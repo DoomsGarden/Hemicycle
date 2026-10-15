@@ -1,4 +1,125 @@
 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+ <meta name="theme-color" content="#0a0e18">
+ <meta name="description" content="Colecciona cromos de politicos y gana el debate llegando a 100 votos.">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+ <title>Hemiciclo: Cara a Cara</title>
+ <link rel="manifest" href="manifest.json">
+ <link rel="icon" href="icon-192.png">
+ <link rel="apple-touch-icon" href="icon-192.png">
+<style>
+html,body{margin:0;padding:0;height:100%;background:#070b16;overflow:hidden}
+body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
+.screen{position:relative;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18)}
+.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(8px + env(safe-area-inset-top)) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440}
+.brand{font-weight:800;letter-spacing:.4px;font-size:14px;line-height:1.05}
+.brand span{display:block;font-size:8px;color:#e8b923;letter-spacing:1.8px;font-weight:700}
+.abR{margin-left:auto;display:flex;gap:5px;align-items:center}
+.pill{background:#1e2848;border:1px solid #2b3763;border-radius:99px;padding:3px 9px;font-size:10.5px;white-space:nowrap}
+.pill.gold{border-color:#e8b923;color:#ffd76a;font-weight:700}
+.pill.red{border-color:#d43b3b;color:#ff9b8a;font-weight:700}
+.pill.green{border-color:#28a86b;color:#7fe0b0;font-weight:700}
+.mini{background:#1e2848;border:1px solid #2b3763;color:#e9ecf5;border-radius:9px;padding:6px 9px;font-size:12px;min-height:34px;font-weight:700}
+.mini.hot{background:#d43b3b;border-color:#ff8a6a;color:#fff}
+.mini:active{background:#e8b923;color:#111}
+.content{padding:10px 12px 14px}
+button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;border-radius:10px}
+h2{font-size:18px;margin:0 0 3px}
+h3{font-size:12.5px;margin:11px 0 5px;color:#ffd76a}
+p{margin:0 0 7px;font-size:13px}
+.sub{color:#8b93ab;font-size:11.5px;line-height:1.3}
+.panel{background:#131b31;border:1px solid #232e52;border-radius:13px;padding:11px;margin-bottom:9px}
+.panel.win{border-color:#28a86b;background:linear-gradient(180deg,#132a22,#131b31)}
+.panel.lose{border-color:#d43b3b;background:linear-gradient(180deg,#2a1414,#131b31)}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.mode{border:1px solid #232e52;background:#18213c;border-radius:13px;padding:10px;text-align:left;min-height:80px}
+.mode:active{border-color:#e8b923}
+.mode b{display:block;font-size:12.5px;color:#ffd76a;margin-bottom:2px}
+.mode i{font-style:normal;color:#8b93ab;font-size:10.5px;line-height:1.25}
+.btn{background:linear-gradient(180deg,#e8b923,#c9931a);color:#141414;border:none;font-weight:800;padding:13px;font-size:13px;min-height:48px}
+.btn:active{filter:brightness(1.12)}
+.btn.ghost{background:#1e2848;color:#e9ecf5;border:1px solid #2b3763;font-weight:600}
+.btn.wide{width:100%}
+.btn:disabled{opacity:.5}
+.bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.tabbar{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(10px + env(safe-area-inset-bottom));background:rgba(8,12,22,.99);border-top:1px solid #1c2440}
+.tab{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:#8b93ab;padding:6px 0;min-height:50px;border-radius:10px;font-weight:600}
+.tab .ic{font-size:17px;line-height:1.1}
+.tab.on{color:#ffd76a;background:rgba(232,185,35,.12)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
+.cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:9px;border:2px solid var(--tier,#555);background:linear-gradient(180deg,#1b2440,#0d1424);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.cromo .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:rgba(255,255,255,.15)}
+.cromo .art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+.cromo .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;padding:3px 3px 0}
+.cromo .cost{background:rgba(0,0,0,.72);border-radius:5px;padding:0 4px;font-size:11px;font-weight:900;color:#ffd76a}
+.cromo .bot{position:relative;z-index:2;background:linear-gradient(180deg,transparent,rgba(0,0,0,.9) 42%);padding:9px 3px 3px;font-size:9px;line-height:1.12}
+.cromo .nm{display:block;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cromo .st{display:block;color:#cfd6e8;font-weight:700}
+.cromo.sel{border-color:#fff;box-shadow:0 0 0 2px #ffd76a inset}
+.cromo.lead{border-color:#fff}
+.cromo.tgt{box-shadow:0 0 0 2px #ff8a6a inset}
+.cromo.busy{filter:saturate(.55) brightness(.85)}
+.cromo .crown{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:3;font-size:12px;color:#ffd76a;text-shadow:0 0 5px #000}
+.cromo .lbl{position:absolute;z-index:3;top:2px;left:2px;font-size:8px;font-weight:800;color:#111;background:#ffd76a;border-radius:4px;padding:0 3px}
+.star{position:absolute;z-index:4;top:2px;right:2px;width:28px;height:28px;border-radius:50%;border:1px solid #2b3763;background:rgba(8,12,24,.85);font-size:14px;padding:0;color:#8b93ab}
+.star.on{background:#e8b923;color:#141414;border-color:#ffd76a}
+.badge{position:absolute;z-index:4;bottom:2px;right:2px;background:rgba(8,12,24,.92);border:1px solid #2b3763;border-radius:99px;padding:1px 5px;font-size:9px;font-weight:800;color:#ffd76a}
+.row{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;padding:5px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.row>*{flex:0 0 auto;width:84px;scroll-snap-align:center}
+.tribuna{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tribuna .cromo{aspect-ratio:3 / 3.9}
+.tribuna .slot{border:1px dashed #232e52;border-radius:9px;aspect-ratio:3 / 3.9;display:flex;align-items:center;justify-content:center;color:#39456e;font-size:12px;font-weight:700;text-align:center;padding:4px}
+.tribuna .slot.tgt{border-color:#ff8a6a;color:#ff8a6a;border-style:solid}
+.vbars{display:grid;gap:4px;margin-bottom:6px}
+.vbar{display:flex;align-items:center;gap:6px;font-size:11px}
+.vbar .track{flex:1;height:10px;background:#0c1324;border:1px solid #232e52;border-radius:99px;overflow:hidden}
+.vbar .fill{height:100%;width:0}
+.vbar.me .fill{background:linear-gradient(90deg,#3b6fd4,#6ea8ff)}
+.vbar.foe .fill{background:linear-gradient(90deg,#d43b3b,#ff8a6a)}
+.vbar b{min-width:30px;text-align:right;font-size:11.5px}
+.tdp{display:flex;gap:3px;align-items:center}
+.crystal{width:13px;height:13px;border-radius:50%;border:1px solid #3b6fd4;background:#4f8bea}
+.crystal.off{background:#151d33;border-color:#2b3763}
+.log{background:#0a1020;border:1px solid #232e52;border-radius:9px;padding:6px 8px;font-size:11px;min-height:42px;max-height:76px;overflow-y:auto;color:#c3cbe0}
+.log .hi{color:#ffd76a}
+.hint{background:#1a2547;border:1px solid #3b6fd4;border-radius:9px;padding:6px 8px;font-size:11.5px;color:#bcd2ff;margin-top:6px}
+.gab{display:flex;gap:4px;margin:5px 0;flex-wrap:wrap}
+.gab span{font-size:9.5px;border:1px solid #2b3763;border-radius:6px;padding:2px 5px;background:#0d1424;color:#8b93ab}
+.gab span.on{color:#111;background:#ffd76a;border-color:#ffd76a;font-weight:800}
+.gab span.field{color:#111;background:#7fe0b0;border-color:#7fe0b0;font-weight:800}
+.gab span.pas{color:#ff9b8a;border-color:#d43b3b}
+.chips{display:flex;gap:5px;overflow-x:auto;padding:2px 0 6px}
+.chip{border:1px solid #2b3763;background:#1e2848;border-radius:99px;padding:7px 11px;font-size:11.5px;min-height:36px;white-space:nowrap}
+.chip.on{background:#e8b923;color:#141414;border-color:#ffd76a;font-weight:800}
+input{width:100%;background:#0b1224;border:1px solid #2b3763;border-radius:9px;color:#e9ecf5;padding:10px 11px;font:inherit;font-size:13px;min-height:44px;margin-bottom:6px}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+th,td{padding:5px 3px;border-bottom:1px solid #232e52;text-align:left}
+th{color:#8b93ab;font-weight:600}
+tr.you td{color:#ffd76a;font-weight:700;background:rgba(232,185,35,.14)}
+tr.pro td{background:rgba(40,168,107,.1)}
+tr.des td{background:rgba(212,59,59,.1)}
+.stat{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin:8px 0}
+.stat div{background:#0d1424;border:1px solid #232e52;border-radius:8px;padding:6px 3px;text-align:center}
+.stat b{display:block;font-size:16px;color:#ffd76a}
+.stat span{font-size:9.5px;color:#8b93ab}
+.quote{background:#0d1424;border-left:3px solid #e8b923;border-radius:0 8px 8px 0;padding:6px 9px;margin:5px 0;font-size:12px}
+.reveal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.ficha{display:flex;gap:10px;align-items:flex-start}
+.ficha .caja{flex:0 0 auto;width:92px}
+.doc{display:inline-flex;align-items:center;gap:5px;border:1px solid #2b3763;border-radius:99px;padding:2px 8px;font-size:10.5px;background:#0d1424}
+.dot{width:8px;height:8px;border-radius:50%}
+.err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
+.foot{font-size:10px;color:#8b93ab;text-align:center;padding-top:6px}
+</style>
+</head>
+<body>
 
 <div id="app">
  <div class="screen" id="screen">
@@ -7,6 +128,720 @@
   <div class="tabbar" id="tabbar"></div>
  </div>
 </div>
+
+<script>
+window.onerror=function(m,src,l,c){
+  var ct=document.getElementById('content'); if(!ct)return;
+  var b=document.getElementById('errbox');
+  if(!b){b=document.createElement('div');b.id='errbox';b.className='err';ct.insertBefore(b,ct.firstChild);}
+  b.textContent='Error: '+m+' (linea '+l+':'+c+')';
+};
+(function(){
+'use strict';
+var VERSION='v19';
+var UID=0;
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+var MEM={};
+function lsGet(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){MEM[k]=v;}}
+function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+function pick(a){return a[Math.floor(Math.random()*a.length)];}
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+
+var ART_BASE=''; /* pon 'cards/' cuando subas los retratos a www/cards/ */
+
+var DOCS=[
+ {k:'verborrea',n:'Verborrea',d:'+1 TdP cada turno. Si te expulsan un orador, +2 TdP.',col:'#3b6fd4'},
+ {k:'guardia',n:'Vieja Guardia',d:'Al final de tu turno tus oradores ganan +1 Zasca (max +3).',col:'#8b5cf6'},
+ {k:'aforado',n:'Aforado',d:'La primera expulsion de un orador tuyo se salva con 1 de Aguante.',col:'#28a86b'},
+ {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 2 de dano.',col:'#d4a03b'},
+ {k:'foco',n:'Foco Mediatico',d:'Tu Lider regenera +1 Aguante y cada golpe suyo te da +1 voto.',col:'#d43b3b'},
+ {k:'viperina',n:'Lengua Viperina',d:'Tus oradores infligen +2 de dano al Lider rival.',col:'#c026d3'}
+];
+var DOCM={};DOCS.forEach(function(d){DOCM[d.k]=d;});
+var RARS=[{k:'comun',n:'Comun',c:'#b07a45',g:3},{k:'raro',n:'Raro',c:'#4a7fb5',g:4},{k:'especial',n:'Especial',c:'#8b5cf6',g:5},{k:'legendario',n:'Legendario',c:'#e8b923',g:6}];
+var RARM={};RARS.forEach(function(r){RARM[r.k]=r;});
+var TIER={comun:{c:[1,3],a:[2,4],h:[4,7],v:2},raro:{c:[2,4],a:[4,6],h:[6,10],v:3},especial:{c:[3,5],a:[5,7],h:[8,12],v:5},legendario:{c:[4,6],a:[7,9],h:[11,16],v:8}};
+var TIERORDER={legendario:0,especial:1,raro:2,comun:3};
+
+var ROSTER={
+ verborrea:{legendario:['Donald Trump','Boris Johnson'],especial:['Pablo Iglesias','Nigel Farage','Javier Milei','Gabriel Rufian'],raro:['Jose Luis Rodriguez Zapatero','Pablo Echenique','Inigo Errejon','Alberto Garzon','Irene Montero','Monica Garcia'],comun:['Toni Canto','Antonio Maillo','Rafael Hernando','Pablo Cambronero','Marta Lois','Nacho Alvarez','Isabel Garcia Tejerina','Jaime de Olano']},
+ guardia:{legendario:['Alberto Nunez Feijoo','Angela Merkel'],especial:['Jose Maria Aznar','Felipe Gonzalez','Bernie Sanders','Joe Biden'],raro:['Esperanza Aguirre','Soraya Saenz de Santamaria','Ana Botella','Cristina Cifuentes','Jose Manuel Garcia-Margallo','Julio Anguita'],comun:['Celia Villalobos','Alfonso Alonso','Javier Maroto','Juan Vicente Herrera','Carlos Floriano','Miguel Arias Canete','Dolors Montserrat','Teodoro Garcia Egea']},
+ aforado:{legendario:['Mariano Rajoy','Vladimir Putin'],especial:['Santiago Abascal','Giorgia Meloni','Recep Tayyip Erdogan','Viktor Orban'],raro:['Pablo Casado','Albert Rivera','Dolores de Cospedal','Jorge Fernandez Diaz','Luis de Guindos','Cristobal Montoro'],comun:['Fatima Banez','Inigo Mendez de Vigo','Rafael Catala','Alvaro Nadal','Jose Luis Abalos','Carmen Calvo','Meritxell Batet','Fernando Grande-Marlaska']},
+ giro:{legendario:['Carles Puigdemont','Emmanuel Macron'],especial:['Marine Le Pen','Matteo Salvini','Justin Trudeau','Salvador Illa'],raro:['Oriol Junqueras','Jordi Turull','Miriam Nogueras','Laura Borras','Anna Gabriel','Marta Rovira'],comun:['Quim Torra','Pere Aragones','Jordi Sanchez','Roger Torrent','Josep Rull','Carme Forcadell','Raul Romeva','Toni Comin']},
+ foco:{legendario:['Pedro Sanchez','Isabel Diaz Ayuso'],especial:['Ada Colau','Nicolas Maduro','Andres Manuel Lopez Obrador','Cristina Fernandez de Kirchner'],raro:['Ines Arrimadas','Rocio Monasterio','Cayetana Alvarez de Toledo','Edmundo Bal','Begona Villacis','Sara Gimenez'],comun:['Ana Pastor','Pablo Montesinos','Marta Rivera de la Cruz','Andrea Levy','Cuca Gamarra','Borja Semper','Esteban Gonzalez Pons','Elias Bendodo']},
+ viperina:{legendario:['Barack Obama','Yolanda Diaz'],especial:['Hillary Clinton','Kamala Harris','Christine Lagarde','Ursula von der Leyen'],raro:['Miquel Iceta','Adriana Lastra','Pilar Alegria','Isabel Cela','Maria Jesus Montero','Nadia Calvino'],comun:['Oscar Puente','Patxi Lopez','Susana Diaz','Emiliano Garcia-Page','Juan Espadas','Pilar Llop','Reyes Maroto','Raquel Sanchez']}
+};
+var QPOOL={
+ verborrea:['«Yo he venido aqui a hablar de mi libro»','«Vamos a ver, senorias»','«Permitanme una reflexion»','«Un minuto mas, presidenta»','«Es que no me dejan terminar»','«Ya acabo, ya acabo»','«Rectifico: no rectifico»','«Se lo explicare con peras y manzanas»','«Que me quiten la palabra si quieren»','«Esto es un debate de sordos»','«A mi me han llamado de todo»','«Y ademas, y sobre todo»'],
+ guardia:['«Cuando yo era joven esto no pasaba»','«Ya lo avise en 1987»','«Aqui hemos venido a aguantar»','«Los anos dan criterio»','«Yo he visto caer tres gobiernos»','«A mi no me tiembla el pulso»','«Esto ya lo dijo un clasico»','«Paciencia, mucha paciencia»','«He sobrevivido a cinco crisis»','«Con respeto y con la verdad»','«No me jubilo, me reengancho»','«La experiencia es un grado»'],
+ aforado:['«Que me llamen, que aqui estoy»','«A mi nadie me mueve de este escano»','«Inhabilitado, si; retirado, no»','«Su senoria, sigo en pie»','«Me voy de rositas»','«Esto me lo apunto para el recurso»','«Tengo fuero, paciencia y tiempo»','«Me han dado por muerto cuatro veces»','«No hay mocion que me tumbe»','«Aqui sigo, imperturbable»','«Lo veo todo desde la ultima fila»','«Ni me condenan ni me voy»'],
+ giro:['«Y entonces cambie de opinion»','«Rectificar es de sabios»','«Esto lo arreglo con una enmienda»','«Enmienda a la totalidad»','«Nadie se lo esperaba»','«Sorpresa, senorias»','«Voy a hacer un anuncio»','«Lo dije, pero en otro sentido»','«Segundo acto: el giro»','«Ustedes no se lo creeran»','«Todo tiene una segunda parte»','«Y aqui viene el cambio de guion»'],
+ foco:['«Que me enfoquen a mi»','«Salgo en todos los telediarios»','«Un titular, por favor»','«Primer plano, gracias»','«La camara, aqui»','«Esto da para portada»','«Foco, foco, foco»','«Me van a citar mil veces»','«Tendencia numero uno»','«Un directo y lo arreglo»','«Que salga bien en la foto»','«Atencion a mi»'],
+ viperina:['«Con todo el carino del mundo»','«Se lo digo por su bien»','«Que poco leido esta usted»','«Le falta un hervor»','«Con esa altura de miras...»','«Es usted muy gracioso, senoria»','«Menuda ocurrencia»','«Aprendiz, pero con ganas»','«Se le ve el plumero»','«Mucho ruido y pocas nueces»','«Lo digo sin acritud»','«Que se lo mire»']
+};
+var QBESP={
+ 'donald-trump':['«Fake news!»','«You are fired!»','«Person, woman, man, camera, TV»'],
+ 'boris-johnson':['«Get Brexit done»','«Let us get ready to rubble»','«Lo hacemos y ya veremos»'],
+ 'alberto-nunez-feijoo':['«Sentidino»','«Galicia no se vende»','«Aqui no sobra nadie»'],
+ 'angela-merkel':['«Wir schaffen das»','«Lo vamos a resolver»','«Sin prisas, con calma»'],
+ 'mariano-rajoy':['«Los espanoles son muy espanoles y mucho espanoles»','«El vino, con moderacion, es bueno»','«Y usted que quiere que le diga?»'],
+ 'vladimir-putin':['«Sorpresa»','«Lo hice por Rusia»','«Todo segun el plan»'],
+ 'carles-puigdemont':['«Volvere»','«Desde Bruselas»','«Esto no ha acabado»'],
+ 'emmanuel-macron':['«En meme temps»','«En marche!»','«Y a la vez...»'],
+ 'pedro-sanchez':['«Resistire»','«Pactare con quien haga falta»','«Espana va como un cohete»'],
+ 'isabel-diaz-ayuso':['«Libertad!»','«Comunismo o libertad»','«Madrid es Espana»'],
+ 'barack-obama':['«Yes, we can»','«Let me be clear»','«Change»'],
+ 'yolanda-diaz':['«El pais que viene»','«A trabajar»','«Sumar es sumar»'],
+ 'pablo-iglesias':['«La casta»','«Asalto a los cielos»','«Nos han votado por el cambio»'],
+ 'nigel-farage':['«Take back control»','«Brexit means Brexit»'],
+ 'javier-milei':['«Viva la libertad, carajo»','«Afuera»','«No hay plata»'],
+ 'gabriel-rufian':['«Somos la sonrisa de la Republica»','«Espana nos roba un poco»'],
+ 'jose-maria-aznar':['«Espana va bien»','«Hemos ganado»'],
+ 'felipe-gonzalez':['«Que pesado soy»','«Otro gallo cantaria»'],
+ 'bernie-sanders':['«I am once again asking»','«Not me, us»'],
+ 'joe-biden':['«No malarkey»','«Look, folks»'],
+ 'santiago-abascal':['«Viva Espana»','«Que viva Espana»'],
+ 'giorgia-meloni':['«Soy Giorgia, soy madre, soy italiana»','«Dios, patria y familia»'],
+ 'recep-tayyip-erdogan':['«Vamos a hacer algo grande»','«El pueblo manda»'],
+ 'viktor-orban':['«Hungria primero»','«Democracia iliberal»'],
+ 'marine-le-pen':['«Le peuple»','«Francia primero»'],
+ 'matteo-salvini':['«Italianos primero»','«Manos libres»'],
+ 'justin-trudeau':['«Because it is 2015»','«Sunny ways»'],
+ 'salvador-illa':['«Volveremos a ganar»','«Con toda la humildad»'],
+ 'ada-colau':['«Barcelona no se vende»','«Los vecinos primero»'],
+ 'nicolas-maduro':['«Un paso al frente»','«Chavez vive»'],
+ 'andres-manuel-lopez-obrador':['«Abrazos, no balazos»','«La pobreza no es destino»'],
+ 'cristina-fernandez-de-kirchner':['«Un modelo de pais»','«La patria es el otro»'],
+ 'hillary-clinton':['«I am with her»','«Deal me in»'],
+ 'kamala-harris':['«We did it, Joe»','«No volver atras»'],
+ 'christine-lagarde':['«Haremos lo que haga falta»','«Whatever it takes»'],
+ 'ursula-von-der-leyen':['«Europa es nuestra respuesta»','«Al grano»']
+};
+
+var CARDS=[],BYID={};
+DOCS.forEach(function(d){
+ ['legendario','especial','raro','comun'].forEach(function(t){
+  var t2=TIER[t];
+  ROSTER[d.k][t].forEach(function(nm,ix){
+   var c={id:slug(nm),n:nm,r:t,pa:d.k,
+     c:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),
+     a:t2.a[0]+((ix*3)%(t2.a[1]-t2.a[0]+1)),
+     h:t2.h[0]+((ix*5)%(t2.h[1]-t2.h[0]+1)),
+     v:t2.v};
+   var pool=QPOOL[d.k],bes=QBESP[c.id];
+   c.q=bes?bes.concat([pool[ix%pool.length]]):[pool[ix%pool.length],pool[(ix+4)%pool.length],pool[(ix+8)%pool.length]];
+   CARDS.push(c);BYID[c.id]=c;
+  });
+ });
+});
+CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||(a.n<b.n?-1:1);});
+
+function gem(n,col){
+ var pts=[],i,ang,rad;
+ for(i=0;i<n*2;i++){ang=-Math.PI/2+i*Math.PI/n;rad=(i%2)?3.1:6.6;pts.push((10+Math.cos(ang)*rad).toFixed(1)+','+(10+Math.sin(ang)*rad).toFixed(1));}
+ return '<svg viewBox="0 0 20 20" width="13" height="13"><polygon points="'+pts.join(' ')+'" fill="'+col+'" stroke="rgba(0,0,0,.5)" stroke-width=".6"/></svg>';
+}
+function initials(nm){
+ var p=nm.split(' ').filter(function(w){return w.length>2;});
+ if(!p.length)p=nm.split(' ');
+ return (p[0].charAt(0)+(p[1]?p[1].charAt(0):'')).toUpperCase();
+}
+function cromoHTML(c,o){
+ o=o||{};
+ var r=RARM[c.r];
+ var st='--tier:'+r.c+(o.extra?';'+o.extra:'');
+ var art=ART_BASE?'<img src="'+ART_BASE+c.id+'.webp" alt="" loading="lazy">':'<span>'+esc(initials(c.n))+'</span>';
+ return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'" data-card="'+c.id+'"'+(o.pick?' data-pick="'+c.id+'"':'')+'>'
+  +'<div class="art">'+art+'</div><div class="top"><span class="cost">'+c.c+'</span>'+gem(r.g,r.c)+'</div>'
+  +(o.lead?'<span class="crown">&#9733;</span>':'')
+  +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'">&#9733;</button>':'')
+  +(o.count?'<span class="badge">x'+o.count+'</span>':'')
+  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+c.a+' &middot; A'+c.h+'</span></div></div>';
+}
+function fichaHTML(c){
+ var r=RARM[c.r];
+ return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c)+'</div>'
+ +'<div style="flex:1;min-width:0"><p style="margin:0 0 4px"><b>'+esc(c.n)+'</b></p>'
+ +'<p style="margin:0 0 5px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span></p>'
+ +'<p class="sub" style="margin:0">Zasca '+c.a+' &middot; Aguante '+c.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escanos</p>'
+ +'<p class="sub" style="margin:5px 0 0">'+esc(DOCM[c.pa].d)+'</p></div></div>'
+ +'<div class="quote">'+esc(pick(c.q))+'</div></div>';
+}
+
+var LS='hemiciclo_v19',LS2='hemiciclo_liga_v9';
+function seedAlbum(d){
+ var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
+ add('comun',18);add('raro',8);add('especial',3);add('legendario',1);
+}
+function D(){
+ var d=lsGet(LS);
+ if(!d||!d.album){d={fs:1500,elo:300,w:0,l:0,album:[],lastDaily:0,lastWeekly:0};seedAlbum(d);lsSet(LS,d);}
+ return d;
+}
+function saveD(d){lsSet(LS,d);}
+var RANKS=[[0,'Aprendiz de pasillo'],[400,'Concejal'],[700,'Diputado'],[1000,'Portavoz'],[1300,'Ministro'],[1600,'Presidente']];
+function rankName(e){var n=RANKS[0][1];for(var i=0;i<RANKS.length;i++)if(e>=RANKS[i][0])n=RANKS[i][1];return n;}
+function copies(d,id){var n=0;for(var i=0;i<d.album.length;i++)if(d.album[i]===id)n++;return n;}
+function uniqueAlbum(d){var m={},out=[];d.album.forEach(function(id){m[id]=(m[id]||0)+1;});Object.keys(m).forEach(function(id){if(BYID[id])out.push({id:id,c:BYID[id],n:m[id]});});return out;}
+
+var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},G=null;
+function go(s,o){SCREEN=s;if(o!==undefined&&o!==null)SO=o;paint();var sc=document.getElementById('screen');if(sc)sc.scrollTop=0;}
+function appbar(){
+ var d=D();
+ return '<div class="brand">HEMICICLO<span>CARA A CARA '+VERSION+'</span></div>'
+ +'<div class="abR">'
+ +((G&&!G.over)?'<button class="mini hot" data-go="battle">Debate</button>':'')
+ +'<span class="pill gold">'+d.fs+' FS</span><span class="pill">'+esc(rankName(d.elo))+'</span>'
+ +'<button class="mini" data-go="ayuda">?</button></div>';
+}
+function tabbar(){
+ var tabs=[['menu','\u2302','Menu'],['coleccion','\u25A6','Cromos'],['tienda','\u25C8','Tienda'],['liga','\u265B','Liga']];
+ return tabs.map(function(t){
+  return '<button class="tab'+(SCREEN===t[0]?' on':'')+'" data-go="'+t[0]+'"><span class="ic">'+t[1]+'</span>'+t[2]+'</button>';
+ }).join('');
+}
+function paint(){
+ var c=document.getElementById('content');if(!c)return;
+ if(TICK){clearInterval(TICK);TICK=null;}
+ var ab=document.getElementById('appbar');if(ab)ab.innerHTML=appbar();
+ c.innerHTML=((SCREENS[SCREEN]||SCREENS.menu)())+'<div class="foot">'+CARDS.length+' cromos &middot; 6 doctrinas &middot; gabinete de 5</div>';
+ var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
+ if(SCREEN==='tienda')startTick();
+}
+function startTick(){
+ TICK=setInterval(function(){
+  var now=Date.now(),els=document.querySelectorAll('[data-cd]');
+  for(var i=0;i<els.length;i++){
+   var e=els[i],t=parseInt(e.getAttribute('data-cd'),10),left=Math.max(0,t-now);
+   var h=Math.floor(left/3600000),m=Math.floor(left%3600000/60000),s=Math.floor(left%60000/1000);
+   e.textContent=(h>0?h+'h ':'')+m+'m '+s+'s';
+   if(left<=0){clearInterval(TICK);TICK=null;paint();return;}
+  }
+ },1000);
+}
+
+var SCREENS={};
+SCREENS.menu=function(){
+ var d=D();
+ return '<h2>Hemiciclo</h2><p class="sub">Consigue 100 votos antes que el rival: el 100% de los escanos.</p>'
+ +'<div class="modes">'
+ +'<button class="mode" data-go="builder" data-mode="normal"><b>Partida normal</b><i>Coleccion blindada. Nada se pierde.</i></button>'
+ +'<button class="mode" data-go="builder" data-mode="ranked"><b>Clasificatoria</b><i>Elo y botin: el que gana se lleva un cromo rival.</i></button>'
+ +'<button class="mode" data-go="liga"><b>Liga de los 30</b><i>12 jornadas, 3 divisiones, ascensos.</i></button>'
+ +'<button class="mode" data-act="rapida"><b>Partida rapida</b><i>Equipo automatico y al debate.</i></button>'
+ +'</div>'
+ +'<div class="panel" style="margin-top:9px"><div class="bar"><button class="btn" data-go="builder" data-mode="normal">Jugar</button>'
+ +'<button class="btn ghost" data-go="coleccion">Coleccion ('+d.album.length+')</button>'
+ +'<button class="btn ghost" data-act="reset">Borrar progreso</button></div>'
+ +'<p class="sub" style="margin-top:7px">'+d.w+' victorias &middot; '+d.l+' derrotas</p></div>'
+ +'<div class="panel"><h3>Las seis doctrinas</h3>'
+ +DOCS.map(function(x){return '<p style="margin:0 0 6px"><span class="doc"><span class="dot" style="background:'+x.col+'"></span>'+esc(x.n)+'</span><br><span class="sub">'+esc(x.d)+'</span></p>';}).join('')
+ +'<p class="sub">Solo se activa la doctrina del Lider que este en la Tribuna.</p></div>';
+};
+function colList(){
+ var d=D(),list=uniqueAlbum(d);
+ if(FIL.r)list=list.filter(function(x){return x.c.r===FIL.r;});
+ if(FIL.d)list=list.filter(function(x){return x.c.pa===FIL.d;});
+ if(FIL.q){var q=FIL.q.toLowerCase();list=list.filter(function(x){return x.c.n.toLowerCase().indexOf(q)>=0;});}
+ list.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);});
+ return list;
+}
+function colGrid(){return colList().map(function(x){return cromoHTML(x.c,{count:x.n});}).join('');}
+SCREENS.coleccion=function(){
+ var d=D();
+ return '<h2>Coleccion</h2><p class="sub" id="cntBox">'+d.album.length+' cromos &middot; '+uniqueAlbum(d).length+' distintos. Los repetidos son copias de reserva.</p>'
+ +'<input type="search" id="fq" placeholder="Buscar politico..." value="'+esc(FIL.q)+'">'
+ +'<div class="chips"><button class="chip'+(FIL.r===''?' on':'')+'" data-fr="">Todas</button>'
+ +RARS.map(function(r){return '<button class="chip'+(FIL.r===r.k?' on':'')+'" data-fr="'+r.k+'">'+r.n+'</button>';}).join('')+'</div>'
+ +'<div class="chips"><button class="chip'+(FIL.d===''?' on':'')+'" data-fd="">Todas las doctrinas</button>'
+ +DOCS.map(function(x){return '<button class="chip'+(FIL.d===x.k?' on':'')+'" data-fd="'+x.k+'">'+esc(x.n)+'</button>';}).join('')+'</div>'
+ +'<div class="grid sm" id="gridBox">'+colGrid()+'</div>';
+};
+SCREENS.detalle=function(){
+ var c=BYID[SO.id],d=D(),r=RARM[c.r];
+ return '<h2>'+esc(c.n)+'</h2>'
+ +'<p><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+copies(d,c.id)+'</span></p>'
+ +'<div class="stat"><div><b>'+c.c+'</b><span>TdP</span></div><div><b>'+c.a+'</b><span>Zasca</span></div><div><b>'+c.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escanos</span></div></div>'
+ +'<h3>Frases de ataque</h3>'+c.q.map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')
+ +'<h3>Doctrina</h3><p class="sub">'+esc(DOCM[c.pa].d)+'</p>'
+ +'<div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
+};
+var PACKS=[
+ {k:'comun',n:'Sobre comun',p:400,d:'4 comunes garantizados. 20% de que uno sea raro.'},
+ {k:'raro',n:'Sobre raro',p:800,d:'4 raros garantizados. 25% de que uno sea especial.'},
+ {k:'legendario',n:'Sobre legendario',p:1500,d:'1 legendario, 1 especial y 3 raros.'},
+ {k:'mitico',n:'Sobre mitico',p:2900,d:'5 legendarios. El unico camino al nivel maximo.'}];
+var DAY=86400000,WEEK=7*DAY;
+SCREENS.tienda=function(){
+ var d=D(),now=Date.now();
+ var dl=Math.max(0,d.lastDaily+DAY-now),wl=Math.max(0,d.lastWeekly+WEEK-now);
+ return '<h2>Tienda</h2><p class="sub">Fuerza Soberana: '+d.fs+' FS. Moneda blanda, no se compra con dinero real.</p>'
+ +'<div class="panel"><h3>Sobres gratis</h3><div class="bar">'
+ +'<button class="btn" data-act="free" data-k="diario"'+(dl>0?' disabled':'')+'>Diario'+(dl>0?' <span data-cd="'+(now+dl)+'">...</span>':'')+'</button>'
+ +'<button class="btn" data-act="free" data-k="semanal"'+(wl>0?' disabled':'')+'>Semanal'+(wl>0?' <span data-cd="'+(now+wl)+'">...</span>':'')+'</button>'
+ +'</div><p class="sub" style="margin-top:6px">Diario: 5 comunes. Semanal: 5 raros.</p></div>'
+ +PACKS.map(function(p){var can=d.fs>=p.p;
+  return '<div class="panel"><h3>'+p.n+' <span class="pill gold">'+p.p+' FS</span></h3><p class="sub">'+p.d+'</p>'
+  +'<button class="btn wide" data-act="buy" data-k="'+p.k+'"'+(can?'':' disabled')+'>'+(can?'Abrir sobre':'Faltan FS')+'</button></div>';}).join('');
+};
+function packContents(k){
+ var out=[],i;
+ if(k==='diario'||k==='comun'){
+  for(i=0;i<4;i++)out.push(pick(CARDS.filter(function(x){return x.r==='comun';})));
+  out.push(Math.random()<0.2?pick(CARDS.filter(function(x){return x.r==='raro';})):pick(CARDS.filter(function(x){return x.r==='comun';})));
+ } else if(k==='semanal'||k==='raro'){
+  for(i=0;i<4;i++)out.push(pick(CARDS.filter(function(x){return x.r==='raro';})));
+  out.push(Math.random()<0.25?pick(CARDS.filter(function(x){return x.r==='especial';})):pick(CARDS.filter(function(x){return x.r==='raro';})));
+ } else if(k==='legendario'){
+  out.push(pick(CARDS.filter(function(x){return x.r==='legendario';})));
+  out.push(pick(CARDS.filter(function(x){return x.r==='especial';})));
+  for(i=0;i<3;i++)out.push(pick(CARDS.filter(function(x){return x.r==='raro';})));
+ } else {for(i=0;i<5;i++)out.push(pick(CARDS.filter(function(x){return x.r==='legendario';})));}
+ return out;
+}
+function openPack(k,free){
+ var d=D(),p=PACKS.filter(function(x){return x.k===k;})[0];
+ if(!free){if(!p||d.fs<p.p){go('result',{who:'info',msg:'No te llega la Fuerza Soberana. Necesitas '+p.p+' FS.',fs:0});return;}}
+ else{
+  if(k==='diario'){if(Date.now()<d.lastDaily+DAY)return;d.lastDaily=Date.now();}
+  else{if(Date.now()<d.lastWeekly+WEEK)return;d.lastWeekly=Date.now();}
+ }
+ var cards=packContents(k);
+ if(!free)d.fs-=p.p;
+ cards.forEach(function(c){d.album.push(c.id);});
+ saveD(d);
+ go('sobre',{cards:cards.map(function(c){return c.id;}),k:k});
+}
+SCREENS.sobre=function(){
+ var ids=SO.cards||[];
+ return '<h2>Sobre abierto</h2><p class="sub">'+ids.length+' cromos anadidos a tu coleccion.</p>'
+ +'<div class="reveal">'+ids.map(function(id){return cromoHTML(BYID[id]);}).join('')+'</div>'
+ +'<div class="bar" style="margin-top:9px"><button class="btn" data-act="again" data-k="'+(SO.k||'')+'">Abrir otro</button>'
+ +'<button class="btn ghost" data-go="tienda">Tienda</button></div>';
+};
+function builderScreen(mode,rival,jor){
+ var uniq=uniqueAlbum(D());
+ uniq.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);});
+ var lead=BUILD.leader?BYID[BUILD.leader].n:'sin asignar';
+ var names=BUILD.ids.map(function(id){return BYID[id].n;});
+ var tit=mode==='ranked'?'Clasificatoria':(mode==='liga'?('Liga &middot; Jornada '+jor):'Partida normal');
+ return '<h2>'+tit+'</h2>'
+ +(rival?'<p class="sub">Rival: <b>'+esc(rival)+'</b></p>':'')
+ +'<div class="panel" style="padding:9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Lider: '+esc(lead)+'</p>'
+ +(names.length?'<p class="sub" style="margin:4px 0 0">'+esc(names.join(' · '))+'</p>':'')
+ +'</div>'
+ +'<div class="bar" style="margin-bottom:8px"><button class="btn" data-act="start">Empezar</button>'
+ +'<button class="btn ghost" data-act="auto">Auto</button>'
+ +'<button class="btn ghost" data-act="clear">Vaciar</button></div>'
+ +'<p class="sub">5 cromos distintos, ni uno repetido: entran los 5 al debate. Toca para alinearlos y usa la estrella para el Lider.'
+ +(mode!=='normal'?' <b>En juego: el ganador se lleva un cromo del rival.</b>':'')+'</p>'
+ +'<div class="grid">'+uniq.map(function(x){return cromoHTML(x.c,{sel:BUILD.ids.indexOf(x.id)>=0,lead:BUILD.leader===x.id,star:true,count:x.n,pick:true});}).join('')+'</div>'
+ +'<div style="height:8px"></div><button class="btn wide" data-act="start">Empezar debate ('+(5-BUILD.ids.length)+' por elegir)</button>';
+}
+SCREENS.builder=function(){return builderScreen(SO.mode||'normal',SO.rival,SO.jor);};
+function autoBuild(){var s=shuffle(uniqueAlbum(D())).slice(0,5);BUILD.ids=s.map(function(x){return x.id;});if(BUILD.ids.length)BUILD.leader=BUILD.ids[0];}
+function startBattle(){
+ if(BUILD.ids.length<5)autoBuild();
+ if(!BUILD.leader)BUILD.leader=BUILD.ids[0];
+ if(BUILD.ids.length<5){go('result',{who:'info',msg:'Necesitas al menos 5 cromos distintos en la coleccion. Abre algun sobre.',fs:0});return;}
+ newBattle(SO.mode||'normal',SO.rival);
+}
+
+function mk(c){UID++;return {uid:'u'+UID,k:c.id,n:c.n,a:c.a,h:c.h,hm:c.h,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,ready:true};}
+function newBattle(mode,rival){
+ var d=D(),team=BUILD.ids.slice(0,5),ldrId=BUILD.leader||team[0];
+ var eTeam=shuffle(CARDS.map(function(c){return c.id;})).slice(0,5);
+ var diff=1;
+ if(mode==='ranked')diff=1+(d.elo-300)/700;
+ if(mode==='liga')diff=1+((3-(SO.div||3))*0.18);
+ diff=Math.max(.8,Math.min(2,diff));
+ G={mode:mode,rival:rival||pick(['Grupo Mixto','Bancada Gris','Coalicion Improbable','Grupo del Pasillo','Mesa del Cafe','Los Indecisos']),
+  eTeam:eTeam,pTeam:team.slice(),
+  n:0,over:false,done:false,side:'p',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
+  field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},leader:{}};
+ var build=function(s,ids,lead){
+  var dk=shuffle(ids).map(function(id){return mk(BYID[id]);}),lc=null,i;
+  for(i=0;i<dk.length;i++)if(dk[i].k===lead)lc=dk[i];
+  if(!lc){lc=mk(BYID[lead]);dk.unshift(lc);}
+  var hi=dk.indexOf(lc);
+  if(hi>=0)dk.splice(hi,1);
+  var hand=dk.splice(0,2);
+  hand.unshift(lc);
+  G.leader[s]=lc;G.deck[s]=dk;G.hand[s]=hand;
+ };
+ build('p',team,ldrId);
+ build('e',eTeam,eTeam[Math.floor(Math.random()*5)]);
+ if(diff!==1)G.deck.e.concat(G.hand.e).forEach(function(c){c.a=Math.max(1,Math.round(c.a*diff));c.h=Math.max(1,Math.round(c.h*diff));c.hm=c.h;});
+ log('Comienza el debate contra '+G.rival+'.','hi');
+ log('Tu gabinete: '+team.map(function(id){return BYID[id].n;}).join(', ')+'.');
+ go('battle');
+ startTurn('p');
+}
+function log(t,cls){if(!G)return;G.log.unshift('<div'+(cls?' class="'+cls+'"':'')+'>'+esc(t)+'</div>');if(G.log.length>40)G.log.pop();}
+function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
+function leaderOn(s){var l=G.leader[s];if(!l)return false;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return true;return false;}
+function enMano(s,uid){for(var i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)return true;return false;}
+function enMesa(s,uid){for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===uid)return true;return false;}
+function draw(s){
+ if(!G.deck[s].length){G.deck[s]=shuffle(G.pas[s]);G.pas[s]=[];}
+ if(!G.deck[s].length)return;
+ if(G.hand[s].length>=7)return;
+ var c=G.deck[s][0];
+ if(enMano(s,c.uid)||enMesa(s,c.uid)){G.deck[s].shift();return;}
+ G.hand[s].push(G.deck[s].shift());
+}
+function startTurn(s){
+ if(!G||G.over)return;
+ if(G.n>=14){endByVotes();return;}
+ G.n++;G.side=s;G.sel=null;
+ G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
+ G.tdp[s]=G.tdpMax[s]+((doc(s)==='verborrea')?1:0);
+ if(G.pas[s].length){G.hand[s]=G.hand[s].concat(G.pas[s]);G.pas[s]=[];}
+ draw(s);
+ if(doc(s)==='foco'&&leaderOn(s))G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+1);
+ G.field[s].forEach(function(c){c.ready=true;});
+ var gain=3;G.field[s].forEach(function(c){gain+=c.v;});
+ G.votes[s]+=gain;
+ log('Turno '+Math.ceil(G.n/2)+': +'+gain+' votos.');
+ paint();
+ if(G.votes[s]>=100){finish(s);return;}
+ if(s==='e')setTimeout(aiTurn,520);
+}
+function endTurn(){
+ if(!G||G.over||G.side!=='p')return;
+ if(doc('p')==='guardia'){G.field.p.forEach(function(c){if((c.buff||0)<3){c.buff=(c.buff||0)+1;c.a++;}});log('Vieja Guardia: tus oradores se crecen.');}
+ G.sel=null;startTurn('e');
+}
+function expel(owner,card,attacker){
+ var victim=owner==='p'?'e':'p';
+ if(!enMesa(victim,card.uid))return;
+ if(doc(victim)==='aforado'&&!G.saved[card.uid]){G.saved[card.uid]=true;card.h=1;log(card.n+' invoca el Aforado y sobrevive con 1.','hi');return;}
+ G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
+ G.pas[victim].push(card);
+ if(attacker){G.votes[owner]+=card.v;log(card.n+' expulsado: +'+card.v+' escanos para ti.','hi');}
+ else log(card.n+' abandona la Tribuna.');
+ if(doc(victim)==='verborrea'){G.tdp[victim]+=2;log('Verborrea: +2 TdP.');}
+}
+function playCard(s,uid){
+ var idx=-1,i;
+ for(i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)idx=i;
+ if(idx<0)return false;
+ var c=G.hand[s][idx];
+ if(c.c>G.tdp[s]||G.field[s].length>=3)return false;
+ G.hand[s].splice(idx,1);
+ if(c.uid===G.leader[s].uid){c.a=G.leader[s].a+1;c.h+=3;c.hm+=3;}
+ G.field[s].push(c);G.tdp[s]-=c.c;
+ log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+'.');
+ return true;
+}
+function attack(atk,tgt,owner){
+ var foe=owner==='p'?'e':'p';
+ var bonus=(doc(owner)==='viperina'&&G.leader[foe]&&tgt.uid===G.leader[foe].uid)?2:0;
+ log(atk.n+' lanza '+pick(atk.q)+' ('+(atk.a+bonus)+' de dano a '+tgt.n+').','hi');
+ tgt.h-=atk.a+bonus;atk.ready=false;
+ if(doc(foe)==='giro'&&tgt!==atk){atk.h-=2;log('Giro de Guion: '+atk.n+' recibe 2.');}
+ if(doc(owner)==='foco'&&G.leader[foe]&&tgt.uid===G.leader[foe].uid)G.votes[owner]+=1;
+ if(atk.h<=0)expel(foe,atk,null);
+ if(tgt.h<=0)expel(owner,tgt,atk);
+}
+function endByVotes(){G.over=true;if(G.votes.p>G.votes.e)finish('p');else if(G.votes.e>G.votes.p)finish('e');else finish('d');}
+function finish(who){
+ if(!G||G.done)return;G.over=true;G.done=true;
+ var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal');
+ if(who==='p'){
+  fs=mode==='normal'?rnd(20,50):rnd(50,100);
+  d.w++;if(mode==='ranked')d.elo+=25;
+  msg='Victoria. Consigues '+fs+' FS.';
+  if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escano de '+BYID[won].n+'.';}
+ } else if(who==='e'){
+  fs=mode==='normal'?0:rnd(20,30);
+  d.l++;if(mode==='ranked')d.elo=Math.max(0,d.elo-20);
+  msg='Derrota.'+(fs?' Recuperas '+fs+' FS.':'');
+  if(comp&&G.pTeam.length&&d.album.length){
+   lost=pick(G.pTeam);
+   var i=d.album.indexOf(lost);if(i<0){lost=d.album[0];i=0;}
+   if(i>=0)d.album.splice(i,1);
+   msg+=' Pierdes una copia de '+BYID[lost].n+'.';
+  }
+ } else {fs=25;d.w++;d.l++;msg='Empate tecnico.';}
+ d.fs+=fs;saveD(d);
+ if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
+ go('result',{who:who,msg:msg,fs:fs,won:won,lost:lost,mode:mode});
+}
+function ligaPanel(){
+ var lg=ligaLoad();if(!lg)return '';
+ var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
+ var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
+ var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
+ return '<h3>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+' &middot; Jornada '+lg.jor+'/12</h3>'
+ +'<p class="sub">Vas '+pos+' de 30 con '+me.pts+' puntos.</p>'
+ +'<div class="panel" style="max-height:250px;overflow:auto"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
+ +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(t.n)+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
+ +'</tbody></table></div><button class="btn wide" data-act="ligajugar">Siguiente: jornada '+lg.jor+' vs '+esc(rival.n)+'</button>';
+}
+SCREENS.result=function(){
+ if(SO.who==='info')return '<h2>Aviso</h2><p>'+esc(SO.msg)+'</p>'
+  +'<div class="bar"><button class="btn" data-go="tienda">Ir a la tienda</button><button class="btn ghost" data-go="menu">Menu</button></div>';
+ var who=SO.who;
+ var title=who==='p'?'Victoria':(who==='e'?'Derrota':(who==='season'?'Temporada cerrada':'Empate'));
+ var html='<h2>'+title+'</h2><p>'+esc(SO.msg)+'</p>';
+ if(SO.fs)html+='<p><span class="pill gold">+'+SO.fs+' FS</span></p>';
+ if(SO.won)html+='<h3>Cromo arrebatado al rival</h3>'+fichaHTML(BYID[SO.won])
+  +'<p class="sub">Ya esta en tu coleccion. Ahora tienes '+copies(D(),SO.won)+' copia(s).</p>';
+ if(SO.lost)html+='<h3>Cromo perdido</h3>'+fichaHTML(BYID[SO.lost])
+  +'<p class="sub">Te quedan '+copies(D(),SO.lost)+' copia(s) de este cromo.</p>';
+ if(SO.liga&&!SO.season)html+=ligaPanel();
+ html+='<div class="bar" style="margin-top:9px">';
+ if(SO.liga&&!SO.season)html+='<button class="btn" data-go="liga">Ver clasificacion</button>';
+ html+='<button class="btn ghost" data-act="rev" data-mode="'+(SO.mode||'normal')+'">Revancha</button>'
+ +'<button class="btn ghost" data-go="coleccion">Coleccion</button>'
+ +'<button class="btn ghost" data-go="menu">Menu</button></div>';
+ return html;
+};
+var AIQ=[];
+function aiTurn(){
+ if(!G||G.over)return;AIQ=[];
+ G.hand.e.slice().sort(function(a,b){return b.c-a.c;}).forEach(function(c){if(c.c<=G.tdp.e&&G.field.e.length<3)AIQ.push(['play',c.uid]);});
+ G.field.e.filter(function(c){return c.ready;}).forEach(function(a){
+  var tars=G.field.p.slice().sort(function(x,y){return x.h-y.h;});
+  AIQ.push(['atk',a.uid,(tars[0]||G.leader.p).uid]);
+ });
+ aiStep();
+}
+function aiStep(){
+ if(!G||G.over)return;
+ if(!AIQ.length){paint();setTimeout(function(){if(G&&!G.over)startTurn('p');},360);return;}
+ var a=AIQ.shift(),ok=false,i;
+ if(a[0]==='play')ok=playCard('e',a[1]);
+ else{
+  var atk=null,tgt=null;
+  for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===a[1])atk=G.field.e[i];
+  for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===a[2])tgt=G.field.p[i];
+  if(!tgt)tgt=G.leader.p;
+  if(atk&&atk.ready){attack(atk,tgt,'e');ok=true;}
+ }
+ paint();
+ if(G.over)return;
+ setTimeout(aiStep,ok?420:60);
+}
+function cromoBattle(c,side,extra){
+ var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
+ var isTarget=(side==='e'&&G.sel);
+ return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'">'
+  +'<div class="art"><span>'+esc(initials(c.n))+'</span></div>'
+  +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(r.g,r.c)+'</div>'
+  +(isLead?'<span class="crown">&#9733;</span>':'')
+  +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
+  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+c.a+' &middot; A'+Math.max(0,c.h)+'/'+c.hm+'</span></div></div>';
+}
+function nmByUid(uid){var i;for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)return G.field.p[i].n;return '?';}
+function uidOf(uid){var i;for(i=0;i<G.hand.p.length;i++)if(G.hand.p[i].uid===uid)return G.hand.p[i].k;return '';}
+function gabLine(){
+ var est=G.pTeam.map(function(id){
+  var c=null,i;
+  for(i=0;i<G.hand.p.length;i++)if(G.hand.p[i].k===id)c='mano';
+  for(i=0;i<G.field.p.length;i++)if(G.field.p[i].k===id)c='mesa';
+  for(i=0;i<G.pas.p.length;i++)if(G.pas.p[i].k===id)c='fuera';
+  return {n:BYID[id].n,s:c||'mazo'};
+ });
+ return '<div class="gab">'+est.map(function(e){
+  var cls=e.s==='mano'?'on':(e.s==='mesa'?'field':(e.s==='fuera'?'pas':''));
+  return '<span class="'+cls+'">'+esc(e.n.split(' ')[0])+'</span>';
+ }).join('')+'</div>';
+}
+SCREENS.battle=function(){
+ if(!G)return '<p>Cargando...</p>';
+ if(G.sel){var found=false,i2;for(i2=0;i2<G.field.p.length;i2++)if(G.field.p[i2].uid===G.sel)found=true;if(!found)G.sel=null;}
+ var i,tdp='',etdp='';
+ for(i=0;i<6;i++){tdp+='<span class="crystal'+(i<G.tdp.p?'':' off')+'"></span>';etdp+='<span class="crystal'+(i<G.tdp.e?'':' off')+'"></span>';}
+ var pf=G.field.p.map(function(c){return cromoBattle(c,'p');}).join('');
+ for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
+ var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
+ for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__LDR_E" data-side="e">'+(G.sel?'Lider rival':'+')+'</div>';
+ var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3;return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
+ var eLeadOn=leaderOn('e');
+ var modo=G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
+ return '<p class="sub" style="margin:0 0 5px"><span class="pill">'+modo+'</span>'+(G.mode!=='normal'?' <span class="pill red">se juega una copia</span>':'')+' <span class="pill green">mazo '+G.deck.p.length+'</span></p>'
+ +gabLine()
+ +'<div class="vbars">'
+ +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'</b></div>'
+ +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'</b></div></div>'
+ +'<p class="sub">Rival &middot; TdP '+G.tdp.e+'/6 '+etdp+'</p>'
+ +'<p class="sub" style="margin:3px 0 5px">Lider rival: <b>'+esc(G.leader.e.n)+'</b> &middot; Aguante '+Math.max(0,G.leader.e.h)+'/'+G.leader.e.hm+(eLeadOn?' (en la Tribuna)':' (fuera)')+'</p>'
+ +'<div class="tribuna">'+ef+'</div>'
+ +'<div class="log" style="margin:7px 0">'+G.log.slice(0,4).join('')+'</div>'
+ +'<div class="tribuna">'+pf+'</div>'
+ +'<p class="sub" style="margin-top:7px">Tu Tribuna &middot; TdP '+G.tdp.p+'/6 '+tdp+'</p>'
+ +'<div class="row">'+hand+'</div>'
+ +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca una carta rival o un hueco "Lider rival".</div>'
+        :'<div class="hint">Toca un orador tuyo de la Tribuna para elegir atacante.</div>')
+ +'<div class="bar" style="margin-top:7px"><button class="btn" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.side==='p'?'Pasar turno':'Rival...')+'</button>'
+ +'<button class="btn ghost" data-act="abandon">Abandonar</button></div>';
+};
+var LNAMES=['Grupo Nacional','Bancada Popular','Union Civica','Frente Comun','Alianza Soberana','Grupo Liberal','Coalicion Verde','Bloque Regional','Partido del Centro','Grupo Independiente','Union Patriotica','Frente Amplio','Grupo Federal','Nueva Bancada','Coalicion Civica','Bloque Obrero','Grupo Democratico','Union Progresista','Frente Nacional','Grupo Social','Alianza Popular','Bloque Ciudadano','Grupo Reformista','Union Democratica','Frente Civico','Grupo del Norte','Bancada del Sur','Alianza Federal','Grupo Radical','Frente del Centro'];
+function ligaNew(div){
+ var teams=LNAMES.slice(0,30).map(function(n){return {n:n,pts:0,w:0,d:0,l:0,you:false,str:rnd(30,80)};});
+ teams[0].you=true;teams[0].n='Tu grupo';teams[0].str=60;
+ return {div:div||3,jor:1,temp:1,teams:teams};
+}
+function ligaLoad(){return lsGet(LS2);}
+function ligaResult(who,info){
+ var lg=ligaLoad();
+ if(!lg){go('result',{who:who,msg:info.msg,fs:info.fs,won:info.won,lost:info.lost,mode:'liga'});return;}
+ var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
+ if(!me){go('result',{who:who,msg:info.msg,fs:info.fs,won:info.won,lost:info.lost,mode:'liga'});return;}
+ if(who==='p'){me.pts+=3;me.w++;}else if(who==='e'){me.l++;}else{me.pts+=1;me.d++;}
+ simRound(lg,me);
+ lg.jor++;
+ if(lg.jor>12){seasonEnd(lg,info);return;}
+ lsSet(LS2,lg);
+ go('result',{who:who,msg:info.msg,fs:info.fs,won:info.won,lost:info.lost,mode:'liga',liga:true});
+}
+function simRound(lg,me){
+ var others=shuffle(lg.teams.filter(function(t){return t!==me;}));
+ for(var i=0;i<others.length-1;i+=2){
+  var a=others[i],b=others[i+1],ra=a.str+rnd(0,30),rb=b.str+rnd(0,30);
+  if(ra>rb){a.pts+=3;a.w++;b.l++;}else if(rb>ra){b.pts+=3;b.w++;a.l++;}else{a.pts++;b.pts++;a.d++;b.d++;}
+ }
+}
+function seasonEnd(lg,info){
+ var d=D(),me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
+ var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
+ var pos=sorted.indexOf(me)+1,reward=rnd(700,1100);
+ d.fs+=reward;saveD(d);
+ var nd=lg.div;if(pos<=5&&lg.div>1)nd=lg.div-1;else if(pos>25&&lg.div<3)nd=lg.div+1;
+ var nm=function(x){return x===1?'Primera':(x===2?'Segunda':'Tercera');};
+ var msg='Terminas '+pos+' de 30 en '+nm(lg.div)+' con '+me.pts+' puntos. Recompensa de liga: '+reward+' FS. ';
+ msg+=nd<lg.div?('ASCENSO a '+nm(nd)+'.'):(nd>lg.div?('DESCENSO a '+nm(nd)+'.'):'Te mantienes en la division.');
+ var fresh=ligaNew(nd);fresh.temp=lg.temp+1;lsSet(LS2,fresh);
+ go('result',{who:'season',msg:msg,fs:reward,mode:'liga',season:true});
+}
+SCREENS.liga=function(){
+ var lg=ligaLoad();
+ if(!lg)return '<h2>Liga de los 30</h2><p class="sub">30 grupos, 12 jornadas, tres divisiones con ascensos y descensos. Empiezas en Tercera.</p>'
+  +'<p class="sub">En liga el ganador se lleva un cromo del rival y el perdedor suelta una copia.</p>'
+  +'<div class="bar"><button class="btn" data-act="liganew">Crear liga</button><button class="btn ghost" data-go="menu">Menu</button></div>';
+ var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
+ var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
+ var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
+ return '<h2>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+'</h2>'
+ +'<p class="sub">Temporada '+lg.temp+' &middot; Jornada '+lg.jor+' de 12 &middot; vas '+pos+' de 30 con '+me.pts+' pts</p>'
+ +'<button class="btn wide" data-act="ligajugar" style="margin-bottom:8px">Jugar jornada '+lg.jor+' vs '+esc(rival.n)+'</button>'
+ +'<div class="panel" style="max-height:330px;overflow:auto"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
+ +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(t.n)+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
+ +'</tbody></table></div><p class="sub">Los 5 primeros ascienden, los 5 ultimos descienden.</p>'
+ +'<button class="btn ghost wide" data-act="ligabandon">Abandonar liga</button>';
+};
+SCREENS.ayuda=function(){
+ return '<h2>Como se juega</h2>'
+ +'<div class="panel"><h3>Objetivo</h3><p>Cada turno ganas 3 votos mas los escanos de tus oradores en la Tribuna. Gana quien llegue a <b>100 votos</b>. Expulsar a un orador rival te da sus escanos.</p></div>'
+ +'<div class="panel"><h3>Tu gabinete</h3><p>Eliges 5 cromos <b>distintos</b> y son exactamente los 5 que entran en el debate. Cada uno es una instancia propia: puede estar en la mano o en la mesa, nunca en los dos sitios.</p></div>'
+ +'<div class="panel"><h3>Atacar</h3><p>Toca un orador tuyo (se marca en dorado) y luego una carta rival o un hueco "Lider rival". Un orador solo ataca una vez por turno.</p></div>'
+ +'<div class="panel"><h3>Botin</h3><p>En clasificatoria y en liga, el que gana se lleva un cromo del gabinete rival y el que pierde suelta una copia del suyo.</p></div>'
+ +'<div class="panel"><h3>Economia</h3><p>Normal 20-50 FS al ganar. Clasificatoria 50-100 al ganar y 20-30 al perder. Liga 700-1100 FS al cerrar temporada.</p></div>'
+ +'<button class="btn wide" data-go="menu">Volver</button>';
+};
+
+document.addEventListener('click',function(ev){
+ var t=ev.target;
+ var root=document.getElementById('app')||document.body;
+ if(!root.contains(t)||!t.closest)return;
+ var n=t.closest('[data-go],[data-act],[data-lead],[data-card],[data-buid],[data-fr],[data-fd]');
+ if(!n)return;
+ if(n.disabled)return;
+ if(n.hasAttribute('data-fr')){FIL.r=n.getAttribute('data-fr');paint();return;}
+ if(n.hasAttribute('data-fd')){FIL.d=n.getAttribute('data-fd');paint();return;}
+ if(n.hasAttribute('data-lead')){
+  var lid=n.getAttribute('data-lead');
+  if(BUILD.ids.indexOf(lid)<0){if(BUILD.ids.length>=5)BUILD.ids.pop();BUILD.ids.unshift(lid);}
+  BUILD.leader=lid;paint();return;
+ }
+ if(n.hasAttribute('data-pick')){
+  var pid=n.getAttribute('data-pick'),ix=BUILD.ids.indexOf(pid);
+  if(ix>=0){BUILD.ids.splice(ix,1);if(BUILD.leader===pid)BUILD.leader=BUILD.ids[0]||null;}
+  else if(BUILD.ids.length<5)BUILD.ids.push(pid);
+  else BUILD.ids[4]=pid;
+  if(!BUILD.leader&&BUILD.ids.length)BUILD.leader=BUILD.ids[0];
+  paint();return;
+ }
+ if(n.hasAttribute('data-buid')){
+  var uid=n.getAttribute('data-buid'),side=n.getAttribute('data-side');
+  if(!G||G.over||G.side!=='p')return;
+  var i;
+  if(enMano('p',uid)){
+   if(!playCard('p',uid))log('No te llega el Tiempo de Palabra para '+BYID[uidOf(uid)].n+'.');
+   paint();return;
+  }
+  if(side==='e'){
+   if(!G.sel){log('Elige primero un orador tuyo de la Tribuna.');paint();return;}
+   var atk=null,tgt=null;
+   for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===G.sel)atk=G.field.p[i];
+   for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===uid)tgt=G.field.e[i];
+   if(!tgt)tgt=G.leader.e;
+   if(atk&&atk.ready){attack(atk,tgt,'p');G.sel=null;paint();}
+   return;
+  }
+  var own=null;
+  for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)own=G.field.p[i];
+  if(own){
+   if(!own.ready){log(own.n+' ya ha intervenido este turno.');paint();return;}
+   G.sel=(G.sel===uid)?null:uid;paint();
+  }
+  return;
+ }
+ if(n.hasAttribute('data-card')&&SCREEN==='coleccion'){go('detalle',{id:n.getAttribute('data-card')});return;}
+ var act=n.getAttribute('data-act'),dest=n.getAttribute('data-go');
+ if(dest){
+  if(dest==='builder'){SO={mode:n.getAttribute('data-mode')||'normal'};BUILD={ids:[],leader:null};}
+  if(dest==='tienda')FIL={q:'',r:'',d:''};
+  if(dest==='battle'&&!G)return;
+  go(dest);return;
+ }
+ if(!act)return;
+ switch(act){
+  case 'reset':try{localStorage.removeItem(LS);localStorage.removeItem(LS2);}catch(e){}MEM={};G=null;go('menu');break;
+  case 'rapida':autoBuild();SO={mode:'normal'};newBattle('normal');break;
+  case 'auto':autoBuild();paint();break;
+  case 'clear':BUILD={ids:[],leader:null};paint();break;
+  case 'start':startBattle();break;
+  case 'buy':openPack(n.getAttribute('data-k'),false);break;
+  case 'free':openPack(n.getAttribute('data-k'),true);break;
+  case 'again':openPack(SO.k,false);break;
+  case 'end':endTurn();break;
+  case 'abandon':if(G&&!G.over)finish('e');break;
+  case 'rev':{var m=n.getAttribute('data-mode')||'normal';BUILD={ids:[],leader:null};SO={mode:m};go('builder');break;}
+  case 'liganew':lsSet(LS2,ligaNew(3));go('liga');break;
+  case 'ligabandon':try{localStorage.removeItem(LS2);}catch(e){}go('liga');break;
+  case 'ligajugar':{
+   var lg=ligaLoad();if(!lg){go('liga');break;}
+   var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
+   var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
+   var pos=sorted.indexOf(me)+1,rv=sorted[(pos-1+3)%30];
+   BUILD={ids:[],leader:null};
+   go('builder',{mode:'liga',rival:rv.n,div:lg.div,jor:lg.jor});
+   break;
+  }
+ }
+},false);
+document.addEventListener('input',function(ev){
+ if(ev.target&&ev.target.id==='fq'){
+  FIL.q=ev.target.value;
+  var box=document.getElementById('gridBox');
+  if(box)box.innerHTML=colGrid();
+  var c=document.getElementById('cntBox');
+  if(c)c.textContent=colList().length+' cromos listados. Los repetidos son copias de reserva.';
+ }
+},false);
+function boot(){D();paint();}
+try{if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();}
+catch(e){window.onerror(e.message,'boot',0,0);}
+})();
+</script>
+</body>
+</html>
+
 
 
 
