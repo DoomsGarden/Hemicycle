@@ -553,20 +553,43 @@ function playCard(s,uid){
  var c=G.hand[s][idx];
  if(c.c>G.tdp[s]||G.field[s].length>=3)return false;
  G.hand[s].splice(idx,1);
- if(c.uid===G.leader[s].uid){c.a=G.leader[s].a+1;c.h+=3;c.hm+=3;}
+ if(c.uid===G.leader[s].uid){
+  if(!c.leadBuffed){c.a+=1;c.hm+=3;c.leadBuffed=true;}
+  c.h=c.hm;
+ }else{
+  c.h=c.hm;
+ }
  G.field[s].push(c);G.tdp[s]-=c.c;
- log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+'.');
+ log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Lider en Tribuna: doctrina '+DOCM[c.pa].n+' activa).':'.'));
  return true;
 }
 function attack(atk,tgt,owner){
  var foe=owner==='p'?'e':'p';
- var bonus=(doc(owner)==='viperina'&&G.leader[foe]&&tgt.uid===G.leader[foe].uid)?2:0;
+ var ownerDoc=doc(owner),foeDoc=doc(foe);
+ atk.ready=false;
+ if(tgt==='__EMPTY'){
+  var stolen=Math.min(G.votes[foe],atk.a);
+  G.votes[foe]=Math.max(0,G.votes[foe]-atk.a);
+  log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacia (-'+stolen+' votos al rival).','hi');
+  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
+   G.votes[owner]+=1;
+   log('Foco Mediatico: +1 voto para ti.');
+  }
+  if(G.votes[owner]>=100){finish(owner);return;}
+  return;
+ }
+ var isFoeLead=(G.leader[foe]&&tgt.uid===G.leader[foe].uid);
+ var bonus=(ownerDoc==='viperina'&&isFoeLead)?2:0;
  log(atk.n+' lanza '+pick(atk.q)+' ('+(atk.a+bonus)+' de dano a '+tgt.n+').','hi');
- tgt.h-=atk.a+bonus;atk.ready=false;
- if(doc(foe)==='giro'&&tgt!==atk){atk.h-=2;log('Giro de Guion: '+atk.n+' recibe 2.');}
- if(doc(owner)==='foco'&&G.leader[foe]&&tgt.uid===G.leader[foe].uid)G.votes[owner]+=1;
+ tgt.h-=atk.a+bonus;
+ if(foeDoc==='giro'&&tgt!==atk){atk.h-=2;log('Giro de Guion: '+atk.n+' recibe 2.');}
+ if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
+  G.votes[owner]+=1;
+  log('Foco Mediatico: +1 voto para ti.');
+ }
  if(atk.h<=0)expel(foe,atk,null);
  if(tgt.h<=0)expel(owner,tgt,atk);
+ if(G.votes[owner]>=100){finish(owner);return;}
 }
 function endByVotes(){G.over=true;if(G.votes.p>G.votes.e)finish('p');else if(G.votes.e>G.votes.p)finish('e');else finish('d');}
 function finish(who){
@@ -628,7 +651,7 @@ function aiTurn(){
  G.hand.e.slice().sort(function(a,b){return b.c-a.c;}).forEach(function(c){if(c.c<=G.tdp.e&&G.field.e.length<3)AIQ.push(['play',c.uid]);});
  G.field.e.filter(function(c){return c.ready;}).forEach(function(a){
   var tars=G.field.p.slice().sort(function(x,y){return x.h-y.h;});
-  AIQ.push(['atk',a.uid,(tars[0]||G.leader.p).uid]);
+  AIQ.push(['atk',a.uid,tars[0]?tars[0].uid:'__EMPTY']);
  });
  aiStep();
 }
@@ -640,8 +663,9 @@ function aiStep(){
  else{
   var atk=null,tgt=null;
   for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===a[1])atk=G.field.e[i];
-  for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===a[2])tgt=G.field.p[i];
-  if(!tgt)tgt=G.leader.p;
+  if(a[2]==='__EMPTY'){tgt='__EMPTY';}
+  else{for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===a[2])tgt=G.field.p[i];}
+  if(!tgt)tgt='__EMPTY';
   if(atk&&atk.ready){attack(atk,tgt,'e');ok=true;}
  }
  paint();
@@ -651,8 +675,9 @@ function aiStep(){
 function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var isTarget=(side==='e'&&G.sel);
+ var art=ART_BASE?'<img src="'+ART_BASE+c.k+'.webp" alt="" loading="lazy">':'<span>'+esc(initials(c.n))+'</span>';
  return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'">'
-  +'<div class="art"><span>'+esc(initials(c.n))+'</span></div>'
+  +'<div class="art">'+art+'</div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(r.g,r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
   +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
@@ -681,7 +706,7 @@ SCREENS.battle=function(){
  var pf=G.field.p.map(function(c){return cromoBattle(c,'p');}).join('');
  for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
- for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__LDR_E" data-side="e">'+(G.sel?'Lider rival':'+')+'</div>';
+ for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__EMPTY" data-side="e">'+(G.sel?'Restar votos':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3;return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
  var eLeadOn=leaderOn('e');
  var modo=G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
@@ -691,8 +716,7 @@ SCREENS.battle=function(){
  +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'</b></div>'
  +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'</b></div></div>'
  +'<p class="sub">Rival &middot; TdP '+G.tdp.e+'/6 '+etdp+'</p>'
- +'<p class="sub" style="margin:3px 0 5px">Lider rival: <b>'+esc(G.leader.e.n)+'</b> &middot; Aguante '+Math.max(0,G.leader.e.h)+'/'+G.leader.e.hm+(eLeadOn?' (en la Tribuna)':' (fuera)')+'</p>'
- +'<div class="tribuna">'+ef+'</div>'
+ +'<p class="sub" style="margin:3px 0 5px">Lider rival: <b>'+esc(G.leader.e.n)+'</b> &middot; Doctrina: '+(eLeadOn?'<b style="color:#7fe0b0">'+esc(DOCM[G.leader.e.pa].n)+' (en Tribuna)</b>':'inactiva (fuera)')+'</p>' +'<div class="tribuna">'+ef+'</div>'
  +'<div class="log" style="margin:7px 0">'+G.log.slice(0,4).join('')+'</div>'
  +'<div class="tribuna">'+pf+'</div>'
  +'<p class="sub" style="margin-top:7px">Tu Tribuna &middot; TdP '+G.tdp.p+'/6 '+tdp+'</p>'
@@ -801,7 +825,7 @@ document.addEventListener('click',function(ev){
    var atk=null,tgt=null;
    for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===G.sel)atk=G.field.p[i];
    for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===uid)tgt=G.field.e[i];
-   if(!tgt)tgt=G.leader.e;
+   if(!tgt)tgt='__EMPTY';
    if(atk&&atk.ready){attack(atk,tgt,'p');G.sel=null;paint();}
    return;
   }
