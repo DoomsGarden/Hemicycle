@@ -1,8 +1,12 @@
-const CACHE = 'hemiciclo-v1';
+const CACHE = 'hemiciclo-v2';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
-  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).then(() => self.skipWaiting()));
+  e.waitUntil(
+    caches.open(CACHE).then(c =>
+      Promise.allSettled(ASSETS.map(url => c.add(url)))
+    ).then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', e => {
@@ -15,18 +19,30 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   const req = e.request;
-  if (req.method !== 'GET') return;
+  if (req.method !== 'GET' || !req.url.startsWith('http')) return;
+
   if (req.mode === 'navigate') {
     e.respondWith(
       fetch(req)
-        .then(res => { const c = res.clone(); caches.open(CACHE).then(x => x.put('./index.html', c)); return res; })
-        .catch(() => caches.match('./index.html'))
+        .then(res => {
+          if (res && res.ok) {
+            const c = res.clone();
+            caches.open(CACHE).then(x => x.put('./index.html', c));
+          }
+          return res;
+        })
+        .catch(() => caches.match('./index.html') || caches.match('./'))
     );
     return;
   }
+
   e.respondWith(
     caches.match(req).then(r => r || fetch(req).then(res => {
-      const c = res.clone(); caches.open(CACHE).then(x => x.put(req, c)); return res;
-    }))
+      if (res && res.ok) {
+        const c = res.clone();
+        caches.open(CACHE).then(x => x.put(req, c));
+      }
+      return res;
+    }).catch(() => new Response('', { status: 404 })))
   );
 });
