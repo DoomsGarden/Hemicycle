@@ -16,9 +16,18 @@
 :root{--sat:26px;--sab:16px}
 html,body{margin:0;padding:0;height:100%;background:#070b16;overflow:hidden}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
-/* === SOLUCIÓN: Pantalla en flex column para que la tabbar se ancle abajo siempre === */
 .screen{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18)}
 .appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440;flex-shrink:0}
+.brand{font-weight:800;letter-spacing:.4px;font-size:14px;line-height:1.05}
+.brand span{display:block;font-size:8px;color:#e8b923;letter-spacing:1.8px;font-weight:700}
+.abR{margin-left:auto;display:flex;gap:5px;align-items:center}
+.pill{background:#1e2848;border:1px solid #2b3763;border-radius:99px;padding:3px 9px;font-size:10.5px;white-space:nowrap}
+.pill.gold{border-color:#e8b923;color:#ffd76a;font-weight:700}
+.pill.red{border-color:#d43b3b;color:#ff9b8a;font-weight:700}
+.pill.green{border-color:#28a86b;color:#7fe0b0;font-weight:700}
+.mini{background:#1e2848;border:1px solid #2b3763;color:#e9ecf5;border-radius:9px;padding:6px 9px;font-size:12px;min-height:34px;font-weight:700}
+.mini.hot{background:#d43b3b;border-color:#ff8a6a;color:#fff}
+.mini:active{background:#e8b923;color:#111}
 .content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;padding:10px 12px 14px}
 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;border-radius:10px}
 h2{font-size:18px;margin:0 0 3px}
@@ -46,32 +55,35 @@ p{margin:0 0 7px;font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
 
-/* === MARCO DINÁMICO DE CROMOS SEGÚN RAREZA === */
+/* === MARCO REACTIVO SEGÚN RAREZA (Opción 1) === */
 @keyframes gemShimmer {
   0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
   50% { transform: scale(1.12); filter: drop-shadow(0 0 7px var(--tier)); }
   100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
 }
 
-.cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:12px;border:3.5px solid var(--tier,#555);background:linear-gradient(180deg,rgba(19,27,49,0.95),rgba(7,11,22,0.98));box-shadow:0 6px 16px rgba(0,0,0,0.6), inset 0 0 10px rgba(255,255,255,0.12);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:transform .15s ease}
-.cromo::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,0.25);border-radius:10px;pointer-events:none}
+.cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:12px;border:3.5px solid var(--tier,#555);background:linear-gradient(180deg,rgba(19,27,49,0.95),rgba(7,11,22,0.98));box-shadow:0 6px 16px rgba(0,0,0,0.6), 0 0 10px var(--tier);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:transform .15s ease}
+
+/* Capa de marco transparente reactiva opcional (si subes 'cards/frame.webp') */
+.cromo .frame-overlay{position:absolute;inset:0;background-image:url('cards/frame.webp');background-size:cover;pointer-events:none;z-index:3;mix-blend-mode:overlay;opacity:0.85;}
+
 .cromo .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:rgba(255,255,255,.15)}
 .cromo .art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.cromo .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;padding:4px 4px 0}
+.cromo .top{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:flex-start;padding:4px 4px 0}
 .cromo .cost{background:rgba(0,0,0,.78);border:1px solid var(--tier,#555);border-radius:6px;padding:0 5px;font-size:11px;font-weight:900;color:#ffd76a}
 .cromo .gem-wrap{display:inline-flex;align-items:center;justify-content:center;animation:gemShimmer 3.5s infinite ease-in-out}
-.cromo .bot{position:relative;z-index:2;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 45%);padding:10px 4px 4px;font-size:9px;line-height:1.12}
+.cromo .bot{position:relative;z-index:4;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 45%);padding:10px 4px 4px;font-size:9px;line-height:1.12}
 .cromo .nm{display:block;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cromo .st{display:block;color:#cfd6e8;font-weight:700}
 .cromo.sel{border-color:#fff;box-shadow:0 0 0 2px #ffd76a inset, 0 6px 16px rgba(232,185,35,0.3)}
 .cromo.lead{border-color:#fff}
 .cromo.tgt{box-shadow:0 0 0 2px #ff8a6a inset, 0 6px 16px rgba(255,138,106,0.3)}
 .cromo.busy{filter:saturate(.55) brightness(.85)}
-.cromo .crown{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:3;font-size:12px;color:#ffd76a;text-shadow:0 0 5px #000}
-.cromo .lbl{position:absolute;z-index:3;top:2px;left:2px;font-size:8px;font-weight:800;color:#111;background:#ffd76a;border-radius:4px;padding:0 3px}
-.star{position:absolute;z-index:4;top:2px;right:2px;width:28px;height:28px;border-radius:50%;border:1px solid #2b3763;background:rgba(8,12,24,.85);font-size:14px;padding:0;color:#8b93ab}
+.cromo .crown{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:5;font-size:12px;color:#ffd76a;text-shadow:0 0 5px #000}
+.cromo .lbl{position:absolute;z-index:5;top:2px;left:2px;font-size:8px;font-weight:800;color:#111;background:#ffd76a;border-radius:4px;padding:0 3px}
+.star{position:absolute;z-index:6;top:2px;right:2px;width:28px;height:28px;border-radius:50%;border:1px solid #2b3763;background:rgba(8,12,24,.85);font-size:14px;padding:0;color:#8b93ab}
 .star.on{background:#e8b923;color:#141414;border-color:#ffd76a}
-.badge{position:absolute;z-index:4;bottom:2px;right:2px;background:rgba(8,12,24,.92);border:1px solid #2b3763;border-radius:99px;padding:1px 5px;font-size:9px;font-weight:800;color:#ffd76a}
+.badge{position:absolute;z-index:6;bottom:2px;right:2px;background:rgba(8,12,24,.92);border:1px solid #2b3763;border-radius:99px;padding:1px 5px;font-size:9px;font-weight:800;color:#ffd76a}
 
 .row{display:flex;gap:6px;overflow-x:auto;overflow-y:hidden;padding:5px 2px 8px;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
 .row>*{flex:0 0 auto;width:84px;scroll-snap-align:center}
@@ -114,7 +126,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .quote{background:#0d1424;border-left:3px solid #e8b923;border-radius:0 8px 8px 0;padding:6px 9px;margin:5px 0;font-size:12px}
 .reveal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .ficha{display:flex;gap:10px;align-items:flex-start}
-.ficha .caja{flex:0 0 auto;width:110px} /* Ampliado ligeramente para lucir el cromo en detalle */
+.ficha .caja{flex:0 0 auto;width:110px}
 .doc{display:inline-flex;align-items:center;gap:5px;border:1px solid #2b3763;border-radius:99px;padding:2px 8px;font-size:10.5px;background:#0d1424}
 .dot{width:8px;height:8px;border-radius:50%}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
@@ -140,9 +152,9 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v21.1';
+var VERSION='v22';
 var UID=0;
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 var MEM={};
 function lsGet(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
@@ -267,8 +279,11 @@ function cromoHTML(c,o){
  var r=RARM[c.r];
  var st='--tier:'+r.c+(o.extra?';'+o.extra:'');
  var art=artTag(c.id,c.n);
+ /* Se incluye .frame-overlay para soportar el marco transparente reactivo en WebP si se desea */
  return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'" data-card="'+c.id+'"'+(o.pick?' data-pick="'+c.id+'"':'')+'>'
-  +'<div class="art">'+art+'</div><div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
+  +'<div class="art">'+art+'</div>'
+  +'<div class="frame-overlay"></div>'
+  +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(o.lead?'<span class="crown">&#9733;</span>':'')
   +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'">&#9733;</button>':'')
   +(o.count?'<span class="badge">x'+o.count+'</span>':'')
@@ -276,7 +291,6 @@ function cromoHTML(c,o){
 }
 function fichaHTML(c){
  var r=RARM[c.r];
- /* === CORREGIDO: Ahora envuelve el cromo en .caja dentro de la ficha de detalle === */
  return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c)+'</div>'
  +'<div style="flex:1;min-width:0"><p style="margin:0 0 4px"><b>'+esc(c.n)+'</b></p>'
  +'<p style="margin:0 0 5px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span></p>'
@@ -394,9 +408,9 @@ SCREENS.coleccion=function(){
  +'<div class="grid sm" id="gridBox">'+colGrid()+'</div>';
 };
 SCREENS.detalle=function(){
- var c=BYID[SO.id],d=D();
- if(!c) return '<h2>Cromo no encontrado</h2><button class="btn" data-go="coleccion">Volver</center>';
- return fichaHTML(c) + '<div class="bar"><button class="btn" data-go="coleccion">Volver a la colección</button></div>';
+ var c=BYID[SO.id];
+ if(!c)return '<h2>Cromo no encontrado</h2><button class="btn" data-go="coleccion">Volver</button>';
+ return fichaHTML(c)+'<div class="bar"><button class="btn" data-go="coleccion">Volver a la colección</button></div>';
 };
 var PACKS=[
  {k:'comun',n:'Sobre comun',p:400,d:'4 comunes garantizados. 20% de que uno sea raro.'},
@@ -460,7 +474,7 @@ function builderScreen(mode,rival,jor){
  return '<h2>'+tit+'</h2>'
  +(rival?'<p class="sub">Rival: <b>'+esc(rival)+'</b></p>':'')
  +'<div class="panel" style="padding:9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Lider: '+esc(lead)+'</p>'
- +(names.length?'<p class="sub" style="margin:4px 0 0">'+esc(names.join(' · '))+'</p>':'')
+ +(names.length?'<p class="sub" style="margin:4px 0 0">'+names.join(' · ')+'</p>':'')
  +'</div>'
  +'<div class="bar" style="margin-bottom:8px"><button class="btn" data-act="start">Empezar</button>'
  +'<button class="btn ghost" data-act="auto">Auto</button>'
@@ -686,6 +700,7 @@ function cromoBattle(c,side,extra){
  var art=artTag(c.k,c.n);
  return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'">'
   +'<div class="art">'+art+'</div>'
+  +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
   +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
@@ -873,7 +888,7 @@ document.addEventListener('click',function(ev){
    var lg=ligaLoad();if(!lg){go('liga');break;}
    var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
    var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
-   var pos=sorted.indexOf(me)+1,rv=sorted[(pos-1+3)%30];
+   var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
    BUILD={ids:[],leader:null};
    go('builder',{mode:'liga',rival:rv.n,div:lg.div,jor:lg.jor});
    break;
