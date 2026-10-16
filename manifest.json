@@ -1,10 +1,12 @@
 {
+  "id": "./",
   "name": "Hemiciclo: Cara a Cara",
   "short_name": "Hemiciclo",
-  "description": "Colecciona cromos de politicos y gana el debate llegando a 100 votos.",
-  "start_url": "./index.html",
+  "description": "Colecciona cromos de políticos y gana el debate llegando a 100 votos.",
+  "start_url": "./",
   "scope": "./",
-  "display": "fullscreen",
+  "display": "standalone",
+  "display_override": ["fullscreen", "standalone"],
   "orientation": "portrait",
   "background_color": "#070b16",
   "theme_color": "#0a0e18",
@@ -28,7 +30,6 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
   ],
   "categories": [
     "games"
