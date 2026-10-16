@@ -16,19 +16,10 @@
 :root{--sat:26px;--sab:16px}
 html,body{margin:0;padding:0;height:100%;background:#070b16;overflow:hidden}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
-.screen{position:relative;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18)}
-.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440}
-.brand{font-weight:800;letter-spacing:.4px;font-size:14px;line-height:1.05}
-.brand span{display:block;font-size:8px;color:#e8b923;letter-spacing:1.8px;font-weight:700}
-.abR{margin-left:auto;display:flex;gap:5px;align-items:center}
-.pill{background:#1e2848;border:1px solid #2b3763;border-radius:99px;padding:3px 9px;font-size:10.5px;white-space:nowrap}
-.pill.gold{border-color:#e8b923;color:#ffd76a;font-weight:700}
-.pill.red{border-color:#d43b3b;color:#ff9b8a;font-weight:700}
-.pill.green{border-color:#28a86b;color:#7fe0b0;font-weight:700}
-.mini{background:#1e2848;border:1px solid #2b3763;color:#e9ecf5;border-radius:9px;padding:6px 9px;font-size:12px;min-height:34px;font-weight:700}
-.mini.hot{background:#d43b3b;border-color:#ff8a6a;color:#fff}
-.mini:active{background:#e8b923;color:#111}
-.content{padding:10px 12px 14px}
+/* === SOLUCIÓN: Pantalla en flex column para que la tabbar se ancle abajo siempre === */
+.screen{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18)}
+.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440;flex-shrink:0}
+.content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;padding:10px 12px 14px}
 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;border-radius:10px}
 h2{font-size:18px;margin:0 0 3px}
 h3{font-size:12.5px;margin:11px 0 5px;color:#ffd76a}
@@ -48,7 +39,7 @@ p{margin:0 0 7px;font-size:13px}
 .btn.wide{width:100%}
 .btn:disabled{opacity:.5}
 .bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tabbar{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(var(--sab) + 10px);background:rgba(8,12,22,.99);border-top:1px solid #1c2440}
+.tabbar{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(var(--sab) + 10px);background:rgba(8,12,22,.99);border-top:1px solid #1c2440;flex-shrink:0}
 .tab{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:#8b93ab;padding:6px 0;min-height:50px;border-radius:10px;font-weight:600}
 .tab .ic{font-size:17px;line-height:1.1}
 .tab.on{color:#ffd76a;background:rgba(232,185,35,.12)}
@@ -123,7 +114,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .quote{background:#0d1424;border-left:3px solid #e8b923;border-radius:0 8px 8px 0;padding:6px 9px;margin:5px 0;font-size:12px}
 .reveal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .ficha{display:flex;gap:10px;align-items:flex-start}
-.ficha .caja{flex:0 0 auto;width:92px}
+.ficha .caja{flex:0 0 auto;width:110px} /* Ampliado ligeramente para lucir el cromo en detalle */
 .doc{display:inline-flex;align-items:center;gap:5px;border:1px solid #2b3763;border-radius:99px;padding:2px 8px;font-size:10.5px;background:#0d1424}
 .dot{width:8px;height:8px;border-radius:50%}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
@@ -149,7 +140,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v21';
+var VERSION='v21.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -160,7 +151,7 @@ function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
-var ART_BASE='cards/'; /* pon 'cards/' cuando subas los retratos a cards/ */
+var ART_BASE='cards/';
 
 var DOCS=[
  {k:'verborrea',n:'Verborrea',d:'+1 TdP cada turno. Si te expulsan un orador, +2 TdP.',col:'#3b6fd4'},
@@ -217,7 +208,7 @@ var QBESP={
  'giorgia-meloni':['«Soy Giorgia, soy madre, soy italiana»','«Dios, patria y familia»'],
  'recep-tayyip-erdogan':['«Vamos a hacer algo grande»','«El pueblo manda»'],
  'viktor-orban':['«Hungria primero»','«Democracia iliberal»'],
- 'marine-le-pen':['«Le peuple»','('+'Francia primero»'],
+ 'marine-le-pen':['«Le peuple»','«Francia primero»'],
  'matteo-salvini':['«Italianos primero»','«Manos libres»'],
  'justin-trudeau':['«Because it is 2015»','«Sunny ways»'],
  'salvador-illa':['«Volveremos a ganar»','«Con toda la humildad»'],
@@ -249,7 +240,6 @@ DOCS.forEach(function(d){
 });
 CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||(a.n<b.n?-1:1);});
 
-// Generación de gema con puntas escalonadas según rareza (Común = 3, Raro = 5, Especial = 7, Legendario = 9)
 function gem(rKey, col){
  var ptsCount = (rKey === 'legendario') ? 9 : (rKey === 'especial') ? 7 : (rKey === 'raro') ? 5 : 3;
  var pts=[], i, ang, rad;
@@ -286,6 +276,7 @@ function cromoHTML(c,o){
 }
 function fichaHTML(c){
  var r=RARM[c.r];
+ /* === CORREGIDO: Ahora envuelve el cromo en .caja dentro de la ficha de detalle === */
  return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c)+'</div>'
  +'<div style="flex:1;min-width:0"><p style="margin:0 0 4px"><b>'+esc(c.n)+'</b></p>'
  +'<p style="margin:0 0 5px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span></p>'
@@ -403,13 +394,9 @@ SCREENS.coleccion=function(){
  +'<div class="grid sm" id="gridBox">'+colGrid()+'</div>';
 };
 SCREENS.detalle=function(){
- var c=BYID[SO.id],d=D(),r=RARM[c.r];
- return '<h2>'+esc(c.n)+'</h2>'
- +'<p><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+copies(d,c.id)+'</span></p>'
- +'<div class="stat"><div><b>'+c.c+'</b><span>TdP</span></div><div><b>'+c.a+'</b><span>Zasca</span></div><div><b>'+c.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escanos</span></div></div>'
- +'<h3>Frases de ataque</h3>'+c.q.map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')
- +'<h3>Doctrina</h3><p class="sub">'+esc(DOCM[c.pa].d)+'</p>'
- +'<div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
+ var c=BYID[SO.id],d=D();
+ if(!c) return '<h2>Cromo no encontrado</h2><button class="btn" data-go="coleccion">Volver</center>';
+ return fichaHTML(c) + '<div class="bar"><button class="btn" data-go="coleccion">Volver a la colección</button></div>';
 };
 var PACKS=[
  {k:'comun',n:'Sobre comun',p:400,d:'4 comunes garantizados. 20% de que uno sea raro.'},
