@@ -55,18 +55,20 @@ p{margin:0 0 7px;font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
 
-/* Estilos de cromo con marco dinámico según rareza y animación de gema */
-@keyframes gemPulse {
+/* === MARCO DINÁMICO DE CROMOS SEGÚN RAREZA === */
+@keyframes gemShimmer {
   0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
-  50% { transform: scale(1.12); filter: drop-shadow(0 0 6px var(--tier)); }
+  50% { transform: scale(1.12); filter: drop-shadow(0 0 7px var(--tier)); }
   100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
 }
-.cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:11px;border:3px solid var(--tier,#555);background:linear-gradient(180deg,rgba(27,36,64,0.9),rgba(13,20,36,0.95));box-shadow:0 4px 12px rgba(0,0,0,0.5), inset 0 0 8px rgba(255,255,255,0.08);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:transform .15s ease}
+
+.cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:12px;border:3.5px solid var(--tier,#555);background:linear-gradient(180deg,rgba(19,27,49,0.95),rgba(7,11,22,0.98));box-shadow:0 6px 16px rgba(0,0,0,0.6), inset 0 0 10px rgba(255,255,255,0.12);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:transform .15s ease}
+.cromo::after{content:'';position:absolute;inset:0;border:1px solid rgba(255,255,255,0.25);border-radius:10px;pointer-events:none}
 .cromo .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:rgba(255,255,255,.15)}
 .cromo .art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .cromo .top{position:relative;z-index:2;display:flex;justify-content:space-between;align-items:flex-start;padding:4px 4px 0}
 .cromo .cost{background:rgba(0,0,0,.78);border:1px solid var(--tier,#555);border-radius:6px;padding:0 5px;font-size:11px;font-weight:900;color:#ffd76a}
-.cromo .gem-wrap{display:inline-block;animation:gemPulse 3s infinite ease-in-out}
+.cromo .gem-wrap{display:inline-flex;align-items:center;justify-content:center;animation:gemShimmer 3.5s infinite ease-in-out}
 .cromo .bot{position:relative;z-index:2;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 45%);padding:10px 4px 4px;font-size:9px;line-height:1.12}
 .cromo .nm{display:block;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cromo .st{display:block;color:#cfd6e8;font-weight:700}
@@ -215,7 +217,7 @@ var QBESP={
  'giorgia-meloni':['«Soy Giorgia, soy madre, soy italiana»','«Dios, patria y familia»'],
  'recep-tayyip-erdogan':['«Vamos a hacer algo grande»','«El pueblo manda»'],
  'viktor-orban':['«Hungria primero»','«Democracia iliberal»'],
- 'marine-le-pen':['«Le peuple»','«Francia primero»'],
+ 'marine-le-pen':['«Le peuple»','('+'Francia primero»'],
  'matteo-salvini':['«Italianos primero»','«Manos libres»'],
  'justin-trudeau':['«Because it is 2015»','«Sunny ways»'],
  'salvador-illa':['«Volveremos a ganar»','«Con toda la humildad»'],
@@ -247,7 +249,7 @@ DOCS.forEach(function(d){
 });
 CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||(a.n<b.n?-1:1);});
 
-// Generación de gema con puntas escalonadas según rareza (Común = 3, Legendario = 9)
+// Generación de gema con puntas escalonadas según rareza (Común = 3, Raro = 5, Especial = 7, Legendario = 9)
 function gem(rKey, col){
  var ptsCount = (rKey === 'legendario') ? 9 : (rKey === 'especial') ? 7 : (rKey === 'raro') ? 5 : 3;
  var pts=[], i, ang, rad;
@@ -256,7 +258,7 @@ function gem(rKey, col){
   rad = (i % 2) ? 3.2 : 6.8;
   pts.push((10 + Math.cos(ang) * rad).toFixed(1) + ',' + (10 + Math.sin(ang) * rad).toFixed(1));
  }
- return '<span class="gem-wrap"><svg viewBox="0 0 20 20" width="14" height="14"><polygon points="'+pts.join(' ')+'" fill="'+col+'" stroke="rgba(255,255,255,0.6)" stroke-width=".8"/></svg></span>';
+ return '<span class="gem-wrap"><svg viewBox="0 0 20 20" width="14" height="14"><polygon points="'+pts.join(' ')+'" fill="'+col+'" stroke="rgba(255,255,255,0.7)" stroke-width=".9"/></svg></span>';
 }
 
 function initials(nm){
