@@ -250,11 +250,17 @@ function initials(nm){
  if(!p.length)p=nm.split(' ');
  return (p[0].charAt(0)+(p[1]?p[1].charAt(0):'')).toUpperCase();
 }
+function artTag(id,nm){
+ var ini='<span>'+esc(initials(nm))+'</span>';
+ if(!ART_BASE)return ini;
+ return '<img src="'+ART_BASE+id+'.webp" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'">'
+  +'<span style="display:none">'+esc(initials(nm))+'</span>';
+}
 function cromoHTML(c,o){
  o=o||{};
  var r=RARM[c.r];
  var st='--tier:'+r.c+(o.extra?';'+o.extra:'');
- var art=ART_BASE?'<img src="'+ART_BASE+c.id+'.webp" alt="" loading="lazy">':'<span>'+esc(initials(c.n))+'</span>';
+ var art=artTag(c.id,c.n);
  return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'" data-card="'+c.id+'"'+(o.pick?' data-pick="'+c.id+'"':'')+'>'
   +'<div class="art">'+art+'</div><div class="top"><span class="cost">'+c.c+'</span>'+gem(r.g,r.c)+'</div>'
   +(o.lead?'<span class="crown">&#9733;</span>':'')
@@ -675,7 +681,7 @@ function aiStep(){
 function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var isTarget=(side==='e'&&G.sel);
- var art=ART_BASE?'<img src="'+ART_BASE+c.k+'.webp" alt="" loading="lazy">':'<span>'+esc(initials(c.n))+'</span>';
+ var art=artTag(c.k,c.n);
  return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(r.g,r.c)+'</div>'
