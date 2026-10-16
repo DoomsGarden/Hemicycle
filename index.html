@@ -16,7 +16,6 @@
 :root{--sat:26px;--sab:16px}
 html,body{margin:0;padding:0;height:100%;background:#070b16;overflow:hidden}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
-/* === CORREGIDO: Estructura original fluida para restaurar el menú principal === */
 .screen{position:relative;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18);display:flex;flex-direction:column}
 .appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440}
 .brand{font-weight:800;letter-spacing:.4px;font-size:14px;line-height:1.05}
@@ -56,26 +55,56 @@ p{margin:0 0 7px;font-size:13px}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
 
-/* === MARCO REACTIVO SEGÚN RAREZA === */
+/* === MARCO WEBP REACTIVO SEGÚN RAREZA === */
 @keyframes gemShimmer {
   0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
   50% { transform: scale(1.12); filter: drop-shadow(0 0 7px var(--tier)); }
   100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
 }
 
-.cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:12px;border:3.5px solid var(--tier,#555);background:linear-gradient(180deg,rgba(19,27,49,0.95),rgba(7,11,22,0.98));box-shadow:0 6px 16px rgba(0,0,0,0.6), 0 0 10px var(--tier);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:transform .15s ease}
-.cromo .frame-overlay{position:absolute;inset:0;background-image:url('cards/frame.webp');background-size:cover;pointer-events:none;z-index:3;mix-blend-mode:overlay;opacity:0.85;}
+.cromo{
+  position: relative;
+  aspect-ratio: 3 / 4.1;
+  border-radius: 12px;
+  border: none; /* Sin borde plano CSS, mandará el frame.webp */
+  background: linear-gradient(180deg, rgba(19,27,49,0.95), rgba(7,11,22,0.98));
+  box-shadow: 0 8px 20px rgba(0,0,0,0.7), 0 0 12px var(--tier, rgba(232,185,35,0.4));
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  transition: transform .15s ease;
+}
+
+/* Capa del marco WebP con adaptación dinámica de color por rareza */
+.cromo .frame-overlay{
+  position: absolute;
+  inset: 0;
+  background-image: url('cards/frame.webp');
+  background-size: cover;
+  pointer-events: none;
+  z-index: 3;
+  filter: drop-shadow(0 0 4px var(--tier));
+}
+
+/* Mapeo automático de tonos azules del marco según la rareza definida en JavaScript */
+.cromo[style*="#b07a45"] .frame-overlay { filter: hue-rotate(140deg) saturate(1.2) drop-shadow(0 0 4px var(--tier)); } /* Común -> Bronce */
+.cromo[style*="#4a7fb5"] .frame-overlay { filter: hue-rotate(0deg) saturate(1) drop-shadow(0 0 4px var(--tier)); }    /* Raro -> Azul original */
+.cromo[style*="#8b5cf6"] .frame-overlay { filter: hue-rotate(240deg) saturate(1.5) drop-shadow(0 0 4px var(--tier)); } /* Especial -> Morado */
+.cromo[style*="#e8b923"] .frame-overlay { filter: hue-rotate(35deg) saturate(1.8) brightness(1.1) drop-shadow(0 0 6px var(--tier)); } /* Legendario -> Oro intenso */
+
 .cromo .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:rgba(255,255,255,.15)}
 .cromo .art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
-.cromo .top{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:flex-start;padding:4px 4px 0}
+.cromo .top{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:flex-start;padding:6px 6px 0}
 .cromo .cost{background:rgba(0,0,0,.78);border:1px solid var(--tier,#555);border-radius:6px;padding:0 5px;font-size:11px;font-weight:900;color:#ffd76a}
 .cromo .gem-wrap{display:inline-flex;align-items:center;justify-content:center;animation:gemShimmer 3.5s infinite ease-in-out}
-.cromo .bot{position:relative;z-index:4;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 45%);padding:10px 4px 4px;font-size:9px;line-height:1.12}
+.cromo .bot{position:relative;z-index:4;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 45%);padding:12px 6px 6px;font-size:9px;line-height:1.12}
 .cromo .nm{display:block;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cromo .st{display:block;color:#cfd6e8;font-weight:700}
-.cromo.sel{border-color:#fff;box-shadow:0 0 0 2px #ffd76a inset, 0 6px 16px rgba(232,185,35,0.3)}
-.cromo.lead{border-color:#fff}
-.cromo.tgt{box-shadow:0 0 0 2px #ff8a6a inset, 0 6px 16px rgba(255,138,106,0.3)}
+.cromo.sel{border-color:transparent;box-shadow:0 0 0 2px #ffd76a inset, 0 8px 20px rgba(232,185,35,0.4)}
+.cromo.lead{border-color:transparent}
+.cromo.tgt{box-shadow:0 0 0 2px #ff8a6a inset, 0 8px 20px rgba(255,138,106,0.4)}
 .cromo.busy{filter:saturate(.55) brightness(.85)}
 .cromo .crown{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:5;font-size:12px;color:#ffd76a;text-shadow:0 0 5px #000}
 .cromo .lbl{position:absolute;z-index:5;top:2px;left:2px;font-size:8px;font-weight:800;color:#111;background:#ffd76a;border-radius:4px;padding:0 3px}
@@ -150,7 +179,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v22.2';
+var VERSION='v22.3';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -225,7 +254,7 @@ var QBESP={
  'ada-colau':['«Barcelona no se vende»','«Los vecinos primero»'],
  'nicolas-maduro':['«Un paso al frente»','«Chavez vive»'],
  'andres-manuel-lopez-obrador':['«Abrazos, no balazos»','«La pobreza no es destino»'],
- 'cristina-fernandez-de-kirchner':['«Un modelo de pais»','«La patria es el otro»'],
+ 'cristina-fernandez-de-kirchner':['«Un modelo de pais»','«La patria is el otro»'],
  'hillary-clinton':['«I am with her»','«Deal me in»'],
  'kamala-harris':['«We did it, Joe»','«No volver atras»'],
  'christine-lagarde':['«Haremos lo que haga falta»','«Whatever it takes»'],
@@ -885,7 +914,7 @@ document.addEventListener('click',function(ev){
    var lg=ligaLoad();if(!lg){go('liga');break;}
    var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
    var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
-   var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
+   var pos=sorted.indexOf(me)+1,rv=sorted[(pos-1+3)%30];
    BUILD={ids:[],leader:null};
    go('builder',{mode:'liga',rival:rv.n,div:lg.div,jor:lg.jor});
    break;
