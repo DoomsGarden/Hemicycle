@@ -16,8 +16,9 @@
 :root{--sat:26px;--sab:16px}
 html,body{margin:0;padding:0;height:100%;background:#070b16;overflow:hidden}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
-.screen{position:relative;height:100vh;height:100dvh;display:flex;flex-direction:column;overflow-x:hidden;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18)}
-.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440;flex-shrink:0}
+/* === CORREGIDO: Estructura original fluida para restaurar el menú principal === */
+.screen{position:relative;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18);display:flex;flex-direction:column}
+.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440}
 .brand{font-weight:800;letter-spacing:.4px;font-size:14px;line-height:1.05}
 .brand span{display:block;font-size:8px;color:#e8b923;letter-spacing:1.8px;font-weight:700}
 .abR{margin-left:auto;display:flex;gap:5px;align-items:center}
@@ -28,7 +29,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
 .mini{background:#1e2848;border:1px solid #2b3763;color:#e9ecf5;border-radius:9px;padding:6px 9px;font-size:12px;min-height:34px;font-weight:700}
 .mini.hot{background:#d43b3b;border-color:#ff8a6a;color:#fff}
 .mini:active{background:#e8b923;color:#111}
-.content{flex:1;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;padding:10px 12px 14px}
+.content{flex:1;padding:10px 12px 14px}
 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;border-radius:10px}
 h2{font-size:18px;margin:0 0 3px}
 h3{font-size:12.5px;margin:11px 0 5px;color:#ffd76a}
@@ -48,14 +49,14 @@ p{margin:0 0 7px;font-size:13px}
 .btn.wide{width:100%}
 .btn:disabled{opacity:.5}
 .bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tabbar{position:sticky;bottom:0;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(var(--sab) + 10px);background:rgba(8,12,22,.99);border-top:1px solid #1c2440;flex-shrink:0}
+.tabbar{margin-top:auto;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(var(--sab) + 10px);background:rgba(8,12,22,.99);border-top:1px solid #1c2440;flex-shrink:0}
 .tab{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:#8b93ab;padding:6px 0;min-height:50px;border-radius:10px;font-weight:600}
 .tab .ic{font-size:17px;line-height:1.1}
 .tab.on{color:#ffd76a;background:rgba(232,185,35,.12)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
 
-/* === MARCO REACTIVO SEGÚN RAREZA (Opción 1) === */
+/* === MARCO REACTIVO SEGÚN RAREZA === */
 @keyframes gemShimmer {
   0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
   50% { transform: scale(1.12); filter: drop-shadow(0 0 7px var(--tier)); }
@@ -63,10 +64,7 @@ p{margin:0 0 7px;font-size:13px}
 }
 
 .cromo{position:relative;aspect-ratio:3 / 4.1;border-radius:12px;border:3.5px solid var(--tier,#555);background:linear-gradient(180deg,rgba(19,27,49,0.95),rgba(7,11,22,0.98));box-shadow:0 6px 16px rgba(0,0,0,0.6), 0 0 10px var(--tier);overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;min-width:0;transition:transform .15s ease}
-
-/* Capa de marco transparente reactiva opcional (si subes 'cards/frame.webp') */
 .cromo .frame-overlay{position:absolute;inset:0;background-image:url('cards/frame.webp');background-size:cover;pointer-events:none;z-index:3;mix-blend-mode:overlay;opacity:0.85;}
-
 .cromo .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:rgba(255,255,255,.15)}
 .cromo .art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
 .cromo .top{position:relative;z-index:4;display:flex;justify-content:space-between;align-items:flex-start;padding:4px 4px 0}
@@ -152,9 +150,9 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v22';
+var VERSION='v22.2';
 var UID=0;
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 var MEM={};
 function lsGet(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
@@ -279,7 +277,6 @@ function cromoHTML(c,o){
  var r=RARM[c.r];
  var st='--tier:'+r.c+(o.extra?';'+o.extra:'');
  var art=artTag(c.id,c.n);
- /* Se incluye .frame-overlay para soportar el marco transparente reactivo en WebP si se desea */
  return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'" data-card="'+c.id+'"'+(o.pick?' data-pick="'+c.id+'"':'')+'>'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
@@ -409,7 +406,7 @@ SCREENS.coleccion=function(){
 };
 SCREENS.detalle=function(){
  var c=BYID[SO.id];
- if(!c)return '<h2>Cromo no encontrado</h2><button class="btn" data-go="coleccion">Volver</button>';
+ if(!c)return '<h2>Cromo no encontrado</h2><div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
  return fichaHTML(c)+'<div class="bar"><button class="btn" data-go="coleccion">Volver a la colección</button></div>';
 };
 var PACKS=[
