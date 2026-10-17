@@ -123,16 +123,11 @@ p{margin:0 0 7px;font-size:13px}
   100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
 }
 
-/* === SEAMLESS LOOP DE 3.1s PARA EL CROMO GOLDEN DE TRUMP === */
+/* === SEAMLESS LOOP DE 3.1s SIN PARPADEO PARA EL CROMO GOLDEN DE TRUMP === */
 @keyframes goldBreath31 {
-  0%   { transform: scale(1.01); filter: brightness(1.06) saturate(1.08); }
-  50%  { transform: scale(1.045); filter: brightness(1.0) saturate(1.0); }
-  100% { transform: scale(1.01); filter: brightness(1.06) saturate(1.08); }
-}
-@keyframes goldSeamMask31 {
-  0%, 100% { opacity: 0.42; }
-  12%, 88% { opacity: 0.05; }
-  50%      { opacity: 0.14; }
+  0%   { transform: scale(1.015); }
+  50%  { transform: scale(1.035); }
+  100% { transform: scale(1.015); }
 }
 
 .gold-loop-wrap{
@@ -141,33 +136,37 @@ p{margin:0 0 7px;font-size:13px}
   width:100%;
   height:100%;
   overflow:hidden;
+  background:#141c34;
 }
 .gold-loop-wrap img,
 .gold-loop-wrap canvas.gold-canvas{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
   object-position:center top;
   display:block;
-  will-change:transform,filter;
+  backface-visibility:hidden;
+  -webkit-backface-visibility:hidden;
+  transform:translateZ(0);
   animation:goldBreath31 3.1s infinite ease-in-out;
 }
+/* El canvas se superpone encima de la imagen base solo cuando ya tiene un fotograma pintado */
 .gold-loop-wrap canvas.gold-canvas{
-  display:none;
-}
-.gold-loop-wrap.canvas-on img{
-  display:none !important;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .12s ease;
 }
 .gold-loop-wrap.canvas-on canvas.gold-canvas{
-  display:block !important;
+  opacity:1;
 }
 .gold-seam-mask{
   position:absolute;
   inset:0;
   pointer-events:none;
-  background:radial-gradient(circle at 50% 35%, rgba(255,215,106,0.55), rgba(232,185,35,0.18) 60%, transparent 90%);
+  background:radial-gradient(circle at 50% 30%, rgba(255,215,106,0.16), transparent 75%);
   mix-blend-mode:screen;
-  animation:goldSeamMask31 3.1s infinite ease-in-out;
 }
 
 .cromo{
@@ -288,7 +287,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v25';
+var VERSION='v25.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -301,7 +300,7 @@ function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(M
 
 var ART_BASE='cards/';
 
-/* === MOTOR PING-PONG SEAMLESS LOOP (3.1s / 906KB) PARA DONALD TRUMP GOLDEN === */
+/* === MOTOR PING-PONG SEAMLESS LOOP ANTI-PARPADEO (3.1s / 906KB) === */
 var GOLD_LOOP={
  state:'idle',
  frames:[],
@@ -312,50 +311,61 @@ var GOLD_LOOP={
  rafId:null
 };
 
-function getGoldFrameAt(now){
+/* Devuelve el índice del fotograma limpio para el instante actual en modo Ping-Pong */
+function getGoldFrameIndexAt(now){
+ var len=GOLD_LOOP.frames.length;
+ if(len<=1)return 0;
  var dur=GOLD_LOOP.duration;
- var cycle=dur*2;
+ /* Recorte de seguridad de 45ms en ambos extremos para evitar posibles micro-cortes de codificación */
+ var trim=Math.min(45, dur*0.04);
+ var span=Math.max(100, dur - trim*2);
+ var cycle=span*2;
  var pos=now % cycle;
- var t=(pos<=dur)?pos:(cycle-pos);
+ var t=trim + ((pos<=span)?pos:(cycle-pos));
  var acc=0;
- for(var i=0;i<GOLD_LOOP.frames.length;i++){
+ for(var i=0;i<len;i++){
   acc+=GOLD_LOOP.frames[i].dur;
-  if(t<=acc)return GOLD_LOOP.frames[i].bmp;
+  if(t<=acc)return i;
  }
- return GOLD_LOOP.frames[0].bmp;
+ return len-1;
 }
 
 function drawCurrentGoldFrame(now){
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return 0;
- var cvs=document.querySelectorAll('.gold-loop-wrap.canvas-on canvas.gold-canvas');
- if(!cvs.length)return 0;
- var chosen=getGoldFrameAt(now || performance.now());
- for(var c=0;c<cvs.length;c++){
-  var cv=cvs[c];
-  if(cv.width!==GOLD_LOOP.w){cv.width=GOLD_LOOP.w;cv.height=GOLD_LOOP.h;}
-  var ctx=cv.getContext('2d');
-  if(ctx){
-   ctx.clearRect(0,0,cv.width,cv.height);
-   ctx.drawImage(chosen,0,0);
+ var wraps=document.querySelectorAll('.gold-loop-wrap');
+ if(!wraps.length)return 0;
+ var fIdx=getGoldFrameIndexAt(now || performance.now());
+ var chosen=GOLD_LOOP.frames[fIdx].bmp;
+ for(var c=0;c<wraps.length;c++){
+  var wrap=wraps[c];
+  var cv=wrap.querySelector('canvas.gold-canvas');
+  if(!cv)continue;
+  var resized=false;
+  if(cv.width!==GOLD_LOOP.w || cv.height!==GOLD_LOOP.h){
+   cv.width=GOLD_LOOP.w;
+   cv.height=GOLD_LOOP.h;
+   resized=true;
+  }
+  /* Solo repintamos el canvas si cambió el fotograma o si el canvas acaba de crearse/redimensionarse */
+  if(resized || cv._lastIdx!==fIdx){
+   var ctx=cv.getContext('2d');
+   if(ctx){
+    /* No llamamos a clearRect: el fotograma ya está pre-compuesto y opaco al 100%, evitando cualquier parpadeo */
+    ctx.drawImage(chosen,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+    cv._lastIdx=fIdx;
+   }
+  }
+  if(!wrap.classList.contains('canvas-on')){
+   wrap.classList.add('canvas-on');
   }
  }
- return cvs.length;
+ return wraps.length;
 }
 
 function syncGoldCanvases(){
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return;
- var wraps=document.querySelectorAll('.gold-loop-wrap');
- if(!wraps.length)return;
- for(var i=0;i<wraps.length;i++){
-  wraps[i].classList.add('canvas-on');
-  var cv=wraps[i].querySelector('canvas.gold-canvas');
-  if(cv && cv.width!==GOLD_LOOP.w){
-   cv.width=GOLD_LOOP.w;
-   cv.height=GOLD_LOOP.h;
-  }
- }
- drawCurrentGoldFrame(performance.now());
- startGoldRaf();
+ var count=drawCurrentGoldFrame(performance.now());
+ if(count>0)startGoldRaf();
 }
 
 function startGoldRaf(){
@@ -365,10 +375,35 @@ function startGoldRaf(){
   if(activeCount>0){
    GOLD_LOOP.rafId=requestAnimationFrame(tick);
   } else {
-   GOLD_LOOP.rafId=null; /* Se pausa automáticamente cuando no hay cromo Golden en pantalla */
+   GOLD_LOOP.rafId=null;
   }
  };
  GOLD_LOOP.rafId=requestAnimationFrame(tick);
+}
+
+/* Comprueba si un fotograma decodificado tiene suficientes píxeles opacos y no es un frame vacío/negro defectuoso */
+function isFrameValid(sampleCtx, sampleW, sampleH, sourceCanvas){
+ try{
+  sampleCtx.clearRect(0,0,sampleW,sampleH);
+  sampleCtx.drawImage(sourceCanvas,0,0,sampleW,sampleH);
+  var data=sampleCtx.getImageData(0,0,sampleW,sampleH).data;
+  var totalPixels=sampleW*sampleH;
+  var opaqueCount=0,lumaSum=0;
+  for(var i=0;i<data.length;i+=4){
+   var a=data[i+3];
+   if(a>40){
+    opaqueCount++;
+    lumaSum+=(data[i]*0.299 + data[i+1]*0.587 + data[i+2]*0.114);
+   }
+  }
+  /* Si menos del 35% del cromo es opaco o está casi completamente en negro, es un frame corrupto */
+  if(opaqueCount < totalPixels*0.35)return false;
+  var avgLuma=lumaSum/opaqueCount;
+  if(avgLuma < 6)return false;
+  return true;
+ }catch(e){
+  return true;
+ }
 }
 
 function ensureGoldLoop(){
@@ -392,23 +427,50 @@ function ensureGoldLoop(){
    return dec.tracks.ready.then(function(){
     var cnt=dec.tracks.selectedTrack.frameCount||0;
     if(cnt<=1)throw new Error('Static webp');
-    var list=[],p=Promise.resolve();
+    var rawList=[],p=Promise.resolve();
+    /* Lienzo acumulador fuera de pantalla para componer sub-frames delta y evitar transparencias intermedias */
+    var stageCanvas=document.createElement('canvas');
+    var stageCtx=stageCanvas.getContext('2d');
+    var sampleCanvas=document.createElement('canvas');
+    sampleCanvas.width=16;sampleCanvas.height=22;
+    var sampleCtx=sampleCanvas.getContext('2d',{willReadFrequently:true});
+
     var step=function(idx){
-     return dec.decode({frameIndex:idx}).then(function(res){
-      return createImageBitmap(res.image).then(function(bmp){
-       var dur=(res.image.duration?res.image.duration/1000:0)||(GOLD_LOOP.duration/cnt);
-       list.push({bmp:bmp,dur:dur});
-       res.image.close();
+     return dec.decode({frameIndex:idx,completeFramesOnly:true}).then(function(res){
+      var img=res.image;
+      var fw=img.displayWidth||img.codedWidth||400;
+      var fh=img.displayHeight||img.codedHeight||550;
+      if(stageCanvas.width!==fw || stageCanvas.height!==fh){
+       stageCanvas.width=fw;
+       stageCanvas.height=fh;
+       stageCtx.fillStyle='#141c34';
+       stageCtx.fillRect(0,0,fw,fh);
+      }
+      /* Componemos encima del fotograma anterior para que jamás exista un hueco transparente si el WebP usa delta-frames */
+      stageCtx.drawImage(img,0,0,fw,fh);
+      var dur=(img.duration?img.duration/1000:0)||(GOLD_LOOP.duration/cnt);
+      img.close();
+      var valid=isFrameValid(sampleCtx,16,22,stageCanvas);
+      return createImageBitmap(stageCanvas).then(function(bmp){
+       rawList.push({bmp:bmp,dur:dur,valid:valid});
       });
      });
     };
     for(var i=0;i<cnt;i++)(function(ix){p=p.then(function(){return step(ix);});})(i);
     return p.then(function(){
-     GOLD_LOOP.frames=list;
-     GOLD_LOOP.w=list[0].bmp.width;
-     GOLD_LOOP.h=list[0].bmp.height;
+     /* Filtramos cualquier fotograma que haya salido vacío/transparente/negro al inicio o al final */
+     var clean=rawList.filter(function(f){return f.valid;});
+     if(clean.length<2)clean=rawList;
+     /* Si hay suficientes fotogramas (>8), descartamos el primer y último fotograma si su duración es anómala (<12ms) */
+     if(clean.length>8){
+      if(clean[0].dur<12)clean.shift();
+      if(clean[clean.length-1].dur<12)clean.pop();
+     }
+     GOLD_LOOP.frames=clean;
+     GOLD_LOOP.w=clean[0].bmp.width;
+     GOLD_LOOP.h=clean[0].bmp.height;
      var total=0;
-     for(var j=0;j<list.length;j++)total+=list[j].dur;
+     for(var j=0;j<clean.length;j++)total+=clean[j].dur;
      if(total>400)GOLD_LOOP.duration=total;
      GOLD_LOOP.state='ready';
      syncGoldCanvases();
@@ -550,8 +612,8 @@ function artTag(id,nm){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
    setTimeout(ensureGoldLoop,0);
-   var isReady=(GOLD_LOOP.state==='ready');
-   return '<div class="gold-loop-wrap'+(isReady?' canvas-on':'')+'">'
+   /* No aplicamos 'canvas-on' hasta que syncGoldCanvases() haya pintado el primer fotograma en el canvas */
+   return '<div class="gold-loop-wrap">'
     +'<img src="'+ART_BASE+'donald-trump-golden.webp" alt="" decoding="async" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
     +'<canvas class="gold-canvas"></canvas>'
     +'<div class="gold-seam-mask"></div>'
@@ -634,7 +696,6 @@ function copies(d,id){var n=0;for(var i=0;i<d.album.length;i++)if(d.album[i]===i
 function uniqueAlbum(d){var m={},out=[];d.album.forEach(function(id){m[id]=(m[id]||0)+1;});Object.keys(m).forEach(function(id){if(BYID[id])out.push({id:id,c:BYID[id],n:m[id]});});return out;}
 
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,NOHIST=false;
-/* Memoria de scroll para barras horizontales y paneles */
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0};
 
 function clearAI(){if(AITIMER){clearTimeout(AITIMER);AITIMER=null;}}
@@ -706,11 +767,12 @@ function tabbar(){
  }).join('');
 }
 
-/* Preservación de scroll interno al repintar la misma pantalla (ej. mano en batalla o chips) */
 function paint(){
  var c=document.getElementById('content');if(!c)return;
  var handEl=c.querySelector('.row');
  var handScroll=handEl?handEl.scrollLeft:0;
+ var logEl=c.querySelector('.log');
+ var logScroll=logEl?logEl.scrollTop:0;
  if(SCREEN==='coleccion')saveColScroll();
  if(TICK){clearInterval(TICK);TICK=null;}
  var ab=document.getElementById('appbar');if(ab)ab.innerHTML=appbar();
@@ -720,6 +782,10 @@ function paint(){
  if(handScroll>0){
   var newHand=c.querySelector('.row');
   if(newHand)newHand.scrollLeft=handScroll;
+ }
+ if(logScroll>0){
+  var newLog=c.querySelector('.log');
+  if(newLog)newLog.scrollTop=logScroll;
  }
  if(SCREEN==='tienda')startTick();
  syncGoldCanvases();
@@ -1402,7 +1468,6 @@ document.addEventListener('click',function(ev){
  var n=t.closest('[data-go],[data-act],[data-lead],[data-pick],[data-card],[data-buid],[data-fr],[data-fd]');
  if(!n||n.disabled)return;
 
- /* Filtros de rareza y doctrina en Colección sin reiniciar el scroll lateral */
  if(n.hasAttribute('data-fr')){
   FIL.r=n.getAttribute('data-fr');
   updateColeccionInPlace();
