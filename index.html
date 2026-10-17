@@ -123,6 +123,53 @@ p{margin:0 0 7px;font-size:13px}
   100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
 }
 
+/* === SEAMLESS LOOP DE 3.1s PARA EL CROMO GOLDEN DE TRUMP === */
+@keyframes goldBreath31 {
+  0%   { transform: scale(1.01); filter: brightness(1.06) saturate(1.08); }
+  50%  { transform: scale(1.045); filter: brightness(1.0) saturate(1.0); }
+  100% { transform: scale(1.01); filter: brightness(1.06) saturate(1.08); }
+}
+@keyframes goldSeamMask31 {
+  0%, 100% { opacity: 0.42; }
+  12%, 88% { opacity: 0.05; }
+  50%      { opacity: 0.14; }
+}
+
+.gold-loop-wrap{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+}
+.gold-loop-wrap img,
+.gold-loop-wrap canvas.gold-canvas{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center top;
+  display:block;
+  will-change:transform,filter;
+  animation:goldBreath31 3.1s infinite ease-in-out;
+}
+.gold-loop-wrap canvas.gold-canvas{
+  display:none;
+}
+.gold-loop-wrap.canvas-on img{
+  display:none !important;
+}
+.gold-loop-wrap.canvas-on canvas.gold-canvas{
+  display:block !important;
+}
+.gold-seam-mask{
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:radial-gradient(circle at 50% 35%, rgba(255,215,106,0.55), rgba(232,185,35,0.18) 60%, transparent 90%);
+  mix-blend-mode:screen;
+  animation:goldSeamMask31 3.1s infinite ease-in-out;
+}
+
 .cromo{
   position: relative;
   aspect-ratio: 3 / 4.1;
@@ -240,7 +287,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v24';
+var VERSION='v24.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -252,6 +299,113 @@ function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
 
 var ART_BASE='cards/';
+
+/* === MOTOR PING-PONG SEAMLESS LOOP (3.1s / 906KB) PARA DONALD TRUMP GOLDEN === */
+var GOLD_LOOP={
+ state:'idle',
+ frames:[],
+ w:0,
+ h:0,
+ duration:3100, /* 3.1s exactos */
+ preloadImg:null,
+ rafId:null
+};
+
+function ensureGoldLoop(){
+ var url=ART_BASE+'donald-trump-golden.webp';
+ /* 1. Mantener en caché de memoria el archivo de 906KB para evitar recargas al hacer paint() */
+ if(!GOLD_LOOP.preloadImg){
+  GOLD_LOOP.preloadImg=new Image();
+  GOLD_LOOP.preloadImg.src=url;
+ }
+ if(GOLD_LOOP.state==='ready'){
+  syncGoldCanvases();
+  return;
+ }
+ if(GOLD_LOOP.state!=='idle')return;
+ /* 2. Si el navegador soporta ImageDecoder (WebCodecs), decodificar fotogramas para Ping-Pong Loop perfecto */
+ if(typeof window.ImageDecoder==='function' && typeof window.fetch==='function' && location.protocol!=='file:'){
+  GOLD_LOOP.state='loading';
+  fetch(url).then(function(res){
+   if(!res.ok)throw new Error('HTTP '+res.status);
+   return res.arrayBuffer();
+  }).then(function(buf){
+   var dec=new ImageDecoder({data:buf,type:'image/webp'});
+   return dec.tracks.ready.then(function(){
+    var cnt=dec.tracks.selectedTrack.frameCount||0;
+    if(cnt<=1)throw new Error('Static webp');
+    var list=[],p=Promise.resolve();
+    var step= function(idx){
+     return dec.decode({frameIndex:idx}).then(function(res){
+      return createImageBitmap(res.image).then(function(bmp){
+       var dur=(res.image.duration?res.image.duration/1000:0)||(GOLD_LOOP.duration/cnt);
+       list.push({bmp:bmp,dur:dur});
+       res.image.close();
+      });
+     });
+    };
+    for(var i=0;i<cnt;i++)(function(ix){p=p.then(function(){return step(ix);});})(i);
+    return p.then(function(){
+     GOLD_LOOP.frames=list;
+     GOLD_LOOP.w=list[0].bmp.width;
+     GOLD_LOOP.h=list[0].bmp.height;
+     var total=0;
+     for(var j=0;j<list.length;j++)total+=list[j].dur;
+     if(total>400)GOLD_LOOP.duration=total;
+     GOLD_LOOP.state='ready';
+     syncGoldCanvases();
+     startGoldRaf();
+    });
+   });
+  }).catch(function(){
+   GOLD_LOOP.state='fallback';
+  });
+ } else {
+  GOLD_LOOP.state='fallback';
+ }
+}
+
+function syncGoldCanvases(){
+ if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return;
+ var wraps=document.querySelectorAll('.gold-loop-wrap');
+ for(var i=0;i<wraps.length;i++){
+  wraps[i].classList.add('canvas-on');
+  var cv=wraps[i].querySelector('canvas.gold-canvas');
+  if(cv && cv.width!==GOLD_LOOP.w){
+   cv.width=GOLD_LOOP.w;
+   cv.height=GOLD_LOOP.h;
+  }
+ }
+}
+
+function startGoldRaf(){
+ if(GOLD_LOOP.rafId)return;
+ var tick=function(now){
+  var cvs=document.querySelectorAll('.gold-loop-wrap.canvas-on canvas.gold-canvas');
+  if(cvs.length && GOLD_LOOP.frames.length>1){
+   var dur=GOLD_LOOP.duration; /* 3100ms */
+   var cycle=dur*2; /* 6200ms ciclo completo Ida + Vuelta (Ping-Pong Seamless) */
+   var pos=now % cycle;
+   var t=(pos<=dur)?pos:(cycle-pos);
+   var acc=0,chosen=GOLD_LOOP.frames[0].bmp;
+   for(var i=0;i<GOLD_LOOP.frames.length;i++){
+    acc+=GOLD_LOOP.frames[i].dur;
+    if(t<=acc){chosen=GOLD_LOOP.frames[i].bmp;break;}
+   }
+   for(var c=0;c<cvs.length;c++){
+    var cv=cvs[c];
+    if(cv.width!==GOLD_LOOP.w){cv.width=GOLD_LOOP.w;cv.height=GOLD_LOOP.h;}
+    var ctx=cv.getContext('2d');
+    if(ctx){
+     ctx.clearRect(0,0,cv.width,cv.height);
+     ctx.drawImage(chosen,0,0);
+    }
+   }
+  }
+  GOLD_LOOP.rafId=requestAnimationFrame(tick);
+ };
+ GOLD_LOOP.rafId=requestAnimationFrame(tick);
+}
 
 var DOCS=[
  {k:'verborrea',n:'Verborrea',d:'+1 TdP cada turno. Si te expulsan un orador, +2 TdP.',col:'#3b6fd4'},
@@ -377,12 +531,20 @@ function initials(nm){
 function artTag(id,nm){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
- var fileId=id;
  if(id==='donald-trump'){
   var d=D();
-  if(d.dtGoldUnlocked&&d.dtGoldActive)fileId='donald-trump-golden';
+  if(d.dtGoldUnlocked&&d.dtGoldActive){
+   setTimeout(ensureGoldLoop,0);
+   var isReady=(GOLD_LOOP.state==='ready');
+   return '<div class="gold-loop-wrap'+(isReady?' canvas-on':'')+'">'
+    +'<img src="'+ART_BASE+'donald-trump-golden.webp" alt="" decoding="async" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
+    +'<canvas class="gold-canvas"></canvas>'
+    +'<div class="gold-seam-mask"></div>'
+    +'</div>'
+    +'<span style="display:none">'+esc(initials(nm))+'</span>';
+  }
  }
- return '<img src="'+ART_BASE+fileId+'.webp" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'">'
+ return '<img src="'+ART_BASE+id+'.webp" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'">'
   +'<span style="display:none">'+esc(initials(nm))+'</span>';
 }
 function cromoHTML(c,o){
@@ -500,6 +662,7 @@ function paint(){
  c.innerHTML=((SCREENS[SCREEN]||SCREENS.menu)())+'<div class="foot">'+CARDS.length+' cromos &middot; 6 doctrinas &middot; gabinete de 5</div>';
  var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
  if(SCREEN==='tienda')startTick();
+ syncGoldCanvases();
 }
 function startTick(){
  TICK=setInterval(function(){
@@ -568,7 +731,7 @@ SCREENS.detalle=function(){
    +'<p class="sub">Logro oculto completado (10 victorias competitivas con Donald Trump como Lider). Elige el aspecto visual de este cromo:</p>'
    +'<div class="bar">'
    +'<button class="btn sm '+(d.dtGoldActive?'ghost':'')+'" data-act="dtskin" data-val="normal">Version Clasica</button>'
-   +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Version Golden</button>'
+   +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Version Golden (Loop)</button>'
    +'</div></div>';
  }
  return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true,count:cnt})+'</div>'
@@ -1230,6 +1393,7 @@ document.addEventListener('click',function(ev){
     if(d.dtGoldUnlocked){
      d.dtGoldActive=(n.getAttribute('data-val')==='golden');
      saveD(d);
+     if(d.dtGoldActive)ensureGoldLoop();
      paint();
     }
    }
@@ -1322,6 +1486,7 @@ document.addEventListener('input',function(ev){
   if(box)box.innerHTML=colGrid();
   var c=document.getElementById('cntBox');
   if(c)c.innerHTML=colCountText();
+  syncGoldCanvases();
  }
 },false);
 
@@ -1344,7 +1509,9 @@ window.addEventListener('orientationchange',medirInsets);
 function boot(){
  medirInsets();
  try{history.replaceState({s:'menu'},'');}catch(e){}
- D();paint();
+ var d=D();
+ if(d.dtGoldUnlocked&&d.dtGoldActive)ensureGoldLoop();
+ paint();
  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(function(){});}
 }
 try{if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();}
