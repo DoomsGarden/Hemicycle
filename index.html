@@ -68,6 +68,103 @@ p{margin:0 0 7px;font-size:13px}
 .modal p{margin:0 0 14px;font-size:12.5px;color:#cfd6e8;line-height:1.38}
 .modal .bar{justify-content:flex-end}
 
+/* === VISOR EMERGENTE DE CROMO EN GRANDE (ZOOM + SWIPE) === */
+.zoom-bg{
+  position:fixed;
+  inset:0;
+  z-index:150;
+  background:rgba(4,7,15,.88);
+  backdrop-filter:blur(6px);
+  -webkit-backdrop-filter:blur(6px);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  cursor:pointer;
+  touch-action:pan-y;
+  animation:zoomFadeIn .16s ease-out;
+}
+@keyframes zoomFadeIn{from{opacity:0}to{opacity:1}}
+.zoom-card-wrap{
+  width:min(78vw, 310px);
+  max-height:74vh;
+  aspect-ratio:3 / 4.1;
+  position:relative;
+  will-change:transform,opacity;
+}
+.zoom-card-wrap .cromo{
+  width:100%;
+  height:100%;
+  border-radius:18px;
+  box-shadow:0 18px 46px rgba(0,0,0,.92), 0 0 26px var(--tier, rgba(232,185,35,.55));
+}
+.zoom-card-wrap .cromo .top{padding:12px 12px 0}
+.zoom-card-wrap .cromo .cost{font-size:20px;padding:2px 10px;border-radius:9px;border-width:1.5px}
+.zoom-card-wrap .cromo .gem-wrap svg{width:26px;height:26px}
+.zoom-card-wrap .cromo .badge{font-size:14px;padding:3px 10px;bottom:6px;right:6px}
+.zoom-card-wrap .cromo .bot{padding:24px 12px 12px;font-size:16px}
+.zoom-card-wrap .cromo .nm{font-size:17px;margin-bottom:3px}
+.zoom-card-wrap .cromo .st{font-size:14.5px}
+.zoom-card-wrap .cromo .art{font-size:52px}
+.zoom-meta{
+  margin-top:14px;
+  text-align:center;
+  pointer-events:none;
+}
+.zoom-meta b{display:block;font-size:13px;color:#ffd76a;margin-bottom:3px}
+.zoom-meta span{font-size:11.5px;color:#cfd6e8;opacity:.85}
+
+/* === CONTENEDOR DESLIZABLE DE LA FICHA DE STATS === */
+.detalle-swipe{
+  touch-action:pan-y;
+  will-change:transform,opacity;
+}
+.ficha .caja.zoomable{
+  cursor:zoom-in;
+  position:relative;
+}
+.ficha .caja.zoomable:active{
+  transform:scale(.97);
+}
+.zoom-badge-hint{
+  display:block;
+  text-align:center;
+  font-size:9.5px;
+  color:#ffd76a;
+  margin-top:4px;
+  opacity:.85;
+}
+.nav-strip{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  margin-bottom:8px;
+  background:#0d1424;
+  border:1px solid #232e52;
+  border-radius:10px;
+  padding:5px 8px;
+}
+.nav-strip span{
+  font-size:11px;
+  color:#8b93ab;
+  text-align:center;
+}
+.nav-strip b{color:#ffd76a}
+
+/* === ANIMACIONES DE TRANSICIÓN LATERAL SINCRONIZADA === */
+@keyframes slideInFromRight{
+  from{transform:translateX(54px);opacity:.25}
+  to{transform:translateX(0);opacity:1}
+}
+@keyframes slideInFromLeft{
+  from{transform:translateX(-54px);opacity:.25}
+  to{transform:translateX(0);opacity:1}
+}
+.anim-next{animation:slideInFromRight .2s cubic-bezier(.2,.8,.2,1)}
+.anim-prev{animation:slideInFromLeft .2s cubic-bezier(.2,.8,.2,1)}
+
 /* === VENTANA EMERGENTE SUPERIOR DE LOGRO OCULTO === */
 .ach-toast{
   position:fixed;
@@ -152,7 +249,6 @@ p{margin:0 0 7px;font-size:13px}
   transform:translateZ(0);
   animation:goldBreath31 3.1s infinite ease-in-out;
 }
-/* El canvas se superpone encima de la imagen base solo cuando ya tiene un fotograma pintado */
 .gold-loop-wrap canvas.gold-canvas{
   opacity:0;
   pointer-events:none;
@@ -180,7 +276,7 @@ p{margin:0 0 7px;font-size:13px}
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 0;
+  min-width:0;
   transition: transform .15s ease;
 }
 
@@ -274,6 +370,7 @@ tr.des td{background:rgba(212,59,59,.1)}
   <div class="content" id="content"><p class="sub">Cargando Hemiciclo...</p></div>
   <div class="tabbar" id="tabbar"></div>
  </div>
+ <div id="zoomRoot"></div>
  <div id="modalRoot"></div>
  <div id="toastRoot"></div>
 </div>
@@ -287,7 +384,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v25.1';
+var VERSION='v26';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -311,12 +408,10 @@ var GOLD_LOOP={
  rafId:null
 };
 
-/* Devuelve el índice del fotograma limpio para el instante actual en modo Ping-Pong */
 function getGoldFrameIndexAt(now){
  var len=GOLD_LOOP.frames.length;
  if(len<=1)return 0;
  var dur=GOLD_LOOP.duration;
- /* Recorte de seguridad de 45ms en ambos extremos para evitar posibles micro-cortes de codificación */
  var trim=Math.min(45, dur*0.04);
  var span=Math.max(100, dur - trim*2);
  var cycle=span*2;
@@ -346,11 +441,9 @@ function drawCurrentGoldFrame(now){
    cv.height=GOLD_LOOP.h;
    resized=true;
   }
-  /* Solo repintamos el canvas si cambió el fotograma o si el canvas acaba de crearse/redimensionarse */
   if(resized || cv._lastIdx!==fIdx){
    var ctx=cv.getContext('2d');
    if(ctx){
-    /* No llamamos a clearRect: el fotograma ya está pre-compuesto y opaco al 100%, evitando cualquier parpadeo */
     ctx.drawImage(chosen,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
     cv._lastIdx=fIdx;
    }
@@ -381,7 +474,6 @@ function startGoldRaf(){
  GOLD_LOOP.rafId=requestAnimationFrame(tick);
 }
 
-/* Comprueba si un fotograma decodificado tiene suficientes píxeles opacos y no es un frame vacío/negro defectuoso */
 function isFrameValid(sampleCtx, sampleW, sampleH, sourceCanvas){
  try{
   sampleCtx.clearRect(0,0,sampleW,sampleH);
@@ -396,7 +488,6 @@ function isFrameValid(sampleCtx, sampleW, sampleH, sourceCanvas){
     lumaSum+=(data[i]*0.299 + data[i+1]*0.587 + data[i+2]*0.114);
    }
   }
-  /* Si menos del 35% del cromo es opaco o está casi completamente en negro, es un frame corrupto */
   if(opaqueCount < totalPixels*0.35)return false;
   var avgLuma=lumaSum/opaqueCount;
   if(avgLuma < 6)return false;
@@ -428,7 +519,6 @@ function ensureGoldLoop(){
     var cnt=dec.tracks.selectedTrack.frameCount||0;
     if(cnt<=1)throw new Error('Static webp');
     var rawList=[],p=Promise.resolve();
-    /* Lienzo acumulador fuera de pantalla para componer sub-frames delta y evitar transparencias intermedias */
     var stageCanvas=document.createElement('canvas');
     var stageCtx=stageCanvas.getContext('2d');
     var sampleCanvas=document.createElement('canvas');
@@ -446,7 +536,6 @@ function ensureGoldLoop(){
        stageCtx.fillStyle='#141c34';
        stageCtx.fillRect(0,0,fw,fh);
       }
-      /* Componemos encima del fotograma anterior para que jamás exista un hueco transparente si el WebP usa delta-frames */
       stageCtx.drawImage(img,0,0,fw,fh);
       var dur=(img.duration?img.duration/1000:0)||(GOLD_LOOP.duration/cnt);
       img.close();
@@ -458,10 +547,8 @@ function ensureGoldLoop(){
     };
     for(var i=0;i<cnt;i++)(function(ix){p=p.then(function(){return step(ix);});})(i);
     return p.then(function(){
-     /* Filtramos cualquier fotograma que haya salido vacío/transparente/negro al inicio o al final */
      var clean=rawList.filter(function(f){return f.valid;});
      if(clean.length<2)clean=rawList;
-     /* Si hay suficientes fotogramas (>8), descartamos el primer y último fotograma si su duración es anómala (<12ms) */
      if(clean.length>8){
       if(clean[0].dur<12)clean.shift();
       if(clean[clean.length-1].dur<12)clean.pop();
@@ -612,7 +699,6 @@ function artTag(id,nm){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
    setTimeout(ensureGoldLoop,0);
-   /* No aplicamos 'canvas-on' hasta que syncGoldCanvases() haya pintado el primer fotograma en el canvas */
    return '<div class="gold-loop-wrap">'
     +'<img src="'+ART_BASE+'donald-trump-golden.webp" alt="" decoding="async" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
     +'<canvas class="gold-canvas"></canvas>'
@@ -668,7 +754,197 @@ function closeModal(){
  var mr=document.getElementById('modalRoot');
  if(mr)mr.innerHTML='';
 }
-window.addEventListener('keydown',function(ev){if(ev.key==='Escape')closeModal();});
+
+/* === SISTEMA DE ZOOM EMERGENTE Y NAVEGACIÓN SINCRONIZADA ENTRE CROMOS === */
+var ZOOM_OPEN=false;
+var LAST_SWIPE_DIR='';
+var SWIPE_BLOCK_CLICK=0;
+
+function getSwipeDeckIds(){
+ var list=colList().map(function(x){return x.id;});
+ if(SO.id && list.indexOf(SO.id)<0){
+  list=uniqueAlbum(D()).sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);}).map(function(x){return x.id;});
+ }
+ if(SO.id && list.indexOf(SO.id)<0)list=[SO.id];
+ return list;
+}
+
+function renderZoomOverlay(){
+ var zr=document.getElementById('zoomRoot');
+ if(!zr)return;
+ if(!ZOOM_OPEN || SCREEN!=='detalle' || !SO.id || !BYID[SO.id]){
+  ZOOM_OPEN=false;
+  zr.innerHTML='';
+  return;
+ }
+ var c=BYID[SO.id],d=D(),cnt=copies(d,c.id);
+ var ids=getSwipeDeckIds();
+ var idx=ids.indexOf(c.id);
+ var animCls=LAST_SWIPE_DIR==='next'?' anim-next':(LAST_SWIPE_DIR==='prev'?' anim-prev':'');
+ zr.innerHTML='<div class="zoom-bg" id="zoomBg">'
+  +'<div class="zoom-card-wrap'+animCls+'" id="zoomCardWrap">'
+  +cromoHTML(c,{noCardAttr:true,count:cnt})
+  +'</div>'
+  +'<div class="zoom-meta">'
+  +'<b>'+esc(c.n)+' ('+(idx+1)+' de '+ids.length+')</b>'
+  +'<span>'+(ids.length>1?'Desliza a izq/der para cambiar &middot; ':'')+'Toca en cualquier lugar para cerrar</span>'
+  +'</div>'
+  +'</div>';
+ syncGoldCanvases();
+}
+
+function openZoom(){
+ if(SCREEN!=='detalle'||!SO.id)return;
+ ZOOM_OPEN=true;
+ LAST_SWIPE_DIR='';
+ renderZoomOverlay();
+}
+
+function closeZoom(){
+ if(!ZOOM_OPEN)return;
+ ZOOM_OPEN=false;
+ var zr=document.getElementById('zoomRoot');
+ if(zr)zr.innerHTML='';
+}
+
+function cycleDetalleCard(step){
+ if(SCREEN!=='detalle'||!SO.id)return false;
+ var ids=getSwipeDeckIds();
+ if(ids.length<=1)return false;
+ var idx=ids.indexOf(SO.id);
+ if(idx<0)idx=0;
+ var nextIdx=(idx+step+ids.length)%ids.length;
+ LAST_SWIPE_DIR=step>0?'next':'prev';
+ SO.id=ids[nextIdx];
+ paint();
+ if(ZOOM_OPEN)renderZoomOverlay();
+ setTimeout(function(){LAST_SWIPE_DIR='';},240);
+ return true;
+}
+
+/* Gestor unificado de deslizamiento (Touch + Mouse) que mimetiza la vista de fondo cuando el Zoom está abierto */
+(function initSwipeGestures(){
+ var sx=0,sy=0,dx=0,dy=0,tracking=false,lockedHoriz=false;
+
+ function applyDragTransform(offsetX){
+  var det=document.getElementById('detalleSwipe');
+  var zWrap=document.getElementById('zoomCardWrap');
+  var clamped=Math.max(-140,Math.min(140,offsetX));
+  var op=Math.max(0.55, 1 - Math.abs(clamped)/260);
+  if(det){
+   det.style.transition='none';
+   det.style.transform='translateX('+(clamped*0.65)+'px)';
+   det.style.opacity=op;
+  }
+  if(zWrap){
+   zWrap.style.transition='none';
+   zWrap.style.transform='translateX('+clamped+'px) rotate('+(clamped*0.035)+'deg)';
+   zWrap.style.opacity=op;
+  }
+ }
+
+ function resetDragTransform(){
+  var det=document.getElementById('detalleSwipe');
+  var zWrap=document.getElementById('zoomCardWrap');
+  if(det){
+   det.style.transition='transform .18s ease, opacity .18s ease';
+   det.style.transform='';
+   det.style.opacity='';
+  }
+  if(zWrap){
+   zWrap.style.transition='transform .18s ease, opacity .18s ease';
+   zWrap.style.transform='';
+   zWrap.style.opacity='';
+  }
+ }
+
+ function canStartSwipe(target){
+  if(SCREEN!=='detalle')return false;
+  if(MODAL_CB)return false;
+  if(ZOOM_OPEN)return true;
+  if(target && target.closest && target.closest('#detalleSwipe'))return true;
+  return false;
+ }
+
+ function onStart(x,y,target){
+  if(!canStartSwipe(target))return;
+  sx=x;sy=y;dx=0;dy=0;
+  tracking=true;
+  lockedHoriz=false;
+ }
+
+ function onMove(x,y,ev){
+  if(!tracking)return;
+  dx=x-sx;
+  dy=y-sy;
+  if(!lockedHoriz){
+   if(Math.abs(dx)>14 && Math.abs(dx)>Math.abs(dy)*1.25){
+    lockedHoriz=true;
+   } else if(Math.abs(dy)>18 && Math.abs(dy)>Math.abs(dx)){
+    tracking=false;
+    resetDragTransform();
+    return;
+   }
+  }
+  if(lockedHoriz){
+   if(ev && ev.cancelable)ev.preventDefault();
+   applyDragTransform(dx);
+  }
+ }
+
+ function onEnd(){
+  if(!tracking)return;
+  tracking=false;
+  if(lockedHoriz && Math.abs(dx)>=42){
+   SWIPE_BLOCK_CLICK=Date.now()+320;
+   var step=(dx<0)?1:-1; /* Deslizar a la izquierda -> siguiente cromo; derecha -> anterior */
+   if(!cycleDetalleCard(step)){
+    resetDragTransform();
+   }
+  } else {
+   if(lockedHoriz)SWIPE_BLOCK_CLICK=Date.now()+220;
+   resetDragTransform();
+  }
+  lockedHoriz=false;
+ }
+
+ document.addEventListener('touchstart',function(ev){
+  if(!ev.touches||ev.touches.length!==1)return;
+  onStart(ev.touches[0].clientX,ev.touches[0].clientY,ev.target);
+ },{passive:true});
+
+ document.addEventListener('touchmove',function(ev){
+  if(!tracking||!ev.touches||!ev.touches.length)return;
+  onMove(ev.touches[0].clientX,ev.touches[0].clientY,ev);
+ },{passive:false});
+
+ document.addEventListener('touchend',onEnd,{passive:true});
+ document.addEventListener('touchcancel',function(){tracking=false;resetDragTransform();},{passive:true});
+
+ document.addEventListener('mousedown',function(ev){
+  if(ev.button!==0)return;
+  onStart(ev.clientX,ev.clientY,ev.target);
+ },false);
+
+ document.addEventListener('mousemove',function(ev){
+  if(!tracking)return;
+  onMove(ev.clientX,ev.clientY,ev);
+ },false);
+
+ document.addEventListener('mouseup',onEnd,false);
+})();
+
+window.addEventListener('keydown',function(ev){
+ if(ev.key==='Escape'){
+  if(ZOOM_OPEN){closeZoom();return;}
+  closeModal();
+  return;
+ }
+ if(SCREEN==='detalle' && !MODAL_CB){
+  if(ev.key==='ArrowRight')cycleDetalleCard(1);
+  else if(ev.key==='ArrowLeft')cycleDetalleCard(-1);
+ }
+});
 
 /* === SISTEMA DE LOGRO OCULTO EMERGENTE SUPERIOR (2s + FADE OUT) === */
 var TOAST_T1=null, TOAST_T2=null;
@@ -721,6 +997,7 @@ function restoreColScroll(restoreVertical){
 function go(s,o){
  var prev=SCREEN;
  if(prev==='coleccion')saveColScroll();
+ if(s!=='detalle')closeZoom();
  SCREEN=s;if(o!==undefined&&o!==null)SO=o;
  if(!NOHIST){try{history.pushState({s:s},'');}catch(e){}}
  paint();
@@ -733,6 +1010,10 @@ function go(s,o){
 }
 window.addEventListener('popstate',function(ev){
  closeModal();
+ if(ZOOM_OPEN){
+  closeZoom();
+  return;
+ }
  var prev=SCREEN;
  if(prev==='coleccion')saveColScroll();
  var s=(ev.state&&ev.state.s)||'menu';
@@ -883,6 +1164,17 @@ SCREENS.detalle=function(){
  var c=BYID[SO.id];
  if(!c)return '<h2>Cromo no encontrado</h2><div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
  var d=D(),r=RARM[c.r],cnt=copies(d,c.id);
+ var ids=getSwipeDeckIds();
+ var idx=ids.indexOf(c.id);
+ var animCls=LAST_SWIPE_DIR==='next'?' anim-next':(LAST_SWIPE_DIR==='prev'?' anim-prev':'');
+ var navBar='';
+ if(ids.length>1){
+  navBar='<div class="nav-strip">'
+   +'<button class="mini" data-act="prevcard">&lsaquo; Anterior</button>'
+   +'<span>Cromo <b>'+(idx+1)+'</b> de <b>'+ids.length+'</b><br><i style="font-style:normal;font-size:9.5px">Desliza a izq/der para comparar</i></span>'
+   +'<button class="mini" data-act="nextcard">Siguiente &rsaquo;</button>'
+   +'</div>';
+ }
  var skinPanel='';
  if(c.id==='donald-trump'&&d.dtGoldUnlocked){
   skinPanel='<div class="panel gold-box">'
@@ -893,7 +1185,13 @@ SCREENS.detalle=function(){
    +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Version Golden (Loop)</button>'
    +'</div></div>';
  }
- return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true,count:cnt})+'</div>'
+ return navBar
+ +'<div class="detalle-swipe'+animCls+'" id="detalleSwipe">'
+ +'<div class="panel"><div class="ficha">'
+ +'<div class="caja zoomable" data-act="zoomcard" title="Toca para ampliar el cromo">'
+ +cromoHTML(c,{noCardAttr:true,count:cnt})
+ +'<span class="zoom-badge-hint">&#128269; Toca para ampliar</span>'
+ +'</div>'
  +'<div style="flex:1;min-width:0">'
  +'<h2 style="margin:0 0 6px">'+esc(c.n)+'</h2>'
  +'<p style="margin:0 0 6px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+cnt+' en album</span></p>'
@@ -905,6 +1203,7 @@ SCREENS.detalle=function(){
  +c.q.map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')
  +'</div>'
  +skinPanel
+ +'</div>'
  +'<div class="bar"><button class="btn wide" data-go="coleccion">Volver a la coleccion</button></div>';
 };
 
@@ -1452,9 +1751,22 @@ SCREENS.ayuda=function(){
 };
 
 document.addEventListener('click',function(ev){
+ /* Si acaba de ocurrir un gesto de deslizar (swipe), bloqueamos el click fantasma posterior */
+ if(Date.now() < SWIPE_BLOCK_CLICK){
+  ev.preventDefault();
+  ev.stopPropagation();
+  return;
+ }
+
  var t=ev.target;
  var root=document.getElementById('app')||document.body;
  if(!root.contains(t)||!t.closest)return;
+
+ /* Si el visor de cromo en grande está abierto, clicar en cualquier parte lo cierra */
+ if(ZOOM_OPEN && t.closest('#zoomBg')){
+  closeZoom();
+  return;
+ }
 
  var mBtn=t.closest('[data-modal]');
  if(mBtn){
@@ -1537,6 +1849,7 @@ document.addEventListener('click',function(ev){
  }
 
  if(n.hasAttribute('data-card')&&SCREEN==='coleccion'){
+  LAST_SWIPE_DIR='';
   go('detalle',{id:n.getAttribute('data-card')});return;
  }
 
@@ -1554,6 +1867,15 @@ document.addEventListener('click',function(ev){
  if(!act)return;
 
  switch(act){
+  case 'zoomcard':
+   openZoom();
+   break;
+  case 'prevcard':
+   cycleDetalleCard(-1);
+   break;
+  case 'nextcard':
+   cycleDetalleCard(1);
+   break;
   case 'clearfil':
    FIL={q:'',r:'',d:''};
    updateColeccionInPlace();
@@ -1566,6 +1888,7 @@ document.addEventListener('click',function(ev){
      saveD(d);
      if(d.dtGoldActive)ensureGoldLoop();
      paint();
+     if(ZOOM_OPEN)renderZoomOverlay();
     }
    }
    break;
@@ -1576,7 +1899,7 @@ document.addEventListener('click',function(ev){
     'Si, borrar todo',
     true,
     function(){
-     clearAI();
+     clearAI();closeZoom();
      try{localStorage.removeItem(LS);localStorage.removeItem(LS2);}catch(e){}
      MEM={};G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};
      D();go('menu');
