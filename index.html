@@ -39,6 +39,7 @@ p{margin:0 0 7px;font-size:13px}
 .panel{background:#131b31;border:1px solid #232e52;border-radius:13px;padding:11px;margin-bottom:9px}
 .panel.win{border-color:#28a86b;background:linear-gradient(180deg,#132a22,#131b31)}
 .panel.lose{border-color:#d43b3b;background:linear-gradient(180deg,#2a1414,#131b31)}
+.panel.gold-box{border-color:#e8b923;background:linear-gradient(180deg,rgba(232,185,35,.16),#131b31)}
 .modes{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:9px}
 .mode{border:1px solid #232e52;background:#18213c;border-radius:13px;padding:10px;text-align:left;min-height:80px;transition:border-color .15s}
 .mode:active{border-color:#e8b923}
@@ -66,6 +67,54 @@ p{margin:0 0 7px;font-size:13px}
 .modal h3{margin:0 0 6px;font-size:15px;color:#ffd76a}
 .modal p{margin:0 0 14px;font-size:12.5px;color:#cfd6e8;line-height:1.38}
 .modal .bar{justify-content:flex-end}
+
+/* === VENTANA EMERGENTE SUPERIOR DE LOGRO OCULTO === */
+.ach-toast{
+  position:fixed;
+  top:calc(var(--sat) + 10px);
+  left:50%;
+  transform:translateX(-50%);
+  z-index:200;
+  width:calc(100% - 28px);
+  max-width:360px;
+  background:linear-gradient(135deg,#1d2646,#0e1428);
+  border:2px solid #e8b923;
+  border-radius:14px;
+  padding:11px 14px;
+  box-shadow:0 10px 28px rgba(0,0,0,.85), 0 0 18px rgba(232,185,35,.45);
+  display:flex;
+  align-items:center;
+  gap:11px;
+  pointer-events:none;
+  opacity:1;
+  animation:achDropIn .25s ease-out;
+  transition:opacity .85s ease, transform .85s ease;
+}
+.ach-toast.fade-out{
+  opacity:0;
+  transform:translate(-50%, -12px);
+}
+@keyframes achDropIn{
+  from{opacity:0;transform:translate(-50%, -18px)}
+  to{opacity:1;transform:translate(-50%, 0)}
+}
+.ach-toast .ach-ic{
+  flex:0 0 auto;
+  width:38px;
+  height:38px;
+  border-radius:50%;
+  background:radial-gradient(circle,#ffd76a,#c9931a);
+  color:#141414;
+  font-size:20px;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 10px rgba(232,185,35,.6);
+}
+.ach-toast .ach-txt{flex:1;min-width:0}
+.ach-toast .ach-txt b{display:block;font-size:12.5px;color:#ffd76a;letter-spacing:.3px;margin-bottom:2px}
+.ach-toast .ach-txt span{display:block;font-size:11px;color:#e9ecf5;line-height:1.25}
 
 /* === MARCO WEBP REACTIVO SEGÚN RAREZA === */
 @keyframes gemShimmer {
@@ -179,6 +228,7 @@ tr.des td{background:rgba(212,59,59,.1)}
   <div class="tabbar" id="tabbar"></div>
  </div>
  <div id="modalRoot"></div>
+ <div id="toastRoot"></div>
 </div>
 
 <script>
@@ -190,7 +240,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v23';
+var VERSION='v24';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -290,6 +340,24 @@ DOCS.forEach(function(d){
 });
 CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||(a.n<b.n?-1:1);});
 
+var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9';
+function seedAlbum(d){
+ var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
+ add('comun',18);add('raro',8);add('especial',3);add('legendario',1);
+}
+function D(){
+ var d=lsGet(LS);
+ if(!d||!d.album){
+  d={fs:1500,elo:300,w:0,l:0,album:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
+  seedAlbum(d);lsSet(LS,d);
+ }
+ if(typeof d.dtWins!=='number')d.dtWins=0;
+ d.dtGoldUnlocked=!!d.dtGoldUnlocked;
+ d.dtGoldActive=!!d.dtGoldActive;
+ return d;
+}
+function saveD(d){lsSet(LS,d);}
+
 function gem(rKey, col){
  var ptsCount = (rKey === 'legendario') ? 9 : (rKey === 'especial') ? 7 : (rKey === 'raro') ? 5 : 3;
  var pts=[], i, ang, rad;
@@ -309,7 +377,12 @@ function initials(nm){
 function artTag(id,nm){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
- return '<img src="'+ART_BASE+id+'.webp" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'">'
+ var fileId=id;
+ if(id==='donald-trump'){
+  var d=D();
+  if(d.dtGoldUnlocked&&d.dtGoldActive)fileId='donald-trump-golden';
+ }
+ return '<img src="'+ART_BASE+fileId+'.webp" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'">'
   +'<span style="display:none">'+esc(initials(nm))+'</span>';
 }
 function cromoHTML(c,o){
@@ -357,17 +430,26 @@ function closeModal(){
  if(mr)mr.innerHTML='';
 }
 
-var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9';
-function seedAlbum(d){
- var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
- add('comun',18);add('raro',8);add('especial',3);add('legendario',1);
+/* === SISTEMA DE LOGRO OCULTO EMERGENTE SUPERIOR (2s + FADE OUT) === */
+var TOAST_T1=null, TOAST_T2=null;
+function showAchievement(title, desc){
+ var tr=document.getElementById('toastRoot');
+ if(!tr)return;
+ if(TOAST_T1){clearTimeout(TOAST_T1);TOAST_T1=null;}
+ if(TOAST_T2){clearTimeout(TOAST_T2);TOAST_T2=null;}
+ tr.innerHTML='<div class="ach-toast" id="achToast">'
+  +'<div class="ach-ic">&#9733;</div>'
+  +'<div class="ach-txt"><b>'+esc(title)+'</b><span>'+esc(desc)+'</span></div>'
+  +'</div>';
+ TOAST_T1=setTimeout(function(){
+  var el=document.getElementById('achToast');
+  if(el)el.classList.add('fade-out');
+  TOAST_T2=setTimeout(function(){
+   if(tr)tr.innerHTML='';
+  },850);
+ },2000);
 }
-function D(){
- var d=lsGet(LS);
- if(!d||!d.album){d={fs:1500,elo:300,w:0,l:0,album:[],lastDaily:0,lastWeekly:0};seedAlbum(d);lsSet(LS,d);}
- return d;
-}
-function saveD(d){lsSet(LS,d);}
+
 var RANKS=[[0,'Aprendiz de pasillo'],[400,'Concejal'],[700,'Diputado'],[1000,'Portavoz'],[1300,'Ministro'],[1600,'Presidente']];
 function rankName(e){var n=RANKS[0][1];for(var i=0;i<RANKS.length;i++)if(e>=RANKS[i][0])n=RANKS[i][1];return n;}
 function copies(d,id){var n=0;for(var i=0;i<d.album.length;i++)if(d.album[i]===id)n++;return n;}
@@ -479,6 +561,16 @@ SCREENS.detalle=function(){
  var c=BYID[SO.id];
  if(!c)return '<h2>Cromo no encontrado</h2><div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
  var d=D(),r=RARM[c.r],cnt=copies(d,c.id);
+ var skinPanel='';
+ if(c.id==='donald-trump'&&d.dtGoldUnlocked){
+  skinPanel='<div class="panel gold-box">'
+   +'<h3 style="margin-top:0">&#9733; Edicion Especial Desbloqueada</h3>'
+   +'<p class="sub">Logro oculto completado (10 victorias competitivas con Donald Trump como Lider). Elige el aspecto visual de este cromo:</p>'
+   +'<div class="bar">'
+   +'<button class="btn sm '+(d.dtGoldActive?'ghost':'')+'" data-act="dtskin" data-val="normal">Version Clasica</button>'
+   +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Version Golden</button>'
+   +'</div></div>';
+ }
  return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true,count:cnt})+'</div>'
  +'<div style="flex:1;min-width:0">'
  +'<h2 style="margin:0 0 6px">'+esc(c.n)+'</h2>'
@@ -490,6 +582,7 @@ SCREENS.detalle=function(){
  +'<h3>Intervenciones celebres</h3>'
  +c.q.map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')
  +'</div>'
+ +skinPanel
  +'<div class="bar"><button class="btn wide" data-go="coleccion">Volver a la coleccion</button></div>';
 };
 
@@ -805,12 +898,20 @@ function finish(who){
  if(!G||G.done)return;
  clearAI();
  G.over=true;G.done=true;
- var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal');
+ var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal'),justUnlockedGold=false;
  if(who==='p'){
   fs=mode==='normal'?rnd(20,50):rnd(50,100);
   d.w++;if(mode==='ranked')d.elo+=25;
   msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS.';
   if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escano de '+BYID[won].n+'.';}
+  /* Comprobación del logro oculto: 10 victorias en Clasificatoria y/o Liga con Donald Trump como Líder */
+  if(comp && G.leader && G.leader.p && G.leader.p.k==='donald-trump'){
+   d.dtWins=(d.dtWins||0)+1;
+   if(d.dtWins>=10 && !d.dtGoldUnlocked){
+    d.dtGoldUnlocked=true;
+    justUnlockedGold=true;
+   }
+  }
  } else if(who==='e'){
   fs=mode==='normal'?0:rnd(20,30);
   d.l++;if(mode==='ranked')d.elo=Math.max(0,d.elo-20);
@@ -832,6 +933,9 @@ function finish(who){
   msg='Empate tecnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
  }
  d.fs+=fs;saveD(d);
+ if(justUnlockedGold){
+  showAchievement('¡Logro Oculto Desbloqueado!','Magnate Dorado: Aspecto Golden de Donald Trump disponible en tu Coleccion.');
+ }
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
  go('result',{who:who,msg:msg,fs:fs,won:won,lost:lost,mode:mode});
 }
@@ -876,7 +980,6 @@ SCREENS.result=function(){
 /* === MOTOR DINÁMICO DE IA PASO A PASO === */
 function aiStep(){
  if(!G||G.over||G.side!=='e')return;
- /* 1. Intentar bajar el orador más caro posible si hay hueco y TdP */
  if(G.field.e.length<3){
   var playable=G.hand.e.filter(function(c){return c.c<=G.tdp.e;}).sort(function(a,b){return b.c-a.c;});
   if(playable.length){
@@ -886,7 +989,6 @@ function aiStep(){
    return;
   }
  }
- /* 2. Buscar el siguiente orador listo para intervenir en la Tribuna */
  var readyAtk=G.field.e.filter(function(c){return c.ready;});
  if(readyAtk.length){
   var atk=readyAtk[0];
@@ -897,7 +999,6 @@ function aiStep(){
   if(!G.over)AITIMER=setTimeout(aiStep,480);
   return;
  }
- /* 3. Fin del turno de la IA: aplicar Vieja Guardia si corresponde y pasar turno al jugador */
  applyGuardia('e');
  paint();
  AITIMER=setTimeout(function(){
@@ -1033,7 +1134,6 @@ document.addEventListener('click',function(ev){
  var root=document.getElementById('app')||document.body;
  if(!root.contains(t)||!t.closest)return;
 
- /* Manejo de botones del Modal de confirmación */
  var mBtn=t.closest('[data-modal]');
  if(mBtn){
   var mAct=mBtn.getAttribute('data-modal');
@@ -1049,7 +1149,6 @@ document.addEventListener('click',function(ev){
  if(n.hasAttribute('data-fr')){FIL.r=n.getAttribute('data-fr');paint();return;}
  if(n.hasAttribute('data-fd')){FIL.d=n.getAttribute('data-fd');paint();return;}
 
- /* Selección de Líder en el Builder */
  if(n.hasAttribute('data-lead')){
   var lid=n.getAttribute('data-lead');
   if(BUILD.ids.indexOf(lid)<0){
@@ -1060,7 +1159,6 @@ document.addEventListener('click',function(ev){
   paint();return;
  }
 
- /* Selección / deselección de los 5 cromos en el Builder */
  if(n.hasAttribute('data-pick')){
   var pid=n.getAttribute('data-pick'),ix=BUILD.ids.indexOf(pid);
   if(ix>=0){
@@ -1077,7 +1175,6 @@ document.addEventListener('click',function(ev){
   paint();return;
  }
 
- /* Interacciones en la pantalla de Debate */
  if(n.hasAttribute('data-buid')){
   var uid=n.getAttribute('data-buid'),side=n.getAttribute('data-side');
   if(!G||G.over||G.side!=='p')return;
@@ -1127,10 +1224,20 @@ document.addEventListener('click',function(ev){
  if(!act)return;
 
  switch(act){
+  case 'dtskin':
+   if(SCREEN==='detalle' && SO.id==='donald-trump'){
+    var d=D();
+    if(d.dtGoldUnlocked){
+     d.dtGoldActive=(n.getAttribute('data-val')==='golden');
+     saveD(d);
+     paint();
+    }
+   }
+   break;
   case 'reset':
    showModal(
     '¿Borrar todo el progreso?',
-    'Perderas tu coleccion de cromos, tu Fuerza Soberana, tu rango Elo y el avance en la Liga. Esta accion no se puede deshacer.',
+    'Perderas tu coleccion de cromos, tu Fuerza Soberana, tu rango Elo, logros y el avance en la Liga. Esta accion no se puede deshacer.',
     'Si, borrar todo',
     true,
     function(){
