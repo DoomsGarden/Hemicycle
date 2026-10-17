@@ -50,7 +50,6 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
   border-top:1px solid #1c2440;
   flex-shrink:0;
 }
-/* Ocultar barras superior e inferior durante la partida */
 .screen.in-battle .appbar,
 .screen.in-battle .tabbar{
   display:none !important;
@@ -60,7 +59,6 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
   padding-bottom:calc(var(--sab) + 6px);
 }
 
-/* El área central ocupa exactamente el hueco entre barra superior e inferior sin scroll salvo en Colección */
 .content{
   flex:1;
   min-height:0;
@@ -103,8 +101,8 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
 .abR{margin-left:auto;display:flex;gap:5px;align-items:center;min-width:0}
 .pill{background:#1e2848;border:1px solid #2b3763;border-radius:99px;padding:2px 8px;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:130px}
 .pill.gold{border-color:#e8b923;color:#ffd76a;font-weight:700;flex-shrink:0}
-.pill.red{border-color:#d43b3b;color:#ff9b8a;font-weight:700}
-.pill.green{border-color:#28a86b;color:#7fe0b0;font-weight:700}
+.pill.red{border-color:#d43b3b;color:#ff9b8a;font-weight:700;flex-shrink:0}
+.pill.green{border-color:#28a86b;color:#7fe0b0;font-weight:700;flex-shrink:0}
 .mini{background:#1e2848;border:1px solid #2b3763;color:#e9ecf5;border-radius:8px;padding:5px 8px;font-size:11.5px;min-height:30px;font-weight:700;flex-shrink:0}
 .mini.hot{background:#d43b3b;border-color:#ff8a6a;color:#fff}
 .mini:active{background:#e8b923;color:#111}
@@ -150,7 +148,6 @@ p{margin:0 0 4px;font-size:12px}
 
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
-
 /* === VENTANA EMERGENTE (MODAL DE CONFIRMACIÓN) === */
 .modal-bg{position:fixed;inset:0;z-index:100;background:rgba(4,7,15,.82);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:18px}
 .modal{background:#131b31;border:1px solid #3b4c82;border-radius:15px;padding:16px;max-width:340px;width:100%;box-shadow:0 14px 34px rgba(0,0,0,.85);animation:modalIn .16s ease-out}
@@ -355,7 +352,6 @@ p{margin:0 0 4px;font-size:12px}
   transition: transform .15s ease, box-shadow .15s ease;
 }
 
-/* Centrado milimétrico del frame.webp al 100% de ancho y alto del cromo */
 .cromo .frame-overlay{
   position: absolute;
   inset: 0;
@@ -375,7 +371,6 @@ p{margin:0 0 4px;font-size:12px}
 .cromo[style*="#8b5cf6"] .frame-overlay { filter: hue-rotate(240deg) saturate(1.5) drop-shadow(0 0 3px var(--tier)); }
 .cromo[style*="#e8b923"] .frame-overlay { filter: hue-rotate(35deg) saturate(1.8) brightness(1.1) drop-shadow(0 0 5px var(--tier)); }
 
-/* Remarcación de cromo seleccionado (.sel) y objetivo (.tgt) POR ENCIMA del marco (z-index: 8) */
 .cromo.sel::after{
   content:'';
   position:absolute;
@@ -511,7 +506,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v28';
+var VERSION='v29';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -524,18 +519,17 @@ function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(M
 
 var ART_BASE='cards/';
 
-/* === SOLUCIONES 1, 2 Y 3: PING-PONG MATEMÁTICO PURO + POOL DE CANVAS PERSISTENTES === */
+/* === MOTOR PING-PONG MATEMÁTICO PURO + POOL DE CANVAS PERSISTENTES === */
 var GOLD_LOOP={
  state:'idle',
  frames:[],
  w:0,
  h:0,
  duration:3100,
- pool:[], /* Pool de elementos <canvas> vivos que jamás son destruidos por innerHTML */
+ pool:[],
  rafId:null
 };
 
-/* Solución 1: Onda triangular pura por índice (0 -> N-1 -> 1) sin punto de reinicio */
 function getGoldPingPongIndex(now){
  var len=GOLD_LOOP.frames.length;
  if(len<=1)return 0;
@@ -545,7 +539,6 @@ function getGoldPingPongIndex(now){
  return (step<len)?step:(totalSteps-step);
 }
 
-/* Solución 3: Rescata los <canvas> antes de que paint() o renderZoomOverlay() borren el DOM */
 function detachGoldPool(container){
  if(!container)return;
  var activeCvs=container.querySelectorAll('canvas.gold-canvas');
@@ -580,7 +573,6 @@ function drawCurrentGoldFrame(now){
  for(var i=0;i<slots.length;i++){
   var slot=slots[i];
   var cv=slot.querySelector('canvas.gold-canvas');
-  /* Si el hueco aún no tiene su <canvas> persistente inyectado, se lo asignamos del pool al instante */
   if(!cv){
    cv=getPooledCanvas();
    slot.appendChild(cv);
@@ -799,7 +791,6 @@ DOCS.forEach(function(d){
  });
 });
 CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||(a.n<b.n?-1:1);});
-
 var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9';
 function seedAlbum(d){
  var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
@@ -835,7 +826,6 @@ function initials(nm){
  return (p[0].charAt(0)+(p[1]?p[1].charAt(0):'')).toUpperCase();
 }
 
-/* Solución 2: En modo Golden no se instancia <img src="donald-trump-golden.webp">, sino el contenedor para el <canvas> del pool */
 function artTag(id,nm){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
@@ -881,19 +871,19 @@ function fichaHTML(c){
  +'<div class="quote">'+esc(pick(c.q))+'</div></div>';
 }
 
-/* === SISTEMA DE VENTANA EMERGENTE (MODAL) === */
+/* === SISTEMA DE VENTANA EMERGENTE (MODAL CORREGIDO SIN STOPPROPAGATION) === */
 var MODAL_CB=null;
 function showModal(title, msg, confirmLabel, isDanger, onConfirm){
  MODAL_CB=onConfirm;
  var mr=document.getElementById('modalRoot');
  if(!mr)return;
- mr.innerHTML='<div class="modal-bg" data-modal="cancel">'
-  +'<div class="modal" onclick="event.stopPropagation()">'
+ mr.innerHTML='<div class="modal-bg" data-modal="bg">'
+  +'<div class="modal">'
   +'<h3>'+esc(title)+'</h3>'
   +'<p>'+esc(msg)+'</p>'
   +'<div class="bar">'
-  +'<button class="btn ghost sm" data-modal="cancel">Cancelar</button>'
-  +'<button class="btn '+(isDanger?'danger':'')+' sm" data-modal="confirm">'+esc(confirmLabel||'Confirmar')+'</button>'
+  +'<button type="button" class="btn ghost sm" data-modal="cancel">Cancelar</button>'
+  +'<button type="button" class="btn '+(isDanger?'danger':'')+' sm" data-modal="confirm">'+esc(confirmLabel||'Confirmar')+'</button>'
   +'</div></div></div>';
 }
 function closeModal(){
@@ -1095,6 +1085,7 @@ window.addEventListener('keydown',function(ev){
   else if(ev.key==='ArrowLeft')cycleDetalleCard(-1);
  }
 });
+
 /* === SISTEMA DE LOGRO OCULTO EMERGENTE SUPERIOR (2s + FADE OUT) === */
 var TOAST_T1=null, TOAST_T2=null;
 function showAchievement(title, desc){
@@ -1216,7 +1207,6 @@ function paint(){
  var logScroll=logEl?logEl.scrollTop:0;
  if(SCREEN==='coleccion'||SCREEN==='builder')saveColScroll();
 
- /* Rescatamos todos los <canvas> vivos al pool en memoria antes de destruir el DOM */
  detachGoldPool(c);
 
  if(TICK){clearInterval(TICK);TICK=null;}
@@ -1276,19 +1266,18 @@ function startTick(){
   }
  },1000);
 }
-
 var SCREENS={};
 SCREENS.menu=function(){
  var d=D(),u=uniqueAlbum(d).length;
  return '<div><h2>Hemiciclo</h2><p class="sub">Consigue 100 votos antes que el rival: el 100% de los escanos.</p></div>'
  +'<div class="modes">'
  +'<button class="mode" data-go="builder" data-mode="normal"><b>Partida normal</b><i>Coleccion blindada. Nada se pierde.</i></button>'
- +'<button class="mode" data-go="builder" data-mode="ranked"><b>Clasificatoria</b><i>Elo y botin: el que gana se lleva un cromo rival.</i></button>'
+ +'<button class="mode" data-go="builder" data-mode="ranked"><b>Clasificatoria</b><i>Elo dinamico y botin: gana un cromo rival.</i></button>'
  +'<button class="mode" data-go="liga"><b>Liga de los 30</b><i>12 jornadas, 3 divisiones, ascensos.</i></button>'
  +'<button class="mode" data-act="rapida"><b>Partida rapida</b><i>Equipo automatico y directo al debate.</i></button>'
  +'</div>'
  +'<div class="panel"><div class="bar between">'
- +'<div><b style="font-size:12px">Expediente parlamentario</b><br><span class="sub">'+d.w+'V &middot; '+d.l+'D &middot; Elo '+d.elo+' &middot; '+u+'/'+CARDS.length+' politicos ('+d.album.length+' total)</span></div>'
+ +'<div><b style="font-size:12px">Expediente parlamentario</b><br><span class="sub">'+d.w+'V &middot; '+d.l+'D &middot; Elo '+d.elo+' ('+esc(rankName(d.elo))+') &middot; '+u+'/'+CARDS.length+' politicos ('+d.album.length+' total)</span></div>'
  +'<button class="btn ghost sm" data-act="reset">Borrar</button>'
  +'</div></div>'
  +'<div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between">'
@@ -1508,14 +1497,42 @@ function mk(c, isLeader){
  return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,ready:true,buff:0};
 }
 
+/* === GENERADOR DE GABINETE RIVAL EQUILIBRADO SIN INFLAR STATS === */
+function buildEnemyTeam(mode, elo, div){
+ var recipe=['comun','comun','raro','raro','especial'];
+ if(mode==='normal'){
+  recipe=['comun','comun','comun','raro','raro'];
+ } else if(mode==='liga'){
+  var dv=div||3;
+  if(dv===3)recipe=['comun','comun','comun','raro','raro'];
+  else if(dv===2)recipe=['comun','raro','raro','especial','especial'];
+  else recipe=['raro','raro','especial','especial','legendario'];
+ } else if(mode==='ranked'){
+  if(elo<450)recipe=['comun','comun','comun','raro','raro'];
+  else if(elo<750)recipe=['comun','comun','raro','raro','especial'];
+  else if(elo<1100)recipe=['comun','raro','raro','especial','legendario'];
+  else recipe=['raro','raro','especial','especial','legendario'];
+ }
+ var picked=[],used={};
+ recipe.forEach(function(tier){
+  var pool=shuffle(CARDS.filter(function(c){return c.r===tier && !used[c.id];}));
+  if(!pool.length)pool=shuffle(CARDS.filter(function(c){return !used[c.id];}));
+  if(pool.length){
+   used[pool[0].id]=true;
+   picked.push(pool[0].id);
+  }
+ });
+ return picked;
+}
+
 function newBattle(mode,rival){
  clearAI();
  var d=D(),team=BUILD.ids.slice(0,5),ldrId=BUILD.leader||team[0];
- var eTeam=shuffle(CARDS.map(function(c){return c.id;})).slice(0,5);
- var diff=1;
- if(mode==='ranked')diff=1+(d.elo-300)/700;
- if(mode==='liga')diff=1+((3-(SO.div||3))*0.18);
- diff=Math.max(.8,Math.min(2,diff));
+ var eTeam=buildEnemyTeam(mode, d.elo, SO.div||3);
+ /* Elegimos como Líder del rival su carta de mayor rango para que juegue con cabeza pero con sus stats reales */
+ var eSorted=eTeam.slice().sort(function(a,b){return TIERORDER[BYID[a].r]-TIERORDER[BYID[b].r];});
+ var eLeadId=eSorted[0]||eTeam[0];
+
  G={mode:mode,rival:rival||pick(['Grupo Mixto','Bancada Gris','Coalicion Improbable','Grupo del Pasillo','Mesa del Cafe','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
   n:0,over:false,done:false,side:'p',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
@@ -1531,14 +1548,7 @@ function newBattle(mode,rival){
   G.leader[s]=lc;G.deck[s]=dk;G.hand[s]=hand;
  };
  build('p',team,ldrId);
- build('e',eTeam,eTeam[Math.floor(Math.random()*eTeam.length)]);
- if(diff!==1){
-  G.deck.e.concat(G.hand.e).forEach(function(c){
-   c.a=Math.max(1,Math.round(c.a*diff));
-   c.h=Math.max(1,Math.round(c.h*diff));
-   c.hm=c.h;
-  });
- }
+ build('e',eTeam,eLeadId);
  log('Comienza el debate contra '+G.rival+'.','hi');
  log('Tu gabinete: '+team.map(function(id){return BYID[id].n;}).join(', ')+'.');
  go('battle');
@@ -1686,15 +1696,40 @@ function endByVotes(){
  else finish('d');
 }
 
-function finish(who){
+/* === CÁLCULO DE ELO DINÁMICO POR RENDIMIENTO (+10 a +25 en victoria / -5 a -18 en derrota) === */
+function calcRankedEloDelta(who, pVotes, eVotes, turnsPlayed, abandoned){
+ var diff=Math.abs(pVotes - eVotes);
+ var rounds=Math.ceil((turnsPlayed||1)/2);
+ if(who==='p'){
+  /* Base +10, hasta +10 por diferencia de votos y hasta +5 por ganar rápido (total 10..25) */
+  var marginBonus=Math.min(10, Math.round(diff/8));
+  var speedBonus=Math.max(0, Math.min(5, 7 - rounds));
+  return Math.max(10, Math.min(25, 10 + marginBonus + speedBonus));
+ }
+ if(who==='e'){
+  if(abandoned)return -18;
+  /* Penalización entre -5 (derrota muy reñida o con muchos votos conseguidos) y -18 (derrota amplia) */
+  var closeness=Math.min(8, Math.floor(pVotes/12));
+  var marginPenalty=Math.min(5, Math.floor(diff/18));
+  var loss=13 - closeness + marginPenalty;
+  return -Math.max(5, Math.min(18, loss));
+ }
+ return 0;
+}
+
+function finish(who, abandoned){
  if(!G||G.done)return;
  clearAI();
  G.over=true;G.done=true;
- var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal'),justUnlockedGold=false;
+ var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal'),justUnlockedGold=false,eloDelta=0;
  if(who==='p'){
   fs=mode==='normal'?rnd(20,50):rnd(50,100);
-  d.w++;if(mode==='ranked')d.elo+=25;
-  msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS.';
+  d.w++;
+  if(mode==='ranked'){
+   eloDelta=calcRankedEloDelta('p', G.votes.p, G.votes.e, G.n, false);
+   d.elo+=eloDelta;
+  }
+  msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS'+(eloDelta?' y +'+eloDelta+' Elo.':'.');
   if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escano de '+BYID[won].n+'.';}
   if(comp && G.leader && G.leader.p && G.leader.p.k==='donald-trump'){
    d.dtWins=(d.dtWins||0)+1;
@@ -1705,8 +1740,12 @@ function finish(who){
   }
  } else if(who==='e'){
   fs=mode==='normal'?0:rnd(20,30);
-  d.l++;if(mode==='ranked')d.elo=Math.max(0,d.elo-20);
-  msg='Derrota ('+G.votes.p+' a '+G.votes.e+').'+(fs?' Recuperas '+fs+' FS.':'');
+  d.l++;
+  if(mode==='ranked'){
+   eloDelta=calcRankedEloDelta('e', G.votes.p, G.votes.e, G.n, !!abandoned);
+   d.elo=Math.max(0, d.elo + eloDelta);
+  }
+  msg='Derrota ('+G.votes.p+' a '+G.votes.e+').'+(fs?' Recuperas '+fs+' FS.':'')+(eloDelta?' ('+eloDelta+' Elo).':'');
   if(comp&&G.pTeam.length&&d.album.length){
    var uniqCount=uniqueAlbum(d).length;
    var candidates=G.pTeam.filter(function(id){return uniqCount>5 || copies(d,id)>1;});
@@ -1728,9 +1767,8 @@ function finish(who){
   showAchievement('¡Logro Oculto Desbloqueado!','Magnate Dorado: Aspecto Golden de Donald Trump disponible en tu Coleccion.');
  }
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
- go('result',{who:who,msg:msg,fs:fs,won:won,lost:lost,mode:mode});
+ go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:mode});
 }
-
 function ligaPanel(){
  var lg=ligaLoad();if(!lg)return '';
  var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
@@ -1746,7 +1784,12 @@ SCREENS.result=function(){
  var who=SO.who;
  var title=who==='p'?'¡Victoria!':(who==='e'?'Derrota':(who==='season'?'Temporada cerrada':'Empate'));
  var pCls=who==='p'?'panel win':(who==='e'?'panel lose':'panel');
- var html='<div class="'+pCls+'"><div class="bar between"><h2>'+title+'</h2>'+(SO.fs?'<span class="pill gold">+'+SO.fs+' FS</span>':'')+'</div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
+ var badges='';
+ if(SO.fs)badges+='<span class="pill gold">+'+SO.fs+' FS</span>';
+ if(SO.eloDelta){
+  badges+=' <span class="pill '+(SO.eloDelta>0?'green':'red')+'">'+(SO.eloDelta>0?'+'+SO.eloDelta:SO.eloDelta)+' Elo</span>';
+ }
+ var html='<div class="'+pCls+'"><div class="bar between"><h2>'+title+'</h2><div>'+badges+'</div></div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
  html+='<div class="inner-scroll">';
  if(SO.won)html+='<h3>Cromo arrebatado al rival (x'+copies(D(),SO.won)+')</h3>'+fichaHTML(BYID[SO.won]);
  if(SO.lost)html+='<h3>Cromo perdido (quedan x'+copies(D(),SO.lost)+')</h3>'+fichaHTML(BYID[SO.lost]);
@@ -1763,11 +1806,16 @@ SCREENS.result=function(){
  return html;
 };
 
-/* === MOTOR DINÁMICO DE IA PASO A PASO === */
+/* === MOTOR DINÁMICO DE IA TÁCTICA (SIN INFLAR STATS) === */
 function aiStep(){
  if(!G||G.over||G.side!=='e')return;
+ /* 1. Bajar cartas priorizando a su Líder o el orador de mayor impacto */
  if(G.field.e.length<3){
-  var playable=G.hand.e.filter(function(c){return c.c<=G.tdp.e;}).sort(function(a,b){return b.c-a.c;});
+  var playable=G.hand.e.filter(function(c){return c.c<=G.tdp.e;}).sort(function(a,b){
+   var aLead=(G.leader.e&&a.uid===G.leader.e.uid)?1:0;
+   var bLead=(G.leader.e&&b.uid===G.leader.e.uid)?1:0;
+   return (bLead-aLead)||(b.v-a.v)||(b.c-a.c);
+  });
   if(playable.length){
    playCard('e',playable[0].uid);
    paint();
@@ -1775,11 +1823,24 @@ function aiStep(){
    return;
   }
  }
+ /* 2. Elegir objetivo inteligente con los oradores listos */
  var readyAtk=G.field.e.filter(function(c){return c.ready;});
  if(readyAtk.length){
   var atk=readyAtk[0];
-  var targets=G.field.p.slice().sort(function(a,b){return a.h-b.h;});
-  var tgt=targets.length ? targets[0] : '__EMPTY';
+  var eDoc=doc('e');
+  var tgt='__EMPTY';
+  if(G.field.p.length){
+   /* Busca primero si puede expulsar de un golpe a algún orador tuyo o dañar a tu Líder */
+   var sortedT=G.field.p.slice().sort(function(x,y){
+    var dmgX=atk.a+((eDoc==='viperina'&&G.leader.p&&x.uid===G.leader.p.uid)?2:0);
+    var dmgY=atk.a+((eDoc==='viperina'&&G.leader.p&&y.uid===G.leader.p.uid)?2:0);
+    var killX=(x.h<=dmgX)?1:0;
+    var killY=(y.h<=dmgY)?1:0;
+    if(killX!==killY)return killY-killX;
+    return (y.v-x.v)||(x.h-y.h);
+   });
+   tgt=sortedT[0];
+  }
   attack(atk,tgt,'e');
   paint();
   if(!G.over)AITIMER=setTimeout(aiStep,480);
@@ -1913,33 +1974,39 @@ SCREENS.ayuda=function(){
  return '<h2>Como se juega</h2>'
  +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cada turno ganas 3 votos base mas los escanos de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escanos a tu marcador.</p></div>'
  +'<div class="panel"><h3>2. Tu gabinete y Lider (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Lider empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras este en la Tribuna activa su Doctrina.</p></div>'
- +'<div class="panel"><h3>3. Intervenir y atacar</h3><p class="sub">Toca un orador tuyo en la Tribuna (borde dorado) y luego toca un orador rival para lanzarle un zasca, o un hueco vacio ("Restar votos") para restarle votos al rival.</p></div>'
+ +'<div class="panel"><h3>3. Elo y Dificultad Justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadisticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>-5 a -18 Elo</b> segun tu rendimiento en el debate.</p></div>'
  +'<div class="panel"><h3>4. Botin y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiendose siempre tus 5 ultimos politicos unicos).</p></div>'
  +'<button class="btn wide sm" data-go="menu">Volver al menu</button>';
 };
 
 document.addEventListener('click',function(ev){
+ var t=ev.target;
+ var root=document.getElementById('app')||document.body;
+ if(!root.contains(t)||!t.closest)return;
+
+ /* 1. Gestión prioritaria de los botones de confirmación / cancelación del Modal */
+ var mBtn=t.closest('button[data-modal]');
+ if(mBtn){
+  var mAct=mBtn.getAttribute('data-modal');
+  var cb=MODAL_CB;
+  closeModal();
+  if(mAct==='confirm' && typeof cb==='function')cb();
+  return;
+ }
+ if(t.getAttribute('data-modal')==='bg'){
+  closeModal();
+  return;
+ }
+ if(t.closest('.modal'))return;
+
  if(Date.now() < SWIPE_BLOCK_CLICK){
   ev.preventDefault();
   ev.stopPropagation();
   return;
  }
 
- var t=ev.target;
- var root=document.getElementById('app')||document.body;
- if(!root.contains(t)||!t.closest)return;
-
  if(ZOOM_OPEN && t.closest('#zoomBg')){
   closeZoom();
-  return;
- }
-
- var mBtn=t.closest('[data-modal]');
- if(mBtn){
-  var mAct=mBtn.getAttribute('data-modal');
-  var cb=MODAL_CB;
-  closeModal();
-  if(mAct==='confirm' && typeof cb==='function')cb();
   return;
  }
 
@@ -2099,7 +2166,7 @@ document.addEventListener('click',function(ev){
      'Si abandonas el hemiciclo ahora, se contara como una derrota'+(G.mode!=='normal'?' y podrias perder una copia de un cromo de tu gabinete':'')+'.',
      'Abandonar debate',
      true,
-     function(){if(G&&!G.over)finish('e');}
+     function(){if(G&&!G.over)finish('e', true);}
     );
    }
    break;
@@ -2183,3 +2250,4 @@ catch(e){window.onerror(e.message,'boot',0,0);}
 </script>
 </body>
 </html>
+
