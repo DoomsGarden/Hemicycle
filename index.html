@@ -14,10 +14,11 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--sat:26px;--sab:16px}
+*{box-sizing:border-box}
 html,body{margin:0;padding:0;height:100%;background:#070b16;overflow:hidden}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
 .screen{position:relative;height:100vh;height:100dvh;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;touch-action:manipulation;background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18);display:flex;flex-direction:column}
-.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440}
+.appbar{position:sticky;top:0;z-index:29;display:flex;align-items:center;gap:6px;padding:calc(var(--sat) + 8px) 12px 8px;background:rgba(10,15,28,.97);border-bottom:1px solid #1c2440;flex-shrink:0}
 .brand{font-weight:800;letter-spacing:.4px;font-size:14px;line-height:1.05}
 .brand span{display:block;font-size:8px;color:#e8b923;letter-spacing:1.8px;font-weight:700}
 .abR{margin-left:auto;display:flex;gap:5px;align-items:center}
@@ -30,6 +31,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
 .mini:active{background:#e8b923;color:#111}
 .content{flex:1;padding:10px 12px 14px}
 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;border-radius:10px}
+button:disabled{opacity:.45;cursor:not-allowed;pointer-events:none}
 h2{font-size:18px;margin:0 0 3px}
 h3{font-size:12.5px;margin:11px 0 5px;color:#ffd76a}
 p{margin:0 0 7px;font-size:13px}
@@ -37,23 +39,33 @@ p{margin:0 0 7px;font-size:13px}
 .panel{background:#131b31;border:1px solid #232e52;border-radius:13px;padding:11px;margin-bottom:9px}
 .panel.win{border-color:#28a86b;background:linear-gradient(180deg,#132a22,#131b31)}
 .panel.lose{border-color:#d43b3b;background:linear-gradient(180deg,#2a1414,#131b31)}
-.modes{display:grid;grid-template-columns:1fr 1fr;gap:7px}
-.mode{border:1px solid #232e52;background:#18213c;border-radius:13px;padding:10px;text-align:left;min-height:80px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:9px}
+.mode{border:1px solid #232e52;background:#18213c;border-radius:13px;padding:10px;text-align:left;min-height:80px;transition:border-color .15s}
 .mode:active{border-color:#e8b923}
 .mode b{display:block;font-size:12.5px;color:#ffd76a;margin-bottom:2px}
 .mode i{font-style:normal;color:#8b93ab;font-size:10.5px;line-height:1.25}
-.btn{background:linear-gradient(180deg,#e8b923,#c9931a);color:#141414;border:none;font-weight:800;padding:13px;font-size:13px;min-height:48px}
+.btn{background:linear-gradient(180deg,#e8b923,#c9931a);color:#141414;border:none;font-weight:800;padding:12px 13px;font-size:13px;min-height:46px}
 .btn:active{filter:brightness(1.12)}
 .btn.ghost{background:#1e2848;color:#e9ecf5;border:1px solid #2b3763;font-weight:600}
+.btn.danger{background:linear-gradient(180deg,#d43b3b,#a82828);color:#fff;border:1px solid #ff8a6a;font-weight:700}
+.btn.sm{padding:7px 11px;font-size:11.5px;min-height:36px}
 .btn.wide{width:100%}
-.btn:disabled{opacity:.5}
 .bar{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
-.tabbar{margin-top:auto;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(var(--sab) + 10px);background:rgba(8,12,22,.99);border-top:1px solid #1c2440;flex-shrink:0}
+.bar.between{justify-content:space-between}
+.tabbar{position:sticky;bottom:0;margin-top:auto;z-index:30;display:grid;grid-template-columns:repeat(4,1fr);gap:3px;padding:6px 6px calc(var(--sab) + 10px);background:rgba(8,12,22,.99);border-top:1px solid #1c2440;flex-shrink:0}
 .tab{background:none;border:0;display:flex;flex-direction:column;align-items:center;gap:1px;font-size:10px;color:#8b93ab;padding:6px 0;min-height:50px;border-radius:10px;font-weight:600}
 .tab .ic{font-size:17px;line-height:1.1}
 .tab.on{color:#ffd76a;background:rgba(232,185,35,.12)}
 .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .grid.sm{grid-template-columns:repeat(5,1fr);gap:5px}
+
+/* === VENTANA EMERGENTE (MODAL DE CONFIRMACIÓN) === */
+.modal-bg{position:fixed;inset:0;z-index:100;background:rgba(4,7,15,.82);backdrop-filter:blur(3px);display:flex;align-items:center;justify-content:center;padding:18px}
+.modal{background:#131b31;border:1px solid #3b4c82;border-radius:15px;padding:16px;max-width:340px;width:100%;box-shadow:0 14px 34px rgba(0,0,0,.85);animation:modalIn .16s ease-out}
+@keyframes modalIn{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+.modal h3{margin:0 0 6px;font-size:15px;color:#ffd76a}
+.modal p{margin:0 0 14px;font-size:12.5px;color:#cfd6e8;line-height:1.38}
+.modal .bar{justify-content:flex-end}
 
 /* === MARCO WEBP REACTIVO SEGÚN RAREZA === */
 @keyframes gemShimmer {
@@ -66,7 +78,7 @@ p{margin:0 0 7px;font-size:13px}
   position: relative;
   aspect-ratio: 3 / 4.1;
   border-radius: 12px;
-  border: none; /* Sin borde plano CSS, mandará el frame.webp */
+  border: none;
   background: linear-gradient(180deg, rgba(19,27,49,0.95), rgba(7,11,22,0.98));
   box-shadow: 0 8px 20px rgba(0,0,0,0.7), 0 0 12px var(--tier, rgba(232,185,35,0.4));
   overflow: hidden;
@@ -77,7 +89,6 @@ p{margin:0 0 7px;font-size:13px}
   transition: transform .15s ease;
 }
 
-/* Capa del marco WebP con adaptación dinámica de color por rareza */
 .cromo .frame-overlay{
   position: absolute;
   inset: 0;
@@ -88,11 +99,10 @@ p{margin:0 0 7px;font-size:13px}
   filter: drop-shadow(0 0 4px var(--tier));
 }
 
-/* Mapeo automático de tonos azules del marco según la rareza definida en JavaScript */
-.cromo[style*="#b07a45"] .frame-overlay { filter: hue-rotate(140deg) saturate(1.2) drop-shadow(0 0 4px var(--tier)); } /* Común -> Bronce */
-.cromo[style*="#4a7fb5"] .frame-overlay { filter: hue-rotate(0deg) saturate(1) drop-shadow(0 0 4px var(--tier)); }    /* Raro -> Azul original */
-.cromo[style*="#8b5cf6"] .frame-overlay { filter: hue-rotate(240deg) saturate(1.5) drop-shadow(0 0 4px var(--tier)); } /* Especial -> Morado */
-.cromo[style*="#e8b923"] .frame-overlay { filter: hue-rotate(35deg) saturate(1.8) brightness(1.1) drop-shadow(0 0 6px var(--tier)); } /* Legendario -> Oro intenso */
+.cromo[style*="#b07a45"] .frame-overlay { filter: hue-rotate(140deg) saturate(1.2) drop-shadow(0 0 4px var(--tier)); }
+.cromo[style*="#4a7fb5"] .frame-overlay { filter: hue-rotate(0deg) saturate(1) drop-shadow(0 0 4px var(--tier)); }
+.cromo[style*="#8b5cf6"] .frame-overlay { filter: hue-rotate(240deg) saturate(1.5) drop-shadow(0 0 4px var(--tier)); }
+.cromo[style*="#e8b923"] .frame-overlay { filter: hue-rotate(35deg) saturate(1.8) brightness(1.1) drop-shadow(0 0 6px var(--tier)); }
 
 .cromo .art{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:24px;color:rgba(255,255,255,.15)}
 .cromo .art img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
@@ -102,9 +112,9 @@ p{margin:0 0 7px;font-size:13px}
 .cromo .bot{position:relative;z-index:4;background:linear-gradient(180deg,transparent,rgba(0,0,0,.92) 45%);padding:12px 6px 6px;font-size:9px;line-height:1.12}
 .cromo .nm{display:block;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .cromo .st{display:block;color:#cfd6e8;font-weight:700}
-.cromo.sel{border-color:transparent;box-shadow:0 0 0 2px #ffd76a inset, 0 8px 20px rgba(232,185,35,0.4)}
+.cromo.sel{border-color:transparent;box-shadow:0 0 0 2.5px #ffd76a inset, 0 8px 20px rgba(232,185,35,0.45)}
 .cromo.lead{border-color:transparent}
-.cromo.tgt{box-shadow:0 0 0 2px #ff8a6a inset, 0 8px 20px rgba(255,138,106,0.4)}
+.cromo.tgt{box-shadow:0 0 0 2.5px #ff8a6a inset, 0 8px 20px rgba(255,138,106,0.45)}
 .cromo.busy{filter:saturate(.55) brightness(.85)}
 .cromo .crown{position:absolute;top:0;left:50%;transform:translateX(-50%);z-index:5;font-size:12px;color:#ffd76a;text-shadow:0 0 5px #000}
 .cromo .lbl{position:absolute;z-index:5;top:2px;left:2px;font-size:8px;font-weight:800;color:#111;background:#ffd76a;border-radius:4px;padding:0 3px}
@@ -117,18 +127,18 @@ p{margin:0 0 7px;font-size:13px}
 .tribuna{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
 .tribuna .cromo{aspect-ratio:3 / 3.9}
 .tribuna .slot{border:1px dashed #232e52;border-radius:9px;aspect-ratio:3 / 3.9;display:flex;align-items:center;justify-content:center;color:#39456e;font-size:12px;font-weight:700;text-align:center;padding:4px}
-.tribuna .slot.tgt{border-color:#ff8a6a;color:#ff8a6a;border-style:solid}
+.tribuna .slot.tgt{border-color:#ff8a6a;color:#ff8a6a;border-style:solid;cursor:pointer}
 .vbars{display:grid;gap:4px;margin-bottom:6px}
 .vbar{display:flex;align-items:center;gap:6px;font-size:11px}
 .vbar .track{flex:1;height:10px;background:#0c1324;border:1px solid #232e52;border-radius:99px;overflow:hidden}
-.vbar .fill{height:100%;width:0}
+.vbar .fill{height:100%;width:0;transition:width .25s ease}
 .vbar.me .fill{background:linear-gradient(90deg,#3b6fd4,#6ea8ff)}
 .vbar.foe .fill{background:linear-gradient(90deg,#d43b3b,#ff8a6a)}
 .vbar b{min-width:30px;text-align:right;font-size:11.5px}
 .tdp{display:flex;gap:3px;align-items:center}
-.crystal{width:13px;height:13px;border-radius:50%;border:1px solid #3b6fd4;background:#4f8bea}
+.crystal{display:inline-block;width:12px;height:12px;border-radius:50%;border:1px solid #3b6fd4;background:#4f8bea;vertical-align:middle;margin-right:2px}
 .crystal.off{background:#151d33;border-color:#2b3763}
-.log{background:#0a1020;border:1px solid #232e52;border-radius:9px;padding:6px 8px;font-size:11px;min-height:42px;max-height:76px;overflow-y:auto;color:#c3cbe0}
+.log{background:#0a1020;border:1px solid #232e52;border-radius:9px;padding:6px 8px;font-size:11px;min-height:48px;max-height:80px;overflow-y:auto;color:#c3cbe0}
 .log .hi{color:#ffd76a}
 .hint{background:#1a2547;border:1px solid #3b6fd4;border-radius:9px;padding:6px 8px;font-size:11.5px;color:#bcd2ff;margin-top:6px}
 .gab{display:flex;gap:4px;margin:5px 0;flex-wrap:wrap}
@@ -151,9 +161,9 @@ tr.des td{background:rgba(212,59,59,.1)}
 .stat b{display:block;font-size:16px;color:#ffd76a}
 .stat span{font-size:9.5px;color:#8b93ab}
 .quote{background:#0d1424;border-left:3px solid #e8b923;border-radius:0 8px 8px 0;padding:6px 9px;margin:5px 0;font-size:12px}
-.reveal{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
-.ficha{display:flex;gap:10px;align-items:flex-start}
-.ficha .caja{flex:0 0 auto;width:110px}
+.reveal{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
+.ficha{display:flex;gap:12px;align-items:flex-start}
+.ficha .caja{flex:0 0 auto;width:115px}
 .doc{display:inline-flex;align-items:center;gap:5px;border:1px solid #2b3763;border-radius:99px;padding:2px 8px;font-size:10.5px;background:#0d1424}
 .dot{width:8px;height:8px;border-radius:50%}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
@@ -168,6 +178,7 @@ tr.des td{background:rgba(212,59,59,.1)}
   <div class="content" id="content"><p class="sub">Cargando Hemiciclo...</p></div>
   <div class="tabbar" id="tabbar"></div>
  </div>
+ <div id="modalRoot"></div>
 </div>
 
 <script>
@@ -179,7 +190,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v22.3';
+var VERSION='v23';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -254,7 +265,7 @@ var QBESP={
  'ada-colau':['«Barcelona no se vende»','«Los vecinos primero»'],
  'nicolas-maduro':['«Un paso al frente»','«Chavez vive»'],
  'andres-manuel-lopez-obrador':['«Abrazos, no balazos»','«La pobreza no es destino»'],
- 'cristina-fernandez-de-kirchner':['«Un modelo de pais»','«La patria is el otro»'],
+ 'cristina-fernandez-de-kirchner':['«Un modelo de pais»','«La patria es el otro»'],
  'hillary-clinton':['«I am with her»','«Deal me in»'],
  'kamala-harris':['«We did it, Joe»','«No volver atras»'],
  'christine-lagarde':['«Haremos lo que haga falta»','«Whatever it takes»'],
@@ -306,23 +317,44 @@ function cromoHTML(c,o){
  var r=RARM[c.r];
  var st='--tier:'+r.c+(o.extra?';'+o.extra:'');
  var art=artTag(c.id,c.n);
- return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'" data-card="'+c.id+'"'+(o.pick?' data-pick="'+c.id+'"':'')+'>'
+ return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-pick="'+c.id+'"':'')+'>'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(o.lead?'<span class="crown">&#9733;</span>':'')
-  +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'">&#9733;</button>':'')
+  +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'" title="Elegir como Lider">&#9733;</button>':'')
   +(o.count?'<span class="badge">x'+o.count+'</span>':'')
   +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+c.a+' &middot; A'+c.h+'</span></div></div>';
 }
 function fichaHTML(c){
  var r=RARM[c.r];
- return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c)+'</div>'
+ return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true})+'</div>'
  +'<div style="flex:1;min-width:0"><p style="margin:0 0 4px"><b>'+esc(c.n)+'</b></p>'
  +'<p style="margin:0 0 5px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span></p>'
  +'<p class="sub" style="margin:0">Zasca '+c.a+' &middot; Aguante '+c.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escanos</p>'
  +'<p class="sub" style="margin:5px 0 0">'+esc(DOCM[c.pa].d)+'</p></div></div>'
  +'<div class="quote">'+esc(pick(c.q))+'</div></div>';
+}
+
+/* === SISTEMA DE VENTANA EMERGENTE (MODAL) === */
+var MODAL_CB=null;
+function showModal(title, msg, confirmLabel, isDanger, onConfirm){
+ MODAL_CB=onConfirm;
+ var mr=document.getElementById('modalRoot');
+ if(!mr)return;
+ mr.innerHTML='<div class="modal-bg" data-modal="cancel">'
+  +'<div class="modal" onclick="event.stopPropagation()">'
+  +'<h3>'+esc(title)+'</h3>'
+  +'<p>'+esc(msg)+'</p>'
+  +'<div class="bar">'
+  +'<button class="btn ghost sm" data-modal="cancel">Cancelar</button>'
+  +'<button class="btn '+(isDanger?'danger':'')+' sm" data-modal="confirm">'+esc(confirmLabel||'Confirmar')+'</button>'
+  +'</div></div></div>';
+}
+function closeModal(){
+ MODAL_CB=null;
+ var mr=document.getElementById('modalRoot');
+ if(mr)mr.innerHTML='';
 }
 
 var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9';
@@ -341,7 +373,9 @@ function rankName(e){var n=RANKS[0][1];for(var i=0;i<RANKS.length;i++)if(e>=RANK
 function copies(d,id){var n=0;for(var i=0;i<d.album.length;i++)if(d.album[i]===id)n++;return n;}
 function uniqueAlbum(d){var m={},out=[];d.album.forEach(function(id){m[id]=(m[id]||0)+1;});Object.keys(m).forEach(function(id){if(BYID[id])out.push({id:id,c:BYID[id],n:m[id]});});return out;}
 
-var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},G=null,NOHIST=false;
+var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,NOHIST=false;
+
+function clearAI(){if(AITIMER){clearTimeout(AITIMER);AITIMER=null;}}
 
 function go(s,o){
  SCREEN=s;if(o!==undefined&&o!==null)SO=o;
@@ -350,6 +384,7 @@ function go(s,o){
  var sc=document.getElementById('screen');if(sc)sc.scrollTop=0;
 }
 window.addEventListener('popstate',function(ev){
+ closeModal();
  var s=(ev.state&&ev.state.s)||'menu';
  if(s==='battle'&&!G)s='menu';
  if(s==='battle'&&G&&G.over)s='menu';
@@ -366,7 +401,7 @@ function appbar(){
  var d=D();
  return '<div class="brand">HEMICICLO<span>CARA A CARA '+VERSION+'</span></div>'
  +'<div class="abR">'
- +((G&&!G.over)?'<button class="mini hot" data-go="battle">Debate</button>':'')
+ +((G&&!G.over&&SCREEN!=='battle')?'<button class="mini hot" data-go="battle">Debate</button>':'')
  +'<span class="pill gold">'+d.fs+' FS</span><span class="pill">'+esc(rankName(d.elo))+'</span>'
  +'<button class="mini" data-go="ayuda">?</button></div>';
 }
@@ -398,22 +433,23 @@ function startTick(){
 
 var SCREENS={};
 SCREENS.menu=function(){
- var d=D();
+ var d=D(),u=uniqueAlbum(d).length;
  return '<h2>Hemiciclo</h2><p class="sub">Consigue 100 votos antes que el rival: el 100% de los escanos.</p>'
  +'<div class="modes">'
  +'<button class="mode" data-go="builder" data-mode="normal"><b>Partida normal</b><i>Coleccion blindada. Nada se pierde.</i></button>'
  +'<button class="mode" data-go="builder" data-mode="ranked"><b>Clasificatoria</b><i>Elo y botin: el que gana se lleva un cromo rival.</i></button>'
  +'<button class="mode" data-go="liga"><b>Liga de los 30</b><i>12 jornadas, 3 divisiones, ascensos.</i></button>'
- +'<button class="mode" data-act="rapida"><b>Partida rapida</b><i>Equipo automatico y al debate.</i></button>'
+ +'<button class="mode" data-act="rapida"><b>Partida rapida</b><i>Equipo automatico y directo al debate.</i></button>'
  +'</div>'
- +'<div class="panel" style="margin-top:9px"><div class="bar"><button class="btn" data-go="builder" data-mode="normal">Jugar</button>'
- +'<button class="btn ghost" data-go="coleccion">Coleccion ('+d.album.length+')</button>'
- +'<button class="btn ghost" data-act="reset">Borrar progreso</button></div>'
- +'<p class="sub" style="margin-top:7px">'+d.w+' victorias &middot; '+d.l+' derrotas</p></div>'
+ +'<div class="panel"><div class="bar between">'
+ +'<div><b>Expediente parlamentario</b><br><span class="sub">'+d.w+' victorias &middot; '+d.l+' derrotas &middot; Elo '+d.elo+'<br>'+u+'/'+CARDS.length+' politicos distintos ('+d.album.length+' totales)</span></div>'
+ +'<button class="btn ghost sm" data-act="reset">Borrar progreso</button>'
+ +'</div></div>'
  +'<div class="panel"><h3>Las seis doctrinas</h3>'
  +DOCS.map(function(x){return '<p style="margin:0 0 6px"><span class="doc"><span class="dot" style="background:'+x.col+'"></span>'+esc(x.n)+'</span><br><span class="sub">'+esc(x.d)+'</span></p>';}).join('')
- +'<p class="sub">Solo se activa la doctrina del Lider que este en la Tribuna.</p></div>';
+ +'<p class="sub">Solo se activa la doctrina del Lider cuando esta presente en la Tribuna.</p></div>';
 };
+
 function colList(){
  var d=D(),list=uniqueAlbum(d);
  if(FIL.r)list=list.filter(function(x){return x.c.r===FIL.r;});
@@ -422,10 +458,15 @@ function colList(){
  list.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);});
  return list;
 }
+function colCountText(){
+ var d=D(),u=uniqueAlbum(d).length,shown=colList().length;
+ if(FIL.r||FIL.d||FIL.q)return 'Mostrando '+shown+' de '+u+' politicos distintos ('+d.album.length+' cromos en total).';
+ return d.album.length+' cromos en total &middot; '+u+' de '+CARDS.length+' politicos distintos. Los repetidos son copias de reserva.';
+}
 function colGrid(){return colList().map(function(x){return cromoHTML(x.c,{count:x.n});}).join('');}
+
 SCREENS.coleccion=function(){
- var d=D();
- return '<h2>Coleccion</h2><p class="sub" id="cntBox">'+d.album.length+' cromos &middot; '+uniqueAlbum(d).length+' distintos. Los repetidos son copias de reserva.</p>'
+ return '<h2>Coleccion</h2><p class="sub" id="cntBox">'+colCountText()+'</p>'
  +'<input type="search" id="fq" placeholder="Buscar politico..." value="'+esc(FIL.q)+'">'
  +'<div class="chips"><button class="chip'+(FIL.r===''?' on':'')+'" data-fr="">Todas</button>'
  +RARS.map(function(r){return '<button class="chip'+(FIL.r===r.k?' on':'')+'" data-fr="'+r.k+'">'+r.n+'</button>';}).join('')+'</div>'
@@ -433,29 +474,45 @@ SCREENS.coleccion=function(){
  +DOCS.map(function(x){return '<button class="chip'+(FIL.d===x.k?' on':'')+'" data-fd="'+x.k+'">'+esc(x.n)+'</button>';}).join('')+'</div>'
  +'<div class="grid sm" id="gridBox">'+colGrid()+'</div>';
 };
+
 SCREENS.detalle=function(){
  var c=BYID[SO.id];
  if(!c)return '<h2>Cromo no encontrado</h2><div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
- return fichaHTML(c)+'<div class="bar"><button class="btn" data-go="coleccion">Volver a la colección</button></div>';
+ var d=D(),r=RARM[c.r],cnt=copies(d,c.id);
+ return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true,count:cnt})+'</div>'
+ +'<div style="flex:1;min-width:0">'
+ +'<h2 style="margin:0 0 6px">'+esc(c.n)+'</h2>'
+ +'<p style="margin:0 0 6px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+cnt+' en album</span></p>'
+ +'<p class="sub" style="margin:0"><b>Doctrina de Lider:</b> '+esc(DOCM[c.pa].d)+'</p>'
+ +'<p class="sub" style="margin:5px 0 0">Si lo asignas como Lider (&#9733;), entra al debate con <b>+1 Zasca</b> y <b>+3 Aguante</b>.</p>'
+ +'</div></div>'
+ +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+c.a+'</b><span>Zasca</span></div><div><b>'+c.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escanos/turno</span></div></div>'
+ +'<h3>Intervenciones celebres</h3>'
+ +c.q.map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')
+ +'</div>'
+ +'<div class="bar"><button class="btn wide" data-go="coleccion">Volver a la coleccion</button></div>';
 };
+
 var PACKS=[
- {k:'comun',n:'Sobre comun',p:400,d:'4 comunes garantizados. 20% de que uno sea raro.'},
- {k:'raro',n:'Sobre raro',p:800,d:'4 raros garantizados. 25% de que uno sea especial.'},
- {k:'legendario',n:'Sobre legendario',p:1500,d:'1 legendario, 1 especial y 3 raros.'},
- {k:'mitico',n:'Sobre mitico',p:2900,d:'5 legendarios. El unico camino al nivel maximo.'}];
+ {k:'comun',n:'Sobre comun',p:400,d:'4 comunes garantizados. 20% de que el quinto sea raro.'},
+ {k:'raro',n:'Sobre raro',p:800,d:'4 raros garantizados. 25% de que el quinto sea especial.'},
+ {k:'legendario',n:'Sobre legendario',p:1500,d:'1 legendario, 1 especial y 3 raros garantizados.'},
+ {k:'mitico',n:'Sobre mitico',p:2900,d:'5 legendarios garantizados. El unico camino al nivel maximo.'}];
 var DAY=86400000,WEEK=7*DAY;
+
 SCREENS.tienda=function(){
  var d=D(),now=Date.now();
  var dl=Math.max(0,d.lastDaily+DAY-now),wl=Math.max(0,d.lastWeekly+WEEK-now);
- return '<h2>Tienda</h2><p class="sub">Fuerza Soberana: '+d.fs+' FS. Moneda blanda, no se compra con dinero real.</p>'
- +'<div class="panel"><h3>Sobres gratis</h3><div class="bar">'
- +'<button class="btn" data-act="free" data-k="diario"'+(dl>0?' disabled':'')+'>Diario'+(dl>0?' <span data-cd="'+(now+dl)+'">...</span>':'')+'</button>'
- +'<button class="btn" data-act="free" data-k="semanal"'+(wl>0?' disabled':'')+'>Semanal'+(wl>0?' <span data-cd="'+(now+wl)+'">...</span>':'')+'</button>'
- +'</div><p class="sub" style="margin-top:6px">Diario: 5 comunes. Semanal: 5 raros.</p></div>'
+ return '<h2>Tienda</h2><p class="sub">Fuerza Soberana: <b>'+d.fs+' FS</b>. Moneda obtenida en los debates.</p>'
+ +'<div class="panel"><h3>Sobres gratuitos</h3><div class="bar">'
+ +'<button class="btn" data-act="free" data-k="diario"'+(dl>0?' disabled':'')+'>Diario'+(dl>0?' (<span data-cd="'+(now+dl)+'">...</span>)':' (Listo)')+'</button>'
+ +'<button class="btn" data-act="free" data-k="semanal"'+(wl>0?' disabled':'')+'>Semanal'+(wl>0?' (<span data-cd="'+(now+wl)+'">...</span>)':' (Listo)')+'</button>'
+ +'</div><p class="sub" style="margin-top:6px">Diario: 4 comunes + 1 comun/raro. Semanal: 4 raros + 1 raro/especial.</p></div>'
  +PACKS.map(function(p){var can=d.fs>=p.p;
   return '<div class="panel"><h3>'+p.n+' <span class="pill gold">'+p.p+' FS</span></h3><p class="sub">'+p.d+'</p>'
-  +'<button class="btn wide" data-act="buy" data-k="'+p.k+'"'+(can?'':' disabled')+'>'+(can?'Abrir sobre':'Faltan FS')+'</button></div>';}).join('');
+  +'<button class="btn wide" data-act="buy" data-k="'+p.k+'"'+(can?'':' disabled')+'>'+(can?'Abrir sobre ('+p.p+' FS)':'Faltan '+(p.p-d.fs)+' FS')+'</button></div>';}).join('');
 };
+
 function packContents(k){
  var out=[],i;
  if(k==='diario'||k==='comun'){
@@ -471,56 +528,104 @@ function packContents(k){
  } else {for(i=0;i<5;i++)out.push(pick(CARDS.filter(function(x){return x.r==='legendario';})));}
  return out;
 }
+
 function openPack(k,free){
  var d=D(),p=PACKS.filter(function(x){return x.k===k;})[0];
- if(!free){if(!p||d.fs<p.p){go('result',{who:'info',msg:'No te llega la Fuerza Soberana. Necesitas '+p.p+' FS.',fs:0});return;}}
- else{
+ if(!free){
+  if(!p)return;
+  if(d.fs<p.p){go('result',{who:'info',msg:'No tienes suficiente Fuerza Soberana. Necesitas '+p.p+' FS.',fs:0});return;}
+ } else {
   if(k==='diario'){if(Date.now()<d.lastDaily+DAY)return;d.lastDaily=Date.now();}
-  else{if(Date.now()<d.lastWeekly+WEEK)return;d.lastWeekly=Date.now();}
+  else if(k==='semanal'){if(Date.now()<d.lastWeekly+WEEK)return;d.lastWeekly=Date.now();}
+  else return;
  }
  var cards=packContents(k);
  if(!free)d.fs-=p.p;
  cards.forEach(function(c){d.album.push(c.id);});
  saveD(d);
- go('sobre',{cards:cards.map(function(c){return c.id;}),k:k});
+ go('sobre',{cards:cards.map(function(c){return c.id;}),k:k,free:!!free});
 }
+
 SCREENS.sobre=function(){
- var ids=SO.cards||[];
+ var ids=SO.cards||[],d=D();
+ var p=PACKS.filter(function(x){return x.k===SO.k;})[0];
+ var canAgain=p&&!SO.free&&d.fs>=p.p;
  return '<h2>Sobre abierto</h2><p class="sub">'+ids.length+' cromos anadidos a tu coleccion.</p>'
- +'<div class="reveal">'+ids.map(function(id){return cromoHTML(BYID[id]);}).join('')+'</div>'
- +'<div class="bar" style="margin-top:9px"><button class="btn" data-act="again" data-k="'+(SO.k||'')+'">Abrir otro</button>'
- +'<button class="btn ghost" data-go="tienda">Tienda</button></div>';
+ +'<div class="reveal">'+ids.map(function(id){return cromoHTML(BYID[id],{noCardAttr:true});}).join('')+'</div>'
+ +'<div class="bar" style="margin-top:12px">'
+ +(p&&!SO.free?'<button class="btn" data-act="again" data-k="'+p.k+'"'+(canAgain?'':' disabled')+'>'+(canAgain?'Abrir otro ('+p.p+' FS)':'Sin FS para otro ('+p.p+' FS)')+'</button>':'')
+ +'<button class="btn ghost" data-go="tienda">Volver a la Tienda</button>'
+ +'<button class="btn ghost" data-go="coleccion">Ver Coleccion</button></div>';
 };
+
+function sanitizeBuild(){
+ var d=D(),owned={};
+ d.album.forEach(function(id){owned[id]=true;});
+ BUILD.ids=BUILD.ids.filter(function(id){return !!owned[id];}).slice(0,5);
+ if(BUILD.leader&&BUILD.ids.indexOf(BUILD.leader)<0){
+  BUILD.leader=BUILD.ids[0]||null;
+ }
+ if(!BUILD.leader&&BUILD.ids.length){
+  BUILD.leader=BUILD.ids[0];
+ }
+}
+
 function builderScreen(mode,rival,jor){
+ sanitizeBuild();
  var uniq=uniqueAlbum(D());
  uniq.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);});
- var lead=BUILD.leader?BYID[BUILD.leader].n:'sin asignar';
+ var ready=(BUILD.ids.length===5 && !!BUILD.leader);
+ var missing=5-BUILD.ids.length;
+ var leadObj=BUILD.leader?BYID[BUILD.leader]:null;
+ var leadTxt=leadObj?(leadObj.n+' ('+DOCM[leadObj.pa].n+')'):'sin asignar';
  var names=BUILD.ids.map(function(id){return BYID[id].n;});
- var tit=mode==='ranked'?'Clasificatoria':(mode==='liga'?('Liga &middot; Jornada '+jor):'Partida normal');
+ var tit=mode==='ranked'?'Clasificatoria':(mode==='liga'?('Liga &middot; Jornada '+(jor||1)):'Partida normal');
+ var btnLabel=ready?'Empezar debate':('Elige '+missing+' cromo'+(missing===1?'':'s')+' mas para empezar');
  return '<h2>'+tit+'</h2>'
  +(rival?'<p class="sub">Rival: <b>'+esc(rival)+'</b></p>':'')
- +'<div class="panel" style="padding:9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Lider: '+esc(lead)+'</p>'
- +(names.length?'<p class="sub" style="margin:4px 0 0">'+names.join(' · ')+'</p>':'')
+ +'<div class="panel" style="padding:9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Lider: <b>'+esc(leadTxt)+'</b></p>'
+ +(names.length?'<p class="sub" style="margin:4px 0 0;color:#ffd76a">'+esc(names.join(' · '))+'</p>':'<p class="sub" style="margin:4px 0 0">Toca 5 politicos de abajo para armar tu gabinete.</p>')
  +'</div>'
- +'<div class="bar" style="margin-bottom:8px"><button class="btn" data-act="start">Empezar</button>'
- +'<button class="btn ghost" data-act="auto">Auto</button>'
- +'<button class="btn ghost" data-act="clear">Vaciar</button></div>'
- +'<p class="sub">5 cromos distintos, ni uno repetido: entran los 5 al debate. Toca para alinearlos y usa la estrella para el Lider.'
+ +'<div class="bar" style="margin-bottom:8px">'
+ +'<button class="btn" data-act="start"'+(ready?'':' disabled')+'>Empezar</button>'
+ +'<button class="btn ghost" data-act="auto">Auto (5 al azar)</button>'
+ +'<button class="btn ghost" data-act="clear"'+(BUILD.ids.length?'':' disabled')+'>Vaciar</button></div>'
+ +'<p class="sub">Debes seleccionar <b>5 cromos distintos</b>. Usa el boton &#9733; de cada carta para elegir quien sera tu Lider.'
  +(mode!=='normal'?' <b>En juego: el ganador se lleva un cromo del rival.</b>':'')+'</p>'
- +'<div class="grid">'+uniq.map(function(x){return cromoHTML(x.c,{sel:BUILD.ids.indexOf(x.id)>=0,lead:BUILD.leader===x.id,star:true,count:x.n,pick:true});}).join('')+'</div>'
- +'<div style="height:8px"></div><button class="btn wide" data-act="start">Empezar debate ('+(5-BUILD.ids.length)+' por elegir)</button>';
+ +'<div class="grid">'+uniq.map(function(x){return cromoHTML(x.c,{sel:BUILD.ids.indexOf(x.id)>=0,lead:BUILD.leader===x.id,star:true,count:x.n,pick:true,noCardAttr:true});}).join('')+'</div>'
+ +'<div style="height:10px"></div><button class="btn wide" data-act="start"'+(ready?'':' disabled')+'>'+btnLabel+'</button>';
 }
 SCREENS.builder=function(){return builderScreen(SO.mode||'normal',SO.rival,SO.jor);};
-function autoBuild(){var s=shuffle(uniqueAlbum(D())).slice(0,5);BUILD.ids=s.map(function(x){return x.id;});if(BUILD.ids.length)BUILD.leader=BUILD.ids[0];}
+
+function autoBuild(){
+ var s=shuffle(uniqueAlbum(D())).slice(0,5);
+ BUILD.ids=s.map(function(x){return x.id;});
+ BUILD.leader=BUILD.ids[0]||null;
+}
+
 function startBattle(){
- if(BUILD.ids.length<5)autoBuild();
- if(!BUILD.leader)BUILD.leader=BUILD.ids[0];
- if(BUILD.ids.length<5){go('result',{who:'info',msg:'Necesitas al menos 5 cromos distintos en la coleccion. Abre algun sobre.',fs:0});return;}
+ sanitizeBuild();
+ if(uniqueAlbum(D()).length<5){
+  go('result',{who:'info',msg:'Necesitas al menos 5 politicos distintos en tu coleccion. Abre algun sobre en la tienda.',fs:0});
+  return;
+ }
+ if(BUILD.ids.length<5||!BUILD.leader){
+  showModal('Gabinete incompleto','Debes seleccionar exactamente 5 politicos y un Lider antes de iniciar el debate, o pulsar el boton "Auto" si quieres rellenarlo al azar.','Entendido',false,null);
+  return;
+ }
+ LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader};
  newBattle(SO.mode||'normal',SO.rival);
 }
 
-function mk(c){UID++;return {uid:'u'+UID,k:c.id,n:c.n,a:c.a,h:c.h,hm:c.h,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,ready:true};}
+function mk(c, isLeader){
+ UID++;
+ var a = c.a + (isLeader ? 1 : 0);
+ var hm = c.h + (isLeader ? 3 : 0);
+ return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,ready:true,buff:0};
+}
+
 function newBattle(mode,rival){
+ clearAI();
  var d=D(),team=BUILD.ids.slice(0,5),ldrId=BUILD.leader||team[0];
  var eTeam=shuffle(CARDS.map(function(c){return c.id;})).slice(0,5);
  var diff=1;
@@ -532,9 +637,9 @@ function newBattle(mode,rival){
   n:0,over:false,done:false,side:'p',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},leader:{}};
  var build=function(s,ids,lead){
-  var dk=shuffle(ids).map(function(id){return mk(BYID[id]);}),lc=null,i;
+  var dk=shuffle(ids).map(function(id){return mk(BYID[id], id===lead);}),lc=null,i;
   for(i=0;i<dk.length;i++)if(dk[i].k===lead)lc=dk[i];
-  if(!lc){lc=mk(BYID[lead]);dk.unshift(lc);}
+  if(!lc){lc=mk(BYID[lead], true);dk.unshift(lc);}
   var hi=dk.indexOf(lc);
   if(hi>=0)dk.splice(hi,1);
   var hand=dk.splice(0,2);
@@ -542,58 +647,105 @@ function newBattle(mode,rival){
   G.leader[s]=lc;G.deck[s]=dk;G.hand[s]=hand;
  };
  build('p',team,ldrId);
- build('e',eTeam,eTeam[Math.floor(Math.random()*5)]);
- if(diff!==1)G.deck.e.concat(G.hand.e).forEach(function(c){c.a=Math.max(1,Math.round(c.a*diff));c.h=Math.max(1,Math.round(c.h*diff));c.hm=c.h;});
+ build('e',eTeam,eTeam[Math.floor(Math.random()*eTeam.length)]);
+ if(diff!==1){
+  G.deck.e.concat(G.hand.e).forEach(function(c){
+   c.a=Math.max(1,Math.round(c.a*diff));
+   c.h=Math.max(1,Math.round(c.h*diff));
+   c.hm=c.h;
+  });
+ }
  log('Comienza el debate contra '+G.rival+'.','hi');
  log('Tu gabinete: '+team.map(function(id){return BYID[id].n;}).join(', ')+'.');
  go('battle');
  startTurn('p');
 }
+
 function log(t,cls){if(!G)return;G.log.unshift('<div'+(cls?' class="'+cls+'"':'')+'>'+esc(t)+'</div>');if(G.log.length>40)G.log.pop();}
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function leaderOn(s){var l=G.leader[s];if(!l)return false;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return true;return false;}
 function enMano(s,uid){for(var i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)return true;return false;}
 function enMesa(s,uid){for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===uid)return true;return false;}
+
 function draw(s){
- if(!G.deck[s].length){G.deck[s]=shuffle(G.pas[s]);G.pas[s]=[];}
- if(!G.deck[s].length)return;
- if(G.hand[s].length>=7)return;
- var c=G.deck[s][0];
- if(enMano(s,c.uid)||enMesa(s,c.uid)){G.deck[s].shift();return;}
- G.hand[s].push(G.deck[s].shift());
+ if(!G.deck[s].length && G.pas[s].length){
+  G.pas[s].forEach(function(c){c.h=c.hm;c.ready=true;});
+  G.deck[s]=shuffle(G.pas[s]);
+  G.pas[s]=[];
+  log((s==='p'?'Tus oradores en descanso':'Los oradores rivales en descanso')+' vuelven al mazo.');
+ }
+ while(G.deck[s].length && G.hand[s].length<7){
+  var c=G.deck[s].shift();
+  if(!enMano(s,c.uid) && !enMesa(s,c.uid)){
+   c.h=c.hm;
+   c.ready=true;
+   G.hand[s].push(c);
+   break;
+  }
+ }
 }
+
 function startTurn(s){
  if(!G||G.over)return;
  if(G.n>=14){endByVotes();return;}
  G.n++;G.side=s;G.sel=null;
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
  G.tdp[s]=G.tdpMax[s]+((doc(s)==='verborrea')?1:0);
- if(G.pas[s].length){G.hand[s]=G.hand[s].concat(G.pas[s]);G.pas[s]=[];}
  draw(s);
- if(doc(s)==='foco'&&leaderOn(s))G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+1);
+ if(doc(s)==='foco'&&leaderOn(s)){
+  G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+1);
+ }
  G.field[s].forEach(function(c){c.ready=true;});
  var gain=3;G.field[s].forEach(function(c){gain+=c.v;});
  G.votes[s]+=gain;
- log('Turno '+Math.ceil(G.n/2)+': +'+gain+' votos.');
+ var roundNum=Math.ceil(G.n/2);
+ log('Ronda '+roundNum+'/7 ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
  paint();
  if(G.votes[s]>=100){finish(s);return;}
- if(s==='e')setTimeout(aiTurn,520);
+ if(s==='e'){clearAI();AITIMER=setTimeout(aiStep,520);}
 }
+
+function applyGuardia(s){
+ if(doc(s)==='guardia' && G.field[s].length){
+  var grew=false;
+  G.field[s].forEach(function(c){
+   if((c.buff||0)<3){c.buff=(c.buff||0)+1;c.a++;grew=true;}
+  });
+  if(grew)log('Vieja Guardia: los oradores '+(s==='p'?'tuyos':'rivales')+' ganan +1 Zasca.');
+ }
+}
+
 function endTurn(){
  if(!G||G.over||G.side!=='p')return;
- if(doc('p')==='guardia'){G.field.p.forEach(function(c){if((c.buff||0)<3){c.buff=(c.buff||0)+1;c.a++;}});log('Vieja Guardia: tus oradores se crecen.');}
- G.sel=null;startTurn('e');
+ applyGuardia('p');
+ G.sel=null;
+ startTurn('e');
 }
+
 function expel(owner,card,attacker){
  var victim=owner==='p'?'e':'p';
  if(!enMesa(victim,card.uid))return;
- if(doc(victim)==='aforado'&&!G.saved[card.uid]){G.saved[card.uid]=true;card.h=1;log(card.n+' invoca el Aforado y sobrevive con 1.','hi');return;}
+ if(doc(victim)==='aforado'&&!G.saved[card.uid]){
+  G.saved[card.uid]=true;card.h=1;
+  log(card.n+' invoca el Aforado y se aferra al escano con 1 de Aguante.','hi');
+  return;
+ }
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
+ card.h=card.hm;
+ card.ready=true;
  G.pas[victim].push(card);
- if(attacker){G.votes[owner]+=card.v;log(card.n+' expulsado: +'+card.v+' escanos para ti.','hi');}
- else log(card.n+' abandona la Tribuna.');
- if(doc(victim)==='verborrea'){G.tdp[victim]+=2;log('Verborrea: +2 TdP.');}
+ if(attacker){
+  G.votes[owner]+=card.v;
+  log(card.n+' es expulsado: +'+card.v+' votos '+(owner==='p'?'para ti.':'para '+G.rival+'.'),'hi');
+ } else {
+  log(card.n+' abandona la Tribuna.');
+ }
+ if(doc(victim)==='verborrea'){
+  G.tdp[victim]+=2;
+  log('Verborrea: +2 TdP para '+(victim==='p'?'ti.':'el rival.'));
+ }
 }
+
 function playCard(s,uid){
  var idx=-1,i;
  for(i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)idx=i;
@@ -601,16 +753,13 @@ function playCard(s,uid){
  var c=G.hand[s][idx];
  if(c.c>G.tdp[s]||G.field[s].length>=3)return false;
  G.hand[s].splice(idx,1);
- if(c.uid===G.leader[s].uid){
-  if(!c.leadBuffed){c.a+=1;c.hm+=3;c.leadBuffed=true;}
-  c.h=c.hm;
- }else{
-  c.h=c.hm;
- }
+ c.h=c.hm;
+ c.ready=true;
  G.field[s].push(c);G.tdp[s]-=c.c;
  log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Lider en Tribuna: doctrina '+DOCM[c.pa].n+' activa).':'.'));
  return true;
 }
+
 function attack(atk,tgt,owner){
  var foe=owner==='p'?'e':'p';
  var ownerDoc=doc(owner),foeDoc=doc(foe);
@@ -618,10 +767,10 @@ function attack(atk,tgt,owner){
  if(tgt==='__EMPTY'){
   var stolen=Math.min(G.votes[foe],atk.a);
   G.votes[foe]=Math.max(0,G.votes[foe]-atk.a);
-  log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacia (-'+stolen+' votos al rival).','hi');
+  log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacia (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
   if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
    G.votes[owner]+=1;
-   log('Foco Mediatico: +1 voto para ti.');
+   log('Foco Mediatico: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
   }
   if(G.votes[owner]>=100){finish(owner);return;}
   return;
@@ -630,96 +779,132 @@ function attack(atk,tgt,owner){
  var bonus=(ownerDoc==='viperina'&&isFoeLead)?2:0;
  log(atk.n+' lanza '+pick(atk.q)+' ('+(atk.a+bonus)+' de dano a '+tgt.n+').','hi');
  tgt.h-=atk.a+bonus;
- if(foeDoc==='giro'&&tgt!==atk){atk.h-=2;log('Giro de Guion: '+atk.n+' recibe 2.');}
+ if(foeDoc==='giro'&&tgt!==atk){
+  atk.h-=2;
+  log('Giro de Guion: '+atk.n+' recibe 2 de dano.');
+ }
  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
   G.votes[owner]+=1;
-  log('Foco Mediatico: +1 voto para ti.');
+  log('Foco Mediatico: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
  }
  if(atk.h<=0)expel(foe,atk,null);
  if(tgt.h<=0)expel(owner,tgt,atk);
  if(G.votes[owner]>=100){finish(owner);return;}
 }
-function endByVotes(){G.over=true;if(G.votes.p>G.votes.e)finish('p');else if(G.votes.e>G.votes.p)finish('e');else finish('d');}
+
+function endByVotes(){
+ if(!G)return;
+ G.over=true;
+ log('Fin de las 7 rondas reglamentarias. Recuento de votos...','hi');
+ if(G.votes.p>G.votes.e)finish('p');
+ else if(G.votes.e>G.votes.p)finish('e');
+ else finish('d');
+}
+
 function finish(who){
- if(!G||G.done)return;G.over=true;G.done=true;
+ if(!G||G.done)return;
+ clearAI();
+ G.over=true;G.done=true;
  var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal');
  if(who==='p'){
   fs=mode==='normal'?rnd(20,50):rnd(50,100);
   d.w++;if(mode==='ranked')d.elo+=25;
-  msg='Victoria. Consigues '+fs+' FS.';
+  msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS.';
   if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escano de '+BYID[won].n+'.';}
  } else if(who==='e'){
   fs=mode==='normal'?0:rnd(20,30);
   d.l++;if(mode==='ranked')d.elo=Math.max(0,d.elo-20);
-  msg='Derrota.'+(fs?' Recuperas '+fs+' FS.':'');
+  msg='Derrota ('+G.votes.p+' a '+G.votes.e+').'+(fs?' Recuperas '+fs+' FS.':'');
   if(comp&&G.pTeam.length&&d.album.length){
-   lost=pick(G.pTeam);
-   var i=d.album.indexOf(lost);if(i<0){lost=d.album[0];i=0;}
-   if(i>=0)d.album.splice(i,1);
-   msg+=' Pierdes una copia de '+BYID[lost].n+'.';
+   var uniqCount=uniqueAlbum(d).length;
+   var candidates=G.pTeam.filter(function(id){return uniqCount>5 || copies(d,id)>1;});
+   if(candidates.length){
+    lost=pick(candidates);
+    var idx=d.album.indexOf(lost);
+    if(idx>=0)d.album.splice(idx,1);
+    msg+=' Pierdes una copia de '+BYID[lost].n+'.';
+   } else {
+    msg+=' El Seguro Parlamentario protege tus 5 ultimos politicos unicos.';
+   }
   }
- } else {fs=25;d.w++;d.l++;msg='Empate tecnico.';}
+ } else {
+  fs=25;
+  msg='Empate tecnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
+ }
  d.fs+=fs;saveD(d);
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
  go('result',{who:who,msg:msg,fs:fs,won:won,lost:lost,mode:mode});
 }
+
 function ligaPanel(){
  var lg=ligaLoad();if(!lg)return '';
  var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
  var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
  var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
  return '<h3>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+' &middot; Jornada '+lg.jor+'/12</h3>'
- +'<p class="sub">Vas '+pos+' de 30 con '+me.pts+' puntos.</p>'
+ +'<p class="sub">Vas '+pos+'&ordm; de 30 con '+me.pts+' puntos.</p>'
  +'<div class="panel" style="max-height:250px;overflow:auto"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
  +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(t.n)+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
  +'</tbody></table></div><button class="btn wide" data-act="ligajugar">Siguiente: jornada '+lg.jor+' vs '+esc(rival.n)+'</button>';
 }
+
 SCREENS.result=function(){
- if(SO.who==='info')return '<h2>Aviso</h2><p>'+esc(SO.msg)+'</p>'
+ if(SO.who==='info')return '<h2>Aviso</h2><div class="panel"><p>'+esc(SO.msg)+'</p></div>'
   +'<div class="bar"><button class="btn" data-go="tienda">Ir a la tienda</button><button class="btn ghost" data-go="menu">Menu</button></div>';
  var who=SO.who;
- var title=who==='p'?'Victoria':(who==='e'?'Derrota':(who==='season'?'Temporada cerrada':'Empate'));
- var html='<h2>'+title+'</h2><p>'+esc(SO.msg)+'</p>';
- if(SO.fs)html+='<p><span class="pill gold">+'+SO.fs+' FS</span></p>';
+ var title=who==='p'?'¡Victoria!':(who==='e'?'Derrota':(who==='season'?'Temporada cerrada':'Empate'));
+ var pCls=who==='p'?'panel win':(who==='e'?'panel lose':'panel');
+ var html='<div class="'+pCls+'"><h2>'+title+'</h2><p>'+esc(SO.msg)+'</p>';
+ if(SO.fs)html+='<p style="margin:0"><span class="pill gold">+'+SO.fs+' FS</span></p>';
+ html+='</div>';
  if(SO.won)html+='<h3>Cromo arrebatado al rival</h3>'+fichaHTML(BYID[SO.won])
   +'<p class="sub">Ya esta en tu coleccion. Ahora tienes '+copies(D(),SO.won)+' copia(s).</p>';
  if(SO.lost)html+='<h3>Cromo perdido</h3>'+fichaHTML(BYID[SO.lost])
   +'<p class="sub">Te quedan '+copies(D(),SO.lost)+' copia(s) de este cromo.</p>';
  if(SO.liga&&!SO.season)html+=ligaPanel();
  html+='<div class="bar" style="margin-top:9px">';
- if(SO.liga&&!SO.season)html+='<button class="btn" data-go="liga">Ver clasificacion</button>';
- html+='<button class="btn ghost" data-act="rev" data-mode="'+(SO.mode||'normal')+'">Revancha</button>'
- +'<button class="btn ghost" data-go="coleccion">Coleccion</button>'
+ if(SO.liga&&!SO.season){
+  html+='<button class="btn ghost" data-go="liga">Tabla de Liga</button>';
+ } else if(SO.mode!=='liga'){
+  html+='<button class="btn" data-act="rev" data-mode="'+(SO.mode||'normal')+'">Volver a jugar</button>';
+ }
+ html+='<button class="btn ghost" data-go="coleccion">Coleccion</button>'
  +'<button class="btn ghost" data-go="menu">Menu</button></div>';
  return html;
 };
-var AIQ=[];
-function aiTurn(){
- if(!G||G.over)return;AIQ=[];
- G.hand.e.slice().sort(function(a,b){return b.c-a.c;}).forEach(function(c){if(c.c<=G.tdp.e&&G.field.e.length<3)AIQ.push(['play',c.uid]);});
- G.field.e.filter(function(c){return c.ready;}).forEach(function(a){
-  var tars=G.field.p.slice().sort(function(x,y){return x.h-y.h;});
-  AIQ.push(['atk',a.uid,tars[0]?tars[0].uid:'__EMPTY']);
- });
- aiStep();
-}
+
+/* === MOTOR DINÁMICO DE IA PASO A PASO === */
 function aiStep(){
- if(!G||G.over)return;
- if(!AIQ.length){paint();setTimeout(function(){if(G&&!G.over)startTurn('p');},360);return;}
- var a=AIQ.shift(),ok=false,i;
- if(a[0]==='play')ok=playCard('e',a[1]);
- else{
-  var atk=null,tgt=null;
-  for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===a[1])atk=G.field.e[i];
-  if(a[2]==='__EMPTY'){tgt='__EMPTY';}
-  else{for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===a[2])tgt=G.field.p[i];}
-  if(!tgt)tgt='__EMPTY';
-  if(atk&&atk.ready){attack(atk,tgt,'e');ok=true;}
+ if(!G||G.over||G.side!=='e')return;
+ /* 1. Intentar bajar el orador más caro posible si hay hueco y TdP */
+ if(G.field.e.length<3){
+  var playable=G.hand.e.filter(function(c){return c.c<=G.tdp.e;}).sort(function(a,b){return b.c-a.c;});
+  if(playable.length){
+   playCard('e',playable[0].uid);
+   paint();
+   if(!G.over)AITIMER=setTimeout(aiStep,450);
+   return;
+  }
  }
+ /* 2. Buscar el siguiente orador listo para intervenir en la Tribuna */
+ var readyAtk=G.field.e.filter(function(c){return c.ready;});
+ if(readyAtk.length){
+  var atk=readyAtk[0];
+  var targets=G.field.p.slice().sort(function(a,b){return a.h-b.h;});
+  var tgt=targets.length ? targets[0] : '__EMPTY';
+  attack(atk,tgt,'e');
+  paint();
+  if(!G.over)AITIMER=setTimeout(aiStep,480);
+  return;
+ }
+ /* 3. Fin del turno de la IA: aplicar Vieja Guardia si corresponde y pasar turno al jugador */
+ applyGuardia('e');
  paint();
- if(G.over)return;
- setTimeout(aiStep,ok?420:60);
+ AITIMER=setTimeout(function(){
+  if(G&&!G.over)startTurn('p');
+ },380);
 }
+
 function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var isTarget=(side==='e'&&G.sel);
@@ -747,6 +932,7 @@ function gabLine(){
   return '<span class="'+cls+'">'+esc(e.n.split(' ')[0])+'</span>';
  }).join('')+'</div>';
 }
+
 SCREENS.battle=function(){
  if(!G)return '<p>Cargando...</p>';
  if(G.sel){var found=false,i2;for(i2=0;i2<G.field.p.length;i2++)if(G.field.p[i2].uid===G.sel)found=true;if(!found)G.sel=null;}
@@ -756,26 +942,27 @@ SCREENS.battle=function(){
  for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
  for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__EMPTY" data-side="e">'+(G.sel?'Restar votos':'+')+'</div>';
- var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3;return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
- var eLeadOn=leaderOn('e');
+ var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
+ var eLeadOn=leaderOn('e'),pLeadOn=leaderOn('p');
  var modo=G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
- return '<p class="sub" style="margin:0 0 5px"><span class="pill">'+modo+'</span>'+(G.mode!=='normal'?' <span class="pill red">se juega una copia</span>':'')+' <span class="pill green">mazo '+G.deck.p.length+'</span></p>'
+ var roundNum=Math.min(7,Math.max(1,Math.ceil(G.n/2)));
+ return '<p class="sub" style="margin:0 0 5px"><span class="pill">'+modo+'</span> <span class="pill gold">Ronda '+roundNum+'/7</span>'+(G.mode!=='normal'?' <span class="pill red">botin en juego</span>':'')+' <span class="pill green">mazo '+G.deck.p.length+'</span></p>'
  +gabLine()
  +'<div class="vbars">'
- +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'</b></div>'
- +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'</b></div></div>'
- +'<p class="sub">Rival &middot; TdP '+G.tdp.e+'/6 '+etdp+'</p>'
- +'<p class="sub" style="margin:3px 0 5px">Lider rival: <b>'+esc(G.leader.e.n)+'</b> &middot; Doctrina: '+(eLeadOn?'<b style="color:#7fe0b0">'+esc(DOCM[G.leader.e.pa].n)+' (en Tribuna)</b>':'inactiva (fuera)')+'</p>'
+ +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'/100</b></div>'
+ +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'/100</b></div></div>'
+ +'<p class="sub">Rival &middot; TdP '+G.tdp.e+'/6 '+etdp+' &middot; Doctrina: '+(eLeadOn?'<b style="color:#ff9b8a">'+esc(DOCM[G.leader.e.pa].n)+'</b>':'inactiva')+'</p>'
  +'<div class="tribuna">'+ef+'</div>'
- +'<div class="log" style="margin:7px 0">'+G.log.slice(0,4).join('')+'</div>'
+ +'<div class="log" style="margin:7px 0">'+G.log.slice(0,5).join('')+'</div>'
  +'<div class="tribuna">'+pf+'</div>'
- +'<p class="sub" style="margin-top:7px">Tu Tribuna &middot; TdP '+G.tdp.p+'/6 '+tdp+'</p>'
+ +'<p class="sub" style="margin-top:7px">Tu Tribuna &middot; TdP '+G.tdp.p+'/6 '+tdp+' &middot; Doctrina: '+(pLeadOn?'<b style="color:#7fe0b0">'+esc(DOCM[G.leader.p.pa].n)+'</b>':'inactiva')+'</p>'
  +'<div class="row">'+hand+'</div>'
- +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca una carta rival o un hueco "Lider rival".</div>'
-        :'<div class="hint">Toca un orador tuyo de la Tribuna para elegir atacante.</div>')
- +'<div class="bar" style="margin-top:7px"><button class="btn" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.side==='p'?'Pasar turno':'Rival...')+'</button>'
+ +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca un orador rival o un hueco "Restar votos".</div>'
+        :'<div class="hint">Toca una carta de tu mano para bajarla o un orador tuyo en Tribuna para atacar.</div>')
+ +'<div class="bar" style="margin-top:7px"><button class="btn" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.side==='p'?'Pasar turno':'Turno rival...')+'</button>'
  +'<button class="btn ghost" data-act="abandon">Abandonar</button></div>';
 };
+
 var LNAMES=['Grupo Nacional','Bancada Popular','Union Civica','Frente Comun','Alianza Soberana','Grupo Liberal','Coalicion Verde','Bloque Regional','Partido del Centro','Grupo Independiente','Union Patriotica','Frente Amplio','Grupo Federal','Nueva Bancada','Coalicion Civica','Bloque Obrero','Grupo Democratico','Union Progresista','Frente Nacional','Grupo Social','Alianza Popular','Bloque Ciudadano','Grupo Reformista','Union Democratica','Frente Civico','Grupo del Norte','Bancada del Sur','Alianza Federal','Grupo Radical','Frente del Centro'];
 function ligaNew(div){
  var teams=LNAMES.slice(0,30).map(function(n){return {n:n,pts:0,w:0,d:0,l:0,you:false,str:rnd(30,80)};});
@@ -809,34 +996,35 @@ function seasonEnd(lg,info){
  d.fs+=reward;saveD(d);
  var nd=lg.div;if(pos<=5&&lg.div>1)nd=lg.div-1;else if(pos>25&&lg.div<3)nd=lg.div+1;
  var nm=function(x){return x===1?'Primera':(x===2?'Segunda':'Tercera');};
- var msg='Terminas '+pos+' de 30 en '+nm(lg.div)+' con '+me.pts+' puntos. Recompensa de liga: '+reward+' FS. ';
- msg+=nd<lg.div?('ASCENSO a '+nm(nd)+'.'):(nd>lg.div?('DESCENSO a '+nm(nd)+'.'):'Te mantienes en la division.');
+ var msg=info.msg+' Terminas '+pos+'º de 30 en '+nm(lg.div)+' con '+me.pts+' puntos. Recompensa de fin de temporada: +'+reward+' FS. ';
+ msg+=nd<lg.div?('¡ASCENSO a '+nm(nd)+'!'):(nd>lg.div?('DESCENSO a '+nm(nd)+'.'):'Mantienes la categoria.');
  var fresh=ligaNew(nd);fresh.temp=lg.temp+1;lsSet(LS2,fresh);
- go('result',{who:'season',msg:msg,fs:reward,mode:'liga',season:true});
+ go('result',{who:'season',msg:msg,fs:info.fs+reward,won:info.won,lost:info.lost,mode:'liga',season:true});
 }
+
 SCREENS.liga=function(){
  var lg=ligaLoad();
- if(!lg)return '<h2>Liga de los 30</h2><p class="sub">30 grupos, 12 jornadas, tres divisiones con ascensos y descensos. Empiezas en Tercera.</p>'
-  +'<p class="sub">En liga el ganador se lleva un cromo del rival y el perdedor suelta una copia.</p>'
-  +'<div class="bar"><button class="btn" data-act="liganew">Crear liga</button><button class="btn ghost" data-go="menu">Menu</button></div>';
+ if(!lg)return '<h2>Liga de los 30</h2><p class="sub">30 grupos parlamentarios, 12 jornadas, tres divisiones con ascensos y descensos. Empiezas en Tercera.</p>'
+  +'<p class="sub">En liga el ganador se lleva un cromo del rival y el perdedor cede una copia.</p>'
+  +'<div class="bar"><button class="btn" data-act="liganew">Crear nueva liga</button><button class="btn ghost" data-go="menu">Menu</button></div>';
  var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
  var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
  var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
  return '<h2>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+'</h2>'
- +'<p class="sub">Temporada '+lg.temp+' &middot; Jornada '+lg.jor+' de 12 &middot; vas '+pos+' de 30 con '+me.pts+' pts</p>'
+ +'<p class="sub">Temporada '+lg.temp+' &middot; Jornada '+lg.jor+' de 12 &middot; Vas '+pos+'&ordm; de 30 con '+me.pts+' pts</p>'
  +'<button class="btn wide" data-act="ligajugar" style="margin-bottom:8px">Jugar jornada '+lg.jor+' vs '+esc(rival.n)+'</button>'
  +'<div class="panel" style="max-height:330px;overflow:auto"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
  +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(t.n)+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
  +'</tbody></table></div><p class="sub">Los 5 primeros ascienden, los 5 ultimos descienden.</p>'
- +'<button class="btn ghost wide" data-act="ligabandon">Abandonar liga</button>';
+ +'<button class="btn ghost wide" data-act="ligabandon">Reiniciar o abandonar liga</button>';
 };
+
 SCREENS.ayuda=function(){
  return '<h2>Como se juega</h2>'
- +'<div class="panel"><h3>Objetivo</h3><p>Cada turno ganas 3 votos mas los escanos de tus oradores en la Tribuna. Gana quien llegue a <b>100 votos</b>. Expulsar a un orador rival te da sus escanos.</p></div>'
- +'<div class="panel"><h3>Tu gabinete</h3><p>Eliges 5 cromos <b>distintos</b> y son exactamente los 5 que entran en el debate. Cada uno es una instancia propia: puede estar en la mano o en la mesa, nunca en los dos sitios.</p></div>'
- +'<div class="panel"><h3>Atacar</h3><p>Toca un orador tuyo (se marca en dorado) y luego una carta rival o un hueco "Lider rival". Un orador solo ataca una vez por turno.</p></div>'
- +'<div class="panel"><h3>Botin</h3><p>En clasificatoria y en liga, el que gana se lleva un cromo del gabinete rival y el que pierde suelta una copia del suyo.</p></div>'
- +'<div class="panel"><h3>Economia</h3><p>Normal 20-50 FS al ganar. Clasificatoria 50-100 al ganar y 20-30 al perder. Liga 700-1100 FS al cerrar temporada.</p></div>'
+ +'<div class="panel"><h3>Objetivo</h3><p>Cada turno ganas 3 votos base mas los escanos de tus oradores en la Tribuna. Gana quien llegue a <b>100 votos</b> o quien tenga mas votos al finalizar las <b>7 rondas</b>. Expulsar a un orador rival suma sus escanos a tu marcador.</p></div>'
+ +'<div class="panel"><h3>Tu gabinete</h3><p>Eliges <b>5 cromos distintos</b> y un <b>Lider (&#9733;)</b>. Tu Lider comienza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras este en la Tribuna activa su Doctrina para todo tu grupo.</p></div>'
+ +'<div class="panel"><h3>Intervenir y atacar</h3><p>Toca un orador tuyo en la Tribuna (se marca en dorado) y luego toca un orador rival para lanzarle un zasca, o un hueco vacio ("Restar votos") para restarle votos directamente al rival.</p></div>'
+ +'<div class="panel"><h3>Botin y Seguro</h3><p>En Clasificatoria y Liga, el ganador arrebata un cromo del gabinete rival y el perdedor pierde una copia (protegiendose siempre tus 5 ultimos politicos unicos).</p></div>'
  +'<button class="btn wide" data-go="menu">Volver</button>';
 };
 
@@ -844,34 +1032,67 @@ document.addEventListener('click',function(ev){
  var t=ev.target;
  var root=document.getElementById('app')||document.body;
  if(!root.contains(t)||!t.closest)return;
- var n=t.closest('[data-go],[data-act],[data-lead],[data-card],[data-buid],[data-fr],[data-fd]');
- if(!n)return;
- if(n.disabled)return;
+
+ /* Manejo de botones del Modal de confirmación */
+ var mBtn=t.closest('[data-modal]');
+ if(mBtn){
+  var mAct=mBtn.getAttribute('data-modal');
+  var cb=MODAL_CB;
+  closeModal();
+  if(mAct==='confirm' && typeof cb==='function')cb();
+  return;
+ }
+
+ var n=t.closest('[data-go],[data-act],[data-lead],[data-pick],[data-card],[data-buid],[data-fr],[data-fd]');
+ if(!n||n.disabled)return;
+
  if(n.hasAttribute('data-fr')){FIL.r=n.getAttribute('data-fr');paint();return;}
  if(n.hasAttribute('data-fd')){FIL.d=n.getAttribute('data-fd');paint();return;}
+
+ /* Selección de Líder en el Builder */
  if(n.hasAttribute('data-lead')){
   var lid=n.getAttribute('data-lead');
-  if(BUILD.ids.indexOf(lid)<0){if(BUILD.ids.length>=5)BUILD.ids.pop();BUILD.ids.unshift(lid);}
-  BUILD.leader=lid;paint();return;
+  if(BUILD.ids.indexOf(lid)<0){
+   if(BUILD.ids.length>=5)BUILD.ids.pop();
+   BUILD.ids.unshift(lid);
+  }
+  BUILD.leader=lid;
+  paint();return;
  }
+
+ /* Selección / deselección de los 5 cromos en el Builder */
  if(n.hasAttribute('data-pick')){
   var pid=n.getAttribute('data-pick'),ix=BUILD.ids.indexOf(pid);
-  if(ix>=0){BUILD.ids.splice(ix,1);if(BUILD.leader===pid)BUILD.leader=BUILD.ids[0]||null;}
-  else if(BUILD.ids.length<5)BUILD.ids.push(pid);
-  else BUILD.ids[4]=pid;
+  if(ix>=0){
+   BUILD.ids.splice(ix,1);
+   if(BUILD.leader===pid)BUILD.leader=BUILD.ids[0]||null;
+  } else if(BUILD.ids.length<5){
+   BUILD.ids.push(pid);
+  } else {
+   var oldId=BUILD.ids[4];
+   BUILD.ids[4]=pid;
+   if(BUILD.leader===oldId)BUILD.leader=pid;
+  }
   if(!BUILD.leader&&BUILD.ids.length)BUILD.leader=BUILD.ids[0];
   paint();return;
  }
+
+ /* Interacciones en la pantalla de Debate */
  if(n.hasAttribute('data-buid')){
   var uid=n.getAttribute('data-buid'),side=n.getAttribute('data-side');
   if(!G||G.over||G.side!=='p')return;
   var i;
   if(enMano('p',uid)){
-   if(!playCard('p',uid))log('No te llega el Tiempo de Palabra para '+BYID[uidOf(uid)].n+'.');
+   var cardKey=uidOf(uid);
+   if(G.field.p.length>=3){
+    log('Tu Tribuna ya tiene el maximo de 3 oradores.');
+   } else if(!playCard('p',uid)){
+    log('No te llega el Tiempo de Palabra para presentar a '+(BYID[cardKey]?BYID[cardKey].n:'este orador')+'.');
+   }
    paint();return;
   }
   if(side==='e'){
-   if(!G.sel){log('Elige primero un orador tuyo de la Tribuna.');paint();return;}
+   if(!G.sel){log('Elige primero un orador tuyo de la Tribuna para atacar.');paint();return;}
    var atk=null,tgt=null;
    for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===G.sel)atk=G.field.p[i];
    for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===uid)tgt=G.field.e[i];
@@ -882,52 +1103,118 @@ document.addEventListener('click',function(ev){
   var own=null;
   for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)own=G.field.p[i];
   if(own){
-   if(!own.ready){log(own.n+' ya ha intervenido este turno.');paint();return;}
+   if(!own.ready){log(own.n+' ya ha intervenido en este turno.');paint();return;}
    G.sel=(G.sel===uid)?null:uid;paint();
   }
   return;
  }
- if(n.hasAttribute('data-card')&&SCREEN==='coleccion'){go('detalle',{id:n.getAttribute('data-card')});return;}
+
+ if(n.hasAttribute('data-card')&&SCREEN==='coleccion'){
+  go('detalle',{id:n.getAttribute('data-card')});return;
+ }
+
  var act=n.getAttribute('data-act'),dest=n.getAttribute('data-go');
  if(dest){
-  if(dest==='builder'){SO={mode:n.getAttribute('data-mode')||'normal'};BUILD={ids:[],leader:null};}
+  if(dest==='builder'){
+   SO={mode:n.getAttribute('data-mode')||'normal'};
+   BUILD={ids:LAST_BUILD.ids.slice(),leader:LAST_BUILD.leader};
+   sanitizeBuild();
+  }
   if(dest==='tienda')FIL={q:'',r:'',d:''};
   if(dest==='battle'&&!G)return;
   go(dest);return;
  }
  if(!act)return;
+
  switch(act){
-  case 'reset':try{localStorage.removeItem(LS);localStorage.removeItem(LS2);}catch(e){}MEM={};G=null;go('menu');break;
-  case 'rapida':autoBuild();SO={mode:'normal'};newBattle('normal');break;
-  case 'auto':autoBuild();paint();break;
-  case 'clear':BUILD={ids:[],leader:null};paint();break;
-  case 'start':startBattle();break;
-  case 'buy':openPack(n.getAttribute('data-k'),false);break;
-  case 'free':openPack(n.getAttribute('data-k'),true);break;
-  case 'again':openPack(SO.k,false);break;
-  case 'end':endTurn();break;
-  case 'abandon':if(G&&!G.over)finish('e');break;
-  case 'rev':{var m=n.getAttribute('data-mode')||'normal';BUILD={ids:[],leader:null};SO={mode:m};go('builder');break;}
-  case 'liganew':lsSet(LS2,ligaNew(3));go('liga');break;
-  case 'ligabandon':try{localStorage.removeItem(LS2);}catch(e){}go('liga');break;
+  case 'reset':
+   showModal(
+    '¿Borrar todo el progreso?',
+    'Perderas tu coleccion de cromos, tu Fuerza Soberana, tu rango Elo y el avance en la Liga. Esta accion no se puede deshacer.',
+    'Si, borrar todo',
+    true,
+    function(){
+     clearAI();
+     try{localStorage.removeItem(LS);localStorage.removeItem(LS2);}catch(e){}
+     MEM={};G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};
+     D();go('menu');
+    }
+   );
+   break;
+  case 'rapida':
+   autoBuild();
+   LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader};
+   SO={mode:'normal'};
+   newBattle('normal');
+   break;
+  case 'auto':
+   autoBuild();paint();break;
+  case 'clear':
+   BUILD={ids:[],leader:null};paint();break;
+  case 'start':
+   startBattle();break;
+  case 'buy':
+   openPack(n.getAttribute('data-k'),false);break;
+  case 'free':
+   openPack(n.getAttribute('data-k'),true);break;
+  case 'again':
+   openPack(n.getAttribute('data-k')||SO.k,false);break;
+  case 'end':
+   endTurn();break;
+  case 'abandon':
+   if(G&&!G.over){
+    showModal(
+     '¿Abandonar el debate?',
+     'Si abandonas el hemiciclo ahora, se contara como una derrota'+(G.mode!=='normal'?' y podrias perder una copia de un cromo de tu gabinete':'')+'.',
+     'Abandonar debate',
+     true,
+     function(){if(G&&!G.over)finish('e');}
+    );
+   }
+   break;
+  case 'rev':{
+   var m=n.getAttribute('data-mode')||'normal';
+   BUILD={ids:LAST_BUILD.ids.slice(),leader:LAST_BUILD.leader};
+   sanitizeBuild();
+   SO={mode:m};
+   go('builder');
+   break;
+  }
+  case 'liganew':
+   lsSet(LS2,ligaNew(3));go('liga');break;
+  case 'ligabandon':
+   showModal(
+    '¿Abandonar la Liga actual?',
+    'Se borrara tu clasificacion y progreso de jornadas de la temporada actual para que puedas empezar una nueva desde Tercera.',
+    'Si, abandonar liga',
+    true,
+    function(){
+     try{localStorage.removeItem(LS2);}catch(e){}
+     MEM[LS2]=null;
+     go('liga');
+    }
+   );
+   break;
   case 'ligajugar':{
    var lg=ligaLoad();if(!lg){go('liga');break;}
    var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
    var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
-   var pos=sorted.indexOf(me)+1,rv=sorted[(pos-1+3)%30];
-   BUILD={ids:[],leader:null};
-   go('builder',{mode:'liga',rival:rv.n,div:lg.div,jor:lg.jor});
+   var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
+   BUILD={ids:LAST_BUILD.ids.slice(),leader:LAST_BUILD.leader};
+   sanitizeBuild();
+   go('builder',{mode:'liga',rival:rival.n,div:lg.div,jor:lg.jor});
    break;
   }
  }
 },false);
+
 document.addEventListener('input',function(ev){
  if(ev.target&&ev.target.id==='fq'){
   FIL.q=ev.target.value;
   var box=document.getElementById('gridBox');
   if(box)box.innerHTML=colGrid();
   var c=document.getElementById('cntBox');
-  if(c)c.textContent=colList().length+' cromos listados. Los repetidos son copias de reserva.';
+  if(c)c.innerHTML=colCountText();
  }
 },false);
 
