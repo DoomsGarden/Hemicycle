@@ -308,14 +308,14 @@ p{margin:0 0 4px;font-size:12px}
 .ach-toast .ach-txt b{display:block;font-size:12.5px;color:#ffd76a;letter-spacing:.3px;margin-bottom:2px}
 .ach-toast .ach-txt span{display:block;font-size:11px;color:#e9ecf5;line-height:1.25}
 
-/* === MARCO WEBP CENTRADO Y REMARCACIÓN POR ENCIMA === */
+/* === CONTENEDOR DE LIENZO PERSISTENTE PARA TRUMP GOLDEN === */
 @keyframes gemShimmer {
   0% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
   50% { transform: scale(1.12); filter: drop-shadow(0 0 7px var(--tier)); }
   100% { transform: scale(1); filter: drop-shadow(0 0 2px var(--tier)); }
 }
 
-.gold-loop-wrap{
+.gold-slot{
   position:absolute;
   inset:0;
   width:100%;
@@ -323,8 +323,8 @@ p{margin:0 0 4px;font-size:12px}
   overflow:hidden;
   background:#141c34;
 }
-.gold-loop-wrap img,
-.gold-loop-wrap canvas.gold-canvas{
+.gold-slot img.gold-static-fb,
+.gold-slot canvas.gold-canvas{
   position:absolute;
   inset:0;
   width:100%;
@@ -336,15 +336,8 @@ p{margin:0 0 4px;font-size:12px}
   -webkit-backface-visibility:hidden;
   transform:translateZ(0);
 }
-.gold-loop-wrap canvas.gold-canvas{
-  opacity:0;
-  pointer-events:none;
-}
-.gold-loop-wrap.canvas-on canvas.gold-canvas{
-  opacity:1;
-}
-.gold-loop-wrap.canvas-on img{
-  opacity:0;
+.gold-slot.has-canvas img.gold-static-fb{
+  display:none !important;
 }
 
 .cromo{
@@ -518,7 +511,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v27';
+var VERSION='v28';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -531,74 +524,84 @@ function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(M
 
 var ART_BASE='cards/';
 
-/* === MOTOR DE ANIMACIÓN CONSTANTE CON CROSSFADE CIRCULAR Y CACHÉ DE NODOS (3.1s) === */
+/* === SOLUCIONES 1, 2 Y 3: PING-PONG MATEMÁTICO PURO + POOL DE CANVAS PERSISTENTES === */
 var GOLD_LOOP={
  state:'idle',
  frames:[],
  w:0,
  h:0,
  duration:3100,
- preloadImg:null,
+ pool:[], /* Pool de elementos <canvas> vivos que jamás son destruidos por innerHTML */
  rafId:null
 };
 
-/* Devuelve el fotograma principal y, si estamos en el borde final de los 3.1s, el fotograma inicial con factor alpha para fundido continuo sin parones */
-function getGoldBlendAt(now){
+/* Solución 1: Onda triangular pura por índice (0 -> N-1 -> 1) sin punto de reinicio */
+function getGoldPingPongIndex(now){
  var len=GOLD_LOOP.frames.length;
- if(len<=1)return {idxA:0,idxB:0,alpha:0};
- var dur=GOLD_LOOP.duration;
- var pos=now % dur;
- var acc=0, idxA=len-1;
- for(var i=0;i<len;i++){
-  acc+=GOLD_LOOP.frames[i].dur;
-  if(pos<=acc){idxA=i;break;}
+ if(len<=1)return 0;
+ var totalSteps=(len*2)-2;
+ var stepDur=GOLD_LOOP.duration/len;
+ var step=Math.floor(now/stepDur)%totalSteps;
+ return (step<len)?step:(totalSteps-step);
+}
+
+/* Solución 3: Rescata los <canvas> antes de que paint() o renderZoomOverlay() borren el DOM */
+function detachGoldPool(container){
+ if(!container)return;
+ var activeCvs=container.querySelectorAll('canvas.gold-canvas');
+ for(var i=0;i<activeCvs.length;i++){
+  var cv=activeCvs[i];
+  if(cv.parentNode)cv.parentNode.removeChild(cv);
+  if(GOLD_LOOP.pool.indexOf(cv)<0)GOLD_LOOP.pool.push(cv);
  }
- /* Ventana de Crossfade de los últimos 420ms hacia el fotograma 0 para que jamás haya corte ni pausa al reiniciar el ciclo */
- var fadeWindow=Math.min(420, dur*0.18);
- if(pos > dur - fadeWindow){
-  var alpha=(pos - (dur - fadeWindow)) / fadeWindow;
-  var headIdx=Math.min(len-1, Math.floor(alpha * 3));
-  return {idxA:idxA, idxB:headIdx, alpha:alpha};
+}
+
+function getPooledCanvas(){
+ var cv=GOLD_LOOP.pool.pop();
+ if(!cv){
+  cv=document.createElement('canvas');
+  cv.className='gold-canvas';
+  cv._lastIdx=-1;
  }
- return {idxA:idxA, idxB:idxA, alpha:0};
+ if(GOLD_LOOP.w>0 && (cv.width!==GOLD_LOOP.w || cv.height!==GOLD_LOOP.h)){
+  cv.width=GOLD_LOOP.w;
+  cv.height=GOLD_LOOP.h;
+  cv._lastIdx=-1;
+ }
+ return cv;
 }
 
 function drawCurrentGoldFrame(now){
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return 0;
- var wraps=document.querySelectorAll('.gold-loop-wrap');
- if(!wraps.length)return 0;
- var blend=getGoldBlendAt(now || performance.now());
- var bmpA=GOLD_LOOP.frames[blend.idxA].bmp;
- var bmpB=GOLD_LOOP.frames[blend.idxB].bmp;
- var sig=blend.idxA+':'+(blend.alpha>0?blend.alpha.toFixed(2):'0');
- for(var c=0;c<wraps.length;c++){
-  var wrap=wraps[c];
-  var cv=wrap.querySelector('canvas.gold-canvas');
-  if(!cv)continue;
-  var resized=false;
+ var slots=document.querySelectorAll('.gold-slot');
+ if(!slots.length)return 0;
+ var fIdx=getGoldPingPongIndex(now || performance.now());
+ var chosen=GOLD_LOOP.frames[fIdx].bmp;
+ for(var i=0;i<slots.length;i++){
+  var slot=slots[i];
+  var cv=slot.querySelector('canvas.gold-canvas');
+  /* Si el hueco aún no tiene su <canvas> persistente inyectado, se lo asignamos del pool al instante */
+  if(!cv){
+   cv=getPooledCanvas();
+   slot.appendChild(cv);
+  }
   if(cv.width!==GOLD_LOOP.w || cv.height!==GOLD_LOOP.h){
    cv.width=GOLD_LOOP.w;
    cv.height=GOLD_LOOP.h;
-   resized=true;
+   cv._lastIdx=-1;
   }
-  if(resized || cv._lastSig!==sig){
+  if(cv._lastIdx!==fIdx){
    var ctx=cv.getContext('2d');
    if(ctx){
-    ctx.globalAlpha=1;
-    ctx.drawImage(bmpA,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
-    if(blend.alpha>0.01){
-     ctx.globalAlpha=blend.alpha;
-     ctx.drawImage(bmpB,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
-     ctx.globalAlpha=1;
-    }
-    cv._lastSig=sig;
+    ctx.drawImage(chosen,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+    cv._lastIdx=fIdx;
    }
   }
-  if(!wrap.classList.contains('canvas-on')){
-   wrap.classList.add('canvas-on');
+  if(!slot.classList.contains('has-canvas')){
+   slot.classList.add('has-canvas');
   }
  }
- return wraps.length;
+ return slots.length;
 }
 
 function syncGoldCanvases(){
@@ -644,16 +647,12 @@ function isFrameValid(sampleCtx, sampleW, sampleH, sourceCanvas){
 }
 
 function ensureGoldLoop(){
- var url=ART_BASE+'donald-trump-golden.webp';
- if(!GOLD_LOOP.preloadImg){
-  GOLD_LOOP.preloadImg=new Image();
-  GOLD_LOOP.preloadImg.src=url;
- }
  if(GOLD_LOOP.state==='ready'){
   syncGoldCanvases();
   return;
  }
  if(GOLD_LOOP.state!=='idle')return;
+ var url=ART_BASE+'donald-trump-golden.webp';
  if(typeof window.ImageDecoder==='function' && typeof window.fetch==='function' && location.protocol!=='file:'){
   GOLD_LOOP.state='loading';
   fetch(url,{cache:'force-cache'}).then(function(res){
@@ -683,9 +682,8 @@ function ensureGoldLoop(){
        stageCtx.fillRect(0,0,fw,fh);
       }
       stageCtx.drawImage(img,0,0,fw,fh);
-      /* Normalizamos duraciones congeladas al final del clip para que no exista pausa en el último fotograma */
       var rawDur=(img.duration?img.duration/1000:0)||(GOLD_LOOP.duration/cnt);
-      var dur=Math.min(120, Math.max(16, rawDur));
+      var dur=Math.min(100, Math.max(16, rawDur));
       img.close();
       var valid=isFrameValid(sampleCtx,16,22,stageCanvas);
       return createImageBitmap(stageCanvas).then(function(bmp){
@@ -836,23 +834,28 @@ function initials(nm){
  if(!p.length)p=nm.split(' ');
  return (p[0].charAt(0)+(p[1]?p[1].charAt(0):'')).toUpperCase();
 }
+
+/* Solución 2: En modo Golden no se instancia <img src="donald-trump-golden.webp">, sino el contenedor para el <canvas> del pool */
 function artTag(id,nm){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
  if(id==='donald-trump'){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
-   setTimeout(ensureGoldLoop,0);
-   return '<div class="gold-loop-wrap">'
-    +'<img src="'+ART_BASE+'donald-trump-golden.webp" alt="" decoding="async" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
-    +'<canvas class="gold-canvas"></canvas>'
-    +'</div>'
-    +'<span style="display:none">'+esc(initials(nm))+'</span>';
+   if(GOLD_LOOP.state==='idle')setTimeout(ensureGoldLoop,0);
+   if(GOLD_LOOP.state==='ready'){
+    return '<div class="gold-slot has-canvas"></div><span style="display:none">'+esc(initials(nm))+'</span>';
+   }
+   var fbFile=(GOLD_LOOP.state==='fallback')?'donald-trump-golden':'donald-trump';
+   return '<div class="gold-slot">'
+    +'<img class="gold-static-fb" src="'+ART_BASE+fbFile+'.webp" alt="" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
+    +'</div><span style="display:none">'+esc(initials(nm))+'</span>';
   }
  }
  return '<img src="'+ART_BASE+id+'.webp" alt="" loading="lazy" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'">'
   +'<span style="display:none">'+esc(initials(nm))+'</span>';
 }
+
 function cromoHTML(c,o){
  o=o||{};
  var r=RARM[c.r];
@@ -916,6 +919,7 @@ function getSwipeDeckIds(){
 function renderZoomOverlay(){
  var zr=document.getElementById('zoomRoot');
  if(!zr)return;
+ detachGoldPool(zr);
  if(!ZOOM_OPEN || SCREEN!=='detalle' || !SO.id || !BYID[SO.id]){
   ZOOM_OPEN=false;
   zr.innerHTML='';
@@ -948,7 +952,10 @@ function closeZoom(){
  if(!ZOOM_OPEN)return;
  ZOOM_OPEN=false;
  var zr=document.getElementById('zoomRoot');
- if(zr)zr.innerHTML='';
+ if(zr){
+  detachGoldPool(zr);
+  zr.innerHTML='';
+ }
 }
 
 function cycleDetalleCard(step){
@@ -1195,7 +1202,6 @@ function tabbar(){
  }).join('');
 }
 
-/* Reutiliza los nodos de animación de Trump Golden para que no parpadeen ni se recarguen al hacer paint() */
 function paint(){
  var sc=document.getElementById('screen');
  var c=document.getElementById('content');if(!c)return;
@@ -1210,22 +1216,14 @@ function paint(){
  var logScroll=logEl?logEl.scrollTop:0;
  if(SCREEN==='coleccion'||SCREEN==='builder')saveColScroll();
 
- /* Rescatamos el nodo vivo de la animación Golden antes de destruir el HTML para no recargar el archivo .webp */
- var savedGoldNode=c.querySelector('.gold-loop-wrap');
+ /* Rescatamos todos los <canvas> vivos al pool en memoria antes de destruir el DOM */
+ detachGoldPool(c);
 
  if(TICK){clearInterval(TICK);TICK=null;}
  var ab=document.getElementById('appbar');if(ab)ab.innerHTML=appbar();
  var foot=(SCREEN==='battle')?'':'<div class="foot">'+CARDS.length+' cromos &middot; 6 doctrinas &middot; gabinete de 5</div>';
  c.innerHTML='<div class="view-body">'+((SCREENS[SCREEN]||SCREENS.menu)())+'</div>'+foot;
  var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
-
- /* Si había un nodo vivo de animación Golden y en la nueva vista hay un contenedor Golden, lo trasplantamos sin recargar */
- if(savedGoldNode){
-  var newGoldTargets=c.querySelectorAll('.gold-loop-wrap');
-  if(newGoldTargets.length===1){
-   newGoldTargets[0].parentNode.replaceChild(savedGoldNode, newGoldTargets[0]);
-  }
- }
 
  if(SCREEN==='coleccion'||SCREEN==='builder')restoreColScroll(false);
  if(handScroll>0){
@@ -1258,7 +1256,10 @@ function updateColeccionInPlace(){
  var fq=document.getElementById('fq');
  if(fq && fq.value!==FIL.q)fq.value=FIL.q;
  var box=document.getElementById('gridBox');
- if(box)box.innerHTML=colGrid();
+ if(box){
+  detachGoldPool(box);
+  box.innerHTML=colGrid();
+ }
  var cnt=document.getElementById('cntBox');
  if(cnt)cnt.innerHTML=colCountText();
  syncGoldCanvases();
@@ -2142,7 +2143,10 @@ document.addEventListener('input',function(ev){
  if(ev.target&&ev.target.id==='fq'){
   FIL.q=ev.target.value;
   var box=document.getElementById('gridBox');
-  if(box)box.innerHTML=colGrid();
+  if(box){
+   detachGoldPool(box);
+   box.innerHTML=colGrid();
+  }
   var c=document.getElementById('cntBox');
   if(c)c.innerHTML=colCountText();
   syncGoldCanvases();
