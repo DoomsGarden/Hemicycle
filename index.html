@@ -506,7 +506,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v29';
+var VERSION='v30';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -519,24 +519,57 @@ function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(M
 
 var ART_BASE='cards/';
 
-/* === MOTOR PING-PONG MATEMÁTICO PURO + POOL DE CANVAS PERSISTENTES === */
+/* === FOTOGRAMAS PRECARGADOS + BUCLE CON SOLAPAMIENTO FIJO === */
 var GOLD_LOOP={
  state:'idle',
  frames:[],
+ sequence:[],
+ ends:[],
  w:0,
  h:0,
- duration:3100,
+ duration:0,
+ overlap:100,
+ period:0,
+ startedAt:0,
+ surface:null,
+ lastDraw:null,
+ posterUrl:'',
  pool:[],
  rafId:null
 };
 
-function getGoldPingPongIndex(now){
- var len=GOLD_LOOP.frames.length;
- if(len<=1)return 0;
- var totalSteps=(len*2)-2;
- var stepDur=GOLD_LOOP.duration/len;
- var step=Math.floor(now/stepDur)%totalSteps;
- return (step<len)?step:(totalSteps-step);
+function buildGoldTimeline(){
+ var sequence=[],ends=[],total=0,i;
+ for(i=0;i<GOLD_LOOP.frames.length;i++)sequence.push(i);
+ for(i=GOLD_LOOP.frames.length-2;i>0;i--)sequence.push(i);
+ for(i=0;i<sequence.length;i++){
+  total+=GOLD_LOOP.frames[sequence[i]].dur;
+  ends.push(total);
+ }
+ GOLD_LOOP.sequence=sequence;
+ GOLD_LOOP.ends=ends;
+ GOLD_LOOP.duration=total;
+ GOLD_LOOP.overlap=sequence.length>1?Math.min(100,total/4):0;
+ GOLD_LOOP.period=total-GOLD_LOOP.overlap;
+}
+
+function getGoldFrameIndex(time){
+ var ends=GOLD_LOOP.ends,lo=0,hi=ends.length-1;
+ while(lo<hi){
+  var mid=(lo+hi)>>1;
+  if(time<ends[mid])hi=mid;else lo=mid+1;
+ }
+ return GOLD_LOOP.sequence[lo];
+}
+
+function getGoldPlayback(now){
+ // Use one absolute clock: missed animation ticks never extend the next cycle.
+ var phase=Math.max(0,now-GOLD_LOOP.startedAt)%GOLD_LOOP.period;
+ var next=getGoldFrameIndex(phase);
+ if(GOLD_LOOP.overlap>0 && phase<GOLD_LOOP.overlap){
+  return {first:getGoldFrameIndex(GOLD_LOOP.period+phase),second:next,mix:phase/GOLD_LOOP.overlap};
+ }
+ return {first:next,second:next,mix:0};
 }
 
 function detachGoldPool(container){
@@ -554,12 +587,12 @@ function getPooledCanvas(){
  if(!cv){
   cv=document.createElement('canvas');
   cv.className='gold-canvas';
-  cv._lastIdx=-1;
+  cv._lastDraw=null;
  }
  if(GOLD_LOOP.w>0 && (cv.width!==GOLD_LOOP.w || cv.height!==GOLD_LOOP.h)){
   cv.width=GOLD_LOOP.w;
   cv.height=GOLD_LOOP.h;
-  cv._lastIdx=-1;
+  cv._lastDraw=null;
  }
  return cv;
 }
@@ -568,27 +601,40 @@ function drawCurrentGoldFrame(now){
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return 0;
  var slots=document.querySelectorAll('.gold-slot');
  if(!slots.length)return 0;
- var fIdx=getGoldPingPongIndex(now || performance.now());
- var chosen=GOLD_LOOP.frames[fIdx].bmp;
+ var playback=getGoldPlayback(now===undefined?performance.now():now);
+ var key=playback.first+':'+playback.second+':'+Math.round(playback.mix*255);
+ if(GOLD_LOOP.lastDraw!==key){
+  var surfaceCtx=GOLD_LOOP.surface.getContext('2d');
+  if(!surfaceCtx)return slots.length;
+  surfaceCtx.globalAlpha=1;
+  surfaceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+  if(playback.mix>0){
+   surfaceCtx.globalAlpha=playback.mix;
+   surfaceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+   surfaceCtx.globalAlpha=1;
+  }
+  GOLD_LOOP.lastDraw=key;
+ }
  for(var i=0;i<slots.length;i++){
   var slot=slots[i];
   var cv=slot.querySelector('canvas.gold-canvas');
   if(!cv){
    cv=getPooledCanvas();
-   slot.appendChild(cv);
   }
   if(cv.width!==GOLD_LOOP.w || cv.height!==GOLD_LOOP.h){
    cv.width=GOLD_LOOP.w;
    cv.height=GOLD_LOOP.h;
-   cv._lastIdx=-1;
+   cv._lastDraw=null;
   }
-  if(cv._lastIdx!==fIdx){
+  if(cv._lastDraw!==key){
    var ctx=cv.getContext('2d');
    if(ctx){
-    ctx.drawImage(chosen,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
-    cv._lastIdx=fIdx;
+    ctx.drawImage(GOLD_LOOP.surface,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+    cv._lastDraw=key;
    }
+   else continue;
   }
+  if(!cv.parentNode)slot.appendChild(cv);
   if(!slot.classList.contains('has-canvas')){
    slot.classList.add('has-canvas');
   }
@@ -638,71 +684,117 @@ function isFrameValid(sampleCtx, sampleW, sampleH, sourceCanvas){
  }
 }
 
+function readGoldFrames(buffer){
+ var bytes=new Uint8Array(buffer),view=new DataView(buffer),frames=[],width=0,height=0,frameNumber=0;
+ function tag(at){return String.fromCharCode(bytes[at],bytes[at+1],bytes[at+2],bytes[at+3]);}
+ function uint24(at){return bytes[at]|(bytes[at+1]<<8)|(bytes[at+2]<<16);}
+ if(bytes.length<12 || tag(0)!=='RIFF' || tag(8)!=='WEBP')throw new Error('Invalid golden WebP');
+ for(var pos=12;pos+8<=bytes.length;){
+  var kind=tag(pos),size=view.getUint32(pos+4,true),start=pos+8,end=start+size;
+  if(end>bytes.length)throw new Error('Incomplete golden WebP');
+  if(kind==='VP8X' && size>=10){width=uint24(start+4)+1;height=uint24(start+7)+1;}
+  if(kind==='ANMF'){
+   if(size<16 || !width || !height)throw new Error('Invalid golden frame');
+   var fw=uint24(start+6)+1,fh=uint24(start+9)+1;
+   // This asset uses complete, independent frames. Its first frame is only particles.
+   if(uint24(start)!==0 || uint24(start+3)!==0 || fw!==width || fh!==height || !(bytes[start+15]&2)){
+    throw new Error('Golden frame requires composition');
+   }
+   if(frameNumber>0){
+    var body=bytes.slice(start+16,end),bodyView=new DataView(body.buffer),alpha=false;
+    for(var sub=0;sub+8<=body.length;){
+     var subSize=bodyView.getUint32(sub+4,true);
+     if(sub+8+subSize>body.length)throw new Error('Incomplete golden frame');
+     if(body[sub]===65 && body[sub+1]===76 && body[sub+2]===80 && body[sub+3]===72)alpha=true;
+     sub+=8+subSize+(subSize&1);
+    }
+    var header=new Uint8Array(alpha?30:12),headerView=new DataView(header.buffer);
+    header.set([82,73,70,70],0);headerView.setUint32(4,header.length+body.length-8,true);
+    header.set([87,69,66,80],8);
+    if(alpha){
+     header.set([86,80,56,88,10,0,0,0,16,0,0,0],12);
+     for(var b=0;b<3;b++){header[24+b]=((width-1)>>(b*8))&255;header[27+b]=((height-1)>>(b*8))&255;}
+    }
+    frames.push({blob:new Blob([header,body],{type:'image/webp'}),dur:uint24(start+12)||56,w:width,h:height});
+   }
+   frameNumber++;
+  }
+  pos=end+(size&1);
+ }
+ if(!frames.length)throw new Error('No golden portrait frames');
+ return frames;
+}
+
+function loadGoldImage(blob){
+ return new Promise(function(resolve,reject){
+  var img=new Image(),url=URL.createObjectURL(blob);
+  img.onload=function(){URL.revokeObjectURL(url);resolve(img);};
+  img.onerror=function(){URL.revokeObjectURL(url);reject(new Error('Cannot decode golden frame'));};
+  img.src=url;
+ });
+}
+
+function decodeGoldFrame(blob){
+ if(typeof createImageBitmap==='function'){
+  return createImageBitmap(blob).catch(function(){return loadGoldImage(blob);});
+ }
+ return loadGoldImage(blob);
+}
+
 function ensureGoldLoop(){
  if(GOLD_LOOP.state==='ready'){
   syncGoldCanvases();
   return;
  }
  if(GOLD_LOOP.state!=='idle')return;
- var url=ART_BASE+'donald-trump-golden.webp';
- if(typeof window.ImageDecoder==='function' && typeof window.fetch==='function' && location.protocol!=='file:'){
-  GOLD_LOOP.state='loading';
-  fetch(url,{cache:'force-cache'}).then(function(res){
-   if(!res.ok)throw new Error('HTTP '+res.status);
-   return res.arrayBuffer();
-  }).then(function(buf){
-   var dec=new ImageDecoder({data:buf,type:'image/webp'});
-   return dec.tracks.ready.then(function(){
-    var cnt=dec.tracks.selectedTrack.frameCount||0;
-    if(cnt<=1)throw new Error('Static webp');
-    var rawList=[],p=Promise.resolve();
-    var stageCanvas=document.createElement('canvas');
-    var stageCtx=stageCanvas.getContext('2d');
-    var sampleCanvas=document.createElement('canvas');
-    sampleCanvas.width=16;sampleCanvas.height=22;
-    var sampleCtx=sampleCanvas.getContext('2d',{willReadFrequently:true});
+ GOLD_LOOP.state='loading';
+ var loaded=[];
+ // A new URL also bypasses copies retained by the previous service worker.
+ var url=ART_BASE+'donald-trump-golden.webp?v=gold-loop-2';
+ fetch(url,{cache:'force-cache'}).then(function(res){
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  return res.arrayBuffer();
+ }).then(function(buf){
+  var frames=readGoldFrames(buf),p=Promise.resolve();
+  GOLD_LOOP.posterUrl=URL.createObjectURL(frames[0].blob);
+  var sampleCanvas=document.createElement('canvas');
+  sampleCanvas.width=16;sampleCanvas.height=22;
+  var sampleCtx=sampleCanvas.getContext('2d',{willReadFrequently:true});
 
-    var step=function(idx){
-     return dec.decode({frameIndex:idx,completeFramesOnly:true}).then(function(res){
-      var img=res.image;
-      var fw=img.displayWidth||img.codedWidth||400;
-      var fh=img.displayHeight||img.codedHeight||550;
-      if(stageCanvas.width!==fw || stageCanvas.height!==fh){
-       stageCanvas.width=fw;
-       stageCanvas.height=fh;
-       stageCtx.fillStyle='#141c34';
-       stageCtx.fillRect(0,0,fw,fh);
-      }
-      stageCtx.drawImage(img,0,0,fw,fh);
-      var rawDur=(img.duration?img.duration/1000:0)||(GOLD_LOOP.duration/cnt);
-      var dur=Math.min(100, Math.max(16, rawDur));
-      img.close();
-      var valid=isFrameValid(sampleCtx,16,22,stageCanvas);
-      return createImageBitmap(stageCanvas).then(function(bmp){
-       rawList.push({bmp:bmp,dur:dur,valid:valid});
-      });
-     });
-    };
-    for(var i=0;i<cnt;i++)(function(ix){p=p.then(function(){return step(ix);});})(i);
-    return p.then(function(){
-     var clean=rawList.filter(function(f){return f.valid;});
-     if(clean.length<2)clean=rawList;
-     GOLD_LOOP.frames=clean;
-     GOLD_LOOP.w=clean[0].bmp.width;
-     GOLD_LOOP.h=clean[0].bmp.height;
-     var total=0;
-     for(var j=0;j<clean.length;j++)total+=clean[j].dur;
-     if(total>300)GOLD_LOOP.duration=total;
-     GOLD_LOOP.state='ready';
-     syncGoldCanvases();
-    });
+  frames.forEach(function(frame){
+   p=p.then(function(){return decodeGoldFrame(frame.blob);}).then(function(bmp){
+    if(isFrameValid(sampleCtx,16,22,bmp)){
+     loaded.push({bmp:bmp,dur:frame.dur});
+    }else if(typeof bmp.close==='function'){
+     bmp.close();
+    }
    });
-  }).catch(function(){
-   GOLD_LOOP.state='fallback';
   });
- } else {
+  return p.then(function(){
+   if(loaded.length<2)throw new Error('Not enough valid golden frames');
+   GOLD_LOOP.frames=loaded;
+   GOLD_LOOP.w=frames[0].w;
+   GOLD_LOOP.h=frames[0].h;
+   buildGoldTimeline();
+   GOLD_LOOP.surface=document.createElement('canvas');
+   GOLD_LOOP.surface.width=GOLD_LOOP.w;
+   GOLD_LOOP.surface.height=GOLD_LOOP.h;
+   GOLD_LOOP.startedAt=performance.now();
+   GOLD_LOOP.state='ready';
+   syncGoldCanvases();
+  });
+ }).catch(function(){
+  loaded.forEach(function(f){if(typeof f.bmp.close==='function')f.bmp.close();});
+  GOLD_LOOP.frames=[];
   GOLD_LOOP.state='fallback';
- }
+  var slots=document.querySelectorAll('.gold-slot');
+  for(var i=0;i<slots.length;i++){
+   slots[i].classList.remove('has-canvas');
+   detachGoldPool(slots[i]);
+   var img=slots[i].querySelector('img.gold-static-fb');
+   if(img)img.src=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump.webp';
+  }
+ });
 }
 
 var DOCS=[
@@ -833,12 +925,9 @@ function artTag(id,nm){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
    if(GOLD_LOOP.state==='idle')setTimeout(ensureGoldLoop,0);
-   if(GOLD_LOOP.state==='ready'){
-    return '<div class="gold-slot has-canvas"></div><span style="display:none">'+esc(initials(nm))+'</span>';
-   }
-   var fbFile=(GOLD_LOOP.state==='fallback')?'donald-trump-golden':'donald-trump';
+   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump.webp';
    return '<div class="gold-slot">'
-    +'<img class="gold-static-fb" src="'+ART_BASE+fbFile+'.webp" alt="" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
+    +'<img class="gold-static-fb" src="'+poster+'" alt="" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
     +'</div><span style="display:none">'+esc(initials(nm))+'</span>';
   }
  }
