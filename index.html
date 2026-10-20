@@ -508,6 +508,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=30.2.58">
+<link rel="stylesheet" href="css/tutorial.css?v=30.2.59">
 </head>
 <body>
 
@@ -523,9 +524,10 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="toastRoot"></div>
 </div>
 
+<script src="js/battle-tutorial.js?v=30.2.59"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=30.2.58"></script>
+<script src="js/changelog.js?v=30.2.59"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -537,7 +539,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.2.58';
+var VERSION='v30.2.59';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1023,7 +1025,7 @@ DOCS.forEach(function(d){
  });
 });
 CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||a.n.localeCompare(b.n,'es');});
-var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9';
+var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9',TUTORIAL=null;
 function seedAlbum(d){
  var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
  add('comun',18);add('raro',8);add('especial',3);add('legendario',1);
@@ -1128,12 +1130,13 @@ function closeModal(){
  MODAL_CB=null;
  var mr=document.getElementById('modalRoot');
  if(mr)mr.innerHTML='';
- var content=document.getElementById('content');if(content)content.inert=!!(SCREEN==='battle'&&G&&!G.over&&G.n===0);
+ var content=document.getElementById('content');if(content)content.inert=!!(SCREEN==='battle'&&G&&!G.over&&G.n===0&&!G.tutorial);
+ if(TUTORIAL)TUTORIAL.render();
 }
 
 function syncCoinToss(){
  var root=document.getElementById('coinRoot');if(!root)return;
- var pending=SCREEN==='battle'&&G&&!G.over&&G.n===0;
+ var pending=SCREEN==='battle'&&G&&!G.over&&G.n===0&&!G.tutorial;
  var content=document.getElementById('content'),modal=document.getElementById('modalRoot');if(content)content.inert=!!pending||!!(modal&&modal.firstChild);
  if(!pending){root.innerHTML='';return;}
  if(root.firstChild)return;
@@ -1495,6 +1498,7 @@ function paint(){
  if(sc){
   sc.classList.toggle('in-battle', SCREEN==='battle');
   sc.dataset.view=SCREEN;
+  sc.dataset.tutorialActive=String(!!(SCREEN==='battle'&&G&&G.tutorial&&!G.over));
  }
  c.classList.toggle('scroll-ok', SCREEN==='coleccion');
 
@@ -1524,6 +1528,7 @@ function paint(){
  if(SCREEN==='tienda')startTick();
  syncGoldCanvases();
  syncCoinToss();
+ if(TUTORIAL)TUTORIAL.render();
 }
 
 function updateColeccionInPlace(){
@@ -1839,15 +1844,16 @@ function buildEnemyTeam(mode, elo, div){
  return picked;
 }
 
-function newBattle(mode,rival){
+function newBattle(mode,rival,isTutorial){
+ if(TUTORIAL&&!isTutorial&&!TUTORIAL.seen()){TUTORIAL.start();return;}
  clearAI();
- var d=D(),team=BUILD.ids.slice(0,5),ldrId=BUILD.leader||team[0];
- var eTeam=buildEnemyTeam(mode, d.elo, SO.div||3);
+ var d=D(),team=isTutorial?['celia-villalobos','ana-pastor','alvaro-nadal','dolors-montserrat','carlos-floriano']:BUILD.ids.slice(0,5),ldrId=isTutorial?team[0]:(BUILD.leader||team[0]);
+ var eTeam=isTutorial?['carlos-floriano','ana-pastor','andrea-levy','alvaro-nadal','cuca-gamarra']:buildEnemyTeam(mode, d.elo, SO.div||3);
  /* Elegimos como Líder del rival su carta de mayor rango para que juegue con cabeza pero con sus stats reales */
  var eSorted=eTeam.slice().sort(function(a,b){return TIERORDER[BYID[a].r]-TIERORDER[BYID[b].r];});
  var eLeadId=eSorted[0]||eTeam[0];
 
- G={mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
+ G={tutorial:!!isTutorial,mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
   n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},refund:{p:0,e:0},leader:{}};
@@ -1863,6 +1869,15 @@ function newBattle(mode,rival){
  };
  build('p',team,ldrId);
  build('e',eTeam,eLeadId);
+ if(isTutorial){
+  G.first='p';G.rival='Bancada de práctica';
+  var allPlayer=G.hand.p.concat(G.deck.p),allEnemy=G.hand.e.concat(G.deck.e);
+  G.hand.p=team.slice(0,3).map(function(id){return allPlayer.filter(function(c){return c.k===id;})[0];});
+  G.deck.p=team.slice(3).map(function(id){return allPlayer.filter(function(c){return c.k===id;})[0];});
+  allEnemy.forEach(function(c){c.a=1;c.h=3;c.hm=3;});
+  var target=allEnemy.filter(function(c){return c.k==='ana-pastor';})[0];
+  G.field.e=[target];G.hand.e=allEnemy.filter(function(c){return c!==target;});G.deck.e=[];
+ }
  log('Comienza el debate contra '+G.rival+'.','hi');
  log('Tu gabinete: '+team.map(function(id){return BYID[id].n;}).join(', ')+'.');
  log('Sorteo: tú tienes cara y el rival, cruz. Ha salido '+(G.first==='p'?'cara: empiezas tú.':'cruz: empieza '+G.rival+'.'),'hi');
@@ -1930,7 +1945,7 @@ function startTurn(s){
  log('Ronda '+roundNum+'/7 ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
  if(checkBattleEnd())return;
  paint();
- if(s==='e'){clearAI();AITIMER=setTimeout(aiStep,520);}
+ if(s==='e'&&!G.tutorial){clearAI();AITIMER=setTimeout(aiStep,520);}
 }
 
 function applyGuardia(s){
@@ -2055,6 +2070,12 @@ function calcRankedEloDelta(who, pVotes, eVotes, abandoned){
 
 function finish(who, abandoned){
  if(!G||G.done)return;
+ if(G.tutorial){
+  clearAI();G.over=true;G.done=true;
+  if(TUTORIAL&&TUTORIAL.active)TUTORIAL.finish(who==='p'&&!abandoned?'completed':'skipped');
+  else go('result',{tutorial:true,completed:who==='p'&&!abandoned});
+  return;
+ }
  clearAI();
  G.over=true;G.done=true;
  var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal'),justUnlockedGold=false,eloDelta=0;
@@ -2116,6 +2137,7 @@ function ligaPanel(){
 }
 
 SCREENS.result=function(){
+ if(SO.tutorial)return '<div class="panel win"><h2>'+(SO.completed?'¡Tutorial completado!':'Práctica terminada')+'</h2><p class="sub">'+(SO.completed?'Has practicado las acciones del debate y la victoria inmediata a 100 votos.':'Puedes repetir la guía cuando quieras desde Ayuda.')+' Tu colección, FS, Elo y Liga se mantienen intactos.</p></div><div class="bar"><button class="btn" data-act="play">Jugar una partida</button><button class="btn ghost" data-go="menu">Menú</button></div>';
  if(SO.who==='info')return '<h2>Aviso</h2><div class="panel"><p>'+esc(SO.msg)+'</p></div>'
   +'<div class="bar"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menú</button></div>';
  var who=SO.who;
@@ -2236,20 +2258,21 @@ SCREENS.battle=function(){
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
  for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__EMPTY" data-side="e">'+(G.sel?'Restar votos':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
- var modo=G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
+ var modo=G.tutorial?'TUTORIAL':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.min(7,Math.max(1,Math.ceil(G.n/2)));
  return '<div class="battle-wrap">'
+ +(G.tutorial&&G.n===0?'<button class="tutorial-coin" data-tutorial="coin" data-act="begin">Cara o cruz · Toca para ensayar el sorteo</button>':'')
  +'<div class="bar between"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'/7</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
  +gabLine()+'</div>'
  +'<div class="vbars">'
  +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'/100</b></div>'
  +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'/100</b></div></div>'
  +'<p class="sub">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
- +'<div class="tribuna">'+ef+'</div>'
+ +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
  +'<div class="log">'+G.log.slice(0,5).join('')+'</div>'
- +'<div class="tribuna">'+pf+'</div>'
- +'<p class="sub">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
- +'<div class="row">'+hand+'</div>'
+ +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
+ +'<p class="sub" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
+ +'<div class="row" data-tutorial="hand">'+hand+'</div>'
  +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca un orador rival o "Restar votos".</div>'
         :'<div class="hint">Toca una carta de tu mano para bajarla o un orador en Tribuna para atacar.</div>')
  +'<div class="bar between"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
@@ -2318,6 +2341,7 @@ SCREENS.liga=function(){
 
 SCREENS.ayuda=function(){
  return '<h2>Cómo se juega</h2><div class="inner-scroll">'
+ +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Repetir tutorial</button></div>'
  +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. Si nadie lo consigue, gana quien tenga más votos tras 7 rondas. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
  +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
@@ -2474,7 +2498,10 @@ document.addEventListener('click',function(ev){
    PLAY_MODE=n.getAttribute('data-mode');PLAY_OPEN=false;paint();
    var play=document.querySelector('[data-act="play"]');if(play)play.focus();
    break;
+  case 'tutorial':
+   if(TUTORIAL)TUTORIAL.start();break;
   case 'play':
+   if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start();break;}
    if(PLAY_MODE==='liga'){go('liga');break;}
    if(PLAY_MODE==='rapida'){autoBuild();LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader};SO={mode:'normal'};newBattle('normal');break;}
    BUILD={ids:LAST_BUILD.ids.slice(),leader:LAST_BUILD.leader};sanitizeBuild();go('builder',{mode:PLAY_MODE});
@@ -2544,7 +2571,7 @@ document.addEventListener('click',function(ev){
    if(G&&!G.over){
     showModal(
      '¿Abandonar el debate?',
-     'Si abandonas el hemiciclo ahora, se contará como una derrota'+(G.mode!=='normal'?' y podrías perder una copia de un cromo de tu gabinete':'')+'.',
+     G.tutorial?'Puedes repetir esta práctica desde Ayuda. No perderás cromos ni cambiarán tus estadísticas.':'Si abandonas el hemiciclo ahora, se contará como una derrota'+(G.mode!=='normal'?' y podrías perder una copia de un cromo de tu gabinete':'')+'.',
      'Abandonar debate',
      true,
      function(){if(G&&!G.over)finish('e', true);}
@@ -2620,6 +2647,37 @@ window.addEventListener('resize',medirInsets);
 window.addEventListener('orientationchange',medirInsets);
 
 function boot(){
+ TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
+  read:lsGet,write:lsSet,
+  pause:function(){clearAI();if(G&&G.tutorial){G.over=true;G.done=true;}},
+  inBattle:function(){return SCREEN==='battle'&&G&&G.tutorial&&!G.over;},
+  prepare:function(){newBattle('normal',null,true);},
+  action:function(action){
+   var own=G.leader.p,enemy=G.field.e[0];
+   if(action==='begin'){beginDebate();return;}
+   if(action==='play-leader')playCard('p',own.uid);
+   if(action==='select-leader')G.sel=own.uid;
+   if(action==='select-member')G.sel=G.field.p.filter(function(c){return c!==own;})[0].uid;
+   if(action==='play-member')playCard('p',G.hand.p[0].uid);
+   if(action==='attack'||action==='empty'){
+    var attacker=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
+    attack(attacker,action==='empty'?'__EMPTY':enemy,'p');G.sel=null;
+   }
+   if(action==='end'){
+    completeTurn('p');
+    var member=G.hand.e.filter(function(c){return c!==G.leader.e&&c.c<=G.tdp.e;})[0];
+    if(member)playCard('e',member.uid);
+   }
+   if(action==='enemy'){if(enemy)attack(enemy,own,'e');completeTurn('e');}
+   if(action==='prepare-final'){
+    G.votes.p=98;own.ready=true;
+    var target=G.pas.e[0];G.pas.e.splice(0,1);target.h=1;target.v=2;G.field.e=[target];
+    log('Último ejercicio: marcador adelantado a 98 votos. Expulsa al rival para practicar el cierre inmediato.','hi');
+   }
+   if(!G.over)paint();
+  },
+  leave:function(status){clearAI();G.over=true;G.done=true;go('result',{tutorial:true,completed:status==='completed'});}
+ }):null;
  medirInsets();
  try{history.replaceState({s:'menu'},'');}catch(e){}
  var d=D();

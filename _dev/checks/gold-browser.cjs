@@ -12,7 +12,7 @@ const errors=[];
   for(const variant of ['bitmap','image-fallback','portrait-failure']){
    const context=await browser.newContext({viewport:{width:393,height:851},isMobile:true,hasTouch:true,serviceWorkers:'block'});
    await context.addInitScript(({profile,variant})=>{
-    localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;
+    localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed',version:1}));localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;
     if(variant==='image-fallback')window.createImageBitmap=undefined;
    },{profile,variant});
    await context.route('**/Hemicycle/',r=>r.fulfill({status:200,contentType:'text/html',body:instrumented}));

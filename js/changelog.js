@@ -4,6 +4,17 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version":"v30.2.59",
+    "date":"2026-10-20",
+    "title":"Tu primer combate, paso a paso",
+    "sections":[{"title":"Tutorial de combate","items":[
+      "La próxima vez que pulses Jugar podrás aprender en un combate guiado muy fácil con cromos prestados.",
+      "Las explicaciones flotantes dejan libre el elemento que debes tocar. La zona señalada brilla hasta realizar la acción; con movimiento reducido mantiene un borde fijo.",
+      "Practica el sorteo, los votos, el TdP, el líder y su doctrina, presentar cromos, atacar, pasar turno y conseguir la victoria.",
+      "La práctica no modifica tu colección, Fuerza Soberana, Elo ni Liga. Puedes salir sin penalización y repetirla desde Ayuda."
+    ]}]
+  },
+  {
     "version": "v30.2.58",
     "date": "2026-10-20",
     "title": "Botones con relieve",
