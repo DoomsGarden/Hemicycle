@@ -1,5 +1,5 @@
-const CACHE = 'hemiciclo-v30.2.56-inicio';
-const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/changelog.js', './js/market-rules.js', './js/market-ui.js', './css/interface.css', './cards/donald-trump-golden.webp?v=gold-loop-2'];
+const CACHE = 'hemiciclo-v30.2.56-final';
+const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/changelog.js?v=30.2.56-inicio', './js/market-rules.js', './js/market-ui.js?v=30.2.56', './css/interface.css?v=30.2.56-inicio', './cards/donald-trump-golden.webp?v=gold-loop-2'];
 
 self.addEventListener('install', e => {
   e.waitUntil(

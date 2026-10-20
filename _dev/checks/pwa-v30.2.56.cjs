@@ -11,7 +11,7 @@ const server=http.createServer((req,res)=>{
  const name=new URL(req.url,'http://local').pathname.replace(/^\/Hemicycle\//,'')||'index.html';
  const file=path.join(root,name);
  try{
-  const bytes=!updated&&name==='index.html'?oldIndex:!updated&&name==='sw.js'?oldSw:!updated&&name==='js/changelog.js'?oldNotes:fs.readFileSync(file);
+  const bytes=!updated&&name==='index.html'?oldIndex:!updated&&name==='sw.js'?oldSw:!updated&&name==='js/changelog.js?v=30.2.56-inicio'?oldNotes:fs.readFileSync(file);
   const ext=path.extname(name),type={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png'}[ext]||'application/octet-stream';
   res.writeHead(200,{'Content-Type':type,'Cache-Control':'no-store'});res.end(bytes);
  }catch(e){res.writeHead(404);res.end();}
@@ -37,8 +37,21 @@ const server=http.createServer((req,res)=>{
   assert.ok((await page.locator('#appbar').innerText()).includes(previousVersion));
   assert.ok((await page.evaluate(()=>caches.keys())).includes(previousCache));
   updated=true;
+  await page.goto(base,{waitUntil:'domcontentloaded'});
+  assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
+  await page.locator('#tabbar [data-go="mercado"]').click();
+  await page.waitForFunction(()=>document.querySelector('.market-account').textContent.includes('guardado local'));
+  await page.locator('[data-market="select"][data-id="gabriel-rufian"]').click();
+  await page.locator('[data-market="sell"]').click();
+  assert.equal(await page.locator('#modalRoot [data-modal="review"]').count(),1);
+  assert.equal(await page.locator('#modalRoot [data-modal="confirm"]').isDisabled(),true);
+  await page.locator('#modalRoot [data-modal="review"]').click();
+  assert.equal(await page.locator('#modalRoot [data-modal="review"]').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(35, 134, 83)');
+  await page.locator('#modalRoot [data-modal="cancel"]').click();
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  console.log('First navigation loads the new single-window market and its green review tick without an extra reload');
   await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
-  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.56-inicio')&&!ks.includes(previousCache);},previousCache);
+  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.56-final')&&!ks.includes(previousCache);},previousCache);
   await page.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return r&&r.active===navigator.serviceWorker.controller&&r.active.state==='activated';});
   await page.goto(base,{waitUntil:'domcontentloaded'});
   assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
@@ -51,7 +64,7 @@ const server=http.createServer((req,res)=>{
   await page.locator('#gridBox [data-card="gabriel-rufian"]').click();
   const quotes=await page.locator('#content .quote').allTextContents();
   assert.equal(quotes.length,3);assert.match(quotes[2],/izquierda de caviar/);
-  for(const asset of ['js/card-confetti.js','js/changelog.js','js/market-rules.js','js/market-ui.js','css/interface.css','cards/donald-trump-golden.webp?v=gold-loop-2']){
+  for(const asset of ['js/card-confetti.js','js/changelog.js?v=30.2.56-inicio','js/market-rules.js','js/market-ui.js?v=30.2.56','css/interface.css?v=30.2.56-inicio','cards/donald-trump-golden.webp?v=gold-loop-2']){
    assert.ok(await page.evaluate(async asset=>!!await caches.match(new URL(asset,location.href)),asset),asset+' cached');
   }
   await page.locator('#content [data-go="coleccion"]').click();

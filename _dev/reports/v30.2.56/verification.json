@@ -1,7 +1,7 @@
 {
   "version": "v30.2.56",
   "passed": true,
-  "finished": "2026-10-20T20:08:33.988105+00:00",
+  "finished": "2026-10-20T20:13:23.990427+00:00",
   "baseline": "b28daf7",
   "originalAnimationRenderer": "5a3a785",
   "rendererRestoredExactly": true,
@@ -63,11 +63,26 @@
       "check": "home-patch-upgrade",
       "passed": true,
       "log": "_dev/reports/v30.2.56/home-patch-upgrade.log"
+    },
+    {
+      "check": "cache-unit",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/cache-unit.log"
+    },
+    {
+      "check": "cache-upgrade",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/cache-upgrade.log"
+    },
+    {
+      "check": "cache-patch-upgrade",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/cache-patch-upgrade.log"
     }
   ],
   "sourceHashes": {
-    "index.html": "b80ee93de9795bd7f90f4144411672ffbc229d67c244e7894bb530223846e05a",
-    "sw.js": "098a59f7792c15a829a1d7f385b4b6b93937aae81c3563c92c625ec3b3c3845b",
+    "index.html": "f5d814bb28a1cd7450fafa77f47ebde9fd8e13ba8bb2f53465ba57611cd6b08e",
+    "sw.js": "3453d0c291c1aec9434fc583708cff488f00f5bbdc5b2398e3272fac0925f515",
     "css/interface.css": "0986c6761db19b84475c931023ce2b2dd792904713d2796dcf131bebe4fc2f6a",
     "js/market-ui.js": "9e35e28d72b42381198d0d88f501b70690ac02676cbcf75e0ffe8934f968657b",
     "js/market-rules.js": "98874569c4c347b0370a7b40389ec726063ca4d08b14a27f083c25b6afaa75fb",
@@ -145,8 +160,50 @@
           "passed": true,
           "log": "_dev/reports/v30.2.56/home-patch-upgrade.log"
         }
-      ]
+      ],
+      "sourceHashes": {
+        "index.html": "b80ee93de9795bd7f90f4144411672ffbc229d67c244e7894bb530223846e05a",
+        "sw.js": "098a59f7792c15a829a1d7f385b4b6b93937aae81c3563c92c625ec3b3c3845b",
+        "css/interface.css": "0986c6761db19b84475c931023ce2b2dd792904713d2796dcf131bebe4fc2f6a",
+        "js/market-ui.js": "9e35e28d72b42381198d0d88f501b70690ac02676cbcf75e0ffe8934f968657b",
+        "js/market-rules.js": "98874569c4c347b0370a7b40389ec726063ca4d08b14a27f083c25b6afaa75fb",
+        "js/changelog.js": "f06ec4aa14ed49f05ec2fe977d7fd80a32eaba069f03d197739d9ffe4e193bb4",
+        "_dev/market/server.cjs": "15fc5d88f3566261433d87c1beb3a056367591e4e1e8d4f0000d196ac330833f",
+        "cards/donald-trump-golden.webp": "1b2ef6a9c1916f6aaff94f93df1a98eef2856770afd299bccda5d0988027a733"
+      }
+    },
+    {
+      "name": "First-navigation asset update",
+      "checks": [
+        {
+          "check": "cache-unit",
+          "passed": true,
+          "log": "_dev/reports/v30.2.56/cache-unit.log"
+        },
+        {
+          "check": "cache-upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.56/cache-upgrade.log"
+        },
+        {
+          "check": "cache-patch-upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.56/cache-patch-upgrade.log"
+        }
+      ],
+      "sourceHashes": {
+        "index.html": "f5d814bb28a1cd7450fafa77f47ebde9fd8e13ba8bb2f53465ba57611cd6b08e",
+        "sw.js": "3453d0c291c1aec9434fc583708cff488f00f5bbdc5b2398e3272fac0925f515",
+        "css/interface.css": "0986c6761db19b84475c931023ce2b2dd792904713d2796dcf131bebe4fc2f6a",
+        "js/market-ui.js": "9e35e28d72b42381198d0d88f501b70690ac02676cbcf75e0ffe8934f968657b",
+        "js/market-rules.js": "98874569c4c347b0370a7b40389ec726063ca4d08b14a27f083c25b6afaa75fb",
+        "js/changelog.js": "f06ec4aa14ed49f05ec2fe977d7fd80a32eaba069f03d197739d9ffe4e193bb4",
+        "_dev/market/server.cjs": "15fc5d88f3566261433d87c1beb3a056367591e4e1e8d4f0000d196ac330833f",
+        "cards/donald-trump-golden.webp": "1b2ef6a9c1916f6aaff94f93df1a98eef2856770afd299bccda5d0988027a733"
+      }
     }
   ],
-  "homeMotionTravelPx": 5
+  "homeMotionTravelPx": 5,
+  "firstNavigationUpdatedUI": true,
+  "priorObservation": "An earlier automated offline transition timed out while awaiting DOMContentLoaded; the expanded first-navigation upgrade test passed for both v30.2.55 and the already-published v30.2.56."
 }
