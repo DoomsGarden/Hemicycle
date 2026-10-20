@@ -507,7 +507,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=30.2.57">
+<link rel="stylesheet" href="css/interface.css?v=30.2.58">
 </head>
 <body>
 
@@ -525,7 +525,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=30.2.57"></script>
+<script src="js/changelog.js?v=30.2.58"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -537,7 +537,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.2.57';
+var VERSION='v30.2.58';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -564,10 +564,8 @@ var GOLD_LOOP={
  period:0,
  startedAt:0,
  surface:null,
- faceSurface:null,
  portrait:null,
  confetti:null,
- face:{x:144,y:133,w:132,h:168},
  lastDraw:null,
  posterUrl:'',
  pool:[],
@@ -577,7 +575,6 @@ var GOLD_LOOP={
 function buildGoldTimeline(){
  var sequence=[],ends=[],total=0,i;
  for(i=0;i<GOLD_LOOP.frames.length;i++)sequence.push(i);
- for(i=GOLD_LOOP.frames.length-2;i>0;i--)sequence.push(i);
  for(i=0;i<sequence.length;i++){
   total+=GOLD_LOOP.frames[sequence[i]].dur;
   ends.push(total);
@@ -606,23 +603,6 @@ function getGoldPlayback(now){
   return {first:getGoldFrameIndex(GOLD_LOOP.period+phase),second:next,mix:phase/GOLD_LOOP.overlap};
  }
  return {first:next,second:next,mix:0};
-}
-
-function makeGoldFaceFrame(source){
- var rect=GOLD_LOOP.face,cv=document.createElement('canvas');
- cv.width=rect.w;cv.height=rect.h;
- var ctx=cv.getContext('2d');
- if(!ctx)throw new Error('Cannot prepare golden expression');
- ctx.save();ctx.translate(rect.w/2,rect.h/2);ctx.scale(rect.w/2,rect.h/2);
- var mask=ctx.createRadialGradient(0,0,0,0,0,1);
- mask.addColorStop(0,'rgba(255,255,255,1)');
- mask.addColorStop(0.8,'rgba(255,255,255,1)');
- mask.addColorStop(1,'rgba(255,255,255,0)');
- ctx.fillStyle=mask;ctx.fillRect(-1,-1,2,2);ctx.restore();
- ctx.globalCompositeOperation='source-in';
- ctx.drawImage(source,rect.x,rect.y,rect.w,rect.h,0,0,rect.w,rect.h);
- ctx.globalCompositeOperation='source-over';
- return cv;
 }
 
 /* Las partículas usan tiempo continuo: la expresión puede retroceder, la caída no. */
@@ -667,17 +647,12 @@ function drawCurrentGoldFrame(now){
   var surfaceCtx=GOLD_LOOP.surface.getContext('2d');
   if(!surfaceCtx)return slots.length;
   surfaceCtx.globalAlpha=1;
-  surfaceCtx.drawImage(GOLD_LOOP.portrait,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
-  var face=GOLD_LOOP.face,faceCtx=GOLD_LOOP.faceSurface.getContext('2d');
-  faceCtx.clearRect(0,0,face.w,face.h);
-  faceCtx.globalCompositeOperation='source-over';faceCtx.globalAlpha=1-playback.mix;
-  faceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0);
+  surfaceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
   if(playback.mix>0){
-   faceCtx.globalCompositeOperation='lighter';faceCtx.globalAlpha=playback.mix;
-   faceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0);
+   surfaceCtx.globalAlpha=playback.mix;
+   surfaceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+   surfaceCtx.globalAlpha=1;
   }
-  faceCtx.globalAlpha=1;faceCtx.globalCompositeOperation='source-over';
-  surfaceCtx.drawImage(GOLD_LOOP.faceSurface,face.x,face.y);
   drawGoldConfetti(surfaceCtx,elapsed);
   GOLD_LOOP.lastDraw=key;
  }
@@ -751,7 +726,7 @@ function isFrameValid(sampleCtx, sampleW, sampleH, sourceCanvas){
 }
 
 function readGoldFrames(buffer){
- var bytes=new Uint8Array(buffer),view=new DataView(buffer),frames=[],width=0,height=0,frameNumber=0;
+ var bytes=new Uint8Array(buffer),view=new DataView(buffer),frames=[],width=0,height=0;
  function tag(at){return String.fromCharCode(bytes[at],bytes[at+1],bytes[at+2],bytes[at+3]);}
  function uint24(at){return bytes[at]|(bytes[at+1]<<8)|(bytes[at+2]<<16);}
  if(bytes.length<12 || tag(0)!=='RIFF' || tag(8)!=='WEBP')throw new Error('Invalid golden WebP');
@@ -762,11 +737,11 @@ function readGoldFrames(buffer){
   if(kind==='ANMF'){
    if(size<16 || !width || !height)throw new Error('Invalid golden frame');
    var fw=uint24(start+6)+1,fh=uint24(start+9)+1;
-   // This asset uses complete, independent frames. Its first frame is only particles.
+   // Every frame is a complete portrait, including the neutral first frame.
    if(uint24(start)!==0 || uint24(start+3)!==0 || fw!==width || fh!==height || !(bytes[start+15]&2)){
     throw new Error('Golden frame requires composition');
    }
-   if(frameNumber>0){
+   {
     var body=bytes.slice(start+16,end),bodyView=new DataView(body.buffer),alpha=false;
     for(var sub=0;sub+8<=body.length;){
      var subSize=bodyView.getUint32(sub+4,true);
@@ -783,7 +758,6 @@ function readGoldFrames(buffer){
     }
     frames.push({blob:new Blob([header,body],{type:'image/webp'}),dur:uint24(start+12)||56,w:width,h:height});
    }
-   frameNumber++;
   }
   pos=end+(size&1);
  }
@@ -816,8 +790,8 @@ function ensureGoldLoop(){
  GOLD_LOOP.state='loading';
  var loaded=[],portrait=null;
  // A new URL also bypasses copies retained by the previous service worker.
- var url=ART_BASE+'donald-trump-golden.webp?v=gold-loop-2';
- GOLD_LOOP.posterUrl=ART_BASE+'donald-trump-golden-portrait.webp';
+ var url=ART_BASE+'donald-trump-golden.webp?v=breathing-58';
+ GOLD_LOOP.posterUrl=ART_BASE+'donald-trump-golden-portrait.webp?v=breathing-58';
  var portraitReady=fetch(GOLD_LOOP.posterUrl,{cache:'force-cache'}).then(function(res){
   if(!res.ok)throw new Error('HTTP '+res.status);
   return res.blob();
@@ -845,8 +819,7 @@ function ensureGoldLoop(){
      return;
     }
     if(isFrameValid(sampleCtx,16,22,bmp)){
-     loaded.push({bmp:makeGoldFaceFrame(bmp),dur:frame.dur});
-     if(typeof bmp.close==='function')bmp.close();
+     loaded.push({bmp:bmp,dur:frame.dur});
     }else if(typeof bmp.close==='function'){
      bmp.close();
     }
@@ -865,9 +838,6 @@ function ensureGoldLoop(){
    GOLD_LOOP.surface=document.createElement('canvas');
    GOLD_LOOP.surface.width=GOLD_LOOP.w;
    GOLD_LOOP.surface.height=GOLD_LOOP.h;
-   GOLD_LOOP.faceSurface=document.createElement('canvas');
-   GOLD_LOOP.faceSurface.width=GOLD_LOOP.face.w;
-   GOLD_LOOP.faceSurface.height=GOLD_LOOP.face.h;
    GOLD_LOOP.startedAt=performance.now();
    GOLD_LOOP.state='ready';
    syncGoldCanvases();
@@ -1100,7 +1070,7 @@ function artTag(id,nm,allowGold){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
    if(GOLD_LOOP.state==='idle')setTimeout(ensureGoldLoop,0);
-   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump-golden-portrait.webp';
+   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump-golden-portrait.webp?v=breathing-58';
    return '<div class="gold-slot">'
     +'<img class="gold-static-fb" src="'+poster+'" alt="" onerror="this.onerror=null;this.src=\''+ART_BASE+'donald-trump.webp\'">'
     +'</div><span style="display:none">'+esc(initials(nm))+'</span>';

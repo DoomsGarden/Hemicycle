@@ -4,6 +4,16 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version": "v30.2.58",
+    "date": "2026-10-20",
+    "title": "Botones con relieve",
+    "sections": [{"title":"Menú inferior","items":[
+      "Los cinco botones tienen acabado metálico, bordes biselados y símbolos en relieve.",
+      "La sección abierta mantiene su botón más grande y elevado. Al pulsar un botón, este se hunde ligeramente.",
+      "Se conserva la distribución del menú y la altura compacta de las estadísticas."
+    ]}]
+  },
+  {
     "version": "v30.2.57",
     "date": "2026-10-20",
     "title": "Interfaz más compacta",

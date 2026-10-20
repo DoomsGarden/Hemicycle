@@ -2,7 +2,7 @@ const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('n
 const {createMarketServer}=require('../market/server.cjs'),{cards,root}=require('../market/catalog.cjs');
 const profile={fs:4321,elo:321,w:18,l:12,album:cards.map(c=>c.id).concat(cards[0].id),lastDaily:1,lastWeekly:2,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
 const oldHtml=execFileSync('git',['show','da2dc6a:index.html'],{cwd:root}).toString(),oldCss=execFileSync('git',['show','da2dc6a:css/interface.css'],{cwd:root}).toString();
-const folder=path.join(root,'_dev/previews/v30.2.57');fs.mkdirSync(folder,{recursive:true});
+const folder=path.join(root,'_dev/previews/v30.2.58');fs.mkdirSync(folder,{recursive:true});
 async function dimensions(page){return page.evaluate(()=>{const rect=s=>{const r=document.querySelector(s).getBoundingClientRect();return {top:r.top,height:r.height,width:r.width}};return {brand:rect('.brand'),buttons:rect('.abR'),stats:rect('.hud-strip'),header:rect('#appbar')}})}
 async function touchDrag(context,page,x,y,dx,dy){
  const cdp=await context.newCDPSession(page);

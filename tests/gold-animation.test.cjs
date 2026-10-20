@@ -26,16 +26,15 @@ function timeline(context, durations) {
   return context.GOLD_LOOP;
 }
 
-test('the real asset produces 46 independent portrait frames, excluding the particle-only opening', async () => {
+test('the rebuilt asset includes the neutral opening and a complete clean portrait cycle', async () => {
   const frames = readFrames(loadEngine());
-  assert.equal(frames.length, 46);
-  assert.ok(frames.every(f => f.w === 420 && f.h === 560 && f.dur === 56));
+  assert.ok(frames.length >= 40);
+  assert.ok(frames.every(f => f.w === 420 && f.h === 560 && f.dur > 0));
   const first = Buffer.from(await frames[0].blob.arrayBuffer());
   assert.equal(first.toString('ascii', 0, 4), 'RIFF');
   assert.equal(first.toString('ascii', 8, 12), 'WEBP');
-  assert.equal(first.toString('ascii', 12, 16), 'VP8 ');
-  assert.equal(first.readUInt32LE(4) + 8, first.length);
-  assert.equal(first.readUInt32LE(16), 18692);
+  assert.deepEqual(first,fs.readFileSync(path.join(root,'cards/donald-trump-golden-portrait.webp')));
+  assert.deepEqual(first,Buffer.from(await frames.at(-1).blob.arrayBuffer()),'the last full frame returns exactly to the normal portrait');
 });
 
 test('truncated assets and partial frames fail instead of displaying incomplete portraits', () => {
@@ -48,20 +47,19 @@ test('truncated assets and partial frames fail instead of displaying incomplete 
   assert.throws(() => readFrames(context, partial), /requires composition/);
 });
 
-test('the real animation overlaps by a fixed 100 ms without duplicating endpoint holds', () => {
-  const context = loadEngine();
-  const state = timeline(context, readFrames(context).map(f => f.dur));
-  assert.equal(state.sequence.length, 90);
-  assert.equal(state.duration, 5040);
-  assert.equal(state.overlap, 100);
-  assert.equal(state.period, 4940);
+test('the asset already contains the return journey and is not reversed again', () => {
+  const c=loadEngine(),frames=readFrames(c),state=timeline(c,frames.map(f=>f.dur));
+  assert.equal(state.sequence.length,frames.length);
+  assert.equal(state.duration,frames.reduce((sum,f)=>sum+f.dur,0));
+  assert.equal(state.overlap,100);
+  assert.equal(state.period,state.duration-100);
 });
 
 test('individual frame durations determine when the portrait advances', () => {
   const context = loadEngine();
   const state = timeline(context, [120, 240, 360]);
-  assert.equal(state.duration, 960);
-  for (const [time, expected] of [[0, 0], [119, 0], [120, 1], [359, 1], [360, 2], [719, 2], [720, 1], [959, 1]]) {
+  assert.equal(state.duration, 720);
+  for (const [time, expected] of [[0, 0], [119, 0], [120, 1], [359, 1], [360, 2], [719, 2]]) {
     assert.equal(context.getGoldFrameIndex(time), expected, `time ${time}`);
   }
 });
@@ -106,22 +104,18 @@ test('short animations clamp the overlap and a single frame remains a static por
   assert.equal(playback.mix, 0);
 });
 
-test('the composite draws a clean portrait and a cropped expression, with an independent particle clock', () => {
-  const c=loadEngine(),state=timeline(c,Array(46).fill(56)),surfaceDraws=[],particleTimes=[];
-  state.frames.forEach((f,i)=>f.bmp={expression:i});
-  const surfaceCtx={drawImage(source){surfaceDraws.push(source)}};
-  const faceCtx={clearRect(){},drawImage(){}};
-  state.surface={getContext(){return surfaceCtx}};
-  state.faceSurface={getContext(){return faceCtx}};
-  state.portrait={cleanPortrait:true};state.w=420;state.h=560;state.state='ready';
-  state.confetti={draw(ctx,time){assert.equal(ctx,surfaceCtx);particleTimes.push(time)}};
+test('full portrait frames move while the independent confetti clock never reverses', () => {
+  const c=loadEngine(),state=timeline(c,Array(90).fill(56)),draws=[],particleTimes=[];
+  state.frames.forEach((f,i)=>f.bmp={fullPortrait:i});
+  const ctx={drawImage(source){draws.push(source)}};
+  state.surface={getContext(){return ctx}};state.w=420;state.h=560;state.state='ready';
+  state.confetti={draw(ctx,time){particleTimes.push(time)}};
   const canvas={width:420,height:560,parentNode:{},getContext(){return{drawImage(){}}}};
   c.document={querySelectorAll(){return[{querySelector(){return canvas},classList:{contains(){return true}}}]}};
-  c.drawCurrentGoldFrame(state.startedAt+state.period-1);
-  c.drawCurrentGoldFrame(state.startedAt+state.period+1);
-  assert.deepEqual(particleTimes,[state.period-1,state.period+1]);
-  assert.deepEqual(surfaceDraws,[state.portrait,state.faceSurface,state.portrait,state.faceSurface]);
-  assert.equal(surfaceDraws.some(source=>state.frames.some(frame=>frame.bmp===source)),false,'full frames containing baked confetti are never drawn');
+  c.drawCurrentGoldFrame(state.startedAt+1000);c.drawCurrentGoldFrame(state.startedAt+3000);
+  assert.deepEqual(particleTimes,[1000,3000]);
+  assert.equal(draws.length,2);assert.notEqual(draws[0],draws[1]);
+  assert.ok(draws.every(source=>state.frames.some(f=>f.bmp===source)));
 });
 
 test('confetti redraws while an expression frame is still held', () => {
