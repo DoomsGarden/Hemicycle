@@ -1,5 +1,6 @@
+const dismissLaunch=require('./launch-helper.cjs');
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),{chromium}=require('playwright');
-const root='/workspace/Hemicycle',html=fs.readFileSync(root+'/index.html','utf8'),out='/tmp/hemicycle-v30-2-58-checks';
+const root='/workspace/Hemicycle',html=fs.readFileSync(root+'/index.html','utf8'),out='/tmp/hemicycle-v30-2-60-checks';
 fs.mkdirSync(out,{recursive:true});
 const catalog=vm.createContext({});vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),catalog);
 const ids=JSON.parse(vm.runInContext('JSON.stringify(CARDS.map(c=>c.id))',catalog));
@@ -18,7 +19,7 @@ const errors=[];
    await context.route('**/Hemicycle/',r=>r.fulfill({status:200,contentType:'text/html',body:instrumented}));
    if(variant==='portrait-failure')await context.route('**/cards/donald-trump-golden-portrait.webp*',r=>r.abort('failed'));
    const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
-   await page.goto('http://127.0.0.1:8022/Hemicycle/');
+   await page.goto('http://127.0.0.1:8022/Hemicycle/');await dismissLaunch(page);
    await page.locator('#tabbar [data-go="coleccion"]').click();
    await page.locator('#fq').fill('Donald Trump');
    await page.locator('#gridBox [data-card="donald-trump"]').click();
@@ -55,9 +56,9 @@ const errors=[];
     c.drawImage(g.frames[Math.floor(g.frames.length/2)].bmp,0,0);const smile=c.getImageData(0,0,420,560).data;
     let torsoChanged=0;for(let y=315;y<510;y++)for(let x=30;x<390;x++){const i=(y*420+x)*4;if(Math.abs(first[i]-smile[i])+Math.abs(first[i+1]-smile[i+1])+Math.abs(first[i+2]-smile[i+2])>20)torsoChanged++;}
         const start=performance.now();for(let i=0;i<60;i++)t.draw(g.startedAt+10000+i*34);
-    return{originalMeanError:error,torsoChanged,frames,upward,faceFrames:g.frames.length,faceWidth:g.frames[0].bmp.width,msPerDraw:(performance.now()-start)/60,started:g.startedAt};
+    return{uniqueBitmaps:new Set(g.frames.map(f=>f.bmp)).size,originalMeanError:error,torsoChanged,frames,upward,faceFrames:g.frames.length,faceWidth:g.frames[0].bmp.width,msPerDraw:(performance.now()-start)/60,started:g.startedAt};
    });
-   assert.ok(result.originalMeanError<5,JSON.stringify(result.originalMeanError));assert.ok(result.torsoChanged>1000);assert.equal(result.upward,0);assert.equal(result.faceFrames,51);assert.equal(result.faceWidth,420);
+   assert.ok(result.originalMeanError<5,JSON.stringify(result.originalMeanError));assert.ok(result.torsoChanged>1000);assert.equal(result.upward,0);assert.equal(result.faceFrames,90);assert.equal(result.uniqueBitmaps,46);assert.equal(result.faceWidth,420);
    for(const f of result.frames){assert.equal(f.minAlpha,255);assert.ok(f.average>10);fs.writeFileSync(out+'/gold-'+variant+'-'+f.time+'.png',Buffer.from(f.png.split(',')[1],'base64'));delete f.png}
    if(variant==='bitmap'){
     await page.locator('#tabbar [data-go="menu"]').click();await page.locator('[data-act="play-menu"]').click();await page.locator('[data-act="play-mode"][data-mode="rapida"]').click();await page.locator('[data-act="play"]').click();
@@ -79,7 +80,7 @@ const errors=[];
     await page.screenshot({path:out+'/gold-own-and-rival.png'});
    }
    fs.writeFileSync(out+'/gold-'+variant+'.json',JSON.stringify(result,null,2));
-   console.log(variant+': 51 full portrait frames, downward confetti, opaque renders, '+result.msPerDraw.toFixed(2)+' ms/draw');
+   console.log(variant+': 90 full portrait frames, downward confetti, opaque renders, '+result.msPerDraw.toFixed(2)+' ms/draw');
    await context.close();
   }
   assert.deepEqual(errors,[]);

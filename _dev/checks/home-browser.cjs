@@ -1,3 +1,4 @@
+const dismissLaunch=require('./launch-helper.cjs');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const {createMarketServer}=require('../market/server.cjs'),{cards,root}=require('../market/catalog.cjs');
 const profile={fs:4321,elo:321,w:5,l:3,album:cards.slice(0,9).flatMap(c=>[c.id,c.id]),lastDaily:1,lastWeekly:2,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
@@ -12,7 +13,7 @@ const folder=path.join(root,'_dev/previews',version);fs.mkdirSync(folder,{recurs
   for(const width of [393,360,320]){
    const context=await browser.newContext({viewport:{width,height:width===393?851:width===360?640:568},serviceWorkers:'block'});
    await context.addInitScript(profile=>{localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;},profile);
-   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);
+   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await dismissLaunch(page);
    const selected=()=>page.locator('.hero-fan .art img').evaluateAll(es=>es.map(e=>e.getAttribute('src').match(/\/([^/]+)\.webp$/)[1]));
    const saved=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));
    let last=await selected();assert.equal(last.length,3);assert.equal(new Set(last).size,3);assert.ok(last.every(id=>profile.album.includes(id)));
@@ -39,7 +40,7 @@ const folder=path.join(root,'_dev/previews',version);fs.mkdirSync(folder,{recurs
   for(const count of [1,2]){
    const d={...profile,album:cards.slice(0,count).map(c=>c.id)};
    const context=await browser.newContext({viewport:{width:393,height:851},serviceWorkers:'block',reducedMotion:'reduce'});
-   await context.addInitScript(d=>localStorage.setItem('hemiciclo_v21',JSON.stringify(d)),d);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);
+   await context.addInitScript(d=>localStorage.setItem('hemiciclo_v21',JSON.stringify(d)),d);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await dismissLaunch(page);
    assert.equal(await page.locator('.hero-fan .cromo').count(),count);
    assert.ok(await page.locator('.hero-fan .cromo').evaluateAll(es=>es.every(e=>getComputedStyle(e).animationName==='none')));
    await context.close();

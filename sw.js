@@ -1,5 +1,5 @@
-const CACHE = 'hemiciclo-v30.2.59-tutorial';
-const ASSETS = ['./js/battle-tutorial.js?v=30.2.59', './css/tutorial.css?v=30.2.59', './', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/app-interaction.js?v=30.2.57-final', './js/changelog.js?v=30.2.59', './js/market-rules.js', './js/market-ui.js?v=30.2.56', './css/interface.css?v=30.2.58', './cards/donald-trump-golden-portrait.webp?v=breathing-58', './cards/donald-trump-golden.webp?v=breathing-58'];
+const CACHE = 'hemiciclo-v30.2.60-entrada';
+const ASSETS = ['./js/launch-screen.js?v=30.2.60', './css/launch.css?v=30.2.60', './fonts/Anton-Regular.ttf', './js/battle-tutorial.js?v=30.2.59', './css/tutorial.css?v=30.2.59', './', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/app-interaction.js?v=30.2.57-final', './js/changelog.js?v=30.2.60', './js/market-rules.js', './js/market-ui.js?v=30.2.56', './css/interface.css?v=30.2.58', './cards/donald-trump-golden-portrait.webp?v=nod-60', './cards/donald-trump-golden.webp?v=nod-60'];
 
 self.addEventListener('install', e => {
   e.waitUntil(

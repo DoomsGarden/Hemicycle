@@ -4,6 +4,16 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version":"v30.2.60",
+    "date":"2026-10-20",
+    "title":"Una nueva bienvenida",
+    "sections":[{"title":"Pantalla de inicio","items":[
+      "Al abrir el juego aparecen el logo, el nombre HEMICICLO con letras de doble trazo y el botón INICIAR.",
+      "Al pulsar INICIAR, el logo asciende, el nombre se aleja y una transición suave muestra el menú principal.",
+      "La entrada funciona sin conexión y respeta la preferencia de reducir el movimiento. Volver al menú durante la sesión no repite la presentación."
+    ]}]
+  },
+  {
     "version":"v30.2.59",
     "date":"2026-10-20",
     "title":"Tu primer combate, paso a paso",

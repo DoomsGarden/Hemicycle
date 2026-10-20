@@ -30,6 +30,8 @@ test('the rebuilt asset includes the neutral opening and a complete clean portra
   const frames = readFrames(loadEngine());
   assert.ok(frames.length >= 40);
   assert.ok(frames.every(f => f.w === 420 && f.h === 560 && f.dur > 0));
+  assert.equal(new Set(frames.map(f=>f.identity)).size,46,'the 90-frame cycle shares its 46 distinct full portraits');
+  assert.equal(frames[0].identity,frames.at(-1).identity);
   const first = Buffer.from(await frames[0].blob.arrayBuffer());
   assert.equal(first.toString('ascii', 0, 4), 'RIFF');
   assert.equal(first.toString('ascii', 8, 12), 'WEBP');

@@ -1,3 +1,4 @@
+const dismissLaunch=require('./launch-helper.cjs');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const {cards,root}=require('../market/catalog.cjs');
 const profile={fs:4321,elo:321,w:5,l:3,album:cards.slice(0,9).flatMap(c=>[c.id,c.id]),lastDaily:1,lastWeekly:2};
@@ -5,7 +6,7 @@ const version=fs.readFileSync(root+'/index.html','utf8').match(/var VERSION='([^
 (async()=>{const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});const errors=[];
 try{for(const width of [320,360,393,1280]){
 const context=await browser.newContext({viewport:{width,height:851},serviceWorkers:'block'});await context.addInitScript(d=>localStorage.setItem('hemiciclo_v21',JSON.stringify(d)),profile);
-const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:8022/Hemicycle/');const save=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));
+const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:8022/Hemicycle/');await dismissLaunch(page);const save=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));
 const height=await page.locator('.hud-strip').evaluate(e=>e.getBoundingClientRect().height);assert.ok(height<43);
 for(const section of ['tienda','coleccion','menu','liga','mercado']){
 await page.locator('#tabbar [data-go="'+section+'"]').click();await page.waitForTimeout(230);

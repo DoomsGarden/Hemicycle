@@ -1,8 +1,9 @@
+const dismissLaunch=require('./launch-helper.cjs');
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{execFileSync}=require('node:child_process'),{chromium}=require('playwright');
 const {createMarketServer}=require('../market/server.cjs'),{cards,root}=require('../market/catalog.cjs');
 const profile={fs:4321,elo:321,w:18,l:12,album:cards.map(c=>c.id).concat(cards[0].id),lastDaily:1,lastWeekly:2,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
 const oldHtml=execFileSync('git',['show','da2dc6a:index.html'],{cwd:root}).toString(),oldCss=execFileSync('git',['show','da2dc6a:css/interface.css'],{cwd:root}).toString();
-const folder=path.join(root,'_dev/previews/v30.2.58');fs.mkdirSync(folder,{recursive:true});
+const folder=path.join(root,'_dev/previews/v30.2.60');fs.mkdirSync(folder,{recursive:true});
 async function dimensions(page){return page.evaluate(()=>{const rect=s=>{const r=document.querySelector(s).getBoundingClientRect();return {top:r.top,height:r.height,width:r.width}};return {brand:rect('.brand'),buttons:rect('.abR'),stats:rect('.hud-strip'),header:rect('#appbar')}})}
 async function touchDrag(context,page,x,y,dx,dy){
  const cdp=await context.newCDPSession(page);
@@ -21,7 +22,7 @@ async function touchDrag(context,page,x,y,dx,dy){
    await before.route('**/css/interface.css*',r=>r.fulfill({status:200,contentType:'text/css',body:oldCss}));
    const oldPage=await before.newPage();await oldPage.goto(base);const old=await dimensions(oldPage);await before.close();
    const context=await browser.newContext({viewport,isMobile:viewport.width<800,hasTouch:true,serviceWorkers:'block'});await context.addInitScript(profile=>localStorage.setItem('hemiciclo_v21',JSON.stringify(profile)),profile);
-   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);
+   const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await dismissLaunch(page);
    const now=await dimensions(page);
    for(const part of ['brand','buttons'])for(const key of ['height','top','width'])assert.ok(Math.abs(old[part][key]-now[part][key])<0.5,part+' '+key+' changed');
    assert.ok(old.stats.height-now.stats.height>=10,'statistics must be at least 10 px shorter');
