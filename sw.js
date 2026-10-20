@@ -1,10 +1,10 @@
-const CACHE = 'hemiciclo-v30.2.2-pasivas';
+const CACHE = 'hemiciclo-v30.2.2-historial';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/changelog.js', './cards/donald-trump-golden-portrait.webp'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
     caches.open(CACHE).then(c =>
-      Promise.allSettled(ASSETS.map(url => c.add(url)))
+      Promise.allSettled(ASSETS.map(url => c.add(new Request(url, { cache: 'reload' }))))
     ).then(() => self.skipWaiting())
   );
 });
