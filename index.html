@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-ES">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 <meta name="theme-color" content="#0a0e18">
-<meta name="description" content="Colecciona cromos de politicos y gana el debate llegando a 100 votos.">
+<meta name="description" content="Colecciona cromos de políticos y gana el debate llegando a 100 votos.">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -502,14 +502,15 @@ window.onerror=function(m,src,l,c){
   var ct=document.getElementById('content'); if(!ct)return;
   var b=document.getElementById('errbox');
   if(!b){b=document.createElement('div');b.id='errbox';b.className='err';ct.insertBefore(b,ct.firstChild);}
-  b.textContent='Error: '+m+' (linea '+l+':'+c+')';
+  b.textContent='Error: '+m+' (línea '+l+':'+c+')';
 };
 (function(){
 'use strict';
-var VERSION='v30';
+var VERSION='v30.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
+function searchText(s){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
 var MEM={};
 function lsGet(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
 function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){MEM[k]=v;}}
@@ -799,90 +800,168 @@ function ensureGoldLoop(){
 
 var DOCS=[
  {k:'verborrea',n:'Verborrea',d:'+1 TdP cada turno. Si te expulsan un orador, +2 TdP.',col:'#3b6fd4'},
- {k:'guardia',n:'Vieja Guardia',d:'Al final de tu turno tus oradores ganan +1 Zasca (max +3).',col:'#8b5cf6'},
- {k:'aforado',n:'Aforado',d:'La primera expulsion de un orador tuyo se salva con 1 de Aguante.',col:'#28a86b'},
- {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 2 de dano.',col:'#d4a03b'},
- {k:'foco',n:'Foco Mediatico',d:'Tu Lider regenera +1 Aguante y cada golpe suyo te da +1 voto.',col:'#d43b3b'},
- {k:'viperina',n:'Lengua Viperina',d:'Tus oradores infligen +2 de dano al Lider rival.',col:'#c026d3'}
+ {k:'guardia',n:'Vieja Guardia',d:'Al final de tu turno tus oradores ganan +1 Zasca (máx. +3).',col:'#8b5cf6'},
+ {k:'aforado',n:'Aforado',d:'La primera expulsión de un orador tuyo se salva con 1 de Aguante.',col:'#28a86b'},
+ {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 2 de daño.',col:'#d4a03b'},
+ {k:'foco',n:'Foco Mediático',d:'Tu Líder regenera +1 Aguante y cada golpe suyo te da +1 voto.',col:'#d43b3b'},
+ {k:'viperina',n:'Lengua Viperina',d:'Tus oradores infligen +2 de daño al Líder rival.',col:'#c026d3'}
 ];
 var DOCM={};DOCS.forEach(function(d){DOCM[d.k]=d;});
-var RARS=[{k:'comun',n:'Comun',c:'#b07a45',g:3},{k:'raro',n:'Raro',c:'#4a7fb5',g:4},{k:'especial',n:'Especial',c:'#8b5cf6',g:5},{k:'legendario',n:'Legendario',c:'#e8b923',g:6}];
+var RARS=[{k:'comun',n:'Común',c:'#b07a45',g:3},{k:'raro',n:'Raro',c:'#4a7fb5',g:4},{k:'especial',n:'Especial',c:'#8b5cf6',g:5},{k:'legendario',n:'Legendario',c:'#e8b923',g:6}];
 var RARM={};RARS.forEach(function(r){RARM[r.k]=r;});
 var TIER={comun:{c:[1,3],a:[2,4],h:[4,7],v:2},raro:{c:[2,4],a:[4,6],h:[6,10],v:3},especial:{c:[3,5],a:[5,7],h:[8,12],v:5},legendario:{c:[4,6],a:[7,9],h:[11,16],v:8}};
 var TIERORDER={legendario:0,especial:1,raro:2,comun:3};
 
 var ROSTER={
- verborrea:{legendario:['Donald Trump','Boris Johnson'],especial:['Pablo Iglesias','Nigel Farage','Javier Milei','Gabriel Rufian'],raro:['Jose Luis Rodriguez Zapatero','Pablo Echenique','Inigo Errejon','Alberto Garzon','Irene Montero','Monica Garcia'],comun:['Toni Canto','Antonio Maillo','Rafael Hernando','Pablo Cambronero','Marta Lois','Nacho Alvarez','Isabel Garcia Tejerina','Jaime de Olano']},
- guardia:{legendario:['Alberto Nunez Feijoo','Angela Merkel'],especial:['Jose Maria Aznar','Felipe Gonzalez','Bernie Sanders','Joe Biden'],raro:['Esperanza Aguirre','Soraya Saenz de Santamaria','Ana Botella','Cristina Cifuentes','Jose Manuel Garcia-Margallo','Julio Anguita'],comun:['Celia Villalobos','Alfonso Alonso','Javier Maroto','Juan Vicente Herrera','Carlos Floriano','Miguel Arias Canete','Dolors Montserrat','Teodoro Garcia Egea']},
- aforado:{legendario:['Mariano Rajoy','Vladimir Putin'],especial:['Santiago Abascal','Giorgia Meloni','Recep Tayyip Erdogan','Viktor Orban'],raro:['Pablo Casado','Albert Rivera','Dolores de Cospedal','Jorge Fernandez Diaz','Luis de Guindos','Cristobal Montoro'],comun:['Fatima Banez','Inigo Mendez de Vigo','Rafael Catala','Alvaro Nadal','Jose Luis Abalos','Carmen Calvo','Meritxell Batet','Fernando Grande-Marlaska']},
- giro:{legendario:['Carles Puigdemont','Emmanuel Macron'],especial:['Marine Le Pen','Matteo Salvini','Justin Trudeau','Salvador Illa'],raro:['Oriol Junqueras','Jordi Turull','Miriam Nogueras','Laura Borras','Anna Gabriel','Marta Rovira'],comun:['Quim Torra','Pere Aragones','Jordi Sanchez','Roger Torrent','Josep Rull','Carme Forcadell','Raul Romeva','Toni Comin']},
- foco:{legendario:['Pedro Sanchez','Isabel Diaz Ayuso'],especial:['Ada Colau','Nicolas Maduro','Andres Manuel Lopez Obrador','Cristina Fernandez de Kirchner'],raro:['Ines Arrimadas','Rocio Monasterio','Cayetana Alvarez de Toledo','Edmundo Bal','Begona Villacis','Sara Gimenez'],comun:['Ana Pastor','Pablo Montesinos','Marta Rivera de la Cruz','Andrea Levy','Cuca Gamarra','Borja Semper','Esteban Gonzalez Pons','Elias Bendodo']},
- viperina:{legendario:['Barack Obama','Yolanda Diaz'],especial:['Hillary Clinton','Kamala Harris','Christine Lagarde','Ursula von der Leyen'],raro:['Miquel Iceta','Adriana Lastra','Pilar Alegria','Isabel Cela','Maria Jesus Montero','Nadia Calvino'],comun:['Oscar Puente','Patxi Lopez','Susana Diaz','Emiliano Garcia-Page','Juan Espadas','Pilar Llop','Reyes Maroto','Raquel Sanchez']}
-};
-var QPOOL={
- verborrea:['«Yo he venido aqui a hablar de mi libro»','«Vamos a ver, senorias»','«Permitanme una reflexion»','«Un minuto mas, presidenta»','«Es que no me dejan terminar»','«Ya acabo, ya acabo»','«Rectifico: no rectifico»','«Se lo explicare con peras y manzanas»','«Que me quiten la palabra si quieren»','«Esto es un debate de sordos»','«A mi me han llamado de todo»','«Y ademas, y sobre todo»'],
- guardia:['«Cuando yo era joven esto no pasaba»','«Ya lo avise en 1987»','«Aqui hemos venido a aguantar»','«Los anos dan criterio»','«Yo he visto caer tres gobiernos»','«A mi no me tiembla el pulso»','«Esto ya lo dijo un clasico»','«Paciencia, mucha paciencia»','«He sobrevivido a cinco crisis»','«Con respeto y con la verdad»','«No me jubilo, me reengancho»','«La experiencia es un grado»'],
- aforado:['«Que me llamen, que aqui estoy»','«A mi nadie me mueve de este escano»','«Inhabilitado, si; retirado, no»','«Su senoria, sigo en pie»','«Me voy de rositas»','«Esto me lo apunto para el recurso»','«Tengo fuero, paciencia y tiempo»','«Me han dado por muerto cuatro veces»','«No hay mocion que me tumbe»','«Aqui sigo, imperturbable»','«Lo veo todo desde la ultima fila»','«Ni me condenan ni me voy»'],
- giro:['«Y entonces cambie de opinion»','«Rectificar es de sabios»','«Esto lo arreglo con una enmienda»','«Enmienda a la totalidad»','«Nadie se lo esperaba»','«Sorpresa, senorias»','«Voy a hacer un anuncio»','«Lo dije, pero en otro sentido»','«Segundo acto: el giro»','«Ustedes no se lo creeran»','«Todo tiene una segunda parte»','«Y aqui viene el cambio de guion»'],
- foco:['«Que me enfoquen a mi»','«Salgo en todos los telediarios»','«Un titular, por favor»','«Primer plano, gracias»','«La camara, aqui»','«Esto da para portada»','«Foco, foco, foco»','«Me van a citar mil veces»','«Tendencia numero uno»','«Un directo y lo arreglo»','«Que salga bien en la foto»','«Atencion a mi»'],
- viperina:['«Con todo el carino del mundo»','«Se lo digo por su bien»','«Que poco leido esta usted»','«Le falta un hervor»','«Con esa altura de miras...»','«Es usted muy gracioso, senoria»','«Menuda ocurrencia»','«Aprendiz, pero con ganas»','«Se le ve el plumero»','«Mucho ruido y pocas nueces»','«Lo digo sin acritud»','«Que se lo mire»']
+ verborrea:{legendario:['Donald Trump','Boris Johnson'],especial:['Pablo Iglesias','Nigel Farage','Javier Milei','Gabriel Rufián'],raro:['José Luis Rodríguez Zapatero','Pablo Echenique','Íñigo Errejón','Alberto Garzón','Irene Montero','Mónica García'],comun:['Toni Cantó','Antonio Maíllo','Rafael Hernando','Pablo Cambronero','Marta Lois','Nacho Álvarez','Isabel García Tejerina','Jaime de Olano']},
+ guardia:{legendario:['Alberto Núñez Feijóo','Angela Merkel'],especial:['José María Aznar','Felipe González','Bernie Sanders','Joe Biden'],raro:['Esperanza Aguirre','Soraya Sáenz de Santamaría','Ana Botella','Cristina Cifuentes','José Manuel García-Margallo','Julio Anguita'],comun:['Celia Villalobos','Alfonso Alonso','Javier Maroto','Juan Vicente Herrera','Carlos Floriano','Miguel Arias Cañete','Dolors Montserrat','Teodoro García Egea']},
+ aforado:{legendario:['Mariano Rajoy','Vladímir Putin'],especial:['Santiago Abascal','Giorgia Meloni','Recep Tayyip Erdoğan','Viktor Orbán'],raro:['Pablo Casado','Albert Rivera','Dolores de Cospedal','Jorge Fernández Díaz','Luis de Guindos','Cristóbal Montoro'],comun:['Fátima Báñez','Íñigo Méndez de Vigo','Rafael Catalá','Álvaro Nadal','José Luis Ábalos','Carmen Calvo','Meritxell Batet','Fernando Grande-Marlaska']},
+ giro:{legendario:['Carles Puigdemont','Emmanuel Macron'],especial:['Marine Le Pen','Matteo Salvini','Justin Trudeau','Salvador Illa'],raro:['Oriol Junqueras','Jordi Turull','Miriam Nogueras','Laura Borràs','Anna Gabriel','Marta Rovira'],comun:['Quim Torra','Pere Aragonès','Jordi Sànchez','Roger Torrent','Josep Rull','Carme Forcadell','Raül Romeva','Toni Comín']},
+ foco:{legendario:['Pedro Sánchez','Isabel Díaz Ayuso'],especial:['Ada Colau','Nicolás Maduro','Andrés Manuel López Obrador','Cristina Fernández de Kirchner'],raro:['Inés Arrimadas','Rocío Monasterio','Cayetana Álvarez de Toledo','Edmundo Bal','Begoña Villacís','Sara Giménez'],comun:['Ana Pastor','Pablo Montesinos','Marta Rivera de la Cruz','Andrea Levy','Cuca Gamarra','Borja Sémper','Esteban González Pons','Elías Bendodo']},
+ viperina:{legendario:['Barack Obama','Yolanda Díaz'],especial:['Hillary Clinton','Kamala Harris','Christine Lagarde','Ursula von der Leyen'],raro:['Miquel Iceta','Adriana Lastra','Pilar Alegría','Isabel Cela','María Jesús Montero','Nadia Calviño'],comun:['Óscar Puente','Patxi López','Susana Díaz','Emiliano García-Page','Juan Espadas','Pilar Llop','Reyes Maroto','Raquel Sánchez']}
 };
 var QBESP={
  'donald-trump':['«Fake news!»','«You are fired!»','«Person, woman, man, camera, TV»'],
  'boris-johnson':['«Get Brexit done»','«Let us get ready to rubble»','«Lo hacemos y ya veremos»'],
- 'alberto-nunez-feijoo':['«Sentidino»','«Galicia no se vende»','«Aqui no sobra nadie»'],
- 'angela-merkel':['«Wir schaffen das»','«Lo vamos a resolver»','«Sin prisas, con calma»'],
- 'mariano-rajoy':['«Los espanoles son muy espanoles y mucho espanoles»','«El vino, con moderacion, es bueno»','«Y usted que quiere que le diga?»'],
- 'vladimir-putin':['«Sorpresa»','«Lo hice por Rusia»','«Todo segun el plan»'],
- 'carles-puigdemont':['«Volvere»','«Desde Bruselas»','«Esto no ha acabado»'],
- 'emmanuel-macron':['«En meme temps»','«En marche!»','«Y a la vez...»'],
- 'pedro-sanchez':['«Resistire»','«Pactare con quien haga falta»','«Espana va como un cohete»'],
- 'isabel-diaz-ayuso':['«Libertad!»','«Comunismo o libertad»','«Madrid es Espana»'],
+ 'alberto-nunez-feijoo':['«Sentido común»','«Galicia no se vende»','«Aquí no sobra nadie»'],
+ 'angela-merkel':['«Lo conseguiremos»','«Lo vamos a resolver»','«Sin prisas, con calma»'],
+ 'mariano-rajoy':['«Los españoles son muy españoles y mucho españoles»','«El vino, con moderación, es bueno»','«¿Y usted qué quiere que le diga?»'],
+ 'vladimir-putin':['«Sorpresa»','«Lo hice por Rusia»','«Todo según el plan»'],
+ 'carles-puigdemont':['«Volveré»','«Desde Bruselas»','«Esto no ha acabado»'],
+ 'emmanuel-macron':['«Al mismo tiempo»','«¡En marcha!»','«Y a la vez...»'],
+ 'pedro-sanchez':['«Resistiré»','«Pactaré con quien haga falta»','«España va como un cohete»'],
+ 'isabel-diaz-ayuso':['«¡Libertad!»','«Comunismo o libertad»','«Madrid es España»'],
  'barack-obama':['«Yes, we can»','«Let me be clear»','«Change»'],
- 'yolanda-diaz':['«El pais que viene»','«A trabajar»','«Sumar es sumar»'],
+ 'yolanda-diaz':['«El país que viene»','«A trabajar»','«Sumar es sumar»'],
  'pablo-iglesias':['«La casta»','«Asalto a los cielos»','«Nos han votado por el cambio»'],
- 'nigel-farage':['«Take back control»','«Brexit means Brexit»'],
- 'javier-milei':['«Viva la libertad, carajo»','«Afuera»','«No hay plata»'],
- 'gabriel-rufian':['«Somos la sonrisa de la Republica»','«Espana nos roba un poco»'],
- 'jose-maria-aznar':['«Espana va bien»','«Hemos ganado»'],
- 'felipe-gonzalez':['«Que pesado soy»','«Otro gallo cantaria»'],
- 'bernie-sanders':['«I am once again asking»','«Not me, us»'],
- 'joe-biden':['«No malarkey»','«Look, folks»'],
- 'santiago-abascal':['«Viva Espana»','«Que viva Espana»'],
- 'giorgia-meloni':['«Soy Giorgia, soy madre, soy italiana»','«Dios, patria y familia»'],
- 'recep-tayyip-erdogan':['«Vamos a hacer algo grande»','«El pueblo manda»'],
- 'viktor-orban':['«Hungria primero»','«Democracia iliberal»'],
- 'marine-le-pen':['«Le peuple»','«Francia primero»'],
- 'matteo-salvini':['«Italianos primero»','«Manos libres»'],
- 'justin-trudeau':['«Because it is 2015»','«Sunny ways»'],
- 'salvador-illa':['«Volveremos a ganar»','«Con toda la humildad»'],
- 'ada-colau':['«Barcelona no se vende»','«Los vecinos primero»'],
- 'nicolas-maduro':['«Un paso al frente»','«Chavez vive»'],
- 'andres-manuel-lopez-obrador':['«Abrazos, no balazos»','«La pobreza no es destino»'],
- 'cristina-fernandez-de-kirchner':['«Un modelo de pais»','«La patria es el otro»'],
- 'hillary-clinton':['«I am with her»','«Deal me in»'],
- 'kamala-harris':['«We did it, Joe»','«No volver atras»'],
- 'christine-lagarde':['«Haremos lo que haga falta»','«Whatever it takes»'],
- 'ursula-von-der-leyen':['«Europa es nuestra respuesta»','«Al grano»']
+ 'nigel-farage':['«Take back control»','«Brexit means Brexit»','«I have been called a great many things in my time — that’s politics.»'],
+ 'javier-milei':['«¡Viva la libertad, carajo!»','«¡Afuera!»','«No hay plata»'],
+ 'gabriel-rufian':['«Somos la sonrisa de la República»','«España nos roba un poco»','«Respeto enormemente las opiniones de la izquierda de caviar.»'],
+ 'jose-maria-aznar':['«España va bien»','«Hemos ganado»','«Tomar posesión de un escaño siempre es preferible a empuñar las armas.»'],
+ 'felipe-gonzalez':['«Qué pesado soy»','«Otro gallo cantaría»','«Hay una crisis institucional que galopa hacia la anarquía.»'],
+ 'bernie-sanders':['«I am once again asking»','«Not me, us»','«Healthcare is a right of all people, not a privilege.»'],
+ 'joe-biden':['«No malarkey»','«Look, folks»','«This is the time to heal in America.»'],
+ 'santiago-abascal':['«¡Viva España!»','«¡Que viva España!»','«Yo soy español. Ni monárquico ni republicano.»'],
+ 'giorgia-meloni':['«Soy Giorgia, soy madre, soy italiana»','«Dios, patria y familia»','«Las fronteras solo existen si las defiendes.»'],
+ 'recep-tayyip-erdogan':['«Vamos a hacer algo grande»','«El pueblo manda»','«Todos somos seres humanos.»'],
+ 'viktor-orban':['«Hungría primero»','«Democracia iliberal»','«Los días que tenemos por delante son para sanar nuestras heridas.»'],
+ 'marine-le-pen':['«El pueblo»','«Francia primero»','«Lo que me importa es la defensa de Francia.»'],
+ 'matteo-salvini':['«Italianos primero»','«Manos libres»','«Elijo cambiar las cosas desde dentro.»'],
+ 'justin-trudeau':['«Because it is 2015»','«Sunny ways»','«Diversity is our strength.»'],
+ 'salvador-illa':['«Volveremos a ganar»','«Con toda la humildad»','«Las vacunas salvan vidas.»'],
+ 'ada-colau':['«Barcelona no se vende»','«Los vecinos primero»','«Es una victoria de la ciudadanía y no de un partido político.»'],
+ 'nicolas-maduro':['«Un paso al frente»','«Chávez vive»','«Soy hijo de Chávez, pero no soy Chávez.»'],
+ 'andres-manuel-lopez-obrador':['«Abrazos, no balazos»','«La pobreza no es destino»','«No puede haber gobierno rico con pueblo pobre.»'],
+ 'cristina-fernandez-de-kirchner':['«Un modelo de país»','«La patria es el otro»','«No fue magia.»'],
+ 'hillary-clinton':['«I am with her»','«Deal me in»','«Women’s rights are human rights.»'],
+ 'kamala-harris':['«We did it, Joe»','«No volver atrás»','«No parent should have to worry about going broke because their child is sick.»'],
+ 'christine-lagarde':['«Haremos lo que haga falta»','«Whatever it takes»','«The financial industry is a service industry. It should serve others before it serves itself.»'],
+ 'ursula-von-der-leyen':['«Europa es nuestra respuesta»','«Al grano»','«Freedom is priceless.»'],
+ "adriana-lastra":["«En las listas van a ir, como siempre, los mejores»","«Nosotros estamos siempre preparados, siempre dispuestos y siempre con ánimo de victoria»","«Este gobierno no tira la toalla y no deja tirada a la gente»"],
+ "albert-rivera":["«Saber catalán debe ser un mérito, no una barrera»","«No abra pseudoembajadas. Métase en la cabeza que Cataluña es una comunidad autónoma»","«Queremos ser un partido conciliador entre españoles»"],
+ "alberto-garzon":["«Hay que formatear las actuales instituciones del Estado»","«Trichet y Draghi son responsables directos de todo el sufrimiento actual y deberían pasar por un juzgado»","«Lo que se podría haber evitado era hacer recaer todo el coste de la crisis sobre la mayoría de la población»"],
+ "alfonso-alonso":["«Hoy es la última rueda de prensa»","«Es una decisión firme, irrevocable»","«Trabajar, afianzar el proyecto y estar unidos»"],
+ "alvaro-nadal":["«La divergencia de ideas y opiniones no es un problema en España»","«Contamos nuestros gobiernos por recuperaciones, otros por recesiones»","«Hemos de buscar un mix energético que nos permita respetar el medio ambiente sin incrementar los precios para el consumidor»"],
+ "ana-botella":["«Los años pares siempre nos han traído mala suerte»","«La ideología que ha traído mayor progreso a la humanidad es la de los que estamos aquí sentados»","«Sí, soy tradicional; soy conservadora»"],
+ "ana-pastor":["«Realmente no sé si lo conseguí»","«El Parlamento debe ser expresión de la unidad de principios y valores»","«Seguir avanzando como nación en este proyecto común que se llama España»"],
+ "andrea-levy":["«Todos tenemos una fecha de caducidad que hemos de asumir»","«El partido no se doblegó y el tiempo nos dio la razón»","«No podemos normalizar la ansiedad medicalizándola»"],
+ "anna-gabriel":["«Soy un producto de la clase trabajadora»","«Frenaremos a la derecha»","«Mis compromisos políticos y sociales permanecen donde estaban»"],
+ "antonio-maillo":["«Sea quien sea el que encabece la candidatura, los dos vamos a ser un pack, un tándem»","«No solo estamos dispuestos, sino que queremos gobernar y cambiar Andalucía»","«Vamos a ser un equipo que suma, que incorpora a gente desde la complementariedad»"],
+ "begona-villacis":["«Nosotros no somos políticos, somos gente»","«Nada ni nadie va a cohibirnos ni a impedirnos que cumplamos con el compromiso adquirido con los madrileños»","«No debemos permitir que el odio se instale en nuestra sociedad»"],
+ "borja-semper":["«Yo me libré porque ese día no fui a clase»","«También me gustaría un cara a cara para preguntarles por qué querían matarme»","«No siento odio hacia ellos, pero sí quiero que respondan ante la justicia»"],
+ "carlos-floriano":["«Ya estamos preparados para gobernar»","«El liderazgo sale reforzado, nos ponemos en la senda de ganar»","«Hoy hemos conseguido hacer un partido más sólido»"],
+ "carme-forcadell":["«Yo no estoy inhabilitada porque no tenía malversación»","«Lo único que le importa es la unidad de España y lo que menos le importa es la justicia»","«El Tribunal Constitucional nos dará la razón y lo avalará»"],
+ "carmen-calvo":["«Estamos manejando dinero público, y el dinero público no es de nadie»","«Un concierto de rock en español hace más por el castellano que el Instituto Cervantes»","«Soy una tía a la que no doblan»"],
+ "cayetana-alvarez-de-toledo":["«Un poco extraño, ¿no?»","«No te lo perdonaré jamás, Manuela Carmena. ¡Jamás!»","«La justicia es el último dique de contención que tiene la democracia en este pacto de Sánchez con Podemos y los independentistas»"],
+ "celia-villalobos":["«¡Vamos, Manolo, que pierdo el tren!»","«Usted a mí no me da lecciones»","«Le digo al ama de casa que no eche huesos de vaca cuando haga una comida»"],
+ "cristina-cifuentes":["«Si sacas la pistola es para disparar»","«No me voy, me quedo»","«Voy a seguir trabajando por vosotros, los que me habéis votado y los que no»"],
+ "cristobal-montoro":["«Que caiga España, que ya la levantaremos nosotros»","«¡Pandilla de inútiles, estáis arruinando España!»","«España se levanta sola»"],
+ "cuca-gamarra":["«Hay que estar para servir y no para servirte de la política»","«Nos están vendiendo una moto, pero España no va como una moto»","«Durante los primeros 100 días bajaremos el IRPF a las rentas menores»"],
+ "dolores-de-cospedal":["«Que se presenten a las elecciones»","«¿Pero esto qué es? ¿Qué es esto de tratar de violentar el voto?»","«Es el partido de los trabajadores»"],
+ "dolors-montserrat":["«La independencia judicial no es elegible según a quién afecta»","«Europa no puede mirar hacia otro lado en un caso como este»","«Los jueces deben estar protegidos frente a intervenciones o presiones externas susceptibles de afectar a su juicio independiente»"],
+ "edmundo-bal":["«Soy Bal, Edmundo Bal»","«No soporto la mentira»","«Soy un servidor público que he dedicado toda mi vida a conseguir, a pelear por los intereses generales de este país»"],
+ "elias-bendodo":["«El discurso de la vivienda se les ha caído entero»","«Sánchez convocó las elecciones por la vivienda y la vivienda va a ser su puntilla»","«Dejar atrás el muro de la crispación de Sánchez»"],
+ "emiliano-garcia-page":["«Las elecciones son como los melones»","«Ese es el espíritu con el que hay que salir a dar la batalla electoral»","«Lo que necesitamos en todo caso es recuperar entre todos espacios de ciertos consensos, al menos de cierta escucha»"],
+ "esperanza-aguirre":["«Yo también estoy harta»","«De momento deben dejar sus cargos»","«Los ciudadanos quieren un partido limpio y tenemos que luchar para ello»"],
+ "esteban-gonzalez-pons":["«Desde aquí vamos a trabajar para seguir avanzando, con las puertas abiertas para todas las delegaciones»","«No hay una Europa del sur y otra del norte, una Europa rica y otra pobre»","«Habrá más Europa si soñamos juntos y trabajamos unidos»"],
+ "fatima-banez":["«Uno de cada cinco delitos ya es ciberdelito»","«En Aragón y en España hay dos tipos de empresa, la que ha sufrido un ciberataque y la que lo sufrirá»","«La inversión en seguridad es estratégica y no es un gasto»"],
+ "fernando-grande-marlaska":["«Son gajes del oficio, lo raro sería no aparecer»","«Sostener los esfuerzos para impedir la llegada a la península de personas que permanecen en Ceuta de manera irregular»","«La garantía de la seguridad ciudadana»"],
+ "ines-arrimadas":["«Siempre he decidido dar un paso al frente»","«Hay que luchar por la España que merecemos, ha llegado la hora de sacar a Sánchez y Torra del gobierno»","«Remar todos juntos en la misma dirección, unidos y adelante»"],
+ "inigo-errejon":["«Uno a diez en lo estratégico, diez a uno en lo táctico»","«Quien crea que Venezuela es modelo para España es un analfabeto político»","«En Venezuela la gente hace tres comidas al día»"],
+ "inigo-mendez-de-vigo":["«El dinero no tiene que ser el factor que impida llegar a un acuerdo si existe la voluntad política»","«Piensen en los ciudadanos, y no en los réditos electorales»","«Un Pacto necesario para dar un salto de calidad en nuestro sistema educativo»"],
+ "irene-montero":["«El poder no se entrega, el poder se ejerce»","«A los fascistas se les para avanzando en derechos más rápido y de forma más contundente»","«El feminismo siempre vuelve a salir para cuidar y decir que necesitamos poner la vida en el centro»"],
+ "isabel-cela":["«Una ley de todos, cargada de futuro»","«Era una ley excluyente, segregadora y elitista»","«Abrir una gran avenida de oportunidades»"],
+ "isabel-garcia-tejerina":["«No gusta Pedro Sánchez, pero gusta todavía menos ERC»","«Sánchez pacta lo que haya que pactar por poder»","«Siempre tomamos las decisiones que mejor le convienen a España»"],
+ "jaime-de-olano":["«Los españoles se creen a su cuenta corriente más que a sus PowerPoint»","«Su desgobierno es una puerta cerrada a los jóvenes para que puedan formar un hogar»","«Nos sobra propaganda y nos faltan medicamentos»"],
+ "javier-maroto":["«A Pedro Sánchez solo le importa Sánchez»","«Comprar votos, repito, es corrupción»","«Pedimos a los ciudadanos la oportunidad de compartir un proyecto juntos»"],
+ "jordi-sanchez":["«Nuestra salida es un homenaje a toda la gente que está en el exilio»","«Todos estamos conjurados para la victoria inmediata»","«Que el reino de España sea condenado por haber vulnerado los derechos y libertades de este país»"],
+ "jordi-turull":["«No tenía la pretensión de ser la cara del partido»","«Nosotros mantenemos los compromisos, los plazos y la hoja de ruta»","«Mi compromiso con los ciudadanos de Catalunya y su progreso y bienestar seguirá estando intacto»"],
+ "jorge-fernandez-diaz":["«¡Nada es mera coincidencia!»","«La mitad de independentistas de hoy son coyunturales»","«Marcelo, llamo al mío. Me ayuda en pequeñas cosas, como aparcar el coche. Y también en las grandes, siempre ayuda»"],
+ "jose-luis-abalos":["«Soy un mero peón que se inserta en una lucha política sin reglas»","«Los que pretenden echarme a la calle por la puerta de atrás tendrán que mirarme a la cara»","«Voy a defender mi honor personal hasta las últimas consecuencias»"],
+ "jose-luis-rodriguez-zapatero":["«Estamos en la Champions League de las economías mundiales»","«A cada insulto que recibamos nosotros una propuesta, a cada descalificación, una idea, y a cada exageración una sonrisa»","«El Estado de derecho se defiende con el Estado de derecho»"],
+ "jose-manuel-garcia-margallo":["«Cualquier gobierno es un gobierno de coalición entre el ministro de Hacienda y todos los demás»","«No pisaré Gibraltar mientras no haya una bandera española»","«Soy un talibán de la transparencia»"],
+ "josep-rull":["«Permítanme expresar el honor que como nacionalista catalán me supone poder dirigirles la palabra desde este foro empapado de dignidad, de historia y de solemnidad»","«Estoy convencido de que algún día será el de una nación libre»","«Les decimos que seguiremos luchando para conseguirla y lo haremos»"],
+ "juan-espadas":["«No voy a dejar Andalucía»","«Quiero ser candidato a la Junta y tener una segunda opción como hice en el Ayuntamiento de Sevilla»","«A ello dedicaré todo mi esfuerzo»"],
+ "juan-vicente-herrera":["«Más pasado que futuro»","«Me tengo que empezar a acostumbrar a que se acuerden de uno en ausencia»","«Ser el presidente de todos los castellanos y leoneses sin distinción de partidos, ideologías y opiniones»"],
+ "julio-anguita":["«Si me quiere insultar, llámeme progre»","«Malditas sean las guerras y los canallas que las apoyan»","«Reivindico mi parcela de libertad de pensamiento»"],
+ "laura-borras":["«Servir al país y a la cultura»","«Nada volverá a ser como antes»","«Nos tiene y nos tendrá siempre al lado al servicio del país»"],
+ "luis-de-guindos":["«Lo que aprendes cuando eres joven en la universidad te vale para el resto de la vida»","«Hay que intentar maximizar los beneficios de la inmigración y minimizar los costes»","«Es importante adaptar las enseñanzas a lo que va a ser la demanda en el futuro»"],
+ "maria-jesus-montero":["«Qué vergüenza que todavía se cuestione el testimonio de una víctima»","«Estamos con todas aquellas que se enfrentan a gigantes para poder reclamar la dignidad»","«No está sola, aquí estamos contigo»"],
+ "marta-lois":["«La decisión está tomada»","«Va a haber un cambio histórico»","«Lamentamos la ruptura de Podemos con nuestro grupo»"],
+ "marta-rivera-de-la-cruz":["«Enseñar en gallego, porque el castellano se aprende con la tele, es una irresponsabilidad»","«España no tenía colonias, tenía virreinatos»","«Todo lo que se obtuvo en las excavaciones, todas las joyas que se encontraban, se han quedado allí»"],
+ "marta-rovira":["«Comenzar a confrontar ideas y dejar de atacar a personas porque piensan diferente»","«Pienso que hay quien cree que, cuanto peor, mejor para él»","«Aire fresco y energía renovada»"],
+ "meritxell-batet":["«Cada uno de nosotros somos del pueblo»","«Ningún partido representa en exclusiva a España»","«La esperanza es el material político»"],
+ "miguel-arias-canete":["«Hoy nuestros socios europeos admiran lo que hemos hecho y nos respetan por ello»","«España no puede jugar sola la partida y Europa es una gran oportunidad de desarrollo socioeconómico y de liderazgo político para los países que la integramos»","«Garantizar el estado de bienestar, que sea sostenible»"],
+ "miquel-iceta":["«Era gay y bailó»","«¡Mantente firme y líbranos de Rajoy y del PP!»","«¡Aguanta, resiste a las presiones!»"],
+ "miriam-nogueras":["«Facilitar la negociación de la secesión»","«Y yo pago 49 euros en un hostal, pero el pueblo eres tú, ¿verdad?»","«Estoy absolutamente convencida de que, si gana el sí, de aquí no marchará nadie»"],
+ "monica-garcia":["«Lo que nosotros planteamos es un cambio en el modelo de gestión de la Sanidad de Madrid»","«Estamos hablando con un muro. No tienen ninguna intención de escucharnos»","«Nosotros estamos dispuestos a aportar soluciones»"],
+ "nacho-alvarez":["«Estoy orgulloso de haber formado parte de esa historia»","«Puso fin al bipartidismo»","«En mi cultura política no es concebible aceptar un cargo al margen de la organización de la que uno forma parte»"],
+ "nadia-calvino":["«Necesitamos una respuesta unida tanto en el corto como en el largo plazo»","«Los ciudadanos no merecen y no entenderían que no se llegase a un acuerdo»","«No es aceptable que cada país tenga que hacer frente solo»"],
+ "oriol-junqueras":["«El referéndum es también una palanca de cambio para toda España»","«Es una oportunidad para que se puedan aplicar las cosas que no nos dejan aplicar»","«Nosotros tenemos todo el aprecio y cariño por la sociedad española, sus ciudadanos, su lengua y su cultura»"],
+ "oscar-puente":["«Me han degradado a ministro de Transportes, no está mal, no está mal»","«Es imposible que gane las elecciones, cavó su fosa; pues no»","«Una de las administraciones que mejor funciona de España»"],
+ "pablo-cambronero":["«No me integro en ningún grupo político, haré lo que prometí hacer»","«Dije no al sanchismo y lo mantengo»","«Voy a defender la democracia que está amenazada»"],
+ "pablo-casado":["«El Partido Popular es el partido que representa a la España que madruga»","«Nosotros no colonizábamos, lo que hacíamos era tener una España más grande»","«La nación española es un hecho moral»"],
+ "pablo-echenique":["«En la izquierda a veces la gente se vuelve anticientífica»","«Es hora de que certifiquemos la defunción del bipartidismo»","«Puede afectar a miles de familias. Por eso, la recurriré»"],
+ "pablo-montesinos":["«El lío lo tiene que solucionar Sánchez porque él es el tapón, el señor del bloqueo político»","«No vamos a facilitar la investidura de Sánchez porque no podemos estar al lado de los que quieren romper España»","«El Partido Popular ejercerá una oposición firme a Sánchez»"],
+ "patxi-lopez":["«Pues va a ser que no»","«Una vez detenido el terrorista, no podemos dejar impune a la ideología que le ha forzado a serlo»","«Era uno de los nuestros, un trabajador de nuestra tierra, defensor de Euskadi»"],
+ "pere-aragones":["«Los conflictos en una democracia se resuelven políticamente. Y es votando»","«Culminar la independencia de Cataluña»","«Cerrar un ciclo electoral de malos resultados y contribuir a abrir un nuevo ciclo de crecimiento»"],
+ "pilar-alegria":["«Una sociedad moderna no se puede permitir vivir a espaldas de una universidad tan importante»","«Una apuesta fuerte y directa»","«Tenemos que apoyar fuertemente a esos creadores, investigadores que esta Comunidad tiene»"],
+ "pilar-llop":["«Tenemos la obligación de terminar con la violencia de género, con la violencia machista»","«Esto es intolerable en el siglo XXI»","«Quiero pedirles ayuda para reivindicar entre todos, sin excepciones, el consenso del Pacto de Estado contra la Violencia de Género»"],
+ "quim-torra":["«La ratafía nos une, nos divierte y, de alguna manera, forma parte de nosotros mismos»","«No nos tenemos que defender, hemos de atacar al Estado español»","«Bajo la presidencia de Jordi Pujol nos sentimos seguros, protegidos»"],
+ "rafael-catala":["«Es una obligación hacer que las cosas funcionen bien»","«Pasar de presidente de Sala a presidente del Tribunal Supremo no es ninguna pérdida, sino un ascenso»","«Garantiza un CGPJ profesional, estable, que seguirá haciendo bien su trabajo»"],
+ "rafael-hernando":["«La Justicia ha sido tradicionalmente una de las instituciones peor valoradas de nuestra democracia»","«Yo he dicho que Pedraz ha actuado como un pijo ácrata, no que lo sea»","«No nos protege nadie»"],
+ "raquel-sanchez":["«La democracia no crece con ladrillos, sino con derechos»","«No hay dignidad sin vivienda»","«Su función social es incuestionable»"],
+ "raul-romeva":["«Soy un culo inquieto, de raíces múltiples y variadas»","«Cuando a uno le pasan los cazas por encima de la cabeza se genera incertidumbre»","«Lo primero que hago al llegar es irme al Parlamento, allí trabajo y trabajo y cuando termino vuelvo a casa»"],
+ "reyes-maroto":["«Hoy gana el derecho de la ciudadanía a hacerse escuchar»","«Esa es la cuestión que no entiende ni Ayuso ni Almeida»","«Más vivienda asequible, prevención de los desahucios y protección frente a la especulación»"],
+ "rocio-monasterio":["«Un acto de servicio a los españoles»","«Yo no me meto en la cama de nadie y no quiero que nadie se meta en mi casa para decir cómo educar a mis hijos»","«Esa es la verdadera libertad»"],
+ "roger-torrent":["«Respeto para la voluntad mayoritaria de la gente»","«Conjurarse para recuperar las instituciones del país lo más pronto posible»","«Mi objetivo es coser la sociedad catalana compuesta por identidades cruzadas»"],
+ "sara-gimenez":["«La imagen que tiene ante los demás se sigue basando en prejuicios y estereotipos»","«¡Ya está bien de tanto sesgar y estigmatizar!»","«Somos muchos los que llevamos una vida cotidiana muy normalizada y parece que somos invisibles»"],
+ "soraya-saenz-de-santamaria":["«La razón como argumento puede resultar inoperante frente a tanta exaltación emocional»","«Prima lo efímero, la anécdota frente a la categoría, el morbo frente a la verdad»","«Si nuestras instituciones no se ponen en valor, se ponen en riesgo»"],
+ "susana-diaz":["«Cumplir con mi palabra, mi compromiso con Andalucía»","«España no se puede permitir que el PSOE no tenga rumbo»","«Hace falta diálogo, mucho diálogo y consenso»"],
+ "teodoro-garcia-egea":["«Nunca había lanzado más de 11 m»","«Ganar abrió una nueva etapa en mi vida»","«Yo soy de Murcia, no de extrema derecha»"],
+ "toni-canto":["«Eso es transfuguismo y está feo»","«Cesen los privilegios de vascos y navarros»","«Si te acomodas en una poltrona no haces lo que prometes»"],
+ "toni-comin":["«Una democracia mundial es posible»","«Hay que buscar el desgaste económico del Estado»","«Erradicar la pobreza en el mundo es perfectamente posible»"]
 };
 
+// Keep the original save/image identifier when a corrected surname changes its spelling.
+var CARD_NAMES={'isabel-cela':'Isabel Celaá'};
 var CARDS=[],BYID={};
 DOCS.forEach(function(d){
  ['legendario','especial','raro','comun'].forEach(function(t){
   var t2=TIER[t];
   ROSTER[d.k][t].forEach(function(nm,ix){
-   var c={id:slug(nm),n:nm,r:t,pa:d.k,
+   var id=slug(nm);
+   var c={id:id,n:CARD_NAMES[id]||nm,r:t,pa:d.k,
      c:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),
      a:t2.a[0]+((ix*3)%(t2.a[1]-t2.a[0]+1)),
      h:t2.h[0]+((ix*5)%(t2.h[1]-t2.h[0]+1)),
      v:t2.v};
-   var pool=QPOOL[d.k],bes=QBESP[c.id];
-   c.q=bes?bes.concat([pool[ix%pool.length]]):[pool[ix%pool.length],pool[(ix+4)%pool.length],pool[(ix+8)%pool.length]];
+   c.q=QBESP[c.id].slice();
    CARDS.push(c);BYID[c.id]=c;
   });
  });
 });
-CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||(a.n<b.n?-1:1);});
+CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||a.n.localeCompare(b.n,'es');});
 var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9';
 function seedAlbum(d){
  var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
@@ -946,7 +1025,7 @@ function cromoHTML(c,o){
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(o.lead?'<span class="crown">&#9733;</span>':'')
   +(o.sel&&o.pick?'<span class="sel-tag">&#10003; ELEGIDO</span>':'')
-  +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'" title="Elegir como Lider">&#9733;</button>':'')
+  +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'" title="Elegir como Líder">&#9733;</button>':'')
   +(o.count?'<span class="badge">x'+o.count+'</span>':'')
   +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+c.a+' &middot; A'+c.h+'</span></div></div>';
 }
@@ -955,7 +1034,7 @@ function fichaHTML(c){
  return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true})+'</div>'
  +'<div style="flex:1;min-width:0"><p style="margin:0 0 3px"><b>'+esc(c.n)+'</b></p>'
  +'<p style="margin:0 0 4px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span></p>'
- +'<p class="sub" style="margin:0">Zasca '+c.a+' &middot; Aguante '+c.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escanos</p>'
+ +'<p class="sub" style="margin:0">Zasca '+c.a+' &middot; Aguante '+c.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escaños</p>'
  +'<p class="sub" style="margin:4px 0 0">'+esc(DOCM[c.pa].d)+'</p></div></div>'
  +'<div class="quote">'+esc(pick(c.q))+'</div></div>';
 }
@@ -1276,7 +1355,7 @@ function appbar(){
  +'<button class="mini" data-go="ayuda">?</button></div>';
 }
 function tabbar(){
- var tabs=[['menu','\u2302','Menu'],['coleccion','\u25A6','Cromos'],['tienda','\u25C8','Tienda'],['liga','\u265B','Liga']];
+ var tabs=[['menu','\u2302','Menú'],['coleccion','\u25A6','Cromos'],['tienda','\u25C8','Tienda'],['liga','\u265B','Liga']];
  return tabs.map(function(t){
   return '<button class="tab'+(SCREEN===t[0]?' on':'')+'" data-go="'+t[0]+'"><span class="ic">'+t[1]+'</span>'+t[2]+'</button>';
  }).join('');
@@ -1358,19 +1437,19 @@ function startTick(){
 var SCREENS={};
 SCREENS.menu=function(){
  var d=D(),u=uniqueAlbum(d).length;
- return '<div><h2>Hemiciclo</h2><p class="sub">Consigue 100 votos antes que el rival: el 100% de los escanos.</p></div>'
+ return '<div><h2>Hemiciclo</h2><p class="sub">Consigue 100 votos antes que el rival: el 100% de los escaños.</p></div>'
  +'<div class="modes">'
- +'<button class="mode" data-go="builder" data-mode="normal"><b>Partida normal</b><i>Coleccion blindada. Nada se pierde.</i></button>'
- +'<button class="mode" data-go="builder" data-mode="ranked"><b>Clasificatoria</b><i>Elo dinamico y botin: gana un cromo rival.</i></button>'
+ +'<button class="mode" data-go="builder" data-mode="normal"><b>Partida normal</b><i>Colección blindada. Nada se pierde.</i></button>'
+ +'<button class="mode" data-go="builder" data-mode="ranked"><b>Clasificatoria</b><i>Elo dinámico y botín: gana un cromo rival.</i></button>'
  +'<button class="mode" data-go="liga"><b>Liga de los 30</b><i>12 jornadas, 3 divisiones, ascensos.</i></button>'
- +'<button class="mode" data-act="rapida"><b>Partida rapida</b><i>Equipo automatico y directo al debate.</i></button>'
+ +'<button class="mode" data-act="rapida"><b>Partida rápida</b><i>Equipo automático y directo al debate.</i></button>'
  +'</div>'
  +'<div class="panel"><div class="bar between">'
- +'<div><b style="font-size:12px">Expediente parlamentario</b><br><span class="sub">'+d.w+'V &middot; '+d.l+'D &middot; Elo '+d.elo+' ('+esc(rankName(d.elo))+') &middot; '+u+'/'+CARDS.length+' politicos ('+d.album.length+' total)</span></div>'
+ +'<div><b style="font-size:12px">Expediente parlamentario</b><br><span class="sub">'+d.w+'V &middot; '+d.l+'D &middot; Elo '+d.elo+' ('+esc(rankName(d.elo))+') &middot; '+u+'/'+CARDS.length+' políticos ('+d.album.length+' total)</span></div>'
  +'<button class="btn ghost sm" data-act="reset">Borrar</button>'
  +'</div></div>'
  +'<div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between">'
- +'<h3 style="margin-top:0">Las seis doctrinas (activas con tu Lider en Tribuna)</h3>'
+ +'<h3 style="margin-top:0">Las seis doctrinas (activas con tu Líder en Tribuna)</h3>'
  +'<div class="doc-grid">'
  +DOCS.map(function(x){return '<div class="doc-card"><span class="doc"><span class="dot" style="background:'+x.col+'"></span><b>'+esc(x.n)+'</b></span><span class="sub">'+esc(x.d)+'</span></div>';}).join('')
  +'</div></div>';
@@ -1380,28 +1459,28 @@ function colList(){
  var d=D(),list=uniqueAlbum(d);
  if(FIL.r)list=list.filter(function(x){return x.c.r===FIL.r;});
  if(FIL.d)list=list.filter(function(x){return x.c.pa===FIL.d;});
- if(FIL.q){var q=FIL.q.toLowerCase();list=list.filter(function(x){return x.c.n.toLowerCase().indexOf(q)>=0;});}
- list.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);});
+ if(FIL.q){var q=searchText(FIL.q);list=list.filter(function(x){return searchText(x.c.n).indexOf(q)>=0;});}
+ list.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||a.c.n.localeCompare(b.c.n,'es');});
  return list;
 }
 function colCountText(){
  var d=D(),u=uniqueAlbum(d).length,shown=colList().length;
- if(FIL.r||FIL.d||FIL.q)return 'Mostrando <b>'+shown+'</b> de '+u+' politicos distintos ('+d.album.length+' cromos en total).';
- return d.album.length+' cromos en total &middot; '+u+' de '+CARDS.length+' politicos distintos. Los repetidos son copias de reserva.';
+ if(FIL.r||FIL.d||FIL.q)return 'Mostrando <b>'+shown+'</b> de '+u+' políticos distintos ('+d.album.length+' cromos en total).';
+ return d.album.length+' cromos en total &middot; '+u+' de '+CARDS.length+' políticos distintos. Los repetidos son copias de reserva.';
 }
 function colGrid(){
  var list=colList();
  if(!list.length){
-  return '<div class="empty-box"><p style="margin:0 0 6px"><b>Sin resultados en tu coleccion</b></p>'
-   +'<p class="sub" style="margin:0 0 10px">Ningun cromo coincide con los filtros seleccionados.</p>'
+  return '<div class="empty-box"><p style="margin:0 0 6px"><b>Sin resultados en tu colección</b></p>'
+   +'<p class="sub" style="margin:0 0 10px">Ningún cromo coincide con los filtros seleccionados.</p>'
    +'<button class="btn ghost sm" data-act="clearfil">Limpiar filtros</button></div>';
  }
  return list.map(function(x){return cromoHTML(x.c,{count:x.n});}).join('');
 }
 
 SCREENS.coleccion=function(){
- return '<h2>Coleccion</h2><p class="sub" id="cntBox">'+colCountText()+'</p>'
- +'<input type="search" id="fq" placeholder="Buscar politico..." value="'+esc(FIL.q)+'">'
+ return '<h2>Colección</h2><p class="sub" id="cntBox">'+colCountText()+'</p>'
+ +'<input type="search" id="fq" placeholder="Buscar político..." value="'+esc(FIL.q)+'">'
  +'<div class="chips" id="chipsR"><button class="chip'+(FIL.r===''?' on':'')+'" data-fr="">Todas</button>'
  +RARS.map(function(r){return '<button class="chip'+(FIL.r===r.k?' on':'')+'" data-fr="'+r.k+'">'+r.n+'</button>';}).join('')+'</div>'
  +'<div class="chips" id="chipsD"><button class="chip'+(FIL.d===''?' on':'')+'" data-fd="">Todas las doctrinas</button>'
@@ -1427,10 +1506,10 @@ SCREENS.detalle=function(){
  var skinPanel='';
  if(c.id==='donald-trump'&&d.dtGoldUnlocked){
   skinPanel='<div class="panel gold-box">'
-   +'<div class="bar between"><div><b style="color:#ffd76a;font-size:11.5px">&#9733; Edicion Especial</b><br><span class="sub">Aspecto del cromo:</span></div>'
+   +'<div class="bar between"><div><b style="color:#ffd76a;font-size:11.5px">&#9733; Edición especial</b><br><span class="sub">Aspecto del cromo:</span></div>'
    +'<div class="bar">'
-   +'<button class="btn sm '+(d.dtGoldActive?'ghost':'')+'" data-act="dtskin" data-val="normal">Clasico</button>'
-   +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Golden</button>'
+   +'<button class="btn sm '+(d.dtGoldActive?'ghost':'')+'" data-act="dtskin" data-val="normal">Clásico</button>'
+   +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Dorado</button>'
    +'</div></div></div>';
  }
  return navBar
@@ -1445,22 +1524,22 @@ SCREENS.detalle=function(){
  +'<h2 style="margin:0 0 4px">'+esc(c.n)+'</h2>'
  +'<p style="margin:0 0 4px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+cnt+'</span></p>'
  +'<p class="sub" style="margin:0"><b>Doctrina:</b> '+esc(DOCM[c.pa].d)+'</p>'
- +'<p class="sub" style="margin:3px 0 0">Como Lider (&#9733;): <b>+1 Zasca</b> y <b>+3 Aguante</b>.</p>'
+ +'<p class="sub" style="margin:3px 0 0">Como Líder (&#9733;): <b>+1 Zasca</b> y <b>+3 Aguante</b>.</p>'
  +'</div></div>'
- +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+c.a+'</b><span>Zasca</span></div><div><b>'+c.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escanos</span></div></div>'
- +'<div><h3 style="margin:0 0 3px">Intervenciones celebres</h3>'
+ +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+c.a+'</b><span>Zasca</span></div><div><b>'+c.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escaños</span></div></div>'
+ +'<div><h3 style="margin:0 0 3px">Intervenciones célebres</h3>'
  +c.q.slice(0,3).map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')+'</div>'
  +'</div>'
  +skinPanel
  +'</div>'
- +'<div class="bar"><button class="btn wide sm" data-go="coleccion">Volver a la coleccion</button></div>';
+ +'<div class="bar"><button class="btn wide sm" data-go="coleccion">Volver a la colección</button></div>';
 };
 
 var PACKS=[
- {k:'comun',n:'Sobre comun',p:400,d:'4 comunes + 20% raro.'},
+ {k:'comun',n:'Sobre común',p:400,d:'4 comunes + 20% raro.'},
  {k:'raro',n:'Sobre raro',p:800,d:'4 raros + 25% especial.'},
  {k:'legendario',n:'Sobre legendario',p:1500,d:'1 legendario, 1 especial y 3 raros.'},
- {k:'mitico',n:'Sobre mitico',p:2900,d:'5 legendarios garantizados.'}];
+ {k:'mitico',n:'Sobre mítico',p:2900,d:'5 legendarios garantizados.'}];
 var DAY=86400000,WEEK=7*DAY;
 
 SCREENS.tienda=function(){
@@ -1516,12 +1595,12 @@ SCREENS.sobre=function(){
  var ids=SO.cards||[],d=D();
  var p=PACKS.filter(function(x){return x.k===SO.k;})[0];
  var canAgain=p&&!SO.free&&d.fs>=p.p;
- return '<div><h2>Sobre abierto</h2><p class="sub">'+ids.length+' cromos anadidos a tu coleccion.</p></div>'
+ return '<div><h2>Sobre abierto</h2><p class="sub">'+ids.length+' cromos añadidos a tu colección.</p></div>'
  +'<div class="reveal">'+ids.map(function(id){return cromoHTML(BYID[id],{noCardAttr:true});}).join('')+'</div>'
  +'<div class="bar">'
  +(p&&!SO.free?'<button class="btn sm" data-act="again" data-k="'+p.k+'"'+(canAgain?'':' disabled')+'>'+(canAgain?'Abrir otro ('+p.p+' FS)':'Sin FS ('+p.p+' FS)')+'</button>':'')
  +'<button class="btn ghost sm" data-go="tienda">Tienda</button>'
- +'<button class="btn ghost sm" data-go="coleccion">Coleccion</button></div>';
+ +'<button class="btn ghost sm" data-go="coleccion">Colección</button></div>';
 };
 
 function sanitizeBuild(){
@@ -1539,7 +1618,7 @@ function sanitizeBuild(){
 function builderScreen(mode,rival,jor){
  sanitizeBuild();
  var uniq=uniqueAlbum(D());
- uniq.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);});
+ uniq.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||a.c.n.localeCompare(b.c.n,'es');});
  var ready=(BUILD.ids.length===5 && !!BUILD.leader);
  var missing=5-BUILD.ids.length;
  var leadObj=BUILD.leader?BYID[BUILD.leader]:null;
@@ -1547,9 +1626,9 @@ function builderScreen(mode,rival,jor){
  var names=BUILD.ids.map(function(id){return BYID[id].n;});
  var tit=mode==='ranked'?'Clasificatoria':(mode==='liga'?('Liga &middot; Jornada '+(jor||1)):'Partida normal');
  var btnLabel=ready?'Empezar debate':('Faltan '+missing+' cromo'+(missing===1?'':'s'));
- return '<div class="bar between"><h2>'+tit+'</h2>'+(rival?'<span class="sub">vs <b>'+esc(rival)+'</b></span>':'')+'</div>'
- +'<div class="panel" style="padding:7px 9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Lider: <b>'+esc(leadTxt)+'</b></p>'
- +(names.length?'<p class="sub" style="margin:2px 0 0;color:#ffd76a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(names.join(' · '))+'</p>':'<p class="sub" style="margin:2px 0 0">Toca 5 cromos para alinearlos y &#9733; para elegir Lider.</p>')
+ return '<div class="bar between"><h2>'+tit+'</h2>'+(rival?'<span class="sub">contra <b>'+esc(leagueName(rival))+'</b></span>':'')+'</div>'
+ +'<div class="panel" style="padding:7px 9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Líder: <b>'+esc(leadTxt)+'</b></p>'
+ +(names.length?'<p class="sub" style="margin:2px 0 0;color:#ffd76a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(names.join(' · '))+'</p>':'<p class="sub" style="margin:2px 0 0">Toca 5 cromos para alinearlos y &#9733; para elegir Líder.</p>')
  +'</div>'
  +'<div class="bar">'
  +'<button class="btn sm" data-act="start"'+(ready?'':' disabled')+'>'+btnLabel+'</button>'
@@ -1568,11 +1647,11 @@ function autoBuild(){
 function startBattle(){
  sanitizeBuild();
  if(uniqueAlbum(D()).length<5){
-  go('result',{who:'info',msg:'Necesitas al menos 5 politicos distintos en tu coleccion. Abre algun sobre en la tienda.',fs:0});
+  go('result',{who:'info',msg:'Necesitas al menos 5 políticos distintos en tu colección. Abre algún sobre en la tienda.',fs:0});
   return;
  }
  if(BUILD.ids.length<5||!BUILD.leader){
-  showModal('Gabinete incompleto','Debes seleccionar exactamente 5 politicos y un Lider antes de iniciar el debate, o pulsar el boton "Auto" si quieres rellenarlo al azar.','Entendido',false,null);
+  showModal('Gabinete incompleto','Debes seleccionar exactamente 5 políticos y un Líder antes de iniciar el debate, o pulsar el botón "Auto" si quieres rellenarlo al azar.','Entendido',false,null);
   return;
  }
  LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader};
@@ -1622,7 +1701,7 @@ function newBattle(mode,rival){
  var eSorted=eTeam.slice().sort(function(a,b){return TIERORDER[BYID[a].r]-TIERORDER[BYID[b].r];});
  var eLeadId=eSorted[0]||eTeam[0];
 
- G={mode:mode,rival:rival||pick(['Grupo Mixto','Bancada Gris','Coalicion Improbable','Grupo del Pasillo','Mesa del Cafe','Los Indecisos']),
+ G={mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
   n:0,over:false,done:false,side:'p',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},leader:{}};
@@ -1711,7 +1790,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
  var activeVictimDoc=(victimDocSnapshot!==undefined)?victimDocSnapshot:doc(victim);
  if(activeVictimDoc==='aforado'&&!G.saved[card.uid]){
   G.saved[card.uid]=true;card.h=1;
-  log(card.n+' invoca el Aforado y se aferra al escano con 1 de Aguante.','hi');
+  log(card.n+' invoca el Aforado y se aferra al escaño con 1 de Aguante.','hi');
   return;
  }
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
@@ -1740,7 +1819,7 @@ function playCard(s,uid){
  c.h=c.hm;
  c.ready=true;
  G.field[s].push(c);G.tdp[s]-=c.c;
- log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Lider en Tribuna: doctrina '+DOCM[c.pa].n+' activa).':'.'));
+ log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Líder en Tribuna: doctrina '+DOCM[c.pa].n+' activa).':'.'));
  return true;
 }
 
@@ -1751,25 +1830,25 @@ function attack(atk,tgt,owner){
  if(tgt==='__EMPTY'){
   var stolen=Math.min(G.votes[foe],atk.a);
   G.votes[foe]=Math.max(0,G.votes[foe]-atk.a);
-  log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacia (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
+  log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacía (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
   if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
    G.votes[owner]+=1;
-   log('Foco Mediatico: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
+   log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
   }
   if(G.votes[owner]>=100){finish(owner);return;}
   return;
  }
  var isFoeLead=(G.leader[foe]&&tgt.uid===G.leader[foe].uid);
  var bonus=(ownerDoc==='viperina'&&isFoeLead)?2:0;
- log(atk.n+' lanza '+pick(atk.q)+' ('+(atk.a+bonus)+' de dano a '+tgt.n+').','hi');
+ log(atk.n+' lanza '+pick(atk.q)+' ('+(atk.a+bonus)+' de daño a '+tgt.n+').','hi');
  tgt.h-=atk.a+bonus;
  if(foeDoc==='giro'&&tgt!==atk){
   atk.h-=2;
-  log('Giro de Guion: '+atk.n+' recibe 2 de dano.');
+  log('Giro de Guion: '+atk.n+' recibe 2 de daño.');
  }
  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
   G.votes[owner]+=1;
-  log('Foco Mediatico: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
+  log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
  }
  if(tgt.h<=0)expel(owner,tgt,atk,foeDoc);
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
@@ -1819,7 +1898,7 @@ function finish(who, abandoned){
    d.elo+=eloDelta;
   }
   msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS'+(eloDelta?' y +'+eloDelta+' Elo.':'.');
-  if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escano de '+BYID[won].n+'.';}
+  if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escaño de '+BYID[won].n+'.';}
   if(comp && G.leader && G.leader.p && G.leader.p.k==='donald-trump'){
    d.dtWins=(d.dtWins||0)+1;
    if(d.dtWins>=10 && !d.dtGoldUnlocked){
@@ -1844,16 +1923,16 @@ function finish(who, abandoned){
     if(idx>=0)d.album.splice(idx,1);
     msg+=' Pierdes una copia de '+BYID[lost].n+'.';
    } else {
-    msg+=' El Seguro Parlamentario protege tus 5 ultimos politicos unicos.';
+    msg+=' El Seguro Parlamentario protege tus 5 últimos políticos únicos.';
    }
   }
  } else {
   fs=25;
-  msg='Empate tecnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
+  msg='Empate técnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
  }
  d.fs+=fs;saveD(d);
  if(justUnlockedGold){
-  showAchievement('¡Logro Oculto Desbloqueado!','Magnate Dorado: Aspecto Golden de Donald Trump disponible en tu Coleccion.');
+  showAchievement('¡Logro oculto desbloqueado!','Magnate Dorado: Aspecto dorado de Donald Trump disponible en tu Colección.');
  }
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
  go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:mode});
@@ -1864,12 +1943,12 @@ function ligaPanel(){
  var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
  var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
  return '<div class="panel"><div class="bar between"><div><b>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+' (J'+lg.jor+'/12)</b><br><span class="sub">Vas '+pos+'&ordm; de 30 con '+me.pts+' puntos.</span></div>'
- +'<button class="btn sm" data-act="ligajugar">Jugar J'+lg.jor+' vs '+esc(rival.n)+'</button></div></div>';
+ +'<button class="btn sm" data-act="ligajugar">Jugar J'+lg.jor+' contra '+esc(leagueName(rival.n))+'</button></div></div>';
 }
 
 SCREENS.result=function(){
  if(SO.who==='info')return '<h2>Aviso</h2><div class="panel"><p>'+esc(SO.msg)+'</p></div>'
-  +'<div class="bar"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menu</button></div>';
+  +'<div class="bar"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menú</button></div>';
  var who=SO.who;
  var title=who==='p'?'¡Victoria!':(who==='e'?'Derrota':(who==='season'?'Temporada cerrada':'Empate'));
  var pCls=who==='p'?'panel win':(who==='e'?'panel lose':'panel');
@@ -1890,8 +1969,8 @@ SCREENS.result=function(){
  } else if(SO.mode!=='liga'){
   html+='<button class="btn sm" data-act="rev" data-mode="'+(SO.mode||'normal')+'">Volver a jugar</button>';
  }
- html+='<button class="btn ghost sm" data-go="coleccion">Coleccion</button>'
- +'<button class="btn ghost sm" data-go="menu">Menu</button></div>';
+ html+='<button class="btn ghost sm" data-go="coleccion">Colección</button>'
+ +'<button class="btn ghost sm" data-go="menu">Menú</button></div>';
  return html;
 };
 
@@ -1984,7 +2063,7 @@ SCREENS.battle=function(){
  var modo=G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.min(7,Math.max(1,Math.ceil(G.n/2)));
  return '<div class="battle-wrap">'
- +'<div class="bar between"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'/7</span>'+(G.mode!=='normal'?'<span class="pill red">botin</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
+ +'<div class="bar between"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'/7</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
  +gabLine()+'</div>'
  +'<div class="vbars">'
  +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'/100</b></div>'
@@ -2002,7 +2081,9 @@ SCREENS.battle=function(){
  +'</div>';
 };
 
-var LNAMES=['Grupo Nacional','Bancada Popular','Union Civica','Frente Comun','Alianza Soberana','Grupo Liberal','Coalicion Verde','Bloque Regional','Partido del Centro','Grupo Independiente','Union Patriotica','Frente Amplio','Grupo Federal','Nueva Bancada','Coalicion Civica','Bloque Obrero','Grupo Democratico','Union Progresista','Frente Nacional','Grupo Social','Alianza Popular','Bloque Ciudadano','Grupo Reformista','Union Democratica','Frente Civico','Grupo del Norte','Bancada del Sur','Alianza Federal','Grupo Radical','Frente del Centro'];
+var LNAMES=['Grupo Nacional','Bancada Popular','Unión Cívica','Frente Común','Alianza Soberana','Grupo Liberal','Coalición Verde','Bloque Regional','Partido del Centro','Grupo Independiente','Unión Patriótica','Frente Amplio','Grupo Federal','Nueva Bancada','Coalición Cívica','Bloque Obrero','Grupo Democrático','Unión Progresista','Frente Nacional','Grupo Social','Alianza Popular','Bloque Ciudadano','Grupo Reformista','Unión Democrática','Frente Cívico','Grupo del Norte','Bancada del Sur','Alianza Federal','Grupo Radical','Frente del Centro'];
+var LEAGUE_NAMES={};LNAMES.forEach(function(n){LEAGUE_NAMES[searchText(n)]=n;});
+function leagueName(n){return LEAGUE_NAMES[searchText(n)]||n;}
 function ligaNew(div){
  var teams=LNAMES.slice(0,30).map(function(n){return {n:n,pts:0,w:0,d:0,l:0,you:false,str:rnd(30,80)};});
  teams[0].you=true;teams[0].n='Tu grupo';teams[0].str=60;
@@ -2036,7 +2117,7 @@ function seasonEnd(lg,info){
  var nd=lg.div;if(pos<=5&&lg.div>1)nd=lg.div-1;else if(pos>25&&lg.div<3)nd=lg.div+1;
  var nm=function(x){return x===1?'Primera':(x===2?'Segunda':'Tercera');};
  var msg=info.msg+' Terminas '+pos+'º de 30 en '+nm(lg.div)+' con '+me.pts+' puntos. Recompensa de fin de temporada: +'+reward+' FS. ';
- msg+=nd<lg.div?('¡ASCENSO a '+nm(nd)+'!'):(nd>lg.div?('DESCENSO a '+nm(nd)+'.'):'Mantienes la categoria.');
+ msg+=nd<lg.div?('¡ASCENSO a '+nm(nd)+'!'):(nd>lg.div?('DESCENSO a '+nm(nd)+'.'):'Mantienes la categoría.');
  var fresh=ligaNew(nd);fresh.temp=lg.temp+1;lsSet(LS2,fresh);
  go('result',{who:'season',msg:msg,fs:info.fs+reward,won:info.won,lost:info.lost,mode:'liga',season:true});
 }
@@ -2045,27 +2126,27 @@ SCREENS.liga=function(){
  var lg=ligaLoad();
  if(!lg)return '<div><h2>Liga de los 30</h2><p class="sub">30 grupos parlamentarios, 12 jornadas, tres divisiones con ascensos y descensos. Empiezas en Tercera.</p>'
   +'<p class="sub" style="margin-top:4px">En liga el ganador se lleva un cromo del rival y el perdedor cede una copia.</p></div>'
-  +'<div class="bar"><button class="btn" data-act="liganew">Crear nueva liga</button><button class="btn ghost" data-go="menu">Menu</button></div>';
+  +'<div class="bar"><button class="btn" data-act="liganew">Crear nueva liga</button><button class="btn ghost" data-go="menu">Menú</button></div>';
  var sorted=lg.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;});
  var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
  var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
  return '<div class="bar between"><div><h2>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+'</h2>'
  +'<p class="sub">Temp. '+lg.temp+' &middot; J'+lg.jor+'/12 &middot; Vas '+pos+'&ordm; ('+me.pts+' pts)</p></div>'
- +'<button class="btn sm" data-act="ligajugar">Jugar J'+lg.jor+' vs '+esc(rival.n)+'</button></div>'
+ +'<button class="btn sm" data-act="ligajugar">Jugar J'+lg.jor+' contra '+esc(leagueName(rival.n))+'</button></div>'
  +'<div class="panel inner-scroll"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
- +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(t.n)+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
+ +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(leagueName(t.n))+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
  +'</tbody></table></div>'
- +'<div class="bar between"><span class="sub">Top 5 ascienden &middot; 5 ultimos descienden</span>'
+ +'<div class="bar between"><span class="sub">Los 5 primeros ascienden &middot; 5 últimos descienden</span>'
  +'<button class="btn ghost sm" data-act="ligabandon">Abandonar liga</button></div>';
 };
 
 SCREENS.ayuda=function(){
- return '<h2>Como se juega</h2>'
- +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cada turno ganas 3 votos base mas los escanos de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escanos a tu marcador.</p></div>'
- +'<div class="panel"><h3>2. Tu gabinete y Lider (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Lider empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras este en la Tribuna activa su Doctrina.</p></div>'
- +'<div class="panel"><h3>3. Elo y Dificultad Justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadisticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>-5 a -18 Elo</b> segun tu rendimiento en el debate.</p></div>'
- +'<div class="panel"><h3>4. Botin y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiendose siempre tus 5 ultimos politicos unicos).</p></div>'
- +'<button class="btn wide sm" data-go="menu">Volver al menu</button>';
+ return '<h2>Cómo se juega</h2>'
+ +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
+ +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
+ +'<div class="panel"><h3>3. Elo y Dificultad Justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>-5 a -18 Elo</b> según tu rendimiento en el debate.</p></div>'
+ +'<div class="panel"><h3>4. Botín y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
+ +'<button class="btn wide sm" data-go="menu">Volver al menú</button>';
 };
 
 document.addEventListener('click',function(ev){
@@ -2146,7 +2227,7 @@ document.addEventListener('click',function(ev){
   if(enMano('p',uid)){
    var cardKey=uidOf(uid);
    if(G.field.p.length>=3){
-    log('Tu Tribuna ya tiene el maximo de 3 oradores.');
+    log('Tu Tribuna ya tiene el máximo de 3 oradores.');
    } else if(!playCard('p',uid)){
     log('No te llega el Tiempo de Palabra para presentar a '+(BYID[cardKey]?BYID[cardKey].n:'este orador')+'.');
    }
@@ -2217,8 +2298,8 @@ document.addEventListener('click',function(ev){
   case 'reset':
    showModal(
     '¿Borrar todo el progreso?',
-    'Perderas tu coleccion de cromos, tu Fuerza Soberana, tu rango Elo, logros y el avance en la Liga. Esta accion no se puede deshacer.',
-    'Si, borrar todo',
+    'Perderás tu colección de cromos, tu Fuerza Soberana, tu rango Elo, logros y el avance en la Liga. Esta acción no se puede deshacer.',
+    'Sí, borrar todo',
     true,
     function(){
      clearAI();closeZoom();
@@ -2252,7 +2333,7 @@ document.addEventListener('click',function(ev){
    if(G&&!G.over){
     showModal(
      '¿Abandonar el debate?',
-     'Si abandonas el hemiciclo ahora, se contara como una derrota'+(G.mode!=='normal'?' y podrias perder una copia de un cromo de tu gabinete':'')+'.',
+     'Si abandonas el hemiciclo ahora, se contará como una derrota'+(G.mode!=='normal'?' y podrías perder una copia de un cromo de tu gabinete':'')+'.',
      'Abandonar debate',
      true,
      function(){if(G&&!G.over)finish('e', true);}
@@ -2272,8 +2353,8 @@ document.addEventListener('click',function(ev){
   case 'ligabandon':
    showModal(
     '¿Abandonar la Liga actual?',
-    'Se borrara tu clasificacion y progreso de jornadas de la temporada actual para que puedas empezar una nueva desde Tercera.',
-    'Si, abandonar liga',
+    'Se borrará tu clasificación y progreso de jornadas de la temporada actual para que puedas empezar una nueva desde Tercera.',
+    'Sí, abandonar liga',
     true,
     function(){
      try{localStorage.removeItem(LS2);}catch(e){}

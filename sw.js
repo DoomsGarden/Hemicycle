@@ -1,4 +1,4 @@
-const CACHE = 'hemiciclo-v3-gold-loop';
+const CACHE = 'hemiciclo-v30.1-citas-es';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
