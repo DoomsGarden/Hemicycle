@@ -117,6 +117,9 @@ p{margin:0 0 4px;font-size:12px}
 .panel.win{border-color:#28a86b;background:linear-gradient(180deg,#132a22,#131b31)}
 .panel.lose{border-color:#d43b3b;background:linear-gradient(180deg,#2a1414,#131b31)}
 .panel.gold-box{border-color:#e8b923;background:linear-gradient(180deg,rgba(232,185,35,.16),#131b31)}
+.coin-toss{margin:auto 0;text-align:center;display:grid;gap:12px}
+.coin-toss h3{font-size:16px}
+.coin-face{display:grid;place-items:center;width:80px;height:80px;margin:0 auto;border:3px solid #ffd76a;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe6a0,#c9931a);box-shadow:inset 0 0 0 5px #a97816;color:#141414;font-size:14px;font-weight:800}
 
 .modes{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex-shrink:0}
 .mode{border:1px solid #232e52;background:#18213c;border-radius:11px;padding:8px 9px;text-align:left;min-height:62px;transition:border-color .15s}
@@ -506,7 +509,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.1';
+var VERSION='v30.2.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1703,7 +1706,7 @@ function newBattle(mode,rival){
 
  G={mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
-  n:0,over:false,done:false,side:'p',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
+  n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},leader:{}};
  var build=function(s,ids,lead){
   var dk=shuffle(ids).map(function(id){return mk(BYID[id], id===lead);}),lc=null,i;
@@ -1719,8 +1722,21 @@ function newBattle(mode,rival){
  build('e',eTeam,eLeadId);
  log('Comienza el debate contra '+G.rival+'.','hi');
  log('Tu gabinete: '+team.map(function(id){return BYID[id].n;}).join(', ')+'.');
+ log('Sorteo: tú tienes cara y el rival, cruz. Ha salido '+(G.first==='p'?'cara: empiezas tú.':'cruz: empieza '+G.rival+'.'),'hi');
  go('battle');
- startTurn('p');
+}
+
+function beginDebate(){
+ if(checkBattleEnd()||G.n!==0)return;
+ startTurn(G.first);
+}
+
+/* Una mayoría de 100 votos cierra el debate antes de cualquier otra acción. */
+function checkBattleEnd(){
+ if(!G||G.over)return true;
+ if(G.votes.p>=100){finish('p');return true;}
+ if(G.votes.e>=100){finish('e');return true;}
+ return false;
 }
 
 function log(t,cls){if(!G)return;G.log.unshift('<div'+(cls?' class="'+cls+'"':'')+'>'+esc(t)+'</div>');if(G.log.length>40)G.log.pop();}
@@ -1748,7 +1764,8 @@ function draw(s){
 }
 
 function startTurn(s){
- if(!G||G.over)return;
+ if(checkBattleEnd())return;
+ clearAI();
  if(G.n>=14){endByVotes();return;}
  G.n++;G.side=s;G.sel=null;
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
@@ -1762,8 +1779,8 @@ function startTurn(s){
  G.votes[s]+=gain;
  var roundNum=Math.ceil(G.n/2);
  log('Ronda '+roundNum+'/7 ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
+ if(checkBattleEnd())return;
  paint();
- if(G.votes[s]>=100){finish(s);return;}
  if(s==='e'){clearAI();AITIMER=setTimeout(aiStep,520);}
 }
 
@@ -1778,13 +1795,14 @@ function applyGuardia(s){
 }
 
 function endTurn(){
- if(!G||G.over||G.side!=='p')return;
+ if(checkBattleEnd()||G.side!=='p')return;
  applyGuardia('p');
  G.sel=null;
  startTurn('e');
 }
 
 function expel(owner,card,attacker,victimDocSnapshot){
+ if(checkBattleEnd())return;
  var victim=owner==='p'?'e':'p';
  if(!enMesa(victim,card.uid))return;
  var activeVictimDoc=(victimDocSnapshot!==undefined)?victimDocSnapshot:doc(victim);
@@ -1800,6 +1818,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
  if(attacker){
   G.votes[owner]+=card.v;
   log(card.n+' es expulsado: +'+card.v+' votos '+(owner==='p'?'para ti.':'para '+G.rival+'.'),'hi');
+  if(checkBattleEnd())return;
  } else {
   log(card.n+' abandona la Tribuna.');
  }
@@ -1810,6 +1829,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
 }
 
 function playCard(s,uid){
+ if(checkBattleEnd()||G.side!==s)return false;
  var idx=-1,i;
  for(i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)idx=i;
  if(idx<0)return false;
@@ -1824,6 +1844,7 @@ function playCard(s,uid){
 }
 
 function attack(atk,tgt,owner){
+ if(checkBattleEnd()||G.side!==owner||!atk||!atk.ready||!enMesa(owner,atk.uid))return;
  var foe=owner==='p'?'e':'p';
  var ownerDoc=doc(owner),foeDoc=doc(foe);
  atk.ready=false;
@@ -1835,7 +1856,7 @@ function attack(atk,tgt,owner){
    G.votes[owner]+=1;
    log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
   }
-  if(G.votes[owner]>=100){finish(owner);return;}
+  checkBattleEnd();
   return;
  }
  var isFoeLead=(G.leader[foe]&&tgt.uid===G.leader[foe].uid);
@@ -1849,40 +1870,29 @@ function attack(atk,tgt,owner){
  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
   G.votes[owner]+=1;
   log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
+  if(checkBattleEnd())return;
  }
  if(tgt.h<=0)expel(owner,tgt,atk,foeDoc);
+ if(checkBattleEnd())return;
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
- if(G.votes[owner]>=100){finish(owner);return;}
 }
 
 function endByVotes(){
- if(!G)return;
- G.over=true;
+ if(checkBattleEnd())return;
  log('Fin de las 7 rondas reglamentarias. Recuento de votos...','hi');
  if(G.votes.p>G.votes.e)finish('p');
  else if(G.votes.e>G.votes.p)finish('e');
  else finish('d');
 }
 
-/* === CÁLCULO DE ELO DINÁMICO POR RENDIMIENTO (+10 a +25 en victoria / -5 a -18 en derrota) === */
-function calcRankedEloDelta(who, pVotes, eVotes, turnsPlayed, abandoned){
- var diff=Math.abs(pVotes - eVotes);
- var rounds=Math.ceil((turnsPlayed||1)/2);
- if(who==='p'){
-  /* Base +10, hasta +10 por diferencia de votos y hasta +5 por ganar rápido (total 10..25) */
-  var marginBonus=Math.min(10, Math.round(diff/8));
-  var speedBonus=Math.max(0, Math.min(5, 7 - rounds));
-  return Math.max(10, Math.min(25, 10 + marginBonus + speedBonus));
- }
- if(who==='e'){
-  if(abandoned)return -18;
-  /* Penalización entre -5 (derrota muy reñida o con muchos votos conseguidos) y -18 (derrota amplia) */
-  var closeness=Math.min(8, Math.floor(pVotes/12));
-  var marginPenalty=Math.min(5, Math.floor(diff/18));
-  var loss=13 - closeness + marginPenalty;
-  return -Math.max(5, Math.min(18, loss));
- }
- return 0;
+/* === ELO SEGÚN EL MARGEN RELATIVO, SIN BONO POR RAPIDEZ === */
+function calcRankedEloDelta(who, pVotes, eVotes, abandoned){
+ if(who!=='p'&&who!=='e')return 0;
+ if(who==='e'&&abandoned)return -18;
+ var winner=who==='p'?pVotes:eVotes,loser=who==='p'?eVotes:pVotes;
+ var margin=Math.max(0,Math.min(1,(winner-loser)/Math.max(1,winner)));
+ /* +25 al dejar al rival con un cuarto de tus votos; -18 solo sin votos o por abandono. */
+ return who==='p'?10+Math.floor(15*Math.min(1,margin/0.75)):-5-Math.floor(13*margin);
 }
 
 function finish(who, abandoned){
@@ -1894,7 +1904,7 @@ function finish(who, abandoned){
   fs=mode==='normal'?rnd(20,50):rnd(50,100);
   d.w++;
   if(mode==='ranked'){
-   eloDelta=calcRankedEloDelta('p', G.votes.p, G.votes.e, G.n, false);
+   eloDelta=calcRankedEloDelta('p', G.votes.p, G.votes.e, false);
    d.elo+=eloDelta;
   }
   msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS'+(eloDelta?' y +'+eloDelta+' Elo.':'.');
@@ -1910,8 +1920,9 @@ function finish(who, abandoned){
   fs=mode==='normal'?0:rnd(20,30);
   d.l++;
   if(mode==='ranked'){
-   eloDelta=calcRankedEloDelta('e', G.votes.p, G.votes.e, G.n, !!abandoned);
-   d.elo=Math.max(0, d.elo + eloDelta);
+   var previousElo=d.elo;
+   d.elo=Math.max(0, d.elo + calcRankedEloDelta('e', G.votes.p, G.votes.e, !!abandoned));
+   eloDelta=d.elo-previousElo;
   }
   msg='Derrota ('+G.votes.p+' a '+G.votes.e+').'+(fs?' Recuperas '+fs+' FS.':'')+(eloDelta?' ('+eloDelta+' Elo).':'');
   if(comp&&G.pTeam.length&&d.album.length){
@@ -1976,7 +1987,7 @@ SCREENS.result=function(){
 
 /* === MOTOR DINÁMICO DE IA TÁCTICA (SIN INFLAR STATS) === */
 function aiStep(){
- if(!G||G.over||G.side!=='e')return;
+ if(checkBattleEnd()||G.side!=='e')return;
  /* 1. Bajar cartas priorizando a su Líder o el orador de mayor impacto */
  if(G.field.e.length<3){
   var playable=G.hand.e.filter(function(c){return c.c<=G.tdp.e;}).sort(function(a,b){
@@ -2051,6 +2062,12 @@ function gabLine(){
 
 SCREENS.battle=function(){
  if(!G)return '<p>Cargando...</p>';
+ if(G.n===0)return '<div class="panel coin-toss"><h2>Cara o cruz</h2>'
+  +'<p>Tú tienes <b>cara</b> y '+esc(G.rival)+' tiene <b>cruz</b>. Ambos tenéis la misma probabilidad de empezar.</p>'
+  +'<div class="coin-face">'+(G.first==='p'?'CARA':'CRUZ')+'</div>'
+  +'<h3>Ha salido '+(G.first==='p'?'cara. Empiezas tú.':'cruz. Empieza '+esc(G.rival)+'.')+'</h3>'
+  +'<p class="sub">Cada ronda incluye un turno de cada jugador. El debate termina en cuanto alguien alcanza 100 votos o al completar 7 rondas.</p>'
+  +'<button class="btn wide" data-act="begin">Comenzar debate</button></div>';
  if(G.sel){var found=false,i2;for(i2=0;i2<G.field.p.length;i2++)if(G.field.p[i2].uid===G.sel)found=true;if(!found)G.sel=null;}
  var i,tdp='',etdp='';
  for(i=0;i<6;i++){tdp+='<span class="crystal'+(i<G.tdp.p?'':' off')+'"></span>';etdp+='<span class="crystal'+(i<G.tdp.e?'':' off')+'"></span>';}
@@ -2141,12 +2158,12 @@ SCREENS.liga=function(){
 };
 
 SCREENS.ayuda=function(){
- return '<h2>Cómo se juega</h2>'
- +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
+ return '<h2>Cómo se juega</h2><div class="inner-scroll">'
+ +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. Si nadie lo consigue, gana quien tenga más votos tras 7 rondas. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
  +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
- +'<div class="panel"><h3>3. Elo y Dificultad Justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>-5 a -18 Elo</b> según tu rendimiento en el debate.</p></div>'
+ +'<div class="panel"><h3>3. Elo y dificultad justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
  +'<div class="panel"><h3>4. Botín y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
- +'<button class="btn wide sm" data-go="menu">Volver al menú</button>';
+ +'</div><button class="btn wide sm" data-go="menu">Volver al menú</button>';
 };
 
 document.addEventListener('click',function(ev){
@@ -2222,7 +2239,7 @@ document.addEventListener('click',function(ev){
 
  if(n.hasAttribute('data-buid')){
   var uid=n.getAttribute('data-buid'),side=n.getAttribute('data-side');
-  if(!G||G.over||G.side!=='p')return;
+  if(checkBattleEnd()||G.side!=='p')return;
   var i;
   if(enMano('p',uid)){
    var cardKey=uidOf(uid);
@@ -2329,6 +2346,8 @@ document.addEventListener('click',function(ev){
    openPack(n.getAttribute('data-k')||SO.k,false);break;
   case 'end':
    endTurn();break;
+  case 'begin':
+   beginDebate();break;
   case 'abandon':
    if(G&&!G.over){
     showModal(

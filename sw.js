@@ -1,4 +1,4 @@
-const CACHE = 'hemiciclo-v30.1-citas-es';
+const CACHE = 'hemiciclo-v30.2.1-turnos-elo';
 const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
 
 self.addEventListener('install', e => {
