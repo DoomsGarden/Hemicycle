@@ -51,7 +51,7 @@ const server=http.createServer((req,res)=>{
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
   console.log('First navigation loads the new single-window market and its green review tick without an extra reload');
   await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
-  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.57-interfaz')&&!ks.includes(previousCache);},previousCache);
+  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.57-gestos')&&!ks.includes(previousCache);},previousCache);
   await page.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return r&&r.active===navigator.serviceWorker.controller&&r.active.state==='activated';});
   await page.goto(base,{waitUntil:'domcontentloaded'});
   assert.match(await page.locator('#appbar').innerText(),/v30\.2\.57/);
@@ -64,7 +64,7 @@ const server=http.createServer((req,res)=>{
   await page.locator('#gridBox [data-card="gabriel-rufian"]').click();
   const quotes=await page.locator('#content .quote').allTextContents();
   assert.equal(quotes.length,3);assert.match(quotes[2],/izquierda de caviar/);
-  for(const asset of ['js/card-confetti.js','js/app-interaction.js?v=30.2.57','cards/donald-trump-golden-portrait.webp','js/changelog.js?v=30.2.57','js/market-rules.js','js/market-ui.js?v=30.2.56','css/interface.css?v=30.2.57','cards/donald-trump-golden.webp?v=gold-loop-2']){
+  for(const asset of ['js/card-confetti.js','js/app-interaction.js?v=30.2.57-final','cards/donald-trump-golden-portrait.webp','js/changelog.js?v=30.2.57','js/market-rules.js','js/market-ui.js?v=30.2.56','css/interface.css?v=30.2.57','cards/donald-trump-golden.webp?v=gold-loop-2']){
    assert.ok(await page.evaluate(async asset=>!!await caches.match(new URL(asset,location.href)),asset),asset+' cached');
   }
   await page.locator('#content [data-go="coleccion"]').click();

@@ -33,6 +33,11 @@ async function touchDrag(context,page,x,y,dx,dy){
    });assert.deepEqual(checks,{context:true,drag:true,selection:true});
    await page.evaluate(()=>document.addEventListener('contextmenu',event=>window.__contextBlocked=event.defaultPrevented,{once:true}));
    await page.mouse.click(viewport.width/2,viewport.height*0.5,{button:'right'});await page.waitForFunction(()=>window.__contextBlocked===true);
+   if(viewport.width>800){
+    await page.evaluate(()=>{window.__contextBlocked=false;document.addEventListener('contextmenu',event=>window.__contextBlocked=event.defaultPrevented,{once:true})});
+    await page.mouse.click(10,100,{button:'right'});await page.waitForFunction(()=>window.__contextBlocked===true);
+   }
+
 
    await page.mouse.move(viewport.width/2,viewport.height/2);await page.mouse.wheel(0,500);
    await touchDrag(context,page,viewport.width/2,viewport.height*0.65,0,-150);

@@ -1,7 +1,7 @@
 {
   "version": "v30.2.57",
   "passed": true,
-  "finished": "2026-10-20T22:54:10.580147+00:00",
+  "finished": "2026-10-20T22:58:47.565781+00:00",
   "baseline": "da2dc6a",
   "rendererRestoredFrom": "b28daf7",
   "rendererRestoredExactly": true,
@@ -62,17 +62,142 @@
       "check": "home",
       "passed": true,
       "log": "_dev/reports/v30.2.57/home.log"
+    },
+    {
+      "check": "final-unit",
+      "passed": true,
+      "log": "_dev/reports/v30.2.57/final-unit.log"
+    },
+    {
+      "check": "final-interaction",
+      "passed": true,
+      "log": "_dev/reports/v30.2.57/final-interaction.log"
+    },
+    {
+      "check": "final-upgrade",
+      "passed": true,
+      "log": "_dev/reports/v30.2.57/final-upgrade.log"
+    },
+    {
+      "check": "patch-upgrade",
+      "passed": true,
+      "log": "_dev/reports/v30.2.57/patch-upgrade.log"
     }
   ],
   "sourceHashes": {
-    "index.html": "e6df9b6f1985a2356c6519d476e8b2928876c17f62bbdae304d65c9ffeaa6fff",
-    "sw.js": "f30e58459a83246c8dea2c22b4851cbed0991b578c36fb46e0b4228e15f89114",
+    "index.html": "44a617e8d869517e6e31c2d680d307f5c44e8fac127f6ec5df4adf430774f646",
+    "sw.js": "dbb8392e8ab8b3e642406d235924b54a3bd291d7f19bdb507b947103cc89cbb0",
     "css/interface.css": "39fa28a0bcadaf2d8b3a841028bbc56acf6736e52f24b73c51fb559a2e8a9f3b",
-    "js/app-interaction.js": "55a8b8a825a6632926452d738f57b376c0176bdaa7c69008ad28f6f29515853e",
+    "js/app-interaction.js": "6c7004c0925fa954508b33580b56c114d362651d806679a200c9f32a474c3449",
     "js/card-confetti.js": "d5abfba8f2980e06cdc382ffbc1f9fab6e663385a1eb16bf839c9e85153635e1",
     "js/market-ui.js": "9e35e28d72b42381198d0d88f501b70690ac02676cbcf75e0ffe8934f968657b",
     "js/changelog.js": "60a365a849351c7c9178128733be87e3b5a51dd061f25285e25ef7a57d71e2f0",
     "cards/donald-trump-golden.webp": "1b2ef6a9c1916f6aaff94f93df1a98eef2856770afd299bccda5d0988027a733",
     "cards/donald-trump-golden-portrait.webp": "0a02bbe2007467b78ea8df66e0e9da7fc0ff94ae220419b49e6a75f277d3dfc8"
-  }
+  },
+  "stages": [
+    {
+      "name": "Initial revision",
+      "commit": "ff3ce34",
+      "sourceHashes": {
+        "index.html": "e6df9b6f1985a2356c6519d476e8b2928876c17f62bbdae304d65c9ffeaa6fff",
+        "sw.js": "f30e58459a83246c8dea2c22b4851cbed0991b578c36fb46e0b4228e15f89114",
+        "css/interface.css": "39fa28a0bcadaf2d8b3a841028bbc56acf6736e52f24b73c51fb559a2e8a9f3b",
+        "js/app-interaction.js": "55a8b8a825a6632926452d738f57b376c0176bdaa7c69008ad28f6f29515853e",
+        "js/card-confetti.js": "d5abfba8f2980e06cdc382ffbc1f9fab6e663385a1eb16bf839c9e85153635e1",
+        "js/market-ui.js": "9e35e28d72b42381198d0d88f501b70690ac02676cbcf75e0ffe8934f968657b",
+        "js/changelog.js": "60a365a849351c7c9178128733be87e3b5a51dd061f25285e25ef7a57d71e2f0",
+        "cards/donald-trump-golden.webp": "1b2ef6a9c1916f6aaff94f93df1a98eef2856770afd299bccda5d0988027a733",
+        "cards/donald-trump-golden-portrait.webp": "0a02bbe2007467b78ea8df66e0e9da7fc0ff94ae220419b49e6a75f277d3dfc8"
+      },
+      "checks": [
+        {
+          "check": "unit",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/unit.log"
+        },
+        {
+          "check": "animation",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/animation.log"
+        },
+        {
+          "check": "history",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/history.log"
+        },
+        {
+          "check": "interaction",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/interaction.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/upgrade.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/battles.log"
+        },
+        {
+          "check": "bonus",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/bonus.log"
+        },
+        {
+          "check": "home",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/home.log"
+        },
+        {
+          "check": "final-unit",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/final-unit.log"
+        },
+        {
+          "check": "final-interaction",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/final-interaction.log"
+        },
+        {
+          "check": "final-upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/final-upgrade.log"
+        },
+        {
+          "check": "patch-upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/patch-upgrade.log"
+        }
+      ]
+    },
+    {
+      "name": "Desktop background gesture coverage",
+      "checks": [
+        {
+          "check": "final-unit",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/final-unit.log"
+        },
+        {
+          "check": "final-interaction",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/final-interaction.log"
+        },
+        {
+          "check": "final-upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/final-upgrade.log"
+        },
+        {
+          "check": "patch-upgrade",
+          "passed": true,
+          "log": "_dev/reports/v30.2.57/patch-upgrade.log"
+        }
+      ]
+    }
+  ],
+  "desktopMarginsContextMenuBlocked": true
 }

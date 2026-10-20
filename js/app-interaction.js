@@ -1,7 +1,8 @@
 /* Mantiene los gestos dentro de los paneles desplazables del juego. */
 (function(){
  'use strict';
- var app=document.getElementById('screen');if(!app)return;
+ if(!document.getElementById('screen'))return;
+ var app=document.body;
  var point=null;
  function editable(target){return !!(target&&target.closest&&target.closest('input,textarea,select,[contenteditable="true"]'));}
  function canScroll(target,dx,dy){
