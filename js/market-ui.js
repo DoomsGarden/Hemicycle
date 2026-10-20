@@ -36,10 +36,10 @@
    state.connecting=false;repaint();
   }
   function summary(title,lines){return '<div class="market-review"><span class="review-step">'+esc(title)+'</span>'+lines.map(function(line){return '<p>'+esc(line)+'</p>';}).join('')+'</div>';}
-  function confirmTwo(title,lines,verify,commit){
-   app.modal(title,summary('Paso 1 de 2 · Revisa las condiciones',lines),'Verificar condiciones',false,function(){
-    task(async function(){var verified=await verify();app.modal(title,summary('Paso 2 de 2 · Confirmación final',lines),'Confirmar operación',false,function(){task(async function(){await commit(verified);state.notice='Operación completada.';if(state.remote)await sync();});});});
-   },true);
+  function confirmOne(title,lines,label,verify,commit){
+   app.modal(title,summary('Revisa los datos y marca el tick para continuar',lines),label,false,function(){
+    task(async function(){var verified=await verify();await commit(verified);state.notice='Operación completada.';if(state.remote)await sync();});
+   },true,true);
   }
   function thumb(c){return '<div class="market-thumb" aria-hidden="true"><img src="cards/'+c.id+'.webp" alt="" loading="lazy"></div>';}
   function sellView(){
@@ -80,7 +80,7 @@
    var different=state.give&&state.receive&&rules.card(state.give).r!==rules.card(state.receive).r;
    var lowerOwn=different&&HemicycleMarket.rarities.indexOf(rules.card(state.give).r)<HemicycleMarket.rarities.indexOf(rules.card(state.receive).r);
    var lowerId=lowerOwn?state.give:state.receive,extras=different?(lowerOwn?own:other).filter(function(row){return row.card.r===rules.card(lowerId).r&&(row.card.id!==lowerId||row.quantity>=2);}):[];
-   return '<p class="market-note">Primero se verifican las condiciones y se reservan los recursos. Después, ambos jugadores confirman el intercambio.</p>'
+   return '<p class="market-note">Revisa la propuesta, marca el tick y confirma en una sola ventana. El intercambio se completa cuando ambos jugadores lo aceptan.</p>'
     +'<div class="trade-compose"><label>Jugador<select id="tradePlayer"><option value="">Selecciona otro jugador</option>'+state.players.map(function(p){return '<option value="'+p.id+'"'+(state.recipient===p.id?' selected':'')+'>'+esc(p.name)+'</option>';}).join('')+'</select></label>'
     +'<div class="trade-pair"><label>Tú entregas<select id="tradeGive">'+options(own,state.give)+'</select></label><span aria-hidden="true">⇄</span><label>Tú recibes<select id="tradeReceive"'+(!state.recipient?' disabled':'')+'>'+options(other,state.receive)+'</select></label></div>'
     +(different?'<label>Cómo compensar la diferencia<select id="tradeMethod"><option value="fs"'+(state.method==='fs'?' selected':'')+'>Un cromo inferior + suplemento en FS</option><option value="two"'+(state.method==='two'?' selected':'')+'>Dos cromos inferiores por uno superior</option></select></label>':'')
@@ -93,12 +93,12 @@
   function bundleText(items){return items.map(function(c){return c.quantity+' × '+rules.card(c.id).n;}).join(' + ');}
   function tradeLines(t){return [t.proposerName+' entrega: '+bundleText(t.terms.give)+(t.terms.giveFS?' + '+t.terms.giveFS+' FS':''),t.recipientName+' entrega: '+bundleText(t.terms.receive)+(t.terms.receiveFS?' + '+t.terms.receiveFS+' FS':''),'Valor de referencia de los cromos: '+reference(t.terms.give)+' FS frente a '+reference(t.terms.receive)+' FS.','La propuesta caduca si no se completa en 15 minutos.'];}
   function tradeCard(t){
-   var side=t.proposer===state.me.id?'a':'b',verified=t['verified_'+side],confirmed=t['confirmed_'+side];
-   var labels={verification:'1 · Verificación',confirmation:'2 · Confirmación',completed:'Completado',cancelled:'Cancelado',expired:'Caducado'};
+   var side=t.proposer===state.me.id?'a':'b',confirmed=t['confirmed_'+side];
+   var labels={verification:'Pendiente de aceptación',confirmation:'Pendiente de aceptación',completed:'Completado',cancelled:'Cancelado',expired:'Caducado'};
    return '<article class="trade-activity"><div class="bar between"><b>Intercambio con '+esc(side==='a'?t.recipientName:t.proposerName)+'</b><span class="trade-status '+t.status+'">'+labels[t.status]+'</span></div>'
     +tradeLines(t).slice(0,2).map(function(line){return '<p>'+esc(line)+'</p>';}).join('')
-    +(['verification','confirmation'].includes(t.status)?'<div class="trade-progress"><span>'+((t.verified_a&&t.verified_b)?'✓':'○')+' Ambos verifican</span><span>'+((t.confirmed_a&&t.confirmed_b)?'✓':'○')+' Ambos confirman</span></div><div class="bar">'
-     +(t.status==='verification'&&!verified?'<button class="btn sm" data-market="verify" data-id="'+t.id+'">Verificar condiciones</button>':t.status==='confirmation'&&!confirmed?'<button class="btn sm" data-market="confirm" data-id="'+t.id+'">Confirmar intercambio</button>':'<span class="market-note">Esperando al otro jugador.</span>')
+    +(['verification','confirmation'].includes(t.status)?'<div class="trade-progress"><span>'+(confirmed?'✓ Tú has aceptado':'○ Tu aceptación pendiente')+'</span><span>'+(t['confirmed_'+(side==='a'?'b':'a')]?'✓ El otro jugador ha aceptado':'○ El otro jugador pendiente')+'</span></div><div class="bar">'
+     +(!confirmed?'<button class="btn sm" data-market="accept" data-id="'+t.id+'">Revisar intercambio</button>':'<span class="market-note">Esperando al otro jugador.</span>')
      +'<button class="btn ghost sm" data-market="cancel-trade" data-id="'+t.id+'">Cancelar</button></div>':'')+'</article>';
   }
   function activityView(){
@@ -131,7 +131,7 @@
    if(action==='sell'){
     var target=state.remote?state.target:'machine',quantity=state.quantity,cardId=state.id,quote=rules.sale(cardId,quantity,target),operation=key();
     var lines=[quantity+' × '+rules.card(cardId).n,(target==='machine'?'La máquina paga: ':'Precio total de la oferta: ')+quote.total+' FS',target==='machine'?'La venta es definitiva. Se conserva una copia.':'Recibirás los FS cuando otro jugador compre. Los cromos quedan reservados.'];
-    confirmTwo(target==='machine'?'Vender a la máquina':'Publicar oferta',lines,async function(){if(rules.duplicates(profile().album,cardId)<quantity)throw new Error('La cantidad de repetidos ha cambiado.');return quote;},async function(){
+    confirmOne(target==='machine'?'Vender a la máquina':'Publicar oferta',lines,target==='machine'?'Realizar venta':'Publicar oferta',async function(){if(rules.duplicates(profile().album,cardId)<quantity)throw new Error('La cantidad de repetidos ha cambiado.');return quote;},async function(){
      if(state.remote)await request(target==='machine'?'/sales/machine':'/listings',{id:cardId,quantity:quantity,key:operation});
      else{var save=function(){app.saveProfile(rules.machineSale(app.getProfile(),cardId,quantity,operation));};if(navigator.locks)await navigator.locks.request('hemicycle-market-sale',save);else save();}
      state.id='';
@@ -140,19 +140,22 @@
    if(action==='buy'){
     var listing=state.listings.find(function(l){return l.id===id;});if(!listing)return;
     app.quantityModal(rules.card(listing.card).n,listing.remaining,listing.unit,function(quantity){
-     var lines=[quantity+' × '+rules.card(listing.card).n,'Vendedor: '+listing.sellerName,'Total: '+quantity*listing.unit+' FS'];
-     confirmTwo('Comprar cromos',lines,function(){return request('/quotes/purchase',{listing:id,quantity:quantity});},function(quote){return request('/purchases',{quote:quote.id});});
-    });return;
+     task(async function(){
+      var quote=await request('/quotes/purchase',{listing:id,quantity:quantity});
+      if(quote.cardId!==listing.card||quote.quantity!==quantity||quote.unit!==listing.unit||quote.total!==quantity*listing.unit)throw new Error('La oferta ha cambiado. Revisa la compra de nuevo.');
+      await request('/purchases',{quote:quote.id});state.notice='Compra completada.';await sync();
+     });
+    },listing.sellerName);return;
    }
    if(action==='propose'){
     var terms=tradeTerms(),recipient=state.recipient,other=state.players.find(function(p){return p.id===recipient;});
     var proposal={proposerName:state.me.name,recipientName:other.name,terms:terms},operation=key();
-    app.modal('Verificar propuesta',summary('Paso 1 de 2 · Verificar y reservar',tradeLines(proposal).concat(['Tus cromos y el suplemento quedan reservados. Se devolverán si se cancela o caduca.'])),'Verificar y enviar',false,function(){task(async function(){await request('/trades',{key:operation,recipient:recipient,give:terms.give,receive:terms.receive,verify:true});state.tab='activity';await sync();});},true);return;
+    app.modal('Revisar intercambio',summary('Revisa los datos y marca el tick para continuar',tradeLines(proposal).concat(['Al confirmar aceptas la propuesta y reservas tu parte. El intercambio se completa cuando el otro jugador también lo acepta.'])),'Realizar intercambio',false,function(){task(async function(){await request('/trades',{key:operation,recipient:recipient,give:terms.give,receive:terms.receive,accept:true});state.tab='activity';await sync();});},true,true);return;
    }
-   if(action==='verify'||action==='confirm'||action==='cancel-trade'){
+   if(action==='accept'||action==='cancel-trade'){
     var trade=state.activity.trades.find(function(t){return t.id===id;});if(!trade)return;
-    var labels={verify:['Verificar intercambio','Verificar y reservar'],confirm:['Confirmar intercambio','Confirmar intercambio'],'cancel-trade':['Cancelar intercambio','Cancelar y devolver reservas']};
-    app.modal(labels[action][0],summary(action==='verify'?'Paso 1 de 2':action==='confirm'?'Paso 2 de 2':'Devolver recursos',tradeLines(trade)),labels[action][1],action==='cancel-trade',function(){task(async function(){await request('/trades/'+id+'/'+(action==='cancel-trade'?'cancel':action),{});await sync();});},true);return;
+    var cancelling=action==='cancel-trade';
+    app.modal(cancelling?'Cancelar intercambio':'Revisar intercambio',summary(cancelling?'Devolver recursos':'Revisa los datos y marca el tick para continuar',tradeLines(trade)),cancelling?'Cancelar y devolver reservas':'Realizar intercambio',cancelling,function(){task(async function(){await request('/trades/'+id+'/'+(cancelling?'cancel':'accept'),{});await sync();});},true,!cancelling);return;
    }
    if(action==='cancel-listing'){app.modal('Retirar oferta','Los cromos que aún no se hayan vendido volverán a estar disponibles.','Retirar oferta',false,function(){task(async function(){await request('/listings/'+id+'/cancel',{});await sync();});});}
   }

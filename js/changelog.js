@@ -4,6 +4,26 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version": "v30.2.56",
+    "date": "2026-10-20",
+    "title": "Ajustes del mercado",
+    "sections": [
+      {
+        "title": "Interfaz",
+        "items": [
+          "El icono de Mercado comparte el estilo de trazo del icono de Liga en la barra inferior."
+        ]
+      },
+      {
+        "title": "Confirmaciones",
+        "items": [
+          "Las ventas, compras e intercambios se revisan desde una sola ventana. Marca el tick situado entre Cancelar y el botón de la operación para habilitarla; el tick se vuelve verde al activarlo.",
+          "Cada jugador acepta el intercambio una vez. La entrega se completa cuando ambos han confirmado, conservando la protección de la última copia."
+        ]
+      }
+    ]
+  },
+  {
     "version": "v30.2.55",
     "date": "2026-10-20",
     "title": "Nuevo menú y mercado de repetidos",

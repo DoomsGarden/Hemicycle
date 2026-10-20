@@ -1,0 +1,87 @@
+const assert=require('node:assert/strict'),fs=require('node:fs'),http=require('node:http'),path=require('node:path'),{execFileSync}=require('node:child_process'),{chromium}=require('playwright');
+const root='/workspace/Hemicycle';
+const oldIndex=execFileSync('git',['show','b28daf7:index.html'],{cwd:root});
+const oldSw=execFileSync('git',['show','b28daf7:sw.js'],{cwd:root});
+const oldNotes=execFileSync('git',['show','b28daf7:js/changelog.js'],{cwd:root});
+let updated=false,hangNavigation=false,base='';
+const server=http.createServer((req,res)=>{
+ if(hangNavigation&&(req.headers.accept||'').includes('text/html')){req.on('close',()=>res.destroy());return;}
+ const name=new URL(req.url,'http://local').pathname.replace(/^\/Hemicycle\//,'')||'index.html';
+ const file=path.join(root,name);
+ try{
+  const bytes=!updated&&name==='index.html'?oldIndex:!updated&&name==='sw.js'?oldSw:!updated&&name==='js/changelog.js'?oldNotes:fs.readFileSync(file);
+  const ext=path.extname(name),type={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png'}[ext]||'application/octet-stream';
+  res.writeHead(200,{'Content-Type':type,'Cache-Control':'no-store'});res.end(bytes);
+ }catch(e){res.writeHead(404);res.end();}
+});
+(async()=>{
+ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ base='http://127.0.0.1:'+server.address().port+'/Hemicycle/';
+ const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+ try{
+  const context=await browser.newContext({viewport:{width:393,height:851}}),page=await context.newPage();
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(base);
+  await page.evaluate(()=>navigator.serviceWorker.ready);
+  await page.waitForFunction(()=>navigator.serviceWorker.controller);
+  const profile=await page.evaluate(async()=>{
+   const d=JSON.parse(localStorage.getItem('hemiciclo_v21'));
+   d.album.push('gabriel-rufian','gabriel-rufian','isabel-cela','donald-trump');d.fs=456789;d.elo=999;d.dtWins=15;d.dtGoldUnlocked=true;d.dtGoldActive=true;
+   localStorage.setItem('hemiciclo_v21',JSON.stringify(d));
+   await caches.open('unrelated-app');
+   localStorage.setItem('hemiciclo_liga_v9',JSON.stringify({div:2,jor:6,temp:3,teams:[{n:'Tu grupo',pts:17,w:5,d:2,l:0,you:true,str:60}]}));
+   return d;
+  });
+  assert.match(await page.locator('#appbar').innerText(),/v30\.2\.55/);
+  assert.ok((await page.evaluate(()=>caches.keys())).includes('hemiciclo-v30.2.55-mercado'));
+  updated=true;
+  await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
+  await page.waitForFunction(async()=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.56-visual')&&!ks.includes('hemiciclo-v30.2.55-mercado');});
+  await page.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return r&&r.active===navigator.serviceWorker.controller&&r.active.state==='activated';});
+  await page.goto(base,{waitUntil:'domcontentloaded'});
+  assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
+  await page.waitForFunction(()=>navigator.serviceWorker.controller&&navigator.serviceWorker.controller.scriptURL.includes('v=v30.2.56')&&navigator.serviceWorker.controller.state==='activated');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  assert.ok((await page.evaluate(()=>caches.keys())).includes('unrelated-app'));
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_liga_v9')).jor),6);
+  await page.locator('#tabbar [data-go="coleccion"]').click();
+  await page.locator('#fq').fill('Gabriel Rufian');
+  await page.locator('#gridBox [data-card="gabriel-rufian"]').click();
+  const quotes=await page.locator('#content .quote').allTextContents();
+  assert.equal(quotes.length,3);assert.match(quotes[2],/izquierda de caviar/);
+  for(const asset of ['js/card-confetti.js','js/changelog.js','js/market-rules.js','js/market-ui.js','css/interface.css','cards/donald-trump-golden.webp?v=gold-loop-2']){
+   assert.ok(await page.evaluate(async asset=>!!await caches.match(new URL(asset,location.href)),asset),asset+' cached');
+  }
+  await page.locator('#content [data-go="coleccion"]').click();
+  await page.locator('#fq').fill('Donald Trump');
+  await page.locator('#gridBox [data-card="donald-trump"]').click();
+  await page.waitForSelector('.gold-slot.has-canvas');
+  console.log('Online update and golden assets loaded');
+  await context.setOffline(true);await page.goto(base,{waitUntil:'domcontentloaded'});
+  console.log('Offline document loaded');
+  assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  await page.locator('#appbar [data-go="novedades"]').click();
+  assert.equal(await page.locator('.release-entry').count(),24);
+  await page.locator('.release-entry').first().locator('summary').click();
+  assert.match(await page.locator('.release-entry').first().innerText(),/Mercado|mercado/);
+  await page.locator('#tabbar [data-go="coleccion"]').click();
+  await page.locator('#fq').fill('Donald Trump');
+  await page.locator('#gridBox [data-card="donald-trump"]').click();
+  await page.waitForFunction(()=>Array.from(document.querySelectorAll('canvas')).some(c=>c.width===420&&c.height===560));
+  await page.waitForTimeout(1500);
+  assert.ok(await page.locator('canvas').evaluateAll(cs=>cs.some(c=>{const a=c.getContext('2d').getImageData(210,280,1,1).data;return a[3]===255&&a[0]+a[1]+a[2]>10})), 'golden art works offline');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  await page.locator('#tabbar [data-go="mercado"]').click();
+  await page.waitForFunction(()=>!document.querySelector('.market-account').textContent.includes('Comprobando'));
+  assert.match(await page.locator('.market-account').innerText(),/guardado local/);
+  assert.ok(await page.locator('[data-market="select"]').count()>0);
+  await context.setOffline(false);hangNavigation=true;
+  const started=Date.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:12000});
+  assert.ok(Date.now()-started<10000,'a stalled network must use the saved document');
+  assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  assert.deepEqual(errors,[]);
+  console.log('v30.2.55 → v30.2.56 update passed: new cache, offline history and original full animation; collection, FS, Elo, league and golden progress preserved; unrelated cache intact.');
+ }finally{await browser.close();server.close();}
+})().catch(e=>{console.error(e);server.close();process.exitCode=1;});

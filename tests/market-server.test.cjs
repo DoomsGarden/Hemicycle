@@ -194,3 +194,48 @@ test('identities, inventories, balances and pending reservations survive a serve
  assert.equal(me.id,initial.id);assert.equal(me.fs,6000);assert.equal(quantity(me,common),1);
  const activity=await (await fetch(base+'/api/market/activity',{headers:{Cookie:cookie}})).json();assert.equal(activity.listings[0].remaining,2);
 });
+
+test('one reviewed acceptance per player reserves first, then completes atomically and only once',async t=>{
+ const f=await fixture(t),a=await f.client('Ana'),b=await f.client('Bruno'),outside=await f.client('Clara');
+ const data={recipient:b.id,give:[{id:common,quantity:1}],receive:[{id:rare,quantity:1}],accept:true,key:crypto.randomUUID()};
+ const trade=await a.call('/trades',data);
+ assert.equal(trade.verified_a,1);assert.equal(trade.confirmed_a,1);assert.equal(trade.confirmed_b,0);
+ assert.equal((await a.me()).fs,5982);assert.equal(quantity(await a.me(),rare),3);
+ await a.call('/trades',data);await a.call('/trades/'+trade.id+'/accept',{});
+ assert.equal((await a.me()).fs,5982);assert.equal(quantity(await a.me(),common),2);
+ await outside.call('/trades/'+trade.id+'/accept',{},403);
+ const replies=await Promise.all([b.call('/trades/'+trade.id+'/accept',{}),b.call('/trades/'+trade.id+'/accept',{})]);
+ assert.ok(replies.every(r=>r.status==='completed'));
+ assert.equal(quantity(await a.me(),rare),4);assert.equal(quantity(await b.me(),common),4);
+ assert.equal((await a.me()).fs+(await b.me()).fs,12000);
+ assert.equal((await b.me()).fs,6018);
+ assert.equal((await a.call('/activity')).receipts.filter(r=>r.kind==='trade').length,1);
+ assert.equal((await b.call('/activity')).receipts.filter(r=>r.kind==='trade').length,1);
+});
+
+test('cancellation or expiry returns a pending single-window acceptance and its FS once',async t=>{
+ for(const expired of [false,true]){
+  const f=await fixture(t),a=await f.client('Ana'),b=await f.client('Bruno');
+  const trade=await a.call('/trades',{recipient:b.id,give:[{id:common,quantity:1}],receive:[{id:rare,quantity:1}],accept:true,key:crypto.randomUUID()});
+  if(expired){f.advance(900001);await b.call('/trades/'+trade.id+'/accept',{},410);}
+  else{await b.call('/trades/'+trade.id+'/cancel',{});await a.call('/trades/'+trade.id+'/cancel',{});await b.call('/trades/'+trade.id+'/accept',{},409);}
+  assert.equal((await a.me()).fs,6000);assert.equal(quantity(await a.me(),common),3);
+  assert.equal((await b.me()).fs,6000);assert.equal(quantity(await b.me(),rare),3);
+  assert.equal((await a.call('/activity')).receipts.filter(r=>r.kind==='trade').length,0);
+ }
+});
+
+test('single-window acceptance rechecks stock and FS and rolls back a failed reservation',async t=>{
+ for(const loseStock of [true,false]){
+  const f=await fixture(t),a=await f.client('Ana'),b=await f.client('Bruno');
+  const give=loseStock?common:rare,receive=loseStock?rare:common;
+  const trade=await a.call('/trades',{recipient:b.id,give:[{id:give,quantity:1}],receive:[{id:receive,quantity:1}],accept:true,key:crypto.randomUUID()});
+  if(loseStock)await b.call('/listings',operation(receive,2));
+  else f.app.db.prepare('UPDATE players SET fs=10 WHERE id=?').run(b.id);
+  const before=await b.me();await b.call('/trades/'+trade.id+'/accept',{},409);
+  assert.deepEqual(await b.me(),before);
+  const pending=(await a.call('/activity')).trades[0];assert.equal(pending.verified_b,0);assert.equal(pending.confirmed_b,0);
+  await a.call('/trades/'+trade.id+'/cancel',{});
+  assert.equal(quantity(await a.me(),give),3);assert.equal((await a.me()).fs,6000);
+ }
+});

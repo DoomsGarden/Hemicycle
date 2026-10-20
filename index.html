@@ -536,7 +536,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.2.55';
+var VERSION='v30.2.56';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -563,10 +563,6 @@ var GOLD_LOOP={
  period:0,
  startedAt:0,
  surface:null,
- faceSurface:null,
- portrait:null,
- confetti:null,
- face:{x:144,y:133,w:132,h:168},
  lastDraw:null,
  posterUrl:'',
  pool:[],
@@ -607,29 +603,6 @@ function getGoldPlayback(now){
  return {first:next,second:next,mix:0};
 }
 
-function makeGoldFaceFrame(source){
- var rect=GOLD_LOOP.face,cv=document.createElement('canvas');
- cv.width=rect.w;cv.height=rect.h;
- var ctx=cv.getContext('2d');
- if(!ctx)throw new Error('Cannot prepare golden expression');
- ctx.save();ctx.translate(rect.w/2,rect.h/2);ctx.scale(rect.w/2,rect.h/2);
- var mask=ctx.createRadialGradient(0,0,0,0,0,1);
- mask.addColorStop(0,'rgba(255,255,255,1)');
- mask.addColorStop(0.8,'rgba(255,255,255,1)');
- mask.addColorStop(1,'rgba(255,255,255,0)');
- ctx.fillStyle=mask;ctx.fillRect(-1,-1,2,2);ctx.restore();
- ctx.globalCompositeOperation='source-in';
- ctx.drawImage(source,rect.x,rect.y,rect.w,rect.h,0,0,rect.w,rect.h);
- ctx.globalCompositeOperation='source-over';
- return cv;
-}
-
-/* Las partículas usan tiempo continuo: la expresión puede retroceder, la caída no. */
-function drawGoldConfetti(ctx,elapsed){
- if(!GOLD_LOOP.confetti)GOLD_LOOP.confetti=CardConfetti.create(CardConfetti.TRUMP);
- GOLD_LOOP.confetti.draw(ctx,elapsed);
-}
-
 function detachGoldPool(container){
  if(!container)return;
  var activeCvs=container.querySelectorAll('canvas.gold-canvas');
@@ -659,25 +632,18 @@ function drawCurrentGoldFrame(now){
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return 0;
  var slots=document.querySelectorAll('.gold-slot');
  if(!slots.length)return 0;
- now=now===undefined?performance.now():now;
- var playback=getGoldPlayback(now),elapsed=Math.max(0,now-GOLD_LOOP.startedAt);
- var key=playback.first+':'+playback.second+':'+Math.round(playback.mix*255)+':'+Math.floor(elapsed/33.333333);
+ var playback=getGoldPlayback(now===undefined?performance.now():now);
+ var key=playback.first+':'+playback.second+':'+Math.round(playback.mix*255);
  if(GOLD_LOOP.lastDraw!==key){
   var surfaceCtx=GOLD_LOOP.surface.getContext('2d');
   if(!surfaceCtx)return slots.length;
   surfaceCtx.globalAlpha=1;
-  surfaceCtx.drawImage(GOLD_LOOP.portrait,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
-  var face=GOLD_LOOP.face,faceCtx=GOLD_LOOP.faceSurface.getContext('2d');
-  faceCtx.clearRect(0,0,face.w,face.h);
-  faceCtx.globalCompositeOperation='source-over';faceCtx.globalAlpha=1-playback.mix;
-  faceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0);
+  surfaceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
   if(playback.mix>0){
-   faceCtx.globalCompositeOperation='lighter';faceCtx.globalAlpha=playback.mix;
-   faceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0);
+   surfaceCtx.globalAlpha=playback.mix;
+   surfaceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+   surfaceCtx.globalAlpha=1;
   }
-  faceCtx.globalAlpha=1;faceCtx.globalCompositeOperation='source-over';
-  surfaceCtx.drawImage(GOLD_LOOP.faceSurface,face.x,face.y);
-  drawGoldConfetti(surfaceCtx,elapsed);
   GOLD_LOOP.lastDraw=key;
  }
  for(var i=0;i<slots.length;i++){
@@ -813,65 +779,42 @@ function ensureGoldLoop(){
  }
  if(GOLD_LOOP.state!=='idle')return;
  GOLD_LOOP.state='loading';
- var loaded=[],portrait=null;
+ var loaded=[];
  // A new URL also bypasses copies retained by the previous service worker.
  var url=ART_BASE+'donald-trump-golden.webp?v=gold-loop-2';
- GOLD_LOOP.posterUrl=ART_BASE+'donald-trump-golden-portrait.webp';
- var portraitReady=fetch(GOLD_LOOP.posterUrl,{cache:'force-cache'}).then(function(res){
-  if(!res.ok)throw new Error('HTTP '+res.status);
-  return res.blob();
- }).then(decodeGoldFrame).then(function(bmp){
-  if(GOLD_LOOP.state!=='loading'){
-   if(typeof bmp.close==='function')bmp.close();
-   throw new Error('Golden loading cancelled');
-  }
-  portrait=bmp;return bmp;
- });
- var framesReady=fetch(url,{cache:'force-cache'}).then(function(res){
+ fetch(url,{cache:'force-cache'}).then(function(res){
   if(!res.ok)throw new Error('HTTP '+res.status);
   return res.arrayBuffer();
  }).then(function(buf){
   var frames=readGoldFrames(buf),p=Promise.resolve();
-  if(frames[0].w!==420||frames[0].h!==560)throw new Error('Unexpected golden portrait size');
+  GOLD_LOOP.posterUrl=URL.createObjectURL(frames[0].blob);
   var sampleCanvas=document.createElement('canvas');
   sampleCanvas.width=16;sampleCanvas.height=22;
   var sampleCtx=sampleCanvas.getContext('2d',{willReadFrequently:true});
 
   frames.forEach(function(frame){
    p=p.then(function(){return decodeGoldFrame(frame.blob);}).then(function(bmp){
-    if(GOLD_LOOP.state!=='loading'){
-     if(typeof bmp.close==='function')bmp.close();
-     return;
-    }
     if(isFrameValid(sampleCtx,16,22,bmp)){
-     loaded.push({bmp:makeGoldFaceFrame(bmp),dur:frame.dur});
-     if(typeof bmp.close==='function')bmp.close();
+     loaded.push({bmp:bmp,dur:frame.dur});
     }else if(typeof bmp.close==='function'){
      bmp.close();
     }
    });
   });
-  return p;
- });
- Promise.all([framesReady,portraitReady]).then(function(results){
-   portrait=results[1];
+  return p.then(function(){
    if(loaded.length<2)throw new Error('Not enough valid golden frames');
    GOLD_LOOP.frames=loaded;
-   GOLD_LOOP.w=420;
-   GOLD_LOOP.h=560;
-   GOLD_LOOP.portrait=portrait;
+   GOLD_LOOP.w=frames[0].w;
+   GOLD_LOOP.h=frames[0].h;
    buildGoldTimeline();
    GOLD_LOOP.surface=document.createElement('canvas');
    GOLD_LOOP.surface.width=GOLD_LOOP.w;
    GOLD_LOOP.surface.height=GOLD_LOOP.h;
-   GOLD_LOOP.faceSurface=document.createElement('canvas');
-   GOLD_LOOP.faceSurface.width=GOLD_LOOP.face.w;
-   GOLD_LOOP.faceSurface.height=GOLD_LOOP.face.h;
    GOLD_LOOP.startedAt=performance.now();
    GOLD_LOOP.state='ready';
    syncGoldCanvases();
+  });
  }).catch(function(){
-  if(portrait&&typeof portrait.close==='function')portrait.close();
   loaded.forEach(function(f){if(typeof f.bmp.close==='function')f.bmp.close();});
   GOLD_LOOP.frames=[];
   GOLD_LOOP.state='fallback';
@@ -880,7 +823,7 @@ function ensureGoldLoop(){
    slots[i].classList.remove('has-canvas');
    detachGoldPool(slots[i]);
    var img=slots[i].querySelector('img.gold-static-fb');
-   if(img)img.src=ART_BASE+'donald-trump.webp';
+   if(img)img.src=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump.webp';
   }
  });
 }
@@ -1099,7 +1042,7 @@ function artTag(id,nm,allowGold){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
    if(GOLD_LOOP.state==='idle')setTimeout(ensureGoldLoop,0);
-   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump-golden-portrait.webp';
+   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump.webp';
    return '<div class="gold-slot">'
     +'<img class="gold-static-fb" src="'+poster+'" alt="" onerror="this.onerror=null;this.src=\''+ART_BASE+'donald-trump.webp\'">'
     +'</div><span style="display:none">'+esc(initials(nm))+'</span>';
@@ -1137,7 +1080,7 @@ function fichaHTML(c){
 
 /* === SISTEMA DE VENTANA EMERGENTE (MODAL CORREGIDO SIN STOPPROPAGATION) === */
 var MODAL_CB=null;
-function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml){
+function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, requiresReview){
  MODAL_CB=onConfirm;
  var mr=document.getElementById('modalRoot');
  if(!mr)return;
@@ -1145,12 +1088,13 @@ function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml){
   +'<div class="modal" role="dialog" aria-modal="true" aria-labelledby="dialogTitle">'
   +'<h3 id="dialogTitle">'+esc(title)+'</h3>'
   +(trustedHtml?msg:'<p>'+esc(msg)+'</p>')
-  +'<div class="bar">'
+  +'<div class="bar'+(requiresReview?' market-confirm-actions':'')+'">'
   +'<button type="button" class="btn ghost sm" data-modal="cancel">Cancelar</button>'
-  +'<button type="button" class="btn '+(isDanger?'danger':'')+' sm" data-modal="confirm">'+esc(confirmLabel||'Confirmar')+'</button>'
+  +(requiresReview?'<button type="button" class="btn ghost sm review-check" data-modal="review" aria-pressed="false" aria-label="Confirmar que he revisado los datos"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></button>':'')
+  +'<button type="button" class="btn '+(isDanger?'danger':'')+' sm" data-modal="confirm"'+(requiresReview?' disabled':'')+'>'+esc(confirmLabel||'Confirmar')+'</button>'
   +'</div></div></div>';
  var content=document.getElementById('content');if(content)content.inert=true;
- var confirm=mr.querySelector('[data-modal="confirm"]');if(confirm)confirm.focus();
+ var focus=mr.querySelector(requiresReview?'[data-modal="review"]':'[data-modal="confirm"]');if(focus)focus.focus();
 }
 function closeModal(){
  MODAL_CB=null;
@@ -1484,14 +1428,14 @@ window.addEventListener('popstate',function(ev){
 });
 
 function uiIcon(name){
- var paths={home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
+ var paths={home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',market:'<path d="M4 21V3l8 10 8-10v18M8 21V14l4 5 4-5v7"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
  return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[name]||paths.home)+'</svg>';
 }
-function purchaseQuantityModal(name,max,unit,done){
+function purchaseQuantityModal(name,max,unit,done,seller){
  var quantity=1;
- showModal('Cantidad de compra','<p>'+esc(name)+' · '+max+' disponibles</p><label class="sub" for="purchaseQuantity">Cantidad</label><input class="purchase-quantity" id="purchaseQuantity" type="number" min="1" max="'+max+'" value="1" inputmode="numeric"><p class="purchase-price" id="purchaseTotal">'+unit+' FS</p>','Revisar compra',false,function(){done(quantity);},true);
+ showModal('Comprar cromos','<p>'+esc(name)+' · '+max+' disponibles</p><p>Vendedor: '+esc(seller)+'</p><label class="sub" for="purchaseQuantity">Cantidad</label><input class="purchase-quantity" id="purchaseQuantity" type="number" min="1" max="'+max+'" value="1" inputmode="numeric"><p class="purchase-price" id="purchaseTotal">'+unit+' FS</p><p>Revisa los datos y marca el tick para continuar.</p>','Realizar compra',false,function(){done(quantity);},true,true);
  var input=document.getElementById('purchaseQuantity');
- input.addEventListener('input',function(){var n=Number(input.value),valid=Number.isSafeInteger(n)&&n>=1&&n<=max;document.querySelector('#modalRoot [data-modal="confirm"]').disabled=!valid;if(valid){quantity=n;document.getElementById('purchaseTotal').textContent=(n*unit)+' FS';}});
+ input.addEventListener('input',function(){var n=Number(input.value),valid=Number.isSafeInteger(n)&&n>=1&&n<=max,confirm=document.querySelector('#modalRoot [data-modal="confirm"]'),review=document.querySelector('#modalRoot [data-modal="review"]');confirm.dataset.valid=String(valid);confirm.disabled=true;review.setAttribute('aria-pressed','false');review.classList.remove('is-reviewed');if(valid){quantity=n;document.getElementById('purchaseTotal').textContent=(n*unit)+' FS';}});
 }
 function market(){
  if(!MARKET)MARKET=HemicycleMarketUI.create({cards:CARDS,packs:PACKS,rarities:RARS,rarity:function(k){return RARM[k];},getProfile:D,saveProfile:saveD,esc:esc,search:searchText,modal:showModal,quantityModal:purchaseQuantityModal,refresh:function(){if(SCREEN==='mercado')paint();}});
@@ -1512,7 +1456,7 @@ function tabbar(){
  var tabs=[['tienda','shop','Tienda'],['coleccion','collection','Cromos'],['menu','home','Inicio'],['liga','league','Liga'],['mercado','market','Mercado']];
  var active=SCREEN==='detalle'?'coleccion':SCREEN==='sobre'?'tienda':NAV_SECTION;
  return tabs.map(function(t){
-  return '<button class="tab'+(active===t[0]?' on':'')+'" data-go="'+t[0]+'"'+(active===t[0]?' aria-current="page"':'')+'><span class="nav-icon">'+(t[1]==='market'?'<span class="nav-market-letter">M</span>':uiIcon(t[1]))+'</span><span>'+t[2]+'</span></button>';
+  return '<button class="tab'+(active===t[0]?' on':'')+'" data-go="'+t[0]+'"'+(active===t[0]?' aria-current="page"':'')+'><span class="nav-icon">'+uiIcon(t[1])+'</span><span>'+t[2]+'</span></button>';
  }).join('');
 }
 
@@ -2345,7 +2289,7 @@ SCREENS.ayuda=function(){
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
  +'<div class="panel"><h3>3. Elo y dificultad justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
  +'<div class="panel"><h3>4. Botín y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
- +'<div class="panel"><h3>5. Mercado de repetidos</h3><p class="sub">Desde Mercado puedes vender uno o varios repetidos y conservar una copia de cada cromo. Entre jugadores se necesita una conexión al servidor. Los intercambios solo admiten rarezas iguales o consecutivas, con verificación y confirmación por ambos jugadores.</p></div>'
+ +'<div class="panel"><h3>5. Mercado de repetidos</h3><p class="sub">Desde Mercado puedes vender uno o varios repetidos y conservar una copia de cada cromo. Entre jugadores se necesita una conexión al servidor. Los intercambios solo admiten rarezas iguales o consecutivas. Cada jugador revisa los datos, marca el tick y confirma en una sola ventana; la entrega se realiza cuando ambos aceptan.</p></div>'
  +'<div class="panel"><h3>Tu progreso</h3><p class="sub">'+D().w+' victorias · '+D().l+' derrotas · '+D().fs+' FS.</p><button class="btn ghost sm" style="margin-top:8px" data-act="reset">Borrar progreso</button></div>'
  +'</div><button class="btn wide sm" data-go="menu">Volver al menú</button>';
 };
@@ -2361,7 +2305,16 @@ document.addEventListener('click',function(ev){
  /* 1. Gestión prioritaria de los botones de confirmación / cancelación del Modal */
  var mBtn=t.closest('button[data-modal]');
  if(mBtn){
+  if(mBtn.disabled)return;
   var mAct=mBtn.getAttribute('data-modal');
+  var review=document.querySelector('#modalRoot [data-modal="review"]');
+  if(mAct==='review'){
+   var checked=mBtn.getAttribute('aria-pressed')!=='true';
+   mBtn.setAttribute('aria-pressed',String(checked));mBtn.classList.toggle('is-reviewed',checked);
+   var confirm=document.querySelector('#modalRoot [data-modal="confirm"]');if(confirm)confirm.disabled=!checked||confirm.dataset.valid==='false';
+   return;
+  }
+  if(mAct==='confirm'&&review&&review.getAttribute('aria-pressed')!=='true')return;
   var cb=MODAL_CB;
   closeModal();
   if(mAct==='confirm' && typeof cb==='function')cb();

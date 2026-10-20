@@ -38,6 +38,14 @@ function createMarketServer({dbPath=':memory:',now=()=>Date.now()}={}){
    if(t['verified_'+side]){items.forEach(c=>add(player,c.id,c.quantity));credit(player,fs);}
   }
  }
+ function completeTrade(t){
+  if(t.status==='completed'||!t.verified_a||!t.verified_b||!t.confirmed_a||!t.confirmed_b)return;
+  const terms=JSON.parse(t.terms);
+  terms.receive.forEach(c=>add(t.proposer,c.id,c.quantity));terms.give.forEach(c=>add(t.recipient,c.id,c.quantity));
+  credit(t.proposer,terms.receiveFS);credit(t.recipient,terms.giveFS);
+  run("UPDATE trades SET status='completed' WHERE id=?",t.id);
+  receipt(t.proposer,'trade',{trade:t.id});receipt(t.recipient,'trade',{trade:t.id});
+ }
  function expire(){atomic(()=>{
   for(const t of all("SELECT * FROM trades WHERE status IN ('verification','confirmation') AND expires<=?",now())){unlock(t);run("UPDATE trades SET status='expired' WHERE id=?",t.id);}
  });}
@@ -122,7 +130,7 @@ function createMarketServer({dbPath=':memory:',now=()=>Date.now()}={}){
    receipt(l.seller,'player-sale',{cardId:l.card,quantity:q.quantity,total,counterparty:account(player).name});
    run('UPDATE quotes SET result=? WHERE id=?',JSON.stringify(result),q.id);return result;
   });
-  if(req.method==='POST'&&endpoint==='/trades')return atomic(()=>once(player,data.key,{recipient:data.recipient,give:data.give,receive:data.receive,verify:data.verify===true},()=>{
+  if(req.method==='POST'&&endpoint==='/trades')return atomic(()=>once(player,data.key,{recipient:data.recipient,give:data.give,receive:data.receive,verify:data.verify===true,...(data.accept===true?{accept:true}:{})},()=>{
    if(data.recipient===player)bad('Elige otro jugador.');account(data.recipient);
    const terms=rules.trade(data.give,data.receive);
    for(const [who,items,fee]of [[player,terms.give,terms.giveFS],[data.recipient,terms.receive,terms.receiveFS]]){
@@ -130,10 +138,10 @@ function createMarketServer({dbPath=':memory:',now=()=>Date.now()}={}){
     if(account(who).fs<fee)bad('Uno de los jugadores no tiene FS suficientes para el suplemento.',409);
    }
    const id=crypto.randomUUID();run('INSERT INTO trades(id,proposer,recipient,terms,status,expires,created) VALUES(?,?,?,?,?,?,?)',id,player,data.recipient,JSON.stringify(terms),'verification',now()+900000,now());
-   if(data.verify===true){terms.give.forEach(c=>take(player,c.id,c.quantity));pay(player,terms.giveFS);run('UPDATE trades SET verified_a=1 WHERE id=?',id);}
+   if(data.verify===true||data.accept===true){terms.give.forEach(c=>take(player,c.id,c.quantity));pay(player,terms.giveFS);run('UPDATE trades SET verified_a=1,confirmed_a=? WHERE id=?',data.accept===true?1:0,id);}
    return publicTrade(tradeRow(id,player));
   }));
-  const tradeAction=endpoint.match(/^\/trades\/([^/]+)\/(verify|confirm|cancel)$/);
+  const tradeAction=endpoint.match(/^\/trades\/([^/]+)\/(verify|confirm|accept|cancel)$/);
   if(req.method==='POST'&&tradeAction)return atomic(()=>{
    const t=tradeRow(tradeAction[1],player),action=tradeAction[2],side=t.proposer===player?'a':'b',terms=JSON.parse(t.terms);
    if(action==='cancel'){
@@ -144,24 +152,20 @@ function createMarketServer({dbPath=':memory:',now=()=>Date.now()}={}){
    if(t.status==='completed')return publicTrade(t);
    if(t.expires<=now())bad('El intercambio ha caducado. Actualiza el mercado.',410);
    if(!['verification','confirmation'].includes(t.status))bad('Este intercambio ya no está disponible.',409);
-   if(action==='verify'){
+   if(action==='verify'||action==='accept'){
     if(!t['verified_'+side]){
      const items=side==='a'?terms.give:terms.receive,fee=side==='a'?terms.giveFS:terms.receiveFS;
      items.forEach(c=>take(player,c.id,c.quantity));pay(player,fee);
      run('UPDATE trades SET verified_'+side+'=1 WHERE id=?',t.id);
     }
+    if(action==='accept')run('UPDATE trades SET confirmed_'+side+'=1 WHERE id=?',t.id);
     const fresh=tradeRow(t.id,player);
     if(fresh.verified_a&&fresh.verified_b)run("UPDATE trades SET status='confirmation' WHERE id=?",t.id);
+    completeTrade(tradeRow(t.id,player));
    }else{
     if(t.status!=='confirmation'||!t.verified_a||!t.verified_b)bad('Ambos jugadores deben verificar las condiciones antes de confirmar.',409);
     run('UPDATE trades SET confirmed_'+side+'=1 WHERE id=?',t.id);
-    const fresh=tradeRow(t.id,player);
-    if(fresh.confirmed_a&&fresh.confirmed_b){
-     terms.receive.forEach(c=>add(t.proposer,c.id,c.quantity));terms.give.forEach(c=>add(t.recipient,c.id,c.quantity));
-     credit(t.proposer,terms.receiveFS);credit(t.recipient,terms.giveFS);
-     run("UPDATE trades SET status='completed' WHERE id=?",t.id);
-     receipt(t.proposer,'trade',{trade:t.id});receipt(t.recipient,'trade',{trade:t.id});
-    }
+    completeTrade(tradeRow(t.id,player));
    }
    return publicTrade(tradeRow(t.id,player));
   });

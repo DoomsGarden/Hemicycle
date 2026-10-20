@@ -59,35 +59,36 @@ pueda comparar esta alternativa. No se permiten diferencias de dos rarezas.
 Solo se venden o intercambian copias repetidas. Se conserva una copia de cada
 cromo; el inventario reservado deja de estar disponible para otras operaciones.
 
-## Verificación y ejecución
+## Revisión y ejecución
 
-- Ventas y compras muestran cantidad, destinatario e importe antes de confirmar.
-  Las compras verificadas caducan a los dos minutos; si la oferta cambia, se
-  exige revisar de nuevo. La reserva de una oferta puede retirarse.
-- El proponente revisa y verifica su propuesta una sola vez; ese paso reserva
-  sus cromos y su posible suplemento. El otro jugador verifica los mismos
-  términos y reserva su parte.
-- Después, ambos confirman. El segundo consentimiento ejecuta el intercambio
-  completo en una transacción. Ninguna entrega se produce por adelantado.
-- Cancelar o dejar caducar la propuesta devuelve todas las reservas. El límite
-  es de quince minutos. Los reintentos no duplican cobros, entregas o devoluciones.
-- La API determina las cantidades, los precios y la propiedad; los valores que
-  muestre un cliente no permiten adjudicarse recursos. Las respuestas privadas
-  llevan `no-store` y el service worker no intercepta la API.
+- Ventas y compras muestran cantidad, destinatario e importe en una sola ventana.
+  El tick central tiene inicialmente el aspecto de Cancelar; al pulsarlo se pone
+  verde y habilita la acción final. Marcarlo no cobra ni reserva nada.
+- Cambiar la cantidad de compra elimina la marca del tick y exige revisar de
+  nuevo el importe. La API comprueba el presupuesto antes de ejecutar la compra.
+- Cada jugador acepta un intercambio una sola vez desde esa misma ventana.
+  El proponente reserva su parte al enviar; la aceptación del otro jugador
+  verifica y reserva su parte y completa ambas entregas en una transacción.
+  Las propuestas anteriores también pueden aceptarse desde la nueva interfaz.
+- Cancelar o dejar caducar la propuesta devuelve las reservas. El límite es de
+  quince minutos. Los reintentos no duplican cobros, entregas o devoluciones.
+- La API determina las cantidades, los precios y la propiedad. Sus respuestas
+  privadas llevan `no-store` y el service worker no intercepta la API.
 
 ## Comprobaciones
 
 ```sh
 node --test tests/*.test.cjs
 node _dev/market/browser-check.cjs
-node _dev/checks/verify-release.cjs
+node _dev/checks/gold-browser.cjs
+node _dev/checks/pwa-v30.2.56.cjs
 ```
 
 La comprobación de navegador necesita Playwright y Chromium. En el entorno
 de nube ambos están disponibles; `CHROMIUM_PATH` permite elegir el ejecutable
-del navegador para `browser-check.cjs`. El verificador completo requiere además
-que el servidor esté activo en el puerto 8022. Ejecuta diez pasadas y guarda
-resultados y registros en `_dev/reports/v30.2.55/`.
+del navegador para `browser-check.cjs`. Las comprobaciones de animación
+requieren que el servidor esté activo en el puerto 8022. Los resultados de la
+revisión actual se conservan en `_dev/reports/v30.2.56/`.
 
 `_dev` se excluye de GitHub Pages. El alojamiento público de la API y la unión
 con las cuentas y el inventario autoritativo del futuro juego online siguen

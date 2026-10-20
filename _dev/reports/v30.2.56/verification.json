@@ -1,0 +1,58 @@
+{
+  "version": "v30.2.56",
+  "passed": true,
+  "finished": "2026-10-20T20:02:58.380013+00:00",
+  "baseline": "b28daf7",
+  "originalAnimationRenderer": "5a3a785",
+  "rendererRestoredExactly": true,
+  "unitTests": 162,
+  "completedMatches": 8,
+  "immediate100Scenarios": 18,
+  "browserWidths": [
+    320,
+    360,
+    393
+  ],
+  "checks": [
+    {
+      "check": "unit",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/unit.log"
+    },
+    {
+      "check": "market",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/market.log"
+    },
+    {
+      "check": "animation",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/animation.log"
+    },
+    {
+      "check": "bonus",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/bonus.log"
+    },
+    {
+      "check": "upgrade",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/upgrade.log"
+    },
+    {
+      "check": "battles",
+      "passed": true,
+      "log": "_dev/reports/v30.2.56/battles.log"
+    }
+  ],
+  "sourceHashes": {
+    "index.html": "2d6016af831a210c00fc810185330d5fbc5219c5eb188d45a4f646d17d997d98",
+    "sw.js": "a1d29770fce2c2f309aedbc55a453f5cc2b6181365496b8577e587255ea11478",
+    "css/interface.css": "29268910ff96c25f8a62c3f9e79421d4e70356b89a993fa16004518f74546a14",
+    "js/market-ui.js": "9e35e28d72b42381198d0d88f501b70690ac02676cbcf75e0ffe8934f968657b",
+    "js/market-rules.js": "98874569c4c347b0370a7b40389ec726063ca4d08b14a27f083c25b6afaa75fb",
+    "js/changelog.js": "7d9fd8c7c902ccf1a7c049203f1aff96d8e7079a7c5bef4b81ce72b0fe9e4f8e",
+    "_dev/market/server.cjs": "15fc5d88f3566261433d87c1beb3a056367591e4e1e8d4f0000d196ac330833f",
+    "cards/donald-trump-golden.webp": "1b2ef6a9c1916f6aaff94f93df1a98eef2856770afd299bccda5d0988027a733"
+  }
+}
