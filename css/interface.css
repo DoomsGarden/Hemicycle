@@ -33,3 +33,5 @@ body{background:radial-gradient(ellipse at 50% 0,#192138,#070a12 70%)}
 @media(max-height:600px){.hero-scene,.hero-fan{min-height:110px}.home-copy h1{font-size:26px}.home-season{padding-bottom:0}}
 
 .market-confirm-actions{display:grid;grid-template-columns:auto 40px minmax(0,1fr);gap:8px;align-items:stretch}.market-confirm-actions .btn{min-width:0;padding:9px 10px;white-space:normal;line-height:1.25}.market-confirm-actions .review-check{display:grid;place-items:center;padding:0;min-height:40px}.market-confirm-actions .review-check.is-reviewed{background:#238653;border-color:#57c48b;color:#fff;box-shadow:0 0 12px #23865330}
+
+@keyframes heroBob{0%,100%{translate:0 2.5px}50%{translate:0 -2.5px}}.hero-fan .cromo{animation:heroBob 3.6s ease-in-out infinite}.hero-fan .cromo:first-child{animation-delay:-.8s}.hero-fan .cromo:last-child{animation-delay:-1.6s}@media(prefers-reduced-motion:reduce){.hero-fan .cromo{animation:none;translate:0 0}}

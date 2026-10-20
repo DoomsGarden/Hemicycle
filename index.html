@@ -1355,7 +1355,7 @@ function copies(d,id){var n=0;for(var i=0;i<d.album.length;i++)if(d.album[i]===i
 function uniqueAlbum(d){var m={},out=[];d.album.forEach(function(id){m[id]=(m[id]||0)+1;});Object.keys(m).forEach(function(id){if(BYID[id])out.push({id:id,c:BYID[id],n:m[id]});});return out;}
 
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,NOHIST=false;
-var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu';
+var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu',MENU_FEATURED=[];
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0,builderGrid:0};
 
 function clearAI(){if(AITIMER){clearTimeout(AITIMER);AITIMER=null;}}
@@ -1384,6 +1384,7 @@ function restoreColScroll(restoreVertical){
 
 function go(s,o){
  var prev=SCREEN;
+ if(s==='menu')chooseMenuCards();
  PLAY_OPEN=false;
  if(['menu','coleccion','tienda','liga','mercado'].indexOf(s)>=0)NAV_SECTION=s;
  if(prev==='coleccion'||prev==='builder')saveColScroll();
@@ -1416,7 +1417,7 @@ window.addEventListener('popstate',function(ev){
  if(s==='sobre')s='tienda';
  if(s==='detalle'&&!SO.id)s='coleccion';
  if(s===SCREEN)return;
- NOHIST=true;SCREEN=s;NAV_SECTION=(ev.state&&ev.state.nav)||(['menu','coleccion','tienda','liga','mercado'].indexOf(s)>=0?s:'menu');paint();
+ NOHIST=true;SCREEN=s;if(s==='menu')chooseMenuCards();NAV_SECTION=(ev.state&&ev.state.nav)||(['menu','coleccion','tienda','liga','mercado'].indexOf(s)>=0?s:'menu');paint();
  if(s==='mercado')market().enter();
  var ct=document.getElementById('content');
  if(s==='coleccion'&&prev==='detalle'){
@@ -1549,12 +1550,18 @@ SCREENS.novedades=function(){
    +'<div class="release-content">'+entry.sections.map(function(section){return '<section><h3>'+esc(section.title)+'</h3><ul>'+section.items.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ul></section>';}).join('')+'</div></details>';
  }).join('')+'</div>';
 };
+function chooseMenuCards(){
+ var pool=shuffle(uniqueAlbum(D())),picked=pool.slice(0,3);
+ if(pool.length>3&&picked.every(function(x){return MENU_FEATURED.indexOf(x.id)>=0;}))picked[2]=pool[3];
+ else if(pool.length>1&&picked.map(function(x){return x.id;}).join(',')===MENU_FEATURED.join(','))picked.push(picked.shift());
+ MENU_FEATURED=picked.map(function(x){return x.id;});
+}
 SCREENS.menu=function(){
  var d=D(),u=uniqueAlbum(d).length;
  var modes=[['normal','N','Partida normal'],['ranked','VS','Clasificatoria'],['liga','L','Liga de los 30'],['rapida','R','Partida rápida']];
  var selected=modes.filter(function(mode){return mode[0]===PLAY_MODE;})[0];
- var featured=uniqueAlbum(d).filter(function(x){return x.c.r==='comun';}).slice(0,3);
- if(featured.length<3)featured=uniqueAlbum(d).slice(0,3);
+ if(!MENU_FEATURED.length)chooseMenuCards();
+ var featured=MENU_FEATURED.filter(function(id){return BYID[id]&&copies(d,id)>0;}).map(function(id){return {c:BYID[id]};});
  return '<section class="menu-home"><div class="home-copy"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
  +'<div class="hero-scene" aria-hidden="true"><div class="hero-halo"></div><div class="hero-fan">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'

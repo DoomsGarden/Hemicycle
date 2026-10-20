@@ -1,8 +1,10 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),http=require('node:http'),path=require('node:path'),{execFileSync}=require('node:child_process'),{chromium}=require('playwright');
 const root='/workspace/Hemicycle';
-const oldIndex=execFileSync('git',['show','b28daf7:index.html'],{cwd:root});
-const oldSw=execFileSync('git',['show','b28daf7:sw.js'],{cwd:root});
-const oldNotes=execFileSync('git',['show','b28daf7:js/changelog.js'],{cwd:root});
+const previous=process.env.PREVIOUS_REF||'b28daf7';
+const oldIndex=execFileSync('git',['show',previous+':index.html'],{cwd:root});
+const oldSw=execFileSync('git',['show',previous+':sw.js'],{cwd:root});
+const oldNotes=execFileSync('git',['show',previous+':js/changelog.js'],{cwd:root});
+const previousVersion=oldIndex.toString().match(/var VERSION='([^']+)'/)[1],previousCache=oldSw.toString().match(/const CACHE = '([^']+)'/)[1];
 let updated=false,hangNavigation=false,base='';
 const server=http.createServer((req,res)=>{
  if(hangNavigation&&(req.headers.accept||'').includes('text/html')){req.on('close',()=>res.destroy());return;}
@@ -32,11 +34,11 @@ const server=http.createServer((req,res)=>{
    localStorage.setItem('hemiciclo_liga_v9',JSON.stringify({div:2,jor:6,temp:3,teams:[{n:'Tu grupo',pts:17,w:5,d:2,l:0,you:true,str:60}]}));
    return d;
   });
-  assert.match(await page.locator('#appbar').innerText(),/v30\.2\.55/);
-  assert.ok((await page.evaluate(()=>caches.keys())).includes('hemiciclo-v30.2.55-mercado'));
+  assert.ok((await page.locator('#appbar').innerText()).includes(previousVersion));
+  assert.ok((await page.evaluate(()=>caches.keys())).includes(previousCache));
   updated=true;
   await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
-  await page.waitForFunction(async()=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.56-visual')&&!ks.includes('hemiciclo-v30.2.55-mercado');});
+  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v30.2.56-inicio')&&!ks.includes(previousCache);},previousCache);
   await page.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return r&&r.active===navigator.serviceWorker.controller&&r.active.state==='activated';});
   await page.goto(base,{waitUntil:'domcontentloaded'});
   assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
@@ -82,6 +84,6 @@ const server=http.createServer((req,res)=>{
   assert.match(await page.locator('#appbar').innerText(),/v30\.2\.56/);
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
   assert.deepEqual(errors,[]);
-  console.log('v30.2.55 → v30.2.56 update passed: new cache, offline history and original full animation; collection, FS, Elo, league and golden progress preserved; unrelated cache intact.');
+  console.log(previousVersion+' → v30.2.56 update passed: new cache, offline history and original full animation; collection, FS, Elo, league and golden progress preserved; unrelated cache intact.');
  }finally{await browser.close();server.close();}
 })().catch(e=>{console.error(e);server.close();process.exitCode=1;});

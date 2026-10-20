@@ -6,12 +6,13 @@
   {
     "version": "v30.2.56",
     "date": "2026-10-20",
-    "title": "Ajustes del mercado",
+    "title": "Inicio y ajustes del mercado",
     "sections": [
       {
         "title": "Interfaz",
         "items": [
-          "El icono de Mercado comparte el estilo de trazo del icono de Liga en la barra inferior."
+          "El icono de Mercado comparte el estilo de trazo del icono de Liga en la barra inferior.",
+          "Al pulsar Inicio se eligen hasta tres cromos aleatorios de tu colección. Se balancean suavemente en vertical con un recorrido de 5 px; el movimiento respeta la preferencia de reducir animaciones."
         ]
       },
       {
