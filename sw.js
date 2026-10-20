@@ -1,5 +1,5 @@
-const CACHE = 'hemiciclo-v30.2.2-historial';
-const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/changelog.js', './cards/donald-trump-golden-portrait.webp'];
+const CACHE = 'hemiciclo-v30.2.55-mercado';
+const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/changelog.js', './js/market-rules.js', './js/market-ui.js', './css/interface.css', './cards/donald-trump-golden-portrait.webp', './cards/donald-trump-golden.webp?v=gold-loop-2'];
 
 self.addEventListener('install', e => {
   e.waitUntil(
@@ -20,19 +20,32 @@ self.addEventListener('activate', e => {
 self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET' || !req.url.startsWith('http')) return;
+  if (new URL(req.url).pathname.startsWith('/api/market/')) return;
 
   if (req.mode === 'navigate') {
-    e.respondWith(
-      fetch(req)
-        .then(res => {
-          if (res && res.ok) {
-            const c = res.clone();
-            caches.open(CACHE).then(x => x.put('./index.html', c));
-          }
-          return res;
-        })
-        .catch(() => caches.match('./index.html') || caches.match('./'))
-    );
+    e.respondWith((async () => {
+      const cache = await caches.open(CACHE);
+      const saved = await cache.match('./index.html') || await cache.match('./');
+      const controller = new AbortController();
+      let timer;
+      try {
+        const res = await Promise.race([
+          fetch(req, { signal: controller.signal }),
+          new Promise((resolve, reject) => {
+            timer = setTimeout(() => { controller.abort(); reject(new Error('Navigation timeout')); }, 3500);
+          })
+        ]);
+        if (!res.ok) throw new Error('Navigation unavailable');
+        e.waitUntil(cache.put('./index.html', res.clone()).catch(() => {}));
+        return res;
+      } catch (error) {
+        return saved || new Response('Conéctate una vez para guardar el juego y poder abrirlo sin conexión.', {
+          status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' }
+        });
+      } finally {
+        clearTimeout(timer);
+      }
+    })());
     return;
   }
 
@@ -40,7 +53,7 @@ self.addEventListener('fetch', e => {
     caches.match(req).then(r => r || fetch(req).then(res => {
       if (res && res.ok) {
         const c = res.clone();
-        caches.open(CACHE).then(x => x.put(req, c));
+        e.waitUntil(caches.open(CACHE).then(x => x.put(req, c)).catch(() => {}));
       }
       return res;
     }).catch(() => new Response('', { status: 404 })))

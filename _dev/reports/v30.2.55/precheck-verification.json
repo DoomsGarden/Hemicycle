@@ -1,0 +1,60 @@
+{
+  "version": "v30.2.55",
+  "requestedRounds": 10,
+  "started": "2026-10-20T16:54:34.426Z",
+  "rounds": [
+    {
+      "number": 1,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6366,
+          "log": "_dev/reports/v30.2.55/precheck-01-rules.log",
+          "tests": 152
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35852,
+          "log": "_dev/reports/v30.2.55/precheck-01-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43086,
+          "log": "_dev/reports/v30.2.55/precheck-01-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": false,
+          "durationMs": 10828,
+          "log": "_dev/reports/v30.2.55/precheck-01-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 12774,
+          "log": "_dev/reports/v30.2.55/precheck-01-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 68944,
+          "log": "_dev/reports/v30.2.55/precheck-01-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4609,
+          "log": "_dev/reports/v30.2.55/precheck-01-gold.log"
+        }
+      ]
+    }
+  ],
+  "passed": false,
+  "error": "upgrade failed; see /workspace/Hemicycle/_dev/reports/v30.2.55/01-upgrade.log"
+}

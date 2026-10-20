@@ -4,6 +4,29 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version": "v30.2.55",
+    "date": "2026-10-20",
+    "title": "Nuevo menú y mercado de repetidos",
+    "sections": [
+      {
+        "title": "Interfaz",
+        "items": [
+          "Las estadísticas y el progreso de la colección se muestran en la parte superior. La barra inferior reúne Tienda, Cromos, Inicio, Liga y Mercado.",
+          "El acceso de la sección abierta se eleva y aumenta de tamaño. Jugar permite elegir el modo desde un selector desplegable hacia arriba."
+        ]
+      },
+      {
+        "title": "Mercado",
+        "items": [
+          "Se pueden vender repetidos a la máquina de uno en uno o en la cantidad elegida, conservando una copia de cada cromo.",
+          "La venta entre jugadores toma el precio de compra de la IA y añade un 20 %. Comprar permite buscar por nombre y rareza, o mostrar solo los cromos que te faltan.",
+          "Las ventas entre jugadores y los intercambios se ensayan en un servidor con inventario y FS de demostración, separado de la partida real. Su alojamiento online queda pendiente.",
+          "Los intercambios admiten rarezas iguales o consecutivas. La diferencia se compensa con FS o con dos cromos inferiores por uno superior. Ambos jugadores verifican las condiciones y después confirman."
+        ]
+      }
+    ]
+  },
+  {
     "version": "v30.2.2",
     "date": "2026-10-20",
     "title": "Doctrinas con debilidades y novedades del juego",

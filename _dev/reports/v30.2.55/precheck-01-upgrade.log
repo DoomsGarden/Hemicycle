@@ -1,0 +1,14 @@
+Online update and golden assets loaded
+Offline document loaded
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert.ok(await page.locator('[data-market="select"]').count()>0)
+
+    at /workspace/Hemicycle/_dev/checks/pwa-upgrade.cjs:74:10 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

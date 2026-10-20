@@ -1,0 +1,72 @@
+{
+  "version": "v30.2.55",
+  "started": "2026-10-20T17:28:53.422Z",
+  "sourceHashes": {
+    "index.html": "67cc4a51fc50e0bcebe4f3d94a6e697329d21b8bd5f3a38ab6be14e80f9259f5",
+    "sw.js": "da3f28cd8f875f371ff7ff6588efcf4ed9fa592dac9662ff25f3734c6517a435",
+    "css/interface.css": "5ca22c1d8393cc903b1b1a53a57cf84861ea9935c426df1fef7edbded2b89c89",
+    "js/market-rules.js": "98874569c4c347b0370a7b40389ec726063ca4d08b14a27f083c25b6afaa75fb",
+    "js/market-ui.js": "20c25ba06c6e0c3cea25e228a6ff12f0f7fc99061bc48cbfad94f83faee82cb3",
+    "js/changelog.js": "3e89b2a2f03bfa53e9e913167af9c896affb760b9befb11339f2926e6bf4300f",
+    "_dev/market/server.cjs": "9c017da3f15f2cf7d91cbc1344afdbaa2c67fa0e7beaff7365f0c1d89f06146f",
+    "_dev/market/catalog.cjs": "f2c25625dca71108854fa29e05ff2dad4aff2360cfff3d1ed3302d702b1455bf"
+  },
+  "checks": [
+    {
+      "check": "rules",
+      "passed": true,
+      "durationMs": 6456,
+      "log": "_dev/reports/v30.2.55/final-rules-1.log",
+      "tests": 159
+    },
+    {
+      "check": "rules",
+      "passed": true,
+      "durationMs": 5844,
+      "log": "_dev/reports/v30.2.55/final-rules-2.log",
+      "tests": 159
+    },
+    {
+      "check": "rules",
+      "passed": true,
+      "durationMs": 5985,
+      "log": "_dev/reports/v30.2.55/final-rules-3.log",
+      "tests": 159
+    },
+    {
+      "check": "catalog",
+      "passed": true,
+      "durationMs": 43709,
+      "log": "_dev/reports/v30.2.55/final-catalog.log"
+    },
+    {
+      "check": "market",
+      "passed": true,
+      "durationMs": 34999,
+      "log": "_dev/reports/v30.2.55/final-market.log"
+    },
+    {
+      "check": "extra-ui",
+      "passed": true,
+      "durationMs": 14843,
+      "log": "_dev/reports/v30.2.55/final-extra-ui.log"
+    },
+    {
+      "check": "battles",
+      "passed": true,
+      "durationMs": 69930,
+      "log": "_dev/reports/v30.2.55/final-battles.log",
+      "completedMatches": 8,
+      "immediate100Scenarios": 18,
+      "browserErrors": []
+    },
+    {
+      "check": "gold",
+      "passed": true,
+      "durationMs": 4347,
+      "log": "_dev/reports/v30.2.55/final-gold.log"
+    }
+  ],
+  "passed": true,
+  "finished": "2026-10-20T17:30:07.706Z"
+}

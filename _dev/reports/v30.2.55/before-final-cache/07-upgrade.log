@@ -1,0 +1,11 @@
+Online update and golden assets loaded
+page.goto: Timeout 30000ms exceeded.
+Call log:
+[2m  - navigating to "http://127.0.0.1:33367/Hemicycle/", waiting until "domcontentloaded"[22m
+
+    at /workspace/Hemicycle/_dev/checks/pwa-upgrade.cjs:59:45 {
+  log: [
+    '  - navigating to "http://127.0.0.1:33367/Hemicycle/", waiting until "domcontentloaded"'
+  ],
+  name: 'TimeoutError'
+}

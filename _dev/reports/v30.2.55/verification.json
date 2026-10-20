@@ -1,0 +1,1496 @@
+{
+  "version": "v30.2.55",
+  "passed": true,
+  "requestedSuccessfulChecksPerFamily": 10,
+  "method": "Comprobaciones acumuladas por bloque funcional, con repetición específica del bloque de actualización después de corregir la caché y una pasada final de integración sobre los archivos que se publican. No representa diez matrices completas consecutivas sobre un único hash.",
+  "finalCacheCorrection": "Registro del service worker con versión y precarga de la URL exacta de la animación. La apertura sin conexión y la migración desde v30.2.2 pasan diez veces después de este ajuste.",
+  "finished": "2026-10-20T17:30:18.805682+00:00",
+  "sourceHashes": {
+    "index.html": "67cc4a51fc50e0bcebe4f3d94a6e697329d21b8bd5f3a38ab6be14e80f9259f5",
+    "sw.js": "da3f28cd8f875f371ff7ff6588efcf4ed9fa592dac9662ff25f3734c6517a435",
+    "css/interface.css": "5ca22c1d8393cc903b1b1a53a57cf84861ea9935c426df1fef7edbded2b89c89",
+    "js/market-rules.js": "98874569c4c347b0370a7b40389ec726063ca4d08b14a27f083c25b6afaa75fb",
+    "js/market-ui.js": "20c25ba06c6e0c3cea25e228a6ff12f0f7fc99061bc48cbfad94f83faee82cb3",
+    "js/changelog.js": "3e89b2a2f03bfa53e9e913167af9c896affb760b9befb11339f2926e6bf4300f",
+    "_dev/market/server.cjs": "9c017da3f15f2cf7d91cbc1344afdbaa2c67fa0e7beaff7365f0c1d89f06146f",
+    "_dev/market/catalog.cjs": "f2c25625dca71108854fa29e05ff2dad4aff2360cfff3d1ed3302d702b1455bf"
+  },
+  "finalIntegration": "_dev/reports/v30.2.55/final-integration.json",
+  "priorAttempts": [
+    "_dev/reports/v30.2.55/precheck-verification.json",
+    "_dev/reports/v30.2.55/pre-cache-fix/verification.json",
+    "_dev/reports/v30.2.55/before-final-cache/verification.json"
+  ],
+  "families": {
+    "rules": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6366,
+          "log": "_dev/reports/v30.2.55/precheck-01-rules.log",
+          "tests": 152,
+          "attempt": "precheck-verification.json",
+          "round": 1
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6439,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/01-rules.log",
+          "tests": 152,
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 1
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 7081,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/02-rules.log",
+          "tests": 152,
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 2
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6461,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/03-rules.log",
+          "tests": 152,
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 3
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6067,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-rules.log",
+          "tests": 152,
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6651,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-rules.log",
+          "tests": 152,
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6651,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6106,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5811,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6428,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6559,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6083,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5582,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6456,
+          "log": "_dev/reports/v30.2.55/final-rules-1.log",
+          "tests": 159,
+          "attempt": "final-integration.json"
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5844,
+          "log": "_dev/reports/v30.2.55/final-rules-2.log",
+          "tests": 159,
+          "attempt": "final-integration.json"
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5985,
+          "log": "_dev/reports/v30.2.55/final-rules-3.log",
+          "tests": 159,
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passedRuns": 16,
+      "final159TestSuitePasses": 10,
+      "acceptanceRuns": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6651,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6106,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5811,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6428,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6559,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6083,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5582,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-rules.log",
+          "tests": 159,
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6456,
+          "log": "_dev/reports/v30.2.55/final-rules-1.log",
+          "tests": 159,
+          "attempt": "final-integration.json"
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5844,
+          "log": "_dev/reports/v30.2.55/final-rules-2.log",
+          "tests": 159,
+          "attempt": "final-integration.json"
+        },
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5985,
+          "log": "_dev/reports/v30.2.55/final-rules-3.log",
+          "tests": 159,
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passed": true
+    },
+    "market": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35852,
+          "log": "_dev/reports/v30.2.55/precheck-01-market.log",
+          "attempt": "precheck-verification.json",
+          "round": 1
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 34968,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/01-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 1
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36453,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/02-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 2
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35949,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/03-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 3
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36287,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35351,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 38490,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35304,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 38311,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 37899,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36378,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36300,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36823,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 34999,
+          "log": "_dev/reports/v30.2.55/final-market.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passedRuns": 14,
+      "final159TestSuitePasses": null,
+      "acceptanceRuns": [
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36287,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35351,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-market.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 38490,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35304,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 38311,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 37899,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36378,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36300,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36823,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-market.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 34999,
+          "log": "_dev/reports/v30.2.55/final-market.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passed": true
+    },
+    "extra-ui": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 12774,
+          "log": "_dev/reports/v30.2.55/precheck-01-extra-ui.log",
+          "attempt": "precheck-verification.json",
+          "round": 1
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16103,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/01-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 1
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17168,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/02-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 2
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16972,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/03-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 3
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17153,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16462,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 18557,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16504,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17065,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16029,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16897,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17273,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16867,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 14843,
+          "log": "_dev/reports/v30.2.55/final-extra-ui.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passedRuns": 14,
+      "final159TestSuitePasses": null,
+      "acceptanceRuns": [
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17153,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16462,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-extra-ui.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 18557,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16504,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17065,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16029,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16897,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17273,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16867,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-extra-ui.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 14843,
+          "log": "_dev/reports/v30.2.55/final-extra-ui.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passed": true
+    },
+    "battles": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 68944,
+          "log": "_dev/reports/v30.2.55/precheck-01-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "precheck-verification.json",
+          "round": 1
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 68883,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/01-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 1
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71752,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/02-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 2
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 69409,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/03-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 3
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 70921,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 68518,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 74617,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 69216,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71362,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71433,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71462,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71023,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71172,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 69930,
+          "log": "_dev/reports/v30.2.55/final-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passedRuns": 14,
+      "final159TestSuitePasses": null,
+      "acceptanceRuns": [
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 70921,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 68518,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 74617,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 69216,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71362,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71433,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71462,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71023,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71172,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 69930,
+          "log": "_dev/reports/v30.2.55/final-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": [],
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passed": true
+    },
+    "gold": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4609,
+          "log": "_dev/reports/v30.2.55/precheck-01-gold.log",
+          "attempt": "precheck-verification.json",
+          "round": 1
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5001,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/01-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 1
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4913,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/02-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 2
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4984,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/03-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 3
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5305,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5229,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5379,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4491,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4614,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4474,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4956,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5325,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4669,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4347,
+          "log": "_dev/reports/v30.2.55/final-gold.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passedRuns": 14,
+      "final159TestSuitePasses": null,
+      "acceptanceRuns": [
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5305,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5229,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-gold.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5379,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4491,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4614,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4474,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4956,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5325,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4669,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-gold.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4347,
+          "log": "_dev/reports/v30.2.55/final-gold.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passed": true
+    },
+    "catalog": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43086,
+          "log": "_dev/reports/v30.2.55/precheck-01-catalog.log",
+          "attempt": "precheck-verification.json",
+          "round": 1
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43115,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/01-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 1
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 45321,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/02-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 2
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43318,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/03-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 3
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44618,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 42245,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 47987,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43285,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 45844,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44964,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43685,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44045,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44469,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43709,
+          "log": "_dev/reports/v30.2.55/final-catalog.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passedRuns": 14,
+      "final159TestSuitePasses": null,
+      "acceptanceRuns": [
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44618,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/04-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 4
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 42245,
+          "log": "_dev/reports/v30.2.55/pre-cache-fix/05-catalog.log",
+          "attempt": "pre-cache-fix/verification.json",
+          "round": 5
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 47987,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 1
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43285,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 2
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 45844,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 3
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44964,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 4
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43685,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 5
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44045,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 6
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44469,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-catalog.log",
+          "attempt": "before-final-cache/verification.json",
+          "round": 7
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43709,
+          "log": "_dev/reports/v30.2.55/final-catalog.log",
+          "attempt": "final-integration.json"
+        }
+      ],
+      "passed": true
+    },
+    "upgrade": {
+      "requiredSuccessfulRuns": 10,
+      "successfulRuns": [
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 1,
+          "log": "_dev/reports/v30.2.55/final-01-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 2,
+          "log": "_dev/reports/v30.2.55/final-02-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 3,
+          "log": "_dev/reports/v30.2.55/final-03-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 4,
+          "log": "_dev/reports/v30.2.55/final-04-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 5,
+          "log": "_dev/reports/v30.2.55/final-05-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 6,
+          "log": "_dev/reports/v30.2.55/final-06-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 7,
+          "log": "_dev/reports/v30.2.55/final-07-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 8,
+          "log": "_dev/reports/v30.2.55/final-08-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 9,
+          "log": "_dev/reports/v30.2.55/final-09-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 10,
+          "log": "_dev/reports/v30.2.55/final-10-upgrade.log",
+          "finalCacheCode": true
+        }
+      ],
+      "passedRuns": 10,
+      "final159TestSuitePasses": null,
+      "acceptanceRuns": [
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 1,
+          "log": "_dev/reports/v30.2.55/final-01-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 2,
+          "log": "_dev/reports/v30.2.55/final-02-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 3,
+          "log": "_dev/reports/v30.2.55/final-03-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 4,
+          "log": "_dev/reports/v30.2.55/final-04-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 5,
+          "log": "_dev/reports/v30.2.55/final-05-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 6,
+          "log": "_dev/reports/v30.2.55/final-06-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 7,
+          "log": "_dev/reports/v30.2.55/final-07-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 8,
+          "log": "_dev/reports/v30.2.55/final-08-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 9,
+          "log": "_dev/reports/v30.2.55/final-09-upgrade.log",
+          "finalCacheCode": true
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "round": 10,
+          "log": "_dev/reports/v30.2.55/final-10-upgrade.log",
+          "finalCacheCode": true
+        }
+      ],
+      "passed": true
+    }
+  },
+  "scope": {
+    "browserWidths": [
+      320,
+      360,
+      393
+    ],
+    "completedMatchesInSuccessfulEvidence": 112,
+    "immediate100VoteScenarios": 252,
+    "market": "Venta local real y servidor de demostración para dos jugadores; alojamiento público de API pendiente."
+  }
+}

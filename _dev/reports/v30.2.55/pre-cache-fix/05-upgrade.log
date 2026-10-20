@@ -1,0 +1,9 @@
+Online update and golden assets loaded
+page.reload: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for navigation until "domcontentloaded"[22m
+
+    at /workspace/Hemicycle/_dev/checks/pwa-upgrade.cjs:56:45 {
+  log: [ '  - waiting for navigation until "domcontentloaded"' ],
+  name: 'TimeoutError'
+}

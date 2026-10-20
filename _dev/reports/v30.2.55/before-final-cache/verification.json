@@ -1,0 +1,372 @@
+{
+  "version": "v30.2.55",
+  "requestedRounds": 10,
+  "started": "2026-10-20T17:10:54.723Z",
+  "rounds": [
+    {
+      "number": 1,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6651,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 38490,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 47987,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "durationMs": 14330,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 18557,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 74617,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5379,
+          "log": "_dev/reports/v30.2.55/before-final-cache/01-gold.log"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "number": 2,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6106,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 35304,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43285,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "durationMs": 13888,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16504,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 69216,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4491,
+          "log": "_dev/reports/v30.2.55/before-final-cache/02-gold.log"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "number": 3,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5811,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 38311,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 45844,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "durationMs": 14150,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17065,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71362,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4614,
+          "log": "_dev/reports/v30.2.55/before-final-cache/03-gold.log"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "number": 4,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6428,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 37899,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44964,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "durationMs": 14350,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16029,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71433,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4474,
+          "log": "_dev/reports/v30.2.55/before-final-cache/04-gold.log"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "number": 5,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6559,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36378,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 43685,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "durationMs": 14368,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16897,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71462,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4956,
+          "log": "_dev/reports/v30.2.55/before-final-cache/05-gold.log"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "number": 6,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 6083,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36300,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44045,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-catalog.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": true,
+          "durationMs": 14451,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-upgrade.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 17273,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71023,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 5325,
+          "log": "_dev/reports/v30.2.55/before-final-cache/06-gold.log"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "number": 7,
+      "checks": [
+        {
+          "check": "rules",
+          "passed": true,
+          "durationMs": 5582,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-rules.log",
+          "tests": 159
+        },
+        {
+          "check": "market",
+          "passed": true,
+          "durationMs": 36823,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-market.log"
+        },
+        {
+          "check": "catalog",
+          "passed": true,
+          "durationMs": 44469,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-catalog.log"
+        },
+        {
+          "check": "extra-ui",
+          "passed": true,
+          "durationMs": 16867,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-extra-ui.log"
+        },
+        {
+          "check": "battles",
+          "passed": true,
+          "durationMs": 71172,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-battles.log",
+          "completedMatches": 8,
+          "immediate100Scenarios": 18,
+          "browserErrors": []
+        },
+        {
+          "check": "gold",
+          "passed": true,
+          "durationMs": 4669,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-gold.log"
+        },
+        {
+          "check": "upgrade",
+          "passed": false,
+          "durationMs": 37708,
+          "log": "_dev/reports/v30.2.55/before-final-cache/07-upgrade.log"
+        }
+      ]
+    }
+  ],
+  "passed": false,
+  "error": "upgrade failed; see /workspace/Hemicycle/_dev/reports/v30.2.55/07-upgrade.log"
+}
