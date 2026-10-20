@@ -4,6 +4,21 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version": "v30.2.57",
+    "date": "2026-10-20",
+    "title": "Interfaz más compacta",
+    "sections": [
+      {
+        "title": "Pantalla de juego",
+        "items": [
+          "Las estadísticas ocupan menos altura y conservan la franja superior del nombre y sus botones.",
+          "El fondo y las barras permanecen fijos. Las listas y los paneles que lo necesitan siguen permitiendo desplazarse.",
+          "Se evita el menú contextual y el arrastre de imágenes dentro del juego. Los campos de texto mantienen la selección y la edición."
+        ]
+      }
+    ]
+  },
+  {
     "version": "v30.2.56",
     "date": "2026-10-20",
     "title": "Inicio y ajustes del mercado",

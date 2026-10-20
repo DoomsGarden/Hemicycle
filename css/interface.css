@@ -35,3 +35,19 @@ body{background:radial-gradient(ellipse at 50% 0,#192138,#070a12 70%)}
 .market-confirm-actions{display:grid;grid-template-columns:auto 40px minmax(0,1fr);gap:8px;align-items:stretch}.market-confirm-actions .btn{min-width:0;padding:9px 10px;white-space:normal;line-height:1.25}.market-confirm-actions .review-check{display:grid;place-items:center;padding:0;min-height:40px}.market-confirm-actions .review-check.is-reviewed{background:#238653;border-color:#57c48b;color:#fff;box-shadow:0 0 12px #23865330}
 
 @keyframes heroBob{0%,100%{translate:0 2.5px}50%{translate:0 -2.5px}}.hero-fan .cromo{animation:heroBob 3.6s ease-in-out infinite}.hero-fan .cromo:first-child{animation-delay:-.8s}.hero-fan .cromo:last-child{animation-delay:-1.6s}@media(prefers-reduced-motion:reduce){.hero-fan .cromo{animation:none;translate:0 0}}
+
+/* El documento no se desplaza: solo lo hacen los paneles con contenido. */
+html{overscroll-behavior:none}
+body{position:fixed;inset:0;overscroll-behavior:none}
+.screen,.screen *{-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.screen input,.screen textarea,.screen [contenteditable="true"]{-webkit-user-select:text;user-select:text;-webkit-touch-callout:default}
+.screen img,.screen .gold-canvas{-webkit-user-drag:none;pointer-events:none}
+.inner-scroll,.content.scroll-ok,.doc-grid,.chips,.row,.log,.modal,.screen[data-view=tienda] .view-body{overscroll-behavior:none}
+/* Solo se compacta la fila de estadísticas; la franja del nombre no cambia. */
+.hud-strip{gap:6px}
+.hud-cell{padding:5px 9px;gap:8px;border-radius:9px}
+.hud-metric small{font-size:7.5px;line-height:1.15;letter-spacing:.6px;margin-bottom:2px;white-space:nowrap}
+.hud-metric b,.hud-collection .hud-metric b{display:block;font-size:14px;line-height:1.05;white-space:nowrap}
+.hud-metric+.hud-metric{padding-left:8px}
+.album-mark svg{width:18px;height:18px}
+.album-track{height:2px;margin-top:3px}

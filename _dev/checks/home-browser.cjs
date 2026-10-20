@@ -1,7 +1,8 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
 const {createMarketServer}=require('../market/server.cjs'),{cards,root}=require('../market/catalog.cjs');
 const profile={fs:4321,elo:321,w:5,l:3,album:cards.slice(0,9).flatMap(c=>[c.id,c.id]),lastDaily:1,lastWeekly:2,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
-const folder=path.join(root,'_dev/previews/v30.2.56');fs.mkdirSync(folder,{recursive:true});
+const version=fs.readFileSync(root+'/index.html','utf8').match(/var VERSION='([^']+)'/)[1];
+const folder=path.join(root,'_dev/previews',version);fs.mkdirSync(folder,{recursive:true});
 (async()=>{
  const app=createMarketServer();await new Promise(resolve=>app.server.listen(0,'127.0.0.1',resolve));
  const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
