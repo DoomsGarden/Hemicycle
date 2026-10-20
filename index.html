@@ -106,6 +106,26 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
 .mini{background:#1e2848;border:1px solid #2b3763;color:#e9ecf5;border-radius:8px;padding:5px 8px;font-size:11.5px;min-height:30px;font-weight:700;flex-shrink:0}
 .mini.hot{background:#d43b3b;border-color:#ff8a6a;color:#fff}
 .mini:active{background:#e8b923;color:#111}
+.mini.news{width:30px;height:30px;padding:6px;display:grid;place-items:center}
+.abR>.pill:not(.gold){min-width:0}
+.release-entry{background:#131b31;border:1px solid #232e52;border-radius:11px;margin-bottom:8px}
+.release-entry.current{border-color:#8b6b21}
+.release-entry summary{display:flex;align-items:center;gap:10px;list-style:none;cursor:pointer;padding:12px;min-height:60px;border-radius:10px}
+.release-entry summary::-webkit-details-marker{display:none}
+.release-entry summary:focus-visible{outline:2px solid #ffd76a;outline-offset:-3px}
+.release-heading{flex:1;min-width:0}
+.release-heading b{color:#ffd76a;font-size:13px}
+.release-heading time{font-size:10px;color:#aab4cd;margin-left:8px}
+.release-heading span{display:block;font-size:12px;line-height:1.4;margin-top:3px}
+.release-chevron{flex-shrink:0;color:#ffd76a;transform:rotate(0deg);transition:transform .22s ease}
+.release-entry[open] .release-chevron{transform:rotate(180deg)}
+.release-content{padding:0 14px 12px;font-size:12px;line-height:1.5;color:#cfd6e8}
+.release-content h3{font-size:12px;margin:8px 0 4px}
+.release-content ul{margin:0;padding-left:18px}
+.release-content li{margin:5px 0}
+.release-entry[open] .release-content{animation:releaseReveal .2s ease-out}
+@keyframes releaseReveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.release-chevron{transition:none}.release-entry[open] .release-content{animation:none}}
 
 button{font:inherit;color:inherit;cursor:pointer;touch-action:manipulation;border-radius:10px}
 button:disabled{opacity:.42;cursor:not-allowed;pointer-events:none}
@@ -117,8 +137,9 @@ p{margin:0 0 4px;font-size:12px}
 .panel.win{border-color:#28a86b;background:linear-gradient(180deg,#132a22,#131b31)}
 .panel.lose{border-color:#d43b3b;background:linear-gradient(180deg,#2a1414,#131b31)}
 .panel.gold-box{border-color:#e8b923;background:linear-gradient(180deg,rgba(232,185,35,.16),#131b31)}
-.coin-toss{margin:auto 0;text-align:center;display:grid;gap:12px}
+.coin-toss{text-align:center;display:grid;gap:12px}
 .coin-toss h3{font-size:16px}
+.coin-toss p{margin:0}
 .coin-face{display:grid;place-items:center;width:80px;height:80px;margin:0 auto;border:3px solid #ffd76a;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffe6a0,#c9931a);box-shadow:inset 0 0 0 5px #a97816;color:#141414;font-size:14px;font-weight:800}
 
 .modes{display:grid;grid-template-columns:1fr 1fr;gap:6px;flex-shrink:0}
@@ -127,7 +148,7 @@ p{margin:0 0 4px;font-size:12px}
 .mode b{display:block;font-size:12px;color:#ffd76a;margin-bottom:2px}
 .mode i{font-style:normal;color:#8b93ab;font-size:10px;line-height:1.2;display:block}
 
-.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px}
+.doc-grid{display:grid;grid-template-columns:1fr 1fr;gap:5px;min-height:0;overflow-y:auto}
 .doc-card{background:#0d1424;border:1px solid #1f2a4d;border-radius:8px;padding:5px 7px}
 .doc-card .sub{font-size:9.5px;line-height:1.18;margin-top:2px;display:block}
 
@@ -497,9 +518,12 @@ tr.des td{background:rgba(212,59,59,.1)}
  </div>
  <div id="zoomRoot"></div>
  <div id="modalRoot"></div>
+ <div id="coinRoot"></div>
  <div id="toastRoot"></div>
 </div>
 
+<script src="js/card-confetti.js"></script>
+<script src="js/changelog.js"></script>
 <script>
 window.onerror=function(m,src,l,c){
   var ct=document.getElementById('content'); if(!ct)return;
@@ -509,7 +533,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.2.1';
+var VERSION='v30.2.2';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -536,6 +560,10 @@ var GOLD_LOOP={
  period:0,
  startedAt:0,
  surface:null,
+ faceSurface:null,
+ portrait:null,
+ confetti:null,
+ face:{x:144,y:133,w:132,h:168},
  lastDraw:null,
  posterUrl:'',
  pool:[],
@@ -576,6 +604,29 @@ function getGoldPlayback(now){
  return {first:next,second:next,mix:0};
 }
 
+function makeGoldFaceFrame(source){
+ var rect=GOLD_LOOP.face,cv=document.createElement('canvas');
+ cv.width=rect.w;cv.height=rect.h;
+ var ctx=cv.getContext('2d');
+ if(!ctx)throw new Error('Cannot prepare golden expression');
+ ctx.save();ctx.translate(rect.w/2,rect.h/2);ctx.scale(rect.w/2,rect.h/2);
+ var mask=ctx.createRadialGradient(0,0,0,0,0,1);
+ mask.addColorStop(0,'rgba(255,255,255,1)');
+ mask.addColorStop(0.8,'rgba(255,255,255,1)');
+ mask.addColorStop(1,'rgba(255,255,255,0)');
+ ctx.fillStyle=mask;ctx.fillRect(-1,-1,2,2);ctx.restore();
+ ctx.globalCompositeOperation='source-in';
+ ctx.drawImage(source,rect.x,rect.y,rect.w,rect.h,0,0,rect.w,rect.h);
+ ctx.globalCompositeOperation='source-over';
+ return cv;
+}
+
+/* Las partículas usan tiempo continuo: la expresión puede retroceder, la caída no. */
+function drawGoldConfetti(ctx,elapsed){
+ if(!GOLD_LOOP.confetti)GOLD_LOOP.confetti=CardConfetti.create(CardConfetti.TRUMP);
+ GOLD_LOOP.confetti.draw(ctx,elapsed);
+}
+
 function detachGoldPool(container){
  if(!container)return;
  var activeCvs=container.querySelectorAll('canvas.gold-canvas');
@@ -605,18 +656,25 @@ function drawCurrentGoldFrame(now){
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return 0;
  var slots=document.querySelectorAll('.gold-slot');
  if(!slots.length)return 0;
- var playback=getGoldPlayback(now===undefined?performance.now():now);
- var key=playback.first+':'+playback.second+':'+Math.round(playback.mix*255);
+ now=now===undefined?performance.now():now;
+ var playback=getGoldPlayback(now),elapsed=Math.max(0,now-GOLD_LOOP.startedAt);
+ var key=playback.first+':'+playback.second+':'+Math.round(playback.mix*255)+':'+Math.floor(elapsed/33.333333);
  if(GOLD_LOOP.lastDraw!==key){
   var surfaceCtx=GOLD_LOOP.surface.getContext('2d');
   if(!surfaceCtx)return slots.length;
   surfaceCtx.globalAlpha=1;
-  surfaceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+  surfaceCtx.drawImage(GOLD_LOOP.portrait,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
+  var face=GOLD_LOOP.face,faceCtx=GOLD_LOOP.faceSurface.getContext('2d');
+  faceCtx.clearRect(0,0,face.w,face.h);
+  faceCtx.globalCompositeOperation='source-over';faceCtx.globalAlpha=1-playback.mix;
+  faceCtx.drawImage(GOLD_LOOP.frames[playback.first].bmp,0,0);
   if(playback.mix>0){
-   surfaceCtx.globalAlpha=playback.mix;
-   surfaceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0,GOLD_LOOP.w,GOLD_LOOP.h);
-   surfaceCtx.globalAlpha=1;
+   faceCtx.globalCompositeOperation='lighter';faceCtx.globalAlpha=playback.mix;
+   faceCtx.drawImage(GOLD_LOOP.frames[playback.second].bmp,0,0);
   }
+  faceCtx.globalAlpha=1;faceCtx.globalCompositeOperation='source-over';
+  surfaceCtx.drawImage(GOLD_LOOP.faceSurface,face.x,face.y);
+  drawGoldConfetti(surfaceCtx,elapsed);
   GOLD_LOOP.lastDraw=key;
  }
  for(var i=0;i<slots.length;i++){
@@ -752,42 +810,65 @@ function ensureGoldLoop(){
  }
  if(GOLD_LOOP.state!=='idle')return;
  GOLD_LOOP.state='loading';
- var loaded=[];
+ var loaded=[],portrait=null;
  // A new URL also bypasses copies retained by the previous service worker.
  var url=ART_BASE+'donald-trump-golden.webp?v=gold-loop-2';
- fetch(url,{cache:'force-cache'}).then(function(res){
+ GOLD_LOOP.posterUrl=ART_BASE+'donald-trump-golden-portrait.webp';
+ var portraitReady=fetch(GOLD_LOOP.posterUrl,{cache:'force-cache'}).then(function(res){
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  return res.blob();
+ }).then(decodeGoldFrame).then(function(bmp){
+  if(GOLD_LOOP.state!=='loading'){
+   if(typeof bmp.close==='function')bmp.close();
+   throw new Error('Golden loading cancelled');
+  }
+  portrait=bmp;return bmp;
+ });
+ var framesReady=fetch(url,{cache:'force-cache'}).then(function(res){
   if(!res.ok)throw new Error('HTTP '+res.status);
   return res.arrayBuffer();
  }).then(function(buf){
   var frames=readGoldFrames(buf),p=Promise.resolve();
-  GOLD_LOOP.posterUrl=URL.createObjectURL(frames[0].blob);
+  if(frames[0].w!==420||frames[0].h!==560)throw new Error('Unexpected golden portrait size');
   var sampleCanvas=document.createElement('canvas');
   sampleCanvas.width=16;sampleCanvas.height=22;
   var sampleCtx=sampleCanvas.getContext('2d',{willReadFrequently:true});
 
   frames.forEach(function(frame){
    p=p.then(function(){return decodeGoldFrame(frame.blob);}).then(function(bmp){
+    if(GOLD_LOOP.state!=='loading'){
+     if(typeof bmp.close==='function')bmp.close();
+     return;
+    }
     if(isFrameValid(sampleCtx,16,22,bmp)){
-     loaded.push({bmp:bmp,dur:frame.dur});
+     loaded.push({bmp:makeGoldFaceFrame(bmp),dur:frame.dur});
+     if(typeof bmp.close==='function')bmp.close();
     }else if(typeof bmp.close==='function'){
      bmp.close();
     }
    });
   });
-  return p.then(function(){
+  return p;
+ });
+ Promise.all([framesReady,portraitReady]).then(function(results){
+   portrait=results[1];
    if(loaded.length<2)throw new Error('Not enough valid golden frames');
    GOLD_LOOP.frames=loaded;
-   GOLD_LOOP.w=frames[0].w;
-   GOLD_LOOP.h=frames[0].h;
+   GOLD_LOOP.w=420;
+   GOLD_LOOP.h=560;
+   GOLD_LOOP.portrait=portrait;
    buildGoldTimeline();
    GOLD_LOOP.surface=document.createElement('canvas');
    GOLD_LOOP.surface.width=GOLD_LOOP.w;
    GOLD_LOOP.surface.height=GOLD_LOOP.h;
+   GOLD_LOOP.faceSurface=document.createElement('canvas');
+   GOLD_LOOP.faceSurface.width=GOLD_LOOP.face.w;
+   GOLD_LOOP.faceSurface.height=GOLD_LOOP.face.h;
    GOLD_LOOP.startedAt=performance.now();
    GOLD_LOOP.state='ready';
    syncGoldCanvases();
-  });
  }).catch(function(){
+  if(portrait&&typeof portrait.close==='function')portrait.close();
   loaded.forEach(function(f){if(typeof f.bmp.close==='function')f.bmp.close();});
   GOLD_LOOP.frames=[];
   GOLD_LOOP.state='fallback';
@@ -796,23 +877,26 @@ function ensureGoldLoop(){
    slots[i].classList.remove('has-canvas');
    detachGoldPool(slots[i]);
    var img=slots[i].querySelector('img.gold-static-fb');
-   if(img)img.src=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump.webp';
+   if(img)img.src=ART_BASE+'donald-trump.webp';
   }
  });
 }
 
 var DOCS=[
- {k:'verborrea',n:'Verborrea',d:'+1 TdP cada turno. Si te expulsan un orador, +2 TdP.',col:'#3b6fd4'},
- {k:'guardia',n:'Vieja Guardia',d:'Al final de tu turno tus oradores ganan +1 Zasca (máx. +3).',col:'#8b5cf6'},
- {k:'aforado',n:'Aforado',d:'La primera expulsión de un orador tuyo se salva con 1 de Aguante.',col:'#28a86b'},
- {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 2 de daño.',col:'#d4a03b'},
- {k:'foco',n:'Foco Mediático',d:'Tu Líder regenera +1 Aguante y cada golpe suyo te da +1 voto.',col:'#d43b3b'},
- {k:'viperina',n:'Lengua Viperina',d:'Tus oradores infligen +2 de daño al Líder rival.',col:'#c026d3'}
+ {k:'verborrea',n:'Verborrea',d:'+1 TdP al entrar el Líder y por turno. Las expulsiones reservan hasta +2 para el próximo. Máximo: 8 TdP.',beats:'guardia',col:'#3b6fd4'},
+ {k:'guardia',n:'Vieja Guardia',d:'Tus oradores ganan +1 Zasca al entrar y al terminar tu turno (máx. +3 mientras esté activa).',beats:'aforado',col:'#8b5cf6'},
+ {k:'aforado',n:'Aforado',d:'Cada orador puede evitar una expulsión por debate y quedarse con 1 de Aguante.',beats:'viperina',col:'#28a86b'},
+ {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 1 de daño.',beats:'verborrea',col:'#d4a03b'},
+ {k:'foco',n:'Foco Mediático',d:'Tu Líder regenera 2 de Aguante por turno y sus ataques suman +1 voto.',beats:'giro',col:'#d43b3b'},
+ {k:'viperina',n:'Lengua Viperina',d:'Tus oradores infligen +2 de daño al Líder rival.',beats:'foco',col:'#c026d3'}
 ];
 var DOCM={};DOCS.forEach(function(d){DOCM[d.k]=d;});
+DOCS.forEach(function(d){DOCM[d.beats].weak=d.k;});
+var MAX_TDP=8;
+function doctrineMatchup(k){var d=DOCM[k];return 'Contrarresta: '+DOCM[d.beats].n+'. Debilidad: '+DOCM[d.weak].n+'.';}
 var RARS=[{k:'comun',n:'Común',c:'#b07a45',g:3},{k:'raro',n:'Raro',c:'#4a7fb5',g:4},{k:'especial',n:'Especial',c:'#8b5cf6',g:5},{k:'legendario',n:'Legendario',c:'#e8b923',g:6}];
 var RARM={};RARS.forEach(function(r){RARM[r.k]=r;});
-var TIER={comun:{c:[1,3],a:[2,4],h:[4,7],v:2},raro:{c:[2,4],a:[4,6],h:[6,10],v:3},especial:{c:[3,5],a:[5,7],h:[8,12],v:5},legendario:{c:[4,6],a:[7,9],h:[11,16],v:8}};
+var TIER={comun:{c:[1,3],a:[2,4],h:[4,7],v:2},raro:{c:[2,4],a:[4,6],h:[6,10],v:3},especial:{c:[3,4],costs:[3,4,4,3],a:[5,7],h:[8,12],v:5},legendario:{c:[4,6],a:[7,9],h:[11,16],v:8}};
 var TIERORDER={legendario:0,especial:1,raro:2,comun:3};
 
 var ROSTER={
@@ -955,7 +1039,7 @@ DOCS.forEach(function(d){
   ROSTER[d.k][t].forEach(function(nm,ix){
    var id=slug(nm);
    var c={id:id,n:CARD_NAMES[id]||nm,r:t,pa:d.k,
-     c:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),
+     c:t2.costs?t2.costs[ix%t2.costs.length]:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),
      a:t2.a[0]+((ix*3)%(t2.a[1]-t2.a[0]+1)),
      h:t2.h[0]+((ix*5)%(t2.h[1]-t2.h[0]+1)),
      v:t2.v};
@@ -1000,16 +1084,21 @@ function initials(nm){
  return (p[0].charAt(0)+(p[1]?p[1].charAt(0):'')).toUpperCase();
 }
 
-function artTag(id,nm){
+function goldenEnabled(id){if(id!=='donald-trump')return false;var d=D();return d.dtGoldUnlocked&&d.dtGoldActive;}
+function cardStats(c,allowGold){
+ var gold=allowGold!==false&&goldenEnabled(c.id);
+ return {a:c.a+(gold?2:0),h:c.h+(gold?2:0),gold:gold};
+}
+function artTag(id,nm,allowGold){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
- if(id==='donald-trump'){
+ if(id==='donald-trump'&&allowGold!==false){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
    if(GOLD_LOOP.state==='idle')setTimeout(ensureGoldLoop,0);
-   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump.webp';
+   var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump-golden-portrait.webp';
    return '<div class="gold-slot">'
-    +'<img class="gold-static-fb" src="'+poster+'" alt="" onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'inline\'">'
+    +'<img class="gold-static-fb" src="'+poster+'" alt="" onerror="this.onerror=null;this.src=\''+ART_BASE+'donald-trump.webp\'">'
     +'</div><span style="display:none">'+esc(initials(nm))+'</span>';
   }
  }
@@ -1019,7 +1108,7 @@ function artTag(id,nm){
 
 function cromoHTML(c,o){
  o=o||{};
- var r=RARM[c.r];
+ var r=RARM[c.r],stats=cardStats(c);
  var st='--tier:'+r.c+(o.extra?';'+o.extra:'');
  var art=artTag(c.id,c.n);
  return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-pick="'+c.id+'"':'')+'>'
@@ -1030,15 +1119,16 @@ function cromoHTML(c,o){
   +(o.sel&&o.pick?'<span class="sel-tag">&#10003; ELEGIDO</span>':'')
   +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'" title="Elegir como Líder">&#9733;</button>':'')
   +(o.count?'<span class="badge">x'+o.count+'</span>':'')
-  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+c.a+' &middot; A'+c.h+'</span></div></div>';
+  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+stats.a+' &middot; A'+stats.h+'</span></div></div>';
 }
 function fichaHTML(c){
- var r=RARM[c.r];
+ var r=RARM[c.r],stats=cardStats(c);
  return '<div class="panel"><div class="ficha"><div class="caja">'+cromoHTML(c,{noCardAttr:true})+'</div>'
  +'<div style="flex:1;min-width:0"><p style="margin:0 0 3px"><b>'+esc(c.n)+'</b></p>'
  +'<p style="margin:0 0 4px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span></p>'
- +'<p class="sub" style="margin:0">Zasca '+c.a+' &middot; Aguante '+c.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escaños</p>'
- +'<p class="sub" style="margin:4px 0 0">'+esc(DOCM[c.pa].d)+'</p></div></div>'
+ +'<p class="sub" style="margin:0">Zasca '+stats.a+' &middot; Aguante '+stats.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escaños</p>'
+ +'<p class="sub" style="margin:4px 0 0">'+esc(DOCM[c.pa].d)+'</p>'
+ +'<p class="sub" style="margin:4px 0 0">'+esc(doctrineMatchup(c.pa))+'</p></div></div>'
  +'<div class="quote">'+esc(pick(c.q))+'</div></div>';
 }
 
@@ -1061,6 +1151,21 @@ function closeModal(){
  MODAL_CB=null;
  var mr=document.getElementById('modalRoot');
  if(mr)mr.innerHTML='';
+}
+
+function syncCoinToss(){
+ var root=document.getElementById('coinRoot');if(!root)return;
+ var pending=SCREEN==='battle'&&G&&!G.over&&G.n===0;
+ var content=document.getElementById('content');if(content)content.inert=!!pending;
+ if(!pending){root.innerHTML='';return;}
+ if(root.firstChild)return;
+ root.innerHTML='<div class="modal-bg"><div class="modal coin-toss" role="dialog" aria-modal="true" aria-labelledby="coinTitle">'
+  +'<h3 id="coinTitle">Cara o cruz</h3>'
+  +'<p>Tú tienes <b>cara</b> y '+esc(G.rival)+' tiene <b>cruz</b>. Cada uno tiene un 50 % de probabilidad de empezar.</p>'
+  +'<div class="coin-face">'+(G.first==='p'?'CARA':'CRUZ')+'</div>'
+  +'<p><b>Ha salido '+(G.first==='p'?'cara. Empiezas tú.':'cruz. Empieza '+esc(G.rival)+'.')+'</b></p>'
+  +'<button class="btn wide" data-act="begin">Comenzar debate</button></div></div>';
+ var button=root.querySelector('button');if(button)button.focus();
 }
 
 /* === SISTEMA DE ZOOM EMERGENTE Y NAVEGACIÓN SINCRONIZADA ENTRE CROMOS === */
@@ -1246,6 +1351,13 @@ function cycleDetalleCard(step){
 })();
 
 window.addEventListener('keydown',function(ev){
+ if(SCREEN==='battle'&&G&&!G.over&&G.n===0){
+  if(ev.key==='Escape'||ev.key==='Tab'){
+   ev.preventDefault();
+   var button=document.querySelector('#coinRoot button');if(button)button.focus();
+  }
+  return;
+ }
  if(ev.key==='Escape'){
   if(ZOOM_OPEN){closeZoom();return;}
   closeModal();
@@ -1314,6 +1426,7 @@ function go(s,o){
  if(prev==='coleccion'||prev==='builder')saveColScroll();
  if(prev!=='builder'&&s==='builder')SCROLL_MEM.builderGrid=0;
  if(s!=='detalle')closeZoom();
+ var coinRoot=document.getElementById('coinRoot');if(s!=='battle'&&coinRoot)coinRoot.innerHTML='';
  SCREEN=s;if(o!==undefined&&o!==null)SO=o;
  if(!NOHIST){try{history.pushState({s:s},'');}catch(e){}}
  paint();
@@ -1355,6 +1468,7 @@ function appbar(){
  +'<div class="abR">'
  +((G&&!G.over&&SCREEN!=='battle')?'<button class="mini hot" data-go="battle">Debate</button>':'')
  +'<span class="pill gold">'+d.fs+' FS</span><span class="pill">'+esc(rankName(d.elo))+'</span>'
+ +'<button class="mini news" data-go="novedades" aria-label="Novedades y cambios" title="Novedades y cambios"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2.5h8l3 3v12H4v-15h1zM12 2.5v4h4M7 10h6M7 13h6"/></svg></button>'
  +'<button class="mini" data-go="ayuda">?</button></div>';
 }
 function tabbar(){
@@ -1397,6 +1511,7 @@ function paint(){
  }
  if(SCREEN==='tienda')startTick();
  syncGoldCanvases();
+ syncCoinToss();
 }
 
 function updateColeccionInPlace(){
@@ -1438,6 +1553,19 @@ function startTick(){
  },1000);
 }
 var SCREENS={};
+SCREENS.novedades=function(){
+ var entries=typeof HemicycleChangelog==='undefined'?[]:HemicycleChangelog;
+ if(!entries.length)return '<h2>Novedades y cambios</h2><div class="panel"><p>El historial no se ha podido cargar. Vuelve a abrir el juego cuando tengas conexión.</p></div>';
+ return '<h2>Novedades y cambios</h2>'
+ +'<p class="sub">Prelanzamiento · Versión actual '+esc(VERSION)+'. Desde el primer día registrado, el 15 de octubre de 2026. La primera versión jugable conservada es la v19.</p>'
+ +'<div class="inner-scroll" id="releaseList">'+entries.map(function(entry){
+  var date=new Date(entry.date+'T12:00:00').toLocaleDateString('es-ES',{day:'numeric',month:'long',year:'numeric'});
+  return '<details class="release-entry'+(entry.version===VERSION?' current':'')+'" data-version="'+esc(entry.version)+'">'
+   +'<summary><div class="release-heading"><b>'+esc(entry.version)+'</b><time datetime="'+esc(entry.date)+'">'+esc(date)+'</time><span>'+esc(entry.title)+'</span></div>'
+   +'<svg class="release-chevron" viewBox="0 0 20 20" width="20" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 7 5 5 5-5"/></svg></summary>'
+   +'<div class="release-content">'+entry.sections.map(function(section){return '<section><h3>'+esc(section.title)+'</h3><ul>'+section.items.map(function(item){return '<li>'+esc(item)+'</li>';}).join('')+'</ul></section>';}).join('')+'</div></details>';
+ }).join('')+'</div>';
+};
 SCREENS.menu=function(){
  var d=D(),u=uniqueAlbum(d).length;
  return '<div><h2>Hemiciclo</h2><p class="sub">Consigue 100 votos antes que el rival: el 100% de los escaños.</p></div>'
@@ -1494,7 +1622,7 @@ SCREENS.coleccion=function(){
 SCREENS.detalle=function(){
  var c=BYID[SO.id];
  if(!c)return '<h2>Cromo no encontrado</h2><div class="bar"><button class="btn" data-go="coleccion">Volver</button></div>';
- var d=D(),r=RARM[c.r],cnt=copies(d,c.id);
+ var d=D(),r=RARM[c.r],cnt=copies(d,c.id),stats=cardStats(c);
  var ids=getSwipeDeckIds();
  var idx=ids.indexOf(c.id);
  var animCls=LAST_SWIPE_DIR==='next'?' anim-next':(LAST_SWIPE_DIR==='prev'?' anim-prev':'');
@@ -1513,11 +1641,11 @@ SCREENS.detalle=function(){
    +'<div class="bar">'
    +'<button class="btn sm '+(d.dtGoldActive?'ghost':'')+'" data-act="dtskin" data-val="normal">Clásico</button>'
    +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Dorado</button>'
-   +'</div></div></div>';
+   +'</div></div><p class="sub" style="margin:5px 0 0">Dorado: <b>+2 Zasca base</b> y <b>+2 Aguante base</b>, como líder o miembro del gabinete. Se suma a la bonificación de líder.</p></div>';
  }
  return navBar
  +'<div class="detalle-swipe'+animCls+'" id="detalleSwipe">'
- +'<div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column;justify-content:space-between">'
+ +'<div class="panel" style="flex:1;min-height:0;overflow-y:auto;display:flex;flex-direction:column;justify-content:space-between">'
  +'<div class="ficha">'
  +'<div class="caja zoomable" data-act="zoomcard" title="Toca para ampliar el cromo">'
  +cromoHTML(c,{noCardAttr:true,count:cnt})
@@ -1527,9 +1655,10 @@ SCREENS.detalle=function(){
  +'<h2 style="margin:0 0 4px">'+esc(c.n)+'</h2>'
  +'<p style="margin:0 0 4px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+cnt+'</span></p>'
  +'<p class="sub" style="margin:0"><b>Doctrina:</b> '+esc(DOCM[c.pa].d)+'</p>'
+ +'<p class="sub" style="margin:3px 0 0">'+esc(doctrineMatchup(c.pa))+'</p>'
  +'<p class="sub" style="margin:3px 0 0">Como Líder (&#9733;): <b>+1 Zasca</b> y <b>+3 Aguante</b>.</p>'
  +'</div></div>'
- +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+c.a+'</b><span>Zasca</span></div><div><b>'+c.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escaños</span></div></div>'
+ +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+stats.a+'</b><span>Zasca</span></div><div><b>'+stats.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escaños</span></div></div>'
  +'<div><h3 style="margin:0 0 3px">Intervenciones célebres</h3>'
  +c.q.slice(0,3).map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')+'</div>'
  +'</div>'
@@ -1631,6 +1760,7 @@ function builderScreen(mode,rival,jor){
  var btnLabel=ready?'Empezar debate':('Faltan '+missing+' cromo'+(missing===1?'':'s'));
  return '<div class="bar between"><h2>'+tit+'</h2>'+(rival?'<span class="sub">contra <b>'+esc(leagueName(rival))+'</b></span>':'')+'</div>'
  +'<div class="panel" style="padding:7px 9px"><p class="sub" style="margin:0"><b>Gabinete '+BUILD.ids.length+'/5</b> &middot; Líder: <b>'+esc(leadTxt)+'</b></p>'
+ +(leadObj?'<p class="sub" style="margin:2px 0 0">'+esc(doctrineMatchup(leadObj.pa))+'</p>':'')
  +(names.length?'<p class="sub" style="margin:2px 0 0;color:#ffd76a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'+esc(names.join(' · '))+'</p>':'<p class="sub" style="margin:2px 0 0">Toca 5 cromos para alinearlos y &#9733; para elegir Líder.</p>')
  +'</div>'
  +'<div class="bar">'
@@ -1661,11 +1791,12 @@ function startBattle(){
  newBattle(SO.mode||'normal',SO.rival);
 }
 
-function mk(c, isLeader){
+function mk(c, isLeader, side){
  UID++;
- var a = c.a + (isLeader ? 1 : 0);
- var hm = c.h + (isLeader ? 3 : 0);
- return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,ready:true,buff:0};
+ var stats=cardStats(c,side==='p');
+ var a = stats.a + (isLeader ? 1 : 0);
+ var hm = stats.h + (isLeader ? 3 : 0);
+ return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,gold:stats.gold,ready:true,buff:0};
 }
 
 /* === GENERADOR DE GABINETE RIVAL EQUILIBRADO SIN INFLAR STATS === */
@@ -1707,11 +1838,11 @@ function newBattle(mode,rival){
  G={mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
   n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
-  field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},leader:{}};
+  field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},refund:{p:0,e:0},leader:{}};
  var build=function(s,ids,lead){
-  var dk=shuffle(ids).map(function(id){return mk(BYID[id], id===lead);}),lc=null,i;
+  var dk=shuffle(ids).map(function(id){return mk(BYID[id], id===lead,s);}),lc=null,i;
   for(i=0;i<dk.length;i++)if(dk[i].k===lead)lc=dk[i];
-  if(!lc){lc=mk(BYID[lead], true);dk.unshift(lc);}
+  if(!lc){lc=mk(BYID[lead], true,s);dk.unshift(lc);}
   var hi=dk.indexOf(lc);
   if(hi>=0)dk.splice(hi,1);
   var hand=dk.splice(0,2);
@@ -1741,6 +1872,10 @@ function checkBattleEnd(){
 
 function log(t,cls){if(!G)return;G.log.unshift('<div'+(cls?' class="'+cls+'"':'')+'>'+esc(t)+'</div>');if(G.log.length>40)G.log.pop();}
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
+function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
+function battleZasca(s,c){return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0);}
+function attackDamage(s,c,tgt){var foe=s==='p'?'e':'p';return battleZasca(s,c)+(activeDoc(s)==='viperina'&&G.leader[foe]&&tgt.uid===G.leader[foe].uid?2:0);}
+function battleDoctrine(s){var k=doc(s);if(!k)return 'inactiva';return esc(DOCM[k].n)+(activeDoc(s)?'':' (neutralizada por '+esc(DOCM[doc(s==='p'?'e':'p')].n)+')');}
 function leaderOn(s){var l=G.leader[s];if(!l)return false;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return true;return false;}
 function enMano(s,uid){for(var i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)return true;return false;}
 function enMesa(s,uid){for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===uid)return true;return false;}
@@ -1769,10 +1904,12 @@ function startTurn(s){
  if(G.n>=14){endByVotes();return;}
  G.n++;G.side=s;G.sel=null;
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
- G.tdp[s]=G.tdpMax[s]+((doc(s)==='verborrea')?1:0);
+ var doctrine=activeDoc(s);
+ G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+G.refund[s]:0));
+ G.refund[s]=0;
  draw(s);
- if(doc(s)==='foco'&&leaderOn(s)){
-  G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+1);
+ if(doctrine==='foco'){
+  G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+2);
  }
  G.field[s].forEach(function(c){c.ready=true;});
  var gain=3;G.field[s].forEach(function(c){gain+=c.v;});
@@ -1785,27 +1922,31 @@ function startTurn(s){
 }
 
 function applyGuardia(s){
- if(doc(s)==='guardia' && G.field[s].length){
+ if(activeDoc(s)==='guardia' && G.field[s].length){
   var grew=false;
   G.field[s].forEach(function(c){
-   if((c.buff||0)<3){c.buff=(c.buff||0)+1;c.a++;grew=true;}
+   if((c.buff||0)<3){c.buff=(c.buff||0)+1;grew=true;}
   });
   if(grew)log('Vieja Guardia: los oradores '+(s==='p'?'tuyos':'rivales')+' ganan +1 Zasca.');
  }
 }
 
 function endTurn(){
- if(checkBattleEnd()||G.side!=='p')return;
- applyGuardia('p');
+ completeTurn('p');
+}
+
+function completeTurn(s){
+ if(checkBattleEnd()||G.side!==s)return;
+ applyGuardia(s);
  G.sel=null;
- startTurn('e');
+ startTurn(s==='p'?'e':'p');
 }
 
 function expel(owner,card,attacker,victimDocSnapshot){
  if(checkBattleEnd())return;
  var victim=owner==='p'?'e':'p';
  if(!enMesa(victim,card.uid))return;
- var activeVictimDoc=(victimDocSnapshot!==undefined)?victimDocSnapshot:doc(victim);
+ var activeVictimDoc=(victimDocSnapshot!==undefined)?victimDocSnapshot:activeDoc(victim);
  if(activeVictimDoc==='aforado'&&!G.saved[card.uid]){
   G.saved[card.uid]=true;card.h=1;
   log(card.n+' invoca el Aforado y se aferra al escaño con 1 de Aguante.','hi');
@@ -1814,6 +1955,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
  card.h=card.hm;
  card.ready=true;
+ card.buff=0;
  G.pas[victim].push(card);
  if(attacker){
   G.votes[owner]+=card.v;
@@ -1823,8 +1965,8 @@ function expel(owner,card,attacker,victimDocSnapshot){
   log(card.n+' abandona la Tribuna.');
  }
  if(activeVictimDoc==='verborrea'){
-  G.tdp[victim]+=2;
-  log('Verborrea: +2 TdP para '+(victim==='p'?'ti.':'el rival.'));
+  G.refund[victim]=2;
+  log('Verborrea: hasta +2 TdP reservados para el próximo turno '+(victim==='p'?'tuyo.':'rival.')+' Máximo al comenzar: 8 TdP.');
  }
 }
 
@@ -1839,18 +1981,23 @@ function playCard(s,uid){
  c.h=c.hm;
  c.ready=true;
  G.field[s].push(c);G.tdp[s]-=c.c;
- log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Líder en Tribuna: doctrina '+DOCM[c.pa].n+' activa).':'.'));
+ log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Líder en Tribuna: doctrina '+DOCM[c.pa].n+(activeDoc(s)?' activa).':' neutralizada).'):'.'));
+ if(c.uid===G.leader[s].uid&&activeDoc(s)==='verborrea'){
+  G.tdp[s]=Math.min(MAX_TDP,G.tdp[s]+1);
+  log('Verborrea: +1 TdP al presentar al Líder.');
+ }
+ if(activeDoc(s)==='guardia')c.buff=1;
  return true;
 }
 
 function attack(atk,tgt,owner){
  if(checkBattleEnd()||G.side!==owner||!atk||!atk.ready||!enMesa(owner,atk.uid))return;
  var foe=owner==='p'?'e':'p';
- var ownerDoc=doc(owner),foeDoc=doc(foe);
+ var ownerDoc=activeDoc(owner),foeDoc=activeDoc(foe);
  atk.ready=false;
  if(tgt==='__EMPTY'){
-  var stolen=Math.min(G.votes[foe],atk.a);
-  G.votes[foe]=Math.max(0,G.votes[foe]-atk.a);
+  var stolen=Math.min(G.votes[foe],battleZasca(owner,atk));
+  G.votes[foe]-=stolen;
   log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacía (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
   if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
    G.votes[owner]+=1;
@@ -1859,13 +2006,12 @@ function attack(atk,tgt,owner){
   checkBattleEnd();
   return;
  }
- var isFoeLead=(G.leader[foe]&&tgt.uid===G.leader[foe].uid);
- var bonus=(ownerDoc==='viperina'&&isFoeLead)?2:0;
- log(atk.n+' lanza '+pick(atk.q)+' ('+(atk.a+bonus)+' de daño a '+tgt.n+').','hi');
- tgt.h-=atk.a+bonus;
+ var damage=attackDamage(owner,atk,tgt);
+ log(atk.n+' lanza '+pick(atk.q)+' ('+damage+' de daño a '+tgt.n+').','hi');
+ tgt.h-=damage;
  if(foeDoc==='giro'&&tgt!==atk){
-  atk.h-=2;
-  log('Giro de Guion: '+atk.n+' recibe 2 de daño.');
+  atk.h-=1;
+  log('Giro de Guion: '+atk.n+' recibe 1 de daño.');
  }
  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
   G.votes[owner]+=1;
@@ -1986,63 +2132,70 @@ SCREENS.result=function(){
 };
 
 /* === MOTOR DINÁMICO DE IA TÁCTICA (SIN INFLAR STATS) === */
-function aiStep(){
- if(checkBattleEnd()||G.side!=='e')return;
- /* 1. Bajar cartas priorizando a su Líder o el orador de mayor impacto */
- if(G.field.e.length<3){
-  var playable=G.hand.e.filter(function(c){return c.c<=G.tdp.e;}).sort(function(a,b){
-   var aLead=(G.leader.e&&a.uid===G.leader.e.uid)?1:0;
-   var bLead=(G.leader.e&&b.uid===G.leader.e.uid)?1:0;
+function chooseBattleAction(s){
+ if(!G||G.over||G.side!==s)return null;
+ var foe=s==='p'?'e':'p';
+ /* Presentar al Líder permite activar la doctrina y responder al cruce rival. */
+ if(G.field[s].length<3){
+  var playable=G.hand[s].filter(function(c){return c.c<=G.tdp[s];}).sort(function(a,b){
+   var aLead=(G.leader[s]&&a.uid===G.leader[s].uid)?1:0;
+   var bLead=(G.leader[s]&&b.uid===G.leader[s].uid)?1:0;
    return (bLead-aLead)||(b.v-a.v)||(b.c-a.c);
   });
-  if(playable.length){
-   playCard('e',playable[0].uid);
-   paint();
-   if(!G.over)AITIMER=setTimeout(aiStep,450);
-   return;
-  }
+  if(playable.length)return {type:'play',card:playable[0]};
  }
- /* 2. Elegir objetivo inteligente con los oradores listos */
- var readyAtk=G.field.e.filter(function(c){return c.ready;});
+ var readyAtk=G.field[s].filter(function(c){return c.ready;});
  if(readyAtk.length){
   var atk=readyAtk[0];
-  var eDoc=doc('e');
   var tgt='__EMPTY';
-  if(G.field.p.length){
-   /* Busca primero si puede expulsar de un golpe a algún orador tuyo o dañar a tu Líder */
-   var sortedT=G.field.p.slice().sort(function(x,y){
-    var dmgX=atk.a+((eDoc==='viperina'&&G.leader.p&&x.uid===G.leader.p.uid)?2:0);
-    var dmgY=atk.a+((eDoc==='viperina'&&G.leader.p&&y.uid===G.leader.p.uid)?2:0);
-    var killX=(x.h<=dmgX)?1:0;
-    var killY=(y.h<=dmgY)?1:0;
+  if(G.field[foe].length){
+   var sortedT=G.field[foe].slice().sort(function(x,y){
+    var protectedDoc=activeDoc(foe)==='aforado';
+    var killX=(x.h<=attackDamage(s,atk,x)&&!(protectedDoc&&!G.saved[x.uid]))?1:0;
+    var killY=(y.h<=attackDamage(s,atk,y)&&!(protectedDoc&&!G.saved[y.uid]))?1:0;
     if(killX!==killY)return killY-killX;
+    if(doc(s)&&!activeDoc(s)){
+     var leadX=x.uid===G.leader[foe].uid?1:0,leadY=y.uid===G.leader[foe].uid?1:0;
+     if(leadX!==leadY)return leadY-leadX;
+    }
     return (y.v-x.v)||(x.h-y.h);
    });
    tgt=sortedT[0];
   }
-  attack(atk,tgt,'e');
+  return {type:'attack',card:atk,target:tgt};
+ }
+ return {type:'end'};
+}
+
+function aiStep(){
+ if(checkBattleEnd()||G.side!=='e')return;
+ var action=chooseBattleAction('e');
+ if(action.type==='play'){
+  playCard('e',action.card.uid);
+  paint();
+  if(!G.over)AITIMER=setTimeout(aiStep,450);
+  return;
+ }
+ if(action.type==='attack'){
+  attack(action.card,action.target,'e');
   paint();
   if(!G.over)AITIMER=setTimeout(aiStep,480);
   return;
  }
- applyGuardia('e');
- paint();
- AITIMER=setTimeout(function(){
-  if(G&&!G.over)startTurn('p');
- },380);
+ AITIMER=setTimeout(function(){completeTurn('e');},380);
 }
 
 function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var isTarget=(side==='e'&&G.sel);
- var art=artTag(c.k,c.n);
+ var art=artTag(c.k,c.n,side==='p'&&c.gold);
  return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
   +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
-  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+c.a+' &middot; A'+Math.max(0,c.h)+'/'+c.hm+'</span></div></div>';
+  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+battleZasca(side,c)+' &middot; A'+Math.max(0,c.h)+'/'+c.hm+'</span></div></div>';
 }
 function nmByUid(uid){var i;for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)return G.field.p[i].n;return '?';}
 function uidOf(uid){var i;for(i=0;i<G.hand.p.length;i++)if(G.hand.p[i].uid===uid)return G.hand.p[i].k;return '';}
@@ -2062,21 +2215,15 @@ function gabLine(){
 
 SCREENS.battle=function(){
  if(!G)return '<p>Cargando...</p>';
- if(G.n===0)return '<div class="panel coin-toss"><h2>Cara o cruz</h2>'
-  +'<p>Tú tienes <b>cara</b> y '+esc(G.rival)+' tiene <b>cruz</b>. Ambos tenéis la misma probabilidad de empezar.</p>'
-  +'<div class="coin-face">'+(G.first==='p'?'CARA':'CRUZ')+'</div>'
-  +'<h3>Ha salido '+(G.first==='p'?'cara. Empiezas tú.':'cruz. Empieza '+esc(G.rival)+'.')+'</h3>'
-  +'<p class="sub">Cada ronda incluye un turno de cada jugador. El debate termina en cuanto alguien alcanza 100 votos o al completar 7 rondas.</p>'
-  +'<button class="btn wide" data-act="begin">Comenzar debate</button></div>';
  if(G.sel){var found=false,i2;for(i2=0;i2<G.field.p.length;i2++)if(G.field.p[i2].uid===G.sel)found=true;if(!found)G.sel=null;}
  var i,tdp='',etdp='';
- for(i=0;i<6;i++){tdp+='<span class="crystal'+(i<G.tdp.p?'':' off')+'"></span>';etdp+='<span class="crystal'+(i<G.tdp.e?'':' off')+'"></span>';}
+ var crystals=Math.max(6,G.tdp.p,G.tdp.e);
+ for(i=0;i<crystals;i++){tdp+='<span class="crystal'+(i<G.tdp.p?'':' off')+'"></span>';etdp+='<span class="crystal'+(i<G.tdp.e?'':' off')+'"></span>';}
  var pf=G.field.p.map(function(c){return cromoBattle(c,'p');}).join('');
  for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
  for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__EMPTY" data-side="e">'+(G.sel?'Restar votos':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
- var eLeadOn=leaderOn('e'),pLeadOn=leaderOn('p');
  var modo=G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.min(7,Math.max(1,Math.ceil(G.n/2)));
  return '<div class="battle-wrap">'
@@ -2085,15 +2232,15 @@ SCREENS.battle=function(){
  +'<div class="vbars">'
  +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'/100</b></div>'
  +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'/100</b></div></div>'
- +'<p class="sub">Rival &middot; TdP '+G.tdp.e+'/6 '+etdp+' &middot; Doctrina: '+(eLeadOn?'<b style="color:#ff9b8a">'+esc(DOCM[G.leader.e.pa].n)+'</b>':'inactiva')+'</p>'
+ +'<p class="sub">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
  +'<div class="tribuna">'+ef+'</div>'
  +'<div class="log">'+G.log.slice(0,5).join('')+'</div>'
  +'<div class="tribuna">'+pf+'</div>'
- +'<p class="sub">Tu Tribuna &middot; TdP '+G.tdp.p+'/6 '+tdp+' &middot; Doctrina: '+(pLeadOn?'<b style="color:#7fe0b0">'+esc(DOCM[G.leader.p.pa].n)+'</b>':'inactiva')+'</p>'
+ +'<p class="sub">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
  +'<div class="row">'+hand+'</div>'
  +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca un orador rival o "Restar votos".</div>'
         :'<div class="hint">Toca una carta de tu mano para bajarla o un orador en Tribuna para atacar.</div>')
- +'<div class="bar between"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.side==='p'?'Pasar turno':'Turno rival...')+'</button>'
+ +'<div class="bar between"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
  +'<button class="btn ghost sm" data-act="abandon">Abandonar</button></div>'
  +'</div>';
 };
@@ -2161,6 +2308,8 @@ SCREENS.ayuda=function(){
  return '<h2>Cómo se juega</h2><div class="inner-scroll">'
  +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. Si nadie lo consigue, gana quien tenga más votos tras 7 rondas. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
  +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
+ +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
+ +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
  +'<div class="panel"><h3>3. Elo y dificultad justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
  +'<div class="panel"><h3>4. Botín y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
  +'</div><button class="btn wide sm" data-go="menu">Volver al menú</button>';
@@ -2170,6 +2319,9 @@ document.addEventListener('click',function(ev){
  var t=ev.target;
  var root=document.getElementById('app')||document.body;
  if(!root.contains(t)||!t.closest)return;
+
+ if(t.closest('#coinRoot [data-act="begin"]')){beginDebate();return;}
+ if(t.closest('#coinRoot'))return;
 
  /* 1. Gestión prioritaria de los botones de confirmación / cancelación del Modal */
  var mBtn=t.closest('button[data-modal]');

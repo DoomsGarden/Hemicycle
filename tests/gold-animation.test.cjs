@@ -10,7 +10,7 @@ const engine = html.slice(html.indexOf('var GOLD_LOOP={'), html.indexOf('\nvar D
 const asset = fs.readFileSync(path.join(root, 'cards/donald-trump-golden.webp'));
 
 function loadEngine() {
-  const context = vm.createContext({ Blob });
+  const context = vm.createContext({ Blob, CardConfetti: require('../js/card-confetti.js') });
   vm.runInContext(engine, context);
   return context;
 }
@@ -104,4 +104,37 @@ test('short animations clamp the overlap and a single frame remains a static por
   assert.equal(playback.first, 0);
   assert.equal(playback.second, 0);
   assert.equal(playback.mix, 0);
+});
+
+test('the composite draws a clean portrait and a cropped expression, with an independent particle clock', () => {
+  const c=loadEngine(),state=timeline(c,Array(46).fill(56)),surfaceDraws=[],particleTimes=[];
+  state.frames.forEach((f,i)=>f.bmp={expression:i});
+  const surfaceCtx={drawImage(source){surfaceDraws.push(source)}};
+  const faceCtx={clearRect(){},drawImage(){}};
+  state.surface={getContext(){return surfaceCtx}};
+  state.faceSurface={getContext(){return faceCtx}};
+  state.portrait={cleanPortrait:true};state.w=420;state.h=560;state.state='ready';
+  state.confetti={draw(ctx,time){assert.equal(ctx,surfaceCtx);particleTimes.push(time)}};
+  const canvas={width:420,height:560,parentNode:{},getContext(){return{drawImage(){}}}};
+  c.document={querySelectorAll(){return[{querySelector(){return canvas},classList:{contains(){return true}}}]}};
+  c.drawCurrentGoldFrame(state.startedAt+state.period-1);
+  c.drawCurrentGoldFrame(state.startedAt+state.period+1);
+  assert.deepEqual(particleTimes,[state.period-1,state.period+1]);
+  assert.deepEqual(surfaceDraws,[state.portrait,state.faceSurface,state.portrait,state.faceSurface]);
+  assert.equal(surfaceDraws.some(source=>state.frames.some(frame=>frame.bmp===source)),false,'full frames containing baked confetti are never drawn');
+});
+
+test('confetti redraws while an expression frame is still held', () => {
+  const c=loadEngine(),state=timeline(c,Array(46).fill(56));
+  state.frames.forEach((f,i)=>f.bmp={expression:i});
+  let draws=0;
+  state.surface={getContext(){return{drawImage(){}}}};
+  state.faceSurface={getContext(){return{clearRect(){},drawImage(){}}}};
+  state.portrait={};state.w=420;state.h=560;state.state='ready';state.confetti={draw(){draws++}};
+  const canvas={width:420,height:560,parentNode:{},getContext(){return{drawImage(){}}}};
+  c.document={querySelectorAll(){return[{querySelector(){return canvas},classList:{contains(){return true}}}]}};
+  assert.equal(c.getGoldFrameIndex(1020),c.getGoldFrameIndex(1054));
+  c.drawCurrentGoldFrame(state.startedAt+1020);
+  c.drawCurrentGoldFrame(state.startedAt+1054);
+  assert.equal(draws,2);
 });

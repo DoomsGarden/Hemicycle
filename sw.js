@@ -1,5 +1,5 @@
-const CACHE = 'hemiciclo-v30.2.1-turnos-elo';
-const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png'];
+const CACHE = 'hemiciclo-v30.2.2-pasivas';
+const ASSETS = ['./', './index.html', './manifest.json', './icon-192.png', './icon-512.png', './js/card-confetti.js', './js/changelog.js', './cards/donald-trump-golden-portrait.webp'];
 
 self.addEventListener('install', e => {
   e.waitUntil(

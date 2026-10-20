@@ -1,0 +1,150 @@
+<html data-host-mode="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><script>Object.defineProperty(document, "cookie", {get: function() { return ""; },set: function() {},configurable: false});</script><script type="module">(async()=>{if(typeof FileSystemFileHandle!=="undefined"&&"createWritable"in FileSystemFileHandle.prototype)return;if(!navigator.storage?.getDirectory)return;try{const{createWorker}=await import("https://esm.sh/opfs-worker");const w=await createWorker();class W{constructor(p){this.p=p;this.c=[];this.x=false}write(d){if(this.x)throw new DOMException("closed","InvalidStateError");if(typeof d==="object"&&"type"in d&&!(d instanceof Blob)&&!(d instanceof ArrayBuffer)){if(d.type==="write")this.c.push(d.data);else if(d.type==="truncate")this.c=[];return}this.c.push(d)}async close(){if(this.x)return;const b=new Blob(this.c);await w.writeFile(this.p,new Uint8Array(await b.arrayBuffer()));this.x=true;this.c=[]}abort(){this.x=true;this.c=[]}}const pF=(h,p)=>new Proxy(h,{get:(t,k)=>k==="createWritable"?async()=>new W(p):typeof t[k]==="function"?t[k].bind(t):t[k]});const pD=(h,p)=>new Proxy(h,{get:(t,k)=>{if(k==="getFileHandle")return async(n,o)=>pF(await t.getFileHandle(n,o),(p+"/"+n).replace(//+/g,"/"));if(k==="getDirectoryHandle")return async(n,o)=>pD(await t.getDirectoryHandle(n,o),(p+"/"+n).replace(//+/g,"/"));return typeof t[k]==="function"?t[k].bind(t):t[k]}});const og=navigator.storage.getDirectory.bind(navigator.storage);navigator.storage.getDirectory=async function(){return pD(await og.call(this),"/")};}catch(e){console.warn("[OPFS]",e)}})();</script><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>:root { --host-bg: rgb(14, 18, 23); --host-fg: rgb(238, 237, 228); --host-fg-muted: rgb(162, 166, 170); --host-card: rgba(255, 255, 255, 0.04); --host-card-fg: rgb(238, 237, 228); --host-input: rgba(255, 255, 255, 0.04); --host-muted: rgba(255, 255, 255, 0.04); --host-border: rgba(255, 255, 255, 0.06); --host-border-hover: rgba(255, 255, 255, 0.12); --host-primary: rgb(18, 92, 161); --host-secondary: rgba(255, 255, 255, 0.04); --host-secondary-fg: rgb(238, 237, 228); --host-success: #22c55e; --host-error: #ef4444; } * { box-sizing: border-box; margin: 0; padding: 0; } :root, html, body { width: 100%; max-width: 100%; height: auto; overflow-x: hidden; overflow-y: visible; background: transparent; font-family: Inter, system-ui, -apple-system, sans-serif; } #sandbox-content { width: 100%; } @media (max-width: 640px) { :where(#sandbox-content svg, #sandbox-content img) { max-width: 100%; height: auto; } } </style></head><body><div id="sandbox-content"><h2 class="sr-only">Compositor de bucle de 3 segundos con capa de confetti dorado, con exportación robusta.</h2>
+<style>
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+  .ctl{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--host-fg)}
+  .ctl span{color:var(--host-fg-muted);font-size:11px}
+  input[type=range]{width:100%;accent-color:#d9a327;height:16px}
+  .btn{background:var(--host-secondary);color:var(--host-secondary-fg);border:1px solid var(--host-border);border-radius:8px;padding:7px 14px;font-size:12px;font-weight:500;cursor:pointer;text-decoration:none;display:inline-block}
+  .btn.p{background:#d9a327;color:#1a1408;border-color:#d9a327}
+  .btn:disabled{opacity:.5;cursor:default}
+</style>
+<div style="display:flex;flex-direction:column;align-items:center;gap:12px">
+  <div id="stage" style="position:relative;width:525px;height:700px;border-radius:12px;overflow:hidden;background:#0d1428">
+    <video id="vid" loop="" muted="" playsinline="" style="position:absolute;inset:0;width:100%;height:100%;opacity:0;pointer-events:none" src="/sandbox/proxy?url=https%3A%2F%2Fvenice.ai%2Fapi%2Fmedia%2FSAoKnkqQOHPITS.0"></video>
+    <canvas id="cv" width="525" height="700" style="position:absolute;inset:0;width:100%;height:100%;display:block"></canvas>
+    <div id="stat" style="position:absolute;left:10px;bottom:10px;font-size:11px;padding:4px 9px;border-radius:6px;background:rgba(0,0,0,.55);color:#fff">video no cargado - usa "Cargar mp4"</div>
+  </div>
+  <div style="width:525px;display:grid;grid-template-columns:1fr 1fr;gap:10px 20px">
+    <label class="ctl">Cantidad <span id="ld">95</span><input id="dens" type="range" min="20" max="220" step="5" value="95"></label>
+    <label class="ctl">Tamaño <span id="ls">100%</span><input id="size" type="range" min="50" max="200" step="5" value="100"></label>
+    <label class="ctl">Velocidad <span id="lv">2</span><input id="spd" type="range" min="1" max="4" step="1" value="2"></label>
+    <label class="ctl">Deriva lateral <span id="lw">100%</span><input id="drift" type="range" min="0" max="200" step="5" value="100"></label>
+  </div>
+  <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center">
+    <button class="btn" id="pp">Pausa</button>
+    <button class="btn p" id="exp">Grabar bucle 3 s</button>
+    <label class="btn">Cargar mp4<input id="file" type="file" accept="video/*" style="display:none"></label>
+  </div>
+  <div id="panel" style="width:525px;display:none;border:1px solid var(--host-border);border-radius:10px;padding:12px;font-size:12px;color:var(--host-fg)"></div>
+</div>
+<script>
+const cv=document.getElementById('cv'),ctx=cv.getContext('2d');
+const vid=document.getElementById('vid'),stat=document.getElementById('stat'),panel=document.getElementById('panel');
+const W=1050,H=1400,LOOP=3.0;
+let S=1;try{S=Math.min(2,window.devicePixelRatio||1)}catch(e){}
+cv.width=Math.round(525*S);cv.height=Math.round(700*S);
+const VW=cv.width,VH=cv.height;
+const MARG=Math.round(VH*0.06),TRAVEL=VH+2*MARG;
+const GOLD=[['#FFF7D6','#F6C24E','#B8801A'],['#FFE9A8','#E9A72A','#96690F'],['#FFFDF0','#FFD980','#C68C1C'],['#FFF2BE','#DFA128','#8E6412']];
+let rnd=1;function R(){rnd=(rnd*1664525+1013904223)%4294967296;return rnd/4294967296}
+let P=[],dens=95,sizeMul=1,spd=2,driftMul=1;
+function build(){
+  rnd=90210;P=[];
+  for(let i=0;i<dens;i++){
+    const r=R();let base;
+    if(r<0.14)base=16+R()*14;else if(r<0.55)base=8+R()*8;else base=3.5+R()*4.5;
+    const s=base*sizeMul*(VH/1400);
+    const u=(R()*2-1),push=Math.sign(u)*Math.pow(Math.abs(u),0.62);
+    P.push({x0:VW*0.5+push*VW*0.5,y0:R()*TRAVEL,s:s,w:s*(0.5+R()*0.85),vy:spd*TRAVEL/LOOP,
+      amp:(5+R()*22)*driftMul*(VW/1050),m:1+(R()<0.5?1:0),ph:R()*Math.PI*2,
+      rot0:R()*Math.PI*2,nr:1+(R()<0.6?1:0),sp:R()<0.5?-1:1,
+      a:0.45+R()*0.55,g:GOLD[Math.floor(R()*GOLD.length)],depth:R()});
+  }
+}
+function rr(x,y,w,h,r){if(ctx.roundRect){ctx.beginPath();ctx.roundRect(x,y,w,h,r);return}ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath()}
+function drawConfetti(t){
+  for(let i=0;i<P.length;i++){
+    const p=P[i];
+    const y=((p.y0+p.vy*t)%TRAVEL+TRAVEL)%TRAVEL-MARG;
+    const x=p.x0+p.amp*Math.sin(2*Math.PI*p.m*t/LOOP+p.ph);
+    const rot=p.rot0+p.sp*2*Math.PI*p.nr*t/LOOP;
+    const w=p.w,h=p.s;
+    ctx.save();ctx.translate(x,y);ctx.rotate(rot);ctx.globalAlpha=p.a*(0.65+p.depth*0.35);
+    if(p.s>9){ctx.globalAlpha*=0.35;ctx.fillStyle=p.g[1];rr(-w*0.85,-h*0.85,w*1.7,h*1.7,h*0.4);ctx.fill();ctx.globalAlpha=p.a*(0.65+p.depth*0.35)}
+    const g=ctx.createLinearGradient(-w/2,-h/2,w/2,h/2);
+    g.addColorStop(0,p.g[0]);g.addColorStop(0.45,p.g[1]);g.addColorStop(1,p.g[2]);
+    ctx.fillStyle=g;rr(-w/2,-h/2,w,h,h*0.28);ctx.fill();
+    ctx.fillStyle='rgba(255,255,255,'+(Math.abs(Math.cos(rot))*0.5+0.12).toFixed(3)+')';
+    ctx.fillRect(-w/2,-h/2,w,h*0.26);
+    ctx.restore();
+  }
+}
+function paint(){const g=ctx.createLinearGradient(0,0,0,VH);g.addColorStop(0,'#0b1226');g.addColorStop(1,'#141d3a');ctx.fillStyle=g;ctx.fillRect(0,0,VW,VH)}
+function drawBase(){if(vid.readyState>=2){try{ctx.drawImage(vid,0,0,VW,VH);return}catch(e){}}paint()}
+let t0=null,playing=true,raf=null,recording=false;
+function loop(now){
+  if(t0===null)t0=now;
+  const t=((now-t0)/1000)%LOOP;
+  drawBase();drawConfetti(t);
+  raf=requestAnimationFrame(loop);
+}
+function setStat(m){stat.textContent=m}
+function startPlay(){if(!playing)return;if(raf)cancelAnimationFrame(raf);t0=null;raf=requestAnimationFrame(loop);vid.play().catch(function(){})}
+const ID='SAoKnkqQOHPITS.0';
+const cands=['https://venice.ai/api/media/'+ID,'https://venice.ai/media/'+ID,'/api/media/'+ID,'/media/'+ID,'/sandbox/proxy?url='+encodeURIComponent('https://venice.ai/api/media/'+ID)];
+let ci=0;
+function tryNext(){
+  if(ci>=cands.length){setStat('video no cargado - usa "Cargar mp4"');return}
+  const url=cands[ci++];let done=false;
+  const to=setTimeout(function(){if(!done){done=true;tryNext()}},4500);
+  vid.onloadeddata=function(){if(done)return;done=true;clearTimeout(to);setStat('video cargado');vid.play().catch(function(){})};
+  vid.onerror=function(){if(done)return;done=true;clearTimeout(to);tryNext()};
+  vid.src=url;
+}
+function loadFile(f){if(!f)return;vid.src=URL.createObjectURL(f);vid.onloadeddata=function(){setStat('video cargado (local)');vid.play().catch(function(){})}}
+document.getElementById('dens').oninput=function(e){dens=+e.target.value;document.getElementById('ld').textContent=dens;build()};
+document.getElementById('size').oninput=function(e){sizeMul=+e.target.value/100;document.getElementById('ls').textContent=e.target.value+'%';build()};
+document.getElementById('spd').oninput=function(e){spd=+e.target.value;document.getElementById('lv').textContent=spd;build()};
+document.getElementById('drift').oninput=function(e){driftMul=+e.target.value/100;document.getElementById('lw').textContent=e.target.value+'%';build()};
+document.getElementById('pp').onclick=function(e){playing=!playing;e.target.textContent=playing?'Pausa':'Reproducir';if(playing){startPlay()}else{if(raf)cancelAnimationFrame(raf);vid.pause()}};
+document.getElementById('file').onchange=function(e){loadFile(e.target.files[0])};
+const stage=document.getElementById('stage');
+stage.ondragover=function(e){e.preventDefault()};
+stage.ondrop=function(e){e.preventDefault();loadFile(e.dataTransfer.files[0])};
+function pickMime(){
+  const list=['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm','video/mp4;codecs=h264','video/mp4'];
+  for(let i=0;i<list.length;i++){try{if(MediaRecorder.isTypeSupported(list[i]))return list[i]}catch(e){}}
+  return '';
+}
+document.getElementById('exp').onclick=function(){
+  if(recording)return;
+  panel.style.display='none';panel.innerHTML='';
+  if(typeof MediaRecorder==='undefined'){panel.style.display='block';panel.textContent='Este navegador no soporta grabación (MediaRecorder).';return}
+  if(!cv.captureStream){panel.style.display='block';panel.textContent='Este navegador no soporta captura de canvas.';return}
+  playing=true;document.getElementById('pp').textContent='Pausa';startPlay();
+  let stream,mime='';
+  try{stream=cv.captureStream(30)}catch(e){panel.style.display='block';panel.textContent='Error al capturar: '+e.message;return}
+  mime=pickMime();
+  let rec;
+  try{rec=new MediaRecorder(stream,mime?{mimeType:mime,videoBitsPerSecond:16000000}:{videoBitsPerSecond:16000000})}
+  catch(e){try{rec=new MediaRecorder(stream)}catch(e2){panel.style.display='block';panel.textContent='Error al crear el grabador: '+e2.message;return}}
+  recording=true;const chunks=[];let bytes=0;
+  rec.ondataavailable=function(ev){if(ev.data&&ev.data.size){chunks.push(ev.data);bytes+=ev.data.size;setStat('grabando... '+Math.round(bytes/1024)+' KB')}};
+  rec.onerror=function(ev){setStat('error de grabación')};
+  rec.onstop=function(){
+    recording=false;
+    const type=(rec.mimeType||mime||'video/webm').split(';')[0];
+    const blob=new Blob(chunks,{type:type});
+    if(!blob.size){panel.style.display='block';panel.textContent='La grabación salió vacía. Prueba a pulsar "Grabar" otra vez.';setStat('grabación vacía');return}
+    const url=URL.createObjectURL(blob);
+    setStat('listo: '+Math.round(blob.size/1024)+' KB');
+    panel.style.display='block';
+    panel.innerHTML='<div style="font-weight:500;margin-bottom:8px">Bucle listo — '+Math.round(blob.size/1024)+' KB · '+type+' · 3,0 s</div>'+
+      '<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">'+
+      '<a class="btn p" id="dl" download="retrato_confetti_bucle_3s.webm" href="'+url+'">Descargar</a>'+
+      '<button class="btn" id="op">Abrir en pestaña</button>'+
+      '<button class="btn" id="cp">Copiar enlace</button></div>'+
+      '<div style="font-size:11px;color:var(--host-fg-muted);margin-bottom:6px">Si la descarga no arranca, usa "Abrir en pestaña" y guarda desde ahí, o mantén pulsado el botón Descargar y elige "Guardar enlace como".</div>'+
+      '<input readonly value="'+url+'" style="width:100%;font-size:11px;padding:6px;border-radius:6px;border:1px solid var(--host-border);background:var(--host-input);color:var(--host-fg)">';
+    try{document.getElementById('dl').click()}catch(e){}
+    document.getElementById('op').onclick=function(){window.open(url,'_blank')};
+    document.getElementById('cp').onclick=function(){const i=panel.querySelector('input');i.select();try{document.execCommand('copy')}catch(e){};setStat('enlace copiado')};
+  };
+  try{vid.currentTime=0}catch(e){}
+  t0=performance.now();
+  try{rec.start(250)}catch(e){panel.style.display='block';panel.textContent='Error al iniciar grabación: '+e.message;recording=false;return}
+  let el=0;const iv=setInterval(function(){el+=0.25;if(el<LOOP)setStat('grabando... '+el.toFixed(1)+' s');else clearInterval(iv)},250);
+  setTimeout(function(){if(rec.state!=='inactive')rec.stop()},LOOP*1000+120);
+};
+build();raf=requestAnimationFrame(loop);tryNext();
+</script></div><style>:root, html, body { height: auto !important; max-height: 5000px !important; overflow-x: hidden !important; overflow-y: auto !important; background: transparent !important; } html { -webkit-text-size-adjust: 100% !important; text-size-adjust: 100% !important; } </style><script>(function() {var lastHeight = 0;var debounceTimer = null;function reportHeight() {var rect = document.body.getBoundingClientRect();var h = Math.ceil(rect.height);if (h !== lastHeight && h > 0) {lastHeight = h;window.parent.postMessage({ type: "html-sandbox-height", height: h }, "*");}}new ResizeObserver(function() {clearTimeout(debounceTimer);debounceTimer = setTimeout(reportHeight, 100);}).observe(document.body);window.addEventListener("load", function() {window.parent.postMessage({ type: "html-sandbox-ready" }, "*");});document.fonts && document.fonts.ready.then(function() {reportHeight();});})();</script></body></html>

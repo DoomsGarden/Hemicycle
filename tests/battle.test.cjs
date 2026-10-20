@@ -1,48 +1,6 @@
 const assert = require('node:assert/strict');
-const fs = require('node:fs');
-const path = require('node:path');
-const vm = require('node:vm');
 const { test } = require('node:test');
-
-const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
-// Execute the production rules, persistence and AI with a deterministic clock.
-// Only rendering/navigation are replaced; finish() and league rewards remain real.
-function loadBattle(mode = 'normal', random = 0.25) {
-  const storage = new Map(), timers = new Map();
-  let timerId = 0;
-  const math = Object.create(Math);
-  math.random = () => random;
-  const context = vm.createContext({
-    Math: math,
-    localStorage: { getItem: k => storage.get(k) || null, setItem: (k, v) => storage.set(k, v) },
-    setTimeout: fn => { timers.set(++timerId, fn); return timerId; },
-    clearTimeout: id => timers.delete(id)
-  });
-  vm.runInContext(
-    html.slice(html.indexOf('var UID='), html.indexOf("var ART_BASE=")) +
-    html.slice(html.indexOf('var DOCS='), html.indexOf('\nfunction gem(')) +
-    html.slice(html.indexOf('var RANKS='), html.indexOf('\nfunction saveColScroll(')) +
-    '\nvar SCREENS={};function paint(){};function go(s,o){SCREEN=s;SO=o||{};}function showAchievement(){}\n' +
-    html.slice(html.indexOf('function mk('), html.indexOf('\nfunction cromoBattle(')) +
-    html.slice(html.indexOf('SCREENS.battle=function'), html.indexOf('\nSCREENS.liga=function')),
-    context
-  );
-  vm.runInContext(`
-    var profile=D();profile.album=CARDS.map(function(c){return c.id;});profile.elo=300;saveD(profile);
-    var ids=CARDS.filter(function(c){return c.r==='comun';}).slice(0,5).map(function(c){return c.id;});
-    BUILD={ids:ids,leader:ids[0]};
-    lsSet(LS2,ligaNew(3));
-  `, context);
-  context.newBattle(mode);
-  context.timers = timers;
-  context.tick = () => {
-    const next = timers.entries().next().value;
-    assert.ok(next, 'expected a pending AI action');
-    timers.delete(next[0]);
-    next[1]();
-  };
-  return context;
-}
+const { loadBattle } = require('./helpers/battle.cjs');
 
 const modes = ['normal', 'ranked', 'liga'];
 const json = value => JSON.parse(JSON.stringify(value));
@@ -55,8 +13,10 @@ for (const mode of modes) {
       assert.equal(c.G.side, null);
       assert.equal(c.G.n, 0);
       assert.equal(c.timers.size, 0);
-      assert.match(c.SCREENS.battle(), /Tú tienes <b>cara<\/b>/);
-      assert.match(c.SCREENS.battle(), new RegExp('Ha salido ' + face));
+      assert.match(c.elements.coinRoot.innerHTML, /Tú tienes <b>cara<\/b>/);
+      assert.match(c.SCREENS.battle(), /battle-wrap/);
+      assert.equal(c.elements.content.inert, true);
+      assert.match(c.elements.coinRoot.innerHTML, new RegExp('Ha salido ' + face));
       c.playCard('p', c.G.hand.p[0].uid);
       c.endTurn();
       assert.equal(c.G.n, 0);
@@ -67,6 +27,8 @@ for (const mode of modes) {
       assert.equal(c.timers.size, first === 'e' ? 1 : 0);
       c.beginDebate();
       assert.equal(c.G.n, 1, 'double tapping cannot skip a turn');
+      assert.equal(c.elements.coinRoot.innerHTML, '');
+      assert.equal(c.elements.content.inert, false);
     });
   }
 
