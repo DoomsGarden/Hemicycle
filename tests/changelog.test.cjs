@@ -37,3 +37,8 @@ test('development tools are excluded from Pages and never linked or precached by
  assert.match(preview,/src="\.\.\/\.\.\/js\/card-confetti.js"/);
  assert.doesNotMatch(preview,/venice\.ai|esm\.sh|localStorage|sessionStorage|postMessage|fetch\(/);
 });
+
+test('public version notes never reveal the hidden achievement or its reward',()=>{
+ const publicText=JSON.stringify(entries);
+ assert.doesNotMatch(publicText,/trump|logros?|desbloque|aspecto (?:especial|dorad)|sonrisa|confeti|Zasca base|Aguante base/i);
+});

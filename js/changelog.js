@@ -19,12 +19,9 @@
         ]
       },
       {
-        "title": "Sorteo y aspecto dorado",
+        "title": "Sorteo inicial",
         "items": [
-          "Cara o cruz aparece en una ventana emergente sobre el tablero. La partida espera a que confirmes el resultado.",
-          "El Trump dorado solo aparece en tus cartas si has desbloqueado y activado el aspecto. La IA muestra el clásico.",
-          "El Trump dorado suma +2 de Zasca base y +2 de Aguante base, tanto como líder como miembro del gabinete. Si lidera, también recibe la bonificación habitual de líder.",
-          "La sonrisa conserva su recorrido de ida y vuelta; el confeti tiene su propio movimiento y siempre cae."
+          "Cara o cruz aparece en una ventana emergente sobre el tablero. La partida espera a que confirmes el resultado."
         ]
       },
       {
@@ -81,7 +78,7 @@
   {
     "version": "v30",
     "date": "2026-10-20",
-    "title": "Continuidad de la animación dorada",
+    "title": "Continuidad de las animaciones",
     "sections": [
       {
         "title": "Animación",
@@ -137,7 +134,7 @@
       {
         "title": "Animación",
         "items": [
-          "Se reutilizan los lienzos del aspecto dorado al cambiar de pantalla para reducir los reinicios de la animación.",
+          "Se reutilizan los lienzos al cambiar de pantalla para reducir los reinicios de las animaciones.",
           "Se ajusta el recorrido de ida y vuelta de los fotogramas."
         ]
       }
@@ -179,7 +176,7 @@
     "title": "Mejoras contra los parpadeos",
     "sections": [
       {
-        "title": "Aspecto dorado",
+        "title": "Animación",
         "items": [
           "Se refuerza la detección de fotogramas vacíos, transparentes u oscuros.",
           "Se mejora la composición de los fotogramas y se evitan borrados innecesarios del retrato entre imágenes."
@@ -214,9 +211,9 @@
     "title": "Primer motor del retrato animado",
     "sections": [
       {
-        "title": "Aspecto dorado",
+        "title": "Animación",
         "items": [
-          "Se incorpora la preparación de fotogramas del retrato dorado y su reproducción de ida y vuelta.",
+          "Se incorpora la preparación de fotogramas y su reproducción de ida y vuelta.",
           "Se añaden efectos visuales de brillo y una alternativa de imagen cuando la reproducción avanzada no está disponible."
         ]
       }
@@ -225,14 +222,12 @@
   {
     "version": "v24",
     "date": "2026-10-17",
-    "title": "Logros y aspecto especial desbloqueable",
+    "title": "Mejoras de presentación",
     "sections": [
       {
         "title": "Colección",
         "items": [
-          "Se añaden el seguimiento de logros y un aspecto dorado desbloqueable para Donald Trump.",
-          "Tras desbloquearlo se puede elegir entre el aspecto clásico y el dorado desde la colección.",
-          "Los logros recién conseguidos muestran un aviso en pantalla."
+          "Se amplía el sistema de presentación visual de los cromos."
         ]
       }
     ]
