@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{chromium}=require('playwright'),{cards}=require('../market/catalog.cjs');
 const base='http://127.0.0.1:8022/Hemicycle/',project='https://fdotndyenfreqbmzqdzd.supabase.co';
-const out='/workspace/Hemicycle/_dev/previews/v31.0.0.1';fs.mkdirSync(out,{recursive:true});
+const out='/workspace/Hemicycle/_dev/previews/'+fs.readFileSync('/workspace/Hemicycle/index.html','utf8').match(/var VERSION='([^']+)'/)[1];fs.mkdirSync(out,{recursive:true});
 const user={id:'11111111-1111-4111-8111-111111111111',aud:'authenticated',role:'authenticated',email:'player@example.test',app_metadata:{provider:'google',providers:['google']},user_metadata:{},created_at:new Date().toISOString()};
 const player={fs:76543,elo:5588,w:12,l:7,album:cards.map(c=>c.id).concat(cards.slice(0,8).map(c=>c.id)),lastDaily:0,lastWeekly:0,dtWins:12,dtGoldUnlocked:true,dtGoldActive:true};
 let saved={user_id:user.id,nickname:null,nickname_changed_at:null,next_nickname_change_at:null,can_rename:true},oauth=0,pkce=false;
@@ -16,6 +16,7 @@ let data,status=200;
 if(url.pathname==='/auth/v1/token'){const body=req.postDataJSON();assert.ok(body.code_verifier,'PKCE verifier sent on callback');data={access_token:token(),token_type:'bearer',expires_in:3600,refresh_token:'mock-refresh-token',user};}
 else if(url.pathname==='/auth/v1/user')data=user;
 else if(url.pathname==='/auth/v1/logout')return route.fulfill({status:204,headers});
+else if(url.pathname==='/rest/v1/rpc/hemicycle_get_cloud_save')data={user_id:user.id,revision:0,payload:null};
 else if(url.pathname==='/rest/v1/rpc/hemicycle_get_profile')data=saved;
 else if(url.pathname==='/rest/v1/rpc/hemicycle_set_nickname'){if(!saved.can_rename){status=400;data={code:'P0001',message:'Ya has utilizado el cambio gratuito.'};}else{let now=new Date(),next=new Date(now);next.setFullYear(next.getFullYear()+1);saved={...saved,nickname:req.postDataJSON().p_nickname,nickname_changed_at:now.toISOString(),next_nickname_change_at:next.toISOString(),can_rename:false};data=saved;}}
 else return route.fulfill({status:404,headers,body:'{}'});

@@ -1,0 +1,23 @@
+{
+  "version": "v31.0.0.2",
+  "passed": true,
+  "unitTests": 205,
+  "sqlEngine": "PGlite 0.3.14",
+  "browserIntegration": "Official SDK and real SQL functions; auth transport simulated",
+  "supabaseMigration": "Owner confirmed Success",
+  "progressReset": false,
+  "activation": "Explicit review and tick",
+  "multiplayerEnabled": false,
+  "sourceHashes": {
+    "index.html": "f6998b8e7d84715219d5c1787059fc391769b7cbbc98575aad59f663afccba23",
+    "sw.js": "fb50f2adc1f6df5a2e81d813da46ef013cf66602600afab2a1d9332cb9905597",
+    "js/player-profile.js": "1f562993f03d2d28e126df1a8f920c7fc831667174516d9d0f507eb378960fe4",
+    "js/player-backup.js": "4e571b9c073f15a8bfa084d6a89189151b75b8f6f48f72d2ffdba799ed373592",
+    "js/cloud-save.js": "3d61220497bab446e3aed0a7fa057b5c3b89b526dc49d5b6443e04d8ca72bf9f",
+    "js/cloud-ui.js": "db7c67717c7f2ce3c310362022c9459ce1dc7d0fb57f4bbca61e9356760fd3da",
+    "js/menu-tutorial.js": "5794fe9c25884a7396b7c561f3df52ffdc5b12b71934e2567e0e2e3744bdc570",
+    "js/changelog.js": "c620ce9eedd93dc0aff536d9e11c296f8f7f430c7c4a36ff21d37bf9991f48ed",
+    "css/cloud.css": "1105dc7f02b26cefe4abc2a904870cc918887becc3c48e2bd67a398158d0e958",
+    "_dev/supabase/20261021_cloud_saves.sql": "cbc2c1aaf8cc1c0e4ca3eaa122db1fc2ef0b64668d59512236be406bf566d21d"
+  }
+}

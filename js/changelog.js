@@ -4,6 +4,21 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version":"v31.0.0.2",
+    "date":"2026-10-21",
+    "title":"Tu progreso, también en la nube",
+    "sections":[{"title":"Guardado en la nube","items":[
+      "Desde Perfil → Nube puedes activar el guardado de tu progreso en la cuenta. La primera copia requiere revisar y confirmar los datos.",
+      "Se conservan cromos y copias, estadísticas, FS, Elo, Liga, tutoriales y recompensas pendientes. El reinicio competitivo queda reservado para el estreno multijugador.",
+      "Tras activarlo, los cambios se guardan automáticamente. En otro dispositivo puedes iniciar sesión y recuperar la copia desde Perfil → Nube.",
+      "Si hay cambios distintos entre dispositivos, se conservan las copias para que puedas revisarlas. Una copia antigua no sustituye automáticamente a otra más reciente.",
+      "Antes de recuperar una copia se guarda el progreso local anterior, disponible para descargar. El respaldo en archivo sigue disponible."
+    ]},{"title":"Acceso","items":[
+      "El guardado pertenece a la cuenta, tanto si accedes con Google como con un correo y contraseña ya registrados.",
+      "Puedes seguir jugando sin cuenta. Activar el guardado es opcional y no modifica las reglas de las partidas."
+    ]}]
+  },
+  {
     "version":"v31.0.0.1",
     "date":"2026-10-21",
     "title":"Tu cuenta y tu perfil de jugador",

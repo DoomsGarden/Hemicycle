@@ -511,6 +511,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/tutorial.css?v=30.2.61">
 <link rel="stylesheet" href="css/launch.css?v=30.2.60">
 <link rel="stylesheet" href="css/profile.css?v=31.0.0.1-profile">
+<link rel="stylesheet" href="css/cloud.css?v=31.0.0.2">
 </head>
 <body>
 
@@ -531,18 +532,20 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="toastRoot"></div>
 </div>
 
-<div id="profileRoot"></div>
+<div id="profileRoot"></div><div id="cloudRoot"></div>
 <script src="js/supabase-sdk.js?v=2.118.0"></script>
 <script src="js/supabase-config.js?v=31.0.0.1"></script>
-<script src="js/player-profile.js?v=31.0.0.1-profile"></script>
+<script src="js/player-profile.js?v=31.0.0.2"></script>
+<script src="js/cloud-save.js?v=31.0.0.2"></script>
+<script src="js/cloud-ui.js?v=31.0.0.2"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-tutorial.js?v=30.2.61"></script>
-<script src="js/menu-tutorial.js?v=31.0.0.1-profile"></script>
-<script src="js/player-backup.js?v=30.2.61"></script>
+<script src="js/menu-tutorial.js?v=31.0.0.2"></script>
+<script src="js/player-backup.js?v=31.0.0.2"></script>
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=31.0.0.1-profile"></script>
+<script src="js/changelog.js?v=31.0.0.2"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -554,14 +557,15 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.0.1';
+var VERSION='v31.0.0.2';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
 function searchText(s){return String(s).normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();}
 var MEM={};
 function lsGet(k){try{var v=localStorage.getItem(k);return v?JSON.parse(v):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
-function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){MEM[k]=v;}}
+function localSaved(){if(typeof Event!=='undefined'&&document.dispatchEvent)document.dispatchEvent(new Event('hemicycle:local-save'));}
+function lsSet(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){MEM[k]=v;}localSaved();}
 function rnd(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
 function pick(a){return a[Math.floor(Math.random()*a.length)];}
 function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
@@ -1419,6 +1423,7 @@ function atomicLocal(values){
  var before={};Object.keys(values).forEach(function(k){before[k]=localStorage.getItem(k);});
  try{Object.keys(values).forEach(function(k){if(values[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(values[k]));});}
  catch(e){Object.keys(before).forEach(function(k){try{if(before[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,before[k]);}catch(ignore){}});throw new Error('No se han podido guardar los cambios. Comprueba el espacio del navegador.');}
+ localSaved();
 }
 function claimRankedReward(id){
  var claim=function(){
@@ -1435,11 +1440,13 @@ function rankedPanel(){
 }
 function backupPanel(){
  var id=HemicycleBackup.identity(lsGet,lsSet).id;
- return '<section class="panel backup-panel"><h3>ID de jugador y respaldo</h3><label class="sub" for="playerId">Tu ID estable</label><input id="playerId" value="'+esc(id)+'" readonly aria-label="ID de jugador"><p class="sub">Guarda una copia de tu colección, estadísticas, logros y guías. El archivo permite recuperarlos en otro dispositivo. La nube todavía está pendiente de conexión.</p><div class="bar"><button class="mini" data-act="copy-player-id">Copiar ID</button><button class="btn sm" data-act="backup-export">Descargar respaldo</button><button class="btn ghost sm" data-act="backup-import">Restaurar archivo</button></div><input type="file" id="backupFile" accept=".json,application/json" hidden></section>';
+ return '<section class="panel backup-panel"><h3>ID de jugador y respaldo</h3><label class="sub" for="playerId">Tu ID estable</label><input id="playerId" value="'+esc(id)+'" readonly aria-label="ID de jugador"><p class="sub">Guarda una copia de tu colección, estadísticas, logros y guías. El archivo permite recuperarlos en otro dispositivo. Si conectas tu cuenta, puedes activar el guardado en la nube desde Perfil → Nube.</p><div class="bar"><button class="mini" data-act="copy-player-id">Copiar ID</button><button class="btn sm" data-act="backup-export">Descargar respaldo</button><button class="btn ghost sm" data-act="backup-import">Restaurar archivo</button></div><input type="file" id="backupFile" accept=".json,application/json" hidden></section>';
 }
-function exportPlayerBackup(){
- var data=HemicycleBackup.build({read:lsGet,write:lsSet,profile:D,league:ligaLoad,version:VERSION}),blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
- link.href=url;link.download='hemiciclo-'+data.identity.id+'-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
+function backupSnapshot(){return HemicycleBackup.validate(HemicycleBackup.build({read:lsGet,write:lsSet,profile:D,league:ligaLoad,version:VERSION}),CARDS.map(function(c){return c.id;}));}
+function exportPlayerBackup(){downloadBackup(backupSnapshot(),'respaldo');}
+function downloadBackup(data,label){
+ var blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+ link.href=url;link.download='hemiciclo-'+label+'-'+data.identity.id+'-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
 }
 function importPlayerBackup(file){
  if(!file)return;
@@ -1447,15 +1454,15 @@ function importPlayerBackup(file){
  if(file.size>HemicycleBackup.maxBytes){showModal('Respaldo no válido','El archivo supera los 8 MB.','Entendido',false,null);return;}
  file.text().then(function(text){
   var data=HemicycleBackup.parse(text,CARDS.map(function(c){return c.id;})),p=data.profile;
-  showModal('Restaurar respaldo','<p>Se sustituirán los datos de este dispositivo por los del archivo.</p><p>ID: <b>'+esc(data.identity.id)+'</b></p><p>'+p.album.length+' cromos · '+p.w+' victorias · '+p.l+' derrotas · '+p.fs+' FS · '+p.elo+' Elo.</p><p>La restauración conserva tus datos; si han vencido temporadas, se aplicará el descenso correspondiente. El reinicio completo de clasificatoria y Liga se aplicará al migrar a la nube.</p>','Restaurar respaldo',true,function(){
-   try{HemicycleBackup.restore(localStorage,data);MEM={};syncRankedSeason();clearAI();clearBattleClock();closeZoom();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;go('menu');}
+  showModal('Restaurar respaldo','<p>Se sustituirán los datos de este dispositivo por los del archivo.</p><p>ID: <b>'+esc(data.identity.id)+'</b></p><p>'+p.album.length+' cromos · '+p.w+' victorias · '+p.l+' derrotas · '+p.fs+' FS · '+p.elo+' Elo.</p><p>La restauración conserva tus datos; si han vencido temporadas, se aplicará el descenso correspondiente. El reinicio competitivo queda reservado para el estreno multijugador.</p>','Restaurar respaldo',true,function(){
+   try{HemicycleBackup.restore(localStorage,data);if(CLOUD_SAVE)CLOUD_SAVE.localReplaced();MEM={};syncRankedSeason();clearAI();clearBattleClock();closeZoom();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;go('menu');}
    catch(e){showModal('No se ha restaurado el respaldo',e.message,'Entendido',false,null);}
   },true,true);
  }).catch(function(e){showModal('Respaldo no válido',e.message,'Entendido',false,null);});
 }
 
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
-var PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
+var CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
 var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu',MENU_FEATURED=[];
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0,builderGrid:0};
 
@@ -2630,7 +2637,7 @@ document.addEventListener('click',function(ev){
     'Sí, borrar todo',
     true,
     function(){
-     clearAI();closeZoom();
+     clearAI();closeZoom();if(CLOUD_SAVE)CLOUD_SAVE.localReplaced();
      try{localStorage.removeItem(LS);localStorage.removeItem(LS2);}catch(e){}
      MEM={};G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};
      D();go('menu');
@@ -2766,7 +2773,17 @@ function firstEntry(){
 }
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();
- PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,accountChanged:function(){if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
+  CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
+   atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra));MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');
+  },changed:function(){if(CLOUD_UI)CLOUD_UI.changed();}});
+  CLOUD_UI=HemicycleCloudUI.create({service:CLOUD_SAVE,snapshot:backupSnapshot,export:exportPlayerBackup,download:downloadBackup,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},changed:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();}});
+  document.addEventListener('hemicycle:local-save',function(){CLOUD_SAVE.dirty();});
+  window.addEventListener('online',function(){CLOUD_SAVE.reconnect();});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)CLOUD_SAVE.save();else CLOUD_SAVE.reconnect();});
+  window.addEventListener('storage',function(event){if(event.key===HemicycleCloudSave.ownerKey&&event.newValue===null){CLOUD_SAVE.localReplaced();return;}if([LS,LS2,HemicycleRanked.key,'hemiciclo_tutorial_v1','hemiciclo_menu_tutorial_v1'].indexOf(event.key)>=0)CLOUD_SAVE.dirty();});
+ }
  TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
   read:lsGet,write:lsSet,
   pause:function(){clearAI();if(G&&G.tutorial){G.over=true;G.done=true;}},

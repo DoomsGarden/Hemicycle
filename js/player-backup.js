@@ -30,17 +30,20 @@ function validate(raw,catalog){
   ranked={season:r.season,highest:r.highest,promotions:r.promotions,rewards:rewards,lastDemotion:null};
   if(r.lastDemotion&&['from','to','periods'].every(function(k){return Number.isSafeInteger(r.lastDemotion[k])&&r.lastDemotion[k]>=0;}))ranked.lastDemotion={from:r.lastDemotion.from,to:r.lastDemotion.to,periods:r.lastDemotion.periods};
  }
- var tutorials={};['battle','menu'].forEach(function(k){var t=raw.tutorials&&raw.tutorials[k];if(t&&['completed','skipped','in-progress'].includes(t.status))tutorials[k]={status:t.status,version:1,updatedAt:Number.isSafeInteger(t.updatedAt)?t.updatedAt:Date.now()};else tutorials[k]=null;});
+ var tutorials={};['battle','menu'].forEach(function(k){var t=raw.tutorials&&raw.tutorials[k];if(t&&['completed','skipped','in-progress'].includes(t.status))tutorials[k]={status:t.status,version:1,updatedAt:Number.isSafeInteger(t.updatedAt)?t.updatedAt:0};else tutorials[k]=null;});
  // Whitelist fields: importing a file never introduces executable markup or object prototypes.
  return {format:FORMAT,schemaVersion:1,identity:{id:raw.identity.id,createdAt:typeof raw.identity.createdAt==='string'?raw.identity.createdAt:raw.exportedAt},exportedAt:raw.exportedAt,gameVersion:raw.gameVersion,profile:{fs:p.fs,elo:p.elo,w:p.w,l:p.l,album:p.album.slice(),lastDaily:p.lastDaily,lastWeekly:p.lastWeekly,dtWins:p.dtWins,dtGoldUnlocked:p.dtGoldUnlocked,dtGoldActive:p.dtGoldActive,...(receipts?{marketReceipts:receipts}:{})},league:league===null?null:JSON.parse(JSON.stringify(league)),tutorials:tutorials,ranked:ranked,catalogEdition:'prelaunch-120'};
 }
 function build(api){return {format:FORMAT,schemaVersion:1,gameVersion:api.version,exportedAt:new Date().toISOString(),catalogEdition:'prelaunch-120',ranked:api.read('hemiciclo_ranked_seasons_v1'),identity:identity(api.read,api.write),profile:api.profile(),league:api.league(),tutorials:{battle:api.read('hemiciclo_tutorial_v1'),menu:api.read('hemiciclo_menu_tutorial_v1')}};}
 function parse(text,catalog){if(typeof text!=='string'||new Blob([text]).size>MAX_BYTES)throw new Error('El respaldo supera el tamaño permitido de 8 MB.');var raw;try{raw=JSON.parse(text.replace(/^\uFEFF/,''));}catch(e){throw new Error('El archivo no contiene un respaldo JSON válido.');}return validate(raw,catalog);}
+function storageValues(data){
+ var values={'hemiciclo_v21':data.profile,'hemiciclo_liga_v9':data.league,'hemiciclo_tutorial_v1':data.tutorials.battle,'hemiciclo_menu_tutorial_v1':data.tutorials.menu};values[KEY]=data.identity;values['hemiciclo_ranked_seasons_v1']=data.ranked;return values;
+}
 function restore(storage,data){
- var values={'hemiciclo_v21':data.profile,'hemiciclo_liga_v9':data.league,'hemiciclo_tutorial_v1':data.tutorials.battle,'hemiciclo_menu_tutorial_v1':data.tutorials.menu};values[KEY]=data.identity;values['hemiciclo_ranked_seasons_v1']=data.ranked;
+ var values=storageValues(data);
  var before={};Object.keys(values).forEach(function(k){before[k]=storage.getItem(k);});
  try{Object.keys(values).forEach(function(k){if(values[k]===null)storage.removeItem(k);else storage.setItem(k,JSON.stringify(values[k]));});}
  catch(error){Object.keys(before).forEach(function(k){try{if(before[k]===null)storage.removeItem(k);else storage.setItem(k,before[k]);}catch(ignore){}});throw new Error('No se ha podido restaurar el respaldo. Comprueba el espacio disponible del navegador.');}
 }
-return {restore:restore,key:KEY,identity:identity,build:build,parse:parse,validate:validate,maxBytes:MAX_BYTES};
+return {storageValues:storageValues,restore:restore,key:KEY,identity:identity,build:build,parse:parse,validate:validate,maxBytes:MAX_BYTES};
 });

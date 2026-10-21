@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{chromium}=require('playwright');
 const dismiss=require('./launch-helper.cjs'),{cards,root}=require('../market/catalog.cjs');
-const out=root+'/_dev/previews/v31.0.0.1';fs.mkdirSync(out,{recursive:true});
+const out=root+'/_dev/previews/'+fs.readFileSync(root+'/index.html','utf8').match(/var VERSION='([^']+)'/)[1];fs.mkdirSync(out,{recursive:true});
 const profile={fs:8000,elo:700,w:6,l:2,album:cards.slice(0,10).map(c=>c.id),lastDaily:Date.now(),lastWeekly:Date.now(),dtWins:2,dtGoldUnlocked:false,dtGoldActive:false};
 async function walk(page,count,checkMenu=false,width=393){
  const order=[];
