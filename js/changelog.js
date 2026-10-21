@@ -4,6 +4,18 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version":"v31.0.0.1",
+    "date":"2026-10-21",
+    "title":"Tu cuenta y tu perfil de jugador",
+    "sections":[{"title":"Acceso","items":[
+      "Después de INICIAR puedes acceder con Google o continuar sin cuenta. Una sesión válida guardada permite entrar directamente en ese navegador.",
+      "Conectar o cerrar la cuenta conserva el progreso de este dispositivo. El guardado de la colección en la nube y el multijugador se activarán en una fase posterior."
+    ]},{"title":"Perfil","items":[
+      "El menú principal incluye un botón cuadrado de perfil a la izquierda de las victorias y derrotas. Abre una ventana con tus estadísticas, colección y situación en la Liga.",
+      "Puedes elegir un nick para tu cuenta. La primera elección es gratuita; después dispones de un cambio gratuito al cumplirse un año desde el último."
+    ]}]
+  },
+  {
     "version":"v30.2.61",
     "date":"2026-10-21",
     "title":"Tutoriales, nuevos debates y temporadas",

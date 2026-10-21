@@ -1,0 +1,112 @@
+/* Cuenta y perfil. La sesión pertenece a Supabase; las estadísticas siguen siendo locales. */
+(function(root){
+'use strict';
+function escape(value){return String(value==null?'':value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function create(api){
+ var host=document.getElementById('profileRoot'),client=null,session=null,profile=null,verified=false,ready=false,opened=false,gate=false,busy=false,message='',nicknameDraft=null,generation=0,resolveEntry=null,previousFocus=null;
+ var cachedKey=function(id){return 'hemiciclo_account_profile_v1:'+id;};
+ function store(value){try{localStorage.setItem(cachedKey(value.user_id),JSON.stringify(value));}catch(ignore){}}
+ function cached(id){try{var p=JSON.parse(localStorage.getItem(cachedKey(id)));return p&&p.user_id===id?p:null;}catch(ignore){return null;}}
+ function notify(){if(opened)render();if(api.changed)api.changed();}
+ function errorText(error){
+  if(error&&['PGRST202','42P01','42883'].includes(error.code))return 'La cuenta está conectada. Falta activar el perfil en el servidor para guardar tu nick.';
+  if(error&&['22023','P0001'].includes(error.code))return error.message;
+  return 'No se ha podido conectar. Comprueba tu conexión y vuelve a intentarlo.';
+ }
+ async function loadProfile(){
+  if(!client||!session)return;
+  var id=session.user.id,ticket=++generation;verified=false;
+  try{var result=await client.rpc('hemicycle_get_profile');if(result.error)throw result.error;
+   if(ticket!==generation||!session||session.user.id!==id)return;
+   if(!result.data||result.data.user_id!==id)throw new Error('Invalid profile');
+   profile=result.data;verified=true;message='';store(profile);
+  }catch(error){if(ticket!==generation)return;message=errorText(error);}
+  notify();
+ }
+ function receive(next){
+  var old=session&&session.user.id,id=next&&next.user&&next.user.id;
+  session=id?next:null;
+  if(old!==id){generation++;nicknameDraft=null;profile=id?cached(id):null;verified=false;}
+  ready=true;
+  if(gate&&session){completeEntry();}
+  if(session&&(!verified||old!==id))loadProfile();
+  notify();
+ }
+ function focus(){var target=host.querySelector('[data-profile="close"],[data-profile="google"],[data-profile="guest"]');if(target)target.focus({preventScroll:true});}
+ function open(asGate){
+  if(!asGate&&api.canOpen&&!api.canOpen())return;
+  opened=true;gate=!!asGate;previousFocus=document.activeElement;
+  var app=document.getElementById('app');app.inert=true;app.setAttribute('aria-hidden','true');render();
+  if(!document.getElementById('launchScreen'))focus();
+ }
+ function close(){
+  if(gate)return;opened=false;host.innerHTML='';var app=document.getElementById('app');
+  if(!document.getElementById('launchScreen')){app.inert=false;app.removeAttribute('aria-hidden');}
+  var target=previousFocus&&previousFocus.isConnected?previousFocus:document.querySelector('[data-act="profile"]');if(target)target.focus({preventScroll:true});
+ }
+ function completeEntry(){
+  gate=false;close();if(resolveEntry){var done=resolveEntry;resolveEntry=null;done();}
+ }
+ function enter(){
+  if(ready&&session)return Promise.resolve();
+  return new Promise(function(resolve){resolveEntry=resolve;open(true);});
+ }
+ function metrics(){var s=api.stats();return '<div class="profile-stats">'+s.metrics.map(function(m){return '<div><span>'+escape(m[0])+'</span><b>'+escape(m[1])+'</b></div>';}).join('')+'</div><p class="profile-rarities">'+escape(s.rarities)+'</p><p class="profile-league">'+escape(s.league)+'</p><p class="profile-id" title="'+escape(s.id)+'">ID local: '+escape(s.id)+'</p>';}
+ function render(){
+  if(!opened)return;
+  var active=host.contains(document.activeElement)?document.activeElement:null,activeId=active&&active.id,action=active&&active.dataset.profile,draft=activeId==='profileNickname'?active.value:null;
+  var nick=profile&&profile.nickname,canEdit=!!(session&&verified&&profile.can_rename),date=profile&&profile.next_nickname_change_at?new Intl.DateTimeFormat('es-ES',{dateStyle:'medium',timeZone:'Europe/Madrid'}).format(new Date(profile.next_nickname_change_at)):'';
+  var account=session?'<span class="profile-status">Cuenta conectada</span><button type="button" class="mini" data-profile="logout" '+(busy?'disabled':'')+'>Cerrar sesión</button>':'<button type="button" class="btn profile-google" data-profile="google" '+(!client||busy?'disabled':'')+'>'+(busy?'Conectando…':'Continuar con Google')+'</button>';
+  var nickname=session?'<label for="profileNickname">Nick de jugador</label><form id="nicknameForm"><input id="profileNickname" name="nickname" minlength="3" maxlength="20" autocomplete="nickname" value="'+escape(nicknameDraft!==null?nicknameDraft:nick||'')+'" placeholder="Elige tu nick" '+(!canEdit||busy?'disabled':'')+'><button type="submit" class="btn sm" '+(!canEdit||busy?'disabled':'')+'>Guardar</button></form><p class="profile-hint">'+(!verified?'El cambio de nick requiere conexión con tu cuenta.':canEdit?(!nick?'Primera elección gratuita. Después, un cambio gratis cada año.':'Tienes disponible un cambio gratuito.'):'Próximo cambio gratuito: '+escape(date)+'.')+'</p>':'<p class="profile-hint">Conecta tu cuenta para elegir un nick y conservarlo entre dispositivos.</p>';
+  host.innerHTML='<div class="profile-shade"><section class="player-profile '+(gate?'account-entry':'')+'" role="dialog" aria-modal="true" aria-labelledby="profileTitle"><header><div><small>HEMICICLO</small><h2 id="profileTitle">'+(gate?'Tu cuenta':escape(nick||'Perfil de jugador'))+'</h2></div>'+(!gate?'<button type="button" class="mini profile-close" data-profile="close" aria-label="Cerrar perfil">×</button>':'')+'</header><div class="profile-columns"><div class="profile-account"><div class="profile-account-actions">'+account+'</div>'+nickname+'<p class="profile-message" role="status">'+escape(message||(!ready?'Comprobando sesión…':session?'El nick se guarda en tu cuenta. El progreso del juego todavía se guarda en este dispositivo.':'Puedes jugar como invitado y conectar tu cuenta más adelante.'))+'</p>'+(session&&!verified?'<button type="button" class="mini" data-profile="retry" '+(busy?'disabled':'')+'>Reintentar conexión</button>':'')+'</div>'+(!gate?'<div class="profile-overview"><h3>Estadísticas de este dispositivo</h3>'+metrics()+'</div>':'')+'</div>'+(gate?'<button type="button" class="btn ghost profile-guest" data-profile="guest">Continuar sin cuenta</button>':'')+'</section></div>';
+  if(draft!==null){var input=host.querySelector('#profileNickname');if(input&&!input.disabled){input.value=draft;input.focus({preventScroll:true});}}
+  else if(action){var replacement=host.querySelector('[data-profile="'+action+'"]');if(replacement&&!replacement.disabled)replacement.focus({preventScroll:true});}
+ }
+ async function login(){
+  if(busy||!client)return;busy=true;message='';render();
+  try{
+   var result=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:api.config.redirectTo,skipBrowserRedirect:true}});
+   if(result.error)throw result.error;
+   var url=new URL(result.data.url),project=new URL(api.config.url);
+   if(url.origin!==project.origin||url.pathname!=='/auth/v1/authorize')throw new Error('Invalid OAuth destination');
+   location.assign(url.href);
+  }catch(error){busy=false;message=errorText(error);render();focus();}
+ }
+ async function logout(){
+  if(busy)return;busy=true;render();
+  try{var result=await client.auth.signOut({scope:'local'});if(result.error)throw result.error;receive(null);message='Has cerrado la sesión. Tu progreso local se conserva.';}
+  catch(error){message=errorText(error);}finally{busy=false;render();focus();}
+ }
+ async function saveNickname(form){
+  if(busy||!session||!verified||!profile.can_rename)return;
+  var nick=new FormData(form).get('nickname').normalize('NFC').trim();
+  if(!/^[\p{L}\p{N} ._-]{3,20}$/u.test(nick)){message='Usa de 3 a 20 caracteres: letras, números, espacios, punto, guion o guion bajo.';render();return;}
+  var id=session.user.id,ticket=++generation;busy=true;message='';render();
+  try{var result=await client.rpc('hemicycle_set_nickname',{p_nickname:nick});if(result.error)throw result.error;
+   if(ticket!==generation||!session||session.user.id!==id)return;
+   if(!result.data||result.data.user_id!==id)throw new Error('Invalid profile');
+   profile=result.data;nicknameDraft=null;store(profile);verified=true;message='Nick guardado.';
+  }catch(error){if(ticket===generation)message=errorText(error);}finally{busy=false;render();focus();}
+ }
+ host.addEventListener('click',function(event){var button=event.target.closest('[data-profile]');if(!button||button.disabled)return;var action=button.dataset.profile;
+  if(action==='google')login();if(action==='guest')completeEntry();if(action==='close')close();if(action==='logout')logout();if(action==='retry')loadProfile();
+ });
+ host.addEventListener('input',function(event){if(event.target.id==='profileNickname')nicknameDraft=event.target.value;});
+ host.addEventListener('submit',function(event){if(event.target.id==='nicknameForm'){event.preventDefault();saveNickname(event.target);}});
+ document.addEventListener('keydown',function(event){if(!opened||document.getElementById('launchScreen'))return;
+  if(event.key==='Escape'){event.preventDefault();event.stopImmediatePropagation();if(!gate)close();return;}
+  if(event.key==='Tab'){var buttons=Array.from(host.querySelectorAll('button:not(:disabled),input:not(:disabled)'));var i=buttons.indexOf(document.activeElement);
+   if(buttons.length&&((event.shiftKey&&i<=0)||(!event.shiftKey&&(i<0||i===buttons.length-1)))){event.preventDefault();buttons[event.shiftKey?buttons.length-1:0].focus();}}
+ },true);
+ document.addEventListener('hemicycle:entered',function(){if(opened){var app=document.getElementById('app');app.inert=true;app.setAttribute('aria-hidden','true');focus();}});
+ try{var incoming=new URL(location.href),fragment=new URLSearchParams(location.hash.slice(1));if(incoming.searchParams.has('error')||fragment.has('error'))message='No se completó el acceso con Google. Puedes volver a intentarlo.';}catch(ignore){}
+ var fetchWithTimeout=function(input,options){var controller=new AbortController(),timer=setTimeout(function(){controller.abort();},10000);options=Object.assign({},options,{signal:controller.signal});return fetch(input,options).finally(function(){clearTimeout(timer);});};
+ try{
+  client=api.client||root.supabase.createClient(api.config.url,api.config.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true,flowType:'pkce'},global:{fetch:fetchWithTimeout}});
+  client.auth.onAuthStateChange(function(event,next){setTimeout(function(){receive(next);},0);});
+  client.auth.getSession().then(function(result){if(result.error)throw result.error;receive(result.data.session);}).catch(function(){ready=true;message='No se ha podido recuperar la sesión. Puedes reintentarlo o continuar sin cuenta.';notify();});
+ }catch(error){ready=true;message='El acceso a cuentas no está disponible. Puedes continuar sin cuenta.';}
+ return {enter:enter,open:function(){open(false);},close:close,isOpen:function(){return opened;},refresh:function(){if(opened&&!gate)render();}};
+}
+root.HemicyclePlayerProfile={create:create};
+})(typeof globalThis!=='undefined'?globalThis:this);

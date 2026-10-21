@@ -1,0 +1,113 @@
+const dismissLaunch=require('./launch-helper.cjs');
+const assert=require('node:assert/strict'),fs=require('node:fs'),http=require('node:http'),path=require('node:path'),{execFileSync}=require('node:child_process'),{chromium}=require('playwright');
+const root='/workspace/Hemicycle';
+const previous=process.env.PREVIOUS_REF||'b052613';
+const oldIndex=execFileSync('git',['show',previous+':index.html'],{cwd:root,maxBuffer:8*1024*1024});
+const oldSw=execFileSync('git',['show',previous+':sw.js'],{cwd:root,maxBuffer:8*1024*1024});
+const oldGold=execFileSync('git',['show',previous+':cards/donald-trump-golden.webp'],{cwd:root,maxBuffer:8*1024*1024});
+const oldPortrait=execFileSync('git',['show',previous+':cards/donald-trump-golden-portrait.webp'],{cwd:root,maxBuffer:8*1024*1024});
+const oldCss=execFileSync('git',['show',previous+':css/interface.css'],{cwd:root,maxBuffer:8*1024*1024});
+const oldNotes=execFileSync('git',['show',previous+':js/changelog.js'],{cwd:root,maxBuffer:8*1024*1024});
+const previousVersion=oldIndex.toString().match(/var VERSION='([^']+)'/)[1],previousCache=oldSw.toString().match(/const CACHE = '([^']+)'/)[1];
+let updated=false,hangNavigation=false,base='';
+const server=http.createServer((req,res)=>{
+ if(hangNavigation&&(req.headers.accept||'').includes('text/html')){req.on('close',()=>res.destroy());return;}
+ const name=new URL(req.url,'http://local').pathname.replace(/^\/Hemicycle\//,'')||'index.html';
+ const file=path.join(root,name);
+ try{
+  const bytes=!updated&&name==='index.html'?oldIndex:!updated&&name==='sw.js'?oldSw:!updated&&name==='js/changelog.js?v=31.0.0.1'?oldNotes:fs.readFileSync(file);
+  const ext=path.extname(name),type={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png'}[ext]||'application/octet-stream';
+  res.writeHead(200,{'Content-Type':type,'Cache-Control':'no-store'});res.end(bytes);
+ }catch(e){res.writeHead(404);res.end();}
+});
+(async()=>{
+ await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
+ base='http://127.0.0.1:'+server.address().port+'/Hemicycle/';
+ const browser=await chromium.launch({executablePath:'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
+ try{
+  const context=await browser.newContext({viewport:{width:393,height:851}}),page=await context.newPage();
+  const errors=[];page.on('pageerror',e=>errors.push(e.message));
+  await page.goto(base);await dismissLaunch(page);
+  await page.evaluate(()=>navigator.serviceWorker.ready);
+  await page.waitForFunction(()=>navigator.serviceWorker.controller);
+  const profile=await page.evaluate(async()=>{
+   localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed'}));localStorage.setItem('hemiciclo_menu_tutorial_v1',JSON.stringify({status:'completed'}));
+   const d=JSON.parse(localStorage.getItem('hemiciclo_v21'));
+   d.album.push('gabriel-rufian','gabriel-rufian','isabel-cela','donald-trump');d.fs=456789;d.elo=999;d.dtWins=15;d.dtGoldUnlocked=true;d.dtGoldActive=true;
+   localStorage.setItem('hemiciclo_v21',JSON.stringify(d));
+   await caches.open('unrelated-app');
+   localStorage.setItem('hemiciclo_liga_v9',JSON.stringify({div:2,jor:6,temp:3,teams:Array.from({length:30},(_,i)=>({n:i?'Grupo de prueba '+i:'Tu grupo',pts:i?0:17,w:i?0:5,d:i?0:2,l:0,you:i===0,str:60}))}));
+   return d;
+  });
+  assert.ok((await page.locator('#appbar').innerText()).includes(previousVersion));
+  assert.ok((await page.evaluate(()=>caches.keys())).includes(previousCache));
+  updated=true;
+  await page.goto(base,{waitUntil:'domcontentloaded'});await dismissLaunch(page);
+  assert.match(await page.locator('#appbar').innerText(),/v31\.0\.0\.1/);
+  await page.locator('#tabbar [data-go="mercado"]').click();
+  await page.waitForFunction(()=>document.querySelector('.market-account').textContent.includes('guardado local'));
+  await page.locator('[data-market="select"][data-id="gabriel-rufian"]').click();
+  await page.locator('[data-market="sell"]').click();
+  assert.equal(await page.locator('#modalRoot [data-modal="review"]').count(),1);
+  assert.equal(await page.locator('#modalRoot [data-modal="confirm"]').isDisabled(),true);
+  await page.locator('#modalRoot [data-modal="review"]').click();
+  assert.equal(await page.locator('#modalRoot [data-modal="review"]').evaluate(e=>getComputedStyle(e).backgroundColor),'rgb(35, 134, 83)');
+  await page.locator('#modalRoot [data-modal="cancel"]').click();
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  console.log('First navigation loads the new single-window market and its green review tick without an extra reload');
+  await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
+  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v31.0.0.1-cuentas')&&!ks.includes(previousCache);},previousCache);
+  await page.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return r&&r.active===navigator.serviceWorker.controller&&r.active.state==='activated';});
+  await page.goto(base,{waitUntil:'domcontentloaded'});await dismissLaunch(page);
+  assert.match(await page.locator('#appbar').innerText(),/v31\.0\.0\.1/);
+  await page.waitForFunction(()=>navigator.serviceWorker.controller&&navigator.serviceWorker.controller.scriptURL.includes('v=v31.0.0.1')&&navigator.serviceWorker.controller.state==='activated');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  assert.ok((await page.evaluate(()=>caches.keys())).includes('unrelated-app'));
+  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_liga_v9')).jor),6);
+  await page.locator('#tabbar [data-go="coleccion"]').click();
+  await page.locator('#fq').fill('Gabriel Rufian');
+  await page.locator('#gridBox [data-card="gabriel-rufian"]').click();
+  const quotes=await page.locator('#content .quote').allTextContents();
+  assert.equal(quotes.length,3);assert.match(quotes[2],/izquierda de caviar/);
+  for(const asset of ['js/supabase-sdk.js?v=2.118.0','js/supabase-config.js?v=31.0.0.1','js/player-profile.js?v=31.0.0.1','css/profile.css?v=31.0.0.1','./js/player-backup.js?v=30.2.61','./js/ranked-seasons.js?v=30.2.61','js/menu-tutorial.js?v=30.2.61','js/launch-screen.js?v=30.2.61','css/launch.css?v=30.2.60','fonts/Anton-Regular.ttf','js/battle-tutorial.js?v=30.2.61','css/tutorial.css?v=30.2.61','js/card-confetti.js','js/app-interaction.js?v=30.2.57-final','cards/donald-trump-golden-portrait.webp?v=nod-60','js/changelog.js?v=31.0.0.1','js/market-rules.js','js/market-ui.js?v=30.2.56','css/interface.css?v=30.2.61','cards/donald-trump-golden.webp?v=nod-60']){
+   assert.ok(await page.evaluate(async asset=>!!await caches.match(new URL(asset,location.href)),asset),asset+' cached');
+  }
+  await page.locator('#content [data-go="coleccion"]').click();
+  await page.locator('#fq').fill('Donald Trump');
+  await page.locator('#gridBox [data-card="donald-trump"]').click();
+  await page.waitForSelector('.gold-slot.has-canvas');
+  console.log('Online update and golden assets loaded');
+  await context.setOffline(true);await page.goto(base,{waitUntil:'domcontentloaded'});await dismissLaunch(page);
+  console.log('Offline document loaded');
+  await page.locator('[data-act=profile]').click();assert.equal(await page.locator('.profile-stats>div').count(),12);await page.locator('[data-profile=close]').click();console.log('New profile and guest access work offline');
+  assert.match(await page.locator('#appbar').innerText(),/v31\.0\.0\.1/);
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  await page.locator('#appbar [data-go="novedades"]').click();
+  assert.equal(await page.locator('.release-entry').count(),30);
+  await page.locator('.release-entry').first().locator('summary').click();
+  assert.match(await page.locator('.release-entry').first().innerText(),/Acceso|Perfil/);
+  await page.locator('#tabbar [data-go="coleccion"]').click();
+  await page.locator('#fq').fill('Donald Trump');
+  await page.locator('#gridBox [data-card="donald-trump"]').click();
+  await page.waitForFunction(()=>Array.from(document.querySelectorAll('canvas')).some(c=>c.width===420&&c.height===560));
+  await page.waitForTimeout(1500);
+  assert.ok(await page.locator('canvas').evaluateAll(cs=>cs.some(c=>{const a=c.getContext('2d').getImageData(210,280,1,1).data;return a[3]===255&&a[0]+a[1]+a[2]>10})), 'golden art works offline');
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  await page.locator('#tabbar [data-go="mercado"]').click();
+  await page.waitForFunction(()=>!document.querySelector('.market-account').textContent.includes('Comprobando'));
+  assert.match(await page.locator('.market-account').innerText(),/guardado local/);
+  assert.ok(await page.locator('[data-market="select"]').count()>0);
+  await page.locator('#appbar [data-go="ayuda"]').click();await page.locator('[data-act="menu-tutorial"]').click();
+  for(let i=0;i<20;i++)await page.locator('.tutorial-focus').click();
+  assert.equal(await page.locator('.tutorial-focus').count(),0);
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  console.log('Full 20-step menu guide works offline without changing profile or league');
+  await context.setOffline(false);hangNavigation=true;
+  const started=Date.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:12000});await dismissLaunch(page);
+  assert.ok(Date.now()-started<10000,'a stalled network must use the saved document');
+  assert.match(await page.locator('#appbar').innerText(),/v31\.0\.0\.1/);
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
+  assert.deepEqual(errors,[]);
+  console.log(previousVersion+' → v31.0.0.1 update passed: new cache, offline history and independent particle animation; collection, FS, Elo, league and golden progress preserved; unrelated cache intact.');
+ }finally{await browser.close();server.close();}
+})().catch(e=>{console.error(e);server.close();process.exitCode=1;});

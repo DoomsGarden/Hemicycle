@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),{chromium}=require('playwright');
 const dismiss=require('./launch-helper.cjs'),{cards,root}=require('../market/catalog.cjs');
-const out=root+'/_dev/previews/v30.2.61';fs.mkdirSync(out,{recursive:true});
+const out=root+'/_dev/previews/v31.0.0.1';fs.mkdirSync(out,{recursive:true});
 const profile={fs:8000,elo:700,w:6,l:2,album:cards.slice(0,10).map(c=>c.id),lastDaily:Date.now(),lastWeekly:Date.now(),dtWins:2,dtGoldUnlocked:false,dtGoldActive:false};
 async function walk(page,count,checkMenu=false,width=393){
  const order=[];
@@ -21,7 +21,7 @@ for(const width of [320,393,851,1280]){
  const context=await browser.newContext({viewport:{width,height:width===320?568:width===851?393:851},serviceWorkers:'block',reducedMotion:'reduce',isMobile:width<500,hasTouch:true});
  await context.addInitScript(d=>localStorage.setItem('hemiciclo_v21',JSON.stringify(d)),profile);
  const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto('http://127.0.0.1:8022/Hemicycle/');
- const saved=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));await page.locator('.launch-start').click();assert.equal(await page.locator('.battle-wrap').count(),1,'the tutorial is prepared behind the fade instead of showing the main menu first');await page.waitForSelector('#launchScreen',{state:'detached'});
+ const saved=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));await page.locator('.launch-start').click();assert.equal(await page.locator('.battle-wrap').count(),0,'the account gate precedes the tutorial');await page.waitForSelector('#launchScreen',{state:'detached'});await page.locator('[data-profile=guest]').click();
  assert.ok(await page.locator('#tutorialRoot .tutorial-coach').isVisible(),'INICIAR starts combat directly, without pressing Jugar');
  await walk(page,19);assert.ok(await page.locator('#menuTutorialRoot .tutorial-coach').isVisible());
  const titles=await walk(page,20,true,width);assert.equal(titles[0],'1. Tu menú principal');assert.ok(titles.indexOf('2. La tienda')<titles.indexOf('3. Tu colección'));assert.ok(titles.indexOf('3. Tu colección')<titles.indexOf('4. El mercado'));assert.equal(titles.at(-2),'5. La Liga');

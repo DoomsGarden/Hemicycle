@@ -1,0 +1,3 @@
+Migration is idempotent and preserves existing game data
+Reapplying migration preserves the existing nickname and change date
+SQL passed: initial/free annual nickname, Spanish text, unchanged retries, invalid names, yearly renewal, RLS isolation, anonymous and direct-write denial

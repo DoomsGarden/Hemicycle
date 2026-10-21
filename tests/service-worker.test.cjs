@@ -3,7 +3,7 @@ const source=fs.readFileSync(path.resolve(__dirname,'../sw.js'),'utf8'),cacheNam
 function worker({saved,rootSaved,fetcher=async()=>new Response('online')}={}){
  const events={},timers=new Map(),puts=[],waiting=[];
  const cache={match:async key=>key==='./index.html'?saved:key==='./'?rootSaved:undefined,put:async(key,response)=>puts.push([key,await response.text()])};
- const context=vm.createContext({AbortController,Response,URL,Promise,Error,clearTimeout:id=>timers.delete(id),setTimeout:(fn,ms)=>{timers.set(1,{fn,ms});return 1;},fetch:fetcher,caches:{open:async name=>{assert.equal(name,cacheName);return cache;},match:async()=>{throw new Error('Navigation must not read another application cache');}},self:{addEventListener:(name,fn)=>events[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}}});
+ const context=vm.createContext({AbortController,Response,URL,Promise,Error,clearTimeout:id=>timers.delete(id),setTimeout:(fn,ms)=>{timers.set(1,{fn,ms});return 1;},fetch:fetcher,caches:{open:async name=>{assert.equal(name,cacheName);return cache;},match:async()=>{throw new Error('Navigation must not read another application cache');}},self:{location:{origin:'https://example.test'},addEventListener:(name,fn)=>events[name]=fn,skipWaiting:async()=>{},clients:{claim:async()=>{}}}});
  vm.runInContext(source,context);
  function request(extra={}){let response;const e={request:{url:'https://example.test/Hemicycle/',method:'GET',mode:'navigate',...extra},respondWith:p=>response=p,waitUntil:p=>waiting.push(p)};events.fetch(e);return response;}
  return {request,timers,puts,waiting};
@@ -37,4 +37,9 @@ test('first offline launch without a saved copy has a clear response',async()=>{
 test('private market requests and mutations bypass the service worker entirely',()=>{
  const w=worker();assert.equal(w.request({url:'https://example.test/api/market/me',mode:'cors'}),undefined);
  assert.equal(w.request({url:'https://example.test/api/market/session',method:'POST',mode:'cors'}),undefined);
+});
+
+test('external authentication and profile GET requests bypass the cache',()=>{
+ const w=worker();
+ for(const path of ['/auth/v1/user','/auth/v1/authorize?provider=google','/rest/v1/hemicycle_account_profiles'])assert.equal(w.request({url:'https://project.supabase.co'+path,mode:'cors'}),undefined);
 });

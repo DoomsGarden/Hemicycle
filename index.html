@@ -510,6 +510,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/interface.css?v=30.2.61">
 <link rel="stylesheet" href="css/tutorial.css?v=30.2.61">
 <link rel="stylesheet" href="css/launch.css?v=30.2.60">
+<link rel="stylesheet" href="css/profile.css?v=31.0.0.1">
 </head>
 <body>
 
@@ -530,6 +531,10 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="toastRoot"></div>
 </div>
 
+<div id="profileRoot"></div>
+<script src="js/supabase-sdk.js?v=2.118.0"></script>
+<script src="js/supabase-config.js?v=31.0.0.1"></script>
+<script src="js/player-profile.js?v=31.0.0.1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-tutorial.js?v=30.2.61"></script>
 <script src="js/menu-tutorial.js?v=30.2.61"></script>
@@ -537,7 +542,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=30.2.61"></script>
+<script src="js/changelog.js?v=31.0.0.1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -549,7 +554,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.2.61';
+var VERSION='v31.0.0.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1450,6 +1455,7 @@ function importPlayerBackup(file){
 }
 
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
+var PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
 var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu',MENU_FEATURED=[];
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0,builderGrid:0};
 
@@ -1554,7 +1560,7 @@ function appbar(){
  +'<span class="pill gold">'+d.fs+' FS</span><span class="pill" title="'+esc(rankName(d.elo))+'" aria-label="'+esc(rankName(d.elo))+'">'+esc(rankName(d.elo).replace('Aprendiz de pasillo','Aprendiz'))+'</span>'
  +'<button class="mini news" data-go="novedades" aria-label="Novedades y cambios" title="Novedades y cambios"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2.5h8l3 3v12H4v-15h1zM12 2.5v4h4M7 10h6M7 13h6"/></svg></button>'
  +'<button class="mini" data-go="ayuda" aria-label="Ayuda">?</button></div>'
- +'<div class="hud-strip"><div class="hud-cell"><div class="hud-metric"><small aria-label="Victorias y derrotas">V / D</small><b>'+d.w+' <span>/ '+d.l+'</span></b></div><div class="hud-metric"><small>Elo</small><b>'+d.elo+'</b></div></div>'
+ +'<div class="hud-strip"><div class="hud-cell">'+(SCREEN==='menu'?'<button type="button" class="profile-button" data-act="profile" aria-label="Perfil de jugador" title="Perfil de jugador"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21v-2a8 8 0 0 1 16 0v2Z"/></svg></button>':'')+'<div class="hud-metric"><small aria-label="Victorias y derrotas">V / D</small><b>'+d.w+' <span>/ '+d.l+'</span></b></div><div class="hud-metric"><small>Elo</small><b>'+d.elo+'</b></div></div>'
  +'<div class="hud-cell hud-collection"><span class="album-mark">'+uiIcon('album')+'</span><div class="hud-metric"><small>Colección</small><b>'+u+' <span>/ '+CARDS.length+'</span></b><div class="album-track"><span style="width:'+(u/CARDS.length*100)+'%"></span></div></div></div></div>';
 }
 function tabbar(){
@@ -2576,6 +2582,7 @@ document.addEventListener('click',function(ev){
    PLAY_MODE=n.getAttribute('data-mode');PLAY_OPEN=false;paint();
    var play=document.querySelector('[data-act="play"]');if(play)play.focus();
    break;
+  case 'profile': if(PLAYER_PROFILE)PLAYER_PROFILE.open();break;
   case 'backup-export': exportPlayerBackup();break;
   case 'backup-import': document.getElementById('backupFile').click();break;
   case 'copy-player-id': {var input=document.getElementById('playerId');if(navigator.clipboard)navigator.clipboard.writeText(input.value).catch(function(){input.focus();input.select();});else {input.focus();input.select();}break;}
@@ -2738,7 +2745,19 @@ function restoreMenuGuideState(){
  if(MENU_GUIDE_STATE.resumeAI&&G===MENU_GUIDE_STATE.game&&!G.over&&G.side==='e')AITIMER=setTimeout(aiStep,520);
  MENU_GUIDE_STATE=null;
 }
+function profileStats(){
+ var d=D(),u=uniqueAlbum(d),played=d.w+d.l,l=ligaLoad(),place='Liga: sin temporada activa.';
+ if(l){var table=l.teams.slice().sort(function(a,b){return b.pts-a.pts||b.w-a.w;}),me=table.filter(function(t){return t.you;})[0];place='Liga: '+(l.div===1?'Primera':l.div===2?'Segunda':'Tercera')+' · Puesto '+(table.indexOf(me)+1)+'/30 · '+(me?me.pts:0)+' pts · Jornada '+l.jor+'/12';}
+ return {id:HemicycleBackup.identity(lsGet,lsSet).id,
+ metrics:[['Partidas',played],['Victorias',d.w],['Derrotas',d.l],['Victorias %',played?Math.round(d.w/played*100)+' %':'—'],['Fuerza Soberana',d.fs+' FS'],['Elo',d.elo],['Rango',rankName(d.elo)],['Cromos distintos',u.length+'/'+CARDS.length],['Copias totales',d.album.length],['Repetidos',d.album.length-u.length],['Logros',d.dtGoldUnlocked?1:0],['Sobres pendientes',lsGet(HemicycleRanked.key).rewards.filter(function(r){return !r.claimed;}).length]],
+ rarities:RARS.map(function(r){return RARM[r.k].n+': '+u.filter(function(c){return c.c.r===r.k;}).length;}).join(' · '),league:place};
+}
 function firstEntry(){
+ if(!ACCOUNT_ENTRY_READY&&PLAYER_PROFILE){
+  if(!ACCOUNT_ENTRY_PENDING){ACCOUNT_ENTRY_PENDING=true;PLAYER_PROFILE.enter().then(function(){ACCOUNT_ENTRY_READY=true;firstEntry();});}
+  return;
+ }
+
  if(TUTORIAL&&TUTORIAL.active){TUTORIAL.render();return;}
  if(MENU_GUIDE&&MENU_GUIDE.active){MENU_GUIDE.render();return;}
  if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start();return;}
@@ -2746,6 +2765,7 @@ function firstEntry(){
 }
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();
+ PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
   read:lsGet,write:lsSet,
   pause:function(){clearAI();if(G&&G.tutorial){G.over=true;G.done=true;}},
