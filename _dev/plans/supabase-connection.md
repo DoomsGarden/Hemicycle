@@ -19,3 +19,5 @@ Pruebas PostgreSQL compatibles mediante PGlite 0.3.14: esquema auth mínimo aisl
 Playwright con el SDK oficial y endpoints simulados: autorización, PKCE y retorno, tokens persistentes, perfil/RPC, bloqueo anual, cierre de sesión, invitado, errores de SDK/perfil, guías y conservación del progreso. No sustituye una prueba manual de Google con una cuenta autorizada real.
 
 Se intentó leer `/auth/v1/settings` real; el proxy del entorno rechaza ese destino antes de alcanzar Supabase (HTTP 403 de túnel). No se solicitó ninguna credencial privada. El propietario probará el acceso con su cuenta al publicar.
+
+La guía del menú incorpora cuatro pasos de perfil: botón, estadísticas, nick/cambio anual y cierre. Usa la ventana real en modo de consulta, bloquea operaciones de cuenta y desactiva la edición durante la visita. Salir o interrumpir la guía cierra el perfil y restablece el fondo. Son 24 pasos de menú; las marcas de guía completada se conservan y puede repetirse desde Ayuda.

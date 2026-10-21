@@ -11,6 +11,7 @@
       "Después de INICIAR puedes acceder con Google o continuar sin cuenta. Una sesión válida guardada permite entrar directamente en ese navegador.",
       "Conectar o cerrar la cuenta conserva el progreso de este dispositivo. El guardado de la colección en la nube y el multijugador se activarán en una fase posterior."
     ]},{"title":"Perfil","items":[
+      "La guía del menú abre el perfil y enseña sus estadísticas, el nick y el cambio anual, sin modificar datos.",
       "El menú principal incluye un botón cuadrado de perfil a la izquierda de las victorias y derrotas. Abre una ventana con tus estadísticas, colección y situación en la Liga.",
       "Puedes elegir un nick para tu cuenta. La primera elección es gratuita; después dispones de un cambio gratuito al cumplirse un año desde el último."
     ]}]

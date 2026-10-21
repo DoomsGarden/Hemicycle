@@ -24,13 +24,13 @@ for(const width of [320,393,851,1280]){
  const saved=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));await page.locator('.launch-start').click();assert.equal(await page.locator('.battle-wrap').count(),0,'the account gate precedes the tutorial');await page.waitForSelector('#launchScreen',{state:'detached'});await page.locator('[data-profile=guest]').click();
  assert.ok(await page.locator('#tutorialRoot .tutorial-coach').isVisible(),'INICIAR starts combat directly, without pressing Jugar');
  await walk(page,19);assert.ok(await page.locator('#menuTutorialRoot .tutorial-coach').isVisible());
- const titles=await walk(page,20,true,width);assert.equal(titles[0],'1. Tu menú principal');assert.ok(titles.indexOf('2. La tienda')<titles.indexOf('3. Tu colección'));assert.ok(titles.indexOf('3. Tu colección')<titles.indexOf('4. El mercado'));assert.equal(titles.at(-2),'5. La Liga');
+ const titles=await walk(page,24,true,width);assert.equal(titles[0],'1. Tu menú principal');assert.ok(titles.indexOf('2. La tienda')<titles.indexOf('3. Tu colección'));assert.ok(titles.indexOf('3. Tu colección')<titles.indexOf('4. El mercado'));assert.equal(titles.at(-2),'5. La Liga');
  assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_menu_tutorial_v1')).status),'completed');
  assert.equal(await page.locator('.tutorial-focus').count(),0);assert.equal(await page.evaluate(()=>localStorage.getItem('hemiciclo_v21')),saved);assert.equal(await page.evaluate(()=>localStorage.getItem('hemiciclo_liga_v9')),null);
  await page.reload();await dismiss(page);assert.equal(await page.locator('.tutorial-focus').count(),0,'completed guides do not restart');
  await page.locator('#appbar [data-go=ayuda]').click();assert.equal(await page.locator('[data-act=tutorial]').count(),1);await page.locator('[data-act=menu-tutorial]').click();assert.ok(await page.locator('#menuTutorialRoot .tutorial-coach').isVisible());
  await page.keyboard.press('Tab');assert.equal(await page.evaluate(()=>document.activeElement.id),'menuTutorialExit');await page.keyboard.press('Enter');assert.equal(await page.locator('.tutorial-focus').count(),0);assert.equal(await page.evaluate(()=>localStorage.getItem('hemiciclo_v21')),saved);
- console.log(width+'px: first INICIAR → 19 combat steps → 20 menu steps in order; no overlap, no purchases/claims/sales/league, reload once only, independent replay and keyboard exit passed');await context.close();
+ console.log(width+'px: first INICIAR → 19 combat steps → 24 menu steps in order; no overlap, no purchases/claims/sales/league, reload once only, independent replay and keyboard exit passed');await context.close();
 }
 // Existing players skip the already completed battle; reload/interruption can resume the missing menu guide.
 const context=await browser.newContext({viewport:{width:393,height:851},serviceWorkers:'block',reducedMotion:'reduce'});await context.addInitScript(d=>{localStorage.setItem('hemiciclo_v21',JSON.stringify(d));localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed'}));},profile);
@@ -44,7 +44,7 @@ const edge=await browser.newContext({viewport:{width:360,height:640},serviceWork
 const league={div:3,jor:4,temp:2,teams:Array.from({length:30},(_,i)=>({n:i?'Grupo '+i:'Tu grupo',pts:i,w:0,d:0,l:0,you:i===0,str:50}))};
 await edge.addInitScript(({p,league})=>{localStorage.setItem('hemiciclo_v21',JSON.stringify({...p,album:[],fs:0}));localStorage.setItem('hemiciclo_liga_v9',JSON.stringify(league));localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed'}));},{p:profile,league});
 const empty=await edge.newPage();empty.on('pageerror',e=>errors.push(e.message));await empty.goto('http://127.0.0.1:8022/Hemicycle/');await dismiss(empty);
-const before=await empty.evaluate(()=>({p:localStorage.getItem('hemiciclo_v21'),l:localStorage.getItem('hemiciclo_liga_v9')}));await walk(empty,20,true,360);
+const before=await empty.evaluate(()=>({p:localStorage.getItem('hemiciclo_v21'),l:localStorage.getItem('hemiciclo_liga_v9')}));await walk(empty,24,true,360);
 assert.deepEqual(await empty.evaluate(()=>({p:localStorage.getItem('hemiciclo_v21'),l:localStorage.getItem('hemiciclo_liga_v9')})),before);
 await empty.locator('#appbar [data-go=ayuda]').click();await empty.locator('[data-act=menu-tutorial]').click();for(let i=0;i<8;i++)await empty.locator('.tutorial-focus').click();
 await empty.goBack();await empty.goBack();

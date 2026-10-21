@@ -15,7 +15,7 @@ const server=http.createServer((req,res)=>{
  const name=new URL(req.url,'http://local').pathname.replace(/^\/Hemicycle\//,'')||'index.html';
  const file=path.join(root,name);
  try{
-  const bytes=!updated&&name==='index.html'?oldIndex:!updated&&name==='sw.js'?oldSw:!updated&&name==='js/changelog.js?v=31.0.0.1'?oldNotes:fs.readFileSync(file);
+  const bytes=!updated&&name==='index.html'?oldIndex:!updated&&name==='sw.js'?oldSw:!updated&&name==='js/changelog.js?v=31.0.0.1-profile'?oldNotes:fs.readFileSync(file);
   const ext=path.extname(name),type={'.html':'text/html','.js':'application/javascript','.css':'text/css','.json':'application/json','.webp':'image/webp','.png':'image/png'}[ext]||'application/octet-stream';
   res.writeHead(200,{'Content-Type':type,'Cache-Control':'no-store'});res.end(bytes);
  }catch(e){res.writeHead(404);res.end();}
@@ -56,7 +56,7 @@ const server=http.createServer((req,res)=>{
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
   console.log('First navigation loads the new single-window market and its green review tick without an extra reload');
   await page.evaluate(async()=>{const reg=await navigator.serviceWorker.getRegistration();await reg.update();});
-  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v31.0.0.1-cuentas')&&!ks.includes(previousCache);},previousCache);
+  await page.waitForFunction(async previousCache=>{const ks=await caches.keys();return ks.includes('hemiciclo-v31.0.0.1-perfil-guia')&&!ks.includes(previousCache);},previousCache);
   await page.waitForFunction(async()=>{const r=await navigator.serviceWorker.getRegistration();return r&&r.active===navigator.serviceWorker.controller&&r.active.state==='activated';});
   await page.goto(base,{waitUntil:'domcontentloaded'});await dismissLaunch(page);
   assert.match(await page.locator('#appbar').innerText(),/v31\.0\.0\.1/);
@@ -69,7 +69,7 @@ const server=http.createServer((req,res)=>{
   await page.locator('#gridBox [data-card="gabriel-rufian"]').click();
   const quotes=await page.locator('#content .quote').allTextContents();
   assert.equal(quotes.length,3);assert.match(quotes[2],/izquierda de caviar/);
-  for(const asset of ['js/supabase-sdk.js?v=2.118.0','js/supabase-config.js?v=31.0.0.1','js/player-profile.js?v=31.0.0.1','css/profile.css?v=31.0.0.1','./js/player-backup.js?v=30.2.61','./js/ranked-seasons.js?v=30.2.61','js/menu-tutorial.js?v=30.2.61','js/launch-screen.js?v=30.2.61','css/launch.css?v=30.2.60','fonts/Anton-Regular.ttf','js/battle-tutorial.js?v=30.2.61','css/tutorial.css?v=30.2.61','js/card-confetti.js','js/app-interaction.js?v=30.2.57-final','cards/donald-trump-golden-portrait.webp?v=nod-60','js/changelog.js?v=31.0.0.1','js/market-rules.js','js/market-ui.js?v=30.2.56','css/interface.css?v=30.2.61','cards/donald-trump-golden.webp?v=nod-60']){
+  for(const asset of ['js/supabase-sdk.js?v=2.118.0','js/supabase-config.js?v=31.0.0.1','js/player-profile.js?v=31.0.0.1-profile','css/profile.css?v=31.0.0.1-profile','./js/player-backup.js?v=30.2.61','./js/ranked-seasons.js?v=30.2.61','js/menu-tutorial.js?v=31.0.0.1-profile','js/launch-screen.js?v=30.2.61','css/launch.css?v=30.2.60','fonts/Anton-Regular.ttf','js/battle-tutorial.js?v=30.2.61','css/tutorial.css?v=30.2.61','js/card-confetti.js','js/app-interaction.js?v=30.2.57-final','cards/donald-trump-golden-portrait.webp?v=nod-60','js/changelog.js?v=31.0.0.1-profile','js/market-rules.js','js/market-ui.js?v=30.2.56','css/interface.css?v=30.2.61','cards/donald-trump-golden.webp?v=nod-60']){
    assert.ok(await page.evaluate(async asset=>!!await caches.match(new URL(asset,location.href)),asset),asset+' cached');
   }
   await page.locator('#content [data-go="coleccion"]').click();
@@ -98,10 +98,10 @@ const server=http.createServer((req,res)=>{
   assert.match(await page.locator('.market-account').innerText(),/guardado local/);
   assert.ok(await page.locator('[data-market="select"]').count()>0);
   await page.locator('#appbar [data-go="ayuda"]').click();await page.locator('[data-act="menu-tutorial"]').click();
-  for(let i=0;i<20;i++)await page.locator('.tutorial-focus').click();
+  for(let i=0;i<24;i++)await page.locator('.tutorial-focus').click();
   assert.equal(await page.locator('.tutorial-focus').count(),0);
   assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('hemiciclo_v21'))),profile);
-  console.log('Full 20-step menu guide works offline without changing profile or league');
+  console.log('Full 24-step menu guide works offline without changing profile or league');
   await context.setOffline(false);hangNavigation=true;
   const started=Date.now();await page.goto(base,{waitUntil:'domcontentloaded',timeout:12000});await dismissLaunch(page);
   assert.ok(Date.now()-started<10000,'a stalled network must use the saved document');

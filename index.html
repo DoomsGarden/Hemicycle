@@ -510,7 +510,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/interface.css?v=30.2.61">
 <link rel="stylesheet" href="css/tutorial.css?v=30.2.61">
 <link rel="stylesheet" href="css/launch.css?v=30.2.60">
-<link rel="stylesheet" href="css/profile.css?v=31.0.0.1">
+<link rel="stylesheet" href="css/profile.css?v=31.0.0.1-profile">
 </head>
 <body>
 
@@ -534,15 +534,15 @@ tr.des td{background:rgba(212,59,59,.1)}
 <div id="profileRoot"></div>
 <script src="js/supabase-sdk.js?v=2.118.0"></script>
 <script src="js/supabase-config.js?v=31.0.0.1"></script>
-<script src="js/player-profile.js?v=31.0.0.1"></script>
+<script src="js/player-profile.js?v=31.0.0.1-profile"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-tutorial.js?v=30.2.61"></script>
-<script src="js/menu-tutorial.js?v=30.2.61"></script>
+<script src="js/menu-tutorial.js?v=31.0.0.1-profile"></script>
 <script src="js/player-backup.js?v=30.2.61"></script>
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=31.0.0.1"></script>
+<script src="js/changelog.js?v=31.0.0.1-profile"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -2741,6 +2741,7 @@ window.addEventListener('orientationchange',medirInsets);
 function startPractice(guide){if(G&&!G.over&&!G.tutorial){showModal('Debate en curso','Termina o abandona el debate actual antes de comenzar una guía. El reloj sigue avanzando.','Volver al debate',false,function(){if(G&&!G.over)go('battle');});return;}guide.start();}
 function restoreMenuGuideState(){
  if(!MENU_GUIDE_STATE)return;
+ if(PLAYER_PROFILE&&PLAYER_PROFILE.isOpen())PLAYER_PROFILE.close();
  FIL=MENU_GUIDE_STATE.fil;PLAY_OPEN=false;
  if(MENU_GUIDE_STATE.resumeAI&&G===MENU_GUIDE_STATE.game&&!G.over&&G.side==='e')AITIMER=setTimeout(aiStep,520);
  MENU_GUIDE_STATE=null;
@@ -2806,6 +2807,8 @@ function boot(){
   },
   pause:function(){document.getElementById('screen').dataset.menuTutorial='false';restoreMenuGuideState();},
   action:function(action){
+   if(action==='profile-open')PLAYER_PROFILE.openGuide();
+   if(action==='profile-close')PLAYER_PROFILE.close();
    if(action==='modes'){PLAY_OPEN=true;paint();}
    if(action==='close-modes'){PLAY_OPEN=false;paint();}
    if(action==='shop')go('tienda');

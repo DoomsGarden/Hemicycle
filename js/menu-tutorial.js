@@ -9,6 +9,10 @@ function create(api){
   steps:[
    ['home','#tabbar [data-go="menu"]','1. Tu menú principal','Inicio es tu punto de partida. El botón de la sección abierta se ve más grande. Esta guía no gastará FS ni modificará tu colección. Toca Inicio.'],
    ['stats','.hud-strip','Tu progreso de un vistazo','Aquí aparecen tus victorias, derrotas, Elo y cromos distintos. El saldo de Fuerza Soberana está en la franja superior. Toca las estadísticas.'],
+   ['profile-open','[data-act="profile"]','Abre tu perfil','El botón cuadrado junto a las victorias y derrotas abre tu perfil sobre el menú principal. Tócalo para conocerlo.','profile-open'],
+   ['profile-stats','.profile-stats','Tus estadísticas completas','Aquí consultas tus partidas, victorias, derrotas, Elo, colección y recompensas. Debajo aparecen las rarezas y la Liga. Son los datos de este dispositivo; conectar una cuenta todavía no traslada la colección a la nube. Toca las estadísticas.'],
+   ['profile-nick','.profile-nickname','Elige tu nick','Con una cuenta puedes elegir tu nick: la primera elección es gratis y el siguiente cambio gratuito llega al cumplirse un año. Esta visita no modifica el nick ni inicia o cierra sesiones. Toca este bloque para continuar.'],
+   ['profile-close','[data-profile="close"]','Regresa al menú','Puedes abrir y cerrar el perfil cuando lo necesites desde Inicio. Toca la cruz para volver al menú y continuar con la guía.','profile-close'],
    ['play','[data-act="play-menu"]','Cómo elegir una partida','Jugar permite preparar tu gabinete. La flecha abre los modos de juego. Tócala para verlos sin iniciar un combate.','modes'],
    ['modes','.play-options','Los modos de juego','Normal permite practicar; Clasificatoria cambia el Elo y tiene botín; Rápida elige tu gabinete; Liga abre la competición por jornadas. Toca este menú para cerrarlo.','close-modes'],
    ['shop','#tabbar [data-go="tienda"]','2. La tienda','Aquí consigues sobres para ampliar la colección. Toca Tienda; durante la guía solo revisaremos sus opciones.','shop'],

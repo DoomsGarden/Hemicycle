@@ -38,13 +38,17 @@
   ],
   "cloudGameSaveEnabled": false,
   "sourceHashes": {
-    "index.html": "c77101a11667bad5b1ffb0c95b6167f2ef1740f229c00149b20a097ce8e9fc48",
-    "sw.js": "1a05f7b2f05e7258f1853996a8126a407608ab1dcce6f9300d743fa33d80e2da",
-    "css/profile.css": "fa2a6dcfbc278f7779870ce34063fd5732d0cb1073e21a722f7c9bf7b779dcf7",
-    "js/player-profile.js": "a41824054d7a3534d81f4d2d457c1c1c4a357d5a24a133b2222df2cd2f4ca034",
+    "index.html": "4e8d525751795b233da04e12c6c0bf991b5c2817a23f6c57f084fc683c2ba24e",
+    "sw.js": "f1fa2063c78eacf74410d10323fdb88eb66a80dd28d0d09bc5b3e039b969d6f4",
+    "css/profile.css": "4d8b2abf64729497c3bdf7ceec065dfe4031e181985d68b10c1ec9fc5d359285",
+    "js/player-profile.js": "7dd524e71a69b6c5885f934128cbfd217922ad33b181957a8c4cc05cd676a6f7",
     "js/supabase-config.js": "ea4116775f04c3b3fac94a0bdb677568237b72476770057c7f83a2781bc8cbbf",
     "js/supabase-sdk.js": "3010eeb284d5fb2f1ca42fb6278d020cc7d58cf783c1285471afdb39bbf0057f",
-    "js/changelog.js": "31b83a232a820942e761f3b99e1d3fa02212ef55eab68b303f3fc4a8cdb8ff55",
-    "_dev/supabase/20261021_account_profiles.sql": "1aac8c1ed3398315efe2a1eb09678f21c97f7a52ce3b305db291863d0c2e1cf3"
-  }
+    "js/changelog.js": "a595ffc9edb8ca3fbbc2e176c84667c2ce1c3eaf31e3c7af42f0b416e734f8f0",
+    "_dev/supabase/20261021_account_profiles.sql": "1aac8c1ed3398315efe2a1eb09678f21c97f7a52ce3b305db291863d0c2e1cf3",
+    "js/menu-tutorial.js": "4f326bb7f67f83f2bccfdb3105a35cd72cc20afe851371d45068fc3f55b19ff3"
+  },
+  "menuGuideSteps": 24,
+  "menuGuideProfile": "Real profile, read-only, no account mutations, exit cleanup",
+  "sameVersionUpgrade": "v31.0.0.1 account build to v31.0.0.1 guided profile build passed"
 }
