@@ -168,12 +168,12 @@ test('Giro retaliation is resolved from the attack snapshot even if its leader i
   assert.equal(c.G.pas.e.length,1);
 });
 
-test('Foco heals 2 up to full health and awards a vote; Viperina suppresses both effects',()=>{
+test('Foco heals 3 up to full health and awards a vote; Viperina suppresses both effects',()=>{
   for(const countered of [false,true]){
     const c=duel('foco',countered?'viperina':null),leader=c.G.leader.p;
     leader.h=leader.hm-3;
     c.startTurn('p');
-    assert.equal(leader.h,leader.hm-(countered?3:1));
+    assert.equal(leader.h,leader.hm-(countered?3:0));
     const before=c.G.votes.p;
     c.attack(leader,'__EMPTY','p');
     assert.equal(c.G.votes.p,before+(countered?0:1));
@@ -253,11 +253,21 @@ test('newBattle applies the golden bonus once, with no stacking when Trump is re
     const a=base.a+2+(asLeader?1:0),h=base.h+2+(asLeader?3:0);
     assert.equal(own.a,a);assert.equal(own.hm,h);assert.equal(enemy.gold,false);
     c.G.n=2;c.G.side='e';c.G.leader.p=null;c.G.field.p=[own];c.G.hand.p=[];c.G.deck.p=[];
-    own.h=0;c.expel('e',own,{uid:'rival'});c.draw('p');
+    own.h=0;c.expel('e',own,{uid:'rival'});c.draw('p');assert.equal(c.G.hand.p.length,0);c.G.turns.p++;c.draw('p');assert.equal(c.G.hand.p.length,0);c.G.turns.p++;c.draw('p');
     assert.ok(c.G.hand.p.some(card=>card.uid===own.uid));
     assert.equal(own.a,a);assert.equal(own.hm,h);assert.equal(own.h,h);
     c.newBattle('normal');
     const fresh=[...c.G.hand.p,...c.G.deck.p].find(card=>card.k===base.id);
     assert.equal(fresh.a,a);assert.equal(fresh.hm,h);assert.equal(base.a,a-2-(asLeader?1:0));
   }
+});
+
+for(const side of ['p','e'])test(side+': Verborrea reserved draw fills at most two cards, only while active',()=>{
+ for(const countered of [false,true]){
+ const c=duel(side==='p'?'verborrea':countered?'giro':null,side==='e'?'verborrea':countered?'giro':null);
+ c.G.refund[side]=2;c.G.hand[side]=[];c.G.deck[side]=Array.from(c.CARDS).slice(0,3).map(card=>c.mk(card,false));
+ c.startTurn(side);assert.equal(c.G.hand[side].length,countered?1:2);
+ assert.equal(c.G.deck[side].length,countered?2:1);
+ c.startTurn(side);assert.ok(c.G.hand[side].length<=2);
+ }
 });

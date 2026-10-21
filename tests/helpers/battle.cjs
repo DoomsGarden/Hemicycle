@@ -14,7 +14,8 @@ const source = new vm.Script(
 );
 function loadBattle(mode = 'normal', random = 0.25) {
   const storage = new Map(), timers = new Map(), elements = {};
-  let timerId = 0;
+  let timerId = 0, now=1000000;
+  const intervals=new Map();
   for (const id of ['coinRoot', 'content']) elements[id] = {
     innerHTML: '', inert: false,
     get firstChild() { return this.innerHTML ? {} : null; },
@@ -24,6 +25,9 @@ function loadBattle(mode = 'normal', random = 0.25) {
   math.random = typeof random === 'function' ? random : () => random;
   const context = vm.createContext({
     Math: math,
+    Date: class extends Date { static now(){return now;} },
+    setInterval: fn=>{intervals.set(++timerId,fn);return timerId;},
+    clearInterval:id=>intervals.delete(id),
     document: { getElementById: id => elements[id] || null },
     localStorage: { getItem: k => storage.get(k) || null, setItem: (k, v) => storage.set(k, v) },
     setTimeout: fn => { timers.set(++timerId, fn); return timerId; },
@@ -37,6 +41,8 @@ function loadBattle(mode = 'normal', random = 0.25) {
     context
   );
   context.newBattle(mode);
+  context.advanceTime=ms=>{now+=ms;for(const fn of Array.from(intervals.values()))fn();};
+  context.intervals=intervals;
   context.timers = timers;
   context.elements = elements;
   context.tick = () => {

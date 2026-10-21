@@ -33,29 +33,14 @@ for (const mode of modes) {
   }
 
   for (const first of ['p', 'e']) {
-    test(`${mode}: both players receive seven turns when ${first} starts`, () => {
-      const c = loadBattle(mode, first === 'p' ? 0.25 : 0.75);
-      // Empty cabinets isolate the round limit from the 100-vote win condition.
-      for (const s of ['p', 'e']) c.G.hand[s] = c.G.deck[s] = c.G.pas[s] = [];
+    test(`${mode}: no seven- or ten-round cap when ${first} starts; only 100 votes ends play`, () => {
+      const c=loadBattle(mode,first==='p'?0.25:0.75);
+      for(const side of ['p','e'])c.G.hand[side]=c.G.deck[side]=c.G.pas[side]=[];
       c.beginDebate();
-      const turns = { p: 0, e: 0 };
-      let seen = 0, steps = 0;
-      while (!c.G.over && steps++ < 50) {
-        if (c.G.n !== seen) { seen = c.G.n; turns[c.G.side]++; }
-        if (c.G.side === 'p') c.endTurn();
-        else c.tick();
-      }
-      assert.ok(c.G.done);
-      assert.deepEqual(turns, { p: 7, e: 7 });
-      assert.equal(c.G.n, 14);
-      assert.equal(c.SO.who, 'd');
-      assert.deepEqual(json(c.G.votes), { p: 21, e: 21 });
-      assert.equal(c.timers.size, 0);
-      assert.equal(c.D().elo, 300, 'a draw never changes Elo');
-      if (mode === 'liga') {
-        assert.equal(c.ligaLoad().jor, 2);
-        assert.equal(c.ligaLoad().teams.find(team => team.you).pts, 1);
-      }
+      while(c.G.n<22){if(c.G.side==='p')c.endTurn();else c.tick();}
+      assert.equal(c.G.over,false);assert.equal(c.G.n,22);
+      let safety=0;while(!c.G.over&&safety++<200){if(c.G.side==='p')c.endTurn();else c.tick();}
+      assert.equal(c.SO.who,first);assert.equal(c.G.votes[first],102);assert.equal(c.G.n,67);assert.equal(c.timers.size,0);assert.equal(c.intervals.size,0);
     });
   }
 
@@ -175,4 +160,17 @@ test('ranked loss reports the actual Elo deducted when the balance reaches zero'
   assert.equal(c.D().elo, 0);
   assert.equal(c.SO.eloDelta, -3);
   assert.match(c.SO.msg, /\(-3 Elo\)/);
+});
+
+for(const mode of ['normal','ranked','liga'])for(const side of ['p','e'])test(mode+': '+side+' has 60 absolute seconds, then loses for inactivity once',()=>{
+ const c=loadBattle(mode,side==='p'?0.25:0.75);c.beginDebate();const initial=c.D(),deadline=c.G.turnDeadline;c.advanceTime(59999);assert.equal(c.G.over,false);assert.equal(c.G.turnDeadline,deadline);c.advanceTime(1);assert.equal(c.G.done,true);assert.equal(c.G.inactivity,side);assert.equal(c.SO.who,side==='p'?'e':'p');assert.match(c.SO.msg,/inactividad/);assert.equal(c.intervals.size,0);assert.equal(c.timers.size,0);const saved=json(c.D());c.advanceTime(60000);c.syncBattleClock();assert.deepEqual(json(c.D()),saved);assert.equal(saved.w-initial.w,side==='p'?0:1);assert.equal(saved.l-initial.l,side==='p'?1:0);if(mode==='ranked'&&side==='p')assert.equal(saved.elo,initial.elo-18);
+});
+test('passing in time gives the next side a fresh 60 seconds; actions do not reset the current deadline',()=>{const c=loadBattle();c.beginDebate();const first=c.G.turnDeadline;c.advanceTime(30000);c.playCard('p',c.G.hand.p[0].uid);assert.equal(c.G.turnDeadline,first);c.endTurn();assert.equal(c.G.turnDeadline,first+30000);});
+test('practice remains untimed while the player reads',()=>{const c=loadBattle();c.newBattle('normal',null,true);c.beginDebate();c.advanceTime(600000);assert.equal(c.G.over,false);assert.equal(c.G.turnDeadline,null);});
+test('hands never exceed two; expelled cards skip the next own turn before mixing back into the deck',()=>{const c=loadBattle();c.beginDebate();assert.equal(c.G.hand.p.length,2);const target=c.G.hand.p.shift();c.G.field.p=[target];c.G.side='e';c.expel('e',target,{uid:'attacker'});assert.equal(target.h,0);assert.equal(c.G.pas.p.includes(target),true);c.startTurn('p');assert.equal(c.G.pas.p.includes(target),true);assert.ok(c.G.hand.p.length<=2);c.G.hand.p=[];c.startTurn('p');assert.equal(c.G.pas.p.includes(target),false);assert.ok(c.G.deck.p.includes(target)||c.G.hand.p.includes(target));assert.ok(c.G.hand.p.length<=2);});
+
+test('ranked rival progression follows the new 2500-Elo rank boundaries without inflated card statistics',()=>{
+ const c=loadBattle();
+ const expected=[['comun','comun','comun','raro','raro'],['comun','comun','raro','raro','especial'],['comun','raro','raro','especial','legendario'],['raro','raro','especial','especial','legendario']];
+ for(let rank=0;rank<4;rank++)for(const elo of [rank*2500,rank*2500+2499])assert.deepEqual(Array.from(c.buildEnemyTeam('ranked',elo,3),id=>c.BYID[id].r),expected[rank]);
 });

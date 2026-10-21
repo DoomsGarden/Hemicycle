@@ -4,6 +4,29 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version":"v30.2.61",
+    "date":"2026-10-21",
+    "title":"Tutoriales, nuevos debates y temporadas",
+    "sections":[{"title":"Tutoriales","items":[
+      "La primera vez, INICIAR abre directamente el combate guiado. Al completarlo comienza la guía del menú.",
+      "La guía recorre Inicio, Tienda, Colección, Mercado y, por último, Liga, con explicaciones junto a las zonas señaladas.",
+      "Desde Ayuda puedes repetir por separado el tutorial de combate y la guía del menú. Las guías terminadas no vuelven a abrirse automáticamente.",
+      "El recorrido del menú es de consulta: no gasta FS, no reclama sobres y no realiza ventas ni cambia tu Liga. Puedes salir de la guía cuando lo necesites."
+    ]}, {"title":"Debates","items":[
+      "Victoria inmediata al alcanzar 100 votos, sin límite de rondas. Cada turno dispone de 60 segundos; agotarlos supone abandonar por inactividad. El tutorial no tiene cuenta atrás.",
+      "Se mantienen tres espacios en mesa. La mano tiene dos cromos como máximo y el resto espera en el mazo; se roba al comenzar el turno si queda espacio.",
+      "Los oradores expulsados descansan y luego se barajan con el mazo. No pueden volver a robarse en el siguiente turno propio.",
+      "Los votos aparecen entre ambas tribunas. Verborrea permite un robo adicional tras una expulsión si sigue activa, sin superar dos cartas en mano ni ocho TdP; Foco Mediático regenera tres de Aguante al líder."
+    ]}, {"title":"Clasificatoria","items":[
+      "Los seis rangos tienen diez divisiones: de X a I. Cada ascenso requiere 250 Elo.",
+      "Cada nueva división entrega un sobre común; cada cinco ascensos se añade un raro y al subir de rango se añade un legendario. Se reclaman desde Tienda y no se repiten por recuperar una división durante la misma temporada.",
+      "Las temporadas duran 30 días naturales. Al renovarse, desciendes un rango conservando la división, hasta el rango mínimo. Los sobres pendientes se mantienen."
+    ]}, {"title":"Tu progreso","items":[
+      "Ayuda incluye un ID estable y la descarga de un respaldo con colección, estadísticas, progreso, Liga, tutoriales y recompensas de temporada.",
+      "Puedes restaurar ese archivo en otro dispositivo tras revisarlo y confirmar. Es un respaldo local: la conexión a cuentas y al guardado en la nube llegará más adelante."
+    ]}]
+  },
+  {
     "version":"v30.2.60",
     "date":"2026-10-20",
     "title":"Una nueva bienvenida",

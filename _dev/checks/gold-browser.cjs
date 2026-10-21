@@ -1,6 +1,6 @@
 const dismissLaunch=require('./launch-helper.cjs');
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),{chromium}=require('playwright');
-const root='/workspace/Hemicycle',html=fs.readFileSync(root+'/index.html','utf8'),out='/tmp/hemicycle-v30-2-60-checks';
+const root='/workspace/Hemicycle',html=fs.readFileSync(root+'/index.html','utf8'),out='/tmp/hemicycle-v30-2-61-checks';
 fs.mkdirSync(out,{recursive:true});
 const catalog=vm.createContext({});vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),catalog);
 const ids=JSON.parse(vm.runInContext('JSON.stringify(CARDS.map(c=>c.id))',catalog));
@@ -13,7 +13,7 @@ const errors=[];
   for(const variant of ['bitmap','image-fallback','portrait-failure']){
    const context=await browser.newContext({viewport:{width:393,height:851},isMobile:true,hasTouch:true,serviceWorkers:'block'});
    await context.addInitScript(({profile,variant})=>{
-    localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed',version:1}));localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;
+    localStorage.setItem('hemiciclo_menu_tutorial_v1',JSON.stringify({status:'completed'}));localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed',version:1}));localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;
     if(variant==='image-fallback')window.createImageBitmap=undefined;
    },{profile,variant});
    await context.route('**/Hemicycle/',r=>r.fulfill({status:200,contentType:'text/html',body:instrumented}));

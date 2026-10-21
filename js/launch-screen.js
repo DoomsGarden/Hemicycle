@@ -9,10 +9,13 @@ var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function finish(){
  if(ended)return;ended=true;clearTimeout(timer);screen.remove();app.inert=false;app.removeAttribute('aria-hidden');
  var target=app.querySelector('[data-act="play"]');if(target)target.focus({preventScroll:true});
+ window.HemicycleEntered=true;document.dispatchEvent(new Event('hemicycle:entered'));
 }
 function ready(){if(ended)return;button.disabled=false;button.focus({preventScroll:true});}
 button.addEventListener('click',function(){
- if(leaving||button.disabled)return;leaving=true;button.disabled=true;screen.classList.add('leaving');
+ if(leaving||button.disabled)return;leaving=true;button.disabled=true;
+ window.HemicycleEntryRequested=true;document.dispatchEvent(new Event('hemicycle:entry-request'));
+ screen.classList.add('leaving');
  timer=setTimeout(finish,reduced?200:1400);
 });
 screen.addEventListener('animationend',function(ev){if(leaving&&ev.target===screen&&ev.animationName==='launchExit')finish();});

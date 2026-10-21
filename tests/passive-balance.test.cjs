@@ -11,6 +11,6 @@ test('six doctrines retain strengths and weaknesses in 3456 paired simulations',
     const counter = Object.keys(report.counters).find(key => report.counters[key] === doctrine);
     assert.ok(report.matrix[doctrine][prey].score > 0.53, doctrine + ': favorable matchup');
     assert.ok(report.matrix[doctrine][counter].score < 0.47, doctrine + ': unfavorable matchup');
-    assert.equal(report.matrix[doctrine][doctrine].score, 0.5);
+    assert.ok(Math.abs(report.matrix[doctrine][doctrine].score-0.5)<1e-12);
   }
 });

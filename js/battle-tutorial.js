@@ -3,14 +3,15 @@
 'use strict';
 var KEY='hemiciclo_tutorial_v1';
 function create(api){
+ var key=api.key||KEY,textId=api.textId||'tutorialText';
  var active=false,index=0,highlight=null,previous=null,frame=0,steps=[];
- var layer=document.createElement('div');layer.id='tutorialRoot';document.body.appendChild(layer);
- function seen(){var value=api.read(KEY);return !!value&&(value.status==='completed'||value.status==='skipped');}
- function save(status){api.write(KEY,{status:status,version:1,updatedAt:Date.now()});}
+ var layer=document.createElement('div');layer.id=api.layerId||'tutorialRoot';layer.className='tutorial-layer';document.body.appendChild(layer);
+ function seen(){var value=api.read(key);return !!value&&(value.status==='completed'||value.status==='skipped');}
+ function save(status){api.write(key,{status:status,version:1,updatedAt:Date.now()});}
  function makeSteps(){return [
   ['coin','[data-tutorial="coin"]','Tu primer debate','Práctica sin riesgo: cromos prestados y rival muy fácil. Ensayamos cara y empiezas tú; en partidas normales el sorteo es al 50 %. Toca la moneda.','begin'],
-  ['votes','.vbars','Gana con 100 votos','Alcanza 100 votos para ganar al instante. Si nadie llega, se cuentan los votos tras 7 rondas. Cada turno suma 3 votos más los escaños de tu Tribuna. Toca los marcadores.'],
-  ['cabinet','.gab','Tu gabinete y el mazo','Juegas con cinco cromos distintos. Aquí ves si están en la mano, la Tribuna, el mazo o descansando. Robas al empezar tu turno; los expulsados podrán volver al mazo. Toca el gabinete.'],
+  ['votes','.vbars','Gana con 100 votos','Alcanza 100 votos para ganar al instante. En partidas normales no hay límite de rondas y dispones de 60 segundos por turno. Aquí practicas sin reloj. Cada turno suma 3 votos más los escaños de tu Tribuna. Toca los marcadores.'],
+  ['cabinet','.gab','Tu gabinete y el mazo','Juegas con cinco cromos distintos. Aquí ves si están en la mano, la Tribuna, el mazo o descansando. Tu mano admite dos cartas. Robas una al empezar si hay hueco; los expulsados esperan y se barajan con el mazo, sin volver en tu siguiente turno. Toca el gabinete.'],
   ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El TdP paga el coste de la esquina superior de cada cromo. Se renueva al empezar tu turno y aumenta su base hasta 6; algunas pasivas permiten llegar a 8. Toca los cristales.'],
   ['play-leader','[data-tutorial="hand"] .lead','Presenta a tu líder','La estrella señala al líder: tiene +1 Zasca y +3 Aguante. Z indica el daño y A la resistencia. Este cuesta 1 TdP. Tócalo para llevarlo a la Tribuna.','play-leader'],
   ['passive','[data-tutorial="resources"]','Tu pasiva está activa','Vieja Guardia aumenta el Zasca al presentar oradores y al terminar el turno, hasta +3. Solo funciona con el líder en la Tribuna. Cada doctrina tiene una debilidad circular frente a otra. Toca la doctrina.'],
@@ -30,7 +31,7 @@ function create(api){
  ];}
  function start(){
   if(active)return;
-  active=true;index=0;steps=makeSteps();save('in-progress');api.prepare();render();
+  active=true;index=0;steps=api.steps||makeSteps();save('in-progress');api.prepare();render();
  }
  function clear(){
   if(highlight){highlight.classList.remove('tutorial-focus');for(var key in previous){if(previous[key]===null)highlight.removeAttribute(key);else highlight.setAttribute(key,previous[key]);}}
@@ -40,7 +41,7 @@ function create(api){
  function advance(){
   var step=steps[index];index++;
   if(step[4])api.action(step[4]);
-  if(active){if(step[0]==='empty')api.action('prepare-final');render();}
+  if(active){if(!api.steps&&step[0]==='empty')api.action('prepare-final');if(index>=steps.length){finish('completed');return;}render();}
  }
  function place(){
   if(!highlight||!layer.firstChild)return;
@@ -57,16 +58,17 @@ function create(api){
   if(!api.inBattle()){active=false;api.pause();return;}
   if(document.querySelector('#modalRoot .modal'))return;
   var step=steps[index];if(!step)return;
-  highlight=document.querySelector(step[1]);if(!highlight)return;
-  layer.hidden=false;previous={tabindex:highlight.getAttribute('tabindex'),role:highlight.getAttribute('role'),'aria-describedby':highlight.getAttribute('aria-describedby')};
-  highlight.classList.add('tutorial-focus');if(!highlight.matches('button')){highlight.setAttribute('tabindex','0');highlight.setAttribute('role','button');}highlight.setAttribute('aria-describedby','tutorialText');
-  layer.innerHTML='<section class="tutorial-coach" role="region" aria-label="Guía del combate"><small>PRÁCTICA · '+(index+1)+' / '+steps.length+'</small><h3>'+step[2]+'</h3><p id="tutorialText">'+step[3]+'</p><span>Toca la zona iluminada para continuar.</span></section>';
+  highlight=document.querySelector(step[1]);if(!highlight){if(api.steps){active=false;api.pause();}return;}
+  layer.hidden=false;layer.setAttribute('aria-hidden',String(!!document.getElementById('launchScreen')));previous={tabindex:highlight.getAttribute('tabindex'),role:highlight.getAttribute('role'),'aria-describedby':highlight.getAttribute('aria-describedby')};
+  highlight.classList.add('tutorial-focus');if(!highlight.matches('button')){highlight.setAttribute('tabindex','0');highlight.setAttribute('role','button');}highlight.setAttribute('aria-describedby',textId);
+  layer.innerHTML='<section class="tutorial-coach" role="region" aria-label="'+(api.label||'Guía del combate')+'"><small>'+(api.caption||'PRÁCTICA')+' · '+(index+1)+' / '+steps.length+'</small><h3>'+step[2]+'</h3><p id="'+textId+'">'+step[3]+'</p><span>Toca la zona iluminada para continuar.</span>'+(api.exitSelector?'<button type="button" class="mini tutorial-exit" id="menuTutorialExit">Salir de la guía</button>':'')+'</section>';
   highlight.scrollIntoView({block:'nearest',inline:'nearest'});place();frame=requestAnimationFrame(place);highlight.focus({preventScroll:true});
  }
  document.addEventListener('click',function(ev){
   if(!active||!api.inBattle())return;
+  if(api.exitSelector&&ev.target.closest(api.exitSelector)){ev.preventDefault();ev.stopImmediatePropagation();finish('skipped');return;}
   if(ev.target.closest('#modalRoot'))return;
-  if(ev.target.closest('[data-act="abandon"]'))return;
+  if(!api.exitSelector&&ev.target.closest('[data-act="abandon"]'))return;
   ev.preventDefault();ev.stopImmediatePropagation();
   if(highlight&&highlight.contains(ev.target))advance();
  },true);
@@ -74,12 +76,12 @@ function create(api){
   if(!active||!api.inBattle()||document.querySelector('#modalRoot .modal'))return;
   if((ev.key==='Enter'||ev.key===' ')&&highlight&&highlight.contains(ev.target)&&!ev.target.closest('button')){ev.preventDefault();advance();}
   if(ev.key==='Tab'){
-   var abandon=document.querySelector('[data-act="abandon"]');ev.preventDefault();
+   var abandon=document.querySelector(api.exitSelector||'[data-act="abandon"]');ev.preventDefault();
    if(document.activeElement===highlight&&abandon)abandon.focus();else if(highlight)highlight.focus({preventScroll:true});
   }
  },true);
  window.addEventListener('resize',place);window.addEventListener('scroll',place,true);
- return {start:start,seen:seen,render:render,finish:finish,get active(){return active;},get step(){return active?steps[index][0]:null;},key:KEY};
+ return {start:start,seen:seen,render:render,finish:finish,get active(){return active;},get step(){return active?steps[index][0]:null;},key:key};
 }
 root.HemicycleTutorial={create:create,key:KEY};
 })(typeof globalThis!=='undefined'?globalThis:this);

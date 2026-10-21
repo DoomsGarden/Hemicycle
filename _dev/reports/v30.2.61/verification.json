@@ -1,0 +1,43 @@
+{
+  "version": "v30.2.61",
+  "unitTests": 193,
+  "passed": true,
+  "simulationGames": 3456,
+  "fullBrowserMatches": 8,
+  "additionalRankedMatches": 2,
+  "immediate100Scenarios": 18,
+  "additionalRankedImmediate100": 6,
+  "deadlineScenarios": 2,
+  "onboardingViewports": [
+    [
+      320,
+      568
+    ],
+    [
+      393,
+      851
+    ],
+    [
+      851,
+      393
+    ],
+    [
+      1280,
+      851
+    ]
+  ],
+  "browser": "local Chromium /usr/bin/chromium",
+  "cloudServiceDeployed": false,
+  "sourceHashes": {
+    "index.html": "6e7b98f6683e566405023348bb417b4e8090669505a46167c9ee51437dcc3a0d",
+    "sw.js": "292c054c6722bb3363fd57c680af24da6fd4aaedf4cf1aab4fa958dde79d1742",
+    "js/player-backup.js": "53ccc7744e6c9daf11e51ad3f68837f659a857dc6e597fdffc8474aad39ad1d1",
+    "js/ranked-seasons.js": "889c164b8ecfb8459c07d9eaaaa3fbf91cc9b8eb026785b3a403efbb465014e6",
+    "js/menu-tutorial.js": "a03871f8def89bc9d04b681afc3ab49af790726c27e23a0c0021c30f749cbcdb",
+    "js/battle-tutorial.js": "b29a894a7f18dbffa2338841387e01dc267e827473fc0178ae7bf2c6857f3b47",
+    "js/launch-screen.js": "33d5b4c52fcecb27aa73327179c09d9f5c059bcc72d463c2bf639d25df81eb91",
+    "js/changelog.js": "893decb0850142817984847b268f0d069fc67bccc70f9f65ba49e64d05e88813",
+    "css/interface.css": "09440425b4e2917fcaa2120bb5b97a43ebfc7baacccb5878d930336119f6ce81",
+    "css/tutorial.css": "c7c000f2541e2790f4269a471b86f7d3112400fd3f203547954bb0c4851c15e3"
+  }
+}

@@ -12,7 +12,7 @@ const folder=path.join(root,'_dev/previews',version);fs.mkdirSync(folder,{recurs
   const base='http://127.0.0.1:'+app.server.address().port+'/Hemicycle/';
   for(const width of [393,360,320]){
    const context=await browser.newContext({viewport:{width,height:width===393?851:width===360?640:568},serviceWorkers:'block'});
-   await context.addInitScript(profile=>{localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;},profile);
+   await context.addInitScript(profile=>{localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed'}));localStorage.setItem('hemiciclo_menu_tutorial_v1',JSON.stringify({status:'completed'}));localStorage.setItem('hemiciclo_v21',JSON.stringify(profile));Math.random=()=>0.25;},profile);
    const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await dismissLaunch(page);
    const selected=()=>page.locator('.hero-fan .art img').evaluateAll(es=>es.map(e=>e.getAttribute('src').match(/\/([^/]+)\.webp$/)[1]));
    const saved=await page.evaluate(()=>localStorage.getItem('hemiciclo_v21'));
@@ -40,7 +40,7 @@ const folder=path.join(root,'_dev/previews',version);fs.mkdirSync(folder,{recurs
   for(const count of [1,2]){
    const d={...profile,album:cards.slice(0,count).map(c=>c.id)};
    const context=await browser.newContext({viewport:{width:393,height:851},serviceWorkers:'block',reducedMotion:'reduce'});
-   await context.addInitScript(d=>localStorage.setItem('hemiciclo_v21',JSON.stringify(d)),d);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await dismissLaunch(page);
+   await context.addInitScript(d=>{localStorage.setItem('hemiciclo_tutorial_v1',JSON.stringify({status:'completed'}));localStorage.setItem('hemiciclo_menu_tutorial_v1',JSON.stringify({status:'completed'}));localStorage.setItem('hemiciclo_v21',JSON.stringify(d));},d);const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await dismissLaunch(page);
    assert.equal(await page.locator('.hero-fan .cromo').count(),count);
    assert.ok(await page.locator('.hero-fan .cromo').evaluateAll(es=>es.every(e=>getComputedStyle(e).animationName==='none')));
    await context.close();

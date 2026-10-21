@@ -507,8 +507,8 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=30.2.58">
-<link rel="stylesheet" href="css/tutorial.css?v=30.2.59">
+<link rel="stylesheet" href="css/interface.css?v=30.2.61">
+<link rel="stylesheet" href="css/tutorial.css?v=30.2.61">
 <link rel="stylesheet" href="css/launch.css?v=30.2.60">
 </head>
 <body>
@@ -530,11 +530,14 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="toastRoot"></div>
 </div>
 
-<script src="js/launch-screen.js?v=30.2.60"></script>
-<script src="js/battle-tutorial.js?v=30.2.59"></script>
+<script src="js/launch-screen.js?v=30.2.61"></script>
+<script src="js/battle-tutorial.js?v=30.2.61"></script>
+<script src="js/menu-tutorial.js?v=30.2.61"></script>
+<script src="js/player-backup.js?v=30.2.61"></script>
+<script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=30.2.60"></script>
+<script src="js/changelog.js?v=30.2.61"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -546,7 +549,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v30.2.60';
+var VERSION='v30.2.61';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -873,11 +876,11 @@ function ensureGoldLoop(){
 }
 
 var DOCS=[
- {k:'verborrea',n:'Verborrea',d:'+1 TdP al entrar el Líder y por turno. Las expulsiones reservan hasta +2 para el próximo. Máximo: 8 TdP.',beats:'guardia',col:'#3b6fd4'},
+ {k:'verborrea',n:'Verborrea',d:'+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP y un robo adicional para el próximo turno activo (mano máxima: 2). Máximo: 8 TdP.',beats:'guardia',col:'#3b6fd4'},
  {k:'guardia',n:'Vieja Guardia',d:'Tus oradores ganan +1 Zasca al entrar y al terminar tu turno (máx. +3 mientras esté activa).',beats:'aforado',col:'#8b5cf6'},
  {k:'aforado',n:'Aforado',d:'Cada orador puede evitar una expulsión por debate y quedarse con 1 de Aguante.',beats:'viperina',col:'#28a86b'},
  {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 1 de daño.',beats:'verborrea',col:'#d4a03b'},
- {k:'foco',n:'Foco Mediático',d:'Tu Líder regenera 2 de Aguante por turno y sus ataques suman +1 voto.',beats:'giro',col:'#d43b3b'},
+ {k:'foco',n:'Foco Mediático',d:'Tu Líder regenera 3 de Aguante por turno y sus ataques suman +1 voto.',beats:'giro',col:'#d43b3b'},
  {k:'viperina',n:'Lengua Viperina',d:'Tus oradores infligen +2 de daño al Líder rival.',beats:'foco',col:'#c026d3'}
 ];
 var DOCM={};DOCS.forEach(function(d){DOCM[d.k]=d;});
@@ -1039,7 +1042,7 @@ DOCS.forEach(function(d){
  });
 });
 CARDS.sort(function(a,b){return TIERORDER[a.r]-TIERORDER[b.r]||a.n.localeCompare(b.n,'es');});
-var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9',TUTORIAL=null;
+var LS='hemiciclo_v21',LS2='hemiciclo_liga_v9',TUTORIAL=null,MENU_GUIDE=null,MENU_GUIDE_STATE=null;
 function seedAlbum(d){
  var add=function(t,n){var p=shuffle(CARDS.filter(function(c){return c.r===t;}));for(var i=0;i<n;i++)d.album.push(p[i%p.length].id);};
  add('comun',18);add('raro',8);add('especial',3);add('legendario',1);
@@ -1047,7 +1050,7 @@ function seedAlbum(d){
 function D(){
  var d=lsGet(LS);
  if(!d||!d.album){
-  d={fs:1500,elo:300,w:0,l:0,album:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
+  d={fs:1500,elo:0,w:0,l:0,album:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};
   seedAlbum(d);lsSet(LS,d);
  }
  if(typeof d.dtWins!=='number')d.dtWins=0;
@@ -1146,6 +1149,7 @@ function closeModal(){
  if(mr)mr.innerHTML='';
  var content=document.getElementById('content');if(content)content.inert=!!(SCREEN==='battle'&&G&&!G.over&&G.n===0&&!G.tutorial);
  if(TUTORIAL)TUTORIAL.render();
+ if(MENU_GUIDE)MENU_GUIDE.render();
 }
 
 function syncCoinToss(){
@@ -1394,16 +1398,71 @@ function showAchievement(title, desc){
  },2000);
 }
 
-var RANKS=[[0,'Aprendiz de pasillo'],[400,'Concejal'],[700,'Diputado'],[1000,'Portavoz'],[1300,'Ministro'],[1600,'Presidente']];
-function rankName(e){var n=RANKS[0][1];for(var i=0;i<RANKS.length;i++)if(e>=RANKS[i][0])n=RANKS[i][1];return n;}
+var RANKS=[[0,'Aprendiz de pasillo'],[2500,'Concejal'],[5000,'Diputado'],[7500,'Portavoz'],[10000,'Ministro'],[12500,'Presidente']];
+function rankName(e){if(typeof HemicycleRanked!=='undefined')return HemicycleRanked.position(e).label;var n=RANKS[0][1];for(var i=0;i<RANKS.length;i++)if(e>=RANKS[i][0])n=RANKS[i][1];return n;}
 function copies(d,id){var n=0;for(var i=0;i<d.album.length;i++)if(d.album[i]===id)n++;return n;}
 function uniqueAlbum(d){var m={},out=[];d.album.forEach(function(id){m[id]=(m[id]||0)+1;});Object.keys(m).forEach(function(id){if(BYID[id])out.push({id:id,c:BYID[id],n:m[id]});});return out;}
 
-var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,NOHIST=false;
+function syncRankedSeason(){
+ if(typeof HemicycleRanked==='undefined')return null;
+ var d=D(),saved=lsGet(HemicycleRanked.key),result=HemicycleRanked.sync(saved,d.elo,Date.now());
+ if(result.elo!==d.elo){d.elo=result.elo;var changes={};changes[LS]=d;changes[HemicycleRanked.key]=result.state;atomicLocal(changes);}
+ else if(JSON.stringify(saved)!==JSON.stringify(result.state)){var changes={};changes[HemicycleRanked.key]=result.state;atomicLocal(changes);}
+ return result;
+}
+function atomicLocal(values){
+ var before={};Object.keys(values).forEach(function(k){before[k]=localStorage.getItem(k);});
+ try{Object.keys(values).forEach(function(k){if(values[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,JSON.stringify(values[k]));});}
+ catch(e){Object.keys(before).forEach(function(k){try{if(before[k]===null)localStorage.removeItem(k);else localStorage.setItem(k,before[k]);}catch(ignore){}});throw new Error('No se han podido guardar los cambios. Comprueba el espacio del navegador.');}
+}
+function claimRankedReward(id){
+ var claim=function(){
+  var state=syncRankedSeason().state,result=HemicycleRanked.claim(state,id),cards=packContents(result.reward.kind),d=D();
+  cards.forEach(function(c){d.album.push(c.id);});var values={};values[LS]=d;values[HemicycleRanked.key]=result.state;atomicLocal(values);
+  go('sobre',{cards:cards.map(function(c){return c.id;}),k:result.reward.kind,free:true});
+ };
+ Promise.resolve().then(function(){if(navigator.locks)return navigator.locks.request('hemicycle-market-sale',claim);return claim();}).catch(function(e){showModal('No se ha reclamado el sobre',e.message,'Entendido',false,null);});
+}
+function rankedPanel(){
+ var current=syncRankedSeason();if(!current)return '';
+ var d=D(),p=HemicycleRanked.position(d.elo),pending=current.state.rewards.filter(function(r){return !r.claimed;}),date=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',dateStyle:'medium'}).format(new Date(current.period.end));
+ return '<section class="panel ranked-panel"><h3>Clasificatoria · Temporada '+current.period.id+'</h3><p class="sub"><b>'+esc(p.label)+'</b> · '+d.elo+' Elo'+(p.next===null?' · División máxima':' · Próximo ascenso: '+p.next+' Elo')+'</p><p class="sub">Finaliza el '+esc(date)+'. Temporadas de 30 días naturales: al renovarse bajas un rango y conservas tu división, hasta el rango mínimo.</p><p class="sub">Un común por ascenso, un raro adicional cada cinco ascensos y un legendario al subir de rango. Los ascensos repetidos no duplican premios durante la misma temporada.</p>'+(pending.length?'<div class="ranked-rewards">'+pending.map(function(r){var labels={comun:'común',raro:'raro',legendario:'legendario'};return '<button class="btn ghost sm" data-act="ranked-reward" data-reward="'+esc(r.id)+'">Reclamar sobre '+labels[r.kind]+' · T'+r.season+'</button>';}).join('')+'</div>':'<p class="sub">No hay sobres pendientes. Los nuevos ascensos desbloquean recompensas.</p>')+'</section>';
+}
+function backupPanel(){
+ var id=HemicycleBackup.identity(lsGet,lsSet).id;
+ return '<section class="panel backup-panel"><h3>ID de jugador y respaldo</h3><label class="sub" for="playerId">Tu ID estable</label><input id="playerId" value="'+esc(id)+'" readonly aria-label="ID de jugador"><p class="sub">Guarda una copia de tu colección, estadísticas, logros y guías. El archivo permite recuperarlos en otro dispositivo. La nube todavía está pendiente de conexión.</p><div class="bar"><button class="mini" data-act="copy-player-id">Copiar ID</button><button class="btn sm" data-act="backup-export">Descargar respaldo</button><button class="btn ghost sm" data-act="backup-import">Restaurar archivo</button></div><input type="file" id="backupFile" accept=".json,application/json" hidden></section>';
+}
+function exportPlayerBackup(){
+ var data=HemicycleBackup.build({read:lsGet,write:lsSet,profile:D,league:ligaLoad,version:VERSION}),blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),link=document.createElement('a');
+ link.href=url;link.download='hemiciclo-'+data.identity.id+'-'+new Date().toISOString().slice(0,10)+'.json';document.body.appendChild(link);link.click();link.remove();setTimeout(function(){URL.revokeObjectURL(url);},1000);
+}
+function importPlayerBackup(file){
+ if(!file)return;
+ if(G&&!G.over&&!G.tutorial){showModal('Debate en curso','Termina el debate antes de restaurar datos.','Entendido',false,null);return;}
+ if(file.size>HemicycleBackup.maxBytes){showModal('Respaldo no válido','El archivo supera los 8 MB.','Entendido',false,null);return;}
+ file.text().then(function(text){
+  var data=HemicycleBackup.parse(text,CARDS.map(function(c){return c.id;})),p=data.profile;
+  showModal('Restaurar respaldo','<p>Se sustituirán los datos de este dispositivo por los del archivo.</p><p>ID: <b>'+esc(data.identity.id)+'</b></p><p>'+p.album.length+' cromos · '+p.w+' victorias · '+p.l+' derrotas · '+p.fs+' FS · '+p.elo+' Elo.</p><p>La restauración conserva tus datos; si han vencido temporadas, se aplicará el descenso correspondiente. El reinicio completo de clasificatoria y Liga se aplicará al migrar a la nube.</p>','Restaurar respaldo',true,function(){
+   try{HemicycleBackup.restore(localStorage,data);MEM={};syncRankedSeason();clearAI();clearBattleClock();closeZoom();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;go('menu');}
+   catch(e){showModal('No se ha restaurado el respaldo',e.message,'Entendido',false,null);}
+  },true,true);
+ }).catch(function(e){showModal('Respaldo no válido',e.message,'Entendido',false,null);});
+}
+
+var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
 var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu',MENU_FEATURED=[];
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0,builderGrid:0};
 
 function clearAI(){if(AITIMER){clearTimeout(AITIMER);AITIMER=null;}}
+function clearBattleClock(){if(TURN_CLOCK){clearInterval(TURN_CLOCK);TURN_CLOCK=null;}}
+function syncBattleClock(){
+ if(!G||G.over||G.tutorial||!G.turnDeadline){clearBattleClock();return;}
+ if(checkBattleEnd())return;
+ var clock=document.getElementById('turnClock'),left=Math.max(0,Math.ceil((G.turnDeadline-Date.now())/1000));
+ if(clock){clock.textContent=(G.side==='p'?'Tu turno':'Rival')+' · '+left+' s';clock.classList.toggle('urgent',left<=10);}
+ if(!TURN_CLOCK)TURN_CLOCK=setInterval(syncBattleClock,250);
+}
+
 
 function saveColScroll(){
  var rBar=document.getElementById('chipsR');
@@ -1492,7 +1551,7 @@ function appbar(){
  return '<div class="brand">HEMICICLO<span>CARA A CARA '+VERSION+'</span></div>'
  +'<div class="abR">'
  +((G&&!G.over&&SCREEN!=='battle')?'<button class="mini hot" data-go="battle">Debate</button>':'')
- +'<span class="pill gold">'+d.fs+' FS</span><span class="pill">'+esc(rankName(d.elo))+'</span>'
+ +'<span class="pill gold">'+d.fs+' FS</span><span class="pill" title="'+esc(rankName(d.elo))+'" aria-label="'+esc(rankName(d.elo))+'">'+esc(rankName(d.elo).replace('Aprendiz de pasillo','Aprendiz'))+'</span>'
  +'<button class="mini news" data-go="novedades" aria-label="Novedades y cambios" title="Novedades y cambios"><svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 2.5h8l3 3v12H4v-15h1zM12 2.5v4h4M7 10h6M7 13h6"/></svg></button>'
  +'<button class="mini" data-go="ayuda" aria-label="Ayuda">?</button></div>'
  +'<div class="hud-strip"><div class="hud-cell"><div class="hud-metric"><small aria-label="Victorias y derrotas">V / D</small><b>'+d.w+' <span>/ '+d.l+'</span></b></div><div class="hud-metric"><small>Elo</small><b>'+d.elo+'</b></div></div>'
@@ -1507,11 +1566,13 @@ function tabbar(){
 }
 
 function paint(){
+ syncRankedSeason();
  var sc=document.getElementById('screen');
  var c=document.getElementById('content');if(!c)return;
  if(sc){
   sc.classList.toggle('in-battle', SCREEN==='battle');
   sc.dataset.view=SCREEN;
+  sc.dataset.menuTutorial=String(!!(MENU_GUIDE&&MENU_GUIDE.active));
   sc.dataset.tutorialActive=String(!!(SCREEN==='battle'&&G&&G.tutorial&&!G.over));
  }
  c.classList.toggle('scroll-ok', SCREEN==='coleccion');
@@ -1542,7 +1603,9 @@ function paint(){
  if(SCREEN==='tienda')startTick();
  syncGoldCanvases();
  syncCoinToss();
+ syncBattleClock();
  if(TUTORIAL)TUTORIAL.render();
+ if(MENU_GUIDE)MENU_GUIDE.render();
 }
 
 function updateColeccionInPlace(){
@@ -1706,14 +1769,15 @@ var PACKS=[
 var DAY=86400000,WEEK=7*DAY;
 
 SCREENS.tienda=function(){
- var d=D(),now=Date.now();
+ syncRankedSeason();var d=D(),now=Date.now();
  var dl=Math.max(0,d.lastDaily+DAY-now),wl=Math.max(0,d.lastWeekly+WEEK-now);
  return '<div><h2>Tienda</h2><p class="sub">Fuerza Soberana: <b>'+d.fs+' FS</b>. Moneda obtenida en los debates.</p></div>'
- +'<div class="panel"><div class="bar between"><div><b style="color:#ffd76a;font-size:12px">Sobres gratuitos</b><br><span class="sub">Diario: 5 cromos &middot; Semanal: 5 raros</span></div>'
+ +'<div class="panel" data-menu-guide="free"><div class="bar between"><div><b style="color:#ffd76a;font-size:12px">Sobres gratuitos</b><br><span class="sub">Diario: 5 cromos &middot; Semanal: 5 raros</span></div>'
  +'<div class="bar">'
  +'<button class="btn sm" data-act="free" data-k="diario"'+(dl>0?' disabled':'')+'>Diario'+(dl>0?' (<span data-cd="'+(now+dl)+'">...</span>)':'')+'</button>'
  +'<button class="btn sm" data-act="free" data-k="semanal"'+(wl>0?' disabled':'')+'>Semanal'+(wl>0?' (<span data-cd="'+(now+wl)+'">...</span>)':'')+'</button>'
  +'</div></div></div>'
+ +rankedPanel()
  +'<div class="pack-grid">'
  +PACKS.map(function(p){var can=d.fs>=p.p;
   return '<div class="pack-card"><div><h3>'+p.n+' <span class="pill gold">'+p.p+' FS</span></h3><p class="sub">'+p.d+'</p></div>'
@@ -1809,6 +1873,7 @@ function autoBuild(){
 }
 
 function startBattle(){
+ if(G&&!G.over&&!G.tutorial){showModal('Debate en curso','Termina o abandona el debate actual antes de comenzar otro. El reloj sigue avanzando.','Volver al debate',false,function(){if(G&&!G.over)go('battle');});return;}
  sanitizeBuild();
  if(uniqueAlbum(D()).length<5){
   go('result',{who:'info',msg:'Necesitas al menos 5 políticos distintos en tu colección. Abre algún sobre en la tienda.',fs:0});
@@ -1841,9 +1906,9 @@ function buildEnemyTeam(mode, elo, div){
   else if(dv===2)recipe=['comun','raro','raro','especial','especial'];
   else recipe=['raro','raro','especial','especial','legendario'];
  } else if(mode==='ranked'){
-  if(elo<450)recipe=['comun','comun','comun','raro','raro'];
-  else if(elo<750)recipe=['comun','comun','raro','raro','especial'];
-  else if(elo<1100)recipe=['comun','raro','raro','especial','legendario'];
+  if(elo<2500)recipe=['comun','comun','comun','raro','raro'];
+  else if(elo<5000)recipe=['comun','comun','raro','raro','especial'];
+  else if(elo<7500)recipe=['comun','raro','raro','especial','legendario'];
   else recipe=['raro','raro','especial','especial','legendario'];
  }
  var picked=[],used={};
@@ -1860,7 +1925,7 @@ function buildEnemyTeam(mode, elo, div){
 
 function newBattle(mode,rival,isTutorial){
  if(TUTORIAL&&!isTutorial&&!TUTORIAL.seen()){TUTORIAL.start();return;}
- clearAI();
+ clearAI();clearBattleClock();syncRankedSeason();
  var d=D(),team=isTutorial?['celia-villalobos','ana-pastor','alvaro-nadal','dolors-montserrat','carlos-floriano']:BUILD.ids.slice(0,5),ldrId=isTutorial?team[0]:(BUILD.leader||team[0]);
  var eTeam=isTutorial?['carlos-floriano','ana-pastor','andrea-levy','alvaro-nadal','cuca-gamarra']:buildEnemyTeam(mode, d.elo, SO.div||3);
  /* Elegimos como Líder del rival su carta de mayor rango para que juegue con cabeza pero con sus stats reales */
@@ -1869,7 +1934,7 @@ function newBattle(mode,rival,isTutorial){
 
  G={tutorial:!!isTutorial,mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
-  n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
+  turnDeadline:null,inactivity:null,turns:{p:0,e:0},n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},refund:{p:0,e:0},leader:{}};
  var build=function(s,ids,lead){
   var dk=shuffle(ids).map(function(id){return mk(BYID[id], id===lead,s);}),lc=null,i;
@@ -1877,7 +1942,7 @@ function newBattle(mode,rival,isTutorial){
   if(!lc){lc=mk(BYID[lead], true,s);dk.unshift(lc);}
   var hi=dk.indexOf(lc);
   if(hi>=0)dk.splice(hi,1);
-  var hand=dk.splice(0,2);
+  var hand=dk.splice(0,1);
   hand.unshift(lc);
   G.leader[s]=lc;G.deck[s]=dk;G.hand[s]=hand;
  };
@@ -1886,11 +1951,11 @@ function newBattle(mode,rival,isTutorial){
  if(isTutorial){
   G.first='p';G.rival='Bancada de práctica';
   var allPlayer=G.hand.p.concat(G.deck.p),allEnemy=G.hand.e.concat(G.deck.e);
-  G.hand.p=team.slice(0,3).map(function(id){return allPlayer.filter(function(c){return c.k===id;})[0];});
-  G.deck.p=team.slice(3).map(function(id){return allPlayer.filter(function(c){return c.k===id;})[0];});
+  G.hand.p=team.slice(0,2).map(function(id){return allPlayer.filter(function(c){return c.k===id;})[0];});
+  G.deck.p=team.slice(2).map(function(id){return allPlayer.filter(function(c){return c.k===id;})[0];});
   allEnemy.forEach(function(c){c.a=1;c.h=3;c.hm=3;});
   var target=allEnemy.filter(function(c){return c.k==='ana-pastor';})[0];
-  G.field.e=[target];G.hand.e=allEnemy.filter(function(c){return c!==target;});G.deck.e=[];
+  G.field.e=[target];var others=allEnemy.filter(function(c){return c!==target;});G.hand.e=others.slice(0,2);G.deck.e=others.slice(2);
  }
  log('Comienza el debate contra '+G.rival+'.','hi');
  log('Tu gabinete: '+team.map(function(id){return BYID[id].n;}).join(', ')+'.');
@@ -1908,6 +1973,7 @@ function checkBattleEnd(){
  if(!G||G.over)return true;
  if(G.votes.p>=100){finish('p');return true;}
  if(G.votes.e>=100){finish('e');return true;}
+ if(!G.tutorial&&G.turnDeadline&&Date.now()>=G.turnDeadline){G.inactivity=G.side;log((G.side==='p'?'Has abandonado':'El rival ha abandonado')+' por inactividad: se agotaron los 60 segundos.','hi');finish(G.side==='p'?'e':'p',G.side==='p');return true;}
  return false;
 }
 
@@ -1922,19 +1988,16 @@ function enMano(s,uid){for(var i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===
 function enMesa(s,uid){for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===uid)return true;return false;}
 
 function draw(s){
- if(!G.deck[s].length && G.pas[s].length){
-  G.pas[s].forEach(function(c){c.h=c.hm;c.ready=true;});
-  G.deck[s]=shuffle(G.pas[s]);
-  G.pas[s]=[];
-  log((s==='p'?'Tus oradores en descanso':'Los oradores rivales en descanso')+' vuelven al mazo.');
+ var turns=G.turns?G.turns[s]:0,eligible=G.pas[s].filter(function(c){return !c.drawAfterTurn||turns>=c.drawAfterTurn;});
+ if(eligible.length){
+  G.pas[s]=G.pas[s].filter(function(c){return eligible.indexOf(c)<0;});
+  G.deck[s]=shuffle(G.deck[s].concat(eligible));
+  log((s==='p'?'Tus oradores que han descansado':'Los oradores rivales que han descansado')+' se barajan con el mazo pendiente.');
  }
- while(G.deck[s].length && G.hand[s].length<7){
+ while(G.deck[s].length&&G.hand[s].length<2){
   var c=G.deck[s].shift();
-  if(!enMano(s,c.uid) && !enMesa(s,c.uid)){
-   c.h=c.hm;
-   c.ready=true;
-   G.hand[s].push(c);
-   break;
+  if(!enMano(s,c.uid)&&!enMesa(s,c.uid)){
+   c.h=c.hm;c.ready=true;delete c.drawAfterTurn;G.hand[s].push(c);break;
   }
  }
 }
@@ -1942,23 +2005,26 @@ function draw(s){
 function startTurn(s){
  if(checkBattleEnd())return;
  clearAI();
- if(G.n>=14){endByVotes();return;}
  G.n++;G.side=s;G.sel=null;
+ if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;
+ G.turnDeadline=G.tutorial?null:Date.now()+60000;
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
  var doctrine=activeDoc(s);
- G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+G.refund[s]:0));
+ var reserved=G.refund[s];
+ G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+reserved:0));
  G.refund[s]=0;
  draw(s);
+ if(doctrine==='verborrea'&&reserved>0)draw(s);
  if(doctrine==='foco'){
-  G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+2);
+  G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+3);
  }
  G.field[s].forEach(function(c){c.ready=true;});
  var gain=3;G.field[s].forEach(function(c){gain+=c.v;});
  G.votes[s]+=gain;
  var roundNum=Math.ceil(G.n/2);
- log('Ronda '+roundNum+'/7 ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
+ log('Ronda '+roundNum+' ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
  if(checkBattleEnd())return;
- paint();
+ syncBattleClock();paint();
  if(s==='e'&&!G.tutorial){clearAI();AITIMER=setTimeout(aiStep,520);}
 }
 
@@ -1994,9 +2060,8 @@ function expel(owner,card,attacker,victimDocSnapshot){
   return;
  }
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
- card.h=card.hm;
- card.ready=true;
- card.buff=0;
+ card.h=0;card.ready=false;card.buff=0;
+ card.drawAfterTurn=(G.turns?G.turns[victim]:0)+2;
  G.pas[victim].push(card);
  if(attacker){
   G.votes[owner]+=card.v;
@@ -2007,7 +2072,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
  }
  if(activeVictimDoc==='verborrea'){
   G.refund[victim]=2;
-  log('Verborrea: hasta +2 TdP reservados para el próximo turno '+(victim==='p'?'tuyo.':'rival.')+' Máximo al comenzar: 8 TdP.');
+  log('Verborrea: hasta +2 TdP reservados para el próximo turno '+(victim==='p'?'tuyo.':'rival.')+' También permite un robo adicional si sigue activa (mano máxima: 2). Máximo al comenzar: 8 TdP.');
  }
 }
 
@@ -2064,13 +2129,6 @@ function attack(atk,tgt,owner){
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
 }
 
-function endByVotes(){
- if(checkBattleEnd())return;
- log('Fin de las 7 rondas reglamentarias. Recuento de votos...','hi');
- if(G.votes.p>G.votes.e)finish('p');
- else if(G.votes.e>G.votes.p)finish('e');
- else finish('d');
-}
 
 /* === ELO SEGÚN EL MARGEN RELATIVO, SIN BONO POR RAPIDEZ === */
 function calcRankedEloDelta(who, pVotes, eVotes, abandoned){
@@ -2084,6 +2142,8 @@ function calcRankedEloDelta(who, pVotes, eVotes, abandoned){
 
 function finish(who, abandoned){
  if(!G||G.done)return;
+ clearBattleClock();
+ if(typeof closeModal==='function')closeModal();
  if(G.tutorial){
   clearAI();G.over=true;G.done=true;
   if(TUTORIAL&&TUTORIAL.active)TUTORIAL.finish(who==='p'&&!abandoned?'completed':'skipped');
@@ -2092,7 +2152,8 @@ function finish(who, abandoned){
  }
  clearAI();
  G.over=true;G.done=true;
- var d=D(),mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal'),justUnlockedGold=false,eloDelta=0;
+ if(G.mode==='ranked')syncRankedSeason();
+ var d=D(),oldElo=d.elo,mode=G.mode,fs=0,msg='',won=null,lost=null,comp=(mode!=='normal'),justUnlockedGold=false,eloDelta=0;
  if(who==='p'){
   fs=mode==='normal'?rnd(20,50):rnd(50,100);
   d.w++;
@@ -2134,12 +2195,14 @@ function finish(who, abandoned){
   fs=25;
   msg='Empate técnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
  }
- d.fs+=fs;saveD(d);
+ if(G.inactivity)msg=(G.inactivity==='p'?'Has abandonado la partida por inactividad al agotarse los 60 segundos. ':'El rival ha abandonado la partida por inactividad. ')+msg;
+ d.fs+=fs;
+ if(mode==='ranked'&&typeof HemicycleRanked!=='undefined'){var earned={};earned[LS]=d;earned[HemicycleRanked.key]=HemicycleRanked.advance(lsGet(HemicycleRanked.key),oldElo,d.elo,Date.now());atomicLocal(earned);}else saveD(d);
  if(justUnlockedGold){
   showAchievement('¡Logro oculto desbloqueado!','Magnate Dorado: Aspecto dorado de Donald Trump disponible en tu Colección.');
  }
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
- go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:mode});
+ go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:mode,reason:G.inactivity?'inactivity':null});
 }
 function ligaPanel(){
  var lg=ligaLoad();if(!lg)return '';
@@ -2155,7 +2218,7 @@ SCREENS.result=function(){
  if(SO.who==='info')return '<h2>Aviso</h2><div class="panel"><p>'+esc(SO.msg)+'</p></div>'
   +'<div class="bar"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menú</button></div>';
  var who=SO.who;
- var title=who==='p'?'¡Victoria!':(who==='e'?'Derrota':(who==='season'?'Temporada cerrada':'Empate'));
+ var title=who==='p'?'¡Victoria!':(who==='e'?(SO.reason==='inactivity'?'Abandono por inactividad':'Derrota'):(who==='season'?'Temporada cerrada':'Empate'));
  var pCls=who==='p'?'panel win':(who==='e'?'panel lose':'panel');
  var badges='';
  if(SO.fs)badges+='<span class="pill gold">+'+SO.fs+' FS</span>';
@@ -2273,22 +2336,22 @@ SCREENS.battle=function(){
  for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__EMPTY" data-side="e">'+(G.sel?'Restar votos':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
  var modo=G.tutorial?'TUTORIAL':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
- var roundNum=Math.min(7,Math.max(1,Math.ceil(G.n/2)));
+ var roundNum=Math.max(1,Math.ceil(G.n/2));
  return '<div class="battle-wrap">'
  +(G.tutorial&&G.n===0?'<button class="tutorial-coin" data-tutorial="coin" data-act="begin">Cara o cruz · Toca para ensayar el sorteo</button>':'')
- +'<div class="bar between"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'/7</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
- +gabLine()+'</div>'
+ +'<div class="bar between"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
+ +gabLine()+'<span class="turn-clock" id="turnClock" role="timer" aria-live="off">'+(G.tutorial?'Práctica sin reloj':G.n===0?'60 s por turno':'')+'</span></div>'
+ +'<p class="sub">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
+ +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
  +'<div class="vbars">'
  +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'/100</b></div>'
  +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'/100</b></div></div>'
- +'<p class="sub">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
- +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
- +'<div class="log">'+G.log.slice(0,5).join('')+'</div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
  +'<p class="sub" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
- +'<div class="row" data-tutorial="hand">'+hand+'</div>'
+ +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small></div></div>'
  +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca un orador rival o "Restar votos".</div>'
         :'<div class="hint">Toca una carta de tu mano para bajarla o un orador en Tribuna para atacar.</div>')
+ +'<div class="log">'+G.log.slice(0,5).join('')+'</div>'
  +'<div class="bar between"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
  +'<button class="btn ghost sm" data-act="abandon">Abandonar</button></div>'
  +'</div>';
@@ -2355,14 +2418,15 @@ SCREENS.liga=function(){
 
 SCREENS.ayuda=function(){
  return '<h2>Cómo se juega</h2><div class="inner-scroll">'
- +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Repetir tutorial</button></div>'
- +'<div class="panel"><h3>1. Objetivo (100 votos o 7 rondas)</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. Si nadie lo consigue, gana quien tenga más votos tras 7 rondas. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
- +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
+ +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button></div>'
+ +'<div class="panel"><h3>1. Objetivo y tiempo por turno</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: cada turno dispone de 60 segundos para realizar sus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
+ +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y un máximo de dos cartas en la mano; las demás esperan en el mazo. Al comenzar tu turno robas una carta si tienes espacio. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
  +'<div class="panel"><h3>3. Elo y dificultad justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
  +'<div class="panel"><h3>4. Botín y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
  +'<div class="panel"><h3>5. Mercado de repetidos</h3><p class="sub">Desde Mercado puedes vender uno o varios repetidos y conservar una copia de cada cromo. Entre jugadores se necesita una conexión al servidor. Los intercambios solo admiten rarezas iguales o consecutivas. Cada jugador revisa los datos, marca el tick y confirma en una sola ventana; la entrega se realiza cuando ambos aceptan.</p></div>'
+ +backupPanel()
  +'<div class="panel"><h3>Tu progreso</h3><p class="sub">'+D().w+' victorias · '+D().l+' derrotas · '+D().fs+' FS.</p><button class="btn ghost sm" style="margin-top:8px" data-act="reset">Borrar progreso</button></div>'
  +'</div><button class="btn wide sm" data-go="menu">Volver al menú</button>';
 };
@@ -2512,9 +2576,16 @@ document.addEventListener('click',function(ev){
    PLAY_MODE=n.getAttribute('data-mode');PLAY_OPEN=false;paint();
    var play=document.querySelector('[data-act="play"]');if(play)play.focus();
    break;
+  case 'backup-export': exportPlayerBackup();break;
+  case 'backup-import': document.getElementById('backupFile').click();break;
+  case 'copy-player-id': {var input=document.getElementById('playerId');if(navigator.clipboard)navigator.clipboard.writeText(input.value).catch(function(){input.focus();input.select();});else {input.focus();input.select();}break;}
+  case 'ranked-reward': claimRankedReward(n.getAttribute('data-reward'));break;
+  case 'menu-tutorial':
+   if(MENU_GUIDE)startPractice(MENU_GUIDE);break;
   case 'tutorial':
-   if(TUTORIAL)TUTORIAL.start();break;
+   if(TUTORIAL)startPractice(TUTORIAL);break;
   case 'play':
+   if(G&&!G.over&&!G.tutorial){go('battle');break;}
    if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start();break;}
    if(PLAY_MODE==='liga'){go('liga');break;}
    if(PLAY_MODE==='rapida'){autoBuild();LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader};SO={mode:'normal'};newBattle('normal');break;}
@@ -2642,7 +2713,7 @@ document.addEventListener('input',function(ev){
   syncGoldCanvases();
  }
 },false);
-document.addEventListener('change',function(ev){if(ev.target&&['marketRarity','marketBuyRarity','tradePlayer','tradeGive','tradeReceive','tradeMethod','tradeExtra'].indexOf(ev.target.id)>=0)market().change(ev.target);},false);
+document.addEventListener('change',function(ev){if(ev.target&&ev.target.id==='backupFile'){importPlayerBackup(ev.target.files[0]);ev.target.value='';return;}if(ev.target&&['marketRarity','marketBuyRarity','tradePlayer','tradeGive','tradeReceive','tradeMethod','tradeExtra'].indexOf(ev.target.id)>=0)market().change(ev.target);},false);
 
 function medirInsets(){
  try{
@@ -2660,7 +2731,21 @@ function medirInsets(){
 window.addEventListener('resize',medirInsets);
 window.addEventListener('orientationchange',medirInsets);
 
+function startPractice(guide){if(G&&!G.over&&!G.tutorial){showModal('Debate en curso','Termina o abandona el debate actual antes de comenzar una guía. El reloj sigue avanzando.','Volver al debate',false,function(){if(G&&!G.over)go('battle');});return;}guide.start();}
+function restoreMenuGuideState(){
+ if(!MENU_GUIDE_STATE)return;
+ FIL=MENU_GUIDE_STATE.fil;PLAY_OPEN=false;
+ if(MENU_GUIDE_STATE.resumeAI&&G===MENU_GUIDE_STATE.game&&!G.over&&G.side==='e')AITIMER=setTimeout(aiStep,520);
+ MENU_GUIDE_STATE=null;
+}
+function firstEntry(){
+ if(TUTORIAL&&TUTORIAL.active){TUTORIAL.render();return;}
+ if(MENU_GUIDE&&MENU_GUIDE.active){MENU_GUIDE.render();return;}
+ if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start();return;}
+ if(MENU_GUIDE&&!MENU_GUIDE.seen())MENU_GUIDE.start();
+}
 function boot(){
+ HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();
  TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
   read:lsGet,write:lsSet,
   pause:function(){clearAI();if(G&&G.tutorial){G.over=true;G.done=true;}},
@@ -2690,14 +2775,40 @@ function boot(){
    }
    if(!G.over)paint();
   },
-  leave:function(status){clearAI();G.over=true;G.done=true;go('result',{tutorial:true,completed:status==='completed'});}
+  leave:function(status){clearAI();G.over=true;G.done=true;if(status==='completed'&&MENU_GUIDE&&!MENU_GUIDE.seen()){MENU_GUIDE.start();return;}go('result',{tutorial:true,completed:status==='completed'});}
  }):null;
+ MENU_GUIDE=window.HemicycleMenuTutorial?HemicycleMenuTutorial.create({
+  read:lsGet,write:lsSet,
+  isOpen:function(){return ['menu','tienda','coleccion','detalle','mercado','liga','ayuda'].indexOf(SCREEN)>=0;},
+  prepare:function(){
+   MENU_GUIDE_STATE={fil:{q:FIL.q,r:FIL.r,d:FIL.d},game:G,resumeAI:!!AITIMER};clearAI();
+   PLAY_OPEN=false;closeZoom();go('menu');
+  },
+  pause:function(){document.getElementById('screen').dataset.menuTutorial='false';restoreMenuGuideState();},
+  action:function(action){
+   if(action==='modes'){PLAY_OPEN=true;paint();}
+   if(action==='close-modes'){PLAY_OPEN=false;paint();}
+   if(action==='shop')go('tienda');
+   if(action==='collection'){FIL={q:'',r:'',d:''};go('coleccion');}
+   if(action==='card'){var owned=uniqueAlbum(D());go('detalle',{id:owned.length?owned[0].id:CARDS[0].id});}
+   if(action==='market')go('mercado');
+   if(action==='prices'){var prices=document.querySelector('.market-prices');if(prices)prices.open=true;}
+   if(action==='help')go('ayuda');
+   if(action==='league')go('liga');
+  },
+  leave:function(){restoreMenuGuideState();go('menu');}
+ }):null;
+ document.addEventListener('visibilitychange',syncBattleClock);
+ window.addEventListener('pageshow',syncBattleClock);
+ document.addEventListener('hemicycle:entry-request',firstEntry);
+ document.addEventListener('hemicycle:entered',firstEntry);
  medirInsets();
  try{history.replaceState({s:'menu'},'');}catch(e){}
  var d=D();
  if(d.dtGoldUnlocked&&d.dtGoldActive)ensureGoldLoop();
  paint();
  if(!window.HemicycleLaunchReady){var entry=document.getElementById('launchScreen');if(entry)entry.remove();var app=document.getElementById('app');app.inert=false;app.removeAttribute('aria-hidden');}
+ if(window.HemicycleEntryRequested||window.HemicycleEntered)firstEntry();
  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js?v='+encodeURIComponent(VERSION),{updateViaCache:'none'}).catch(function(){});}
 }
 try{if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();}

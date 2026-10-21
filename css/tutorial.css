@@ -1,4 +1,4 @@
-#tutorialRoot{position:fixed;inset:0;pointer-events:none;z-index:80}#tutorialRoot[hidden]{display:none}
+.tutorial-layer{position:fixed;inset:0;pointer-events:none;z-index:80}.tutorial-layer[hidden]{display:none}
 .tutorial-coach{position:fixed;box-sizing:border-box;padding:11px 13px;background:linear-gradient(145deg,#222b40,#111827);border:1px solid #d9bb75;border-radius:12px;box-shadow:0 9px 28px #000b;color:#f0f1f6;overflow:auto;pointer-events:auto;overscroll-behavior:contain}
 .tutorial-coach small{display:block;color:#efd293;letter-spacing:1px;font-size:8px;font-weight:800}.tutorial-coach h3{margin:6px 0;font-size:14px;line-height:1.2}.tutorial-coach p{margin:0;font-size:11px;line-height:1.45;color:#d5dceb}.tutorial-coach>span{display:block;margin-top:7px;color:#cdb67c;font-size:9px}
 @keyframes tutorialPulse{0%,100%{outline-color:#f6d77f;box-shadow:0 0 0 3px #ecc36420,0 0 13px #ecc36425}50%{outline-color:#fff1c1;box-shadow:0 0 0 5px #ecc36455,0 0 21px #ecc36460}}
@@ -8,3 +8,6 @@
 .tutorial-coin{font-size:10px;padding:6px 10px;background:#332c21;border:1px solid #d9bb75;color:#ffe0a0;border-radius:18px}
 @media(max-height:650px){.screen[data-tutorial-active=true] .tribuna{max-width:210px}.screen[data-tutorial-active=true] .row>*{width:62px}.screen[data-tutorial-active=true] .battle-wrap{gap:5px}.tutorial-coach{padding:9px 11px}.tutorial-coach p{font-size:10px}}
 @media(prefers-reduced-motion:reduce){.tutorial-focus{animation:none!important;outline-color:#ffeab0!important;box-shadow:0 0 0 4px #ecc36444}}
+
+.tutorial-exit{display:block;margin-top:9px;padding:6px 9px;min-height:30px;font-size:10px;color:#e0c996}
+.screen[data-menu-tutorial=true] .content:not(.scroll-ok) .view-body{overflow:auto;overscroll-behavior:contain}
