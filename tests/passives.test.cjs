@@ -48,10 +48,10 @@ for(const p of keys) for(const e of keys) {
   });
 }
 
-test('all 120 names, associations, quotes and base stats stay unchanged; only 5-cost specials become 4', () => {
+test('all 120 names, associations and base stats stay unchanged; only 5-cost specials become 4', () => {
   const c=loadBattle(),cards=JSON.parse(JSON.stringify(c.CARDS));
-  const invariant=cards.slice().sort((a,b)=>a.id.localeCompare(b.id)).map(({id,n,r,pa,a,h,v,q})=>({id,n,r,pa,a,h,v,q}));
-  assert.equal(createHash('sha256').update(JSON.stringify(invariant)).digest('hex'),'cd8d82fea1a7acea0d6f953504fff5723c358dfd0331d9fa1bbb4a3aea9e57b0');
+  const invariant=cards.slice().sort((a,b)=>a.id.localeCompare(b.id)).map(({id,n,r,pa,a,h,v})=>({id,n,r,pa,a,h,v}));
+  assert.equal(createHash('sha256').update(JSON.stringify(invariant)).digest('hex'),'059caf3e56f3698f9129d7ec6e87a5054df1dc270ddc213289cad9ef6b912d86');
   const oldRanges={comun:[1,3],raro:[2,4],especial:[3,5],legendario:[4,6]};
   for(const doctrine of keys)for(const [tier,names]of Object.entries(c.ROSTER[doctrine])){
     for(let i=0;i<names.length;i++){
@@ -191,7 +191,7 @@ test('Viperina bonus targets only the rival leader and is disabled by Aforado',(
 
 test('AI prioritizes the countering leader when no expulsion is available',()=>{
   const c=duel('verborrea','giro');
-  c.G.hand.p=[];c.G.leader.e.h=30;
+  c.G.hand.p=[];c.G.leader.e.h=30;c.G.leader.p.h=c.G.leader.p.hm=100;
   const other=c.mk(c.CARDS[0],false);other.h=30;other.v=8;
   c.G.field.e.push(other);
   const action=c.chooseBattleAction('p');

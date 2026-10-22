@@ -4,6 +4,37 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+    "version": "v31.0.0.3",
+    "date": "2026-10-22",
+    "title": "Tres frases, cuatro formas de intervenir",
+    "sections": [
+        {
+            "title": "Acciones de los cromos",
+            "items": [
+                "La primera frase realiza un ataque normal con el Zasca vigente. La segunda realiza un ataque fuerte del 150 %, redondeado hacia arriba.",
+                "El ataque fuerte se habilita en el segundo turno propio del cromo en mesa. Después de usarlo espera dos turnos propios; salir y volver a entrar reinicia su contador individual.",
+                "La tercera frase permite elegir defensa o curación. La defensa reduce a la mitad solo el siguiente golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo.",
+                "Cada cromo puede realizar una acción por turno. Los medios puntos de daño tras defender y de curación se redondean hacia arriba. El rival utiliza las mismas reglas."
+            ]
+        },
+        {
+            "title": "Frases y controles",
+            "items": [
+                "Los 120 cromos incorporan tres frases breves documentadas, sin nombres de otras personas, con recortes y traducciones recogidos en las fuentes.",
+                "Al tocar un orador de tu Tribuna aparece una ventana con sus tres frases y valores. La tercera sustituye el contenido de esa misma ventana por Defensa y Curación, con un botón para volver.",
+                "Las selecciones y los cambios de contenido tienen animación. Se respeta la preferencia de reducir movimiento y las opciones no necesitan desplazamiento dentro de la ventana."
+            ]
+        },
+        {
+            "title": "Aprendizaje y móviles",
+            "items": [
+                "El tutorial de combate permite practicar ataque normal, ataque fuerte, defensa y curación, con cromos prestados y sin modificar tu progreso. Puedes repetirlo desde Ayuda.",
+                "Se corrige la ampliación por gestos de dos dedos en las secciones del juego, incluidas las ventanas de acceso y perfil."
+            ]
+        }
+    ]
+},
+  {
     "version":"v31.0.0.2",
     "date":"2026-10-21",
     "title":"Tu progreso, también en la nube",

@@ -32,7 +32,8 @@ function createSimulator() {
         action = { type: 'play', card: playable[0] };
       }
       if (action.type === 'play') c.playCard(side, action.card.uid);
-      else if (action.type === 'attack') c.attack(action.card, action.target, side);
+      else if (action.type === 'attack') c.attack(action.card, action.target, side, action.variant);
+      else if(action.type==='heal'||action.type==='guard') c.useSupport(action.card,action.type,side);
       else c.completeTurn(side);
     }
     if (!c.G.done) throw new Error('Battle failed to finish: ' + JSON.stringify({p,e,recipe,seed,first,policy}));

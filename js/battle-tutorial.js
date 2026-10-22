@@ -7,28 +7,42 @@ function create(api){
  var active=false,index=0,highlight=null,previous=null,frame=0,steps=[];
  var layer=document.createElement('div');layer.id=api.layerId||'tutorialRoot';layer.className='tutorial-layer';document.body.appendChild(layer);
  function seen(){var value=api.read(key);return !!value&&(value.status==='completed'||value.status==='skipped');}
- function save(status){api.write(key,{status:status,version:1,updatedAt:Date.now()});}
+ function save(status){api.write(key,{status:status,version:2,updatedAt:Date.now()});}
  function makeSteps(){return [
-  ['coin','[data-tutorial="coin"]','Tu primer debate','Práctica sin riesgo: cromos prestados y rival muy fácil. Ensayamos cara y empiezas tú; en partidas normales el sorteo es al 50 %. Toca la moneda.','begin'],
-  ['votes','.vbars','Gana con 100 votos','Alcanza 100 votos para ganar al instante. En partidas normales no hay límite de rondas y dispones de 60 segundos por turno. Aquí practicas sin reloj. Cada turno suma 3 votos más los escaños de tu Tribuna. Toca los marcadores.'],
-  ['cabinet','.gab','Tu gabinete y el mazo','Juegas con cinco cromos distintos. Aquí ves si están en la mano, la Tribuna, el mazo o descansando. Tu mano admite dos cartas. Robas una al empezar si hay hueco; los expulsados esperan y se barajan con el mazo, sin volver en tu siguiente turno. Toca el gabinete.'],
-  ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El TdP paga el coste de la esquina superior de cada cromo. Se renueva al empezar tu turno y aumenta su base hasta 6; algunas pasivas permiten llegar a 8. Toca los cristales.'],
-  ['play-leader','[data-tutorial="hand"] .lead','Presenta a tu líder','La estrella señala al líder: tiene +1 Zasca y +3 Aguante. Z indica el daño y A la resistencia. Este cuesta 1 TdP. Tócalo para llevarlo a la Tribuna.','play-leader'],
-  ['passive','[data-tutorial="resources"]','Tu pasiva está activa','Vieja Guardia aumenta el Zasca al presentar oradores y al terminar el turno, hasta +3. Solo funciona con el líder en la Tribuna. Cada doctrina tiene una debilidad circular frente a otra. Toca la doctrina.'],
-  ['select','[data-tutorial="player"] .lead','Elige quién ataca','Los oradores pueden atacar una vez por turno, incluso al entrar. Toca a tu líder en la Tribuna para seleccionarlo.','select-leader'],
-  ['attack','[data-tutorial="enemy"] .cromo','Elige el objetivo','Toca el cromo rival para lanzar el zasca. Hemos reducido su Aguante solo en esta práctica: lo expulsarás y sumarás sus escaños como votos.','attack'],
-  ['log','.log','Comprueba lo ocurrido','El registro muestra el zasca, el daño y los votos ganados. «Hecho» indica que tu orador ya atacó; recuperará su acción en tu próximo turno. Toca el registro.'],
-  ['end','[data-act="end"]','Cede el turno','Puedes presentar hasta tres oradores en la Tribuna. Cuando termines tus acciones, pulsa Pasar turno. Vieja Guardia reforzará a tus oradores.','end'],
-  ['enemy','[data-tutorial="enemy"] .cromo','También juega el rival','El rival recibe TdP y votos, roba y presenta un orador. En este ensayo solo atacará con 1 de Zasca. Toca su cromo para observar el ataque y recuperar el turno.','enemy'],
-  ['member','[data-tutorial="hand"] .cromo','Refuerza tu Tribuna','Se han renovado tu TdP y las acciones de tus oradores. Presenta este segundo miembro; su coste se descontará y también recibirá la bonificación activa.','play-member'],
-  ['select-again','[data-tutorial="player"] .lead','Tu líder vuelve a estar listo','Toca al líder para preparar otro zasca. Ahora es más fuerte gracias a Vieja Guardia.','select-leader'],
-  ['attack-again','[data-tutorial="enemy"] .cromo','Deja la bancada vacía','Ataca al orador rival. Al expulsarlo sumarás sus escaños y quedará una bancada vacía a la que también se puede atacar.','attack'],
-  ['select-member','[data-tutorial="player"] .cromo:not(.lead)','Otro orador, otra acción','Tu segundo miembro aún no ha intervenido. Tócalo para seleccionarlo.','select-member'],
-  ['empty','[data-tutorial="enemy"] [data-buid="__EMPTY"]','Resta votos al rival','Con la bancada vacía, un zasca resta votos al rival hasta el valor de tu Zasca. No te entrega esos votos. Toca «Restar votos».','empty'],
-  ['final-votes','.vbars','Ensayo de la victoria','Para el último ejercicio adelantamos tu marcador a 98 votos y colocamos un rival con 1 de Aguante y 2 escaños. Toca el marcador: bastará expulsarlo para llegar a 100.'],
-  ['final-select','[data-tutorial="player"] .lead','Último zasca','Hemos preparado una última acción de práctica. Selecciona a tu líder.','select-leader'],
-  ['final-attack','[data-tutorial="enemy"] .cromo','Consigue los dos votos','Toca el rival. Al llegar a 100, la victoria será inmediata y no habrá turno de respuesta.','attack']
+  ['coin','[data-tutorial="coin"]','Tu primer debate','Práctica con cromos prestados. Ensayamos cara y empiezas tú; fuera del tutorial el sorteo es al 50 %. Toca la moneda.','begin'],
+  ['votes','.vbars','Gana con 100 votos','Ganas al llegar a 100 votos. No hay límite de rondas; cada turno normal dura 60 segundos. Aquí puedes leer sin reloj. Toca los marcadores.'],
+  ['cabinet','.gab','Tu gabinete y el mazo','Cinco cromos, hasta tres en la Tribuna y dos en la mano. Los expulsados descansan y se barajan con el mazo; no vuelven en tu siguiente turno. Toca el gabinete.'],
+  ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El TdP paga el coste de presentar cromos. Se renueva cada turno; su base crece hasta 6 y algunas pasivas permiten llegar a 8. Toca los cristales.'],
+  ['play-leader','[data-tutorial="hand"] .lead','Presenta a tu líder','La estrella identifica al líder: +1 Zasca y +3 Aguante. Z indica el daño; A, su resistencia. Este cuesta 1 TdP. Tócalo para presentarlo.','play-leader'],
+  ['passive','[data-tutorial="resources"]','Tu pasiva','Vieja Guardia mejora el Zasca al presentar y al terminar el turno, hasta +3. Requiere al líder en la Tribuna y puede ser neutralizada. Toca la doctrina.'],
+  ['select','[data-tutorial="player"] .lead','Abre las tres frases','Cada orador dispone de una acción por turno, incluso al entrar. Toca al líder para abrir sus frases encima del cromo.','select-leader'],
+  ['normal','[data-baction="normal"]','Primera frase: ataque normal','Esta primera frase causa el Zasca vigente del cromo. El número incluye bonificaciones. El fuerte se habilita en el segundo turno propio del cromo en mesa. Toca esta opción.','choose-normal'],
+  ['attack','[data-tutorial="enemy"] .cromo','Elige el objetivo','Toca al orador rival para lanzar la primera frase. Tiene poco Aguante: lo expulsarás y ganarás sus escaños como votos.','attack'],
+  ['log','.log','Una acción por orador','El registro muestra la frase elegida, el daño y los votos. «Hecho» indica que ese cromo ya usó su acción. Toca el registro.'],
+  ['end','[data-act="end"]','Cede el turno','Al pasar, el rival roba, recibe recursos y presenta un orador. Tu líder recuperará su acción cuando vuelva tu turno. Pulsa Pasar turno.','end'],
+  ['enemy','[data-tutorial="enemy"] .cromo','Practica con daño recibido','Este golpe preparado hará 4 de daño a tu líder y te devolverá el turno. Así podrás probar la curación sin riesgo. Toca al rival.','enemy'],
+  ['heal-select','[data-tutorial="player"] .lead','Tercera frase: apoyo','Tu líder está herido. Tócalo para volver a abrir las tres frases.','select-leader'],
+  ['support-heal','[data-baction="support"]','Elige la tercera frase','La tercera frase abre dos opciones dentro de esta misma ventana: defensa o curación. Tócala.','choose-support'],
+  ['heal','[data-baction="heal"]','Recupera Aguante','Cura la mitad de lo que te falta, redondeando hacia arriba: mínimo 3, sin superar tu máximo. Consume la acción de este cromo. Pulsa Curación.','choose-heal'],
+  ['member','[data-tutorial="hand"] .cromo','Presenta un segundo orador','Tu líder ya ha actuado, pero puedes usar otro cromo. Presenta este miembro de tu mano.','play-member'],
+  ['guard-select','[data-tutorial="player"] .cromo:not(.lead)','Ensaya una defensa','Este segundo orador conserva su acción. Tócalo para abrir sus frases.','select-member'],
+  ['support-guard','[data-baction="support"]','La misma tercera frase','Esta vez usaremos la tercera frase para defender. Tócala para abrir sus dos opciones.','choose-support'],
+  ['guard','[data-baction="guard"]','Reduce el próximo golpe','Defensa reduce al 50 % el siguiente golpe que reciba este cromo y después desaparece. No se acumula y consume su acción. Pulsa Defensa.','choose-guard'],
+  ['end-guard','[data-act="end"]','Observa el escudo','El cromo muestra que tiene una defensa preparada. Se mantiene hasta recibir un golpe. Pulsa Pasar turno.','end'],
+  ['enemy-guard','[data-tutorial="enemy"] .cromo','Comprueba la reducción','Este golpe de práctica causa 4 de daño: con la defensa solo recibirás 2. Toca al rival para comprobarlo y recuperar el turno.','enemy-guard'],
+  ['guard-log','.log','Una defensa, un golpe','El registro muestra la reducción. El escudo ya se ha consumido; los golpes posteriores tendrán su daño habitual. Toca el registro.'],
+  ['strong-select','[data-tutorial="player"] .lead','Prueba el ataque fuerte','Tu líder vuelve a tener una acción disponible. Tócalo para abrir sus frases.','select-leader'],
+  ['strong','[data-baction="strong"]','Segunda frase: ataque fuerte','Usa la segunda frase y causa el 150 % del Zasca vigente. Se redondea hacia arriba. Después de usarlo, esperará dos turnos propios para volver a estar disponible. Toca esta opción.','choose-strong'],
+  ['strong-attack','[data-tutorial="enemy"] .cromo','Lanza la segunda frase','Toca al rival para usar el ataque fuerte. El registro conservará la segunda frase, distinta de la del ataque normal.','attack'],
+  ['select-member','[data-tutorial="player"] .cromo:not(.lead)','Cada miembro tiene su acción','Tu segundo orador también puede actuar este turno. Tócalo para abrir sus frases.','select-member'],
+  ['normal-empty','[data-baction="normal"]','Elige el ataque normal','Usaremos su primera frase para atacar un espacio vacío y restar votos al rival. Toca Ataque normal.','choose-normal'],
+  ['empty','[data-tutorial="enemy"] [data-buid="__EMPTY"]','Resta votos al rival','Un ataque a una bancada vacía resta votos hasta su daño, sin entregártelos. Toca «Restar votos».','empty'],
+  ['final-votes','.vbars','Ensayo de la victoria','Adelantamos tu marcador a 98 votos y preparamos un rival con 1 de Aguante y 2 escaños. Toca los marcadores.'],
+  ['final-select','[data-tutorial="player"] .lead','Última acción de práctica','Tu líder dispone de una última acción preparada para terminar el ejercicio. Tócalo.','select-leader'],
+  ['final-normal','[data-baction="normal"]','Prepara el último zasca','El ataque normal basta para este rival. Escoge la primera frase.','choose-normal'],
+  ['final-attack','[data-tutorial="enemy"] .cromo','Consigue los dos votos','Toca al rival. La victoria llega al alcanzar 100 votos y no habrá turno de respuesta.','attack']
  ];}
+
  function start(){
   if(active)return;
   active=true;index=0;steps=api.steps||makeSteps();save('in-progress');api.prepare();render();
@@ -70,7 +84,7 @@ function create(api){
   if(ev.target.closest('#modalRoot'))return;
   if(!api.exitSelector&&ev.target.closest('[data-act="abandon"]'))return;
   ev.preventDefault();ev.stopImmediatePropagation();
-  if(highlight&&highlight.contains(ev.target))advance();
+  if(highlight&&highlight.contains(ev.target)){var step=steps[index];if(api.select&&step[4]&&step[4].indexOf('choose-')===0)api.select(highlight,advance);else advance();}
  },true);
  document.addEventListener('keydown',function(ev){
   if(!active||!api.inBattle()||document.querySelector('#modalRoot .modal'))return;

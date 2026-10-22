@@ -4,6 +4,18 @@
  if(!document.getElementById('screen'))return;
  var app=document.body;
  var point=null;
+ // Cubre también inicio, acceso, perfil y nube, fuera de #screen.
+ function blockPinch(event){
+  if(event.touches&&event.touches.length>1){
+   point=null;
+   if(event.cancelable)event.preventDefault();
+  }
+ }
+ function blockGesture(event){if(event.cancelable)event.preventDefault();}
+ document.addEventListener('touchstart',blockPinch,{capture:true,passive:false});
+ document.addEventListener('touchmove',blockPinch,{capture:true,passive:false});
+ document.addEventListener('gesturestart',blockGesture,{capture:true,passive:false});
+ document.addEventListener('gesturechange',blockGesture,{capture:true,passive:false});
  function editable(target){return !!(target&&target.closest&&target.closest('input,textarea,select,[contenteditable="true"]'));}
  function canScroll(target,dx,dy){
   var horizontal=Math.abs(dx)>Math.abs(dy),delta=horizontal?dx:dy;

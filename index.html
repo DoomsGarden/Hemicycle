@@ -15,7 +15,7 @@
 <style>
 :root{--sat:22px;--sab:12px}
 *{box-sizing:border-box}
-html,body{margin:0;padding:0;width:100%;height:100%;background:#070b16;overflow:hidden}
+html,body{margin:0;padding:0;width:100%;height:100%;background:#070b16;overflow:hidden;touch-action:pan-x pan-y}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
 
 /* === ESTRUCTURA FIJA ENTRE APPBAR Y TABBAR === */
@@ -25,7 +25,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9e
   height:100vh;
   height:100dvh;
   overflow:hidden;
-  touch-action:manipulation;
+  touch-action:pan-x pan-y;
   background:linear-gradient(180deg,#070b16,#0d1730 60%,#080d18);
   display:flex;
   flex-direction:column;
@@ -508,7 +508,8 @@ tr.des td{background:rgba(212,59,59,.1)}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=30.2.61">
-<link rel="stylesheet" href="css/tutorial.css?v=30.2.61">
+<link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.3">
+<link rel="stylesheet" href="css/tutorial.css?v=31.0.0.3">
 <link rel="stylesheet" href="css/launch.css?v=31.0.0.2-logo-metal">
 <link rel="stylesheet" href="css/profile.css?v=31.0.0.1-profile">
 <link rel="stylesheet" href="css/cloud.css?v=31.0.0.2">
@@ -529,6 +530,7 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="zoomRoot"></div>
  <div id="modalRoot"></div>
  <div id="coinRoot"></div>
+ <div id="battleActionRoot" hidden></div>
  <div id="toastRoot"></div>
 </div>
 
@@ -539,13 +541,14 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/cloud-save.js?v=31.0.0.2"></script>
 <script src="js/cloud-ui.js?v=31.0.0.2"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
-<script src="js/battle-tutorial.js?v=30.2.61"></script>
+<script src="js/battle-actions-ui.js?v=31.0.0.3"></script>
+<script src="js/battle-tutorial.js?v=31.0.0.3"></script>
 <script src="js/menu-tutorial.js?v=31.0.0.2"></script>
 <script src="js/player-backup.js?v=31.0.0.2"></script>
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
-<script src="js/app-interaction.js?v=30.2.57-final"></script>
-<script src="js/changelog.js?v=31.0.0.2"></script>
+<script src="js/app-interaction.js?v=31.0.0.3"></script>
+<script src="js/changelog.js?v=31.0.0.3"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -557,7 +560,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.0.2';
+var VERSION='v31.0.0.3';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -910,126 +913,126 @@ var ROSTER={
  viperina:{legendario:['Barack Obama','Yolanda Díaz'],especial:['Hillary Clinton','Kamala Harris','Christine Lagarde','Ursula von der Leyen'],raro:['Miquel Iceta','Adriana Lastra','Pilar Alegría','Isabel Cela','María Jesús Montero','Nadia Calviño'],comun:['Óscar Puente','Patxi López','Susana Díaz','Emiliano García-Page','Juan Espadas','Pilar Llop','Reyes Maroto','Raquel Sánchez']}
 };
 var QBESP={
- 'donald-trump':['«Fake news!»','«You are fired!»','«Person, woman, man, camera, TV»'],
- 'boris-johnson':['«Get Brexit done»','«Let us get ready to rubble»','«Lo hacemos y ya veremos»'],
- 'alberto-nunez-feijoo':['«Sentido común»','«Galicia no se vende»','«Aquí no sobra nadie»'],
- 'angela-merkel':['«Lo conseguiremos»','«Lo vamos a resolver»','«Sin prisas, con calma»'],
- 'mariano-rajoy':['«Los españoles son muy españoles y mucho españoles»','«El vino, con moderación, es bueno»','«¿Y usted qué quiere que le diga?»'],
- 'vladimir-putin':['«Sorpresa»','«Lo hice por Rusia»','«Todo según el plan»'],
- 'carles-puigdemont':['«Volveré»','«Desde Bruselas»','«Esto no ha acabado»'],
- 'emmanuel-macron':['«Al mismo tiempo»','«¡En marcha!»','«Y a la vez...»'],
- 'pedro-sanchez':['«Resistiré»','«Pactaré con quien haga falta»','«España va como un cohete»'],
- 'isabel-diaz-ayuso':['«¡Libertad!»','«Comunismo o libertad»','«Madrid es España»'],
- 'barack-obama':['«Yes, we can»','«Let me be clear»','«Change»'],
- 'yolanda-diaz':['«El país que viene»','«A trabajar»','«Sumar es sumar»'],
- 'pablo-iglesias':['«La casta»','«Asalto a los cielos»','«Nos han votado por el cambio»'],
- 'nigel-farage':['«Take back control»','«Brexit means Brexit»','«I have been called a great many things in my time — that’s politics.»'],
- 'javier-milei':['«¡Viva la libertad, carajo!»','«¡Afuera!»','«No hay plata»'],
- 'gabriel-rufian':['«Somos la sonrisa de la República»','«España nos roba un poco»','«Respeto enormemente las opiniones de la izquierda de caviar.»'],
- 'jose-maria-aznar':['«España va bien»','«Hemos ganado»','«Tomar posesión de un escaño siempre es preferible a empuñar las armas.»'],
- 'felipe-gonzalez':['«Qué pesado soy»','«Otro gallo cantaría»','«Hay una crisis institucional que galopa hacia la anarquía.»'],
- 'bernie-sanders':['«I am once again asking»','«Not me, us»','«Healthcare is a right of all people, not a privilege.»'],
- 'joe-biden':['«No malarkey»','«Look, folks»','«This is the time to heal in America.»'],
- 'santiago-abascal':['«¡Viva España!»','«¡Que viva España!»','«Yo soy español. Ni monárquico ni republicano.»'],
- 'giorgia-meloni':['«Soy Giorgia, soy madre, soy italiana»','«Dios, patria y familia»','«Las fronteras solo existen si las defiendes.»'],
- 'recep-tayyip-erdogan':['«Vamos a hacer algo grande»','«El pueblo manda»','«Todos somos seres humanos.»'],
- 'viktor-orban':['«Hungría primero»','«Democracia iliberal»','«Los días que tenemos por delante son para sanar nuestras heridas.»'],
- 'marine-le-pen':['«El pueblo»','«Francia primero»','«Lo que me importa es la defensa de Francia.»'],
- 'matteo-salvini':['«Italianos primero»','«Manos libres»','«Elijo cambiar las cosas desde dentro.»'],
- 'justin-trudeau':['«Because it is 2015»','«Sunny ways»','«Diversity is our strength.»'],
- 'salvador-illa':['«Volveremos a ganar»','«Con toda la humildad»','«Las vacunas salvan vidas.»'],
- 'ada-colau':['«Barcelona no se vende»','«Los vecinos primero»','«Es una victoria de la ciudadanía y no de un partido político.»'],
- 'nicolas-maduro':['«Un paso al frente»','«Chávez vive»','«Soy hijo de Chávez, pero no soy Chávez.»'],
- 'andres-manuel-lopez-obrador':['«Abrazos, no balazos»','«La pobreza no es destino»','«No puede haber gobierno rico con pueblo pobre.»'],
- 'cristina-fernandez-de-kirchner':['«Un modelo de país»','«La patria es el otro»','«No fue magia.»'],
- 'hillary-clinton':['«I am with her»','«Deal me in»','«Women’s rights are human rights.»'],
- 'kamala-harris':['«We did it, Joe»','«No volver atrás»','«No parent should have to worry about going broke because their child is sick.»'],
- 'christine-lagarde':['«Haremos lo que haga falta»','«Whatever it takes»','«The financial industry is a service industry. It should serve others before it serves itself.»'],
- 'ursula-von-der-leyen':['«Europa es nuestra respuesta»','«Al grano»','«Freedom is priceless.»'],
- "adriana-lastra":["«En las listas van a ir, como siempre, los mejores»","«Nosotros estamos siempre preparados, siempre dispuestos y siempre con ánimo de victoria»","«Este gobierno no tira la toalla y no deja tirada a la gente»"],
- "albert-rivera":["«Saber catalán debe ser un mérito, no una barrera»","«No abra pseudoembajadas. Métase en la cabeza que Cataluña es una comunidad autónoma»","«Queremos ser un partido conciliador entre españoles»"],
- "alberto-garzon":["«Hay que formatear las actuales instituciones del Estado»","«Trichet y Draghi son responsables directos de todo el sufrimiento actual y deberían pasar por un juzgado»","«Lo que se podría haber evitado era hacer recaer todo el coste de la crisis sobre la mayoría de la población»"],
- "alfonso-alonso":["«Hoy es la última rueda de prensa»","«Es una decisión firme, irrevocable»","«Trabajar, afianzar el proyecto y estar unidos»"],
- "alvaro-nadal":["«La divergencia de ideas y opiniones no es un problema en España»","«Contamos nuestros gobiernos por recuperaciones, otros por recesiones»","«Hemos de buscar un mix energético que nos permita respetar el medio ambiente sin incrementar los precios para el consumidor»"],
- "ana-botella":["«Los años pares siempre nos han traído mala suerte»","«La ideología que ha traído mayor progreso a la humanidad es la de los que estamos aquí sentados»","«Sí, soy tradicional; soy conservadora»"],
- "ana-pastor":["«Realmente no sé si lo conseguí»","«El Parlamento debe ser expresión de la unidad de principios y valores»","«Seguir avanzando como nación en este proyecto común que se llama España»"],
- "andrea-levy":["«Todos tenemos una fecha de caducidad que hemos de asumir»","«El partido no se doblegó y el tiempo nos dio la razón»","«No podemos normalizar la ansiedad medicalizándola»"],
- "anna-gabriel":["«Soy un producto de la clase trabajadora»","«Frenaremos a la derecha»","«Mis compromisos políticos y sociales permanecen donde estaban»"],
- "antonio-maillo":["«Sea quien sea el que encabece la candidatura, los dos vamos a ser un pack, un tándem»","«No solo estamos dispuestos, sino que queremos gobernar y cambiar Andalucía»","«Vamos a ser un equipo que suma, que incorpora a gente desde la complementariedad»"],
- "begona-villacis":["«Nosotros no somos políticos, somos gente»","«Nada ni nadie va a cohibirnos ni a impedirnos que cumplamos con el compromiso adquirido con los madrileños»","«No debemos permitir que el odio se instale en nuestra sociedad»"],
- "borja-semper":["«Yo me libré porque ese día no fui a clase»","«También me gustaría un cara a cara para preguntarles por qué querían matarme»","«No siento odio hacia ellos, pero sí quiero que respondan ante la justicia»"],
- "carlos-floriano":["«Ya estamos preparados para gobernar»","«El liderazgo sale reforzado, nos ponemos en la senda de ganar»","«Hoy hemos conseguido hacer un partido más sólido»"],
- "carme-forcadell":["«Yo no estoy inhabilitada porque no tenía malversación»","«Lo único que le importa es la unidad de España y lo que menos le importa es la justicia»","«El Tribunal Constitucional nos dará la razón y lo avalará»"],
- "carmen-calvo":["«Estamos manejando dinero público, y el dinero público no es de nadie»","«Un concierto de rock en español hace más por el castellano que el Instituto Cervantes»","«Soy una tía a la que no doblan»"],
- "cayetana-alvarez-de-toledo":["«Un poco extraño, ¿no?»","«No te lo perdonaré jamás, Manuela Carmena. ¡Jamás!»","«La justicia es el último dique de contención que tiene la democracia en este pacto de Sánchez con Podemos y los independentistas»"],
- "celia-villalobos":["«¡Vamos, Manolo, que pierdo el tren!»","«Usted a mí no me da lecciones»","«Le digo al ama de casa que no eche huesos de vaca cuando haga una comida»"],
- "cristina-cifuentes":["«Si sacas la pistola es para disparar»","«No me voy, me quedo»","«Voy a seguir trabajando por vosotros, los que me habéis votado y los que no»"],
- "cristobal-montoro":["«Que caiga España, que ya la levantaremos nosotros»","«¡Pandilla de inútiles, estáis arruinando España!»","«España se levanta sola»"],
- "cuca-gamarra":["«Hay que estar para servir y no para servirte de la política»","«Nos están vendiendo una moto, pero España no va como una moto»","«Durante los primeros 100 días bajaremos el IRPF a las rentas menores»"],
- "dolores-de-cospedal":["«Que se presenten a las elecciones»","«¿Pero esto qué es? ¿Qué es esto de tratar de violentar el voto?»","«Es el partido de los trabajadores»"],
- "dolors-montserrat":["«La independencia judicial no es elegible según a quién afecta»","«Europa no puede mirar hacia otro lado en un caso como este»","«Los jueces deben estar protegidos frente a intervenciones o presiones externas susceptibles de afectar a su juicio independiente»"],
- "edmundo-bal":["«Soy Bal, Edmundo Bal»","«No soporto la mentira»","«Soy un servidor público que he dedicado toda mi vida a conseguir, a pelear por los intereses generales de este país»"],
- "elias-bendodo":["«El discurso de la vivienda se les ha caído entero»","«Sánchez convocó las elecciones por la vivienda y la vivienda va a ser su puntilla»","«Dejar atrás el muro de la crispación de Sánchez»"],
- "emiliano-garcia-page":["«Las elecciones son como los melones»","«Ese es el espíritu con el que hay que salir a dar la batalla electoral»","«Lo que necesitamos en todo caso es recuperar entre todos espacios de ciertos consensos, al menos de cierta escucha»"],
- "esperanza-aguirre":["«Yo también estoy harta»","«De momento deben dejar sus cargos»","«Los ciudadanos quieren un partido limpio y tenemos que luchar para ello»"],
- "esteban-gonzalez-pons":["«Desde aquí vamos a trabajar para seguir avanzando, con las puertas abiertas para todas las delegaciones»","«No hay una Europa del sur y otra del norte, una Europa rica y otra pobre»","«Habrá más Europa si soñamos juntos y trabajamos unidos»"],
- "fatima-banez":["«Uno de cada cinco delitos ya es ciberdelito»","«En Aragón y en España hay dos tipos de empresa, la que ha sufrido un ciberataque y la que lo sufrirá»","«La inversión en seguridad es estratégica y no es un gasto»"],
- "fernando-grande-marlaska":["«Son gajes del oficio, lo raro sería no aparecer»","«Sostener los esfuerzos para impedir la llegada a la península de personas que permanecen en Ceuta de manera irregular»","«La garantía de la seguridad ciudadana»"],
- "ines-arrimadas":["«Siempre he decidido dar un paso al frente»","«Hay que luchar por la España que merecemos, ha llegado la hora de sacar a Sánchez y Torra del gobierno»","«Remar todos juntos en la misma dirección, unidos y adelante»"],
- "inigo-errejon":["«Uno a diez en lo estratégico, diez a uno en lo táctico»","«Quien crea que Venezuela es modelo para España es un analfabeto político»","«En Venezuela la gente hace tres comidas al día»"],
- "inigo-mendez-de-vigo":["«El dinero no tiene que ser el factor que impida llegar a un acuerdo si existe la voluntad política»","«Piensen en los ciudadanos, y no en los réditos electorales»","«Un Pacto necesario para dar un salto de calidad en nuestro sistema educativo»"],
- "irene-montero":["«El poder no se entrega, el poder se ejerce»","«A los fascistas se les para avanzando en derechos más rápido y de forma más contundente»","«El feminismo siempre vuelve a salir para cuidar y decir que necesitamos poner la vida en el centro»"],
- "isabel-cela":["«Una ley de todos, cargada de futuro»","«Era una ley excluyente, segregadora y elitista»","«Abrir una gran avenida de oportunidades»"],
- "isabel-garcia-tejerina":["«No gusta Pedro Sánchez, pero gusta todavía menos ERC»","«Sánchez pacta lo que haya que pactar por poder»","«Siempre tomamos las decisiones que mejor le convienen a España»"],
- "jaime-de-olano":["«Los españoles se creen a su cuenta corriente más que a sus PowerPoint»","«Su desgobierno es una puerta cerrada a los jóvenes para que puedan formar un hogar»","«Nos sobra propaganda y nos faltan medicamentos»"],
- "javier-maroto":["«A Pedro Sánchez solo le importa Sánchez»","«Comprar votos, repito, es corrupción»","«Pedimos a los ciudadanos la oportunidad de compartir un proyecto juntos»"],
- "jordi-sanchez":["«Nuestra salida es un homenaje a toda la gente que está en el exilio»","«Todos estamos conjurados para la victoria inmediata»","«Que el reino de España sea condenado por haber vulnerado los derechos y libertades de este país»"],
- "jordi-turull":["«No tenía la pretensión de ser la cara del partido»","«Nosotros mantenemos los compromisos, los plazos y la hoja de ruta»","«Mi compromiso con los ciudadanos de Catalunya y su progreso y bienestar seguirá estando intacto»"],
- "jorge-fernandez-diaz":["«¡Nada es mera coincidencia!»","«La mitad de independentistas de hoy son coyunturales»","«Marcelo, llamo al mío. Me ayuda en pequeñas cosas, como aparcar el coche. Y también en las grandes, siempre ayuda»"],
- "jose-luis-abalos":["«Soy un mero peón que se inserta en una lucha política sin reglas»","«Los que pretenden echarme a la calle por la puerta de atrás tendrán que mirarme a la cara»","«Voy a defender mi honor personal hasta las últimas consecuencias»"],
- "jose-luis-rodriguez-zapatero":["«Estamos en la Champions League de las economías mundiales»","«A cada insulto que recibamos nosotros una propuesta, a cada descalificación, una idea, y a cada exageración una sonrisa»","«El Estado de derecho se defiende con el Estado de derecho»"],
- "jose-manuel-garcia-margallo":["«Cualquier gobierno es un gobierno de coalición entre el ministro de Hacienda y todos los demás»","«No pisaré Gibraltar mientras no haya una bandera española»","«Soy un talibán de la transparencia»"],
- "josep-rull":["«Permítanme expresar el honor que como nacionalista catalán me supone poder dirigirles la palabra desde este foro empapado de dignidad, de historia y de solemnidad»","«Estoy convencido de que algún día será el de una nación libre»","«Les decimos que seguiremos luchando para conseguirla y lo haremos»"],
- "juan-espadas":["«No voy a dejar Andalucía»","«Quiero ser candidato a la Junta y tener una segunda opción como hice en el Ayuntamiento de Sevilla»","«A ello dedicaré todo mi esfuerzo»"],
- "juan-vicente-herrera":["«Más pasado que futuro»","«Me tengo que empezar a acostumbrar a que se acuerden de uno en ausencia»","«Ser el presidente de todos los castellanos y leoneses sin distinción de partidos, ideologías y opiniones»"],
- "julio-anguita":["«Si me quiere insultar, llámeme progre»","«Malditas sean las guerras y los canallas que las apoyan»","«Reivindico mi parcela de libertad de pensamiento»"],
- "laura-borras":["«Servir al país y a la cultura»","«Nada volverá a ser como antes»","«Nos tiene y nos tendrá siempre al lado al servicio del país»"],
- "luis-de-guindos":["«Lo que aprendes cuando eres joven en la universidad te vale para el resto de la vida»","«Hay que intentar maximizar los beneficios de la inmigración y minimizar los costes»","«Es importante adaptar las enseñanzas a lo que va a ser la demanda en el futuro»"],
- "maria-jesus-montero":["«Qué vergüenza que todavía se cuestione el testimonio de una víctima»","«Estamos con todas aquellas que se enfrentan a gigantes para poder reclamar la dignidad»","«No está sola, aquí estamos contigo»"],
- "marta-lois":["«La decisión está tomada»","«Va a haber un cambio histórico»","«Lamentamos la ruptura de Podemos con nuestro grupo»"],
- "marta-rivera-de-la-cruz":["«Enseñar en gallego, porque el castellano se aprende con la tele, es una irresponsabilidad»","«España no tenía colonias, tenía virreinatos»","«Todo lo que se obtuvo en las excavaciones, todas las joyas que se encontraban, se han quedado allí»"],
- "marta-rovira":["«Comenzar a confrontar ideas y dejar de atacar a personas porque piensan diferente»","«Pienso que hay quien cree que, cuanto peor, mejor para él»","«Aire fresco y energía renovada»"],
- "meritxell-batet":["«Cada uno de nosotros somos del pueblo»","«Ningún partido representa en exclusiva a España»","«La esperanza es el material político»"],
- "miguel-arias-canete":["«Hoy nuestros socios europeos admiran lo que hemos hecho y nos respetan por ello»","«España no puede jugar sola la partida y Europa es una gran oportunidad de desarrollo socioeconómico y de liderazgo político para los países que la integramos»","«Garantizar el estado de bienestar, que sea sostenible»"],
- "miquel-iceta":["«Era gay y bailó»","«¡Mantente firme y líbranos de Rajoy y del PP!»","«¡Aguanta, resiste a las presiones!»"],
- "miriam-nogueras":["«Facilitar la negociación de la secesión»","«Y yo pago 49 euros en un hostal, pero el pueblo eres tú, ¿verdad?»","«Estoy absolutamente convencida de que, si gana el sí, de aquí no marchará nadie»"],
- "monica-garcia":["«Lo que nosotros planteamos es un cambio en el modelo de gestión de la Sanidad de Madrid»","«Estamos hablando con un muro. No tienen ninguna intención de escucharnos»","«Nosotros estamos dispuestos a aportar soluciones»"],
- "nacho-alvarez":["«Estoy orgulloso de haber formado parte de esa historia»","«Puso fin al bipartidismo»","«En mi cultura política no es concebible aceptar un cargo al margen de la organización de la que uno forma parte»"],
- "nadia-calvino":["«Necesitamos una respuesta unida tanto en el corto como en el largo plazo»","«Los ciudadanos no merecen y no entenderían que no se llegase a un acuerdo»","«No es aceptable que cada país tenga que hacer frente solo»"],
- "oriol-junqueras":["«El referéndum es también una palanca de cambio para toda España»","«Es una oportunidad para que se puedan aplicar las cosas que no nos dejan aplicar»","«Nosotros tenemos todo el aprecio y cariño por la sociedad española, sus ciudadanos, su lengua y su cultura»"],
- "oscar-puente":["«Me han degradado a ministro de Transportes, no está mal, no está mal»","«Es imposible que gane las elecciones, cavó su fosa; pues no»","«Una de las administraciones que mejor funciona de España»"],
- "pablo-cambronero":["«No me integro en ningún grupo político, haré lo que prometí hacer»","«Dije no al sanchismo y lo mantengo»","«Voy a defender la democracia que está amenazada»"],
- "pablo-casado":["«El Partido Popular es el partido que representa a la España que madruga»","«Nosotros no colonizábamos, lo que hacíamos era tener una España más grande»","«La nación española es un hecho moral»"],
- "pablo-echenique":["«En la izquierda a veces la gente se vuelve anticientífica»","«Es hora de que certifiquemos la defunción del bipartidismo»","«Puede afectar a miles de familias. Por eso, la recurriré»"],
- "pablo-montesinos":["«El lío lo tiene que solucionar Sánchez porque él es el tapón, el señor del bloqueo político»","«No vamos a facilitar la investidura de Sánchez porque no podemos estar al lado de los que quieren romper España»","«El Partido Popular ejercerá una oposición firme a Sánchez»"],
- "patxi-lopez":["«Pues va a ser que no»","«Una vez detenido el terrorista, no podemos dejar impune a la ideología que le ha forzado a serlo»","«Era uno de los nuestros, un trabajador de nuestra tierra, defensor de Euskadi»"],
- "pere-aragones":["«Los conflictos en una democracia se resuelven políticamente. Y es votando»","«Culminar la independencia de Cataluña»","«Cerrar un ciclo electoral de malos resultados y contribuir a abrir un nuevo ciclo de crecimiento»"],
- "pilar-alegria":["«Una sociedad moderna no se puede permitir vivir a espaldas de una universidad tan importante»","«Una apuesta fuerte y directa»","«Tenemos que apoyar fuertemente a esos creadores, investigadores que esta Comunidad tiene»"],
- "pilar-llop":["«Tenemos la obligación de terminar con la violencia de género, con la violencia machista»","«Esto es intolerable en el siglo XXI»","«Quiero pedirles ayuda para reivindicar entre todos, sin excepciones, el consenso del Pacto de Estado contra la Violencia de Género»"],
- "quim-torra":["«La ratafía nos une, nos divierte y, de alguna manera, forma parte de nosotros mismos»","«No nos tenemos que defender, hemos de atacar al Estado español»","«Bajo la presidencia de Jordi Pujol nos sentimos seguros, protegidos»"],
- "rafael-catala":["«Es una obligación hacer que las cosas funcionen bien»","«Pasar de presidente de Sala a presidente del Tribunal Supremo no es ninguna pérdida, sino un ascenso»","«Garantiza un CGPJ profesional, estable, que seguirá haciendo bien su trabajo»"],
- "rafael-hernando":["«La Justicia ha sido tradicionalmente una de las instituciones peor valoradas de nuestra democracia»","«Yo he dicho que Pedraz ha actuado como un pijo ácrata, no que lo sea»","«No nos protege nadie»"],
- "raquel-sanchez":["«La democracia no crece con ladrillos, sino con derechos»","«No hay dignidad sin vivienda»","«Su función social es incuestionable»"],
- "raul-romeva":["«Soy un culo inquieto, de raíces múltiples y variadas»","«Cuando a uno le pasan los cazas por encima de la cabeza se genera incertidumbre»","«Lo primero que hago al llegar es irme al Parlamento, allí trabajo y trabajo y cuando termino vuelvo a casa»"],
- "reyes-maroto":["«Hoy gana el derecho de la ciudadanía a hacerse escuchar»","«Esa es la cuestión que no entiende ni Ayuso ni Almeida»","«Más vivienda asequible, prevención de los desahucios y protección frente a la especulación»"],
- "rocio-monasterio":["«Un acto de servicio a los españoles»","«Yo no me meto en la cama de nadie y no quiero que nadie se meta en mi casa para decir cómo educar a mis hijos»","«Esa es la verdadera libertad»"],
- "roger-torrent":["«Respeto para la voluntad mayoritaria de la gente»","«Conjurarse para recuperar las instituciones del país lo más pronto posible»","«Mi objetivo es coser la sociedad catalana compuesta por identidades cruzadas»"],
- "sara-gimenez":["«La imagen que tiene ante los demás se sigue basando en prejuicios y estereotipos»","«¡Ya está bien de tanto sesgar y estigmatizar!»","«Somos muchos los que llevamos una vida cotidiana muy normalizada y parece que somos invisibles»"],
- "soraya-saenz-de-santamaria":["«La razón como argumento puede resultar inoperante frente a tanta exaltación emocional»","«Prima lo efímero, la anécdota frente a la categoría, el morbo frente a la verdad»","«Si nuestras instituciones no se ponen en valor, se ponen en riesgo»"],
- "susana-diaz":["«Cumplir con mi palabra, mi compromiso con Andalucía»","«España no se puede permitir que el PSOE no tenga rumbo»","«Hace falta diálogo, mucho diálogo y consenso»"],
- "teodoro-garcia-egea":["«Nunca había lanzado más de 11 m»","«Ganar abrió una nueva etapa en mi vida»","«Yo soy de Murcia, no de extrema derecha»"],
- "toni-canto":["«Eso es transfuguismo y está feo»","«Cesen los privilegios de vascos y navarros»","«Si te acomodas en una poltrona no haces lo que prometes»"],
- "toni-comin":["«Una democracia mundial es posible»","«Hay que buscar el desgaste económico del Estado»","«Erradicar la pobreza en el mundo es perfectamente posible»"]
+ "alberto-nunez-feijoo":["El gratis total no hace ningún bien", "No acepto pagar el precio", "Tengo principios, límites y palabra"],
+ "angela-merkel":["La tolerancia no significa «todo vale»", "Lo lograremos", "Seguridad, bienestar y paz"],
+ "barack-obama":["Let me be clear", "Yes, we can", "We rise or fall together"],
+ "boris-johnson":["Get Brexit done", "We are going to rise", "Let's get breakfast done"],
+ "carles-puigdemont":["No se ha acabado", "La libertad individual", "Volver a un lugar seguro"],
+ "donald-trump":["Fake news!", "You're fired!", "Never, ever give up"],
+ "emmanuel-macron":["Al mismo tiempo", "Debemos retomar el control", "Hay que poder resistir"],
+ "isabel-diaz-ayuso":["¡Libertad!", "Comunismo o libertad", "Madrid es España"],
+ "mariano-rajoy":["Es la realidad", "Fin de la cita", "No tomar ninguna decisión"],
+ "pedro-sanchez":["Pese a todas las dificultades", "Como un cohete", "Mejorar la vida de la gente"],
+ "vladimir-putin":["Nadie puede cambiar estas cosas", "No tenemos miedo de nada", "Podemos sentirnos seguros"],
+ "yolanda-diaz":["Ahora toca gobernar", "No es suficiente", "Una pieza de estabilidad"],
+ "ada-colau":["Mucha emoción contenida", "Una victoria de la ciudadanía", "Una segunda oportunidad"],
+ "andres-manuel-lopez-obrador":["Ya chole", "Me canso ganso", "Solo el pueblo puede salvar al pueblo"],
+ "bernie-sanders":["I am once again asking", "Enough is enough!", "Healthcare is a right"],
+ "christine-lagarde":["Tengo mi propio estilo", "Tomaremos todas las medidas necesarias", "Hemos conseguido mantenernos estables"],
+ "cristina-fernandez-de-kirchner":["No fue magia", "Soy una exitosa presidente", "Nos vamos a curar"],
+ "felipe-gonzalez":["Inventar el futuro", "Galopa hacia la anarquía", "Superar este peligro"],
+ "gabriel-rufian":["Competir de tú a tú", "Estoy harto de tener la razón", "Sin renunciar a lo que soy"],
+ "giorgia-meloni":["Soy Giorgia", "Estamos preparados", "Defenderemos nuestra identidad"],
+ "hillary-clinton":["Deal me in", "We are stronger together", "Women's rights are human rights"],
+ "javier-milei":["¡Afuera!", "¡Viva la libertad!", "No hay plata"],
+ "joe-biden":["Look, folks", "No malarkey", "Time to heal"],
+ "jose-maria-aznar":["El que pueda hablar, que hable", "Váyase, señor presidente", "Tomar posesión de un escaño"],
+ "justin-trudeau":["Because it's 2015", "The budget will balance itself", "Diversity is our strength"],
+ "kamala-harris":["I'll repeat the question", "We are not going back", "I know we can fix it"],
+ "marine-le-pen":["¿Dónde estoy?", "No debemos callarnos", "La defensa de Francia"],
+ "matteo-salvini":["Cambiar las cosas desde dentro", "Estamos creciendo", "Nos estamos aliando"],
+ "nicolas-maduro":["No se tarde en llegar", "Venga por mí", "Aquí lo espero"],
+ "nigel-farage":["Who are you?", "That's not good enough", "I'm not for sale"],
+ "pablo-iglesias":["Cuando no se roba, se gobierna mejor", "Por asalto", "Defender la democracia con la ley"],
+ "recep-tayyip-erdogan":["One minute", "El mundo es más grande que cinco", "Todos somos seres humanos"],
+ "salvador-illa":["Humildad", "Un triunfo de todos", "Las vacunas salvan vidas"],
+ "santiago-abascal":["Yo soy español", "¡Viva España!", "Ni monárquico ni republicano"],
+ "ursula-von-der-leyen":["This is a watershed moment", "We must fight back", "Freedom is priceless"],
+ "viktor-orban":["Debemos afrontar este hecho", "Firmes en nuestra determinación", "Sanar nuestras heridas"],
+ "adriana-lastra":["Como siempre, los mejores", "Siempre con ánimo de victoria", "No tira la toalla"],
+ "albert-rivera":["Debe ser un mérito", "Matar moscas a cañonazos", "Venimos a ayudar"],
+ "alberto-garzon":["La verdad es la verdad", "Hay que formatear", "Moderar el impacto"],
+ "ana-botella":["Mala suerte", "Mayor progreso a la humanidad", "Relaxing cup of café con leche"],
+ "anna-gabriel":["La clase trabajadora", "Frenaremos a la derecha", "Permanecen donde estaban"],
+ "begona-villacis":["Somos gente", "Nada ni nadie va a cohibirnos", "Cumplamos con el compromiso adquirido"],
+ "cayetana-alvarez-de-toledo":["Un poco extraño, ¿no?", "No te lo perdonaré jamás", "El último dique de contención"],
+ "cristina-cifuentes":["Voy a seguir trabajando", "No me voy, me quedo", "Sin bajar la guardia"],
+ "cristobal-montoro":["Las reformas estructurales", "España se levanta sola", "El país no necesita un rescate"],
+ "dolores-de-cospedal":["¿Pero esto qué es?", "Que se presenten a las elecciones", "En diferido"],
+ "edmundo-bal":["Soy Bal, Edmundo Bal", "No soporto la mentira", "Soy un servidor público"],
+ "esperanza-aguirre":["Yo también estoy harta", "Deben dejar sus cargos", "Tenemos que luchar para ello"],
+ "ines-arrimadas":["Dar un paso al frente", "Ha llegado la hora", "Unidos y adelante"],
+ "inigo-errejon":["Uno a diez en lo estratégico", "Diez a uno en lo táctico", "Construir normalidad"],
+ "irene-montero":["El poder se ejerce", "Más rápido y de forma más contundente", "Poner la vida en el centro"],
+ "isabel-cela":["Una ley de todos", "Cargada de futuro", "Una gran avenida de oportunidades"],
+ "jordi-turull":["No tenía la pretensión", "Mantenemos los compromisos", "Seguirá estando intacto"],
+ "jorge-fernandez-diaz":["Nada es mera coincidencia", "Míreme a los ojos: ¡no!", "Siempre ayuda"],
+ "jose-luis-rodriguez-zapatero":["A cada descalificación, una idea", "Estamos en la Champions League", "A cada exageración una sonrisa"],
+ "jose-manuel-garcia-margallo":["No tengo la menor duda", "Estamos en un mundo nuevo", "Regeneración de las instituciones"],
+ "julio-anguita":["Siempre he dicho lo que pensaba", "Nunca me he arredrado", "Libertad de pensamiento"],
+ "laura-borras":["Servir al país y a la cultura", "Nada volverá a ser como antes", "Siempre al lado"],
+ "luis-de-guindos":["Maximizar los beneficios", "Minimizar los costes", "Te vale para el resto de la vida"],
+ "maria-jesus-montero":["Qué vergüenza", "Se enfrentan a gigantes", "Aquí estamos contigo"],
+ "marta-rovira":["Confrontar ideas", "Aire fresco", "Energía renovada"],
+ "miquel-iceta":["Queda por hacer", "Intenta formar una mayoría de cambio", "¡Aguanta, resiste a las presiones!"],
+ "miriam-nogueras":["Y yo pago 49 euros", "El pueblo eres tú, ¿verdad?", "De aquí no marchará nadie"],
+ "monica-garcia":["Un cambio en el modelo", "Estamos hablando con un muro", "Aportar soluciones"],
+ "nadia-calvino":["Necesitamos una respuesta unida", "No es aceptable", "Triple red de seguridad"],
+ "oriol-junqueras":["Una palanca de cambio", "Las cosas que no nos dejan aplicar", "Todo el aprecio y cariño"],
+ "pablo-casado":["Una cortina de humo", "Hasta aquí hemos llegado", "Nosotros unimos"],
+ "pablo-echenique":["Cascao y neoliberal", "La defunción del bipartidismo", "Por eso, la recurriré"],
+ "pilar-alegria":["Una sociedad moderna", "Una apuesta fuerte y directa", "Tenemos que apoyar fuertemente"],
+ "rocio-monasterio":["Un acto de servicio", "No quiero que nadie se meta en mi casa", "Esa es la verdadera libertad"],
+ "sara-gimenez":["Prejuicios y estereotipos", "¡Ya está bien!", "Somos muchos"],
+ "soraya-saenz-de-santamaria":["La razón como argumento", "El morbo frente a la verdad", "Nuestras instituciones"],
+ "alfonso-alonso":["Hoy es la última rueda de prensa", "Una decisión firme, irrevocable", "Estar unidos"],
+ "alvaro-nadal":["La divergencia de ideas y opiniones", "Contamos nuestros gobiernos por recuperaciones", "Respetar el medio ambiente"],
+ "ana-pastor":["Realmente no sé si lo conseguí", "Seguir avanzando como nación", "La unidad de principios y valores"],
+ "andrea-levy":["Todos tenemos una fecha de caducidad", "El tiempo nos dio la razón", "No se doblegó"],
+ "antonio-maillo":["Un pack, un tándem", "Queremos gobernar y cambiar Andalucía", "Un equipo que suma"],
+ "borja-semper":["No le daría otra interpretación", "Estoy convencido", "Sin mala intención"],
+ "carlos-floriano":["Ya estamos preparados para gobernar", "Nos ponemos en la senda de ganar", "Un partido más sólido"],
+ "carme-forcadell":["Yo no estoy inhabilitada", "Nos dará la razón", "Lo avalará"],
+ "carmen-calvo":["El dinero público no es de nadie", "No renuncio", "Soy una tía a la que no doblan"],
+ "celia-villalobos":["¡Que pierdo el tren!", "Usted a mí no me da lecciones", "No eche huesos de vaca"],
+ "cuca-gamarra":["Hay que estar para servir", "Nos están vendiendo una moto", "Bajaremos el IRPF"],
+ "dolors-montserrat":["No puede mirar hacia otro lado", "La independencia judicial no es elegible", "Los jueces deben estar protegidos"],
+ "elias-bendodo":["Un clásico", "Se les ha caído entero", "Las pensiones están garantizadas"],
+ "emiliano-garcia-page":["Las elecciones son como los melones", "Salir a dar la batalla electoral", "Recuperar entre todos"],
+ "esteban-gonzalez-pons":["Con las puertas abiertas", "Trabajamos unidos", "Si soñamos juntos"],
+ "fatima-banez":["Los malos también aprenden", "Hacen ataques más sofisticados", "Prepararnos mejor para el futuro"],
+ "fernando-grande-marlaska":["Son gajes del oficio", "Impedir la llegada", "La garantía de la seguridad ciudadana"],
+ "inigo-mendez-de-vigo":["Si existe la voluntad política", "Dar un salto de calidad", "Un pacto necesario"],
+ "isabel-garcia-tejerina":["Somos importantes hoy", "No podemos dejar a España sin alternativa", "La convivencia y la estabilidad"],
+ "jaime-de-olano":["Su cuenta corriente", "Nos sobra propaganda", "Para que puedan formar un hogar"],
+ "javier-maroto":["Con dureza democrática", "Comprar votos, repito, es corrupción", "Compartir un proyecto juntos"],
+ "jordi-sanchez":["Todos estamos conjurados", "Para la victoria inmediata", "Los derechos y libertades de este país"],
+ "jose-luis-abalos":["Soy un mero peón", "Tendrán que mirarme a la cara", "Voy a defender mi honor personal"],
+ "josep-rull":["Dirigirles la palabra", "Una nación libre", "Seguiremos luchando"],
+ "juan-espadas":["No voy a dejar Andalucía", "A ello dedicaré todo mi esfuerzo", "Una segunda opción"],
+ "juan-vicente-herrera":["Más pasado que futuro", "Que se acuerden de uno", "Sin distinción de partidos"],
+ "marta-lois":["La decisión está tomada", "Un cambio histórico", "Cuento con vosotros y vosotras"],
+ "marta-rivera-de-la-cruz":["Chulapear", "Es una irresponsabilidad", "Se han quedado allí"],
+ "meritxell-batet":["Somos del pueblo", "Ningún partido representa en exclusiva a España", "La esperanza es el material político"],
+ "miguel-arias-canete":["Nos respetan por ello", "No puede jugar sola la partida", "Garantizar el estado de bienestar"],
+ "nacho-alvarez":["Estoy orgulloso", "Puso fin al bipartidismo", "Redefinir y oxigenar"],
+ "oscar-puente":["No está mal", "Pues no", "Así es la vida"],
+ "pablo-cambronero":["Haré lo que prometí hacer", "Lo mantengo", "Voy a defender la democracia"],
+ "pablo-montesinos":["Sería una irresponsabilidad", "Una oposición firme", "Pactos de Estado"],
+ "patxi-lopez":["Pues va a ser que no", "Tú sabrás", "Velar por la seguridad"],
+ "pere-aragones":["Es votando", "Culminar la independencia de Cataluña", "Abrir un nuevo ciclo de crecimiento"],
+ "pilar-llop":["Tenemos la obligación", "Esto es intolerable", "Quiero pedirles ayuda"],
+ "quim-torra":["La ratafía nos une", "Hemos de atacar", "Nos sentimos seguros, protegidos"],
+ "rafael-catala":["Que las cosas funcionen bien", "Un ascenso", "Seguirá haciendo bien su trabajo"],
+ "rafael-hernando":["Esa es la representatividad", "¡Inaceptable!", "En todo momento hemos respetado"],
+ "raquel-sanchez":["No crece con ladrillos", "No hay dignidad sin vivienda", "Su función social es incuestionable"],
+ "raul-romeva":["Soy un culo inquieto", "Se genera incertidumbre", "Trabajo y trabajo"],
+ "reyes-maroto":["Esa es la cuestión", "Hoy gana el derecho", "Protección frente a la especulación"],
+ "roger-torrent":["Respeto para la voluntad mayoritaria", "Recuperar las instituciones", "Coser la sociedad catalana"],
+ "susana-diaz":["Cumplir con mi palabra", "No se puede permitir", "Diálogo, mucho diálogo y consenso"],
+ "teodoro-garcia-egea":["Nunca había lanzado más de 11 m", "Ganar abrió una nueva etapa", "Yo soy de Murcia"],
+ "toni-canto":["Eso es transfuguismo", "No haces lo que prometes", "Cesen los privilegios"],
+ "toni-comin":["Una democracia mundial es posible", "Hay que buscar el desgaste económico", "Erradicar la pobreza en el mundo"]
 };
 
 // Keep the original save/image identifier when a corrected surname changes its spelling.
@@ -1150,6 +1153,7 @@ function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, r
   +'<button type="button" class="btn '+(isDanger?'danger':'')+' sm" data-modal="confirm"'+(requiresReview?' disabled':'')+'>'+esc(confirmLabel||'Confirmar')+'</button>'
   +'</div></div></div>';
  var content=document.getElementById('content');if(content)content.inert=true;
+ if(typeof HemicycleBattleActions!=='undefined')HemicycleBattleActions.render(null);
  var focus=mr.querySelector(requiresReview?'[data-modal="review"]':'[data-modal="confirm"]');if(focus)focus.focus();
 }
 function closeModal(){
@@ -1157,6 +1161,7 @@ function closeModal(){
  var mr=document.getElementById('modalRoot');
  if(mr)mr.innerHTML='';
  var content=document.getElementById('content');if(content)content.inert=!!(SCREEN==='battle'&&G&&!G.over&&G.n===0&&!G.tutorial);
+ syncBattleActions();
  if(TUTORIAL)TUTORIAL.render();
  if(MENU_GUIDE)MENU_GUIDE.render();
 }
@@ -1332,18 +1337,21 @@ function cycleDetalleCard(step){
   lockedHoriz=false;
  }
 
+ function cancelTouchSwipe(){tracking=false;lockedHoriz=false;resetDragTransform();}
+
  document.addEventListener('touchstart',function(ev){
-  if(!ev.touches||ev.touches.length!==1)return;
+  if(!ev.touches||ev.touches.length!==1){cancelTouchSwipe();return;}
   onStart(ev.touches[0].clientX,ev.touches[0].clientY,ev.target);
  },{passive:true});
 
  document.addEventListener('touchmove',function(ev){
-  if(!tracking||!ev.touches||!ev.touches.length)return;
+  if(!ev.touches||ev.touches.length!==1){cancelTouchSwipe();return;}
+  if(!tracking)return;
   onMove(ev.touches[0].clientX,ev.touches[0].clientY,ev);
  },{passive:false});
 
  document.addEventListener('touchend',onEnd,{passive:true});
- document.addEventListener('touchcancel',function(){tracking=false;resetDragTransform();},{passive:true});
+ document.addEventListener('touchcancel',cancelTouchSwipe,{passive:true});
 
  document.addEventListener('mousedown',function(ev){
   if(ev.button!==0)return;
@@ -1365,6 +1373,10 @@ window.addEventListener('keydown',function(ev){
    var button=document.querySelector('#coinRoot button');if(button)button.focus();
   }
   return;
+ }
+ if(SCREEN==='battle'&&G&&!G.over&&!(TUTORIAL&&TUTORIAL.active)&&!MODAL_CB){
+  if(ev.key==='Escape'&&G.sel){ev.preventDefault();var selected=G.sel;choosePlayerAction('cancel');var cardButton=document.querySelector('[data-tutorial=player] [data-buid="'+selected+'"]');if(cardButton)cardButton.focus();return;}
+  if((ev.key==='Enter'||ev.key===' ')&&ev.target.matches('[data-buid]')){ev.preventDefault();ev.target.click();return;}
  }
  if(PLAY_OPEN&&ev.key==='Escape'){ev.preventDefault();PLAY_OPEN=false;paint();var toggle=document.querySelector('[data-act="play-menu"]');if(toggle)toggle.focus();return;}
  if(PLAY_OPEN&&(ev.key==='ArrowUp'||ev.key==='ArrowDown')){
@@ -1617,6 +1629,7 @@ function paint(){
  syncGoldCanvases();
  syncCoinToss();
  syncBattleClock();
+ syncBattleActions();
  if(TUTORIAL)TUTORIAL.render();
  if(MENU_GUIDE)MENU_GUIDE.render();
 }
@@ -1905,7 +1918,7 @@ function mk(c, isLeader, side){
  var stats=cardStats(c,side==='p');
  var a = stats.a + (isLeader ? 1 : 0);
  var hm = stats.h + (isLeader ? 3 : 0);
- return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,gold:stats.gold,ready:true,buff:0};
+ return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,gold:stats.gold,ready:true,buff:0,guard:false};
 }
 
 /* === GENERADOR DE GABINETE RIVAL EQUILIBRADO SIN INFLAR STATS === */
@@ -1994,7 +2007,38 @@ function log(t,cls){if(!G)return;G.log.unshift('<div'+(cls?' class="'+cls+'"':''
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
 function battleZasca(s,c){return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0);}
-function attackDamage(s,c,tgt){var foe=s==='p'?'e':'p';return battleZasca(s,c)+(activeDoc(s)==='viperina'&&G.leader[foe]&&tgt.uid===G.leader[foe].uid?2:0);}
+function attackDamage(s,c,tgt,variant){
+ var foe=s==='p'?'e':'p',zasca=battleZasca(s,c);
+ if(variant==='strong')zasca=Math.ceil(zasca*1.5);
+ return zasca+(activeDoc(s)==='viperina'&&G.leader[foe]&&tgt&&tgt.uid===G.leader[foe].uid?2:0);
+}
+function incomingDamage(card,damage){return card.guard?Math.ceil(damage/2):damage;}
+function healingAmount(card){var missing=Math.max(0,card.hm-card.h);return Math.min(missing,Math.max(3,Math.ceil(missing/2)));}
+function strongWait(owner,card){
+ var turn=G.turns?G.turns[owner]:0;
+ return Math.max(0,(card.strongReadyOn==null?turn+1:card.strongReadyOn)-turn);
+}
+function canStrongAttack(owner,card){return strongWait(owner,card)===0;}
+function receiveBattleDamage(card,damage){
+ var received=incomingDamage(card,damage);
+ if(card.guard&&damage>0){card.guard=false;log(card.n+' usa su defensa: el golpe baja de '+damage+' a '+received+' de daño.');}
+ card.h-=received;return received;
+}
+function useSupport(card,kind,owner){
+ if(checkBattleEnd()||G.side!==owner||!card||!card.ready||G.field[owner].indexOf(card)<0)return false;
+ if(kind!=='guard'&&kind!=='heal')return false;
+ var heal=healingAmount(card);
+ if((kind==='guard'&&card.guard)||(kind==='heal'&&heal===0))return false;
+ card.ready=false;
+ if(kind==='guard'){
+  card.guard=true;
+  log(card.n+' dice «'+card.q[2]+'»: defensa del 50 % frente al próximo golpe.','hi');
+ }else{
+  card.h+=heal;
+  log(card.n+' dice «'+card.q[2]+'»: recupera '+heal+' de Aguante ('+card.h+'/'+card.hm+').','hi');
+ }
+ return true;
+}
 function battleDoctrine(s){var k=doc(s);if(!k)return 'inactiva';return esc(DOCM[k].n)+(activeDoc(s)?'':' (neutralizada por '+esc(DOCM[doc(s==='p'?'e':'p')].n)+')');}
 function leaderOn(s){var l=G.leader[s];if(!l)return false;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return true;return false;}
 function enMano(s,uid){for(var i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)return true;return false;}
@@ -2010,7 +2054,7 @@ function draw(s){
  while(G.deck[s].length&&G.hand[s].length<2){
   var c=G.deck[s].shift();
   if(!enMano(s,c.uid)&&!enMesa(s,c.uid)){
-   c.h=c.hm;c.ready=true;delete c.drawAfterTurn;G.hand[s].push(c);break;
+   c.h=c.hm;c.ready=true;c.guard=false;c.enteredTurn=null;c.strongReadyOn=null;delete c.drawAfterTurn;G.hand[s].push(c);break;
   }
  }
 }
@@ -2018,7 +2062,7 @@ function draw(s){
 function startTurn(s){
  if(checkBattleEnd())return;
  clearAI();
- G.n++;G.side=s;G.sel=null;
+ G.n++;G.side=s;G.sel=null;G.move=null;G.support=false;
  if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;
  G.turnDeadline=G.tutorial?null:Date.now()+60000;
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
@@ -2073,7 +2117,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
   return;
  }
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
- card.h=0;card.ready=false;card.buff=0;
+ card.h=0;card.ready=false;card.buff=0;card.guard=false;card.enteredTurn=null;card.strongReadyOn=null;
  card.drawAfterTurn=(G.turns?G.turns[victim]:0)+2;
  G.pas[victim].push(card);
  if(attacker){
@@ -2098,7 +2142,8 @@ function playCard(s,uid){
  if(c.c>G.tdp[s]||G.field[s].length>=3)return false;
  G.hand[s].splice(idx,1);
  c.h=c.hm;
- c.ready=true;
+ c.ready=true;c.guard=false;
+ c.enteredTurn=G.turns?G.turns[s]:0;c.strongReadyOn=c.enteredTurn+1;
  G.field[s].push(c);G.tdp[s]-=c.c;
  log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Líder en Tribuna: doctrina '+DOCM[c.pa].n+(activeDoc(s)?' activa).':' neutralizada).'):'.'));
  if(c.uid===G.leader[s].uid&&activeDoc(s)==='verborrea'){
@@ -2109,28 +2154,33 @@ function playCard(s,uid){
  return true;
 }
 
-function attack(atk,tgt,owner){
- if(checkBattleEnd()||G.side!==owner||!atk||!atk.ready||!enMesa(owner,atk.uid))return;
+function attack(atk,tgt,owner,variant){
+ if(checkBattleEnd()||G.side!==owner||!atk||!atk.ready||G.field[owner].indexOf(atk)<0)return false;
+ variant=variant||'normal';
+ if(variant!=='normal'&&variant!=='strong')return false;
+ if(variant==='strong'&&!canStrongAttack(owner,atk))return false;
  var foe=owner==='p'?'e':'p';
+ if(tgt==='__EMPTY'?G.field[foe].length>=3:G.field[foe].indexOf(tgt)<0)return false;
  var ownerDoc=activeDoc(owner),foeDoc=activeDoc(foe);
+ var phrase=atk.q[variant==='strong'?1:0],label=variant==='strong'?'ataque fuerte':'ataque normal';
  atk.ready=false;
+ if(variant==='strong')atk.strongReadyOn=(G.turns?G.turns[owner]:0)+2;
  if(tgt==='__EMPTY'){
-  var stolen=Math.min(G.votes[foe],battleZasca(owner,atk));
+  var stolen=Math.min(G.votes[foe],attackDamage(owner,atk,null,variant));
   G.votes[foe]-=stolen;
-  log(atk.n+' lanza '+pick(atk.q)+' a la bancada vacía (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
+  log(atk.n+' lanza «'+phrase+'» ('+label+') a la bancada vacía (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
   if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
    G.votes[owner]+=1;
    log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
   }
   checkBattleEnd();
-  return;
+  return true;
  }
- var damage=attackDamage(owner,atk,tgt);
- log(atk.n+' lanza '+pick(atk.q)+' ('+damage+' de daño a '+tgt.n+').','hi');
- tgt.h-=damage;
+ var damage=attackDamage(owner,atk,tgt,variant),received=receiveBattleDamage(tgt,damage);
+ log(atk.n+' lanza «'+phrase+'» ('+label+': '+received+' de daño a '+tgt.n+').','hi');
  if(foeDoc==='giro'&&tgt!==atk){
-  atk.h-=1;
-  log('Giro de Guion: '+atk.n+' recibe 1 de daño.');
+  var reflected=receiveBattleDamage(atk,1);
+  log('Giro de Guion: '+atk.n+' recibe '+reflected+' de daño.');
  }
  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
   G.votes[owner]+=1;
@@ -2140,6 +2190,7 @@ function attack(atk,tgt,owner){
  if(tgt.h<=0)expel(owner,tgt,atk,foeDoc);
  if(checkBattleEnd())return;
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
+ return true;
 }
 
 
@@ -2270,13 +2321,13 @@ function chooseBattleAction(s){
  }
  var readyAtk=G.field[s].filter(function(c){return c.ready;});
  if(readyAtk.length){
-  var atk=readyAtk[0];
+  var atk=readyAtk[0],power=canStrongAttack(s,atk)?'strong':'normal';
   var tgt='__EMPTY';
   if(G.field[foe].length){
    var sortedT=G.field[foe].slice().sort(function(x,y){
     var protectedDoc=activeDoc(foe)==='aforado';
-    var killX=(x.h<=attackDamage(s,atk,x)&&!(protectedDoc&&!G.saved[x.uid]))?1:0;
-    var killY=(y.h<=attackDamage(s,atk,y)&&!(protectedDoc&&!G.saved[y.uid]))?1:0;
+    var killX=(x.h<=incomingDamage(x,attackDamage(s,atk,x,power))&&!(protectedDoc&&!G.saved[x.uid]))?1:0;
+    var killY=(y.h<=incomingDamage(y,attackDamage(s,atk,y,power))&&!(protectedDoc&&!G.saved[y.uid]))?1:0;
     if(killX!==killY)return killY-killX;
     if(doc(s)&&!activeDoc(s)){
      var leadX=x.uid===G.leader[foe].uid?1:0,leadY=y.uid===G.leader[foe].uid?1:0;
@@ -2286,7 +2337,17 @@ function chooseBattleAction(s){
    });
    tgt=sortedT[0];
   }
-  return {type:'attack',card:atk,target:tgt};
+  var canExpel=tgt!=='__EMPTY'&&tgt.h<=incomingDamage(tgt,attackDamage(s,atk,tgt,power))&&!(activeDoc(foe)==='aforado'&&!G.saved[tgt.uid]);
+  if(!canExpel){
+   var threat=0;
+   G.field[foe].forEach(function(c){threat=Math.max(threat,attackDamage(foe,c,atk,strongWait(foe,c)<=1?'strong':'normal'));});
+   // No insiste siempre en curarse si ni la cura basta frente al peor golpe posible.
+   // Alterna presión y apoyo en ese caso incierto, sin bonificaciones ocultas.
+   if(atk.h<=Math.ceil(atk.hm/2)&&healingAmount(atk)>0&&(atk.h+healingAmount(atk)>threat||Math.random()<0.5))return {type:'heal',card:atk};
+   if(!atk.guard&&threat>=atk.h&&Math.ceil(threat/2)<atk.h)return {type:'guard',card:atk};
+  }
+  var variant=tgt!=='__EMPTY'&&tgt.h<=incomingDamage(tgt,attackDamage(s,atk,tgt,'normal'))?'normal':power;
+  return {type:'attack',card:atk,target:tgt,variant:variant};
  }
  return {type:'end'};
 }
@@ -2301,7 +2362,13 @@ function aiStep(){
   return;
  }
  if(action.type==='attack'){
-  attack(action.card,action.target,'e');
+  attack(action.card,action.target,'e',action.variant);
+  paint();
+  if(!G.over)AITIMER=setTimeout(aiStep,480);
+  return;
+ }
+ if(action.type==='heal'||action.type==='guard'){
+  useSupport(action.card,action.type,'e');
   paint();
   if(!G.over)AITIMER=setTimeout(aiStep,480);
   return;
@@ -2309,15 +2376,40 @@ function aiStep(){
  AITIMER=setTimeout(function(){completeTurn('e');},380);
 }
 
+function syncBattleActions(){
+ if(typeof HemicycleBattleActions==='undefined')return;
+ var card=G&&G.field.p.filter(function(c){return c.uid===G.sel;})[0];
+ var visible=SCREEN==='battle'&&G&&!G.over&&G.side==='p'&&G.n>0&&!G.move&&card&&card.ready&&!MODAL_CB&&!document.getElementById('modalRoot').firstChild;
+ HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),heal:healingAmount(card),guard:!!card.guard,support:!!G.support}:null);
+}
+function choosePlayerAction(kind){
+ if(checkBattleEnd()||G.side!=='p')return false;
+ var card=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
+ if(!card||!card.ready)return false;
+ if(kind==='cancel'){G.sel=null;G.move=null;G.support=false;}
+ else if(kind==='back'){G.support=false;}
+ else if(kind==='support'){G.support=true;G.move=null;}
+ else if(kind==='normal'||kind==='strong'){
+  if(kind==='strong'&&!canStrongAttack('p',card))return false;
+  G.move=kind;G.support=false;
+ }
+ else if(kind==='guard'||kind==='heal'){
+  if(!G.support||!useSupport(card,kind,'p'))return false;
+  G.sel=null;G.move=null;G.support=false;
+ }else return false;
+ paint();return true;
+}
+
 function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
- var isTarget=(side==='e'&&G.sel);
+ var isTarget=(side==='e'&&G.sel&&G.move);
  var art=artTag(c.k,c.n,side==='p'&&c.gold);
- return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'">'
+ return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
+  +(c.guard?'<span class="battle-guard" aria-label="Defensa del 50 % preparada">&#128737; 50 %</span>':'')
   +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
   +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+battleZasca(side,c)+' &middot; A'+Math.max(0,c.h)+'/'+c.hm+'</span></div></div>';
 }
@@ -2346,7 +2438,7 @@ SCREENS.battle=function(){
  var pf=G.field.p.map(function(c){return cromoBattle(c,'p');}).join('');
  for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
- for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel?' tgt':'')+'" data-buid="__EMPTY" data-side="e">'+(G.sel?'Restar votos':'+')+'</div>';
+ for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel&&G.move?' tgt':'')+'" data-buid="__EMPTY" data-side="e" role="button" tabindex="0">'+(G.sel&&G.move?'Restar votos':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
  var modo=G.tutorial?'TUTORIAL':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
@@ -2362,8 +2454,8 @@ SCREENS.battle=function(){
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
  +'<p class="sub" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
  +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small></div></div>'
- +(G.sel?'<div class="hint">Atacante: <b>'+esc(nmByUid(G.sel))+'</b>. Toca un orador rival o "Restar votos".</div>'
-        :'<div class="hint">Toca una carta de tu mano para bajarla o un orador en Tribuna para atacar.</div>')
+ +(G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
+        :'<div class="hint">Toca tu mano para presentar un cromo. Toca tu Tribuna para elegir ataque, defensa o curación.</div>')
  +'<div class="log">'+G.log.slice(0,5).join('')+'</div>'
  +'<div class="bar between"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
  +'<button class="btn ghost sm" data-act="abandon">Abandonar</button></div>'
@@ -2434,6 +2526,7 @@ SCREENS.ayuda=function(){
  +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button></div>'
  +'<div class="panel"><h3>1. Objetivo y tiempo por turno</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: cada turno dispone de 60 segundos para realizar sus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
  +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y un máximo de dos cartas en la mano; las demás esperan en el mazo. Al comenzar tu turno robas una carta si tienes espacio. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
+ +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte se habilita en el segundo turno propio del cromo en mesa y, después de usarlo, espera dos turnos propios. El contador es individual y se reinicia al salir de la Tribuna y volver a entrar.</p><p class="sub">La tercera frase cambia el contenido de esa misma ventana para escoger <b>Defensa</b> o <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; no se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
  +'<div class="panel"><h3>3. Elo y dificultad justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
@@ -2491,8 +2584,14 @@ document.addEventListener('click',function(ev){
   return;
  }
 
- var n=t.closest('[data-go],[data-act],[data-lead],[data-pick],[data-card],[data-buid],[data-fr],[data-fd]');
+ var n=t.closest('[data-baction],[data-go],[data-act],[data-lead],[data-pick],[data-card],[data-buid],[data-fr],[data-fd]');
  if(!n||n.disabled)return;
+ if(n.hasAttribute('data-baction')){
+  var choice=n.getAttribute('data-baction'),game=G,selected=G&&G.sel;
+  if(typeof HemicycleBattleActions!=='undefined'&&n.closest('#battleActionRoot'))HemicycleBattleActions.select(n,function(){if(G===game&&G.sel===selected)choosePlayerAction(choice);});
+  else choosePlayerAction(choice);
+  return;
+ }
 
  if(n.hasAttribute('data-fr')){
   FIL.r=n.getAttribute('data-fr');
@@ -2545,19 +2644,19 @@ document.addEventListener('click',function(ev){
    paint();return;
   }
   if(side==='e'){
-   if(!G.sel){log('Elige primero un orador tuyo de la Tribuna para atacar.');paint();return;}
+   if(!G.sel||!G.move){log('Elige un orador tuyo y después una de sus dos frases de ataque.');paint();return;}
    var atk=null,tgt=null;
    for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===G.sel)atk=G.field.p[i];
    for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===uid)tgt=G.field.e[i];
    if(!tgt)tgt='__EMPTY';
-   if(atk&&atk.ready){attack(atk,tgt,'p');G.sel=null;paint();}
+   if(atk&&atk.ready){attack(atk,tgt,'p',G.move);G.sel=null;G.move=null;paint();}
    return;
   }
   var own=null;
   for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)own=G.field.p[i];
   if(own){
    if(!own.ready){log(own.n+' ya ha intervenido en este turno.');paint();return;}
-   G.sel=(G.sel===uid)?null:uid;paint();
+   G.sel=(G.sel===uid&&!G.move)?null:uid;G.move=null;G.support=false;paint();
   }
   return;
  }
@@ -2786,29 +2885,34 @@ function boot(){
  }
  TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
   read:lsGet,write:lsSet,
+  select:function(button,done){HemicycleBattleActions.select(button,done);},
   pause:function(){clearAI();if(G&&G.tutorial){G.over=true;G.done=true;}},
   inBattle:function(){return SCREEN==='battle'&&G&&G.tutorial&&!G.over;},
   prepare:function(){newBattle('normal',null,true);},
   action:function(action){
    var own=G.leader.p,enemy=G.field.e[0];
    if(action==='begin'){beginDebate();return;}
+   if(action.indexOf('choose-')===0){choosePlayerAction(action.slice(7));return;}
    if(action==='play-leader')playCard('p',own.uid);
-   if(action==='select-leader')G.sel=own.uid;
-   if(action==='select-member')G.sel=G.field.p.filter(function(c){return c!==own;})[0].uid;
+   if(action==='select-leader'){G.sel=own.uid;G.move=null;G.support=false;}
+   if(action==='select-member'){G.sel=G.field.p.filter(function(c){return c!==own;})[0].uid;G.move=null;G.support=false;}
    if(action==='play-member')playCard('p',G.hand.p[0].uid);
    if(action==='attack'||action==='empty'){
     var attacker=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
-    attack(attacker,action==='empty'?'__EMPTY':enemy,'p');G.sel=null;
+    attack(attacker,action==='empty'?'__EMPTY':enemy,'p',G.move);G.sel=null;G.move=null;
    }
    if(action==='end'){
     completeTurn('p');
-    var member=G.hand.e.filter(function(c){return c!==G.leader.e&&c.c<=G.tdp.e;})[0];
-    if(member)playCard('e',member.uid);
+    if(!G.field.e.length){var member=G.hand.e.filter(function(c){return c!==G.leader.e&&c.c<=G.tdp.e;})[0];if(member)playCard('e',member.uid);}
    }
-   if(action==='enemy'){if(enemy)attack(enemy,own,'e');completeTurn('e');}
+   if(action==='enemy'||action==='enemy-guard'){
+    var target=action==='enemy'?own:G.field.p.filter(function(c){return c!==own;})[0];
+    if(enemy){enemy.a=4;attack(enemy,target,'e','normal');enemy.a=1;}
+    completeTurn('e');
+   }
    if(action==='prepare-final'){
     G.votes.p=98;own.ready=true;
-    var target=G.pas.e[0];G.pas.e.splice(0,1);target.h=1;target.v=2;G.field.e=[target];
+    var target=G.pas.e.shift()||mk(BYID['ana-pastor'],false,'e');target.h=1;target.v=2;target.guard=false;G.field.e=[target];
     log('Último ejercicio: marcador adelantado a 98 votos. Expulsa al rival para practicar el cierre inmediato.','hi');
    }
    if(!G.over)paint();

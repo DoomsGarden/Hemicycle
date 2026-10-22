@@ -1,0 +1,38 @@
+{
+  "version": "v31.0.0.3",
+  "verifiedAt": "2026-10-22T03:15:15.803942+00:00",
+  "published": false,
+  "sourceHashes": {
+    "index.html": "39f86fbc9c8bcea185fa8c0273ae0a5958398a7e056b732100ac252a4384b112",
+    "js/battle-actions-ui.js": "bdd5bb4298b6d057332ace4eb03759c4e20d1e7c30a9dec769e3dcc3125c3785",
+    "css/battle-actions.css": "b49b09f7ad25937ed0628da3f68f88d7aa1d2988745f1498e625d3fd0ccd5f76",
+    "js/battle-tutorial.js": "6240f61b4e7220bbbd45e5dc0161ae42ddc16675afa7fca8721e26ead20651c0",
+    "js/app-interaction.js": "4f77470d3e9b752fe275c9b300796ca8aef99ecfa39576e64f649abaf7fd372f",
+    "js/changelog.js": "51e20edb595141c1dfae15abf958e83c80cc6f2af803adc81cdb18458fd920cc",
+    "sw.js": "33b9e0613350c1a6d853b50cab881e64142b9edf59d4cc03b6b6fcbe8a8555ba"
+  },
+  "checks": {
+    "unitTests": 254,
+    "failures": 0,
+    "pairedBalanceFixturesInUnitSuite": 3456,
+    "additionalBalanceFixtures": 10368,
+    "fullBrowserMatches": 8,
+    "immediateVictoryScenarios": 18,
+    "inactivityScenarios": 2,
+    "popupViewports": 4,
+    "phrasesPerViewport": 360,
+    "nativePinchInPopup": true,
+    "cancelDuringSelectionAnimation": true,
+    "fullTutorialViewports": 3,
+    "stepsPerTutorial": 32,
+    "keyboardAndReducedMotion": true,
+    "zoomChecks": 48,
+    "offlineTutorialSteps": 32,
+    "precachedAssets": 30,
+    "profileAndLeaguePreserved": true
+  },
+  "limitations": [
+    "Las simulaciones comparan gabinetes y políticas concretos; no garantizan un equilibrio idéntico para todas las combinaciones.",
+    "Seis frases conservan la limitación de documentación por titular o fragmento indexado descrita en las fuentes aprobadas."
+  ]
+}
