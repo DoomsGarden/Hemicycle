@@ -1,0 +1,53 @@
+{
+  "version": "v31.0.0.3",
+  "published": true,
+  "url": "https://doomsgarden.github.io/Hemicycle/",
+  "release_commit": "342fe06ca5ce0a3d748d03f356f96a9ed9f6e4df",
+  "verified_at": "2026-10-22T03:17:21.418370+00:00",
+  "public_files": [
+    {
+      "file": "index.html",
+      "sha256": "39f86fbc9c8bcea185fa8c0273ae0a5958398a7e056b732100ac252a4384b112",
+      "matches_local": true
+    },
+    {
+      "file": "js/battle-actions-ui.js",
+      "sha256": "bdd5bb4298b6d057332ace4eb03759c4e20d1e7c30a9dec769e3dcc3125c3785",
+      "matches_local": true
+    },
+    {
+      "file": "css/battle-actions.css",
+      "sha256": "b49b09f7ad25937ed0628da3f68f88d7aa1d2988745f1498e625d3fd0ccd5f76",
+      "matches_local": true
+    },
+    {
+      "file": "js/battle-tutorial.js",
+      "sha256": "6240f61b4e7220bbbd45e5dc0161ae42ddc16675afa7fca8721e26ead20651c0",
+      "matches_local": true
+    },
+    {
+      "file": "js/app-interaction.js",
+      "sha256": "4f77470d3e9b752fe275c9b300796ca8aef99ecfa39576e64f649abaf7fd372f",
+      "matches_local": true
+    },
+    {
+      "file": "js/changelog.js",
+      "sha256": "51e20edb595141c1dfae15abf958e83c80cc6f2af803adc81cdb18458fd920cc",
+      "matches_local": true
+    },
+    {
+      "file": "sw.js",
+      "sha256": "33b9e0613350c1a6d853b50cab881e64142b9edf59d4cc03b6b6fcbe8a8555ba",
+      "matches_local": true
+    }
+  ],
+  "private_review_status": 404,
+  "live_browser": {
+    "url": "https://doomsgarden.github.io/Hemicycle/?v=31.0.0.3",
+    "version": "v31.0.0.3",
+    "liveTutorialSteps": 32,
+    "progressUnchanged": true,
+    "errors": [],
+    "environment_note": "El Chromium de pruebas acepta el certificado del proxy HTTPS del entorno; la comprobación de archivos HTTP usa la confianza TLS del sistema."
+  }
+}

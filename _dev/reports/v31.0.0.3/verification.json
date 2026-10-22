@@ -1,7 +1,7 @@
 {
   "version": "v31.0.0.3",
   "verifiedAt": "2026-10-22T03:15:15.803942+00:00",
-  "published": false,
+  "published": true,
   "sourceHashes": {
     "index.html": "39f86fbc9c8bcea185fa8c0273ae0a5958398a7e056b732100ac252a4384b112",
     "js/battle-actions-ui.js": "bdd5bb4298b6d057332ace4eb03759c4e20d1e7c30a9dec769e3dcc3125c3785",
@@ -34,5 +34,6 @@
   "limitations": [
     "Las simulaciones comparan gabinetes y políticas concretos; no garantizan un equilibrio idéntico para todas las combinaciones.",
     "Seis frases conservan la limitación de documentación por titular o fragmento indexado descrita en las fuentes aprobadas."
-  ]
+  ],
+  "deployment": "deployment.json"
 }
