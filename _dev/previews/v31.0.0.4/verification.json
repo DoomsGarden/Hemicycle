@@ -1,0 +1,90 @@
+{
+  "ui": [
+    {
+      "width": 320,
+      "height": 568,
+      "quotesTested": 360,
+      "normal": true,
+      "strong": true,
+      "defence": true,
+      "healing": true,
+      "cooldown": true,
+      "samePopup": true,
+      "noScroller": true,
+      "pinchNoZoom": true,
+      "cancelDuringAnimation": true
+    },
+    {
+      "width": 393,
+      "height": 851,
+      "quotesTested": 360,
+      "normal": true,
+      "strong": true,
+      "defence": true,
+      "healing": true,
+      "cooldown": true,
+      "samePopup": true,
+      "noScroller": true,
+      "pinchNoZoom": true,
+      "cancelDuringAnimation": true
+    },
+    {
+      "width": 851,
+      "height": 393,
+      "quotesTested": 360,
+      "normal": true,
+      "strong": true,
+      "defence": true,
+      "healing": true,
+      "cooldown": true,
+      "samePopup": true,
+      "noScroller": true,
+      "pinchNoZoom": true,
+      "cancelDuringAnimation": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "quotesTested": 360,
+      "normal": true,
+      "strong": true,
+      "defence": true,
+      "healing": true,
+      "cooldown": true,
+      "samePopup": true,
+      "noScroller": true,
+      "pinchNoZoom": true,
+      "cancelDuringAnimation": true
+    }
+  ],
+  "tutorials": [
+    {
+      "width": 320,
+      "height": 568,
+      "steps": 32,
+      "noOverlap": true,
+      "profileUnchanged": true,
+      "replay": true,
+      "cancelAndLeave": true
+    },
+    {
+      "width": 393,
+      "height": 851,
+      "steps": 32,
+      "noOverlap": true,
+      "profileUnchanged": true,
+      "replay": true,
+      "cancelAndLeave": true
+    },
+    {
+      "width": 851,
+      "height": 393,
+      "steps": 32,
+      "noOverlap": true,
+      "profileUnchanged": true,
+      "replay": true,
+      "cancelAndLeave": true
+    }
+  ],
+  "errors": []
+}

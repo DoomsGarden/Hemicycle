@@ -16,6 +16,7 @@ function validate(raw,catalog){
  var ids=new Set(catalog);if(p.album.some(function(id){return typeof id!=='string'||!ids.has(id);}))throw new Error('El respaldo contiene cromos que no reconoce esta versión.');
  ['fs','elo','w','l','lastDaily','lastWeekly','dtWins'].forEach(function(key){if(!Number.isSafeInteger(p[key])||p[key]<0)throw new Error('El valor de '+key+' no es válido.');});
  if(typeof p.dtGoldUnlocked!=='boolean'||typeof p.dtGoldActive!=='boolean'||p.dtGoldActive&&!p.dtGoldUnlocked)throw new Error('El progreso de aspectos del respaldo no es válido.');
+ if(p.battleTheme!==undefined&&!['classic','marble'].includes(p.battleTheme))throw new Error('El aspecto de la bancada no es válido.');
  var league=raw.league;
  if(league!==null){
   if(!league||![1,2,3].includes(league.div)||!Number.isInteger(league.jor)||league.jor<1||league.jor>13||!Number.isSafeInteger(league.temp)||league.temp<1||!Array.isArray(league.teams)||league.teams.length!==30)throw new Error('La temporada de Liga no es válida.');
@@ -32,7 +33,7 @@ function validate(raw,catalog){
  }
  var tutorials={};['battle','menu'].forEach(function(k){var t=raw.tutorials&&raw.tutorials[k];if(t&&['completed','skipped','in-progress'].includes(t.status))tutorials[k]={status:t.status,version:1,updatedAt:Number.isSafeInteger(t.updatedAt)?t.updatedAt:0};else tutorials[k]=null;});
  // Whitelist fields: importing a file never introduces executable markup or object prototypes.
- return {format:FORMAT,schemaVersion:1,identity:{id:raw.identity.id,createdAt:typeof raw.identity.createdAt==='string'?raw.identity.createdAt:raw.exportedAt},exportedAt:raw.exportedAt,gameVersion:raw.gameVersion,profile:{fs:p.fs,elo:p.elo,w:p.w,l:p.l,album:p.album.slice(),lastDaily:p.lastDaily,lastWeekly:p.lastWeekly,dtWins:p.dtWins,dtGoldUnlocked:p.dtGoldUnlocked,dtGoldActive:p.dtGoldActive,...(receipts?{marketReceipts:receipts}:{})},league:league===null?null:JSON.parse(JSON.stringify(league)),tutorials:tutorials,ranked:ranked,catalogEdition:'prelaunch-120'};
+ return {format:FORMAT,schemaVersion:1,identity:{id:raw.identity.id,createdAt:typeof raw.identity.createdAt==='string'?raw.identity.createdAt:raw.exportedAt},exportedAt:raw.exportedAt,gameVersion:raw.gameVersion,profile:{fs:p.fs,elo:p.elo,w:p.w,l:p.l,album:p.album.slice(),lastDaily:p.lastDaily,lastWeekly:p.lastWeekly,dtWins:p.dtWins,dtGoldUnlocked:p.dtGoldUnlocked,dtGoldActive:p.dtGoldActive,...(receipts?{marketReceipts:receipts}:{}),...(p.battleTheme?{battleTheme:p.battleTheme}:{})},league:league===null?null:JSON.parse(JSON.stringify(league)),tutorials:tutorials,ranked:ranked,catalogEdition:'prelaunch-120'};
 }
 function build(api){return {format:FORMAT,schemaVersion:1,gameVersion:api.version,exportedAt:new Date().toISOString(),catalogEdition:'prelaunch-120',ranked:api.read('hemiciclo_ranked_seasons_v1'),identity:identity(api.read,api.write),profile:api.profile(),league:api.league(),tutorials:{battle:api.read('hemiciclo_tutorial_v1'),menu:api.read('hemiciclo_menu_tutorial_v1')}};}
 function parse(text,catalog){if(typeof text!=='string'||new Blob([text]).size>MAX_BYTES)throw new Error('El respaldo supera el tamaño permitido de 8 MB.');var raw;try{raw=JSON.parse(text.replace(/^\uFEFF/,''));}catch(e){throw new Error('El archivo no contiene un respaldo JSON válido.');}return validate(raw,catalog);}

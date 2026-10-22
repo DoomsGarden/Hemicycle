@@ -509,6 +509,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=30.2.61">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.3">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.0.4">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.0.3">
 <link rel="stylesheet" href="css/launch.css?v=31.0.0.2-logo-metal">
 <link rel="stylesheet" href="css/profile.css?v=31.0.0.1-profile">
@@ -531,24 +532,26 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="modalRoot"></div>
  <div id="coinRoot"></div>
  <div id="battleActionRoot" hidden></div>
+<div id="battleFxRoot" aria-hidden="true"></div>
  <div id="toastRoot"></div>
 </div>
 
 <div id="profileRoot"></div><div id="cloudRoot"></div>
 <script src="js/supabase-sdk.js?v=2.118.0"></script>
-<script src="js/supabase-config.js?v=31.0.0.1"></script>
-<script src="js/player-profile.js?v=31.0.0.2"></script>
+<script src="js/supabase-config.js?v=31.0.0.4"></script>
+<script src="js/player-profile.js?v=31.0.0.4"></script>
 <script src="js/cloud-save.js?v=31.0.0.2"></script>
 <script src="js/cloud-ui.js?v=31.0.0.2"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.3"></script>
-<script src="js/battle-tutorial.js?v=31.0.0.3"></script>
-<script src="js/menu-tutorial.js?v=31.0.0.2"></script>
-<script src="js/player-backup.js?v=31.0.0.2"></script>
+<script src="js/battle-visuals.js?v=31.0.0.4"></script>
+<script src="js/battle-tutorial.js?v=31.0.0.4"></script>
+<script src="js/menu-tutorial.js?v=31.0.0.4"></script>
+<script src="js/player-backup.js?v=31.0.0.4"></script>
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.0.3"></script>
+<script src="js/changelog.js?v=31.0.0.4"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=30.2.56"></script>
 <script>
@@ -560,7 +563,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.0.3';
+var VERSION='v31.0.0.4';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1441,15 +1444,20 @@ function claimRankedReward(id){
  var claim=function(){
   var state=syncRankedSeason().state,result=HemicycleRanked.claim(state,id),cards=packContents(result.reward.kind),d=D();
   cards.forEach(function(c){d.album.push(c.id);});var values={};values[LS]=d;values[HemicycleRanked.key]=result.state;atomicLocal(values);
-  go('sobre',{cards:cards.map(function(c){return c.id;}),k:result.reward.kind,free:true});
+  go('sobre',{cards:cards.map(function(c){return c.id;}),k:result.reward.kind,free:true,from:'buzon'});
  };
- Promise.resolve().then(function(){if(navigator.locks)return navigator.locks.request('hemicycle-market-sale',claim);return claim();}).catch(function(e){showModal('No se ha reclamado el sobre',e.message,'Entendido',false,null);});
+ return Promise.resolve().then(function(){if(navigator.locks)return navigator.locks.request('hemicycle-market-sale',claim);return claim();}).catch(function(e){showModal('No se ha reclamado el sobre',e.message,'Entendido',false,null);});
 }
+function pendingMail(){var current=syncRankedSeason();return current?current.state.rewards.filter(function(r){return !r.claimed;}):[];}
+function mailButton(){var count=pendingMail().length;return '<button class="mail-button'+(count?' has-mail':'')+'" data-go="buzon" aria-label="Buzón'+(count?': '+count+' recompensas pendientes':': sin recompensas pendientes')+'" title="Buzón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>'+(count?'<span>'+count+'</span>':'')+'</button>';}
 function rankedPanel(){
  var current=syncRankedSeason();if(!current)return '';
- var d=D(),p=HemicycleRanked.position(d.elo),pending=current.state.rewards.filter(function(r){return !r.claimed;}),date=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',dateStyle:'medium'}).format(new Date(current.period.end));
- return '<section class="panel ranked-panel"><h3>Clasificatoria · Temporada '+current.period.id+'</h3><p class="sub"><b>'+esc(p.label)+'</b> · '+d.elo+' Elo'+(p.next===null?' · División máxima':' · Próximo ascenso: '+p.next+' Elo')+'</p><p class="sub">Finaliza el '+esc(date)+'. Temporadas de 30 días naturales: al renovarse bajas un rango y conservas tu división, hasta el rango mínimo.</p><p class="sub">Un común por ascenso, un raro adicional cada cinco ascensos y un legendario al subir de rango. Los ascensos repetidos no duplican premios durante la misma temporada.</p>'+(pending.length?'<div class="ranked-rewards">'+pending.map(function(r){var labels={comun:'común',raro:'raro',legendario:'legendario'};return '<button class="btn ghost sm" data-act="ranked-reward" data-reward="'+esc(r.id)+'">Reclamar sobre '+labels[r.kind]+' · T'+r.season+'</button>';}).join('')+'</div>':'<p class="sub">No hay sobres pendientes. Los nuevos ascensos desbloquean recompensas.</p>')+'</section>';
+ var d=D(),p=HemicycleRanked.position(d.elo),date=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',dateStyle:'medium'}).format(new Date(current.period.end));
+ return '<section class="panel ranked-panel"><h3>Clasificatoria · Temporada '+current.period.id+'</h3><p class="sub"><b>'+esc(p.label)+'</b> · '+d.elo+' Elo'+(p.next===null?' · División máxima':' · Próximo ascenso: '+p.next+' Elo')+'</p><p class="sub">Finaliza el '+esc(date)+'. Temporadas de 30 días naturales: al renovarse bajas un rango y conservas tu división, hasta el rango mínimo.</p><p class="sub">Un común por ascenso, un raro adicional cada cinco ascensos y un legendario al subir de rango. Los ascensos repetidos no duplican premios durante la misma temporada.</p><p class="sub">Las recompensas te esperan en el buzón del menú principal, también si cambia la temporada.</p><button class="btn ghost sm" data-go="buzon">Abrir buzón</button></section>';
 }
+function battleTheme(){return D().battleTheme==='marble'?'marble':'classic';}
+function appearancePanel(){var theme=battleTheme();return '<fieldset class="profile-appearance"><legend>Tu bancada · Gratis en prelanzamiento</legend><button type="button" data-profile="theme" data-theme="classic" aria-pressed="'+(theme==='classic')+'"><i class="theme-swatch classic"></i>Clásico</button><button type="button" data-profile="theme" data-theme="marble" aria-pressed="'+(theme==='marble')+'"><i class="theme-swatch marble"></i>Mármol azul</button></fieldset>';}
+
 function backupPanel(){
  var id=HemicycleBackup.identity(lsGet,lsSet).id;
  return '<section class="panel backup-panel"><h3>ID de jugador y respaldo</h3><label class="sub" for="playerId">Tu ID estable</label><input id="playerId" value="'+esc(id)+'" readonly aria-label="ID de jugador"><p class="sub">Guarda una copia de tu colección, estadísticas, logros y guías. El archivo permite recuperarlos en otro dispositivo. Si conectas tu cuenta, puedes activar el guardado en la nube desde Perfil → Nube.</p><div class="bar"><button class="mini" data-act="copy-player-id">Copiar ID</button><button class="btn sm" data-act="backup-export">Descargar respaldo</button><button class="btn ghost sm" data-act="backup-import">Restaurar archivo</button></div><input type="file" id="backupFile" accept=".json,application/json" hidden></section>';
@@ -1484,7 +1492,7 @@ function syncBattleClock(){
  if(!G||G.over||G.tutorial||!G.turnDeadline){clearBattleClock();return;}
  if(checkBattleEnd())return;
  var clock=document.getElementById('turnClock'),left=Math.max(0,Math.ceil((G.turnDeadline-Date.now())/1000));
- if(clock){clock.textContent=(G.side==='p'?'Tu turno':'Rival')+' · '+left+' s';clock.classList.toggle('urgent',left<=10);}
+ if(clock){clock.textContent=String(left);clock.setAttribute('aria-label',(G.side==='p'?'Tu turno':'Turno rival')+': '+left+' segundos');clock.classList.toggle('urgent',left<=10);}
  if(!TURN_CLOCK)TURN_CLOCK=setInterval(syncBattleClock,250);
 }
 
@@ -1516,6 +1524,7 @@ function go(s,o){
  if(s==='menu')chooseMenuCards();
  PLAY_OPEN=false;
  if(['menu','coleccion','tienda','liga','mercado'].indexOf(s)>=0)NAV_SECTION=s;
+ if(s==='buzon')NAV_SECTION='menu';
  if(prev==='coleccion'||prev==='builder')saveColScroll();
  if(prev!=='builder'&&s==='builder')SCROLL_MEM.builderGrid=0;
  if(s!=='detalle')closeZoom();
@@ -1584,7 +1593,7 @@ function appbar(){
 }
 function tabbar(){
  var tabs=[['tienda','shop','Tienda'],['coleccion','collection','Cromos'],['menu','home','Inicio'],['liga','league','Liga'],['mercado','market','Mercado']];
- var active=SCREEN==='detalle'?'coleccion':SCREEN==='sobre'?'tienda':NAV_SECTION;
+ var active=SCREEN==='detalle'?'coleccion':SCREEN==='sobre'?(SO.from==='buzon'?'menu':'tienda'):NAV_SECTION;
  return tabs.map(function(t){
   return '<button class="tab'+(active===t[0]?' on':'')+'" data-go="'+t[0]+'"'+(active===t[0]?' aria-current="page"':'')+'><span class="nav-icon">'+uiIcon(t[1])+'</span><span>'+t[2]+'</span></button>';
  }).join('');
@@ -1630,6 +1639,7 @@ function paint(){
  syncCoinToss();
  syncBattleClock();
  syncBattleActions();
+ if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(SCREEN==='battle'?G:null);
  if(TUTORIAL)TUTORIAL.render();
  if(MENU_GUIDE)MENU_GUIDE.render();
 }
@@ -1698,11 +1708,15 @@ SCREENS.menu=function(){
  var selected=modes.filter(function(mode){return mode[0]===PLAY_MODE;})[0];
  if(!MENU_FEATURED.length)chooseMenuCards();
  var featured=MENU_FEATURED.filter(function(id){return BYID[id]&&copies(d,id)>0;}).map(function(id){return {c:BYID[id]};});
- return '<section class="menu-home"><div class="home-copy"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
+ return '<section class="menu-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+mailButton()+'</div><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
  +'<div class="hero-scene" aria-hidden="true"><div class="hero-halo"></div><div class="hero-fan">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'
  +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'</div>':'')
  +'<span class="play-mode-caption">'+selected[2]+'</span><div class="play-split"><button class="play-main" data-act="play">Jugar</button><button class="play-toggle" data-act="play-menu" aria-label="Elegir modo de juego" aria-haspopup="menu" aria-expanded="'+PLAY_OPEN+'"'+(PLAY_OPEN?' aria-controls="playOptions"':'')+'>'+uiIcon('chevron')+'</button></div></div></div></section>';
+};
+SCREENS.buzon=function(){
+ var messages=pendingMail(),names={comun:'Sobre común',raro:'Sobre raro',legendario:'Sobre legendario'};
+ return '<div class="mail-heading"><div><span class="eyebrow">TUS RECOMPENSAS</span><h2>Buzón</h2></div><span class="pill gold">'+messages.length+' pendientes</span></div><div class="inner-scroll mail-list">'+(messages.length?messages.map(function(r){return '<article class="panel mail-message"><div class="bar between"><h3>¡Tu recompensa por conseguir el avance!</h3><span class="pill">T'+r.season+'</span></div><p class="sub">Has alcanzado '+esc(HemicycleRanked.position(r.division*250).label)+'. Tu sobre está listo para recoger.</p><div class="mail-reward"><b>'+names[r.kind]+'</b><button class="btn sm" data-act="ranked-reward" data-reward="'+esc(r.id)+'">Recoger recompensa</button></div></article>';}).join(''):'<section class="panel mail-empty"><span aria-hidden="true">✉</span><h3>Todo al día</h3><p class="sub">Aquí recibirás tus sobres por avanzar en Clasificatoria. No hay recompensas pendientes.</p></section>')+'</div><div class="bar"><button class="btn ghost sm" data-go="ayuda">Cómo funciona Clasificatoria</button><button class="btn sm" data-go="menu">Volver al menú</button></div>';
 };
 SCREENS.mercado=function(){return market().render();};
 
@@ -1803,7 +1817,6 @@ SCREENS.tienda=function(){
  +'<button class="btn sm" data-act="free" data-k="diario"'+(dl>0?' disabled':'')+'>Diario'+(dl>0?' (<span data-cd="'+(now+dl)+'">...</span>)':'')+'</button>'
  +'<button class="btn sm" data-act="free" data-k="semanal"'+(wl>0?' disabled':'')+'>Semanal'+(wl>0?' (<span data-cd="'+(now+wl)+'">...</span>)':'')+'</button>'
  +'</div></div></div>'
- +rankedPanel()
  +'<div class="pack-grid">'
  +PACKS.map(function(p){var can=d.fs>=p.p;
   return '<div class="pack-card"><div><h3>'+p.n+' <span class="pill gold">'+p.p+' FS</span></h3><p class="sub">'+p.d+'</p></div>'
@@ -1852,7 +1865,7 @@ SCREENS.sobre=function(){
  +'<div class="reveal">'+ids.map(function(id){return cromoHTML(BYID[id],{noCardAttr:true});}).join('')+'</div>'
  +'<div class="bar">'
  +(p&&!SO.free?'<button class="btn sm" data-act="again" data-k="'+p.k+'"'+(canAgain?'':' disabled')+'>'+(canAgain?'Abrir otro ('+p.p+' FS)':'Sin FS ('+p.p+' FS)')+'</button>':'')
- +'<button class="btn ghost sm" data-go="tienda">Tienda</button>'
+ +(SO.from==='buzon'?'<button class="btn sm" data-go="buzon">Volver al buzón</button>':'<button class="btn ghost sm" data-go="tienda">Tienda</button>')
  +'<button class="btn ghost sm" data-go="coleccion">Colección</button></div>';
 };
 
@@ -2003,7 +2016,8 @@ function checkBattleEnd(){
  return false;
 }
 
-function log(t,cls){if(!G)return;G.log.unshift('<div'+(cls?' class="'+cls+'"':'')+'>'+esc(t)+'</div>');if(G.log.length>40)G.log.pop();}
+function battleVisual(kind,data){if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.queue(G,kind,data||{});}
+function log(t,cls){if(!G)return;var type=/recupera|curación/.test(t)?'heal':/defensa|golpe baja/.test(t)?'guard':/de daño/.test(t)?'damage':/votos?/.test(t)?'votes':'';var name=t.match(/^(.+?) (?:lanza|dice|es expulsado|recibe|usa su defensa)/),copy=name?'<b>'+esc(name[1])+'</b>'+esc(t.slice(name[1].length)):esc(t);G.log.unshift('<div class="log-line '+(cls||'')+' '+type+'" title="'+esc(t)+'">'+copy+'</div>');if(G.log.length>40)G.log.pop();}
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
 function battleZasca(s,c){return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0);}
@@ -2022,7 +2036,7 @@ function canStrongAttack(owner,card){return strongWait(owner,card)===0;}
 function receiveBattleDamage(card,damage){
  var received=incomingDamage(card,damage);
  if(card.guard&&damage>0){card.guard=false;log(card.n+' usa su defensa: el golpe baja de '+damage+' a '+received+' de daño.');}
- card.h-=received;return received;
+ battleVisual('damage',{uid:card.uid,value:received,guarded:!!card.guard});card.h-=received;return received;
 }
 function useSupport(card,kind,owner){
  if(checkBattleEnd()||G.side!==owner||!card||!card.ready||G.field[owner].indexOf(card)<0)return false;
@@ -2031,10 +2045,10 @@ function useSupport(card,kind,owner){
  if((kind==='guard'&&card.guard)||(kind==='heal'&&heal===0))return false;
  card.ready=false;
  if(kind==='guard'){
-  card.guard=true;
+  card.guard=true;battleVisual('guard',{uid:card.uid});
   log(card.n+' dice «'+card.q[2]+'»: defensa del 50 % frente al próximo golpe.','hi');
  }else{
-  card.h+=heal;
+  card.h+=heal;battleVisual('heal',{uid:card.uid,value:heal});
   log(card.n+' dice «'+card.q[2]+'»: recupera '+heal+' de Aguante ('+card.h+'/'+card.hm+').','hi');
  }
  return true;
@@ -2077,7 +2091,7 @@ function startTurn(s){
  }
  G.field[s].forEach(function(c){c.ready=true;});
  var gain=3;G.field[s].forEach(function(c){gain+=c.v;});
- G.votes[s]+=gain;
+ G.votes[s]+=gain;battleVisual('turn',{side:s,value:gain});
  var roundNum=Math.ceil(G.n/2);
  log('Ronda '+roundNum+' ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
  if(checkBattleEnd())return;
@@ -2121,7 +2135,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
  card.drawAfterTurn=(G.turns?G.turns[victim]:0)+2;
  G.pas[victim].push(card);
  if(attacker){
-  G.votes[owner]+=card.v;
+  G.votes[owner]+=card.v;battleVisual('votes',{side:owner,value:card.v});
   log(card.n+' es expulsado: +'+card.v+' votos '+(owner==='p'?'para ti.':'para '+G.rival+'.'),'hi');
   if(checkBattleEnd())return;
  } else {
@@ -2161,16 +2175,17 @@ function attack(atk,tgt,owner,variant){
  if(variant==='strong'&&!canStrongAttack(owner,atk))return false;
  var foe=owner==='p'?'e':'p';
  if(tgt==='__EMPTY'?G.field[foe].length>=3:G.field[foe].indexOf(tgt)<0)return false;
+ battleVisual('attack',{uid:atk.uid,target:tgt==='__EMPTY'?null:tgt.uid,side:owner,strong:variant==='strong'});
  var ownerDoc=activeDoc(owner),foeDoc=activeDoc(foe);
  var phrase=atk.q[variant==='strong'?1:0],label=variant==='strong'?'ataque fuerte':'ataque normal';
  atk.ready=false;
  if(variant==='strong')atk.strongReadyOn=(G.turns?G.turns[owner]:0)+2;
  if(tgt==='__EMPTY'){
   var stolen=Math.min(G.votes[foe],attackDamage(owner,atk,null,variant));
-  G.votes[foe]-=stolen;
+  G.votes[foe]-=stolen;battleVisual('votes',{side:foe,value:-stolen});
   log(atk.n+' lanza «'+phrase+'» ('+label+') a la bancada vacía (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
   if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
-   G.votes[owner]+=1;
+   G.votes[owner]+=1;battleVisual('votes',{side:owner,value:1});
    log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
   }
   checkBattleEnd();
@@ -2183,7 +2198,7 @@ function attack(atk,tgt,owner,variant){
   log('Giro de Guion: '+atk.n+' recibe '+reflected+' de daño.');
  }
  if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
-  G.votes[owner]+=1;
+  G.votes[owner]+=1;battleVisual('votes',{side:owner,value:1});
   log('Foco Mediático: +1 voto para '+(owner==='p'?'ti.':G.rival+'.'));
   if(checkBattleEnd())return;
  }
@@ -2289,7 +2304,7 @@ SCREENS.result=function(){
  if(SO.eloDelta){
   badges+=' <span class="pill '+(SO.eloDelta>0?'green':'red')+'">'+(SO.eloDelta>0?'+'+SO.eloDelta:SO.eloDelta)+' Elo</span>';
  }
- var html='<div class="'+pCls+'"><div class="bar between"><h2>'+title+'</h2><div>'+badges+'</div></div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
+ var html=(who==='p'&&G&&G.votes.p>=100?'<div class="majority-seal"><span aria-hidden="true">★</span><b>Mayoría alcanzada</b><small>'+G.votes.p+' / 100 votos</small></div>':'')+'<div class="'+pCls+'"><div class="bar between"><h2>'+title+'</h2><div>'+badges+'</div></div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
  html+='<div class="inner-scroll">';
  if(SO.won)html+='<h3>Cromo arrebatado al rival (x'+copies(D(),SO.won)+')</h3>'+fichaHTML(BYID[SO.won]);
  if(SO.lost)html+='<h3>Cromo perdido (quedan x'+copies(D(),SO.lost)+')</h3>'+fichaHTML(BYID[SO.lost]);
@@ -2403,14 +2418,15 @@ function choosePlayerAction(kind){
 function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var isTarget=(side==='e'&&G.sel&&G.move);
- var art=artTag(c.k,c.n,side==='p'&&c.gold);
- return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
+ var art=artTag(c.k,c.n,side==='p'&&c.gold),inField=enMesa(side,c.uid),available=inField&&side===G.side&&c.ready&&!G.over;
+ return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
   +(c.guard?'<span class="battle-guard" aria-label="Defensa del 50 % preparada">&#128737; 50 %</span>':'')
   +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
+  +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">ϟ</span>':'')
   +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+battleZasca(side,c)+' &middot; A'+Math.max(0,c.h)+'/'+c.hm+'</span></div></div>';
 }
 function nmByUid(uid){var i;for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)return G.field.p[i].n;return '?';}
@@ -2442,22 +2458,22 @@ SCREENS.battle=function(){
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&G.field.p.length<3&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
  var modo=G.tutorial?'TUTORIAL':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
- return '<div class="battle-wrap">'
+ return '<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+(G.enemyTheme==='marble'?'marble':'classic')+'"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'
  +(G.tutorial&&G.n===0?'<button class="tutorial-coin" data-tutorial="coin" data-act="begin">Cara o cruz · Toca para ensayar el sorteo</button>':'')
- +'<div class="bar between"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
- +gabLine()+'<span class="turn-clock" id="turnClock" role="timer" aria-live="off">'+(G.tutorial?'Práctica sin reloj':G.n===0?'60 s por turno':'')+'</span></div>'
- +'<p class="sub">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
+ +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
+ +gabLine()+'</div>'
+ +'<p class="sub battle-resources rival-resources">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
  +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
- +'<div class="vbars">'
- +'<div class="vbar me"><span>Tus votos</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'/100</b></div>'
- +'<div class="vbar foe"><span>'+esc(G.rival)+'</span><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'/100</b></div></div>'
+ +'<div class="battle-hud"><div class="vbars" aria-label="Marcadores de votos: rojo rival, azul jugador">'
+ +'<div class="vbar foe" aria-label="Votos del rival: '+G.votes.e+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'<small>/100</small></b></div>'
+ +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':'60 segundos por turno')+'">60</span></div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
- +'<p class="sub" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
+ +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
  +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small></div></div>'
  +(G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
-        :'<div class="hint">Toca tu mano para presentar un cromo. Toca tu Tribuna para elegir ataque, defensa o curación.</div>')
- +'<div class="log">'+G.log.slice(0,5).join('')+'</div>'
- +'<div class="bar between"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
+        :'')
+ +'<section class="battle-journal"><div class="journal-heading"><span>ACTA DEL DEBATE</span><span>Ronda '+roundNum+'</span></div><div class="log" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.slice(0,8).join('')+'</div></section>'
+ +'<div class="bar between battle-controls"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
  +'<button class="btn ghost sm" data-act="abandon">Abandonar</button></div>'
  +'</div>';
 };
@@ -2522,19 +2538,21 @@ SCREENS.liga=function(){
 };
 
 SCREENS.ayuda=function(){
- return '<h2>Cómo se juega</h2><div class="inner-scroll">'
+ var html='<div class="help-heading"><span class="eyebrow">A TU RITMO</span><h2>Ayuda</h2><p class="sub">Abre el tema que quieras consultar o practica con las guías.</p></div><div class="inner-scroll help-topics">'
  +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button></div>'
- +'<div class="panel"><h3>1. Objetivo y tiempo por turno</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: cada turno dispone de 60 segundos para realizar sus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
- +'<div class="panel"><h3>2. Tu gabinete y Líder (&#9733;)</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y un máximo de dos cartas en la mano; las demás esperan en el mazo. Al comenzar tu turno robas una carta si tienes espacio. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
+ +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: cada turno dispone de 60 segundos para realizar sus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
+ +'<div class="panel"><h3>Tu gabinete y su líder</h3><p class="sub">Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y un máximo de dos cartas en la mano; las demás esperan en el mazo. Al comenzar tu turno robas una carta si tienes espacio. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
  +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte se habilita en el segundo turno propio del cromo en mesa y, después de usarlo, espera dos turnos propios. El contador es individual y se reinicia al salir de la Tribuna y volver a entrar.</p><p class="sub">La tercera frase cambia el contenido de esa misma ventana para escoger <b>Defensa</b> o <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; no se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
- +'<div class="panel"><h3>3. Elo y dificultad justa</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
- +'<div class="panel"><h3>4. Botín y Seguro</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
- +'<div class="panel"><h3>5. Mercado de repetidos</h3><p class="sub">Desde Mercado puedes vender uno o varios repetidos y conservar una copia de cada cromo. Entre jugadores se necesita una conexión al servidor. Los intercambios solo admiten rarezas iguales o consecutivas. Cada jugador revisa los datos, marca el tick y confirma en una sola ventana; la entrega se realiza cuando ambos aceptan.</p></div>'
+ +'<div class="panel"><h3>Elo · Puntuación y dificultad</h3><p class="sub">Los cromos rivales nunca inflan sus estadísticas. En Clasificatoria ganas de <b>+10 a +25 Elo</b> y pierdes de <b>5 a 18 Elo</b> según la diferencia proporcional de votos, sin importar quién empieza ni la ronda final. Un resultado ajustado cambia menos Elo. Ganas +25 si el rival termina con una cuarta parte de tus votos o menos (por ejemplo, 100 a 25). Solo pierdes 18 si acabas sin votos o abandonas. Un empate mantiene tu Elo, que nunca baja de cero.</p></div>'
+ +rankedPanel()
+ +'<div class="panel"><h3>Botín y protección de la colección</h3><p class="sub">En Clasificatoria y Liga, el ganador arrebata un cromo rival y el perdedor cede una copia (protegiéndose siempre tus 5 últimos políticos únicos).</p></div>'
+ +'<div class="panel"><h3>Mercado · Ventas e intercambios</h3><p class="sub">Desde Mercado puedes vender uno o varios repetidos y conservar una copia de cada cromo. Entre jugadores se necesita una conexión al servidor. Los intercambios solo admiten rarezas iguales o consecutivas. Cada jugador revisa los datos, marca el tick y confirma en una sola ventana; la entrega se realiza cuando ambos aceptan.</p></div>'
  +backupPanel()
  +'<div class="panel"><h3>Tu progreso</h3><p class="sub">'+D().w+' victorias · '+D().l+' derrotas · '+D().fs+' FS.</p><button class="btn ghost sm" style="margin-top:8px" data-act="reset">Borrar progreso</button></div>'
  +'</div><button class="btn wide sm" data-go="menu">Volver al menú</button>';
+ return html.replace(/<(div|section) class="panel(?: [^"]*)?"><h3>([\s\S]*?)<\/h3>([\s\S]*?)<\/\1>/g,function(all,tag,title,body){return '<details class="help-section"'+(title==='Combate guiado'?' open':'')+'><summary><span>'+title+'</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg></summary><div class="help-body">'+body+'</div></details>';});
 };
 
 document.addEventListener('click',function(ev){
@@ -2872,7 +2890,7 @@ function firstEntry(){
 }
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();
- PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,accountChanged:function(){if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
   CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
    atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra));MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');
@@ -2881,7 +2899,7 @@ function boot(){
   document.addEventListener('hemicycle:local-save',function(){CLOUD_SAVE.dirty();});
   window.addEventListener('online',function(){CLOUD_SAVE.reconnect();});
   document.addEventListener('visibilitychange',function(){if(document.hidden)CLOUD_SAVE.save();else CLOUD_SAVE.reconnect();});
-  window.addEventListener('storage',function(event){if(event.key===HemicycleCloudSave.ownerKey&&event.newValue===null){CLOUD_SAVE.localReplaced();return;}if([LS,LS2,HemicycleRanked.key,'hemiciclo_tutorial_v1','hemiciclo_menu_tutorial_v1'].indexOf(event.key)>=0)CLOUD_SAVE.dirty();});
+  window.addEventListener('storage',function(event){if(event.key===HemicycleCloudSave.ownerKey&&event.newValue===null){CLOUD_SAVE.localReplaced();return;}if([LS,LS2,HemicycleRanked.key,'hemiciclo_tutorial_v1','hemiciclo_menu_tutorial_v1'].indexOf(event.key)>=0)CLOUD_SAVE.dirty();if(event.key===HemicycleRanked.key&&['menu','buzon'].indexOf(SCREEN)>=0&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active))paint();});
  }
  TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
   read:lsGet,write:lsSet,

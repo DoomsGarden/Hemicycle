@@ -1,0 +1,34 @@
+{
+  "version": "v31.0.0.4",
+  "tests": 258,
+  "fullMatches": 8,
+  "immediate100Scenarios": 18,
+  "inactivityScenarios": 2,
+  "battleTutorialSteps": 32,
+  "menuTutorialSteps": 24,
+  "uiViewports": 5,
+  "phraseViewports": 4,
+  "cachedAssets": 32,
+  "sourceHashes": {
+    "index.html": "ab423045620aace9489366a66173baca70164cbdd7e1020c7f84a44054160c75",
+    "sw.js": "1d4ff1e19b0e1bd02423bddccb805b55964f08751429715ce8c156060d290405",
+    "css/battle-visuals.css": "ee61bc24c8430da1e21c381aa6c422fd75bf1712cb957bff00149e7455ed9cd1",
+    "js/battle-visuals.js": "7bae79149fa6efa4f3cb2ef0c047d4e10a004db1d890e7af2213bbe4ca4cfb4e",
+    "js/battle-tutorial.js": "1b1a248cdf8836f632e92e60911ac67364f2c894dad28c2b9a21bba697772054",
+    "js/menu-tutorial.js": "94149aabd2e1d0b44b8cc3e0e725895c344d2b964791505019e3c34c2f5d430e",
+    "js/player-backup.js": "555cb9d4b50984d26c620c4357923833c3e8d2c9d00275d491f4eed935ccc94d",
+    "js/player-profile.js": "ad7906ef5276043eede2857e4fcc041fe3dfa2d3942b04b71da733b9041ac3e2",
+    "js/supabase-config.js": "c77ac0b25383f6a5a9c966f7ca39a49e0f78418a5a9a5fc298603f56b4bcf5f8",
+    "js/changelog.js": "2b945070243df11ffa8ae89b7687a9e85bada327bed0c093604441ed8f475ee8"
+  },
+  "logs": [
+    "tests",
+    "actions",
+    "matches",
+    "ui",
+    "cloud",
+    "pwa",
+    "onboarding"
+  ],
+  "passed": true
+}

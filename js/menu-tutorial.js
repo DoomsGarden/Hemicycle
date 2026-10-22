@@ -8,9 +8,9 @@ function create(api){
   read:api.read,write:api.write,prepare:api.prepare,pause:api.pause,inBattle:api.isOpen,action:api.action,leave:api.leave,
   steps:[
    ['home','#tabbar [data-go="menu"]','1. Tu menú principal','Inicio es tu punto de partida. El botón de la sección abierta se ve más grande. Esta guía no gastará FS ni modificará tu colección. Toca Inicio.'],
-   ['stats','.hud-strip','Tu progreso de un vistazo','Aquí aparecen tus victorias, derrotas, Elo y cromos distintos. El saldo de Fuerza Soberana está en la franja superior. Toca las estadísticas.'],
+   ['stats','.hud-strip','Tu progreso de un vistazo','Aquí aparecen tus victorias, derrotas, Elo y cromos distintos. El saldo de Fuerza Soberana está en la franja superior; el sobre del menú abre tu buzón de recompensas. Toca las estadísticas.'],
    ['profile-open','[data-act="profile"]','Abre tu perfil','El botón cuadrado junto a las victorias y derrotas abre tu perfil sobre el menú principal. Tócalo para conocerlo.','profile-open'],
-   ['profile-stats','.profile-stats','Tus estadísticas completas','Aquí consultas tus partidas, victorias, derrotas, Elo, colección y recompensas. Debajo aparecen las rarezas y la Liga. Desde Perfil → Nube puedes activar una copia de tu cuenta o recuperarla en otro dispositivo. Toca las estadísticas.'],
+   ['profile-stats','.profile-stats','Tus estadísticas completas','Aquí consultas tus partidas, victorias, derrotas, Elo, colección y recompensas. Debajo aparecen las rarezas y la Liga; en Tu bancada puedes elegir el fondo de tu mitad del tablero. Desde Perfil → Nube puedes activar una copia de tu cuenta o recuperarla en otro dispositivo. Toca las estadísticas.'],
    ['profile-nick','.profile-nickname','Elige tu nick','Con una cuenta puedes elegir tu nick: la primera elección es gratis y el siguiente cambio gratuito llega al cumplirse un año. Esta visita no modifica el nick ni inicia o cierra sesiones. Toca este bloque para continuar.'],
    ['profile-close','[data-profile="close"]','Regresa al menú','Puedes abrir y cerrar el perfil cuando lo necesites desde Inicio. Toca la cruz para volver al menú y continuar con la guía.','profile-close'],
    ['play','[data-act="play-menu"]','Cómo elegir una partida','Jugar permite preparar tu gabinete. La flecha abre los modos de juego. Tócala para verlos sin iniciar un combate.','modes'],

@@ -10,7 +10,7 @@ function create(api){
  function save(status){api.write(key,{status:status,version:2,updatedAt:Date.now()});}
  function makeSteps(){return [
   ['coin','[data-tutorial="coin"]','Tu primer debate','Práctica con cromos prestados. Ensayamos cara y empiezas tú; fuera del tutorial el sorteo es al 50 %. Toca la moneda.','begin'],
-  ['votes','.vbars','Gana con 100 votos','Ganas al llegar a 100 votos. No hay límite de rondas; cada turno normal dura 60 segundos. Aquí puedes leer sin reloj. Toca los marcadores.'],
+  ['votes','.vbars','Gana con 100 votos','Azul: tus votos. Rojo: los del rival. Ganas al llegar a 100. El número lateral es el reloj: 60 segundos por turno, sin límite de rondas. En esta práctica no corre. Toca los marcadores.'],
   ['cabinet','.gab','Tu gabinete y el mazo','Cinco cromos, hasta tres en la Tribuna y dos en la mano. Los expulsados descansan y se barajan con el mazo; no vuelven en tu siguiente turno. Toca el gabinete.'],
   ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El TdP paga el coste de presentar cromos. Se renueva cada turno; su base crece hasta 6 y algunas pasivas permiten llegar a 8. Toca los cristales.'],
   ['play-leader','[data-tutorial="hand"] .lead','Presenta a tu líder','La estrella identifica al líder: +1 Zasca y +3 Aguante. Z indica el daño; A, su resistencia. Este cuesta 1 TdP. Tócalo para presentarlo.','play-leader'],

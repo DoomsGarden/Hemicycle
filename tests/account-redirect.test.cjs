@@ -1,0 +1,5 @@
+const{test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const source=fs.readFileSync(require('node:path').join(__dirname,'../js/supabase-config.js'),'utf8');
+function config(origin){const ctx=vm.createContext({location:{origin},module:{exports:{}}});vm.runInContext(source,ctx);return ctx.module.exports;}
+test('account login returns to the active approved domain, while Pages remains usable during migration',()=>{for(const origin of ['https://hemicycle.online','https://www.hemicycle.online'])assert.equal(config(origin).redirectTo,origin+'/');assert.equal(config('https://doomsgarden.github.io').redirectTo,'https://doomsgarden.github.io/Hemicycle/');});
+test('a preview or deceptive hostname cannot become an OAuth return destination',()=>{for(const origin of ['http://hemicycle.online','https://hemicycle.online.example.test','https://example.test','http://127.0.0.1:8022'])assert.equal(config(origin).redirectTo,'https://doomsgarden.github.io/Hemicycle/');});

@@ -3,10 +3,12 @@
  */
 (function(root){
  'use strict';
+ var origin=root.location&&root.location.origin;
+ var redirect=['https://hemicycle.online','https://www.hemicycle.online'].indexOf(origin)>=0?origin+'/':'https://doomsgarden.github.io/Hemicycle/';
  var config=Object.freeze({
   url:'https://fdotndyenfreqbmzqdzd.supabase.co',
   publishableKey:'sb_publishable_Uztkuwu0Wt_dwoQIRfAGKg_en2K-W8I',
-  redirectTo:'https://doomsgarden.github.io/Hemicycle/'
+  redirectTo:redirect
  });
  if(typeof module==='object'&&module.exports)module.exports=config;
  else root.HemicycleSupabaseConfig=config;

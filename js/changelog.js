@@ -4,6 +4,30 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
   {
+  "version": "v31.0.0.4",
+  "date": "2026-10-22",
+  "title": "Un nuevo aspecto para el debate y tus recompensas",
+  "sections": [
+    {
+      "title": "El hemiciclo",
+      "items": [
+        "Dos bancadas con fondos independientes. Desde Perfil puedes elegir Clásico o Mármol azul, gratuitos durante el prelanzamiento.",
+        "Los votos aparecen en barras iguales y centradas: rojo para el rival y azul para ti. El reloj numérico está a su lado.",
+        "El acta del debate gana espacio y distingue daño, defensa, curación y votos. Se retira la indicación fija que repetía el tutorial.",
+        "Ataques, curaciones, defensas y votos tienen efectos breves. Se señala el turno activo y el ataque fuerte disponible, respetando la opción de reducir movimiento."
+      ]
+    },
+    {
+      "title": "Buzón y ayuda",
+      "items": [
+        "El menú principal incluye un buzón que avisa cuando tienes sobres por recoger. Cada mensaje indica el motivo y el nombre del sobre antes de reclamarlo.",
+        "Los sobres pendientes de Clasificatoria se conservan y se recogen desde el buzón. La explicación de temporadas y premios pasa de la tienda a Ayuda.",
+        "Ayuda se organiza por temas desplegables con flechas animadas, para consultar las reglas y el guardado con más claridad."
+      ]
+    }
+  ]
+},
+  {
     "version": "v31.0.0.3",
     "date": "2026-10-22",
     "title": "Tres frases, cuatro formas de intervenir",

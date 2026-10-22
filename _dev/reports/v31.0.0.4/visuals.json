@@ -1,0 +1,106 @@
+{
+  "viewports": [
+    {
+      "viewport": {
+        "width": 320,
+        "height": 568
+      },
+      "mail": {
+        "pending": 13,
+        "reclaimedOnce": true,
+        "repeatRejected": true,
+        "emptyState": true
+      },
+      "helpTopics": 11,
+      "appearanceBackedUp": true,
+      "profileFits": true,
+      "equalVoteBars": true,
+      "numericClock": true,
+      "battleFits": true
+    },
+    {
+      "viewport": {
+        "width": 360,
+        "height": 640
+      },
+      "mail": {
+        "pending": 13,
+        "reclaimedOnce": true,
+        "repeatRejected": true,
+        "emptyState": true
+      },
+      "helpTopics": 11,
+      "appearanceBackedUp": true,
+      "profileFits": true,
+      "equalVoteBars": true,
+      "numericClock": true,
+      "battleFits": true
+    },
+    {
+      "viewport": {
+        "width": 393,
+        "height": 851
+      },
+      "mail": {
+        "pending": 13,
+        "reclaimedOnce": true,
+        "repeatRejected": true,
+        "emptyState": true
+      },
+      "helpTopics": 11,
+      "appearanceBackedUp": true,
+      "profileFits": true,
+      "equalVoteBars": true,
+      "numericClock": true,
+      "battleFits": true
+    },
+    {
+      "viewport": {
+        "width": 851,
+        "height": 393
+      },
+      "mail": {
+        "pending": 13,
+        "reclaimedOnce": true,
+        "repeatRejected": true,
+        "emptyState": true
+      },
+      "helpTopics": 11,
+      "appearanceBackedUp": true,
+      "profileFits": true,
+      "equalVoteBars": true,
+      "numericClock": true,
+      "battleFits": true
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "mail": {
+        "pending": 13,
+        "reclaimedOnce": true,
+        "repeatRejected": true,
+        "emptyState": true
+      },
+      "helpTopics": 11,
+      "appearanceBackedUp": true,
+      "profileFits": true,
+      "equalVoteBars": true,
+      "numericClock": true,
+      "battleFits": true
+    }
+  ],
+  "errors": [],
+  "effects": {
+    "damage": true,
+    "shield": true,
+    "heal": true,
+    "immediateState": true,
+    "nonblocking": true,
+    "reducedMotion": true,
+    "cleanedUp": true,
+    "crossTabMail": true,
+    "reloadPreservesChoices": true
+  }
+}
