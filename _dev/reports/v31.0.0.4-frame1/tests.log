@@ -1,0 +1,19 @@
+✔ version notes cover every recorded playable version and the first repository entry (2.962204ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (1.294869ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.468827ms)
+✔ a successful navigation saves the new document and ties its cache write to the event (34.008055ms)
+✔ offline navigation recovers the current version document without consulting other caches (0.991163ms)
+✔ the root document fallback is awaited when index.html is missing (1.225939ms)
+✔ a network request that never responds is aborted after 3500 ms and uses the saved document (5.750841ms)
+✔ an unavailable network response falls back to the saved page (1.297793ms)
+✔ first offline launch without a saved copy has a clear response (2.549116ms)
+✔ private market requests and mutations bypass the service worker entirely (1.089458ms)
+✔ external authentication and profile GET requests bypass the cache (0.811798ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 133.061863
