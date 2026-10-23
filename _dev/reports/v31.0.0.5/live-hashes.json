@@ -1,0 +1,242 @@
+{
+  "url": "https://doomsgarden.github.io/Hemicycle/",
+  "version": "v31.0.0.5",
+  "verifiedAt": "2026-10-23T10:25:42.387257+00:00",
+  "files": [
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "b4bb2860fb89800c03f0ca5f2e9b58b5c00b554c80fd31588e6c67c8532c7900",
+      "bytes": 171853,
+      "contentType": "text/html; charset=utf-8"
+    },
+    {
+      "file": "sw.js",
+      "status": 200,
+      "sha256": "284baf42bf29ce30b72810975d977800f789ba422831fe9d73098444b82cb3b8",
+      "bytes": 3794,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "js/game-audio.js",
+      "status": 200,
+      "sha256": "4f2ac58e52d534cd46e55b3f29a6a1ec6f2a48fb38bc53a6d077d40545eca7f3",
+      "bytes": 10923,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "css/audio.css",
+      "status": 200,
+      "sha256": "a27fedee141c2896a22a9bfb6166925dfd49a47ac88d15eb231b887295b4c904",
+      "bytes": 509,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "file": "js/changelog.js",
+      "status": 200,
+      "sha256": "e9be9d47195fcad3fe7fec953ec193e61aa301e6f148164e5cbf5e0d573df69d",
+      "bytes": 27790,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "js/cabinet-presets.js",
+      "status": 200,
+      "sha256": "aad20f3e74dbb801273f9041a18987d8a6241aad28d42b5a6cb761a00b75555e",
+      "bytes": 1507,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "css/cabinets.css",
+      "status": 200,
+      "sha256": "ab62dd10bd9b6c9098dd74aa24bb0541d5d877dd45ff70897d37b4f2758eb724",
+      "bytes": 1171,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "file": "js/battle-actions-ui.js",
+      "status": 200,
+      "sha256": "a51298760ab724b07e01d13edfeb5a4a2e632dd0bcdf190787a3acb1808e7ae3",
+      "bytes": 4789,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "css/battle-actions.css",
+      "status": 200,
+      "sha256": "0b51d02a19105161cb3ab4deed869cc32910f9db091ad53b42a79e71cfb0b91c",
+      "bytes": 4271,
+      "contentType": "text/css; charset=utf-8"
+    },
+    {
+      "file": "js/battle-tutorial.js",
+      "status": 200,
+      "sha256": "7acea14c30457b331362769ee9f18aa4a4d78fcca481c04a406e5c30943b6e84",
+      "bytes": 11552,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "js/menu-tutorial.js",
+      "status": 200,
+      "sha256": "17bab0ea464158f37a936a379887266342325039870bb2563b9bae0d960aaf88",
+      "bytes": 6478,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "js/player-backup.js",
+      "status": 200,
+      "sha256": "1ab573be2ac839a8e861a1d0f7a58ee9a9ee12860e8210f6e040216e226f6ffe",
+      "bytes": 8046,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "js/market-ui.js",
+      "status": 200,
+      "sha256": "fadca423ed4a48d5da77b2617b39b72484de77992478b621f7893119644d49bc",
+      "bytes": 23938,
+      "contentType": "application/javascript; charset=utf-8"
+    },
+    {
+      "file": "audio/ambience.mp3",
+      "status": 200,
+      "sha256": "4b0c009eafd5d33ee3b38d4b25ae68a2a4a83e244417fd874a018dd1e3be3f4e",
+      "bytes": 121004,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/card.mp3",
+      "status": 200,
+      "sha256": "914954fe54c3b584fc00539e1c1b22a5b4419716d39769b3d0ffcc58e1fc50f7",
+      "bytes": 8108,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/coin.mp3",
+      "status": 200,
+      "sha256": "c44ecb7090fd10a5b520beac32c070afb8ff52014d2da0334766a8ac6b94423e",
+      "bytes": 19052,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/combat-base.mp3",
+      "status": 200,
+      "sha256": "2f08949c456902fe26c8d2801007248970d5f48102c2f31f2f342e512649ce87",
+      "bytes": 687644,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/combat-layer.mp3",
+      "status": 200,
+      "sha256": "c4837231cc65d7821ba101297c703457fab44b1536ab91008ce2a62b64d795aa",
+      "bytes": 687644,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/defeat.mp3",
+      "status": 200,
+      "sha256": "0a3ef2c1531bbd7183efd54191c67bc7c262f0f3ab8a1b5a7c90395969039f74",
+      "bytes": 103724,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/error.mp3",
+      "status": 200,
+      "sha256": "45f916a2663daca2ade979380ea8bda8bfa4ccd0f87c7743d8eec42863d7f147",
+      "bytes": 6956,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/expel.mp3",
+      "status": 200,
+      "sha256": "3d96520995d9033dbc28da43b01add14f2ee52e41f23166ef649a85af28cf460",
+      "bytes": 10700,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/guard.mp3",
+      "status": 200,
+      "sha256": "b6e9ce32d7e7a68d57033447985910d87e10fe5e8b4c7ea7eca076bb9a91148a",
+      "bytes": 11276,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/heal.mp3",
+      "status": 200,
+      "sha256": "73882045c244d26ea31e6027c181bc748d3218334a32e6fb3ccdd9295ce4c378",
+      "bytes": 13580,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/menu.mp3",
+      "status": 200,
+      "sha256": "f01681a7134583d8620812e1e67c918d46f3292a523f56e0f95d99fd64b60cd7",
+      "bytes": 275372,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/normal.mp3",
+      "status": 200,
+      "sha256": "3aacbfa3c3727d5467d31e3ce188b802e6234b3832cee12df51c64b0075400dd",
+      "bytes": 6668,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/pack.mp3",
+      "status": 200,
+      "sha256": "18c7ad8348fd56a1bd8db6f6c5c49c6a50c8e30a9c3e7abe3242263db89377ff",
+      "bytes": 22508,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/reward.mp3",
+      "status": 200,
+      "sha256": "c4b5af0ebd888731c91d3302db8fec6b12ed1212f27d06241fbcbdb92d642915",
+      "bytes": 11852,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/strong.mp3",
+      "status": 200,
+      "sha256": "ab050384fb7bce10fa7d74069b5b7c1ad7815c5928612dd7421398fd94c20913",
+      "bytes": 12428,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/timer.mp3",
+      "status": 200,
+      "sha256": "1123546e0dc2a7c25bd98fa761df91f1ed9af2056c1a9b0bd30498bdd5188ead",
+      "bytes": 3212,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/turn.mp3",
+      "status": 200,
+      "sha256": "190c0685c83e2ce1207e395e48860122fd33b343dae892d4eb191be1cd6d2e1b",
+      "bytes": 9548,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/ui.mp3",
+      "status": 200,
+      "sha256": "5118424fc291c613b64f8c164f9ae064bcc98ebfa9183f590af3c12cb58ae144",
+      "bytes": 4076,
+      "contentType": "audio/mp3"
+    },
+    {
+      "file": "audio/victory.mp3",
+      "status": 200,
+      "sha256": "00aa78b1c22b1446eb76e8ca07a924926eb05b9f83c1f967d8844b49159345eb",
+      "bytes": 108044,
+      "contentType": "audio/mp3"
+    }
+  ],
+  "privateExcluded": [
+    {
+      "path": "_dev/releases/v31.0.0.5.md",
+      "status": 404
+    },
+    {
+      "path": "_dev/audio/combat-v2/README.md",
+      "status": 404
+    }
+  ],
+  "tlsVerification": true
+}

@@ -1,6 +1,6 @@
 {
   "version": "v31.0.0.5",
-  "status": "verified-local-ready-to-publish",
+  "status": "published-and-live-verified",
   "verifiedAt": "2026-10-23T10:21:53.740077+00:00",
   "unitTests": {
     "passed": 270,
@@ -70,5 +70,8 @@
     "audio/turn.mp3": "190c0685c83e2ce1207e395e48860122fd33b343dae892d4eb191be1cd6d2e1b",
     "audio/ui.mp3": "5118424fc291c613b64f8c164f9ae064bcc98ebfa9183f590af3c12cb58ae144",
     "audio/victory.mp3": "00aa78b1c22b1446eb76e8ca07a924926eb05b9f83c1f967d8844b49159345eb"
-  }
+  },
+  "publishedCommit": "20583c2242aa04d1ce9e9449a0d07894e31d8002",
+  "publicUrl": "https://doomsgarden.github.io/Hemicycle/",
+  "liveVerification": "live-hashes.json and live-browser.json"
 }
