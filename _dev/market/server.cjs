@@ -181,8 +181,8 @@ function createMarketServer({dbPath=':memory:',now=()=>Date.now()}={}){
    }
    if(req.method!=='GET'&&req.method!=='HEAD')bad('Método no permitido.',405);
    const name=decodeURIComponent(url.pathname).replace(/^\/(?:Hemicycle\/)?/,'')||'index.html';
-   if(!/^(?:index\.html|sw\.js|manifest\.json|icon-(?:192|512)\.png|js\/[a-z-]+\.js|css\/[a-z-]+\.css|cards\/[a-z0-9-]+\.webp|fonts\/Anton-Regular\.ttf|audio\/[a-z-]+\.mp3)$/.test(name))bad('Archivo no encontrado.',404);
-   const file=path.join(root,name),types={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.png':'image/png','.webp':'image/webp','.ttf':'font/ttf','.mp3':'audio/mpeg'};
+   if(!/^(?:index\.html|sw\.js|manifest\.json|icon-(?:192|512)\.png|js\/[a-z-]+\.js|css\/[a-z-]+\.css|cards\/[a-z0-9-]+\.webp|fonts\/Anton-Regular\.ttf|audio\/[a-z-]+\.mp3|assets\/packs\/[a-z]+\.svg)$/.test(name))bad('Archivo no encontrado.',404);
+   const file=path.join(root,name),types={'.html':'text/html; charset=utf-8','.js':'application/javascript; charset=utf-8','.css':'text/css; charset=utf-8','.json':'application/json','.png':'image/png','.webp':'image/webp','.ttf':'font/ttf','.mp3':'audio/mpeg','.svg':'image/svg+xml'};
    const bytes=fs.readFileSync(file);res.setHeader('Content-Type',types[path.extname(file)]);res.end(req.method==='HEAD'?undefined:bytes);
   }catch(e){res.statusCode=e.status||(e.code==='ENOENT'?404:400);res.setHeader('Content-Type','application/json; charset=utf-8');res.end(JSON.stringify({error:e.message||'No se ha podido completar la operación.'}));}
  });

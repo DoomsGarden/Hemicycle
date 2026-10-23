@@ -1,0 +1,35 @@
+{
+  "version": "v31.0.1.0",
+  "reviewedPR": 2,
+  "reviewedHead": "7860e458efe4d737502f8284f1ba689bf0db92e5",
+  "base": "264e508d641fb807965838846141580597b55e29",
+  "nodeTests": {
+    "passed": 278,
+    "failed": 0
+  },
+  "chromiumViewports": [
+    "320x568",
+    "393x851",
+    "851x393",
+    "1280x900"
+  ],
+  "tutorialSteps": {
+    "combat": 32,
+    "menu": 24
+  },
+  "pwaAssets": 62,
+  "cloud": "official SDK, local PostgreSQL RPCs; simulated authentication transport; no hosted accounts touched",
+  "hashes": {
+    "index.html": "28668f8499d4a3469e514a7a00205803e97a09589ba398b7170b2c342e789751",
+    "sw.js": "8cd09f5766565cbfe0e85868ac68bc54179bd507692b005f8634babc39afc880",
+    "css/cabinets.css": "ec9608cbb20486a883e66e5529400ca44caa2e7836c6d010a8d31949546dc357",
+    "css/packs.css": "4480253e0bfb147839fe24211ab1e4f19e38c3d0722dfd182966c8cac9845674",
+    "js/changelog.js": "01a691e669bb6dbea9bb025a7fbe987c19623b7b6b3fabdcb5515e3ed2fd19fd",
+    "assets/packs/comun.svg": "79282ef610a89309cd19f59337a3d5cebaf0b2435f72e50c0f9f06ef503f075e",
+    "assets/packs/diario.svg": "1ffc08145a6dd89626c27d29e25cb85a339e5794a20777701301bafa775adabe",
+    "assets/packs/legendario.svg": "295ac712ad06c4ff09bee7a5c0dacc7b143f09517bc4a93fedbe8dc20107c72e",
+    "assets/packs/mitico.svg": "ace56a63fe0694358ff2a04f92ba16e840c5b55cea3ae762e130cfe6098772e9",
+    "assets/packs/raro.svg": "b2a8d26ed3dc4972e769ea5da16fe23c0bd59053a5392ecd35702377a38995f7",
+    "assets/packs/semanal.svg": "9cd8a38e7e58ea6a1e2d7425736527dbf35323f3c89eb1bdece2b8965c599e3a"
+  }
+}

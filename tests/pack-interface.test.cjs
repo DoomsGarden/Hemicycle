@@ -22,5 +22,19 @@ test('a free pack cannot be reclaimed while cooling down, and rewards are stored
 test('pack art and styles referenced by the page are precached',()=>{
  const root=require('node:path').join(__dirname,'..'),sw=fs.readFileSync(root+'/sw.js','utf8');
  for(const k of ['diario','semanal','comun','raro','legendario','mitico']){assert.ok(fs.existsSync(root+'/assets/packs/'+k+'.svg'));assert.ok(sw.includes('./assets/packs/'+k+'.svg'));}
- assert.ok(sw.includes('css/packs.css?v=31.0.0.5-collection1'));
+ const style=html.match(/href="(css\/packs\.css\?[^\"]+)"/)[1];assert.ok(sw.includes(style));
+});
+function revealFixture(reduced){
+ const events=[],timers=[],buttons=[{disabled:false},{disabled:false}],receipt={cards:['a','a','b']};
+ const ctx=vm.createContext({SCREEN:'sobre',SO:receipt,gameSound:n=>events.push(n),paint:()=>events.push('paint'),window:{matchMedia:()=>({matches:reduced})},setTimeout:fn=>timers.push(fn),document:{querySelector:s=>s==='.pack-opening'?{classList:{add:()=>{}},querySelectorAll:()=>buttons}:{focus:()=>events.push('focus')}}});
+ vm.runInContext(between('function revealPack(){','SCREENS.sobre=function(){'),ctx);return {ctx,events,timers,buttons,receipt};
+}
+test('reduced motion reveals once, sounds once and focuses the first reward',()=>{
+ const {ctx,events,receipt,timers}=revealFixture(true);assert.equal(ctx.revealPack(),true);assert.equal(receipt.revealed,true);assert.deepEqual(events,['pack','paint','focus']);assert.equal(timers.length,0);assert.equal(ctx.revealPack(),false);assert.deepEqual(events,['pack','paint','focus']);
+});
+test('animated reveal rejects double activation while pending and finishes once',()=>{
+ const {ctx,events,receipt,timers,buttons}=revealFixture(false);assert.equal(ctx.revealPack(),true);assert.equal(receipt.opening,true);assert.equal(ctx.revealPack(),false);assert.ok(buttons.every(b=>b.disabled));assert.equal(timers.length,1);assert.deepEqual(events,['pack']);timers[0]();assert.equal(receipt.revealed,true);assert.equal(receipt.opening,false);assert.deepEqual(events,['pack','paint','focus']);
+});
+test('an old reveal callback cannot repaint a different receipt or another screen',()=>{
+ for(const leave of [true,false]){const {ctx,events,receipt,timers}=revealFixture(false);ctx.revealPack();ctx.SCREEN=leave?'tienda':'sobre';ctx.SO={cards:['c'],revealed:false};timers[0]();assert.equal(receipt.revealed,true);assert.equal(ctx.SO.revealed,false);assert.deepEqual(events,['pack']);}
 });

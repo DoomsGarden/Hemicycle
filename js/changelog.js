@@ -4,6 +4,30 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version": "v31.0.1.0",
+  "date": "2026-10-23",
+  "title": "Tu colección y tus sobres, más claros",
+  "sections": [
+    {
+      "title": "Colección y gabinetes",
+      "items": [
+        "La colección muestra tres cromos por fila para facilitar la lectura. Los filtros y favoritos comparten el acabado azul y dorado del juego.",
+        "Los cinco favoritos mantienen sus botones compactos y sus puntos de estado. Debajo puedes ver sus integrantes y reconocer al líder por su estrella.",
+        "Durante la edición puedes quitar integrantes tocando sus retratos, guardar o cancelar. Tus gabinetes y el progreso anterior se conservan."
+      ]
+    },
+    {
+      "title": "Tienda y apertura de sobres",
+      "items": [
+        "Los sobres gratuitos y los que cuestan Fuerza Soberana aparecen separados, con seis diseños de sobre y contadores más fáciles de leer.",
+        "Después de adquirir un sobre, tócalo para revelar sus cinco cromos. Los premios quedan guardados antes de la animación; volver al sobre no repite cobros ni entregas.",
+        "Puedes consultar y ampliar cada premio, navegar entre los políticos de ese sobre y regresar al resultado. La apertura respeta la opción de reducir movimiento.",
+        "Se mantienen los precios, las probabilidades, los tiempos de espera y las recompensas existentes."
+      ]
+    }
+  ]
+},
+{
   "version": "v31.0.0.5",
   "date": "2026-10-23",
   "title": "El debate cobra voz y afina su estrategia",
