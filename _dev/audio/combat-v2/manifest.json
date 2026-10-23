@@ -1,0 +1,126 @@
+{
+  "title": "Hemicycle · Combate musical adaptativo",
+  "threshold": 50,
+  "condition": "max(votosPropios, votosRival) > 50",
+  "transitionSeconds": 1.5,
+  "integratedInGame": false,
+  "pieces": [
+    {
+      "id": "a",
+      "name": "Duelo de tribunas",
+      "tempo": 112,
+      "meter": "4/4",
+      "description": "Aventura orquestal: cuerdas rítmicas, tema de oboe y respuesta de trompas. El estado glorioso abre los metales y eleva la melodía.",
+      "color": "Ágil, noble y con tensión",
+      "duration": 34.2857,
+      "normal": "pistas/a-combate.mp3",
+      "intense": "pistas/a-gloriosa.mp3",
+      "demo": "pistas/a-demostracion.mp3",
+      "baseStem": "pistas/a-base-capa.ogg",
+      "layerStem": "pistas/a-refuerzo-capa.ogg",
+      "normalRms": 0.07779,
+      "intenseRms": 0.12371,
+      "peak": 0.69,
+      "timeline": [
+        {
+          "time": 0,
+          "label": "Combate activo · nadie supera 50 votos"
+        },
+        {
+          "time": 17.14,
+          "label": "Un jugador llega a 51 · entra el estado glorioso"
+        },
+        {
+          "time": 34.29,
+          "label": "Vuelve a 50 · regresa el estado normal"
+        },
+        {
+          "time": 42.86,
+          "label": "El rival supera 50 · regresa el estado glorioso"
+        },
+        {
+          "time": 51.43,
+          "label": "Final de combate · resolución musical"
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "name": "La mayoría avanza",
+      "tempo": 120,
+      "meter": "4/4",
+      "description": "Marcha cinematográfica: clarinete, violines, caja y bajo marcado. Sobre 50 votos aparece una fanfarria luminosa, con contramelodía de cuerdas.",
+      "color": "Decidida, luminosa y competitiva",
+      "duration": 32.0,
+      "normal": "pistas/b-combate.mp3",
+      "intense": "pistas/b-gloriosa.mp3",
+      "demo": "pistas/b-demostracion.mp3",
+      "baseStem": "pistas/b-base-capa.ogg",
+      "layerStem": "pistas/b-refuerzo-capa.ogg",
+      "normalRms": 0.08186,
+      "intenseRms": 0.11071,
+      "peak": 0.69,
+      "timeline": [
+        {
+          "time": 0,
+          "label": "Combate activo · nadie supera 50 votos"
+        },
+        {
+          "time": 16.0,
+          "label": "Un jugador llega a 51 · entra el estado glorioso"
+        },
+        {
+          "time": 32.0,
+          "label": "Vuelve a 50 · regresa el estado normal"
+        },
+        {
+          "time": 40.0,
+          "label": "El rival supera 50 · regresa el estado glorioso"
+        },
+        {
+          "time": 48.0,
+          "label": "Final de combate · resolución musical"
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "name": "El pulso de la cámara",
+      "tempo": 168,
+      "meter": "6/8",
+      "description": "Impulso en seis por ocho: violonchelo, guitarra de nailon, flauta y timbales. La segunda capa suma trompas, violines y una percusión más amplia.",
+      "color": "Fluida, aventurera y con empuje",
+      "duration": 34.2857,
+      "normal": "pistas/c-combate.mp3",
+      "intense": "pistas/c-gloriosa.mp3",
+      "demo": "pistas/c-demostracion.mp3",
+      "baseStem": "pistas/c-base-capa.ogg",
+      "layerStem": "pistas/c-refuerzo-capa.ogg",
+      "normalRms": 0.07326,
+      "intenseRms": 0.11801,
+      "peak": 0.69,
+      "timeline": [
+        {
+          "time": 0,
+          "label": "Combate activo · nadie supera 50 votos"
+        },
+        {
+          "time": 17.14,
+          "label": "Un jugador llega a 51 · entra el estado glorioso"
+        },
+        {
+          "time": 34.29,
+          "label": "Vuelve a 50 · regresa el estado normal"
+        },
+        {
+          "time": 42.86,
+          "label": "El rival supera 50 · regresa el estado glorioso"
+        },
+        {
+          "time": 51.43,
+          "label": "Final de combate · resolución musical"
+        }
+      ]
+    }
+  ]
+}

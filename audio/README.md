@@ -1,0 +1,9 @@
+# Sonido de Hemicycle
+
+Música de combate: «Duelo de tribunas», composición y arreglo creados para Hemicycle, 112 BPM en re menor. `combat-base.mp3` y `combat-layer.mp3` comparten la misma longitud. La base suena desde el primer turno; la segunda capa entra en 1,5 segundos cuando cualquiera supera 50 votos y se retira cuando ambos están a 50 o menos, sin reiniciar la pieza. `victory.mp3` (5,3 s) y `defeat.mp3` (5,1 s) son composiciones relacionadas y suenan una vez al cerrar el combate.
+
+Selección de efectos aprobados: A para interfaz, error suave, cartas, moneda, defensa, curación, turno, sobres y recompensas; B para ataque normal y expulsión; C para ataque fuerte y reloj. Menú y ambiente corresponden a A. Los efectos y el menú se crearon por síntesis original. El ambiente es una textura abstracta, sin conversaciones, y está desactivado por defecto.
+
+Los timbres de las composiciones orquestales proceden del banco TimGM6mb, interpretado con FluidSynth. TimGM6mb: copyright 2004 Tim Brechbill; 2010 David Bolton, distribuido por Debian bajo GPL-2. Fuente: https://github.com/musescore/musescore-old/commit/90c33ef9d87b3f5ff92efd3b07d89eb455fb1fef . No se redistribuye el banco SF2 ni FluidSynth en esta carpeta. Las melodías y arreglos son originales; los timbres sampleados no se presentan como grabaciones propias.
+
+El sonido se inicia tras una interacción, admite volumen independiente de música/efectos/ambiente y silencio total, se suspende en segundo plano y no requiere servicios externos. Los controles están en Ayuda → Sonido y música. Los archivos se guardan para uso sin conexión. Los recursos de desarrollo no forman parte del juego publicado.

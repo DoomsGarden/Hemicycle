@@ -18,3 +18,4 @@
  .battle-action-content{grid-template-columns:repeat(3,minmax(0,1fr))}.battle-action-head{grid-column:1/-1}.battle-option{flex-direction:column;align-items:stretch;min-height:78px;gap:4px}.battle-option>b{text-align:right}
  #battleActionRoot[data-view=support] .battle-action-content{grid-template-columns:repeat(2,minmax(0,1fr))}#battleActionRoot[data-view=support] .battle-support-quote{grid-column:1/-1}#battleActionRoot[data-view=support] .battle-option{min-height:56px}
 }
+.battle-strong-label{display:inline-flex;gap:5px;align-items:center}.strong-charge{width:18px;height:18px;flex-shrink:0;vertical-align:middle}.charge-segment{fill:#39465b;stroke:#121d30;stroke-width:1}.charge-segment.is-filled{fill:#eacb85}.strong-charge .charge-bolt{fill:#f6e3b6}.battle-option>b small{display:block;font-size:9px;color:#c9b47c;margin-top:3px;font-weight:600}.strong-charge.is-ready{filter:drop-shadow(0 0 2px #d0aa5080)}

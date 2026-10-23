@@ -1,0 +1,23 @@
+{
+  "integratedInGame": false,
+  "combatPiece": "Duelo de tribunas",
+  "tempo": 112,
+  "samples": [
+    {
+      "id": "victoria",
+      "seconds": 5.3,
+      "peak": 0.62,
+      "rms": 0.11879574873982679,
+      "file": "victoria.mp3",
+      "description": "Fanfarria ascendente y resolución en re mayor."
+    },
+    {
+      "id": "derrota",
+      "seconds": 5.1,
+      "peak": 0.42,
+      "rms": 0.08951730135128387,
+      "file": "derrota.mp3",
+      "description": "Motivo descendente de corno inglés y cuerdas; resolución en re menor."
+    }
+  ]
+}

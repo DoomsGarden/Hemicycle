@@ -3,9 +3,11 @@
  'use strict';
  var current=null,frame=0,pending=0;
  function esc(text){return String(text).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
- function button(action,label,quote,value,disabled){
-  return '<button type="button" class="battle-option" data-baction="'+action+'"'+(disabled?' disabled':'')+'><span class="battle-option-copy"><small>'+esc(label)+'</small><span>'+esc(quote)+'</span></span><b>'+esc(value)+'</b></button>';
+ function chargeIcon(value){return '<svg class="strong-charge'+(value===3?' is-ready':'')+'" viewBox="0 0 32 32" role="img" aria-label="Carga: '+value+' de 3 secciones">'+[0,1,2].map(function(i){return '<path class="charge-segment'+(i<value?' is-filled':'')+'" transform="rotate('+(i*120)+' 16 16)" d="M16 2 A14 14 0 0 1 28.124 23 L22.062 19.5 A7 7 0 0 0 16 9 Z"/>';}).join('')+'<path class="charge-bolt" d="m17 10-6 8h4l-1 5 7-9h-4Z"/></svg>';}
+ function button(action,label,quote,value,disabled,charge){
+  return '<button type="button" class="battle-option" data-baction="'+action+'"'+(disabled?' disabled':'')+'><span class="battle-option-copy"><small'+(action==='strong'?' class="battle-strong-label"':'')+'>'+(action==='strong'?chargeIcon(charge):'')+esc(label)+'</small><span>'+esc(quote)+'</span></span><b>'+esc(value)+(action==='strong'?'<small>Coste: 1 A</small>':'')+'</b></button>';
  }
+
  function place(){
   frame=0;
   var el=document.getElementById('battleActionRoot');if(!current||!el||el.hidden)return;
@@ -27,11 +29,11 @@
   el.setAttribute('role','dialog');el.setAttribute('aria-modal','false');el.setAttribute('aria-label','Acciones de '+data.name);
   if(data.support){
    header+='<p class="battle-support-quote">«'+esc(data.quotes[2])+'»</p>';
-   header+=button('guard','Defensa',data.guard?'Ya está preparada':'Solo el próximo golpe','−50 %',data.guard);
-   header+=button('heal','Curación',data.heal?'Recuperar Aguante':'Aguante completo','+'+data.heal+' A',!data.heal);
+   header+=button('guard','Defensa',data.guard?'Ya está preparada':'Un golpe; hasta tu próximo turno','−50 %',data.guard);
+   header+=button('heal','Curación',data.healWait?'Descansa este turno':data.heal?'Recuperar Aguante':'Aguante completo','+'+data.heal+' A',!data.heal||!!data.healWait);
   }else{
    header+=button('normal','Ataque normal',data.quotes[0],data.normal+' Z');
-   header+=button('strong','Ataque fuerte'+(data.strongWait?' · en '+data.strongWait+' turno'+(data.strongWait===1?'':'s'):' · listo'),data.quotes[1],data.strong+' Z',data.strongWait>0);
+   header+=button('strong','Ataque fuerte'+(data.strongWait?' · cargando':data.strongHealth<2?' · necesita 2 A':' · este turno'),data.quotes[1],data.strong+' Z',!data.strongAllowed,data.strongCharge);
    header+=button('support','Defensa / curación',data.quotes[2],'50 % / +'+data.heal+' A');
   }
   el.innerHTML='<div class="battle-action-content'+(changed&&previous?' swapping':'')+'">'+header+'</div>';el.classList.toggle('opening',!previous||previous.uid!==data.uid);el.dataset.view=data.support?'support':'phrases';el.hidden=false;place();

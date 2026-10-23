@@ -1,0 +1,846 @@
+{
+  "title": "Hemicycle · Muestras de sonido",
+  "originalSynthesis": true,
+  "productionIntegration": false,
+  "styles": [
+    {
+      "id": "a",
+      "name": "Hemiciclo solemne",
+      "description": "Madera, campanas suaves y armonías sobrias. La opción más cercana a la estética dorada del juego.",
+      "bpm": 84,
+      "reel": "muestra-a.mp3",
+      "timeline": [
+        {
+          "event": "Botones y confirmaciones",
+          "start": 0
+        },
+        {
+          "event": "Acción no disponible",
+          "start": 0.8
+        },
+        {
+          "event": "Robar o presentar cromo",
+          "start": 1.85
+        },
+        {
+          "event": "Moneda de inicio",
+          "start": 3.0
+        },
+        {
+          "event": "Zasca normal",
+          "start": 5.05
+        },
+        {
+          "event": "Zasca fuerte",
+          "start": 6.08
+        },
+        {
+          "event": "Defensa",
+          "start": 7.58
+        },
+        {
+          "event": "Curación",
+          "start": 8.98
+        },
+        {
+          "event": "Orador al descarte",
+          "start": 10.58
+        },
+        {
+          "event": "Comienzo del turno propio",
+          "start": 11.93
+        },
+        {
+          "event": "Últimos segundos",
+          "start": 13.18
+        },
+        {
+          "event": "Apertura de sobre",
+          "start": 15.38
+        },
+        {
+          "event": "Correo y recompensa",
+          "start": 17.73
+        },
+        {
+          "event": "Victoria",
+          "start": 19.18
+        },
+        {
+          "event": "Derrota",
+          "start": 22.33
+        },
+        {
+          "event": "Música del menú",
+          "start": 25.08
+        },
+        {
+          "event": "Música de combate",
+          "start": 33.63
+        },
+        {
+          "event": "Ambiente del hemiciclo",
+          "start": 42.18
+        }
+      ]
+    },
+    {
+      "id": "b",
+      "name": "Sátira ligera",
+      "description": "Percusión de madera, pizzicatos y pequeños gestos cómicos. Más desenfadado, sin voces ni caricaturas personales.",
+      "bpm": 96,
+      "reel": "muestra-b.mp3",
+      "timeline": [
+        {
+          "event": "Botones y confirmaciones",
+          "start": 0
+        },
+        {
+          "event": "Acción no disponible",
+          "start": 0.8
+        },
+        {
+          "event": "Robar o presentar cromo",
+          "start": 1.85
+        },
+        {
+          "event": "Moneda de inicio",
+          "start": 3.0
+        },
+        {
+          "event": "Zasca normal",
+          "start": 5.05
+        },
+        {
+          "event": "Zasca fuerte",
+          "start": 6.08
+        },
+        {
+          "event": "Defensa",
+          "start": 7.58
+        },
+        {
+          "event": "Curación",
+          "start": 8.98
+        },
+        {
+          "event": "Orador al descarte",
+          "start": 10.58
+        },
+        {
+          "event": "Comienzo del turno propio",
+          "start": 11.93
+        },
+        {
+          "event": "Últimos segundos",
+          "start": 13.18
+        },
+        {
+          "event": "Apertura de sobre",
+          "start": 15.38
+        },
+        {
+          "event": "Correo y recompensa",
+          "start": 17.73
+        },
+        {
+          "event": "Victoria",
+          "start": 19.18
+        },
+        {
+          "event": "Derrota",
+          "start": 22.33
+        },
+        {
+          "event": "Música del menú",
+          "start": 25.08
+        },
+        {
+          "event": "Música de combate",
+          "start": 33.63
+        },
+        {
+          "event": "Ambiente del hemiciclo",
+          "start": 42.18
+        }
+      ]
+    },
+    {
+      "id": "c",
+      "name": "Duelo moderno",
+      "description": "Pulsos electrónicos cálidos y señales precisas. Una lectura más competitiva del combate.",
+      "bpm": 108,
+      "reel": "muestra-c.mp3",
+      "timeline": [
+        {
+          "event": "Botones y confirmaciones",
+          "start": 0
+        },
+        {
+          "event": "Acción no disponible",
+          "start": 0.8
+        },
+        {
+          "event": "Robar o presentar cromo",
+          "start": 1.85
+        },
+        {
+          "event": "Moneda de inicio",
+          "start": 3.0
+        },
+        {
+          "event": "Zasca normal",
+          "start": 5.05
+        },
+        {
+          "event": "Zasca fuerte",
+          "start": 6.08
+        },
+        {
+          "event": "Defensa",
+          "start": 7.58
+        },
+        {
+          "event": "Curación",
+          "start": 8.98
+        },
+        {
+          "event": "Orador al descarte",
+          "start": 10.58
+        },
+        {
+          "event": "Comienzo del turno propio",
+          "start": 11.93
+        },
+        {
+          "event": "Últimos segundos",
+          "start": 13.18
+        },
+        {
+          "event": "Apertura de sobre",
+          "start": 15.38
+        },
+        {
+          "event": "Correo y recompensa",
+          "start": 17.73
+        },
+        {
+          "event": "Victoria",
+          "start": 19.18
+        },
+        {
+          "event": "Derrota",
+          "start": 22.33
+        },
+        {
+          "event": "Música del menú",
+          "start": 25.08
+        },
+        {
+          "event": "Música de combate",
+          "start": 33.63
+        },
+        {
+          "event": "Ambiente del hemiciclo",
+          "start": 42.18
+        }
+      ]
+    }
+  ],
+  "samples": [
+    {
+      "id": "a-ui",
+      "style": "a",
+      "event": "ui",
+      "label": "Botones y confirmaciones",
+      "description": "Un toque breve para seleccionar o confirmar; no se repite al pasar el dedo.",
+      "file": "samples/a-ui.mp3",
+      "duration": 0.25,
+      "peak": 0.48,
+      "rms": 0.09812
+    },
+    {
+      "id": "a-error",
+      "style": "a",
+      "event": "error",
+      "label": "Acción no disponible",
+      "description": "Aviso suave para una acción inválida, sin gastar la acción del cromo.",
+      "file": "samples/a-error.mp3",
+      "duration": 0.5,
+      "peak": 0.48,
+      "rms": 0.10341
+    },
+    {
+      "id": "a-card",
+      "style": "a",
+      "event": "card",
+      "label": "Robar o presentar cromo",
+      "description": "Deslizamiento y pequeño apoyo al colocar la carta.",
+      "file": "samples/a-card.mp3",
+      "duration": 0.6,
+      "peak": 0.48,
+      "rms": 0.06283
+    },
+    {
+      "id": "a-coin",
+      "style": "a",
+      "event": "coin",
+      "label": "Moneda de inicio",
+      "description": "Giro y caída de la moneda. Misma señal gane quien gane.",
+      "file": "samples/a-coin.mp3",
+      "duration": 1.5,
+      "peak": 0.48,
+      "rms": 0.06927
+    },
+    {
+      "id": "a-normal",
+      "style": "a",
+      "event": "normal",
+      "label": "Zasca normal",
+      "description": "Golpe corto y legible para el ataque normal.",
+      "file": "samples/a-normal.mp3",
+      "duration": 0.48,
+      "peak": 0.48,
+      "rms": 0.04207
+    },
+    {
+      "id": "a-strong",
+      "style": "a",
+      "event": "strong",
+      "label": "Zasca fuerte",
+      "description": "Anticipación breve y golpe más grave que el normal.",
+      "file": "samples/a-strong.mp3",
+      "duration": 0.95,
+      "peak": 0.48,
+      "rms": 0.0682
+    },
+    {
+      "id": "a-guard",
+      "style": "a",
+      "event": "guard",
+      "label": "Defensa",
+      "description": "Escudo que se prepara; se puede reutilizar una versión corta al bloquear.",
+      "file": "samples/a-guard.mp3",
+      "duration": 0.85,
+      "peak": 0.48,
+      "rms": 0.05394
+    },
+    {
+      "id": "a-heal",
+      "style": "a",
+      "event": "heal",
+      "label": "Curación",
+      "description": "Tres notas ascendentes, cálidas y breves.",
+      "file": "samples/a-heal.mp3",
+      "duration": 1.05,
+      "peak": 0.48,
+      "rms": 0.0963
+    },
+    {
+      "id": "a-expel",
+      "style": "a",
+      "event": "expel",
+      "label": "Orador al descarte",
+      "description": "Caída corta para reconocer una expulsión sin dramatizarla demasiado.",
+      "file": "samples/a-expel.mp3",
+      "duration": 0.8,
+      "peak": 0.48,
+      "rms": 0.1198
+    },
+    {
+      "id": "a-turn",
+      "style": "a",
+      "event": "turn",
+      "label": "Comienzo del turno propio",
+      "description": "Dos notas para llamar la atención sin una alarma.",
+      "file": "samples/a-turn.mp3",
+      "duration": 0.7,
+      "peak": 0.48,
+      "rms": 0.09319
+    },
+    {
+      "id": "a-timer",
+      "style": "a",
+      "event": "timer",
+      "label": "Últimos segundos",
+      "description": "Muestra de tres pulsos. En el juego se limitaría a los últimos diez segundos.",
+      "file": "samples/a-timer.mp3",
+      "duration": 1.65,
+      "peak": 0.48,
+      "rms": 0.03727
+    },
+    {
+      "id": "a-pack",
+      "style": "a",
+      "event": "pack",
+      "label": "Apertura de sobre",
+      "description": "Papel, apertura y brillo de revelación. Evitaría sonidos largos en cada cromo.",
+      "file": "samples/a-pack.mp3",
+      "duration": 1.8,
+      "peak": 0.48,
+      "rms": 0.06188
+    },
+    {
+      "id": "a-reward",
+      "style": "a",
+      "event": "reward",
+      "label": "Correo y recompensa",
+      "description": "Señal corta para recoger un sobre o recibir una recompensa.",
+      "file": "samples/a-reward.mp3",
+      "duration": 0.9,
+      "peak": 0.48,
+      "rms": 0.09262
+    },
+    {
+      "id": "a-victory",
+      "style": "a",
+      "event": "victory",
+      "label": "Victoria",
+      "description": "Remate musical corto, reservado al final del combate.",
+      "file": "samples/a-victory.mp3",
+      "duration": 2.6,
+      "peak": 0.48,
+      "rms": 0.0752
+    },
+    {
+      "id": "a-defeat",
+      "style": "a",
+      "event": "defeat",
+      "label": "Derrota",
+      "description": "Cierre sobrio, sin burla ni alarma.",
+      "file": "samples/a-defeat.mp3",
+      "duration": 2.2,
+      "peak": 0.48,
+      "rms": 0.10502
+    },
+    {
+      "id": "a-menu",
+      "style": "a",
+      "event": "menu",
+      "label": "Música del menú",
+      "description": "Boceto instrumental de ocho compases, pensado para sonar muy bajo.",
+      "file": "samples/a-menu.mp3",
+      "duration": 22.857,
+      "peak": 0.24,
+      "rms": 0.05845
+    },
+    {
+      "id": "a-battle",
+      "style": "a",
+      "event": "battle",
+      "label": "Música de combate",
+      "description": "Boceto con algo más de pulso; deja espacio a los efectos y a la concentración.",
+      "file": "samples/a-battle.mp3",
+      "duration": 22.857,
+      "peak": 0.24,
+      "rms": 0.05364
+    },
+    {
+      "id": "a-ambience",
+      "style": "a",
+      "event": "ambience",
+      "label": "Ambiente del hemiciclo",
+      "description": "Textura abstracta de sala, sin conversaciones ni palabras. Alternativa a la música.",
+      "file": "samples/a-ambience.mp3",
+      "duration": 10.0,
+      "peak": 0.13,
+      "rms": 0.01858
+    },
+    {
+      "id": "b-ui",
+      "style": "b",
+      "event": "ui",
+      "label": "Botones y confirmaciones",
+      "description": "Un toque breve para seleccionar o confirmar; no se repite al pasar el dedo.",
+      "file": "samples/b-ui.mp3",
+      "duration": 0.25,
+      "peak": 0.48,
+      "rms": 0.11623
+    },
+    {
+      "id": "b-error",
+      "style": "b",
+      "event": "error",
+      "label": "Acción no disponible",
+      "description": "Aviso suave para una acción inválida, sin gastar la acción del cromo.",
+      "file": "samples/b-error.mp3",
+      "duration": 0.5,
+      "peak": 0.48,
+      "rms": 0.0976
+    },
+    {
+      "id": "b-card",
+      "style": "b",
+      "event": "card",
+      "label": "Robar o presentar cromo",
+      "description": "Deslizamiento y pequeño apoyo al colocar la carta.",
+      "file": "samples/b-card.mp3",
+      "duration": 0.6,
+      "peak": 0.48,
+      "rms": 0.05773
+    },
+    {
+      "id": "b-coin",
+      "style": "b",
+      "event": "coin",
+      "label": "Moneda de inicio",
+      "description": "Giro y caída de la moneda. Misma señal gane quien gane.",
+      "file": "samples/b-coin.mp3",
+      "duration": 1.5,
+      "peak": 0.48,
+      "rms": 0.05425
+    },
+    {
+      "id": "b-normal",
+      "style": "b",
+      "event": "normal",
+      "label": "Zasca normal",
+      "description": "Golpe corto y legible para el ataque normal.",
+      "file": "samples/b-normal.mp3",
+      "duration": 0.48,
+      "peak": 0.48,
+      "rms": 0.05104
+    },
+    {
+      "id": "b-strong",
+      "style": "b",
+      "event": "strong",
+      "label": "Zasca fuerte",
+      "description": "Anticipación breve y golpe más grave que el normal.",
+      "file": "samples/b-strong.mp3",
+      "duration": 0.95,
+      "peak": 0.48,
+      "rms": 0.06991
+    },
+    {
+      "id": "b-guard",
+      "style": "b",
+      "event": "guard",
+      "label": "Defensa",
+      "description": "Escudo que se prepara; se puede reutilizar una versión corta al bloquear.",
+      "file": "samples/b-guard.mp3",
+      "duration": 0.85,
+      "peak": 0.48,
+      "rms": 0.05098
+    },
+    {
+      "id": "b-heal",
+      "style": "b",
+      "event": "heal",
+      "label": "Curación",
+      "description": "Tres notas ascendentes, cálidas y breves.",
+      "file": "samples/b-heal.mp3",
+      "duration": 1.05,
+      "peak": 0.48,
+      "rms": 0.09982
+    },
+    {
+      "id": "b-expel",
+      "style": "b",
+      "event": "expel",
+      "label": "Orador al descarte",
+      "description": "Caída corta para reconocer una expulsión sin dramatizarla demasiado.",
+      "file": "samples/b-expel.mp3",
+      "duration": 0.8,
+      "peak": 0.48,
+      "rms": 0.10022
+    },
+    {
+      "id": "b-turn",
+      "style": "b",
+      "event": "turn",
+      "label": "Comienzo del turno propio",
+      "description": "Dos notas para llamar la atención sin una alarma.",
+      "file": "samples/b-turn.mp3",
+      "duration": 0.7,
+      "peak": 0.48,
+      "rms": 0.08454
+    },
+    {
+      "id": "b-timer",
+      "style": "b",
+      "event": "timer",
+      "label": "Últimos segundos",
+      "description": "Muestra de tres pulsos. En el juego se limitaría a los últimos diez segundos.",
+      "file": "samples/b-timer.mp3",
+      "duration": 1.65,
+      "peak": 0.48,
+      "rms": 0.03813
+    },
+    {
+      "id": "b-pack",
+      "style": "b",
+      "event": "pack",
+      "label": "Apertura de sobre",
+      "description": "Papel, apertura y brillo de revelación. Evitaría sonidos largos en cada cromo.",
+      "file": "samples/b-pack.mp3",
+      "duration": 1.8,
+      "peak": 0.48,
+      "rms": 0.07105
+    },
+    {
+      "id": "b-reward",
+      "style": "b",
+      "event": "reward",
+      "label": "Correo y recompensa",
+      "description": "Señal corta para recoger un sobre o recibir una recompensa.",
+      "file": "samples/b-reward.mp3",
+      "duration": 0.9,
+      "peak": 0.48,
+      "rms": 0.09628
+    },
+    {
+      "id": "b-victory",
+      "style": "b",
+      "event": "victory",
+      "label": "Victoria",
+      "description": "Remate musical corto, reservado al final del combate.",
+      "file": "samples/b-victory.mp3",
+      "duration": 2.6,
+      "peak": 0.48,
+      "rms": 0.07749
+    },
+    {
+      "id": "b-defeat",
+      "style": "b",
+      "event": "defeat",
+      "label": "Derrota",
+      "description": "Cierre sobrio, sin burla ni alarma.",
+      "file": "samples/b-defeat.mp3",
+      "duration": 2.2,
+      "peak": 0.48,
+      "rms": 0.09493
+    },
+    {
+      "id": "b-menu",
+      "style": "b",
+      "event": "menu",
+      "label": "Música del menú",
+      "description": "Boceto instrumental de ocho compases, pensado para sonar muy bajo.",
+      "file": "samples/b-menu.mp3",
+      "duration": 20.0,
+      "peak": 0.24,
+      "rms": 0.05986
+    },
+    {
+      "id": "b-battle",
+      "style": "b",
+      "event": "battle",
+      "label": "Música de combate",
+      "description": "Boceto con algo más de pulso; deja espacio a los efectos y a la concentración.",
+      "file": "samples/b-battle.mp3",
+      "duration": 20.0,
+      "peak": 0.24,
+      "rms": 0.04199
+    },
+    {
+      "id": "b-ambience",
+      "style": "b",
+      "event": "ambience",
+      "label": "Ambiente del hemiciclo",
+      "description": "Textura abstracta de sala, sin conversaciones ni palabras. Alternativa a la música.",
+      "file": "samples/b-ambience.mp3",
+      "duration": 10.0,
+      "peak": 0.13,
+      "rms": 0.02264
+    },
+    {
+      "id": "c-ui",
+      "style": "c",
+      "event": "ui",
+      "label": "Botones y confirmaciones",
+      "description": "Un toque breve para seleccionar o confirmar; no se repite al pasar el dedo.",
+      "file": "samples/c-ui.mp3",
+      "duration": 0.25,
+      "peak": 0.48,
+      "rms": 0.11971
+    },
+    {
+      "id": "c-error",
+      "style": "c",
+      "event": "error",
+      "label": "Acción no disponible",
+      "description": "Aviso suave para una acción inválida, sin gastar la acción del cromo.",
+      "file": "samples/c-error.mp3",
+      "duration": 0.5,
+      "peak": 0.48,
+      "rms": 0.13721
+    },
+    {
+      "id": "c-card",
+      "style": "c",
+      "event": "card",
+      "label": "Robar o presentar cromo",
+      "description": "Deslizamiento y pequeño apoyo al colocar la carta.",
+      "file": "samples/c-card.mp3",
+      "duration": 0.6,
+      "peak": 0.48,
+      "rms": 0.06681
+    },
+    {
+      "id": "c-coin",
+      "style": "c",
+      "event": "coin",
+      "label": "Moneda de inicio",
+      "description": "Giro y caída de la moneda. Misma señal gane quien gane.",
+      "file": "samples/c-coin.mp3",
+      "duration": 1.5,
+      "peak": 0.48,
+      "rms": 0.09685
+    },
+    {
+      "id": "c-normal",
+      "style": "c",
+      "event": "normal",
+      "label": "Zasca normal",
+      "description": "Golpe corto y legible para el ataque normal.",
+      "file": "samples/c-normal.mp3",
+      "duration": 0.48,
+      "peak": 0.48,
+      "rms": 0.07288
+    },
+    {
+      "id": "c-strong",
+      "style": "c",
+      "event": "strong",
+      "label": "Zasca fuerte",
+      "description": "Anticipación breve y golpe más grave que el normal.",
+      "file": "samples/c-strong.mp3",
+      "duration": 0.95,
+      "peak": 0.48,
+      "rms": 0.0775
+    },
+    {
+      "id": "c-guard",
+      "style": "c",
+      "event": "guard",
+      "label": "Defensa",
+      "description": "Escudo que se prepara; se puede reutilizar una versión corta al bloquear.",
+      "file": "samples/c-guard.mp3",
+      "duration": 0.85,
+      "peak": 0.48,
+      "rms": 0.07025
+    },
+    {
+      "id": "c-heal",
+      "style": "c",
+      "event": "heal",
+      "label": "Curación",
+      "description": "Tres notas ascendentes, cálidas y breves.",
+      "file": "samples/c-heal.mp3",
+      "duration": 1.05,
+      "peak": 0.48,
+      "rms": 0.11082
+    },
+    {
+      "id": "c-expel",
+      "style": "c",
+      "event": "expel",
+      "label": "Orador al descarte",
+      "description": "Caída corta para reconocer una expulsión sin dramatizarla demasiado.",
+      "file": "samples/c-expel.mp3",
+      "duration": 0.8,
+      "peak": 0.48,
+      "rms": 0.12855
+    },
+    {
+      "id": "c-turn",
+      "style": "c",
+      "event": "turn",
+      "label": "Comienzo del turno propio",
+      "description": "Dos notas para llamar la atención sin una alarma.",
+      "file": "samples/c-turn.mp3",
+      "duration": 0.7,
+      "peak": 0.48,
+      "rms": 0.12024
+    },
+    {
+      "id": "c-timer",
+      "style": "c",
+      "event": "timer",
+      "label": "Últimos segundos",
+      "description": "Muestra de tres pulsos. En el juego se limitaría a los últimos diez segundos.",
+      "file": "samples/c-timer.mp3",
+      "duration": 1.65,
+      "peak": 0.48,
+      "rms": 0.06223
+    },
+    {
+      "id": "c-pack",
+      "style": "c",
+      "event": "pack",
+      "label": "Apertura de sobre",
+      "description": "Papel, apertura y brillo de revelación. Evitaría sonidos largos en cada cromo.",
+      "file": "samples/c-pack.mp3",
+      "duration": 1.8,
+      "peak": 0.48,
+      "rms": 0.0739
+    },
+    {
+      "id": "c-reward",
+      "style": "c",
+      "event": "reward",
+      "label": "Correo y recompensa",
+      "description": "Señal corta para recoger un sobre o recibir una recompensa.",
+      "file": "samples/c-reward.mp3",
+      "duration": 0.9,
+      "peak": 0.48,
+      "rms": 0.10651
+    },
+    {
+      "id": "c-victory",
+      "style": "c",
+      "event": "victory",
+      "label": "Victoria",
+      "description": "Remate musical corto, reservado al final del combate.",
+      "file": "samples/c-victory.mp3",
+      "duration": 2.6,
+      "peak": 0.48,
+      "rms": 0.0939
+    },
+    {
+      "id": "c-defeat",
+      "style": "c",
+      "event": "defeat",
+      "label": "Derrota",
+      "description": "Cierre sobrio, sin burla ni alarma.",
+      "file": "samples/c-defeat.mp3",
+      "duration": 2.2,
+      "peak": 0.48,
+      "rms": 0.12121
+    },
+    {
+      "id": "c-menu",
+      "style": "c",
+      "event": "menu",
+      "label": "Música del menú",
+      "description": "Boceto instrumental de ocho compases, pensado para sonar muy bajo.",
+      "file": "samples/c-menu.mp3",
+      "duration": 17.778,
+      "peak": 0.24,
+      "rms": 0.06228
+    },
+    {
+      "id": "c-battle",
+      "style": "c",
+      "event": "battle",
+      "label": "Música de combate",
+      "description": "Boceto con algo más de pulso; deja espacio a los efectos y a la concentración.",
+      "file": "samples/c-battle.mp3",
+      "duration": 17.778,
+      "peak": 0.24,
+      "rms": 0.05813
+    },
+    {
+      "id": "c-ambience",
+      "style": "c",
+      "event": "ambience",
+      "label": "Ambiente del hemiciclo",
+      "description": "Textura abstracta de sala, sin conversaciones ni palabras. Alternativa a la música.",
+      "file": "samples/c-ambience.mp3",
+      "duration": 10.0,
+      "peak": 0.13,
+      "rms": 0.02233
+    }
+  ]
+}

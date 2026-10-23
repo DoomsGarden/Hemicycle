@@ -1,0 +1,295 @@
+{
+  "total": 3456,
+  "seeds": 8,
+  "recipes": [
+    "inicial",
+    "mixto",
+    "avanzado"
+  ],
+  "policies": [
+    "lider",
+    "tempo"
+  ],
+  "counters": {
+    "verborrea": "guardia",
+    "guardia": "aforado",
+    "aforado": "viperina",
+    "giro": "verborrea",
+    "foco": "giro",
+    "viperina": "foco"
+  },
+  "scores": {
+    "verborrea": 0.4625,
+    "guardia": 0.5489583333333333,
+    "aforado": 0.4572916666666666,
+    "giro": 0.4510416666666667,
+    "foco": 0.5427083333333333,
+    "viperina": 0.5375
+  },
+  "matrix": {
+    "verborrea": {
+      "verborrea": {
+        "wins": 50,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5208333333333334,
+        "score": 0.5
+      },
+      "guardia": {
+        "wins": 60,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.625,
+        "score": 0.6197916666666666
+      },
+      "aforado": {
+        "wins": 53,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5520833333333334,
+        "score": 0.5052083333333335
+      },
+      "giro": {
+        "wins": 38,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.3958333333333333,
+        "score": 0.3802083333333333
+      },
+      "foco": {
+        "wins": 33,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.34375,
+        "score": 0.3541666666666667
+      },
+      "viperina": {
+        "wins": 50,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5208333333333334,
+        "score": 0.45312500000000006
+      }
+    },
+    "guardia": {
+      "verborrea": {
+        "wins": 37,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.3854166666666667,
+        "score": 0.38020833333333337
+      },
+      "guardia": {
+        "wins": 57,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.59375,
+        "score": 0.5
+      },
+      "aforado": {
+        "wins": 73,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.7604166666666666,
+        "score": 0.7083333333333333
+      },
+      "giro": {
+        "wins": 56,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5833333333333334,
+        "score": 0.53125
+      },
+      "foco": {
+        "wins": 71,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.7395833333333334,
+        "score": 0.6145833333333335
+      },
+      "viperina": {
+        "wins": 55,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5729166666666666,
+        "score": 0.5104166666666665
+      }
+    },
+    "aforado": {
+      "verborrea": {
+        "wins": 52,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5416666666666666,
+        "score": 0.4947916666666666
+      },
+      "guardia": {
+        "wins": 33,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.34375,
+        "score": 0.2916666666666667
+      },
+      "aforado": {
+        "wins": 54,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5625,
+        "score": 0.5
+      },
+      "giro": {
+        "wins": 55,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5729166666666666,
+        "score": 0.47395833333333326
+      },
+      "foco": {
+        "wins": 44,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.4583333333333333,
+        "score": 0.40104166666666663
+      },
+      "viperina": {
+        "wins": 61,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.6354166666666666,
+        "score": 0.6249999999999999
+      }
+    },
+    "giro": {
+      "verborrea": {
+        "wins": 61,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.6354166666666666,
+        "score": 0.6197916666666666
+      },
+      "guardia": {
+        "wins": 50,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5208333333333334,
+        "score": 0.46875000000000006
+      },
+      "aforado": {
+        "wins": 60,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.625,
+        "score": 0.5260416666666667
+      },
+      "giro": {
+        "wins": 53,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5520833333333334,
+        "score": 0.5
+      },
+      "foco": {
+        "wins": 22,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.22916666666666666,
+        "score": 0.21875000000000006
+      },
+      "viperina": {
+        "wins": 45,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.46875,
+        "score": 0.421875
+      }
+    },
+    "foco": {
+      "verborrea": {
+        "wins": 61,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.6354166666666666,
+        "score": 0.6458333333333333
+      },
+      "guardia": {
+        "wins": 49,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5104166666666666,
+        "score": 0.3854166666666666
+      },
+      "aforado": {
+        "wins": 63,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.65625,
+        "score": 0.5989583333333334
+      },
+      "giro": {
+        "wins": 76,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.7916666666666666,
+        "score": 0.7812499999999999
+      },
+      "foco": {
+        "wins": 48,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5,
+        "score": 0.5
+      },
+      "viperina": {
+        "wins": 34,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.3541666666666667,
+        "score": 0.30208333333333337
+      }
+    },
+    "viperina": {
+      "verborrea": {
+        "wins": 59,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.6145833333333334,
+        "score": 0.546875
+      },
+      "guardia": {
+        "wins": 53,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.5520833333333334,
+        "score": 0.4895833333333334
+      },
+      "aforado": {
+        "wins": 37,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.3854166666666667,
+        "score": 0.37500000000000006
+      },
+      "giro": {
+        "wins": 60,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.625,
+        "score": 0.578125
+      },
+      "foco": {
+        "wins": 72,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.75,
+        "score": 0.6979166666666666
+      },
+      "viperina": {
+        "wins": 61,
+        "draws": 0,
+        "games": 96,
+        "seatScore": 0.6354166666666666,
+        "score": 0.49999999999999994
+      }
+    }
+  }
+}

@@ -168,12 +168,12 @@ test('Giro retaliation is resolved from the attack snapshot even if its leader i
   assert.equal(c.G.pas.e.length,1);
 });
 
-test('Foco heals 3 up to full health and awards a vote; Viperina suppresses both effects',()=>{
+test('Foco heals 2 up to full health and awards a vote; Viperina suppresses both effects',()=>{
   for(const countered of [false,true]){
     const c=duel('foco',countered?'viperina':null),leader=c.G.leader.p;
     leader.h=leader.hm-3;
     c.startTurn('p');
-    assert.equal(leader.h,leader.hm-(countered?3:0));
+    assert.equal(leader.h,leader.hm-(countered?3:1));
     const before=c.G.votes.p;
     c.attack(leader,'__EMPTY','p');
     assert.equal(c.G.votes.p,before+(countered?0:1));

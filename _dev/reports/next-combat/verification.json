@@ -1,0 +1,52 @@
+{
+  "status": "superseded-by-v31.0.0.5",
+  "functionalChecksPassed": true,
+  "readyToPublish": false,
+  "blockingCheck": "passive-balance: foco 57.0833 % in the 3456 paired fixtures; aggregate threshold 43–57 % unchanged; all circular favorable/unfavorable checks hold",
+  "unitTests": {
+    "passed": 269,
+    "failed": 1
+  },
+  "matches": 8,
+  "immediate100Scenarios": 18,
+  "deadlineSeconds": 90,
+  "popupPhraseViewports": 4,
+  "combatTutorials": 3,
+  "combatTutorialSteps": 32,
+  "cabinetViewports": 3,
+  "cloudCabinetsRoundTrip": true,
+  "offlineAssets": 34,
+  "sourceHashes": {
+    "index.html": "557fa666f908c8140281d821eb552cabdf1de200cb65cc28a102be12cb9a6869",
+    "sw.js": "29f510f935fb94389fbc6504e13097892281e841023b2619c1a95a3c7145e295",
+    "js/cabinet-presets.js": "aad20f3e74dbb801273f9041a18987d8a6241aad28d42b5a6cb761a00b75555e",
+    "css/cabinets.css": "ab62dd10bd9b6c9098dd74aa24bb0541d5d877dd45ff70897d37b4f2758eb724",
+    "js/battle-actions-ui.js": "a51298760ab724b07e01d13edfeb5a4a2e632dd0bcdf190787a3acb1808e7ae3",
+    "css/battle-actions.css": "0b51d02a19105161cb3ab4deed869cc32910f9db091ad53b42a79e71cfb0b91c",
+    "js/battle-tutorial.js": "7acea14c30457b331362769ee9f18aa4a4d78fcca481c04a406e5c30943b6e84",
+    "js/menu-tutorial.js": "17bab0ea464158f37a936a379887266342325039870bb2563b9bae0d960aaf88",
+    "js/player-backup.js": "1ab573be2ac839a8e861a1d0f7a58ee9a9ee12860e8210f6e040216e226f6ffe"
+  },
+  "supportRules": {
+    "guardExpiresAtNextOwnTurn": true,
+    "healSkipsNextOwnTurn": true,
+    "activeHealingOnly": true,
+    "sameRulesForAI": true,
+    "uiViewports": 3
+  },
+  "balanceReport": "balance-support.json",
+  "cabinetCompactButtons": {
+    "labels": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5"
+    ],
+    "touchHeight": 44,
+    "statusDotsPreserved": true,
+    "explanatoryTextRemoved": true,
+    "checkedViewports": 3
+  },
+  "supersededBy": "../v31.0.0.5/verification.json"
+}

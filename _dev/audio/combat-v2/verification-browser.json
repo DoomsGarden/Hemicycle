@@ -1,0 +1,74 @@
+{
+  "viewports": [
+    {
+      "width": 320,
+      "height": 568,
+      "offline": true,
+      "noAutoplay": true,
+      "exactThreshold": true,
+      "eitherPlayer": true,
+      "noRestartOnThresholdChange": true,
+      "rampUpAndDown": true,
+      "volume": true,
+      "stop": true,
+      "escape": true,
+      "backgroundStops": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 393,
+      "height": 851,
+      "offline": true,
+      "noAutoplay": true,
+      "exactThreshold": true,
+      "eitherPlayer": true,
+      "noRestartOnThresholdChange": true,
+      "rampUpAndDown": true,
+      "volume": true,
+      "stop": true,
+      "escape": true,
+      "backgroundStops": true,
+      "noHorizontalOverflow": true
+    },
+    {
+      "width": 1280,
+      "height": 900,
+      "offline": true,
+      "noAutoplay": true,
+      "exactThreshold": true,
+      "eitherPlayer": true,
+      "noRestartOnThresholdChange": true,
+      "rampUpAndDown": true,
+      "volume": true,
+      "stop": true,
+      "escape": true,
+      "backgroundStops": true,
+      "noHorizontalOverflow": true
+    }
+  ],
+  "errors": [],
+  "networkRequests": [],
+  "layerPairs": [
+    {
+      "id": "a",
+      "length": 1512000,
+      "duration": 34.285714285714285,
+      "sampleRate": 44100,
+      "channels": 2
+    },
+    {
+      "id": "b",
+      "length": 1411200,
+      "duration": 32,
+      "sampleRate": 44100,
+      "channels": 2
+    },
+    {
+      "id": "c",
+      "length": 1512000,
+      "duration": 34.285714285714285,
+      "sampleRate": 44100,
+      "channels": 2
+    }
+  ]
+}

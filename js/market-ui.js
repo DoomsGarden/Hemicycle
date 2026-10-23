@@ -24,7 +24,8 @@
   }
   async function task(work){
    if(state.busy)return;state.busy=true;state.error='';repaint();
-   try{await work();}catch(e){state.error=e.message||'No se ha podido completar la operación.';}
+   var previousNotice=state.notice;
+   try{await work();if(app.sound&&state.notice&&state.notice!==previousNotice)app.sound('reward');}catch(e){state.error=e.message||'No se ha podido completar la operación.';if(app.sound)app.sound('error');}
    state.busy=false;repaint();
   }
   async function enter(){

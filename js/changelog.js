@@ -3,6 +3,38 @@
  if(typeof module==='object'&&module.exports)module.exports=entries;
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
+{
+  "version": "v31.0.0.5",
+  "date": "2026-10-23",
+  "title": "El debate cobra voz y afina su estrategia",
+  "sections": [
+    {
+      "title": "Música y efectos",
+      "items": [
+        "El combate estrena una composición orquestal que se intensifica cuando cualquiera supera los 50 votos y vuelve al estado normal si ambos quedan en 50 o menos, sin reiniciar la melodía.",
+        "Victoria y derrota tienen remates musicales breves. Los menús, cartas, moneda, ataques, defensa, curación, sobres y recompensas incorporan efectos propios.",
+        "En Ayuda puedes ajustar música, efectos y ambiente por separado o silenciarlo todo. Se recuerda tu elección en este dispositivo y el audio se detiene en segundo plano."
+      ]
+    },
+    {
+      "title": "Más tiempo y decisiones en combate",
+      "items": [
+        "Cada turno dispone de 90 segundos para realizar las acciones y pasar.",
+        "El ataque fuerte está disponible en los turnos propios 3, 6, 9… de cada cromo en mesa. La oportunidad caduca si no se usa; cuesta 1 de Aguante y requiere al menos 2. Un icono de tres secciones muestra su carga.",
+        "La defensa reduce un único golpe a la mitad y caduca al comenzar el siguiente turno propio si no se utiliza. Cada cromo debe descansar un turno propio entre curaciones activas.",
+        "Foco Mediático recupera 2 de Aguante por turno para ajustar su equilibrio con las demás doctrinas. Se conservan las seis pasivas y sus debilidades circulares. El tutorial y Ayuda explican las nuevas reglas."
+      ]
+    },
+    {
+      "title": "Tus cinco gabinetes favoritos",
+      "items": [
+        "Colección permite guardar cinco gabinetes de cinco cromos y elegir sus líderes. Antes del combate puedes seleccionar uno; sus integrantes se editan desde Colección.",
+        "Los botones numerados son compactos y sus puntos gris o verde indican si el gabinete está listo. Los favoritos se incluyen en el respaldo y el guardado en la nube.",
+        "Tu colección, estadísticas y progreso existente se conservan."
+      ]
+    }
+  ]
+},
   {
   "version": "v31.0.0.4",
   "date": "2026-10-22",
