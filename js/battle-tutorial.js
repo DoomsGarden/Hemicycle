@@ -4,7 +4,7 @@
 var KEY='hemiciclo_tutorial_v1';
 function create(api){
  var key=api.key||KEY,textId=api.textId||'tutorialText';
- var active=false,index=0,highlight=null,previous=null,frame=0,steps=[];
+ var active=false,index=0,highlight=null,previous=null,frame=0,steps=[],waiting=false,run=0;
  var layer=document.createElement('div');layer.id=api.layerId||'tutorialRoot';layer.className='tutorial-layer';document.body.appendChild(layer);
  function seen(){var value=api.read(key);return !!value&&(value.status==='completed'||value.status==='skipped');}
  function save(status){api.write(key,{status:status,version:2,updatedAt:Date.now()});}
@@ -45,17 +45,20 @@ function create(api){
 
  function start(){
   if(active)return;
-  active=true;index=0;steps=api.steps||makeSteps();save('in-progress');api.prepare();render();
+  active=true;waiting=false;run++;index=0;steps=api.steps||makeSteps();save('in-progress');api.prepare();render();
  }
  function clear(){
   if(highlight){highlight.classList.remove('tutorial-focus');for(var key in previous){if(previous[key]===null)highlight.removeAttribute(key);else highlight.setAttribute(key,previous[key]);}}
   highlight=null;previous=null;layer.innerHTML='';layer.hidden=true;cancelAnimationFrame(frame);
  }
- function finish(status){if(!active)return;active=false;clear();save(status);api.leave(status);}
+ function finish(status){if(!active)return;active=false;waiting=false;run++;clear();save(status);api.leave(status);}
  function advance(){
-  var step=steps[index];index++;
-  if(step[4])api.action(step[4]);
-  if(active){if(!api.steps&&step[0]==='empty')api.action('prepare-final');if(index>=steps.length){finish('completed');return;}render();}
+  if(waiting)return;
+  var step=steps[index],token=run;index++;
+  function next(){if(!active||token!==run)return;waiting=false;if(!api.steps&&step[0]==='empty')api.action('prepare-final');if(index>=steps.length){finish('completed');return;}render();}
+  // A menu demonstration may animate before its next target exists.
+  waiting=true;var result=step[4]?api.action(step[4]):null;
+  if(result&&typeof result.then==='function'){clear();result.then(next,function(){if(active&&token===run)finish('skipped');});}else next();
  }
  function place(){
   if(!highlight||!layer.firstChild)return;
@@ -68,7 +71,7 @@ function create(api){
  }
  function render(){
   clear();
-  if(!active)return;
+  if(!active||waiting)return;
   if(!api.inBattle()){active=false;api.pause();return;}
   if(document.querySelector('#modalRoot .modal'))return;
   var step=steps[index];if(!step)return;

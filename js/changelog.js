@@ -4,6 +4,29 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version": "v31.0.1.1",
+  "date": "2026-10-23",
+  "title": "Sobres por lotes y nuevas portadas",
+  "sections": [
+    {
+      "title": "Elige cómo abrir tus sobres",
+      "items": [
+        "Los sobres de pago permiten elegir x1, x5 o x10 junto al precio. El importe muestra el total de la compra; los gratuitos se siguen abriendo de uno en uno.",
+        "Los lotes se cobran una sola vez y guardan todos los cromos al comprarlos. Puedes recorrer los sobres de uno en uno y volver a sus resultados sin nuevos cobros.",
+        "Cada sobre luce una portada de su rareza que cambia los lunes. El personaje de la imagen no está garantizado: se mantienen los contenidos y probabilidades habituales.",
+        "La apertura corta y separa la parte superior del envoltorio antes de revelar los cromos. Con movimiento reducido, el resultado aparece directamente."
+      ]
+    },
+    {
+      "title": "Una guía más ágil",
+      "items": [
+        "La guía del menú pasa de 24 a 18 pasos, con transiciones automáticas, explicación de las compras múltiples y una apertura de muestra sin gastar FS ni añadir cromos.",
+        "Las zonas que necesitan desplazamiento siguen funcionando, con las barras visuales ocultas para mantener el aspecto del juego."
+      ]
+    }
+  ]
+},
+{
   "version": "v31.0.1.0",
   "date": "2026-10-23",
   "title": "Tu colección y tus sobres, más claros",

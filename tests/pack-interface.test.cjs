@@ -15,9 +15,9 @@ test('collection navigation remains filter-aware outside a reward receipt',()=>{
 });
 test('a free pack cannot be reclaimed while cooling down, and rewards are stored before presentation',()=>{
  let profile={fs:1000,album:[],lastDaily:0,lastWeekly:0},saves=0,goes=[];
- const ctx=vm.createContext({D:()=>profile,PACKS:[{k:'comun',p:400}],DAY:864e5,WEEK:7*864e5,Date:{now:()=>10*864e5},saveD:()=>saves++,packContents:()=>[{id:'a'},{id:'a'},{id:'b'}],go:(...args)=>{assert.equal(saves,1);assert.equal(profile.album.length,3);goes.push(args)},gameSound:()=>{}});
- vm.runInContext(between('function openPack(k,free){','SCREENS.sobre=function(){'),ctx);
- ctx.openPack('diario',true);ctx.openPack('diario',true);assert.equal(saves,1);assert.equal(goes.length,1);assert.equal(profile.fs,1000);assert.deepEqual(profile.album,['a','a','b']);assert.equal(goes[0][1].free,true);
+ const ctx=vm.createContext({D:()=>profile,PACKS:[{k:'comun',p:400}],DAY:864e5,WEEK:7*864e5,Date:{now:()=>10*864e5},LS:'profile',CARDS:[],HemicyclePacks:require('../js/pack-presentation.js'),atomicLocal:values=>{saves++;profile=values.profile;},packContents:()=>[{id:'a'},{id:'a'},{id:'b'}],go:(...args)=>{assert.equal(saves,1);assert.equal(profile.album.length,3);goes.push(args)},gameSound:()=>{}});
+ vm.runInContext(between('function openPack(k,free,count){','SCREENS.sobre=function(){'),ctx);
+ ctx.openPack('diario',true);ctx.openPack('diario',true);assert.equal(saves,1);assert.equal(goes.length,1);assert.equal(profile.fs,1000);assert.deepEqual(Array.from(profile.album),['a','a','b']);assert.equal(goes[0][1].free,true);
 });
 test('pack art and styles referenced by the page are precached',()=>{
  const root=require('node:path').join(__dirname,'..'),sw=fs.readFileSync(root+'/sw.js','utf8');
@@ -27,7 +27,7 @@ test('pack art and styles referenced by the page are precached',()=>{
 function revealFixture(reduced){
  const events=[],timers=[],buttons=[{disabled:false},{disabled:false}],receipt={cards:['a','a','b']};
  const ctx=vm.createContext({SCREEN:'sobre',SO:receipt,gameSound:n=>events.push(n),paint:()=>events.push('paint'),window:{matchMedia:()=>({matches:reduced})},setTimeout:fn=>timers.push(fn),document:{querySelector:s=>s==='.pack-opening'?{classList:{add:()=>{}},querySelectorAll:()=>buttons}:{focus:()=>events.push('focus')}}});
- vm.runInContext(between('function revealPack(){','SCREENS.sobre=function(){'),ctx);return {ctx,events,timers,buttons,receipt};
+ vm.runInContext(between('function revealPack(done){','SCREENS.sobre=function(){'),ctx);return {ctx,events,timers,buttons,receipt};
 }
 test('reduced motion reveals once, sounds once and focuses the first reward',()=>{
  const {ctx,events,receipt,timers}=revealFixture(true);assert.equal(ctx.revealPack(),true);assert.equal(receipt.revealed,true);assert.deepEqual(events,['pack','paint','focus']);assert.equal(timers.length,0);assert.equal(ctx.revealPack(),false);assert.deepEqual(events,['pack','paint','focus']);

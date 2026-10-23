@@ -14,7 +14,8 @@
 <link rel="apple-touch-icon" href="icon-192.png">
 <style>
 :root{--sat:22px;--sab:12px}
-*{box-sizing:border-box}
+*{box-sizing:border-box;scrollbar-width:none!important;-ms-overflow-style:none}
+*::-webkit-scrollbar{display:none!important;width:0!important;height:0!important}
 html,body{margin:0;padding:0;width:100%;height:100%;background:#070b16;overflow:hidden;touch-action:pan-x pan-y}
 body{font-family:'Segoe UI',system-ui,-apple-system,Roboto,sans-serif;color:#e9ecf5;-webkit-text-size-adjust:100%;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;-webkit-tap-highlight-color:transparent;overscroll-behavior:none}
 
@@ -509,7 +510,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=30.2.61">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.1.0">
-<link rel="stylesheet" href="css/packs.css?v=31.0.1.0">
+<link rel="stylesheet" href="css/packs.css?v=31.0.1.1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.0.4-frame1">
@@ -549,14 +550,15 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
 <script src="js/battle-visuals.js?v=31.0.0.4"></script>
-<script src="js/battle-tutorial.js?v=31.0.0.5"></script>
-<script src="js/menu-tutorial.js?v=31.0.0.5"></script>
+<script src="js/battle-tutorial.js?v=31.0.1.1"></script>
+<script src="js/pack-presentation.js?v=31.0.1.1"></script>
+<script src="js/menu-tutorial.js?v=31.0.1.1"></script>
 <script src="js/cabinet-presets.js?v=31.0.0.5"></script>
 <script src="js/player-backup.js?v=31.0.0.5"></script>
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.0"></script>
+<script src="js/changelog.js?v=31.0.1.1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -568,7 +570,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.1.0';
+var VERSION='v31.0.1.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1828,17 +1830,30 @@ var PACKS=[
  {k:'mitico',n:'Sobre mítico',p:2900,d:'5 legendarios garantizados.'}];
 var DAY=86400000,WEEK=7*DAY;
 
-function packArt(k){return '<img class="pack-art" src="assets/packs/'+(PACKS.some(function(p){return p.k===k;})||k==='diario'||k==='semanal'?k:'raro')+'.svg" alt="" draggable="false">';}
+var PACK_QUANTITIES={};
+function packArt(k,coverId){
+ var kind=PACKS.some(function(p){return p.k===k;})||k==='diario'||k==='semanal'?k:'raro';
+ var card=coverId?BYID[coverId]:HemicyclePacks.cover(CARDS,kind,Date.now());
+ var label={diario:'DIARIO',semanal:'SEMANAL',comun:'COMÚN',raro:'RARO',legendario:'LEGENDARIO',mitico:'MÍTICO'}[kind];
+ return '<span class="pack-cover" data-rarity="'+kind+'" role="img" aria-label="Sobre '+label+(card?' con '+esc(card.n):'')+'"><img class="pack-art" src="assets/packs/'+kind+'.svg" alt="" draggable="false">'+(card?'<img class="pack-portrait" src="cards/'+card.id+'.webp" alt="" draggable="false" onerror="this.hidden=true">':'')+'<span class="pack-wordmark">HEMICICLO</span><span class="pack-rarity">'+label+'</span><span class="pack-lid" style="background-image:url(assets/packs/'+kind+'.svg)"></span><span class="pack-cut-line"></span></span>';
+}
+function packSelection(k){return HemicyclePacks.quantity(PACK_QUANTITIES[k])||1;}
+function updatePackQuantity(select){
+ var kind=select.getAttribute('data-pack-quantity'),q=HemicyclePacks.quantity(select.value),pack=PACKS.filter(function(p){return p.k===kind;})[0];
+ if(!pack||!q)return;PACK_QUANTITIES[kind]=q;
+ var button=select.closest('.pack-card').querySelector('[data-act="buy"]'),cost=HemicyclePacks.total(pack.p,q);
+ button.textContent=cost+' FS';button.disabled=D().fs<cost;button.setAttribute('aria-label','Comprar '+q+' '+(q===1?'sobre':'sobres')+' '+pack.n.replace('Sobre ','')+' por '+cost+' FS');
+}
 SCREENS.tienda=function(){
  syncRankedSeason();var d=D(),now=Date.now();
  return '<div class="store-heading"><span class="eyebrow">FUERZA SOBERANA</span><h2>Tienda <span class="pill gold">'+d.fs+' FS</span></h2></div>'
  +'<section class="free-packs" data-menu-guide="free" aria-label="Sobres gratuitos"><h3>Gratuitos</h3><div class="free-pack-grid">'
  +[{k:'diario',n:'Diario',until:d.lastDaily+DAY,desc:'5 cromos'},{k:'semanal',n:'Semanal',until:d.lastWeekly+WEEK,desc:'4 raros y un quinto con un 25 % de probabilidad de ser especial'}].map(function(p){var left=Math.max(0,p.until-now);return '<article class="free-pack"><div class="pack-display">'+packArt(p.k)+'</div><div class="free-pack-copy"><h3>'+p.n+'</h3><button class="btn sm" data-act="free" data-k="'+p.k+'" data-pack-label="'+esc('Sobre '+p.n+'. '+p.desc)+'" aria-label="'+esc((left?'Sobre '+p.n+'. Disponible en '+packCountdown(left):'Abrir sobre '+p.n)+'. '+p.desc)+'"'+(left?' disabled':'')+'>'+(left?'<span data-cd="'+p.until+'">'+packCountdown(left)+'</span>':'Abrir')+'</button></div></article>';}).join('')
  +'</div></section><section class="paid-packs" aria-label="Sobres con Fuerza Soberana"><h3>Sobres</h3><div class="pack-grid">'
- +PACKS.map(function(p){var can=d.fs>=p.p;
+ +PACKS.map(function(p){var q=packSelection(p.k),cost=HemicyclePacks.total(p.p,q),can=d.fs>=cost,cover=HemicyclePacks.cover(CARDS,p.k,now);
   return '<article class="pack-card"><div class="pack-display">'+packArt(p.k)+'</div><h3>'+p.n+'</h3><p class="sub">'+p.d+'</p>'
-  +'<button class="btn wide sm" data-act="buy" data-k="'+p.k+'" aria-label="Abrir '+p.n+' por '+p.p+' FS"'+(can?'':' disabled')+'>'+p.p+' FS</button></article>';}).join('')
- +'</div></section>';
+  +'<div class="pack-purchase"><button class="btn sm" data-act="buy" data-k="'+p.k+'" aria-label="Comprar '+q+' sobres '+p.n.replace('Sobre ','')+' por '+cost+' FS"'+(can?'':' disabled')+'>'+cost+' FS</button><select data-pack-quantity="'+p.k+'" aria-label="Cantidad de '+p.n.toLowerCase()+'">'+[1,5,10].map(function(n){return '<option value="'+n+'"'+(q===n?' selected':'')+'>x'+n+'</option>';}).join('')+'</select></div><p class="pack-feature">Portada semanal'+(cover?' · '+esc(cover.n):'')+'</p></article>';}).join('')
+ +'</div><p class="pack-disclaimer sub">Las portadas cambian cada lunes. La imagen no garantiza ese cromo; cada sobre mantiene su contenido habitual.</p></section>';
 };
 
 function packContents(k){
@@ -1857,42 +1872,51 @@ function packContents(k){
  return out;
 }
 
-function openPack(k,free){
- var d=D(),p=PACKS.filter(function(x){return x.k===k;})[0];
+function openPack(k,free,count){
+ var q=free?1:HemicyclePacks.quantity(count===undefined?1:count);
+ if(!q)return false;
+ var d=JSON.parse(JSON.stringify(D())),p=PACKS.filter(function(x){return x.k===k;})[0],cost=free?0:p&&HemicyclePacks.total(p.p,q);
  if(!free){
-  if(!p)return;
-  if(d.fs<p.p){go('result',{who:'info',msg:'No tienes suficiente Fuerza Soberana. Necesitas '+p.p+' FS.',fs:0});gameSound('error');return;}
+  if(!p)return false;
+  if(d.fs<cost){go('result',{who:'info',msg:'No tienes suficiente Fuerza Soberana. Necesitas '+cost+' FS.',fs:0});gameSound('error');return false;}
  } else {
-  if(k==='diario'){if(Date.now()<d.lastDaily+DAY)return;d.lastDaily=Date.now();}
-  else if(k==='semanal'){if(Date.now()<d.lastWeekly+WEEK)return;d.lastWeekly=Date.now();}
-  else return;
+  if(k==='diario'){if(Date.now()<d.lastDaily+DAY)return false;d.lastDaily=Date.now();}
+  else if(k==='semanal'){if(Date.now()<d.lastWeekly+WEEK)return false;d.lastWeekly=Date.now();}
+  else return false;
  }
- var cards=packContents(k);
- if(!free)d.fs-=p.p;
- cards.forEach(function(c){d.album.push(c.id);});
- saveD(d);
- go('sobre',{cards:cards.map(function(c){return c.id;}),k:k,free:!!free});
+ var packs=[];
+ for(var i=0;i<q;i++)packs.push(packContents(k).map(function(c){return c.id;}));
+ d.fs-=cost;packs.forEach(function(ids){ids.forEach(function(id){d.album.push(id);});});
+ try{var values={};values[LS]=d;atomicLocal(values);}catch(e){showModal('No se ha abierto el sobre',e.message,'Entendido',false,null);return false;}
+ var cover=HemicyclePacks.cover(CARDS,k,Date.now());
+ go('sobre',{cards:packs[0],packs:packs,opened:[],packIndex:0,quantity:q,k:k,coverId:cover&&cover.id,free:!!free});return true;
 }
-
-function revealPack(){
+function showReceiptPack(index){
+ if(SCREEN!=='sobre'||!SO.packs||SO.opening||index<0||index>=SO.packs.length||Math.floor(index)!==index)return;
+ var next=Object.assign({},SO,{packIndex:index,cards:SO.packs[index],revealed:!!SO.opened[index],opening:false});go('sobre',next);
+}
+function revealPack(done){
  if(SCREEN!=='sobre'||!SO||!Array.isArray(SO.cards)||SO.revealed||SO.opening)return false;
  var receipt=SO,stage=document.querySelector('.pack-opening');
  receipt.opening=true;gameSound('pack');
- function complete(){receipt.opening=false;receipt.revealed=true;if(SCREEN==='sobre'&&SO===receipt){paint();var first=document.querySelector('.reward-card');if(first)first.focus({preventScroll:true});}}
+ function complete(){receipt.opening=false;receipt.revealed=true;if(receipt.opened)receipt.opened[receipt.packIndex||0]=true;if(SCREEN==='sobre'&&SO===receipt){paint();var first=document.querySelector('.reward-card');if(first)first.focus({preventScroll:true});}if(done)done();}
  if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)complete();
- else{if(stage){stage.classList.add('opening');stage.querySelectorAll('button').forEach(function(b){b.disabled=true;});}setTimeout(complete,420);}
+ else{if(stage){stage.classList.add('opening');stage.querySelectorAll('button').forEach(function(b){b.disabled=true;});}setTimeout(complete,900);}
  return true;
 }
 
 SCREENS.sobre=function(){
- var ids=SO.cards||[],d=D();
- var p=PACKS.filter(function(x){return x.k===SO.k;})[0];
- var canAgain=p&&!SO.free&&d.fs>=p.p;
- if(!SO.revealed)return '<div class="pack-opening"><span class="eyebrow">'+esc(p?p.n:SO.k==='semanal'?'Sobre semanal':SO.k==='diario'?'Sobre diario':'Tu recompensa')+'</span><button class="sealed-pack" data-act="pack-reveal" aria-label="Revelar los '+ids.length+' cromos del sobre">'+packArt(SO.k)+'</button><button class="btn" data-act="pack-reveal">Revelar cromos</button></div>';
- return '<div><h2>Sobre abierto</h2><p class="sub">'+ids.length+' cromos añadidos a tu colección.</p></div>'
+ var ids=SO.cards||[],d=D(),q=SO.quantity||1,index=SO.packIndex||0;
+ var p=PACKS.filter(function(x){return x.k===SO.k;})[0],cost=p&&HemicyclePacks.total(p.p,q);
+ var canAgain=p&&!SO.free&&d.fs>=cost;
+ var heading=(SO.demo?'<span class="pack-demo">DEMOSTRACIÓN · SIN COSTE</span>':'')+(q>1?'<span class="pack-progress">Sobre '+(index+1)+' de '+q+'</span>':'');
+ if(!SO.revealed)return '<div class="pack-opening">'+heading+'<span class="eyebrow">'+esc(p?p.n:SO.k==='semanal'?'Sobre semanal':SO.k==='diario'?'Sobre diario':'Tu recompensa')+'</span><button class="sealed-pack" data-act="pack-reveal" aria-label="Cortar el sobre y revelar sus '+ids.length+' cromos">'+packArt(SO.k,SO.coverId)+'</button><button class="btn" data-act="pack-reveal">Cortar y revelar</button></div>';
+ return '<div>'+heading+'<h2>'+(SO.demo?'Apertura de ejemplo':'Sobre abierto')+'</h2><p class="sub">'+(SO.demo?'Estos cromos son de muestra; tu colección no cambia.':q>1?q+' sobres · '+(q*5)+' cromos guardados en tu colección.':ids.length+' cromos añadidos a tu colección.')+'</p></div>'
  +'<div class="reveal pack-results">'+ids.map(function(id,i){return '<button class="reward-card" data-act="pack-card" data-id="'+id+'" style="--reveal-delay:'+i*65+'ms" aria-label="Ver '+esc(BYID[id].n)+'">'+cromoHTML(BYID[id],{noCardAttr:true})+'</button>';}).join('')+'</div>'
  +'<div class="bar">'
- +(p&&!SO.free?'<button class="btn sm" data-act="again" data-k="'+p.k+'"'+(canAgain?'':' disabled')+'>'+(canAgain?'Abrir otro ('+p.p+' FS)':'Sin FS ('+p.p+' FS)')+'</button>':'')
+ +(index>0?'<button class="btn ghost sm" data-act="pack-step" data-index="'+(index-1)+'">Anterior</button>':'')
+ +(index+1<q?'<button class="btn sm" data-act="pack-step" data-index="'+(index+1)+'">Siguiente sobre ('+(index+2)+'/'+q+')</button>':'')
+ +(p&&!SO.free&&index+1===q?'<button class="btn sm" data-act="again" data-k="'+p.k+'" data-quantity="'+q+'"'+(canAgain?'':' disabled')+'>'+(canAgain?(q===1?'Abrir otro':'Abrir otros '+q)+' ('+cost+' FS)':'Sin FS ('+cost+' FS)')+'</button>':'')
  +(SO.from==='buzon'?'<button class="btn sm" data-go="buzon">Volver al buzón</button>':'<button class="btn ghost sm" data-go="tienda">Tienda</button>')
  +'<button class="btn ghost sm" data-go="coleccion">Colección</button></div>';
 };
@@ -2738,6 +2762,7 @@ document.addEventListener('click',function(ev){
 
  switch(act){
   case 'pack-reveal':revealPack();break;
+  case 'pack-step':showReceiptPack(Number(n.getAttribute('data-index')));break;
   case 'pack-card':if(SCREEN==='sobre'&&SO.revealed&&SO.cards.indexOf(n.getAttribute('data-id'))>=0){var receipt=Object.assign({},SO);go('detalle',{id:n.getAttribute('data-id'),pack:receipt});}break;
   case 'pack-return':if(SCREEN==='detalle'&&SO.pack)go('sobre',SO.pack);break;
   case 'cabinet-inspect':if(SCREEN==='coleccion'&&CABINET_EDIT===null)go('detalle',{id:n.getAttribute('data-id')});break;
@@ -2833,11 +2858,11 @@ document.addEventListener('click',function(ev){
   case 'start':
    startBattle();break;
   case 'buy':
-   openPack(n.getAttribute('data-k'),false);break;
+   if(SCREEN==='tienda')openPack(n.getAttribute('data-k'),false,packSelection(n.getAttribute('data-k')));break;
   case 'free':
    openPack(n.getAttribute('data-k'),true);break;
   case 'again':
-   openPack(n.getAttribute('data-k')||SO.k,false);break;
+   if(SCREEN==='sobre'&&SO.revealed&&!SO.opening)openPack(n.getAttribute('data-k')||SO.k,false,n.getAttribute('data-quantity')||1);break;
   case 'end':
    endTurn();break;
   case 'begin':
@@ -2903,7 +2928,7 @@ document.addEventListener('input',function(ev){
   syncGoldCanvases();
  }
 },false);
-document.addEventListener('change',function(ev){if(ev.target&&ev.target.id==='backupFile'){importPlayerBackup(ev.target.files[0]);ev.target.value='';return;}if(ev.target&&['marketRarity','marketBuyRarity','tradePlayer','tradeGive','tradeReceive','tradeMethod','tradeExtra'].indexOf(ev.target.id)>=0)market().change(ev.target);},false);
+document.addEventListener('change',function(ev){if(ev.target&&ev.target.matches('[data-pack-quantity]')){updatePackQuantity(ev.target);return;}if(ev.target&&ev.target.id==='backupFile'){importPlayerBackup(ev.target.files[0]);ev.target.value='';return;}if(ev.target&&['marketRarity','marketBuyRarity','tradePlayer','tradeGive','tradeReceive','tradeMethod','tradeExtra'].indexOf(ev.target.id)>=0)market().change(ev.target);},false);
 
 function medirInsets(){
  try{
@@ -2998,7 +3023,7 @@ function boot(){
  }):null;
  MENU_GUIDE=window.HemicycleMenuTutorial?HemicycleMenuTutorial.create({
   read:lsGet,write:lsSet,
-  isOpen:function(){return ['menu','tienda','coleccion','detalle','mercado','liga','ayuda'].indexOf(SCREEN)>=0;},
+  isOpen:function(){return ['menu','tienda','coleccion','detalle','sobre','mercado','liga','ayuda'].indexOf(SCREEN)>=0;},
   prepare:function(){
    MENU_GUIDE_STATE={fil:{q:FIL.q,r:FIL.r,d:FIL.d},game:G,resumeAI:!!AITIMER};clearAI();
    PLAY_OPEN=false;closeZoom();go('menu');
@@ -3009,7 +3034,9 @@ function boot(){
    if(action==='profile-close')PLAYER_PROFILE.close();
    if(action==='modes'){PLAY_OPEN=true;paint();}
    if(action==='close-modes'){PLAY_OPEN=false;paint();}
-   if(action==='shop')go('tienda');
+   if(action==='shop'){PLAY_OPEN=false;go('tienda');}
+   if(action==='demo-pack'){var examples=CARDS.filter(function(c){return c.r==='comun';}).slice(0,5).map(function(c){return c.id;});go('sobre',{cards:examples,k:'comun',free:true,demo:true});}
+   if(action==='demo-reveal')return new Promise(function(resolve){if(!revealPack(resolve))resolve();});
    if(action==='collection'){FIL={q:'',r:'',d:''};go('coleccion');}
    if(action==='card'){var owned=uniqueAlbum(D());go('detalle',{id:owned.length?owned[0].id:CARDS[0].id});}
    if(action==='market')go('mercado');
