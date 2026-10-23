@@ -508,7 +508,8 @@ tr.des td{background:rgba(212,59,59,.1)}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=30.2.61">
-<link rel="stylesheet" href="css/cabinets.css?v=31.0.0.5">
+<link rel="stylesheet" href="css/cabinets.css?v=31.0.1.0">
+<link rel="stylesheet" href="css/packs.css?v=31.0.1.0">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.0.4-frame1">
@@ -555,7 +556,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.0.5-options1"></script>
+<script src="js/changelog.js?v=31.0.1.0"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -567,7 +568,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.0.5';
+var VERSION='v31.0.1.0';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1195,6 +1196,7 @@ var LAST_SWIPE_DIR='';
 var SWIPE_BLOCK_CLICK=0;
 
 function getSwipeDeckIds(){
+ if(SO.pack)return SO.pack.cards.filter(function(id,i,ids){return BYID[id]&&ids.indexOf(id)===i;});
  var list=colList().map(function(x){return x.id;});
  if(SO.id && list.indexOf(SO.id)<0){
   list=uniqueAlbum(D()).sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||(a.c.n<b.c.n?-1:1);}).map(function(x){return x.id;});
@@ -1682,16 +1684,23 @@ function updateColeccionInPlace(){
  syncGoldCanvases();
 }
 
+function packCountdown(left){
+ var seconds=Math.max(0,Math.ceil(left/1000));
+ if(seconds>=86400)return Math.floor(seconds/86400)+'d '+Math.floor(seconds%86400/3600)+'h';
+ if(seconds>=3600)return Math.floor(seconds/3600)+'h '+Math.floor(seconds%3600/60)+'m';
+ if(seconds>=60)return Math.floor(seconds/60)+'m '+seconds%60+'s';
+ return seconds+'s';
+}
 function startTick(){
- TICK=setInterval(function(){
+ function update(){
   var now=Date.now(),els=document.querySelectorAll('[data-cd]');
   for(var i=0;i<els.length;i++){
-   var e=els[i],t=parseInt(e.getAttribute('data-cd'),10),left=Math.max(0,t-now);
-   var h=Math.floor(left/3600000),m=Math.floor(left%3600000/60000),s=Math.floor(left%60000/1000);
-   e.textContent=(h>0?h+'h ':'')+m+'m '+s+'s';
-   if(left<=0){clearInterval(TICK);TICK=null;paint();return;}
+   var e=els[i],left=Math.max(0,Number(e.getAttribute('data-cd'))-now);
+   e.textContent=packCountdown(left);var button=e.closest('button');if(button&&button.hasAttribute('data-pack-label'))button.setAttribute('aria-label',button.getAttribute('data-pack-label')+'. Disponible en '+packCountdown(left)+'.');
+   if(left<=0){if(TICK)clearInterval(TICK);TICK=null;paint();return;}
   }
- },1000);
+ }
+ TICK=setInterval(update,1000);update();
 }
 var SCREENS={};
 SCREENS.novedades=function(){
@@ -1809,7 +1818,7 @@ SCREENS.detalle=function(){
  +'</div>'
  +skinPanel
  +'</div>'
- +'<div class="bar"><button class="btn wide sm" data-go="coleccion">Volver a la colección</button></div>';
+ +'<div class="bar"><button class="btn wide sm" '+(SO.pack?'data-act="pack-return">Volver al sobre':'data-go="coleccion">Volver a la colección')+'</button></div>';
 };
 
 var PACKS=[
@@ -1819,20 +1828,17 @@ var PACKS=[
  {k:'mitico',n:'Sobre mítico',p:2900,d:'5 legendarios garantizados.'}];
 var DAY=86400000,WEEK=7*DAY;
 
+function packArt(k){return '<img class="pack-art" src="assets/packs/'+(PACKS.some(function(p){return p.k===k;})||k==='diario'||k==='semanal'?k:'raro')+'.svg" alt="" draggable="false">';}
 SCREENS.tienda=function(){
  syncRankedSeason();var d=D(),now=Date.now();
- var dl=Math.max(0,d.lastDaily+DAY-now),wl=Math.max(0,d.lastWeekly+WEEK-now);
- return '<div><h2>Tienda</h2><p class="sub">Fuerza Soberana: <b>'+d.fs+' FS</b>. Moneda obtenida en los debates.</p></div>'
- +'<div class="panel" data-menu-guide="free"><div class="bar between"><div><b style="color:#ffd76a;font-size:12px">Sobres gratuitos</b><br><span class="sub">Diario: 5 cromos &middot; Semanal: 5 raros</span></div>'
- +'<div class="bar">'
- +'<button class="btn sm" data-act="free" data-k="diario"'+(dl>0?' disabled':'')+'>Diario'+(dl>0?' (<span data-cd="'+(now+dl)+'">...</span>)':'')+'</button>'
- +'<button class="btn sm" data-act="free" data-k="semanal"'+(wl>0?' disabled':'')+'>Semanal'+(wl>0?' (<span data-cd="'+(now+wl)+'">...</span>)':'')+'</button>'
- +'</div></div></div>'
- +'<div class="pack-grid">'
+ return '<div class="store-heading"><span class="eyebrow">FUERZA SOBERANA</span><h2>Tienda <span class="pill gold">'+d.fs+' FS</span></h2></div>'
+ +'<section class="free-packs" data-menu-guide="free" aria-label="Sobres gratuitos"><h3>Gratuitos</h3><div class="free-pack-grid">'
+ +[{k:'diario',n:'Diario',until:d.lastDaily+DAY,desc:'5 cromos'},{k:'semanal',n:'Semanal',until:d.lastWeekly+WEEK,desc:'4 raros y un quinto con un 25 % de probabilidad de ser especial'}].map(function(p){var left=Math.max(0,p.until-now);return '<article class="free-pack"><div class="pack-display">'+packArt(p.k)+'</div><div class="free-pack-copy"><h3>'+p.n+'</h3><button class="btn sm" data-act="free" data-k="'+p.k+'" data-pack-label="'+esc('Sobre '+p.n+'. '+p.desc)+'" aria-label="'+esc((left?'Sobre '+p.n+'. Disponible en '+packCountdown(left):'Abrir sobre '+p.n)+'. '+p.desc)+'"'+(left?' disabled':'')+'>'+(left?'<span data-cd="'+p.until+'">'+packCountdown(left)+'</span>':'Abrir')+'</button></div></article>';}).join('')
+ +'</div></section><section class="paid-packs" aria-label="Sobres con Fuerza Soberana"><h3>Sobres</h3><div class="pack-grid">'
  +PACKS.map(function(p){var can=d.fs>=p.p;
-  return '<div class="pack-card"><div><h3>'+p.n+' <span class="pill gold">'+p.p+' FS</span></h3><p class="sub">'+p.d+'</p></div>'
-  +'<button class="btn wide sm" data-act="buy" data-k="'+p.k+'"'+(can?'':' disabled')+'>'+(can?'Abrir ('+p.p+' FS)':'Faltan '+(p.p-d.fs)+' FS')+'</button></div>';}).join('')
- +'</div>';
+  return '<article class="pack-card"><div class="pack-display">'+packArt(p.k)+'</div><h3>'+p.n+'</h3><p class="sub">'+p.d+'</p>'
+  +'<button class="btn wide sm" data-act="buy" data-k="'+p.k+'" aria-label="Abrir '+p.n+' por '+p.p+' FS"'+(can?'':' disabled')+'>'+p.p+' FS</button></article>';}).join('')
+ +'</div></section>';
 };
 
 function packContents(k){
@@ -1865,15 +1871,26 @@ function openPack(k,free){
  if(!free)d.fs-=p.p;
  cards.forEach(function(c){d.album.push(c.id);});
  saveD(d);
- go('sobre',{cards:cards.map(function(c){return c.id;}),k:k,free:!!free});gameSound('pack');
+ go('sobre',{cards:cards.map(function(c){return c.id;}),k:k,free:!!free});
+}
+
+function revealPack(){
+ if(SCREEN!=='sobre'||!SO||!Array.isArray(SO.cards)||SO.revealed||SO.opening)return false;
+ var receipt=SO,stage=document.querySelector('.pack-opening');
+ receipt.opening=true;gameSound('pack');
+ function complete(){receipt.opening=false;receipt.revealed=true;if(SCREEN==='sobre'&&SO===receipt){paint();var first=document.querySelector('.reward-card');if(first)first.focus({preventScroll:true});}}
+ if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches)complete();
+ else{if(stage){stage.classList.add('opening');stage.querySelectorAll('button').forEach(function(b){b.disabled=true;});}setTimeout(complete,420);}
+ return true;
 }
 
 SCREENS.sobre=function(){
  var ids=SO.cards||[],d=D();
  var p=PACKS.filter(function(x){return x.k===SO.k;})[0];
  var canAgain=p&&!SO.free&&d.fs>=p.p;
+ if(!SO.revealed)return '<div class="pack-opening"><span class="eyebrow">'+esc(p?p.n:SO.k==='semanal'?'Sobre semanal':SO.k==='diario'?'Sobre diario':'Tu recompensa')+'</span><button class="sealed-pack" data-act="pack-reveal" aria-label="Revelar los '+ids.length+' cromos del sobre">'+packArt(SO.k)+'</button><button class="btn" data-act="pack-reveal">Revelar cromos</button></div>';
  return '<div><h2>Sobre abierto</h2><p class="sub">'+ids.length+' cromos añadidos a tu colección.</p></div>'
- +'<div class="reveal">'+ids.map(function(id){return cromoHTML(BYID[id],{noCardAttr:true});}).join('')+'</div>'
+ +'<div class="reveal pack-results">'+ids.map(function(id,i){return '<button class="reward-card" data-act="pack-card" data-id="'+id+'" style="--reveal-delay:'+i*65+'ms" aria-label="Ver '+esc(BYID[id].n)+'">'+cromoHTML(BYID[id],{noCardAttr:true})+'</button>';}).join('')+'</div>'
  +'<div class="bar">'
  +(p&&!SO.free?'<button class="btn sm" data-act="again" data-k="'+p.k+'"'+(canAgain?'':' disabled')+'>'+(canAgain?'Abrir otro ('+p.p+' FS)':'Sin FS ('+p.p+' FS)')+'</button>':'')
  +(SO.from==='buzon'?'<button class="btn sm" data-go="buzon">Volver al buzón</button>':'<button class="btn ghost sm" data-go="tienda">Tienda</button>')
@@ -1886,10 +1903,15 @@ function cabinetControls(editable){
  var d=D(),state=cabinetState(),selected=CABINET_EDIT===null?state.selected:CABINET_EDIT;
  var tabs='<div class="cabinet-tabs" role="group" aria-label="Cinco gabinetes favoritos">'+state.slots.map(function(slot,i){var ready=HemicycleCabinets.ready(slot,d.album);return '<button class="cabinet-tab'+(selected===i?' on':'')+'" data-act="'+(editable?'cabinet-edit':'cabinet-select')+'" data-slot="'+i+'" aria-pressed="'+(selected===i)+'" aria-label="Gabinete '+(i+1)+(ready?', completo':slot.ids.length?', necesita revisión':', vacío')+'"><b>'+(i+1)+'</b><i class="'+(ready?'complete':'')+'" aria-hidden="true"></i></button>';}).join('')+'</div>';
  if(!editable)return tabs;
- if(CABINET_EDIT===null)return '<section class="cabinet-panel"><h3>Tus favoritos</h3>'+tabs+'</section>'+(CABINET_RETURN?'<button class="btn ghost sm" data-act="cabinet-return">Volver a preparar el combate</button>':'');
- var complete=BUILD.ids.length===5&&BUILD.ids.indexOf(BUILD.leader)>=0,lead=BUILD.leader&&BYID[BUILD.leader];
- return '<section class="cabinet-panel editing"><h3>Editando gabinete '+(CABINET_EDIT+1)+'</h3>'+tabs+'<p class="sub"><b>'+BUILD.ids.length+'/5 cromos</b> · Líder: '+esc(lead?lead.n:'sin elegir')+'</p><p class="sub">Toca un cromo para añadirlo o quitarlo; su estrella elige al líder. Guarda cuando termines.</p><div class="bar"><button class="btn sm" data-act="cabinet-save"'+(complete||BUILD.ids.length===0?'':' disabled')+'>Guardar</button><button class="btn ghost sm" data-act="cabinet-cancel">Cancelar</button><button class="mini" data-act="auto">Al azar</button><button class="mini" data-act="clear">Vaciar</button></div></section>'+(CABINET_RETURN?'<button class="btn ghost sm" data-act="cabinet-return">Volver a preparar el combate</button>':'');
+ var slot=CABINET_EDIT===null?state.slots[selected]:BUILD;
+ var portraits='<div class="cabinet-members" role="group" aria-label="Integrantes del gabinete '+(selected+1)+'">';
+ for(var i=0;i<5;i++){var id=slot.ids[i],card=BYID[id];portraits+=card?'<button class="cabinet-member'+(id===slot.leader?' leader':'')+'" data-act="'+(CABINET_EDIT===null?'cabinet-inspect':'cabinet-remove')+'" data-id="'+id+'" title="'+esc(card.n)+(id===slot.leader?' · Líder':'')+'" aria-label="'+(CABINET_EDIT===null?'Ver ':'Quitar ')+esc(card.n)+(id===slot.leader?', líder':'')+'">'+artTag(id,card.n,false)+(id===slot.leader?'<span aria-hidden="true">★</span>':'')+'</button>':'<div class="cabinet-member empty" aria-label="Hueco vacío"><span aria-hidden="true">+</span></div>';}
+ portraits+='</div>';
+ var complete=BUILD.ids.length===5&&BUILD.ids.indexOf(BUILD.leader)>=0;
+ var actions=CABINET_EDIT===null?'':'<div class="cabinet-actions"><button class="btn sm" data-act="cabinet-save"'+(complete||BUILD.ids.length===0?'':' disabled')+'>Guardar</button><button class="btn ghost sm" data-act="cabinet-cancel">Cancelar</button><button class="mini" data-act="auto" title="Al azar" aria-label="Gabinete al azar">⤨</button><button class="mini" data-act="clear" title="Vaciar" aria-label="Vaciar gabinete">×</button></div>';
+ return '<section class="cabinet-panel'+(CABINET_EDIT===null?'':' editing')+'" aria-label="Gabinetes favoritos">'+tabs+portraits+actions+'</section>'+(CABINET_RETURN?'<button class="btn ghost sm" data-act="cabinet-return">Volver a preparar el combate</button>':'');
 }
+
 function cabinetBattleScreen(){
  var d=D(),state=cabinetState(),slot=state.slots[state.selected],ready=HemicycleCabinets.ready(slot,d.album),missing=HemicycleCabinets.missing(slot,d.album),mode=SO.mode||'normal';
  loadSelectedCabinet();
@@ -2715,6 +2737,11 @@ document.addEventListener('click',function(ev){
  if(!act)return;
 
  switch(act){
+  case 'pack-reveal':revealPack();break;
+  case 'pack-card':if(SCREEN==='sobre'&&SO.revealed&&SO.cards.indexOf(n.getAttribute('data-id'))>=0){var receipt=Object.assign({},SO);go('detalle',{id:n.getAttribute('data-id'),pack:receipt});}break;
+  case 'pack-return':if(SCREEN==='detalle'&&SO.pack)go('sobre',SO.pack);break;
+  case 'cabinet-inspect':if(SCREEN==='coleccion'&&CABINET_EDIT===null)go('detalle',{id:n.getAttribute('data-id')});break;
+  case 'cabinet-remove':if(SCREEN==='coleccion'&&CABINET_EDIT!==null){var id=n.getAttribute('data-id');BUILD.ids=BUILD.ids.filter(function(x){return x!==id;});if(BUILD.leader===id)BUILD.leader=BUILD.ids[0]||null;paint();}break;
   case 'cabinet-edit':{
    if(SCREEN!=='coleccion')break;var state=cabinetState(),slot=Number(n.getAttribute('data-slot'));if(!Number.isInteger(slot)||slot<0||slot>4)break;
    CABINET_EDIT=slot;BUILD={ids:state.slots[slot].ids.slice(),leader:state.slots[slot].leader};sanitizeBuild();paint();break;
