@@ -13,7 +13,7 @@
       "items": [
         "El combate estrena una composición orquestal que se intensifica cuando cualquiera supera los 50 votos y vuelve al estado normal si ambos quedan en 50 o menos, sin reiniciar la melodía.",
         "Victoria y derrota tienen remates musicales breves. Los menús, cartas, moneda, ataques, defensa, curación, sobres y recompensas incorporan efectos propios.",
-        "En Ayuda puedes ajustar música, efectos y ambiente por separado o silenciarlo todo. Se recuerda tu elección en este dispositivo y el audio se detiene en segundo plano."
+        "Desde Opciones, en el menú principal, puedes ajustar el volumen maestro, los efectos y la música, y encender o apagar estos dos últimos por separado. Se recuerda tu elección en este dispositivo y el audio se detiene en segundo plano."
       ]
     },
     {

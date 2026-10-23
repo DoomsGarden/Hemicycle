@@ -1,0 +1,34 @@
+{
+  "version": "v31.0.0.5",
+  "build": "options1",
+  "status": "verified-local-ready-to-publish",
+  "verifiedAt": "2026-10-23T10:56:32.360122+00:00",
+  "nodeTests": {
+    "passed": 270,
+    "failed": 0
+  },
+  "browserViewports": 4,
+  "sliders": [
+    "master",
+    "effects",
+    "music"
+  ],
+  "switches": [
+    "effects",
+    "music"
+  ],
+  "legacyPreferencesPreserved": true,
+  "legacyMuteRecoverable": true,
+  "profileAndMailRewardsPreserved": true,
+  "offlineAssets": 55,
+  "previousCache": "hemiciclo-v31.0.0.5",
+  "cache": "hemiciclo-v31.0.0.5-options1",
+  "sourceHashes": {
+    "index.html": "a23e869c365106103438b6eedd2c0b6a99681165626afe8d42b3eb9526017f25",
+    "sw.js": "cf1e608f75b739599525654b50bf8c7c8bf200962b78aa3b59b931f8497b41c3",
+    "js/game-audio.js": "232c5cbf503149c5c0056db2080bf3aec62048773bd1bab05e042ca737967e69",
+    "css/audio.css": "a7cc0ad3a7f44bc6309ced6f3f105a339056c2476b7d6986669435e3cba5bc61",
+    "js/changelog.js": "ca49c4d324337d2743f4dd8342d1aa89ab7b7fb26dbf106d26ac2ea725d2bd6a",
+    "audio/README.md": "fffa7ceae97172e4c41b37b52e8d4cb2f177189564e6b428bc44bbfceb308759"
+  }
+}
