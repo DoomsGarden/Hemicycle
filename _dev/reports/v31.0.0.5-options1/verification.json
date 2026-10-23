@@ -1,7 +1,7 @@
 {
   "version": "v31.0.0.5",
   "build": "options1",
-  "status": "verified-local-ready-to-publish",
+  "status": "published-and-live-verified",
   "verifiedAt": "2026-10-23T10:56:32.360122+00:00",
   "nodeTests": {
     "passed": 270,
@@ -30,5 +30,11 @@
     "css/audio.css": "a7cc0ad3a7f44bc6309ced6f3f105a339056c2476b7d6986669435e3cba5bc61",
     "js/changelog.js": "ca49c4d324337d2743f4dd8342d1aa89ab7b7fb26dbf106d26ac2ea725d2bd6a",
     "audio/README.md": "fffa7ceae97172e4c41b37b52e8d4cb2f177189564e6b428bc44bbfceb308759"
-  }
+  },
+  "publishedCommit": "6b282e8",
+  "publicUrl": "https://doomsgarden.github.io/Hemicycle/",
+  "liveVerification": [
+    "live-hashes.json",
+    "live-browser.json"
+  ]
 }
