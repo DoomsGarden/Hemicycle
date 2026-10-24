@@ -554,9 +554,12 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/menu-tutorial.js?v=31.0.1.1"></script>
 <script src="js/cabinet-presets.js?v=31.0.0.5"></script>
-<script src="js/player-backup.js?v=31.0.0.5"></script>
+<script src="js/legendary-mastery.js?v=31.0.1.1-mastery1"></script>
+<script src="js/player-backup.js?v=31.0.1.1-mastery1"></script>
 <script src="js/ranked-seasons.js?v=30.2.61"></script>
 <script src="js/card-confetti.js"></script>
+<script src="js/legendary-confetti.js?v=31.0.1.1-mastery1"></script>
+<link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.1-mastery1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
 <script src="js/changelog.js?v=31.0.1.1"></script>
 <script src="js/market-rules.js"></script>
@@ -718,6 +721,7 @@ function drawCurrentGoldFrame(now){
 }
 
 function syncGoldCanvases(){
+ if(typeof HemicycleLegendaryConfetti!=='undefined')HemicycleLegendaryConfetti.sync();
  if(GOLD_LOOP.state!=='ready'||!GOLD_LOOP.frames.length)return;
  var count=drawCurrentGoldFrame(performance.now());
  if(count>0)startGoldRaf();
@@ -1107,6 +1111,7 @@ function cardStats(c,allowGold){
 function artTag(id,nm,allowGold){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
+ if(allowGold!==false&&typeof HemicycleMastery!=='undefined'&&HemicycleMastery.enabled(D(),id))return artTag(id,nm,false)+'<div class="legendary-confetti" aria-hidden="true"></div>';
  if(id==='donald-trump'&&allowGold!==false){
   var d=D();
   if(d.dtGoldUnlocked&&d.dtGoldActive){
@@ -1795,7 +1800,7 @@ SCREENS.detalle=function(){
   skinPanel='<div class="panel gold-box">'
    +'<div class="bar between"><div><b style="color:#ffd76a;font-size:11.5px">&#9733; Edición especial</b><br><span class="sub">Aspecto del cromo:</span></div>'
    +'<div class="bar">'
-   +'<button class="btn sm '+(d.dtGoldActive?'ghost':'')+'" data-act="dtskin" data-val="normal">Clásico</button>'
+   +'<button class="btn sm '+(d.dtGoldActive||HemicycleMastery.enabled(d,c.id)?'ghost':'')+'" data-act="dtskin" data-val="normal">Clásico</button>'
    +'<button class="btn sm '+(d.dtGoldActive?'':'ghost')+'" data-act="dtskin" data-val="golden">Dorado</button>'
    +'</div></div><p class="sub" style="margin:5px 0 0">Dorado: <b>+2 Zasca base</b> y <b>+2 Aguante base</b>, como líder o miembro del gabinete. Se suma a la bonificación de líder.</p></div>';
  }
@@ -1819,9 +1824,17 @@ SCREENS.detalle=function(){
  +c.q.slice(0,3).map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')+'</div>'
  +'</div>'
  +skinPanel
+ +masteryPanel(c,d)
  +'</div>'
  +'<div class="bar"><button class="btn wide sm" '+(SO.pack?'data-act="pack-return">Volver al sobre':'data-go="coleccion">Volver a la colección')+'</button></div>';
 };
+
+function masteryPanel(c,d){
+ if(!HemicycleMastery.eligible(c.id))return '';
+ var state=HemicycleMastery.state(d),wins=state.wins[c.id]||0,unlocked=state.unlocked.indexOf(c.id)>=0,active=state.active.indexOf(c.id)>=0;
+ return '<section class="panel mastery-panel"><h3>Maestría de líder · Edición confeti</h3><p class="sub">Gana 250 debates con '+esc(c.n)+' como líder.</p><progress class="mastery-progress" max="250" value="'+Math.min(wins,250)+'" aria-label="Victorias como líder"></progress><p class="sub">'+wins+' / 250 victorias · Aspecto visual</p>'
+ +(wins>=250?'<div class="bar">'+(!unlocked?'<button class="btn sm" data-act="mastery-claim" data-id="'+c.id+'">Reclamar edición</button>':'<button class="btn sm '+(active?'':'ghost')+'" aria-pressed="'+active+'" data-act="mastery-equip" data-id="'+c.id+'" data-on="true">Confeti</button><button class="btn ghost sm" aria-pressed="'+(!active&&!(c.id==='donald-trump'&&d.dtGoldActive))+'" data-act="mastery-equip" data-id="'+c.id+'" data-on="false">Clásico</button>')+'</div>':'')+'</section>';
+}
 
 var PACKS=[
  {k:'comun',n:'Sobre común',p:400,d:'4 comunes + 20% raro.'},
@@ -2297,6 +2310,7 @@ function finish(who, abandoned){
  if(who==='p'){
   fs=mode==='normal'?rnd(20,50):rnd(50,100);
   d.w++;
+  if(typeof HemicycleMastery!=='undefined'&&G.leader&&G.leader.p&&HemicycleMastery.eligible(G.leader.p.k))d.leaderMastery=HemicycleMastery.recordWin(d,G.leader.p.k);
   if(mode==='ranked'){
    eloDelta=calcRankedEloDelta('p', G.votes.p, G.votes.e, false);
    d.elo+=eloDelta;
@@ -2819,11 +2833,18 @@ document.addEventListener('click',function(ev){
    FIL={q:'',r:'',d:''};
    updateColeccionInPlace();
    break;
+  case 'mastery-claim':
+   if(SCREEN!=='detalle'||SO.id!==n.getAttribute('data-id'))break;
+   var d=JSON.parse(JSON.stringify(D()));try{d.leaderMastery=HemicycleMastery.claim(d,SO.id);var changes={};changes[LS]=d;atomicLocal(changes);paint();}catch(e){showModal('Edición confeti',esc(e.message),'Entendido',false,null);}break;
+  case 'mastery-equip':
+   if(SCREEN!=='detalle'||SO.id!==n.getAttribute('data-id'))break;
+   var d=JSON.parse(JSON.stringify(D()));try{d.leaderMastery=HemicycleMastery.equip(d,SO.id,n.getAttribute('data-on')==='true');if(SO.id==='donald-trump')d.dtGoldActive=false;var changes={};changes[LS]=d;atomicLocal(changes);paint();if(ZOOM_OPEN)renderZoomOverlay();}catch(e){showModal('Edición confeti',esc(e.message),'Entendido',false,null);}break;
   case 'dtskin':
    if(SCREEN==='detalle' && SO.id==='donald-trump'){
     var d=D();
     if(d.dtGoldUnlocked){
      d.dtGoldActive=(n.getAttribute('data-val')==='golden');
+     if(d.leaderMastery&&d.leaderMastery.unlocked.indexOf('donald-trump')>=0)d.leaderMastery=HemicycleMastery.equip(d,'donald-trump',false);
      saveD(d);
      if(d.dtGoldActive)ensureGoldLoop();
      paint();
