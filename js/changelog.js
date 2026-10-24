@@ -4,6 +4,29 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version": "v31.0.1.2",
+  "date": "2026-10-24",
+  "title": "Desafíos, logros y ediciones de líder",
+  "sections": [
+    {
+      "title": "Nuevas metas para tu progreso",
+      "items": [
+        "Desafíos reúne 7 misiones diarias, 10 semanales y 16 mensuales. Cada misión completada llena un segmento; sus FS y los sobres de la barra se reclaman por separado.",
+        "Los periodos se renuevan según la hora de Madrid. Las recompensas conseguidas y pendientes se conservan; los sobres adicionales no cambian la espera de los gratuitos de la tienda.",
+        "Logros reúne cadenas permanentes por secciones y recompensas únicas. Los máximos de colección y Elo se conservan, y los nuevos contadores registran tus partidas desde esta actualización."
+      ]
+    },
+    {
+      "title": "Ediciones y presentación",
+      "items": [
+        "Las doce cartas legendarias pueden conseguir una edición de confeti tras 250 victorias con ese político como líder. Se reclama una vez y puedes equiparla o volver al aspecto clásico; no cambia sus estadísticas.",
+        "Los sobres incorporan reflejos metalizados, grabados y adornos por rareza. Se mantienen las portadas semanales, las compras x1, x5 y x10 y el corte superior al abrir.",
+        "La guía del menú incluye los nuevos accesos. Si ya la completaste, verás una explicación breve y podrás repetir la guía completa desde Ayuda. Se conservan tu progreso y tus ajustes."
+      ]
+    }
+  ]
+},
+{
   "version": "v31.0.1.1",
   "date": "2026-10-23",
   "title": "Sobres por lotes y nuevas portadas",

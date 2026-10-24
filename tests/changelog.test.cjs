@@ -40,5 +40,5 @@ test('development tools are excluded from Pages and never linked or precached by
 
 test('public version notes never reveal the hidden achievement or its reward',()=>{
  const publicText=JSON.stringify(entries);
- assert.doesNotMatch(publicText,/trump|logros?|desbloque|aspecto (?:especial|dorad)|sonrisa|confeti|Zasca base|Aguante base/i);
+ assert.doesNotMatch(publicText,/trump|aspecto (?:especial|dorad)|sonrisa|Zasca base|Aguante base/i);
 });

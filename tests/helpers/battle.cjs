@@ -24,6 +24,7 @@ function loadBattle(mode = 'normal', random = 0.25) {
   const math = Object.create(Math);
   math.random = typeof random === 'function' ? random : () => random;
   const context = vm.createContext({
+    HemicycleObjectives: require('../../js/objectives.js'),
     Math: math,
     Date: class extends Date { static now(){return now;} },
     setInterval: fn=>{intervals.set(++timerId,fn);return timerId;},

@@ -1,0 +1,41 @@
+{
+  "version": "v31.0.1.2",
+  "reviewedPR": 3,
+  "reviewedHead": "86fa7e129b1d4efcfdbfafa766270a2c0319ec13",
+  "base": "2f69ab9d1167558245271df2bf59049ff593c3f0",
+  "nodeTests": {
+    "passed": 326,
+    "failed": 0
+  },
+  "viewports": [
+    "320x568",
+    "393x851",
+    "851x393",
+    "1280x900"
+  ],
+  "pwaAssets": 68,
+  "tutorialSteps": {
+    "battle": 32,
+    "menu": 20
+  },
+  "cloud": "Official SDK, local PostgreSQL RPCs, three isolated browser devices; authentication transport simulated; no hosted accounts touched",
+  "hashes": {
+    "index.html": "fbe04abf3d88a6c9afef746d5d25e975771a7ac86d0e5db48d8e709f592ad2bd",
+    "sw.js": "bf6cfcebf98bc10b2fa13e080b4262188f3db743c30d3164c3415fc980654fce",
+    "js/objectives.js": "1220fcd6496821c7bf1a9f2659c5e00be606ec2cd14886b5cb9d35bddedad7d6",
+    "js/menu-tutorial.js": "ab04e4fa54a037b1a70df187c839469b67da9ab113a6b51b5f325076189afa7a",
+    "js/legendary-mastery.js": "3e05216de84aa0e39a5e432b6302582412420436ec8b1528d8ecbf494fd27847",
+    "js/legendary-confetti.js": "581c8f0bfadfcb8ebe44152f75ed3cf4bac06067cd433b6fbf0174469cfb9b88",
+    "js/player-backup.js": "d5ea340fe165fbf585bdb18f5b8e84c7c1d12154a2557b0ff304c87bf27539f3",
+    "js/changelog.js": "de3df18dce4af4b0f9dd2be7a696240dc718645d1a4c69c0dc9eedd503614945",
+    "css/objectives.css": "ba21c73906a6bcf037e0776c5249c3b7e686387a7eb2b070d72577a78e1b65c8",
+    "css/legendary-confetti.css": "65e9c6767941e24890c55352969a26a394c443855fc2564b45e270f7ed510372",
+    "css/packs.css": "a9634d7a4396a3dfbea1715ac505f14f31ac1f0140d41245759a05bd1cb8b20d",
+    "assets/packs/comun.svg": "4f1cc852e4d026288559803cf1b68ed783148bf091f74f93faea073b0cc858e0",
+    "assets/packs/diario.svg": "225dcec060ec8e29577998e5303313cb0b5c573e510e53082ae044cbdeb48887",
+    "assets/packs/legendario.svg": "b10d60b7d4882ac2600ee91520b7eded023a93b8ee78a79c0029ae94f0551bbe",
+    "assets/packs/mitico.svg": "449642914e16f48fa17e65cf40cbec065beb15657ccb01fa15963325b0c1bc4a",
+    "assets/packs/raro.svg": "52ed438d5fea911aca8dafbcc0b4456f174c726c6a71ae7747e2465f999f6896",
+    "assets/packs/semanal.svg": "3fb059613309291afe60b69c77b14df00965461823f4b37c1d93fa2952d481f1"
+  }
+}

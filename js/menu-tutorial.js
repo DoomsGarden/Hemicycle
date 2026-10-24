@@ -8,6 +8,8 @@ function create(api){
   read:api.read,write:api.write,prepare:api.prepare,pause:api.pause,inBattle:api.isOpen,action:api.action,leave:api.leave,
   steps:[
    ['home','.hud-strip','1. Tu menú principal','Victorias, derrotas, Elo y colección, de un vistazo. El botón inferior más grande indica dónde estás. El buzón guarda los sobres que ganes en Clasificatoria. Toca tus estadísticas.'],
+   ['challenges','[data-act="challenges"]','Desafíos por periodo','Completa 7 misiones diarias, 10 semanales y 16 mensuales. Cada misión llena un segmento: reclama los FS y los sobres de la barra por separado. Los premios ganados se conservan al reiniciarse el periodo. Toca para continuar sin reclamar nada.'],
+   ['achievements','[data-act="achievements"]','Logros permanentes','Debajo del buzón encontrarás Logros: secciones, cadenas con hitos y recompensas únicas. No se reinician. Las cadenas de líder terminan en 250 victorias. Toca para continuar.'],
    ['profile-open','[data-act="profile"]','Tu perfil','Este botón abre tus estadísticas completas, el nick, el fondo de tu bancada y el acceso a la nube. Tócalo para entrar.','profile-open'],
    ['profile-nick','.profile-nickname','Nick, estadísticas y nube','Aquí puedes elegir tu nick con una cuenta; después tienes un cambio gratis al año. El perfil también reúne tus estadísticas y Nube permite guardar o recuperar tu progreso. Esta visita no cambia nada. Toca este bloque.'],
    ['profile-close','[data-profile="close"]','Vuelve al inicio','El perfil se abre encima del menú. Toca la cruz para volver.','profile-close'],

@@ -24,3 +24,25 @@
 @keyframes packCutBody{0%,65%{transform:none;opacity:1}100%{transform:translateY(24px);opacity:0}}
 @media(max-height:500px){.pack-opening{gap:6px;min-height:190px}.sealed-pack{height:105px}.sealed-pack .pack-wordmark{font-size:7px}.sealed-pack .pack-rarity{font-size:5px}}
 @media(prefers-reduced-motion:reduce){.pack-opening.opening .pack-cover,.pack-opening.opening .pack-lid,.pack-opening.opening .pack-cut-line{animation:none}}
+/* Foil, grabado e iluminación: solo transformaciones, sin cambiar el tamaño. */
+.pack-cover{--foil-delay:-2s;--foil-colour:#c5e5f1}
+.pack-cover[data-rarity=raro],.pack-cover[data-rarity=semanal]{--foil-delay:-5s;--foil-colour:#7cdeff}
+.pack-cover[data-rarity=legendario]{--foil-delay:-7s;--foil-colour:#ffe9ab}
+.pack-cover[data-rarity=mitico]{--foil-delay:-.5s;--foil-colour:#edb6ff}
+.pack-cover>.pack-art{filter:drop-shadow(0 5px 5px #0008)}
+.pack-portrait{border-color:var(--pack-ink);box-shadow:0 0 0 1px #08101b,0 0 0 2px var(--pack-glow),0 3px 8px #020813a6}
+.pack-wordmark,.pack-rarity{z-index:3}.pack-wordmark{color:#fff2ce;text-shadow:0 1px #000,0 0 5px #f2d89c44;background:linear-gradient(90deg,transparent,#08101be8 22%,#08101be8 78%,transparent)}
+.pack-rarity{font-weight:900}.pack-lid{z-index:5}.pack-cut-line{z-index:6}
+.pack-foil{position:absolute;inset:0;z-index:1;overflow:hidden;pointer-events:none;clip-path:polygon(13.6% 13%,86.4% 13%,88.5% 89%,86.4% 95.7%,13.6% 95.7%,11.5% 89%)}
+.pack-foil::before{content:"";position:absolute;inset:-15% -35%;background:linear-gradient(115deg,transparent 30%,#fff1 39%,#fff7 43%,#fff2 46%,transparent 51%,#fff4 54%,transparent 58%);transform:translate3d(-100%,0,0);animation:packFoilSweep 9s ease-in-out infinite;animation-delay:var(--foil-delay);will-change:transform;opacity:.6}
+.pack-foil::after{content:"";position:absolute;inset:0;background:linear-gradient(130deg,#fff1,transparent 34%,var(--foil-colour) 67%,transparent 84%);opacity:.13;mix-blend-mode:screen}
+.pack-cover[data-rarity=mitico] .pack-foil::after{background:conic-gradient(from 25deg at 50% 40%,#e2a6ff,transparent,#89dcff,transparent,#ffe6b0,transparent,#e2a6ff);opacity:.22}
+.pack-glints{position:absolute;inset:0;z-index:4;pointer-events:none}
+.pack-glints::before,.pack-glints::after{content:"";position:absolute;width:9%;aspect-ratio:1;background:radial-gradient(circle,#fff 0 6%,var(--pack-ink) 22%,transparent 70%);clip-path:polygon(50% 0,58% 40%,100% 50%,58% 58%,50% 100%,42% 58%,0 50%,42% 40%);opacity:.65}
+.pack-glints::before{left:15.8%;top:64%}.pack-glints::after{right:15%;top:33.5%;width:7%}
+.pack-cover[data-rarity=legendario] .pack-glints::before,.pack-cover[data-rarity=mitico] .pack-glints::before{animation:packEngravingGlint 6s ease-in-out infinite;animation-delay:var(--foil-delay)}
+@keyframes packFoilSweep{0%,28%{transform:translate3d(-100%,0,0)}58%,100%{transform:translate3d(100%,0,0)}}
+@keyframes packEngravingGlint{0%,35%,100%{transform:scale(.65);opacity:.35}50%{transform:scale(1.2);opacity:.9}65%{transform:scale(.8);opacity:.5}}
+.pack-opening.opening .pack-foil::before,.pack-opening.opening .pack-glints::before{animation-play-state:paused}
+@media(hover:hover) and (pointer:fine){.pack-card .pack-cover{transition:transform .2s ease,filter .2s ease}.pack-card:hover .pack-cover{transform:translateY(-3px) rotate(-1deg);filter:brightness(1.08)}}
+@media(prefers-reduced-motion:reduce){.pack-foil::before{animation:none;transform:translate3d(0,0,0);opacity:.25}.pack-cover .pack-glints::before{animation:none!important}.pack-card .pack-cover{transition:none}.pack-card:hover .pack-cover{transform:none}}
