@@ -21,7 +21,7 @@
       "items": [
         "Las doce cartas legendarias pueden conseguir una edición de confeti tras 250 victorias con ese político como líder. Se reclama una vez y puedes equiparla o volver al aspecto clásico; no cambia sus estadísticas.",
         "Los sobres incorporan reflejos metalizados, grabados y adornos por rareza. Se mantienen las portadas semanales, las compras x1, x5 y x10 y el corte superior al abrir.",
-        "La guía del menú incluye los nuevos accesos. Si ya la completaste, verás una explicación breve y podrás repetir la guía completa desde Ayuda. Se conservan tu progreso y tus ajustes."
+        "La guía del menú incluye los nuevos accesos. Si ya la completaste, verás una explicación breve y podrás repetir la guía completa desde Ayuda. Se conservan tu progreso y tus ajustes. La interfaz incorpora una fuente incluida, iconos centrados y cifras más claras en los cromos. Al reclamar recompensas se conserva la posición de la lista."
       ]
     }
   ]

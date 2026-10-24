@@ -237,7 +237,8 @@ test('golden Trump gains +2 base Zasca and Aguante only for an eligible player i
     assert.equal(own.c,base.c);assert.equal(own.v,base.v);
     assert.equal(c.cardStats(base).a,base.a+bonus);
     assert.equal(c.cardStats(base).h,base.h+bonus);
-    assert.match(c.cromoHTML(base),new RegExp('Z'+(base.a+bonus)+' &middot; A'+(base.h+bonus)));
+    assert.match(c.cromoHTML(base),new RegExp('aria-label="Zasca '+(base.a+bonus)+'"'));
+    assert.match(c.cromoHTML(base),new RegExp('aria-label="Aguante '+(base.h+bonus)+'"'));
   }
 });
 

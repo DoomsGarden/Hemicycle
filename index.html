@@ -554,7 +554,9 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2"></script>
 <script src="js/menu-tutorial.js?v=31.0.1.2"></script>
-<link rel="stylesheet" href="css/objectives.css?v=31.0.1.2">
+<link rel="stylesheet" href="css/objectives.css?v=31.0.1.2-ui1">
+<link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.2-ui1">
 <script src="js/cabinet-presets.js?v=31.0.0.5"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
 <script src="js/player-backup.js?v=31.0.1.2"></script>
@@ -563,7 +565,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.2"></script>
+<script src="js/changelog.js?v=31.0.1.2-ui1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -1136,12 +1138,12 @@ function cromoHTML(c,o){
  return '<div class="cromo'+(o.sel?' sel':'')+(o.lead?' lead':'')+'" style="'+st+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-pick="'+c.id+'"':'')+'>'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
-  +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
+  +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(o.lead?'<span class="crown">&#9733;</span>':'')
   +(o.sel&&o.pick?'<span class="sel-tag">&#10003; ELEGIDO</span>':'')
   +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'" title="Elegir como Líder">&#9733;</button>':'')
   +(o.count?'<span class="badge">x'+o.count+'</span>':'')
-  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+stats.a+' &middot; A'+stats.h+'</span></div></div>';
+  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+esc(c.n)+'</span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+stats.a+'"><small>Z</small><b>'+stats.a+'</b></span><span class="card-stat aguante" aria-label="Aguante '+stats.h+'"><small>A</small><b>'+stats.h+'</b></span></span></div></div>';
 }
 function fichaHTML(c){
  var r=RARM[c.r],stats=cardStats(c);
@@ -1174,7 +1176,7 @@ function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, r
  var focus=mr.querySelector(requiresReview?'[data-modal="review"]':'[data-modal="confirm"]');if(focus)focus.focus();
 }
 function closeModal(){
- var objectivesOpen=document.querySelector('#modalRoot .objective-modal');
+ var objectivesOpen=document.querySelector('#modalRoot .objective-modal');if(objectivesOpen)rememberObjectives();
  MODAL_CB=null;
  var mr=document.getElementById('modalRoot');
  if(mr)mr.innerHTML='';
@@ -1478,21 +1480,23 @@ function claimRankedReward(id){
 function pendingMail(){var current=syncRankedSeason();return current?current.state.rewards.filter(function(r){return !r.claimed;}):[];}
 
 function objectivePending(d,view){var a=HemicycleObjectives,s=a.sync(d);if(view==='achievements')return a.achievements(d,CARDS).some(function(x){return x.steps.some(function(t){return x.value>=t&&s.claimed.indexOf(x.id+'/'+t)<0&&!(t===250&&x.id.indexOf('leader:')===0&&HemicycleMastery.state(d).unlocked.indexOf(x.id.slice(7))>=0);});});return Object.values(s.periods).concat(s.archive).some(function(p){return a.quests(p.type,p.key,p.limits).some(function(q){return a.metric(p,q.metric)>=q.target&&p.claimed.indexOf(q.id)<0;})||a.rewards(p.type).some(function(r){return a.completed(p)>=r.at&&p.claimed.indexOf('bar'+r.at)<0;});});}
-function objectiveButton(view,icon,label){return '<button class="home-options-button objective-access" data-act="'+view+'" aria-label="'+label+(objectivePending(D(),view)?': recompensas pendientes':'')+'" title="'+label+'">'+icon+(objectivePending(D(),view)?'<i aria-hidden="true"></i>':'')+'</button>';}
+function objectiveButton(view,icon,label){return '<button class="home-options-button objective-access" data-act="'+view+'" aria-label="'+label+(objectivePending(D(),view)?': recompensas pendientes':'')+'" title="'+label+'">'+uiIcon(view==='challenges'?'challenges':'achievements')+(objectivePending(D(),view)?'<i aria-hidden="true"></i>':'')+'</button>';}
 var OBJECTIVE_FOCUS=null;
+var OBJECTIVE_POSITIONS={};
+function rememberObjectives(){var panel=document.querySelector('#modalRoot .objectives');if(!panel)return null;var position={view:panel.getAttribute('data-objective-view'),tab:panel.getAttribute('data-objective-tab'),top:panel.scrollTop};OBJECTIVE_POSITIONS[position.view+'/'+position.tab]=position;return position;}
 var OBJECTIVE_TAB={challenges:'daily',achievements:'General'};
-function openObjectives(view,tab){if(!document.querySelector('#modalRoot .objective-modal'))OBJECTIVE_FOCUS=document.activeElement;var a=HemicycleObjectives,d=D(),s=a.sync(Object.assign({},d,{objectiveCatalog:CARDS})),html='',sections=view==='challenges'?a.types:['General','Clasificatorias','Colección','Gabinetes y doctrinas','Liga','Líderes'].concat(d.dtGoldUnlocked?['Secretos']:[]);tab=tab||OBJECTIVE_TAB[view];if(sections.indexOf(tab)<0)tab=sections[0];OBJECTIVE_TAB[view]=tab;
- html+='<div class="objectives"><nav class="objective-tabs" aria-label="Secciones">'+sections.map(function(t,i){return '<button class="mini '+(t===tab?'on':'')+'" data-act="objective-tab" data-view="'+view+'" data-tab="'+esc(t)+'" aria-pressed="'+(t===tab)+'">'+esc(view==='challenges'?a.labels[i]:t)+'</button>';}).join('')+'</nav>';
+function openObjectives(view,tab,restore){var previouslyOpen=!!document.querySelector('#modalRoot .objective-modal');rememberObjectives();if(!document.querySelector('#modalRoot .objective-modal'))OBJECTIVE_FOCUS=document.activeElement===document.body?document.querySelector('[data-act="'+view+'"]'):document.activeElement;var a=HemicycleObjectives,d=D(),s=a.sync(Object.assign({},d,{objectiveCatalog:CARDS})),html='',sections=view==='challenges'?a.types:['General','Clasificatorias','Colección','Gabinetes y doctrinas','Liga','Líderes'].concat(d.dtGoldUnlocked?['Secretos']:[]);tab=tab||OBJECTIVE_TAB[view];if(sections.indexOf(tab)<0)tab=sections[0];OBJECTIVE_TAB[view]=tab;
+ html+='<nav class="objective-tabs '+(view==='challenges'?'period-tabs':'achievement-tabs')+'" aria-label="Secciones">'+sections.map(function(t,i){return '<button class="mini '+(t===tab?'on':'')+'" data-act="objective-tab" data-view="'+view+'" data-tab="'+esc(t)+'" aria-pressed="'+(t===tab)+'" title="'+esc(view==='challenges'?a.labels[i]:t)+'">'+esc(view==='challenges'?a.labels[i]:t==='Gabinetes y doctrinas'?'Gabinetes':t)+'</button>';}).join('')+'</nav><div class="objectives" data-objective-view="'+view+'" data-objective-tab="'+esc(tab)+'">';
  function bar(value,max,segments){if(segments)return '<div class="objective-segments" role="progressbar" aria-label="Misiones completadas" aria-valuenow="'+Math.min(value,max)+'" aria-valuemin="0" aria-valuemax="'+max+'" style="--segments:'+max+'">'+Array.from({length:max},function(_,i){return '<i class="'+(i<value?'complete':'')+'"></i>';}).join('')+'</div><small>'+value+' / '+max+'</small>';return '<progress max="'+max+'" value="'+Math.min(max,value)+'" aria-label="'+value+' de '+max+'"></progress><small>'+value+' / '+max+'</small>';}
- function claim(id,label,done,ready,extra){return '<button class="btn sm" data-act="objective-claim" data-view="'+view+'" data-id="'+esc(id)+'" '+(extra||'')+(!ready||done?' disabled':'')+'>'+(done?'Reclamado':label)+'</button>';}
+ function claim(id,label,done,ready,extra){return '<button class="btn sm objective-reward '+(done?'is-claimed':ready?'is-ready':'is-locked')+'" data-act="objective-claim" data-view="'+view+'" data-id="'+esc(id)+'" '+(extra||'')+(!ready||done?' disabled':'')+'>'+(done?'Reclamado':label)+'</button>';}
  if(view==='challenges'){
  html+='<p class="sub">Calendario de Madrid · reinicio diario, lunes y primer día del mes. Las recompensas ganadas se conservan.</p>';
- [s.periods[tab]].concat(s.archive.filter(function(p){return p.type===tab;})).forEach(function(p,index){var qs=a.quests(p.type,p.key,p.limits),done=a.completed(p),prefix=p.type+'/'+p.key+'/';html+='<section class="objective-period"><h4>'+(index?'Recompensas anteriores · ':'Periodo · ')+esc(p.key)+'</h4>'+bar(done,qs.length,true)+'<div class="objective-rewards">'+a.rewards(p.type).map(function(r){return '<div>'+packArt(r.kind)+'<b>'+r.at+' / '+qs.length+'</b>'+claim(prefix+'bar'+r.at,'Reclamar sobre',p.claimed.indexOf('bar'+r.at)>=0,done>=r.at)+'</div>';}).join('')+'</div>';
- qs.forEach(function(q){var value=a.metric(p,q.metric),claimed=p.claimed.indexOf(q.id)>=0;if(index&&(claimed||value<q.target))return;html+='<article class="objective-row"><span class="pill">'+['Fácil','Normal','Difícil','Rara'][q.difficulty]+'</span><h4>'+esc(q.title)+'</h4>'+bar(value,q.target)+claim(prefix+q.id,q.fs+' FS',claimed,value>=q.target)+'</article>';});html+='</section>';});
- }else{a.achievements(d,CARDS).filter(function(x){return x.section===tab;}).forEach(function(x){html+='<article class="objective-row"><h4>'+esc(x.title)+'</h4>'+bar(x.value,x.steps[x.steps.length-1])+'<div class="objective-milestones">'+x.steps.map(function(t){var confetti=t===250&&x.id.indexOf('leader:')===0&&HemicycleMastery.eligible(x.id.slice(7)),already=s.claimed.indexOf(x.id+'/'+t)>=0||(confetti&&HemicycleMastery.state(d).unlocked.indexOf(x.id.slice(7))>=0);return '<div><b>'+t+'</b>'+claim(x.id,confetti?'Edición confeti':'Reclamar hito',already,x.value>=t,'data-step="'+t+'"')+'</div>';}).join('')+'</div></article>';});}
- showModal(view==='challenges'?'Desafíos':'Logros',html+'</div>','Cerrar',false,null,true);var cancel=document.querySelector('#modalRoot [data-modal="cancel"]');if(cancel)cancel.hidden=true;var dialog=document.querySelector('#modalRoot .modal');if(dialog){dialog.classList.add('objective-modal');['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=true;});var selected=dialog.querySelector('.objective-tabs .on');if(selected)selected.focus({preventScroll:true});}
+ [s.periods[tab]].concat(s.archive.filter(function(p){return p.type===tab;})).forEach(function(p,index){var qs=a.quests(p.type,p.key,p.limits),done=a.completed(p),prefix=p.type+'/'+p.key+'/';html+='<section class="objective-period" tabindex="-1"><h4>'+(index?'Recompensas anteriores · ':'Periodo · ')+esc(p.key)+'</h4>'+bar(done,qs.length,true)+'<div class="objective-rewards">'+a.rewards(p.type).map(function(r){return '<div>'+packArt(r.kind)+'<b>'+r.at+' / '+qs.length+'</b>'+claim(prefix+'bar'+r.at,'Reclamar sobre',p.claimed.indexOf('bar'+r.at)>=0,done>=r.at)+'</div>';}).join('')+'</div>';
+ qs.forEach(function(q){var value=a.metric(p,q.metric),claimed=p.claimed.indexOf(q.id)>=0;if(index&&(claimed||value<q.target))return;html+='<article class="objective-row" tabindex="-1"><span class="pill">'+['Fácil','Normal','Difícil','Rara'][q.difficulty]+'</span><h4>'+esc(q.title)+'</h4>'+bar(value,q.target)+claim(prefix+q.id,q.fs+' FS',claimed,value>=q.target)+'</article>';});html+='</section>';});
+ }else{a.achievements(d,CARDS).filter(function(x){return x.section===tab;}).forEach(function(x){html+='<article class="objective-row" tabindex="-1"><h4>'+esc(x.title)+'</h4>'+bar(x.value,x.steps[x.steps.length-1])+'<div class="objective-milestones">'+x.steps.map(function(t){var confetti=t===250&&x.id.indexOf('leader:')===0&&HemicycleMastery.eligible(x.id.slice(7)),already=s.claimed.indexOf(x.id+'/'+t)>=0||(confetti&&HemicycleMastery.state(d).unlocked.indexOf(x.id.slice(7))>=0);return '<div><b>'+t+'</b>'+claim(x.id,confetti?'Edición confeti':'Reclamar hito',already,x.value>=t,'data-step="'+t+'"')+'</div>';}).join('')+'</div></article>';});}
+ showModal(view==='challenges'?'Desafíos':'Logros',html+'</div>','Cerrar',false,null,true);var cancel=document.querySelector('#modalRoot [data-modal="cancel"]');if(cancel)cancel.hidden=true;var dialog=document.querySelector('#modalRoot .modal');if(dialog){dialog.classList.add('objective-modal');if(previouslyOpen||restore)dialog.style.animation='none';['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=true;});var panel=dialog.querySelector('.objectives'),position=restore||OBJECTIVE_POSITIONS[view+'/'+tab];if(panel&&position)panel.scrollTop=position.top;var selected=dialog.querySelector('.objective-tabs .on');if(restore&&restore.id){var reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id&&el.getAttribute('data-step')===(restore.step||null);});if(reward)selected=reward.disabled?(reward.closest('.objective-row')||reward.closest('.objective-period')||selected):reward;}if(selected)selected.focus({preventScroll:true});}
 }
-function claimObjective(button){if((MENU_GUIDE&&MENU_GUIDE.active)||(TUTORIAL&&TUTORIAL.active))return;var a=HemicycleObjectives,d=JSON.parse(JSON.stringify(D())),view=button.getAttribute('data-view'),id=button.getAttribute('data-id');try{var result=view==='challenges'?a.claim(d,id):a.claimAchievement(d,CARDS,id,Number(button.getAttribute('data-step')));d.objectives=result.state;d.fs+=result.reward.fs||0;if(result.leader&&HemicycleMastery.eligible(result.leader))d.leaderMastery=HemicycleMastery.claim(d,result.leader);var cards=result.reward.kind?packContents(result.reward.kind).map(function(c){return c.id;}):null;if(cards)cards.forEach(function(id){d.album.push(id);});d.objectives=a.snapshot(d,CARDS);var values={};values[LS]=d;atomicLocal(values);closeModal();paint();if(cards)go('sobre',{cards:cards,packs:[cards],opened:[],packIndex:0,quantity:1,k:result.reward.kind,free:true});else openObjectives(view);}catch(e){showModal('No se ha reclamado',e.message,'Cerrar',false,null);}}
+function claimObjective(button){var position=rememberObjectives();if(position){position.id=button.getAttribute('data-id');position.step=button.getAttribute('data-step');}if((MENU_GUIDE&&MENU_GUIDE.active)||(TUTORIAL&&TUTORIAL.active))return;var a=HemicycleObjectives,d=JSON.parse(JSON.stringify(D())),view=button.getAttribute('data-view'),id=button.getAttribute('data-id');try{var result=view==='challenges'?a.claim(d,id):a.claimAchievement(d,CARDS,id,Number(button.getAttribute('data-step')));d.objectives=result.state;d.fs+=result.reward.fs||0;if(result.leader&&HemicycleMastery.eligible(result.leader))d.leaderMastery=HemicycleMastery.claim(d,result.leader);var cards=result.reward.kind?packContents(result.reward.kind).map(function(c){return c.id;}):null;if(cards)cards.forEach(function(id){d.album.push(id);});d.objectives=a.snapshot(d,CARDS);var values={};values[LS]=d;atomicLocal(values);closeModal();paint();if(cards)go('sobre',{cards:cards,packs:[cards],opened:[],packIndex:0,quantity:1,k:result.reward.kind,free:true,objectiveReturn:position});else openObjectives(view,position&&position.tab,position);}catch(e){closeModal();showModal('No se ha reclamado',e.message,'Volver',false,function(){openObjectives(view,position&&position.tab,position);});}}
 
 function mailButton(){var count=pendingMail().length;return '<button class="mail-button'+(count?' has-mail':'')+'" data-go="buzon" aria-label="Buzón'+(count?': '+count+' recompensas pendientes':': sin recompensas pendientes')+'" title="Buzón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>'+(count?'<span>'+count+'</span>':'')+'</button>';}
 function rankedPanel(){
@@ -1616,7 +1620,7 @@ window.addEventListener('popstate',function(ev){
 });
 
 function uiIcon(name){
- var paths={home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',market:'<path d="M4 21V3l8 10 8-10v18M8 21V14l4 5 4-5v7"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
+ var paths={challenges:'<rect x="4" y="3" width="16" height="18" rx="3"/><path d="m7 8 1 1 2-2m-3 7 1 1 2-2m3-5h4m-4 6h4"/>',achievements:'<path d="m8 3 4 6 4-6M7 3h10M12 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/><path d="m12 11 1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2L9 13.3l2-.3Z"/>',home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',market:'<path d="M4 21V3l8 10 8-10v18M8 21V14l4 5 4-5v7"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
  return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[name]||paths.home)+'</svg>';
 }
 function purchaseQuantityModal(name,max,unit,done,seller){
@@ -1962,7 +1966,7 @@ SCREENS.sobre=function(){
  +(index>0?'<button class="btn ghost sm" data-act="pack-step" data-index="'+(index-1)+'">Anterior</button>':'')
  +(index+1<q?'<button class="btn sm" data-act="pack-step" data-index="'+(index+1)+'">Siguiente sobre ('+(index+2)+'/'+q+')</button>':'')
  +(p&&!SO.free&&index+1===q?'<button class="btn sm" data-act="again" data-k="'+p.k+'" data-quantity="'+q+'"'+(canAgain?'':' disabled')+'>'+(canAgain?(q===1?'Abrir otro':'Abrir otros '+q)+' ('+cost+' FS)':'Sin FS ('+cost+' FS)')+'</button>':'')
- +(SO.from==='buzon'?'<button class="btn sm" data-go="buzon">Volver al buzón</button>':'<button class="btn ghost sm" data-go="tienda">Tienda</button>')
+ +(SO.objectiveReturn?'<button class="btn sm" data-act="objective-return">Volver a desafíos</button>':SO.from==='buzon'?'<button class="btn sm" data-go="buzon">Volver al buzón</button>':'<button class="btn ghost sm" data-go="tienda">Tienda</button>')
  +'<button class="btn ghost sm" data-go="coleccion">Colección</button></div>';
 };
 
@@ -2531,12 +2535,12 @@ function cromoBattle(c,side,extra){
  return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
-  +'<div class="top"><span class="cost">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
+  +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
   +(c.guard?'<span class="battle-guard" aria-label="Defensa del 50 % preparada">&#128737; 50 %</span>':'')
   +(side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
   +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">ϟ</span>':'')
-  +'<div class="bot"><span class="nm">'+esc(c.n)+'</span><span class="st">Z'+battleZasca(side,c)+' &middot; A'+Math.max(0,c.h)+'/'+c.hm+'</span></div></div>';
+  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+esc(c.n)+'</span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+battleZasca(side,c)+'"><small>Z</small><b>'+battleZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
 }
 function nmByUid(uid){var i;for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)return G.field.p[i].n;return '?';}
 function uidOf(uid){var i;for(i=0;i<G.hand.p.length;i++)if(G.hand.p[i].uid===uid)return G.hand.p[i].k;return '';}
@@ -2694,7 +2698,7 @@ document.addEventListener('click',function(ev){
   closeModal();
   return;
  }
- var objectiveAction=t.closest('.objectives [data-act]');if(objectiveAction&&!objectiveAction.disabled){if(objectiveAction.getAttribute('data-act')==='objective-tab')openObjectives(objectiveAction.getAttribute('data-view'),objectiveAction.getAttribute('data-tab'));else if(objectiveAction.getAttribute('data-act')==='objective-claim')claimObjective(objectiveAction);return;}
+ var objectiveAction=t.closest('.objective-modal [data-act]');if(objectiveAction&&!objectiveAction.disabled){if(objectiveAction.getAttribute('data-act')==='objective-tab')openObjectives(objectiveAction.getAttribute('data-view'),objectiveAction.getAttribute('data-tab'));else if(objectiveAction.getAttribute('data-act')==='objective-claim')claimObjective(objectiveAction);return;}
  if(t.closest('.modal'))return;
 
  if(PLAY_OPEN&&!t.closest('.play-launcher')){PLAY_OPEN=false;var options=document.getElementById('playOptions');if(options)options.remove();var toggle=document.querySelector('[data-act="play-menu"]');if(toggle)toggle.setAttribute('aria-expanded','false');}
@@ -2817,6 +2821,7 @@ document.addEventListener('click',function(ev){
   case 'pack-reveal':revealPack();break;
   case 'pack-step':showReceiptPack(Number(n.getAttribute('data-index')));break;
   case 'pack-card':if(SCREEN==='sobre'&&SO.revealed&&SO.cards.indexOf(n.getAttribute('data-id'))>=0){var receipt=Object.assign({},SO);go('detalle',{id:n.getAttribute('data-id'),pack:receipt});}break;
+  case 'objective-return':if(SCREEN==='sobre'&&SO.objectiveReturn){var back=SO.objectiveReturn;go('menu');openObjectives(back.view,back.tab,back);}break;
   case 'pack-return':if(SCREEN==='detalle'&&SO.pack)go('sobre',SO.pack);break;
   case 'cabinet-inspect':if(SCREEN==='coleccion'&&CABINET_EDIT===null)go('detalle',{id:n.getAttribute('data-id')});break;
   case 'cabinet-remove':if(SCREEN==='coleccion'&&CABINET_EDIT!==null){var id=n.getAttribute('data-id');BUILD.ids=BUILD.ids.filter(function(x){return x!==id;});if(BUILD.leader===id)BUILD.leader=BUILD.ids[0]||null;paint();}break;
