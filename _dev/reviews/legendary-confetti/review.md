@@ -12,11 +12,13 @@ La edición de Trump usa `donald-trump.webp`, no el personaje animado del dorado
 
 El logro oculto Magnate Dorado mantiene exactamente sus reglas actuales: diez victorias en los modos que ya computaba. No se revela antes de obtenerlo, no se traslada a 250 y no se modifica su umbral de lanzamiento por anticipado. El nuevo contador de maestría es independiente del antiguo `dtWins`.
 
-## Integración pendiente del sistema de logros
+## Desafíos y logros integrados en el mismo PR
 
-La ventana general de logros y las misiones diarias/semanales/mensuales siguen siendo un diseño acordado, no una funcionalidad implementada en esta rama. Esta entrega ofrece el módulo de progreso y el premio final para enlazarlos posteriormente. Mientras tanto, la ficha de cada legendario permite consultar el progreso, reclamar la edición a 250 y equiparla. Las reclamaciones y cambios de aspecto nuevos usan escritura atómica para informar de fallos de almacenamiento sin fingir una recompensa guardada.
+La entrega incluye 7 desafíos diarios, 10 semanales y 16 mensuales con cuatro dificultades, FS individuales y barras con sobres adicionales: diario completo, semanal completo, raro a mitad mensual y legendario al final. Calendario Europe/Madrid y recompensas ganadas conservadas tras reinicio. Reclamación atómica y única, sin modificar cooldowns de tienda.
 
-La cadena propuesta para estos logros debe terminar en 250; cualquier referencia anterior a un tramo final de 500 queda sustituida para las cadenas de líder que entregan esta edición. Las recompensas intermedias se integrarán con el sistema general de logros.
+Logros permanentes por secciones, cadenas con hitos reclamables y líderes hasta 250. Secretos completamente ausentes hasta desbloquearlos. Menú: Desafíos en HUD compacto, Logros debajo de buzón y distintivos pendientes. Guía ampliada y aviso breve para usuarios anteriores. Perfil validado en respaldos/nube y assets PWA incluidos. Gabinetes/sobres/zoom acordados ya están en la base y se conservan.
+
+Validación: 320 pruebas Node; calendario/DST, reinicio, archivo de premios ganados, doble reclamación, fallo de almacenamiento, ventanas por VM y tutorial aislado. Scripts compilados y diff revisado. La revisión visual en navegador real sigue pendiente antes de publicar. No se han publicado Pages ni tocado cuentas reales.
 
 ## Recursos de revisión
 

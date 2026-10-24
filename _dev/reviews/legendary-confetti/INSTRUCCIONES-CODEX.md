@@ -1,4 +1,4 @@
-# Entrega para Codex — Hemicycle: ediciones legendarias de confeti
+# Entrega para Codex — Hemicycle: desafíos, logros y ediciones legendarias
 
 ## Repositorio y material
 
@@ -28,7 +28,7 @@ Si la rama ya existe localmente, cambiar a ella y revisar el estado antes de act
 - Progreso en `profile.leaderMastery`: `wins`, `unlocked`, `active`. Validación y conservación en respaldos/nube. Escritura atómica al reclamar y equipar.
 - Trump normal con confeti es independiente del dorado animado. Las ediciones son mutuamente excluyentes al equiparlas. Conservar las bonificaciones ya existentes del dorado; no extenderlas al confeti normal.
 - **Magnate Dorado sigue oculto y con sus reglas actuales de 10 victorias.** El propietario prevé endurecerlo en el lanzamiento oficial; no modificarlo ahora ni inventar el nuevo umbral.
-- Actualmente el progreso y las acciones se muestran en la ficha del legendario. La ventana general de logros todavía no existe en este parche.
+- Progreso y acciones en la ficha del legendario y en la ventana general de Logros del menú.
 
 Código: `js/legendary-mastery.js`, `js/legendary-confetti.js`, `css/legendary-confetti.css`, integración en `index.html`, respaldo y caché. Recursos de desarrollo en `_dev`; conservar su exclusión de Pages.
 
@@ -52,9 +52,9 @@ Código: `js/legendary-mastery.js`, `js/legendary-confetti.js`, `css/legendary-c
 7. Comprobar actualización PWA y funcionamiento sin conexión con los recursos ya descargados. No afirmar que todos los retratos se precargan: mantienen su política de descarga bajo demanda.
 8. Preparar versión y novedades coherentes con el `main` vigente. Si todo pasa y existe autorización para publicar en ese chat, integrar y desplegar. Verificar versión pública, hashes y conservación del progreso. Informar de fallos o límites reales, sin presentar pruebas simuladas como pruebas de producción.
 
-## Diseño acordado para la siguiente fase: desafíos y logros generales
+## Desafíos y logros incluidos en esta misma entrega
 
-Este apartado documenta el contexto; **el sistema completo aún no está implementado** en el paquete de confeti.
+Implementados en `js/objectives.js`, `css/objectives.css` e `index.html`, con preservación en respaldos/nube y precarga PWA. Esta funcionalidad forma parte del mismo PR y de la próxima versión; no aplazarla a otra fase.
 
 - Desafíos: 7 diarios (3 fáciles, 2 normales, 1 difícil, 1 raro), 10 semanales (3/3/2/2), 16 mensuales (4/4/4/4). Objetivos variados, adecuados a la colección y alcanzables sin compras obligatorias ni azar bloqueante.
 - Una barra por periodo: cada misión completada aporta un segmento, independientemente de reclamar sus FS. Progreso simultáneo entre misiones y logros.
@@ -65,4 +65,10 @@ Este apartado documenta el contexto; **el sistema completo aún no está impleme
 - Menú: Desafíos junto al bloque compacto del contador de colección, alineado con la columna de accesos; Logros debajo del buzón. Distintivos de recompensas pendientes.
 - Adaptar tutorial del menú sin gastos, premios reales ni descubrimiento de secretos en las demostraciones. Miniguía de novedades para quienes ya completaron la guía; conservar la guía completa en Ayuda.
 
-No confundir esa fase de producto con la funcionalidad terminada del paquete actual. El módulo de maestría debe reutilizarse al conectar las cadenas de logros, sin reiniciar sus contadores ni recompensas.
+El módulo de maestría ya se reutiliza para las cadenas de líderes legendarios, sin reiniciar contadores ni recompensas. Las cadenas restantes de líderes entregan FS. Los objetivos de Elo y colección conservan el máximo registrado; los contadores nuevos de modos/doctrinas empiezan a registrar desde la actualización, sin inventar historial.
+
+La base ya incorpora gabinetes adaptables con retratos, bloque separado de sobres gratuitos, portadas cerradas, apertura y zoom limitado a los cromos del recibo. Conservar y revisar esas funciones junto a los cambios nuevos.
+
+Validación ampliada: 320 pruebas Node, incluidas ventanas mediante VM, calendario/DST, reinicios, recompensas ganadas archivadas, FS, reclamación única, fallo de guardado, tutorial sin premios y sobres adicionales sin cambiar cooldowns. No confundir estas pruebas con revisión visual real. Antes de publicar, revisar navegación de pestañas con ratón/teclado, foco, altura y desplazamiento de ambas ventanas en las resoluciones indicadas, guía completa y aviso breve para usuarios anteriores. Revisar balance de cantidades antes de fijar la versión pública.
+
+No hay funciones acordadas relegadas a una fase posterior en esta guía. La publicación requiere completar la revisión visual y preparar versión/novedades sobre main actualizado.
