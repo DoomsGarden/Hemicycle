@@ -560,12 +560,12 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/cabinet-presets.js?v=31.0.0.5"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
 <script src="js/player-backup.js?v=31.0.1.2"></script>
-<script src="js/ranked-seasons.js?v=30.2.61"></script>
+<script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.2-ui2"></script>
+<script src="js/changelog.js?v=31.0.1.2-season1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -1506,8 +1506,8 @@ function claimObjective(button){var position=rememberObjectives();if(position){p
 function mailButton(){var count=pendingMail().length;return '<button class="mail-button'+(count?' has-mail':'')+'" data-go="buzon" aria-label="Buzón'+(count?': '+count+' recompensas pendientes':': sin recompensas pendientes')+'" title="Buzón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>'+(count?'<span>'+count+'</span>':'')+'</button>';}
 function rankedPanel(){
  var current=syncRankedSeason();if(!current)return '';
- var d=D(),p=HemicycleRanked.position(d.elo),date=new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',dateStyle:'medium'}).format(new Date(current.period.end));
- return '<section class="panel ranked-panel"><h3>Clasificatoria · Temporada '+current.period.id+'</h3><p class="sub"><b>'+esc(p.label)+'</b> · '+d.elo+' Elo'+(p.next===null?' · División máxima':' · Próximo ascenso: '+p.next+' Elo')+'</p><p class="sub">Finaliza el '+esc(date)+'. Temporadas de 30 días naturales: al renovarse bajas un rango y conservas tu división, hasta el rango mínimo.</p><p class="sub">Un común por ascenso, un raro adicional cada cinco ascensos y un legendario al subir de rango. Los ascensos repetidos no duplican premios durante la misma temporada.</p><p class="sub">Las recompensas te esperan en el buzón del menú principal, también si cambia la temporada.</p><button class="btn ghost sm" data-go="buzon">Abrir buzón</button></section>';
+ var d=D(),p=HemicycleRanked.position(d.elo),date=current.period.frozen?null:new Intl.DateTimeFormat('es-ES',{timeZone:'Europe/Madrid',dateStyle:'medium'}).format(new Date(current.period.end));
+ return '<section class="panel ranked-panel"><h3>Clasificatoria · Temporada '+current.period.id+'</h3><p class="sub"><b>'+esc(p.label)+'</b> · '+d.elo+' Elo'+(p.next===null?' · División máxima':' · Próximo ascenso: '+p.next+' Elo')+'</p><p class="sub">'+(current.period.frozen?'La temporada 1 permanece abierta durante el prelanzamiento, sin descenso por calendario. La temporada 2 comenzará con el lanzamiento oficial en Google Play.':'Finaliza el '+esc(date)+'. Temporadas de 30 días naturales: al renovarse bajas un rango y conservas tu división, hasta el rango mínimo.')+'</p><p class="sub">Un común por ascenso, un raro adicional cada cinco ascensos y un legendario al subir de rango. Los ascensos repetidos no duplican premios durante la misma temporada.</p><p class="sub">Las recompensas te esperan en el buzón del menú principal, también si cambia la temporada.</p><button class="btn ghost sm" data-go="buzon">Abrir buzón</button></section>';
 }
 function battleTheme(){return D().battleTheme==='marble'?'marble':'classic';}
 function appearancePanel(){var theme=battleTheme();return '<fieldset class="profile-appearance"><legend>Tu bancada · Gratis en prelanzamiento</legend><button type="button" data-profile="theme" data-theme="classic" aria-pressed="'+(theme==='classic')+'"><i class="theme-swatch classic"></i>Clásico</button><button type="button" data-profile="theme" data-theme="marble" aria-pressed="'+(theme==='marble')+'"><i class="theme-swatch marble"></i>Mármol azul</button></fieldset>';}

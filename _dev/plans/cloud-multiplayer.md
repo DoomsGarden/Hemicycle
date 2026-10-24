@@ -104,3 +104,20 @@ inicio de cada turno propio, con máximo una acción entre las dos cartas.
 50 pruebas de prototipo y navegador en cuatro tamaños. Las salas prueban solo
 creación/entrada autenticada y persistencia SQL; todavía no se puede disputar una
 partida online. Ninguna migración alojada ni despliegue en Render se ha ejecutado.
+
+## Corrección vinculante del propietario: reinicio solo en el lanzamiento oficial
+
+24 de octubre de 2026: activar las primeras partidas online NO autoriza ningún
+reinicio. Mientras el catálogo mantenga los 120 oradores actuales más las nuevas
+acciones, todo el progreso se conserva. El reinicio de FS/Elo/rango/Liga queda
+reservado al lanzamiento oficial, asociado al catálogo de 1200–1500 cromos y a
+que la aplicación aparezca en Google Play. Hasta entonces no se aplica. Se siguen
+conservando cromos, estadísticas y logros. Esta instrucción sustituye todas las
+referencias anteriores a «reiniciar al estrenar multijugador» de este documento.
+El motor de partidas privadas no escribe en ningún progreso del juego real.
+
+La temporada 1 clasificatoria queda abierta sin fecha de cierre durante el
+prelanzamiento. Sin descensos por calendario ni reinicio de recompensas al
+transcurrir 30 días. T2 comienza en el lanzamiento oficial; a partir de ella
+se retoman temporadas de 30 días civiles de Madrid. No afecta al calendario
+diario/semanal/mensual de desafíos ni a las jornadas de Liga.

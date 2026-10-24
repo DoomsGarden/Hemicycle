@@ -12,7 +12,7 @@
       "title": "Nuevas metas para tu progreso",
       "items": [
         "Desafíos reúne 7 misiones diarias, 10 semanales y 16 mensuales. Cada misión completada llena un segmento; sus FS y los sobres de la barra se reclaman por separado.",
-        "Los periodos se renuevan según la hora de Madrid. Las recompensas conseguidas y pendientes se conservan; los sobres adicionales no cambian la espera de los gratuitos de la tienda.",
+        "La temporada 1 de Clasificatoria permanece abierta durante el prelanzamiento, sin descenso por calendario; la temporada 2 comenzará en el lanzamiento oficial en Google Play. Los periodos de desafíos se renuevan según la hora de Madrid. Las recompensas conseguidas y pendientes se conservan; los sobres adicionales no cambian la espera de los gratuitos de la tienda.",
         "Logros reúne cadenas permanentes por secciones y recompensas únicas. Los máximos de colección y Elo se conservan, y los nuevos contadores registran tus partidas desde esta actualización."
       ]
     },
