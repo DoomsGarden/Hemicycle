@@ -1,0 +1,38 @@
+'use strict';
+const test=require('node:test'),a=require('node:assert/strict'),R=require('../../_dev/online/actions.cjs');
+const member=(uid='a')=>({uid,hp:6,maxHp:10,ready:true,guard:false,buffs:[],votes:2});
+function state(id='replica'){return {status:'active',side:0,players:[0,1].map(i=>({turn:1,tdp:4,votes:i?20:10,hand:i?[]:[{uid:'action',id,action:true}],deck:[],rest:[],usedActions:[],field:[member(i?'rival':'own')]}))};}
+const t=(n,f)=>test(n,f),err=(f)=>a.throws(f);
+t('La mano se devuelve sin pérdidas ni duplicados',()=>{const pool=[1,2,3,4].map(uid=>({uid})),r=R.renew(pool.slice(0,2),pool.slice(2),()=>0);a.equal(r.hand.length,2);a.deepEqual([...r.hand,...r.deck].map(c=>c.uid).sort(),[1,2,3,4]);});
+t('Dos acciones nunca coinciden en la mano',()=>{const r=R.renew([],[{uid:1,action:true},{uid:2,action:true},{uid:3}],()=>.99);a.equal(r.hand.length,2);a.equal(r.hand.filter(c=>c.action).length,1);});
+t('Un mazo de solo acciones entrega una carta y conserva el resto',()=>{const r=R.renew([],[{uid:1,action:true},{uid:2,action:true}],()=>.99);a.equal(r.hand.length,1);a.equal(r.deck.length,1);});
+t('Mazo vacío no inventa cartas',()=>a.deepEqual(R.renew([],[]),{hand:[],deck:[]}));
+t('La misma instancia no puede estar en mano y mazo',()=>err(()=>R.renew([{uid:1}],[{uid:1}])));
+t('La baraja se mueve con el azar inyectado',()=>{a.notDeepEqual(R.renew([],[1,2,3,4].map(uid=>({uid})),()=>0),R.renew([],[1,2,3,4].map(uid=>({uid})),()=>.99));});
+t('Expulsión impide regresar en el siguiente turno propio',()=>{a.equal(R.recycle([{uid:1,availableTurn:3}],[],2).rest.length,1);});
+t('Al terminar el descanso se recicla curado una sola vez',()=>{const r=R.recycle([{uid:1,availableTurn:3,hp:0,maxHp:10}],[],3);a.equal(r.deck[0].hp,10);a.equal(r.rest.length,0);});
+const cabinet={orators:['a','b','c','d','e'],leader:'a',actions:['replica','receso']},owned=[...cabinet.orators,...cabinet.actions];
+t('Cinco oradores y dos acciones son válidos',()=>a.deepEqual(R.validateCabinet(cabinet,owned,cabinet.orators),cabinet));
+t('Un gabinete anterior sin acciones sigue siendo válido',()=>a.equal(R.validateCabinet({...cabinet,actions:[]},owned,cabinet.orators).actions.length,0));
+t('No se equipan acciones ajenas a la colección',()=>err(()=>R.validateCabinet(cabinet,cabinet.orators,cabinet.orators)));
+t('No se equipan tres acciones',()=>err(()=>R.validateCabinet({...cabinet,actions:[...cabinet.actions,'turno-de-palabra']},[...owned,'turno-de-palabra'],cabinet.orators)));
+t('No se repite un orador o una acción',()=>{err(()=>R.validateCabinet({...cabinet,orators:['a','a','b','c','d']},owned,cabinet.orators));err(()=>R.validateCabinet({...cabinet,actions:['replica','replica']},owned,cabinet.orators));});
+t('El líder debe pertenecer al gabinete',()=>err(()=>R.validateCabinet({...cabinet,leader:'z'},owned,cabinet.orators)));
+const slots=['comun','raro','especial','legendario','raro'].map((r,i)=>({id:'o'+i,r}));
+t('El extremo sin acción conserva las cinco cartas',()=>a.deepEqual(R.pack(slots,()=>.99),slots));
+t('La acción ocupa un único hueco de la misma rareza',()=>{let i=0;const values=[.1,.65,.1],p=R.pack(slots,()=>values[i++]);a.equal(p.length,5);a.equal(p.filter(c=>c.action).length,1);a.equal(p[3].r,'legendario');a.deepEqual(p.filter(c=>!c.action),slots.filter((_,i)=>i!==3));});
+t('Una acción no es portada de sobre',()=>a.equal(R.covers([{r:'raro',action:true},{id:'o',r:'raro'}],'raro')[0].id,'o'));
+t('Réplica consume TdP y sale de la mano sin modificar el original',()=>{const s=state(),next=R.apply(s,0,'replica','rival');a.equal(next.players[0].tdp,3);a.equal(next.players[1].field[0].hp,4);a.equal(next.players[0].hand.length,0);a.equal(s.players[0].tdp,4);});
+t('No se actúa fuera de turno ni después de finalizar',()=>{const s=state();err(()=>R.apply(s,1,'replica','own'));s.status='finished';err(()=>R.apply(s,0,'replica','rival'));});
+t('No se usa una acción sin tenerla ni sin TdP',()=>{const s=state();err(()=>R.apply(s,0,'receso','own'));s.players[0].tdp=0;err(()=>R.apply(s,0,'replica','rival'));});
+t('La acción vuelve al mazo sin ocupar la mesa; no permite otra acción en el mismo turno',()=>{let s=state();s=R.apply(s,0,'replica','rival');a.equal(s.players[0].deck[0].id,'replica');a.equal(s.players[0].field.length,1);s.players[0].hand=[{uid:'new',action:true,id:'receso'}];err(()=>R.apply(s,0,'receso','own'));s.players[0].turn++;a.equal(R.apply(s,0,'receso','own').players[0].field[0].hp,8);});
+t('El objetivo rival no puede sustituirse por uno propio',()=>err(()=>R.apply(state(),0,'replica','own')));
+t('El daño consume y respeta una defensa',()=>{const s=state();s.players[1].field[0].guard=true;const r=R.apply(s,0,'replica','rival');a.equal(r.players[1].field[0].hp,5);a.equal(r.players[1].field[0].guard,false);});
+t('El daño letal lleva al descanso y no a la mano',()=>{const s=state();s.players[1].field[0].hp=2;const r=R.apply(s,0,'replica','rival');a.equal(r.players[1].field.length,0);a.equal(r.players[1].rest[0].availableTurn,3);a.equal(r.players[1].hand.length,0);});
+t('La curación no supera el máximo ni consume cartas sin daño',()=>{const s=state('receso');s.players[0].field[0].hp=9;a.equal(R.apply(s,0,'receso','own').players[0].field[0].hp,10);s.players[0].field[0].hp=10;err(()=>R.apply(s,0,'receso','own'));});
+t('La pausa beneficia a ambos bandos',()=>{const r=R.apply(state('pausa-parlamentaria'),0,'pausa-parlamentaria');a.equal(r.players[0].field[0].hp,8);a.equal(r.players[1].field[0].hp,8);});
+t('El refuerzo temporal caduca en el siguiente turno propio',()=>{const r=R.apply(state('disciplina-de-grupo'),0,'disciplina-de-grupo');a.equal(r.players[0].field[0].buffs.length,1);a.equal(R.begin(r,0,()=>0).players[0].field[0].buffs.length,0);});
+function motion(){const s=state('mocion-de-censura');s.players[0].field=[member('a'),member('b'),member('c')];return s;}
+t('La moción exige desventaja y tres oradores sin actuar',()=>{let s=motion();s.players[0].votes=20;err(()=>R.apply(s,0,'mocion-de-censura'));s=motion();s.players[0].field[0].ready=false;err(()=>R.apply(s,0,'mocion-de-censura'));s=motion();s.players[0].field.pop();err(()=>R.apply(s,0,'mocion-de-censura'));});
+t('La moción agota a los propios; rival roba, puntúa y queda protegido',()=>{const s=motion();s.players[1].deck=[{uid:8},{uid:9}];const r=R.apply(s,0,'mocion-de-censura');a.equal(r.players[0].field.filter(c=>c.ready).length,0);a.equal(r.players[0].actionDiscard[0].id,'mocion-de-censura');a.equal(r.players[0].deck.length,0);const later=R.begin(r,0,()=>0);a.equal(later.players[0].hand.length,0);a.equal(later.players[0].actionDiscard.length,1);const n=R.begin(r,1,()=>0);a.equal(n.players[1].silenced,true);a.equal(n.players[1].hand.length,2);a.equal(n.players[1].votes,25);a.equal(n.players[1].silenceImmuneThrough,4);n.side=0;n.players[0].usedActions=[];n.players[0].hand=s.players[0].hand;n.players[0].tdp=4;n.players[0].field.forEach(c=>c.ready=true);err(()=>R.apply(n,0,'mocion-de-censura'));n.side=1;n.players[1].hand=[{uid:'x',action:true,id:'replica'}];err(()=>R.apply(n,1,'replica','a'));});
+t('Llegar a 100 votos gana incluso en un turno silenciado',()=>{const s=state();s.players[1].votes=98;s.players[1].pendingSilence=true;const r=R.begin(s,1);a.equal(r.status,'finished');a.equal(r.winner,1);});

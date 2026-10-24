@@ -1,0 +1,18 @@
+# Blueprint para un servicio de pruebas; revisar el plan y precio en Render antes de crear.
+services:
+  - type: web
+    name: hemicycle-online-test
+    runtime: node
+    plan: free
+    buildCommand: node --check _dev/online/server.cjs
+    startCommand: node _dev/online/server.cjs
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: SUPABASE_URL
+        sync: false
+      - key: SUPABASE_PUBLISHABLE_KEY
+        sync: false
+      - key: ALLOWED_ORIGINS
+        value: https://hemicycle.online,https://www.hemicycle.online,https://doomsgarden.github.io

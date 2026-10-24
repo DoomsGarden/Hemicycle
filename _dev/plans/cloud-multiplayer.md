@@ -63,3 +63,44 @@ GitHub Pages puede seguir alojando el cliente. El backend se despliega por separ
 ## Actualización acordada en v31.0.0.2
 
 El propietario decidió conservar FS, Elo y Liga durante el respaldo cloud del prelanzamiento y reservar su reinicio para el estreno multijugador. Esta decisión sustituye las referencias anteriores a un reinicio en la primera importación cloud. El respaldo actual es optativo, por cuenta, con revisiones y resolución explícita de conflictos; no convierte el estado local en resultados de juego autoritativos. La siguiente fase debe separar inventario/economía/combate del respaldo editable antes de habilitar interacciones reales entre jugadores. Detalles y pruebas en `_dev/releases/v31.0.0.2.md`.
+
+
+## Continuación acordada: 24 de octubre de 2026
+
+Para la jugabilidad online, la cuenta y el guardado del servidor serán obligatorios.
+El progreso competitivo, inventario y saldo se modificarán mediante operaciones
+validadas en el servidor, nunca aceptando un respaldo JSON del navegador como
+resultado de una partida, compra o recompensa. Hacer obligatorio el respaldo actual
+no lo convierte en un sistema resistente a la manipulación de datos.
+
+El respaldo del prelanzamiento y sus RPC actuales seguirán separados del futuro
+estado autoritativo. El acceso de invitado actual continúa disponible mientras se
+construye esta fase; no se activan reinicios ni migraciones automáticas con este
+ajuste. La importación del legado deberá ser única y transaccional, conservar lo
+acordado y establecer una frontera tras la cual restaurar un archivo local no
+pueda sustituir el inventario online. El servidor no puede demostrar por sí solo
+la legitimidad de los guardados locales anteriores.
+
+Primera entrega online: salas privadas entre dos cuentas, sin premios ni cambios
+competitivos, con reglas actuales y turnos de 90 segundos (sustituye las referencias
+anteriores a 60 segundos de este documento). Después: reconexión, autoridad sobre
+la economía, migración y lanzamiento competitivo. Alojamiento del servidor aún
+pendiente; Render es la propuesta, no un servicio ya desplegado.
+
+La ventana de nube muestra estado y fecha de actualización, sin el número técnico
+de revisión. Las revisiones se conservan en el protocolo y en los controles de
+conflicto para evitar sobrescrituras y duplicaciones.
+
+
+## Prototipo de acciones y salas privadas
+
+Preparación en `_dev/online/README.md`, rama `codex/online-actions-foundation`.
+El propietario confirma cinco oradores y dos acciones opcionales por gabinete.
+Las acciones se activan desde la mano con animación hacia la zona superior de
+la mesa: las reutilizables vuelven al mazo y las de una sola activación terminan
+en un descarte visible sombreado, separado del pasillo. Se renueva la mano al
+inicio de cada turno propio, con máximo una acción entre las dos cartas.
+
+50 pruebas de prototipo y navegador en cuatro tamaños. Las salas prueban solo
+creación/entrada autenticada y persistencia SQL; todavía no se puede disputar una
+partida online. Ninguna migración alojada ni despliegue en Render se ha ejecutado.
