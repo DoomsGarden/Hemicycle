@@ -16,7 +16,7 @@ paths += [path + '?v=31.0.1.4' for path in [
     'js/menu-tutorial.js', 'js/battle-tutorial.js', 'css/online.css',
     'css/tutorial.css', 'js/cloud-ui.js', 'js/changelog.js',
 ]]
-report = {'version': 'v31.0.1.4', 'build': 'online-cabinets', 'runtimeCommit': 'TO_BE_RECORDED',
+report = {'version': 'v31.0.1.4', 'build': 'online-cabinets', 'runtimeCommit': 'bcb6e81',
           'verifiedAt': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'files': []}
 for path in paths:
     if path.split('?')[0] in ['js/online-ui.js','js/online-combat-ui.js','css/cabinets.css','js/changelog.js']:

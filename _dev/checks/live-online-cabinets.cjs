@@ -18,7 +18,7 @@ const report={version:'v31.0.1.4',build:'online-cabinets',testBrowserProxyCertif
   assert.match(await page.locator('#appbar').innerText(),/v31\.0\.1\.4/);
   assert.equal(await page.evaluate(()=>HemicycleActions.cards.length),12);
   await page.locator('#tabbar [data-go=coleccion]').click();await page.locator('[data-act=collection-type]').click();
-  assert.equal(await page.locator('#gridBox .action-card').count(),2);assert.equal(await page.locator('.cabinet-action-empty').count(),2);
+  assert.equal(await page.locator('#gridBox .action-card').count(),2);assert.equal(await page.locator('.cabinet-action-member').count(),2);
   await page.locator('[data-card=replica]').click();assert.match(await page.locator('.action-rules').innerText(),/1 TdP/);
   await page.evaluate(()=>new Promise((resolve,reject)=>{const image=new Image();image.onload=resolve;image.onerror=reject;image.src='assets/actions/art-atlas.png';}));
   console.log('Published action collection, rules and atlas loaded');await page.screenshot({path:'_dev/reports/v31.0.1.4-cabinets1/live-action-detail.png'});
