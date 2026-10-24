@@ -4,6 +4,24 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version": "v31.0.1.3",
+  "date": "2026-10-24",
+  "title": "Primeras partidas online de prueba",
+  "sections": [
+    {"title":"Juega con otros probadores","items":[
+      "Inicio incorpora el acceso a jugadores y partidas online de prueba con tu cuenta del juego. El listado optativo muestra conectados y desconectados por nick o alias provisional.",
+      "Puedes invitar a otro jugador y aceptar invitaciones. Al aceptar se abre la preparación de la partida, sin copiar códigos; las salas por código también siguen disponibles.",
+      "El online utiliza por ahora una colección común de prueba, cinco oradores y hasta dos acciones. Normal y Rápida admiten invitaciones y búsqueda de rival; Clasificatoria utiliza una cola por Elo que amplía el margen con la espera. Normal y Clasificatoria duran 90 segundos por turno; Rápida, 60. Se gana a 100 votos. Normal y Rápida son amistosas: no cambian tu progreso.",
+      "Clasificatoria requiere guardar y sincronizar el progreso en la nube. Conserva el Elo existente al vincularlo y actualiza Elo, victorias, derrotas y recompensas de ascenso en el servidor. No reinicia tu cuenta ni cambia los FS o la colección.",
+      "Las acciones se activan desde la mano. Las reutilizables regresan al mazo y las de un solo uso quedan en un descarte atenuado. Puedes recuperar una partida al reconectar; el reloj sigue avanzando."
+    ]},
+    {"title":"Temporada de prelanzamiento","items":[
+      "La temporada 1 de Clasificatoria permanece abierta, sin descenso por calendario. Se conservan los ascensos y las recompensas ya reclamadas o pendientes.",
+      "La temporada 2 comenzará con el lanzamiento oficial en Google Play. A partir de entonces volverán las temporadas de 30 días naturales. Los desafíos diarios, semanales y mensuales mantienen sus propios periodos."
+    ]}
+  ]
+},
+{
   "version": "v31.0.1.2",
   "date": "2026-10-24",
   "title": "Desafíos, logros y ediciones de líder",
@@ -12,7 +30,7 @@
       "title": "Nuevas metas para tu progreso",
       "items": [
         "Desafíos reúne 7 misiones diarias, 10 semanales y 16 mensuales. Cada misión completada llena un segmento; sus FS y los sobres de la barra se reclaman por separado.",
-        "La temporada 1 de Clasificatoria permanece abierta durante el prelanzamiento, sin descenso por calendario; la temporada 2 comenzará en el lanzamiento oficial en Google Play. Los periodos de desafíos se renuevan según la hora de Madrid. Las recompensas conseguidas y pendientes se conservan; los sobres adicionales no cambian la espera de los gratuitos de la tienda.",
+        "Los periodos se renuevan según la hora de Madrid. Las recompensas conseguidas y pendientes se conservan; los sobres adicionales no cambian la espera de los gratuitos de la tienda.",
         "Logros reúne cadenas permanentes por secciones y recompensas únicas. Los máximos de colección y Elo se conservan, y los nuevos contadores registran tus partidas desde esta actualización."
       ]
     },

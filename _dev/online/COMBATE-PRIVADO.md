@@ -106,3 +106,57 @@ salas es el lugar de esta prueba. Antes de conectar al juego real se necesitan
 inventario de servidor, migración única del progreso y su política de aceptación,
 pruebas alojadas de concurrencia, observabilidad y alojamiento sin suspensión
 para partidas competitivas. El plan gratuito puede tardar al primer acceso.
+
+## Ampliación final de v31.0.1.3: Inicio, tres modos y Elo único
+
+Esta sección sustituye los estados anteriores de «solo panel» y «sin Elo» para
+Clasificatoria. El propietario pidió Normal, Rápida y Clasificatoria y eligió
+60 segundos para Rápida; las otras mantienen 90 y todas ganan a 100 votos.
+
+Inicio incorpora un botón Jugadores que abre una ventana dentro del juego.
+Reutiliza la sesión de cuenta existente: no vuelve a identificar al jugador en
+Render. Invitar/aceptar abre automáticamente la preparación en ambos clientes.
+Normal y Rápida: invitaciones o cola, partidas amistosas sin modificar progreso.
+Clasificatoria: solo cola; no se permite elegir rival mediante invitación/código.
+
+Nuevo SQL adicional: `20261024_matchmaking.sql`, después de los tres SQL de
+salas, jugadores y combates ya confirmados por el propietario. Crea cola,
+clasificación autoritativa y recibos de resultados; conserva los datos existentes.
+También actualiza las funciones de combate y protege el escritor de respaldos.
+No ejecutar después copias antiguas de esas funciones. Para reinstalar, aplicar
+los SQL en orden; el cloud_saves.sql actualizado conserva su guardia opcional.
+
+Elo único: se descartó la propuesta inicial de un contador experimental separado.
+Antes de entrar a Clasificatoria, Nube debe estar activada y sincronizada. El
+servidor toma una vez el Elo del respaldo de ESA cuenta (no un número enviado
+por el navegador). A partir de entonces el registro de clasificación es la fuente
+canónica; los resultados actualizan Elo y V/D en la misma transacción que la
+partida, con recibo único. El respaldo refleja ese mismo Elo con nueva revisión.
+Las copias editables no pueden volver a sustituirlo después de vincularlo.
+El cliente recupera la revisión nueva al finalizar y conserva FS, album y logros.
+Los ascensos generan las recompensas habituales de la temporada 1, sin duplicar
+las anteriores. El cliente autenticado deja de iniciar Clasificatoria contra IA.
+
+Límite de procedencia: no es posible demostrar retroactivamente que un respaldo
+local histórico era legítimo. Esta vinculación conserva el valor existente;
+no certifica ese pasado. La autoridad nueva evita reemplazarlo después, no
+convierte toda la economía local en autoritativa. El inventario/FS siguen siendo
+respaldo del prelanzamiento y requieren su fase de servidor independiente.
+
+Cola: una entrada por cuenta, tres modos separados; sin filtros por colección,
+nivel o rango. Clasificatoria prioriza distancia de Elo y espera. Margen de cada
+jugador: ±250 al inicio, ±500 a los 30 s, ±1000 a los 60 s, ±2500 a los 90 s y
+sin límite desde 120 s. Deben admitir la diferencia los márgenes de AMBOS; no se
+empareja a un recién llegado fuera de su margen porque otro lleve mucho tiempo.
+Si solo hay una cuenta no se simula un rival. El latido vence a los 90 s para
+candidatos ausentes. Cancelar libera la búsqueda; una preparación tiene dos
+minutos para confirmar. Cancelarla invalida la sala de ambos. Una partida activa
+se abandona desde el combate; su resultado y plazo no cambian por cerrar el menú.
+
+Verificación adicional: 15 casos SQL de modos, cola, ampliación, cancelación,
+importación sin reset, protección del Elo y resultado único. Dos navegadores
+recorren el flujo nativo de Inicio con invitación; otro recorrido activa Nube,
+vincula 5588 Elo, empareja, abandona y verifica 5570/5598 en la nube y ambos
+perfiles locales, conservando FS, álbum y temporada 1. SDK real con transporte
+OAuth simulado, PostgreSQL real local en PGlite. Evidencias native-browser.json y
+ranked-browser.json; no son prueba contra las cuentas alojadas de los probadores.

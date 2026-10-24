@@ -2,7 +2,7 @@
 const crypto=require('node:crypto'),A=require('./actions.cjs'),{cards}=require('../market/catalog.cjs');
 const catalog=Object.fromEntries(cards.map(c=>[c.id,c])),beats={verborrea:'guardia',guardia:'aforado',aforado:'viperina',viperina:'foco',foco:'giro',giro:'verborrea'};
 const random=()=>crypto.randomInt(0,0x100000000)/0x100000000,check=(v,m)=>{if(!v)throw Error(m);};
-function initial(){return {schema:1,status:'preparing',players:[null,null],side:null,first:null,deadline:null,winner:null,events:[]};}
+function initial(mode='normal'){return {schema:1,mode,status:'preparing',players:[null,null],side:null,first:null,deadline:null,winner:null,events:[]};}
 function log(s,text){s.events.push(text);s.events=s.events.slice(-40);}
 function doctrine(s,i){const p=s.players[i],l=p.field.find(c=>c.id===p.leader);return l?l.doctrine:null;}
 function active(s,i){const own=doctrine(s,i),other=doctrine(s,1-i);return own&&beats[other]!==own?own:null;}
@@ -24,7 +24,7 @@ function begin(s,i,now,rng){s.side=i;const p=s.players[i];p.turn++;p.silenced=!!
  if(p.turn===1){p.deck=recycled.deck;}else{const next=A.renew(p.hand,recycled.deck,rng);p.hand=next.hand;p.deck=next.deck;}
  p.tdpMax=Math.min(6,p.tdpMax+1);const d=active(s,i);p.tdp=Math.min(8,p.tdpMax+(d==='verborrea'?1+p.refund:0));p.refund=0;
  if(d==='foco'){const l=p.field.find(c=>c.id===p.leader);l.hp=Math.min(l.maxHp,l.hp+2);}
- const gain=3+p.field.reduce((n,c)=>n+c.votes,0);p.votes+=gain;s.deadline=now+90000;log(s,(i===0?'Anfitrión':'Invitado')+': turno '+p.turn+', +'+gain+' votos.');if(victory(s))return;
+ const gain=3+p.field.reduce((n,c)=>n+c.votes,0);p.votes+=gain;s.deadline=now+(s.mode==='rapida'?60000:90000);log(s,(i===0?'Anfitrión':'Invitado')+': turno '+p.turn+', +'+gain+' votos.');if(victory(s))return;
  if(p.silenced){log(s,'Moción de censura: turno sin acciones; conserva robo y votos.');end(s,i,now,rng);}
 }
 function end(s,i,now,rng){if(active(s,i)==='guardia')s.players[i].field.forEach(c=>c.buff=Math.min(3,c.buff+1));begin(s,1-i,now,rng);}
@@ -58,6 +58,7 @@ function apply(original,i,command,now=Date.now(),rng=random){check(i===0||i===1,
 }
 function project(state,side,revision,now){const s=structuredClone(state);const foe=s.players[1-side];if(foe){foe.handCount=foe.hand.length;foe.deckCount=foe.deck.length;delete foe.hand;delete foe.deck;delete foe.usedActions;delete foe.saved;}
  // Los mazos y su orden nunca se envían, tampoco al dueño.
+ for(let i=0;i<2;i++)if(s.players[i])s.players[i].field.forEach(c=>{c.currentZ=power(state,i,c);});
  const own=s.players[side];if(own){own.deckCount=own.deck.length;delete own.deck;own.field.forEach(c=>{c.currentZ=power(state,side,c);c.canStrong=strong(own,c);c.charge=c.enteredTurn===null?0:1+(own.turn-c.enteredTurn)%3;});}
  return {...s,you:side,revision,serverNow:now};
 }

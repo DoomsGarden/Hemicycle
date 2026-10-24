@@ -1,0 +1,23 @@
+✔ Normal empareja sin exigir respaldo o rating y guarda su modo (1424.38607ms)
+✔ No mezcla colas Normal, Rápida y Clasificatoria (862.188381ms)
+✔ Clasificatoria conserva el Elo previo en lugar de crear un contador de prueba (819.721814ms)
+✔ No vincula Clasificatoria sin respaldo de cuenta (774.006219ms)
+✔ No empareja una gran diferencia al comenzar la búsqueda (746.563171ms)
+✔ La ampliación respeta también la espera y el margen del rival nuevo (772.764817ms)
+✔ Después de dos minutos de ambos no existe un bloqueo por nivel (766.327826ms)
+✔ Entre candidatos válidos prioriza el Elo más próximo (762.537665ms)
+✔ Repetir la búsqueda mantiene la espera y no duplica salas (766.619325ms)
+✔ Cancelar una búsqueda retira al jugador de los candidatos (759.18806ms)
+✔ Cancelar una preparación invalida la sala y libera ambas búsquedas (779.429533ms)
+✔ El resultado actualiza un solo Elo, estadísticas y recompensa de ascenso una sola vez (785.520962ms)
+✔ Una copia local no puede sustituir el Elo después de vincularlo (803.368641ms)
+✔ Un resultado Normal no modifica Elo ni estadísticas de cuenta (746.06007ms)
+✔ Rápida dura 60 segundos y las otras modalidades mantienen 90 (2.81577ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 15
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11792.471326

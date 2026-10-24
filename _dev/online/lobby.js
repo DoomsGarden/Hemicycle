@@ -1,7 +1,7 @@
 'use strict';
 (async()=>{
  const $=id=>document.getElementById(id);let client,session=null,room=null,busy=false,poll=null,operation=null,generation=0,directory=null,lastHeartbeat=0,presencePending=null;
- const combat=HemicycleTestCombat.create({account:()=>session});$('combat-open').onclick=()=>combat.open(room.id);$('combat-retry').onclick=()=>combat.retry();$('combat-close').onclick=()=>combat.close();
+ const combat=HemicycleTestCombat.create({base:'',account:()=>session});$('combat-open').onclick=()=>combat.open(room.id);$('combat-retry').onclick=()=>combat.retry();$('combat-close').onclick=()=>combat.close();
  const requestKey='hemicycle-test-room-operation',savedRoomKey='hemicycle-test-room';
  const message=text=>{$('message').textContent=text;};
  function stored(key,value){try{if(value===undefined)return JSON.parse(sessionStorage.getItem(key));if(value===null)sessionStorage.removeItem(key);else sessionStorage.setItem(key,JSON.stringify(value));}catch{}return null;}

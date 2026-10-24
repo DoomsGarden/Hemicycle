@@ -540,11 +540,12 @@ tr.des td{background:rgba(212,59,59,.1)}
  <div id="toastRoot"></div>
 </div>
 
-<div id="profileRoot"></div><div id="cloudRoot"></div><div id="audioOptionsRoot"></div>
+<div id="profileRoot"></div><div id="cloudRoot"></div><div id="audioOptionsRoot"></div><div id="onlineRoot"></div>
 <script src="js/supabase-sdk.js?v=2.118.0"></script>
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.0.4"></script>
 <script src="js/cloud-save.js?v=31.0.0.2"></script>
+<link rel="stylesheet" href="css/online.css?v=31.0.1.3"><script src="js/online-combat-ui.js?v=31.0.1.3"></script><script src="js/online-ui.js?v=31.0.1.3"></script>
 <script src="js/cloud-ui.js?v=31.0.1.2-cloud1"></script>
 <script src="js/game-audio.js?v=31.0.0.5-options1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
@@ -577,7 +578,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.1.2';
+var VERSION='v31.0.1.3';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1536,7 +1537,7 @@ function importPlayerBackup(file){
 }
 
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
-var CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
+var ONLINE=null,CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
 var CABINET_EDIT=null,CABINET_RETURN=null;
 var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu',MENU_FEATURED=[];
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0,builderGrid:0};
@@ -1779,7 +1780,7 @@ SCREENS.menu=function(){
  +'<div class="hero-scene" aria-hidden="true"><div class="hero-halo"></div><div class="hero-fan">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'
  +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'</div>':'')
- +'<span class="play-mode-caption">'+selected[2]+'</span><div class="play-split"><button class="play-main" data-act="play">Jugar</button><button class="play-toggle" data-act="play-menu" aria-label="Elegir modo de juego" aria-haspopup="menu" aria-expanded="'+PLAY_OPEN+'"'+(PLAY_OPEN?' aria-controls="playOptions"':'')+'>'+uiIcon('chevron')+'</button></div></div></div></section>';
+ +'<span class="play-mode-caption">'+selected[2]+'</span><div class="play-split"><button class="play-main" data-act="play">Jugar</button><button class="play-toggle" data-act="play-menu" aria-label="Elegir modo de juego" aria-haspopup="menu" aria-expanded="'+PLAY_OPEN+'"'+(PLAY_OPEN?' aria-controls="playOptions"':'')+'>'+uiIcon('chevron')+'</button></div><button class="mini online-entry" data-act="online" aria-label="Jugadores y partidas online de prueba">Jugadores · Online de prueba</button></div></div></section>';
 };
 SCREENS.buzon=function(){
  var messages=pendingMail(),names={comun:'Sobre común',raro:'Sobre raro',legendario:'Sobre legendario'};
@@ -2075,6 +2076,7 @@ function buildEnemyTeam(mode, elo, div){
 }
 
 function newBattle(mode,rival,isTutorial){
+ if(!isTutorial&&mode==='ranked'&&typeof PLAYER_PROFILE!=='undefined'&&PLAYER_PROFILE&&PLAYER_PROFILE.account()&&ONLINE){go('menu');ONLINE.open('ranked');return;}
  if(TUTORIAL&&!isTutorial&&!TUTORIAL.seen()){TUTORIAL.start();return;}
  clearAI();clearBattleClock();syncRankedSeason();
  var d=D(),team=isTutorial?['celia-villalobos','ana-pastor','alvaro-nadal','dolors-montserrat','carlos-floriano']:BUILD.ids.slice(0,5),ldrId=isTutorial?team[0]:(BUILD.leader||team[0]);
@@ -2124,7 +2126,7 @@ function checkBattleEnd(){
  if(!G||G.over)return true;
  if(G.votes.p>=100){finish('p');return true;}
  if(G.votes.e>=100){finish('e');return true;}
- if(!G.tutorial&&G.turnDeadline&&Date.now()>=G.turnDeadline){G.inactivity=G.side;log((G.side==='p'?'Has abandonado':'El rival ha abandonado')+' por inactividad: se agotaron los 90 segundos.','hi');finish(G.side==='p'?'e':'p',G.side==='p');return true;}
+ if(!G.tutorial&&G.turnDeadline&&Date.now()>=G.turnDeadline){G.inactivity=G.side;log((G.side==='p'?'Has abandonado':'El rival ha abandonado')+' por inactividad: se agotaron los '+(G.quick?60:90)+' segundos.','hi');finish(G.side==='p'?'e':'p',G.side==='p');return true;}
  return false;
 }
 
@@ -2199,7 +2201,7 @@ function startTurn(s){
  G.n++;G.side=s;G.sel=null;G.move=null;G.support=false;
  if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;
  G.field[s].forEach(function(c){if(c.guard){c.guard=false;log(c.n+': su defensa caduca al comenzar su turno.');}});
- G.turnDeadline=G.tutorial?null:Date.now()+90000;
+ G.turnDeadline=G.tutorial?null:Date.now()+(G.quick?60000:90000);
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
  var doctrine=activeDoc(s);
  var reserved=G.refund[s];
@@ -2396,7 +2398,7 @@ function finish(who, abandoned){
   fs=25;
   msg='Empate técnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
  }
- if(G.inactivity)msg=(G.inactivity==='p'?'Has abandonado la partida por inactividad al agotarse los 90 segundos. ':'El rival ha abandonado la partida por inactividad. ')+msg;
+ if(G.inactivity)msg=(G.inactivity==='p'?'Has abandonado la partida por inactividad al agotarse los '+(G.quick?60:90)+' segundos. ':'El rival ha abandonado la partida por inactividad. ')+msg;
  d.fs+=fs;
  d.objectives=HemicycleObjectives.record(d,{win:who==='p',mode:G.quick?'rapida':mode,votes:G.votes.p,enemyVotes:G.votes.e,leader:G.leader&&G.leader.p&&G.leader.p.k,doctrine:G.leader&&G.leader.p&&BYID[G.leader.p.k]&&BYID[G.leader.p.k].pa});
  d.objectives=HemicycleObjectives.snapshot(d,CARDS);
@@ -2590,7 +2592,7 @@ SCREENS.battle=function(){
  +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
  +'<div class="battle-hud"><div class="vbars" aria-label="Marcadores de votos: rojo rival, azul jugador">'
  +'<div class="vbar foe" aria-label="Votos del rival: '+G.votes.e+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'<small>/100</small></b></div>'
- +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':'90 segundos por turno')+'">90</span></div>'
+ +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':(G.quick?'60':'90')+' segundos por turno')+'">'+(G.quick?60:90)+'</span></div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
  +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
  +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small></div></div>'
@@ -2664,7 +2666,7 @@ SCREENS.liga=function(){
 SCREENS.ayuda=function(){
  var html='<div class="help-heading"><span class="eyebrow">A TU RITMO</span><h2>Ayuda</h2><p class="sub">Abre el tema que quieras consultar o practica con las guías.</p></div><div class="inner-scroll help-topics">'
  +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button></div>'
- +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: cada turno dispone de 90 segundos para realizar sus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
+ +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: Normal y Clasificatoria disponen de 90 segundos por turno; Rápida, de 60. Durante ese tiempo puedes realizar tus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador.</p></div>'
  +'<div class="panel"><h3>Tu gabinete y su líder</h3><p class="sub">Desde Colección puedes guardar cinco gabinetes favoritos y elegir su líder. Antes del combate seleccionas uno de ellos; sus integrantes solo se editan en Colección. Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y un máximo de dos cartas en la mano; las demás esperan en el mazo. Al comenzar tu turno robas una carta si tienes espacio. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
  +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte está disponible solo en el tercer turno propio del cromo en mesa y después cada tres turnos: 3, 6, 9… Si lo dejas pasar, la oportunidad caduca. Cuesta 1 de Aguante y requiere al menos 2 para ejecutarlo. El ciclo es individual y se reinicia al salir y volver a entrar.</p><p class="sub">La tercera frase cambia el contenido de esa misma ventana para escoger <b>Defensa</b> o <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; si no recibe golpes, caduca al comenzar tu siguiente turno. No se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. Tras curarse, ese cromo debe dejar pasar un turno propio completo antes de volver a curarse; puede atacar o defender durante ese descanso. Esta restricción no afecta a la curación automática de Foco. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
@@ -2851,6 +2853,7 @@ document.addEventListener('click',function(ev){
   }
   case 'cabinet-manage':if(SCREEN==='builder'){CABINET_RETURN=Object.assign({},SO);var state=cabinetState();CABINET_EDIT=state.selected;loadSelectedCabinet();go('coleccion');}break;
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
+  case 'online':if(ONLINE)ONLINE.open();break;
   case 'play-menu':
    PLAY_OPEN=!PLAY_OPEN;paint();
    var focus=document.querySelector(PLAY_OPEN?'.play-option.on':'[data-act="play-menu"]');if(focus)focus.focus();
@@ -3046,7 +3049,8 @@ function firstEntry(){
 }
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();var initial=D(),initialGoals=HemicycleObjectives.snapshot(Object.assign({},initial,{objectiveCatalog:CARDS}),CARDS);if(JSON.stringify(initial.objectives)!==JSON.stringify(initialGoals)){initial.objectives=initialGoals;var initialSave={};initialSave[LS]=initial;atomicLocal(initialSave);}
- PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(){if(!CLOUD_SAVE)throw Error('Activa primero el guardado en la nube.');await CLOUD_SAVE.save();await CLOUD_SAVE.refresh();if(CLOUD_SAVE.state().phase!=='synced')throw Error('Sincroniza primero tu guardado desde Nube para conservar tu Elo.');},reconcileRanked:async function(){if(!CLOUD_SAVE)return;await CLOUD_SAVE.refresh();var cloud=CLOUD_SAVE.state();if(cloud.remote&&cloud.phase!=='synced')await CLOUD_SAVE.restore(cloud.remote.revision);},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
   CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
    atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra));MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');

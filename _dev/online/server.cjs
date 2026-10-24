@@ -15,7 +15,7 @@ function createServer(config={}){
   const reply=(status,value)=>{res.writeHead(status);res.end(JSON.stringify(value));};
   if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',configured,combatEnabled:!!secret});
   if(req.method==='GET'&&pathname==='/rooms-test'){res.writeHead(308,{Location:'/rooms-test/'+new URL(req.url,'http://localhost').search});res.end();return;}
-  const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/combat.js':['combat-ui.js','text/javascript; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
+  const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/combat.js':['../../js/online-combat-ui.js','text/javascript; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
   if(req.method==='GET'&&testFiles[pathname]){const [file,type]=testFiles[pathname];res.setHeader('Content-Type',type);if(type.startsWith('text/html'))res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,file)));return;}
   const portrait=pathname.match(/^\/rooms-test\/portraits\/([a-z0-9-]+)\.webp$/);
   if(req.method==='GET'&&portrait&&require('./combat.cjs').catalog[portrait[1]]){res.setHeader('Content-Type','image/webp');res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,'../../cards',portrait[1]+'.webp')));return;}
@@ -39,11 +39,14 @@ function createServer(config={}){
     try{return reply(200,await combat(auth,combatPath[1],req.method==='POST'?body.command:null,req.method==='POST'?body.operationId:null));}catch(e){return reply(e.status||409,{error:e.message});}
    }
    let method,args;
-   if(req.method==='POST'&&pathname==='/rooms'){if(!uuid.test(body.operationId||''))return reply(400,{error:'Operación no válida.'});method='hemicycle_room_create';args={p_request_id:body.operationId};}
+   if(req.method==='POST'&&pathname==='/queue'){if(!['normal','rapida','ranked'].includes(body.mode))return reply(400,{error:'Modo no válido.'});method='hemicycle_test_matchmake';args={p_mode:body.mode};}
+   else if(req.method==='POST'&&pathname==='/queue/cancel'){method='hemicycle_test_queue_cancel';args={};}
+   else
+   if(req.method==='POST'&&pathname==='/rooms'){if(!uuid.test(body.operationId||''))return reply(400,{error:'Operación no válida.'});if(body.mode){if(!['normal','rapida'].includes(body.mode))return reply(400,{error:'Clasificatoria requiere cola.'});method='hemicycle_test_room_mode';args={p_request_id:body.operationId,p_mode:body.mode,p_player_id:null};}else{method='hemicycle_room_create';args={p_request_id:body.operationId};}}
    else if(req.method==='POST'&&pathname==='/rooms/join'){if(typeof body.code!=='string'||!(/^[0-9a-f]{12}$/i).test(body.code))return reply(400,{error:'Código no válido.'});method='hemicycle_room_join';args={p_code:body.code.toUpperCase()};}
    else if(req.method==='GET'&&pathname==='/players'){method='hemicycle_test_directory';args={};}
    else if(req.method==='POST'&&pathname==='/players/presence'){if(typeof body.visible!=='boolean'||typeof body.online!=='boolean')return reply(400,{error:'Estado no válido.'});method='hemicycle_test_presence';args={p_visible:body.visible,p_online:body.online};}
-   else if(req.method==='POST'&&pathname==='/rooms/invite'){if(!uuid.test(body.playerId||'')||!uuid.test(body.operationId||''))return reply(400,{error:'Invitación no válida.'});method='hemicycle_test_invite';args={p_player_id:body.playerId,p_request_id:body.operationId};}
+   else if(req.method==='POST'&&pathname==='/rooms/invite'){if(!uuid.test(body.playerId||'')||!uuid.test(body.operationId||''))return reply(400,{error:'Invitación no válida.'});if(body.mode){if(!['normal','rapida'].includes(body.mode))return reply(400,{error:'Clasificatoria requiere cola.'});method='hemicycle_test_room_mode';args={p_request_id:body.operationId,p_mode:body.mode,p_player_id:body.playerId};}else{method='hemicycle_test_invite';args={p_player_id:body.playerId,p_request_id:body.operationId};}}
    else if(req.method==='POST'&&pathname==='/rooms/accept'){if(!uuid.test(body.roomId||''))return reply(400,{error:'Invitación no válida.'});method='hemicycle_test_accept';args={p_room_id:body.roomId};}
    else if(req.method==='GET'&&pathname.startsWith('/rooms/')&&uuid.test(pathname.slice(7))){method='hemicycle_room_view';args={p_id:pathname.slice(7)};}
    else return reply(404,{error:'Ruta no disponible.'});

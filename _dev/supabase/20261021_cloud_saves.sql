@@ -31,7 +31,7 @@ end $$;
 
 create or replace function public.hemicycle_put_cloud_save(p_payload jsonb,p_expected_revision bigint,p_operation_id uuid)
 returns jsonb language plpgsql security definer set search_path='' as $$
-declare actor uuid:=auth.uid(); p public.hemicycle_cloud_saves; origin text; k text; n numeric;
+declare actor uuid:=auth.uid(); p public.hemicycle_cloud_saves; origin text; k text; n numeric; server_elo bigint;
 begin
  if actor is null then raise exception 'Debes iniciar sesión.' using errcode='28000'; end if;
  if p_expected_revision is null or p_expected_revision<0 or p_operation_id is null then raise exception 'Solicitud de guardado no válida.' using errcode='22023'; end if;
@@ -61,6 +61,10 @@ begin
   return jsonb_build_object('status','saved','save',public.hemicycle_get_cloud_save());
  end if;
  if p.revision<>p_expected_revision then return jsonb_build_object('status','conflict','save',public.hemicycle_get_cloud_save()); end if;
+ if to_regclass('public.hemicycle_online_rankings') is not null then
+  execute 'select elo from public.hemicycle_online_rankings where user_id=$1' into server_elo using actor;
+  if server_elo is not null and server_elo<>(p_payload#>>'{profile,elo}')::bigint then raise exception 'El Elo está vinculado al servidor. Recupera primero el progreso de tu cuenta.' using errcode='22023';end if;
+ end if;
  if p.source_id is not null and p.source_id<>origin then raise exception 'El ID de esta copia no coincide con el vinculado a la cuenta.' using errcode='22023'; end if;
  begin
   update public.hemicycle_cloud_saves set source_id=origin,payload=p_payload,revision=p.revision+1,last_operation_id=p_operation_id,updated_at=now() where user_id=actor;
