@@ -1,7 +1,14 @@
-# Acciones y primeras salas online — propuesta comprobable
+# Acciones y salas online
 
-Estado: prototipo de desarrollo, 24 de octubre de 2026. No se activa en Pages,
-no entrega cartas a cuentas reales y no ejecuta migraciones automáticamente.
+Actualización de v31.0.1.3: las doce acciones se integran en sobres, colección,
+gabinetes y combate local, con ilustraciones y tutoriales. El combate online
+mantiene un catálogo común de pruebas y utiliza un motor autoritativo.
+Normal y Rápida conservan el progreso; Clasificatoria enlaza el Elo existente.
+La migración de inventario se ejecuta manualmente en Supabase. Consulta
+[la ampliación verificada](../releases/v31.0.1.3-actions1.md).
+
+A continuación se conserva el planteamiento inicial como referencia histórica.
+Sus apartados pendientes quedan sustituidos por el estado de la ampliación.
 Cinco oradores y dos acciones opcionales, confirmado por el propietario.
 
 ## Reglas propuestas

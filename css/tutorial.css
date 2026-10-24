@@ -11,3 +11,5 @@
 
 .tutorial-exit{display:block;margin-top:9px;padding:6px 9px;min-height:30px;font-size:10px;color:#e0c996}
 .screen[data-menu-tutorial=true] .content:not(.scroll-ok) .view-body{overflow:auto;overscroll-behavior:contain}
+
+#menuTutorialRoot{z-index:160}

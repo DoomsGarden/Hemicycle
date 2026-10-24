@@ -2,7 +2,7 @@
 const crypto=require('node:crypto'),A=require('./actions.cjs'),{cards}=require('../market/catalog.cjs');
 const catalog=Object.fromEntries(cards.map(c=>[c.id,c])),beats={verborrea:'guardia',guardia:'aforado',aforado:'viperina',viperina:'foco',foco:'giro',giro:'verborrea'};
 const random=()=>crypto.randomInt(0,0x100000000)/0x100000000,check=(v,m)=>{if(!v)throw Error(m);};
-function initial(mode='normal'){return {schema:1,mode,status:'preparing',players:[null,null],side:null,first:null,deadline:null,winner:null,events:[]};}
+function initial(mode='normal'){return {schema:1,ruleset:'actions1',mode,status:'preparing',players:[null,null],side:null,first:null,deadline:null,winner:null,events:[]};}
 function log(s,text){s.events.push(text);s.events=s.events.slice(-40);}
 function doctrine(s,i){const p=s.players[i],l=p.field.find(c=>c.id===p.leader);return l?l.doctrine:null;}
 function active(s,i){const own=doctrine(s,i),other=doctrine(s,1-i);return own&&beats[other]!==own?own:null;}
@@ -12,7 +12,7 @@ function finish(s,winner,reason){s.status='finished';s.winner=winner;s.reason=re
 function victory(s){for(let i=0;i<2;i++)if(s.players[i].votes>=100){finish(s,i,'100 votos');return true;}return false;}
 function timeout(s,now){if(s.status==='active'&&now>=s.deadline){finish(s,1-s.side,'inactividad');return true;}return false;}
 function expel(s,victim,c,attacker,doc=active(s,victim)){
- const p=s.players[victim];if(doc==='aforado'&&!p.saved.includes(c.uid)){p.saved.push(c.uid);c.hp=1;log(s,c.name+' conserva el escaño con 1 de Aguante.');return;}
+ const p=s.players[victim];if(doc==='aforado'&&!p.saved.includes(c.uid)){p.saved.push(c.uid);c.hp=s.ruleset==='actions1'?3:1;log(s,c.name+' conserva el escaño.');return;}
  p.field=p.field.filter(x=>x.uid!==c.uid);Object.assign(c,{hp:0,ready:false,guard:false,buff:0,buffs:[],enteredTurn:null,strongUsedTurn:null,lastHealTurn:null,availableTurn:p.turn+2});p.rest.push(c);
  if(attacker!==null){s.players[attacker].votes+=c.votes;log(s,c.name+' al pasillo: +'+c.votes+' votos.');}
  if(doc==='verborrea')p.refund=2;victory(s);
@@ -23,7 +23,7 @@ function begin(s,i,now,rng){s.side=i;const p=s.players[i];p.turn++;p.silenced=!!
  const recycled=A.recycle(p.rest,p.deck,p.turn,rng);p.rest=recycled.rest;
  if(p.turn===1){p.deck=recycled.deck;}else{const next=A.renew(p.hand,recycled.deck,rng);p.hand=next.hand;p.deck=next.deck;}
  p.tdpMax=Math.min(6,p.tdpMax+1);const d=active(s,i);p.tdp=Math.min(8,p.tdpMax+(d==='verborrea'?1+p.refund:0));p.refund=0;
- if(d==='foco'){const l=p.field.find(c=>c.id===p.leader);l.hp=Math.min(l.maxHp,l.hp+2);}
+ if(d==='foco'){const l=p.field.find(c=>c.id===p.leader);l.hp=Math.min(l.maxHp,l.hp+(s.ruleset==='actions1'?1:2));}
  const gain=3+p.field.reduce((n,c)=>n+c.votes,0);p.votes+=gain;s.deadline=now+(s.mode==='rapida'?60000:90000);log(s,(i===0?'Anfitrión':'Invitado')+': turno '+p.turn+', +'+gain+' votos.');if(victory(s))return;
  if(p.silenced){log(s,'Moción de censura: turno sin acciones; conserva robo y votos.');end(s,i,now,rng);}
 }

@@ -1,19 +1,6 @@
 'use strict';
 // Prototipo: no importa ni altera inventarios de jugadores reales.
-const cards = Object.freeze([
- {id:'turno-de-palabra',n:'Turno de palabra',r:'comun',cost:1,effect:'boost',target:'self',value:1,text:'+1 Zasca a un orador propio durante este turno.'},
- {id:'replica',n:'Réplica',r:'comun',cost:1,effect:'damage',target:'rival',value:2,text:'Causa 2 de daño a un orador rival.'},
- {id:'receso',n:'Receso',r:'comun',cost:1,effect:'heal',target:'self',value:2,text:'Restaura 2 de Aguante a un orador propio.'},
- {id:'disciplina-de-grupo',n:'Disciplina de grupo',r:'raro',cost:2,effect:'boost',target:'all-self',value:1,text:'+1 Zasca a todos tus oradores durante este turno.'},
- {id:'pregunta-incomoda',n:'Pregunta incómoda',r:'raro',cost:2,effect:'damage',target:'rival',value:4,text:'Causa 4 de daño a un orador rival.'},
- {id:'pausa-parlamentaria',n:'Pausa parlamentaria',r:'raro',cost:2,effect:'heal',target:'all',value:2,text:'Todos los oradores de ambos jugadores recuperan 2 de Aguante.'},
- {id:'escudo-parlamentario',n:'Escudo parlamentario',r:'especial',cost:3,effect:'guard',target:'all-self',value:1,text:'Cada orador propio reduce a la mitad el próximo golpe, hasta su siguiente turno.'},
- {id:'interpelacion',n:'Interpelación',r:'especial',cost:3,effect:'damage',target:'all-rival',value:2,text:'Causa 2 de daño a cada orador rival.'},
- {id:'debate-abierto',n:'Debate abierto',r:'especial',cost:3,effect:'boost',target:'all',value:2,text:'+2 Zasca a ambos bandos, cada uno durante su siguiente turno activo.'},
- {id:'mocion-de-censura',n:'Moción de censura',r:'legendario',cost:4,oncePerBattle:true,effect:'silence',target:'player-rival',value:1,text:'El rival conserva robo y votos, pero no realiza acciones en su próximo turno. Exige tres oradores propios listos y menos votos que el rival; los tres agotan su acción.'},
- {id:'mayoria-reforzada',n:'Mayoría reforzada',r:'legendario',cost:4,effect:'boost',target:'all-self',value:2,text:'+2 Zasca a todos tus oradores durante este turno.'},
- {id:'acuerdo-de-estado',n:'Acuerdo de Estado',r:'legendario',cost:4,effect:'heal',target:'all-self',value:4,text:'Todos tus oradores recuperan 4 de Aguante.'}
-].map(Object.freeze));
+const cards=require('../../js/action-cards.js').cards;
 const byId=Object.fromEntries(cards.map(c=>[c.id,c]));
 function check(ok,message){if(!ok)throw Error(message);}
 function shuffle(list,random=Math.random){const a=list.slice();for(let i=a.length-1;i>0;i--){const x=random();check(Number.isFinite(x)&&x>=0&&x<1,'Azar no válido');const j=Math.floor(x*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}

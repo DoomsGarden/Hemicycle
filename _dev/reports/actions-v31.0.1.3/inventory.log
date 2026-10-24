@@ -1,0 +1,22 @@
+✔ El respaldo conserva acciones, repetidos y acciones de los cinco gabinetes (3.748323ms)
+✔ El respaldo rechaza acciones desconocidas y gabinetes con acciones ajenas (1.505292ms)
+✔ El editor guarda dos acciones sin modificar el estado de entrada (0.640128ms)
+✔ Un sobre mixto conserva sus cinco rarezas y nunca selecciona acciones para portadas (0.454161ms)
+✔ Cada acción incluye coste, reglas y su ilustración única en el atlas (0.441263ms)
+✔ El SQL conserva datos de clientes antiguos y sus reintentos sin duplicar (2274.248769ms)
+✔ Una acción paga una vez, vuelve al mazo y no ocupa sitio de orador (38.45466ms)
+✔ No permite una segunda acción en el mismo turno (6.119403ms)
+✔ No convierte una acción individual sin objetivo en un efecto de área (5.038611ms)
+✔ Objetivos ajenos y falta de recursos no consumen cartas (5.705304ms)
+✔ La curación no excede el máximo y no gasta una acción sin daño (10.063593ms)
+✔ Las acciones bilaterales afectan a ambos y los modificadores caducan (7.979703ms)
+✔ Moción exige tres listos y desventaja; se agota sin impedir los votos del rival (6.412378ms)
+✔ La mano renovada mantiene dos cartas como máximo y una sola acción (3.828893ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2501.56633

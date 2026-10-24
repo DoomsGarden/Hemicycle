@@ -20,13 +20,15 @@ function validate(raw,catalog){
  var mastery;
  if(p.leaderMastery!==undefined){var Mastery=typeof HemicycleMastery!=='undefined'?HemicycleMastery:require('./legendary-mastery.js');mastery=Mastery.validate(p.leaderMastery);if(p.dtGoldActive&&mastery.active.indexOf('donald-trump')>=0)throw new Error('Elige una sola edición de Donald Trump.');if(Object.keys(mastery.wins).some(function(id){return !ids.has(id);}))throw new Error('Un líder de maestría no está en el catálogo.');}
  var objectives;if(p.objectives!==undefined){var Goals=typeof HemicycleObjectives!=='undefined'?HemicycleObjectives:require('./objectives.js');objectives=Goals.validate(p.objectives);}
+ var actionAlbum;
+ if(p.actionAlbum!==undefined){var Actions=typeof HemicycleActions!=='undefined'?HemicycleActions:require('./action-cards.js');if(!Array.isArray(p.actionAlbum)||p.actionAlbum.length>250000||p.actionAlbum.some(function(id){return typeof id!=='string'||Actions.ids.indexOf(id)<0;}))throw new Error('La colección de acciones no es válida.');actionAlbum=p.actionAlbum.slice();}
  var cabinets;
  if(p.cabinets!==undefined){
   var saved=p.cabinets;
   if(!saved||!Number.isInteger(saved.selected)||saved.selected<0||saved.selected>4||!Array.isArray(saved.slots)||saved.slots.length!==5)throw new Error('Los gabinetes favoritos no son válidos.');
   cabinets={selected:saved.selected,slots:saved.slots.map(function(slot){
    if(!slot||!Array.isArray(slot.ids)||![0,5].includes(slot.ids.length)||new Set(slot.ids).size!==slot.ids.length||slot.ids.some(function(id){return typeof id!=='string'||!ids.has(id);})||(slot.ids.length?slot.ids.indexOf(slot.leader)<0:slot.leader!==null))throw new Error('Un gabinete favorito contiene datos incorrectos.');
-   return {ids:slot.ids.slice(),leader:slot.leader};
+   var result={ids:slot.ids.slice(),leader:slot.leader};if(slot.actions!==undefined){if(!Array.isArray(slot.actions)||slot.actions.length>2||(slot.actions.length&&!slot.ids.length)||new Set(slot.actions).size!==slot.actions.length||slot.actions.some(function(id){return !(actionAlbum||[]).includes(id);}))throw new Error('Las acciones del gabinete no son válidas.');result.actions=slot.actions.slice();}return result;
   })};
  }
 
@@ -46,7 +48,7 @@ function validate(raw,catalog){
  }
  var tutorials={};['battle','menu'].forEach(function(k){var t=raw.tutorials&&raw.tutorials[k];if(t&&['completed','skipped','in-progress'].includes(t.status))tutorials[k]={status:t.status,version:1,updatedAt:Number.isSafeInteger(t.updatedAt)?t.updatedAt:0};else tutorials[k]=null;});
  // Whitelist fields: importing a file never introduces executable markup or object prototypes.
- return {format:FORMAT,schemaVersion:1,identity:{id:raw.identity.id,createdAt:typeof raw.identity.createdAt==='string'?raw.identity.createdAt:raw.exportedAt},exportedAt:raw.exportedAt,gameVersion:raw.gameVersion,profile:{fs:p.fs,elo:p.elo,w:p.w,l:p.l,album:p.album.slice(),lastDaily:p.lastDaily,lastWeekly:p.lastWeekly,dtWins:p.dtWins,dtGoldUnlocked:p.dtGoldUnlocked,dtGoldActive:p.dtGoldActive,...(receipts?{marketReceipts:receipts}:{}),...(p.battleTheme?{battleTheme:p.battleTheme}:{}),...(cabinets?{cabinets:cabinets}:{}),...(mastery?{leaderMastery:mastery}:{}),...(objectives?{objectives:objectives}:{})},league:league===null?null:JSON.parse(JSON.stringify(league)),tutorials:tutorials,ranked:ranked,catalogEdition:'prelaunch-120'};
+ return {format:FORMAT,schemaVersion:1,identity:{id:raw.identity.id,createdAt:typeof raw.identity.createdAt==='string'?raw.identity.createdAt:raw.exportedAt},exportedAt:raw.exportedAt,gameVersion:raw.gameVersion,profile:{fs:p.fs,elo:p.elo,w:p.w,l:p.l,album:p.album.slice(),lastDaily:p.lastDaily,lastWeekly:p.lastWeekly,dtWins:p.dtWins,dtGoldUnlocked:p.dtGoldUnlocked,dtGoldActive:p.dtGoldActive,...(actionAlbum?{actionAlbum:actionAlbum}:{}),...(receipts?{marketReceipts:receipts}:{}),...(p.battleTheme?{battleTheme:p.battleTheme}:{}),...(cabinets?{cabinets:cabinets}:{}),...(mastery?{leaderMastery:mastery}:{}),...(objectives?{objectives:objectives}:{})},league:league===null?null:JSON.parse(JSON.stringify(league)),tutorials:tutorials,ranked:ranked,catalogEdition:'prelaunch-120'};
 }
 function build(api){return {format:FORMAT,schemaVersion:1,gameVersion:api.version,exportedAt:new Date().toISOString(),catalogEdition:'prelaunch-120',ranked:api.read('hemiciclo_ranked_seasons_v1'),identity:identity(api.read,api.write),profile:api.profile(),league:api.league(),tutorials:{battle:api.read('hemiciclo_tutorial_v1'),menu:api.read('hemiciclo_menu_tutorial_v1')}};}
 function parse(text,catalog){if(typeof text!=='string'||new Blob([text]).size>MAX_BYTES)throw new Error('El respaldo supera el tamaño permitido de 8 MB.');var raw;try{raw=JSON.parse(text.replace(/^\uFEFF/,''));}catch(e){throw new Error('El archivo no contiene un respaldo JSON válido.');}return validate(raw,catalog);}

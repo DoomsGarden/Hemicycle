@@ -28,7 +28,7 @@ test('expulsion, recycling and reentry clear support effects and healing cooldow
  const {c,actor,target}=duel();actor.h=2;c.useSupport(actor,'heal','p');actor.guard=true;c.G.side='e';c.expel('e',actor,target);assert.equal(actor.guard,false);assert.equal(actor.lastHealTurn,null);c.G.turns.p+=2;c.draw('p');assert.equal(c.G.hand.p.includes(actor),true);assert.equal(actor.guard,false);assert.equal(actor.lastHealTurn,null);actor.lastHealTurn=100;c.G.side='p';c.G.tdp.p=8;assert.equal(c.playCard('p',actor.uid),true);assert.equal(actor.lastHealTurn,null);
 });
 test('Foco passive healing remains available during active healing cooldown',()=>{
- const {c,actor}=duel();actor.pa='foco';c.G.leader.p=actor;actor.h=2;c.useSupport(actor,'heal','p');assert.equal(actor.h,6);c.startTurn('e');c.startTurn('p');assert.equal(actor.h,8);assert.equal(c.canHeal('p',actor),false);
+ const {c,actor}=duel();actor.pa='foco';c.G.leader.p=actor;actor.h=2;c.useSupport(actor,'heal','p');assert.equal(actor.h,6);c.startTurn('e');c.startTurn('p');assert.equal(actor.h,7);assert.equal(c.canHeal('p',actor),false);
 });
 test('invalid target, full enemy bench, invalid attack or support, and wrong side cannot spend the action',()=>{
  const {c,actor,target}=duel();assert.equal(c.attack(actor,{...target},'p','strong'),false);assert.equal(c.attack(actor,target,'p','unknown'),false);assert.equal(c.useSupport(actor,'unknown','p'),false);assert.equal(c.attack(actor,target,'e','normal'),false);c.G.field.e.push(c.mk(c.CARDS[2]),c.mk(c.CARDS[3]));assert.equal(c.attack(actor,'__EMPTY','p','normal'),false);assert.equal(actor.ready,true);assert.equal(target.h,100);

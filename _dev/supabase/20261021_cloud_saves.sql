@@ -31,7 +31,7 @@ end $$;
 
 create or replace function public.hemicycle_put_cloud_save(p_payload jsonb,p_expected_revision bigint,p_operation_id uuid)
 returns jsonb language plpgsql security definer set search_path='' as $$
-declare actor uuid:=auth.uid(); p public.hemicycle_cloud_saves; origin text; k text; n numeric; server_elo bigint;
+declare actor uuid:=auth.uid(); p public.hemicycle_cloud_saves; origin text; k text; n numeric; server_elo bigint; action_index integer; action_value jsonb;
 begin
  if actor is null then raise exception 'Debes iniciar sesión.' using errcode='28000'; end if;
  if p_expected_revision is null or p_expected_revision<0 or p_operation_id is null then raise exception 'Solicitud de guardado no válida.' using errcode='22023'; end if;
@@ -56,6 +56,23 @@ begin
   or jsonb_typeof(p_payload#>'{profile,dtGoldActive}') is distinct from 'boolean' then raise exception 'El progreso de la colección no es válido.' using errcode='22023'; end if;
  insert into public.hemicycle_cloud_saves(user_id) values(actor) on conflict do nothing;
  select * into p from public.hemicycle_cloud_saves where user_id=actor for update;
+ -- Compatibilidad: un cliente anterior no elimina acciones que aún no conoce.
+ if p_payload#>'{profile,actionAlbum}' is null and p.payload#>'{profile,actionAlbum}' is not null then
+  p_payload:=jsonb_set(p_payload,'{profile,actionAlbum}',p.payload#>'{profile,actionAlbum}');
+  if p_payload#>'{profile,cabinets}' is null and p.payload#>'{profile,cabinets}' is not null then p_payload:=jsonb_set(p_payload,'{profile,cabinets}',p.payload#>'{profile,cabinets}');end if;
+  if jsonb_typeof(p_payload#>'{profile,cabinets,slots}')='array' then
+   for action_index in 0..4 loop
+    if p_payload#>array['profile','cabinets','slots',action_index::text,'actions'] is null and p.payload#>array['profile','cabinets','slots',action_index::text,'actions'] is not null then
+     action_value:=case when jsonb_array_length(p_payload#>array['profile','cabinets','slots',action_index::text,'ids'])>0 then p.payload#>array['profile','cabinets','slots',action_index::text,'actions'] else '[]'::jsonb end;
+     p_payload:=jsonb_set(p_payload,array['profile','cabinets','slots',action_index::text,'actions'],action_value);
+    end if;
+   end loop;
+  end if;
+ end if;
+ if p_payload#>'{profile,actionAlbum}' is not null then
+  if jsonb_typeof(p_payload#>'{profile,actionAlbum}')<>'array' then raise exception 'La colección de acciones no es válida.' using errcode='22023';end if;
+  if jsonb_array_length(p_payload#>'{profile,actionAlbum}')>250000 or exists(select 1 from jsonb_array_elements(p_payload#>'{profile,actionAlbum}') x where jsonb_typeof(x)<>'string' or (x#>>'{}') not in ('turno-de-palabra','replica','receso','disciplina-de-grupo','pregunta-incomoda','pausa-parlamentaria','escudo-parlamentario','interpelacion','debate-abierto','mocion-de-censura','mayoria-reforzada','acuerdo-de-estado')) then raise exception 'La colección de acciones contiene datos no válidos.' using errcode='22023';end if;
+ end if;
  if p.last_operation_id=p_operation_id then
   if p.payload is distinct from p_payload then raise exception 'El reintento contiene datos diferentes.' using errcode='22023'; end if;
   return jsonb_build_object('status','saved','save',public.hemicycle_get_cloud_save());

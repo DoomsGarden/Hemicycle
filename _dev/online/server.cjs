@@ -13,17 +13,17 @@ function createServer(config={}){
   res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Type','application/json; charset=utf-8');
   const pathname=new URL(req.url,'http://localhost').pathname;
   const reply=(status,value)=>{res.writeHead(status);res.end(JSON.stringify(value));};
+  const origin=req.headers.origin;if(origin&&!origins.includes(origin))return reply(403,{error:'Origen no permitido.'});
+  if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');}
+  if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
   if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',configured,combatEnabled:!!secret});
   if(req.method==='GET'&&pathname==='/rooms-test'){res.writeHead(308,{Location:'/rooms-test/'+new URL(req.url,'http://localhost').search});res.end();return;}
-  const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/combat.js':['../../js/online-combat-ui.js','text/javascript; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
+  const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/actions-art.png':['../../assets/actions/art-atlas.png','image/png'],'/rooms-test/combat.js':['../../js/online-combat-ui.js','text/javascript; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
   if(req.method==='GET'&&testFiles[pathname]){const [file,type]=testFiles[pathname];res.setHeader('Content-Type',type);if(type.startsWith('text/html'))res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,file)));return;}
   const portrait=pathname.match(/^\/rooms-test\/portraits\/([a-z0-9-]+)\.webp$/);
   if(req.method==='GET'&&portrait&&require('./combat.cjs').catalog[portrait[1]]){res.setHeader('Content-Type','image/webp');res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,'../../cards',portrait[1]+'.webp')));return;}
   if(req.method==='GET'&&pathname==='/rooms-test/catalog')return reply(200,{orators:require('./combat.cjs').cards,actions:require('./actions.cjs').cards});
   if(req.method==='GET'&&pathname==='/rooms-test/config')return reply(configured?200:503,configured?{url,publishableKey:key}:{error:'Servicio pendiente de configurar.'});
-  const origin=req.headers.origin;if(origin&&!origins.includes(origin))return reply(403,{error:'Origen no permitido.'});
-  if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');}
-  if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
   if(!configured)return reply(503,{error:'Servicio de pruebas pendiente de configurar.'});
   const auth=req.headers.authorization;if(!auth||!/^Bearer [A-Za-z0-9._-]{1,8192}$/.test(auth))return reply(401,{error:'Inicia sesión.'});
   try{

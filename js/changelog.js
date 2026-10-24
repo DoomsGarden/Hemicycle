@@ -13,7 +13,15 @@
       "Puedes invitar a otro jugador y aceptar invitaciones. Al aceptar se abre la preparación de la partida, sin copiar códigos; las salas por código también siguen disponibles.",
       "El online utiliza por ahora una colección común de prueba, cinco oradores y hasta dos acciones. Normal y Rápida admiten invitaciones y búsqueda de rival; Clasificatoria utiliza una cola por Elo que amplía el margen con la espera. Normal y Clasificatoria duran 90 segundos por turno; Rápida, 60. Se gana a 100 votos. Normal y Rápida son amistosas: no cambian tu progreso.",
       "Clasificatoria requiere guardar y sincronizar el progreso en la nube. Conserva el Elo existente al vincularlo y actualiza Elo, victorias, derrotas y recompensas de ascenso en el servidor. No reinicia tu cuenta ni cambia los FS o la colección.",
-      "Las acciones se activan desde la mano. Las reutilizables regresan al mazo y las de un solo uso quedan en un descarte atenuado. Puedes recuperar una partida al reconectar; el reloj sigue avanzando."
+      "Las acciones se activan desde la mano. Las reutilizables regresan al mazo y las de un solo uso quedan en un descarte atenuado. Puedes recuperar una partida al reconectar; el reloj sigue avanzando.",
+      "Corregida la carga del combate al acceder desde el dominio del juego. Si falla la conexión inicial, Actualizar / reintentar vuelve a cargar la preparación sin crear otra sala."
+    ]},
+    {"title":"Acciones, sobres y gabinetes","items":[
+      "Doce cartas de acción con ilustraciones propias se consiguen en los mismos sobres. Cada sobre conserva sus cinco cromos y sus rarezas: puede incluir una acción en lugar de un orador de la misma rareza. Las portadas siguen mostrando solo oradores.",
+      "Un botón de Colección alterna Oradores y Acciones. Cada favorito mantiene cinco oradores y permite añadir hasta dos acciones distintas de tu colección. Puedes leer todos sus efectos, costes y requisitos desde la ficha o al tocarlas en la mano.",
+      "Las acciones no ocupan hueco en la Tribuna. Se activa como máximo una por turno; las reutilizables regresan al mazo y las de un solo uso quedan visibles y sombreadas en su descarte. La mano se renueva al comenzar cada turno propio, con hasta dos cartas y nunca dos acciones juntas.",
+      "El robo de dos cartas se acompaña de un ajuste de pasivas: Foco regenera 1 de Aguante por turno y Aforado recupera 3 al evitar una expulsión una vez por cromo y debate. Se mantiene el círculo de debilidades.",
+      "Las acciones y sus gabinetes se conservan en los respaldos y la nube. Los tutoriales de combate y menú enseñan los nuevos controles sin gastar FS ni alterar tu colección."
     ]},
     {"title":"Temporada de prelanzamiento","items":[
       "La temporada 1 de Clasificatoria permanece abierta, sin descenso por calendario. Se conservan los ascensos y las recompensas ya reclamadas o pendientes.",

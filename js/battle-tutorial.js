@@ -7,11 +7,11 @@ function create(api){
  var active=false,index=0,highlight=null,previous=null,frame=0,steps=[],waiting=false,run=0;
  var layer=document.createElement('div');layer.id=api.layerId||'tutorialRoot';layer.className='tutorial-layer';document.body.appendChild(layer);
  function seen(){var value=api.read(key);return !!value&&(value.status==='completed'||value.status==='skipped');}
- function save(status){api.write(key,{status:status,version:2,updatedAt:Date.now()});}
+ function save(status){api.write(key,{status:status,version:3,updatedAt:Date.now()});}
  function makeSteps(){return [
   ['coin','[data-tutorial="coin"]','Tu primer debate','Práctica con cromos prestados. Ensayamos cara y empiezas tú; fuera del tutorial el sorteo es al 50 %. Toca la moneda.','begin'],
-  ['votes','.vbars','Gana con 100 votos','Azul: tus votos. Rojo: los del rival. Ganas al llegar a 100. El número lateral es el reloj: 90 segundos por turno, sin límite de rondas. En esta práctica no corre. Toca los marcadores.'],
-  ['cabinet','.gab','Tu gabinete y el mazo','Cinco cromos, hasta tres en la Tribuna y dos en la mano. Los expulsados descansan y se barajan con el mazo; no vuelven en tu siguiente turno. Toca el gabinete.'],
+  ['votes','.vbars','Gana con 100 votos','Azul: tus votos. Rojo: los del rival. Ganas al llegar a 100. El número lateral es el reloj: 90 segundos en Normal y Clasificatoria; 60 en Rápida. No hay límite de rondas. En esta práctica no corre. Toca los marcadores.'],
+  ['cabinet','.gab','Tu gabinete y el mazo','Cinco oradores y hasta dos acciones. Tres oradores en mesa y dos cartas en mano, nunca dos acciones juntas. Los expulsados descansan y se barajan con el mazo; no vuelven en tu siguiente turno. Toca el gabinete.'],
   ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El TdP paga el coste de presentar cromos. Se renueva cada turno; su base crece hasta 6 y algunas pasivas permiten llegar a 8. Toca los cristales.'],
   ['play-leader','[data-tutorial="hand"] .lead','Presenta a tu líder','La estrella identifica al líder: +1 Zasca y +3 Aguante. Z indica el daño; A, su resistencia. Este cuesta 1 TdP. Tócalo para presentarlo.','play-leader'],
   ['passive','[data-tutorial="resources"]','Tu pasiva','Vieja Guardia mejora el Zasca al presentar y al terminar el turno, hasta +3. Requiere al líder en la Tribuna y puede ser neutralizada. Toca la doctrina.'],
@@ -37,6 +37,11 @@ function create(api){
   ['select-member','[data-tutorial="player"] .cromo:not(.lead)','Cada miembro tiene su acción','Tu segundo orador también puede actuar este turno. Tócalo para abrir sus frases.','select-member'],
   ['normal-empty','[data-baction="normal"]','Elige el ataque normal','Usaremos su primera frase para atacar un espacio vacío y restar votos al rival. Toca Ataque normal.','choose-normal'],
   ['empty','[data-tutorial="enemy"] [data-buid="__EMPTY"]','Resta votos al rival','Un ataque a una bancada vacía resta votos hasta su daño, sin entregártelos. Toca «Restar votos».','empty'],
+  ['action-card','[data-tutorial="hand"] .action-card','Una carta de acción','Las acciones no ocupan sitio en la Tribuna. Su marco indica la rareza y el número, su coste en TdP. Toca esta acción prestada para consultar sus reglas.','inspect-demo-action'],
+  ['action-rules','#localActionRoot .action-rules','Consulta antes de activar','Aquí ves efecto, coste, límite por turno y qué sucede después de usarla. Las acciones más potentes pueden exigir condiciones adicionales. Toca la explicación.'],
+  ['action-use','#localActionRoot [data-local-action="activate"]','Activa la acción','Turno de palabra cuesta 1 TdP y mejora el Zasca de un orador este turno. No consume el hueco de un orador; solo puedes usar una carta de acción por turno. Pulsa Activar.','activate-demo-action'],
+  ['action-return','.draw-pile','Regresa al mazo','La acción ha salido de tu mano, ha mostrado su efecto y vuelve al mazo. Podrá salir al renovar la mano de un turno posterior. Toca el mazo.'],
+  ['action-discard','.action-discard','Acciones de un solo uso','Esta miniatura prestada muestra cómo queda una acción ya agotada: sombreada y fuera del barajado. Es un descarte distinto del descanso de oradores. Tócala para preparar la victoria final.','prepare-final'],
   ['final-votes','.vbars','Ensayo de la victoria','Adelantamos tu marcador a 98 votos y preparamos un rival con 1 de Aguante y 2 escaños. Toca los marcadores.'],
   ['final-select','[data-tutorial="player"] .lead','Última acción de práctica','Tu líder dispone de una última acción preparada para terminar el ejercicio. Tócalo.','select-leader'],
   ['final-normal','[data-baction="normal"]','Prepara el último zasca','El ataque normal basta para este rival. Escoge la primera frase.','choose-normal'],
@@ -55,7 +60,7 @@ function create(api){
  function advance(){
   if(waiting)return;
   var step=steps[index],token=run;index++;
-  function next(){if(!active||token!==run)return;waiting=false;if(!api.steps&&step[0]==='empty')api.action('prepare-final');if(index>=steps.length){finish('completed');return;}render();}
+  function next(){if(!active||token!==run)return;waiting=false;if(!api.steps&&step[0]==='empty')api.action('prepare-action');if(index>=steps.length){finish('completed');return;}render();}
   // A menu demonstration may animate before its next target exists.
   waiting=true;var result=step[4]?api.action(step[4]):null;
   if(result&&typeof result.then==='function'){clear();result.then(next,function(){if(active&&token===run)finish('skipped');});}else next();
@@ -64,6 +69,8 @@ function create(api){
   if(!highlight||!layer.firstChild)return;
   var card=layer.querySelector('.tutorial-coach'),screen=document.getElementById('screen').getBoundingClientRect(),r=highlight.getBoundingClientRect();
   var top=Math.max(6,screen.top+6),bottom=Math.min(innerHeight-6,screen.bottom-6),left=Math.max(6,screen.left+8),right=Math.min(innerWidth-6,screen.right-8);
+  var sideLeft=r.left-left-12,sideRight=right-r.right-12;
+  if(innerWidth>650&&Math.max(sideLeft,sideRight)>200&&Math.max(r.top-top,bottom-r.bottom)<160){var sideWidth=Math.min(260,Math.max(sideLeft,sideRight));card.style.width=sideWidth+'px';card.style.maxHeight=(bottom-top)+'px';card.style.left=(sideRight>=sideLeft?r.right+12:r.left-sideWidth-12)+'px';card.style.top=Math.max(top,Math.min(bottom-card.offsetHeight,r.top))+'px';return;}
   var above=r.top-top-12,below=bottom-r.bottom-12,useAbove=above>below,room=Math.max(above,below);
   card.style.width=Math.min(310,right-left)+'px';card.style.maxHeight=Math.max(56,room)+'px';
   var h=card.getBoundingClientRect().height,x=Math.min(right-card.offsetWidth,Math.max(left,r.left+(r.width-card.offsetWidth)/2));
