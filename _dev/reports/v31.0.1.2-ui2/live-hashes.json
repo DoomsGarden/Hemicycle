@@ -1,0 +1,45 @@
+{
+  "version": "v31.0.1.2",
+  "build": "ui2",
+  "url": "https://doomsgarden.github.io/Hemicycle/",
+  "commit": "fd14bad",
+  "verifiedAt": "2026-10-24T14:04:17.079732+00:00",
+  "httpsHashes": [
+    {
+      "path": "index.html",
+      "sha256": "74b9137c040d8d65f338ae169dcfbf2f777d437f348844e060322749c6c93bfc",
+      "matches": true
+    },
+    {
+      "path": "sw.js",
+      "sha256": "51a7659ea4dbe18aaf56e2b909585d683bb95c69263a297c281e60eacb7d82cb",
+      "matches": true
+    },
+    {
+      "path": "js/objectives.js",
+      "sha256": "ad87f926eb9c08490a5f431f17f5a0e1b67296b2fdbb676e20b656e243deddaa",
+      "matches": true
+    },
+    {
+      "path": "js/changelog.js",
+      "sha256": "217d7c7dfa49620e0dbe2c5b340fc28213b6ddb414f0315415ade14a1373d3d7",
+      "matches": true
+    },
+    {
+      "path": "css/objectives.css",
+      "sha256": "4c408cdeb91bd3c9c5356e233f450c21e470f65010e71c153fe8b93e5ee47fa9",
+      "matches": true
+    },
+    {
+      "path": "css/legendary-confetti.css",
+      "sha256": "4cec5571a8b0c5b1a47a8967783b53ef362bc922ce87e00602c1fec2d252a498",
+      "matches": true
+    },
+    {
+      "path": "css/ui-polish.css",
+      "sha256": "faf8b04e8931fbf18e4d8ef153599a9c6313e1c01087b47a90508f87314c62bb",
+      "matches": true
+    }
+  ],
+  "devDocumentsReturn404": true
+}
