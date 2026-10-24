@@ -228,3 +228,11 @@ Se añaden 12 pruebas SQL de privacidad/presencia/invitaciones (62 casos totales
 además de las comprobaciones de navegador del retorno Google, selector sin
 correos, desconexión, envío a desconectado y aceptación al regresar. Se conserva
 la cobertura de las salas por código y el rechazo a una tercera cuenta.
+
+## Combate privado añadido
+
+La siguiente entrega conecta las salas a partidas jugables con estado privado
+persistente y reglas en el servidor. Ver **[COMBATE-PRIVADO.md](COMBATE-PRIVADO.md)**
+para activar el nuevo SQL y jugar. Sustituye las referencias anteriores de esta
+bitácora a «solo salas» o «combate deshabilitado». La preparación de las salas
+sigue siendo compatible; el juego real conserva todo su progreso.

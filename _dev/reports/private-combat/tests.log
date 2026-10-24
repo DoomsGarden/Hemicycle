@@ -1,0 +1,40 @@
+✔ Solo el servidor privilegiado lee y confirma estados completos (1606.337658ms)
+✔ Solo los dos participantes acceden a la partida y se exige sesión válida (1206.763765ms)
+✔ Preparación persistente y proyecciones privadas para ambos jugadores (1211.104836ms)
+✔ El mismo identificador de operación no repite preparación ni gasto (1226.839803ms)
+✔ Dos confirmaciones concurrentes no pierden el gabinete del otro jugador (1333.764673ms)
+✔ La acción repetida tras perder respuesta cobra una sola vez (839.639719ms)
+✔ Reiniciar el proceso recupera estado, turno y vencimiento desde PostgreSQL (1094.113668ms)
+✔ Una consulta tras el vencimiento finaliza y guarda una sola derrota (937.56268ms)
+✔ El estado y la revisión sobreviven al reaplicar la migración (1013.363476ms)
+✔ La ausencia de clave privada no activa un almacenamiento editable por el navegador (788.098426ms)
+✔ Preparación exige cinco oradores y hasta dos acciones válidas (3.137463ms)
+✔ No empieza hasta que ambos están listos; sorteo y reloj del servidor (1.749553ms)
+✔ No se puede cambiar gabinete después de estar listo (0.890581ms)
+✔ Presentar paga TdP, ocupa un puesto y activa la carga desde la entrada (0.596998ms)
+✔ No juega una carta rival ni una acción como orador (0.684211ms)
+✔ No hay acciones fuera de turno (0.4911ms)
+✔ La tribuna no supera tres puestos y no admite coste sin TdP (0.609913ms)
+✔ Ataque normal aplica Zasca y agota una sola intervención (0.766177ms)
+✔ Fuerte habilitado solo en turno tercero; redondea y cuesta 1 A (0.800905ms)
+✔ Fuerte caduca sin uso y exige mínimo 2 A (0.91774ms)
+✔ Defensa divide un golpe y se consume (1.040543ms)
+✔ Curación aplica mitad del daño con mínimo 3 y espera otro turno propio (0.80708ms)
+✔ Bancada vacía retira votos y no supera los disponibles (0.555835ms)
+✔ Aforado conserva un escaño una vez; otra expulsión lo manda al descanso (1.411841ms)
+✔ Las pasivas se neutralizan según su ciclo (0.558442ms)
+✔ La renovación devuelve mano al mazo, sin dos acciones (1.113407ms)
+✔ La proyección no revela mano ni mazo enemigo ni el orden propio (1.723366ms)
+✔ El vencimiento concede derrota antes de aceptar una acción tardía (1.069205ms)
+✔ La rendición está permitida aunque sea turno del rival (1.004147ms)
+✔ Una mayoría al inicio de turno termina sin permitir acción rival (1.100885ms)
+✔ La acción reutilizable regresa al mazo sin ocupar la tribuna (1.357445ms)
+✔ Moción consume tres oradores, descarta y salta acciones conservando votos (1.932722ms)
+ℹ tests 32
+ℹ suites 0
+ℹ pass 32
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 11511.832405
