@@ -5,11 +5,13 @@ create table if not exists public.hemicycle_online_rooms (
  id uuid primary key default gen_random_uuid(),
  host_id uuid not null references auth.users(id),
  guest_id uuid references auth.users(id),
+ invited_id uuid references auth.users(id),
  request_id uuid not null,
  code text unique not null default upper(substr(replace(gen_random_uuid()::text,'-',''),1,12)),
  expires_at timestamptz not null default now()+interval '30 minutes',
  unique(host_id,request_id),check(guest_id is null or guest_id<>host_id)
 );
+alter table public.hemicycle_online_rooms add column if not exists invited_id uuid references auth.users(id);
 alter table public.hemicycle_online_rooms enable row level security;
 revoke all on public.hemicycle_online_rooms from public,anon,authenticated;
 create or replace function public.hemicycle_room_view(p_id uuid)
@@ -44,6 +46,7 @@ begin
  select * into r from public.hemicycle_online_rooms where code=upper(p_code) for update;
  if not found or r.expires_at<=now() then raise exception 'Sala no disponible.';end if;
  if actor=r.host_id then raise exception 'Usa otra cuenta para unirte a tu sala.';end if;
+ if r.invited_id is not null and r.invited_id<>actor then raise exception 'Invitación para otro jugador.';end if;
  if r.guest_id is not null and r.guest_id<>actor then raise exception 'La sala está completa.';end if;
  update public.hemicycle_online_rooms set guest_id=actor where id=r.id;
  return public.hemicycle_room_view(r.id);

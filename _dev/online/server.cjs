@@ -9,11 +9,13 @@ function createServer(config={}){
  const configured=!!(url&&/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(url)&&key&&origins.length&&!origins.includes('*'));
  return http.createServer(async(req,res)=>{
   res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Type','application/json; charset=utf-8');
+  const pathname=new URL(req.url,'http://localhost').pathname;
   const reply=(status,value)=>{res.writeHead(status);res.end(JSON.stringify(value));};
-  if(req.url==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',configured,combatEnabled:false});
+  if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',configured,combatEnabled:false});
+  if(req.method==='GET'&&pathname==='/rooms-test'){res.writeHead(308,{Location:'/rooms-test/'+new URL(req.url,'http://localhost').search});res.end();return;}
   const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
-  if(req.method==='GET'&&testFiles[req.url]){const [file,type]=testFiles[req.url];res.setHeader('Content-Type',type);if(type.startsWith('text/html'))res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,file)));return;}
-  if(req.method==='GET'&&req.url==='/rooms-test/config')return reply(configured?200:503,configured?{url,publishableKey:key}:{error:'Servicio pendiente de configurar.'});
+  if(req.method==='GET'&&testFiles[pathname]){const [file,type]=testFiles[pathname];res.setHeader('Content-Type',type);if(type.startsWith('text/html'))res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,file)));return;}
+  if(req.method==='GET'&&pathname==='/rooms-test/config')return reply(configured?200:503,configured?{url,publishableKey:key}:{error:'Servicio pendiente de configurar.'});
   const origin=req.headers.origin;if(origin&&!origins.includes(origin))return reply(403,{error:'Origen no permitido.'});
   if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');}
   if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
@@ -27,9 +29,13 @@ function createServer(config={}){
     if(!body||typeof body!=='object'||Array.isArray(body))return reply(400,{error:'Solicitud no válida.'});
    }
    let method,args;
-   if(req.method==='POST'&&req.url==='/rooms'){if(!uuid.test(body.operationId||''))return reply(400,{error:'Operación no válida.'});method='hemicycle_room_create';args={p_request_id:body.operationId};}
-   else if(req.method==='POST'&&req.url==='/rooms/join'){if(typeof body.code!=='string'||!(/^[0-9a-f]{12}$/i).test(body.code))return reply(400,{error:'Código no válido.'});method='hemicycle_room_join';args={p_code:body.code.toUpperCase()};}
-   else if(req.method==='GET'&&req.url.startsWith('/rooms/')&&uuid.test(req.url.slice(7))){method='hemicycle_room_view';args={p_id:req.url.slice(7)};}
+   if(req.method==='POST'&&pathname==='/rooms'){if(!uuid.test(body.operationId||''))return reply(400,{error:'Operación no válida.'});method='hemicycle_room_create';args={p_request_id:body.operationId};}
+   else if(req.method==='POST'&&pathname==='/rooms/join'){if(typeof body.code!=='string'||!(/^[0-9a-f]{12}$/i).test(body.code))return reply(400,{error:'Código no válido.'});method='hemicycle_room_join';args={p_code:body.code.toUpperCase()};}
+   else if(req.method==='GET'&&pathname==='/players'){method='hemicycle_test_directory';args={};}
+   else if(req.method==='POST'&&pathname==='/players/presence'){if(typeof body.visible!=='boolean'||typeof body.online!=='boolean')return reply(400,{error:'Estado no válido.'});method='hemicycle_test_presence';args={p_visible:body.visible,p_online:body.online};}
+   else if(req.method==='POST'&&pathname==='/rooms/invite'){if(!uuid.test(body.playerId||'')||!uuid.test(body.operationId||''))return reply(400,{error:'Invitación no válida.'});method='hemicycle_test_invite';args={p_player_id:body.playerId,p_request_id:body.operationId};}
+   else if(req.method==='POST'&&pathname==='/rooms/accept'){if(!uuid.test(body.roomId||''))return reply(400,{error:'Invitación no válida.'});method='hemicycle_test_accept';args={p_room_id:body.roomId};}
+   else if(req.method==='GET'&&pathname.startsWith('/rooms/')&&uuid.test(pathname.slice(7))){method='hemicycle_room_view';args={p_id:pathname.slice(7)};}
    else return reply(404,{error:'Ruta no disponible.'});
    // Supabase verifica el JWT y auth.uid(); no se confía en un ID enviado por el cliente.
    const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/'+method,{method:'POST',headers:{apikey:key,Authorization:auth,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(8000)});

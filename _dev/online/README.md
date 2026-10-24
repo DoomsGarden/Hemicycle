@@ -180,3 +180,51 @@ de autenticación simulado, sin tocar usuarios alojados. Se comprueban creación
 entrada, rechazo de tercera cuenta, recarga, cierre de sesión aislado y ausencia
 de cambios en progreso. Evidencias `lobby-browser.json` y capturas host/guest.
 El acceso de Google real y las dos cuentas alojadas deben probarse en el servicio.
+
+## Corrección del retorno de Google y lista de probadores
+
+El propietario observó `{"error":"Inicia sesión."}` al volver a la ventana de
+salas desde Google. Se encontró un fallo reproducible: el servidor comparaba
+req.url entero con `/rooms-test/`, por lo que `?code=…` impedía servir el HTML y
+se exigía un token antes de que el SDK pudiera canjear ese código. Ahora las
+rutas se resuelven por pathname; se mantienen los parámetros para el SDK y una
+redirección de `/rooms-test` a `/rooms-test/` conserva la query. Se prueba el
+recorrido Google/PKCE con el SDK oficial y transporte OAuth simulado.
+
+No hace falta crear primero una contraseña del juego para utilizar Google:
+Supabase crea la cuenta en el primer acceso si el proveedor y el registro están
+habilitados. En producción siguen siendo necesarias la URL de retorno exacta
+en Supabase y la autorización de los correos en Google mientras la aplicación
+OAuth permanezca en pruebas. La corrección no demuestra por sí sola que esos
+ajustes alojados estén bien ni sustituye el acceso real del propietario.
+
+**Nuevo SQL que debe ejecutar el propietario:**
+`_dev/online/20261024_test_players.sql`, después del SQL inicial de salas.
+Puede guardarlo como «Hemicycle — Jugadores e invitaciones de prueba».
+Crea el directorio, añade destinatario a las salas y protege su aceptación.
+Se puede reaplicar y no modifica perfiles, nicks, guardados ni inventarios.
+El `rooms.sql` actual también mantiene la comprobación de destinatario para
+nuevas instalaciones. Para reinstalar, aplicar siempre base y después migración;
+evitar consultas guardadas de versiones anteriores que sustituyan esa función.
+
+- Cada probador autenticado elige «Aparecer en la lista de pruebas».
+- No se enumeran todas las cuentas de auth.users ni sus correos o metadatos.
+  Se usa el nick del juego o un alias provisional de servidor. Este alias no
+  consume el cambio anual de nick.
+- El desplegable muestra conectados y desconectados. La presencia usa el reloj
+  del servidor, latido de unos 25 segundos y vencimiento de 90 segundos. Cerrar
+  sesión marca desconectado; cerrar pestaña o perder red puede tardar hasta
+  ese vencimiento. Varias pestañas/dispositivos pueden actualizar el mismo
+  registro, por lo que es un indicador aproximado, no una garantía de atención.
+- Desmarcar la opción oculta al probador; desconectarse conserva su entrada.
+- Al elegir un jugador visible se envía una invitación privada de 30 minutos.
+  Solo esa cuenta puede aceptar, también después de desconectarse y volver.
+  Saber el código no permite entrar a un tercero. Las salas por código siguen
+  disponibles. Las invitaciones no arrancan combate ni conceden premios.
+- La ventana consulta sala/lista cada cinco segundos mientras está visible;
+  no crea una cuenta ni hace visible al usuario automáticamente.
+
+Se añaden 12 pruebas SQL de privacidad/presencia/invitaciones (62 casos totales),
+además de las comprobaciones de navegador del retorno Google, selector sin
+correos, desconexión, envío a desconectado y aceptación al regresar. Se conserva
+la cobertura de las salas por código y el rechazo a una tercera cuenta.
