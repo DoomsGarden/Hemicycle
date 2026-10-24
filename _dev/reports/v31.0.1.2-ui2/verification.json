@@ -1,0 +1,26 @@
+{
+  "version": "v31.0.1.2",
+  "build": "ui2",
+  "base": "6479866",
+  "nodeTests": {
+    "passed": 329,
+    "failed": 0
+  },
+  "viewports": [
+    "320x568",
+    "393x851",
+    "851x393",
+    "1280x900"
+  ],
+  "pwaAssets": 70,
+  "cloud": "Official SDK and PostgreSQL RPCs in local PGlite, simulated authentication transport, three isolated browser devices; no hosted accounts touched",
+  "hashes": {
+    "index.html": "74b9137c040d8d65f338ae169dcfbf2f777d437f348844e060322749c6c93bfc",
+    "sw.js": "51a7659ea4dbe18aaf56e2b909585d683bb95c69263a297c281e60eacb7d82cb",
+    "js/objectives.js": "ad87f926eb9c08490a5f431f17f5a0e1b67296b2fdbb676e20b656e243deddaa",
+    "js/changelog.js": "217d7c7dfa49620e0dbe2c5b340fc28213b6ddb414f0315415ade14a1373d3d7",
+    "css/objectives.css": "4c408cdeb91bd3c9c5356e233f450c21e470f65010e71c153fe8b93e5ee47fa9",
+    "css/legendary-confetti.css": "4cec5571a8b0c5b1a47a8967783b53ef362bc922ce87e00602c1fec2d252a498",
+    "css/ui-polish.css": "faf8b04e8931fbf18e4d8ef153599a9c6313e1c01087b47a90508f87314c62bb"
+  }
+}
