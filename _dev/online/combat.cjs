@@ -31,7 +31,7 @@ function end(s,i,now,rng){if(active(s,i)==='guardia')s.players[i].field.forEach(
 function ready(s,i,choice,now,rng){check(s.status==='preparing','La partida ya ha comenzado');check(!s.players[i],'Ya estás listo');const valid=A.validateCabinet(choice,[...cards.map(c=>c.id),...A.cards.map(c=>c.id)],cards.map(c=>c.id));
  const all=valid.orators.map((id,j)=>{const c=catalog[id],leader=id===valid.leader;return {uid:i+'-o'+j,id,name:c.n,rarity:c.r,doctrine:c.pa,cost:c.c,z:c.a+(leader?1:0),hp:c.h+(leader?3:0),maxHp:c.h+(leader?3:0),votes:c.v,q:c.q,ready:true,guard:false,buff:0,buffs:[],enteredTurn:null,strongUsedTurn:null,lastHealTurn:null};});
  const leader=all.find(c=>c.id===valid.leader),others=A.shuffle(all.filter(c=>c!==leader),rng),actions=valid.actions.map((id,j)=>({uid:i+'-a'+j,id,action:true}));
- s.players[i]={leader:valid.leader,turn:0,tdp:0,tdpMax:2,votes:0,hand:[leader,others.shift()],deck:A.shuffle([...others,...actions],rng),field:[],rest:[],actionDiscard:[],saved:[],refund:0,usedActions:[],silenced:false};log(s,(i===0?'Anfitrión':'Invitado')+' está listo.');
+ s.players[i]={cabinetIds:valid.orators.slice(),leader:valid.leader,turn:0,tdp:0,tdpMax:2,votes:0,hand:[leader,others.shift()],deck:A.shuffle([...others,...actions],rng),field:[],rest:[],actionDiscard:[],saved:[],refund:0,usedActions:[],silenced:false};log(s,(i===0?'Anfitrión':'Invitado')+' está listo.');
  if(s.players.every(Boolean)){s.status='active';s.first=rng()<.5?0:1;log(s,'Sorteo: '+(s.first===0?'cara, empieza el anfitrión.':'cruz, empieza el invitado.'));begin(s,s.first,now,rng);}
 }
 function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],a=A.byId[id],c=p.hand.find(c=>c.action&&c.id===id);check(a&&c,'Acción fuera de la mano');check(p.tdp>=a.cost,'TdP insuficiente');check(p.actionUsedTurn!==p.turn,'Solo una acción por turno');check(!a.oncePerBattle||!p.usedActions.includes(id),'Acción agotada');
@@ -40,7 +40,7 @@ function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],a=A.b
  if(a.effect==='silence'){check(p.field.length===3&&p.field.every(c=>c.ready),'Necesitas tres oradores listos');check(p.votes<foe.votes,'Debes tener menos votos');check(!foe.pendingSilence&&foe.turn>(foe.silenceImmuneThrough??-1),'Rival protegido');foe.pendingSilence=true;p.field.forEach(c=>c.ready=false);}
  p.tdp-=a.cost;p.actionUsedTurn=p.turn;p.usedActions.push(id);p.hand=p.hand.filter(x=>x!==c);if(a.oncePerBattle)p.actionDiscard.push(c);else p.deck.push(c);
  for(const x of affected){if(a.effect==='damage')damage(x.c,a.value);if(a.effect==='heal')x.c.hp=Math.min(x.c.maxHp,x.c.hp+a.value);if(a.effect==='guard')x.c.guard=true;if(a.effect==='boost')x.c.buffs.push({value:a.value,until:s.players[x.owner].turn+(x.owner===i?0:1)});}
- log(s,a.n+' activada.');s.lastAction={side:i,id,discard:!!a.oncePerBattle};
+ log(s,a.n+' activada.');s.lastAction={side:i,id,discard:!!a.oncePerBattle,turn:p.turn};
  for(const x of affected)if(x.c.hp<=0&&s.status==='active')expel(s,x.owner,x.c,x.owner===i?null:i,x.doc);
 }
 function apply(original,i,command,now=Date.now(),rng=random){check(i===0||i===1,'Jugador no válido');check(command&&typeof command.type==='string','Acción no válida');const s=structuredClone(original);if(timeout(s,now))return s;
@@ -56,7 +56,7 @@ function apply(original,i,command,now=Date.now(),rng=random){check(i===0||i===1,
  if(empty){amount=Math.min(foe.votes,amount);foe.votes-=amount;}else{amount=damage(target,amount);if(enemyDoc==='giro')damage(c,1);}
  if(ownDoc==='foco'&&c.id===p.leader)p.votes++;log(s,c.name+': «'+c.q[powerful?1:0]+'» · '+amount+(empty?' votos retirados.':' de daño.'));if(victory(s))return s;if(target&&target.hp<=0)expel(s,1-i,target,i,enemyDoc);if(s.status==='active'&&c.hp<=0)expel(s,i,c,null,ownDoc);return s;
 }
-function project(state,side,revision,now){const s=structuredClone(state);const foe=s.players[1-side];if(foe){foe.handCount=foe.hand.length;foe.deckCount=foe.deck.length;delete foe.hand;delete foe.deck;delete foe.usedActions;delete foe.saved;}
+function project(state,side,revision,now){const s=structuredClone(state);const foe=s.players[1-side];if(foe){foe.handCount=foe.hand.length;foe.deckCount=foe.deck.length;delete foe.hand;delete foe.deck;delete foe.cabinetIds;delete foe.usedActions;delete foe.saved;}
  // Los mazos y su orden nunca se envían, tampoco al dueño.
  for(let i=0;i<2;i++)if(s.players[i])s.players[i].field.forEach(c=>{c.currentZ=power(state,i,c);});
  const own=s.players[side];if(own){own.deckCount=own.deck.length;delete own.deck;own.field.forEach(c=>{c.currentZ=power(state,side,c);c.canStrong=strong(own,c);c.charge=c.enteredTurn===null?0:1+(own.turn-c.enteredTurn)%3;});}

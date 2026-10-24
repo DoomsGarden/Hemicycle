@@ -1,0 +1,14 @@
+✔ Solo el servicio crea partidas IA y conserva el Elo al vincular (1245.426281ms)
+✔ El gabinete de IA procede de la nube y crear de nuevo no duplica la partida (777.184175ms)
+✔ Una derrota IA guarda Elo, derrota y nube una sola vez (733.428265ms)
+✔ Una victoria IA conserva colección y entrega el ascenso al mismo Elo (728.026186ms)
+✔ La nueva migración no cambia el Elo ni el estado al reaplicarla (718.85858ms)
+✔ La IA realiza turnos válidos y termina cincuenta partidas sin robar manos ocultas (454.728832ms)
+ℹ tests 6
+ℹ suites 0
+ℹ pass 6
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4806.595595

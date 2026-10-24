@@ -33,6 +33,15 @@ function createServer(config={}){
     try{body=JSON.parse(Buffer.concat(chunks).toString());}catch{return reply(400,{error:'JSON no válido.'});}
     if(!body||typeof body!=='object'||Array.isArray(body))return reply(400,{error:'Solicitud no válida.'});
    }
+   if(req.method==='POST'&&pathname==='/ai'){
+    if(!secret)return reply(503,{error:'El combate contra IA está pendiente de configurar.'});
+    if(!uuid.test(body.operationId||''))return reply(400,{error:'Operación no válida.'});
+    const identity=await fetcher(url.replace(/\/$/,'')+'/auth/v1/user',{headers:{apikey:key,Authorization:auth},signal:AbortSignal.timeout(8000)});
+    if(!identity.ok)return reply(401,{error:'Inicia sesión de nuevo.'});const actor=(await identity.json()).id;
+    const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/hemicycle_ai_room',{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify({p_actor:actor,p_request_id:body.operationId}),signal:AbortSignal.timeout(8000)});
+    if(!response.ok)return reply(409,{error:'No se pudo preparar la Clasificatoria contra IA. Comprueba la nube, el gabinete y la actualización del servidor.'});
+    const room=await response.json();try{await combat(auth,room.id,{type:'ready',cabinet:room.cabinet},body.operationId);}catch(e){return reply(e.status||409,{error:e.message});}delete room.cabinet;return reply(200,room);
+   }
    const combatPath=pathname.match(/^\/combats\/([0-9a-f-]{36})$/i);
    if(combatPath&&uuid.test(combatPath[1])&&(req.method==='GET'||req.method==='POST')){
     if(req.method==='POST'&&(!uuid.test(body.operationId||'')||!body.command||typeof body.command!=='object'||Array.isArray(body.command)))return reply(400,{error:'Acción de combate no válida.'});

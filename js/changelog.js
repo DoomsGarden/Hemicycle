@@ -4,6 +4,22 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version":"v31.0.1.4","date":"2026-10-24","title":"Combates integrados y acceso online más sencillo",
+  "sections":[
+    {"title":"Jugar e invitar","items":[
+      "El selector de modo junto a Jugar mantiene su forma y su flecha centrada en todos los tamaños de pantalla.",
+      "Jugadores muestra un listado compacto de conectados y desconectados. Las invitaciones usan el modo elegido en Inicio; ya no hay que repetir la selección ni copiar códigos.",
+      "Sin invitación pendiente, Jugar inicia contra IA. La Clasificatoria contra IA sigue dando Elo durante el prelanzamiento; con una cuenta conectada el servidor ejecuta al rival y guarda el resultado.",
+      "La Clasificatoria entre jugadores sigue usando una cola por Elo, accesible desde el selector de Jugar. Las invitaciones directas son para Normal y Rápida."
+    ]},
+    {"title":"Una sola mesa de combate","items":[
+      "Las partidas online utilizan la mesa habitual del juego, con sus tres puestos, dos cartas en mano, marcadores de votos, reloj y registro. El combate deja de mostrarse dentro de una ventana emergente.",
+      "Las acciones muestran una ficha más clara con su arte, coste y reglas. Si necesitan un objetivo, se elige tocando un cromo iluminado de la mesa, igual que al atacar; cancelar no gasta TdP.",
+      "Los tutoriales de combate y menú explican estos controles. Se conserva el progreso al actualizar la aplicación."
+    ]}
+  ]
+},
+{
   "version": "v31.0.1.3",
   "date": "2026-10-24",
   "title": "Primeras partidas online de prueba",

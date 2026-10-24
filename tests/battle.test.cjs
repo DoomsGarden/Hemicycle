@@ -174,3 +174,5 @@ test('ranked rival progression follows the new 2500-Elo rank boundaries without 
  const expected=[['comun','comun','comun','raro','raro'],['comun','comun','raro','raro','especial'],['comun','raro','raro','especial','legendario'],['raro','raro','especial','especial','legendario']];
  for(let rank=0;rank<4;rank++)for(const elo of [rank*2500,rank*2500+2499])assert.deepEqual(Array.from(c.buildEnemyTeam('ranked',elo,3),id=>c.BYID[id].r),expected[rank]);
 });
+
+test('quick AI battles use their 60-second clock from creation and retain the mode on rematch',()=>{const c=loadBattle('rapida');assert.equal(c.G.quick,true);assert.equal(c.G.mode,'normal');c.beginDebate();assert.equal(c.G.turnDeadline-c.Date.now(),60000);c.G.votes={p:100,e:10};c.finish('p');assert.equal(c.SO.mode,'rapida');});

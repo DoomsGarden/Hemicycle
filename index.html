@@ -508,13 +508,13 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=30.2.61">
+<link rel="stylesheet" href="css/interface.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.1.0">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.0.4-frame1">
-<link rel="stylesheet" href="css/tutorial.css?v=31.0.1.3-actions1">
+<link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/launch.css?v=31.0.0.2-logo-metal">
 <link rel="stylesheet" href="css/profile.css?v=31.0.0.1-profile">
 <link rel="stylesheet" href="css/cloud.css?v=31.0.0.2">
@@ -545,29 +545,29 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.0.4"></script>
 <script src="js/cloud-save.js?v=31.0.0.2"></script>
-<link rel="stylesheet" href="css/online.css?v=31.0.1.3-actions1"><script src="js/online-combat-ui.js?v=31.0.1.3-actions1"></script><script src="js/online-ui.js?v=31.0.1.3-actions1"></script>
-<script src="js/cloud-ui.js?v=31.0.1.3-actions1"></script>
+<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.1.4"></script><script src="js/online-ui.js?v=31.0.1.4"></script>
+<script src="js/cloud-ui.js?v=31.0.1.4"></script>
 <script src="js/game-audio.js?v=31.0.0.5-options1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
 <script src="js/battle-visuals.js?v=31.0.0.4"></script>
-<script src="js/battle-tutorial.js?v=31.0.1.3-actions1"></script>
+<script src="js/battle-tutorial.js?v=31.0.1.4"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
-<script src="js/menu-tutorial.js?v=31.0.1.3-actions1"></script>
+<script src="js/menu-tutorial.js?v=31.0.1.4"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.1.2-ui2">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.2-ui2">
-<script src="js/cabinet-presets.js?v=31.0.1.3-actions1"></script>
+<script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
-<script src="js/action-cards.js?v=31.0.1.3-actions1"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.3-actions1">
-<script src="js/player-backup.js?v=31.0.1.3-actions1"></script>
+<script src="js/action-cards.js?v=31.0.1.4"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4">
+<script src="js/player-backup.js?v=31.0.1.4"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.3-actions1"></script>
+<script src="js/changelog.js?v=31.0.1.4"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -579,7 +579,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.1.3';
+var VERSION='v31.0.1.4';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1419,6 +1419,7 @@ window.addEventListener('keydown',function(ev){
   return;
  }
  if(SCREEN==='battle'&&G&&!G.over&&!(TUTORIAL&&TUTORIAL.active)&&!MODAL_CB){
+  if(ev.key==='Escape'&&LOCAL_ACTION){ev.preventDefault();closeLocalAction();paint();return;}
   if(ev.key==='Escape'&&G.sel){ev.preventDefault();var selected=G.sel;choosePlayerAction('cancel');var cardButton=document.querySelector('[data-tutorial=player] [data-buid="'+selected+'"]');if(cardButton)cardButton.focus();return;}
   if((ev.key==='Enter'||ev.key===' ')&&ev.target.matches('[data-buid]')){ev.preventDefault();ev.target.click();return;}
  }
@@ -1559,7 +1560,7 @@ function clearAI(){if(AITIMER){clearTimeout(AITIMER);AITIMER=null;}}
 function clearBattleClock(){if(TURN_CLOCK){clearInterval(TURN_CLOCK);TURN_CLOCK=null;}}
 function syncBattleClock(){
  if(!G||G.over||G.tutorial||!G.turnDeadline){clearBattleClock();return;}
- if(checkBattleEnd())return;
+ if(!G.authoritative&&checkBattleEnd())return;
  var clock=document.getElementById('turnClock'),left=Math.max(0,Math.ceil((G.turnDeadline-Date.now())/1000));
  if(clock){clock.textContent=String(left);clock.setAttribute('aria-label',(G.side==='p'?'Tu turno':'Turno rival')+': '+left+' segundos');clock.classList.toggle('urgent',left<=10);}
  if(typeof HemicycleAudio!=='undefined')HemicycleAudio.clock(G,left);
@@ -1792,8 +1793,8 @@ SCREENS.menu=function(){
  return '<section class="menu-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+'<div class="home-action-stack"><button type="button" class="home-options-button" data-audio-open aria-label="Opciones" title="Opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#242c39"/><circle cx="15" cy="12" r="2" fill="#242c39"/><circle cx="10" cy="18" r="2" fill="#242c39"/></svg></button>'+mailButton()+objectiveButton('achievements','★','Logros')+'</div></div><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
  +'<div class="hero-scene" aria-hidden="true"><div class="hero-halo"></div><div class="hero-fan">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'
- +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'</div>':'')
- +'<span class="play-mode-caption">'+selected[2]+'</span><div class="play-split"><button class="play-main" data-act="play">Jugar</button><button class="play-toggle" data-act="play-menu" aria-label="Elegir modo de juego" aria-haspopup="menu" aria-expanded="'+PLAY_OPEN+'"'+(PLAY_OPEN?' aria-controls="playOptions"':'')+'>'+uiIcon('chevron')+'</button></div><button class="mini online-entry" data-act="online" aria-label="Jugadores y partidas online de prueba">Jugadores · Online de prueba</button></div></div></section>';
+ +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'<button class="play-online-ranked" data-act="online-ranked" role="menuitem">Buscar Clasificatoria online</button></div>':'')
+ +'<span class="play-mode-caption">'+selected[2]+'</span><div class="play-split"><button class="play-main" data-act="play">Jugar</button><button class="play-toggle" data-act="play-menu" aria-label="Elegir modo de juego" aria-haspopup="menu" aria-expanded="'+PLAY_OPEN+'"'+(PLAY_OPEN?' aria-controls="playOptions"':'')+'>'+uiIcon('chevron')+'</button></div><button class="mini online-entry" data-act="online" aria-label="Jugadores conectados y desconectados">Jugadores</button></div></div></section>';
 };
 SCREENS.buzon=function(){
  var messages=pendingMail(),names={comun:'Sobre común',raro:'Sobre raro',legendario:'Sobre legendario'};
@@ -2092,16 +2093,17 @@ function buildEnemyTeam(mode, elo, div){
 }
 
 function newBattle(mode,rival,isTutorial){
- if(!isTutorial&&mode==='ranked'&&typeof PLAYER_PROFILE!=='undefined'&&PLAYER_PROFILE&&PLAYER_PROFILE.account()&&ONLINE){go('menu');ONLINE.open('ranked');return;}
+ var quick=mode==='rapida';if(quick)mode='normal';
+ if(!isTutorial&&mode==='ranked'&&typeof PLAYER_PROFILE!=='undefined'&&PLAYER_PROFILE&&PLAYER_PROFILE.account()&&ONLINE){go('menu');ONLINE.startAI();return;}
  if(TUTORIAL&&!isTutorial&&!TUTORIAL.seen()){TUTORIAL.start();return;}
- clearAI();clearBattleClock();syncRankedSeason();
+ if(REMOTE_BATTLE){REMOTE_BATTLE.close();REMOTE_BATTLE=null;}clearAI();clearBattleClock();closeLocalAction();syncRankedSeason();
  var d=D(),team=isTutorial?['celia-villalobos','ana-pastor','alvaro-nadal','dolors-montserrat','carlos-floriano']:BUILD.ids.slice(0,5),ldrId=isTutorial?team[0]:(BUILD.leader||team[0]);
  var eTeam=isTutorial?['carlos-floriano','ana-pastor','andrea-levy','alvaro-nadal','cuca-gamarra']:buildEnemyTeam(mode, d.elo, SO.div||3);
  /* Elegimos como Líder del rival su carta de mayor rango para que juegue con cabeza pero con sus stats reales */
  var eSorted=eTeam.slice().sort(function(a,b){return TIERORDER[BYID[a].r]-TIERORDER[BYID[b].r];});
  var eLeadId=eSorted[0]||eTeam[0];
 
- G={tutorial:!!isTutorial,mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
+ G={quick:quick,tutorial:!!isTutorial,mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
   turnDeadline:null,inactivity:null,turns:{p:0,e:0},n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},refund:{p:0,e:0},leader:{}};
@@ -2141,6 +2143,7 @@ function beginDebate(){
 /* Una mayoría de 100 votos cierra el debate antes de cualquier otra acción. */
 function checkBattleEnd(){
  if(!G||G.over)return true;
+ if(G.authoritative)return false;
  if(G.votes.p>=100){finish('p');return true;}
  if(G.votes.e>=100){finish('e');return true;}
  if(!G.tutorial&&G.turnDeadline&&Date.now()>=G.turnDeadline){G.inactivity=G.side;log((G.side==='p'?'Has abandonado':'El rival ha abandonado')+' por inactividad: se agotaron los '+(G.quick?60:90)+' segundos.','hi');finish(G.side==='p'?'e':'p',G.side==='p');return true;}
@@ -2152,7 +2155,7 @@ function battleVisual(kind,data){if(typeof HemicycleBattleVisuals!=='undefined')
 function log(t,cls){if(!G)return;var type=/recupera|curación/.test(t)?'heal':/defensa|golpe baja/.test(t)?'guard':/de daño/.test(t)?'damage':/votos?/.test(t)?'votes':'';var name=t.match(/^(.+?) (?:lanza|dice|es expulsado|recibe|usa su defensa)/),copy=name?'<b>'+esc(name[1])+'</b>'+esc(t.slice(name[1].length)):esc(t);G.log.unshift('<div class="log-line '+(cls||'')+' '+type+'" title="'+esc(t)+'">'+copy+'</div>');if(G.log.length>40)G.log.pop();}
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
-function battleZasca(s,c){return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0)+(c.actionBuffs||[]).filter(function(b){return b.until>=(G.turns?G.turns[s]:0);}).reduce(function(n,b){return n+b.value;},0);}
+function battleZasca(s,c){if(G.authoritative)return c.a;return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0)+(c.actionBuffs||[]).filter(function(b){return b.until>=(G.turns?G.turns[s]:0);}).reduce(function(n,b){return n+b.value;},0);}
 function attackDamage(s,c,tgt,variant){
  var foe=s==='p'?'e':'p',zasca=battleZasca(s,c);
  if(variant==='strong')zasca=Math.ceil(zasca*1.5);
@@ -2180,19 +2183,40 @@ function receiveBattleDamage(card,damage){
 function localActionTargets(side,action,uid){var foe=side==='p'?'e':'p',owners=action.target==='all'?['p','e']:[action.target.indexOf('rival')>=0?foe:side],targets=[];owners.forEach(function(owner){G.field[owner].forEach(function(card){targets.push({owner:owner,card:card,doc:activeDoc(owner)});});});return action.target.indexOf('all')===0?targets:targets.filter(function(t){return !uid||t.card.uid===uid;});}
 function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=BYID[card.k],foe=side==='p'?'e':'p';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
  var targets=localActionTargets(side,a,target);if(!targets.length)return 'No hay un objetivo válido.';if(a.effect==='heal'&&!targets.some(function(x){return x.card.h<x.card.hm;}))return 'No falta Aguante en los objetivos.';if(a.effect==='guard'&&!targets.some(function(x){return !x.card.guard;}))return 'Los objetivos ya tienen defensa.';return '';}
-function useLocalAction(side,uid,target){if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=BYID[instance.k];if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p';
+function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=BYID[instance.k];if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p';
  if(!G.actionUsed)G.actionUsed={p:null,e:null};if(!G.spentActions)G.spentActions={p:[],e:[]};G.actionUsed[side]=G.turns[side];G.tdp[side]-=a.cost;G.hand[side]=G.hand[side].filter(function(c){return c!==instance;});if(a.oncePerBattle)G.spentActions[side].push(instance);else G.deck[side].push(instance);
  if(a.effect==='silence'){if(!G.pendingSilence)G.pendingSilence={p:false,e:false};G.pendingSilence[foe]=true;G.field[side].forEach(function(c){c.ready=false;});}
  targets.forEach(function(x){var c=x.card;if(a.effect==='heal'){var restored=Math.min(a.value,c.hm-c.h);c.h+=restored;battleVisual('heal',{uid:c.uid,value:restored});}if(a.effect==='guard'){c.guard=true;battleVisual('guard',{uid:c.uid});}if(a.effect==='boost'){if(!c.actionBuffs)c.actionBuffs=[];c.actionBuffs.push({value:a.value,until:G.turns[x.owner]+(x.owner===side?0:1)});}if(a.effect==='damage')receiveBattleDamage(c,a.value);});
  log(a.n+' activada · '+a.cost+' TdP. '+(a.oncePerBattle?'Pasa al descarte de acciones.':'Regresa al mazo.'),'hi');targets.forEach(function(x){if(x.card.h<=0&&!G.over)expel(side,x.card,{uid:instance.uid},x.doc);});gameSound('card');if(typeof document!=='undefined'&&document.body){var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}return true;}
-var LOCAL_ACTION=null;
-function closeLocalAction(){LOCAL_ACTION=null;var host=document.getElementById('localActionRoot');if(host)host.remove();}
-function inspectLocalAction(uid){LOCAL_ACTION=uid;syncLocalAction();}
-function syncLocalAction(){var old=document.getElementById('localActionRoot');if(old)old.remove();if(!LOCAL_ACTION)return;if(!G||G.over||SCREEN!=='battle'||G.side!=='p'){LOCAL_ACTION=null;return;}var instance=G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION&&c.action;})[0];if(!instance){LOCAL_ACTION=null;return;}var a=BYID[instance.k],targets=(a.target==='self'||a.target==='rival')?localActionTargets('p',a):[],host=document.createElement('section');host.id='localActionRoot';host.className='local-action-panel';host.setAttribute('role','dialog');host.setAttribute('aria-label',a.n);host.innerHTML='<div class="bar between"><b>'+esc(a.n)+'</b><button class="mini" data-local-action="close" aria-label="Cerrar acción">×</button></div>'+actionRulesHTML(a)+(targets.length?'<label>Objetivo<select>'+targets.map(function(x){return '<option value="'+x.card.uid+'">'+esc(x.card.n)+' · '+x.card.h+'/'+x.card.hm+' A</option>';}).join('')+'</select></label>':'')+'<button class="btn sm" data-local-action="activate">Activar · '+a.cost+' TdP</button>';var uid=LOCAL_ACTION;host.querySelector('[data-local-action=close]').onclick=closeLocalAction;host.querySelector('[data-local-action=activate]').onclick=function(){var picker=host.querySelector('select');if(useLocalAction('p',uid,picker?picker.value:undefined)){closeLocalAction();paint();}else{host.querySelector('[data-local-action=activate]').textContent=localActionReason('p',instance,picker?picker.value:undefined)||'Escoge otro objetivo';}};document.body.appendChild(host);var card=document.querySelector('[data-buid="'+uid+'"]'),rect=card?card.getBoundingClientRect():{top:innerHeight-30,left:innerWidth/2,width:0};host.style.left=Math.max(10,Math.min(innerWidth-host.offsetWidth-10,rect.left+rect.width/2-host.offsetWidth/2))+'px';host.style.top=Math.max(10,Math.min(innerHeight-host.offsetHeight-10,rect.top-host.offsetHeight-10))+'px';}
+var LOCAL_ACTION=null,LOCAL_ACTION_TARGET=false;
+function closeLocalAction(){LOCAL_ACTION=null;LOCAL_ACTION_TARGET=false;var host=document.getElementById('localActionRoot');if(host)host.remove();}
+function inspectLocalAction(uid){LOCAL_ACTION=uid;LOCAL_ACTION_TARGET=false;G.sel=null;G.move=null;G.support=false;paint();}
+function validLocalActionTargets(instance){var a=BYID[instance.k];return localActionTargets('p',a).filter(function(t){return !localActionReason('p',instance,t.card.uid);});}
+function selectLocalActionTarget(uid){
+ if(!LOCAL_ACTION_TARGET||!LOCAL_ACTION)return false;
+ var instance=G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION&&c.action;})[0];
+ if(!instance||!validLocalActionTargets(instance).some(function(t){return t.card.uid===uid;})){gameSound('error');return false;}
+ if(!useLocalAction('p',instance.uid,uid))return false;
+ closeLocalAction();paint();return true;
+}
+function syncLocalAction(){
+ var old=document.getElementById('localActionRoot');if(old)old.remove();if(!LOCAL_ACTION)return;
+ if(!G||G.over||SCREEN!=='battle'||G.side!=='p'){closeLocalAction();return;}
+ var instance=G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION&&c.action;})[0];if(!instance){closeLocalAction();return;}
+ if(LOCAL_ACTION_TARGET)return;
+ var a=BYID[instance.k],targeted=a.target==='self'||a.target==='rival',valid=targeted?validLocalActionTargets(instance):[],reason=localActionReason('p',instance,targeted&&valid[0]?valid[0].card.uid:undefined);
+ var host=document.createElement('section');host.id='localActionRoot';host.className='local-action-panel';host.setAttribute('role','dialog');host.setAttribute('aria-label',a.n);
+ host.innerHTML='<header class="local-action-heading">'+actionArtHTML(a,'action-thumb')+'<div><small>ACCIÓN · '+RARM[a.r].n+'</small><b>'+esc(a.n)+'</b></div><span class="action-price">'+a.cost+'<small>TdP</small></span><button class="mini" data-local-action="close" aria-label="Cerrar acción">×</button></header>'+actionRulesHTML(a)+'<p class="local-action-status" role="status">'+esc(reason||(targeted?'Después, toca un orador '+(a.target==='self'?'propio.':'rival.'):'Afecta a todos los objetivos indicados.'))+'</p><button class="btn sm" data-local-action="activate"'+(reason?' disabled':'')+'>'+(targeted?'Elegir objetivo':'Activar acción')+' · '+a.cost+' TdP</button>';
+ host.querySelector('[data-local-action=close]').onclick=function(){closeLocalAction();paint();};
+ host.querySelector('[data-local-action=activate]').onclick=function(){if(targeted){LOCAL_ACTION_TARGET=true;gameSound('ui');paint();var first=document.querySelector('.action-target');if(first)first.focus({preventScroll:true});}else if(useLocalAction('p',instance.uid)){closeLocalAction();paint();}};
+ document.body.appendChild(host);var card=document.querySelector('[data-buid="'+instance.uid+'"]'),rect=card?card.getBoundingClientRect():{top:innerHeight-30,left:innerWidth/2,width:0};
+ host.style.left=Math.max(10,Math.min(innerWidth-host.offsetWidth-10,rect.left+rect.width/2-host.offsetWidth/2))+'px';host.style.top=Math.max(10,Math.min(innerHeight-host.offsetHeight-10,rect.top-host.offsetHeight-10))+'px';
+}
 
 function renewLocalHand(side){if(G.tutorial||G.turns[side]<=1)return;G.deck[side]=shuffle(G.deck[side].concat(G.hand[side]));G.hand[side]=[];}
 
 function useSupport(card,kind,owner){
+ if(G&&G.authoritative)return owner==='p'?sendRemoteBattle({type:kind,uid:card.uid}):false;
  if(checkBattleEnd()||G.side!==owner||!card||!card.ready||G.field[owner].indexOf(card)<0)return false;
  if(kind!=='guard'&&kind!=='heal')return false;
  var heal=healingAmount(card);
@@ -2233,7 +2257,7 @@ function draw(s){
 function startTurn(s){
  if(checkBattleEnd())return;
  clearAI();
- G.n++;G.side=s;G.sel=null;G.move=null;G.support=false;
+ closeLocalAction();G.n++;G.side=s;G.sel=null;G.move=null;G.support=false;
  if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;
  G.field[s].forEach(function(c){if(c.guard){c.guard=false;log(c.n+': su defensa caduca al comenzar su turno.');}});
  G.turnDeadline=G.tutorial?null:Date.now()+(G.quick?60000:90000);
@@ -2273,6 +2297,7 @@ function endTurn(){
 }
 
 function completeTurn(s){
+ if(G&&G.authoritative)return s==='p'?sendRemoteBattle({type:'end'}):false;
  if(checkBattleEnd()||G.side!==s)return;
  applyGuardia(s);
  G.sel=null;
@@ -2307,6 +2332,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
 }
 
 function playCard(s,uid){
+ if(G&&G.authoritative)return s==='p'?sendRemoteBattle({type:'play',uid:uid}):false;
  if(checkBattleEnd()||G.side!==s)return false;
  var idx=-1,i;
  for(i=0;i<G.hand[s].length;i++)if(G.hand[s][i].uid===uid)idx=i;
@@ -2329,6 +2355,7 @@ function playCard(s,uid){
 }
 
 function attack(atk,tgt,owner,variant){
+ if(G&&G.authoritative)return owner==='p'?sendRemoteBattle({type:'attack',uid:atk.uid,target:tgt==='__EMPTY'?'empty':tgt.uid,variant:variant||'normal'}):false;
  if(checkBattleEnd()||G.side!==owner||!atk||!atk.ready||G.field[owner].indexOf(atk)<0)return false;
  variant=variant||'normal';
  if(variant!=='normal'&&variant!=='strong')return false;
@@ -2380,6 +2407,7 @@ function calcRankedEloDelta(who, pVotes, eVotes, abandoned){
 }
 
 function finish(who, abandoned){
+ if(G&&G.authoritative){if(abandoned)sendRemoteBattle({type:'resign'});return;}
  if(!G||G.done)return;
  clearBattleClock();
  if(typeof closeModal==='function')closeModal();
@@ -2444,7 +2472,7 @@ function finish(who, abandoned){
   showAchievement('¡Logro oculto desbloqueado!','Magnate Dorado: Aspecto dorado de Donald Trump disponible en tu Colección.');
  }
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
- go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:mode,reason:G.inactivity?'inactivity':null});
+ go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:G.quick?'rapida':mode,reason:G.inactivity?'inactivity':null});
 }
 function ligaPanel(){
  var lg=ligaLoad();if(!lg)return '';
@@ -2583,9 +2611,10 @@ function choosePlayerAction(kind){
 function cromoBattle(c,side,extra){
  if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
- var isTarget=(side==='e'&&G.sel&&G.move);
+ var actionInstance=LOCAL_ACTION_TARGET&&G.hand.p.filter(function(x){return x.uid===LOCAL_ACTION;})[0],actionTarget=!!(actionInstance&&enMesa(side,c.uid)&&validLocalActionTargets(actionInstance).some(function(t){return t.card.uid===c.uid;}));
+ var isTarget=actionTarget||(side==='e'&&G.sel&&G.move);
  var art=artTag(c.k,c.n,side==='p'&&c.gold,side==='p'),inField=enMesa(side,c.uid),available=inField&&side===G.side&&c.ready&&!G.over;
- return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
+ return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(actionTarget?' action-target':'')+(side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
@@ -2611,6 +2640,32 @@ function gabLine(){
  }).join('')+'</div>';
 }
 
+var REMOTE_BATTLE=null;
+function sendRemoteBattle(command){
+ if(!REMOTE_BATTLE||!G||!G.authoritative||G.networkBusy||G.over)return false;
+ var accepted=REMOTE_BATTLE.send(command);if(accepted!==false)G.networkBusy=true;return accepted!==false;
+}
+function remoteBattleStatus(text){var el=document.getElementById('networkBattleStatus');if(el){el.innerHTML='<span>'+esc(text)+'</span>'+(text&&text!=='Conectando…'?'<button class="mini" data-act="remote-retry">Reintentar</button>':'');el.hidden=!text;}}
+function remoteActionVisual(event){var a=BYID[event.id];if(!a||!a.action)return;var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);gameSound('card');setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}
+function receiveRemoteBattle(snapshot,controls){
+ if(snapshot.status==='preparing')return false;
+ var own=snapshot.players[snapshot.you],enemy=snapshot.players[1-snapshot.you];if(!own||!enemy)return false;
+ var previous=G&&G.authoritative&&G.remoteId===controls.id?G:null,same=previous&&previous.remoteRevision===snapshot.revision;
+ function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:false};}
+ function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
+ var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
+ REMOTE_BATTLE=controls;clearAI();
+ G={authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
+  over:snapshot.status==='finished',done:snapshot.status==='finished',n:own.turn+enemy.turn,side:snapshot.side===snapshot.you?'p':'e',first:snapshot.first===snapshot.you?'p':'e',turns:{p:own.turn,e:enemy.turn},turnDeadline:snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null,
+  pTeam:own.cabinetIds||Array.from(new Set(hand.concat(pf,rest).filter(function(c){return !c.action;}).map(function(c){return c.k;}))),eTeam:[],field:{p:pf,e:ef},hand:{p:hand,e:[]},deck:{p:new Array(own.deckCount||0),e:new Array(enemy.deckCount||0)},pas:{p:rest,e:(enemy.rest||[]).map(convert)},
+  leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
+  actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
+  log:(snapshot.events||[]).slice().reverse().map(function(text){return '<div class="log-line">'+esc(text)+'</div>';}),sel:same?previous.sel:null,move:same?previous.move:null,support:same?previous.support:false};
+ if(!same)closeLocalAction();
+ if(G.over){closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you;go('result',{who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(snapshot.mode==='ranked'?'Elo y resultado guardados en tu cuenta.':'Partida amistosa: tu progreso se conserva.'),mode:snapshot.mode,fs:0,remote:true});return true;}
+ if(SCREEN!=='battle')go('battle');else paint();return true;
+}
+
 SCREENS.battle=function(){
  if(!G)return '<p>Cargando...</p>';
  if(G.sel){var found=false,i2;for(i2=0;i2<G.field.p.length;i2++)if(G.field.p[i2].uid===G.sel)found=true;if(!found)G.sel=null;}
@@ -2622,11 +2677,11 @@ SCREENS.battle=function(){
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
  for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(G.sel&&G.move?' tgt':'')+'" data-buid="__EMPTY" data-side="e" role="button" tabindex="0">'+(G.sel&&G.move?'Restar votos':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&(c.action||G.field.p.length<3)&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
- var modo=G.tutorial?'TUTORIAL':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
+ var modo=G.tutorial?'TUTORIAL':G.quick?'RÁPIDA':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
- return '<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+(G.enemyTheme==='marble'?'marble':'classic')+'"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'
+ return (G.authoritative?'<p id="networkBattleStatus" class="network-battle-status" role="status" hidden></p>':'')+'<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+(G.enemyTheme==='marble'?'marble':'classic')+'"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'
  +(G.tutorial&&G.n===0?'<button class="tutorial-coin" data-tutorial="coin" data-act="begin">Cara o cruz · Toca para ensayar el sorteo</button>':'')
- +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
+ +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'&&!G.authoritative?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
  +gabLine()+'</div>'
  +'<p class="sub battle-resources rival-resources">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
  +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
@@ -2636,7 +2691,7 @@ SCREENS.battle=function(){
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
  +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
  +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small></div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
- +(G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
+ +(LOCAL_ACTION_TARGET?'<div class="hint action-target-hint" role="status"><b>'+esc(BYID[G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION;})[0].k].n)+'</b>: toca un cromo iluminado. <button class="battle-cancel" data-act="action-cancel">Cancelar</button></div>':G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
         :'')
  +'<section class="battle-journal"><div class="journal-heading"><span>ACTA DEL DEBATE</span><span>Ronda '+roundNum+'</span></div><div class="log" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.slice(0,8).join('')+'</div></section>'
  +'<div class="bar between battle-controls"><button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
@@ -2821,8 +2876,9 @@ document.addEventListener('click',function(ev){
 
  if(n.hasAttribute('data-buid')){
   var uid=n.getAttribute('data-buid'),side=n.getAttribute('data-side');
-  if(checkBattleEnd()||G.side!=='p')return;
+  if(checkBattleEnd()||G.side!=='p'||G.networkBusy)return;
   var i;
+  if(LOCAL_ACTION_TARGET){if(enMano('p',uid)){inspectLocalAction(uid);return;}selectLocalActionTarget(uid);return;}
   if(enMano('p',uid)){
    var selectedHand=G.hand.p.filter(function(c){return c.uid===uid;})[0];if(selectedHand&&selectedHand.action){inspectLocalAction(uid);return;}
    var cardKey=uidOf(uid);
@@ -2896,10 +2952,13 @@ document.addEventListener('click',function(ev){
   }
   case 'cabinet-manage':if(SCREEN==='builder'){CABINET_RETURN=Object.assign({},SO);var state=cabinetState();CABINET_EDIT=state.selected;loadSelectedCabinet();go('coleccion');}break;
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
+  case 'action-cancel':closeLocalAction();paint();break;
   case 'spent-action-info':{var spent=BYID[n.getAttribute('data-id')];if(spent&&spent.action)showModal(spent.n+' · Agotada',actionRulesHTML(spent),'Entendido',false,null,true,false);break;}
   case 'collection-type':if(SCREEN==='coleccion'){COL_MODE=COL_MODE==='acciones'?'oradores':'acciones';FIL={q:'',r:'',d:''};paint();}break;
   case 'cabinet-action-remove':if(CABINET_EDIT!==null){BUILD.actions=(BUILD.actions||[]).filter(function(id){return id!==n.getAttribute('data-id');});paint();}break;
-  case 'online':if(ONLINE)ONLINE.open();break;
+  case 'online':if(ONLINE)ONLINE.open(PLAY_MODE);break;
+  case 'remote-retry':if(REMOTE_BATTLE)REMOTE_BATTLE.retry();break;
+  case 'online-ranked':PLAY_OPEN=false;if(ONLINE)ONLINE.searchRanked();break;
   case 'play-menu':
    PLAY_OPEN=!PLAY_OPEN;paint();
    var focus=document.querySelector(PLAY_OPEN?'.play-option.on':'[data-act="play-menu"]');if(focus)focus.focus();
@@ -2919,9 +2978,11 @@ document.addEventListener('click',function(ev){
    if(TUTORIAL)startPractice(TUTORIAL);break;
   case 'play':
    if(G&&!G.over&&!G.tutorial){go('battle');break;}
+   if(ONLINE&&ONLINE.hasActiveMatch()){ONLINE.resume();break;}
+   if(ONLINE&&ONLINE.hasInvitation()){ONLINE.open();break;}
    if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start();break;}
    if(PLAY_MODE==='liga'){go('liga');break;}
-   if(PLAY_MODE==='rapida'){autoBuild();LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader,actions:(BUILD.actions||[]).slice()};SO={mode:'normal'};newBattle('normal');if(G&&!G.tutorial)G.quick=true;break;}
+   if(PLAY_MODE==='rapida'){autoBuild();LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader,actions:(BUILD.actions||[]).slice()};SO={mode:'normal'};newBattle('rapida');break;}
    BUILD={ids:LAST_BUILD.ids.slice(),leader:LAST_BUILD.leader,actions:(LAST_BUILD.actions||[]).slice()};sanitizeBuild();go('builder',{mode:PLAY_MODE});
    break;
   case 'zoomcard':
@@ -2969,7 +3030,7 @@ document.addEventListener('click',function(ev){
    autoBuild();
    LAST_BUILD={ids:BUILD.ids.slice(),leader:BUILD.leader,actions:(BUILD.actions||[]).slice()};
    SO={mode:'normal'};
-   newBattle('normal');if(G&&!G.tutorial)G.quick=true;
+   newBattle('rapida');
    break;
   case 'auto':
    if(SCREEN==='coleccion'&&CABINET_EDIT!==null){autoBuild();paint();}break;
@@ -2991,7 +3052,7 @@ document.addEventListener('click',function(ev){
    if(G&&!G.over){
     showModal(
      '¿Abandonar el debate?',
-     G.tutorial?'Puedes repetir esta práctica desde Ayuda. No perderás cromos ni cambiarán tus estadísticas.':'Si abandonas el hemiciclo ahora, se contará como una derrota'+(G.mode!=='normal'?' y podrías perder una copia de un cromo de tu gabinete':'')+'.',
+     G.authoritative?'El servidor registrará la rendición y resolverá el resultado de esta partida.':G.tutorial?'Puedes repetir esta práctica desde Ayuda. No perderás cromos ni cambiarán tus estadísticas.':'Si abandonas el hemiciclo ahora, se contará como una derrota'+(G.mode!=='normal'?' y podrías perder una copia de un cromo de tu gabinete':'')+'.',
      'Abandonar debate',
      true,
      function(){if(G&&!G.over)finish('e', true);}
@@ -3097,7 +3158,7 @@ function firstEntry(){
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();var initial=D(),initialGoals=HemicycleObjectives.snapshot(Object.assign({},initial,{objectiveCatalog:CARDS}),CARDS);if(JSON.stringify(initial.objectives)!==JSON.stringify(initialGoals)){initial.objectives=initialGoals;var initialSave={};initialSave[LS]=initial;atomicLocal(initialSave);}
  PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
- ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',cabinet:function(){var d=D(),state=HemicycleCabinets.state(d),slot=state.slots[state.selected];return {orators:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(){if(!CLOUD_SAVE)throw Error('Activa primero el guardado en la nube.');await CLOUD_SAVE.save();await CLOUD_SAVE.refresh();if(CLOUD_SAVE.state().phase!=='synced')throw Error('Sincroniza primero tu guardado desde Nube para conservar tu Elo.');},reconcileRanked:async function(){if(!CLOUD_SAVE)return;await CLOUD_SAVE.refresh();var cloud=CLOUD_SAVE.state();if(cloud.remote&&cloud.phase!=='synced')await CLOUD_SAVE.restore(cloud.remote.revision);},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',mode:function(){return PLAY_MODE;},battle:receiveRemoteBattle,battleStatus:remoteBattleStatus,actionVisual:remoteActionVisual,clearBattle:function(){if(G&&G.authoritative){G=null;REMOTE_BATTLE=null;clearBattleClock();closeLocalAction();go('menu');}},cabinet:function(){var d=D(),state=HemicycleCabinets.state(d),slot=state.slots[state.selected];return {orators:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(){if(!CLOUD_SAVE)throw Error('Activa primero el guardado en la nube.');await CLOUD_SAVE.save();await CLOUD_SAVE.refresh();if(CLOUD_SAVE.state().phase!=='synced')throw Error('Sincroniza primero tu guardado desde Nube para conservar tu Elo.');},reconcileRanked:async function(){if(G&&G.authoritative)G.over=true;if(!CLOUD_SAVE)return;await CLOUD_SAVE.refresh();var cloud=CLOUD_SAVE.state();if(cloud.remote&&cloud.phase!=='synced')await CLOUD_SAVE.restore(cloud.remote.revision);},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
   CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
    atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra));MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');
@@ -3137,7 +3198,8 @@ function boot(){
    }
    if(action==='prepare-action'){var a=BYID['turno-de-palabra'];G.hand.p.unshift({uid:'tutorial-action',k:a.id,n:a.n,r:a.r,c:a.cost,action:true,a:0,h:0,hm:0,v:0});while(G.hand.p.length>2)G.deck.p.push(G.hand.p.pop());}
    if(action==='inspect-demo-action'){inspectLocalAction('tutorial-action');}
-   if(action==='activate-demo-action'){useLocalAction('p','tutorial-action',own.uid);closeLocalAction();if(!G.spentActions)G.spentActions={p:[],e:[]};G.spentActions.p.push({k:'mocion-de-censura'});}
+   if(action==='prepare-demo-target')LOCAL_ACTION_TARGET=true;
+   if(action==='activate-demo-action'){selectLocalActionTarget(own.uid);closeLocalAction();if(!G.spentActions)G.spentActions={p:[],e:[]};G.spentActions.p.push({k:'mocion-de-censura'});}
    if(action==='prepare-final'){
     closeLocalAction();
     G.votes.p=98;own.ready=true;
