@@ -136,3 +136,47 @@ con PostgreSQL local PGlite. No sustituyen una partida real entre dos dispositiv
 ni las pruebas de concurrencia de PostgreSQL alojado. Evidencias en
 `_dev/reports/online-foundation/`. Chromium prueba 320×568, 393×851, 851×393 y
 1280×900, con animación y movimiento reducido.
+
+## Servicio arrancado y ventana para dos cuentas
+
+El propietario confirma `/health` con `configured: true` y
+`combatEnabled: false` en `https://hemicycle-w578.onrender.com`. También confirma
+Success del SQL de salas. El entorno de Codex no puede consultar ese destino:
+el proxy rechaza el túnel CONNECT (403); no se afirma una comprobación externa
+que todavía no se ha realizado.
+
+Esta rama añade una ventana de prueba en:
+https://hemicycle-w578.onrender.com/rooms-test/
+
+Render debe desplegar el último commit de la rama antes de abrirla. No cambia
+la publicación de GitHub Pages. No ejecutar otra migración para esta ventana.
+
+Para Google: Supabase → Authentication → URL Configuration → Redirect URLs →
+Add URL → `https://hemicycle-w578.onrender.com/rooms-test/` → Save. Mantener el
+Site URL y los retornos del juego. El callback de Google Cloud sigue siendo el
+callback de Supabase; no añadir onrender como callback de Google Cloud.
+
+La ventana usa el SDK oficial y guarda su sesión de pruebas separada de la del
+juego. No pide ni guarda claves administrativas. Un navegador accede con una
+cuenta y crea sala; otro navegador/dispositivo accede con una segunda cuenta y
+pega el código. Ambos deben mostrar «Dos jugadores conectados». Una tercera
+cuenta debe ser rechazada. Al recargar se recupera la sesión y la sala de esa
+pestaña. Es una prueba de acceso y persistencia, todavía sin combate. Config y
+SDK son recursos públicos; contienen solo URL y clave publishable. El backend
+permite el origen propio que Render indica en RENDER_EXTERNAL_URL, además de
+los orígenes explícitos del juego. Cerrar sesión de pruebas conserva el progreso
+y la sesión que pudiera estar abierta en el dominio del juego.
+
+Comprobación reproducible adicional:
+
+```sh
+NODE_PATH=/workspace/.hemicycle-tools/node_modules \
+PGLITE_MODULE=/workspace/.hemicycle-tools/node_modules/@electric-sql/pglite \
+node _dev/checks/online-lobby-browser.cjs
+```
+
+SDK real, tres contextos de Chromium y funciones PostgreSQL locales; transporte
+de autenticación simulado, sin tocar usuarios alojados. Se comprueban creación,
+entrada, rechazo de tercera cuenta, recarga, cierre de sesión aislado y ausencia
+de cambios en progreso. Evidencias `lobby-browser.json` y capturas host/guest.
+El acceso de Google real y las dos cuentas alojadas deben probarse en el servicio.
