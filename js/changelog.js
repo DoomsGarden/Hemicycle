@@ -4,20 +4,41 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
-  "version":"v31.0.1.4","date":"2026-10-24","title":"Combates integrados y acceso online más sencillo",
-  "sections":[
-    {"title":"Jugar e invitar","items":[
-      "El selector de modo junto a Jugar mantiene su forma y su flecha centrada en todos los tamaños de pantalla.",
-      "La preparación online utiliza el mismo selector de cinco gabinetes favoritos que las partidas contra IA, con líder, cromos y acciones visibles. Los integrantes se editan desde Colección; al confirmar quedan bloqueados hasta empezar el combate.",
-      "Jugadores muestra un listado compacto de conectados y desconectados. Las invitaciones usan el modo elegido en Inicio; ya no hay que repetir la selección ni copiar códigos.",
-      "Sin invitación pendiente, Jugar inicia contra IA. La Clasificatoria contra IA sigue dando Elo durante el prelanzamiento; con una cuenta conectada el servidor ejecuta al rival y guarda el resultado.",
-      "La Clasificatoria entre jugadores sigue usando una cola por Elo, accesible desde el selector de Jugar. Las invitaciones directas son para Normal y Rápida."
-    ]},
-    {"title":"Una sola mesa de combate","items":[
-      "Las partidas online utilizan la mesa habitual del juego, con sus tres puestos, dos cartas en mano, marcadores de votos, reloj y registro. El combate deja de mostrarse dentro de una ventana emergente.",
-      "Las acciones muestran una ficha más clara con su arte, coste y reglas. Si necesitan un objetivo, se elige tocando un cromo iluminado de la mesa, igual que al atacar; cancelar no gasta TdP.",
-      "Los tutoriales de combate y menú explican estos controles. Se conserva el progreso al actualizar la aplicación."
-    ]}
+  "version": "v31.0.1.4",
+  "date": "2026-10-24",
+  "title": "Combates integrados y acceso online más sencillo",
+  "sections": [
+    {
+      "title": "Jugar e invitar",
+      "items": [
+        "El selector de modo junto a Jugar mantiene su forma y su flecha centrada en todos los tamaños de pantalla.",
+        "La preparación online utiliza el mismo selector de cinco gabinetes favoritos que las partidas contra IA, con líder, cromos y acciones visibles. Los integrantes se editan desde Colección; al confirmar quedan bloqueados hasta empezar el combate.",
+        "Jugadores muestra un listado compacto de conectados y desconectados. Las invitaciones usan el modo elegido en Inicio; ya no hay que repetir la selección ni copiar códigos.",
+        "Sin invitación pendiente, Jugar inicia contra IA. La Clasificatoria contra IA sigue dando Elo durante el prelanzamiento; con una cuenta conectada el servidor ejecuta al rival y guarda el resultado.",
+        "La Clasificatoria entre jugadores sigue usando una cola por Elo, accesible desde el selector de Jugar. Las invitaciones directas son para Normal y Rápida."
+      ]
+    },
+    {
+      "title": "Una sola mesa de combate",
+      "items": [
+        "Las partidas online utilizan la mesa habitual del juego, con sus tres puestos, dos cartas en mano, marcadores de votos, reloj y registro. El combate deja de mostrarse dentro de una ventana emergente.",
+        "Corregidos los reinicios de la música al realizar acciones o recibir actualizaciones en partidas online y contra IA. La intensidad musical cambia con los votos sin interrumpir la melodía, y se conservan las transiciones de victoria y derrota.",
+        "Las acciones muestran una ficha más clara con su arte, coste y reglas. Si necesitan un objetivo, se elige tocando un cromo iluminado de la mesa, igual que al atacar; cancelar no gasta TdP.",
+        "Los tutoriales de combate y menú explican estos controles. Se conserva el progreso al actualizar la aplicación."
+      ]
+    },
+    {
+      "title": "Correcciones acumuladas de preparación y recuperación",
+      "items": [
+        "Los favoritos vacíos no pueden iniciar una partida. La confirmación utiliza exactamente los cinco oradores, el líder y las acciones del favorito elegido, sin volver a seleccionarlos en listas.",
+        "Editar en Colección y volver mantiene la partida pendiente y el favorito elegido. Después de confirmar, la selección permanece bloqueada mientras espera al rival.",
+        "La preparación se adapta a móvil y horizontal para mantener visibles los cinco cromos, sus estadísticas, las acciones y el botón de confirmar sobre la navegación.",
+        "Si se pierde la respuesta de una confirmación o una acción, se recupera la misma operación sin duplicar sus efectos ni su coste.",
+        "Al recargar y pulsar Jugar se recupera la partida online que seguía en curso. Se conserva su reloj y no se crea otra sala.",
+        "El resultado clasificatorio se sincroniza antes de mostrar el Elo final. Rápida mantiene sus 60 segundos y su modo al volver a jugar.",
+        "Los nombres, las estadísticas y las descripciones de los cromos respetan el marco. Las acciones muestran su texto completo en la vista normal y ampliada, con tamaños adaptados a cada carta."
+      ]
+    }
   ]
 },
 {
@@ -25,25 +46,45 @@
   "date": "2026-10-24",
   "title": "Primeras partidas online de prueba",
   "sections": [
-    {"title":"Juega con otros probadores","items":[
-      "Inicio incorpora el acceso a jugadores y partidas online de prueba con tu cuenta del juego. El listado optativo muestra conectados y desconectados por nick o alias provisional.",
-      "Puedes invitar a otro jugador y aceptar invitaciones. Al aceptar se abre la preparación de la partida, sin copiar códigos; las salas por código también siguen disponibles.",
-      "El online utiliza por ahora una colección común de prueba, cinco oradores y hasta dos acciones. Normal y Rápida admiten invitaciones y búsqueda de rival; Clasificatoria utiliza una cola por Elo que amplía el margen con la espera. Normal y Clasificatoria duran 90 segundos por turno; Rápida, 60. Se gana a 100 votos. Normal y Rápida son amistosas: no cambian tu progreso.",
-      "Clasificatoria requiere guardar y sincronizar el progreso en la nube. Conserva el Elo existente al vincularlo y actualiza Elo, victorias, derrotas y recompensas de ascenso en el servidor. No reinicia tu cuenta ni cambia los FS o la colección.",
-      "Las acciones se activan desde la mano. Las reutilizables regresan al mazo y las de un solo uso quedan en un descarte atenuado. Puedes recuperar una partida al reconectar; el reloj sigue avanzando.",
-      "Corregida la carga del combate al acceder desde el dominio del juego. Si falla la conexión inicial, Actualizar / reintentar vuelve a cargar la preparación sin crear otra sala."
-    ]},
-    {"title":"Acciones, sobres y gabinetes","items":[
-      "Doce cartas de acción con ilustraciones propias se consiguen en los mismos sobres. Cada sobre conserva sus cinco cromos y sus rarezas: puede incluir una acción en lugar de un orador de la misma rareza. Las portadas siguen mostrando solo oradores.",
-      "Un botón de Colección alterna Oradores y Acciones. Cada favorito mantiene cinco oradores y permite añadir hasta dos acciones distintas de tu colección. Puedes leer todos sus efectos, costes y requisitos desde la ficha o al tocarlas en la mano.",
-      "Las acciones no ocupan hueco en la Tribuna. Se activa como máximo una por turno; las reutilizables regresan al mazo y las de un solo uso quedan visibles y sombreadas en su descarte. La mano se renueva al comenzar cada turno propio, con hasta dos cartas y nunca dos acciones juntas.",
-      "El robo de dos cartas se acompaña de un ajuste de pasivas: Foco regenera 1 de Aguante por turno y Aforado recupera 3 al evitar una expulsión una vez por cromo y debate. Se mantiene el círculo de debilidades.",
-      "Las acciones y sus gabinetes se conservan en los respaldos y la nube. Los tutoriales de combate y menú enseñan los nuevos controles sin gastar FS ni alterar tu colección."
-    ]},
-    {"title":"Temporada de prelanzamiento","items":[
-      "La temporada 1 de Clasificatoria permanece abierta, sin descenso por calendario. Se conservan los ascensos y las recompensas ya reclamadas o pendientes.",
-      "La temporada 2 comenzará con el lanzamiento oficial en Google Play. A partir de entonces volverán las temporadas de 30 días naturales. Los desafíos diarios, semanales y mensuales mantienen sus propios periodos."
-    ]}
+    {
+      "title": "Juega con otros probadores",
+      "items": [
+        "Inicio incorpora el acceso a jugadores y partidas online de prueba con tu cuenta del juego. El listado optativo muestra conectados y desconectados por nick o alias provisional.",
+        "Puedes invitar a otro jugador y aceptar invitaciones. Al aceptar se abre la preparación de la partida, sin copiar códigos; las salas por código también siguen disponibles.",
+        "El online utiliza por ahora una colección común de prueba, cinco oradores y hasta dos acciones. Normal y Rápida admiten invitaciones y búsqueda de rival; Clasificatoria utiliza una cola por Elo que amplía el margen con la espera. Normal y Clasificatoria duran 90 segundos por turno; Rápida, 60. Se gana a 100 votos. Normal y Rápida son amistosas: no cambian tu progreso.",
+        "Clasificatoria requiere guardar y sincronizar el progreso en la nube. Conserva el Elo existente al vincularlo y actualiza Elo, victorias, derrotas y recompensas de ascenso en el servidor. No reinicia tu cuenta ni cambia los FS o la colección.",
+        "Las acciones se activan desde la mano. Las reutilizables regresan al mazo y las de un solo uso quedan en un descarte atenuado. Puedes recuperar una partida al reconectar; el reloj sigue avanzando.",
+        "Corregida la carga del combate al acceder desde el dominio del juego. Si falla la conexión inicial, Actualizar / reintentar vuelve a cargar la preparación sin crear otra sala."
+      ]
+    },
+    {
+      "title": "Acciones, sobres y gabinetes",
+      "items": [
+        "Doce cartas de acción con ilustraciones propias se consiguen en los mismos sobres. Cada sobre conserva sus cinco cromos y sus rarezas: puede incluir una acción en lugar de un orador de la misma rareza. Las portadas siguen mostrando solo oradores.",
+        "Un botón de Colección alterna Oradores y Acciones. Cada favorito mantiene cinco oradores y permite añadir hasta dos acciones distintas de tu colección. Puedes leer todos sus efectos, costes y requisitos desde la ficha o al tocarlas en la mano.",
+        "Las acciones no ocupan hueco en la Tribuna. Se activa como máximo una por turno; las reutilizables regresan al mazo y las de un solo uso quedan visibles y sombreadas en su descarte. La mano se renueva al comenzar cada turno propio, con hasta dos cartas y nunca dos acciones juntas.",
+        "El robo de dos cartas se acompaña de un ajuste de pasivas: Foco regenera 1 de Aguante por turno y Aforado recupera 3 al evitar una expulsión una vez por cromo y debate. Se mantiene el círculo de debilidades.",
+        "Las acciones y sus gabinetes se conservan en los respaldos y la nube. Los tutoriales de combate y menú enseñan los nuevos controles sin gastar FS ni alterar tu colección."
+      ]
+    },
+    {
+      "title": "Temporada de prelanzamiento",
+      "items": [
+        "La temporada 1 de Clasificatoria permanece abierta, sin descenso por calendario. Se conservan los ascensos y las recompensas ya reclamadas o pendientes.",
+        "La temporada 2 comenzará con el lanzamiento oficial en Google Play. A partir de entonces volverán las temporadas de 30 días naturales. Los desafíos diarios, semanales y mensuales mantienen sus propios periodos."
+      ]
+    },
+    {
+      "title": "Correcciones y compatibilidad incorporadas",
+      "items": [
+        "Se evita abrir varias veces la preparación de la misma partida cuando llega una actualización de la sala, conservando la selección que ya estaba en curso.",
+        "Las nuevas cartas de acción se guardan en su colección correspondiente, también al abrir lotes y sobres de recompensas. Una copia antigua de la aplicación no elimina ese inventario al guardar en la nube.",
+        "Los dos huecos opcionales de acción se conservan al cargar, guardar, elegir de nuevo o recuperar un gabinete. La IA recibe el mismo número de acciones y de rarezas equivalentes en las partidas locales.",
+        "Una acción de objetivo individual no puede convertirse en un efecto para toda la mesa por no haber elegido un cromo. La falta de recursos o un objetivo inválido no consume la carta.",
+        "Las guías incorporan el acceso online, la colección de acciones y los dos huecos del gabinete. Los ejemplos prestados no gastan FS ni modifican la colección, incluso si todavía está vacía.",
+        "Se conservan el progreso y los ajustes al actualizar la aplicación; los nuevos recursos de acciones quedan disponibles sin conexión una vez descargados."
+      ]
+    }
   ]
 },
 {
@@ -65,6 +106,28 @@
         "Las doce cartas legendarias pueden conseguir una edición de confeti tras 250 victorias con ese político como líder. Se reclama una vez y puedes equiparla o volver al aspecto clásico; no cambia sus estadísticas. Los logros muestran un único botón contextual a la derecha de su progreso. La ficha sustituye el bloque de maestría por una insignia al conseguir la edición y coloca los selectores de aspecto bajo las frases.",
         "Los sobres incorporan reflejos metalizados, grabados y adornos por rareza. Se mantienen las portadas semanales, las compras x1, x5 y x10 y el corte superior al abrir.",
         "La guía del menú incluye los nuevos accesos. Si ya la completaste, verás una explicación breve y podrás repetir la guía completa desde Ayuda. Se conservan tu progreso y tus ajustes. La interfaz incorpora una fuente incluida, iconos centrados y cifras más claras en los cromos. Al reclamar recompensas se conserva la posición de la lista."
+      ]
+    },
+    {
+      "title": "Correcciones de navegación y lectura",
+      "items": [
+        "Desafíos, Logros, Opciones y Buzón utilizan iconos centrados y áreas de pulsación alineadas. Las pestañas de Logros y Desafíos se distribuyen en tres columnas con la selección más visible.",
+        "Las pestañas y el botón de cierre permanecen accesibles mientras se recorre la lista. Se puede navegar con el teclado, cerrar con Escape y recuperar el foco en el botón de acceso.",
+        "Reclamar un hito o los FS de una misión mantiene la misma posición. También se recuerda la sección y el desplazamiento al cerrar y reabrir la ventana.",
+        "Al abrir un sobre de recompensa, Volver a desafíos regresa a la sección y posición anteriores, incluso después de consultar o ampliar un premio. No vuelve a entregar recompensas.",
+        "La fuente Inter se incluye en la aplicación para mantener el mismo aspecto entre dispositivos y sin conexión. El título y el reloj conservan su tipografía propia.",
+        "Los cromos muestran Zasca y Aguante en casillas separadas, con números adaptados al tamaño de cada carta. En combate se distingue el Aguante actual del máximo y los indicadores no tapan el nombre ni las cifras."
+      ]
+    },
+    {
+      "title": "Correcciones de hitos y aspectos",
+      "items": [
+        "Cada logro muestra solo una acción junto a la barra: Reclamar para el primer hito alcanzado y pendiente, o Reclamado cuando ya se han recogido los alcanzados. Antes del primer hito no aparece botón; los hitos futuros no llenan la tarjeta con botones desactivados.",
+        "Los hitos pendientes se recogen uno a uno, sin perder los anteriores ni repetir entregas. Las ediciones ya reclamadas siguen contando como obtenidas.",
+        "Se retira el bloque de maestría de la ficha. La insignia junto al nombre aparece solo después de conseguir la edición; los controles Clásico y Confeti quedan inmediatamente debajo de las frases.",
+        "Cambiar el aspecto conserva la posición de la ficha y el foco en el botón elegido. Las ediciones, los logros y los desafíos se mantienen al recargar y en los respaldos.",
+        "Los objetivos de diversidad se adaptan a los líderes y doctrinas disponibles al comenzar cada periodo. Rápida registra sus resultados en su modo correspondiente y los tutoriales no aumentan los contadores.",
+        "Se corrige la presentación del confeti en la Tribuna del jugador y el comportamiento cuando el dispositivo no puede dibujarlo: permanece el retrato y el juego continúa."
       ]
     }
   ]
@@ -88,6 +151,14 @@
       "items": [
         "La guía del menú pasa de 24 a 18 pasos, con transiciones automáticas, explicación de las compras múltiples y una apertura de muestra sin gastar FS ni añadir cromos.",
         "Las zonas que necesitan desplazamiento siguen funcionando, con las barras visuales ocultas para mantener el aspecto del juego."
+      ]
+    },
+    {
+      "title": "Apertura y progreso protegidos",
+      "items": [
+        "Si falla el guardado de una compra, se conservan el saldo, la colección y los tiempos de los sobres gratuitos; no aparece una entrega que no se haya podido guardar.",
+        "La apertura bloquea pulsaciones repetidas durante el corte y permite consultar la ficha y ampliar los premios sin perder el resultado del sobre.",
+        "Si una portada no está descargada al jugar sin conexión, permanece visible el envoltorio del sobre. La actualización conserva la colección, la Liga y los ajustes de sonido."
       ]
     }
   ]

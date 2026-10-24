@@ -200,7 +200,7 @@ p{margin:0 0 4px;font-size:12px}
 }
 @keyframes zoomFadeIn{from{opacity:0}to{opacity:1}}
 .zoom-card-wrap{
-  width:min(78vw, 300px);
+  width:min(78vw, 300px, 54vh);
   max-height:74vh;
   aspect-ratio:3 / 4.1;
   position:relative;
@@ -557,17 +557,17 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/menu-tutorial.js?v=31.0.1.4"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.1.2-ui2">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.2-ui2">
+<link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
-<script src="js/action-cards.js?v=31.0.1.4"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4">
+<script src="js/action-cards.js?v=31.0.1.4"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
 <script src="js/player-backup.js?v=31.0.1.4"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.4-cabinets1"></script>
+<script src="js/changelog.js?v=31.0.1.4-audio1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -2685,6 +2685,8 @@ function receiveRemoteBattle(snapshot,controls){
   leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
   actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
   log:(snapshot.events||[]).slice().reverse().map(function(text){return '<div class="log-line">'+esc(text)+'</div>';}),sel:same?previous.sel:null,move:same?previous.move:null,support:same?previous.support:false};
+ // Keep one game object per match: audio uses its identity to continue the score.
+ if(previous){Object.assign(previous,G);G=previous;}
  if(!same)closeLocalAction();
  if(G.over){closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you;go('result',{who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(snapshot.mode==='ranked'?'Elo y resultado guardados en tu cuenta.':'Partida amistosa: tu progreso se conserva.'),mode:snapshot.mode,fs:0,remote:true});return true;}
  if(SCREEN!=='battle')go('battle');else paint();return true;

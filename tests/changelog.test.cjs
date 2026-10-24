@@ -42,3 +42,8 @@ test('public version notes never reveal the hidden achievement or its reward',()
  const publicText=JSON.stringify(entries);
  assert.doesNotMatch(publicText,/trump|aspecto (?:especial|dorad)|sonrisa|Zasca base|Aguante base/i);
 });
+
+test('same-version corrections retain all published notes from v31.0.1.1 onwards',()=>{
+ const baseline=require('../_dev/changelog/published-v31.0.1.x.json').baseline;
+ for(const release of baseline){const entry=entries.find(e=>e.version===release.version);assert.ok(entry,release.version);const items=entry.sections.flatMap(s=>s.items);for(const original of release.sections.flatMap(s=>s.items))assert.ok(items.some(item=>item.includes(original)),release.version+' must retain the published note from '+release.ref+': '+original);}
+});

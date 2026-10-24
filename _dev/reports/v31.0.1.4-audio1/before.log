@@ -1,0 +1,13 @@
+AssertionError [ERR_ASSERTION]: Presentar orador: online packets must not restart music
+
+4 !== 2
+
+    at stable (/workspace/Hemicycle/_dev/checks/online-music-browser.cjs:21:140)
+    at async /workspace/Hemicycle/_dev/checks/online-music-browser.cjs:23:188 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 4,
+  expected: 2,
+  operator: 'strictEqual',
+  diff: 'simple'
+}

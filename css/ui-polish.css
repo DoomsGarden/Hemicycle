@@ -12,3 +12,9 @@ html,body{font-family:'Hemicycle UI',sans-serif;font-optical-sizing:auto}button,
 @media(max-height:500px){.home-action-stack{gap:4px}.home-action-stack .home-options-button,.home-action-stack .mail-button{height:38px;min-height:38px}.objective-modal>.bar .btn{min-height:38px}}
 /* On short battle cards, keep status badges between the cost and the name. */
 @media(max-height:600px){.battle-wrap .cromo .lbl{top:21px;font-size:6px;line-height:1.1;padding:1px 2px}.battle-wrap .cromo .battle-guard{top:21px;font-size:6px;line-height:1.1;padding:1px 2px}.battle-wrap .cromo:has(.battle-guard) .lbl{display:none}.battle-wrap .cromo .strong-signal{top:21px;width:11px;height:11px;font-size:11px}.battle-wrap .cromo .crown{top:0;font-size:9px}.battle-wrap .cromo .cost{min-width:16px;min-height:16px;padding:0 2px}}
+/* Leave room for the frame and allow every name to wrap in card previews. */
+.cromo:not(.action-card) .bot{padding-left:8%;padding-right:8%;padding-bottom:8%}
+.cromo .nm{display:block;-webkit-line-clamp:unset;overflow:visible;overflow-wrap:anywhere;text-overflow:clip}
+.zoom-card-wrap .cromo .nm{font-size:6.3cqi}
+.battle-wrap .cromo .nm{display:-webkit-box;-webkit-line-clamp:1;overflow:hidden}
+.battle-wrap .cromo:not(.action-card) .bot{padding:10px 3px 3px}
