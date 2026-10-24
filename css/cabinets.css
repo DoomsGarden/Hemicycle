@@ -4,3 +4,39 @@
 @media(max-width:350px){.cabinet-panel{padding:8px}.cabinet-tabs,.cabinet-members{gap:6px}.cabinet-members{margin-top:8px}}
 @media(max-height:500px){.cabinet-members{max-width:250px;margin:8px auto 0}.cabinet-actions{margin-top:7px}}
 .screen[data-view=coleccion] #gridBox{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;padding:4px 2px 10px}.screen[data-view=coleccion] #gridBox .cromo{box-shadow:0 5px 12px #0006}.screen[data-view=coleccion] .chips{gap:5px}.screen[data-view=coleccion] .chip{border-radius:8px;background:#172133;border-color:#354158}.screen[data-view=coleccion] .chip.on{color:#f1ce8a;border-color:#b59961;background:linear-gradient(140deg,#4b402d,#262a32)}
+
+.cabinet-battle-actions{margin-top:10px}.cabinet-battle-actions .cabinet-action-member{font-size:11px}.cabinet-battle-actions .cabinet-action-member>span{display:grid;gap:3px}.cabinet-battle-actions small{font-size:10px;color:#b3c2d4}.cabinet-summary{flex-shrink:0}.cabinet-summary .sub{margin-bottom:0}.cabinet-preparation-buttons{flex-shrink:0}.cabinet-tab:disabled{cursor:default}.cabinet-tab.on:disabled{opacity:1}@media(max-width:350px){.cabinet-preparation-buttons{gap:6px}.cabinet-preparation-buttons .btn{font-size:10px;padding:8px}.cabinet-battle-actions .action-thumb{width:30px}}
+@media(max-height:690px){
+ .screen[data-view=builder] .view-body>p.sub{display:none}
+ .screen[data-view=builder] .cabinet-summary{padding:8px}
+ .screen[data-view=builder] .cabinet-summary h3{margin:0 0 4px;font-size:11px}
+ .screen[data-view=builder] .cabinet-summary>.sub{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:10px}
+ .screen[data-view=builder] .cabinet-battle-actions{margin-top:6px;gap:6px}
+ .screen[data-view=builder] .cabinet-battle-actions .cabinet-action-member,.screen[data-view=builder] .cabinet-action-empty{min-height:32px;padding:4px;font-size:10px}
+ .screen[data-view=builder] .cabinet-battle-actions .action-thumb{width:26px}
+ .screen[data-view=builder] .cabinet-preview{grid-template-columns:repeat(5,minmax(0,1fr));gap:5px;max-width:none}
+}
+@media(max-height:500px) and (min-width:600px){
+ .screen[data-view=builder] .view-body{display:grid;grid-template-columns:minmax(185px,.85fr) minmax(0,1.15fr);grid-template-rows:auto auto minmax(0,1fr) auto;grid-template-areas:"title cards" "tabs cards" "summary cards" "buttons buttons";gap:5px 10px}
+ .screen[data-view=builder] .view-body>h2{grid-area:title;font-size:14px;margin:0}
+ .screen[data-view=builder] .cabinet-tabs{grid-area:tabs;width:100%;max-width:none;gap:5px}
+ .screen[data-view=builder] .cabinet-tab{min-height:32px;padding:4px}
+ .screen[data-view=builder] .cabinet-tab b{font-size:14px}
+ .screen[data-view=builder] .cabinet-summary{grid-area:summary;min-height:0;overflow:auto;margin:0;padding:6px}
+ .screen[data-view=builder] .cabinet-summary h3{margin-bottom:2px}
+ .screen[data-view=builder] .inner-scroll{grid-area:cards;min-height:0;display:flex;align-items:center}
+ .screen[data-view=builder] .cabinet-preview{width:100%;align-items:center}
+ .screen[data-view=builder] .cabinet-preparation-buttons{grid-area:buttons;gap:6px;margin:0}
+ .screen[data-view=builder] .cabinet-preparation-buttons .btn{min-height:30px;padding:6px 9px;font-size:10px}
+}
+@media(max-height:690px){
+ .screen[data-view=builder] .cabinet-preview .cromo .top{padding:2px 2px 0;min-height:16px}
+ .screen[data-view=builder] .cabinet-preview .cromo .cost{min-width:16px;min-height:16px;padding:0 2px;font-size:9px}
+ .screen[data-view=builder] .cabinet-preview .cromo .gem-wrap svg{width:12px;height:12px}
+ .screen[data-view=builder] .cabinet-preview .cromo .bot{padding:7px 3px 3px;gap:2px}
+ .screen[data-view=builder] .cabinet-preview .cromo .nm{font-size:7.5px;line-height:1.1;min-height:2.2em}
+ .screen[data-view=builder] .cabinet-preview .card-stat{min-height:12px;gap:1px;padding:1px}
+ .screen[data-view=builder] .cabinet-preview .card-stat b{font-size:8px}
+ .screen[data-view=builder] .cabinet-preview .card-stat small{font-size:6px}
+}
+@media(max-height:500px) and (min-width:600px){.screen[data-view=builder] .hud-strip{display:none}}

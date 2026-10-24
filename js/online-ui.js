@@ -11,7 +11,8 @@ function create(api){
  const combat=HemicycleTestCombat.create({base,initialCabinet:api.cabinet,artURL:new URL('assets/actions/art-atlas.png',location.href).href,
   onVisibility(active){host.classList.toggle('combat-active',active);$('online-title').textContent=active?'Partida online':'Jugadores';},
   onFinished(id){if(room?.id===id){room={...room,status:'finished'};queue=null;rememberRoom();}},
-  renderBattle:api.battle?function(state,controls){if(state.status==='preparing')return false;opened=false;clearInterval(poll);host.querySelector('.online-shade').hidden=true;$('app').inert=false;$('app').removeAttribute('aria-hidden');return api.battle(state,controls);}:null,onStatus:api.battleStatus,onAction:api.actionVisual,onRankedResult:api.reconcileRanked,account:()=>{const a=api.account();return a?{user:{id:a.userId},access_token:a.accessToken}:null;}});
+  renderPreparation:api.preparation?function(state,controls){opened=false;clearInterval(poll);host.querySelector('.online-shade').hidden=true;$('app').inert=false;$('app').removeAttribute('aria-hidden');return api.preparation(state,controls);}:null,
+ renderBattle:api.battle?function(state,controls){if(state.status==='preparing')return false;opened=false;clearInterval(poll);host.querySelector('.online-shade').hidden=true;$('app').inert=false;$('app').removeAttribute('aria-hidden');return api.battle(state,controls);}:null,onStatus:api.battleStatus,onAction:api.actionVisual,onRankedResult:api.reconcileRanked,account:()=>{const a=api.account();return a?{user:{id:a.userId},access_token:a.accessToken}:null;}});
  $('combat-retry').onclick=()=>combat.retry();$('combat-close').onclick=()=>{combat.close();render();};
  function button(text,fn,disabled=false){const b=node('button',text);b.type='button';b.disabled=busy||disabled;b.onclick=fn;return b;}
  function row(player,demo){

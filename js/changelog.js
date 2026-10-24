@@ -8,6 +8,7 @@
   "sections":[
     {"title":"Jugar e invitar","items":[
       "El selector de modo junto a Jugar mantiene su forma y su flecha centrada en todos los tamaños de pantalla.",
+      "La preparación online utiliza el mismo selector de cinco gabinetes favoritos que las partidas contra IA, con líder, cromos y acciones visibles. Los integrantes se editan desde Colección; al confirmar quedan bloqueados hasta empezar el combate.",
       "Jugadores muestra un listado compacto de conectados y desconectados. Las invitaciones usan el modo elegido en Inicio; ya no hay que repetir la selección ni copiar códigos.",
       "Sin invitación pendiente, Jugar inicia contra IA. La Clasificatoria contra IA sigue dando Elo durante el prelanzamiento; con una cuenta conectada el servidor ejecuta al rival y guarda el resultado.",
       "La Clasificatoria entre jugadores sigue usando una cola por Elo, accesible desde el selector de Jugar. Las invitaciones directas son para Normal y Rápida."
