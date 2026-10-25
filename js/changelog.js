@@ -15,6 +15,8 @@
       "Los efectos usan las mismas jugadas verificadas en partidas online y descargadas, además del modo local, sin bloquear controles ni cambiar las reglas de combate.",
       "Nuevo fondo WebP animado en la pantalla de inicio, con movimiento suave y una composición oscura que conserva la legibilidad del logo, el título y el botón Iniciar.",
       "Recursos disponibles sin conexión tras descargarse; fondo estático y efectos simplificados cuando el dispositivo solicita movimiento reducido.",
+      "Corrección adicional: las copias verificadas conservan exactamente los logros y la temporada del servidor; se evita que el recálculo local vuelva a bloquear Clasificatoria después de sincronizar.",
+      "Música de inicio: tema instrumental con inicio automático cuando el navegador lo permite y transición suave de volumen hacia el menú, sin reiniciar la pista. Si se requiere un toque, hay un control para activarla. Respeta el volumen y el apagado configurados.",
       "Corrección: Clasificatoria recupera el progreso validado de la cuenta antes de comprobar el guardado, conservando las preferencias locales. Se evita el aviso repetido de sincronización cuando la copia local está desactualizada."
     ]
   }]

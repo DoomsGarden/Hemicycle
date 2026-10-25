@@ -1,0 +1,34 @@
+[
+  {
+    "policy": "no-user-gesture-required",
+    "muted": false,
+    "musicStarts": 1,
+    "menuSources": 1,
+    "continuous": true,
+    "errors": []
+  },
+  {
+    "policy": "no-user-gesture-required",
+    "muted": true,
+    "musicStarts": 0,
+    "menuSources": 0,
+    "continuous": true,
+    "errors": []
+  },
+  {
+    "policy": "document-user-activation-required",
+    "muted": false,
+    "musicStarts": 1,
+    "menuSources": 1,
+    "continuous": true,
+    "errors": []
+  },
+  {
+    "policy": "document-user-activation-required",
+    "muted": true,
+    "musicStarts": 0,
+    "menuSources": 0,
+    "continuous": true,
+    "errors": []
+  }
+]

@@ -65,7 +65,7 @@
    });
   }else buffer('menu').then(function(data){if(ticket===epoch&&data&&available()&&prefs.music&&prefs.musicEnabled){music=[node(data,score(),true)];metrics.musicStarts++;}});
  }
- function levels(){if(!ctx)return;master.gain.setTargetAtTime(prefs.muted?0:prefs.master,ctx.currentTime,.02);musicBus.gain.setTargetAtTime(prefs.musicEnabled?prefs.music:0,ctx.currentTime,.03);fxBus.gain.setTargetAtTime(prefs.effectsEnabled?prefs.effects:0,ctx.currentTime,.02);roomBus.gain.setTargetAtTime(prefs.effectsEnabled?prefs.ambience*prefs.effects:0,ctx.currentTime,.03);}
+ function levels(fade){if(!ctx)return;master.gain.setTargetAtTime(prefs.muted?0:prefs.master,ctx.currentTime,.02);musicBus.gain.setTargetAtTime(prefs.musicEnabled?prefs.music*(document.getElementById('launchScreen')?0.7:1):0,ctx.currentTime,fade||.03);fxBus.gain.setTargetAtTime(prefs.effectsEnabled?prefs.effects:0,ctx.currentTime,.02);roomBus.gain.setTargetAtTime(prefs.effectsEnabled?prefs.ambience*prefs.effects:0,ctx.currentTime,.03);}
  function unlock(){
   if(document.hidden)return Promise.resolve();
   try{
@@ -127,6 +127,7 @@
   if(state.screen!=='battle'||state.game!==game||!game||game.side!=='p'||game.tutorial||left<1||left>10)return;
   var key=game.n+':'+left;if(lastClock===key)return;lastClock=key;effect('timer');
  }
+ document.addEventListener('hemicycle:entered',function(){levels(.4);reconcile();});
  document.addEventListener('pointerdown',unlock,{passive:true});
  document.addEventListener('keydown',function(e){if(!e.repeat&&(e.key==='Enter'||e.key===' '||e.key==='Tab'))unlock();});
  document.addEventListener('click',function(e){
@@ -146,5 +147,5 @@
  root.addEventListener('pagehide',function(){stopAll();if(ctx)ctx.suspend().catch(function(){});});
  root.addEventListener('pageshow',function(){if(unlocked&&!document.hidden)unlock();});
  root.addEventListener('online',function(){buffers={};});
- root.HemicycleAudio={sync:sync,effect:effect,battleEvent:battleEvent,clock:clock,panel:panel,open:openOptions,close:closeOptions,set:set,preferences:function(){return Object.assign({},prefs);},status:function(){return {context:ctx?ctx.state:'locked',scene:scene,intense:!!intensity,musicSources:music.length,effectSources:voices.length,musicStarts:metrics.musicStarts,results:metrics.results,effects:Object.assign({},metrics.effects)};}};
+ root.HemicycleAudio={unlock:unlock,sync:sync,effect:effect,battleEvent:battleEvent,clock:clock,panel:panel,open:openOptions,close:closeOptions,set:set,preferences:function(){return Object.assign({},prefs);},status:function(){return {context:ctx?ctx.state:'locked',scene:scene,intense:!!intensity,musicSources:music.length,effectSources:voices.length,musicStarts:metrics.musicStarts,results:metrics.results,effects:Object.assign({},metrics.effects)};}};
 })(window);
