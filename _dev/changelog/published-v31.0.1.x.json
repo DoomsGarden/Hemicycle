@@ -261,6 +261,59 @@
           ]
         }
       ]
+    },
+    {
+      "version": "v31.0.1.4",
+      "ref": "4e2e8ea",
+      "sections": [
+        {
+          "title": "Jugar e invitar",
+          "items": [
+            "El selector de modo junto a Jugar mantiene su forma y su flecha centrada en todos los tamaños de pantalla.",
+            "La preparación online utiliza el mismo selector de cinco gabinetes favoritos que las partidas contra IA, con líder, cromos y acciones visibles. Los integrantes se editan desde Colección; al confirmar quedan bloqueados hasta empezar el combate.",
+            "Jugadores muestra un listado compacto de conectados y desconectados. Las invitaciones usan el modo elegido en Inicio; ya no hay que repetir la selección ni copiar códigos.",
+            "Sin invitación pendiente, Jugar inicia contra IA. La Clasificatoria contra IA sigue dando Elo durante el prelanzamiento; con una cuenta conectada el servidor ejecuta al rival y guarda el resultado.",
+            "La Clasificatoria entre jugadores sigue usando una cola por Elo, accesible desde el selector de Jugar. Las invitaciones directas son para Normal y Rápida."
+          ]
+        },
+        {
+          "title": "Una sola mesa de combate",
+          "items": [
+            "Las partidas online utilizan la mesa habitual del juego, con sus tres puestos, dos cartas en mano, marcadores de votos, reloj y registro. El combate deja de mostrarse dentro de una ventana emergente.",
+            "Corregidos los reinicios de la música al realizar acciones o recibir actualizaciones en partidas online y contra IA. La intensidad musical cambia con los votos sin interrumpir la melodía, y se conservan las transiciones de victoria y derrota.",
+            "Las acciones muestran una ficha más clara con su arte, coste y reglas. Si necesitan un objetivo, se elige tocando un cromo iluminado de la mesa, igual que al atacar; cancelar no gasta TdP.",
+            "Los tutoriales de combate y menú explican estos controles. Se conserva el progreso al actualizar la aplicación."
+          ]
+        },
+        {
+          "title": "Correcciones acumuladas de preparación y recuperación",
+          "items": [
+            "Los favoritos vacíos no pueden iniciar una partida. La confirmación utiliza exactamente los cinco oradores, el líder y las acciones del favorito elegido, sin volver a seleccionarlos en listas.",
+            "Editar en Colección y volver mantiene la partida pendiente y el favorito elegido. Después de confirmar, la selección permanece bloqueada mientras espera al rival.",
+            "La preparación se adapta a móvil y horizontal para mantener visibles los cinco cromos, sus estadísticas, las acciones y el botón de confirmar sobre la navegación.",
+            "Si se pierde la respuesta de una confirmación o una acción, se recupera la misma operación sin duplicar sus efectos ni su coste.",
+            "Al recargar y pulsar Jugar se recupera la partida online que seguía en curso. Se conserva su reloj y no se crea otra sala.",
+            "El resultado clasificatorio se sincroniza antes de mostrar el Elo final. Rápida mantiene sus 60 segundos y su modo al volver a jugar.",
+            "Los nombres, las estadísticas y las descripciones de los cromos respetan el marco. Las acciones muestran su texto completo en la vista normal y ampliada, con tamaños adaptados a cada carta."
+          ]
+        },
+        {
+          "title": "Resultados y espacio en pantalla",
+          "items": [
+            "Clasificatoria vuelve a detallar el Elo ganado o perdido, el Elo anterior y final y los FS obtenidos. El servidor abona de 50 a 100 FS por victoria y de 20 a 30 por derrota en las partidas nuevas; volver a cargar no duplica el premio.",
+            "El resumen de Liga compacta la recompensa y reserva espacio para los botones. La selección de gabinete muestra los cinco oradores juntos, también con la altura reducida del navegador móvil.",
+            "El registro de las acciones explica su efecto y a quién afecta: un orador, un equipo o ambos. El daño y la curación reflejan la cantidad aplicada.",
+            "Los mensajes de recompensa hablan de conseguir o perder un cromo. Se conservan las novedades y correcciones anteriores de esta misma versión."
+          ]
+        },
+        {
+          "title": "Progreso de desafíos online",
+          "items": [
+            "Los nuevos combates online con el guardado en la nube activado registran el avance de desafíos diarios, semanales y mensuales: partidas, votos, victorias, modo, líderes y doctrinas. También se aplica a Clasificatoria contra la IA del servidor. En Normal y Rápida avanzan los desafíos sin cambiar FS, cromos ni Elo.",
+            "El progreso se guarda junto al resultado y se sincroniza antes de volver al menú. Reconectar o recuperar una respuesta no cuenta la partida dos veces; se conservan los hitos y recompensas anteriores."
+          ]
+        }
+      ]
     }
   ]
 }
