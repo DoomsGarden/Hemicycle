@@ -28,6 +28,8 @@
     {
       "title": "Combate y presentación",
       "items": [
+        "Corrección: se recupera automáticamente la partida interrumpida al entrar, conservando el reloj del servidor. Se cierran las selecciones obsoletas y los cromos que ya actuaron no abren acciones de nuevo.",
+        "Mercado: saldo visible, secciones más claras, explicación de cada paso y controles más cómodos para comprar, vender e intercambiar.",
         "Corrección: los errores al reclamar recompensas ya no dejan bloqueada la navegación. Si la verificación final falla o tarda, puedes volver al menú conservando el resultado pendiente, sin acreditar premios sin comprobar.",
         "Desafíos y Logros muestran un pequeño círculo en las pestañas con recompensas disponibles sin reclamar, sin numeración y respetando la opción de reducir animaciones.",
         "Corrección: los cromos en la mano ya no aparecen como Hecho ni atenuados por haber actuado antes; ese indicador solo corresponde a oradores en la Tribuna.",

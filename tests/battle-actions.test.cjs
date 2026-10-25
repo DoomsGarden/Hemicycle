@@ -61,3 +61,11 @@ for(const side of ['p','e'])test(side+': strong needs 2 health and the direct co
 test('a strong attack can still be followed by lethal retaliation after paying its cost',()=>{
  const {c,actor,target}=duel();target.pa='giro';c.G.leader.e=target;actor.h=2;assert.equal(c.attack(actor,target,'p','strong'),true);assert.equal(c.G.field.p.length,0);assert.equal(c.G.pas.p[0].uid,actor.uid);
 });
+
+for(const situation of ['exhausted','removed','rival-turn'])test('cancel closes stale action selection: '+situation,()=>{
+ const {c,actor}=duel();c.G.sel=actor.uid;c.G.support=true;c.G.move='strong';
+ if(situation==='exhausted')actor.ready=false;
+ if(situation==='removed')c.G.field.p=[];
+ if(situation==='rival-turn')c.G.side='e';
+ assert.equal(c.choosePlayerAction('cancel'),true);assert.equal(c.G.sel,null);assert.equal(c.G.move,null);assert.equal(c.G.support,false);
+});

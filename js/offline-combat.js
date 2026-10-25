@@ -49,5 +49,6 @@ await lock(id,async function(){var store=await read(id),record=store.active,tick
   }catch(e){detach();throw e;}finally{preparing=false;if(api.preparing)api.preparing(false);}
  }
  async function status(){var id=owner();if(!id)return {tickets:0,pending:0};var store=await read(id);return {tickets:store.tickets.filter(t=>t.expires>Date.now()&&!store.pending.some(p=>p.ticketId===t.id)&&(!store.active||store.active.ticketId!==t.id)).length,pending:store.pending.length,active:!!store.active};}
- return {start,flush,download,detach,status};
+ async function resume(){var id=owner();if(!id)return false;var active=(await read(id)).active;if(!active)return false;await start(active.cabinet,active.mode);return true;}
+ return {start,resume,flush,download,detach,status};
 }};})(window);

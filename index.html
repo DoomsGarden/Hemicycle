@@ -508,7 +508,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=31.0.1.4-results1">
+<link rel="stylesheet" href="css/interface.css?v=31.0.2.0-recovery2">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.1.4-results1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
@@ -545,7 +545,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.2.0"></script>
 <script src="js/cloud-save.js?v=31.0.2.0"></script>
-<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery1"></script><script src="js/online-ui.js?v=31.0.2.0-recovery1"></script>
+<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery2"></script><script src="js/online-ui.js?v=31.0.2.0-recovery2"></script>
 <script src="js/cloud-ui.js?v=31.0.2.0"></script>
 <script src="js/game-audio.js?v=31.0.0.5-options1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
@@ -567,14 +567,14 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.0-recovery1"></script>
-<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery1">
-<script src="js/result-transition.js?v=31.0.2.0-recovery1"></script>
+<script src="js/changelog.js?v=31.0.2.0-recovery2"></script>
+<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
+<script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
 <script src="js/economy-client.js?v=31.0.2.0"></script>
 <script src="js/offline-rules.js?v=31.0.2.0"></script>
-<script src="js/offline-combat.js?v=31.0.2.0"></script>
+<script src="js/offline-combat.js?v=31.0.2.0-recovery2"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
-<script src="js/market-ui.js?v=31.0.2.0"></script>
+<script src="js/market-ui.js?v=31.0.2.0-recovery2"></script>
 <script>
 window.onerror=function(m,src,l,c){
   var ct=document.getElementById('content'); if(!ct)return;
@@ -2665,6 +2665,7 @@ function syncBattleActions(){
  HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support}:null);
 }
 function choosePlayerAction(kind){
+ if(kind==='cancel'||kind==='back'){if(!G)return false;G.support=false;if(kind==='cancel'){G.sel=null;G.move=null;}paint();return true;}
  if(checkBattleEnd()||G.side!=='p')return false;
  var card=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  if(!card||!card.ready)return false;
@@ -2762,7 +2763,8 @@ function receiveRemoteBattle(snapshot,controls){
 
 SCREENS.battle=function(){
  if(!G)return '<p>Cargando...</p>';
- if(G.sel){var found=false,i2;for(i2=0;i2<G.field.p.length;i2++)if(G.field.p[i2].uid===G.sel)found=true;if(!found)G.sel=null;}
+ if(G.sel){var found=G.side==='p'&&G.field.p.some(function(c){return c.uid===G.sel&&c.ready;});if(!found){G.sel=null;G.move=null;G.support=false;}}
+ if(LOCAL_ACTION&&!G.hand.p.some(function(c){return c.uid===LOCAL_ACTION&&c.action;}))closeLocalAction();
  var i,tdp='',etdp='';
  var crystals=Math.max(6,G.tdp.p,G.tdp.e);
  for(i=0;i<crystals;i++){tdp+='<span class="crystal'+(i<G.tdp.p?'':' off')+'"></span>';etdp+='<span class="crystal'+(i<G.tdp.e?'':' off')+'"></span>';}
@@ -2996,7 +2998,7 @@ document.addEventListener('click',function(ev){
   var own=null;
   for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)own=G.field.p[i];
   if(own){
-   if(!own.ready){gameSound('error');log(own.n+' ya ha intervenido en este turno.');paint();return;}
+   if(!own.ready){G.sel=null;G.move=null;G.support=false;if(typeof HemicycleBattleActions!=='undefined')HemicycleBattleActions.render(null);gameSound('error');remoteBattleStatus(own.n+' ya ha intervenido en este turno.');return;}
    G.sel=(G.sel===uid&&!G.move)?null:uid;G.move=null;G.support=false;paint();
   }
   return;
@@ -3241,12 +3243,23 @@ function profileStats(){
  metrics:[['Partidas',played],['Victorias',d.w],['Derrotas',d.l],['Victorias %',played?Math.round(d.w/played*100)+' %':'—'],['Fuerza Soberana',d.fs+' FS'],['Elo',d.elo],['Rango',rankName(d.elo)],['Cromos distintos',(u.length+uniqueActions(d).length)+'/'+(CARDS.length+HemicycleActions.cards.length)],['Copias totales',d.album.length+(d.actionAlbum||[]).length],['Repetidos',d.album.length+(d.actionAlbum||[]).length-u.length-uniqueActions(d).length],['Logros',d.dtGoldUnlocked?1:0],['Sobres pendientes',lsGet(HemicycleRanked.key).rewards.filter(function(r){return !r.claimed;}).length]],
  rarities:RARS.map(function(r){return RARM[r.k].n+': '+u.concat(uniqueActions(d)).filter(function(c){return c.c.r===r.k;}).length;}).join(' · '),league:place};
 }
+var MATCH_ENTRY_CHECKED=false,MATCH_ENTRY_BUSY=false;
+async function restoreEntryMatch(){
+ if(MATCH_ENTRY_CHECKED||MATCH_ENTRY_BUSY)return;MATCH_ENTRY_BUSY=true;
+ try{
+  if(ONLINE&&ONLINE.hasActiveMatch()){ONLINE.resume();MATCH_ENTRY_CHECKED=true;return;}
+  if(OFFLINE_COMBAT&&await OFFLINE_COMBAT.resume()){MATCH_ENTRY_CHECKED=true;return;}
+  MATCH_ENTRY_CHECKED=true;firstEntry();
+ }catch(e){MATCH_ENTRY_CHECKED=true;showModal('Recuperar partida',esc(e.message||'No se pudo conectar. Puedes reintentar desde Jugar.'),'Entendido',false,null);}
+ finally{MATCH_ENTRY_BUSY=false;}
+}
 function firstEntry(){
  if(!ACCOUNT_ENTRY_READY&&PLAYER_PROFILE){
   if(!ACCOUNT_ENTRY_PENDING){ACCOUNT_ENTRY_PENDING=true;PLAYER_PROFILE.enter().then(function(){ACCOUNT_ENTRY_READY=true;firstEntry();});}
   return;
  }
 
+ if(!MATCH_ENTRY_CHECKED){if(window.HemicycleEntered)restoreEntryMatch();return;}
  if(TUTORIAL&&TUTORIAL.active){TUTORIAL.render();return;}
  if(MENU_GUIDE&&MENU_GUIDE.active){MENU_GUIDE.render();return;}
  if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start();return;}
