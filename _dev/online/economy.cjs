@@ -41,6 +41,7 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   if(state.mode==='liga'){const lg=account(actor).payload.league;check(lg,'Crea una Liga antes de jugarla.');const next=require('./league.cjs').advance(lg,win,rng);account(actor).payload.league=next.league;fs+=next.reward;result.season=!!next.reward;}
   credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
   result={...result,win,mode:state.mode,fs,eloBefore:before,eloAfter:me.elo,eloDelta:me.elo-before,won,lost,votes:own.votes,enemyVotes:foe.votes};
+  require('./battle-history.cjs').record(market,actor,{...result,resultId:'offline:'+ticket.id},now);
  }else if(type==='league-create'){check(!account(actor).payload.league,'Ya tienes una Liga activa.');account(actor).payload.league=require('./league.cjs').create(3,1,rng);changed.add(actor);
  }else if(type==='league-abandon'){account(actor).payload.league=null;changed.add(actor);
  }else if(type==='pack'){
@@ -87,7 +88,8 @@ function view(s,actor,path){
  if(path==='/players')return market.players.filter(p=>p.visible&&p.id!==actor).map(p=>({id:p.id,name:names(p.id)}));
  if(path.startsWith('/players/')){const id=path.split('/')[2];check(market.players.some(p=>p.id===id&&p.visible),'Jugador no disponible.');return tradable(id);}
  if(path==='/listings')return market.listings.filter(l=>l.status==='active').map(l=>({...l,sellerName:names(l.seller)}));
- if(path==='/activity')return {listings:market.listings.filter(l=>l.seller===actor),trades:market.trades.filter(t=>t.proposer===actor||t.recipient===actor).map(t=>({...t,confirmed_a:t.status==='pending'||t.status==='completed',confirmed_b:t.status==='completed',proposerName:names(t.proposer),recipientName:names(t.recipient)})),receipts:market.receipts.filter(r=>r.player===actor).slice(-100).reverse()};
+ if(path==='/history')return market.receipts.filter(r=>r.player===actor&&r.kind==='battle').slice(-50).reverse().map(r=>({...r.data,created:r.created,verified:true}));
+ if(path==='/activity')return {listings:market.listings.filter(l=>l.seller===actor),trades:market.trades.filter(t=>t.proposer===actor||t.recipient===actor).map(t=>({...t,confirmed_a:t.status==='pending'||t.status==='completed',confirmed_b:t.status==='completed',proposerName:names(t.proposer),recipientName:names(t.recipient)})),receipts:market.receipts.filter(r=>r.player===actor&&r.kind!=='battle').slice(-100).reverse()};
  throw Error('Ruta no disponible.');
 }
 module.exports={operate,view,contents,starter,rules,catalog};

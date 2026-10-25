@@ -46,7 +46,7 @@ function create(api){
   ['final-votes','.vbars','Ensayo de la victoria','Adelantamos tu marcador a 98 votos y preparamos un rival con 1 de Aguante y 2 escaños. Toca los marcadores.'],
   ['final-select','[data-tutorial="player"] .lead','Última acción de práctica','Tu líder dispone de una última acción preparada para terminar el ejercicio. Tócalo.','select-leader'],
   ['final-normal','[data-baction="normal"]','Prepara el último zasca','El ataque normal basta para este rival. Escoge la primera frase.','choose-normal'],
-  ['final-attack','[data-tutorial="enemy"] .cromo','Consigue los dos votos','Toca al rival. La victoria llega al alcanzar 100 votos y no habrá turno de respuesta.','attack']
+  ['final-attack','[data-tutorial="enemy"] .cromo','Consigue los dos votos','Toca al rival. La victoria llega al alcanzar 100 votos. En partidas reales verás los FS, el Elo y el cromo del resultado; esta práctica no da premios.','attack']
  ];}
 
  function start(){

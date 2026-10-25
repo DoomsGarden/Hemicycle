@@ -4,6 +4,17 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+ "version":"v31.0.2.2","date":"2026-10-25","title":"Guía de Mercado, historial y recompensas animadas",
+ "sections":[{"title":"Navegación y resultados","items":[
+ "Mercado tiene su propia guía en la primera visita desde esta actualización, repetible desde Ayuda. La guía general ya no repite esas explicaciones y se actualiza para mostrar el historial.",
+ "Las ganancias de FS y los cambios de Elo recorren visualmente los importes confirmados hasta llegar a cero y desaparecer, mientras el total de la cuenta cambia en pantalla. No se abonan dos veces; el movimiento reducido muestra el resultado directamente.",
+ "Historial de partidas desde Perfil: resultados, FS, Elo y cromos ganados o perdidos. Combina recibos de tu cuenta y registros de este dispositivo, identificando su procedencia. El historial se inicia con las nuevas partidas.",
+ "Al perder la última copia de un integrante de un gabinete, el resultado ofrece acceso directo a su edición en Colección.",
+ "Intercambios con selección visual de cromos, búsqueda y comparación de lo que entregas y recibes, con el suplemento de FS visible antes de confirmar.",
+ "Botoneras de Mercado con acabado metálico, iconos y tipografía coherentes con la navegación inferior."
+ ]}]
+},
+{
   "version": "v31.0.2.1",
   "date": "2026-10-25",
   "title": "Efectos de combate y fondo animado de inicio",

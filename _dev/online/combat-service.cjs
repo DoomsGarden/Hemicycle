@@ -7,11 +7,12 @@ function create({url,key,secret,fetcher=fetch}){
   if(state?.status==='finished'&&state.mode==='ranked'&&result){
    if(state.lootVersion===1){
     const participants=await rpc('hemicycle_combat_context',{p_room_id:roomId,p_actor:actor}),owner=participants[0].userId;
-    const request={type:'ranked-loot',roomId,recipient:participants[1]?.userId||null};let receipt;
+    const request={type:'ranked-loot',roomId,recipient:participants[1]?.userId||null};let receipt;const receipts={[actor]:load.result};
+    for(const p of participants)if(p&&p.userId!==actor){const other=await rpc('hemicycle_combat_load',{p_room_id:roomId,p_actor:p.userId,p_operation_id:null,p_request:null});receipts[p.userId]=other.result;}
     for(let i=0;i<5;i++){
      const context=await rpc('hemicycle_economy_context',{p_actor:owner,p_operation_id:roomId,p_request:request});
      if(context.processed){receipt=context.result;break;}
-     const next=require('./ranked-loot.cjs').settle(context,state,participants);
+     const next=require('./ranked-loot.cjs').settle(context,state,participants,undefined,{roomId,receipts});
      if(await rpc('hemicycle_economy_commit',{p_actor:owner,p_operation_id:roomId,p_request:request,p_version:context.version,p_market:next.market,p_updates:next.updates,p_result:next.result})){receipt=next.result;break;}
     }
     if(!receipt?.players?.[actor])throw Error('No se pudo verificar el cromo de la partida. Reintenta para recuperar el resultado.');
