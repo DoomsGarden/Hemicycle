@@ -569,7 +569,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.1-cloud2"></script>
+<script src="js/changelog.js?v=31.0.2.1-loot1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
 <script src="js/economy-client.js?v=31.0.2.0"></script>
@@ -1686,7 +1686,7 @@ function retryLocalResult(game){if(game.resultExpectedSave){atomicLocal(game.res
 function verifiedResult(receipt,ticketId){
  var won=receipt.win,msg=(won?'Victoria':'Derrota')+' ('+receipt.votes+' a '+receipt.enemyVotes+'). Resultado verificado y guardado.';
  if(receipt.won)msg+=' Consigues el cromo de '+BYID[receipt.won].n+'.';if(receipt.lost)msg+=' Pierdes el cromo de '+BYID[receipt.lost].n+'.';
- return {who:won?'p':'e',msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,liga:receipt.mode==='liga',season:receipt.season,verified:true,ticketId:ticketId};
+ return {who:won?'p':'e',msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(receipt.mode==='ranked'&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,verified:true,ticketId:ticketId};
 }
 function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
 async function finishDownloaded(snapshot,ticketId,verification){
@@ -2575,6 +2575,8 @@ SCREENS.result=function(){
  html+='<div class="inner-scroll result-details">';
  if(SO.won)html+=resultCard(SO.won,false);
  if(SO.lost)html+=resultCard(SO.lost,true);
+ if(SO.lootStatus==='protected'&&!SO.won&&!SO.lost)html+='<p class="sub result-loot-note">No se ha transferido ningún cromo: la colección conserva sus cinco últimos oradores únicos.</p>';
+ if(SO.lootStatus==='legacy')html+='<p class="sub result-loot-note">Este resultado no contiene un cromo ganado o perdido registrado.</p>';
  if(SO.liga&&!SO.season)html+=ligaPanel();
  html+='</div>';
  html+='<div class="bar result-controls">';
@@ -2758,7 +2760,7 @@ function receiveRemoteBattle(snapshot,controls){
   if(G.remoteResultShown)return true;G.remoteResultShown=true;
   closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
   var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
-  var options={who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,rewardsUnavailable:ranked&&!receipt};
+  var options={who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,won:receipt&&receipt.won,lost:receipt&&receipt.lost,lootStatus:receipt&&(receipt.lootStatus||(ranked&&receipt.won===undefined&&receipt.lost===undefined?'legacy':null)),rewardsUnavailable:ranked&&!receipt};
   if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(result){if(G===game){if(result.verified)go('result',options);else deferResult(game);}});}else go('result',options);return true;
  }
  if(SCREEN!=='battle')go('battle');else paint();return true;

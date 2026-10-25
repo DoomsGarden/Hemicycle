@@ -23,6 +23,7 @@ function create({url,key,secret,fetcher=fetch}){
   else if(/^\/trades\/[0-9a-f-]{36}\/(accept|cancel)$/.test(part))command={type:part.endsWith('/accept')?'accept-trade':'cancel-trade',id:part.split('/')[2]};
   else if(/^\/listings\/[0-9a-f-]{36}\/cancel$/.test(part))command={type:'cancel-listing',id:part.split('/')[2]};
   else throw Error('Ruta no disponible.');
+  if(command?.type==='ranked-loot')throw Error('La recompensa de Clasificatoria solo la confirma el servidor.');
   if(!command||typeof command!=='object'||Array.isArray(command)||!(/^[0-9a-f-]{36}$/i).test(operationId||''))throw Error('Operación no válida.');
   for(let attempt=0;attempt<5;attempt++){
    const context=await rpc('hemicycle_economy_context',{p_actor:actor,p_operation_id:operationId,p_request:command});if(context.processed)return context.result;
