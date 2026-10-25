@@ -4,6 +4,21 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version": "v31.0.2.1",
+  "date": "2026-10-25",
+  "title": "Efectos de combate y fondo animado de inicio",
+  "sections": [{
+    "title": "Presentación y animaciones",
+    "items": [
+      "Ataques normales con estela e impacto; ataques fuertes diferenciados con doble onda y más partículas, ajustados al tamaño del cromo.",
+      "Defensa con escudo luminoso y respuesta visual al amortiguar un golpe; curación con aura, destellos y la cantidad de Aguante recuperada.",
+      "Los efectos usan las mismas jugadas verificadas en partidas online y descargadas, además del modo local, sin bloquear controles ni cambiar las reglas de combate.",
+      "Nuevo fondo WebP animado en la pantalla de inicio, con movimiento suave y una composición oscura que conserva la legibilidad del logo, el título y el botón Iniciar.",
+      "Recursos disponibles sin conexión tras descargarse; fondo estático y efectos simplificados cuando el dispositivo solicita movimiento reducido."
+    ]
+  }]
+},
+{
   "version": "v31.0.2.0",
   "date": "2026-10-25",
   "title": "Progreso verificado y nuevas escenas de resultado",

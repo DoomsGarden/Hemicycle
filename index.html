@@ -513,15 +513,16 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.0.4-frame1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
-<link rel="stylesheet" href="css/launch.css?v=31.0.0.2-logo-metal">
+<link rel="stylesheet" href="css/launch.css?v=31.0.2.1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.0">
 <link rel="stylesheet" href="css/cloud.css?v=31.0.0.2">
 </head>
 <body>
 
 <section class="launch-screen" id="launchScreen" role="dialog" aria-modal="true" aria-labelledby="launchTitle">
+ <picture class="launch-backdrop" aria-hidden="true"><source media="(prefers-reduced-motion: reduce)" srcset="assets/launch/chamber-still.webp"><img src="assets/launch/chamber-loop.webp" alt="" width="640" height="960" decoding="async" fetchpriority="high" draggable="false"></picture>
  <svg class="launch-logo" viewBox="120 120 272 260" role="img" aria-label="Logo de Hemiciclo" fill="url(#launchLogoMetal)"><defs><linearGradient id="launchLogoMetal" gradientUnits="userSpaceOnUse" x1="0" y1="141.5" x2="0" y2="367"><stop stop-color="#fff0c1"/><stop offset=".45" stop-color="#d7b675"/><stop offset=".65" stop-color="#8c7148"/><stop offset="1" stop-color="#efcf92"/></linearGradient></defs><path d="M149.5 248a106.5 106.5 0 0 1 213 0H312a56 56 0 0 0-112 0Z"/><circle cx="156" cy="270" r="6"/><circle cx="176" cy="270" r="6"/><circle cx="196" cy="270" r="6"/><circle cx="216" cy="270" r="6"/><circle cx="236" cy="270" r="6"/><circle cx="256" cy="270" r="6"/><circle cx="276" cy="270" r="6"/><circle cx="296" cy="270" r="6"/><circle cx="316" cy="270" r="6"/><circle cx="336" cy="270" r="6"/><circle cx="356" cy="270" r="6"/><circle cx="176" cy="292" r="6"/><circle cx="196" cy="292" r="6"/><circle cx="216" cy="292" r="6"/><circle cx="236" cy="292" r="6"/><circle cx="256" cy="292" r="6"/><circle cx="276" cy="292" r="6"/><circle cx="296" cy="292" r="6"/><circle cx="316" cy="292" r="6"/><circle cx="336" cy="292" r="6"/><circle cx="196" cy="314" r="6"/><circle cx="216" cy="314" r="6"/><circle cx="236" cy="314" r="6"/><circle cx="256" cy="314" r="6"/><circle cx="276" cy="314" r="6"/><circle cx="296" cy="314" r="6"/><circle cx="316" cy="314" r="6"/><path d="M250 336h12v31h-12Z"/></svg>
  <h1 class="launch-name" id="launchTitle" aria-label="HEMICICLO"><svg viewBox="0 0 322 48" aria-hidden="true" fill="none" stroke="url(#launchMetal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="launchMetal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0c1"/><stop offset=".45" stop-color="#d7b675"/><stop offset=".65" stop-color="#8c7148"/><stop offset="1" stop-color="#efcf92"/></linearGradient></defs><path transform="translate(0 0)" d="M3 3v42M27 3v42M3 24h24M8 3v16h14V3M8 45V29h14v16"/><path transform="translate(36 0)" d="M28 3H3v42h25M28 8H8v11h17M25 29H8v11h20M3 24h22"/><path transform="translate(72 0)" d="M3 45V3l12 17L27 3v42M8 45V19l7 10 7-10v26"/><path transform="translate(108 0)" d="M3 3h24M3 45h24M12 3v42M18 3v42"/><path transform="translate(144 0)" d="M28 3H8L3 8v32l5 5h20M28 8H10l-2 2v28l2 2h18"/><path transform="translate(180 0)" d="M3 3h24M3 45h24M12 3v42M18 3v42"/><path transform="translate(216 0)" d="M28 3H8L3 8v32l5 5h20M28 8H10l-2 2v28l2 2h18"/><path transform="translate(252 0)" d="M3 3v42h25M8 3v37h20"/><path transform="translate(288 0)" d="M8 3h14l5 5v32l-5 5H8l-5-5V8ZM10 8l-2 2v28l2 2h10l2-2V10l-2-2Z"/></svg><span class="launch-subtitle">CARA A CARA</span></h1>
  <button class="launch-start" type="button" disabled>INICIAR</button>
@@ -550,7 +551,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/game-audio.js?v=31.0.0.5-options1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
-<script src="js/battle-visuals.js?v=31.0.0.4"></script>
+<script src="js/battle-visuals.js?v=31.0.2.1"></script>
 <script src="js/battle-tutorial.js?v=31.0.1.4"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
@@ -567,7 +568,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.0-recovery2"></script>
+<script src="js/changelog.js?v=31.0.2.1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
 <script src="js/economy-client.js?v=31.0.2.0"></script>
@@ -584,7 +585,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.0';
+var VERSION='v31.0.2.1';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}

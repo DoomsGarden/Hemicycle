@@ -10,3 +10,6 @@
 @keyframes launchLogoOut{to{transform:translateY(-65vh) scale(.8);opacity:0}}@keyframes launchNameOut{to{transform:scale(.45);opacity:0}}@keyframes launchButtonOut{to{opacity:0;transform:translateY(3px)}}@keyframes launchExit{to{opacity:0}}
 @media(max-height:500px){.launch-screen{gap:16px;padding:16px}.launch-logo{width:112px}.launch-name{width:270px}.launch-subtitle{margin-top:8px;font-size:8px}.launch-start{margin-top:0;min-height:44px;padding:7px 22px;font-size:21px}}
 @media(prefers-reduced-motion:reduce){.launch-logo,.launch-name,.launch-start{animation:none}.launch-screen.leaving{animation:launchExit .16s linear both}.leaving .launch-logo,.leaving .launch-name,.leaving .launch-start{animation:none}}
+
+/* El fondo se retira con la pantalla de inicio; nunca permanece en el menú. */
+.launch-backdrop{position:absolute;inset:0;z-index:-2;pointer-events:none;opacity:.78;background:#070d18}.launch-backdrop img{width:100%;height:100%;object-fit:cover;object-position:center;pointer-events:none;user-select:none;-webkit-user-drag:none}.launch-screen:after{content:'';position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 50% 46%,#07102077 0%,#07102033 35%,transparent 70%),linear-gradient(0deg,#050a16aa,transparent 32%,#050a1633)}
