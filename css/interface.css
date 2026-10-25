@@ -89,10 +89,10 @@ body{position:fixed;inset:0;overscroll-behavior:none}
 .result-summary p{font-size:12px;line-height:1.3}
 .result-summary .bar>div{display:flex;gap:4px;flex-wrap:wrap}
 .result-rating{font-size:11px;color:#b9c9e0;margin:0;flex-shrink:0}
-.result-details{display:flex;flex-direction:column;gap:8px;justify-content:center;padding:0}
+.result-details{display:flex;flex-direction:column;gap:8px;justify-content:flex-start;padding:0}
 .result-details>.panel{margin:0;flex-shrink:0}
-.result-card{display:flex;align-items:center;gap:12px;padding:9px}
-.result-card-preview{width:68px;flex-shrink:0}
+.result-card{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px;text-align:center}
+.result-card-preview{width:clamp(78px,calc(28dvh - 72px),150px);flex-shrink:0}
 .result-card>div:last-child{min-width:0}
 .result-card h3{font-size:12px;margin:0 0 5px;color:#e9ca85}
 .result-card b{font-size:13px}
@@ -109,17 +109,21 @@ body{position:fixed;inset:0;overscroll-behavior:none}
  .screen[data-view=result] .majority-seal>b{font-size:12px}
  .screen[data-view=result] .majority-seal>small{font-size:10px}
  .result-summary{padding:8px}.result-summary h2{font-size:16px}.result-summary p{font-size:11px}
- .result-card-preview{width:52px}.result-card{padding:7px;gap:9px}.result-card .sub:last-child{display:none}
+ .result-card-preview{width:clamp(76px,calc(28dvh - 72px),112px)}.result-card{padding:8px;gap:6px}.result-card .sub:last-child{display:none}
  .result-details{gap:5px}.result-details>.panel:not(.result-card){padding:7px}
 }
 @media(max-height:500px) and (min-width:600px){
  .screen[data-view=result] .hud-strip{display:none}
  .screen[data-view=result] .view-body{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(0,1fr) auto;grid-template-areas:"seal details" "summary details" "rating details" "controls controls";gap:5px 10px}
  .screen[data-view=result] .majority-seal{grid-area:seal}
- .result-summary{grid-area:summary}.result-rating{grid-area:rating}.result-details{grid-area:details;min-height:0;justify-content:center}.result-controls{grid-area:controls}
+ .result-summary{grid-area:summary}.result-rating{grid-area:rating}.result-details{grid-area:details;min-height:0;justify-content:flex-start}.result-controls{grid-area:controls}
 }
 /* Los efectos de acción se leen completos dentro del registro desplazable. */
 .battle-wrap .log-line.action-event{display:block;-webkit-line-clamp:unset;overflow:visible;overflow-wrap:anywhere}
 
 /* Mercado: jerarquía de navegación y controles cómodos en móvil. */
 .market-balance{margin-left:auto;color:#f0d18f;font-size:15px;white-space:nowrap}.market-heading{gap:12px}.market-section-intro{padding:10px 0 12px}.market-section-intro b{font-size:15px;color:#f0d18f}.market-section-intro p{font-size:12px;line-height:1.5;color:#b5c1d4;margin:5px 0}.market-tabs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.market-tabs button{min-height:42px;font-size:12px}.market-body .market-note,.market-body .market-card-copy b,.market-body .trade-compose label{font-size:12px}.market-body .market-card-copy small{font-size:11px}.market-body .market-filters input,.market-body .market-filters select,.market-body select{min-height:42px;font-size:12px}.market-card-row{min-height:66px}.market-body .btn{min-height:40px}.market-body .trade-pair{grid-template-columns:minmax(0,1fr)}.market-body .trade-pair>span{text-align:center;transform:rotate(90deg)}
+
+/* Mercado compacto: espacio prioritario para la colección y controles acotados. */
+.screen[data-view=mercado] .view-body{gap:5px}.market-heading{gap:8px;min-height:32px}.market-heading .eyebrow{display:none}.market-heading h2{font-size:22px;line-height:1.1;margin:0}.market-balance{font-size:13px}.market-account{font-size:10px;min-height:14px}.market-account>span:last-child{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.market-presence{display:flex;align-items:center;gap:8px;font-size:11px;line-height:1.35;color:#b2bed1;padding:3px 0;margin:0;min-height:28px}.market-presence input[type=checkbox]{appearance:none;-webkit-appearance:none;display:block;flex:0 0 17px;width:17px;min-width:17px;max-width:17px;height:17px;min-height:17px;max-height:17px;margin:0;padding:0;border:1px solid #8c9bae;border-radius:4px;background:#101b2d;cursor:pointer}.market-presence input[type=checkbox]:checked{background-color:#d2b474;border-color:#e8c98b;background-size:100% 100%;background-repeat:no-repeat;background-position:center;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='m4 10 4 4 8-9' fill='none' stroke='%23121b29' stroke-width='2.4'/%3E%3C/svg%3E")}.market-presence input:focus-visible{outline:2px solid #efd69c;outline-offset:3px}.market-tabs{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}.market-tabs button{font-size:11px;line-height:1.2;min-height:40px;padding:6px 1px}.market-section-intro{padding:3px 0 6px}.market-section-intro>b{display:none}.market-section-intro p{font-size:11px;line-height:1.35;margin:0}.market-body .market-note{font-size:11px;margin:4px 0 7px}.market-filters{margin:0 0 5px}.market-body .market-filters input,.market-body .market-filters select{min-height:38px;font-size:11px}.market-filters select{width:112px}.market-heading .market-refresh{width:34px;min-width:34px;height:34px;min-height:34px}
+@media(max-height:500px) and (min-width:600px){.result-card-preview{width:68px}.result-card{padding:6px;gap:4px}.result-card h3{font-size:11px;margin-bottom:3px}.result-card b{font-size:12px}}

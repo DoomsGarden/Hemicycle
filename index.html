@@ -508,7 +508,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=31.0.2.0-recovery2">
+<link rel="stylesheet" href="css/interface.css?v=31.0.2.1-ui3">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.1.4-results1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
@@ -569,14 +569,14 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.1-loot1"></script>
+<script src="js/changelog.js?v=31.0.2.1-ui3"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
 <script src="js/economy-client.js?v=31.0.2.0"></script>
 <script src="js/offline-rules.js?v=31.0.2.0"></script>
 <script src="js/offline-combat.js?v=31.0.2.0-recovery2"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
-<script src="js/market-ui.js?v=31.0.2.0-recovery2"></script>
+<script src="js/market-ui.js?v=31.0.2.1-ui3"></script>
 <script>
 window.onerror=function(m,src,l,c){
   var ct=document.getElementById('content'); if(!ct)return;
@@ -1686,7 +1686,7 @@ function retryLocalResult(game){if(game.resultExpectedSave){atomicLocal(game.res
 function verifiedResult(receipt,ticketId){
  var won=receipt.win,msg=(won?'Victoria':'Derrota')+' ('+receipt.votes+' a '+receipt.enemyVotes+'). Resultado verificado y guardado.';
  if(receipt.won)msg+=' Consigues el cromo de '+BYID[receipt.won].n+'.';if(receipt.lost)msg+=' Pierdes el cromo de '+BYID[receipt.lost].n+'.';
- return {who:won?'p':'e',msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(receipt.mode==='ranked'&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,verified:true,ticketId:ticketId};
+ return {who:won?'p':'e',msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,verified:true,ticketId:ticketId};
 }
 function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
 async function finishDownloaded(snapshot,ticketId,verification){
