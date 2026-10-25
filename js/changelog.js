@@ -11,7 +11,9 @@
  "Historial de partidas desde Perfil: resultados, FS, Elo y cromos ganados o perdidos. Combina recibos de tu cuenta y registros de este dispositivo, identificando su procedencia. El historial se inicia con las nuevas partidas.",
  "Al perder la última copia de un integrante de un gabinete, el resultado ofrece acceso directo a su edición en Colección.",
  "Intercambios con selección visual de cromos, búsqueda y comparación de lo que entregas y recibes, con el suplemento de FS visible antes de confirmar.",
- "Botoneras de Mercado con acabado metálico, iconos y tipografía coherentes con la navegación inferior."
+ "Botoneras de Mercado con acabado metálico, iconos y tipografía coherentes con la navegación inferior.",
+ "Corrección del alta en la nube tras jugar como invitado: distingue una solicitud de migración enviada de una activación fallida, conserva la copia local y facilita el acceso a Nube antes de iniciar partidas con cuenta sin vincular.",
+ "Los errores de activación, migración y descarga de partidas indican si faltan funciones o permisos del servidor, con una referencia de soporte para identificar otros rechazos sin mostrar datos privados."
  ]}]
 },
 {

@@ -547,9 +547,9 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/supabase-sdk.js?v=2.118.0"></script>
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.2.2"></script>
-<script src="js/cloud-save.js?v=31.0.2.0"></script>
+<script src="js/cloud-save.js?v=31.0.2.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery2"></script><script src="js/online-ui.js?v=31.0.2.0-recovery2"></script>
-<script src="js/cloud-ui.js?v=31.0.2.0"></script>
+<script src="js/cloud-ui.js?v=31.0.2.2-cloud1"></script>
 <script src="js/game-audio.js?v=31.0.2.1-cloud2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
@@ -574,10 +574,10 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.2"></script>
+<script src="js/changelog.js?v=31.0.2.2-cloud1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
-<script src="js/economy-client.js?v=31.0.2.0"></script>
+<script src="js/economy-client.js?v=31.0.2.2-cloud1"></script>
 <script src="js/offline-rules.js?v=31.0.2.0"></script>
 <script src="js/offline-combat.js?v=31.0.2.0-recovery2"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
@@ -2173,6 +2173,7 @@ function buildEnemyTeam(mode, elo, div){
 function newBattle(mode,rival,isTutorial){
  var quick=mode==='rapida';if(quick)mode='normal';
  if(!isTutorial&&typeof verifiedAccount==='function'&&verifiedAccount()&&OFFLINE_COMBAT){
+  if(!CLOUD_SAVE||!CLOUD_SAVE.state().enabled){var migrating=CLOUD_SAVE&&CLOUD_SAVE.state().phase==='migration';showModal(migrating?'Migración pendiente':'Vincula tu progreso',migrating?'Tu progreso local está conservado y su migración necesita revisión antes de iniciar partidas con premios de cuenta. Puedes comprobar su estado desde Nube.':'Antes de jugar con esta cuenta, activa o recupera su progreso desde Nube. Si ya jugaste en este dispositivo, conserva la copia local para migrarla.','Ir a Nube',false,function(){go('menu');if(CLOUD_UI)CLOUD_UI.open();});return;}
   if(mode==='ranked'&&navigator.onLine&&ONLINE){go('menu');ONLINE.startAI();return;}
   var cabinet={orators:BUILD.ids.slice(),leader:BUILD.leader||BUILD.ids[0],actions:(BUILD.actions||[]).slice()};
   OFFLINE_COMBAT.start(cabinet,quick?'rapida':mode).catch(function(e){showModal('No se pudo preparar la partida',esc(e.message),'Entendido',false,null);});return;

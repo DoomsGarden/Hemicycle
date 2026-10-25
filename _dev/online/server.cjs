@@ -16,7 +16,7 @@ function createServer(config={}){
   const origin=req.headers.origin;if(origin&&!origins.includes(origin))return reply(403,{error:'Origen no permitido.'});
   if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');}
   if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
-  if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',version:'v31.0.2.0',configured,combatEnabled:!!secret});
+  if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',version:'v31.0.2.2',revision:/^[0-9a-f]{40}$/.test(process.env.RENDER_GIT_COMMIT||'')?process.env.RENDER_GIT_COMMIT:null,configured,combatEnabled:!!secret});
   if(req.method==='GET'&&pathname==='/rooms-test'){res.writeHead(308,{Location:'/rooms-test/'+new URL(req.url,'http://localhost').search});res.end();return;}
   const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/actions-art.png':['../../assets/actions/art-atlas.png','image/png'],'/rooms-test/combat.js':['../../js/online-combat-ui.js','text/javascript; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
   if(req.method==='GET'&&testFiles[pathname]){const [file,type]=testFiles[pathname];res.setHeader('Content-Type',type);if(type.startsWith('text/html'))res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,file)));return;}
@@ -35,7 +35,7 @@ function createServer(config={}){
     if(!body||typeof body!=='object'||Array.isArray(body))return reply(400,{error:'Solicitud no válida.'});
    }
    if(pathname.startsWith('/api/market/')||pathname==='/economy'||pathname==='/economy/initialize'||pathname==='/economy/import-request'||pathname==='/offline/tickets'||pathname==='/offline/settle'){
-    try{return reply(200,await economy(auth,pathname,req.method,body));}catch(e){return reply(e.status||409,{error:e.message});}
+    try{return reply(200,await economy(auth,pathname,req.method,body));}catch(e){return reply(e.status||409,{error:e.message,...(e.code?{code:e.code}:{})});}
    }
    if(req.method==='POST'&&pathname==='/ai'){
     if(!secret)return reply(503,{error:'El combate contra IA está pendiente de configurar.'});

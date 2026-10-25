@@ -1,7 +1,15 @@
 'use strict';
 const crypto=require('node:crypto'),E=require('./economy.cjs');
 function create({url,key,secret,fetcher=fetch}){
- async function rpc(name,args){const r=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/'+name,{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(10000)});if(!r.ok){const e=Error('No se pudo verificar la operación. Comprueba la conexión y la migración del servidor.');e.status=503;throw e;}return r.json();}
+ async function rpc(name,args){const r=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/'+name,{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(10000)});if(!r.ok){
+   let detail;try{detail=await r.json();}catch(ignore){}
+   const code=detail?.code,message=detail?.message;let status=503,kind='ECONOMY_UNAVAILABLE',text='No se pudo contactar con el guardado del servidor. Tu progreso sigue en este dispositivo. Reinténtalo en unos instantes.';
+   if(['PGRST202','42P01','42883'].includes(code)){kind='ECONOMY_SCHEMA_REQUIRED';text='El servidor no tiene disponible la función necesaria para activar o migrar el progreso. El administrador debe revisar la actualización de Supabase. Tu progreso local se conserva.';}
+   else if(code==='42501'||r.status===401||r.status===403){kind='ECONOMY_PERMISSION_REQUIRED';text='El servicio no tiene permiso para verificar el guardado. El administrador debe revisar la configuración del servidor. Tu progreso local se conserva.';}
+   else if(code==='P0001'&&message==='Activa primero la nube.'){status=409;kind='CLOUD_REQUIRED';text='Activa primero el guardado desde Perfil → Nube. Si ya jugaste en este dispositivo, conserva tu copia para migrar el progreso.';}
+   else if(code==='P0001'&&message==='Esta cuenta ya tiene un respaldo vinculado. Recupéralo primero.'){status=409;kind='CLOUD_RESTORE_REQUIRED';text='Esta cuenta ya tiene un respaldo vinculado. Recupéralo desde Perfil → Nube antes de continuar.';}
+   const label=name==='hemicycle_request_legacy_import'?'MIGRACION':name==='hemicycle_economy_bootstrap'?'ACTIVACION':name==='hemicycle_offline_download'?'PARTIDA':'GUARDADO',reference=/^(?:[A-Z0-9]{5}|PGRST[0-9]+)$/.test(code||'')?code:'HTTP'+r.status;const e=Error(text+' Referencia: '+label+'-'+reference+'.');e.status=status;e.code=kind;throw e;
+  }return r.json();}
  return async(auth,path,method,body={})=>{
   if(!secret)throw Error('Economía pendiente de configurar.');
   const identity=await fetcher(url.replace(/\/$/,'')+'/auth/v1/user',{headers:{apikey:key,Authorization:auth},signal:AbortSignal.timeout(8000)});if(!identity.ok){const e=Error('Inicia sesión de nuevo.');e.status=401;throw e;}const actor=(await identity.json()).id;if(!actor)throw Error('Cuenta no válida.');
