@@ -555,7 +555,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
 <script src="js/menu-tutorial.js?v=31.0.1.4"></script>
-<link rel="stylesheet" href="css/objectives.css?v=31.0.1.2-ui2">
+<link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
@@ -567,7 +567,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.0-hand1"></script>
+<script src="js/changelog.js?v=31.0.2.0-tabs1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0">
 <script src="js/result-transition.js?v=31.0.2.0"></script>
 <script src="js/economy-client.js?v=31.0.2.0"></script>
@@ -1506,7 +1506,8 @@ var OBJECTIVE_POSITIONS={};
 function rememberObjectives(){var panel=document.querySelector('#modalRoot .objectives');if(!panel)return null;var position={view:panel.getAttribute('data-objective-view'),tab:panel.getAttribute('data-objective-tab'),top:panel.scrollTop};OBJECTIVE_POSITIONS[position.view+'/'+position.tab]=position;return position;}
 var OBJECTIVE_TAB={challenges:'daily',achievements:'General'};
 function openObjectives(view,tab,restore){var previouslyOpen=!!document.querySelector('#modalRoot .objective-modal');rememberObjectives();if(!document.querySelector('#modalRoot .objective-modal'))OBJECTIVE_FOCUS=document.activeElement===document.body?document.querySelector('[data-act="'+view+'"]'):document.activeElement;var a=HemicycleObjectives,d=D(),s=a.sync(Object.assign({},d,{objectiveCatalog:CARDS})),html='',sections=view==='challenges'?a.types:['General','Clasificatorias','Colección','Gabinetes y doctrinas','Liga','Líderes'].concat(d.dtGoldUnlocked?['Secretos']:[]);tab=tab||OBJECTIVE_TAB[view];if(sections.indexOf(tab)<0)tab=sections[0];OBJECTIVE_TAB[view]=tab;
- html+='<nav class="objective-tabs '+(view==='challenges'?'period-tabs':'achievement-tabs')+'" aria-label="Secciones">'+sections.map(function(t,i){return '<button class="mini '+(t===tab?'on':'')+'" data-act="objective-tab" data-view="'+view+'" data-tab="'+esc(t)+'" aria-pressed="'+(t===tab)+'" title="'+esc(view==='challenges'?a.labels[i]:t)+'">'+esc(view==='challenges'?a.labels[i]:t==='Gabinetes y doctrinas'?'Gabinetes':t)+'</button>';}).join('')+'</nav><div class="objectives" data-objective-view="'+view+'" data-objective-tab="'+esc(tab)+'">';
+ function pendingSection(section){if(view==='achievements')return a.achievements(d,CARDS).some(function(x){return x.section===section&&a.achievementStage(d,x,s).pending!==null;});return Object.values(s.periods).concat(s.archive).filter(function(p){return p.type===section;}).some(function(p){return a.quests(p.type,p.key,p.limits).some(function(q){return a.metric(p,q.metric)>=q.target&&p.claimed.indexOf(q.id)<0;})||a.rewards(p.type).some(function(r){return a.completed(p)>=r.at&&p.claimed.indexOf('bar'+r.at)<0;});});}
+ html+='<nav class="objective-tabs '+(view==='challenges'?'period-tabs':'achievement-tabs')+'" aria-label="Secciones">'+sections.map(function(t,i){var pending=pendingSection(t),label=view==='challenges'?a.labels[i]:t;return '<button aria-label="'+esc(label)+(pending?' · Recompensas sin reclamar':'')+'" class="mini '+(t===tab?'on':'')+'" data-act="objective-tab" data-view="'+view+'" data-tab="'+esc(t)+'" aria-pressed="'+(t===tab)+'" title="'+esc(view==='challenges'?a.labels[i]:t)+'">'+esc(view==='challenges'?a.labels[i]:t==='Gabinetes y doctrinas'?'Gabinetes':t)+(pending?'<i class="objective-tab-dot" aria-hidden="true"></i>':'')+'</button>';}).join('')+'</nav><div class="objectives" data-objective-view="'+view+'" data-objective-tab="'+esc(tab)+'">';
  function bar(value,max,segments){if(segments)return '<div class="objective-segments" role="progressbar" aria-label="Misiones completadas" aria-valuenow="'+Math.min(value,max)+'" aria-valuemin="0" aria-valuemax="'+max+'" style="--segments:'+max+'">'+Array.from({length:max},function(_,i){return '<i class="'+(i<value?'complete':'')+'"></i>';}).join('')+'</div><small>'+value+' / '+max+'</small>';return '<progress max="'+max+'" value="'+Math.min(max,value)+'" aria-label="'+value+' de '+max+'"></progress><small>'+value+' / '+max+'</small>';}
  function claim(id,label,done,ready,extra){return '<button class="btn sm objective-reward '+(done?'is-claimed':ready?'is-ready':'is-locked')+'" data-act="objective-claim" data-view="'+view+'" data-id="'+esc(id)+'" '+(extra||'')+(!ready||done?' disabled':'')+'>'+(done?'Reclamado':label)+'</button>';}
  if(view==='challenges'){
