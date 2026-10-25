@@ -28,6 +28,7 @@
     {
       "title": "Combate y presentación",
       "items": [
+        "Corrección: los errores al reclamar recompensas ya no dejan bloqueada la navegación. Si la verificación final falla o tarda, puedes volver al menú conservando el resultado pendiente, sin acreditar premios sin comprobar.",
         "Desafíos y Logros muestran un pequeño círculo en las pestañas con recompensas disponibles sin reclamar, sin numeración y respetando la opción de reducir animaciones.",
         "Corrección: los cromos en la mano ya no aparecen como Hecho ni atenuados por haber actuado antes; ese indicador solo corresponde a oradores en la Tribuna.",
         "Los ataques a bancadas vacías pueden restar entre todos tus oradores un máximo de 3 votos por turno propio, para evitar estancamientos.",

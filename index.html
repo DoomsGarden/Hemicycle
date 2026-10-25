@@ -545,7 +545,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.2.0"></script>
 <script src="js/cloud-save.js?v=31.0.2.0"></script>
-<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.2.0"></script><script src="js/online-ui.js?v=31.0.2.0"></script>
+<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery1"></script><script src="js/online-ui.js?v=31.0.2.0-recovery1"></script>
 <script src="js/cloud-ui.js?v=31.0.2.0"></script>
 <script src="js/game-audio.js?v=31.0.0.5-options1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
@@ -567,9 +567,9 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.0-tabs1"></script>
-<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0">
-<script src="js/result-transition.js?v=31.0.2.0"></script>
+<script src="js/changelog.js?v=31.0.2.0-recovery1"></script>
+<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery1">
+<script src="js/result-transition.js?v=31.0.2.0-recovery1"></script>
 <script src="js/economy-client.js?v=31.0.2.0"></script>
 <script src="js/offline-rules.js?v=31.0.2.0"></script>
 <script src="js/offline-combat.js?v=31.0.2.0"></script>
@@ -1177,6 +1177,7 @@ function fichaHTML(c){
 /* === SISTEMA DE VENTANA EMERGENTE (MODAL CORREGIDO SIN STOPPROPAGATION) === */
 var MODAL_CB=null;
 function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, requiresReview){
+ if(document.querySelector('#modalRoot .objective-modal'))closeModal();
  MODAL_CB=onConfirm;
  var mr=document.getElementById('modalRoot');
  if(!mr)return;
@@ -1598,7 +1599,7 @@ function restoreColScroll(restoreVertical){
 }
 
 function go(s,o){
- if(s==='result'&&o&&['p','e','season'].indexOf(o.who)>=0&&G&&G.done&&!G.tutorial&&!G.sceneShown&&typeof HemicycleResultTransition!=='undefined'){G.sceneShown=true;var sceneGame=G;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,o.who==='p'||o.who==='season'&&G.resultWho==='p'?'p':'e');HemicycleResultTransition.show(o.who==='p'||o.who==='season'&&G.resultWho==='p',function(){return verifyLocalResult(sceneGame);},{retry:function(){return retryLocalResult(sceneGame);}}).then(function(){if(G===sceneGame)go(s,o);});return;}
+ if(s==='result'&&o&&['p','e','season'].indexOf(o.who)>=0&&G&&G.done&&!G.tutorial&&!G.sceneShown&&typeof HemicycleResultTransition!=='undefined'){G.sceneShown=true;var sceneGame=G;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,o.who==='p'||o.who==='season'&&G.resultWho==='p'?'p':'e');HemicycleResultTransition.show(o.who==='p'||o.who==='season'&&G.resultWho==='p',function(){return verifyLocalResult(sceneGame);},{retry:function(){return retryLocalResult(sceneGame);}}).then(function(result){if(G===sceneGame){if(result.verified)go(s,o);else deferResult(sceneGame);}});return;}
  var prev=SCREEN;
  if(prev==='coleccion'&&s!=='coleccion'&&CABINET_EDIT!==null){CABINET_EDIT=null;loadSelectedCabinet();}
  if(prev==='coleccion'&&s!=='coleccion'&&s!=='builder')CABINET_RETURN=null;
@@ -1684,11 +1685,12 @@ function verifiedResult(receipt,ticketId){
  if(receipt.won)msg+=' Consigues el cromo de '+BYID[receipt.won].n+'.';if(receipt.lost)msg+=' Pierdes el cromo de '+BYID[receipt.lost].n+'.';
  return {who:won?'p':'e',msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,liga:receipt.mode==='liga',season:receipt.season,verified:true,ticketId:ticketId};
 }
+function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
 async function finishDownloaded(snapshot,ticketId,verification){
  if(G){G.over=true;G.done=true;G.sceneShown=true;}clearBattleClock();closeLocalAction();
  var game=G,win=snapshot.winner===snapshot.you;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,win?'p':'e');
  var outcome=await HemicycleResultTransition.show(win,verification,{retry:verification});
- if(G===game)go('result',verifiedResult(outcome.result,ticketId));
+ if(G===game){if(outcome.verified)go('result',verifiedResult(outcome.result,ticketId));else deferResult(game);}
 }
 
 function market(){
@@ -2753,7 +2755,7 @@ function receiveRemoteBattle(snapshot,controls){
   closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
   var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
   var options={who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,rewardsUnavailable:ranked&&!receipt};
-  if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(){if(G===game)go('result',options);});}else go('result',options);return true;
+  if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(result){if(G===game){if(result.verified)go('result',options);else deferResult(game);}});}else go('result',options);return true;
  }
  if(SCREEN!=='battle')go('battle');else paint();return true;
 }

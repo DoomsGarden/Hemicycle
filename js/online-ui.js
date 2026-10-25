@@ -90,7 +90,7 @@ function create(api){
   if(e.key==='Tab'){const all=[...host.querySelectorAll('button:not(:disabled),input:not(:disabled),select:not(:disabled),[tabindex="0"]')].filter(n=>n.getClientRects().length),at=all.indexOf(document.activeElement);if(all.length&&((e.shiftKey&&at<=0)||(!e.shiftKey&&(at<0||at===all.length-1)))){e.preventDefault();all[e.shiftKey?all.length-1:0].focus();}}
  },true);
  return {
-  open,close,startAI,hasActiveMatch(){restoreRoom();return room?.status==='paired';},resume(){restoreRoom();if(room?.status==='paired'&&open(room.mode||'normal',false))openCombat();},hasInvitation(){restoreRoom();return hasInvitation()||!!pending;},
+  open,close,startAI,hasActiveMatch(){restoreRoom();return room?.status==='paired';},resume(){restoreRoom();autoRoom=null;if(room?.status==='paired'&&open(room.mode||'normal',false))openCombat();},hasInvitation(){restoreRoom();return hasInvitation()||!!pending;},
   async searchRanked(){if(!open('ranked',false))return;await run(async()=>{if(!api.account())throw Error('Inicia sesión para buscar rival.');if(api.ensureCloud)await api.ensureCloud();queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();}});},
   openGuide(){combat.close();preview=true;mode=api.mode?.()||'normal';opened=true;epoch++;previousFocus=document.activeElement;$('app').inert=true;$('app').setAttribute('aria-hidden','true');host.querySelector('.online-shade').hidden=false;render();},
   accountChanged(){if(api.account()?.userId!==viewer){close();combat.close();if(api.clearBattle)api.clearBattle();directory=room=pending=queue=aiPending=null;viewer=api.account()?.userId;}}
