@@ -1,0 +1,26 @@
+✔ version notes cover every recorded playable version and the first repository entry (6.212912ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (1.870173ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.601141ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (1.363332ms)
+✔ Una acción paga una vez, vuelve al mazo y no ocupa sitio de orador (28.362987ms)
+✔ No permite una segunda acción en el mismo turno (4.884197ms)
+✔ No convierte una acción individual sin objetivo en un efecto de área (3.444771ms)
+✔ Objetivos ajenos y falta de recursos no consumen cartas (3.507701ms)
+✔ La curación no excede el máximo y no gasta una acción sin daño (7.094935ms)
+✔ Las acciones bilaterales afectan a ambos y los modificadores caducan (4.343228ms)
+✔ Moción exige tres listos y desventaja; se agota sin impedir los votos del rival (4.170094ms)
+✔ La mano renovada mantiene dos cartas como máximo y una sola acción (4.035372ms)
+✔ player: consecutive authoritative updates preserve the game identity and refresh live values (18.750392ms)
+✔ ai: consecutive authoritative updates preserve the game identity and refresh live values (4.035238ms)
+✔ a genuinely different match gets a new game identity (7.30604ms)
+✔ ranked results show the server receipt without awarding rewards in the client (4.764177ms)
+✔ a capped Elo loss displays zero instead of hiding the result (4.53424ms)
+✔ a legacy room never invents FS and can use its observed Elo transition (4.214097ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 171.215986

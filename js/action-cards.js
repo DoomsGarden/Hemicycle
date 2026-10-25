@@ -20,5 +20,14 @@ Object.setPrototypeOf(byId,null);
 function rules(card){const c=typeof card==='string'?byId[card]:card;if(!c)return [];return [c.text,'Coste: '+c.cost+' TdP.','Máximo una carta de acción por turno.',c.oncePerBattle?'Una activación por partida. Va al descarte de acciones.':'Después de activarse vuelve al mazo.',...(c.effect==='silence'?['Exige tres oradores propios listos y menos votos que el rival; los tres agotan su acción.','El rival conserva el robo y los votos pasivos. Queda protegido contra otro silencio durante dos turnos propios adicionales.']:[])];}
 function inject(out,random=Math.random){const result=out.slice();if(random()<.2){const index=Math.floor(random()*result.length),pool=cards.filter(c=>c.r===result[index].r);if(pool.length)result[index]=byId[pool[Math.floor(random()*pool.length)].id];}return result;}
 function award(profile,ids){ids.forEach(function(id){if(byId[id]){if(!profile.actionAlbum)profile.actionAlbum=[];profile.actionAlbum.push(id);}else profile.album.push(id);});}
-return {award,cards:cards.map(c=>byId[c.id]),byId,ids:cards.map(c=>c.id),rules,inject};
+function describeAction(card,actor,scope,targets){
+ const names=targets.map(t=>t.name+' ('+t.team+')');if(card.target==='self'||card.target==='rival')scope=names.join('; ');let effect;
+ if(card.effect==='silence')effect=scope+': no puede realizar acciones en su próximo turno; conserva el robo y los votos.';
+ else if(card.effect==='damage')effect=(card.target.startsWith('all')?scope+': ':'')+targets.map((t,i)=>names[i]+': '+t.amount+' de daño').join('; ')+'.';
+ else if(card.effect==='heal')effect=(card.target.startsWith('all')?scope+': ':'')+targets.map((t,i)=>names[i]+': +'+t.amount+' de Aguante').join('; ')+'.';
+ else if(card.effect==='boost')effect=scope+': +'+card.value+' Zasca '+(card.target==='all'?'durante el turno activo de cada equipo.':'durante este turno.');
+ else effect=scope+': defensa del 50 % frente al próximo golpe, hasta el siguiente turno propio.';
+ return actor+' activa '+card.n+' · '+card.cost+' TdP. '+effect+' '+(card.oncePerBattle?'Pasa al descarte de acciones.':'Regresa al mazo.');
+}
+return {describeAction,award,cards:cards.map(c=>byId[c.id]),byId,ids:cards.map(c=>c.id),rules,inject};
 });

@@ -508,8 +508,8 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:11px;margin-bottom:8px}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=31.0.1.4">
-<link rel="stylesheet" href="css/cabinets.css?v=31.0.1.4-cabinets1">
+<link rel="stylesheet" href="css/interface.css?v=31.0.1.4-results1">
+<link rel="stylesheet" href="css/cabinets.css?v=31.0.1.4-results1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
@@ -560,14 +560,14 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
-<script src="js/action-cards.js?v=31.0.1.4"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
+<script src="js/action-cards.js?v=31.0.1.4-results1"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
 <script src="js/player-backup.js?v=31.0.1.4"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.4-audio1"></script>
+<script src="js/changelog.js?v=31.0.1.4-results1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -2200,11 +2200,11 @@ function receiveBattleDamage(card,damage){
 function localActionTargets(side,action,uid){var foe=side==='p'?'e':'p',owners=action.target==='all'?['p','e']:[action.target.indexOf('rival')>=0?foe:side],targets=[];owners.forEach(function(owner){G.field[owner].forEach(function(card){targets.push({owner:owner,card:card,doc:activeDoc(owner)});});});return action.target.indexOf('all')===0?targets:targets.filter(function(t){return !uid||t.card.uid===uid;});}
 function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=BYID[card.k],foe=side==='p'?'e':'p';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
  var targets=localActionTargets(side,a,target);if(!targets.length)return 'No hay un objetivo válido.';if(a.effect==='heal'&&!targets.some(function(x){return x.card.h<x.card.hm;}))return 'No falta Aguante en los objetivos.';if(a.effect==='guard'&&!targets.some(function(x){return !x.card.guard;}))return 'Los objetivos ya tienen defensa.';return '';}
-function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=BYID[instance.k];if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p';
+function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=BYID[instance.k];if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p',before=targets.map(function(x){return x.card.h;});
  if(!G.actionUsed)G.actionUsed={p:null,e:null};if(!G.spentActions)G.spentActions={p:[],e:[]};G.actionUsed[side]=G.turns[side];G.tdp[side]-=a.cost;G.hand[side]=G.hand[side].filter(function(c){return c!==instance;});if(a.oncePerBattle)G.spentActions[side].push(instance);else G.deck[side].push(instance);
  if(a.effect==='silence'){if(!G.pendingSilence)G.pendingSilence={p:false,e:false};G.pendingSilence[foe]=true;G.field[side].forEach(function(c){c.ready=false;});}
  targets.forEach(function(x){var c=x.card;if(a.effect==='heal'){var restored=Math.min(a.value,c.hm-c.h);c.h+=restored;battleVisual('heal',{uid:c.uid,value:restored});}if(a.effect==='guard'){c.guard=true;battleVisual('guard',{uid:c.uid});}if(a.effect==='boost'){if(!c.actionBuffs)c.actionBuffs=[];c.actionBuffs.push({value:a.value,until:G.turns[x.owner]+(x.owner===side?0:1)});}if(a.effect==='damage')receiveBattleDamage(c,a.value);});
- log(a.n+' activada · '+a.cost+' TdP. '+(a.oncePerBattle?'Pasa al descarte de acciones.':'Regresa al mazo.'),'hi');targets.forEach(function(x){if(x.card.h<=0&&!G.over)expel(side,x.card,{uid:instance.uid},x.doc);});gameSound('card');if(typeof document!=='undefined'&&document.body){var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}return true;}
+ var scope=a.effect==='silence'?(foe==='p'?'Tu equipo':'El equipo rival'):a.target==='all'?'Todos los oradores de ambos equipos':a.target.indexOf('all')===0?'Todos los oradores '+(targets[0].owner==='p'?'de tu equipo':'del equipo rival'):'Orador '+(a.target==='self'?'propio':'rival');log(HemicycleActions.describeAction(a,side==='p'?'Tu equipo':'El rival',scope,targets.map(function(x,i){return {name:x.card.n,team:x.owner==='p'?'tu equipo':'equipo rival',amount:a.effect==='heal'?x.card.h-before[i]:before[i]-x.card.h};})),'hi action-event');targets.forEach(function(x){if(x.card.h<=0&&!G.over)expel(side,x.card,{uid:instance.uid},x.doc);});gameSound('card');if(typeof document!=='undefined'&&document.body){var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}return true;}
 var LOCAL_ACTION=null,LOCAL_ACTION_TARGET=false;
 function closeLocalAction(){LOCAL_ACTION=null;LOCAL_ACTION_TARGET=false;var host=document.getElementById('localActionRoot');if(host)host.remove();}
 function inspectLocalAction(uid){LOCAL_ACTION=uid;LOCAL_ACTION_TARGET=false;G.sel=null;G.move=null;G.support=false;paint();}
@@ -2447,7 +2447,7 @@ function finish(who, abandoned){
    d.elo+=eloDelta;
   }
   msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS'+(eloDelta?' y +'+eloDelta+' Elo.':'.');
-  if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el escaño de '+BYID[won].n+'.';}
+  if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el cromo de '+BYID[won].n+'.';}
   if(comp && G.leader && G.leader.p && G.leader.p.k==='donald-trump'){
    d.dtWins=(d.dtWins||0)+1;
    if(d.dtWins>=10 && !d.dtGoldUnlocked){
@@ -2471,7 +2471,7 @@ function finish(who, abandoned){
     lost=pick(candidates);
     var idx=d.album.indexOf(lost);
     if(idx>=0)d.album.splice(idx,1);
-    msg+=' Pierdes una copia de '+BYID[lost].n+'.';
+    msg+=' Pierdes el cromo de '+BYID[lost].n+'.';
    } else {
     msg+=' El Seguro Parlamentario protege tus 5 últimos políticos únicos.';
    }
@@ -2497,7 +2497,11 @@ function ligaPanel(){
  var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
  var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
  return '<div class="panel"><div class="bar between"><div><b>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+' (J'+lg.jor+'/12)</b><br><span class="sub">Vas '+pos+'&ordm; de 30 con '+me.pts+' puntos.</span></div>'
- +'<button class="btn sm" data-act="ligajugar">Jugar J'+lg.jor+' contra '+esc(leagueName(rival.n))+'</button></div></div>';
+ +'<button class="btn sm" data-act="ligajugar" title="Jugar contra '+esc(leagueName(rival.n))+'">Jugar J'+lg.jor+'</button></div></div>';
+}
+
+function resultCard(id,lost){
+ var c=BYID[id];return '<section class="panel result-card"><div class="result-card-preview">'+cromoHTML(c,{noCardAttr:true})+'</div><div><h3>'+(lost?'Cromo perdido':'Cromo conseguido')+'</h3><b>'+esc(c.n)+'</b><p class="sub">'+RARM[c.r].n+' · '+copies(D(),id)+' '+(copies(D(),id)===1?'copia':'copias')+' en tu colección</p><p class="sub">'+(lost?'Puedes revisar tu gabinete desde Colección.':'Ya está disponible en Colección.')+'</p></div></section>';
 }
 
 SCREENS.result=function(){
@@ -2509,16 +2513,18 @@ SCREENS.result=function(){
  var pCls=who==='p'?'panel win':(who==='e'?'panel lose':'panel');
  var badges='';
  if(SO.fs)badges+='<span class="pill gold">+'+SO.fs+' FS</span>';
- if(SO.eloDelta){
-  badges+=' <span class="pill '+(SO.eloDelta>0?'green':'red')+'">'+(SO.eloDelta>0?'+'+SO.eloDelta:SO.eloDelta)+' Elo</span>';
+ if(SO.eloDelta||(SO.mode==='ranked'&&Number.isFinite(SO.eloDelta))){
+  badges+=' <span class="pill '+(SO.eloDelta>0?'green':SO.eloDelta<0?'red':'')+'">'+(SO.eloDelta>0?'+'+SO.eloDelta:SO.eloDelta)+' Elo</span>';
  }
- var html=(who==='p'&&G&&G.votes.p>=100?'<div class="majority-seal"><span aria-hidden="true">★</span><b>Mayoría alcanzada</b><small>'+G.votes.p+' / 100 votos</small></div>':'')+'<div class="'+pCls+'"><div class="bar between"><h2>'+title+'</h2><div>'+badges+'</div></div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
- html+='<div class="inner-scroll">';
- if(SO.won)html+='<h3>Cromo arrebatado al rival (x'+copies(D(),SO.won)+')</h3>'+fichaHTML(BYID[SO.won]);
- if(SO.lost)html+='<h3>Cromo perdido (quedan x'+copies(D(),SO.lost)+')</h3>'+fichaHTML(BYID[SO.lost]);
+ var html=(who==='p'&&G&&G.votes.p>=100?'<div class="majority-seal"><span aria-hidden="true">★</span><b>Mayoría alcanzada</b><small>'+G.votes.p+' / 100 votos</small></div>':'')+'<div class="'+pCls+' result-summary"><div class="bar between"><h2>'+title+'</h2><div>'+badges+'</div></div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
+ if(SO.mode==='ranked'&&Number.isFinite(SO.eloAfter))html+='<p class="result-rating">Elo'+(Number.isFinite(SO.eloBefore)?': '+SO.eloBefore+' →':':')+' <b>'+SO.eloAfter+'</b></p>';
+ if(SO.rewardsUnavailable)html+='<p class="sub result-legacy">Esta partida no tiene un desglose de FS guardado.</p>';
+ html+='<div class="inner-scroll result-details">';
+ if(SO.won)html+=resultCard(SO.won,false);
+ if(SO.lost)html+=resultCard(SO.lost,true);
  if(SO.liga&&!SO.season)html+=ligaPanel();
  html+='</div>';
- html+='<div class="bar">';
+ html+='<div class="bar result-controls">';
  if(SO.liga&&!SO.season){
   html+='<button class="btn ghost sm" data-go="liga">Tabla de Liga</button>';
  } else if(SO.mode!=='liga'){
@@ -2679,16 +2685,20 @@ function receiveRemoteBattle(snapshot,controls){
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();
- G={authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
+ G={authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
   over:snapshot.status==='finished',done:snapshot.status==='finished',n:own.turn+enemy.turn,side:snapshot.side===snapshot.you?'p':'e',first:snapshot.first===snapshot.you?'p':'e',turns:{p:own.turn,e:enemy.turn},turnDeadline:snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null,
   pTeam:own.cabinetIds||Array.from(new Set(hand.concat(pf,rest).filter(function(c){return !c.action;}).map(function(c){return c.k;}))),eTeam:[],field:{p:pf,e:ef},hand:{p:hand,e:[]},deck:{p:new Array(own.deckCount||0),e:new Array(enemy.deckCount||0)},pas:{p:rest,e:(enemy.rest||[]).map(convert)},
   leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
   actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
-  log:(snapshot.events||[]).slice().reverse().map(function(text){return '<div class="log-line">'+esc(text)+'</div>';}),sel:same?previous.sel:null,move:same?previous.move:null,support:same?previous.support:false};
+  log:(snapshot.events||[]).slice().reverse().map(function(text){return '<div class="log-line'+(text.indexOf(' activa ')>=0?' action-event':'')+'">'+esc(text)+'</div>';}),sel:same?previous.sel:null,move:same?previous.move:null,support:same?previous.support:false};
  // Keep one game object per match: audio uses its identity to continue the score.
  if(previous){Object.assign(previous,G);G=previous;}
  if(!same)closeLocalAction();
- if(G.over){closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you;go('result',{who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(snapshot.mode==='ranked'?'Elo y resultado guardados en tu cuenta.':'Partida amistosa: tu progreso se conserva.'),mode:snapshot.mode,fs:0,remote:true});return true;}
+ if(G.over){
+  closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
+  var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
+  go('result',{who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: tu progreso se conserva.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,rewardsUnavailable:ranked&&!receipt});return true;
+ }
  if(SCREEN!=='battle')go('battle');else paint();return true;
 }
 
@@ -2776,7 +2786,7 @@ SCREENS.liga=function(){
  var pos=sorted.indexOf(me)+1,rival=sorted[(pos-1+3)%30];
  return '<div class="bar between"><div><h2>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+'</h2>'
  +'<p class="sub">Temp. '+lg.temp+' &middot; J'+lg.jor+'/12 &middot; Vas '+pos+'&ordm; ('+me.pts+' pts)</p></div>'
- +'<button class="btn sm" data-act="ligajugar">Jugar J'+lg.jor+' contra '+esc(leagueName(rival.n))+'</button></div>'
+ +'<button class="btn sm" data-act="ligajugar" title="Jugar contra '+esc(leagueName(rival.n))+'">Jugar J'+lg.jor+'</button></div>'
  +'<div class="panel inner-scroll"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
  +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(leagueName(t.n))+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
  +'</tbody></table></div>'

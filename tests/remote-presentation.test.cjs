@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),assert=require('node:assert/strict'),{loadBattle}=require('./helpers/battle.cjs'),E=require('../_dev/online/combat.cjs'),A=require('../js/action-cards.js');
 function fixture(kind='player'){
- const client=loadBattle();for(const card of A.cards)client.BYID[card.id]=card;
+ const client=loadBattle();client.closeModal=()=>{};for(const card of A.cards)client.BYID[card.id]=card;
  const ids=E.cards.filter(c=>c.r==='comun').slice(0,5).map(c=>c.id),cabinet={orators:ids,leader:ids[0],actions:['replica','receso']};
  let server=E.apply(E.initial('normal'),0,{type:'ready',cabinet},1000,()=>.25);server=E.apply(server,1,{type:'ready',cabinet},1000,()=>.25);
  const controls={id:'match-one',busy:false,send(){},close(){},retry(){}};
@@ -14,3 +14,6 @@ for(const kind of ['player','ai'])test(kind+': consecutive authoritative updates
  f.client.G.sel='same-revision-selection';f.controls.busy=true;f.show(2);assert.equal(f.client.G,original);assert.equal(f.client.G.sel,'same-revision-selection');assert.equal(f.client.G.networkBusy,true);
 });
 test('a genuinely different match gets a new game identity',()=>{const f=fixture();f.show(1);const first=f.client.G;f.controls.id='match-two';f.show(1);assert.notEqual(f.client.G,first);assert.equal(f.client.G.remoteId,'match-two');});
+test('ranked results show the server receipt without awarding rewards in the client',()=>{const f=fixture('ai');f.server.mode='ranked';f.show(1);const profile=JSON.stringify(f.client.D());f.server.status='finished';f.server.winner=0;f.server.players[0].votes=110;f.server.players[1].votes=36;f.client.receiveRemoteBattle({...E.project(f.server,0,2,1000),rankedElo:325,result:{eloBefore:300,eloAfter:325,eloDelta:25,fs:82}},f.controls);assert.equal(f.client.SO.eloDelta,25);assert.equal(f.client.SO.fs,82);assert.equal(f.client.SO.eloBefore,300);assert.equal(f.client.SO.eloAfter,325);assert.equal(JSON.stringify(f.client.D()),profile);const html=f.client.SCREENS.result();assert.match(html,/\+25 Elo/);assert.match(html,/\+82 FS/);assert.match(html,/300 →/);});
+test('a capped Elo loss displays zero instead of hiding the result',()=>{const f=fixture();f.server.mode='ranked';f.server.status='finished';f.server.winner=1;f.client.receiveRemoteBattle({...E.project(f.server,0,2,1000),rankedElo:0,result:{eloBefore:0,eloAfter:0,eloDelta:0,fs:23}},f.controls);const html=f.client.SCREENS.result();assert.match(html,/>0 Elo</);assert.match(html,/\+23 FS/);});
+test('a legacy room never invents FS and can use its observed Elo transition',()=>{const f=fixture();f.server.mode='ranked';f.client.receiveRemoteBattle({...E.project(f.server,0,1,1000),rankedElo:300},f.controls);f.server.status='finished';f.server.winner=1;f.client.receiveRemoteBattle({...E.project(f.server,0,2,1000),rankedElo:286},f.controls);assert.equal(f.client.SO.eloDelta,-14);assert.equal(f.client.SO.fs,0);assert.equal(f.client.SO.rewardsUnavailable,true);});

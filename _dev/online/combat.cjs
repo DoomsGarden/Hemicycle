@@ -38,9 +38,11 @@ function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],a=A.b
  const owners=a.target==='all'?[i,1-i]:[a.target.includes('rival')?1-i:i];let affected=owners.flatMap(owner=>s.players[owner].field.map(c=>({owner,c,doc:active(s,owner)})));if(!a.target.startsWith('all'))affected=affected.filter(x=>x.c.uid===target);
  check(a.effect==='silence'||affected.length,'Objetivo no válido');if(a.effect==='heal')check(affected.some(x=>x.c.hp<x.c.maxHp),'No falta Aguante');if(a.effect==='guard')check(affected.some(x=>!x.c.guard),'Defensa ya activa');
  if(a.effect==='silence'){check(p.field.length===3&&p.field.every(c=>c.ready),'Necesitas tres oradores listos');check(p.votes<foe.votes,'Debes tener menos votos');check(!foe.pendingSilence&&foe.turn>(foe.silenceImmuneThrough??-1),'Rival protegido');foe.pendingSilence=true;p.field.forEach(c=>c.ready=false);}
+ const before=affected.map(x=>x.c.hp);
  p.tdp-=a.cost;p.actionUsedTurn=p.turn;p.usedActions.push(id);p.hand=p.hand.filter(x=>x!==c);if(a.oncePerBattle)p.actionDiscard.push(c);else p.deck.push(c);
  for(const x of affected){if(a.effect==='damage')damage(x.c,a.value);if(a.effect==='heal')x.c.hp=Math.min(x.c.maxHp,x.c.hp+a.value);if(a.effect==='guard')x.c.guard=true;if(a.effect==='boost')x.c.buffs.push({value:a.value,until:s.players[x.owner].turn+(x.owner===i?0:1)});}
- log(s,a.n+' activada.');s.lastAction={side:i,id,discard:!!a.oncePerBattle,turn:p.turn};
+ const teams=['equipo anfitrión','equipo invitado'],scope=a.effect==='silence'?teams[1-i]:a.target==='all'?'Todos los oradores de ambos equipos':a.target.startsWith('all')?'Todos los oradores del '+teams[owners[0]]:'Orador '+(a.target==='self'?'propio':'rival');
+ log(s,require('../../js/action-cards.js').describeAction(a,i===0?'El anfitrión':'El invitado',scope,affected.map((x,j)=>({name:x.c.name,team:teams[x.owner],amount:a.effect==='heal'?x.c.hp-before[j]:before[j]-x.c.hp}))));s.lastAction={side:i,id,discard:!!a.oncePerBattle,turn:p.turn};
  for(const x of affected)if(x.c.hp<=0&&s.status==='active')expel(s,x.owner,x.c,x.owner===i?null:i,x.doc);
 }
 function apply(original,i,command,now=Date.now(),rng=random){check(i===0||i===1,'Jugador no válido');check(command&&typeof command.type==='string','Acción no válida');const s=structuredClone(original);if(timeout(s,now))return s;

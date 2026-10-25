@@ -38,6 +38,15 @@
         "El resultado clasificatorio se sincroniza antes de mostrar el Elo final. Rápida mantiene sus 60 segundos y su modo al volver a jugar.",
         "Los nombres, las estadísticas y las descripciones de los cromos respetan el marco. Las acciones muestran su texto completo en la vista normal y ampliada, con tamaños adaptados a cada carta."
       ]
+    },
+    {
+      "title": "Resultados y espacio en pantalla",
+      "items": [
+        "Clasificatoria vuelve a detallar el Elo ganado o perdido, el Elo anterior y final y los FS obtenidos. El servidor abona de 50 a 100 FS por victoria y de 20 a 30 por derrota en las partidas nuevas; volver a cargar no duplica el premio.",
+        "El resumen de Liga compacta la recompensa y reserva espacio para los botones. La selección de gabinete muestra los cinco oradores juntos, también con la altura reducida del navegador móvil.",
+        "El registro de las acciones explica su efecto y a quién afecta: un orador, un equipo o ambos. El daño y la curación reflejan la cantidad aplicada.",
+        "Los mensajes de recompensa hablan de conseguir o perder un cromo. Se conservan las novedades y correcciones anteriores de esta misma versión."
+      ]
     }
   ]
 },
