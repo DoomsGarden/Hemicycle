@@ -28,6 +28,7 @@
     {
       "title": "Combate y presentación",
       "items": [
+        "Corrección: los cromos en la mano ya no aparecen como Hecho ni atenuados por haber actuado antes; ese indicador solo corresponde a oradores en la Tribuna.",
         "Los ataques a bancadas vacías pueden restar entre todos tus oradores un máximo de 3 votos por turno propio, para evitar estancamientos.",
         "Los ataques, defensas, curaciones y cartas online incorporan sus efectos visuales y sonoros sin reiniciar la música.",
         "Victoria y derrota tienen escenas realistas en WebP animado. Siguiente abre los resultados después de comprobar la partida y el guardado; si falla la comprobación se puede reintentar.",
