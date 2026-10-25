@@ -1,0 +1,228 @@
+{
+  "baseCommit": "7f439a909b6fdc7b1cdf0c70661b553ef55244e4",
+  "visibleVersion": "v31.0.2.0",
+  "published": false,
+  "pushed": false,
+  "productionSQLExecuted": false,
+  "nodeTests": {
+    "passed": 510,
+    "failed": 0,
+    "skipped": 0
+  },
+  "postgresIsolated": true,
+  "browser": {
+    "realHTTP": true,
+    "realSQL": true,
+    "realSDKWithSyntheticAuth": true,
+    "canonicalPackPurchase": true,
+    "actionListingAndPurchase": true,
+    "rankedServerWithProtectedCloud": true,
+    "victoryScene": true,
+    "offlineReloadResume": true,
+    "pendingRewardNotSpendable": true,
+    "reconnectSettlementOnce": true,
+    "errors": []
+  },
+  "pwa": {
+    "previousCache": "hemiciclo-v31.0.1.4-progress1",
+    "newCache": "hemiciclo-v31.0.2.0",
+    "cachedAssets": 85,
+    "offlineTutorialSteps": 38,
+    "progressPreserved": true,
+    "unrelatedCachePreserved": true,
+    "hangingNavigationFallback": true,
+    "downloadedConfettiOffline": true,
+    "embeddedFontOffline": true,
+    "errors": []
+  },
+  "email": {
+    "realSDK": true,
+    "simulatedAuthTransport": true,
+    "signupConfirmation": true,
+    "passwordRecoveryPKCE": true,
+    "passwordUpdated": true,
+    "noRealEmailSent": true,
+    "errors": []
+  },
+  "audio": {
+    "sounds": [
+      {
+        "starts": 4,
+        "results": 1,
+        "effects": {
+          "ui": 12,
+          "card": 3,
+          "normal": 2,
+          "turn": 1,
+          "guard": 2,
+          "heal": 1
+        },
+        "loops": [
+          27,
+          28
+        ]
+      },
+      {
+        "starts": 4,
+        "results": 1,
+        "effects": {
+          "ui": 20,
+          "turn": 3,
+          "card": 4,
+          "normal": 2,
+          "guard": 2,
+          "heal": 1
+        },
+        "loops": [
+          36,
+          37
+        ]
+      }
+    ],
+    "musicContinuous": true,
+    "errors": []
+  },
+  "profileOverflowFindings": [],
+  "runtimeSHA256": {
+    "_dev/online/20261025_economy_authority.sql": "3e28b5c92d3fa2e3079a00e14f93823d0a0257a24e8580f59ee50b72851e689f",
+    "_dev/online/actions.cjs": "ecfdc74ad469aaaf0adc04601511b289ab60d30bea89ba335842581e05fa1ea2",
+    "_dev/online/ai.cjs": "b144808e448fd9185e6ee388ce58a156f507f3fc1fc43833cba0820b1b6c0ebd",
+    "_dev/online/combat-service.cjs": "12a505aadd1c3a6df2b9ec0e3ef2af1ce9bf44460f53b3a198da13e9243d790b",
+    "_dev/online/combat.cjs": "d2b9c75ed2908b97d9c6e43bfb2f434bef51e35fd9d87c9c03be72fd2e902794",
+    "_dev/online/economy-service.cjs": "4bddb81868cc274992d2caecbb510f83b83917cd1db8c4a9f1981ee744e884be",
+    "_dev/online/economy.cjs": "76592d6f60e104efa21c2a96583a0c41f9408a2d6e43bb5f365a5c92999e71b5",
+    "_dev/online/league.cjs": "92b5e67c1989e24a9822dfd03a06661fe9e2adeb44db49875dab968b05f99c66",
+    "_dev/online/offline-rules.cjs": "ebee905a4592e43873d1da2171c9a39dcdc7ba4f4e14fdadcbee81ee7eaf245f",
+    "_dev/online/offline-v1.cjs": "27b1344b74223e0717696757114cf290b6066c641ae1e9137ca35cba29f3e17c",
+    "_dev/online/preview-server.cjs": "6810c5812a56b2d40417a14752daa45ba4166e483a3147861ae886da9971f7ba",
+    "_dev/online/progression.cjs": "f3c2da7e66d6a04900b9efc9ba3510c8f379dc3660b8a9dcd3789d9fa74db87f",
+    "_dev/online/server.cjs": "a0db05e443f6ecaa14830019729f31babe951296cbb0e2d3c60448db6c9f503c",
+    "assets/results/defeat-still.webp": "36faf85ff7da1be7f53370e161c3ec6ee88d0cc995a166d29c0664c53e2d5460",
+    "assets/results/defeat.webp": "ef662390b4c63d7f4450ebb76f92e6b74c6e9daf46b99b8e89f38de139867b12",
+    "assets/results/victory-still.webp": "c014d51d2934a1edbc04d678574b6ecf83299a5dd7ecbf44b06ce0d021079982",
+    "assets/results/victory.webp": "c3d42500e525c40faf0d169938ff42449937cf0510ed8b5404034e0afb2aa9c5",
+    "css/action-cards.css": "98e747db915a14b03a1dd175e21f8c25e5d94c520835b44ca4f30349627b88e5",
+    "css/audio.css": "a7cc0ad3a7f44bc6309ced6f3f105a339056c2476b7d6986669435e3cba5bc61",
+    "css/battle-actions.css": "0b51d02a19105161cb3ab4deed869cc32910f9db091ad53b42a79e71cfb0b91c",
+    "css/battle-visuals.css": "9917314a7b8dd62e8ca0b390b8b09c4f950eac386a3c3154e938d409a43b212e",
+    "css/cabinets.css": "44c2d6380b0726db6d3a23915adfe36c5d5f19e9616f1b4cc72274f5de5e424d",
+    "css/cloud.css": "1105dc7f02b26cefe4abc2a904870cc918887becc3c48e2bd67a398158d0e958",
+    "css/interface.css": "0d2204c747551fe31ff1979d99516f059632f14b5c1f4d12a5b8553107882b1f",
+    "css/launch.css": "cabea9e8070f2d93172f308ba51c3c8a14d89f47d58894613078aa87ca2e91cf",
+    "css/legendary-confetti.css": "4cec5571a8b0c5b1a47a8967783b53ef362bc922ce87e00602c1fec2d252a498",
+    "css/objectives.css": "4c408cdeb91bd3c9c5356e233f450c21e470f65010e71c153fe8b93e5ee47fa9",
+    "css/online.css": "dc83c91674ead0e493ea0d338e7019a1643c5079837208f93f2ba7a37e464942",
+    "css/packs.css": "a9634d7a4396a3dfbea1715ac505f14f31ac1f0140d41245759a05bd1cb8b20d",
+    "css/profile.css": "25fe3f780be368d360bdc7fac6c19928614c2e5f7254af3bc9f298a81af7da7e",
+    "css/result-transition.css": "ab7a5492dce6d15fb627c3fe23e223fd87e1e7ee21a58059ba38a0077440b5b0",
+    "css/tutorial.css": "cae01fa3e8b72a656b573a14e21ac929847b4ba4d5e7ea32239a036446107f1e",
+    "css/ui-polish.css": "5d354822783cdcb8c25a309027982d2a5b9f9be4853f8dd0bbdea09ebcaeade6",
+    "index.html": "8c6e100861b7e9ba9ecf15e88e28afffcc155d11ba800d7d86407bb85d8921ff",
+    "js/action-cards.js": "1ceef9da4f14eeaaa5b4bb4ec588e04e7af41a872b60adfaa54d13300931a792",
+    "js/app-interaction.js": "4f77470d3e9b752fe275c9b300796ca8aef99ecfa39576e64f649abaf7fd372f",
+    "js/battle-actions-ui.js": "a51298760ab724b07e01d13edfeb5a4a2e632dd0bcdf190787a3acb1808e7ae3",
+    "js/battle-tutorial.js": "4282ea23179aad198c7d87e3a6793cafd4cfdf99e4fe8534c26415f67980b525",
+    "js/battle-visuals.js": "7bae79149fa6efa4f3cb2ef0c047d4e10a004db1d890e7af2213bbe4ca4cfb4e",
+    "js/cabinet-presets.js": "5fa3b84829ec9c40257cfe85746ab57555e557522789eea40bb038bc75a1119c",
+    "js/card-confetti.js": "d5abfba8f2980e06cdc382ffbc1f9fab6e663385a1eb16bf839c9e85153635e1",
+    "js/changelog.js": "1a813eb230f2b840623767d7ce15538583277c9e0b6b9a0d075c94c7e8c0c2fc",
+    "js/cloud-save.js": "b1f9ee6ceb8ef422a979a8873f82684ad857a2bde79f78ba1cd518aa6a4f2c1b",
+    "js/cloud-ui.js": "8a802d14b277748c22e3bfcd91554d3cc27a2bd250ed0605c9b6f203bad5dc87",
+    "js/economy-client.js": "347aca31a52109577c08893e9637051d1608d7d20a6c12dafcd23ce73cba1b7f",
+    "js/game-audio.js": "232c5cbf503149c5c0056db2080bf3aec62048773bd1bab05e042ca737967e69",
+    "js/launch-screen.js": "33d5b4c52fcecb27aa73327179c09d9f5c059bcc72d463c2bf639d25df81eb91",
+    "js/legendary-confetti.js": "581c8f0bfadfcb8ebe44152f75ed3cf4bac06067cd433b6fbf0174469cfb9b88",
+    "js/legendary-mastery.js": "3e05216de84aa0e39a5e432b6302582412420436ec8b1528d8ecbf494fd27847",
+    "js/market-rules.js": "e26b47359e19aabfca14a7d79ae2ae6ce02494567e08be57cafa339836400049",
+    "js/market-ui.js": "1b4e79d522366e7a17c3967807acf3a32a128ea9378ed892f63d9b992c190a1d",
+    "js/menu-tutorial.js": "a6099aa39a6ed0c3466743a7e434c80014dd999b34143349679c93fd3ff0e613",
+    "js/objectives.js": "ad87f926eb9c08490a5f431f17f5a0e1b67296b2fdbb676e20b656e243deddaa",
+    "js/offline-combat.js": "19787b86d6e2cce18c99f3889781e05873194196cc480d15798037f8e9747599",
+    "js/offline-rules.js": "a3350f9641912695e14605929411526ca36984f70d1af80b1de678413cbe04ae",
+    "js/online-combat-ui.js": "4b835fa930558e42024e4cd36dd2075a465466b60259d22d302c419bf2da7752",
+    "js/online-ui.js": "fbc7f46ced38d23719e4c2f94a590d88dce8a298d73874574eea0c956c7cb822",
+    "js/pack-presentation.js": "10c2070cb0854d6cd367da1baad1df3a2084c3fe70f316b34fe53c28c5aebe5d",
+    "js/player-backup.js": "00f9086b4b1a0795632db4620757f81d0c273e01bcab5bd83282690473c05c17",
+    "js/player-profile.js": "6d2f8cde11107310142d46e15c2f71f149247c0bd642807403d40dcf49feed3c",
+    "js/ranked-seasons.js": "331a6794c069d9abc461d903887d104c4b3a09a5728b218764d50c4032ecdbf7",
+    "js/result-transition.js": "ad26f70c4ee616564905b2835b804f4c6189d6e866441007c0d2a359cf51abb9",
+    "js/supabase-config.js": "c77ac0b25383f6a5a9c966f7ca39a49e0f78418a5a9a5fc298603f56b4bcf5f8",
+    "js/supabase-sdk.js": "3010eeb284d5fb2f1ca42fb6278d020cc7d58cf783c1285471afdb39bbf0057f",
+    "sw.js": "75638ce223477cc40d0788c7a176ae6e2a255015140fab06b73a2359aabfa165"
+  },
+  "resultScenes": {
+    "art": {
+      "victory": {
+        "bytes": 5048852,
+        "frames": 62,
+        "duration": 4799,
+        "loop": 0
+      },
+      "defeat": {
+        "bytes": 3511806,
+        "frames": 62,
+        "duration": 4799,
+        "loop": 0
+      }
+    },
+    "cases": [
+      {
+        "width": 320,
+        "height": 568,
+        "win": true,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 320,
+        "height": 568,
+        "win": false,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 393,
+        "height": 851,
+        "win": true,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 393,
+        "height": 851,
+        "win": false,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 851,
+        "height": 393,
+        "win": true,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 851,
+        "height": 393,
+        "win": false,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "win": true,
+        "verifiedBeforeNext": true
+      },
+      {
+        "width": 1280,
+        "height": 800,
+        "win": false,
+        "verifiedBeforeNext": true
+      }
+    ],
+    "explicitNext": true,
+    "pendingCannotContinue": true,
+    "saveFailureRequiresRetry": true,
+    "reconnectVerifiedBeforeNext": true,
+    "normalMotionMinimum4800ms": true,
+    "reducedMotionUsesStill": true,
+    "errors": []
+  },
+  "explicitNextAfterVerifiedSave": true,
+  "releaseApproved": true
+}

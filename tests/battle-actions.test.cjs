@@ -33,8 +33,8 @@ test('Foco passive healing remains available during active healing cooldown',()=
 test('invalid target, full enemy bench, invalid attack or support, and wrong side cannot spend the action',()=>{
  const {c,actor,target}=duel();assert.equal(c.attack(actor,{...target},'p','strong'),false);assert.equal(c.attack(actor,target,'p','unknown'),false);assert.equal(c.useSupport(actor,'unknown','p'),false);assert.equal(c.attack(actor,target,'e','normal'),false);c.G.field.e.push(c.mk(c.CARDS[2]),c.mk(c.CARDS[3]));assert.equal(c.attack(actor,'__EMPTY','p','normal'),false);assert.equal(actor.ready,true);assert.equal(target.h,100);
 });
-test('normal and strong attacks use their own damage against an empty bench',()=>{
- for(const [variant,remaining]of [['normal',15],['strong',12]]){const {c,actor}=duel();c.G.field.e=[];c.G.votes.e=20;c.attack(actor,'__EMPTY','p',variant);assert.equal(c.G.votes.e,remaining);assert.match(c.G.log[0],new RegExp(variant==='normal'?'Primera frase':'Segunda frase'));}
+test('normal and strong attacks respect the shared empty-bench vote cap',()=>{
+ for(const [variant,remaining]of [['normal',17],['strong',17]]){const {c,actor}=duel();c.G.field.e=[];c.G.votes.e=20;c.attack(actor,'__EMPTY','p',variant);assert.equal(c.G.votes.e,remaining);assert.match(c.G.log[0],new RegExp(variant==='normal'?'Primera frase':'Segunda frase'));}
 });
 test('strong attack uses active Zasca bonuses before multiplying, and target doctrine damage remains additive',()=>{
  const {c,actor,target}=duel();actor.a=3;actor.buff=2;actor.pa='guardia';c.G.leader.p=actor;c.attack(actor,target,'p','strong');assert.equal(target.h,92);

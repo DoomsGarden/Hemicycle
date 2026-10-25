@@ -1,7 +1,7 @@
 'use strict';
 const E=require('./combat.cjs'),A=require('./actions.cjs');
-function cabinet(human,elo,random=Math.random){
- const recipe=elo<2500?['comun','comun','comun','raro','raro']:elo<5000?['comun','comun','raro','raro','especial']:elo<7500?['comun','raro','raro','especial','legendario']:['raro','raro','especial','especial','legendario'];
+function cabinet(human,elo,random=Math.random,recipeOverride){
+ const recipe=recipeOverride||(elo<2500?['comun','comun','comun','raro','raro']:elo<5000?['comun','comun','raro','raro','especial']:elo<7500?['comun','raro','raro','especial','legendario']:['raro','raro','especial','especial','legendario']);
  const orators=[];for(const rarity of recipe){const pool=E.cards.filter(c=>c.r===rarity&&!orators.includes(c.id));orators.push(pool[Math.floor(random()*pool.length)].id);}
  const tiers={comun:0,raro:1,especial:2,legendario:3},leader=orators.slice().sort((a,b)=>tiers[E.catalog[b].r]-tiers[E.catalog[a].r])[0],actions=[];
  for(const id of human.actions){const pool=A.cards.filter(c=>c.r===A.byId[id].r&&!actions.includes(c.id));actions.push(pool[Math.floor(random()*pool.length)].id);}
@@ -16,7 +16,7 @@ function choose(state,side=1,now=Date.now()){
   if(c.hp<c.maxHp/3&&valid({type:'heal',uid:c.uid}))return {type:'heal',uid:c.uid};
   const variant=E.strong(p,c)?'strong':'normal',targets=foe.field.slice().sort((a,b)=>a.hp-b.hp||b.votes-a.votes);
   for(const target of targets){const command={type:'attack',uid:c.uid,target:target.uid,variant};if(valid(command))return command;}
-  if(foe.field.length<3)return {type:'attack',uid:c.uid,target:'empty',variant};
+  if(foe.field.length<3){const normal=E.power(state,side,c),limit=Math.min(foe.votes,state.emptyVoteLimit==null?Infinity:state.emptyVoteLimit-(p.emptyVotesTaken||0)),command={type:'attack',uid:c.uid,target:'empty',variant:normal>=limit?'normal':variant};if(valid(command))return command;}
  }
  return {type:'end'};
 }

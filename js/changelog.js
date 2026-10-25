@@ -4,6 +4,40 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+  "version": "v31.0.2.0",
+  "date": "2026-10-25",
+  "title": "Progreso verificado y nuevas escenas de resultado",
+  "sections": [
+    {
+      "title": "Cuenta, nube y partidas descargadas",
+      "items": [
+        "El servidor valida las compras, ventas y recompensas de las cuentas vinculadas; los recursos ya guardados se conservan.",
+        "Puedes preparar partidas para jugar sin conexión. Sus premios quedan pendientes hasta comprobar las jugadas al reconectar, sin duplicar recompensas al reintentar.",
+        "Nube permite sincronizar las partidas descargadas. El progreso anterior que solo exista en un dispositivo dispone de una solicitud de migración revisada.",
+        "Se añade creación de cuenta por correo, recuperación de acceso y cambio de contraseña desde el enlace recibido."
+      ]
+    },
+    {
+      "title": "Mercado conectado",
+      "items": [
+        "Las cuentas pueden publicar ofertas, comprar e intercambiar repetidos con reservas y pagos comprobados por el servidor.",
+        "Las acciones repetidas también se pueden vender e intercambiar, conservando una copia y respetando las reglas de rareza.",
+        "Puedes elegir aparecer en el listado de intercambios mostrando tu nick y tus repetidos; los respaldos y correos permanecen privados."
+      ]
+    },
+    {
+      "title": "Combate y presentación",
+      "items": [
+        "Los ataques a bancadas vacías pueden restar entre todos tus oradores un máximo de 3 votos por turno propio, para evitar estancamientos.",
+        "Los ataques, defensas, curaciones y cartas online incorporan sus efectos visuales y sonoros sin reiniciar la música.",
+        "Victoria y derrota tienen escenas realistas en WebP animado. Siguiente abre los resultados después de comprobar la partida y el guardado; si falla la comprobación se puede reintentar.",
+        "El perfil se adapta a pantallas bajas y las fichas de acciones incorporan navegación Anterior/Siguiente.",
+        "Se mantienen la temporada 1 de prelanzamiento, el progreso existente y las novedades de versiones anteriores."
+      ]
+    }
+  ]
+},
+{
   "version": "v31.0.1.4",
   "date": "2026-10-24",
   "title": "Combates integrados y acceso online más sencillo",

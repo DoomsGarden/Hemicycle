@@ -56,10 +56,11 @@
    if(typeof operationId!=='string'||operationId.length<8||operationId.length>100)fail('Identificador de operación no válido.');
    var previous=(profile.marketReceipts||[]).find(function(r){return r.id===operationId;});
    if(previous){if(previous.cardId!==id||previous.quantity!==quantity)fail('El identificador pertenece a otra venta.');return profile;}
-   if(duplicates(profile.album,id)<quantity)fail('No hay suficientes repetidos. Conservas siempre una copia.');
+   var albumKey=card(id).action?'actionAlbum':'album',album=profile[albumKey]||[];
+   if(duplicates(album,id)<quantity)fail('No hay suficientes repetidos. Conservas siempre una copia.');
    integer(profile.fs+quote.total,'Saldo FS',0);
    var remaining=quantity;
-   var next=Object.assign({},profile,{fs:profile.fs+quote.total,album:profile.album.filter(function(c){if(c===id&&remaining>0){remaining--;return false;}return true;})});
+   var next=Object.assign({},profile,{fs:profile.fs+quote.total,[albumKey]:album.filter(function(c){if(c===id&&remaining>0){remaining--;return false;}return true;})});
    next.marketReceipts=[{id:operationId,cardId:id,quantity:quantity,total:quote.total}].concat(profile.marketReceipts||[]).slice(0,100);
    return next;
   }

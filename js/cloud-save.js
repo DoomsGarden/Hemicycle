@@ -35,7 +35,7 @@ function create(api){
  }
  async function put(activate){
   var a=account(),ticket=epoch;if(!a)throw new Error('Debes iniciar sesión.');
-  var binding=read(bindKey(a.userId)),owner=read(OWNER),snapshot=api.validate(api.snapshot()),fp=fingerprint(snapshot);
+  var binding=read(bindKey(a.userId)),owner=read(OWNER),snapshot=api.validate(api.prepare&&remote&&remote.payload?api.prepare(api.snapshot(),remote.payload):api.snapshot()),fp=fingerprint(snapshot);
   if(!activate&&(!binding||!owner||owner.userId!==a.userId||owner.identityId!==snapshot.identity.id))return;
   if(activate&&(!remote||remote.revision!==0))throw new Error('Revisa primero el guardado de la cuenta.');
   if(!activate&&fp===binding.fingerprint&&remote&&remote.revision===binding.revision){phase='synced';changed();return;}
@@ -73,6 +73,12 @@ function create(api){
   var payload=api.validate(value.payload),values={};values[RECOVERY+':'+a.userId]={savedAt:new Date().toISOString(),payload:api.snapshot()};values[bindKey(a.userId)]={revision:value.revision,fingerprint:fingerprint(payload),identityId:payload.identity.id};values[OWNER]={userId:a.userId,identityId:payload.identity.id};values[pendingKey(a.userId)]=null;
   clearTimeout(timer);applying=true;try{api.restore(payload,values);}finally{applying=false;}remote=value;error='';phase='synced';evaluate(a);changed();if(phase==='pending')dirty();
  }
+ async function adopt(){
+  await refresh();var a=account();if(phase==='error')throw Error(error||'No se pudo verificar la nube.');if(!a||!remote||!remote.revision)throw Error('No hay un respaldo confirmado para esta cuenta.');
+  if(remote.payload.identity.id!==api.snapshot().identity.id)throw Error('Recupera primero la copia vinculada a tu cuenta.');
+  applying=true;try{if(api.applyCanonical)api.applyCanonical(remote.payload);else return;}finally{applying=false;}
+  remember(a,remote,fingerprint(remote.payload));error='';evaluate(a);changed();if(phase==='pending')dirty();
+ }
  async function useLocal(expectedRevision){
   var a=account(),ticket=epoch;if(!a||!state().enabled)throw new Error('Recupera o vincula primero el progreso de esta cuenta.');
   var value=validateRemote(await rpc(a,'hemicycle_get_cloud_save'),a);
@@ -86,7 +92,7 @@ function create(api){
  function localReplaced(){epoch++;clearTimeout(timer);var a=account();if(a){write(bindKey(a.userId),null);write(pendingKey(a.userId),null);}write(OWNER,null);phase=remote&&remote.revision?'available':account()?'empty':'guest';changed();}
  function accountChanged(){epoch++;clearTimeout(timer);remote=null;phase=account()?'checking':'guest';error='';if(account()){refresh().then(function(){if(phase==='pending')dirty();});}else{changed();}}
  async function reconnect(){if(!account())return;await refresh();if(phase==='pending')return save(false);}
- return {state:state,refresh:refresh,save:function(){return save(false);},activate:function(){return save(true);},restore:restore,useLocal:useLocal,localReplaced:localReplaced,dirty:dirty,accountChanged:accountChanged,reconnect:reconnect,recovery:function(){var a=account();return a?read(RECOVERY+':'+a.userId):null;},remoteRecovery:function(){var a=account();return a?read(REMOTE_RECOVERY+':'+a.userId):null;},dispose:function(){epoch++;clearTimeout(timer);}};
+ return {state:state,refresh:refresh,adopt:adopt,save:function(){return save(false);},activate:api.initialize?async function(){var a=account();if(!a)throw Error('Inicia sesión.');write(RECOVERY+':'+a.userId,{savedAt:new Date().toISOString(),payload:api.snapshot()});await api.initialize();await refresh();if(remote&&remote.revision)await restore(remote.revision);}:function(){return save(true);},restore:restore,useLocal:useLocal,localReplaced:localReplaced,dirty:dirty,accountChanged:accountChanged,reconnect:reconnect,recovery:function(){var a=account();return a?read(RECOVERY+':'+a.userId):null;},remoteRecovery:function(){var a=account();return a?read(REMOTE_RECOVERY+':'+a.userId):null;},dispose:function(){epoch++;clearTimeout(timer);}};
 }
 return {create:create,fingerprint:fingerprint,ownerKey:OWNER,recoveryKey:RECOVERY};
 });

@@ -11,3 +11,10 @@
 @media(max-height:400px) and (max-width:549px){.player-profile header small{display:none}.player-profile header{margin-bottom:3px}.player-profile h2{font-size:15px;margin:0}.profile-close{width:24px;height:24px;font-size:20px}.profile-account-actions button{min-height:24px;padding:3px 6px}.profile-account input{height:24px}.profile-account form .btn{min-height:24px;line-height:1;padding:3px 7px}.profile-hint,.profile-message{font-size:8px;line-height:1.15;margin:2px 0}.profile-stats>div{padding:3px}.profile-overview h3{margin:4px 0}.profile-rarities,.profile-league,.profile-id{margin-top:3px}}
 
 #profileRoot[data-tutorial=true] .profile-shade{z-index:70}
+
+/* El perfil completo conserva sus métricas también con la barra del navegador abierta. */
+@media(max-height:380px) and (max-width:549px){.player-profile{padding:7px}.profile-columns{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr);gap:8px}.account-entry .profile-columns{display:block}.profile-account-actions{flex-wrap:wrap;gap:3px}.profile-status{flex-basis:100%}.profile-account #nicknameForm{flex-wrap:wrap}.profile-account #nicknameForm input{flex-basis:100%}.profile-account label{font-size:9px}.profile-overview h3{margin:0 0 3px}.profile-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.profile-stats>div{padding:4px 3px}.profile-stats span{font-size:7px}.profile-stats b{font-size:10px}.profile-rarities,.profile-league{line-height:1.2;font-size:8px}.profile-id{font-size:7px}.profile-account fieldset{padding:4px;margin:4px 0}.profile-account fieldset legend{font-size:9px}.profile-account fieldset button{padding:3px;font-size:9px;min-height:25px}}
+
+.profile-email-links{display:flex;flex-wrap:wrap;gap:6px}.profile-mail h3{font-size:14px;margin:3px 0}.profile-mail .mini{white-space:normal}.profile-account .profile-mail{display:flex;flex-direction:column}.profile-mail button{min-height:30px}
+
+.profile-offline-hint{font-size:9px;line-height:1.2;color:#aeb8cc;margin:5px 0}

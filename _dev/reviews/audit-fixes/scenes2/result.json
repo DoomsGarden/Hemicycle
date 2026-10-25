@@ -1,0 +1,73 @@
+{
+  "art": {
+    "victory": {
+      "bytes": 5048852,
+      "frames": 62,
+      "duration": 4799,
+      "loop": 0
+    },
+    "defeat": {
+      "bytes": 3511806,
+      "frames": 62,
+      "duration": 4799,
+      "loop": 0
+    }
+  },
+  "cases": [
+    {
+      "width": 320,
+      "height": 568,
+      "win": true,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 320,
+      "height": 568,
+      "win": false,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 393,
+      "height": 851,
+      "win": true,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 393,
+      "height": 851,
+      "win": false,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 851,
+      "height": 393,
+      "win": true,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 851,
+      "height": 393,
+      "win": false,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "win": true,
+      "verifiedBeforeNext": true
+    },
+    {
+      "width": 1280,
+      "height": 800,
+      "win": false,
+      "verifiedBeforeNext": true
+    }
+  ],
+  "explicitNext": true,
+  "pendingCannotContinue": true,
+  "saveFailureRequiresRetry": true,
+  "reconnectVerifiedBeforeNext": true,
+  "normalMotionMinimum4800ms": true,
+  "reducedMotionUsesStill": true,
+  "errors": []
+}

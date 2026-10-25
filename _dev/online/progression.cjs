@@ -11,6 +11,7 @@ function progress(profile,state,side,now){
  const updated={...profile,objectiveCatalog:cards};updated.objectives=Objectives.record(updated,event,now);
  updated.objectives=Objectives.snapshot(updated,cards,now);
  if(win&&Mastery.eligible(leader))updated.leaderMastery=Mastery.recordWin(updated,leader);
- return {objectives:updated.objectives,leaderMastery:updated.leaderMastery||null};
+ const dtWins=(profile.dtWins||0)+(win&&state.mode==='ranked'&&leader==='donald-trump'?1:0);
+ return {objectives:updated.objectives,leaderMastery:updated.leaderMastery||null,dtWins,dtGoldUnlocked:!!profile.dtGoldUnlocked||dtWins>=10};
 }
 module.exports={appearance,progress};

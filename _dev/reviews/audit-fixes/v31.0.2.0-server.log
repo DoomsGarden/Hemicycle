@@ -1,0 +1,19 @@
+✔ Health distingue configuración de disponibilidad de combate (111.721281ms)
+✔ Sin configuración no acepta operaciones (19.020071ms)
+✔ Un origen ajeno no puede usar el servicio (7.38378ms)
+✔ La petición previa de CORS permite solo los métodos previstos (7.403484ms)
+✔ Sin sesión no crea una identidad ficticia (4.202872ms)
+✔ Crear reenvía el JWT y la operación; ignora un ID de jugador aportado (4.637371ms)
+✔ Unirse solo envía un código validado en mayúsculas (6.146056ms)
+✔ Consultar una sala necesita UUID; no hay listado público (5.691879ms)
+✔ JSON mal formado, tipo incorrecto y exceso de tamaño se rechazan (12.299918ms)
+✔ Fallos de autenticación y red no se presentan como salas válidas ni filtran datos (5.677396ms)
+✔ El catálogo y la configuración se pueden leer desde el dominio del juego con CORS (10.394541ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 286.719296

@@ -1,0 +1,38 @@
+{
+  "sounds": [
+    {
+      "starts": 4,
+      "results": 1,
+      "effects": {
+        "ui": 13,
+        "card": 4,
+        "normal": 2,
+        "turn": 2,
+        "guard": 2,
+        "heal": 1
+      },
+      "loops": [
+        28,
+        29
+      ]
+    },
+    {
+      "starts": 4,
+      "results": 1,
+      "effects": {
+        "ui": 18,
+        "turn": 2,
+        "card": 3,
+        "normal": 2,
+        "guard": 2,
+        "heal": 1
+      },
+      "loops": [
+        34,
+        35
+      ]
+    }
+  ],
+  "musicContinuous": true,
+  "errors": []
+}
