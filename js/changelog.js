@@ -14,7 +14,8 @@
       "Defensa con escudo luminoso y respuesta visual al amortiguar un golpe; curación con aura, destellos y la cantidad de Aguante recuperada.",
       "Los efectos usan las mismas jugadas verificadas en partidas online y descargadas, además del modo local, sin bloquear controles ni cambiar las reglas de combate.",
       "Nuevo fondo WebP animado en la pantalla de inicio, con movimiento suave y una composición oscura que conserva la legibilidad del logo, el título y el botón Iniciar.",
-      "Recursos disponibles sin conexión tras descargarse; fondo estático y efectos simplificados cuando el dispositivo solicita movimiento reducido."
+      "Recursos disponibles sin conexión tras descargarse; fondo estático y efectos simplificados cuando el dispositivo solicita movimiento reducido.",
+      "Corrección: Clasificatoria recupera el progreso validado de la cuenta antes de comprobar el guardado, conservando las preferencias locales. Se evita el aviso repetido de sincronización cuando la copia local está desactualizada."
     ]
   }]
 },

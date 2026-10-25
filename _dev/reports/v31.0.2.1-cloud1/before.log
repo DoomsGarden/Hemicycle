@@ -1,0 +1,54 @@
+✖ ranked preflight replaces stale local balances with confirmed server progression (8.359144ms)
+✖ ranked preflight adopts a newer server receipt and preserves cabinet and theme preferences (2.215671ms)
+✔ ranked preflight does not activate an unlinked cloud account (2.067407ms)
+✖ ranked preflight never adopts an unreadable cached save (3.334037ms)
+✔ ranked preflight refuses a different progress identity without modifying it (4.287415ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 2
+ℹ fail 3
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.163353
+
+✖ failing tests:
+
+test at tests/online/ranked-preflight.test.cjs:11:1
+✖ ranked preflight replaces stale local balances with confirmed server progression (8.359144ms)
+  Error: Sincroniza primero tu guardado desde Nube para conservar tu Elo.
+      at Object.run (evalmachine.<anonymous>:1:184)
+      at async TestContext.<anonymous> (/workspace/Hemicycle/tests/online/ranked-preflight.test.cjs:11:225)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3)
+
+test at tests/online/ranked-preflight.test.cjs:12:1
+✖ ranked preflight adopts a newer server receipt and preserves cabinet and theme preferences (2.215671ms)
+  Error: Sincroniza primero tu guardado desde Nube para conservar tu Elo.
+      at Object.run (evalmachine.<anonymous>:1:184)
+      at async TestContext.<anonymous> (/workspace/Hemicycle/tests/online/ranked-preflight.test.cjs:12:328)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7)
+
+test at tests/online/ranked-preflight.test.cjs:14:1
+✖ ranked preflight never adopts an unreadable cached save (3.334037ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /conexión|guardar|verificar/i. Input:
+  
+  'Error: Sincroniza primero tu guardado desde Nube para conservar tu Elo.'
+  
+      at async TestContext.<anonymous> (/workspace/Hemicycle/tests/online/ranked-preflight.test.cjs:14:184)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: Sincroniza primero tu guardado desde Nube para conservar tu Elo.
+        at Object.run (evalmachine.<anonymous>:1:184)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (/workspace/Hemicycle/tests/online/ranked-preflight.test.cjs:14:184)
+        at async Test.run (node:internal/test_runner/test:1389:7)
+        at async Test.processPendingSubtests (node:internal/test_runner/test:960:7),
+    expected: /conexión|guardar|verificar/i,
+    operator: 'rejects',
+    diff: 'simple'
+  }
