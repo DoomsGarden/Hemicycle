@@ -545,7 +545,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.0.4"></script>
 <script src="js/cloud-save.js?v=31.0.0.2"></script>
-<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.1.4-cabinets1"></script><script src="js/online-ui.js?v=31.0.1.4-cabinets1"></script>
+<link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.1.4-progress1"></script><script src="js/online-ui.js?v=31.0.1.4-progress1"></script>
 <script src="js/cloud-ui.js?v=31.0.1.4"></script>
 <script src="js/game-audio.js?v=31.0.0.5-options1"></script>
 <script src="js/launch-screen.js?v=30.2.61"></script>
@@ -567,7 +567,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.1.4-results1"></script>
+<script src="js/changelog.js?v=31.0.1.4-progress1"></script>
 <script src="js/market-rules.js"></script>
 <script src="js/market-ui.js?v=31.0.0.5"></script>
 <script>
@@ -1115,13 +1115,13 @@ function cardStats(c,allowGold){
  var gold=allowGold!==false&&goldenEnabled(c.id);
  return {a:c.a+(gold?2:0),h:c.h+(gold?2:0),gold:gold};
 }
-function artTag(id,nm,allowGold,allowConfetti){
+function artTag(id,nm,allowGold,allowConfetti,edition){
  var ini='<span>'+esc(initials(nm))+'</span>';
  if(!ART_BASE)return ini;
- if((allowConfetti===undefined?allowGold!==false:allowConfetti)&&typeof HemicycleMastery!=='undefined'&&HemicycleMastery.enabled(D(),id))return artTag(id,nm,false,false)+'<div class="legendary-confetti" aria-hidden="true"></div>';
+ if((allowConfetti===undefined?allowGold!==false:allowConfetti)&&typeof HemicycleMastery!=='undefined'&&(edition===undefined?HemicycleMastery.enabled(D(),id):edition==='confetti'))return artTag(id,nm,false,false,'normal')+'<div class="legendary-confetti" aria-hidden="true"></div>';
  if(id==='donald-trump'&&allowGold!==false){
   var d=D();
-  if(d.dtGoldUnlocked&&d.dtGoldActive){
+  if(edition===undefined?d.dtGoldUnlocked&&d.dtGoldActive:edition==='golden'){
    if(GOLD_LOOP.state==='idle')setTimeout(ensureGoldLoop,0);
    var poster=GOLD_LOOP.posterUrl||ART_BASE+'donald-trump-golden-portrait.webp?v=nod-60';
    return '<div class="gold-slot">'
@@ -2636,7 +2636,7 @@ function cromoBattle(c,side,extra){
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var actionInstance=LOCAL_ACTION_TARGET&&G.hand.p.filter(function(x){return x.uid===LOCAL_ACTION;})[0],actionTarget=!!(actionInstance&&enMesa(side,c.uid)&&validLocalActionTargets(actionInstance).some(function(t){return t.card.uid===c.uid;}));
  var isTarget=actionTarget||(side==='e'&&G.sel&&G.move);
- var art=artTag(c.k,c.n,side==='p'&&c.gold,side==='p'),inField=enMesa(side,c.uid),available=inField&&side===G.side&&c.ready&&!G.over;
+ var art=G.authoritative?artTag(c.k,c.n,true,true,c.appearance||'normal'):artTag(c.k,c.n,side==='p'&&c.gold,side==='p'),inField=enMesa(side,c.uid),available=inField&&side===G.side&&c.ready&&!G.over;
  return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(actionTarget?' action-target':'')+(side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
@@ -2681,7 +2681,7 @@ function receiveRemoteBattle(snapshot,controls){
  REMOTE_PREPARATION=null;
  var own=snapshot.players[snapshot.you],enemy=snapshot.players[1-snapshot.you];if(!own||!enemy)return false;
  var previous=G&&G.authoritative&&G.remoteId===controls.id?G:null,same=previous&&previous.remoteRevision===snapshot.revision;
- function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:false};}
+ function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();
@@ -2697,7 +2697,7 @@ function receiveRemoteBattle(snapshot,controls){
  if(G.over){
   closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
   var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
-  go('result',{who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: tu progreso se conserva.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,rewardsUnavailable:ranked&&!receipt});return true;
+  go('result',{who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,rewardsUnavailable:ranked&&!receipt});return true;
  }
  if(SCREEN!=='battle')go('battle');else paint();return true;
 }
@@ -3195,7 +3195,7 @@ function firstEntry(){
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();var initial=D(),initialGoals=HemicycleObjectives.snapshot(Object.assign({},initial,{objectiveCatalog:CARDS}),CARDS);if(JSON.stringify(initial.objectives)!==JSON.stringify(initialGoals)){initial.objectives=initialGoals;var initialSave={};initialSave[LS]=initial;atomicLocal(initialSave);}
  PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
- ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',mode:function(){return PLAY_MODE;},battle:receiveRemoteBattle,preparation:receiveRemotePreparation,battleStatus:remoteBattleStatus,actionVisual:remoteActionVisual,clearBattle:function(){if(REMOTE_PREPARATION){REMOTE_PREPARATION=null;CABINET_RETURN=null;if(SCREEN==='builder'&&SO.online)go('menu');}if(G&&G.authoritative){G=null;REMOTE_BATTLE=null;clearBattleClock();closeLocalAction();go('menu');}},cabinet:function(){var d=D(),state=HemicycleCabinets.state(d),slot=state.slots[state.selected];return {orators:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(){if(!CLOUD_SAVE)throw Error('Activa primero el guardado en la nube.');await CLOUD_SAVE.save();await CLOUD_SAVE.refresh();if(CLOUD_SAVE.state().phase!=='synced')throw Error('Sincroniza primero tu guardado desde Nube para conservar tu Elo.');},reconcileRanked:async function(){if(G&&G.authoritative)G.over=true;if(!CLOUD_SAVE)return;await CLOUD_SAVE.refresh();var cloud=CLOUD_SAVE.state();if(cloud.remote&&cloud.phase!=='synced')await CLOUD_SAVE.restore(cloud.remote.revision);},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',mode:function(){return PLAY_MODE;},battle:receiveRemoteBattle,preparation:receiveRemotePreparation,battleStatus:remoteBattleStatus,actionVisual:remoteActionVisual,clearBattle:function(){if(REMOTE_PREPARATION){REMOTE_PREPARATION=null;CABINET_RETURN=null;if(SCREEN==='builder'&&SO.online)go('menu');}if(G&&G.authoritative){G=null;REMOTE_BATTLE=null;clearBattleClock();closeLocalAction();go('menu');}},cabinet:function(){var d=D(),state=HemicycleCabinets.state(d),slot=state.slots[state.selected];return {orators:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(){if(!CLOUD_SAVE)throw Error('Activa primero el guardado en la nube.');await CLOUD_SAVE.save();await CLOUD_SAVE.refresh();if(CLOUD_SAVE.state().phase!=='synced')throw Error('Sincroniza primero tu guardado desde Nube para conservar tu Elo.');},reconcileRanked:async function(snapshot){if(G&&G.authoritative)G.over=true;if(!CLOUD_SAVE)return;if(snapshot&&snapshot.mode!=='ranked'&&!CLOUD_SAVE.state().enabled)return;await CLOUD_SAVE.refresh();var cloud=CLOUD_SAVE.state();if(cloud.remote&&cloud.phase!=='synced')await CLOUD_SAVE.restore(cloud.remote.revision);},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
   CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
    atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra));MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');

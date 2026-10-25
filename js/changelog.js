@@ -47,6 +47,13 @@
         "El registro de las acciones explica su efecto y a quién afecta: un orador, un equipo o ambos. El daño y la curación reflejan la cantidad aplicada.",
         "Los mensajes de recompensa hablan de conseguir o perder un cromo. Se conservan las novedades y correcciones anteriores de esta misma versión."
       ]
+    },
+    {
+      "title": "Progreso de desafíos online",
+      "items": [
+        "Los nuevos combates online con el guardado en la nube activado registran el avance de desafíos diarios, semanales y mensuales: partidas, votos, victorias, modo, líderes y doctrinas. También se aplica a Clasificatoria contra la IA del servidor. En Normal y Rápida avanzan los desafíos sin cambiar FS, cromos ni Elo.",
+        "El progreso se guarda junto al resultado y se sincroniza antes de volver al menú. Reconectar o recuperar una respuesta no cuenta la partida dos veces; se conservan los hitos y recompensas anteriores."
+      ]
     }
   ]
 },

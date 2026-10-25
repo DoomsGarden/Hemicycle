@@ -28,8 +28,8 @@ function begin(s,i,now,rng){s.side=i;const p=s.players[i];p.turn++;p.silenced=!!
  if(p.silenced){log(s,'Moción de censura: turno sin acciones; conserva robo y votos.');end(s,i,now,rng);}
 }
 function end(s,i,now,rng){if(active(s,i)==='guardia')s.players[i].field.forEach(c=>c.buff=Math.min(3,c.buff+1));begin(s,1-i,now,rng);}
-function ready(s,i,choice,now,rng){check(s.status==='preparing','La partida ya ha comenzado');check(!s.players[i],'Ya estás listo');const valid=A.validateCabinet(choice,[...cards.map(c=>c.id),...A.cards.map(c=>c.id)],cards.map(c=>c.id));
- const all=valid.orators.map((id,j)=>{const c=catalog[id],leader=id===valid.leader;return {uid:i+'-o'+j,id,name:c.n,rarity:c.r,doctrine:c.pa,cost:c.c,z:c.a+(leader?1:0),hp:c.h+(leader?3:0),maxHp:c.h+(leader?3:0),votes:c.v,q:c.q,ready:true,guard:false,buff:0,buffs:[],enteredTurn:null,strongUsedTurn:null,lastHealTurn:null};});
+function ready(s,i,choice,now,rng,profile){check(s.status==='preparing','La partida ya ha comenzado');check(!s.players[i],'Ya estás listo');const valid=A.validateCabinet(choice,[...cards.map(c=>c.id),...A.cards.map(c=>c.id)],cards.map(c=>c.id));
+ const all=valid.orators.map((id,j)=>{const c=catalog[id],leader=id===valid.leader,edition=require('./progression.cjs').appearance(profile,id);return {uid:i+'-o'+j,id,name:c.n,rarity:c.r,doctrine:c.pa,cost:c.c,...edition,z:c.a+(leader?1:0)+(edition.gold?2:0),hp:c.h+(leader?3:0)+(edition.gold?2:0),maxHp:c.h+(leader?3:0)+(edition.gold?2:0),votes:c.v,q:c.q,ready:true,guard:false,buff:0,buffs:[],enteredTurn:null,strongUsedTurn:null,lastHealTurn:null};});
  const leader=all.find(c=>c.id===valid.leader),others=A.shuffle(all.filter(c=>c!==leader),rng),actions=valid.actions.map((id,j)=>({uid:i+'-a'+j,id,action:true}));
  s.players[i]={cabinetIds:valid.orators.slice(),cabinetActions:valid.actions.slice(),leader:valid.leader,turn:0,tdp:0,tdpMax:2,votes:0,hand:[leader,others.shift()],deck:A.shuffle([...others,...actions],rng),field:[],rest:[],actionDiscard:[],saved:[],refund:0,usedActions:[],silenced:false};log(s,(i===0?'Anfitrión':'Invitado')+' está listo.');
  if(s.players.every(Boolean)){s.status='active';s.first=rng()<.5?0:1;log(s,'Sorteo: '+(s.first===0?'cara, empieza el anfitrión.':'cruz, empieza el invitado.'));begin(s,s.first,now,rng);}
@@ -45,8 +45,8 @@ function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],a=A.b
  log(s,require('../../js/action-cards.js').describeAction(a,i===0?'El anfitrión':'El invitado',scope,affected.map((x,j)=>({name:x.c.name,team:teams[x.owner],amount:a.effect==='heal'?x.c.hp-before[j]:before[j]-x.c.hp}))));s.lastAction={side:i,id,discard:!!a.oncePerBattle,turn:p.turn};
  for(const x of affected)if(x.c.hp<=0&&s.status==='active')expel(s,x.owner,x.c,x.owner===i?null:i,x.doc);
 }
-function apply(original,i,command,now=Date.now(),rng=random){check(i===0||i===1,'Jugador no válido');check(command&&typeof command.type==='string','Acción no válida');const s=structuredClone(original);if(timeout(s,now))return s;
- if(command.type==='ready'){ready(s,i,command.cabinet,now,rng);return s;}
+function apply(original,i,command,now=Date.now(),rng=random,profile){check(i===0||i===1,'Jugador no válido');check(command&&typeof command.type==='string','Acción no válida');const s=structuredClone(original);if(timeout(s,now))return s;
+ if(command.type==='ready'){ready(s,i,command.cabinet,now,rng,profile);return s;}
  check(s.status==='active','No hay una partida activa');if(command.type==='resign'){finish(s,1-i,'rendición');return s;}check(s.side===i,'No es tu turno');const p=s.players[i],foe=s.players[1-i];check(!p.silenced,'Turno silenciado');
  if(command.type==='end'){end(s,i,now,rng);return s;}
  if(command.type==='action'){actionCard(s,i,command.id,command.target);return s;}
