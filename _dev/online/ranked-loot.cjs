@@ -4,7 +4,7 @@ const ids=new Set(cards.map(c=>c.id));
 function settle(context,state,participants,rng=()=>crypto.randomInt(0,0x100000000)/0x100000000,history={}){
  if(state.status!=='finished'||state.mode!=='ranked'||state.lootVersion!==1)throw Error('Resultado sin liquidación de cromos.');
  const market=structuredClone(context.market),result={players:{}},updates=[];
- function complete(){if(history.roomId)participants.forEach((p,side)=>{if(p)require('./battle-history.cjs').record(market,p.userId,{...(history.receipts?.[p.userId]||{}),...result.players[p.userId],resultId:'online:'+history.roomId,mode:state.mode,win:state.winner===side,votes:state.players[side].votes,enemyVotes:state.players[1-side].votes},context.now);});return {market,updates,result};}
+ function complete(){if(history.roomId)participants.forEach((p,side)=>{if(p)require('./battle-history.cjs').record(market,p.userId,{...(history.receipts?.[p.userId]||{}),...result.players[p.userId],resultId:'online:'+history.roomId,mode:state.mode,win:state.winner===side,firstWasSelf:state.first===side,ownTurns:state.players[side].turn,opponentTurns:state.players[1-side].turn,ruleset:state.ruleset,votes:state.players[side].votes,enemyVotes:state.players[1-side].votes},context.now);});return {market,updates,result};}
  for(const p of participants)if(p)result.players[p.userId]={won:null,lost:null,lootStatus:'settled'};
  if(![0,1].includes(state.winner)){for(const r of Object.values(result.players))r.lootStatus='draw';return complete();}
  const winner=state.winner,loser=1-winner,w=participants[winner],l=participants[loser];

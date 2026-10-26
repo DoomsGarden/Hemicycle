@@ -30,9 +30,9 @@ function operate(input,actor,command,now=Date.now(),rng=random){
  // Expired proposals return only the proposer's escrow; the recipient never loses anything before accepting.
  for(const t of market.trades)if(t.status==='pending'&&t.expires<=now){refund(t);t.status='expired';}
  let result={};const type=command.type;
- if(type==='maintenance'){}else if(type==='offline-settle'){
-  const ticket=s.ticket;check(ticket&&ticket.expires>now&&!ticket.result,'Partida descargada no disponible o caducada.');
-  const state=require('./offline-v1.cjs').replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
+ if(type==='maintenance'){}else if(type==='learning-actions'){for(const id of ['replica','receso'])if(!(me.actionAlbum||[]).includes(id)){A.award(me,[id]);changed.add(actor);}result={granted:true};}else if(type==='offline-settle'){
+  const ticket=s.ticket;check(ticket&&ticket.expires+30*86400000>now&&!ticket.result,'Partida descargada no disponible o caducada.');
+  const state=require(ticket.rules==='offline2'?'./offline-v2.cjs':'./offline-v1.cjs').replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
   const before=me.elo,margin=Math.max(0,Math.min(1,Math.abs(own.votes-foe.votes)/Math.max(1,win?own.votes:foe.votes)));
   let fs=win?(competitive?50+Math.floor(rng()*51):20+Math.floor(rng()*31)):competitive?20+Math.floor(rng()*11):0,won=null,lost=null;
   if(win){me.w++;if(M.eligible(own.leader))me.leaderMastery=M.recordWin(me,own.leader);if(competitive){won=pick(foe.cabinetIds,rng);A.award(me,[won]);}if(competitive&&own.leader==='donald-trump'){me.dtWins++;if(me.dtWins>=10)me.dtGoldUnlocked=true;}}
@@ -41,7 +41,7 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   if(state.mode==='liga'){const lg=account(actor).payload.league;check(lg,'Crea una Liga antes de jugarla.');const next=require('./league.cjs').advance(lg,win,rng);account(actor).payload.league=next.league;fs+=next.reward;result.season=!!next.reward;}
   credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
   result={...result,win,mode:state.mode,fs,eloBefore:before,eloAfter:me.elo,eloDelta:me.elo-before,won,lost,votes:own.votes,enemyVotes:foe.votes};
-  require('./battle-history.cjs').record(market,actor,{...result,resultId:'offline:'+ticket.id},now);
+  require('./battle-history.cjs').record(market,actor,{...result,firstWasSelf:state.first===0,ownTurns:own.turn,opponentTurns:foe.turn,ruleset:state.ruleset,resultId:'offline:'+ticket.id},now);
  }else if(type==='league-create'){check(!account(actor).payload.league,'Ya tienes una Liga activa.');account(actor).payload.league=require('./league.cjs').create(3,1,rng);changed.add(actor);
  }else if(type==='league-abandon'){account(actor).payload.league=null;changed.add(actor);
  }else if(type==='pack'){

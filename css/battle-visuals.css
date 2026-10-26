@@ -87,3 +87,9 @@
 @keyframes censureEnter{0%{opacity:0;transform:translate(-50%,-50%) scale(1.18) rotate(-12deg)}25%,70%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.04)}}
 @keyframes censureOrbit{from{transform:rotate(-35deg)}to{transform:rotate(45deg)}}
 @media(prefers-reduced-motion:reduce){.inspiration-ring,.action-burst,.action-support,.censure-seal{display:none}.boost-number,.action-notice{animation:none}.boost-number{font-size:12px}}
+
+.recovery-badge{display:block;max-width:100%;border:1px solid #96815b88;border-radius:4px;background:#172338;color:#e3cb94;font:600 8px 'Hemicycle UI',sans-serif;padding:2px 3px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer}.recovery-badge:focus-visible{outline:2px solid #efcc7d}.draw-pile:has(.recovery-badge){gap:3px}
+/* Dos oradores y un apoyo permanecen en una única fila, también en móvil. */
+.screen.in-battle .hand-zone:has(.row>:nth-child(3)){--hand-width:min(64px,calc((100dvw - 100px)/4));grid-template-columns:calc(var(--hand-width)*3 + 12px) var(--hand-width);gap:8px}
+.hand-zone .row:has(>:nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-height:500px) and (min-width:600px){.screen.in-battle .hand-zone:has(.row>:nth-child(3)){--hand-width:44px;gap:7px}}

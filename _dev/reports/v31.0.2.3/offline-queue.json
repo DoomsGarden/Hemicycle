@@ -1,0 +1,36 @@
+{
+  "runtimeSource": "js/offline-combat.js",
+  "controlledPermanentServerRejection": true,
+  "productionDataModified": false,
+  "attempts": [
+    {
+      "path": "/offline/settle",
+      "ticket": "expired"
+    },
+    {
+      "path": "/offline/settle",
+      "ticket": "valid"
+    },
+    {
+      "path": "/offline/tickets"
+    }
+  ],
+  "status": {
+    "tickets": 0,
+    "rejected": 1,
+    "pending": 0,
+    "active": false
+  },
+  "rejected": [
+    {
+      "operationId": "expired",
+      "ticketId": "expired",
+      "record": {
+        "mode": "normal"
+      },
+      "ticket": null,
+      "error": "Partida descargada no disponible o caducada.",
+      "rejectedAt": 1793017052243
+    }
+  ]
+}

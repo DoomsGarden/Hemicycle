@@ -4,6 +4,10 @@
  else root.HemicycleChangelog=entries;
 })(typeof globalThis!=='undefined'?globalThis:this,[
 {
+ "version":"v31.0.2.3","date":"2026-10-26","title":"Mano táctica y fiabilidad",
+ "sections":[{"title":"Combate y aprendizaje","items":["La mano reserva dos huecos para oradores y uno adicional para una acción: equipar apoyos ya no reduce el robo de oradores.","Las acciones reutilizables esperan dos turnos propios completos antes de poder robarse otra vez. Moción de censura conserva su límite de una activación por partida.","La IA de partidas normales utiliza rarezas acordes al gabinete elegido. Se conservan las estadísticas base de los cromos y el progreso de las cuentas. El segundo jugador recibe +1 TdP solo en su primer turno y Vieja Guardia mejora al terminar el turno, con máximo +3; ya no añade daño inmediato al presentar un orador.","Réplica y Receso pueden recogerse gratis desde Acciones en Colección si todavía no se poseen, sin añadir copias repetidas. Colección permite filtrar oradores por país. La mesa muestra cuándo podrá volver a robarse cada acción en recuperación."]},{"title":"Guardado y actualización","items":["Las preparaciones obsoletas dejan de bloquear descargas compatibles con el gabinete actual. Las partidas antiguas conservan su motor de validación.","Los resultados rechazados definitivamente se conservan para revisión y exportación, permitiendo sincronizar los siguientes. Se amplía el margen de validación de preparaciones caducadas.","Las actualizaciones requieren los archivos esenciales completos antes de reemplazar la versión anterior y reutilizan medios locales sin cambios.","Nube puede cerrarse mientras verifica una activación; el resultado sigue su comprobación. Perfil ofrece desplazamiento interno en pantallas pequeñas."]}]
+},
+{
  "version":"v31.0.2.2","date":"2026-10-25","title":"Guía de Mercado, historial y recompensas animadas",
  "sections":[{"title":"Navegación y resultados","items":[
  "Mercado tiene su propia guía en la primera visita desde esta actualización, repetible desde Ayuda. La guía general ya no repite esas explicaciones y se actualiza para mostrar el historial.",

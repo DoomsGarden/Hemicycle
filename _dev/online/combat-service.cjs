@@ -31,7 +31,7 @@ function create({url,key,secret,fetcher=fetch}){
    let context=null;if(command?.type==='ready')context=await rpc('hemicycle_combat_context',{p_room_id:roomId,p_actor:actor});
    let next=structuredClone(state);const timedOut=E.timeout(next,load.now);
    if(!timedOut&&command)next=E.apply(state,load.side,command,load.now,undefined,context?.[load.side]?.profile);
-   if(load.opponentKind==='ai'&&command?.type==='ready'&&!next.players[1])next=E.apply(next,1,{type:'ready',cabinet:AI.cabinet(command.cabinet,load.rating||0)},load.now);
+   if(load.opponentKind==='ai'&&command?.type==='ready'&&!next.players[1])next=E.apply(next,1,{type:'ready',cabinet:AI.cabinet(command.cabinet,load.rating||0,undefined,load.mode==='ranked'?undefined:command.cabinet.orators.map(id=>E.catalog[id].r))},load.now);
    if(load.opponentKind==='ai')next=AI.advance(next,load.now);
    if(!timedOut&&!command)return resultSnapshot(load,roomId,actor);
    const args={p_room_id:roomId,p_actor:actor,p_expected_revision:load.revision,p_state:next,p_operation_id:operationId||crypto.randomUUID(),p_request:request||{type:'timeout'}};

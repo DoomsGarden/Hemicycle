@@ -100,7 +100,7 @@ for(const side of ['p','e']){
     const c=duel(side==='p'?'verborrea':'giro',side==='e'?'verborrea':'giro');
     c.G.tdpMax[side]=6;c.G.refund[side]=2;
     c.startTurn(side);
-    assert.equal(c.G.tdp[side],6);
+    assert.equal(c.G.tdp[side],6+(side!==c.G.first&&c.G.turns[side]===1?1:0));
     assert.equal(c.G.refund[side],0);
     c.G.field[foe]=[];
     c.startTurn(side);
@@ -108,12 +108,12 @@ for(const side of ['p','e']){
   });
 }
 
-test('Guardia bonuses apply on entry, cap at +3, pause under a counter and reset on expulsion',()=>{
+test('Guardia bonuses begin after entry, cap at +3, pause under a counter and reset on expulsion',()=>{
   const c=duel('guardia',null),base=c.CARDS.find(card=>card.r==='comun');
   const card=c.mk(base,false);
   c.G.hand.p=[card];c.G.tdp.p=8;
   c.playCard('p',card.uid);
-  assert.equal(card.buff,1);
+  assert.equal(card.buff,0);
   for(let i=0;i<5;i++)c.applyGuardia('p');
   assert.equal(card.buff,3);
   assert.equal(card.a,base.a,'base stats are not permanently increased');
@@ -267,7 +267,7 @@ for(const side of ['p','e'])test(side+': Verborrea the renewed hand fills two ca
  for(const countered of [false,true]){
  const c=duel(side==='p'?'verborrea':countered?'giro':null,side==='e'?'verborrea':countered?'giro':null);
  c.G.refund[side]=2;c.G.hand[side]=[];c.G.deck[side]=Array.from(c.CARDS).slice(0,3).map(card=>c.mk(card,false));
- c.startTurn(side);assert.equal(c.G.tdp[side],countered?3:6);assert.equal(c.G.hand[side].length,2);
+ c.startTurn(side);assert.equal(c.G.tdp[side],(countered?3:6)+(side!==c.G.first&&c.G.turns[side]===1?1:0));assert.equal(c.G.hand[side].length,2);
  assert.equal(c.G.deck[side].length,1);
  c.startTurn(side);assert.ok(c.G.hand[side].length<=2);
  }

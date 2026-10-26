@@ -2,3 +2,5 @@
 .orator-country{display:inline-flex;align-items:center;justify-content:center;vertical-align:-.08em;width:1.45em;height:1em;margin-right:.3em;flex-shrink:0}.orator-country img{display:block!important;width:100%!important;height:100%!important;object-fit:cover;border-radius:1px;box-shadow:0 0 0 1px #ffffff30}.orator-country.full{width:auto;height:auto;gap:5px;font-size:10px;font-weight:600;color:#bdc8d9;white-space:nowrap;vertical-align:middle}.orator-country.full img{width:18px!important;height:12px!important}.orator-country.full span{font-size:inherit}.detail-heading h2>.orator-country.full{margin-right:7px}
 /* Las miniaturas pequeñas reservan espacio para nombre, bandera y estadísticas. */
 @container (max-width:80px){.cromo .nm{font-size:clamp(6px,9cqi,8px);line-height:1.12}.cromo .bot{gap:3px;padding-top:8px}.card-stat{min-height:13px;padding:1px;gap:2px}}
+
+.country-filter{display:flex;align-items:center;gap:8px;font-size:11px;color:#bdc8d9}.country-filter select{flex:1;min-width:0;font:inherit;padding:7px;border:1px solid #46536b;border-radius:7px;background:#142039;color:#e8ddc6}

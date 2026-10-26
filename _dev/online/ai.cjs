@@ -1,7 +1,10 @@
 'use strict';
 const E=require('./combat.cjs'),A=require('./actions.cjs');
 function cabinet(human,elo,random=Math.random,recipeOverride){
- const recipe=recipeOverride||(elo<2500?['comun','comun','comun','raro','raro']:elo<5000?['comun','comun','raro','raro','especial']:elo<7500?['comun','raro','raro','especial','legendario']:['raro','raro','especial','especial','legendario']);
+ const tiersList=['comun','raro','especial','legendario'],level=r=>tiersList.indexOf(r);
+ let recipe=recipeOverride||(elo<2500?['comun','comun','comun','raro','raro']:elo<5000?['comun','comun','raro','raro','especial']:elo<7500?['comun','raro','raro','especial','legendario']:['raro','raro','especial','especial','legendario']);
+ if(!recipeOverride&&human.orators?.length===5){const own=human.orators.map(id=>E.catalog[id].r).sort((a,b)=>level(a)-level(b));recipe=recipe.slice().sort((a,b)=>level(a)-level(b)).map((r,i)=>tiersList[Math.max(level(r),level(own[i]))]);}
+
  const orators=[];for(const rarity of recipe){const pool=E.cards.filter(c=>c.r===rarity&&!orators.includes(c.id));orators.push(pool[Math.floor(random()*pool.length)].id);}
  const tiers={comun:0,raro:1,especial:2,legendario:3},leader=orators.slice().sort((a,b)=>tiers[E.catalog[b].r]-tiers[E.catalog[a].r])[0],actions=[];
  for(const id of human.actions){const pool=A.cards.filter(c=>c.r===A.byId[id].r&&!actions.includes(c.id));actions.push(pool[Math.floor(random()*pool.length)].id);}
@@ -9,7 +12,8 @@ function cabinet(human,elo,random=Math.random,recipeOverride){
 }
 function choose(state,side=1,now=Date.now()){
  const p=state.players[side],foe=state.players[1-side];
- const valid=command=>{try{E.apply(state,side,command,now);return true;}catch{return false;}};
+ const valid=command=>{try{E.apply(state,side,command,now,()=>.5);return true;}catch{return false;}};
+ const opening=p.field.length<2&&p.hand.filter(c=>!c.action&&c.cost<=p.tdp).sort((a,b)=>(b.id===p.leader)-(a.id===p.leader)||b.votes-a.votes)[0];if(opening)return {type:'play',uid:opening.uid};
  for(const card of p.hand.filter(c=>c.action)){const a=A.byId[card.id],targets=a.target==='self'?p.field:a.target==='rival'?foe.field:[null];for(const target of targets){const command={type:'action',id:a.id,...(target?{target:target.uid}:{})};if(valid(command))return command;}}
  if(p.field.length<3){const playable=p.hand.filter(c=>!c.action&&c.cost<=p.tdp).sort((a,b)=>(b.id===p.leader)-(a.id===p.leader)||b.votes-a.votes);if(playable[0])return {type:'play',uid:playable[0].uid};}
  for(const c of p.field.filter(c=>c.ready)){

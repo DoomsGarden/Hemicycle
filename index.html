@@ -513,10 +513,10 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.2-actions1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.1-cloud2">
-<link rel="stylesheet" href="css/profile.css?v=31.0.2.0">
+<link rel="stylesheet" href="css/profile.css?v=31.0.2.3">
 <link rel="stylesheet" href="css/cloud.css?v=31.0.0.2">
 </head>
 <body>
@@ -549,38 +549,41 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/player-profile.js?v=31.0.2.2"></script>
 <script src="js/cloud-save.js?v=31.0.2.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.1.4"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery2"></script><script src="js/online-ui.js?v=31.0.2.0-recovery2"></script>
-<script src="js/cloud-ui.js?v=31.0.2.2-cloud1"></script>
+<script src="js/cloud-ui.js?v=31.0.2.3"></script>
 <script src="js/game-audio.js?v=31.0.2.1-cloud2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
 <script src="js/battle-visuals.js?v=31.0.2.2-actions1"></script>
-<script src="js/battle-tutorial.js?v=31.0.2.2"></script>
+<script src="js/battle-tutorial.js?v=31.0.2.3"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.2">
 <script src="js/market-tutorial.js?v=31.0.2.2"></script>
-<script src="js/battle-history-ui.js?v=31.0.2.2"></script>
+<script src="js/battle-history-ui.js?v=31.0.2.3"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
 <script src="js/menu-tutorial.js?v=31.0.2.2"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
-<link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.2-actions1">
+<link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.3">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
-<script src="js/action-cards.js?v=31.0.1.4-results1"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
+<script src="js/action-cards.js?v=31.0.2.3"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
 <script src="js/player-backup.js?v=31.0.2.0"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.2-actions1"></script>
+<script src="js/changelog.js?v=31.0.2.3"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
 <script src="js/economy-client.js?v=31.0.2.2-cloud1"></script>
-<script src="js/offline-rules.js?v=31.0.2.0"></script>
-<script src="js/offline-combat.js?v=31.0.2.0-recovery2"></script>
+<script src="js/offline-rules-v1.js?v=31.0.2.3"></script>
+<script>window.HemicycleOfflineRulesV1=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rules.js?v=31.0.2.3"></script>
+<script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;window.HemicycleOfflineRules=Object.assign({},HemicycleOfflineRulesV2,{start:function(t,c,m){return (t.rules==='offline1'?HemicycleOfflineRulesV1:HemicycleOfflineRulesV2).start(t,c,m);}});</script>
+<script src="js/offline-combat.js?v=31.0.2.3"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <script src="js/market-ui.js?v=31.0.2.2"></script>
 <script>
@@ -592,7 +595,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.2';
+var VERSION='v31.0.2.3';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -922,7 +925,7 @@ function ensureGoldLoop(){
 
 var DOCS=[
  {k:'verborrea',n:'Verborrea',d:'+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.',beats:'guardia',col:'#3b6fd4'},
- {k:'guardia',n:'Vieja Guardia',d:'Tus oradores ganan +1 Zasca al entrar y al terminar tu turno (máx. +3 mientras esté activa).',beats:'aforado',col:'#8b5cf6'},
+ {k:'guardia',n:'Vieja Guardia',d:'Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).',beats:'aforado',col:'#8b5cf6'},
  {k:'aforado',n:'Aforado',d:'Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.',beats:'viperina',col:'#28a86b'},
  {k:'giro',n:'Giro de Guion',d:'Quien ataca a un orador tuyo recibe 1 de daño.',beats:'verborrea',col:'#d4a03b'},
  {k:'foco',n:'Foco Mediático',d:'Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.',beats:'giro',col:'#d43b3b'},
@@ -1166,7 +1169,7 @@ function artTag(id,nm,allowGold,allowConfetti,edition){
 
 function actionArtHTML(c,extra){return '<div class="action-art '+(extra||'')+'" style="--ax:'+((c.index%3)*50)+'%;--ay:'+(Math.floor(c.index/3)*100/3)+'%" role="img" aria-label="Ilustración de '+esc(c.n)+'"></div>';}
 function actionCromoHTML(c,o){o=o||{};return '<div class="cromo action-card'+(o.sel?' sel':'')+'" style="--tier:'+RARM[c.r].c+(o.extra?';'+o.extra:'')+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-action-pick="'+c.id+'" role="button" tabindex="0"':'')+'>'+actionArtHTML(c)+'<div class="frame-overlay"></div><div class="top"><span class="cost" aria-label="'+c.cost+' TdP">'+c.cost+'</span>'+gem(c.r,RARM[c.r].c)+'</div>'+(o.sel?'<span class="sel-tag">✓ ELEGIDA</span>':'')+'<div class="action-card-copy"><small>ACCIÓN · '+RARM[c.r].n+'</small><strong>'+esc(c.n)+'</strong><span>'+esc(c.text)+'</span>'+(c.oncePerBattle?'<i>1 uso por partida</i>':'')+'</div></div>';}
-function actionRulesHTML(c){return '<dl class="action-rules"><dt>Efecto</dt><dd>'+esc(c.text)+'</dd><dt>Coste</dt><dd>'+c.cost+' TdP. Máximo una acción por turno.</dd><dt>Después de activarla</dt><dd>'+(c.oncePerBattle?'Una vez por partida. Pasa al descarte de acciones.':'Regresa al mazo y puede robarse en otro turno.')+'</dd>'+(c.effect==='silence'?'<dt>Requisitos</dt><dd>Tres oradores propios listos y menos votos que el rival. Los tres agotan su acción. El rival conserva robo y votos pasivos; después queda protegido contra otro silencio durante dos turnos propios adicionales.</dd>':'')+'</dl>';}
+function actionRulesHTML(c){return '<dl class="action-rules"><dt>Efecto</dt><dd>'+esc(c.text)+'</dd><dt>Coste</dt><dd>'+c.cost+' TdP. Máximo una acción por turno.</dd><dt>Después de activarla</dt><dd>'+(c.oncePerBattle?'Una vez por partida. Pasa al descarte de acciones.':'Regresa al mazo y espera dos turnos propios completos antes de volver a robarse.')+'</dd>'+(c.effect==='silence'?'<dt>Requisitos</dt><dd>Tres oradores propios listos y menos votos que el rival. Los tres agotan su acción. El rival conserva robo y votos pasivos; después queda protegido contra otro silencio durante dos turnos propios adicionales.</dd>':'')+'</dl>';}
 function uniqueActions(d){var counts={};(d.actionAlbum||[]).forEach(function(id){if(BYID[id]&&BYID[id].action)counts[id]=(counts[id]||0)+1;});return Object.keys(counts).map(function(id){return {id:id,c:BYID[id],n:counts[id]};});}
 function awardCards(d,ids){if(typeof HemicycleActions!=='undefined')HemicycleActions.award(d,ids);else ids.forEach(function(id){d.album.push(id);});}
 
@@ -1885,6 +1888,7 @@ SCREENS.mercado=function(){return market().render();};
 function colList(){
  var d=D(),list=COL_MODE==='acciones'?uniqueActions(d):uniqueAlbum(d);if(COL_MODE==='acciones'&&MENU_GUIDE&&MENU_GUIDE.active&&!list.length)list=[{id:HemicycleActions.cards[0].id,c:HemicycleActions.cards[0],n:0}];
  if(FIL.r)list=list.filter(function(x){return x.c.r===FIL.r;});
+ if(FIL.country&&COL_MODE!=='acciones')list=list.filter(function(x){return x.c.country===FIL.country;});
  if(FIL.d&&COL_MODE!=='acciones')list=list.filter(function(x){return x.c.pa===FIL.d;});
  if(FIL.q){var q=searchText(FIL.q);list=list.filter(function(x){return searchText(x.c.n).indexOf(q)>=0;});}
  list.sort(function(a,b){return TIERORDER[a.c.r]-TIERORDER[b.c.r]||a.c.n.localeCompare(b.c.n,'es');});
@@ -1908,7 +1912,8 @@ function colGrid(){
 
 SCREENS.coleccion=function(){
  return '<div class="collection-heading"><h2>Colección · '+(COL_MODE==='acciones'?'Acciones':'Oradores')+'</h2><button class="mini collection-toggle" data-act="collection-type" aria-label="Mostrar '+(COL_MODE==='acciones'?'oradores':'acciones')+'">'+(COL_MODE==='acciones'?'Ver oradores':'Ver acciones')+'</button></div>'+cabinetControls(true)+'<p class="sub" id="cntBox">'+colCountText()+'</p>'
- +'<input type="search" id="fq" placeholder="Buscar cromo..." value="'+esc(FIL.q)+'">'
+ +(COL_MODE==='acciones'&&['replica','receso'].some(function(id){return !(D().actionAlbum||[]).includes(id);})?'<button class="btn sm" data-act="learning-actions">Recoger acciones de aprendizaje · Gratis</button>':'')+'<input type="search" id="fq" placeholder="Buscar cromo..." value="'+esc(FIL.q)+'">'
+ +(COL_MODE!=='acciones'?'<label class="country-filter">País <select id="countryFilter"><option value="">Todos los países</option>'+Object.keys(COUNTRY_NAMES).map(function(code){return '<option value="'+code+'"'+(FIL.country===code?' selected':'')+'>'+esc(COUNTRY_NAMES[code])+'</option>';}).join('')+'</select></label>':'')
  +'<div class="chips" id="chipsR"><button class="chip'+(FIL.r===''?' on':'')+'" data-fr="">Todas</button>'
  +RARS.map(function(r){return '<button class="chip'+(FIL.r===r.k?' on':'')+'" data-fr="'+r.k+'">'+r.n+'</button>';}).join('')+'</div>'
  +'<div class="chips" id="chipsD"'+(COL_MODE==='acciones'?' hidden':'')+'><button class="chip'+(FIL.d===''?' on':'')+'" data-fd="">Todas las doctrinas</button>'
@@ -2178,6 +2183,8 @@ function buildEnemyTeam(mode, elo, div){
   else if(elo<7500)recipe=['comun','raro','raro','especial','legendario'];
   else recipe=['raro','raro','especial','especial','legendario'];
  }
+ if(mode==='normal'&&BUILD.ids&&BUILD.ids.length===5)recipe=BUILD.ids.map(function(id){return BYID[id].r;});
+ if(mode==='ranked'&&BUILD.ids&&BUILD.ids.length===5){var rarityOrder=['comun','raro','especial','legendario'],rank=function(r){return rarityOrder.indexOf(r);},ownRarities=BUILD.ids.map(function(id){return BYID[id].r;}).sort(function(a,b){return rank(a)-rank(b);});recipe=recipe.slice().sort(function(a,b){return rank(a)-rank(b);}).map(function(r,i){return rarityOrder[Math.max(rank(r),rank(ownRarities[i]))];});}
  var picked=[],used={};
  recipe.forEach(function(tier){
   var pool=shuffle(CARDS.filter(function(c){return c.r===tier && !used[c.id];}));
@@ -2284,11 +2291,11 @@ function receiveBattleDamage(card,damage){
  battleVisual('damage',{uid:card.uid,value:received,guarded:guarded});card.h-=received;return received;
 }
 function localActionTargets(side,action,uid){var foe=side==='p'?'e':'p',owners=action.target==='all'?['p','e']:[action.target.indexOf('rival')>=0?foe:side],targets=[];owners.forEach(function(owner){G.field[owner].forEach(function(card){targets.push({owner:owner,card:card,doc:activeDoc(owner)});});});return action.target.indexOf('all')===0?targets:targets.filter(function(t){return !uid||t.card.uid===uid;});}
-function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=BYID[card.k],foe=side==='p'?'e':'p';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
+function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=BYID[card.k],foe=side==='p'?'e':'p';if((card.availableTurn||0)>G.turns[side])return 'Esta acción está en recuperación.';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
  var targets=localActionTargets(side,a,target);if(!targets.length)return 'No hay un objetivo válido.';if(a.effect==='heal'&&!targets.some(function(x){return x.card.h<x.card.hm;}))return 'No falta Aguante en los objetivos.';if(a.effect==='guard'&&!targets.some(function(x){return !x.card.guard;}))return 'Los objetivos ya tienen defensa.';return '';}
 function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=BYID[instance.k];if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p',before=targets.map(function(x){return x.card.h;});
  battleVisual('action',{id:a.id,side:side,targets:targets.filter(function(x){return a.effect!=='heal'||x.card.h<x.card.hm;}).map(function(x){return x.card.uid;})});
- if(!G.actionUsed)G.actionUsed={p:null,e:null};if(!G.spentActions)G.spentActions={p:[],e:[]};G.actionUsed[side]=G.turns[side];G.tdp[side]-=a.cost;G.hand[side]=G.hand[side].filter(function(c){return c!==instance;});if(a.oncePerBattle)G.spentActions[side].push(instance);else G.deck[side].push(instance);
+ if(!G.actionUsed)G.actionUsed={p:null,e:null};if(!G.spentActions)G.spentActions={p:[],e:[]};G.actionUsed[side]=G.turns[side];G.tdp[side]-=a.cost;G.hand[side]=G.hand[side].filter(function(c){return c!==instance;});if(a.oncePerBattle)G.spentActions[side].push(instance);else{instance.availableTurn=G.turns[side]+3;G.deck[side].push(instance);}
  if(a.effect==='silence'){if(!G.pendingSilence)G.pendingSilence={p:false,e:false};G.pendingSilence[foe]=true;G.field[side].forEach(function(c){c.ready=false;});}
  targets.forEach(function(x){var c=x.card;if(a.effect==='heal'){var restored=Math.min(a.value,c.hm-c.h);c.h+=restored;battleVisual('heal',{uid:c.uid,value:restored});}if(a.effect==='guard'){c.guard=true;battleVisual('guard',{uid:c.uid});}if(a.effect==='boost'){if(!c.actionBuffs)c.actionBuffs=[];c.actionBuffs.push({value:a.value,until:G.turns[x.owner]+(x.owner===side?0:1)});}if(a.effect==='damage')receiveBattleDamage(c,a.value);});
  var scope=a.effect==='silence'?(foe==='p'?'Tu equipo':'El equipo rival'):a.target==='all'?'Todos los oradores de ambos equipos':a.target.indexOf('all')===0?'Todos los oradores '+(targets[0].owner==='p'?'de tu equipo':'del equipo rival'):'Orador '+(a.target==='self'?'propio':'rival');log(HemicycleActions.describeAction(a,side==='p'?'Tu equipo':'El rival',scope,targets.map(function(x,i){return {name:x.card.n,team:x.owner==='p'?'tu equipo':'equipo rival',amount:a.effect==='heal'?x.card.h-before[i]:before[i]-x.card.h};})),'hi action-event');targets.forEach(function(x){if(x.card.h<=0&&!G.over)expel(side,x.card,{uid:instance.uid},x.doc);});remoteActionVisual({id:a.id});return true;}
@@ -2348,9 +2355,9 @@ function draw(s){
   log((s==='p'?'Tus oradores que han descansado':'Los oradores rivales que han descansado')+' se barajan con el mazo pendiente.');
  }
  var attempts=G.deck[s].length;
- while(attempts-->0&&G.deck[s].length&&G.hand[s].length<2){
+ while(attempts-->0&&G.deck[s].length&&(G.hand[s].filter(function(x){return !x.action;}).length<2||!G.hand[s].some(function(x){return x.action;}))){
   var c=G.deck[s].shift();
-  if(c.action&&G.hand[s].some(function(x){return x.action;})){G.deck[s].push(c);continue;}
+  if(c.action&&((c.availableTurn||0)>turns||G.hand[s].some(function(x){return x.action;}))||!c.action&&G.hand[s].filter(function(x){return !x.action;}).length>=2){G.deck[s].push(c);continue;}
   if(!enMano(s,c.uid)&&!enMesa(s,c.uid)){
    if(!c.action){c.h=c.hm;c.ready=true;c.guard=false;c.enteredTurn=null;c.strongUsedTurn=null;c.lastHealTurn=null;delete c.drawAfterTurn;}G.hand[s].push(c);if(s==='p'&&SCREEN==='battle')gameSound('card');
   }
@@ -2368,8 +2375,8 @@ function startTurn(s){
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
  var doctrine=activeDoc(s);
  var reserved=G.refund[s];
- G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+reserved:0));
- G.refund[s]=0;
+ G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+reserved:0)+(G.turns[s]===1&&s!==G.first?1:0));
+ G.refund[s]=0;if(G.turns[s]===1&&s!==G.first)log('Compensación de iniciativa: +1 TdP en tu primer turno si empiezas segundo.');
  renewLocalHand(s);draw(s);
  if(doctrine==='verborrea'&&reserved>0)draw(s);
  if(doctrine==='foco'){
@@ -2454,7 +2461,8 @@ function playCard(s,uid){
   G.tdp[s]=Math.min(MAX_TDP,G.tdp[s]+1);
   log('Verborrea: +1 TdP al presentar al Líder.');
  }
- if(activeDoc(s)==='guardia')c.buff=1;
+ // La mejora se obtiene al cerrar el turno, no al presentar el orador.
+ c.buff=0;
  return true;
 }
 
@@ -2629,6 +2637,7 @@ SCREENS.result=function(){
 function chooseBattleAction(s){
  if(!G||G.over||G.side!==s)return null;
  var foe=s==='p'?'e':'p';
+ if(G.field[s].length<2){var opening=G.hand[s].filter(function(c){return !c.action&&c.c<=G.tdp[s];}).sort(function(a,b){return Number(!!G.leader[s]&&b.uid===G.leader[s].uid)-Number(!!G.leader[s]&&a.uid===G.leader[s].uid)||b.v-a.v||b.c-a.c;})[0];if(opening)return {type:'play',card:opening};}
  var actionCard=G.hand[s].filter(function(c){if(!c.action)return false;var a=BYID[c.k],targets=localActionTargets(s,a),target=(a.target==='self'||a.target==='rival')&&targets.length?targets[0].card.uid:undefined;return !localActionReason(s,c,target);})[0];if(actionCard){var spell=BYID[actionCard.k],available=localActionTargets(s,spell),target=(spell.target==='self'||spell.target==='rival')&&available.length?available[0].card.uid:undefined;return {type:'spell',card:actionCard,target:target};}
  /* Presentar al Líder permite activar la doctrina y responder al cruce rival. */
  if(G.field[s].length<3){
@@ -2782,7 +2791,7 @@ function receiveRemoteBattle(snapshot,controls){
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();
- G={authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',downloaded:!!snapshot.offline,rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
+ G={authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',downloaded:!!snapshot.offline,legacyRules:snapshot.ruleset!=='actions2',actionRecovery:own.actionRecovery||[],rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
   over:snapshot.status==='finished',done:snapshot.status==='finished',n:own.turn+enemy.turn,side:snapshot.side===snapshot.you?'p':'e',first:snapshot.first===snapshot.you?'p':'e',turns:{p:own.turn,e:enemy.turn},turnDeadline:snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null,
   pTeam:own.cabinetIds||Array.from(new Set(hand.concat(pf,rest).filter(function(c){return !c.action;}).map(function(c){return c.k;}))),eTeam:[],field:{p:pf,e:ef},hand:{p:hand,e:[]},deck:{p:new Array(own.deckCount||0),e:new Array(enemy.deckCount||0)},pas:{p:rest,e:(enemy.rest||[]).map(convert)},
   leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
@@ -2805,6 +2814,7 @@ SCREENS.battle=function(){
  if(!G)return '<p>Cargando...</p>';
  if(G.sel){var found=G.side==='p'&&G.field.p.some(function(c){return c.uid===G.sel&&c.ready;});if(!found){G.sel=null;G.move=null;G.support=false;}}
  if(LOCAL_ACTION&&!G.hand.p.some(function(c){return c.uid===LOCAL_ACTION&&c.action;}))closeLocalAction();
+ var recovery=G.authoritative?(G.actionRecovery||[]):G.deck.p.filter(function(c){return c.action&&(c.availableTurn||0)>G.turns.p;}).map(function(c){return {id:c.k,turns:c.availableTurn-G.turns.p};});
  var i,tdp='',etdp='';
  var crystals=Math.max(6,G.tdp.p,G.tdp.e);
  for(i=0;i<crystals;i++){tdp+='<span class="crystal'+(i<G.tdp.p?'':' off')+'"></span>';etdp+='<span class="crystal'+(i<G.tdp.e?'':' off')+'"></span>';}
@@ -2826,7 +2836,7 @@ SCREENS.battle=function(){
  +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':(G.quick?'60':'90')+' segundos por turno')+'">'+(G.quick?60:90)+'</span></div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
  +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
- +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small></div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
+ +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="group" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small>'+recovery.map(function(r){return '<button class="recovery-badge" data-act="recovery-action-info" data-id="'+r.id+'" data-turns="'+r.turns+'" title="'+esc(BYID[r.id].n)+' · '+r.turns+' turnos para volver a robarse">'+r.turns+' t · '+esc(BYID[r.id].n)+'</button>';}).join('')+'</div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
  +(LOCAL_ACTION_TARGET?'<div class="hint action-target-hint" role="status"><b>'+esc(BYID[G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION;})[0].k].n)+'</b>: toca un cromo iluminado. <button class="battle-cancel" data-act="action-cancel">Cancelar</button></div>':G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
         :'')
  +'<section class="battle-journal"><div class="journal-heading"><span>ACTA DEL DEBATE</span><span>Ronda '+roundNum+'</span></div><div class="log" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.slice(0,8).join('')+'</div></section>'
@@ -2897,8 +2907,8 @@ SCREENS.liga=function(){
 SCREENS.ayuda=function(){
  var html='<div class="help-heading"><span class="eyebrow">A TU RITMO</span><h2>Ayuda</h2><p class="sub">Abre el tema que quieras consultar o practica con las guías.</p></div><div class="inner-scroll help-topics">'
  +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button><button class="btn ghost sm" data-act="market-tutorial">Guía de Mercado</button></div>'
- +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: Normal y Clasificatoria disponen de 90 segundos por turno; Rápida, de 60. Durante ese tiempo puedes realizar tus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador. Los ataques a bancadas vacías pueden restar, entre todos tus oradores, un máximo de 3 votos por turno propio; al comenzar tu siguiente turno se recupera ese límite.</p></div>'
- +'<div class="panel"><h3>Tu gabinete y su líder</h3><p class="sub">Desde Colección puedes guardar cinco gabinetes favoritos y elegir su líder. Antes del combate seleccionas uno de ellos; sus integrantes solo se editan en Colección. Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y un máximo de dos cartas en la mano; las demás esperan en el mazo. Al comenzar cada turno propio, las cartas sin usar vuelven al mazo y se roban hasta dos al barajar. Nunca pueden coincidir dos acciones en la mano. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
+ +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: Normal y Clasificatoria disponen de 90 segundos por turno; Rápida, de 60. Quien empieza segundo recibe +1 TdP exclusivamente en su primer turno. Durante ese tiempo puedes realizar tus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador. Los ataques a bancadas vacías pueden restar, entre todos tus oradores, un máximo de 3 votos por turno propio; al comenzar tu siguiente turno se recupera ese límite.</p></div>'
+ +'<div class="panel"><h3>Tu gabinete y su líder</h3><p class="sub">Desde Colección puedes guardar cinco gabinetes favoritos y elegir su líder. Antes del combate seleccionas uno de ellos; sus integrantes solo se editan en Colección. Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y dos huecos de orador más uno opcional de acción en la mano; las demás esperan en el mazo. Al comenzar cada turno propio, las cartas sin usar vuelven al mazo y se roban hasta dos oradores y una acción disponible al barajar. Las acciones usadas esperan dos turnos propios completos. Nunca pueden coincidir dos acciones en la mano. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
  +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte está disponible solo en el tercer turno propio del cromo en mesa y después cada tres turnos: 3, 6, 9… Si lo dejas pasar, la oportunidad caduca. Cuesta 1 de Aguante y requiere al menos 2 para ejecutarlo. El ciclo es individual y se reinicia al salir y volver a entrar.</p><p class="sub">La tercera frase cambia el contenido de esa misma ventana para escoger <b>Defensa</b> o <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; si no recibe golpes, caduca al comenzar tu siguiente turno. No se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. Tras curarse, ese cromo debe dejar pasar un turno propio completo antes de volver a curarse; puede atacar o defender durante ese descanso. Esta restricción no afecta a la curación automática de Foco. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
@@ -3094,7 +3104,9 @@ document.addEventListener('click',function(ev){
   case 'cabinet-manage':if(SCREEN==='builder'){CABINET_RETURN=Object.assign({},SO);var state=cabinetState();CABINET_EDIT=state.selected;loadSelectedCabinet();go('coleccion');}break;
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
   case 'action-cancel':closeLocalAction();paint();break;
+  case 'recovery-action-info':{var recovering=BYID[n.getAttribute('data-id')];if(recovering)showModal(recovering.n+' · Recuperación',actionRulesHTML(recovering)+'<p>Podrá volver a robarse dentro de '+esc(n.getAttribute('data-turns'))+' turnos propios.</p>','Entendido',false,null,true,false);break;}
   case 'spent-action-info':{var spent=BYID[n.getAttribute('data-id')];if(spent&&spent.action)showModal(spent.n+' · Agotada',actionRulesHTML(spent),'Entendido',false,null,true,false);break;}
+  case 'learning-actions':if(verifiedAccount()){economyTask({type:'learning-actions'},function(){paint();});}else{var learning=D();['replica','receso'].forEach(function(id){if(!(learning.actionAlbum||[]).includes(id))HemicycleActions.award(learning,[id]);});saveD(learning);paint();}break;
   case 'collection-type':if(SCREEN==='coleccion'){COL_MODE=COL_MODE==='acciones'?'oradores':'acciones';FIL={q:'',r:'',d:''};paint();}break;
   case 'cabinet-action-remove':if(CABINET_EDIT!==null){BUILD.actions=(BUILD.actions||[]).filter(function(id){return id!==n.getAttribute('data-id');});paint();}break;
   case 'online':if(ONLINE)ONLINE.open(PLAY_MODE);break;
@@ -3310,6 +3322,7 @@ function firstEntry(){
  if(MENU_GUIDE&&!MENU_GUIDE.seen()){MENU_GUIDE.start();return;}
  if(!lsGet('hemiciclo_objectives_intro_v1')){lsSet('hemiciclo_objectives_intro_v1',true);showModal('Nuevos desafíos y logros','Desafíos está junto a Colección, en la franja superior. Completa misiones y reclama los sobres de cada barra. Logros está debajo del buzón: sus cadenas y premios son permanentes. Puedes repetir la guía completa desde Ayuda.','Entendido',false,null);}
 }
+document.addEventListener('change',function(e){if(e.target.id==='countryFilter'){FIL.country=e.target.value;paint();}});
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();var initial=D(),initialGoals=HemicycleObjectives.snapshot(Object.assign({},initial,{objectiveCatalog:CARDS}),CARDS);if(JSON.stringify(initial.objectives)!==JSON.stringify(initialGoals)){initial.objectives=initialGoals;var initialSave={};initialSave[LS]=initial;atomicLocal(initialSave);}
  PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(HISTORY)HISTORY.close();if(OFFLINE_COMBAT)OFFLINE_COMBAT.detach();if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},openHistory:function(){PLAYER_PROFILE.close();if(HISTORY)HISTORY.open();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
@@ -3318,7 +3331,7 @@ function boot(){
   CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,prepare:canonicalPreferences,applyCanonical:applyCanonical,initialize:function(){return ECONOMY.initialize();},validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
    atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra),true);MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');
   },changed:function(){if(CLOUD_UI)CLOUD_UI.changed();if(OFFLINE_COMBAT&&CLOUD_SAVE&&CLOUD_SAVE.state().phase==='synced')OFFLINE_COMBAT.download().catch(function(){});}});
-  CLOUD_UI=HemicycleCloudUI.create({service:CLOUD_SAVE,offlineInfo:function(){return 'Partidas descargadas: '+OFFLINE_STATUS.tickets+' · Premios pendientes: '+OFFLINE_STATUS.pending;},syncOffline:async function(){if(ECONOMY)await ECONOMY.resume();if(OFFLINE_COMBAT)await OFFLINE_COMBAT.flush();},snapshot:backupSnapshot,export:exportPlayerBackup,download:downloadBackup,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},changed:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();}});
+  CLOUD_UI=HemicycleCloudUI.create({service:CLOUD_SAVE,offlineInfo:function(){return 'Partidas descargadas: '+OFFLINE_STATUS.tickets+' · Premios pendientes: '+OFFLINE_STATUS.pending+' · Para revisar: '+(OFFLINE_STATUS.rejected||0);},downloadRejected:async function(){var rows=await OFFLINE_COMBAT.rejected(),blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hemicycle-resultados-para-revisar.json';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);},syncOffline:async function(){if(ECONOMY)await ECONOMY.resume();if(OFFLINE_COMBAT)await OFFLINE_COMBAT.flush();},snapshot:backupSnapshot,export:exportPlayerBackup,download:downloadBackup,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},changed:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();}});
   ECONOMY=HemicycleEconomyClient.create({base:'https://hemicycle-w578.onrender.com',account:economyAccount,snapshot:backupSnapshot,reconcile:async function(){if(CLOUD_SAVE)await CLOUD_SAVE.adopt();}});
   OFFLINE_COMBAT=HemicycleOfflineCombat.create({account:economyAccount,economy:ECONOMY,battle:receiveRemoteBattle,events:remoteBattleEvents,preparing:function(value){DOWNLOAD_START_BUSY=value;if(SCREEN==='builder')paint();},changed:function(status){OFFLINE_STATUS=status;if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();},error:function(message){showModal('Partida descargada',esc(message),'Entendido',false,null);},finished:finishDownloaded,onReceipt:function(ticketId,receipt){if(SCREEN==='result'&&SO.ticketId===ticketId){SO=verifiedResult(receipt,ticketId);paint();}}});
   window.addEventListener('hemicycle:entered',function(){if(PLAYER_PROFILE&&PLAYER_PROFILE.account())OFFLINE_COMBAT.flush().catch(function(){});});

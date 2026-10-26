@@ -10,6 +10,10 @@ function renew(hand,deck,random=Math.random){
  for(const c of pool){if(next.length<2&&(!c.action||!next.some(x=>x.action)))next.push(c);else rest.push(c);}
  return {hand:next,deck:rest};
 }
+function renewBalanced(hand,deck,turn,random=Math.random){
+ const pool=shuffle([...hand,...deck],random),orators=pool.filter(c=>!c.action).slice(0,2),support=pool.find(c=>c.action&&(c.availableTurn||0)<=turn),chosen=new Set(orators);if(support)chosen.add(support);
+ return {hand:[...orators,...(support?[support]:[])],deck:pool.filter(c=>!chosen.has(c))};
+}
 function recycle(rest,deck,turn,random=Math.random){const eligible=rest.filter(c=>turn>=c.availableTurn);return {rest:rest.filter(c=>!eligible.includes(c)),deck:shuffle([...deck,...eligible.map(c=>({...c,hp:c.maxHp}))],random)};}
 function validateCabinet(cabinet,owned,oratorIds){
  check(cabinet&&Array.isArray(cabinet.orators)&&Array.isArray(cabinet.actions),'Gabinete no válido');
@@ -67,4 +71,4 @@ function begin(original,side,random=Math.random){const s=structuredClone(origina
  p.votes+=3+p.field.reduce((sum,c)=>sum+c.votes,0);if(p.votes>=100){s.status='finished';s.winner=side;}
  return s;
 }
-const api={cards,byId,shuffle,renew,recycle,validateCabinet,pack,covers,apply,begin};if(typeof module!=='undefined')module.exports=api;else globalThis.HemicycleOnlineActions=api;
+const api={renewBalanced,cards,byId,shuffle,renew,recycle,validateCabinet,pack,covers,apply,begin};if(typeof module!=='undefined')module.exports=api;else globalThis.HemicycleOnlineActions=api;
