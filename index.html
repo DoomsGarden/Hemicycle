@@ -513,7 +513,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.2-actions1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.1-cloud2">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.0">
@@ -553,7 +553,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/game-audio.js?v=31.0.2.1-cloud2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
 <script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
-<script src="js/battle-visuals.js?v=31.0.2.1"></script>
+<script src="js/battle-visuals.js?v=31.0.2.2-actions1"></script>
 <script src="js/battle-tutorial.js?v=31.0.2.2"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
@@ -565,6 +565,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
+<link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.2-actions1">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
 <script src="js/action-cards.js?v=31.0.1.4-results1"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
@@ -1069,13 +1070,31 @@ var QBESP={
 
 // Keep the original save/image identifier when a corrected surname changes its spelling.
 var CARD_NAMES={'isabel-cela':'Isabel Celaá'};
+// País de representación política, no lugar de nacimiento ni institución supranacional.
+var COUNTRY_NAMES={"ES": "España", "US": "Estados Unidos", "GB": "Reino Unido", "DE": "Alemania", "FR": "Francia", "RU": "Rusia", "IT": "Italia", "TR": "Turquía", "HU": "Hungría", "CA": "Canadá", "VE": "Venezuela", "MX": "México", "AR": "Argentina"};
+var COUNTRY_ROSTER={
+ "ES":"alberto-nunez-feijoo carles-puigdemont isabel-diaz-ayuso mariano-rajoy pedro-sanchez yolanda-diaz ada-colau felipe-gonzalez gabriel-rufian jose-maria-aznar pablo-iglesias salvador-illa santiago-abascal adriana-lastra albert-rivera alberto-garzon ana-botella anna-gabriel begona-villacis cayetana-alvarez-de-toledo cristina-cifuentes cristobal-montoro dolores-de-cospedal edmundo-bal esperanza-aguirre ines-arrimadas inigo-errejon irene-montero isabel-cela jordi-turull jorge-fernandez-diaz jose-luis-rodriguez-zapatero jose-manuel-garcia-margallo julio-anguita laura-borras luis-de-guindos maria-jesus-montero marta-rovira miquel-iceta miriam-nogueras monica-garcia nadia-calvino oriol-junqueras pablo-casado pablo-echenique pilar-alegria rocio-monasterio sara-gimenez soraya-saenz-de-santamaria alfonso-alonso alvaro-nadal ana-pastor andrea-levy antonio-maillo borja-semper carlos-floriano carme-forcadell carmen-calvo celia-villalobos cuca-gamarra dolors-montserrat elias-bendodo emiliano-garcia-page esteban-gonzalez-pons fatima-banez fernando-grande-marlaska inigo-mendez-de-vigo isabel-garcia-tejerina jaime-de-olano javier-maroto jordi-sanchez jose-luis-abalos josep-rull juan-espadas juan-vicente-herrera marta-lois marta-rivera-de-la-cruz meritxell-batet miguel-arias-canete nacho-alvarez oscar-puente pablo-cambronero pablo-montesinos patxi-lopez pere-aragones pilar-llop quim-torra rafael-catala rafael-hernando raquel-sanchez raul-romeva reyes-maroto roger-torrent susana-diaz teodoro-garcia-egea toni-canto toni-comin".split(' '),
+ "US":"donald-trump barack-obama bernie-sanders joe-biden hillary-clinton kamala-harris".split(' '),
+ "GB":"boris-johnson nigel-farage".split(' '),
+ "DE":"angela-merkel ursula-von-der-leyen".split(' '),
+ "FR":"emmanuel-macron marine-le-pen christine-lagarde".split(' '),
+ "RU":"vladimir-putin".split(' '),
+ "IT":"giorgia-meloni matteo-salvini".split(' '),
+ "TR":"recep-tayyip-erdogan".split(' '),
+ "HU":"viktor-orban".split(' '),
+ "CA":"justin-trudeau".split(' '),
+ "VE":"nicolas-maduro".split(' '),
+ "MX":"andres-manuel-lopez-obrador".split(' '),
+ "AR":"javier-milei cristina-fernandez-de-kirchner".split(' ')
+};
+var CARD_COUNTRIES={};Object.keys(COUNTRY_ROSTER).forEach(function(code){COUNTRY_ROSTER[code].forEach(function(id){CARD_COUNTRIES[id]=code;});});
 var CARDS=[],BYID={};
 DOCS.forEach(function(d){
  ['legendario','especial','raro','comun'].forEach(function(t){
   var t2=TIER[t];
   ROSTER[d.k][t].forEach(function(nm,ix){
    var id=slug(nm);
-   var c={id:id,n:CARD_NAMES[id]||nm,r:t,pa:d.k,
+   var c={id:id,n:CARD_NAMES[id]||nm,r:t,pa:d.k,country:CARD_COUNTRIES[id]||null,
      c:t2.costs?t2.costs[ix%t2.costs.length]:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),
      a:t2.a[0]+((ix*3)%(t2.a[1]-t2.a[0]+1)),
      h:t2.h[0]+((ix*5)%(t2.h[1]-t2.h[0]+1)),
@@ -1153,6 +1172,7 @@ function awardCards(d,ids){if(typeof HemicycleActions!=='undefined')HemicycleAct
 
 function actionDetail(c){COL_MODE='acciones';var ids=getSwipeDeckIds(),idx=ids.indexOf(c.id),nav=ids.length>1?'<div class="nav-strip"><button class="mini" data-act="prevcard">&lsaquo; Anterior</button><span>Cromo <b>'+(idx+1)+'</b> de <b>'+ids.length+'</b> · Desliza para comparar</span><button class="mini" data-act="nextcard">Siguiente &rsaquo;</button></div>':'';return nav+'<div class="panel action-detail"><div class="ficha"><div class="caja zoomable" data-act="zoomcard">'+actionCromoHTML(c,{noCardAttr:true})+'</div><div><h2>'+esc(c.n)+'</h2><span class="pill">Acción · '+RARM[c.r].n+'</span><p>'+copies(D(),c.id)+' copias en tu colección.</p></div></div>'+actionRulesHTML(c)+'</div><div class="bar"><button class="btn wide sm" '+(SO.pack?'data-act="pack-return">Volver al sobre':'data-go="coleccion">Volver a acciones')+'</button></div>';}
 
+function countryHTML(c,full){var code=c&&(c.country||CARD_COUNTRIES[c.k||c.id]),name=COUNTRY_NAMES[code];if(!name)return '';return '<span class="orator-country'+(full?' full':'')+'" title="'+esc(name)+'" role="img" aria-label="País: '+esc(name)+'"><img src="assets/flags/'+code.toLowerCase()+'.svg" alt="" width="18" height="12">'+(full?'<span>'+esc(name)+'</span>':'')+'</span>';}
 function cromoHTML(c,o){
  if(c&&c.action)return actionCromoHTML(c,o);
  o=o||{};
@@ -1167,7 +1187,7 @@ function cromoHTML(c,o){
   +(o.sel&&o.pick?'<span class="sel-tag">&#10003; ELEGIDO</span>':'')
   +(o.star?'<button class="star'+(o.lead?' on':'')+'" data-lead="'+c.id+'" title="Elegir como Líder">&#9733;</button>':'')
   +(o.count?'<span class="badge">x'+o.count+'</span>':'')
-  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+esc(c.n)+'</span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+stats.a+'"><small>Z</small><b>'+stats.a+'</b></span><span class="card-stat aguante" aria-label="Aguante '+stats.h+'"><small>A</small><b>'+stats.h+'</b></span></span></div></div>';
+  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+stats.a+'"><small>Z</small><b>'+stats.a+'</b></span><span class="card-stat aguante" aria-label="Aguante '+stats.h+'"><small>A</small><b>'+stats.h+'</b></span></span></div></div>';
 }
 function fichaHTML(c){
  if(c&&c.action)return '<div class="panel">'+actionCromoHTML(c)+actionRulesHTML(c)+'</div>';
@@ -1921,7 +1941,7 @@ SCREENS.detalle=function(){
  +'<span class="zoom-badge-hint">&#128269; Ampliar</span>'
  +'</div>'
  +'<div style="flex:1;min-width:0">'
- +'<div class="detail-heading"><h2>'+esc(c.n)+'</h2>'+editionBadges(c,d)+'</div>'
+ +'<div class="detail-heading"><h2>'+countryHTML(c,true)+'<span>'+esc(c.n)+'</span></h2>'+editionBadges(c,d)+'</div>'
  +'<p style="margin:0 0 4px"><span class="doc"><span class="dot" style="background:'+DOCM[c.pa].col+'"></span>'+esc(DOCM[c.pa].n)+'</span> <span class="pill">'+r.n+'</span> <span class="pill gold">x'+cnt+'</span></p>'
  +'<p class="sub" style="margin:0"><b>Doctrina:</b> '+esc(DOCM[c.pa].d)+'</p>'
  +'<p class="sub" style="margin:3px 0 0">'+esc(doctrineMatchup(c.pa))+'</p>'
@@ -2267,10 +2287,11 @@ function localActionTargets(side,action,uid){var foe=side==='p'?'e':'p',owners=a
 function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=BYID[card.k],foe=side==='p'?'e':'p';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
  var targets=localActionTargets(side,a,target);if(!targets.length)return 'No hay un objetivo válido.';if(a.effect==='heal'&&!targets.some(function(x){return x.card.h<x.card.hm;}))return 'No falta Aguante en los objetivos.';if(a.effect==='guard'&&!targets.some(function(x){return !x.card.guard;}))return 'Los objetivos ya tienen defensa.';return '';}
 function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=BYID[instance.k];if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p',before=targets.map(function(x){return x.card.h;});
+ battleVisual('action',{id:a.id,side:side,targets:targets.filter(function(x){return a.effect!=='heal'||x.card.h<x.card.hm;}).map(function(x){return x.card.uid;})});
  if(!G.actionUsed)G.actionUsed={p:null,e:null};if(!G.spentActions)G.spentActions={p:[],e:[]};G.actionUsed[side]=G.turns[side];G.tdp[side]-=a.cost;G.hand[side]=G.hand[side].filter(function(c){return c!==instance;});if(a.oncePerBattle)G.spentActions[side].push(instance);else G.deck[side].push(instance);
  if(a.effect==='silence'){if(!G.pendingSilence)G.pendingSilence={p:false,e:false};G.pendingSilence[foe]=true;G.field[side].forEach(function(c){c.ready=false;});}
  targets.forEach(function(x){var c=x.card;if(a.effect==='heal'){var restored=Math.min(a.value,c.hm-c.h);c.h+=restored;battleVisual('heal',{uid:c.uid,value:restored});}if(a.effect==='guard'){c.guard=true;battleVisual('guard',{uid:c.uid});}if(a.effect==='boost'){if(!c.actionBuffs)c.actionBuffs=[];c.actionBuffs.push({value:a.value,until:G.turns[x.owner]+(x.owner===side?0:1)});}if(a.effect==='damage')receiveBattleDamage(c,a.value);});
- var scope=a.effect==='silence'?(foe==='p'?'Tu equipo':'El equipo rival'):a.target==='all'?'Todos los oradores de ambos equipos':a.target.indexOf('all')===0?'Todos los oradores '+(targets[0].owner==='p'?'de tu equipo':'del equipo rival'):'Orador '+(a.target==='self'?'propio':'rival');log(HemicycleActions.describeAction(a,side==='p'?'Tu equipo':'El rival',scope,targets.map(function(x,i){return {name:x.card.n,team:x.owner==='p'?'tu equipo':'equipo rival',amount:a.effect==='heal'?x.card.h-before[i]:before[i]-x.card.h};})),'hi action-event');targets.forEach(function(x){if(x.card.h<=0&&!G.over)expel(side,x.card,{uid:instance.uid},x.doc);});gameSound('card');if(typeof document!=='undefined'&&document.body){var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}return true;}
+ var scope=a.effect==='silence'?(foe==='p'?'Tu equipo':'El equipo rival'):a.target==='all'?'Todos los oradores de ambos equipos':a.target.indexOf('all')===0?'Todos los oradores '+(targets[0].owner==='p'?'de tu equipo':'del equipo rival'):'Orador '+(a.target==='self'?'propio':'rival');log(HemicycleActions.describeAction(a,side==='p'?'Tu equipo':'El rival',scope,targets.map(function(x,i){return {name:x.card.n,team:x.owner==='p'?'tu equipo':'equipo rival',amount:a.effect==='heal'?x.card.h-before[i]:before[i]-x.card.h};})),'hi action-event');targets.forEach(function(x){if(x.card.h<=0&&!G.over)expel(side,x.card,{uid:instance.uid},x.doc);});remoteActionVisual({id:a.id});return true;}
 var LOCAL_ACTION=null,LOCAL_ACTION_TARGET=false;
 function closeLocalAction(){LOCAL_ACTION=null;LOCAL_ACTION_TARGET=false;var host=document.getElementById('localActionRoot');if(host)host.remove();}
 function inspectLocalAction(uid){LOCAL_ACTION=uid;LOCAL_ACTION_TARGET=false;G.sel=null;G.move=null;G.support=false;paint();}
@@ -2716,7 +2737,7 @@ function cromoBattle(c,side,extra){
   +(c.guard?'<span class="battle-guard" aria-label="Defensa del 50 % preparada">&#128737; 50 %</span>':'')
   +(inField&&side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
   +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">ϟ</span>':'')
-  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+esc(c.n)+'</span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+battleZasca(side,c)+'"><small>Z</small><b>'+battleZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
+  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+battleZasca(side,c)+'"><small>Z</small><b>'+battleZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
 }
 function nmByUid(uid){var i;for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)return G.field.p[i].n;return '?';}
 function uidOf(uid){var i;for(i=0;i<G.hand.p.length;i++)if(G.hand.p[i].uid===uid)return G.hand.p[i].k;return '';}
@@ -2746,18 +2767,18 @@ function sendRemoteBattle(command){
  var accepted=REMOTE_BATTLE.send(command);if(accepted!==false)G.networkBusy=true;return accepted!==false;
 }
 function remoteBattleStatus(text){var el=document.getElementById('networkBattleStatus');if(el){el.innerHTML='<span>'+esc(text)+'</span>'+(text&&text!=='Conectando…'?'<button class="mini" data-act="remote-retry">Reintentar</button>':'');el.hidden=!text;}}
-function remoteActionVisual(event){var a=BYID[event.id];if(!a||!a.action)return;var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);gameSound('card');setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}
+function remoteActionVisual(event){var a=BYID[event.id];if(!a||!a.action||!G||G.over||SCREEN!=='battle')return;gameSound('card');if(typeof document==='undefined'||!document.body||document.hidden)return;document.querySelectorAll('.action-flying').forEach(function(node){node.remove();});var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}
 function remoteBattleEvents(events,you){
  if(!G||!G.authoritative||G.over)return;
- events.forEach(function(event){if(event.kind==='action'){remoteActionVisual(event);return;}var data=Object.assign({},event);if(typeof data.side==='number')data.side=data.side===you?'p':'e';battleVisual(event.kind,data);});
+ events.forEach(function(event,index){var data=Object.assign({},event);if(typeof data.side==='number')data.side=data.side===you?'p':'e';if(event.kind==='action'){remoteActionVisual(event);if(typeof HemicycleBattleVisuals!=='undefined')data.targets=HemicycleBattleVisuals.actionTargets(G,event,events.slice(index+1),you);}battleVisual(event.kind,data);});
  if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(G);
 }
 function receiveRemoteBattle(snapshot,controls){
  if(snapshot.status==='preparing')return false;
  REMOTE_PREPARATION=null;
  var own=snapshot.players[snapshot.you],enemy=snapshot.players[1-snapshot.you];if(!own||!enemy)return false;
- var previous=G&&G.authoritative&&G.remoteId===controls.id?G:null,same=previous&&previous.remoteRevision===snapshot.revision;
- function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
+ var previous=G&&G.authoritative&&G.remoteId===controls.id?G:null,same=previous&&previous.remoteRevision===snapshot.revision;if(previous&&typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.capture(previous);
+ function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,visualBuffs:(c.buffs||[]).map(function(b){return {value:b.value,until:b.until};}),enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();

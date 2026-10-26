@@ -1,0 +1,4 @@
+'use strict';
+const {test}=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),{cards}=require('../_dev/market/catalog.cjs');
+test('all 120 orators have an explicit country and a local flag asset',()=>{assert.equal(cards.length,120);assert.equal(new Set(cards.map(c=>c.id)).size,120);for(const c of cards){assert.match(c.country,/^[A-Z]{2}$/);assert.ok(fs.existsSync('assets/flags/'+c.country.toLowerCase()+'.svg'),c.n);}assert.equal(new Set(cards.map(c=>c.country)).size,13);});
+test('country groups describe political representation, including people born elsewhere and EU officials',()=>{const byId=Object.fromEntries(cards.map(c=>[c.id,c]));for(const [id,code]of Object.entries({'boris-johnson':'GB','pablo-echenique':'ES','cayetana-alvarez-de-toledo':'ES','ursula-von-der-leyen':'DE','christine-lagarde':'FR','javier-milei':'AR','vladimir-putin':'RU'}))assert.equal(byId[id].country,code);});
