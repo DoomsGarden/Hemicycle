@@ -5,7 +5,13 @@
   var state={type:'orators',tab:'sell',id:'',quantity:1,target:'machine',search:'',rarity:'',buySearch:'',buyRarity:'',missing:false,remote:false,me:null,seen:false,connecting:false,busy:false,error:'',notice:'',listings:[],players:[],activity:{listings:[],trades:[],receipts:[]},recipient:'',remoteCards:[],give:'',receive:'',method:'fs',extra:''};
   var esc=app.esc;
   function key(){return typeof crypto.randomUUID==='function'?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);}
-  function repaint(){app.refresh();}
+  function repaint(){
+   var active=document.activeElement,body=document.getElementById('marketBody'),scroll=body?body.scrollTop:0;
+   var focus=active&&active.closest('[data-market],#marketRarity,#marketBuyRarity'),mark=focus?{id:focus.id,action:focus.dataset.market,value:focus.dataset.value,card:focus.dataset.id}:null;
+   app.refresh();
+   body=document.getElementById('marketBody');if(body)body.scrollTop=scroll;
+   if(mark){var next=Array.from(document.querySelectorAll('[data-market],#marketRarity,#marketBuyRarity')).find(function(el){return mark.id?el.id===mark.id:el.dataset.market===mark.action&&el.dataset.value===mark.value&&el.dataset.id===mark.card;});if(next&&next.disabled&&(mark.action==='more'||mark.action==='less'))next=document.querySelector('[data-market="'+(mark.action==='more'?'less':'more')+'"]');if(next&&!next.disabled)next.focus({preventScroll:true});}
+  }
   function profile(){if(!state.remote||!state.me)return app.getProfile();var album=[],actions=[];state.me.inventory.forEach(function(c){for(var i=0;i<c.quantity;i++)(rules.card(c.id).action?actions:album).push(c.id);});return Object.assign({},app.getProfile(),{album:album,actionAlbum:actions,fs:state.me.fs});}
   function ownedCards(){var d=profile();return d.album.concat(d.actionAlbum||[]);}
   function available(){var counts=rules.counts(ownedCards());return app.cards.filter(function(c){return counts[c.id]>1;}).map(function(c){return {card:c,quantity:counts[c.id]-1};});}
