@@ -21,3 +21,14 @@ test('a failed migration request preserves its diagnostic and is never marked as
  const c=client(async()=>({ok:false,status:503,json:async()=>({error:'Falta función',code:'ECONOMY_SCHEMA_REQUIRED'})}),{w:1,l:0,album:['one'],fs:1500,elo:0});
  await assert.rejects(c.initialize(),e=>e.code==='ECONOMY_SCHEMA_REQUIRED'&&!e.definitive);
 });
+test('temporary saturation or network loss preserves the same pending operation until canonical recovery',async()=>{
+ const store=new Map(),sent=[];let unavailable=true;
+ const context=vm.createContext({window:{},AbortSignal,crypto:require('node:crypto'),localStorage:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v),removeItem:k=>store.delete(k)},fetch:async(path,o)=>{sent.push(JSON.parse(o.body));return unavailable?{ok:false,status:503,json:async()=>({error:'Servicio ocupado',code:'ECONOMY_BUSY',requestId:'11111111-1111-4111-8111-111111111111'})}:{ok:true,json:async()=>({total:15})};}});
+ vm.runInContext(fs.readFileSync('js/economy-client.js','utf8'),context);let reconciles=0;
+ const c=context.window.HemicycleEconomyClient.create({base:'http://local',account:()=>({userId:'actor',accessToken:'secret'}),reconcile:async()=>reconciles++});
+ await assert.rejects(c.execute({type:'machine',id:'replica',quantity:1}),e=>!e.definitive&&e.code==='ECONOMY_BUSY'&&e.message.includes('Consulta: 11111111'));
+ assert.equal(store.size,1);unavailable=false;await c.resume();assert.deepEqual(sent[0],sent[1]);assert.equal(store.size,0);assert.equal(reconciles,1);
+});
+test('authentication outage and truncated RPC responses remain temporary',async()=>{
+ for(const brokenAuth of [true,false]){const service=create({url:'https://example.supabase.co',key:'public',secret:'server',fetcher:async url=>url.endsWith('/auth/v1/user')?brokenAuth?{ok:false,status:503}:{ok:true,json:async()=>({id:'actor'})}:{ok:true,json:async()=>{throw SyntaxError('private response');}}});await assert.rejects(service('Bearer user','/offline/tickets','POST',{}),e=>e.status===503&&e.code==='ECONOMY_UNAVAILABLE'&&!e.message.includes('private'));}
+});

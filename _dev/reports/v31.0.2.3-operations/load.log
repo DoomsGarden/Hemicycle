@@ -1,0 +1,23 @@
+✔ missing onboarding SQL PGRST202 is distinguished without exposing database details (16.328142ms)
+✔ missing onboarding SQL 42883 is distinguished without exposing database details (2.012004ms)
+✔ missing onboarding SQL 42P01 is distinguished without exposing database details (1.194101ms)
+✔ a missing cloud save sends a new account to activation rather than a migration error (0.419542ms)
+✔ permission failures and unknown SQL failures remain distinct and do not expose arbitrary details (0.80261ms)
+✔ one guest match requests migration and never initializes a replacement collection (2.430054ms)
+✔ a failed migration request preserves its diagnostic and is never marked as submitted (1.327802ms)
+✔ temporary saturation or network loss preserves the same pending operation until canonical recovery (2.105304ms)
+✔ authentication outage and truncated RPC responses remain temporary (0.841609ms)
+✔ bounded write queue rejects overflow and expired waits, then recovers (22.79331ms)
+{"scenario":"two-instance real SQL load","requests":145,"accounts":25,"p50Ms":108,"p95Ms":310,"maxMs":344,"totals":[{"requests":74,"errors":2,"clientErrors":11,"aborted":0,"slow":0,"rpc":283,"rpcErrors":2,"conflicts":6,"rejected":0,"inFlight":0,"peak":20,"durationMs":6305,"rpcDurationMs":878,"routes":{"/economy":{"requests":74,"errors":13,"durationMs":6305}}},{"requests":71,"errors":0,"clientErrors":12,"aborted":0,"slow":0,"rpc":280,"rpcErrors":0,"conflicts":11,"rejected":0,"inFlight":0,"peak":20,"durationMs":7158,"rpcDurationMs":918,"routes":{"/economy":{"requests":71,"errors":12,"durationMs":7158}}}],"limits":"PGlite executes SQL calls serially; not a production capacity benchmark"}
+✔ HTTP load on real economy SQL preserves stock, balances, receipts and offline rewards across two service instances (2844.225746ms)
+✔ operational records normalize arbitrary routes and count slow or abandoned requests without private data (0.683801ms)
+✔ HTTP saturation returns retryable 503 while health stays responsive and the queue releases after failure (15.972876ms)
+✔ log summary uses only the last cumulative sample of each instance and ignores private or malformed fields (0.770762ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3026.572856

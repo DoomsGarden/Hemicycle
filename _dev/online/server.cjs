@@ -4,17 +4,20 @@ const uuid=/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 function createServer(config={}){
  const url=config.url||process.env.SUPABASE_URL,key=config.key||process.env.SUPABASE_PUBLISHABLE_KEY;
  const origins=(config.origins||process.env.ALLOWED_ORIGINS||'').split(',').map(x=>x.trim()).filter(Boolean),fetcher=config.fetch||fetch;
+ const observe=require('./observability.cjs').create({logger:config.logger||console.info});
+ const upstream=(...args)=>observe.rpc(async()=>{try{return await fetcher(...args);}catch{throw Object.assign(Error('No se pudo contactar con el servidor. Tu operación se conserva para reintentar.'),{status:503,code:'SERVICE_UNAVAILABLE'});}});
  const serviceOrigin=config.serviceOrigin||process.env.RENDER_EXTERNAL_URL;
  if(serviceOrigin&&/^https:\/\/[a-z0-9-]+\.onrender\.com$/.test(serviceOrigin))origins.push(serviceOrigin);
  const secret=config.secret||process.env.SUPABASE_SERVICE_ROLE_KEY;
- const combat=require('./combat-service.cjs').create({url,key,secret,fetcher}),economy=require('./economy-service.cjs').create({url,key,secret,fetcher});
+ const combat=require('./combat-service.cjs').create({url,key,secret,fetcher:upstream,observe}),economy=require('./economy-service.cjs').create({url,key,secret,fetcher:upstream,observe,queueOptions:config.queueOptions});
  const configured=!!(url&&/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(url)&&key&&origins.length&&!origins.includes('*'));
- return http.createServer(async(req,res)=>{
-  res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Type','application/json; charset=utf-8');
+ const server=http.createServer(async(req,res)=>{
   const pathname=new URL(req.url,'http://localhost').pathname;
-  const reply=(status,value)=>{res.writeHead(status);res.end(JSON.stringify(value));};
+  return observe.track(req,res,pathname,async()=>{
+  res.setHeader('Cache-Control','no-store');res.setHeader('X-Content-Type-Options','nosniff');res.setHeader('Content-Type','application/json; charset=utf-8');
+  const reply=(status,value)=>{observe.code(value?.code);if(status>=400)value={...value,requestId:observe.requestId()};if(value?.code==='ECONOMY_BUSY')res.setHeader('Retry-After','1');res.writeHead(status);res.end(JSON.stringify(value));};
   const origin=req.headers.origin;if(origin&&!origins.includes(origin))return reply(403,{error:'Origen no permitido.'});
-  if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');}
+  if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');res.setHeader('Access-Control-Expose-Headers','X-Request-ID,Retry-After');}
   if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
   if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',version:'v31.0.2.3',revision:/^[0-9a-f]{40}$/.test(process.env.RENDER_GIT_COMMIT||'')?process.env.RENDER_GIT_COMMIT:null,configured,combatEnabled:!!secret});
   if(req.method==='GET'&&pathname==='/rooms-test'){res.writeHead(308,{Location:'/rooms-test/'+new URL(req.url,'http://localhost').search});res.end();return;}
@@ -40,9 +43,9 @@ function createServer(config={}){
    if(req.method==='POST'&&pathname==='/ai'){
     if(!secret)return reply(503,{error:'El combate contra IA está pendiente de configurar.'});
     if(!uuid.test(body.operationId||''))return reply(400,{error:'Operación no válida.'});
-    const identity=await fetcher(url.replace(/\/$/,'')+'/auth/v1/user',{headers:{apikey:key,Authorization:auth},signal:AbortSignal.timeout(8000)});
+    const identity=await upstream(url.replace(/\/$/,'')+'/auth/v1/user',{headers:{apikey:key,Authorization:auth},signal:AbortSignal.timeout(8000)});
     if(!identity.ok)return reply(401,{error:'Inicia sesión de nuevo.'});const actor=(await identity.json()).id;
-    const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/hemicycle_ai_room',{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify({p_actor:actor,p_request_id:body.operationId}),signal:AbortSignal.timeout(8000)});
+    const response=await upstream(url.replace(/\/$/,'')+'/rest/v1/rpc/hemicycle_ai_room',{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify({p_actor:actor,p_request_id:body.operationId}),signal:AbortSignal.timeout(8000)});
     if(!response.ok)return reply(409,{error:'No se pudo preparar la Clasificatoria contra IA. Comprueba la nube, el gabinete y la actualización del servidor.'});
     const room=await response.json();try{await combat(auth,room.id,{type:'ready',cabinet:room.cabinet},body.operationId);}catch(e){return reply(e.status||409,{error:e.message});}delete room.cabinet;return reply(200,room);
    }
@@ -64,11 +67,14 @@ function createServer(config={}){
    else if(req.method==='GET'&&pathname.startsWith('/rooms/')&&uuid.test(pathname.slice(7))){method='hemicycle_room_view';args={p_id:pathname.slice(7)};}
    else return reply(404,{error:'Ruta no disponible.'});
    // Supabase verifica el JWT y auth.uid(); no se confía en un ID enviado por el cliente.
-   const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/'+method,{method:'POST',headers:{apikey:key,Authorization:auth,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(8000)});
+   const response=await upstream(url.replace(/\/$/,'')+'/rest/v1/rpc/'+method,{method:'POST',headers:{apikey:key,Authorization:auth,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(8000)});
    if(!response.ok)return reply(response.status===401?401:response.status===403?403:409,{error:'No se pudo acceder a la sala. Comprueba la sesión, el código o la disponibilidad.'});
    reply(200,await response.json());
   }catch{return reply(503,{error:'No hay conexión con el servicio de salas. Vuelve a intentarlo.'});}
+  });
  });
+ let summaryTimer;server.on('listening',()=>{summaryTimer=setInterval(()=>observe.summary(),60000);summaryTimer.unref();});server.on('close',()=>{clearInterval(summaryTimer);observe.summary();});
+ server.observability=observe;return server;
 }
 if(require.main===module){const server=createServer();server.requestTimeout=10000;server.headersTimeout=10000;server.listen(Number(process.env.PORT)||8030,'0.0.0.0',()=>console.log('Servicio de salas y combate privado de prueba iniciado.'));process.on('SIGTERM',()=>server.close(()=>process.exit(0)));}
 module.exports={createServer};

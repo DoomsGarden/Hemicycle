@@ -1,6 +1,6 @@
 'use strict';
 const E=require('./combat.cjs'),crypto=require('node:crypto');
-function create({url,key,secret,fetcher=fetch}){
+function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
  async function rpc(name,args){const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/'+name,{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(8000)});if(!response.ok)throw Error('No se pudo guardar o recuperar el combate. Comprueba el SQL y la configuración del servidor.');return response.json();}
  async function resultSnapshot(load,roomId,actor){
   const state=load.state;let result=load.result||null;
@@ -13,7 +13,8 @@ function create({url,key,secret,fetcher=fetch}){
      const context=await rpc('hemicycle_economy_context',{p_actor:owner,p_operation_id:roomId,p_request:request});
      if(context.processed){receipt=context.result;break;}
      const next=require('./ranked-loot.cjs').settle(context,state,participants,undefined,{roomId,receipts});
-     if(await rpc('hemicycle_economy_commit',{p_actor:owner,p_operation_id:roomId,p_request:request,p_version:context.version,p_market:next.market,p_updates:next.updates,p_result:next.result})){receipt=next.result;break;}
+     if(await rpc('hemicycle_economy_commit',{p_actor:owner,p_operation_id:roomId,p_request:request,p_version:context.version,p_market:next.market,p_updates:next.updates,p_result:next.result})){const canonical=await rpc('hemicycle_economy_context',{p_actor:owner,p_operation_id:roomId,p_request:request});if(canonical.processed){receipt=canonical.result;break;}}
+     observe.conflict();await new Promise(resolve=>setTimeout(resolve,10*(i+1)));
     }
     if(!receipt?.players?.[actor])throw Error('No se pudo verificar el cromo de la partida. Reintenta para recuperar el resultado.');
     result={...result,...receipt.players[actor]};
@@ -41,6 +42,7 @@ function create({url,key,secret,fetcher=fetch}){
     args.p_progress=context.map((entry,side)=>entry?{userId:entry.userId,revision:entry.revision,...require('./progression.cjs').progress(entry.profile,next,side,load.now)}:null);
    }
    const ok=await rpc(next.status==='finished'?'hemicycle_combat_commit_progress':'hemicycle_combat_commit',args);
+   if(!ok)observe.conflict();
    if(ok){const saved=await rpc('hemicycle_combat_load',{p_room_id:roomId,p_actor:actor,p_operation_id:null,p_request:null});return resultSnapshot(saved,roomId,actor);}
   }
   throw Error('El estado cambió. Actualiza la partida y reintenta.');

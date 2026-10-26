@@ -1,0 +1,28 @@
+✔ Solo el servidor privilegiado lee y confirma estados completos (1035.721654ms)
+✔ Solo los dos participantes acceden a la partida y se exige sesión válida (691.316769ms)
+✔ Preparación persistente y proyecciones privadas para ambos jugadores (675.481282ms)
+✔ El mismo identificador de operación no repite preparación ni gasto (601.458984ms)
+✔ Dos confirmaciones concurrentes no pierden el gabinete del otro jugador (628.72985ms)
+✔ La acción repetida tras perder respuesta cobra una sola vez (676.752613ms)
+✔ Reiniciar el proceso recupera estado, turno y vencimiento desde PostgreSQL (646.228995ms)
+✔ Una consulta tras el vencimiento finaliza y guarda una sola derrota (607.606629ms)
+✔ El estado y la revisión sobreviven al reaplicar la migración (583.14097ms)
+✔ La ausencia de clave privada no activa un almacenamiento editable por el navegador (616.176271ms)
+✔ ranked PvP moves exactly one copy and records private won/lost receipts (11.121788ms)
+✔ ranked AI win awards a rival cabinet card (0.505663ms)
+✔ ranked AI loss removes an owned copy (0.692324ms)
+✔ five unique cards without duplicates stay protected for both participants (0.175003ms)
+✔ six unique cards can lose one; reserved or no-longer-owned cards are never selected (1.443977ms)
+✔ six unique cards can become five after a loss (1.075852ms)
+✔ historical finished matches and non-ranked matches cannot be settled retroactively (0.322516ms)
+✔ historical ranked reads return a legacy note without touching inventory (5.88278ms)
+✔ the public economy route cannot request server-only ranked loot (3.20338ms)
+✔ ranked result displays the canonical loot receipt when another instance committed first (2.124193ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 6923.741467

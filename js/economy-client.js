@@ -3,7 +3,7 @@
  var busy=null;
  function account(){var a=api.account();if(!a)throw Error('Inicia sesión para verificar esta operación.');return a;}
  function key(){return 'hemicycle_economy_pending_v1:'+account().userId;}
- async function request(path,body){var a=account(),r=await fetch(api.base+path,{method:'POST',headers:{Authorization:'Bearer '+a.accessToken,'Content-Type':'application/json'},body:JSON.stringify(body),cache:'no-store',signal:AbortSignal.timeout(65000)}),data=await r.json();if(!api.account()||api.account().userId!==a.userId)throw Error('La cuenta ha cambiado.');if(!r.ok){var e=Error(data.error||'No se pudo verificar la operación.');e.definitive=r.status<500;e.code=data.code;throw e;}return data;}
+ async function request(path,body){var a=account(),r=await fetch(api.base+path,{method:'POST',headers:{Authorization:'Bearer '+a.accessToken,'Content-Type':'application/json'},body:JSON.stringify(body),cache:'no-store',signal:AbortSignal.timeout(65000)}),data=await r.json();if(!api.account()||api.account().userId!==a.userId)throw Error('La cuenta ha cambiado.');if(!r.ok){var reference=/^[0-9a-f-]{36}$/i.test(data.requestId||'')?' Consulta: '+data.requestId+'.':'';var e=Error((data.error||'No se pudo verificar la operación.')+reference);e.definitive=r.status<500;e.code=data.code;throw e;}return data;}
  async function perform(command){
   if(busy)return busy;
   var pendingKey=key(),pending;try{pending=JSON.parse(localStorage.getItem(pendingKey));}catch(ignore){}

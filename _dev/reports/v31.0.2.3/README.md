@@ -41,3 +41,7 @@ Comparación de 240 espejos deterministas por variante, seis doctrinas, con/sin 
 Las pruebas de cuentas simulan la autenticación sobre SDK real y usan PostgreSQL/HTTP aislados. Render y Supabase de producción no pueden consultarse desde la política de red del entorno. La publicación se verifica por los archivos servidos por Pages, sin utilizar cuentas privadas.
 
 Las propuestas de dirección de arte, ampliar retos tácticos, ampliar la colección y una separación general del catálogo/HTML son líneas de trabajo posteriores, no cambios automáticos de reglas ni promesas de una reescritura en este parche. Se entrega la fiabilidad, el aprendizaje inicial y la lectura táctica necesaria para probar este ajuste.
+
+## Corrección posterior en la misma versión: supervisión y concurrencia
+
+La revisión ops1 incorpora registros operativos sin datos personales, cola económica limitada, conservación de operaciones ante fallos temporales y recuperación del recibo canónico entre instancias. Batería final: 580 pruebas correctas y PWA con 106 recursos. Evidencias y límites en `_dev/reports/v31.0.2.3-operations/README.md`; uso en `_dev/operations/README.md`. La capacidad en producción sigue pendiente de medición.
