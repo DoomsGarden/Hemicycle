@@ -142,3 +142,22 @@
 .screen.in-battle .state-guard .support-symbol{width:11px;height:11px}
 .status-value{font:700 7px/1 'Hemicycle UI',sans-serif;white-space:nowrap}
 .screen.in-battle .state-guard.is-off .status-value{visibility:hidden}
+
+/* Mesa despejada y acta flotante sin pausar el debate. */
+.battle-wrap[data-turn=p] [data-tutorial=player],.battle-wrap[data-turn=e] [data-tutorial=enemy]{box-shadow:none}
+.screen.in-battle .tribuna{background:none}
+.screen.in-battle .tribuna .cromo .bot{border-radius:0 0 10px 10px;overflow:hidden}
+.screen.in-battle .battle-state-badges{width:100%;left:0;right:0}
+.screen.in-battle .battle-state-badges .battle-state-icon{width:clamp(8px,20%,14px)}
+.screen.in-battle .battle-state-badges .state-guard{width:48%;max-width:36px;min-width:24px;gap:1px;padding:1px}
+.screen.in-battle .state-guard .support-symbol{width:9px;height:9px}
+.screen.in-battle .status-value{font-size:clamp(5px,11cqi,7px)}
+.screen.in-battle .cromo .strong-signal,.screen.in-battle .battle-used{left:auto;right:6%;top:58%;bottom:auto}
+.screen.in-battle[data-tutorial-active=false]{--orator-height:clamp(70px,calc((100dvh - 390px)/2),160px)}
+.screen.in-battle[data-tutorial-active=false] .tribuna{width:calc(var(--orator-height)*2.4324 + 12px);padding-inline:0;gap:6px}
+.screen.in-battle .battle-wrap>.journal-popover{position:absolute;z-index:40;bottom:48px;left:8px;right:8px;max-height:min(42dvh,250px);background:#0d1729f5;border:1px solid #718299;border-radius:12px;box-shadow:0 8px 30px #000b;display:flex;flex-direction:column}
+.screen.in-battle .journal-popover .journal-heading{display:flex;align-items:center;min-height:34px;flex-shrink:0}
+.screen.in-battle .journal-popover .journal-heading button{padding:3px;min-height:28px;min-width:28px}
+.screen.in-battle .journal-popover .log{height:auto;min-height:0;max-height:min(34dvh,200px);overflow-y:auto;padding:6px 9px;flex:1}
+.battle-log-toggle{min-width:44px}.journal-popover .log:focus-visible{outline:2px solid #f1d18b;outline-offset:-3px}
+@media(max-height:500px) and (min-width:600px){.screen.in-battle[data-tutorial-active=false]{--orator-height:60px}.screen.in-battle .battle-wrap>.journal-popover{left:auto;right:8px;width:52%;bottom:49px;max-height:65dvh}.screen.in-battle .journal-popover .log{max-height:50dvh}.screen.in-battle[data-tutorial-active=false] .hand-zone{grid-row:2/6}}
