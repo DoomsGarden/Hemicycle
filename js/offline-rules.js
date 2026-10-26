@@ -197,7 +197,7 @@ const cards = Object.freeze([
 const byId=Object.fromEntries(cards.map((c,index)=>[c.id,Object.freeze({...c,action:true,c:c.cost,index,ruleLines:rules(c)})]));
 Object.setPrototypeOf(byId,null);
 function rules(card){const c=typeof card==='string'?byId[card]:card;if(!c)return [];return [c.text,'Coste: '+c.cost+' TdP.','Máximo una carta de acción por turno.',c.oncePerBattle?'Una activación por partida. Va al descarte de acciones.':'Vuelve al mazo y espera dos turnos propios completos antes de poder robarse otra vez.',...(c.effect==='silence'?['Exige tres oradores propios listos y menos votos que el rival; los tres agotan su acción.','El rival conserva el robo y los votos pasivos. Queda protegido contra otro silencio durante dos turnos propios adicionales.']:[])];}
-function inject(out,random=Math.random){const result=out.slice();if(random()<.2){const index=Math.floor(random()*result.length),pool=cards.filter(c=>c.r===result[index].r);if(pool.length)result[index]=byId[pool[Math.floor(random()*pool.length)].id];}return result;}
+function inject(out,random=Math.random,kind){const result=out.slice();if(random()<(kind==='mitico'?.25:.4)){const index=Math.floor(random()*result.length),pool=cards.filter(c=>c.r===result[index].r);if(pool.length)result[index]=byId[pool[Math.floor(random()*pool.length)].id];}return result;}
 function award(profile,ids){ids.forEach(function(id){if(byId[id]){if(!profile.actionAlbum)profile.actionAlbum=[];profile.actionAlbum.push(id);}else profile.album.push(id);});}
 function describeAction(card,actor,scope,targets){
  const names=targets.map(t=>t.name+' ('+t.team+')');if(card.target==='self'||card.target==='rival')scope=names.join('; ');let effect;
@@ -208,7 +208,9 @@ function describeAction(card,actor,scope,targets){
  else effect=scope+': defensa del 50 % frente al próximo golpe, hasta el siguiente turno propio.';
  return actor+' activa '+card.n+' · '+card.cost+' TdP. '+effect+' '+(card.oncePerBattle?'Pasa al descarte de acciones.':'Regresa al mazo.');
 }
-return {describeAction,award,cards:cards.map(c=>byId[c.id]),byId,ids:cards.map(c=>c.id),rules,inject};
+function lootPool(orators,actions,profile){return Array.from(new Set([...(orators||[]),...(actions||[]).filter(id=>byId[id])])).filter(id=>{if(!profile)return true;const action=!!byId[id],album=action?(profile.actionAlbum||[]):profile.album,count=album.filter(x=>x===id).length;return count>0&&(action||new Set(profile.album).size>5||count>1);});}
+function removeCopy(profile,id){const key=byId[id]?'actionAlbum':'album',album=profile[key]||[],index=album.indexOf(id);if(index<0)throw Error('La colección ha cambiado.');album.splice(index,1);if(byId[id]&&!album.includes(id)&&profile.cabinets&&profile.cabinets.slots)profile.cabinets.slots.forEach(slot=>{slot.actions=(slot.actions||[]).filter(x=>x!==id);});}
+return {lootPool,removeCopy,describeAction,award,cards:cards.map(c=>byId[c.id]),byId,ids:cards.map(c=>c.id),rules,inject};
 });
 
 },

@@ -570,20 +570,20 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.3">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
-<script src="js/action-cards.js?v=31.0.2.3"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.1.4-audio1">
+<script src="js/action-cards.js?v=31.0.2.3-actions2"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-actions2">
 <script src="js/player-backup.js?v=31.0.2.0"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-medium1"></script>
+<script src="js/changelog.js?v=31.0.2.3-actions2"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
 <script src="js/offline-rules-v1.js?v=31.0.2.3"></script>
 <script>window.HemicycleOfflineRulesV1=window.HemicycleOfflineRules;</script>
-<script src="js/offline-rules.js?v=31.0.2.3"></script>
+<script src="js/offline-rules.js?v=31.0.2.3-actions2"></script>
 <script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;window.HemicycleOfflineRules=Object.assign({},HemicycleOfflineRulesV2,{start:function(t,c,m){return (t.rules==='offline1'?HemicycleOfflineRulesV1:HemicycleOfflineRulesV2).start(t,c,m);}});</script>
 <script src="js/offline-combat.js?v=31.0.2.3"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
@@ -1170,7 +1170,7 @@ function artTag(id,nm,allowGold,allowConfetti,edition){
 }
 
 function actionArtHTML(c,extra){return '<div class="action-art '+(extra||'')+'" style="--ax:'+((c.index%3)*50)+'%;--ay:'+(Math.floor(c.index/3)*100/3)+'%" role="img" aria-label="Ilustración de '+esc(c.n)+'"></div>';}
-function actionCromoHTML(c,o){o=o||{};return '<div class="cromo action-card'+(o.sel?' sel':'')+'" style="--tier:'+RARM[c.r].c+(o.extra?';'+o.extra:'')+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-action-pick="'+c.id+'" role="button" tabindex="0"':'')+'>'+actionArtHTML(c)+'<div class="frame-overlay"></div><div class="top"><span class="cost" aria-label="'+c.cost+' TdP">'+c.cost+'</span>'+gem(c.r,RARM[c.r].c)+'</div>'+(o.sel?'<span class="sel-tag">✓ ELEGIDA</span>':'')+'<div class="action-card-copy"><small>ACCIÓN · '+RARM[c.r].n+'</small><strong>'+esc(c.n)+'</strong><span>'+esc(c.text)+'</span>'+(c.oncePerBattle?'<i>1 uso por partida</i>':'')+'</div></div>';}
+function actionCromoHTML(c,o){o=o||{};return '<div class="cromo action-card'+(o.sel?' sel':'')+'" style="--tier:'+RARM[c.r].c+(o.extra?';'+o.extra:'')+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-action-pick="'+c.id+'" role="button" tabindex="0"':'')+'>'+actionArtHTML(c)+'<div class="frame-overlay"></div><div class="top"><span class="cost" aria-label="'+c.cost+' TdP">'+c.cost+'</span>'+gem(c.r,RARM[c.r].c)+'</div>'+(o.count?'<span class="badge" aria-label="'+o.count+' copias">x'+o.count+'</span>':'')+(o.sel?'<span class="sel-tag">✓ ELEGIDA</span>':'')+'<div class="action-card-copy"><small>ACCIÓN · '+RARM[c.r].n+'</small><strong>'+esc(c.n)+'</strong><span>'+esc(c.text)+'</span>'+(c.oncePerBattle?'<i>1 uso por partida</i>':'')+'</div></div>';}
 function actionRulesHTML(c){return '<dl class="action-rules"><dt>Efecto</dt><dd>'+esc(c.text)+'</dd><dt>Coste</dt><dd>'+c.cost+' TdP. Máximo una acción por turno.</dd><dt>Después de activarla</dt><dd>'+(c.oncePerBattle?'Una vez por partida. Pasa al descarte de acciones.':'Regresa al mazo y espera dos turnos propios completos antes de volver a robarse.')+'</dd>'+(c.effect==='silence'?'<dt>Requisitos</dt><dd>Tres oradores propios listos y menos votos que el rival. Los tres agotan su acción. El rival conserva robo y votos pasivos; después queda protegido contra otro silencio durante dos turnos propios adicionales.</dd>':'')+'</dl>';}
 function uniqueActions(d){var counts={};(d.actionAlbum||[]).forEach(function(id){if(BYID[id]&&BYID[id].action)counts[id]=(counts[id]||0)+1;});return Object.keys(counts).map(function(id){return {id:id,c:BYID[id],n:counts[id]};});}
 function awardCards(d,ids){if(typeof HemicycleActions!=='undefined')HemicycleActions.award(d,ids);else ids.forEach(function(id){d.album.push(id);});}
@@ -2016,7 +2016,7 @@ SCREENS.tienda=function(){
  +PACKS.map(function(p){var q=packSelection(p.k),cost=HemicyclePacks.total(p.p,q),can=d.fs>=cost,cover=HemicyclePacks.cover(CARDS,p.k,now);
   return '<article class="pack-card"><div class="pack-display">'+packArt(p.k)+'</div><h3>'+p.n+'</h3><p class="sub">'+p.d+'</p>'
   +'<div class="pack-purchase"><button class="btn sm" data-act="buy" data-k="'+p.k+'" aria-label="Comprar '+q+' sobres '+p.n.replace('Sobre ','')+' por '+cost+' FS"'+(can?'':' disabled')+'>'+cost+' FS</button><select data-pack-quantity="'+p.k+'" aria-label="Cantidad de '+p.n.toLowerCase()+'">'+[1,5,10].map(function(n){return '<option value="'+n+'"'+(q===n?' selected':'')+'>x'+n+'</option>';}).join('')+'</select></div><p class="pack-feature">Portada semanal'+(cover?' · '+esc(cover.n):'')+'</p></article>';}).join('')
- +'</div><p class="pack-disclaimer sub">Las portadas cambian cada lunes. La imagen no garantiza ese cromo; cada sobre mantiene su contenido habitual.</p></section>';
+ +'</div><p class="pack-disclaimer sub">Las portadas cambian cada lunes. La imagen no garantiza ese cromo; cada sobre mantiene sus cinco cromos y rarezas. Un 40 % de los sobres incluye una acción en lugar de un orador de su misma rareza; en el mítico, un 25 %.</p></section>';
 };
 
 function packContents(k){
@@ -2032,7 +2032,7 @@ function packContents(k){
   out.push(pick(CARDS.filter(function(x){return x.r==='especial';})));
   for(i=0;i<3;i++)out.push(pick(CARDS.filter(function(x){return x.r==='raro';})));
  } else {for(i=0;i<5;i++)out.push(pick(CARDS.filter(function(x){return x.r==='legendario';})));}
- return typeof HemicycleActions!=='undefined'?HemicycleActions.inject(out,Math.random):out;
+ return typeof HemicycleActions!=='undefined'?HemicycleActions.inject(out,Math.random,k):out;
 }
 
 function openPack(k,free,count){
@@ -2544,7 +2544,7 @@ function finish(who, abandoned){
    d.elo+=eloDelta;
   }
   msg='Victoria parlamentaria ('+G.votes.p+' a '+G.votes.e+'). Consigues '+fs+' FS'+(eloDelta?' y +'+eloDelta+' Elo.':'.');
-  if(comp&&G.eTeam.length){won=pick(G.eTeam);d.album.push(won);msg+=' Le arrebatas el cromo de '+BYID[won].n+'.';}
+  if(comp&&G.eTeam.length){won=pick(HemicycleActions.lootPool(G.eTeam,battleActionIds('e')));HemicycleActions.award(d,[won]);msg+=' Le arrebatas el cromo de '+BYID[won].n+'.';}
   if(comp && G.leader && G.leader.p && G.leader.p.k==='donald-trump'){
    d.dtWins=(d.dtWins||0)+1;
    if(d.dtWins>=10 && !d.dtGoldUnlocked){
@@ -2563,11 +2563,10 @@ function finish(who, abandoned){
   msg='Derrota ('+G.votes.p+' a '+G.votes.e+').'+(fs?' Recuperas '+fs+' FS.':'')+(eloDelta?' ('+eloDelta+' Elo).':'');
   if(comp&&G.pTeam.length&&d.album.length){
    var uniqCount=uniqueAlbum(d).length;
-   var candidates=G.pTeam.filter(function(id){return uniqCount>5 || copies(d,id)>1;});
+   var candidates=HemicycleActions.lootPool(G.pTeam,battleActionIds('p'),d);
    if(candidates.length){
     lost=pick(candidates);
-    var idx=d.album.indexOf(lost);
-    if(idx>=0)d.album.splice(idx,1);
+    HemicycleActions.removeCopy(d,lost);
     msg+=' Pierdes el cromo de '+BYID[lost].n+'.';
    } else {
     msg+=' El Seguro Parlamentario protege tus 5 últimos políticos únicos.';
@@ -2598,6 +2597,7 @@ function ligaPanel(){
  +'<button class="btn sm" data-act="ligajugar" title="Jugar contra '+esc(leagueName(rival.n))+'">Jugar J'+lg.jor+'</button></div></div>';
 }
 
+function battleActionIds(side){return Array.from(new Set([].concat(G.hand[side]||[],G.deck[side]||[],G.spentActions&&G.spentActions[side]||[]).filter(function(c){return c&&c.action;}).map(function(c){return c.k;})));}
 function resultCard(id,lost){
  var c=BYID[id];return '<section class="panel result-card"><div class="result-card-preview">'+cromoHTML(c,{noCardAttr:true})+'</div><div><h3>'+(lost?'Cromo perdido':'Cromo conseguido')+'</h3><b>'+esc(c.n)+'</b><p class="sub">'+RARM[c.r].n+' · '+copies(D(),id)+' '+(copies(D(),id)===1?'copia':'copias')+' en tu colección</p><p class="sub">'+(lost?'Puedes revisar tu gabinete desde Colección.':'Ya está disponible en Colección.')+'</p></div></section>';
 }
@@ -3345,7 +3345,7 @@ function boot(){
   document.addEventListener('visibilitychange',function(){if(document.hidden)CLOUD_SAVE.save();else CLOUD_SAVE.reconnect();});
   window.addEventListener('storage',function(event){if(event.key===HemicycleCloudSave.ownerKey&&event.newValue===null){CLOUD_SAVE.localReplaced();return;}if([LS,LS2,HemicycleRanked.key,'hemiciclo_tutorial_v1','hemiciclo_menu_tutorial_v1'].indexOf(event.key)>=0)CLOUD_SAVE.dirty();if(event.key===HemicycleRanked.key&&['menu','buzon'].indexOf(SCREEN)>=0&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active))paint();});
  }
- HISTORY=window.HemicycleHistory?HemicycleHistory.create({base:'https://hemicycle-w578.onrender.com',identity:function(){return backupSnapshot().identity.id;},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},card:function(id){return BYID[id];},preview:function(c){return '<img src="cards/'+c.id+'.webp" alt="" loading="lazy">';}}):null;
+ HISTORY=window.HemicycleHistory?HemicycleHistory.create({base:'https://hemicycle-w578.onrender.com',identity:function(){return backupSnapshot().identity.id;},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},card:function(id){return BYID[id];},preview:function(c){if(c.action)return actionArtHTML(c,'action-thumb');return '<img src="cards/'+c.id+'.webp" alt="" loading="lazy">';}}):null;
  MARKET_GUIDE=window.HemicycleMarketTutorial?HemicycleMarketTutorial.create({read:function(key){return lsGet(key+':'+backupSnapshot().identity.id);},write:function(key,value){localStorage.setItem(key+':'+backupSnapshot().identity.id,JSON.stringify(value));},isOpen:function(){return SCREEN==='mercado';},prepare:function(){MARKET_GUIDE_RETURN_TAB=market().state.tab;market().state.tab='sell';MARKET_GUIDE_DEMO=false;paint();},action:function(action){if(action==='demo')MARKET_GUIDE_DEMO=true;else{MARKET_GUIDE_DEMO=false;if(action==='buy'||action==='trade'||action==='activity')market().state.tab=action;}paint();},leave:function(){MARKET_GUIDE_DEMO=false;market().state.tab=MARKET_GUIDE_RETURN_TAB;paint();}}):null;
  TUTORIAL=window.HemicycleTutorial?HemicycleTutorial.create({
   read:lsGet,write:lsSet,

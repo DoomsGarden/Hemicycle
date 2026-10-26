@@ -9,7 +9,7 @@ function contents(kind,rng=random){
  else if(['raro','semanal'].includes(kind))out=[...Array.from({length:4},()=>tier('raro')),tier(rng()<.25?'especial':'raro')];
  else if(kind==='legendario')out=[tier('legendario'),tier('especial'),tier('raro'),tier('raro'),tier('raro')];
  else if(kind==='mitico')out=Array.from({length:5},()=>tier('legendario'));else throw Error('Sobre no válido.');
- return A.inject(out,rng).map(c=>c.id);
+ return A.inject(out,rng,kind).map(c=>c.id);
 }
 function starter(identity,now,rng=random){
  check(/^HC-[0-9a-f-]{36}$/i.test(identity||''),'ID no válido.');
@@ -35,8 +35,8 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   const state=require(ticket.rules==='offline2'?'./offline-v2.cjs':'./offline-v1.cjs').replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
   const before=me.elo,margin=Math.max(0,Math.min(1,Math.abs(own.votes-foe.votes)/Math.max(1,win?own.votes:foe.votes)));
   let fs=win?(competitive?50+Math.floor(rng()*51):20+Math.floor(rng()*31)):competitive?20+Math.floor(rng()*11):0,won=null,lost=null;
-  if(win){me.w++;if(M.eligible(own.leader))me.leaderMastery=M.recordWin(me,own.leader);if(competitive){won=pick(foe.cabinetIds,rng);A.award(me,[won]);}if(competitive&&own.leader==='donald-trump'){me.dtWins++;if(me.dtWins>=10)me.dtGoldUnlocked=true;}}
-  else{me.l++;if(competitive){const unique=new Set(me.album).size,candidates=own.cabinetIds.filter(id=>me.album.includes(id)&&(unique>5||rules.counts(me.album)[id]>1));if(candidates.length){lost=pick(candidates,rng);me.album.splice(me.album.indexOf(lost),1);}}}
+  if(win){me.w++;if(M.eligible(own.leader))me.leaderMastery=M.recordWin(me,own.leader);if(competitive){won=pick(A.lootPool(foe.cabinetIds,foe.cabinetActions),rng);A.award(me,[won]);}if(competitive&&own.leader==='donald-trump'){me.dtWins++;if(me.dtWins>=10)me.dtGoldUnlocked=true;}}
+  else{me.l++;if(competitive){const candidates=A.lootPool(own.cabinetIds,own.cabinetActions,me);if(candidates.length){lost=pick(candidates,rng);A.removeCopy(me,lost);}}}
   if(state.mode==='ranked'){const delta=win?10+Math.floor(15*Math.min(1,margin/.75)):state.reason==='rendición'||state.reason==='inactividad'?-18:-5-Math.floor(13*margin);me.elo=Math.max(0,me.elo+delta);account(actor).payload.ranked=R.advance(account(actor).payload.ranked,before,me.elo,now);}
   if(state.mode==='liga'){const lg=account(actor).payload.league;check(lg,'Crea una Liga antes de jugarla.');const next=require('./league.cjs').advance(lg,win,rng);account(actor).payload.league=next.league;fs+=next.reward;result.season=!!next.reward;}
   credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
