@@ -116,3 +116,12 @@
 .battle-used svg{width:85%;height:85%}
 @keyframes healLockPulse{50%{opacity:.55}}@keyframes boostStatusGlow{50%{opacity:.4;transform:scale(.82)}}
 @media(prefers-reduced-motion:reduce){.screen.in-battle .state-heal,.screen.in-battle .state-boost::before{animation:none}}
+/* Estados en los laterales exteriores del marco; el retrato queda libre. */
+.screen.in-battle .tribuna{width:calc(var(--orator-height)*2.4324 + 84px);padding-inline:14px;gap:28px}
+.screen.in-battle .tribuna .cromo{overflow:visible}
+.screen.in-battle .tribuna .cromo .art{overflow:hidden;border-radius:10px}
+.screen.in-battle .battle-state-badges .battle-state-icon{top:32%;width:clamp(10px,19%,14px);padding:1px}
+.screen.in-battle .state-heal{left:-13px}.screen.in-battle .state-boost{right:-13px}
+.screen.in-battle .state-boost::before{inset:-2px;box-shadow:0 0 4px #b9ed7c66}
+.screen.in-battle .state-guard{top:62%!important;left:auto;right:-13px;transform:none}
+.screen.in-battle .cromo .strong-signal,.screen.in-battle .battle-used{top:62%;bottom:auto;left:-13px;right:auto;width:clamp(10px,19%,14px);background:#182431e6}
