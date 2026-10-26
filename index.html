@@ -509,7 +509,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=31.0.2.3-polish2">
-<link rel="stylesheet" href="css/cabinets.css?v=31.0.1.4-results1">
+<link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-collection1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
@@ -567,7 +567,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/balance-review.js?v=31.0.2.3-medium1"></script>
 <script src="js/battle-history-ui.js?v=31.0.2.3-medium1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
-<script src="js/menu-tutorial.js?v=31.0.2.3-polish2"></script>
+<script src="js/menu-tutorial.js?v=31.0.2.3-collection1"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-polish2"></script>
+<script src="js/changelog.js?v=31.0.2.3-collection1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -1425,7 +1425,7 @@ function importPlayerBackup(file){
  }).catch(function(e){showModal('Respaldo no válido',e.message,'Entendido',false,null);});
 }
 
-var COL_MODE='oradores';
+var COL_MODE='oradores',COL_CAB_OPEN=false,COL_FILTER_OPEN=false;
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
 var HISTORY=null,MARKET_GUIDE=null,MARKET_GUIDE_DEMO=false,MARKET_GUIDE_RETURN_TAB='sell';
 var ECONOMY=null,OFFLINE_COMBAT=null,ECONOMY_WORK=false,DOWNLOAD_START_BUSY=false,OFFLINE_STATUS={tickets:0,pending:0},ONLINE=null,CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
@@ -1637,6 +1637,7 @@ function paint(){
 }
 
 function updateColeccionInPlace(){
+ var filterState=document.getElementById('collectionFilterState');if(filterState)filterState.textContent=FIL.q||FIL.r||FIL.d||FIL.country?'Filtros activos':'';
  var rBar=document.getElementById('chipsR');
  if(rBar){
   var rBtns=rBar.querySelectorAll('[data-fr]');
@@ -1746,13 +1747,13 @@ function colGrid(){
 
 SCREENS.coleccion=function(){
  return '<div class="collection-heading"><h2>Colección · '+(COL_MODE==='acciones'?'Acciones':'Oradores')+'</h2><button class="mini collection-toggle" data-act="collection-type" aria-label="Mostrar '+(COL_MODE==='acciones'?'oradores':'acciones')+'">'+(COL_MODE==='acciones'?'Ver oradores':'Ver acciones')+'</button></div>'+cabinetControls(true)+'<p class="sub" id="cntBox">'+colCountText()+'</p>'
- +(COL_MODE==='acciones'&&['replica','receso'].some(function(id){return !(D().actionAlbum||[]).includes(id);})?'<button class="btn sm" data-act="learning-actions">Recoger acciones de aprendizaje · Gratis</button>':'')+'<input type="search" id="fq" placeholder="Buscar cromo..." value="'+esc(FIL.q)+'">'
+ +(COL_MODE==='acciones'&&['replica','receso'].some(function(id){return !(D().actionAlbum||[]).includes(id);})?'<button class="btn sm" data-act="learning-actions">Recoger acciones de aprendizaje · Gratis</button>':'')+'<div class="collection-filter-heading">'+collectionDisclosure('collection-filters',COL_FILTER_OPEN||!!(MENU_GUIDE&&MENU_GUIDE.active),'collectionFilters','Filtros')+'<span class="sub" id="collectionFilterState">'+(FIL.q||FIL.r||FIL.d||FIL.country?'Filtros activos':'')+'</span></div><div id="collectionFilters"'+(COL_FILTER_OPEN||MENU_GUIDE&&MENU_GUIDE.active?'':' hidden')+'><input type="search" id="fq" placeholder="Buscar cromo..." value="'+esc(FIL.q)+'">'
  +(COL_MODE!=='acciones'?'<label class="country-filter">País <select id="countryFilter"><option value="">Todos los países</option>'+Object.keys(COUNTRY_NAMES).map(function(code){return '<option value="'+code+'"'+(FIL.country===code?' selected':'')+'>'+esc(COUNTRY_NAMES[code])+'</option>';}).join('')+'</select></label>':'')
  +'<div class="chips" id="chipsR"><button class="chip'+(FIL.r===''?' on':'')+'" data-fr="">Todas</button>'
  +RARS.map(function(r){return '<button class="chip'+(FIL.r===r.k?' on':'')+'" data-fr="'+r.k+'">'+r.n+'</button>';}).join('')+'</div>'
  +'<div class="chips" id="chipsD"'+(COL_MODE==='acciones'?' hidden':'')+'><button class="chip'+(FIL.d===''?' on':'')+'" data-fd="">Todas las doctrinas</button>'
  +DOCS.map(function(x){return '<button class="chip'+(FIL.d===x.k?' on':'')+'" data-fd="'+x.k+'">'+esc(x.n)+'</button>';}).join('')+'</div>'
- +'<div class="grid sm" id="gridBox">'+colGrid()+'</div>';
+ +'</div><div class="grid sm" id="gridBox">'+colGrid()+'</div>';
 };
 
 SCREENS.detalle=function(){
@@ -1916,17 +1917,19 @@ SCREENS.sobre=function(){
 
 function cabinetState(){return HemicycleCabinets.state(D());}
 function loadSelectedCabinet(){var state=cabinetState(),slot=state.slots[state.selected];BUILD={ids:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};sanitizeBuild();}
+function collectionDisclosure(action,open,id,label){return '<button type="button" class="mini collection-disclosure" data-act="'+action+'" aria-expanded="'+!!open+'" aria-controls="'+id+'" aria-label="'+(open?'Ocultar ':'Mostrar ')+label.toLowerCase()+'"><span>'+label+'</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>';}
 function cabinetControls(editable){
  var d=D(),state=cabinetState(),selected=CABINET_EDIT===null?state.selected:CABINET_EDIT;
  var tabs='<div class="cabinet-tabs" role="group" aria-label="Cinco gabinetes favoritos">'+state.slots.map(function(slot,i){var ready=HemicycleCabinets.ready(slot,d.album,d.actionAlbum||[]);return '<button class="cabinet-tab'+(selected===i?' on':'')+'" data-act="'+(editable?'cabinet-edit':'cabinet-select')+'" data-slot="'+i+'" aria-pressed="'+(selected===i)+'" aria-label="Gabinete '+(i+1)+(ready?', completo':slot.ids.length?', necesita revisión':', vacío')+'"><b>'+(i+1)+'</b><i class="'+(ready?'complete':'')+'" aria-hidden="true"></i></button>';}).join('')+'</div>';
  if(!editable)return tabs;
+ var expanded=COL_CAB_OPEN||!!(MENU_GUIDE&&MENU_GUIDE.active)||!!CABINET_RETURN;
  var slot=CABINET_EDIT===null?state.slots[selected]:BUILD;
  var portraits='<div class="cabinet-members" role="group" aria-label="Integrantes del gabinete '+(selected+1)+'">';
  for(var i=0;i<5;i++){var id=slot.ids[i],card=BYID[id];portraits+=card?'<button class="cabinet-member'+(id===slot.leader?' leader':'')+'" data-act="'+(CABINET_EDIT===null?'cabinet-inspect':'cabinet-remove')+'" data-id="'+id+'" title="'+esc(card.n)+(id===slot.leader?' · Líder':'')+'" aria-label="'+(CABINET_EDIT===null?'Ver ':'Quitar ')+esc(card.n)+(id===slot.leader?', líder':'')+'">'+artTag(id,card.n,false)+(id===slot.leader?'<span aria-hidden="true">★</span>':'')+'</button>':'<div class="cabinet-member empty" aria-label="Hueco vacío"><span aria-hidden="true">+</span></div>';}
  portraits+='</div><div class="cabinet-action-slots" aria-label="Dos acciones del gabinete">'+[0,1].map(function(i){var a=BYID[(slot.actions||[])[i]];return a?'<button class="cabinet-action-member" data-act="'+(CABINET_EDIT===null?'cabinet-inspect':'cabinet-action-remove')+'" data-id="'+a.id+'" aria-label="'+(CABINET_EDIT===null?'Ver ':'Quitar ')+esc(a.n)+'">'+actionArtHTML(a,'action-thumb')+'<span>'+esc(a.n)+'</span></button>':'<span class="cabinet-action-empty">Acción '+(i+1)+' · opcional</span>';}).join('')+'</div>';
  var complete=BUILD.ids.length===5&&BUILD.ids.indexOf(BUILD.leader)>=0;
  var actions=CABINET_EDIT===null?'':'<div class="cabinet-actions"><button class="btn sm" data-act="cabinet-save"'+(complete||(BUILD.ids.length===0&&!(BUILD.actions||[]).length)?'':' disabled')+'>Guardar</button><button class="btn ghost sm" data-act="cabinet-cancel">Cancelar</button><button class="mini" data-act="auto" title="Al azar" aria-label="Gabinete al azar">⤨</button><button class="mini" data-act="clear" title="Vaciar" aria-label="Vaciar gabinete">×</button></div>';
- return '<section class="cabinet-panel'+(CABINET_EDIT===null?'':' editing')+'" aria-label="Gabinetes favoritos">'+tabs+portraits+actions+'</section>'+(CABINET_RETURN?'<button class="btn ghost sm" data-act="cabinet-return">Volver a preparar el combate</button>':'');
+ return '<section class="cabinet-panel'+(CABINET_EDIT===null?'':' editing')+'" aria-label="Gabinetes favoritos">'+'<div class="collection-cabinet-heading">'+tabs+collectionDisclosure('collection-cabinet',expanded,'collectionCabinet','Gabinete')+'</div><div id="collectionCabinet"'+(expanded?'':' hidden')+'>'+portraits+actions+'</div></section>'+(CABINET_RETURN?'<button class="btn ghost sm" data-act="cabinet-return">Volver a preparar el combate</button>':'');
 }
 
 function cabinetActionPreview(slot){
@@ -2917,11 +2920,16 @@ document.addEventListener('click',function(ev){
   case 'pack-card':if(SCREEN==='sobre'&&SO.revealed&&SO.cards.indexOf(n.getAttribute('data-id'))>=0){var receipt=Object.assign({},SO);go('detalle',{id:n.getAttribute('data-id'),pack:receipt});}break;
   case 'objective-return':if(SCREEN==='sobre'&&SO.objectiveReturn){var back=SO.objectiveReturn;go('menu');openObjectives(back.view,back.tab,back);}break;
   case 'pack-return':if(SCREEN==='detalle'&&SO.pack)go('sobre',SO.pack);break;
+  case 'collection-cabinet':case 'collection-filters':{
+   if(SCREEN!=='coleccion')break;
+   if(act==='collection-cabinet')COL_CAB_OPEN=!COL_CAB_OPEN;else COL_FILTER_OPEN=!COL_FILTER_OPEN;
+   paint();var toggle=document.querySelector('[data-act="'+act+'"]');if(toggle)toggle.focus({preventScroll:true});break;
+  }
   case 'cabinet-inspect':if(SCREEN==='coleccion'&&CABINET_EDIT===null)go('detalle',{id:n.getAttribute('data-id')});break;
   case 'cabinet-remove':if(SCREEN==='coleccion'&&CABINET_EDIT!==null){var id=n.getAttribute('data-id');BUILD.ids=BUILD.ids.filter(function(x){return x!==id;});if(BUILD.leader===id)BUILD.leader=BUILD.ids[0]||null;paint();}break;
   case 'cabinet-edit':{
    if(SCREEN!=='coleccion')break;var state=cabinetState(),slot=Number(n.getAttribute('data-slot'));if(!Number.isInteger(slot)||slot<0||slot>4)break;
-   CABINET_EDIT=slot;BUILD={ids:state.slots[slot].ids.slice(),leader:state.slots[slot].leader,actions:(state.slots[slot].actions||[]).slice()};sanitizeBuild();paint();break;
+   COL_CAB_OPEN=true;CABINET_EDIT=slot;BUILD={ids:state.slots[slot].ids.slice(),leader:state.slots[slot].leader,actions:(state.slots[slot].actions||[]).slice()};sanitizeBuild();paint();break;
   }
   case 'cabinet-save':{
    if(SCREEN!=='coleccion'||CABINET_EDIT===null)break;var d=D();
@@ -2932,7 +2940,7 @@ document.addEventListener('click',function(ev){
    if(SCREEN!=='builder')break;if(SO.online&&REMOTE_PREPARATION&&(REMOTE_PREPARATION.controls.busy||REMOTE_PREPARATION.state.players[REMOTE_PREPARATION.state.you]))break;var selected=Number(n.getAttribute('data-slot'));if(!Number.isInteger(selected)||selected<0||selected>4)break;
    var d=D(),state=cabinetState();state.selected=selected;d.cabinets=state;saveD(d);loadSelectedCabinet();paint();break;
   }
-  case 'repair-cabinet':{var slot=Number(n.getAttribute('data-slot'));if(!Number.isInteger(slot)||slot<0||slot>4)break;var st=cabinetState();CABINET_EDIT=slot;BUILD={ids:st.slots[slot].ids.slice(),leader:st.slots[slot].leader,actions:(st.slots[slot].actions||[]).slice()};go('coleccion');sanitizeBuild();paint();break;}
+  case 'repair-cabinet':{var slot=Number(n.getAttribute('data-slot'));if(!Number.isInteger(slot)||slot<0||slot>4)break;var st=cabinetState();COL_CAB_OPEN=true;CABINET_EDIT=slot;BUILD={ids:st.slots[slot].ids.slice(),leader:st.slots[slot].leader,actions:(st.slots[slot].actions||[]).slice()};go('coleccion');sanitizeBuild();paint();break;}
   case 'market-tutorial':if(G&&!G.over){showModal('Debate en curso','Termina el debate antes de repetir esta guía. El reloj sigue avanzando.','Volver al debate',false,function(){go('battle');});break;}go('mercado');if(MARKET_GUIDE)MARKET_GUIDE.start();break;
   case 'history':if(HISTORY)HISTORY.open();break;
   case 'cabinet-manage':if(SCREEN==='builder'){CABINET_RETURN=Object.assign({},SO);var state=cabinetState();CABINET_EDIT=state.selected;loadSelectedCabinet();go('coleccion');}break;

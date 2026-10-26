@@ -1,0 +1,16 @@
+✔ legacy profiles get five slots without changing collection or stored profile (1.52502ms)
+✔ saving one favourite preserves the other four and requires ownership and a valid leader (0.415387ms)
+✔ a missing collection card invalidates the cabinet without silently substituting or losing its saved composition (0.156907ms)
+✔ extracted catalog preserves every ID, statistic, country and quote from the published game (14.359702ms)
+✔ catalog validation rejects duplicate IDs, missing countries and invalid values or quotes (3.588583ms)
+✔ text preference stays in its safe range with discrete steps even after corrupt storage (0.253443ms)
+✔ coin presentation maps actual host/guest result to either player without drawing random numbers (0.195525ms)
+✔ support uses vector icons and concise singular recovery text (0.41097ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 89.383067
