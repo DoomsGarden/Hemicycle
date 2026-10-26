@@ -1,4 +1,4 @@
-# Acciones y países — preparado, sin publicar
+# Acciones y países — v31.0.2.2
 
 ## Cambios
 
@@ -22,4 +22,4 @@ Ficha: bandera y país antes del nombre. Cromo, combate y zoom: bandera compacta
 - PWA desde 37487f1: 105 recursos precacheados, progreso/Liga/audio conservados y arranque offline. Banderas y CSS entre los recursos comprobados.
 - `node _dev/build-offline.cjs --check`: correcto. El empaquetador excluye el metadato visual de país para mantener idénticos los dos bundles de reglas descargadas existentes.
 
-No requiere SQL. Este trabajo está preparado localmente; no se ha publicado ni se ha resuelto por ello el rechazo de activación cloud de la cuenta pendiente de diagnóstico.
+No requiere SQL. Publicación autorizada el 26 de octubre de 2026 bajo la misma versión. Se mantiene pendiente la comprobación del rechazo de activación cloud de aquella cuenta; estos efectos no resuelven ni validan ese caso de producción.

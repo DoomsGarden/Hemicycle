@@ -14,6 +14,12 @@
  "Botoneras de Mercado con acabado metálico, iconos y tipografía coherentes con la navegación inferior.",
  "Corrección del alta en la nube tras jugar como invitado: distingue una solicitud de migración enviada de una activación fallida, conserva la copia local y facilita el acceso a Nube antes de iniciar partidas con cuenta sin vincular.",
  "Los errores de activación, migración y descarga de partidas indican si faltan funciones o permisos del servidor, con una referencia de soporte para identificar otros rechazos sin mostrar datos privados."
+ ]},{"title":"Acciones y países","items":[
+ "Las doce cartas de acción añaden efectos de impacto, curación, escudo, mejora de Zasca o censura sobre la mesa, en partidas locales, descargadas y online.",
+ "Moción de censura indica que afecta al próximo turno. Las mejoras de Zasca muestran su valor y las curaciones reflejan el Aguante realmente restaurado.",
+ "Las animaciones respetan el movimiento reducido y se retiran al salir de la mesa, cambiar de partida, ocultar o redimensionar la aplicación.",
+ "Los 120 oradores muestran una bandera antes del nombre y el país completo en su ficha, según su representación política. Los datos quedan preparados para un futuro filtro por país.",
+ "Banderas locales que funcionan sin conexión y ajustes de nombres y estadísticas en las miniaturas más pequeñas."
  ]}]
 },
 {
