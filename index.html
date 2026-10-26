@@ -509,7 +509,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .foot{font-size:9.5px;color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
 <link rel="stylesheet" href="css/interface.css?v=31.0.2.3-polish2">
-<link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-collection1">
+<link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-collection2">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
@@ -567,7 +567,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/balance-review.js?v=31.0.2.3-medium1"></script>
 <script src="js/battle-history-ui.js?v=31.0.2.3-medium1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
-<script src="js/menu-tutorial.js?v=31.0.2.3-collection1"></script>
+<script src="js/menu-tutorial.js?v=31.0.2.3-collection2"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-collection1"></script>
+<script src="js/changelog.js?v=31.0.2.3-collection2"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -1637,7 +1637,7 @@ function paint(){
 }
 
 function updateColeccionInPlace(){
- var filterState=document.getElementById('collectionFilterState');if(filterState)filterState.textContent=FIL.q||FIL.r||FIL.d||FIL.country?'Filtros activos':'';
+ var filterState=document.getElementById('collectionFilterState');if(filterState)filterState.textContent=FIL.r||FIL.d||FIL.country?'Filtros activos':'';
  var rBar=document.getElementById('chipsR');
  if(rBar){
   var rBtns=rBar.querySelectorAll('[data-fr]');
@@ -1747,7 +1747,7 @@ function colGrid(){
 
 SCREENS.coleccion=function(){
  return '<div class="collection-heading"><h2>Colección · '+(COL_MODE==='acciones'?'Acciones':'Oradores')+'</h2><button class="mini collection-toggle" data-act="collection-type" aria-label="Mostrar '+(COL_MODE==='acciones'?'oradores':'acciones')+'">'+(COL_MODE==='acciones'?'Ver oradores':'Ver acciones')+'</button></div>'+cabinetControls(true)+'<p class="sub" id="cntBox">'+colCountText()+'</p>'
- +(COL_MODE==='acciones'&&['replica','receso'].some(function(id){return !(D().actionAlbum||[]).includes(id);})?'<button class="btn sm" data-act="learning-actions">Recoger acciones de aprendizaje · Gratis</button>':'')+'<div class="collection-filter-heading">'+collectionDisclosure('collection-filters',COL_FILTER_OPEN||!!(MENU_GUIDE&&MENU_GUIDE.active),'collectionFilters','Filtros')+'<span class="sub" id="collectionFilterState">'+(FIL.q||FIL.r||FIL.d||FIL.country?'Filtros activos':'')+'</span></div><div id="collectionFilters"'+(COL_FILTER_OPEN||MENU_GUIDE&&MENU_GUIDE.active?'':' hidden')+'><input type="search" id="fq" placeholder="Buscar cromo..." value="'+esc(FIL.q)+'">'
+ +(COL_MODE==='acciones'&&['replica','receso'].some(function(id){return !(D().actionAlbum||[]).includes(id);})?'<button class="btn sm" data-act="learning-actions">Recoger acciones de aprendizaje · Gratis</button>':'')+'<div class="collection-filter-heading">'+collectionDisclosure('collection-filters',COL_FILTER_OPEN||!!(MENU_GUIDE&&MENU_GUIDE.active),'collectionFilters','Filtros')+'<input type="search" id="fq" aria-label="Buscar cromo" placeholder="Buscar cromo..." value="'+esc(FIL.q)+'"></div><p class="sub" id="collectionFilterState">'+(FIL.r||FIL.d||FIL.country?'Filtros activos':'')+'</p><div id="collectionFilters"'+(COL_FILTER_OPEN||MENU_GUIDE&&MENU_GUIDE.active?'':' hidden')+'>'
  +(COL_MODE!=='acciones'?'<label class="country-filter">País <select id="countryFilter"><option value="">Todos los países</option>'+Object.keys(COUNTRY_NAMES).map(function(code){return '<option value="'+code+'"'+(FIL.country===code?' selected':'')+'>'+esc(COUNTRY_NAMES[code])+'</option>';}).join('')+'</select></label>':'')
  +'<div class="chips" id="chipsR"><button class="chip'+(FIL.r===''?' on':'')+'" data-fr="">Todas</button>'
  +RARS.map(function(r){return '<button class="chip'+(FIL.r===r.k?' on':'')+'" data-fr="'+r.k+'">'+r.n+'</button>';}).join('')+'</div>'

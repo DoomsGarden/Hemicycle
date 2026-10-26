@@ -69,7 +69,7 @@
 .collection-disclosure[aria-expanded=true] svg{transform:rotate(180deg)}
 .collection-disclosure:focus-visible{outline:2px solid #f4d58e;outline-offset:2px}
 .collection-filter-heading{display:flex;align-items:center;gap:10px;margin:8px 0}
-.collection-filter-heading .sub{margin:0;color:#e3c68a}
-#collectionFilters{flex-shrink:0}#collectionFilters>#fq{width:100%}
+.screen[data-view=coleccion] .collection-filter-heading>#fq{flex:1;min-width:0;width:0;margin:0;min-height:44px;font-size:calc(12px * var(--ui-text-scale,1))}#collectionFilterState{margin:0 0 7px;color:#e3c68a}#collectionFilterState:empty{display:none}
+#collectionFilters{flex-shrink:0}
 @media(max-width:380px){.collection-cabinet-heading .collection-disclosure span{display:none}.collection-cabinet-heading .collection-disclosure{width:40px;padding:7px!important}}
 @media(prefers-reduced-motion:reduce){.collection-disclosure svg{transition:none}}
