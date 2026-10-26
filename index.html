@@ -513,7 +513,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-medium1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.1-cloud2">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3">
@@ -552,14 +552,16 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/cloud-ui.js?v=31.0.2.3"></script>
 <script src="js/game-audio.js?v=31.0.2.1-cloud2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
-<script src="js/battle-actions-ui.js?v=31.0.0.5"></script>
-<script src="js/battle-visuals.js?v=31.0.2.2-actions1"></script>
+<script src="js/battle-status.js?v=31.0.2.3-medium1"></script>
+<script src="js/battle-actions-ui.js?v=31.0.2.3-medium1"></script>
+<script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
 <script src="js/battle-tutorial.js?v=31.0.2.3"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
-<link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.2">
+<link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-medium1">
 <script src="js/market-tutorial.js?v=31.0.2.2"></script>
-<script src="js/battle-history-ui.js?v=31.0.2.3"></script>
+<script src="js/balance-review.js?v=31.0.2.3-medium1"></script>
+<script src="js/battle-history-ui.js?v=31.0.2.3-medium1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
 <script src="js/menu-tutorial.js?v=31.0.2.2"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
@@ -575,9 +577,9 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-ops1"></script>
+<script src="js/changelog.js?v=31.0.2.3-medium1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
-<script src="js/result-transition.js?v=31.0.2.0-recovery2"></script>
+<script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
 <script src="js/offline-rules-v1.js?v=31.0.2.3"></script>
 <script>window.HemicycleOfflineRulesV1=window.HemicycleOfflineRules;</script>
@@ -2711,7 +2713,7 @@ function syncBattleActions(){
  if(typeof HemicycleBattleActions==='undefined')return;
  var card=G&&G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  var visible=SCREEN==='battle'&&G&&!G.over&&G.side==='p'&&G.n>0&&!G.move&&card&&card.ready&&!MODAL_CB&&!document.getElementById('modalRoot').firstChild;
- HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support}:null);
+ HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support,statuses:HemicycleBattleStatus.card(G,'p',card).map(function(s){return s.text;})}:null);
 }
 function choosePlayerAction(kind){
  if(kind==='cancel'||kind==='back'){if(!G)return false;G.support=false;if(kind==='cancel'){G.sel=null;G.move=null;}paint();return true;}
@@ -2732,6 +2734,8 @@ function choosePlayerAction(kind){
  paint();return true;
 }
 
+function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.card(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span>'+s.icon+' '+s.short+'</span>';}).join('')+'</button>':'';}
+function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
  if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
@@ -2743,7 +2747,7 @@ function cromoBattle(c,side,extra){
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
-  +(c.guard?'<span class="battle-guard" aria-label="Defensa del 50 % preparada">&#128737; 50 %</span>':'')
+  +(inField?battleStatusHTML(side,c):'')
   +(inField&&side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
   +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">ϟ</span>':'')
   +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+battleZasca(side,c)+'"><small>Z</small><b>'+battleZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
@@ -2829,13 +2833,13 @@ SCREENS.battle=function(){
  +(G.tutorial&&G.n===0?'<button class="tutorial-coin" data-tutorial="coin" data-act="begin">Cara o cruz · Toca para ensayar el sorteo</button>':'')
  +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'&&!G.authoritative?'<span class="pill red">botín</span>':'')+'<span class="pill green">mazo '+G.deck.p.length+'</span></div>'
  +gabLine()+'</div>'
- +'<p class="sub battle-resources rival-resources">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+'</p>'
+ +'<p class="sub battle-resources rival-resources">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+teamStatusHTML('e')+'</p>'
  +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
  +'<div class="battle-hud"><div class="vbars" aria-label="Marcadores de votos: rojo rival, azul jugador">'
  +'<div class="vbar foe" aria-label="Votos del rival: '+G.votes.e+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'<small>/100</small></b></div>'
  +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':(G.quick?'60':'90')+' segundos por turno')+'">'+(G.quick?60:90)+'</span></div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
- +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+'</p>'
+ +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+teamStatusHTML('p')+'</p>'
  +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="group" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small>'+recovery.map(function(r){return '<button class="recovery-badge" data-act="recovery-action-info" data-id="'+r.id+'" data-turns="'+r.turns+'" title="'+esc(BYID[r.id].n)+' · '+r.turns+' turnos para volver a robarse">'+r.turns+' t · '+esc(BYID[r.id].n)+'</button>';}).join('')+'</div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
  +(LOCAL_ACTION_TARGET?'<div class="hint action-target-hint" role="status"><b>'+esc(BYID[G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION;})[0].k].n)+'</b>: toca un cromo iluminado. <button class="battle-cancel" data-act="action-cancel">Cancelar</button></div>':G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
         :'')
@@ -3104,6 +3108,7 @@ document.addEventListener('click',function(ev){
   case 'cabinet-manage':if(SCREEN==='builder'){CABINET_RETURN=Object.assign({},SO);var state=cabinetState();CABINET_EDIT=state.selected;loadSelectedCabinet();go('coleccion');}break;
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
   case 'action-cancel':closeLocalAction();paint();break;
+  case 'battle-effects':{var effectSide=n.getAttribute('data-side');if(!G||!G.field[effectSide])break;var effectCard=G.field[effectSide].find(function(c){return c.uid===n.getAttribute('data-uid');}),states=effectCard?HemicycleBattleStatus.card(G,effectSide,effectCard):HemicycleBattleStatus.team(G,effectSide);showModal(effectCard?effectCard.n+' · Efectos':'Efectos del equipo','<ul>'+states.map(function(s){return '<li>'+esc(s.text)+'</li>';}).join('')+'</ul>','Entendido',false,null,true,false);break;}
   case 'recovery-action-info':{var recovering=BYID[n.getAttribute('data-id')];if(recovering)showModal(recovering.n+' · Recuperación',actionRulesHTML(recovering)+'<p>Podrá volver a robarse dentro de '+esc(n.getAttribute('data-turns'))+' turnos propios.</p>','Entendido',false,null,true,false);break;}
   case 'spent-action-info':{var spent=BYID[n.getAttribute('data-id')];if(spent&&spent.action)showModal(spent.n+' · Agotada',actionRulesHTML(spent),'Entendido',false,null,true,false);break;}
   case 'learning-actions':if(verifiedAccount()){economyTask({type:'learning-actions'},function(){paint();});}else{var learning=D();['replica','receso'].forEach(function(id){if(!(learning.actionAlbum||[]).includes(id))HemicycleActions.award(learning,[id]);});saveD(learning);paint();}break;

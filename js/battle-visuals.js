@@ -52,7 +52,9 @@ function render(game){
  split();
  var events=pending;pending=[];if(!game||!host||document.hidden)return;
  host.setAttribute('aria-hidden','true');var locations={};
- events.filter(function(e){return e.game===game;}).forEach(function(e){
+ var group=0;events.filter(function(e){return e.game===game;}).forEach(function(e){
+  if(e.type==='action'||e.type==='attack')group++;var delay=reduced()?0:Math.min(600,Math.max(0,group-1)*160);
+  function show(){if(current!==game||game.over||document.hidden)return;
   var d=e.data,origin=e.origin||card(d.uid)||locations[d.uid],score=bar(d.side)||e.score;
   if(e.type==='action')actionEffect(host,e);
   if(e.type==='attack'){
@@ -70,6 +72,8 @@ function render(game){
    var hud=document.querySelector('.battle-hud'),r=hud&&hud.getBoundingClientRect();
    effect(host,'turn-announcement '+(d.side==='p'?'own':'rival'),r?{x:r.left+r.width/2,y:r.top-14}:null,d.side==='p'?'Tu turno':'Turno rival');
   }
+  }
+  if(delay){var timer=setTimeout(function(){cleanups.delete(timer);show();},delay);cleanups.add(timer);}else show();
  });
 }
 root.addEventListener('resize',function(){clear();split();});

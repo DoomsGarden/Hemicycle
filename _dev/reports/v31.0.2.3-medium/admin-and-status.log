@@ -1,0 +1,13 @@
+✔ reviewed imports are hash-guarded, atomic, repeat-safe, private, and never replace a different cloud save (1144.095851ms)
+✔ effect descriptions match guard expiry, owner turns and healing recovery without mutating state (1.057635ms)
+✔ pending silence and immunity display only while their public conditions hold (0.202595ms)
+✔ balance export removes identity, timestamps, card IDs, arbitrary text and invalid numbers (0.53747ms)
+✔ canonical receipt context retains tier and action metrics without exposing cabinet IDs (15.397636ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1275.420698

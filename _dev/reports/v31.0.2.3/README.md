@@ -45,3 +45,7 @@ Las propuestas de dirección de arte, ampliar retos tácticos, ampliar la colecc
 ## Corrección posterior en la misma versión: supervisión y concurrencia
 
 La revisión ops1 incorpora registros operativos sin datos personales, cola económica limitada, conservación de operaciones ante fallos temporales y recuperación del recibo canónico entre instancias. Batería final: 580 pruebas correctas y PWA con 106 recursos. Evidencias y límites en `_dev/reports/v31.0.2.3-operations/README.md`; uso en `_dev/operations/README.md`. La capacidad en producción sigue pendiente de medición.
+
+## Corrección posterior: prioridades medias
+
+Estados públicos consultables, presentación escalonada de efectos, exportación voluntaria de métricas, revisión administrativa de migraciones y escenas de resultado un 47,3 % más ligeras. 585 pruebas correctas, 1.152 simulaciones y PWA con 108 recursos. El equilibrio con personas sigue abierto: ver alcance, resultados y límites en `_dev/reports/v31.0.2.3-medium/README.md`. No se cambian reglas, progreso ni temporada.

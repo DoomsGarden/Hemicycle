@@ -17,7 +17,7 @@
   var wide=innerHeight<=500&&innerWidth>=600,bounds=wide?{left:0,right:innerWidth,width:innerWidth}:s;
   el.style.width=Math.min(wide?720:350,bounds.width-16)+'px';
   var w=el.offsetWidth,h=el.offsetHeight,left=Math.max(bounds.left+8,Math.min(bounds.right-w-8,a.left+a.width/2-w/2));
-  el.style.left=left+'px';el.style.top=(a.top-h-8)+'px';
+  el.style.left=left+'px';el.style.top=Math.max(6,a.top-h-8)+'px';
   el.style.setProperty('--battle-arrow',Math.max(16,Math.min(w-16,a.left+a.width/2-left))+'px');
  }
  function render(data){
@@ -36,6 +36,7 @@
    header+=button('strong','Ataque fuerte'+(data.strongWait?' · cargando':data.strongHealth<2?' · necesita 2 A':' · este turno'),data.quotes[1],data.strong+' Z',!data.strongAllowed,data.strongCharge);
    header+=button('support','Defensa / curación',data.quotes[2],'50 % / +'+data.heal+' A');
   }
+  if(data.statuses&&data.statuses.length)header+='<p class="battle-state-summary">'+data.statuses.map(esc).join(' ')+'</p>';
   el.innerHTML='<div class="battle-action-content'+(changed&&previous?' swapping':'')+'">'+header+'</div>';el.classList.toggle('opening',!previous||previous.uid!==data.uid);el.dataset.view=data.support?'support':'phrases';el.hidden=false;place();
   if(changed||hadFocus){var first=el.querySelector('.battle-option:not(:disabled)');if(first)first.focus({preventScroll:true});}
  }
