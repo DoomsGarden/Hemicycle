@@ -1,0 +1,6 @@
+/* Presenta el sorteo del motor; no genera azar ni altera reloj o estado. */
+(function(root){'use strict';var timer=0;
+function describe(first,you){return {face:first===0?'Cara':'Cruz',starts:first===you?'Empiezas tú':'Empieza el rival'};}
+function show(id,first,you){if(![0,1].includes(first)||![0,1].includes(you)||!id)return;var seen=[];try{seen=JSON.parse(sessionStorage.getItem('hemicycle_coin_seen_v1'))||[];}catch(ignore){}if(seen.includes(id))return;try{sessionStorage.setItem('hemicycle_coin_seen_v1',JSON.stringify(seen.concat(id).slice(-30)));}catch(ignore){}var old=document.getElementById('coinAnnouncement');if(old)old.remove();clearTimeout(timer);var data=describe(first,you),host=document.createElement('aside');host.id='coinAnnouncement';host.className='coin-announcement';host.setAttribute('role','status');host.innerHTML='<div class="coin-medallion">'+HemicycleBattleStatus.symbol('coin')+'</div><div><small>SORTEO · 50 / 50</small><b>'+data.face+' · '+data.starts+'</b><span>Anfitrión: cara · Invitado: cruz</span></div>';document.body.appendChild(host);timer=setTimeout(function(){host.remove();},2200);}
+var api={describe:describe,show:show};if(typeof module==='object'&&module.exports)module.exports=api;else root.HemicycleCoinToss=api;
+})(typeof globalThis!=='undefined'?globalThis:this);

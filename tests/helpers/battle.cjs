@@ -24,6 +24,7 @@ function loadBattle(mode = 'normal', random = 0.25) {
   const math = Object.create(Math);
   math.random = typeof random === 'function' ? random : () => random;
   const context = vm.createContext({
+    HemicycleCatalog: require('../../js/orator-catalog.js'),
     HemicycleActions: require('../../js/action-cards.js'),
     HemicycleBattleStatus: require('../../js/battle-status.js'),
     HemicycleObjectives: require('../../js/objectives.js'),

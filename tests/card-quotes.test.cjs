@@ -6,7 +6,7 @@ const { test } = require('node:test');
 
 const root = path.resolve(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const context = vm.createContext({});
+const context = vm.createContext({HemicycleCatalog:require('../js/orator-catalog.js')});
 const slug = html.match(/function slug\(s\)\{[^\n]+/)[0];
 vm.runInContext(slug + '\n' + html.slice(html.indexOf('var DOCS='), html.indexOf("var LS='")), context);
 const { CARDS: cards, QBESP: bespoke } = JSON.parse(

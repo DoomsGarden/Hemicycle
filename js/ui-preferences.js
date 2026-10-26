@@ -1,0 +1,8 @@
+/* Preferencias de lectura del dispositivo; no cambian progreso ni reglas. */
+(function(root){'use strict';
+function normalize(value){value=Number(value);return Number.isFinite(value)?Math.max(100,Math.min(116,Math.round(value/4)*4)):100;}
+var value=100;try{value=normalize(JSON.parse(localStorage.getItem('hemicycle_ui_v1')).textSize);}catch(ignore){}
+function apply(size){value=normalize(size);if(typeof document!=='undefined'){var el=document.documentElement;el.style.setProperty('--ui-text-scale',value/100);el.style.setProperty('--nav-label-opacity',Math.max(0,1-(value-100)/12));el.dataset.textSize=String(value);document.querySelectorAll('[data-ui-text-size]').forEach(function(n){n.value=value;});document.querySelectorAll('[data-ui-text-value]').forEach(function(n){n.textContent=value+' %';});}return value;}
+function control(){return '<fieldset class="reading-options"><legend>Lectura</legend><div class="audio-setting-title"><label for="ui-text-size">Tamaño del texto</label><output data-ui-text-value>'+value+' %</output></div><input id="ui-text-size" type="range" min="100" max="116" step="4" value="'+value+'" data-ui-text-size><p>Al aumentar el texto, la barra inferior conserva los iconos y oculta gradualmente sus etiquetas.</p></fieldset>';}
+var api={normalize:normalize,apply:apply,control:control,get value(){return value;}};if(typeof module==='object'&&module.exports)module.exports=api;else{root.HemicycleUIPreferences=api;apply(value);document.addEventListener('input',function(e){if(!e.target.matches('[data-ui-text-size]'))return;apply(e.target.value);try{localStorage.setItem('hemicycle_ui_v1',JSON.stringify({textSize:value}));}catch(ignore){}});}
+})(typeof globalThis!=='undefined'?globalThis:this);

@@ -25,7 +25,7 @@
   var previous=current,hadFocus=el.contains(document.activeElement);current=data;if(pending){clearTimeout(pending);pending=0;}el.inert=false;
   if(!data){el.hidden=true;el.innerHTML='';return;}
   var changed=!previous||previous.uid!==data.uid||previous.support!==data.support;
-  var header='<div class="battle-action-head"><span>'+esc(data.support?'Defensa o curación':data.name)+'</span><button type="button" data-baction="'+(data.support?'back':'cancel')+'" aria-label="'+(data.support?'Volver a las tres frases':'Cerrar acciones')+'">'+(data.support?'&#8592;':'&#215;')+'</button></div>';
+  var header='<div class="battle-action-head"><span>'+esc(data.support?'Defensa o curación':data.name)+'</span><button type="button" data-baction="'+(data.support?'back':'cancel')+'" aria-label="'+(data.support?'Volver a las tres frases':'Cerrar acciones')+'">'+(typeof HemicycleBattleStatus!=='undefined'?HemicycleBattleStatus.symbol(data.support?'back':'close'):(data.support?'&#8592;':'&#215;'))+'</button></div>';
   el.setAttribute('role','dialog');el.setAttribute('aria-modal','false');el.setAttribute('aria-label','Acciones de '+data.name);
   if(data.support){
    header+='<p class="battle-support-quote">«'+esc(data.quotes[2])+'»</p>';

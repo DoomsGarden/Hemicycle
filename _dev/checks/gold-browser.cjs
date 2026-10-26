@@ -2,7 +2,7 @@ const dismissLaunch=require('./launch-helper.cjs');
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),{chromium}=require('playwright');
 const root='/workspace/Hemicycle',html=fs.readFileSync(root+'/index.html','utf8'),out='/tmp/hemicycle-v30-2-61-checks';
 fs.mkdirSync(out,{recursive:true});
-const catalog=vm.createContext({});vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),catalog);
+const catalog=vm.createContext({HemicycleCatalog:require('../../js/orator-catalog.js')});vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),catalog);
 const ids=JSON.parse(vm.runInContext('JSON.stringify(CARDS.map(c=>c.id))',catalog));
 const profile={fs:76543,elo:855,w:12,l:7,album:ids,lastDaily:1,lastWeekly:2,dtWins:15,dtGoldUnlocked:true,dtGoldActive:true};
 const instrumented=html.replace(/\}\)\(\);\s*<\/script>/,'window.__game={get gold(){return GOLD_LOOP},draw:drawCurrentGoldFrame,get game(){return G},mk:mk,byid:BYID,paint:paint,clearAI:clearAI};})();</script>');

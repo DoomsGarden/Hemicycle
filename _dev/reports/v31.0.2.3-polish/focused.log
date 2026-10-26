@@ -1,0 +1,13 @@
+✔ extracted catalog preserves every ID, statistic, country and quote from the published game (11.296161ms)
+✔ catalog validation rejects duplicate IDs, missing countries and invalid values or quotes (2.78498ms)
+✔ text preference stays in its safe range with discrete steps even after corrupt storage (0.176476ms)
+✔ coin presentation maps actual host/guest result to either player without drawing random numbers (0.133391ms)
+✔ support uses vector icons and concise singular recovery text (0.375206ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.664896

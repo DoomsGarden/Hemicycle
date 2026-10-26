@@ -4,7 +4,7 @@ const vm = require('node:vm');
 const {chromium} = require('playwright');
 const root = '/workspace/Hemicycle';
 const html = fs.readFileSync(root+'/index.html','utf8');
-const data = vm.createContext({});
+const data = vm.createContext({HemicycleCatalog:require('../../js/orator-catalog.js')});
 vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),data);
 const cards = JSON.parse(vm.runInContext('JSON.stringify(CARDS)',data));
 const profile = {fs:76543,elo:855,w:12,l:7,album:cards.map(c=>c.id).concat(['isabel-cela','donald-trump']),lastDaily:1770000000000,lastWeekly:1770000000010,dtWins:14,dtGoldUnlocked:true,dtGoldActive:false};

@@ -1,6 +1,6 @@
 const assert=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm'),{chromium}=require('playwright');
 const root='/workspace/Hemicycle',html=fs.readFileSync(root+'/index.html','utf8'),out='/tmp/hemicycle-v30-2-55-checks';
-const c=vm.createContext({});vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),c);
+const c=vm.createContext({HemicycleCatalog:require('../../js/orator-catalog.js')});vm.runInContext(html.match(/function slug\(s\)\{[^\n]+/)[0]+'\n'+html.slice(html.indexOf('var DOCS='),html.indexOf("var LS='")),c);
 const cards=JSON.parse(vm.runInContext('JSON.stringify(CARDS)',c)),notes=require(root+'/js/changelog.js');
 const matchups=JSON.parse(vm.runInContext('JSON.stringify(DOCS)',c));
 const profile={fs:76543,elo:300,w:12,l:7,album:cards.map(c=>c.id),lastDaily:1770000000000,lastWeekly:1770000000010,dtWins:14,dtGoldUnlocked:true,dtGoldActive:true};
