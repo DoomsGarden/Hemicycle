@@ -511,7 +511,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/interface.css?v=31.0.2.3-polish2">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-collection2">
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
-<link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
+<link rel="stylesheet" href="css/audio.css?v=31.0.2.3-tools1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-table1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
@@ -562,12 +562,12 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/battle-tutorial.js?v=31.0.2.3"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
-<link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-medium1">
+<link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-tools1">
 <script src="js/market-tutorial.js?v=31.0.2.3-polish2"></script>
 <script src="js/balance-review.js?v=31.0.2.3-medium1"></script>
-<script src="js/battle-history-ui.js?v=31.0.2.3-medium1"></script>
+<script src="js/battle-history-ui.js?v=31.0.2.3-tools1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
-<script src="js/menu-tutorial.js?v=31.0.2.3-collection2"></script>
+<script src="js/menu-tutorial.js?v=31.0.2.3-tools1"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.3-table1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-table1"></script>
+<script src="js/changelog.js?v=31.0.2.3-tools1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -1426,7 +1426,7 @@ function importPlayerBackup(file){
  }).catch(function(e){showModal('Respaldo no válido',e.message,'Entendido',false,null);});
 }
 
-var COL_MODE='oradores',COL_CAB_OPEN=false,COL_FILTER_OPEN=false,BATTLE_LOG_OPEN=false;
+var COL_MODE='oradores',COL_CAB_OPEN=false,COL_FILTER_OPEN=false,BATTLE_LOG_OPEN=false,HOME_ACTIONS_OPEN=false;
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
 var HISTORY=null,MARKET_GUIDE=null,MARKET_GUIDE_DEMO=false,MARKET_GUIDE_RETURN_TAB='sell';
 var ECONOMY=null,OFFLINE_COMBAT=null,ECONOMY_WORK=false,DOWNLOAD_START_BUSY=false,OFFLINE_STATUS={tickets:0,pending:0},ONLINE=null,CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false;
@@ -1520,7 +1520,7 @@ window.addEventListener('popstate',function(ev){
 });
 
 function uiIcon(name){
- var paths={challenges:'<rect x="4" y="3" width="16" height="18" rx="3"/><path d="m7 8 1 1 2-2m-3 7 1 1 2-2m3-5h4m-4 6h4"/>',achievements:'<path d="m8 3 4 6 4-6M7 3h10M12 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/><path d="m12 11 1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2L9 13.3l2-.3Z"/>',home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',market:'<path d="M4 21V3l8 10 8-10v18M8 21V14l4 5 4-5v7"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
+ var paths={history:'<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/>',challenges:'<rect x="4" y="3" width="16" height="18" rx="3"/><path d="m7 8 1 1 2-2m-3 7 1 1 2-2m3-5h4m-4 6h4"/>',achievements:'<path d="m8 3 4 6 4-6M7 3h10M12 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/><path d="m12 11 1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2L9 13.3l2-.3Z"/>',home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',market:'<path d="M4 21V3l8 10 8-10v18M8 21V14l4 5 4-5v7"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
  return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[name]||paths.home)+'</svg>';
 }
 function purchaseQuantityModal(name,max,unit,done,seller){
@@ -1711,7 +1711,7 @@ SCREENS.menu=function(){
  var selected=modes.filter(function(mode){return mode[0]===PLAY_MODE;})[0];
  if(!MENU_FEATURED.length)chooseMenuCards();
  var featured=MENU_FEATURED.filter(function(id){return BYID[id]&&copies(d,id)>0;}).map(function(id){return {c:BYID[id]};});
- return '<section class="menu-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+'<div class="home-action-stack"><button type="button" class="home-options-button" data-audio-open aria-label="Opciones" title="Opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#242c39"/><circle cx="15" cy="12" r="2" fill="#242c39"/><circle cx="10" cy="18" r="2" fill="#242c39"/></svg></button>'+mailButton()+objectiveButton('achievements','★','Logros')+'</div></div><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
+ return '<section class="menu-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+'<div class="home-action-stack'+(HOME_ACTIONS_OPEN?' expanded':'')+'"><button type="button" class="home-options-button" data-audio-open aria-label="Opciones" title="Opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#242c39"/><circle cx="15" cy="12" r="2" fill="#242c39"/><circle cx="10" cy="18" r="2" fill="#242c39"/></svg></button>'+mailButton()+'<div class="home-action-extra" id="homeActionExtra"'+(HOME_ACTIONS_OPEN?'':' inert')+'><div>'+objectiveButton('achievements','★','Logros')+'<button class="home-options-button" data-act="history" aria-label="Historial de combates" title="Historial">'+uiIcon('history')+'</button></div></div><button class="home-options-button home-action-toggle'+(objectivePending(d,'achievements')?' has-pending':'')+'" data-act="home-tools" aria-controls="homeActionExtra" aria-expanded="'+HOME_ACTIONS_OPEN+'" aria-label="'+(HOME_ACTIONS_OPEN?'Ocultar botones adicionales':'Mostrar Logros e Historial')+(objectivePending(d,'achievements')?' · Logros sin reclamar':'')+'">'+uiIcon('chevron')+'</button></div></div><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
  +'<div class="hero-scene" aria-hidden="true"><div class="hero-halo"></div><div class="hero-fan">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'
  +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'<button class="play-online-ranked" data-act="online-ranked" role="menuitem">Buscar Clasificatoria online</button></div>':'')
@@ -2946,6 +2946,7 @@ document.addEventListener('click',function(ev){
   }
   case 'repair-cabinet':{var slot=Number(n.getAttribute('data-slot'));if(!Number.isInteger(slot)||slot<0||slot>4)break;var st=cabinetState();COL_CAB_OPEN=true;CABINET_EDIT=slot;BUILD={ids:st.slots[slot].ids.slice(),leader:st.slots[slot].leader,actions:(st.slots[slot].actions||[]).slice()};go('coleccion');sanitizeBuild();paint();break;}
   case 'market-tutorial':if(G&&!G.over){showModal('Debate en curso','Termina el debate antes de repetir esta guía. El reloj sigue avanzando.','Volver al debate',false,function(){go('battle');});break;}go('mercado');if(MARKET_GUIDE)MARKET_GUIDE.start();break;
+  case 'home-tools':HOME_ACTIONS_OPEN=!HOME_ACTIONS_OPEN;var toolsStack=document.querySelector('.home-action-stack'),toolsExtra=document.getElementById('homeActionExtra');if(toolsStack)toolsStack.classList.toggle('expanded',HOME_ACTIONS_OPEN);if(toolsExtra)toolsExtra.inert=!HOME_ACTIONS_OPEN;n.setAttribute('aria-expanded',String(HOME_ACTIONS_OPEN));n.setAttribute('aria-label',(HOME_ACTIONS_OPEN?'Ocultar botones adicionales':'Mostrar Logros e Historial')+(objectivePending(D(),'achievements')?' · Logros sin reclamar':''));break;
   case 'history':if(HISTORY)HISTORY.open();break;
   case 'cabinet-manage':if(SCREEN==='builder'){CABINET_RETURN=Object.assign({},SO);var state=cabinetState();CABINET_EDIT=state.selected;loadSelectedCabinet();go('coleccion');}break;
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
@@ -3135,6 +3136,7 @@ window.addEventListener('orientationchange',medirInsets);
 
 function startPractice(guide){if(G&&!G.over&&!G.tutorial){showModal('Debate en curso','Termina o abandona el debate actual antes de comenzar una guía. El reloj sigue avanzando.','Volver al debate',false,function(){if(G&&!G.over)go('battle');});return;}guide.start();}
 function restoreMenuGuideState(){
+ if(MENU_GUIDE_STATE)HOME_ACTIONS_OPEN=!!MENU_GUIDE_STATE.homeActions;
  if(ONLINE)ONLINE.close();
  if(!MENU_GUIDE_STATE)return;
  if(PLAYER_PROFILE&&PLAYER_PROFILE.isOpen())PLAYER_PROFILE.close();
@@ -3257,11 +3259,12 @@ function boot(){
   read:lsGet,write:lsSet,
   isOpen:function(){return ['menu','tienda','coleccion','detalle','sobre','mercado','liga','ayuda'].indexOf(SCREEN)>=0;},
   prepare:function(){
-   MENU_GUIDE_STATE={colMode:COL_MODE,fil:{q:FIL.q,r:FIL.r,d:FIL.d},game:G,resumeAI:!!AITIMER};clearAI();
+   MENU_GUIDE_STATE={homeActions:HOME_ACTIONS_OPEN,colMode:COL_MODE,fil:{q:FIL.q,r:FIL.r,d:FIL.d},game:G,resumeAI:!!AITIMER};clearAI();
    PLAY_OPEN=false;closeZoom();go('menu');
   },
   pause:function(){document.getElementById('screen').dataset.menuTutorial='false';restoreMenuGuideState();},
   action:function(action){
+   if(action==='expand-tools'){HOME_ACTIONS_OPEN=true;paint();}
    if(action==='profile-open')PLAYER_PROFILE.openGuide();
    if(action==='profile-close')PLAYER_PROFILE.close();
    if(action==='modes'){PLAY_OPEN=true;paint();}
