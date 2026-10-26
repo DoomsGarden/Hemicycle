@@ -513,7 +513,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-states2">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-states3">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.1-cloud2">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3">
@@ -555,7 +555,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/game-audio.js?v=31.0.2.3-polish2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
 <script src="js/coin-toss.js?v=31.0.2.3-polish2"></script>
-<script src="js/battle-status.js?v=31.0.2.3-states2"></script>
+<script src="js/battle-status.js?v=31.0.2.3-states3"></script>
 <script src="js/battle-actions-ui.js?v=31.0.2.3-polish2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.3-polish2"></script>
@@ -568,7 +568,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/battle-history-ui.js?v=31.0.2.3-medium1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
 <script src="js/menu-tutorial.js?v=31.0.2.3-collection2"></script>
-<link rel="stylesheet" href="css/objectives.css?v=31.0.2.3-states2">
+<link rel="stylesheet" href="css/objectives.css?v=31.0.2.3-states3">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
 <link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.3">
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-states2"></script>
+<script src="js/changelog.js?v=31.0.2.3-states3"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -2565,7 +2565,7 @@ function choosePlayerAction(kind){
  paint();return true;
 }
 
-function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.card(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span class="battle-state-icon state-'+s.icon+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+'</span>';}).join('')+'</button>':'';}
+function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.indicators(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span class="battle-state-icon state-'+s.icon+(s.active?' is-on':' is-off')+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+(s.icon==='guard'?'<b class="status-value">50 %</b>':'')+'</span>';}).join('')+'</button>':'';}
 function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+HemicycleBattleStatus.symbol(states[0].icon)+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
  if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
@@ -2947,7 +2947,7 @@ document.addEventListener('click',function(ev){
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
   case 'action-cancel':closeLocalAction();paint();break;
   case 'coin-info':if(G)showModal('Sorteo inicial','<p>'+HemicycleBattleStatus.symbol('coin')+' '+esc(G.coinFace||(G.first==='p'?'Cara':'Cruz'))+' · '+(G.first==='p'?'Empiezas tú.':'Empieza el rival.')+'</p><p class="sub">Sorteo al 50 %. Este es el resultado inicial: no se repite al consultarlo. El reloj de la partida continúa.</p>','Cerrar',false,null,true,false);break;
-  case 'battle-effects':{var effectSide=n.getAttribute('data-side');if(!G||!G.field[effectSide])break;var effectCard=G.field[effectSide].find(function(c){return c.uid===n.getAttribute('data-uid');}),states=effectCard?HemicycleBattleStatus.card(G,effectSide,effectCard):HemicycleBattleStatus.team(G,effectSide);showModal(effectCard?effectCard.n+' · Efectos':'Efectos del equipo','<ul class="effect-list">'+states.map(function(s){return '<li>'+HemicycleBattleStatus.symbol(s.icon)+'<span>'+esc(s.text)+'</span></li>';}).join('')+'</ul>','Cerrar',false,null,true,false);var cancelEffect=document.querySelector('#modalRoot [data-modal=cancel]');if(cancelEffect)cancelEffect.hidden=true;break;}
+  case 'battle-effects':{var effectSide=n.getAttribute('data-side');if(!G||!G.field[effectSide])break;var effectCard=G.field[effectSide].find(function(c){return c.uid===n.getAttribute('data-uid');}),states=effectCard?HemicycleBattleStatus.indicators(G,effectSide,effectCard):HemicycleBattleStatus.team(G,effectSide);showModal(effectCard?effectCard.n+' · Efectos':'Efectos del equipo','<ul class="effect-list">'+states.map(function(s){return '<li>'+HemicycleBattleStatus.symbol(s.icon)+'<span>'+esc(s.text)+'</span></li>';}).join('')+'</ul>','Cerrar',false,null,true,false);var cancelEffect=document.querySelector('#modalRoot [data-modal=cancel]');if(cancelEffect)cancelEffect.hidden=true;break;}
   case 'recovery-action-info':{var recovering=BYID[n.getAttribute('data-id')];if(recovering)showModal(recovering.n+' · Recuperación',actionRulesHTML(recovering)+'<p>Podrá volver a robarse dentro de '+esc(n.getAttribute('data-turns'))+' turnos propios.</p>','Entendido',false,null,true,false);break;}
   case 'spent-action-info':{var spent=BYID[n.getAttribute('data-id')];if(spent&&spent.action)showModal(spent.n+' · Agotada',actionRulesHTML(spent),'Entendido',false,null,true,false);break;}
   case 'learning-actions':if(verifiedAccount()){economyTask({type:'learning-actions'},function(){paint();});}else{var learning=D();['replica','receso'].forEach(function(id){if(!(learning.actionAlbum||[]).includes(id))HemicycleActions.award(learning,[id]);});saveD(learning);paint();}break;

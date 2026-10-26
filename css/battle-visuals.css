@@ -125,3 +125,20 @@
 .screen.in-battle .state-boost::before{inset:-2px;box-shadow:0 0 4px #b9ed7c66}
 .screen.in-battle .state-guard{top:62%!important;left:auto;right:-13px;transform:none}
 .screen.in-battle .cromo .strong-signal,.screen.in-battle .battle-used{top:62%;bottom:auto;left:-13px;right:auto;width:clamp(10px,19%,14px);background:#182431e6}
+
+/* Hueco fijo sobre cada marco; pilotos apagados hasta que el estado esté activo. */
+.screen.in-battle .tribuna{padding-top:17px}
+.screen.in-battle .battle-state-badges{top:-17px;bottom:auto;height:14px;display:flex;align-items:center;justify-content:space-between;flex-direction:row;padding:0 2px}
+.screen.in-battle .battle-state-badges .battle-state-icon{position:static;flex:0 0 auto;width:clamp(10px,19%,14px);transform:none}
+.screen.in-battle .battle-state-icon.is-off{opacity:.25;filter:grayscale(1);animation:none}
+.screen.in-battle .battle-state-icon.is-off::before{display:none}
+.screen.in-battle .battle-state-icon.is-on{opacity:1;animation:healLockPulse 2.4s ease-in-out infinite}
+@media(max-height:600px) and (max-width:599px){.screen.in-battle .log{height:41px;min-height:41px}}
+@media(max-height:500px) and (min-width:600px){.screen.in-battle .battle-wrap{grid-template-rows:30px 18px 82px 51px 18px 93px}}
+@media(prefers-reduced-motion:reduce){.screen.in-battle .battle-state-icon.is-on{animation:none}}
+
+.screen.in-battle .battle-state-badges{width:calc(100% + 22px);left:-11px;right:auto}
+.screen.in-battle .battle-state-badges .state-guard{width:36px;height:14px;aspect-ratio:auto;display:flex;gap:2px;border-radius:5px;padding:1px 2px}
+.screen.in-battle .state-guard .support-symbol{width:11px;height:11px}
+.status-value{font:700 7px/1 'Hemicycle UI',sans-serif;white-space:nowrap}
+.screen.in-battle .state-guard.is-off .status-value{visibility:hidden}
