@@ -1,0 +1,21 @@
+✔ player: consecutive authoritative updates preserve the game identity and refresh live values (37.53019ms)
+✔ ai: consecutive authoritative updates preserve the game identity and refresh live values (14.270442ms)
+✔ a genuinely different match gets a new game identity (5.754017ms)
+✔ ranked results show the server receipt without awarding rewards in the client (7.511388ms)
+✔ a capped Elo loss displays zero instead of hiding the result (3.52764ms)
+✔ a legacy room never invents FS and can use its observed Elo transition (3.656114ms)
+✔ the native remote adapter retains the verified equipped edition instead of clearing it (4.412895ms)
+✔ hand cards never display the exhausted field state, even after recycling (5.553485ms)
+✔ online receipt displays the won cromo without changing local inventory (6.369166ms)
+✔ online receipt displays the lost cromo without changing local inventory (7.68517ms)
+✔ downloaded verified receipt displays the won cromo (10.951686ms)
+✔ downloaded verified receipt displays the lost cromo (20.141756ms)
+✔ protected ranked results explain why no cromo was transferred (22.479202ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 384.551451

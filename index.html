@@ -513,7 +513,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.1.2">
 <link rel="stylesheet" href="css/audio.css?v=31.0.0.5-options1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.0.5">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-polish2">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-states1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.1.4">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.1-cloud2">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3">
@@ -555,7 +555,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/game-audio.js?v=31.0.2.3-polish2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
 <script src="js/coin-toss.js?v=31.0.2.3-polish2"></script>
-<script src="js/battle-status.js?v=31.0.2.3-polish2"></script>
+<script src="js/battle-status.js?v=31.0.2.3-states1"></script>
 <script src="js/battle-actions-ui.js?v=31.0.2.3-polish2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.3-polish2"></script>
@@ -568,7 +568,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/battle-history-ui.js?v=31.0.2.3-medium1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
 <script src="js/menu-tutorial.js?v=31.0.2.3-collection2"></script>
-<link rel="stylesheet" href="css/objectives.css?v=31.0.2.0-tabs1">
+<link rel="stylesheet" href="css/objectives.css?v=31.0.2.3-states1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.1.4-audio1">
 <link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.3">
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.1.2-ui2">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-collection2"></script>
+<script src="js/changelog.js?v=31.0.2.3-states1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.0-recovery2">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -1382,7 +1382,7 @@ function openObjectives(view,tab,restore){var previouslyOpen=!!document.querySel
  if(view==='challenges'){
  html+='<p class="sub">Calendario de Madrid · reinicio diario, lunes y primer día del mes. Las recompensas ganadas se conservan.</p>';
  [s.periods[tab]].concat(s.archive.filter(function(p){return p.type===tab;})).forEach(function(p,index){var qs=a.quests(p.type,p.key,p.limits),done=a.completed(p),prefix=p.type+'/'+p.key+'/';html+='<section class="objective-period" tabindex="-1"><h4>'+(index?'Recompensas anteriores · ':'Periodo · ')+esc(p.key)+'</h4>'+bar(done,qs.length,true)+'<div class="objective-rewards">'+a.rewards(p.type).map(function(r){return '<div>'+packArt(r.kind)+'<b>'+r.at+' / '+qs.length+'</b>'+claim(prefix+'bar'+r.at,'Reclamar sobre',p.claimed.indexOf('bar'+r.at)>=0,done>=r.at)+'</div>';}).join('')+'</div>';
- qs.forEach(function(q){var value=a.metric(p,q.metric),claimed=p.claimed.indexOf(q.id)>=0;if(index&&(claimed||value<q.target))return;html+='<article class="objective-row" tabindex="-1"><span class="pill">'+['Fácil','Normal','Difícil','Rara'][q.difficulty]+'</span><h4>'+esc(q.title)+'</h4>'+bar(value,q.target)+claim(prefix+q.id,q.fs+' FS',claimed,value>=q.target)+'</article>';});html+='</section>';});
+ qs.forEach(function(q){var value=a.metric(p,q.metric),claimed=p.claimed.indexOf(q.id)>=0;if(index&&(claimed||value<q.target))return;html+='<article class="objective-row" tabindex="-1"><span class="pill">'+['Fácil','Normal','Difícil','Rara'][q.difficulty]+'</span><h4>'+esc(q.title)+'</h4><div class="achievement-summary"><div class="achievement-meter">'+bar(value,q.target)+'</div>'+claim(prefix+q.id,q.fs+' FS',claimed,value>=q.target)+'</div></article>';});html+='</section>';});
  }else{a.achievements(d,CARDS).filter(function(x){return x.section===tab;}).forEach(function(x){
   var stage=a.achievementStage(d,x,s),step=stage.pending===null?stage.claimed:stage.pending;
   html+='<article class="objective-row achievement-row" tabindex="-1"><h4>'+esc(x.title)+'</h4><div class="achievement-summary"><div class="achievement-meter">'+bar(Math.min(x.value,stage.target),stage.target)+'</div>'
@@ -1827,7 +1827,7 @@ function packArt(k,coverId){
  var kind=PACKS.some(function(p){return p.k===k;})||k==='diario'||k==='semanal'?k:'raro';
  var card=coverId?BYID[coverId]:HemicyclePacks.cover(CARDS,kind,Date.now());
  var label={diario:'DIARIO',semanal:'SEMANAL',comun:'COMÚN',raro:'RARO',legendario:'LEGENDARIO',mitico:'MÍTICO'}[kind];
- return '<span class="pack-cover" data-rarity="'+kind+'" role="img" aria-label="Sobre '+label+(card?' con '+esc(card.n):'')+'"><img class="pack-art" src="assets/packs/'+kind+'.svg?v=foil1" alt="" draggable="false">'+(card?'<img class="pack-portrait" src="cards/'+card.id+'.webp" alt="" draggable="false" onerror="this.hidden=true">':'')+'<span class="pack-foil" aria-hidden="true"></span><span class="pack-glints" aria-hidden="true"></span><span class="pack-wordmark">HEMICICLO</span><span class="pack-rarity">'+label+'</span><span class="pack-lid" style="background-image:url(assets/packs/'+kind+'.svg?v=foil1)"></span><span class="pack-cut-line"></span></span>';
+ return '<span class="pack-cover" data-rarity="'+kind+'" role="img" aria-label="Sobre '+label+(card?' con '+esc(card.n):'')+'"><img class="pack-art" src="assets/packs/'+kind+'.svg?v=foil2" alt="" draggable="false">'+(card?'<img class="pack-portrait" src="cards/'+card.id+'.webp" alt="" draggable="false" onerror="this.hidden=true">':'')+'<span class="pack-foil" aria-hidden="true"></span><span class="pack-glints" aria-hidden="true"></span><span class="pack-lid" style="background-image:url(assets/packs/'+kind+'.svg?v=foil2)"></span><span class="pack-cut-line"></span></span>';
 }
 function packSelection(k){return HemicyclePacks.quantity(PACK_QUANTITIES[k])||1;}
 function updatePackQuantity(select){
@@ -2565,7 +2565,7 @@ function choosePlayerAction(kind){
  paint();return true;
 }
 
-function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.card(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span>'+HemicycleBattleStatus.symbol(s.icon)+esc(s.short)+'</span>';}).join('')+'</button>':'';}
+function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.card(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span class="battle-state-icon state-'+s.icon+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+'</span>';}).join('')+'</button>':'';}
 function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+HemicycleBattleStatus.symbol(states[0].icon)+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
  if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
@@ -2579,7 +2579,7 @@ function cromoBattle(c,side,extra){
   +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
   +(inField?battleStatusHTML(side,c):'')
-  +(inField&&side==='p'&&!c.ready?'<span class="lbl">hecho</span>':'')
+  +(inField&&side==='p'&&!c.ready?'<span class="battle-used" title="Intervención utilizada" aria-label="Intervención utilizada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>':'')
   +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">'+HemicycleBattleStatus.symbol('strong')+'</span>':'')
   +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+battleZasca(side,c)+'"><small>Z</small><b>'+battleZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
 }

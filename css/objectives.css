@@ -24,3 +24,6 @@
 @media(max-height:500px){.objective-modal{padding:10px;gap:7px;max-height:calc(100dvh - 16px)}.objective-modal>h3{font-size:15px}.objective-tabs .mini{min-height:34px;font-size:10px;padding:5px}.objective-modal>.bar{padding-top:6px}.objective-modal>.bar .btn{min-height:38px}.objective-row{padding:8px}}
 
 .objective-tabs .mini{position:relative}.objective-tab-dot{position:absolute;top:5px;right:5px;width:6px;height:6px;border-radius:50%;background:#f2d084;box-shadow:0 0 5px #edc46d99;pointer-events:none;animation:objectiveDotPulse 1.8s ease-in-out infinite}@keyframes objectiveDotPulse{50%{opacity:.3}}@media(prefers-reduced-motion:reduce){.objective-tab-dot{animation:none}}
+
+/* Misma fila compacta de progreso y recompensa en desafíos y logros. */
+.objective-row .achievement-summary{align-items:center}.objective-row .achievement-meter small{margin:6px 0 0}

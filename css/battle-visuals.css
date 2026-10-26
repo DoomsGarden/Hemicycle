@@ -102,3 +102,17 @@
 .coin-chip{display:inline-flex;align-items:center;gap:3px;cursor:pointer;font:700 9px 'Hemicycle UI',sans-serif;border-color:#b49552;color:#e7c987;background:#292638}.coin-chip svg{width:12px;height:12px}.coin-announcement{pointer-events:none;position:fixed;z-index:200;left:50%;top:22%;transform:translateX(-50%);width:min(88vw,340px);box-sizing:border-box;display:flex;align-items:center;gap:12px;padding:16px;border:1px solid #d3b26b;border-radius:15px;background:linear-gradient(135deg,#27364bfa,#111c2efa);box-shadow:0 12px 40px #0009;color:#f5dda6;font-family:'Hemicycle UI',sans-serif}.coin-announcement b,.coin-announcement span,.coin-announcement small{display:block}.coin-announcement b{font-size:16px;margin:5px 0}.coin-announcement span{font-size:10px;color:#bdcadc}.coin-announcement small{font-size:9px;letter-spacing:1.4px}.coin-medallion{display:grid;place-items:center;width:53px;height:53px;flex-shrink:0;background:radial-gradient(#e6cd8e,#84652f);color:#2b2315;border:3px double #f1dcac;border-radius:50%;animation:coinReveal 1s ease-out}.coin-medallion svg{width:36px;height:36px}.coin-face .support-symbol{width:36px;height:36px;margin-right:8px}@keyframes coinReveal{from{transform:rotateY(900deg) scale(.6)}to{transform:rotateY(0) scale(1)}}@media(prefers-reduced-motion:reduce){.coin-medallion{animation:none}}
 .strong-signal .support-symbol{width:100%;height:100%}
 @media(max-height:500px) and (min-width:600px){.battle-state-badges .support-symbol{width:8px;height:8px}.battle-state-badges span{line-height:1;min-height:0;max-height:10px;padding:1px 2px}.battle-state-badges{gap:1px}}
+
+/* Estados en una fila propia bajo coste, líder y rareza; nunca sobre sus insignias. */
+.screen.in-battle .battle-state-badges{inset:0;max-width:none;width:100%;height:100%;display:block;pointer-events:none;border-radius:8px}
+.screen.in-battle .battle-state-badges .battle-state-icon{position:absolute;top:max(23%,24px);width:clamp(10px,19%,24px);aspect-ratio:1;padding:2px;border-radius:50%;display:grid;place-items:center;background:#102233eb;line-height:1;max-height:none;min-height:0;pointer-events:auto;overflow:visible}
+.screen.in-battle .battle-state-icon .support-symbol{width:100%;height:100%}
+.screen.in-battle .state-heal{left:8%;border-color:#86dba4;animation:healLockPulse 2.4s ease-in-out infinite}
+.screen.in-battle .state-boost{right:8%;border-color:#b5dda0;color:#cfffaa;isolation:isolate}
+.screen.in-battle .state-boost::before{content:'';position:absolute;inset:-4px;border-radius:50%;background:radial-gradient(circle,#c9ff9744,transparent 70%);box-shadow:0 0 7px #b9ed7c88;z-index:-1;animation:boostStatusGlow 2.8s ease-in-out infinite}
+.screen.in-battle .state-guard{left:50%;transform:translateX(-50%);color:#c1e6ff;border-color:#7cb7d5}
+.screen.in-battle .cromo .strong-signal{top:max(46%,40px);right:8%;width:clamp(12px,17%,20px);height:auto;aspect-ratio:1}
+.screen.in-battle .battle-used{position:absolute;top:63%;right:8%;z-index:5;width:clamp(11px,16%,18px);aspect-ratio:1;display:grid;place-items:center;color:#f2d18b;background:#182431e8;border:1px solid #ad945d;border-radius:50%;pointer-events:none}
+.battle-used svg{width:85%;height:85%}
+@keyframes healLockPulse{50%{opacity:.55}}@keyframes boostStatusGlow{50%{opacity:.4;transform:scale(.82)}}
+@media(prefers-reduced-motion:reduce){.screen.in-battle .state-heal,.screen.in-battle .state-boost::before{animation:none}}
