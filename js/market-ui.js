@@ -2,15 +2,28 @@
  'use strict';
  root.HemicycleMarketUI={create:function(app){
   var rules=HemicycleMarket.create(app.cards,app.packs),rarities=app.rarities;
-  var state={type:'orators',tab:'sell',id:'',quantity:1,target:'machine',search:'',rarity:'',buySearch:'',buyRarity:'',missing:false,remote:false,me:null,seen:false,connecting:false,busy:false,error:'',notice:'',listings:[],players:[],activity:{listings:[],trades:[],receipts:[]},recipient:'',remoteCards:[],give:'',receive:'',method:'fs',extra:''};
+  var state={type:'orators',tab:'sell',id:'',buyId:'',buyQuantity:1,buyReviewed:false,quantity:1,target:'machine',search:'',rarity:'',buySearch:'',buyRarity:'',missing:false,remote:false,me:null,seen:false,connecting:false,busy:false,error:'',notice:'',listings:[],players:[],activity:{listings:[],trades:[],receipts:[]},recipient:'',remoteCards:[],give:'',receive:'',method:'fs',extra:''};
   var esc=app.esc;
   function key(){return typeof crypto.randomUUID==='function'?crypto.randomUUID():Date.now()+'-'+Math.random().toString(36).slice(2);}
   function repaint(){
    var active=document.activeElement,body=document.getElementById('marketBody'),scroll=body?body.scrollTop:0;
-   var focus=active&&active.closest('[data-market],#marketRarity,#marketBuyRarity'),mark=focus?{id:focus.id,action:focus.dataset.market,value:focus.dataset.value,card:focus.dataset.id}:null;
+   var focus=active&&active.closest('[data-market],#marketRarity,#marketBuyRarity,#marketPurchaseQuantity,#marketPurchaseReview'),mark=focus?{id:focus.id,action:focus.dataset.market,value:focus.dataset.value,card:focus.dataset.id}:null;
    app.refresh();
    body=document.getElementById('marketBody');if(body)body.scrollTop=scroll;
-   if(mark){var next=Array.from(document.querySelectorAll('[data-market],#marketRarity,#marketBuyRarity')).find(function(el){return mark.id?el.id===mark.id:el.dataset.market===mark.action&&el.dataset.value===mark.value&&el.dataset.id===mark.card;});if(next&&next.disabled&&(mark.action==='more'||mark.action==='less'))next=document.querySelector('[data-market="'+(mark.action==='more'?'less':'more')+'"]');if(next&&!next.disabled)next.focus({preventScroll:true});}
+   if(mark){var next=Array.from(document.querySelectorAll('[data-market],#marketRarity,#marketBuyRarity,#marketPurchaseQuantity,#marketPurchaseReview')).find(function(el){return mark.id?el.id===mark.id:el.dataset.market===mark.action&&el.dataset.value===mark.value&&el.dataset.id===mark.card;});if(next&&next.disabled&&['more','less','buy-more','buy-less'].includes(mark.action))next=document.querySelector('[data-market="'+({more:'less',less:'more','buy-more':'buy-less','buy-less':'buy-more'}[mark.action])+'"]');if(next&&!next.disabled)next.focus({preventScroll:true});}
+  }
+  function sheetAt(button,open){
+   var row=button.closest('.market-stock-item'),top=row?row.getBoundingClientRect().top:null;
+   repaint();
+   var body=document.getElementById('marketBody'),item=Array.from(document.querySelectorAll('.market-stock-item')).find(function(el){return el.dataset.stockId===button.dataset.id;});
+   if(!body||!item)return;
+   if(top!==null)body.scrollTop+=item.getBoundingClientRect().top-top;
+   if(!open){var trigger=item.querySelector('[aria-controls]');if(trigger)trigger.focus({preventScroll:true});return;}
+   var reveal=item.getBoundingClientRect().bottom>body.getBoundingClientRect().bottom,offset=body.scrollTop+item.getBoundingClientRect().top-body.getBoundingClientRect().top-4;
+   var panel=item.querySelector('.market-inline'),reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+   if(panel&&!reduce&&panel.animate)panel.animate([{height:'0px',opacity:0},{height:panel.scrollHeight+'px',opacity:1}],{duration:240,easing:'ease-out'});
+   if(panel){var title=panel.querySelector('[tabindex="-1"]');if(title)title.focus({preventScroll:true});}
+   if(reveal)body.scrollTo({top:offset,behavior:reduce?'instant':'smooth'});
   }
   function profile(){if(!state.remote||!state.me)return app.getProfile();var album=[],actions=[];state.me.inventory.forEach(function(c){for(var i=0;i<c.quantity;i++)(rules.card(c.id).action?actions:album).push(c.id);});return Object.assign({},app.getProfile(),{album:album,actionAlbum:actions,fs:state.me.fs});}
   function ownedCards(){var d=profile();return d.album.concat(d.actionAlbum||[]);}
@@ -29,6 +42,8 @@
   }
   async function sync(){
    var values=await Promise.all([request('/me'),request('/listings'),request('/players'),request('/activity')]);
+   var before=state.listings.find(function(l){return l.id===state.buyId;}),after=values[1].find(function(l){return l.id===state.buyId;});
+   if(!before||!after||before.unit!==after.unit||before.remaining!==after.remaining||before.card!==after.card)state.buyReviewed=false;
    state.me=values[0];state.listings=values[1];state.players=values[2];state.activity=values[3];
    if(state.recipient)state.remoteCards=await request('/players/'+state.recipient+'/cards');
   }
@@ -60,20 +75,27 @@
    var selected=owned.find(function(row){return row.card.id===state.id;}),form='';
    if(selected){
     var c=selected.card,q=Math.min(state.quantity,selected.quantity),target=state.remote?state.target:'machine',quote=rules.sale(c.id,q,target);state.quantity=q;
-    form='<section class="sell-sheet"><div class="bar between"><b>'+esc(c.n)+'</b><button class="mini" data-market="unselect" aria-label="Cerrar selección">×</button></div>'
+    form='<div class="market-inline" id="marketSellSheet"><section class="sell-sheet" aria-labelledby="marketSellTitle"><div class="bar between"><b id="marketSellTitle" tabindex="-1">'+esc(c.n)+'</b><button class="mini" data-market="unselect" data-id="'+c.id+'" aria-label="Cerrar selección">×</button></div>'
      +'<div class="sell-target"><button data-market="target" data-value="machine" class="'+(target==='machine'?'on':'')+'">A la máquina</button><button data-market="target" data-value="player" class="'+(target==='player'?'on':'')+'"'+(!state.remote?' disabled':'')+'>A otro jugador</button></div>'
      +'<div class="quantity-row"><label for="marketQuantity">Cantidad <small>'+selected.quantity+' repetidos disponibles</small></label><div class="quantity-control"><button class="mini" data-market="less" aria-label="Vender uno menos"'+(q<=1?' disabled':'')+'>−</button><input id="marketQuantity" type="number" min="1" max="'+selected.quantity+'" value="'+q+'" inputmode="numeric"><button class="mini" data-market="more" aria-label="Vender uno más"'+(q>=selected.quantity?' disabled':'')+'>+</button></div></div>'
      +'<div class="sell-total"><span>'+quote.unit+' FS por cromo</span><strong>'+quote.total+' <small>FS</small></strong></div><p class="market-note">'+(target==='player'?'Los cromos se reservan hasta la compra. Puedes retirar la oferta y recuperarlos.':'La venta conserva una copia del cromo en tu colección.')+'</p>'
-     +'<button class="btn wide" data-market="sell"'+(state.busy||state.connecting?' disabled':'')+'>'+(target==='player'?'Revisar oferta':'Revisar venta')+'</button></section>';
+     +'<button class="btn wide" data-market="sell"'+(state.busy||state.connecting?' disabled':'')+'>'+(target==='player'?'Revisar oferta':'Revisar venta')+'</button></section></div>';
    }
    return typeSwitch()+'<div class="market-filters"><input id="marketSearch" type="search" placeholder="Buscar entre tus repetidos…" value="'+esc(state.search)+'" aria-label="Buscar repetidos"><select id="marketRarity" aria-label="Filtrar rareza"><option value="">Todas las rarezas</option>'+rarities.map(function(r){return '<option value="'+r.k+'"'+(state.rarity===r.k?' selected':'')+'>'+r.n+'</option>';}).join('')+'</select></div>'
-    +form+'<p class="market-note">'+list.length+' cromos con repetidos</p><div class="market-stock">'+(list.length?list.map(function(row){var c=row.card;return '<div class="market-card-row'+(state.id===c.id?' selected':'')+'">'+thumb(c)+'<span class="market-card-copy"><b>'+esc(c.n)+'</b><small style="color:'+app.rarity(c.r).c+'">'+app.rarity(c.r).n+' · '+row.quantity+' repetido'+(row.quantity===1?'':'s')+'</small></span><span class="row-price">'+rules.prices[c.r].machine+' <small>FS / ud.</small></span><button class="market-select" data-market="select" data-id="'+c.id+'">Elegir</button></div>';}).join(''):'<div class="market-empty"><b>No hay repetidos aquí.</b><p>Los cromos de los que solo tienes una copia quedan protegidos.</p></div>')+'</div>';
+    +'<p class="market-note">'+list.length+' cromos con repetidos</p><div class="market-stock">'+(list.length?list.map(function(row){var c=row.card;return '<div class="market-stock-item" data-stock-id="'+c.id+'"><div class="market-card-row'+(state.id===c.id?' selected':'')+'">'+thumb(c)+'<span class="market-card-copy"><b>'+esc(c.n)+'</b><small style="color:'+app.rarity(c.r).c+'">'+app.rarity(c.r).n+' · '+row.quantity+' repetido'+(row.quantity===1?'':'s')+'</small></span><span class="row-price">'+rules.prices[c.r].machine+' <small>FS / ud.</small></span><button class="market-select" data-market="'+(state.id===c.id?'unselect':'select')+'" data-id="'+c.id+'" aria-expanded="'+(state.id===c.id)+'" aria-controls="marketSellSheet">'+(state.id===c.id?'Cerrar':'Elegir')+'</button></div>'+(state.id===c.id?form:'')+'</div>';}).join(''):'<div class="market-empty"><b>No hay repetidos aquí.</b><p>Los cromos de los que solo tienes una copia quedan protegidos.</p></div>')+'</div>';
   }
   function offlineView(){return '<div class="market-empty"><span class="empty-market-icon">⇄</span><b>El mercado entre jugadores necesita un servidor</b><p>Las ventas a la máquina ya están disponibles. Las compras y los intercambios se habilitan al conectar el servicio compartido.</p><button class="btn ghost sm" data-market="connect">Comprobar conexión</button></div>';}
+  function purchaseSheet(l){
+   var q=Math.min(state.buyQuantity,l.remaining),valid=Number.isSafeInteger(q)&&q>=1;state.buyQuantity=q;
+   return '<div class="market-inline" id="marketBuySheet"><section class="sell-sheet" aria-labelledby="marketBuyTitle"><div class="bar between"><b id="marketBuyTitle" tabindex="-1">Comprar '+esc(rules.card(l.card).n)+'</b><button class="mini" data-market="close-buy" data-id="'+l.id+'" aria-label="Cerrar compra">×</button></div>'
+    +'<p class="market-note">Vendedor: '+esc(l.sellerName)+'</p><div class="quantity-row"><label for="marketPurchaseQuantity">Cantidad <small>'+l.remaining+' disponibles</small></label><div class="quantity-control"><button class="mini" data-market="buy-less" aria-label="Comprar uno menos"'+(q<=1?' disabled':'')+'>−</button><input id="marketPurchaseQuantity" type="number" min="1" max="'+l.remaining+'" value="'+q+'" inputmode="numeric"><button class="mini" data-market="buy-more" aria-label="Comprar uno más"'+(q>=l.remaining?' disabled':'')+'>+</button></div></div>'
+    +'<div class="sell-total"><span>'+l.unit+' FS por cromo</span><strong>'+q*l.unit+' <small>FS</small></strong></div><label class="market-purchase-review"><input type="checkbox" id="marketPurchaseReview"'+(state.buyReviewed?' checked':'')+'>He revisado la cantidad y el importe.</label>'
+    +'<button class="btn wide" data-market="confirm-buy"'+(!valid||!state.buyReviewed||state.busy?' disabled':'')+'>Realizar compra</button></section></div>';
+  }
   function buyView(){
    if(!state.remote)return offlineView();
    var owned=rules.counts(ownedCards()),list=state.listings.filter(function(l){var c=rules.card(l.card);return matchesType(c)&&l.seller!==state.me.id&&(!state.missing||!owned[l.card])&&(!state.buyRarity||c.r===state.buyRarity)&&app.search(c.n).includes(app.search(state.buySearch));});
-   return typeSwitch()+'<div class="market-filters"><input id="marketBuySearch" type="search" placeholder="Busca el cromo que te falta…" value="'+esc(state.buySearch)+'" aria-label="Buscar ofertas"><select id="marketBuyRarity" aria-label="Rareza de las ofertas"><option value="">Todas las rarezas</option>'+rarities.map(function(r){return '<option value="'+r.k+'"'+(state.buyRarity===r.k?' selected':'')+'>'+r.n+'</option>';}).join('')+'</select></div><button class="missing-filter'+(state.missing?' on':'')+'" data-market="missing" aria-pressed="'+state.missing+'">'+(state.missing?'✓ ':'')+'Solo los que me faltan</button><p class="market-note">Ofertas de otros jugadores. Verificarás el importe antes de confirmar cada compra.</p>'+(list.length?list.map(function(l){var c=rules.card(l.card);return '<div class="market-card-row">'+thumb(c)+'<span class="market-card-copy"><b>'+esc(c.n)+'</b><small>'+esc(l.sellerName)+' · '+l.remaining+' disponibles</small><strong>'+l.unit+' FS por cromo</strong>'+(!owned[l.card]?'<small class="missing-label">Te falta en la colección</small>':'')+'</span><button class="btn sm" data-market="buy" data-id="'+l.id+'">Comprar</button></div>';}).join(''):'<div class="market-empty"><b>No hay ofertas que coincidan.</b><p>'+(state.buySearch||state.buyRarity||state.missing?'Prueba otros filtros o vuelve a actualizar más tarde.':'Publica tus repetidos desde Vender o vuelve a actualizar más tarde.')+'</p></div>');
+   return typeSwitch()+'<div class="market-filters"><input id="marketBuySearch" type="search" placeholder="Busca el cromo que te falta…" value="'+esc(state.buySearch)+'" aria-label="Buscar ofertas"><select id="marketBuyRarity" aria-label="Rareza de las ofertas"><option value="">Todas las rarezas</option>'+rarities.map(function(r){return '<option value="'+r.k+'"'+(state.buyRarity===r.k?' selected':'')+'>'+r.n+'</option>';}).join('')+'</select></div><button class="missing-filter'+(state.missing?' on':'')+'" data-market="missing" aria-pressed="'+state.missing+'">'+(state.missing?'✓ ':'')+'Solo los que me faltan</button><p class="market-note">Ofertas de otros jugadores. Verificarás el importe antes de confirmar cada compra.</p>'+(list.length?list.map(function(l){var c=rules.card(l.card);return '<div class="market-stock-item" data-stock-id="'+l.id+'"><div class="market-card-row'+(state.buyId===l.id?' selected':'')+'">'+thumb(c)+'<span class="market-card-copy"><b>'+esc(c.n)+'</b><small>'+esc(l.sellerName)+' · '+l.remaining+' disponibles</small><strong>'+l.unit+' FS por cromo</strong>'+(!owned[l.card]?'<small class="missing-label">Te falta en la colección</small>':'')+'</span><button class="market-select" data-market="'+(state.buyId===l.id?'close-buy':'buy')+'" data-id="'+l.id+'" aria-expanded="'+(state.buyId===l.id)+'" aria-controls="marketBuySheet">'+(state.buyId===l.id?'Cerrar':'Comprar')+'</button></div>'+(state.buyId===l.id?purchaseSheet(l):'')+'</div>';}).join(''):'<div class="market-empty"><b>No hay ofertas que coincidan.</b><p>'+(state.buySearch||state.buyRarity||state.missing?'Prueba otros filtros o vuelve a actualizar más tarde.':'Publica tus repetidos desde Vender o vuelve a actualizar más tarde.')+'</p></div>');
   }
   function options(list,selected){return '<option value="">Selecciona un cromo</option>'+list.map(function(row){var c=row.card||rules.card(row.id);return '<option value="'+c.id+'"'+(selected===c.id?' selected':'')+'>'+esc(c.n)+' · '+app.rarity(c.r).n+'</option>';}).join('');}
   function tradeTerms(){
@@ -138,15 +160,15 @@
   }
   function handle(button){
    var action=button.dataset.market,id=button.dataset.id;if(action==='preview'){if(app.zoom)app.zoom(rules.card(id));return;}if(state.busy||state.connecting)return;
-   if(action==='type'){state.type=button.dataset.value==='actions'?'actions':'orators';state.id='';state.quantity=1;repaint();return;}
+   if(action==='type'){state.type=button.dataset.value==='actions'?'actions':'orators';state.id='';state.buyId='';state.buyReviewed=false;state.quantity=1;repaint();return;}
    state.error='';state.notice='';
    if(action==='pick-give'||action==='pick-receive'){if(action==='pick-give'||state.recipient)openPicker(action==='pick-give'?'give':'receive');return;}
    if(action==='choose-give'||action==='choose-receive'){var choice=pickerRows().find(function(r){return r.card.id===id;});if(!choice)return;state[state.pickSide]=id;state.extra='';state.method='fs';if(app.closeModal)app.closeModal();repaint();return;}
    if(action==='retry-pending'){var pending=pendingRequest();if(pending)task(async function(){await request(pending.path,pending.body);await sync();});return;}
    if(action==='tab'){state.tab=button.dataset.value;repaint();return;}
    if(action==='missing'){state.missing=!state.missing;repaint();return;}
-   if(action==='select'){state.id=id;state.quantity=1;repaint();return;}
-   if(action==='unselect'){state.id='';repaint();return;}
+   if(action==='select'){state.id=id;state.quantity=1;sheetAt(button,true);return;}
+   if(action==='unselect'){state.id='';sheetAt(button,false);return;}
    if(action==='target'){state.target=button.dataset.value;repaint();return;}
    if(action==='less'||action==='more'){state.quantity=Math.max(1,Math.min(rules.duplicates(ownedCards(),state.id),state.quantity+(action==='more'?1:-1)));repaint();return;}
    if(action==='connect'){state.seen=false;enter();return;}
@@ -161,15 +183,20 @@
      state.id='';
     });return;
    }
-   if(action==='buy'){
-    var listing=state.listings.find(function(l){return l.id===id;});if(!listing)return;
-    app.quantityModal(rules.card(listing.card).n,listing.remaining,listing.unit,function(quantity){
-     task(async function(){
-      var quote=await request('/quotes/purchase',{listing:id,quantity:quantity});
-      if(quote.cardId!==listing.card||quote.quantity!==quantity||quote.unit!==listing.unit||quote.total!==quantity*listing.unit)throw new Error('La oferta ha cambiado. Revisa la compra de nuevo.');
-      await request('/purchases',{quote:quote.id});if(state.real&&app.reconcile)await app.reconcile();state.notice='Compra completada.';await sync();
-     });
-    },listing.sellerName);return;
+   if(action==='buy'){state.buyId=id;state.buyQuantity=1;state.buyReviewed=false;sheetAt(button,true);return;}
+   if(action==='close-buy'){state.buyId='';state.buyReviewed=false;sheetAt(button,false);return;}
+   if(action==='buy-less'||action==='buy-more'){
+    var offer=state.listings.find(function(l){return l.id===state.buyId;});if(!offer)return;
+    state.buyQuantity=Math.max(1,Math.min(offer.remaining,state.buyQuantity+(action==='buy-more'?1:-1)));state.buyReviewed=false;repaint();return;
+   }
+   if(action==='confirm-buy'){
+    var listing=state.listings.find(function(l){return l.id===state.buyId;}),quantity=state.buyQuantity;
+    if(!listing||!state.buyReviewed||!Number.isSafeInteger(quantity)||quantity<1||quantity>listing.remaining)return;
+    task(async function(){
+     var quote=await request('/quotes/purchase',{listing:listing.id,quantity:quantity});
+     if(quote.cardId!==listing.card||quote.quantity!==quantity||quote.unit!==listing.unit||quote.total!==quantity*listing.unit){state.buyReviewed=false;await sync();throw new Error('La oferta ha cambiado. Revisa la compra de nuevo.');}
+     await request('/purchases',{quote:quote.id});state.buyId='';state.buyReviewed=false;state.notice='Compra completada.';await sync();
+    });return;
    }
    if(action==='propose'){
     var terms=tradeTerms(),recipient=state.recipient,other=state.players.find(function(p){return p.id===recipient;});
@@ -190,6 +217,15 @@
    if(id==='marketSearch'||id==='marketBuySearch'){var field=id==='marketSearch'?'search':'buySearch';state[field]=input.value;repaint();var next=document.getElementById(id);if(next){next.focus();next.setSelectionRange(state[field].length,state[field].length);}return;}
    if(id==='marketRarity'){state.rarity=input.value;repaint();return;}
    if(id==='marketBuyRarity'){state.buyRarity=input.value;repaint();return;}
+   if(id==='marketPurchaseQuantity'||id==='marketPurchaseReview'){
+    var listing=state.listings.find(function(l){return l.id===state.buyId;});if(!listing)return;
+    var field=document.getElementById('marketPurchaseQuantity'),n=Number(field.value),valid=Number.isSafeInteger(n)&&n>=1&&n<=listing.remaining;
+    state.buyQuantity=n;state.buyReviewed=id==='marketPurchaseReview'&&input.checked&&valid;
+    var review=document.getElementById('marketPurchaseReview');if(review)review.checked=state.buyReviewed;
+    var confirm=document.querySelector('[data-market="confirm-buy"]');if(confirm)confirm.disabled=!state.buyReviewed||state.busy;
+    var total=document.querySelector('#marketBuySheet .sell-total strong');if(total)total.innerHTML=(valid?n*listing.unit:'—')+' <small>FS</small>';
+    return;
+   }
    if(id==='marketQuantity'){
     var max=rules.duplicates(ownedCards(),state.id),n=Number(input.value),valid=Number.isSafeInteger(n)&&n>=1&&n<=max;
     var sell=document.querySelector('[data-market="sell"]');if(sell)sell.disabled=!valid;

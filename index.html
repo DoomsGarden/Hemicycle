@@ -508,7 +508,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 .err{background:#3a1414;border:1px solid #d43b3b;border-radius:8px;padding:7px;font-size:calc(11px * var(--ui-text-scale,1));margin-bottom:8px}
 .foot{font-size:calc(9.5px * var(--ui-text-scale,1));color:#8b93ab;text-align:center;padding-top:3px;flex-shrink:0}
 </style>
-<link rel="stylesheet" href="css/interface.css?v=31.0.2.3-reading1">
+<link rel="stylesheet" href="css/interface.css?v=31.0.2.4-market1">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.3-reading1">
@@ -563,7 +563,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
-<script src="js/market-tutorial.js?v=31.0.2.3-polish2"></script>
+<script src="js/market-tutorial.js?v=31.0.2.4-market1"></script>
 <script src="js/balance-review.js?v=31.0.2.3-medium1"></script>
 <script src="js/battle-history-ui.js?v=31.0.2.3-tools1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.4-relief2"></script>
+<script src="js/changelog.js?v=31.0.2.4-market1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -592,7 +592,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;window.HemicycleOfflineRules=Object.assign({},HemicycleOfflineRulesV2,{start:function(t,c,m){return (t.rules==='offline1'?HemicycleOfflineRulesV1:HemicycleOfflineRulesV2).start(t,c,m);}});</script>
 <script src="js/offline-combat.js?v=31.0.2.3"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
-<script src="js/market-ui.js?v=31.0.2.3-polish2"></script>
+<script src="js/market-ui.js?v=31.0.2.4-market1"></script>
 <script>
 window.onerror=function(m,src,l,c){
   var ct=document.getElementById('content'); if(!ct)return;
@@ -1518,12 +1518,6 @@ function uiIcon(name){
  var paths={history:'<circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/>',challenges:'<rect x="4" y="3" width="16" height="18" rx="3"/><path d="m7 8 1 1 2-2m-3 7 1 1 2-2m3-5h4m-4 6h4"/>',achievements:'<path d="m8 3 4 6 4-6M7 3h10M12 8a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/><path d="m12 11 1 2 2 .3-1.5 1.4.4 2-1.9-1-1.9 1 .4-2L9 13.3l2-.3Z"/>',home:'<path d="m3 10 9-7 9 7v10H6V10m3 10v-7h6v7"/>',collection:'<rect x="4" y="3" width="16" height="18" rx="2"/><path d="M9 3v18M15 3v18M4 9h16M4 15h16"/>',shop:'<path d="m12 2 10 10-10 10L2 12Z"/><path d="m7 12 5-5 5 5-5 5Z"/>',league:'<path d="M6 3v18h13M10 3v14h9"/>',market:'<path d="M4 21V3l8 10 8-10v18M8 21V14l4 5 4-5v7"/>',album:'<rect x="3" y="5" width="14" height="17" rx="2"/><path d="M8 2h11a2 2 0 0 1 2 2v13M7 10h6M7 14h6M7 18h4"/>',chevron:'<path d="m6 15 6-6 6 6"/>'};
  return '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(paths[name]||paths.home)+'</svg>';
 }
-function purchaseQuantityModal(name,max,unit,done,seller){
- var quantity=1;
- showModal('Comprar cromos','<p>'+esc(name)+' · '+max+' disponibles</p><p>Vendedor: '+esc(seller)+'</p><label class="sub" for="purchaseQuantity">Cantidad</label><input class="purchase-quantity" id="purchaseQuantity" type="number" min="1" max="'+max+'" value="1" inputmode="numeric"><p class="purchase-price" id="purchaseTotal">'+unit+' FS</p><p>Revisa los datos y marca el tick para continuar.</p>','Realizar compra',false,function(){done(quantity);},true,true);
- var input=document.getElementById('purchaseQuantity');
- input.addEventListener('input',function(){var n=Number(input.value),valid=Number.isSafeInteger(n)&&n>=1&&n<=max,confirm=document.querySelector('#modalRoot [data-modal="confirm"]'),review=document.querySelector('#modalRoot [data-modal="review"]');confirm.dataset.valid=String(valid);confirm.disabled=true;review.setAttribute('aria-pressed','false');review.classList.remove('is-reviewed');if(valid){quantity=n;document.getElementById('purchaseTotal').textContent=(n*unit)+' FS';}});
-}
 function economyAccount(){var a=PLAYER_PROFILE&&PLAYER_PROFILE.account();if(!a&&!navigator.onLine){var owner=lsGet(HemicycleCloudSave.ownerKey);if(owner&&owner.identityId===backupSnapshot().identity.id)return {userId:owner.userId,offline:true};}return a;}
 function verifiedAccount(){return !!(ECONOMY&&ECONOMY.active());}
 function economyTask(command,done){
@@ -1560,7 +1554,7 @@ async function finishDownloaded(snapshot,ticketId,verification){
 }
 
 function market(){
- if(!MARKET)MARKET=HemicycleMarketUI.create({base:'https://hemicycle-w578.onrender.com',account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},reconcile:async function(){if(CLOUD_SAVE)await CLOUD_SAVE.adopt();},cards:CARDS.concat(HemicycleActions.cards),packs:PACKS,rarities:RARS,rarity:function(k){return RARM[k];},actionArt:actionArtHTML,getProfile:D,saveProfile:saveD,esc:esc,search:searchText,modal:showModal,quantityModal:purchaseQuantityModal,sound:gameSound,preview:function(c){return cromoHTML(c,{noCardAttr:true});},zoom:function(c){openMarketZoom(c);},icon:uiIcon,closeModal:closeModal,refresh:function(){if(SCREEN==='mercado')paint();}});
+ if(!MARKET)MARKET=HemicycleMarketUI.create({base:'https://hemicycle-w578.onrender.com',account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},reconcile:async function(){if(CLOUD_SAVE)await CLOUD_SAVE.adopt();},cards:CARDS.concat(HemicycleActions.cards),packs:PACKS,rarities:RARS,rarity:function(k){return RARM[k];},actionArt:actionArtHTML,getProfile:D,saveProfile:saveD,esc:esc,search:searchText,modal:showModal,sound:gameSound,preview:function(c){return cromoHTML(c,{noCardAttr:true});},zoom:function(c){openMarketZoom(c);},icon:uiIcon,closeModal:closeModal,refresh:function(){if(SCREEN==='mercado')paint();}});
  return MARKET;
 }
 function appbar(){
@@ -3098,7 +3092,7 @@ document.addEventListener('click',function(ev){
 },false);
 
 document.addEventListener('input',function(ev){
- if(ev.target&&['marketSearch','marketBuySearch','marketQuantity','tradePickSearch'].indexOf(ev.target.id)>=0){market().change(ev.target);return;}
+ if(ev.target&&['marketSearch','marketBuySearch','marketQuantity','marketPurchaseQuantity','tradePickSearch'].indexOf(ev.target.id)>=0){market().change(ev.target);return;}
  if(ev.target&&ev.target.id==='fq'){
   FIL.q=ev.target.value;
   var box=document.getElementById('gridBox');
@@ -3111,7 +3105,7 @@ document.addEventListener('input',function(ev){
   syncGoldCanvases();
  }
 },false);
-document.addEventListener('change',function(ev){if(ev.target&&ev.target.matches('[data-pack-quantity]')){updatePackQuantity(ev.target);return;}if(ev.target&&ev.target.id==='backupFile'){importPlayerBackup(ev.target.files[0]);ev.target.value='';return;}if(ev.target&&ev.target.hasAttribute('data-market-visibility')){market().change(ev.target);return;}if(ev.target&&['marketRarity','marketBuyRarity','tradePlayer','tradeGive','tradeReceive','tradeMethod','tradeExtra'].indexOf(ev.target.id)>=0)market().change(ev.target);},false);
+document.addEventListener('change',function(ev){if(ev.target&&ev.target.matches('[data-pack-quantity]')){updatePackQuantity(ev.target);return;}if(ev.target&&ev.target.id==='backupFile'){importPlayerBackup(ev.target.files[0]);ev.target.value='';return;}if(ev.target&&ev.target.hasAttribute('data-market-visibility')){market().change(ev.target);return;}if(ev.target&&['marketPurchaseReview','marketRarity','marketBuyRarity','tradePlayer','tradeGive','tradeReceive','tradeMethod','tradeExtra'].indexOf(ev.target.id)>=0)market().change(ev.target);},false);
 
 function medirInsets(){
  try{
