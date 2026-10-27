@@ -1,0 +1,35 @@
+✔ version notes cover every recorded playable version and the first repository entry (5.230168ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (1.511931ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.655339ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (1.006558ms)
+✔ same-version market corrections stay with v31.0.2.4 and retain both revisions (0.40434ms)
+✔ server creates separate identities, validates authentication, and never serves development files (85.996921ms)
+✔ machine sale is repeat-safe and cannot sell the protected last copy or forged quantities (36.311877ms)
+✔ listing reserves stock; only the seller can cancel and cancellation restores it once (32.59366ms)
+✔ player purchase needs a verified quote and transfers stock and FS atomically only once (42.077915ms)
+✔ stale and expired purchase quotes never transfer changed stock or debit funds (28.374515ms)
+✔ a one-for-one adjacent trade reserves the +20% surcharge and needs both verification and both confirmations (60.381591ms)
+✔ two lower cards may be distinct, carry no FS surcharge and work in both proposing directions (53.062557ms)
+✔ cancelling at either verification stage returns every reserved card and FS once (55.321324ms)
+✔ expiry releases reserved resources and prevents a late confirmation (24.073088ms)
+✔ proposer verifies and reserves in the initial proposal, without a redundant acceptance step (24.894913ms)
+✔ insufficient FS or loss of stock before verification never creates a partial reservation (26.570656ms)
+✔ two buyers racing for the same stock produce one purchase and conserve all FS and cards (21.122127ms)
+✔ conflicting reservations and illegal rarity gaps fail without consuming other resources (24.384939ms)
+✔ identities, inventories, balances and pending reservations survive a server restart (7.601836ms)
+✔ one reviewed acceptance per player reserves first, then completes atomically and only once (37.717328ms)
+✔ cancellation or expiry returns a pending single-window acceptance and its FS once (46.276968ms)
+✔ single-window acceptance rechecks stock and FS and rolls back a failed reservation (43.232566ms)
+✔ market prices reflect pack values, cheap machine resale, and at least 20% more between players (1.346901ms)
+✔ all 16 rarity pairings allow only equivalent or adjacent trades with the correct surcharge (2.321797ms)
+✔ trade bundles normalize repeated IDs, permit two distinct lower cards, and reject mixed or unequal bundles (0.467125ms)
+✔ market rejects invalid quantities, IDs, targets and unsafe amounts (0.426513ms)
+✔ local machine sales preserve the last copy, other progress and idempotency without mutating the input (0.534607ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 754.552761

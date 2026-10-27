@@ -47,3 +47,12 @@ test('same-version corrections retain all published notes from v31.0.1.1 onwards
  const baseline=require('../_dev/changelog/published-v31.0.1.x.json').baseline;
  for(const release of baseline){const entry=entries.find(e=>e.version===release.version);assert.ok(entry,release.version);const items=entry.sections.flatMap(s=>s.items);for(const original of release.sections.flatMap(s=>s.items))assert.ok(items.some(item=>item.includes(original)),release.version+' must retain the published note from '+release.ref+': '+original);}
 });
+
+test('same-version market corrections stay with v31.0.2.4 and retain both revisions',()=>{
+ const marketNotes=e=>e.sections.flatMap(s=>s.items).filter(s=>/^Corrección(?: visual)? de Mercado:/.test(s));
+ const release=entries.find(e=>e.version==='v31.0.2.4');
+ assert.equal(marketNotes(release).length,2);
+ assert.ok(marketNotes(release).some(s=>s.includes('una sola tarjeta')));
+ assert.ok(marketNotes(release).some(s=>s.includes('Elegir y Comprar')));
+ assert.equal(marketNotes(entries.find(e=>e.version==='v31.0.2.3')).length,0);
+});
