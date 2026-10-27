@@ -1,5 +1,5 @@
 {
-  "nota": "Historial de versiones publicadas. v31.0.1.3 integra acciones y tutoriales; la correctiva actual queda descrita en _dev/releases/v31.0.1.4.md.",
+  "nota": "Historial de versiones publicadas; las correcciones se conservan dentro de cada versión.",
   "registros": [
     {
       "commit": "72f1381",
@@ -297,6 +297,13 @@
       "version": "v31.0.2.2",
       "date": "2026-10-26T00:00:00+01:00",
       "date_madrid": "2026-10-25"
+    },
+    {
+      "commit": "75850f2",
+      "version": "v31.0.2.3",
+      "date": "2026-10-26T21:21:44Z",
+      "date_madrid": "2026-10-26",
+      "nota": "Incluye las correcciones acumuladas de lectura y navegación."
     }
   ]
 }

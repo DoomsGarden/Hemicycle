@@ -27,6 +27,7 @@ function loadBattle(mode = 'normal', random = 0.25) {
     HemicycleCatalog: require('../../js/orator-catalog.js'),
     HemicycleActions: require('../../js/action-cards.js'),
     HemicycleBattleStatus: require('../../js/battle-status.js'),
+    HemicycleCoinToss: {...require('../../js/coin-toss.js'),show(){},schedule(){},cancel(){}},
     HemicycleObjectives: require('../../js/objectives.js'),
     HemicycleCabinets: require('../../js/cabinet-presets.js'),
     Math: math,

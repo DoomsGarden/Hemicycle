@@ -13,10 +13,12 @@ for (const mode of modes) {
       assert.equal(c.G.side, null);
       assert.equal(c.G.n, 0);
       assert.equal(c.timers.size, 0);
-      assert.match(c.elements.coinRoot.innerHTML, /Tú tienes <b>cara<\/b>/);
+      assert.match(c.elements.coinRoot.innerHTML, /coin-presentation/);
+      assert.doesNotMatch(c.elements.coinRoot.innerHTML, /<text[ >]/);
       assert.match(c.SCREENS.battle(), /battle-wrap/);
       assert.equal(c.elements.content.inert, true);
-      assert.match(c.elements.coinRoot.innerHTML, new RegExp('Ha salido ' + face));
+      assert.match(c.elements.coinRoot.innerHTML, new RegExp('coin-result-label\">'+(first==='p'?'Cara':'Cruz')));
+      assert.match(c.elements.coinRoot.innerHTML, new RegExp('is-'+(first==='p'?'head':'cross')));
       c.playCard('p', c.G.hand.p[0].uid);
       c.endTurn();
       assert.equal(c.G.n, 0);

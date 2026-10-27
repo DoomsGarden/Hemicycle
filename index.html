@@ -513,12 +513,12 @@ tr.des td{background:rgba(212,59,59,.1)}
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.3-reading1">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.3-reading1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.4">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/cloud.css?v=31.0.2.3-reading1">
-<link rel="stylesheet" href="css/readability.css?v=31.0.2.3-reading1">
+<link rel="stylesheet" href="css/readability.css?v=31.0.2.4">
 </head>
 <body>
 
@@ -551,10 +551,10 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/cloud-save.js?v=31.0.2.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery2"></script><script src="js/online-ui.js?v=31.0.2.0-recovery2"></script>
 <script src="js/cloud-ui.js?v=31.0.2.3"></script>
-<script src="js/ui-preferences.js?v=31.0.2.3-reading1"></script>
+<script src="js/ui-preferences.js?v=31.0.2.4"></script>
 <script src="js/game-audio.js?v=31.0.2.3-polish2"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
-<script src="js/coin-toss.js?v=31.0.2.3-polish2"></script>
+<script src="js/coin-toss.js?v=31.0.2.4"></script>
 <script src="js/battle-status.js?v=31.0.2.3-table1"></script>
 <script src="js/battle-actions-ui.js?v=31.0.2.3-polish2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
@@ -582,7 +582,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.3-reading1"></script>
+<script src="js/changelog.js?v=31.0.2.4"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -602,7 +602,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.3';
+var VERSION='v31.0.2.4';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1071,16 +1071,11 @@ function syncCoinToss(){
  var root=document.getElementById('coinRoot');if(!root)return;
  var pending=SCREEN==='battle'&&G&&!G.over&&G.n===0&&!G.tutorial;
  var content=document.getElementById('content'),modal=document.getElementById('modalRoot');if(content)content.inert=!!pending||!!(modal&&modal.firstChild);
- if(!pending){root.innerHTML='';return;}
+ if(!pending){HemicycleCoinToss.cancel();root.innerHTML='';return;}
  if(root.firstChild)return;
  gameSound('coin');
- root.innerHTML='<div class="modal-bg"><div class="modal coin-toss" role="dialog" aria-modal="true" aria-labelledby="coinTitle">'
-  +'<h3 id="coinTitle">Cara o cruz</h3>'
-  +'<p>Tú tienes <b>cara</b> y '+esc(G.rival)+' tiene <b>cruz</b>. Cada uno tiene un 50 % de probabilidad de empezar.</p>'
-  +'<div class="coin-face">'+HemicycleBattleStatus.symbol('coin')+(G.first==='p'?'CARA':'CRUZ')+'</div>'
-  +'<p><b>Ha salido '+(G.first==='p'?'cara. Empiezas tú.':'cruz. Empieza '+esc(G.rival)+'.')+'</b></p>'
-  +'<button class="btn wide" data-act="begin">Comenzar debate</button></div></div>';
- var button=root.querySelector('button');if(button)button.focus();
+ root.innerHTML=HemicycleCoinToss.markup(G.first==='p'?'Cara':'Cruz');
+ var coinGame=G;HemicycleCoinToss.schedule(function(){if(G===coinGame&&SCREEN==='battle'&&!G.over&&G.n===0)beginDebate();});
 }
 
 /* === SISTEMA DE ZOOM EMERGENTE Y NAVEGACIÓN SINCRONIZADA ENTRE CROMOS === */
@@ -1481,7 +1476,7 @@ function go(s,o){
  if(prev==='coleccion'||prev==='builder')saveColScroll();
  if(prev!=='builder'&&s==='builder')SCROLL_MEM.builderGrid=0;
  if(s!=='detalle')closeZoom();
- var coinRoot=document.getElementById('coinRoot');if(s!=='battle'&&coinRoot)coinRoot.innerHTML='';
+ var coinRoot=document.getElementById('coinRoot');if(s!=='battle'&&coinRoot){HemicycleCoinToss.cancel();coinRoot.innerHTML='';}
  SCREEN=s;if(o!==undefined&&o!==null)SO=o;
  if(!NOHIST){try{history.pushState({s:s,nav:NAV_SECTION},'');}catch(e){}}
  paint();
