@@ -1,0 +1,33 @@
+unit
+✔ version notes cover every recorded playable version and the first repository entry (5.369228ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (1.92294ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.678293ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (1.091686ms)
+✔ same-version market corrections stay with v31.0.2.4 and retain both revisions (0.371881ms)
+✔ horizontal swipes follow the bottom menu order in both directions (1.194301ms)
+✔ short gestures stay put and screens outside the five tabs cannot swipe (0.198599ms)
+✔ touch travel threshold stays useful on small and wide screens without wrapping edges (0.162966ms)
+✔ the Senate cycles twelve speakers and all three phrases, with alternating entry sides (2.834464ms)
+✔ the shared walking cycle alternates support and bent knees instead of repeating one leg (2.010983ms)
+✔ each speaker leaves immediately after its own complete typed phrase, including the quotation marks (9.42908ms)
+ℹ tests 11
+ℹ suites 0
+ℹ pass 11
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 76.844699
+
+
+browser
+PASS: real touch swipes in both directions, end locks, vertical/horizontal scrolling, cancelled/repaint gestures, controls/popups, mouse, animated bottom selection in 3 sizes, reduced motion and unchanged background/profile.
+
+
+guides
+PASS: complete menu and battle guides, separate market onboarding untouched, no rewards or profile mutations.
+
+
+pwa
+Upgrade and all 128 precached assets passed.
+PASS: PWA upgrade, cache replacement, offline loading, progress preservation and market layouts.

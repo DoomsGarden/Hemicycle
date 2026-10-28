@@ -557,6 +557,8 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
 <link rel="stylesheet" href="css/menu-senate.css?v=31.0.2.5-background1">
 <script src="js/menu-senate.js?v=31.0.2.5-background1"></script>
+<link rel="stylesheet" href="css/menu-navigation.css?v=31.0.2.5-swipe1">
+<script src="js/menu-navigation.js?v=31.0.2.5-swipe1"></script>
 <script src="js/league-rewards.js?v=31.0.2.4-league1"></script>
 <script src="js/coin-toss.js?v=31.0.2.4-relief2"></script>
 <script src="js/battle-status.js?v=31.0.2.3-table1"></script>
@@ -571,7 +573,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/balance-review.js?v=31.0.2.3-medium1"></script>
 <script src="js/battle-history-ui.js?v=31.0.2.3-tools1"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
-<script src="js/menu-tutorial.js?v=31.0.2.4-league1"></script>
+<script src="js/menu-tutorial.js?v=31.0.2.5-swipe1"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.3-reading1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.2.3-reading1">
@@ -586,7 +588,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.5-background1"></script>
+<script src="js/changelog.js?v=31.0.2.5-swipe1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -1584,6 +1586,7 @@ function tabbar(){
 }
 
 function paint(){
+ if(typeof HemicycleMenuNavigation!=='undefined')HemicycleMenuNavigation.capture();
  if(SCREEN!=='coleccion'&&CABINET_EDIT!==null){CABINET_EDIT=null;loadSelectedCabinet();}
  syncRankedSeason();
  var sc=document.getElementById('screen');
@@ -1612,6 +1615,7 @@ function paint(){
  c.innerHTML='<div class="view-body">'+((SCREENS[SCREEN]||SCREENS.menu)())+'</div>'+foot;
  if(typeof HemicycleMenuSenate!=='undefined')HemicycleMenuSenate.sync();
  var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
+ if(typeof HemicycleMenuNavigation!=='undefined')HemicycleMenuNavigation.sync();
  if(journalFocus&&BATTLE_LOG_OPEN){var journalControl=c.querySelector(journalFocus==='close'?'[data-act=battle-log-close]':'.battle-journal .log');if(journalControl)journalControl.focus({preventScroll:true});}
 
  if(SCREEN==='coleccion'||SCREEN==='builder')restoreColScroll(SCREEN==='coleccion'&&CABINET_EDIT!==null);
@@ -3291,6 +3295,7 @@ function boot(){
  window.addEventListener('pageshow',syncBattleClock);
  document.addEventListener('hemicycle:entry-request',firstEntry);
  document.addEventListener('hemicycle:entered',firstEntry);
+ if(typeof HemicycleMenuNavigation!=='undefined')HemicycleMenuNavigation.init({navigate:go});
  medirInsets();
  try{history.replaceState({s:'menu'},'');}catch(e){}
  var d=D();
