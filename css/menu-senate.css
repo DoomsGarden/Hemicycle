@@ -1,0 +1,44 @@
+@font-face{font-family:'Senate Dialogue';src:url('../fonts/VT323-Regular.ttf') format('truetype');font-weight:400;font-style:normal;font-display:swap}
+/* The senate has its own stage; cards occupy only the lower central floor. */
+.screen[data-view=menu] .content{padding-top:0}
+.menu-home.senate-home{isolation:isolate;padding-top:0;overflow:visible}
+.menu-senate{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#0b101d url("../assets/menu-senate/chamber.webp") center top/100% 122% no-repeat}
+.menu-senate canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .3s}
+.menu-senate[data-ready=true] canvas{opacity:1}
+.senate-home .home-copy{position:absolute;top:8px;left:0;right:0;pointer-events:none}
+.senate-home .home-utilities{min-height:0;height:0}
+.senate-home .home-action-stack{pointer-events:auto}
+.senate-home .home-copy h1{font-size:calc(clamp(22px,6vw,31px) * var(--ui-text-scale,1));margin:8px 0;line-height:1.03;text-shadow:0 2px 12px #000,0 0 20px #050912}
+.senate-home .hero-scene{z-index:1;overflow:visible;min-height:180px;margin:0;pointer-events:none}
+.senate-home .hero-scene:before,.senate-home .hero-scene:after,.senate-home .hero-halo{display:none}
+.senate-home .hero-fan{position:absolute;top:65%;height:29%;min-height:0;width:100%;max-width:290px;left:50%;transform:translateX(-50%)}
+.senate-home .hero-fan .cromo{width:clamp(76px,24vw,114px);height:auto;max-height:100%;aspect-ratio:3/4.1}
+.senate-home .hero-fan .cromo:first-child,.senate-home .hero-fan .cromo:last-child{width:clamp(68px,21vw,102px)}
+.senate-home .hero-fan .cromo:first-child{transform:translate(-53%,8px) rotate(-12deg)}
+.senate-home .hero-fan .cromo:last-child{transform:translate(53%,8px) rotate(12deg)}
+.senate-home .hero-fan .cromo:nth-child(2){transform:translateY(-5px)}
+.senate-home .hero-fan .cromo:only-child{transform:none;filter:none}
+.senate-home .hero-caption{bottom:0;font-size:calc(7px * var(--ui-text-scale,1));letter-spacing:1.1px}
+.senate-home .home-bottom{position:relative;z-index:12;padding-top:8px;background:linear-gradient(transparent,#0b101dee 35%);min-height:91px}
+.senate-quote{position:absolute;top:44%;left:5%;width:42%;padding:5px 7px;border:1px solid #e3bf6e99;border-radius:8px;background:#101827f2;box-shadow:0 3px 14px #0008;color:#f5dfae;font-size:calc(clamp(9px,2.6vw,13px) * var(--ui-text-scale,1));line-height:1.25;text-align:center}
+.senate-quote[data-side=right]{left:auto;right:5%}
+.senate-quote b{display:block;font-size:.78em;color:#c4cbd9;margin-bottom:3px;font-weight:600}
+.senate-quote span{display:block;position:relative;color:transparent}
+/* The complete sentence reserves its final height while the visible layer types. */
+.senate-quote span::after{content:attr(data-visible-text);position:absolute;inset:0;color:#f5dfae}
+.screen[data-view=menu] .foot{color:#d3b77e;letter-spacing:2px;font-size:calc(9px * var(--ui-text-scale,1));margin-top:3px}
+@media(max-width:350px){.senate-home .hero-caption{font-size:calc(6px * var(--ui-text-scale,1));letter-spacing:.7px}}
+@media(max-height:690px){.senate-home .home-copy h1{font-size:calc(23px * var(--ui-text-scale,1))}.senate-home .hero-caption{display:none}.senate-home .hero-fan{top:67%;height:30%}.senate-home .home-bottom{min-height:85px}.senate-quote{top:41%;font-size:calc(10px * var(--ui-text-scale,1));padding:3px 5px}.senate-quote b{margin-bottom:1px}}
+@media(max-height:500px) and (min-width:600px){.screen[data-view=menu]{max-width:900px}.screen[data-view=menu] .appbar{padding-top:8px;padding-bottom:6px;gap:5px}.screen[data-view=menu] .hud-cell{padding:3px 8px}.screen[data-view=menu] .hud-metric b{font-size:calc(12px * var(--ui-text-scale,1))}.screen[data-view=menu] .hud-metric small{font-size:calc(7px * var(--ui-text-scale,1));margin-bottom:1px}.screen[data-view=menu] .tabbar{height:57px;padding-bottom:5px}.screen[data-view=menu] .tab.on{height:55px}.screen[data-view=menu] .tab.on .nav-icon{height:35px;width:40px}.screen[data-view=menu] .tab{height:45px}.senate-home .home-copy h1{font-size:calc(22px * var(--ui-text-scale,1))}.senate-home .hero-scene{min-height:100px}.senate-home .hero-fan{top:67%;height:31%;max-width:180px}.senate-home .hero-fan .cromo{width:60px}.senate-home .hero-fan .cromo:first-child,.senate-home .hero-fan .cromo:last-child{width:54px}.senate-home .hero-fan .bot{font-size:calc(6px * var(--ui-text-scale,1));padding:4px}.senate-home .hero-fan .card-stat{font-size:calc(6px * var(--ui-text-scale,1))}.senate-home .home-bottom{position:absolute;right:0;bottom:0;min-height:0;background:none}.senate-home .home-season{display:none}.senate-home .play-main{font-size:calc(16px * var(--ui-text-scale,1));padding:8px 13px;min-height:38px}.senate-home .play-toggle{width:30px}.senate-home .online-entry{min-height:30px}.senate-quote{font-size:calc(9px * var(--ui-text-scale,1))}.senate-home .home-action-stack{gap:3px}.senate-home .home-action-stack .home-options-button,.senate-home .home-action-stack .mail-button{height:32px;min-height:32px;width:36px}.screen[data-view=menu] .foot{font-size:calc(7px * var(--ui-text-scale,1))}}
+@media(prefers-reduced-motion:reduce){.menu-senate canvas{transition:none}}
+
+@media(max-width:350px){.screen[data-view=menu] .hud-cell{gap:4px;padding:6px}.screen[data-view=menu] .hud-metric b{font-size:calc(12px * var(--ui-text-scale,1))}.screen[data-view=menu] .hud-metric+.hud-metric{padding-left:5px}.screen[data-view=menu] .hud-metric small{letter-spacing:.5px}.senate-home .hero-fan .nm{font-size:calc(7px * var(--ui-text-scale,1));white-space:nowrap}.senate-home .hero-fan .cromo .bot{padding:7px 4px 4px}}
+@media(max-height:500px) and (min-width:600px){.senate-home .hero-fan{max-width:170px}.senate-quote{width:66%;left:0;font-size:calc(8px * var(--ui-text-scale,1))}.senate-quote[data-side=right]{right:0}.senate-quote b{display:none}}
+
+
+.screen[data-view=menu]{isolation:isolate}.screen[data-view=menu]>.content{position:relative;z-index:1;background:transparent}.screen[data-view=menu]>.appbar,.screen[data-view=menu]>.tabbar{position:relative;background:rgba(8,13,24,.5);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}.screen[data-view=menu]>.appbar{z-index:29}.screen[data-view=menu]>.tabbar{z-index:30}.senate-home .home-utilities>.eyebrow,.senate-home .home-copy>p{display:none}.senate-home .home-copy{z-index:10}.senate-home .home-action-stack{z-index:30}.menu-senate[hidden]{display:none}.screen[data-view=menu] .hud-cell{background:rgba(14,23,40,.64)}
+
+.senate-quote span{font-family:'Senate Dialogue',monospace;font-size:calc(clamp(14px,3.8vw,19px) * var(--ui-text-scale,1));font-weight:400;line-height:1.05;letter-spacing:0}
+
+.screen[data-view=menu]>.tabbar{grid-template-rows:minmax(0,1fr)}
+@media(max-height:500px) and (min-width:600px){.senate-quote{width:36%;left:3%}.senate-quote[data-side=right]{right:3%}.senate-quote b{display:block}.senate-home .hero-caption{display:none}}

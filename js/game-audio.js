@@ -85,6 +85,22 @@
    source.onended=function(){var i=voices.indexOf(source);if(i>=0)voices.splice(i,1);source.disconnect();};
   });
  }
+ var lastDialogue=-1;
+ function dialogue(speaker,letter){
+  if(!available()||state.screen!=='menu'||!prefs.effectsEnabled||!prefs.effects||typeof ctx.createOscillator!=='function')return;
+  var now=ctx.currentTime;if(now-lastDialogue<.085)return;lastDialogue=now;
+  var pitches=[176,158,236,184,154,208,170,162,222,190,246,226],tone=ctx.createOscillator(),gain=ctx.createGain(),filters=[];
+  var pitch=pitches[Math.abs(speaker)%pitches.length]*(1+Math.sin(letter*1.7)*.045);
+  tone.type='sawtooth';tone.frequency.setValueAtTime(pitch,now);tone.frequency.exponentialRampToValueAtTime(pitch*.95,now+.07);
+  // Short voiced syllables: two vowel formants make RPG chatter, not words.
+  if(typeof ctx.createBiquadFilter==='function'){
+   var vowels=[[720,1200],[500,1700],[300,2100],[480,900],[350,750]],formants=vowels[(Math.abs(letter)+speaker*2)%vowels.length],timbre=.88+(speaker%5)*.055;
+   formants.forEach(function(f,i){var filter=ctx.createBiquadFilter();filter.type='bandpass';filter.frequency.setValueAtTime(f*timbre,now);filter.frequency.linearRampToValueAtTime(f*timbre*1.06,now+.05);filter.Q.value=i?4:3;tone.connect(filter);filter.connect(gain);filters.push(filter);});
+  }else{tone.type='triangle';tone.connect(gain);}
+  gain.gain.setValueAtTime(0,now);gain.gain.linearRampToValueAtTime(.12,now+.008);gain.gain.exponentialRampToValueAtTime(.0001,now+.075);
+  gain.connect(fxBus);voices.push(tone);metrics.effects.dialogue=(metrics.effects.dialogue||0)+1;
+  tone.onended=function(){var at=voices.indexOf(tone);if(at>=0)voices.splice(at,1);tone.disconnect();filters.forEach(function(filter){filter.disconnect();});gain.disconnect();};tone.start(now);tone.stop(now+.085);
+ }
  var optionsHost=null,optionsFocus=null;
  function refreshControls(){
   ['master','music','effects','ambience'].forEach(function(k){var value=k==='master'&&prefs.muted?0:prefs[k];document.querySelectorAll('[data-audio-value="'+k+'"]').forEach(function(el){el.textContent=Math.round(value*100)+' %';});document.querySelectorAll('[data-audio-volume="'+k+'"]').forEach(function(el){el.value=Math.round(value*100);});});
@@ -147,5 +163,5 @@
  root.addEventListener('pagehide',function(){stopAll();if(ctx)ctx.suspend().catch(function(){});});
  root.addEventListener('pageshow',function(){if(unlocked&&!document.hidden)unlock();});
  root.addEventListener('online',function(){buffers={};});
- root.HemicycleAudio={unlock:unlock,sync:sync,effect:effect,battleEvent:battleEvent,clock:clock,panel:panel,open:openOptions,close:closeOptions,set:set,preferences:function(){return Object.assign({},prefs);},status:function(){return {context:ctx?ctx.state:'locked',scene:scene,intense:!!intensity,musicSources:music.length,effectSources:voices.length,musicStarts:metrics.musicStarts,results:metrics.results,effects:Object.assign({},metrics.effects)};}};
+ root.HemicycleAudio={unlock:unlock,sync:sync,effect:effect,dialogue:dialogue,battleEvent:battleEvent,clock:clock,panel:panel,open:openOptions,close:closeOptions,set:set,preferences:function(){return Object.assign({},prefs);},status:function(){return {context:ctx?ctx.state:'locked',scene:scene,intense:!!intensity,musicSources:music.length,effectSources:voices.length,musicStarts:metrics.musicStarts,results:metrics.results,effects:Object.assign({},metrics.effects)};}};
 })(window);

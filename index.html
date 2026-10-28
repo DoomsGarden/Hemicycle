@@ -531,6 +531,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 </section>
 <div id="app" inert aria-hidden="true">
  <div class="screen" id="screen">
+  <div class="menu-senate" id="menuSenateRoot" aria-hidden="true" hidden><canvas></canvas><div class="senate-quote" hidden><b></b><span></span></div></div>
   <div class="appbar" id="appbar"></div>
   <div class="content" id="content"><p class="sub">Cargando Hemiciclo...</p></div>
   <div class="tabbar" id="tabbar"></div>
@@ -549,11 +550,13 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <script src="js/player-profile.js?v=31.0.2.2"></script>
 <script src="js/cloud-save.js?v=31.0.2.2-cloud1"></script>
-<link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/online-combat-ui.js?v=31.0.2.0-recovery2"></script><script src="js/online-ui.js?v=31.0.2.0-recovery2"></script>
+<link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/online-combat-ui.js?v=31.0.2.5"></script><script src="js/online-ui.js?v=31.0.2.5"></script>
 <script src="js/cloud-ui.js?v=31.0.2.3"></script>
 <script src="js/ui-preferences.js?v=31.0.2.4"></script>
-<script src="js/game-audio.js?v=31.0.2.3-polish2"></script>
+<script src="js/game-audio.js?v=31.0.2.5"></script>
 <script src="js/launch-screen.js?v=31.0.2.1-cloud2"></script>
+<link rel="stylesheet" href="css/menu-senate.css?v=31.0.2.5">
+<script src="js/menu-senate.js?v=31.0.2.5"></script>
 <script src="js/league-rewards.js?v=31.0.2.4-league1"></script>
 <script src="js/coin-toss.js?v=31.0.2.4-relief2"></script>
 <script src="js/battle-status.js?v=31.0.2.3-table1"></script>
@@ -583,7 +586,7 @@ tr.des td{background:rgba(212,59,59,.1)}
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.4-league1"></script>
+<script src="js/changelog.js?v=31.0.2.5"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.3-ops1"></script>
@@ -605,7 +608,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.4';
+var VERSION='v31.0.2.5';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1606,6 +1609,7 @@ function paint(){
  var ab=document.getElementById('appbar');if(ab)ab.innerHTML=appbar();
  var foot=(SCREEN==='battle')?'':'<div class="foot">'+CARDS.length+' oradores · '+(typeof HemicycleActions!=='undefined'?HemicycleActions.cards.length:0)+' acciones · gabinete de 5 + 2</div>';
  c.innerHTML='<div class="view-body">'+((SCREENS[SCREEN]||SCREENS.menu)())+'</div>'+foot;
+ if(typeof HemicycleMenuSenate!=='undefined')HemicycleMenuSenate.sync();
  var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
  if(journalFocus&&BATTLE_LOG_OPEN){var journalControl=c.querySelector(journalFocus==='close'?'[data-act=battle-log-close]':'.battle-journal .log');if(journalControl)journalControl.focus({preventScroll:true});}
 
@@ -1704,7 +1708,7 @@ SCREENS.menu=function(){
  var selected=modes.filter(function(mode){return mode[0]===PLAY_MODE;})[0];
  if(!MENU_FEATURED.length)chooseMenuCards();
  var featured=MENU_FEATURED.filter(function(id){return BYID[id]&&copies(d,id)>0;}).map(function(id){return {c:BYID[id]};});
- return '<section class="menu-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+'<div class="home-action-stack'+(HOME_ACTIONS_OPEN?' expanded':'')+'"><button type="button" class="home-options-button" data-audio-open aria-label="Opciones" title="Opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#242c39"/><circle cx="15" cy="12" r="2" fill="#242c39"/><circle cx="10" cy="18" r="2" fill="#242c39"/></svg></button>'+mailButton()+'<div class="home-action-extra" id="homeActionExtra"'+(HOME_ACTIONS_OPEN?'':' inert')+'><div>'+objectiveButton('achievements','★','Logros')+'<button class="home-options-button" data-act="history" aria-label="Historial de combates" title="Historial">'+uiIcon('history')+'</button></div></div><button class="home-options-button home-action-toggle'+(objectivePending(d,'achievements')?' has-pending':'')+'" data-act="home-tools" aria-controls="homeActionExtra" aria-expanded="'+HOME_ACTIONS_OPEN+'" aria-label="'+(HOME_ACTIONS_OPEN?'Ocultar botones adicionales':'Mostrar Logros e Historial')+(objectivePending(d,'achievements')?' · Logros sin reclamar':'')+'">'+uiIcon('chevron')+'</button></div></div><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
+ return '<section class="menu-home senate-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+'<div class="home-action-stack'+(HOME_ACTIONS_OPEN?' expanded':'')+'"><button type="button" class="home-options-button" data-audio-open aria-label="Opciones" title="Opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#242c39"/><circle cx="15" cy="12" r="2" fill="#242c39"/><circle cx="10" cy="18" r="2" fill="#242c39"/></svg></button>'+mailButton()+'<div class="home-action-extra" id="homeActionExtra"'+(HOME_ACTIONS_OPEN?'':' inert')+'><div>'+objectiveButton('achievements','★','Logros')+'<button class="home-options-button" data-act="history" aria-label="Historial de combates" title="Historial">'+uiIcon('history')+'</button></div></div><button class="home-options-button home-action-toggle'+(objectivePending(d,'achievements')?' has-pending':'')+'" data-act="home-tools" aria-controls="homeActionExtra" aria-expanded="'+HOME_ACTIONS_OPEN+'" aria-label="'+(HOME_ACTIONS_OPEN?'Ocultar botones adicionales':'Mostrar Logros e Historial')+(objectivePending(d,'achievements')?' · Logros sin reclamar':'')+'">'+uiIcon('chevron')+'</button></div></div><h1>Toma<br><span>la palabra.</span></h1><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
  +'<div class="hero-scene" aria-hidden="true"><div class="hero-halo"></div><div class="hero-fan">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'
  +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'<button class="play-online-ranked" data-act="online-ranked" role="menuitem">Buscar Clasificatoria online</button></div>':'')

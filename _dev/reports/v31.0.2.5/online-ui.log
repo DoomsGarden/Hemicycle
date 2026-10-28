@@ -1,0 +1,11 @@
+✔ a rendering exception releases the online command lock and allows retry (11.137828ms)
+✔ a slow background poll yields to a move and its late response cannot replace the move result (2.025204ms)
+✔ a pending move is never preempted and a lost reply retries the identical operation ID (3.032884ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 3
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 72.875341

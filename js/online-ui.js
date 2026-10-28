@@ -31,7 +31,7 @@ function create(api){
   if(!preview){
    const label=node('label',undefined,'online-presence'),check=node('input');check.type='checkbox';check.checked=!!directory?.self?.visible;check.disabled=busy;
    check.onchange=()=>run(async()=>{directory=await request('/players/presence',{visible:check.checked,online:true});});label.append(check,node('span','Mostrarme a otros jugadores'));box.append(label);
-   for(const invitation of directory?.invitations||[]){const item=node('div',undefined,'online-invitation');item.append(node('span',invitation.nickname+' te invita'),button('Aceptar',()=>run(async()=>{room=await request('/rooms/accept',{roomId:invitation.id});await refresh();openCombat();})));box.append(item);}
+   for(const invitation of directory?.invitations||[]){const item=node('div',undefined,'online-invitation');item.append(node('span',invitation.nickname+' te invita'),button('Aceptar',()=>run(async()=>{room=await request('/rooms/accept',{roomId:invitation.id});openCombat();})));box.append(item);}
    if(queue?.status==='waiting'){const wait=node('div',undefined,'online-invitation');wait.append(node('span','Buscando rival · '+queue.rating+' Elo'+(queue.band===null?' · sin límite':' · ±'+queue.band)),button('Cancelar',()=>run(async()=>{await request('/queue/cancel',{});queue=null;})));box.append(wait);}
    if(hasInvitation()){const wait=node('div',undefined,'online-invitation');wait.append(node('span',room.status==='paired'?'Invitación aceptada':'Invitación enviada · esperando respuesta'));if(room.status==='paired')wait.append(button('Continuar',openCombat));box.append(wait);}
    if(mode==='ranked')box.append(node('p','La Clasificatoria online se busca por Elo desde el selector de Jugar. Las invitaciones son para Normal y Rápida.','online-note'));
@@ -49,9 +49,11 @@ function create(api){
   if(!response.ok)throw Error(response.status===401?'Inicia sesión de nuevo.':data.error||'No se pudo conectar.');return data;
  }
  async function refresh(){
-  if(queue?.status==='waiting'){queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();}}
-  directory=await request('/players');if(directory.self?.visible)directory=await request('/players/presence',{visible:true,online:true});
-  if(hasInvitation()){const before=room.status;room=await request('/rooms/'+room.id);if(before!=='paired'&&room.status==='paired')openCombat();rememberRoom();}render();
+  if(queue?.status==='waiting'){queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();return;}}
+  const visible=!!directory?.self?.visible,roomId=hasInvitation()?room.id:null;
+  const values=await Promise.all([request(visible?'/players/presence':'/players',visible?{visible:true,online:true}:undefined),roomId?request('/rooms/'+roomId):Promise.resolve(null)]);
+  directory=values[0];if(!visible&&directory.self?.visible)directory=await request('/players/presence',{visible:true,online:true});
+  if(values[1]&&room?.id===roomId){const before=room.status;room=values[1];if(before!=='paired'&&room.status==='paired')openCombat();rememberRoom();}render();
  }
  async function run(fn,quiet=false){
   if(busy)return;const ticket=epoch;busy=true;render();if(!quiet)message('Conectando…');
