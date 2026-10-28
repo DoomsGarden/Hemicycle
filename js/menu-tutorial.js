@@ -31,7 +31,7 @@ function create(api){
    ['details','.stat','Conoce cada cromo','Coste TdP: presentarlo. Zasca: daño. Aguante: resistencia. Escaños: votos. La ficha incluye doctrina, frases, zoom y navegación. Toca sus valores para visitar Ayuda.','help'],
    ['help','[data-act="menu-tutorial"]','Ayuda cuando la necesites','En ? puedes consultar las reglas y repetir por separado esta guía, Mercado o el tutorial de combate. Las novedades están junto a Ayuda. Toca este botón: iremos a la última parada sin reiniciar la guía.','league'],
    ['league','#tabbar [data-go="liga"]','4. La Liga','Liga es una competición por jornadas, distinta de la Clasificatoria de Elo. Toca su botón para conocer la pantalla sin crear una temporada.','league'],
-   ['league-info','#content .view-body>div:first-child','Todo listo para jugar','Aquí ves tu Liga o creas una temporada: 30 grupos, 12 jornadas y tres divisiones. Sus partidas pueden transferir un cromo. Toca este bloque para terminar y volver al inicio.']
+   ['league-info','#content .view-body>div:first-child','Todo listo para jugar','Aquí ves tu Liga o creas una temporada: 30 grupos, 12 jornadas y tres divisiones. Sus partidas pueden transferir un cromo. El premio final va de 1100 a 300 FS según tu puesto. Toca este bloque para terminar y volver al inicio.']
   ]
  });
 }

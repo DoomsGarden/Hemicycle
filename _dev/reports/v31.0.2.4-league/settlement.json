@@ -1,0 +1,32 @@
+{
+  "results": [
+    {
+      "position": 1,
+      "bonus": 1100,
+      "matchFS": 22,
+      "total": 1122,
+      "paidOnce": true,
+      "nextSeason": 8
+    },
+    {
+      "position": 15,
+      "bonus": 714,
+      "matchFS": 22,
+      "total": 736,
+      "paidOnce": true,
+      "nextSeason": 8
+    },
+    {
+      "position": 30,
+      "bonus": 300,
+      "matchFS": 22,
+      "total": 322,
+      "paidOnce": true,
+      "nextSeason": 8
+    }
+  ],
+  "postgresql": true,
+  "eloPreserved": true,
+  "duplicateOperationReturnsReceipt": true,
+  "duplicateTicketRejected": true
+}
