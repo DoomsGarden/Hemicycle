@@ -1,5 +1,5 @@
 /* Only menu content and the bottom selection animate; the fixed Senate is independent. */
-.tabbar{isolation:isolate}
+.tabbar{position:relative;isolation:isolate}
 .tabbar[data-nav-ready=true]:before{content:'';position:absolute;left:0;top:0;width:var(--nav-halo-w);height:var(--nav-halo-h);transform:translate3d(var(--nav-halo-x),var(--nav-halo-y),0);border:1px solid #efd08977;border-radius:18px;background:radial-gradient(ellipse at top,#f5d38b35,transparent 75%);box-shadow:0 0 16px #e9c57224,inset 0 1px #fff0c455;pointer-events:none;z-index:0;transition:transform .27s cubic-bezier(.22,.7,.2,1),width .27s,height .27s}
 .tabbar>.tab{z-index:1}.tabbar>.tab .nav-icon{transform-origin:top left;pointer-events:none}
 @media(max-height:500px) and (min-width:600px){.screen[data-senate=true]>.tabbar{height:57px;padding-bottom:5px}.screen[data-senate=true] .tab.on{height:55px}.screen[data-senate=true] .tab.on .nav-icon{height:35px;width:40px}.screen[data-senate=true] .tab{height:45px}}

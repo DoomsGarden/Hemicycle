@@ -1,0 +1,84 @@
+{
+  "navigation": [
+    {
+      "dx": 140,
+      "to": "tienda"
+    },
+    {
+      "dx": -145,
+      "to": "coleccion"
+    },
+    {
+      "dx": -145,
+      "to": "menu"
+    },
+    {
+      "dx": -145,
+      "to": "liga"
+    },
+    {
+      "dx": -145,
+      "to": "mercado"
+    },
+    {
+      "dx": -145,
+      "to": "mercado"
+    },
+    {
+      "dx": 145,
+      "to": "liga"
+    },
+    {
+      "dx": 145,
+      "to": "menu"
+    },
+    {
+      "dx": 145,
+      "to": "coleccion"
+    },
+    {
+      "dx": 145,
+      "to": "tienda"
+    }
+  ],
+  "nativeTouch": true,
+  "edgesLocked": true,
+  "shortGestures": true,
+  "verticalScroll": true,
+  "horizontalFilters": true,
+  "inputsAndDropdowns": true,
+  "repaintCancellation": true,
+  "mouse": true,
+  "popupsBlocked": true,
+  "transitions": [
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "animated": true,
+      "aligned": true
+    },
+    {
+      "size": {
+        "width": 393,
+        "height": 851
+      },
+      "animated": true,
+      "aligned": true
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "animated": true,
+      "aligned": true
+    }
+  ],
+  "reducedMotion": true,
+  "fixedBackdrop": true,
+  "continuousClock": true,
+  "unchangedProfile": true,
+  "errors": []
+}

@@ -1,0 +1,12 @@
+PASS: 288 walk frames, 12 actors on white, no detached parts or crossfade holes, 36 reading holds, navigation halo inside its bar on 15 screens/layouts, unchanged profile. {"medianMs":0.3999999910593033,"p95Ms":0.7000000029802322}
+
+Upgrade and all 128 precached assets passed.
+PASS: PWA upgrade, cache replacement, offline loading, progress preservation and market layouts.
+
+PASS: real touch swipes in both directions, end locks, vertical/horizontal scrolling, cancelled/repaint gestures, controls/popups, mouse, animated bottom selection in 3 sizes, reduced motion and unchanged background/profile.
+
+PASS: complete menu and battle guides, separate market onboarding untouched, no rewards or profile mutations.
+
+Unit tests: 11 passed; 0 failed.
+Reading scale: 0 unscaled files.
+Offline build check and git diff --check: passed.
