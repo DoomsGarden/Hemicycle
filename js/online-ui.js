@@ -3,7 +3,7 @@
 'use strict';
 function create(api){
  const host=document.getElementById('onlineRoot'),base=api.base;
- let opened=false,busy=false,poll=null,directory=null,room=null,pending=null,viewer=null,epoch=0,previousFocus=null,autoRoom=null,mode='normal',queue=null,preview=false,aiPending=null;
+ let opened=false,busy=false,poll=null,directory=null,room=null,pending=null,viewer=null,epoch=0,previousFocus=null,autoRoom=null,mode='normal',queue=null,preview=false,aiPending=null,lastPresence=0;
  host.innerHTML='<div class="online-shade" hidden><section class="online-dialog" role="dialog" aria-modal="true" aria-labelledby="online-title"><header><h2 id="online-title">Jugadores</h2><button type="button" data-online="close" aria-label="Cerrar partidas online">×</button></header><div class="online-body"><p id="online-message" role="status" aria-live="polite"></p><div id="online-controls"></div><section id="combat" hidden><p id="combat-message" role="status"></p><div class="combat-tools"><button type="button" id="combat-retry">Actualizar / reintentar</button><button type="button" id="combat-close">Volver a jugadores</button></div><div id="combat-content"></div></section></div></section></div>';
  const $=id=>document.getElementById(id),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  const message=text=>{$('online-message').textContent=text;};
@@ -30,7 +30,7 @@ function create(api){
   else if(!api.account()){box.append(node('p','Accede a tu cuenta para invitar a otros jugadores.','online-note'),button('Acceder a mi cuenta',()=>{close();api.login();}));return;}
   if(!preview){
    const label=node('label',undefined,'online-presence'),check=node('input');check.type='checkbox';check.checked=!!directory?.self?.visible;check.disabled=busy;
-   check.onchange=()=>run(async()=>{directory=await request('/players/presence',{visible:check.checked,online:true});});label.append(check,node('span','Mostrarme a otros jugadores'));box.append(label);
+   check.onchange=()=>run(async()=>{directory=await request('/players/presence',{visible:check.checked,online:true});lastPresence=check.checked?Date.now():0;});label.append(check,node('span','Mostrarme a otros jugadores'));box.append(label);
    for(const invitation of directory?.invitations||[]){const item=node('div',undefined,'online-invitation');item.append(node('span',invitation.nickname+' te invita'),button('Aceptar',()=>run(async()=>{room=await request('/rooms/accept',{roomId:invitation.id});openCombat();})));box.append(item);}
    if(queue?.status==='waiting'){const wait=node('div',undefined,'online-invitation');wait.append(node('span','Buscando rival · '+queue.rating+' Elo'+(queue.band===null?' · sin límite':' · ±'+queue.band)),button('Cancelar',()=>run(async()=>{await request('/queue/cancel',{});queue=null;})));box.append(wait);}
    if(hasInvitation()){const wait=node('div',undefined,'online-invitation');wait.append(node('span',room.status==='paired'?'Invitación aceptada':'Invitación enviada · esperando respuesta'));if(room.status==='paired')wait.append(button('Continuar',openCombat));box.append(wait);}
@@ -50,9 +50,9 @@ function create(api){
  }
  async function refresh(){
   if(queue?.status==='waiting'){queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();return;}}
-  const visible=!!directory?.self?.visible,roomId=hasInvitation()?room.id:null;
-  const values=await Promise.all([request(visible?'/players/presence':'/players',visible?{visible:true,online:true}:undefined),roomId?request('/rooms/'+roomId):Promise.resolve(null)]);
-  directory=values[0];if(!visible&&directory.self?.visible)directory=await request('/players/presence',{visible:true,online:true});
+  const roomId=hasInvitation()?room.id:null;
+  const values=await Promise.all([request('/players'),roomId?request('/rooms/'+roomId):Promise.resolve(null)]);
+  directory=values[0];if(directory.self?.visible&&Date.now()-lastPresence>=30000){directory=await request('/players/presence',{visible:true,online:true});lastPresence=Date.now();}
   if(values[1]&&room?.id===roomId){const before=room.status;room=values[1];if(before!=='paired'&&room.status==='paired')openCombat();rememberRoom();}render();
  }
  async function run(fn,quiet=false){
@@ -95,7 +95,7 @@ function create(api){
   open,close,startAI,hasActiveMatch(){restoreRoom();return room?.status==='paired';},resume(){restoreRoom();autoRoom=null;if(room?.status==='paired'&&open(room.mode||'normal',false))openCombat();},hasInvitation(){restoreRoom();return hasInvitation()||!!pending;},
   async searchRanked(){if(!open('ranked',false))return;await run(async()=>{if(!api.account())throw Error('Inicia sesión para buscar rival.');if(api.ensureCloud)await api.ensureCloud();queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();}});},
   openGuide(){combat.close();preview=true;mode=api.mode?.()||'normal';opened=true;epoch++;previousFocus=document.activeElement;$('app').inert=true;$('app').setAttribute('aria-hidden','true');host.querySelector('.online-shade').hidden=false;render();},
-  accountChanged(){if(api.account()?.userId!==viewer){close();combat.close();if(api.clearBattle)api.clearBattle();directory=room=pending=queue=aiPending=null;viewer=api.account()?.userId;}}
+  accountChanged(){if(api.account()?.userId!==viewer){close();combat.close();if(api.clearBattle)api.clearBattle();directory=room=pending=queue=aiPending=null;lastPresence=0;viewer=api.account()?.userId;}}
  };
 }
 root.HemicycleOnlineUI={create};

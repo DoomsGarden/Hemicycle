@@ -17,7 +17,7 @@ Integración de la maqueta `Hemiciclo-senado-revision-v3.html` aportada por Doom
 Se corrigen dos esperas observables en el cliente, sin cambiar autenticación, SQL ni reglas:
 
 1. Una consulta periódica de combate cede ante una jugada del usuario. Su respuesta tardía no puede sobrescribir el estado más reciente. Una escritura pendiente nunca se cancela para enviar otra y mantiene el mismo identificador al reintentar.
-2. Aceptar una invitación abre la preparación inmediatamente tras la confirmación del servidor, sin esperar directorio, presencia y otra consulta de sala. En las actualizaciones de una sala pendiente, presencia y sala se consultan en paralelo; una presencia ya visible evita otra consulta redundante del directorio.
+2. Aceptar una invitación abre la preparación inmediatamente tras la confirmación del servidor, sin esperar directorio, presencia y otra consulta de sala. En las actualizaciones de una sala pendiente, directorio y sala se consultan en paralelo; el aviso de presencia se envía como máximo cada 30 segundos, consultando antes la visibilidad actual para respetar también los cambios desde otro dispositivo.
 
 Las pruebas locales verifican orden y número de peticiones, no la latencia real de Render/Supabase. El recorrido del servidor sigue validando la sesión y confirmando cada jugada de forma autoritativa. Los datos aportados por Dooms corresponden a una instancia Compute de 1 CPU / 2 GB; la revisión no atribuye toda la demora al plan.
 
@@ -26,9 +26,9 @@ Las pruebas locales verifican orden y número de peticiones, no la latencia real
 - **605 pruebas automáticas**, todas correctas (`tests.log`).
 - Inicio en 320×568, 393×851, 768×1024 y 844×390, con texto al 100 % y al 116 %. Accesos alcanzables, barras al 50 %, doce oradores y sus dos sentidos de marcha, lienzo persistente, fuentes acotadas al diálogo, efectos de voz, pausa de ventanas y segundo plano, datos y música conservados (`menu.json`, `menu.log`).
 - Un atlas ausente mantiene el menú funcional; vuelve a intentarse al recuperar conexión (`menu.json`).
-- Invitación aceptada sin consultas redundantes; sala y presencia en paralelo (`online-response.json`). Una lectura lenta deja pasar una jugada; su respuesta antigua se ignora. Las escrituras en curso y los reintentos conservan la operación (`online-ui.log`).
+- Invitación aceptada sin consultas redundantes; sala y directorio en paralelo (`online-response.json`). Una lectura lenta deja pasar una jugada; su respuesta antigua se ignora. Las escrituras en curso y los reintentos conservan la operación (`online-ui.log`).
 - Guías completas de menú y combate, sin premios ni cambios de perfil (`guides/`).
-- PWA desde 86ea2d0: **123 recursos**, nueva caché, escena/fuente sin conexión y perfil, Liga y audio conservados (`pwa/`).
+- PWA desde 86ea2d0 y desde la primera compilación de esta versión (6819b83): **123 recursos**, nueva caché, escena/fuente sin conexión y perfil, Liga y audio conservados (`pwa/`).
 - Sintaxis, escalado de texto, motores offline generados y `git diff --check`: correctos.
 
 Sin SQL ni reinicios de progreso. Fuente VT323 distribuida con su licencia SIL OFL en `fonts/VT323-OFL.txt`; procedencia: https://github.com/google/fonts/tree/main/ofl/vt323 .

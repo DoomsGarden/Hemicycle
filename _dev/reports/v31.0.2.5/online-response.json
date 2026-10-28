@@ -5,11 +5,13 @@
     "/combats/11111111-1111-4111-8111-111111111111"
   ],
   "parallelCalls": [
-    "/players/presence",
+    "/players",
     "/rooms/11111111-1111-4111-8111-111111111111"
   ],
   "noPostAcceptDirectoryWait": true,
   "oneDirectoryReadPerRefresh": true,
+  "heartbeatSpaced": true,
+  "externalVisibilityRespected": true,
   "parallelRoomAndDirectory": true,
   "errors": []
 }
