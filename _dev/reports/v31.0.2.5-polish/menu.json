@@ -1,0 +1,97 @@
+{
+  "layouts": [
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "text": 100,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 320,
+        "height": 568
+      },
+      "text": 116,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 393,
+        "height": 851
+      },
+      "text": 100,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 393,
+        "height": 851
+      },
+      "text": 116,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": 100,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 768,
+        "height": 1024
+      },
+      "text": 116,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "text": 100,
+      "controls": true,
+      "barsOpacity": 0.5
+    },
+    {
+      "size": {
+        "width": 844,
+        "height": 390
+      },
+      "text": 116,
+      "controls": true,
+      "barsOpacity": 0.5
+    }
+  ],
+  "speakers": 12,
+  "seated": 32,
+  "sharedKneeRig": true,
+  "phraseFollowingDeparture": {
+    "speechEnd": 4.825,
+    "departAt": 5.005,
+    "phase": "leaving",
+    "quoteHidden": true
+  },
+  "panelAvoidsCards": true,
+  "ownAnimatedTitle": true,
+  "persistentCanvas": true,
+  "pausedForDialogs": true,
+  "reducedMotion": true,
+  "dialogueEffects": 11,
+  "musicUnchanged": true,
+  "progressUnchanged": true,
+  "backgroundClockFrozen": true,
+  "missingAssetFallback": true,
+  "onlineRecovery": true,
+  "errors": []
+}

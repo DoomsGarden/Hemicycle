@@ -1,0 +1,15 @@
+/* Rasterize the generated layered title and a clockwise, outward-only light sweep.
+ * Source artwork: image_gen, 2026-10-28. Runtime uses only the resulting WebPs.
+ * NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/build-senate-title.cjs
+ */
+'use strict';
+const fs=require('node:fs'),os=require('node:os'),path=require('node:path'),{execFileSync}=require('node:child_process'),{chromium}=require('playwright');
+(async()=>{const dir=fs.mkdtempSync(path.join(os.tmpdir(),'senate-title-')),b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{const p=await b.newPage();await p.goto('about:blank');await p.evaluate(async data=>{const im=new Image();im.src=data;await im.decode();window.titleImage=im;},'data:image/png;base64,'+fs.readFileSync('_dev/artwork/menu-title.png').toString('base64'));
+for(let frame=0;frame<48;frame++){const encoded=await p.evaluate(frame=>{const c=document.createElement('canvas');c.width=640;c.height=460;const x=c.getContext('2d');const angle=frame/48*Math.PI*2,g=x.createConicGradient(angle,320,430);for(let i=0;i<4;i++){const color=i%2?'255,197,59':'255,255,255';g.addColorStop(i/4,'rgba('+color+',0)');g.addColorStop(i/4+.04,'rgba('+color+',0)');g.addColorStop(i/4+.10,'rgba('+color+',.85)');g.addColorStop(i/4+.16,'rgba('+color+',0)');g.addColorStop((i+1)/4,'rgba('+color+',0)');}x.fillStyle=g;x.fillRect(0,0,640,460);
+x.globalCompositeOperation='destination-in';const fade=x.createRadialGradient(320,315,50,320,430,335);fade.addColorStop(0,'#0000');fade.addColorStop(.25,'#0003');fade.addColorStop(.5,'#000c');fade.addColorStop(.72,'#0007');fade.addColorStop(1,'#0000');x.fillStyle=fade;x.fillRect(0,0,640,460);const upper=x.createLinearGradient(0,320,0,400);upper.addColorStop(0,'#000');upper.addColorStop(1,'#0000');x.fillStyle=upper;x.fillRect(0,0,640,460);
+const sides=x.createLinearGradient(0,0,640,0);sides.addColorStop(0,'#0000');sides.addColorStop(.08,'#000');sides.addColorStop(.92,'#000');sides.addColorStop(1,'#0000');x.fillStyle=sides;x.fillRect(0,0,640,460);
+x.globalCompositeOperation='source-over';x.globalAlpha=.95;x.drawImage(window.titleImage,12,95,616,616*window.titleImage.height/window.titleImage.width);return c.toDataURL('image/png').split(',')[1];},frame);fs.writeFileSync(path.join(dir,'frame-'+String(frame).padStart(3,'0')+'.png'),Buffer.from(encoded,'base64'));}
+execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-framerate','12','-i',path.join(dir,'frame-%03d.png'),'-c:v','libwebp_anim','-lossless','0','-quality','78','-compression_level','4','-loop','0','assets/menu-senate/title-loop.webp']);
+execFileSync('ffmpeg',['-hide_banner','-loglevel','error','-y','-i',path.join(dir,'frame-000.png'),'-c:v','libwebp','-quality','88','assets/menu-senate/title-still.webp']);
+console.log('Title: 640×460, 48 frames, 4 seconds, alpha; loop '+fs.statSync('assets/menu-senate/title-loop.webp').size+' bytes, still '+fs.statSync('assets/menu-senate/title-still.webp').size+' bytes.');
+}finally{await b.close();fs.rmSync(dir,{recursive:true,force:true});}})().catch(e=>{console.error(e);process.exitCode=1;});
