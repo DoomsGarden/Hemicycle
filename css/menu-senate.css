@@ -2,7 +2,7 @@
 /* The senate has its own stage; cards occupy only the lower central floor. */
 .screen[data-view=menu] .content{padding-top:0}
 .menu-home.senate-home{isolation:isolate;padding-top:0;overflow:visible}
-.menu-senate{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;background:#0b101d url("../assets/menu-senate/chamber.webp") center top/100% 122% no-repeat}
+.menu-senate{position:fixed;inset:0;width:min(100%,560px);height:100dvh;margin:0 auto;z-index:0;overflow:hidden;pointer-events:none;background:#0b101d url("../assets/menu-senate/chamber.webp") center top/100% 122% no-repeat}
 .menu-senate canvas{display:block;width:100%;height:100%;opacity:0;transition:opacity .3s}
 .menu-senate[data-ready=true] canvas{opacity:1}
 .senate-home .home-copy{position:absolute;top:8px;left:0;right:0;pointer-events:none}
@@ -40,11 +40,11 @@
 @media(max-height:500px) and (min-width:600px){.senate-quote{width:66%;left:0;font-size:calc(8px * var(--ui-text-scale,1))}.senate-quote[data-side=right]{right:0}.senate-quote b{display:none}}
 
 
-.screen[data-view=menu]{isolation:isolate}.screen[data-view=menu]>.content{position:relative;z-index:1;background:transparent}.screen[data-view=menu]>.appbar,.screen[data-view=menu]>.tabbar{position:relative;background:rgba(8,13,24,.5);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}.screen[data-view=menu]>.appbar{z-index:29}.screen[data-view=menu]>.tabbar{z-index:30}.senate-home .home-utilities>.eyebrow,.senate-home .home-copy>p{display:none}.senate-home .home-copy{z-index:10}.senate-home .home-action-stack{z-index:30}.menu-senate[hidden]{display:none}.screen[data-view=menu] .hud-cell{background:rgba(14,23,40,.64)}
+.screen[data-senate=true]{isolation:isolate;background:transparent;z-index:1}.screen[data-senate=true]>.content{position:relative;z-index:1;background:transparent}.screen[data-senate=true]>.appbar,.screen[data-senate=true]>.tabbar{position:relative;background:rgba(8,13,24,.5);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}.screen[data-senate=true]>.appbar{z-index:29}.screen[data-senate=true]>.tabbar{z-index:30}.senate-home .home-utilities>.eyebrow,.senate-home .home-copy>p{display:none}.senate-home .home-copy{z-index:10}.senate-home .home-action-stack{z-index:30}.menu-senate[hidden]{display:none}.screen[data-view=menu] .hud-cell{background:rgba(14,23,40,.64)}
 
 .senate-quote span{font-family:'Senate Dialogue',monospace;font-size:calc(clamp(14px,3.8vw,19px) * var(--ui-text-scale,1));font-weight:400;line-height:1.05;letter-spacing:0}
 
-.screen[data-view=menu]>.tabbar{grid-template-rows:minmax(0,1fr)}
+.screen[data-senate=true]>.tabbar{grid-template-rows:minmax(0,1fr)}
 @media(max-height:500px) and (min-width:600px){.senate-quote{width:36%;left:3%}.senate-quote[data-side=right]{right:3%}.senate-quote b{display:block}.senate-home .hero-caption{display:none}}
 
 /* The fan reserves its own lower margin; the play panel never covers a card. */
@@ -56,3 +56,15 @@
 @media(max-height:500px) and (min-width:600px){.senate-quote{top:44%;bottom:auto;width:26%;left:2%}.senate-quote[data-side=right]{right:2%}.senate-quote span{font-size:calc(14px * var(--ui-text-scale,1))}}
 
 @media(max-height:500px) and (min-width:600px){.senate-title{bottom:100%}}
+
+/* One fixed stage survives navigation; scroll containers never own the canvas. */
+.menu-senate:after{content:'';position:absolute;inset:0;background:rgba(3,5,9,.7);pointer-events:none}
+.menu-senate[data-view=menu]:after{display:none}
+.menu-senate:not([data-view=menu]) .senate-quote{display:none}
+.brand{min-width:0}.brand-wordmark{display:block;width:100%;max-width:185px;height:auto;filter:drop-shadow(0 1px 1px #000);pointer-events:none}
+.appbar .hud-results{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);align-items:center}
+.appbar .hud-results:has(.profile-button){grid-template-columns:auto minmax(0,1.4fr) minmax(0,1fr)}
+.appbar .hud-metric b{white-space:normal;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
+.appbar .hud-metric b span{display:inline-block;max-width:100%;overflow-wrap:anywhere}
+.screen[data-view=menu] .hud-strip{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) 44px}
+@media(max-height:500px) and (min-width:600px){.menu-senate{width:min(100%,900px)}}

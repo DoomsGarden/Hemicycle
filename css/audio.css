@@ -14,3 +14,6 @@
 @media(prefers-reduced-motion:reduce){.home-action-extra,.home-action-toggle svg{transition:none}.home-action-stack:not(.expanded) .home-action-toggle.has-pending{animation:none;box-shadow:0 0 7px #e8c46b77}}
 
 .home-action-extra button:focus-visible{outline-offset:-3px}
+
+.audio-version{display:block;flex-shrink:0;text-align:center;color:#929cad;font-size:calc(9px * var(--ui-text-scale,1));line-height:1.2;margin-top:8px;letter-spacing:.5px}
+@media(max-height:500px) and (min-width:600px){.audio-version{grid-column:1/-1;margin-top:0}}
