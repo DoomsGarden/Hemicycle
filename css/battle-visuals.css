@@ -190,3 +190,12 @@
 
 .mint-coin.is-cross>g:last-child{opacity:.3}
 .screen.in-battle .battle-resources abbr{text-decoration:none}
+
+/* Una sola insignia de estado básico, en el hombro izquierdo del retrato. */
+.screen.in-battle .basic-effect-badge{position:absolute;z-index:6;left:7%;top:38%;width:clamp(15px,24%,27px);aspect-ratio:1;display:grid;place-items:center;padding:2px;border:1px solid #80d5c6;border-radius:7px;background:#102b30ed;color:#c5fff0;box-shadow:0 0 5px #54cdb74d;cursor:pointer;animation:basicEffectHalo 2.8s ease-in-out infinite;touch-action:manipulation}
+.screen.in-battle .basic-effect-badge.negative{color:#ffe1bc;border-color:#e6a56e;background:#382431ed;box-shadow:0 0 5px #e88c4b55}
+.basic-effect-symbol{width:18px;height:18px;display:inline-block;vertical-align:middle;flex-shrink:0}.basic-effect-badge .basic-effect-symbol{width:100%;height:100%}.basic-effect-badge>b{position:absolute;right:-4px;bottom:-4px;min-width:9px;padding:1px 2px;border-radius:5px;background:#101827;color:#f6e4b2;border:1px solid currentColor;font:700 8px/1 'Hemicycle UI',sans-serif}
+.basic-effect-badge:focus-visible{outline:2px solid #fff1c0;outline-offset:3px}.basic-ability-detail{padding:10px 12px;border:1px solid #7b896c70;background:#10252c88;border-radius:10px;margin:10px 0}.basic-ability-detail h3{display:flex;gap:7px;align-items:center;margin:0 0 5px;color:#e4d19c;font-size:calc(14px * var(--ui-text-scale,1))}.basic-ability-detail p{margin:0;color:#d8e5ed;font-size:calc(12px * var(--ui-text-scale,1));line-height:1.45}
+@keyframes basicEffectHalo{50%{filter:brightness(1.13);box-shadow:0 0 8px #d4c38966}}
+@media(prefers-reduced-motion:reduce){.screen.in-battle .basic-effect-badge{animation:none}}
+@media(max-height:500px) and (min-width:600px){.screen.in-battle .basic-effect-badge{left:62%;top:24%;width:11px;padding:0;border-radius:4px}.basic-effect-badge>b{font-size:6px;right:-3px;bottom:-3px;min-width:6px;padding:0 1px}}

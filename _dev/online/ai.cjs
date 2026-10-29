@@ -20,7 +20,7 @@ function choose(state,side=1,now=Date.now()){
   if(c.hp<c.maxHp/3&&valid({type:'heal',uid:c.uid}))return {type:'heal',uid:c.uid};
   const variant=E.strong(p,c)?'strong':'normal',targets=foe.field.slice().sort((a,b)=>a.hp-b.hp||b.votes-a.votes);
   for(const target of targets){const command={type:'attack',uid:c.uid,target:target.uid,variant};if(valid(command))return command;}
-  if(foe.field.length<3){const normal=E.power(state,side,c),limit=Math.min(foe.votes,state.emptyVoteLimit==null?Infinity:state.emptyVoteLimit-(p.emptyVotesTaken||0)),command={type:'attack',uid:c.uid,target:'empty',variant:normal>=limit?'normal':variant};if(valid(command))return command;}
+  if(foe.field.length<3){const normal=E.normalPower(state,side,c),limit=Math.min(foe.votes,state.emptyVoteLimit==null?Infinity:state.emptyVoteLimit-(p.emptyVotesTaken||0)),command={type:'attack',uid:c.uid,target:'empty',variant:normal>=limit?'normal':variant};if(valid(command))return command;}
  }
  return {type:'end'};
 }

@@ -1,0 +1,21 @@
+{
+  "legacyResumed": true,
+  "pendingLegacyPreserved": true,
+  "legacyReceipts": [
+    {
+      "id": "old-pending",
+      "rules": "offline3"
+    },
+    {
+      "id": "old-active",
+      "rules": "offline3"
+    }
+  ],
+  "newRules": [
+    "offline4",
+    "offline4"
+  ],
+  "newEffects": "basic1",
+  "accountIsolation": true,
+  "currentResumed": true
+}

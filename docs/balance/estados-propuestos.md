@@ -1,5 +1,7 @@
 # Estados para los ataques normales — propuesta
 
+Propuesta histórica de v31.0.2.7. La primera prueba implementada y sus ajustes están en [efectos-basicos-2026-10-29.md](efectos-basicos-2026-10-29.md).
+
 **Diseño para revisar con Dooms. No hay efectos nuevos activos ni asignaciones a oradores en esta versión.** Los nombres y cantidades son propuestas; los iconos son conceptos para dibujar después de elegir las mecánicas.
 
 | Estado | Tipo | Efecto propuesto | Idea de icono |

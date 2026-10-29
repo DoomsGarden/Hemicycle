@@ -50,7 +50,7 @@ function create(api){
  ];}
 
  function introSteps(){return [
- ['coin','[data-tutorial="coin"]','Tu primer debate','Usamos cromos prestados, sin premios ni pérdidas. Toca la moneda para empezar esta práctica.','begin'],
+ ['coin','[data-tutorial="coin"]','Tu primer debate','Usamos cromos prestados, sin premios ni pérdidas y sin habilidades adicionales para aprender las reglas básicas. Toca la moneda para empezar esta práctica.','begin'],
  ['votes','.vbars','El objetivo: 100 votos','Azul: tus votos. Rojo: los del rival. El Tiempo de Palabra (TdP) paga los cromos y se renueva en tu turno. Toca los marcadores.'],
  ['play-leader','[data-tutorial="hand"] .lead','Presenta un orador','Su número indica el coste en TdP. La estrella marca al líder. Toca este cromo para llevarlo a tu Tribuna.','play-leader'],
  ['select','[data-tutorial="player"] .lead','Elige su intervención','Cada orador puede actuar una vez por turno. Tócalo para abrir sus frases.','select-leader'],

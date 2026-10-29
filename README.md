@@ -61,7 +61,7 @@ Los escaños base son **2 / 3 / 4 / 5** para comunes, raros, especiales y legend
 
 Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y una acción disponible; las cartas restantes esperan en el mazo. Cada orador puede intervenir **una vez por turno propio**.
 
-- **Ataque normal:** usa el Zasca actual del cromo.
+- **Ataque normal:** usa el Zasca actual del cromo. Algunos oradores generan un estado como máximo una vez cada dos turnos propios. Cada cromo admite uno; toca su icono para consultar el efecto y la duración. La ficha de Colección explica su habilidad.
 - **Ataque fuerte:** causa el 150 % del Zasca, redondeado hacia arriba, y cuesta un punto de Aguante. Su oportunidad aparece en el tercer turno propio del cromo en mesa y después cada tres turnos; si no la usas, debes esperar al siguiente ciclo.
 - **Defensa o curación:** la tercera frase abre ambas opciones. La defensa reduce a la mitad el próximo golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de tres y sin superar su máximo. Tras curarse, ese orador deja pasar un turno propio completo antes de volver a curarse.
 - **Cartas de acción:** puedes usar una por turno. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
@@ -133,10 +133,11 @@ python3 -m http.server 8080
 
 Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el juego local; las funciones vinculadas necesitan su configuración de autenticación, servicio y orígenes autorizados.
 
+- [Habilidades de básicos y reparto de la primera prueba](docs/balance/efectos-basicos-2026-10-29.md)
 - [Servicio online y configuración](_dev/online/README.md)
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
-- [Notas de la versión v31.0.2.7](_dev/releases/v31.0.2.7.md)
+- [Notas de la versión v31.0.2.8](_dev/releases/v31.0.2.8.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 

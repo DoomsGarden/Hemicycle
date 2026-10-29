@@ -1,0 +1,1208 @@
+{
+  "version": "basic1",
+  "catalogVersion": "balance-v2",
+  "cooldownOwnTurns": 2,
+  "activeStatusSlots": 1,
+  "cards": [
+    {
+      "id": "alberto-nunez-feijoo",
+      "name": "Alberto Núñez Feijóo",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "seats": 5,
+      "effect": null
+    },
+    {
+      "id": "angela-merkel",
+      "name": "Angela Merkel",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "seats": 5,
+      "effect": "shield"
+    },
+    {
+      "id": "barack-obama",
+      "name": "Barack Obama",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "seats": 5,
+      "effect": null
+    },
+    {
+      "id": "boris-johnson",
+      "name": "Boris Johnson",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "seats": 5,
+      "effect": "microphone"
+    },
+    {
+      "id": "carles-puigdemont",
+      "name": "Carles Puigdemont",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "seats": 5,
+      "effect": null
+    },
+    {
+      "id": "donald-trump",
+      "name": "Donald Trump",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "seats": 5,
+      "effect": null
+    },
+    {
+      "id": "emmanuel-macron",
+      "name": "Emmanuel Macron",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "seats": 5,
+      "effect": "shield"
+    },
+    {
+      "id": "isabel-diaz-ayuso",
+      "name": "Isabel Díaz Ayuso",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "seats": 5,
+      "effect": "coffee"
+    },
+    {
+      "id": "mariano-rajoy",
+      "name": "Mariano Rajoy",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "seats": 5,
+      "effect": null
+    },
+    {
+      "id": "pedro-sanchez",
+      "name": "Pedro Sánchez",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "seats": 5,
+      "effect": null
+    },
+    {
+      "id": "vladimir-putin",
+      "name": "Vladímir Putin",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "seats": 5,
+      "effect": "coffee"
+    },
+    {
+      "id": "yolanda-diaz",
+      "name": "Yolanda Díaz",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "seats": 5,
+      "effect": "shield"
+    },
+    {
+      "id": "ada-colau",
+      "name": "Ada Colau",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "shield"
+    },
+    {
+      "id": "andres-manuel-lopez-obrador",
+      "name": "Andrés Manuel López Obrador",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "bernie-sanders",
+      "name": "Bernie Sanders",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "shield"
+    },
+    {
+      "id": "christine-lagarde",
+      "name": "Christine Lagarde",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "cristina-fernandez-de-kirchner",
+      "name": "Cristina Fernández de Kirchner",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "felipe-gonzalez",
+      "name": "Felipe González",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "gabriel-rufian",
+      "name": "Gabriel Rufián",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "surge"
+    },
+    {
+      "id": "giorgia-meloni",
+      "name": "Giorgia Meloni",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "hillary-clinton",
+      "name": "Hillary Clinton",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "coffee"
+    },
+    {
+      "id": "javier-milei",
+      "name": "Javier Milei",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "microphone"
+    },
+    {
+      "id": "joe-biden",
+      "name": "Joe Biden",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "coffee"
+    },
+    {
+      "id": "jose-maria-aznar",
+      "name": "José María Aznar",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "justin-trudeau",
+      "name": "Justin Trudeau",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "kamala-harris",
+      "name": "Kamala Harris",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "microphone"
+    },
+    {
+      "id": "marine-le-pen",
+      "name": "Marine Le Pen",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "surge"
+    },
+    {
+      "id": "matteo-salvini",
+      "name": "Matteo Salvini",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "shield"
+    },
+    {
+      "id": "nicolas-maduro",
+      "name": "Nicolás Maduro",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "shield"
+    },
+    {
+      "id": "nigel-farage",
+      "name": "Nigel Farage",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "tongue"
+    },
+    {
+      "id": "pablo-iglesias",
+      "name": "Pablo Iglesias",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "recep-tayyip-erdogan",
+      "name": "Recep Tayyip Erdoğan",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "tongue"
+    },
+    {
+      "id": "salvador-illa",
+      "name": "Salvador Illa",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "santiago-abascal",
+      "name": "Santiago Abascal",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": "shield"
+    },
+    {
+      "id": "ursula-von-der-leyen",
+      "name": "Ursula von der Leyen",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "viktor-orban",
+      "name": "Viktor Orbán",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "seats": 4,
+      "effect": null
+    },
+    {
+      "id": "adriana-lastra",
+      "name": "Adriana Lastra",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "albert-rivera",
+      "name": "Albert Rivera",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "alberto-garzon",
+      "name": "Alberto Garzón",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "ana-botella",
+      "name": "Ana Botella",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "shield"
+    },
+    {
+      "id": "anna-gabriel",
+      "name": "Anna Gabriel",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "begona-villacis",
+      "name": "Begoña Villacís",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "cayetana-alvarez-de-toledo",
+      "name": "Cayetana Álvarez de Toledo",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "archive"
+    },
+    {
+      "id": "cristina-cifuentes",
+      "name": "Cristina Cifuentes",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "cristobal-montoro",
+      "name": "Cristóbal Montoro",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "archive"
+    },
+    {
+      "id": "dolores-de-cospedal",
+      "name": "Dolores de Cospedal",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "tongue"
+    },
+    {
+      "id": "edmundo-bal",
+      "name": "Edmundo Bal",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "esperanza-aguirre",
+      "name": "Esperanza Aguirre",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "ines-arrimadas",
+      "name": "Inés Arrimadas",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "inigo-errejon",
+      "name": "Íñigo Errejón",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "archive"
+    },
+    {
+      "id": "irene-montero",
+      "name": "Irene Montero",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "isabel-cela",
+      "name": "Isabel Celaá",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "jordi-turull",
+      "name": "Jordi Turull",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "surge"
+    },
+    {
+      "id": "jorge-fernandez-diaz",
+      "name": "Jorge Fernández Díaz",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "jose-luis-rodriguez-zapatero",
+      "name": "José Luis Rodríguez Zapatero",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "jose-manuel-garcia-margallo",
+      "name": "José Manuel García-Margallo",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "julio-anguita",
+      "name": "Julio Anguita",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "archive"
+    },
+    {
+      "id": "laura-borras",
+      "name": "Laura Borràs",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "luis-de-guindos",
+      "name": "Luis de Guindos",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "shield"
+    },
+    {
+      "id": "maria-jesus-montero",
+      "name": "María Jesús Montero",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "shield"
+    },
+    {
+      "id": "marta-rovira",
+      "name": "Marta Rovira",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "archive"
+    },
+    {
+      "id": "miquel-iceta",
+      "name": "Miquel Iceta",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "miriam-nogueras",
+      "name": "Miriam Nogueras",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "tongue"
+    },
+    {
+      "id": "monica-garcia",
+      "name": "Mónica García",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "tongue"
+    },
+    {
+      "id": "nadia-calvino",
+      "name": "Nadia Calviño",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "archive"
+    },
+    {
+      "id": "oriol-junqueras",
+      "name": "Oriol Junqueras",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "pablo-casado",
+      "name": "Pablo Casado",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "seats": 3,
+      "effect": null
+    },
+    {
+      "id": "pablo-echenique",
+      "name": "Pablo Echenique",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "surge"
+    },
+    {
+      "id": "pilar-alegria",
+      "name": "Pilar Alegría",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "tongue"
+    },
+    {
+      "id": "rocio-monasterio",
+      "name": "Rocío Monasterio",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "coffee"
+    },
+    {
+      "id": "sara-gimenez",
+      "name": "Sara Giménez",
+      "rarity": "raro",
+      "cost": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "shield"
+    },
+    {
+      "id": "soraya-saenz-de-santamaria",
+      "name": "Soraya Sáenz de Santamaría",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "seats": 3,
+      "effect": "coffee"
+    },
+    {
+      "id": "alfonso-alonso",
+      "name": "Alfonso Alonso",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "microphone"
+    },
+    {
+      "id": "alvaro-nadal",
+      "name": "Álvaro Nadal",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "ana-pastor",
+      "name": "Ana Pastor",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "andrea-levy",
+      "name": "Andrea Levy",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "surge"
+    },
+    {
+      "id": "antonio-maillo",
+      "name": "Antonio Maíllo",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "borja-semper",
+      "name": "Borja Sémper",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "tongue"
+    },
+    {
+      "id": "carlos-floriano",
+      "name": "Carlos Floriano",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "carme-forcadell",
+      "name": "Carme Forcadell",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "tongue"
+    },
+    {
+      "id": "carmen-calvo",
+      "name": "Carmen Calvo",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "archive"
+    },
+    {
+      "id": "celia-villalobos",
+      "name": "Celia Villalobos",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "cuca-gamarra",
+      "name": "Cuca Gamarra",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "microphone"
+    },
+    {
+      "id": "dolors-montserrat",
+      "name": "Dolors Montserrat",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "surge"
+    },
+    {
+      "id": "elias-bendodo",
+      "name": "Elías Bendodo",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "emiliano-garcia-page",
+      "name": "Emiliano García-Page",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "esteban-gonzalez-pons",
+      "name": "Esteban González Pons",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "coffee"
+    },
+    {
+      "id": "fatima-banez",
+      "name": "Fátima Báñez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "surge"
+    },
+    {
+      "id": "fernando-grande-marlaska",
+      "name": "Fernando Grande-Marlaska",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "inigo-mendez-de-vigo",
+      "name": "Íñigo Méndez de Vigo",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "microphone"
+    },
+    {
+      "id": "isabel-garcia-tejerina",
+      "name": "Isabel García Tejerina",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "coffee"
+    },
+    {
+      "id": "jaime-de-olano",
+      "name": "Jaime de Olano",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "javier-maroto",
+      "name": "Javier Maroto",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "tongue"
+    },
+    {
+      "id": "jordi-sanchez",
+      "name": "Jordi Sànchez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "archive"
+    },
+    {
+      "id": "jose-luis-abalos",
+      "name": "José Luis Ábalos",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "josep-rull",
+      "name": "Josep Rull",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "juan-espadas",
+      "name": "Juan Espadas",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "juan-vicente-herrera",
+      "name": "Juan Vicente Herrera",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "coffee"
+    },
+    {
+      "id": "marta-lois",
+      "name": "Marta Lois",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "microphone"
+    },
+    {
+      "id": "marta-rivera-de-la-cruz",
+      "name": "Marta Rivera de la Cruz",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "archive"
+    },
+    {
+      "id": "meritxell-batet",
+      "name": "Meritxell Batet",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "coffee"
+    },
+    {
+      "id": "miguel-arias-canete",
+      "name": "Miguel Arias Cañete",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "archive"
+    },
+    {
+      "id": "nacho-alvarez",
+      "name": "Nacho Álvarez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "archive"
+    },
+    {
+      "id": "oscar-puente",
+      "name": "Óscar Puente",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "surge"
+    },
+    {
+      "id": "pablo-cambronero",
+      "name": "Pablo Cambronero",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "pablo-montesinos",
+      "name": "Pablo Montesinos",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "patxi-lopez",
+      "name": "Patxi López",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "microphone"
+    },
+    {
+      "id": "pere-aragones",
+      "name": "Pere Aragonès",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "microphone"
+    },
+    {
+      "id": "pilar-llop",
+      "name": "Pilar Llop",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "archive"
+    },
+    {
+      "id": "quim-torra",
+      "name": "Quim Torra",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "surge"
+    },
+    {
+      "id": "rafael-catala",
+      "name": "Rafael Catalá",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "tongue"
+    },
+    {
+      "id": "rafael-hernando",
+      "name": "Rafael Hernando",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "tongue"
+    },
+    {
+      "id": "raquel-sanchez",
+      "name": "Raquel Sánchez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "raul-romeva",
+      "name": "Raül Romeva",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "reyes-maroto",
+      "name": "Reyes Maroto",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "coffee"
+    },
+    {
+      "id": "roger-torrent",
+      "name": "Roger Torrent",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "coffee"
+    },
+    {
+      "id": "susana-diaz",
+      "name": "Susana Díaz",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": "tongue"
+    },
+    {
+      "id": "teodoro-garcia-egea",
+      "name": "Teodoro García Egea",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    },
+    {
+      "id": "toni-canto",
+      "name": "Toni Cantó",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "seats": 2,
+      "effect": "surge"
+    },
+    {
+      "id": "toni-comin",
+      "name": "Toni Comín",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "seats": 2,
+      "effect": null
+    }
+  ]
+}

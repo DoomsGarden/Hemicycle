@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.6-onboarding1">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.6-onboarding1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.8">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
@@ -71,13 +71,14 @@
 <script src="js/menu-navigation.js?v=31.0.2.5-swipe1"></script>
 <script src="js/league-rewards.js?v=31.0.2.4-league1"></script>
 <script src="js/coin-toss.js?v=31.0.2.4-relief2"></script>
-<script src="js/battle-tips.js?v=31.0.2.6"></script>
+<script src="js/battle-tips.js?v=31.0.2.8"></script>
 <script src="js/battle-rules.js?v=31.0.2.6"></script>
-<script src="js/battle-status.js?v=31.0.2.3-table1"></script>
+<script src="js/basic-effects.js?v=31.0.2.8"></script>
+<script src="js/battle-status.js?v=31.0.2.8"></script>
 <script src="js/battle-actions-ui.js?v=31.0.2.3-polish2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.3-polish2"></script>
-<script src="js/battle-tutorial.js?v=31.0.2.6-onboarding1"></script>
+<script src="js/battle-tutorial.js?v=31.0.2.8"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
@@ -100,7 +101,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.7"></script>
+<script src="js/changelog.js?v=31.0.2.8"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -110,9 +111,11 @@
 <script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;</script>
 <script src="js/offline-rules-v3.js?v=31.0.2.7"></script>
 <script>window.HemicycleOfflineRulesV3=window.HemicycleOfflineRules;</script>
-<script src="js/offline-rule-dispatch.js?v=31.0.2.7"></script>
-<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3});</script>
-<script src="js/offline-combat.js?v=31.0.2.7"></script>
+<script src="js/offline-rules-v4.js?v=31.0.2.8"></script>
+<script>window.HemicycleOfflineRulesV4=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rule-dispatch.js?v=31.0.2.8"></script>
+<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4});</script>
+<script src="js/offline-combat.js?v=31.0.2.8"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
@@ -126,7 +129,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.7';
+var VERSION='v31.0.2.8';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1310,6 +1313,7 @@ SCREENS.detalle=function(){
  +'<p class="sub" style="margin:3px 0 0">Como Líder (&#9733;): <b>+1 Zasca</b> y <b>+3 Aguante</b>.</p>'
  +'</div></div>'
  +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+stats.a+'</b><span>Zasca</span></div><div><b>'+stats.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escaños</span></div></div>'
+ +basicAbilityHTML(c)
  +'<div class="card-quotes"><h3 style="margin:0 0 3px">Intervenciones célebres</h3>'
  +c.q.slice(0,3).map(function(q){return '<div class="quote">'+esc(q)+'</div>';}).join('')+'</div>'
  +cardAppearances(c,d)
@@ -1318,6 +1322,7 @@ SCREENS.detalle=function(){
  +'<div class="bar"><button class="btn wide sm" '+(SO.pack?'data-act="pack-return">Volver al sobre':'data-go="coleccion">Volver a la colección')+'</button></div>';
 };
 
+function basicAbilityHTML(c){var id=HemicycleBasicEffects.ability(c.id),def=HemicycleBasicEffects.definition(id);return '<section class="basic-ability-detail" data-basic-ability="'+(id||'none')+'"><h3>'+(def?HemicycleBasicEffects.symbol(id)+esc(def.name):'Sin habilidad adicional')+'</h3><p>'+(def?esc(def.description)+' La habilidad puede generar un estado una vez cada dos turnos propios. Cada orador admite un solo estado básico activo: el primero se conserva hasta consumirse o caducar.':'Este orador conserva sus estadísticas, doctrina y las tres intervenciones habituales.')+'</p></section>';}
 function editionBadges(c,d){
  var badges='';
  if(HemicycleMastery.eligible(c.id)&&HemicycleMastery.state(d).unlocked.indexOf(c.id)>=0)badges+='<span class="edition-earned" role="img" aria-label="Edición confeti conseguida" title="Edición confeti conseguida">'+uiIcon('achievements')+'</span>';
@@ -1526,7 +1531,7 @@ function mk(c, isLeader, side){
  var stats=cardStats(c,side==='p');
  var a = stats.a + (isLeader ? 1 : 0);
  var hm = stats.h + (isLeader ? 3 : 0);
- return {uid:'u'+UID,k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,gold:stats.gold,ready:true,buff:0,guard:false};
+ return {uid:'u'+UID,basicAbility:G&&G.tutorial?null:HemicycleBasicEffects.ability(c.id),k:c.id,n:c.n,a:a,h:hm,hm:hm,c:c.c,v:c.v,pa:c.pa,r:c.r,q:c.q,gold:stats.gold,ready:true,buff:0,guard:false};
 }
 
 /* === GENERADOR DE GABINETE RIVAL EQUILIBRADO SIN INFLAR STATS === */
@@ -1576,7 +1581,7 @@ function newBattle(mode,rival,isTutorial){
  var eSorted=eTeam.slice().sort(function(a,b){return TIERORDER[BYID[a].r]-TIERORDER[BYID[b].r];});
  var eLeadId=eSorted[0]||eTeam[0];
 
- G={quick:quick,tutorial:!!isTutorial,mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
+ G={effectsVersion:isTutorial?null:HemicycleBasicEffects.version,quick:quick,tutorial:!!isTutorial,mode:mode,rival:rival?leagueName(rival):pick(['Grupo Mixto','Bancada Gris','Coalición Improbable','Grupo del Pasillo','Mesa del Café','Los Indecisos']),
   eTeam:eTeam,pTeam:team.slice(),
   emptyVotesTaken:{p:0,e:0},turnDeadline:null,inactivity:null,turns:{p:0,e:0},n:0,over:false,done:false,side:null,first:Math.random()<0.5?'p':'e',votes:{p:0,e:0},tdp:{p:0,e:0},tdpMax:{p:2,e:2},
   field:{p:[],e:[]},hand:{p:[],e:[]},deck:{p:[],e:[]},pas:{p:[],e:[]},log:[],sel:null,saved:{},refund:{p:0,e:0},leader:{}};
@@ -1629,8 +1634,9 @@ function log(t,cls){if(!G)return;var type=/recupera|curación/.test(t)?'heal':/d
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
 function battleZasca(s,c){if(G.authoritative)return c.a;return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0)+(c.actionBuffs||[]).filter(function(b){return b.until>=(G.turns?G.turns[s]:0);}).reduce(function(n,b){return n+b.value;},0);}
+function battleNormalZasca(s,c){return G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.normalZ(c,G.turns[s],battleZasca(s,c)):battleZasca(s,c);}
 function attackDamage(s,c,tgt,variant){
- var foe=s==='p'?'e':'p',zasca=battleZasca(s,c);
+ var foe=s==='p'?'e':'p',zasca=variant==='strong'?battleZasca(s,c):battleNormalZasca(s,c);
  if(variant==='strong')zasca=Math.ceil(zasca*1.5);
  return zasca+(activeDoc(s)==='viperina'&&G.leader[foe]&&tgt&&tgt.uid===G.leader[foe].uid?2:0);
 }
@@ -1642,8 +1648,10 @@ function strongWait(owner,card,atTurn){return HemicycleBattleRules.strongWait(ca
 function canStrongAttack(owner,card,atTurn){return HemicycleBattleRules.canStrong(card,atTurn===undefined?(G.turns?G.turns[owner]:0):atTurn);}
 function strongCharge(owner,card){var turn=G.turns?G.turns[owner]:0;return card.strongUsedTurn===turn?0:3-strongWait(owner,card);}
 
-function receiveBattleDamage(card,damage){
+function receiveBattleDamage(card,damage,basicTurn){
+ if(basicTurn!==undefined&&G.effectsVersion===HemicycleBasicEffects.version)damage=HemicycleBasicEffects.beforeDefense(card,basicTurn,damage);
  var received=incomingDamage(card,damage);
+ if(basicTurn!==undefined&&G.effectsVersion===HemicycleBasicEffects.version)received=HemicycleBasicEffects.afterDefense(card,basicTurn,received);
  var guarded=!!card.guard&&damage>0;
  if(guarded){card.guard=false;log(card.n+' usa su defensa: el golpe baja de '+damage+' a '+received+' de daño.');}
  battleVisual('damage',{uid:card.uid,value:received,guarded:guarded});card.h-=received;return received;
@@ -1723,12 +1731,18 @@ function draw(s){
 
 }
 
+function beginBasicEffects(s){
+ if(G.effectsVersion!==HemicycleBasicEffects.version)return;
+ var foe=s==='p'?'e':'p',victimDoc=activeDoc(s);
+ G.field[s].slice().some(function(c){var pulse=HemicycleBasicEffects.begin(c,G.turns[s]);if(!pulse)return false;if(pulse.damage){c.h-=pulse.damage;battleVisual('damage',{uid:c.uid,value:1,periodic:true});log(c.n+': Hemeroteca insistente, −1 Aguante.');if(c.h<=0)expel(pulse.source,c,{uid:'periodic'},victimDoc);}else{var amount=Math.min(pulse.heal,c.hm-c.h);c.h+=amount;battleVisual('heal',{uid:c.uid,value:amount});log(c.n+': Café parlamentario, +'+amount+' Aguante.');}return G.over;});
+}
 function startTurn(s){
  if(checkBattleEnd())return;
  clearAI();
  closeLocalAction();G.n++;G.side=s;G.sel=null;G.move=null;G.support=false;
  if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;if(!G.emptyVotesTaken)G.emptyVotesTaken={p:0,e:0};G.emptyVotesTaken[s]=0;
  G.field[s].forEach(function(c){if(c.guard){c.guard=false;log(c.n+': su defensa caduca al comenzar su turno.');}});
+ beginBasicEffects(s);if(G.over)return;
  G.turnDeadline=G.tutorial?null:Date.now()+(G.quick?60000:90000);
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
  var doctrine=activeDoc(s);
@@ -1768,6 +1782,7 @@ function endTurn(){
 function completeTurn(s){
  if(G&&G.authoritative)return s==='p'?sendRemoteBattle({type:'end'}):false;
  if(checkBattleEnd()||G.side!==s)return;
+ if(G.effectsVersion===HemicycleBasicEffects.version)G.field[s].forEach(function(c){HemicycleBasicEffects.end(c,G.turns[s]);});
  applyGuardia(s);
  G.sel=null;
  startTurn(s==='p'?'e':'p');
@@ -1784,7 +1799,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
   return;
  }
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
- card.h=0;card.ready=false;card.buff=0;card.guard=false;card.enteredTurn=null;card.strongUsedTurn=null;card.lastHealTurn=null;
+ HemicycleBasicEffects.reset(card);card.h=0;card.ready=false;card.buff=0;card.guard=false;card.enteredTurn=null;card.strongUsedTurn=null;card.lastHealTurn=null;
  card.drawAfterTurn=(G.turns?G.turns[victim]:0)+2;
  G.pas[victim].push(card);if(SCREEN==='battle')gameSound('expel');
  if(attacker){
@@ -1811,7 +1826,7 @@ function playCard(s,uid){
  if(c.c>G.tdp[s]||G.field[s].length>=3)return false;
  G.hand[s].splice(idx,1);
  c.h=c.hm;
- c.ready=true;c.guard=false;
+ c.ready=true;c.guard=false;HemicycleBasicEffects.reset(c);
  c.enteredTurn=G.turns?G.turns[s]:0;c.strongUsedTurn=null;c.lastHealTurn=null;
  G.field[s].push(c);G.tdp[s]-=c.c;if(SCREEN==='battle')gameSound('card');
  log((s==='p'?'Presentas':'El rival presenta')+' a '+c.n+(c.uid===G.leader[s].uid?' (Líder en Tribuna: doctrina '+DOCM[c.pa].n+(activeDoc(s)?' activa).':' neutralizada).'):'.'));
@@ -1834,11 +1849,13 @@ function attack(atk,tgt,owner,variant){
  if(tgt==='__EMPTY'?(G.field[foe].length>=3||(G.emptyVotesTaken&&G.emptyVotesTaken[owner]||0)>=3):G.field[foe].indexOf(tgt)<0)return false;
  battleVisual('attack',{uid:atk.uid,target:tgt==='__EMPTY'?null:tgt.uid,side:owner,strong:variant==='strong'});
  var ownerDoc=activeDoc(owner),foeDoc=activeDoc(foe);
+ var baseDamage=attackDamage(owner,atk,tgt==='__EMPTY'?null:tgt,variant);
+ if(variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version)HemicycleBasicEffects.consumeAttack(atk,G.turns[owner]);
  var phrase=atk.q[variant==='strong'?1:0],label=variant==='strong'?'ataque fuerte':'ataque normal';
  atk.ready=false;
  if(variant==='strong'){atk.strongUsedTurn=G.turns?G.turns[owner]:0;atk.h-=1;battleVisual('damage',{uid:atk.uid,value:1});label+=' · coste: 1 A';}
  if(tgt==='__EMPTY'){
-  var stolen=Math.min(G.votes[foe],attackDamage(owner,atk,null,variant),3-(G.emptyVotesTaken&&G.emptyVotesTaken[owner]||0));if(!G.emptyVotesTaken)G.emptyVotesTaken={p:0,e:0};G.emptyVotesTaken[owner]+=stolen;
+  var stolen=Math.min(G.votes[foe],baseDamage,3-(G.emptyVotesTaken&&G.emptyVotesTaken[owner]||0));if(!G.emptyVotesTaken)G.emptyVotesTaken={p:0,e:0};G.emptyVotesTaken[owner]+=stolen;
   G.votes[foe]-=stolen;battleVisual('votes',{side:foe,value:-stolen});
   log(atk.n+' lanza «'+phrase+'» ('+label+') a la bancada vacía (-'+stolen+' votos '+(foe==='e'?'al rival':'para ti')+').','hi');
   if(ownerDoc==='foco'&&G.leader[owner]&&atk.uid===G.leader[owner].uid){
@@ -1848,7 +1865,7 @@ function attack(atk,tgt,owner,variant){
   checkBattleEnd();
   return true;
  }
- var damage=attackDamage(owner,atk,tgt,variant),received=receiveBattleDamage(tgt,damage);
+ var damage=baseDamage,received=receiveBattleDamage(tgt,damage,variant==='normal'?G.turns[foe]:undefined);
  log(atk.n+' lanza «'+phrase+'» ('+label+': '+received+' de daño a '+tgt.n+').','hi');
  if(foeDoc==='giro'&&tgt!==atk){
   var reflected=receiveBattleDamage(atk,1);
@@ -1862,6 +1879,7 @@ function attack(atk,tgt,owner,variant){
  if(tgt.h<=0)expel(owner,tgt,atk,foeDoc);
  if(checkBattleEnd())return;
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
+ if(!G.over&&variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version){var effect=HemicycleBasicEffects.afterHit(atk,tgt,{damage:received,attackerHealth:atk.h,targetHealth:tgt.h,ownTurn:G.turns[owner],rivalTurn:G.turns[foe],source:owner});if(effect){log(effect.card.n+': '+HemicycleBasicEffects.definition(effect.id).name+'.');battleVisual('basic-state',{uid:effect.card.uid,effect:effect.id});}}
  return true;
 }
 
@@ -2069,7 +2087,7 @@ function syncBattleActions(){
  if(typeof HemicycleBattleActions==='undefined')return;
  var card=G&&G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  var visible=SCREEN==='battle'&&G&&!G.over&&G.side==='p'&&G.n>0&&!G.move&&card&&card.ready&&!MODAL_CB&&!document.getElementById('modalRoot').firstChild;
- HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support,statuses:HemicycleBattleStatus.card(G,'p',card).map(function(s){return s.text;})}:null);
+ HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleNormalZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support,statuses:HemicycleBattleStatus.card(G,'p',card).map(function(s){return s.text;})}:null);
 }
 function choosePlayerAction(kind){
  if(kind==='cancel'||kind==='back'){if(!G)return false;G.support=false;if(kind==='cancel'){G.sel=null;G.move=null;}paint();return true;}
@@ -2091,6 +2109,7 @@ function choosePlayerAction(kind){
 }
 
 function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.indicators(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span class="battle-state-icon state-'+s.icon+(s.active?' is-on':' is-off')+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+(s.icon==='guard'?'<b class="status-value">50 %</b>':'')+'</span>';}).join('')+'</button>':'';}
+function basicStatusHTML(side,c){var state=G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.view(c,G.turns[side]):null;return state?'<button type="button" class="basic-effect-badge '+state.polarity+'" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="'+esc(state.text)+'" title="'+esc(state.text)+'">'+HemicycleBasicEffects.symbol(state.id)+'<b>'+state.count+'</b></button>':'';}
 function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+HemicycleBattleStatus.symbol(states[0].icon)+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
  if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
@@ -2098,15 +2117,15 @@ function cromoBattle(c,side,extra){
  var actionInstance=LOCAL_ACTION_TARGET&&G.hand.p.filter(function(x){return x.uid===LOCAL_ACTION;})[0],actionTarget=!!(actionInstance&&enMesa(side,c.uid)&&validLocalActionTargets(actionInstance).some(function(t){return t.card.uid===c.uid;}));
  var isTarget=actionTarget||(side==='e'&&G.sel&&G.move);
  var art=G.authoritative?artTag(c.k,c.n,true,true,c.appearance||'normal'):artTag(c.k,c.n,side==='p'&&c.gold,side==='p'),inField=enMesa(side,c.uid),available=inField&&side===G.side&&c.ready&&!G.over;
- return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(actionTarget?' action-target':'')+(inField&&side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" data-rarity="'+c.r+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca '+battleZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
+ return '<div class="cromo'+(G.sel===c.uid?' sel':'')+(isLead?' lead':'')+(isTarget?' tgt':'')+(actionTarget?' action-target':'')+(inField&&side==='p'&&!c.ready?' busy':'')+(available?' action-ready':'')+'" data-rarity="'+c.r+'" style="--tier:'+r.c+(extra?';'+extra:'')+'" data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+', Zasca básico '+battleNormalZasca(side,c)+', Aguante '+Math.max(0,c.h)+' de '+c.hm+(c.guard?', defensa preparada':'')+'">'
   +'<div class="art">'+art+'</div>'
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
-  +(inField?battleStatusHTML(side,c):'')
+  +(inField?battleStatusHTML(side,c)+basicStatusHTML(side,c):'')
   +(inField&&side==='p'&&!c.ready?'<span class="battle-used" title="Intervención utilizada" aria-label="Intervención utilizada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>':'')
   +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">'+HemicycleBattleStatus.symbol('strong')+'</span>':'')
-  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca '+battleZasca(side,c)+'"><small>Z</small><b>'+battleZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
+  +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca básico '+battleNormalZasca(side,c)+'"><small>Z</small><b>'+battleNormalZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
 }
 function nmByUid(uid){var i;for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===uid)return G.field.p[i].n;return '?';}
 function uidOf(uid){var i;for(i=0;i<G.hand.p.length;i++)if(G.hand.p[i].uid===uid)return G.hand.p[i].k;return '';}
@@ -2147,11 +2166,11 @@ function receiveRemoteBattle(snapshot,controls){
  REMOTE_PREPARATION=null;
  var own=snapshot.players[snapshot.you],enemy=snapshot.players[1-snapshot.you];if(!own||!enemy)return false;
  var previous=G&&G.authoritative&&G.remoteId===controls.id?G:null,same=previous&&previous.remoteRevision===snapshot.revision;if(previous&&typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.capture(previous);
- function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,visualBuffs:(c.buffs||[]).map(function(b){return {value:b.value,until:b.until};}),enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
+ function convert(c){if(c.action){var action=BYID[c.id];return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,basicAbility:c.basicAbility||null,basicReadyTurn:c.basicReadyTurn||0,basicStatus:c.basicStatus?Object.assign({},c.basicStatus):null,r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,visualBuffs:(c.buffs||[]).map(function(b){return {value:b.value,until:b.until};}),enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();
- G={authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,coinFace:snapshot.first===0?'Cara':'Cruz',rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',downloaded:!!snapshot.offline,legacyRules:snapshot.ruleset!=='actions2',actionRecovery:own.actionRecovery||[],rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
+ G={effectsVersion:snapshot.effectsVersion||null,authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,coinFace:snapshot.first===0?'Cara':'Cruz',rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',downloaded:!!snapshot.offline,legacyRules:snapshot.ruleset!=='actions2',actionRecovery:own.actionRecovery||[],rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
   over:snapshot.status==='finished',done:snapshot.status==='finished',n:own.turn+enemy.turn,side:snapshot.side===snapshot.you?'p':'e',first:snapshot.first===snapshot.you?'p':'e',turns:{p:own.turn,e:enemy.turn},turnDeadline:snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null,
   pTeam:own.cabinetIds||Array.from(new Set(hand.concat(pf,rest).filter(function(c){return !c.action;}).map(function(c){return c.k;}))),eTeam:[],field:{p:pf,e:ef},hand:{p:hand,e:[]},deck:{p:new Array(own.deckCount||0),e:new Array(enemy.deckCount||0)},pas:{p:rest,e:(enemy.rest||[]).map(convert)},
   leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
@@ -2199,7 +2218,7 @@ SCREENS.battle=function(){
  +(LOCAL_ACTION_TARGET?'<div class="hint action-target-hint" role="status"><b>'+esc(BYID[G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION;})[0].k].n)+'</b>: toca un cromo iluminado. <button class="battle-cancel" data-act="action-cancel">Cancelar</button></div>':G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
         :'')
  +'<section id="battleJournal" class="battle-journal journal-popover'+(G.tutorial?' practice-journal':'')+'"'+(BATTLE_LOG_OPEN?'':' hidden')+' role="region" aria-label="Acta del debate"><div class="journal-heading"><span>ACTA · Ronda '+roundNum+'</span>'+'<button class="mini" data-act="battle-log-close" aria-label="Cerrar acta">'+HemicycleBattleStatus.symbol('close')+'</button>'+'</div><div class="log" tabindex="0" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.join('')+'</div></section>'
- +(typeof HemicycleBattleTips!=='undefined'?HemicycleBattleTips.html({tutorial:G.tutorial,ownTurn:G.side==='p',action:G.hand.p.some(function(c){return c.action;}),heal:G.field.p.some(function(c){return c.ready&&canHeal('p',c);}),strong:G.field.p.some(function(c){return c.ready&&canStrongAttack('p',c);})}):'')+'<div class="bar between battle-controls">'+'<button class="btn ghost sm battle-log-toggle" data-act="battle-log" aria-controls="battleJournal" aria-expanded="'+BATTLE_LOG_OPEN+'">Acta</button>'+'<button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
+ +(typeof HemicycleBattleTips!=='undefined'?HemicycleBattleTips.html({tutorial:G.tutorial,ownTurn:G.side==='p',basic:G.effectsVersion===HemicycleBasicEffects.version&&G.field.p.concat(G.field.e).some(function(c){return !!HemicycleBasicEffects.state(c);}),action:G.hand.p.some(function(c){return c.action;}),heal:G.field.p.some(function(c){return c.ready&&canHeal('p',c);}),strong:G.field.p.some(function(c){return c.ready&&canStrongAttack('p',c);})}):'')+'<div class="bar between battle-controls">'+'<button class="btn ghost sm battle-log-toggle" data-act="battle-log" aria-controls="battleJournal" aria-expanded="'+BATTLE_LOG_OPEN+'">Acta</button>'+'<button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
  +'<button class="btn ghost sm" data-act="abandon">Abandonar</button></div>'
  +'</div>';
 };
@@ -2473,7 +2492,7 @@ document.addEventListener('click',function(ev){
   case 'cabinet-return':if(SCREEN==='coleccion'&&CABINET_RETURN){var back=CABINET_RETURN;CABINET_RETURN=null;go('builder',back);}break;
   case 'action-cancel':closeLocalAction();paint();break;
   case 'coin-info':if(G)showModal('Sorteo inicial','<p>'+HemicycleBattleStatus.symbol('coin')+' '+esc(G.coinFace||(G.first==='p'?'Cara':'Cruz'))+' · '+(G.first==='p'?'Empiezas tú.':'Empieza el rival.')+'</p><p class="sub">Sorteo al 50 %. Este es el resultado inicial: no se repite al consultarlo. El reloj de la partida continúa.</p>','Cerrar',false,null,true,false);break;
-  case 'battle-effects':{var effectSide=n.getAttribute('data-side');if(!G||!G.field[effectSide])break;var effectCard=G.field[effectSide].find(function(c){return c.uid===n.getAttribute('data-uid');}),states=effectCard?HemicycleBattleStatus.indicators(G,effectSide,effectCard):HemicycleBattleStatus.team(G,effectSide);showModal(effectCard?effectCard.n+' · Efectos':'Efectos del equipo','<ul class="effect-list">'+states.map(function(s){return '<li>'+HemicycleBattleStatus.symbol(s.icon)+'<span>'+esc(s.text)+'</span></li>';}).join('')+'</ul>','Cerrar',false,null,true,false);var cancelEffect=document.querySelector('#modalRoot [data-modal=cancel]');if(cancelEffect)cancelEffect.hidden=true;break;}
+  case 'battle-effects':{var effectSide=n.getAttribute('data-side');if(!G||!G.field[effectSide])break;var effectCard=G.field[effectSide].find(function(c){return c.uid===n.getAttribute('data-uid');}),states=effectCard?HemicycleBattleStatus.indicators(G,effectSide,effectCard).concat(HemicycleBattleStatus.card(G,effectSide,effectCard).filter(function(s){return s.icon.indexOf('basic-')===0;})):HemicycleBattleStatus.team(G,effectSide);showModal(effectCard?effectCard.n+' · Efectos':'Efectos del equipo','<ul class="effect-list">'+states.map(function(s){return '<li>'+HemicycleBattleStatus.symbol(s.icon)+'<span>'+esc(s.text)+'</span></li>';}).join('')+'</ul>','Cerrar',false,null,true,false);var cancelEffect=document.querySelector('#modalRoot [data-modal=cancel]');if(cancelEffect)cancelEffect.hidden=true;break;}
   case 'recovery-action-info':{var recovering=BYID[n.getAttribute('data-id')];if(recovering)showModal(recovering.n+' · Recuperación',actionRulesHTML(recovering)+'<p>Podrá volver a robarse dentro de '+esc(n.getAttribute('data-turns'))+' turnos propios.</p>','Entendido',false,null,true,false);break;}
   case 'spent-action-info':{var spent=BYID[n.getAttribute('data-id')];if(spent&&spent.action)showModal(spent.n+' · Agotada',actionRulesHTML(spent),'Entendido',false,null,true,false);break;}
   case 'learning-actions':if(verifiedAccount()){economyTask({type:'learning-actions'},function(){paint();});}else{var learning=D();['replica','receso'].forEach(function(id){if(!(learning.actionAlbum||[]).includes(id))HemicycleActions.award(learning,[id]);});saveD(learning);paint();}break;
