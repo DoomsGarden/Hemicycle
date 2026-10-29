@@ -1,5 +1,5 @@
 {
-  "version": "basic1",
+  "version": "basic2",
   "catalogVersion": "balance-v2",
   "cooldownOwnTurns": 2,
   "activeStatusSlots": 1,
@@ -12,7 +12,7 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "angela-merkel",
@@ -32,7 +32,7 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "boris-johnson",
@@ -52,7 +52,7 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "donald-trump",
@@ -62,7 +62,7 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "emmanuel-macron",
@@ -92,7 +92,7 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "pedro-sanchez",
@@ -102,7 +102,7 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "vladimir-putin",
@@ -142,7 +142,7 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "bernie-sanders",
@@ -162,7 +162,7 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "fasttrack"
     },
     {
       "id": "cristina-fernandez-de-kirchner",
@@ -172,7 +172,7 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "summon"
     },
     {
       "id": "felipe-gonzalez",
@@ -182,7 +182,7 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "gabriel-rufian",
@@ -202,7 +202,7 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "hillary-clinton",
@@ -242,7 +242,7 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "summon"
     },
     {
       "id": "justin-trudeau",
@@ -252,7 +252,7 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "fasttrack"
     },
     {
       "id": "kamala-harris",
@@ -312,7 +312,7 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "summon"
     },
     {
       "id": "recep-tayyip-erdogan",
@@ -332,7 +332,7 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "santiago-abascal",
@@ -352,7 +352,7 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "fasttrack"
     },
     {
       "id": "viktor-orban",
@@ -362,7 +362,7 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "adriana-lastra",
@@ -372,7 +372,7 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": null
+      "effect": "acta"
     },
     {
       "id": "albert-rivera",
@@ -382,7 +382,7 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": null
+      "effect": "acta"
     },
     {
       "id": "alberto-garzon",
@@ -392,7 +392,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "ana-botella",
@@ -412,7 +412,7 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": null
+      "effect": "paperwork"
     },
     {
       "id": "begona-villacis",
@@ -422,7 +422,7 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": null
+      "effect": "paperwork"
     },
     {
       "id": "cayetana-alvarez-de-toledo",
@@ -442,7 +442,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "cristobal-montoro",
@@ -472,7 +472,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "esperanza-aguirre",
@@ -482,7 +482,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "ines-arrimadas",
@@ -492,7 +492,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "inigo-errejon",
@@ -512,7 +512,7 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "isabel-cela",
@@ -522,7 +522,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "jordi-turull",
@@ -542,7 +542,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "jose-luis-rodriguez-zapatero",
@@ -552,7 +552,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "jose-manuel-garcia-margallo",
@@ -562,7 +562,7 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": null
+      "effect": "escort"
     },
     {
       "id": "julio-anguita",
@@ -582,7 +582,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "luis-de-guindos",
@@ -622,7 +622,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "miriam-nogueras",
@@ -662,7 +662,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "pablo-casado",
@@ -672,7 +672,7 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "pablo-echenique",
@@ -742,7 +742,7 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "ana-pastor",
@@ -752,7 +752,7 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "andrea-levy",
@@ -772,7 +772,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "acta"
     },
     {
       "id": "borja-semper",
@@ -792,7 +792,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "acta"
     },
     {
       "id": "carme-forcadell",
@@ -822,7 +822,7 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": null
+      "effect": "fineprint"
     },
     {
       "id": "cuca-gamarra",
@@ -852,7 +852,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "acta"
     },
     {
       "id": "emiliano-garcia-page",
@@ -862,7 +862,7 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": null
+      "effect": "bank"
     },
     {
       "id": "esteban-gonzalez-pons",
@@ -892,7 +892,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "acta"
     },
     {
       "id": "inigo-mendez-de-vigo",
@@ -922,7 +922,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "paperwork"
     },
     {
       "id": "javier-maroto",
@@ -952,7 +952,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "paperwork"
     },
     {
       "id": "josep-rull",
@@ -962,7 +962,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "paperwork"
     },
     {
       "id": "juan-espadas",
@@ -972,7 +972,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "paperwork"
     },
     {
       "id": "juan-vicente-herrera",
@@ -1052,7 +1052,7 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": null
+      "effect": "bank"
     },
     {
       "id": "pablo-montesinos",
@@ -1062,7 +1062,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "patxi-lopez",
@@ -1132,7 +1132,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "raul-romeva",
@@ -1142,7 +1142,7 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": null
+      "effect": "bank"
     },
     {
       "id": "reyes-maroto",
@@ -1182,7 +1182,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "lane"
     },
     {
       "id": "toni-canto",
@@ -1202,7 +1202,7 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": null
+      "effect": "lane"
     }
   ]
 }

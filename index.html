@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
-<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.8-phrases1">
+<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.8-wave2">
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.8-phrases1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
@@ -73,10 +73,11 @@
 <script src="js/coin-toss.js?v=31.0.2.4-relief2"></script>
 <script src="js/battle-tips.js?v=31.0.2.8-targets1"></script>
 <script src="js/battle-rules.js?v=31.0.2.6"></script>
-<script src="js/basic-effects.js?v=31.0.2.8"></script>
-<script src="js/basic-ability-preview.js?v=31.0.2.8-targets1"></script>
-<script src="js/battle-status.js?v=31.0.2.8-phrases1"></script>
-<script src="js/battle-actions-ui.js?v=31.0.2.8-phrases1"></script>
+<script src="js/basic-effects-v1.js?v=31.0.2.8-wave2"></script>
+<script src="js/basic-effects.js?v=31.0.2.8-wave2"></script>
+<script src="js/basic-ability-preview.js?v=31.0.2.8-wave2"></script>
+<script src="js/battle-status.js?v=31.0.2.8-wave2"></script>
+<script src="js/battle-actions-ui.js?v=31.0.2.8-wave2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.8-phrases1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.3-polish2"></script>
 <script src="js/battle-tutorial.js?v=31.0.2.8-phrases1"></script>
@@ -102,7 +103,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.8-phrases1"></script>
+<script src="js/changelog.js?v=31.0.2.8-wave2"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -114,9 +115,11 @@
 <script>window.HemicycleOfflineRulesV3=window.HemicycleOfflineRules;</script>
 <script src="js/offline-rules-v4.js?v=31.0.2.8"></script>
 <script>window.HemicycleOfflineRulesV4=window.HemicycleOfflineRules;</script>
-<script src="js/offline-rule-dispatch.js?v=31.0.2.8"></script>
-<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4});</script>
-<script src="js/offline-combat.js?v=31.0.2.8-targets1"></script>
+<script src="js/offline-rules-v5.js?v=31.0.2.8-wave2"></script>
+<script>window.HemicycleOfflineRulesV5=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rule-dispatch.js?v=31.0.2.8-wave2"></script>
+<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4,offline5:HemicycleOfflineRulesV5});</script>
+<script src="js/offline-combat.js?v=31.0.2.8-wave2"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
@@ -1324,7 +1327,7 @@ SCREENS.detalle=function(){
 };
 
 function basicAbilityHTML(c){var id=HemicycleBasicEffects.ability(c.id),def=HemicycleBasicEffects.definition(id);return '<section class="basic-ability-detail" data-basic-ability="'+(id||'none')+'"><h3>'+(def?HemicycleBasicEffects.symbol(id)+esc(def.name):'Sin habilidad adicional')+'</h3>'+(def?'<p>'+esc(HemicycleBasicAbilityPreview.detail(id))+'</p>':'')+'</section>';}
-function basicAbilityHelpHTML(){return '<div class="panel"><h3>Habilidades del básico</h3><p class="sub">Algunos oradores generan un estado al causar daño con un ataque básico a otro orador. El fuerte, las acciones y atacar huecos no lo activan. La ficha de Colección muestra el efecto propio de cada cromo.</p><p class="sub"><b>Un estado básico por orador:</b> el primero permanece hasta consumirse o caducar; no se acumula, renueva ni sustituye. La habilidad puede generar un estado <b>una vez cada dos turnos propios</b>. Si la plaza está ocupada, el intento no gasta su recuperación.</p><p class="sub">El icono aparece en el afectado; tócalo para consultar su duración. Los pulsos ocurren al comienzo de sus turnos propios, antes de sumar votos. La defensa, los apoyos y las doctrinas existentes funcionan aparte.</p><details class="basic-ability-roster"><summary>Oradores por habilidad · '+Object.keys(HemicycleBasicEffects.assignments).length+'</summary>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id),names=CARDS.filter(function(c){return HemicycleBasicEffects.ability(c.id)===id;}).sort(function(a,b){return a.n.localeCompare(b.n,'es');}).map(function(c){return c.n;});return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+' · '+names.length+'</h4><p class="sub">'+esc(names.join(', '))+'.</p></section>';}).join('')+'<p class="sub">Los demás oradores conservan sus estadísticas y doctrina, sin habilidad adicional.</p></details></div>';}
+function basicAbilityHelpHTML(){return '<div class="panel"><h3>Habilidades del básico</h3><p class="sub">Los oradores tienen una habilidad que se activa al causar daño con un ataque básico a otro orador. El fuerte, las acciones y atacar huecos no lo activan. La ficha de Colección muestra el efecto propio de cada cromo.</p><p class="sub"><b>Un estado básico por orador:</b> el primero permanece hasta consumirse o caducar; no se acumula, renueva ni sustituye. La habilidad puede activarse <b>una vez cada dos turnos propios</b>. Los efectos inmediatos de robo y recuperación ocupan la plaza hasta cerrar ese turno. Ventanilla rápida tiene además un límite de una activación por jugador y partida; si hay dos acciones elegibles, escoge una al azar. Si la plaza está ocupada, el intento no gasta su recuperación.</p><p class="sub">El icono aparece en el afectado; tócalo para consultar su duración. Los pulsos ocurren al comienzo de sus turnos propios, antes de sumar votos. La defensa, los apoyos y las doctrinas existentes funcionan aparte.</p><details class="basic-ability-roster"><summary>Oradores por habilidad · '+Object.keys(HemicycleBasicEffects.assignments).length+'</summary>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id),names=CARDS.filter(function(c){return HemicycleBasicEffects.ability(c.id)===id;}).sort(function(a,b){return a.n.localeCompare(b.n,'es');}).map(function(c){return c.n;});return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+' · '+names.length+'</h4><p class="sub">'+esc(names.join(', '))+'.</p></section>';}).join('')+'<p class="sub">Las asignaciones responden a su función de juego; no describen a las personas representadas.</p></details></div>';}
 
 function editionBadges(c,d){
  var badges='';
@@ -1636,8 +1639,12 @@ function battleVisual(kind,data){if(typeof HemicycleBattleVisuals!=='undefined')
 function log(t,cls){if(!G)return;var type=/recupera|curación/.test(t)?'heal':/defensa|golpe baja/.test(t)?'guard':/de daño/.test(t)?'damage':/votos?/.test(t)?'votes':'';var name=t.match(/^(.+?) (?:lanza|dice|es expulsado|recibe|usa su defensa)/),copy=name?'<b>'+esc(name[1])+'</b>'+esc(t.slice(name[1].length)):esc(t);G.log.unshift('<div class="log-line '+(cls||'')+' '+type+'" title="'+esc(t)+'">'+copy+'</div>');if(G.log.length>40)G.log.pop();}
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
+function basicRules(){return HemicycleBasicEffects.forVersion(G.effectsVersion);}
+function basicTeam(side){return {field:G.field[side],hand:G.hand[side],deck:G.deck[side],turn:G.turns[side],fasttrackUsed:!!(G.fasttrackUsed&&G.fasttrackUsed[side])};}
+function basicSupportCost(side,card){return G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.supportCost(card,G.turns[side]):0;}
+function battleCanEmpty(side,card,variant){return variant==='strong'||G.effectsVersion!==HemicycleBasicEffects.version||HemicycleBasicEffects.canEmpty(card,G.turns[side]);}
 function battleZasca(s,c){if(G.authoritative)return c.a;return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0)+(c.actionBuffs||[]).filter(function(b){return b.until>=(G.turns?G.turns[s]:0);}).reduce(function(n,b){return n+b.value;},0);}
-function battleNormalZasca(s,c){return G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.normalZ(c,G.turns[s],battleZasca(s,c)):battleZasca(s,c);}
+function battleNormalZasca(s,c){return basicRules()?basicRules().normalZ(c,G.turns[s],battleZasca(s,c)):battleZasca(s,c);}
 function attackDamage(s,c,tgt,variant){
  var foe=s==='p'?'e':'p',zasca=variant==='strong'?battleZasca(s,c):battleNormalZasca(s,c);
  if(variant==='strong')zasca=Math.ceil(zasca*1.5);
@@ -1651,9 +1658,9 @@ function strongWait(owner,card,atTurn){return HemicycleBattleRules.strongWait(ca
 function canStrongAttack(owner,card,atTurn){return HemicycleBattleRules.canStrong(card,atTurn===undefined?(G.turns?G.turns[owner]:0):atTurn);}
 function strongCharge(owner,card){var turn=G.turns?G.turns[owner]:0;return card.strongUsedTurn===turn?0:3-strongWait(owner,card);}
 
-function receiveBattleDamage(card,damage,basicTurn){
+function receiveBattleDamage(card,damage,basicTurn,piercing){
  if(basicTurn!==undefined&&G.effectsVersion===HemicycleBasicEffects.version)damage=HemicycleBasicEffects.beforeDefense(card,basicTurn,damage);
- var received=incomingDamage(card,damage);
+ var received=basicTurn!==undefined&&G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.guardedDamage(damage,!!card.guard,piercing):incomingDamage(card,damage);
  if(basicTurn!==undefined&&G.effectsVersion===HemicycleBasicEffects.version)received=HemicycleBasicEffects.afterDefense(card,basicTurn,received);
  var guarded=!!card.guard&&damage>0;
  if(guarded){card.guard=false;log(card.n+' usa su defensa: el golpe baja de '+damage+' a '+received+' de daño.');}
@@ -1701,6 +1708,7 @@ function useSupport(card,kind,owner){
  if(kind!=='guard'&&kind!=='heal')return false;
  var heal=healingAmount(card);
  if((kind==='guard'&&card.guard)||(kind==='heal'&&!canHeal(owner,card)))return false;
+ var extra=basicSupportCost(owner,card);if(G.tdp[owner]<extra)return false;G.tdp[owner]-=extra;if(G.effectsVersion===HemicycleBasicEffects.version)HemicycleBasicEffects.consumeSupport(card,G.turns[owner]);
  card.ready=false;
  if(kind==='guard'){
   card.guard=true;battleVisual('guard',{uid:card.uid});
@@ -1743,14 +1751,14 @@ function startTurn(s){
  if(checkBattleEnd())return;
  clearAI();
  closeLocalAction();G.n++;G.side=s;G.sel=null;G.move=null;G.support=false;
- if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;if(!G.emptyVotesTaken)G.emptyVotesTaken={p:0,e:0};G.emptyVotesTaken[s]=0;
+ if(!G.turns)G.turns={p:0,e:0};G.turns[s]++;var banked=G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.collect(G.field[s],G.turns[s]):0;if(!G.emptyVotesTaken)G.emptyVotesTaken={p:0,e:0};G.emptyVotesTaken[s]=0;
  G.field[s].forEach(function(c){if(c.guard){c.guard=false;log(c.n+': su defensa caduca al comenzar su turno.');}});
  beginBasicEffects(s);if(G.over)return;
  G.turnDeadline=G.tutorial?null:Date.now()+(G.quick?60000:90000);
  G.tdpMax[s]=Math.min(6,G.tdpMax[s]+1);
  var doctrine=activeDoc(s);
  var reserved=G.refund[s];
- G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+reserved:0)+(G.turns[s]===1&&s!==G.first?1:0));
+ G.tdp[s]=Math.min(MAX_TDP,G.tdpMax[s]+(doctrine==='verborrea'?1+reserved:0)+(G.turns[s]===1&&s!==G.first?1:0)+banked);
  G.refund[s]=0;if(G.turns[s]===1&&s!==G.first)log('Compensación de iniciativa: +1 TdP en tu primer turno si empiezas segundo.');
  renewLocalHand(s);draw(s);
  if(doctrine==='verborrea'&&reserved>0)draw(s);
@@ -1758,7 +1766,7 @@ function startTurn(s){
   G.leader[s].h=Math.min(G.leader[s].hm,G.leader[s].h+1);
  }
  G.field[s].forEach(function(c){c.ready=true;});
- var gain=3;G.field[s].forEach(function(c){gain+=c.v;});
+ var gain=3;G.field[s].forEach(function(c){gain+=G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.passive(c,G.turns[s],c.v):c.v;});
  G.votes[s]+=gain;battleVisual('turn',{side:s,value:gain});
  var roundNum=Math.ceil(G.n/2);
  log('Ronda '+roundNum+' ('+(s==='p'?'Tu turno':'Turno rival')+'): +'+gain+' votos.');
@@ -1785,7 +1793,7 @@ function endTurn(){
 function completeTurn(s){
  if(G&&G.authoritative)return s==='p'?sendRemoteBattle({type:'end'}):false;
  if(checkBattleEnd()||G.side!==s)return;
- if(G.effectsVersion===HemicycleBasicEffects.version)G.field[s].forEach(function(c){HemicycleBasicEffects.end(c,G.turns[s]);});
+ if(G.effectsVersion===HemicycleBasicEffects.version){G.tdp[s]=HemicycleBasicEffects.bank(G.field[s],G.turns[s],G.tdp[s]);G.field[s].forEach(function(c){HemicycleBasicEffects.end(c,G.turns[s]);});}
  applyGuardia(s);
  G.sel=null;
  startTurn(s==='p'?'e':'p');
@@ -1850,6 +1858,9 @@ function attack(atk,tgt,owner,variant){
  if(variant==='strong'&&!canStrongAttack(owner,atk))return false;
  var foe=owner==='p'?'e':'p';
  if(tgt==='__EMPTY'?(G.field[foe].length>=3||(G.emptyVotesTaken&&G.emptyVotesTaken[owner]||0)>=3):G.field[foe].indexOf(tgt)<0)return false;
+ if(tgt==='__EMPTY'&&!battleCanEmpty(owner,atk,variant))return false;
+ if(tgt!=='__EMPTY'&&variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version){var originalTarget=tgt;tgt=HemicycleBasicEffects.redirect(G.field[foe],tgt,G.turns[foe]);if(tgt!==originalTarget){log(tgt.n+': Yo respondo, desvía el básico.');battleVisual('basic-state',{uid:tgt.uid,effect:'escort'});}}
+ var piercing=variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version&&HemicycleBasicEffects.pierces(atk,G.turns[owner]);
  battleVisual('attack',{uid:atk.uid,target:tgt==='__EMPTY'?null:tgt.uid,side:owner,strong:variant==='strong'});
  var ownerDoc=activeDoc(owner),foeDoc=activeDoc(foe);
  var baseDamage=attackDamage(owner,atk,tgt==='__EMPTY'?null:tgt,variant);
@@ -1868,7 +1879,7 @@ function attack(atk,tgt,owner,variant){
   checkBattleEnd();
   return true;
  }
- var damage=baseDamage,received=receiveBattleDamage(tgt,damage,variant==='normal'?G.turns[foe]:undefined);
+ var damage=baseDamage,received=receiveBattleDamage(tgt,damage,variant==='normal'?G.turns[foe]:undefined,piercing);
  log(atk.n+' lanza «'+phrase+'» ('+label+': '+received+' de daño a '+tgt.n+').','hi');
  if(foeDoc==='giro'&&tgt!==atk){
   var reflected=receiveBattleDamage(atk,1);
@@ -1882,7 +1893,7 @@ function attack(atk,tgt,owner,variant){
  if(tgt.h<=0)expel(owner,tgt,atk,foeDoc);
  if(checkBattleEnd())return;
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
- if(!G.over&&variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version){var effect=HemicycleBasicEffects.afterHit(atk,tgt,{damage:received,attackerHealth:atk.h,targetHealth:tgt.h,ownTurn:G.turns[owner],rivalTurn:G.turns[foe],source:owner});if(effect){log(effect.card.n+': '+HemicycleBasicEffects.definition(effect.id).name+'.');battleVisual('basic-state',{uid:effect.card.uid,effect:effect.id});}}
+ if(!G.over&&variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version){var team=basicTeam(owner),effect=HemicycleBasicEffects.afterHit(atk,tgt,{damage:received,attackerHealth:atk.h,targetHealth:tgt.h,ownTurn:G.turns[owner],rivalTurn:G.turns[foe],source:owner,team:team,actions:HemicycleActions.byId,random:Math.random});if(team.fasttrackUsed){if(!G.fasttrackUsed)G.fasttrackUsed={};G.fasttrackUsed[owner]=true;}if(effect){log(effect.card.n+': '+HemicycleBasicEffects.definition(effect.id).name+(effect.utility?' · '+effect.utility.name:'')+'.');battleVisual('basic-state',{uid:effect.card.uid,effect:effect.id});}}
  return true;
 }
 
@@ -2051,11 +2062,12 @@ function chooseBattleAction(s){
    G.field[foe].forEach(function(c){threat=Math.max(threat,attackDamage(foe,c,atk,canStrongAttack(foe,c,(G.turns?G.turns[foe]:0)+1)?'strong':'normal'));});
    // No insiste siempre en curarse si ni la cura basta frente al peor golpe posible.
    // Alterna presión y apoyo en ese caso incierto, sin bonificaciones ocultas.
-   if(atk.h<=Math.ceil(atk.hm/2)&&canHeal(s,atk)&&(atk.h+healingAmount(atk)>threat||Math.random()<0.5))return {type:'heal',card:atk};
-   if(!atk.guard&&threat>=atk.h&&Math.ceil(threat/2)<atk.h)return {type:'guard',card:atk};
+   if(atk.h<=Math.ceil(atk.hm/2)&&canHeal(s,atk)&&G.tdp[s]>=basicSupportCost(s,atk)&&(atk.h+healingAmount(atk)>threat||Math.random()<0.5))return {type:'heal',card:atk};
+   if(!atk.guard&&G.tdp[s]>=basicSupportCost(s,atk)&&threat>=atk.h&&Math.ceil(threat/2)<atk.h)return {type:'guard',card:atk};
   }
   if(tgt==='__EMPTY'&&(G.emptyVotesTaken&&G.emptyVotesTaken[s]||0)>=3)return {type:'end'};
   var variant=tgt==='__EMPTY'&&attackDamage(s,atk,null,'normal')>=Math.min(G.votes[foe],3-(G.emptyVotesTaken&&G.emptyVotesTaken[s]||0))||tgt!=='__EMPTY'&&tgt.h<=incomingDamage(tgt,attackDamage(s,atk,tgt,'normal'))?'normal':power;
+  if(tgt==='__EMPTY'&&!battleCanEmpty(s,atk,variant)){if(canStrongAttack(s,atk))variant='strong';else return {type:'end'};}
   return {type:'attack',card:atk,target:tgt,variant:variant};
  }
  return {type:'end'};
@@ -2087,12 +2099,12 @@ function aiStep(){
 }
 
 function battleEmptyVotesLeft(){return Math.max(0,3-(G.emptyVotesTaken&&G.emptyVotesTaken.p||0));}
-function playerHasAttackTarget(){return G.field.e.length>0||G.field.e.length<3&&battleEmptyVotesLeft()>0;}
+function playerHasAttackTarget(card,variant){return G.field.e.length>0||G.field.e.length<3&&battleEmptyVotesLeft()>0&&(!card||battleCanEmpty('p',card,variant));}
 function syncBattleActions(){
  if(typeof HemicycleBattleActions==='undefined')return;
  var card=G&&G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  var visible=SCREEN==='battle'&&G&&!G.over&&G.side==='p'&&G.n>0&&!G.move&&card&&card.ready&&!MODAL_CB&&!document.getElementById('modalRoot').firstChild;
- HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleNormalZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support,attackBlocked:!playerHasAttackTarget(),attackReason:'Ya has retirado los 3 votos de este turno. Puedes defender, curar o pasar.',ability:HemicycleBasicAbilityPreview.describe(G,'p',card),statuses:HemicycleBattleStatus.card(G,'p',card).map(function(s){return s.icon.indexOf('basic-')===0?s.short+' activo; toca su icono en el cromo para consultar la duración.':s.text;})}:null);
+ HemicycleBattleActions.render(visible?{uid:card.uid,name:card.n,quotes:card.q,normal:battleNormalZasca('p',card),strong:Math.ceil(battleZasca('p',card)*1.5),strongWait:strongWait('p',card),strongCharge:strongCharge('p',card),strongAllowed:canStrongAttack('p',card),strongHealth:card.h,supportCost:basicSupportCost('p',card),supportAffordable:G.tdp.p>=basicSupportCost('p',card),normalBlocked:!playerHasAttackTarget(card,'normal'),heal:healingAmount(card),healWait:healWait('p',card),guard:!!card.guard,support:!!G.support,attackBlocked:!playerHasAttackTarget(),attackReason:'Ya has retirado los 3 votos de este turno. Puedes defender, curar o pasar.',ability:HemicycleBasicAbilityPreview.describe(G,'p',card),statuses:HemicycleBattleStatus.card(G,'p',card).map(function(s){return s.icon.indexOf('basic-')===0?s.short+' activo; toca su icono en el cromo para consultar la duración.':s.text;})}:null);
 }
 function choosePlayerAction(kind){
  if(kind==='cancel'||kind==='back'){if(!G)return false;G.support=false;if(kind==='cancel'){G.sel=null;G.move=null;}paint();return true;}
@@ -2104,7 +2116,7 @@ function choosePlayerAction(kind){
  else if(kind==='back'){G.support=false;}
  else if(kind==='support'){G.support=false;G.move=null;}
  else if(kind==='normal'||kind==='strong'){
-  if(!playerHasAttackTarget()){G.move=null;G.support=false;paint();remoteBattleStatus('Ya has retirado los 3 votos de este turno. Puedes defender, curar o pasar.');return false;}
+  if(!playerHasAttackTarget(card,kind)){G.move=null;G.support=false;paint();remoteBattleStatus('No hay objetivo válido para ese ataque. Puedes defender, curar o pasar.');return false;}
   if(kind==='strong'&&!canStrongAttack('p',card))return false;
   G.move=kind;G.support=false;
  }
@@ -2116,7 +2128,7 @@ function choosePlayerAction(kind){
 }
 
 function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.indicators(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span class="battle-state-icon state-'+s.icon+(s.active?' is-on':' is-off')+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+(s.icon==='guard'?'<b class="status-value">50 %</b>':'')+'</span>';}).join('')+'</button>':'';}
-function basicStatusHTML(side,c){var state=G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.view(c,G.turns[side]):null;return state?'<button type="button" class="basic-effect-badge '+state.polarity+'" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'" title="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'">'+HemicycleBasicEffects.symbol(state.id)+'<b>'+state.count+'</b></button>':'';}
+function basicStatusHTML(side,c){var state=basicRules()?basicRules().view(c,G.turns[side]):null;return state?'<button type="button" class="basic-effect-badge '+state.polarity+'" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'" title="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'">'+HemicycleBasicEffects.symbol(state.id)+'<b>'+state.count+'</b></button>':'';}
 function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+HemicycleBattleStatus.symbol(states[0].icon)+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
  if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
@@ -2182,7 +2194,7 @@ function receiveRemoteBattle(snapshot,controls){
   over:snapshot.status==='finished',done:snapshot.status==='finished',n:own.turn+enemy.turn,side:snapshot.side===snapshot.you?'p':'e',first:snapshot.first===snapshot.you?'p':'e',turns:{p:own.turn,e:enemy.turn},turnDeadline:snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null,
   pTeam:own.cabinetIds||Array.from(new Set(hand.concat(pf,rest).filter(function(c){return !c.action;}).map(function(c){return c.k;}))),eTeam:[],field:{p:pf,e:ef},hand:{p:hand,e:[]},deck:{p:new Array(own.deckCount||0),e:new Array(enemy.deckCount||0)},pas:{p:rest,e:(enemy.rest||[]).map(convert)},
   leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
-  emptyVotesTaken:{p:own.emptyVotesTaken||0,e:enemy.emptyVotesTaken||0},actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
+  fasttrackUsed:{p:!!own.fasttrackUsed,e:!!enemy.fasttrackUsed},emptyVotesTaken:{p:own.emptyVotesTaken||0,e:enemy.emptyVotesTaken||0},actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
   log:(snapshot.events||[]).slice().reverse().map(function(text){return '<div class="log-line'+(text.indexOf(' activa ')>=0?' action-event':'')+'">'+esc(text)+'</div>';}),sel:same?previous.sel:null,move:same?previous.move:null,support:same?previous.support:false};
  // Keep one game object per match: audio uses its identity to continue the score.
  if(previous){Object.assign(previous,G);G=previous;}
@@ -2208,7 +2220,7 @@ SCREENS.battle=function(){
  var pf=G.field.p.map(function(c){return cromoBattle(c,'p');}).join('');
  for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
- var emptyLeft=battleEmptyVotesLeft();for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(!emptyLeft?' slot-capped':G.sel&&G.move?' tgt':'')+'" data-buid="__EMPTY" data-side="e" role="button" aria-disabled="'+(!emptyLeft)+'" tabindex="'+(emptyLeft?'0':'-1')+'"'+(!emptyLeft?' title="Ya has retirado los 3 votos de este turno"':'')+'>'+(!emptyLeft?'Límite de 3 votos':G.sel&&G.move?'Restar votos · '+emptyLeft+'/3':'+')+'</div>';
+ var selectedCard=G.field.p.filter(function(c){return c.uid===G.sel;})[0],laneBlocked=selectedCard&&!battleCanEmpty('p',selectedCard,G.move),emptyLeft=laneBlocked?0:battleEmptyVotesLeft();for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(!emptyLeft?' slot-capped':G.sel&&G.move?' tgt':'')+'" data-buid="__EMPTY" data-side="e" role="button" aria-disabled="'+(!emptyLeft)+'" tabindex="'+(emptyLeft?'0':'-1')+'"'+(!emptyLeft?' title="'+(laneBlocked?'Debate encarrilado: el básico debe dirigirse a un orador':'Ya has retirado los 3 votos de este turno')+'"':'')+'>'+(!emptyLeft?laneBlocked?'Solo oradores':'Límite de 3 votos':G.sel&&G.move?'Restar votos · '+emptyLeft+'/3':'+')+'</div>';
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&(c.action||G.field.p.length<3)&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
  var modo=G.tutorial?'TUTORIAL':G.quick?'RÁPIDA':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
@@ -2298,7 +2310,7 @@ SCREENS.ayuda=function(){
  +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button><button class="btn ghost sm" data-act="market-tutorial">Guía de Mercado</button></div>'
  +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: Normal y Clasificatoria disponen de 90 segundos por turno; Rápida, de 60. Quien empieza segundo recibe +1 TdP exclusivamente en su primer turno. Durante ese tiempo puedes realizar tus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador. Los ataques a bancadas vacías pueden restar, entre todos tus oradores, un máximo de 3 votos por turno propio; al comenzar tu siguiente turno se recupera ese límite.</p></div>'
  +'<div class="panel"><h3>Tu gabinete y su líder</h3><p class="sub">Desde Colección puedes guardar cinco gabinetes favoritos y elegir su líder. Antes del combate seleccionas uno de ellos; sus integrantes solo se editan en Colección. Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y dos huecos de orador más uno opcional de acción en la mano; las demás esperan en el mazo. Al comenzar cada turno propio, las cartas sin usar vuelven al mazo y se roban hasta dos oradores y una acción disponible al barajar. Las acciones usadas esperan dos turnos propios completos. Nunca pueden coincidir dos acciones en la mano. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
- +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte está disponible solo en el tercer turno propio del cromo en mesa y después cada tres turnos: 3, 6, 9… Si lo dejas pasar, la oportunidad caduca. Cuesta 1 de Aguante y requiere al menos 2 para ejecutarlo. El ciclo es individual y se reinicia al salir y volver a entrar.</p><p class="sub">Bajo la tercera frase tienes dos botones directos: el escudo para <b>Defensa</b> y la cruz verde para <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; si no recibe golpes, caduca al comenzar tu siguiente turno. No se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. Tras curarse, ese cromo debe dejar pasar un turno propio completo antes de volver a curarse; puede atacar o defender durante ese descanso. Esta restricción no afecta a la curación automática de Foco. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
+ +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte está disponible solo en el tercer turno propio del cromo en mesa y después cada tres turnos: 3, 6, 9… Si lo dejas pasar, la oportunidad caduca. Cuesta 1 de Aguante y requiere al menos 2 para ejecutarlo. El ciclo es individual y se reinicia al salir y volver a entrar.</p><p class="sub">Bajo la tercera frase tienes dos botones directos: el escudo para <b>Defensa</b> y la cruz verde para <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; si no recibe golpes, caduca al comenzar tu siguiente turno. No se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. Tras curarse, ese cromo debe dejar pasar un turno propio completo antes de volver a curarse; puede atacar o defender durante ese descanso. Esta restricción no afecta a la curación automática de Foco. Papeles traspapelados exige 1 TdP para la próxima defensa o curación voluntaria; si no puedes pagarlo, esos botones quedan desactivados. Ventanilla rápida solo adelanta cartas de acción del mazo. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
  +basicAbilityHelpHTML()
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
@@ -2433,7 +2445,7 @@ document.addEventListener('click',function(ev){
    var atk=null,tgt=null;
    for(i=0;i<G.field.p.length;i++)if(G.field.p[i].uid===G.sel)atk=G.field.p[i];
    for(i=0;i<G.field.e.length;i++)if(G.field.e[i].uid===uid)tgt=G.field.e[i];
-   if(uid==='__EMPTY'){if(!battleEmptyVotesLeft()){G.sel=null;G.move=null;G.support=false;paint();return;}tgt='__EMPTY';}
+   if(uid==='__EMPTY'){if(!battleEmptyVotesLeft()||!battleCanEmpty('p',atk,G.move)){G.sel=null;G.move=null;G.support=false;paint();return;}tgt='__EMPTY';}
    if(!tgt||!atk||!atk.ready){G.sel=null;G.move=null;G.support=false;paint();remoteBattleStatus('Ese objetivo o atacante ya no está disponible. Elige otro orador.');return;}
    attack(atk,tgt,'p',G.move);G.sel=null;G.move=null;G.support=false;paint();
    return;

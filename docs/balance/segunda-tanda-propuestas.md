@@ -1,34 +1,49 @@
-# Segunda tanda de habilidades — propuestas para revisar
+# Segunda tanda — reglas de la prueba
 
-**Documento de diseño: ninguna de estas habilidades se activa ni se asigna en esta corrección.** El reparto vigente conserva 67 oradores con habilidad y 53 sin ella. El rediseño del selector no modifica las reglas de combate.
+Implementación solicitada tras revisar las propuestas: ocho efectos nuevos para los 53 oradores restantes. Se conservan los seis efectos anteriores, sus asignaciones y todas las estadísticas base. El reparto completo está en [Oradores por habilidad](oradores-con-habilidades-v31.0.2.8.md).
 
-Los 53 pendientes se distribuyen en 6 comunes de coste 1, 12 comunes de coste 2, 12 raros de coste 2, 6 raros de coste 3, 6 especiales de coste 3, 5 especiales de coste 4 y 6 legendarios de coste 4. No conviene llenar todas las plazas por obligación: los raros de coste 2 y los legendarios de coste 4 ya tienen estadísticas eficientes.
+## Fuera del acta
 
-## Ocho efectos diferentes de los actuales
+Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base.
 
-| Propuesta | Efecto inicial para probar | Límite y encaje |
-|---|---|---|
-| **Fuera del acta** | El rival golpeado aporta **1 voto menos** al comenzar su próximo turno. | Solo reduce su aportación pasiva, con mínimo 0; conserva los 3 votos base del jugador y sus escaños al ser expulsado. Control para comunes de coste 2 y raros de coste 3. |
-| **Papeles traspapelados** | La próxima defensa o curación voluntaria del rival cuesta **1 TdP** adicional. | Un solo uso, hasta terminar su siguiente turno; no afecta a básicos, fuertes, acciones ni curaciones automáticas. Control suave que permite responder atacando o pagando el recurso. |
-| **Yo respondo** | El próximo básico que el rival dirija a otro de tus oradores debe dirigirse a este. | Protege una vez y caduca al terminar el siguiente turno propio. No obliga a atacar, no atrae fuertes ni acciones y no impide atacar huecos. Útil para oradores resistentes; no añade Aguante. |
-| **Letra pequeña** | En su siguiente básico contra un rival con defensa, recupera **1 punto** del daño que esa defensa habría evitado. | Nunca supera el daño sin defensa. Ejemplo: 4 contra escudo pasa de 2 a 3. Se consume con el siguiente básico aunque no encuentre defensa, y caduca al terminar el siguiente turno propio. Especialidad condicional para comunes o raros eficientes. |
-| **Dietas guardadas** | Al cerrar el turno reserva **1 TdP que no hayas gastado** y lo devuelve al comenzar el siguiente. | No crea recursos: resta 1 ahora y devuelve 1 después. Tope global de 8 y una reserva de este tipo por bancada. Se pierde si el portador sale antes de cobrarla. Utilidad de planificación para comunes sin habilidad. |
-| **Llamada al suplente** | Tras el básico, roba **un común de tu propio mazo** si tienes un hueco de orador en la mano. | No crea copias, no supera dos oradores en mano, no roba acciones ni rescata expulsados en descanso. Hay que pagar el coste del cromo para presentarlo. Reservaría esta ventaja para algún raro de coste 3 o especial, no para todos los comunes baratos. |
-| **Ventanilla rápida** | Adelanta **1 turno** la recuperación de una acción propia de apoyo —curación, defensa o mejora— a la que le queden al menos dos turnos de espera en el mazo. | Como primera prueba, una activación por jugador y partida, afectando solo a la acción elegible usada más recientemente. Nunca recupera acciones agotadas de un solo uso. Candidata para un especial de apoyo. |
-| **Debate encarrilado** | El rival golpeado no puede dirigir su próximo básico a un hueco para retirar votos. | Puede atacar oradores, defender, curar o usar acciones; el fuerte conserva sus reglas. Caduca al terminar su siguiente turno propio. Efecto pequeño y situacional para evitar sumar más daño a una carta ya eficiente. |
+## Papeles traspapelados
 
-## Condiciones de la prueba
+Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción.
 
-Los estados conservarían una única plaza por orador, sin sustitución ni renovación, y la recuperación de una activación cada dos turnos propios. Los nuevos efectos no cambian la fórmula ni el ciclo del fuerte. Los efectos sobre rival requieren que sobreviva al golpe.
+## Yo respondo
 
-Llamada al suplente y Ventanilla rápida son propuestas de utilidad instantánea: habría que decidir su inclusión como categoría, manteniendo la recuperación y exigiendo que el orador tenga la plaza libre al activarlas. Un intento sin objetivo elegible no debería gastar la habilidad. Ventanilla añade además el límite por partida para evitar ciclos de apoyo.
+Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos.
 
-No se proponen robos permanentes de estadísticas, turnos adicionales, bloqueo completo del rival, retirada inmediata del orador con curación gratuita, ni nuevas fuentes de votos que vuelvan a acelerar los debates. Tampoco se propone una inmunidad a estados: con la regla del primero que ocupa la plaza ya hay protección temporal implícita.
+## Letra pequeña
 
-## Primera selección sugerida
+Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno.
 
-Empezaría probando **Fuera del acta**, **Yo respondo** y **Letra pequeña**. Separan control de votos, protección de compañeros y respuesta a defensas, sin aumentar las cifras base.
+## Dietas guardadas
 
-Los comunes sin habilidad —por ejemplo, Ana Pastor, Celia Villalobos, Álvaro Nadal, Pablo Cambronero, Raül Romeva y Emiliano García-Page— son candidatos para utilidades pequeñas. Los raros de coste 2 necesitarían efectos muy condicionales. Los especiales sin habilidad admiten una función de equipo más definida. A los legendarios de coste 4 no les asignaría automáticamente otra ventaja; cualquier prueba debería justificar su necesidad y usar límites estrictos.
+Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos.
 
-Las asignaciones se decidirían por coste y función de juego, no por afirmaciones sobre las personas representadas. Estas cifras no se han simulado: son una propuesta para escoger y ajustar antes de implementar.
+## Llamada al suplente
+
+Tras causar daño con un básico a un orador, roba un común de tu propio mazo si tienes menos de dos oradores en mano. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo.
+
+## Ventanilla rápida
+
+Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por jugador y partida. No afecta a la curación del orador.
+
+## Debate encarrilado
+
+Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno.
+
+## Límites compartidos
+
+Un estado básico por orador: no se sustituye, acumula ni renueva. Una activación cada dos turnos propios; los intentos bloqueados o sin objetivo elegible no gastan la recuperación. Los efectos inmediatos dejan un icono hasta cerrar el turno y ocupan la misma plaza. Solo se activan al causar daño con un básico a un orador; atacante y, para estados negativos, objetivo deben sobrevivir. No se altera el fuerte.
+
+Letra pequeña y Debate encarrilado son las utilidades condicionales de los raros de coste 2 y legendarios de coste 4, ya eficientes. Llamada al suplente y Ventanilla rápida quedan en tres especiales cada una. Yo respondo ocupa una plaza sin añadir Aguante; se desvía un básico una sola vez, sin encadenar protectores.
+
+Ventanilla rápida afecta a cartas de acción de apoyo —curación, defensa o mejora— en el mazo, con al menos dos turnos de recuperación restantes. No acorta la curación de la tercera frase ni devuelve una intervención al orador. A petición de Dooms, si hay dos candidatas se elige una al azar; en partidas descargadas ese azar usa la semilla verificada. Una por jugador y partida, aunque el portador salga y vuelva a entrar.
+
+## Comprobación y alcance
+
+Se verifican los 14 × 14 bloqueos entre estados y las interacciones con defensa, vulnerabilidad, absorción, reflejos, expulsión y votos. La comparación exploratoria incluye 11.520 partidas con los 120 oradores como líderes y miembros, cruces favorables/desfavorables/espejo, 0/2 acciones y ambas iniciativas. No demuestra equilibrio definitivo entre jugadores humanos ni atribuye a una sola habilidad los cambios de victoria: ambos equipos reciben los añadidos.
+
+Las partidas anteriores conservan sus motores originales. Para las nuevas partidas verificadas se incorpora offline5 sin sobrescribir offline1/2/3/4. La migración solo amplía la descarga admitida; no modifica inventarios, guardados, Elo ni premios.

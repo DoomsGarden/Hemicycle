@@ -14,3 +14,5 @@
 #battleActionRoot.opening{animation:battlePopupEnter .16s ease-out}.tribuna .cromo.sel{animation:battleCardSelect .18s ease-out}
 @media(max-height:500px) and (min-width:600px){.battle-action-content{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start}.battle-action-head,.battle-target-notice{grid-column:1/-1}.battle-option{min-height:82px}.battle-support-block{padding:5px 7px}.battle-support-quote{font-size:calc(19px * var(--ui-text-scale,1))}.battle-support-actions{gap:4px}.battle-support-button{min-width:0;padding-inline:5px}}
 @media(prefers-reduced-motion:reduce){#battleActionRoot.opening,.tribuna .cromo.sel,.support-emblem *{animation:none!important}.battle-option,.battle-support-button{transition:none}}
+
+.battle-support-button .support-cost{font:700 10px/1 'Hemicycle UI',sans-serif;color:#f2cd80;margin-left:3px}
