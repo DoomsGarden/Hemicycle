@@ -1,6 +1,6 @@
 # Fuentes de los oradores y aclaración editorial
 
-29-10-2026. Preparado sobre v31.0.2.6, commit f088e40. La página y los documentos están listos; antes de publicar en main se necesita registrar la versión documental 2026-10-29.2 en Supabase mediante el SQL aditivo incluido. No se ha ejecutado contra producción.
+29-10-2026. Preparado sobre v31.0.2.6, commit f088e40. Dooms ha confirmado «Success» al ejecutar en Supabase el SQL aditivo de la versión documental 2026-10-29.2. Se publica la corrección en main tras esa confirmación; el entorno no ha ejecutado ni consultado la base de producción directamente.
 
 ## Qué se incluye
 
@@ -26,9 +26,9 @@ Quedan **cinco frases** apoyadas solo en titular o fragmento indexado del regist
 
 `legal/documents.json` y su derivado `js/legal-documents.js` pasan de 2026-10-29.1 a **2026-10-29.2**. SHA-256: `13fb255ccbbebd0c18595f37be4a39c438626631a0c0dd1485ea21fa82c5798e`.
 
-El servidor solo acepta recibos para versiones/hashes registrados en `hemicycle_legal_documents`; por eso el responsable debe ejecutar `_dev/legal/20261029_sources_release.sql` en el SQL Editor de Supabase antes de publicar los archivos en main. El entorno no dispone de una conexión autenticada a su Supabase. El script solo inserta la nueva versión, es repetible y rechaza reutilizar su número con otro hash. Conserva las versiones y aceptaciones anteriores y no toca partidas, usuarios, Elo ni inventarios. No requiere nuevas tablas, claves o variables.
+El servidor solo acepta recibos para versiones/hashes registrados en `hemicycle_legal_documents`; por eso el responsable ha ejecutado `_dev/legal/20261029_sources_release.sql` en el SQL Editor de Supabase y ha confirmado «Success» antes de publicar los archivos en main. El entorno no dispone de una conexión autenticada a su Supabase. El script solo inserta la nueva versión, es repetible y rechaza reutilizar su número con otro hash. Conserva las versiones y aceptaciones anteriores y no toca partidas, usuarios, Elo ni inventarios. No requiere nuevas tablas, claves o variables.
 
-Después de registrarlo, publicar esta rama en main como corrección de v31.0.2.6. La nueva aceptación aparecerá al entrar por la comparación de versión y hash ya existente, sin casilla premarcada. Un fallo de sincronización no convierte el aviso en pérdida de progreso; conserva la elección local para reintentar.
+Con el registro confirmado por Dooms, se publica esta rama en main como corrección de v31.0.2.6. La nueva aceptación aparecerá al entrar por la comparación de versión y hash ya existente, sin casilla premarcada. Un fallo de sincronización no convierte el aviso en pérdida de progreso; conserva la elección local para reintentar.
 
 ## Pruebas
 
