@@ -1,0 +1,31 @@
+{
+  "reproduced": true,
+  "blockedAfterRejectedAttack": true,
+  "result": {
+    "busy": true,
+    "selection": null,
+    "move": null,
+    "used": 3,
+    "field": [
+      {
+        "id": "toni-canto",
+        "uid": "0-o0",
+        "ready": false
+      },
+      {
+        "id": "pablo-cambronero",
+        "uid": "0-o1",
+        "ready": false
+      },
+      {
+        "id": "ana-pastor",
+        "uid": "0-o2",
+        "ready": true
+      }
+    ],
+    "votes": {
+      "p": 30,
+      "e": 27
+    }
+  }
+}

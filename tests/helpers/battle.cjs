@@ -24,6 +24,7 @@ function loadBattle(mode = 'normal', random = 0.25) {
   const math = Object.create(Math);
   math.random = typeof random === 'function' ? random : () => random;
   const context = vm.createContext({
+    HemicycleBasicAbilityPreview: require('../../js/basic-ability-preview.js'),
     HemicycleBasicEffects: require('../../js/basic-effects.js'),
     HemicycleBattleRules: require('../../js/battle-rules.js'),
     HemicycleLeagueRewards: require('../../js/league-rewards.js'),

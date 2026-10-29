@@ -29,10 +29,10 @@
   notify().catch(function(){});api.finished(snapshot,item.ticketId,verification);
  }
  function send(command){if(busy||!live||owner()!==live.owner)return false;busy=true;
-  (async function(){try{var at=Math.max(live.record.commands.at(-1)?.at||0,Date.now()-live.record.startedAt),next=live.rules.move(live.state,command,at,live.rng);live.state=next;live.record.commands.push({at,command});var match=live;
+  Promise.resolve().then(async function(){try{var at=Math.max(live.record.commands.at(-1)?.at||0,Date.now()-live.record.startedAt),next=live.rules.move(live.state,command,at,live.rng);live.state=next;live.record.commands.push({at,command});var match=live;
    await lock(match.owner,async function(){var store=await read(match.owner);store.active=match.record;await write(match.owner,store);});
    if(next.status==='finished')await finished();else{busy=false;render();if(api.events)api.events(next.visualEvents.filter(e=>e.sequence>match.lastSequence),0);match.lastSequence=next.visualSequence||0;}
-  }catch(e){if(api.error)api.error(e.message);if(live){busy=false;render();}}finally{busy=false;}})();return true;
+  }catch(e){busy=false;if(live)render();if(api.error)api.error(e.message);}finally{busy=false;}});return true;
  }
  async function start(cabinet,mode){
   var id=owner();if(!id)throw Error('Inicia sesión.');if(live){render();return;}

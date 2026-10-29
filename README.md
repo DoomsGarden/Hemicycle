@@ -112,6 +112,7 @@ El guardado local de GitHub Pages y el de `hemicycle.online` pertenecen a oríge
 | Necesitas… | Dónde encontrarlo |
 | --- | --- |
 | Aprender o practicar | **Ayuda:** combate guiado, guía de menús, guía de Mercado y retos tácticos. |
+| Consultar habilidades y sus oradores | **Ayuda → Habilidades del básico**. La ficha de cada cromo muestra su efecto particular. |
 | Mejorar la lectura | **Opciones:** tamaño de texto y de iconos. |
 | Ajustar el audio | **Opciones:** volumen maestro, música y efectos. |
 | Consultar partidas anteriores | **Inicio → flecha de accesos → Historial**. |
