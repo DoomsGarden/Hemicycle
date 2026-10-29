@@ -191,3 +191,5 @@ El icono se coloca sobre el retrato del afectado: verde azulado para beneficios 
 La práctica guiada conserva sus cromos prestados sin habilidades adicionales y lo indica al comenzar. Los combates anteriores mantienen su versión. Las partidas nuevas descargadas usan **offline4**, y los motores offline1/2/3 quedan inmutables para reanudar o validar partidas antiguas.
 
 Antes de publicar en las ramas de despliegue hay que ejecutar [_dev/online/20261029_basic_effects.sql](../../_dev/online/20261029_basic_effects.sql) en Supabase y confirmar Success. Amplía la descarga para admitir offline4, sin alterar guardados ni premios. El SQL anterior de estadísticas admitía hasta offline3; esta actualización introduce reglas nuevas y necesita su propia versión. No requiere nuevas variables de Render.
+
+Dooms confirmó `Success` al ejecutar este SQL el 29 de octubre de 2026, permitiendo activar v31.0.2.8. La confirmación procede del responsable; este entorno no ha inspeccionado directamente la base de datos de producción.

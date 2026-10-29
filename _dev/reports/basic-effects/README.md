@@ -1,6 +1,6 @@
 # Prueba de habilidades de ataques básicos
 
-Preparación sobre `19abdb4` (v31.0.2.7). No se ha modificado ni inspeccionado la base de datos de producción. La activación queda pendiente del SQL indicado en la [nota de versión](../../releases/v31.0.2.8.md).
+Preparación sobre `19abdb4` (v31.0.2.7). No se ha modificado ni inspeccionado la base de datos de producción. Dooms confirmó `Success` al ejecutar el SQL de compatibilidad en Supabase el 29 de octubre de 2026; esa ejecución no se ha inspeccionado directamente desde este entorno. Véase la [nota de versión](../../releases/v31.0.2.8.md).
 
 | Comprobación | Evidencia y alcance |
 |---|---|
