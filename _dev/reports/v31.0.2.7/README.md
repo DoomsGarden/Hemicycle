@@ -1,6 +1,6 @@
 # Comprobaciones del ajuste de oradores
 
-Preparación local de v31.0.2.7 sobre el catálogo publicado en `3a00b45`. No se ha comprobado ni modificado el SQL de producción: queda por ejecutar la migración indicada en la [nota de versión](../../releases/v31.0.2.7.md).
+Preparación local de v31.0.2.7 sobre el catálogo publicado en `3a00b45`. Dooms confirmó `Success` al ejecutar la migración de compatibilidad en Supabase el 29 de octubre de 2026. No se ha inspeccionado la base de datos de producción desde este entorno. Véase la [nota de versión](../../releases/v31.0.2.7.md).
 
 | Evidencia | Resultado |
 |---|---|
