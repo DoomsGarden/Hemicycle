@@ -1,0 +1,12 @@
+{
+  "checks": [
+    "Drafts do not gate entry or collect acceptance; legal/options in three sizes",
+    "Under 12 blocked; 12–13 guest only, no auth initialization, persisted choice",
+    "Decline returns to splash; 14+ account access; retry/idempotent sync; document change re-prompts",
+    "Public documents and real license links without account",
+    "Two email templates, intact ConfirmationURL, responsive previews without real mail"
+  ],
+  "errors": [],
+  "publishedDocuments": true,
+  "draftFixtureOnly": true
+}

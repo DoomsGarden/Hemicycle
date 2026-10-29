@@ -17,3 +17,7 @@
 
 .audio-version{display:block;flex-shrink:0;text-align:center;color:#929cad;font-size:calc(9px * var(--ui-text-scale,1));line-height:1.2;margin-top:8px;letter-spacing:.5px}
 @media(max-height:500px) and (min-width:600px){.audio-version{grid-column:1/-1;margin-top:0}}
+
+/* Opciones admite nuevos apartados sin recortar controles en pantallas pequeñas. */
+.audio-options{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.audio-legal-link{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;gap:10px;margin:0 0 14px;padding:10px 12px;grid-column:1/-1;text-align:left}.audio-legal-link svg{width:18px;height:18px;flex-shrink:0}

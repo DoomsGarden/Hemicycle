@@ -1,0 +1,16 @@
+{
+  "realSDK": true,
+  "simulatedTransport": true,
+  "noRealEmailSent": true,
+  "checks": [
+    "PKCE marked and authenticated update",
+    "PKCE old link and authenticated update",
+    "implicit early callback, blocked ordinary profile, reload, update retry and three sizes",
+    "implicit late callback, blocked ordinary profile, reload, update retry and three sizes",
+    "invalid callback ?account=recovery",
+    "invalid callback ?account=recovery",
+    "invalid callback ?account=recovery&code=missing-verifier",
+    "ordinary saved account unchanged"
+  ],
+  "errors": []
+}

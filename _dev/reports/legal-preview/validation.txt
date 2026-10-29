@@ -1,0 +1,38 @@
+PASS: Drafts do not gate entry or collect acceptance; legal/options in three sizes; Under 12 blocked; 12–13 guest only, no auth initialization, persisted choice; Decline returns to splash; 14+ account access; retry/idempotent sync; document change re-prompts; Public documents and real license links without account; Two email templates, intact ConfirmationURL, responsive previews without real mail
+
+✔ account login returns to the active approved domain, while Pages remains usable during migration (2.728324ms)
+✔ a preview or deceptive hostname cannot become an OAuth return destination (2.104614ms)
+✔ version notes cover every recorded playable version and the first repository entry (6.271557ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (3.546989ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.784382ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (1.06053ms)
+✔ same-version market corrections stay with v31.0.2.4 and retain both revisions (0.668337ms)
+✔ legal receipts authenticate the actor, whitelist documents, preserve first acceptance and isolate users (1171.649126ms)
+✔ publication guards reject incomplete copies and templates preserve Supabase links (159.857299ms)
+✔ the exact SQL supplied for the editor is repeatable and registers the final document hash (1087.624992ms)
+✔ horizontal swipes follow the bottom menu order in both directions (1.250035ms)
+✔ short gestures stay put and screens outside the five tabs cannot swipe (0.198599ms)
+✔ touch travel threshold stays useful on small and wide screens without wrapping edges (0.107802ms)
+✔ the Senate cycles twelve speakers and all three phrases, with alternating entry sides (3.166865ms)
+✔ the shared walking cycle alternates support and bent knees instead of repeating one leg (1.835838ms)
+✔ each speaker keeps its complete typed phrase readable for 900 ms before leaving, including the quotation marks (9.70908ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2556.182908
+
+Upgrade and all 137 precached assets passed.
+PASS: PWA upgrade, cache replacement, offline loading, progress preservation and market layouts.
+
+Checking invalid callback: ?account=recovery#error=access_denied&error_code=otp_expired
+Checking invalid callback: ?account=recovery
+Checking invalid callback: ?account=recovery&code=missing-verifier
+PASS: PKCE marked and authenticated update; PKCE old link and authenticated update; implicit early callback, blocked ordinary profile, reload, update retry and three sizes; implicit late callback, blocked ordinary profile, reload, update retry and three sizes; invalid callback ?account=recovery; invalid callback ?account=recovery; invalid callback ?account=recovery&code=missing-verifier; ordinary saved account unchanged
+
+PASS: Google PKCE, saved session, nickname, seven profile sizes, logout, guest, focus and preserved progress.
+
+Legal build, syntax, reading scale, offline rules and diff checks passed. No production SQL, email-template update or main deployment performed.

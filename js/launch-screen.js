@@ -7,9 +7,15 @@ window.HemicycleLaunchReady=true;
 var button=screen.querySelector('.launch-start'),musicButton=screen.querySelector('[data-intro-music]'),musicRequested=false,musicTouched=false,leaving=false,ended=false,timer;
 var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 function finish(){
- if(ended)return;ended=true;clearTimeout(timer);screen.remove();app.inert=false;app.removeAttribute('aria-hidden');
- var target=app.querySelector('[data-act="play"]');if(target)target.focus({preventScroll:true});
- window.HemicycleEntered=true;document.dispatchEvent(new Event('hemicycle:entered'));
+ if(ended)return;ended=true;clearTimeout(timer);screen.hidden=true;
+ var entry=window.HemicycleLegal?HemicycleLegal.enter():Promise.resolve(true);
+ entry.then(function(allowed){
+  if(!allowed){ended=false;leaving=false;screen.hidden=false;screen.classList.remove('leaving');button.disabled=false;button.focus({preventScroll:true});return;}
+  screen.remove();app.inert=false;app.removeAttribute('aria-hidden');
+  var target=app.querySelector('[data-act="play"]');if(target)target.focus({preventScroll:true});
+  window.HemicycleEntryRequested=true;document.dispatchEvent(new Event('hemicycle:entry-request'));
+  window.HemicycleEntered=true;document.dispatchEvent(new Event('hemicycle:entered'));
+ });
 }
 function musicLabel(){
  if(!musicButton||!window.HemicycleAudio)return;var prefs=HemicycleAudio.preferences(),active=musicRequested&&prefs.musicEnabled;
@@ -24,7 +30,6 @@ if(window.HemicycleAudio)HemicycleAudio.unlock().then(function(){if(!ended&&!mus
 function ready(){if(ended)return;button.disabled=false;button.focus({preventScroll:true});}
 button.addEventListener('click',function(){
  if(leaving||button.disabled)return;leaving=true;button.disabled=true;
- window.HemicycleEntryRequested=true;document.dispatchEvent(new Event('hemicycle:entry-request'));
  screen.classList.add('leaving');
  timer=setTimeout(finish,reduced?200:1400);
 });

@@ -3,6 +3,7 @@
 'use strict';
 function escape(value){return String(value==null?'':value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
 function create(api){
+ function canUseAccount(){return !root.HemicycleLegal||root.HemicycleLegal.canUseAccount();}
  var host=document.getElementById('profileRoot'),client=null,session=null,profile=null,verified=false,ready=false,opened=false,gate=false,readOnly=false,emailMode=false,recovering=false,busy=false,message='',nicknameDraft=null,generation=0,resolveEntry=null,previousFocus=null;
  // Capture recovery intent before the SDK consumes the callback URL. An ordinary
  // saved session or the query marker alone must never validate a recovery link.
@@ -24,7 +25,7 @@ function create(api){
  }
  function profileRpc(name,args){var token=session&&session.access_token,request=client.rpc(name,args);if(token&&typeof request.setHeader==='function')request=request.setHeader('Authorization','Bearer '+token);return request;}
  async function loadProfile(){
-  if(!client||!session)return;
+  if(!client||!session||!canUseAccount())return;
   var id=session.user.id,ticket=++generation;verified=false;
   try{var result=await profileRpc('hemicycle_get_profile');if(result.error)throw result.error;
    if(ticket!==generation||!session||session.user.id!==id)return;
@@ -59,6 +60,7 @@ function create(api){
   gate=false;close();if(resolveEntry){var done=resolveEntry;resolveEntry=null;done();}
  }
  function enter(){
+  if(!canUseAccount())return Promise.resolve();
   if(recovering)return new Promise(function(resolve){resolveEntry=resolve;if(!document.getElementById('launchScreen'))openRecovery();});
   if(ready&&session)return Promise.resolve();
   return new Promise(function(resolve){resolveEntry=resolve;open(true);});
@@ -71,6 +73,7 @@ function create(api){
   var nick=profile&&profile.nickname,canEdit=!!(session&&verified&&profile.can_rename&&!readOnly),date=profile&&profile.next_nickname_change_at?new Intl.DateTimeFormat('es-ES',{dateStyle:'medium',timeZone:'Europe/Madrid'}).format(new Date(profile.next_nickname_change_at)):'';
   var account=session?'<span class="profile-status">Cuenta conectada</span><button type="button" class="mini" data-profile="cloud">Nube</button><button type="button" class="mini" data-profile="logout" '+(busy?'disabled':'')+'>Cerrar sesión</button>':'<button type="button" class="btn profile-google" data-profile="google" '+(!client||busy?'disabled':'')+'>'+(busy?'Conectando…':'Continuar con Google')+'</button><button type="button" class="mini profile-email-toggle" data-profile="email">Acceder con correo</button>';
   var nickname=session?'<label for="profileNickname">Nick de jugador</label><form id="nicknameForm"><input id="profileNickname" name="nickname" minlength="3" maxlength="20" autocomplete="nickname" value="'+escape(nicknameDraft!==null?nicknameDraft:nick||'')+'" placeholder="Elige tu nick" '+(!canEdit||busy?'disabled':'')+'><button type="submit" class="btn sm" '+(!canEdit||busy?'disabled':'')+'>Guardar</button></form><p class="profile-hint">'+(!verified?'El cambio de nick requiere conexión con tu cuenta.':profile.can_rename?(!nick?'Primera elección gratuita. Después, un cambio gratis cada año.':'Tienes disponible un cambio gratuito.'):'Próximo cambio gratuito: '+escape(date)+'.')+'</p>':'<p class="profile-hint">Conecta tu cuenta para elegir un nick y conservarlo entre dispositivos.</p>';
+  if(!canUseAccount()){account='<p class="profile-hint">Modo invitado · Las cuentas están disponibles desde 14 años. Puedes revisar tu elección en Opciones → Información legal.</p>';nickname='';emailMode=false;}
   if(recovering)account='';
   if(emailMode){
    var signup=emailMode==='signup',reset=emailMode==='recover',update=emailMode==='update';
@@ -148,6 +151,10 @@ function create(api){
  document.addEventListener('hemicycle:entered',function(){if(recovering){openRecovery();return;}if(opened){var app=document.getElementById('app');app.inert=true;app.setAttribute('aria-hidden','true');focus();}});
  try{var incoming=new URL(location.href),fragment=new URLSearchParams(location.hash.slice(1));if(!recoveryIntent&&(incoming.searchParams.has('error')||fragment.has('error')))message='No se completó el acceso con Google. Puedes volver a intentarlo.';}catch(ignore){}
  var fetchWithTimeout=function(input,options){var controller=new AbortController(),timer=setTimeout(function(){controller.abort();},10000);options=Object.assign({},options,{signal:controller.signal});return fetch(input,options).finally(function(){clearTimeout(timer);});};
+ function initAccount(){
+ if(!canUseAccount()){ready=true;if(client){client.auth.stopAutoRefresh();client.auth.signOut({scope:'local'}).catch(function(){});receive(null);}return;}
+ if(client){client.auth.startAutoRefresh();return;}
+ ready=false;
  try{
   client=api.client||root.supabase.createClient(api.config.url,api.config.publishableKey,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:!implicitRecovery,flowType:'pkce'},global:{fetch:fetchWithTimeout}});
   client.auth.onAuthStateChange(function(event,next){setTimeout(function(){if(next&&!recoveryError&&(event==='PASSWORD_RECOVERY'||event==='SIGNED_IN'&&!implicitRecovery&&recoveryIntent&&recoveryCode&&!new URL(location.href).searchParams.has('code'))){recovering=true;recoveryValid=true;rememberRecovery(next.user.id);receive(next);if(!document.getElementById('launchScreen'))openRecovery();}else receive(next);},0);});
@@ -156,7 +163,10 @@ function create(api){
   var initialSession=implicitRecovery&&!recoveryError?client.auth.setSession({access_token:fragment.get('access_token'),refresh_token:fragment.get('refresh_token')}).then(function(result){if(result.error)throw result.error;if(!result.data.session)throw Error('Invalid recovery session');recovering=true;recoveryValid=true;rememberRecovery(result.data.session.user.id);var current=new URL(location.href);current.hash='';history.replaceState(history.state,'',current.pathname+current.search);return result;}):client.auth.getSession();
   initialSession.then(function(result){if(result.error)throw result.error;var next=result.data.session;if(!recoveryError&&next&&!recoveryCallback&&rememberedRecovery(next.user.id)){recovering=true;recoveryValid=true;}receive(next);if(recovering){if(!recoveryValid)recoveryFailure();else if(!document.getElementById('launchScreen'))openRecovery();}}).catch(function(){ready=true;if(recoveryIntent){recoveryFailure();return;}message='No se ha podido recuperar la sesión. Puedes reintentarlo o continuar sin cuenta.';notify();});
  }catch(error){ready=true;if(recoveryIntent)recoveryFailure();else message='El acceso a cuentas no está disponible. Puedes continuar sin cuenta.';}
- return {enter:enter,open:function(){open(false);},openGuide:function(){open(false,true);},close:close,isOpen:function(){return opened;},account:function(){return session?{userId:session.user.id,client:client,accessToken:session.access_token}:null;},refresh:function(){if(opened&&!gate&&!readOnly)render();}};
+ }
+ document.addEventListener('hemicycle:legal-accepted',initAccount);
+ initAccount();
+ return {enter:enter,open:function(){open(false);},openGuide:function(){open(false,true);},close:close,isOpen:function(){return opened;},account:function(){return canUseAccount()&&session?{userId:session.user.id,client:client,accessToken:session.access_token}:null;},refresh:function(){if(opened&&!gate&&!readOnly)render();}};
 }
 root.HemicyclePlayerProfile={create:create};
 })(typeof globalThis!=='undefined'?globalThis:this);
