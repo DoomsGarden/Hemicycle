@@ -49,9 +49,19 @@ function create(api){
   ['final-attack','[data-tutorial="enemy"] .cromo','Consigue los dos votos','Toca al rival. La victoria llega al alcanzar 100 votos. En partidas reales verás los FS, el Elo y el cromo del resultado; esta práctica no da premios.','attack']
  ];}
 
- function start(){
+ function introSteps(){return [
+ ['coin','[data-tutorial="coin"]','Tu primer debate','Usamos cromos prestados, sin premios ni pérdidas. Toca la moneda para empezar esta práctica.','begin'],
+ ['votes','.vbars','El objetivo: 100 votos','Azul eres tú; rojo es el rival. El TdP paga los cromos y se renueva al empezar cada turno. Toca los marcadores.'],
+ ['play-leader','[data-tutorial="hand"] .lead','Presenta un orador','Su número indica el coste en TdP. La estrella marca al líder. Toca este cromo para llevarlo a tu Tribuna.','play-leader'],
+ ['select','[data-tutorial="player"] .lead','Elige su intervención','Cada orador puede actuar una vez por turno. Tócalo para abrir sus frases.','select-leader'],
+ ['normal','[data-baction="normal"]','Ataque normal','La primera frase causa el daño indicado por Z. Tócala para elegir el ataque.','choose-normal'],
+ ['attack','[data-tutorial="enemy"] .cromo','Escoge al rival','Toca este orador rival. Al expulsarlo ganarás sus escaños como votos.','attack'],
+ ['end','[data-act="end"]','Pasa el turno','Cuando termines tus intervenciones, pulsa Pasar turno. El rival recibirá sus recursos y votos.','end'],
+ ['ready','.vbars','Ya conoces lo esencial','Gana llegando a 100 votos. Durante el juego podrás consultar fuerte, defensa, curación y acciones; en Ayuda tienes prácticas y la guía completa. Toca para terminar.']
+ ];}
+ function start(mode){
   if(active)return;
-  active=true;waiting=false;run++;index=0;steps=api.steps||makeSteps();save('in-progress');api.prepare();render();
+  active=true;waiting=false;run++;index=0;steps=api.steps||(mode==='short'?introSteps():makeSteps());save('in-progress');api.prepare(mode);render();
  }
  function clear(){
   if(highlight){highlight.classList.remove('tutorial-focus');for(var key in previous){if(previous[key]===null)highlight.removeAttribute(key);else highlight.setAttribute(key,previous[key]);}}
@@ -83,7 +93,7 @@ function create(api){
   if(!api.inBattle()){active=false;api.pause();return;}
   if(document.querySelector('#modalRoot .modal'))return;
   var step=steps[index];if(!step)return;
-  highlight=document.querySelector(step[1]);if(!highlight){if(api.steps){active=false;api.pause();}return;}
+  highlight=document.querySelector(step[1]);if(highlight&&highlight.matches('select')&&root.HemicycleSelect){root.HemicycleSelect.scan(highlight);highlight=document.querySelector('[data-select-for="'+highlight.id+'"]')||highlight;}if(!highlight){if(api.steps){active=false;api.pause();}return;}
   layer.hidden=false;layer.setAttribute('aria-hidden',String(!!document.getElementById('launchScreen')));previous={tabindex:highlight.getAttribute('tabindex'),role:highlight.getAttribute('role'),'aria-describedby':highlight.getAttribute('aria-describedby')};
   highlight.classList.add('tutorial-focus');if(!highlight.matches('button')){highlight.setAttribute('tabindex','0');highlight.setAttribute('role','button');}highlight.setAttribute('aria-describedby',textId);
   layer.innerHTML='<section class="tutorial-coach" role="region" aria-label="'+(api.label||'Guía del combate')+'"><small>'+(api.caption||'PRÁCTICA')+' · '+(index+1)+' / '+steps.length+'</small><h3>'+step[2]+'</h3><p id="'+textId+'">'+step[3]+'</p><span>Toca la zona iluminada para continuar.</span>'+(api.exitSelector?'<button type="button" class="mini tutorial-exit" id="menuTutorialExit">Salir de la guía</button>':'')+'</section>';

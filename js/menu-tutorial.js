@@ -32,7 +32,7 @@ function create(api){
    ['help','[data-act="menu-tutorial"]','Ayuda cuando la necesites','En ? puedes consultar las reglas y repetir por separado esta guía, Mercado o el tutorial de combate. Las novedades están junto a Ayuda. Toca este botón: iremos a la última parada sin reiniciar la guía.','league'],
    ['league','#tabbar [data-go="liga"]','4. La Liga','Liga es una competición por jornadas, distinta de la Clasificatoria de Elo. Toca su botón para conocer la pantalla sin crear una temporada.','league'],
    ['league-info','#content .view-body>div:first-child','Todo listo para jugar','Aquí ves tu Liga o creas una temporada: 30 grupos, 12 jornadas y tres divisiones. Sus partidas pueden transferir un cromo. El premio final va de 1100 a 300 FS según tu puesto. Toca este bloque para terminar y volver al inicio.']
-  ]
+  ].filter(function(step){return !api.accountAllowed||api.accountAllowed()||['profile-nick','online-modes','online-players','online-close'].indexOf(step[0])<0;}).map(function(step){if(api.accountAllowed&&!api.accountAllowed()&&step[0]==='modes')return [step[0],step[1],step[2],'En modo invitado puedes jugar sin vincular una cuenta. El acceso a cuentas y sus funciones está disponible desde 14 años. Toca para visitar la tienda.','online-close-shop'];return step;})
  });
 }
 root.HemicycleMenuTutorial={create:create,key:KEY};

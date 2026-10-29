@@ -3,7 +3,7 @@
 'use strict';
 function create(api){
  const host=document.getElementById('onlineRoot'),base=api.base;
- let opened=false,busy=false,poll=null,directory=null,room=null,pending=null,viewer=null,epoch=0,previousFocus=null,autoRoom=null,mode='normal',queue=null,preview=false,aiPending=null,lastPresence=0;
+ let opened=false,busy=false,poll=null,directory=null,room=null,pending=null,viewer=null,epoch=0,previousFocus=null,autoRoom=null,mode='normal',queue=null,preview=false,aiPending=null,lastPresence=0,progress=null,searchEpoch=null;
  host.innerHTML='<div class="online-shade" hidden><section class="online-dialog" role="dialog" aria-modal="true" aria-labelledby="online-title"><header><h2 id="online-title">Jugadores</h2><button type="button" data-online="close" aria-label="Cerrar partidas online">×</button></header><div class="online-body"><p id="online-message" role="status" aria-live="polite"></p><div id="online-controls"></div><section id="combat" hidden><p id="combat-message" role="status"></p><div class="combat-tools"><button type="button" id="combat-retry">Actualizar / reintentar</button><button type="button" id="combat-close">Volver a jugadores</button></div><div id="combat-content"></div></section></div></section></div>';
  const $=id=>document.getElementById(id),node=(tag,text,cls)=>{const n=document.createElement(tag);if(text!==undefined)n.textContent=text;if(cls)n.className=cls;return n;};
  const message=text=>{$('online-message').textContent=text;};
@@ -42,10 +42,13 @@ function create(api){
   for(const connected of [true,false]){const group=players.filter(p=>!!p.online===connected);if(!group.length)continue;list.append(node('small',(connected?'Conectados':'Desconectados')+' · '+group.length,'online-group'));for(const p of group)list.append(row(p,preview));}
   if(!players.length)list.append(node('p',busy?'Cargando jugadores…':'Todavía no hay otros jugadores visibles.','online-empty'));box.append(list);
  }
+ function setPhase(text){if(progress)progress.phase(text);}
  async function request(path,body){
+  if(!opened)throw Error('La ventana se ha cerrado. La operación pendiente se comprobará al volver.');
+  setPhase(path==='/ai'?'Preparando partida…':path==='/queue'?'Buscando rival…':path.startsWith('/rooms')?'Comprobando la sala…':'Consultando jugadores…');
   const account=api.account(),ticket=epoch;if(!account)throw Error('Inicia sesión.');
   const response=await fetch(base+path,{method:body?'POST':'GET',headers:{Authorization:'Bearer '+account.accessToken,...(body?{'Content-Type':'application/json'}:{})},...(body?{body:JSON.stringify(body)}:{}),cache:'no-store',signal:AbortSignal.timeout(65000)}),data=await response.json();
-  if(ticket!==epoch||api.account()?.userId!==account.userId)throw Error('La sesión ha cambiado.');
+  if(ticket!==epoch||api.account()?.userId!==account.userId){if(path==='/queue'&&body&&api.account()?.userId===account.userId){if(data.status==='waiting'&&searchEpoch!==epoch)fetch(base+'/queue/cancel',{method:'POST',headers:{Authorization:'Bearer '+account.accessToken,'Content-Type':'application/json'},body:'{}',keepalive:true}).catch(()=>{});else if(data.status==='matched'&&data.room){room=data.room;rememberRoom();}}throw Error('La sesión ha cambiado.');}
   if(!response.ok)throw Error(response.status===401?'Inicia sesión de nuevo.':data.error||'No se pudo conectar.');return data;
  }
  async function refresh(){
@@ -56,10 +59,10 @@ function create(api){
   if(values[1]&&room?.id===roomId){const before=room.status;room=values[1];if(before!=='paired'&&room.status==='paired')openCombat();rememberRoom();}render();
  }
  async function run(fn,quiet=false){
-  if(busy)return;const ticket=epoch;busy=true;render();if(!quiet)message('Conectando…');
-  try{await fn();if(ticket===epoch&&!quiet)message('');}
-  catch(e){if(ticket===epoch)message(e.name==='TimeoutError'?'Conexión lenta. Pulsa actualizar.':e.name==='TypeError'?'Sin conexión. Puedes reintentar o seguir jugando contra IA.':e.message);}
-  finally{if(ticket===epoch){busy=false;render();}}
+  if(busy)return;const ticket=epoch;busy=true;render();if(!quiet){message('Comprobando cuenta y conexión…');if(root.HemicycleOperationStatus)progress=root.HemicycleOperationStatus.start('Cuenta y guardado',$('online-message'));}var operation=progress;
+  try{await fn(()=>ticket===epoch&&opened);if(operation)operation.finish(true);if(ticket===epoch&&!quiet)message('');}
+  catch(e){if(operation)operation.finish(false);if(ticket===epoch)message(e.name==='TimeoutError'?'Conexión lenta. Pulsa actualizar.':e.name==='TypeError'?'Sin conexión. Puedes reintentar o seguir jugando contra IA.':e.message);}
+  finally{if(progress===operation)progress=null;if(ticket===epoch){busy=false;render();}}
  }
  async function invitePlayer(target){
   if(!['normal','rapida'].includes(mode))return;
@@ -71,12 +74,12 @@ function create(api){
  function rememberRoom(){const key=storageKey();if(!key)return;try{if(room&&['waiting','paired'].includes(room.status))localStorage.setItem(key,JSON.stringify({id:room.id,kind:room.kind||'player',mode:room.mode||mode,status:room.status}));else localStorage.removeItem(key);sessionStorage.removeItem(key);}catch{}}
  function restoreRoom(){if(room)return;const key=storageKey();if(!key)return;try{const saved=JSON.parse(localStorage.getItem(key)||sessionStorage.getItem(key));if(saved&&/^[a-f0-9-]{36}$/i.test(saved.id)&&['waiting','paired'].includes(saved.status))room=saved;}catch{}}
  function hasInvitation(){return !!room&&room.kind!=='ai'&&['waiting','paired'].includes(room.status);}
- async function startAI(){if(!open('ranked',false))return;await run(async()=>{if(!api.account())throw Error('Inicia sesión.');if(api.ensureCloud)await api.ensureCloud();if(!aiPending)aiPending=crypto.randomUUID();room=await request('/ai',{operationId:aiPending});aiPending=null;autoRoom=null;openCombat();});}
+ async function startAI(){if(!open('ranked',false))return;await run(async current=>{if(!api.account())throw Error('Inicia sesión.');if(api.ensureCloud)await api.ensureCloud(text=>{if(current())setPhase(text);});if(!current())return;if(!aiPending)aiPending=crypto.randomUUID();room=await request('/ai',{operationId:aiPending});aiPending=null;autoRoom=null;openCombat();});}
  function openCombat(){if(room?.status!=='paired')return;rememberRoom();if(autoRoom===room.id&&!$('combat').hidden)return;autoRoom=room.id;combat.open(room.id);$('combat').scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});}
  function close(){
   if(!opened)return;
   if(queue?.status==='waiting'){const a=api.account();if(a)fetch(base+'/queue/cancel',{method:'POST',headers:{Authorization:'Bearer '+a.accessToken,'Content-Type':'application/json'},body:'{}',keepalive:true}).catch(()=>{});queue=null;}
-  opened=false;preview=false;epoch++;busy=false;clearInterval(poll);combat.close();host.querySelector('.online-shade').hidden=true;
+  searchEpoch=null;if(progress){progress.finish('interrupted');progress=null;}opened=false;preview=false;epoch++;busy=false;clearInterval(poll);combat.close();host.querySelector('.online-shade').hidden=true;
   const app=$('app');app.inert=false;app.removeAttribute('aria-hidden');const target=previousFocus?.isConnected?previousFocus:document.querySelector('[data-act=online]');if(target)target.focus({preventScroll:true});
  }
  function open(preferred,loadDirectory=true){
@@ -93,7 +96,7 @@ function create(api){
  },true);
  return {
   open,close,startAI,hasActiveMatch(){restoreRoom();return room?.status==='paired';},resume(){restoreRoom();autoRoom=null;if(room?.status==='paired'&&open(room.mode||'normal',false))openCombat();},hasInvitation(){restoreRoom();return hasInvitation()||!!pending;},
-  async searchRanked(){if(!open('ranked',false))return;await run(async()=>{if(!api.account())throw Error('Inicia sesión para buscar rival.');if(api.ensureCloud)await api.ensureCloud();queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();}});},
+  async searchRanked(){if(!open('ranked',false))return;searchEpoch=epoch;await run(async current=>{if(!api.account())throw Error('Inicia sesión para buscar rival.');if(api.ensureCloud)await api.ensureCloud(text=>{if(current())setPhase(text);});if(!current())return;queue=await request('/queue',{mode:'ranked'});if(queue.status==='matched'){room=queue.room;openCombat();}});},
   openGuide(){combat.close();preview=true;mode=api.mode?.()||'normal';opened=true;epoch++;previousFocus=document.activeElement;$('app').inert=true;$('app').setAttribute('aria-hidden','true');host.querySelector('.online-shade').hidden=false;render();},
   accountChanged(){if(api.account()?.userId!==viewer){close();combat.close();if(api.clearBattle)api.clearBattle();directory=room=pending=queue=aiPending=null;lastPresence=0;viewer=api.account()?.userId;}}
  };

@@ -1,0 +1,13 @@
+'use strict';
+const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
+const source=fs.readFileSync('sw.js','utf8');
+function worker(){const events={},stores=new Map(),downloads=[];const base='https://example.test/Hemicycle/';function key(v){return new URL(typeof v==='string'?v:v.url,base).href;}class WorkerRequest extends Request{constructor(v,o){super(key(v),o);}}
+ const caches={keys:async()=>[...stores.keys()],delete:async name=>stores.delete(name),open:async name=>{if(!stores.has(name))stores.set(name,new Map());const s=stores.get(name);return {match:async v=>s.get(key(v))?.clone(),put:async(v,r)=>s.set(key(v),r),add:async v=>{downloads.push(key(v));s.set(key(v),new Response(key(v)));}};},match:async v=>{for(const s of stores.values())if(s.has(key(v)))return s.get(key(v)).clone();}};
+ const self={registration:{scope:base},location:{origin:new URL(base).origin},addEventListener:(n,f)=>events[n]=f,skipWaiting:async()=>{},clients:{claim:async()=>{}}};vm.runInNewContext(source,{self,caches,Request:WorkerRequest,Response,URL,Promise,AbortController,setTimeout,clearTimeout,fetch:async r=>new Response(key(r))});async function run(n,extra={}){let task,result;events[n]({waitUntil:p=>task=p,respondWith:p=>result=p,...extra});await task;return result;}
+ return {run,caches,downloads,base};}
+test('first installation activates without animated or audio downloads; an explicit offline preparation completes them',async()=>{
+ const w=worker();await w.run('install');a.ok(w.downloads.some(x=>x.includes('battle-rules.js')));a.ok(w.downloads.some(x=>x.includes('css/app.css')));a.equal(w.downloads.some(x=>/loop.webp|\.mp3/.test(x)),false);let result;await w.run('message',{data:{type:'hemicycle:cache-warm',reducedMotion:true},ports:[{postMessage:r=>result=r}]});a.ok(result.available<result.total);a.equal(w.downloads.some(x=>x.includes('title-loop.webp')),false);await w.run('message',{data:{type:'hemicycle:cache-warm',force:true},ports:[{postMessage:r=>result=r}]});a.equal(result.available,result.total);a.ok(w.downloads.some(x=>x.includes('title-loop.webp')));a.ok(w.downloads.some(x=>x.includes('audio/menu.mp3')));
+});
+test('legal and license navigations cannot replace the cached game document',async()=>{
+ const w=worker();await w.run('install');const index=await w.caches.match(w.base+'index.html');const saved=await index.text();for(const route of ['legal/','fonts/Inter-OFL.txt']){const url=w.base+route;const response=await w.run('fetch',{request:{url,method:'GET',mode:'navigate'}});a.equal(await response.text(),url);a.equal(await(await w.caches.match(w.base+'index.html')).text(),saved);}a.match(await(await w.caches.match(w.base+'legal/index.html')).text(),/legal\/$/);
+});

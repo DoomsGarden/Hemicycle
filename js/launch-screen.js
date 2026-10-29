@@ -36,4 +36,7 @@ button.addEventListener('click',function(){
 screen.addEventListener('animationend',function(ev){if(leaving&&ev.target===screen&&ev.animationName==='launchExit')finish();});
 screen.addEventListener('keydown',function(ev){if(ev.key==='Tab'){var items=Array.from(screen.querySelectorAll('button:not(:disabled)')),i=items.indexOf(document.activeElement);if(items.length){ev.preventDefault();items[(i+(ev.shiftKey?-1:1)+items.length)%items.length].focus({preventScroll:true});}}});
 if(reduced)ready();else setTimeout(ready,1550);
+// The still is immediately readable. Animate only after critical scripts/controls.
+if(!reduced&&!(navigator.connection&&navigator.connection.saveData)){var animateIntro=function(){if(!ended&&!leaving){var image=screen.querySelector('.launch-backdrop img');if(image){image.fetchPriority='low';image.src='assets/launch/chamber-loop.webp';}}};if(window.requestIdleCallback)requestIdleCallback(animateIntro,{timeout:2500});else setTimeout(animateIntro,1800);}
+
 })();

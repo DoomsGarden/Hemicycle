@@ -1,0 +1,59 @@
+{
+  "assertions": [
+    {
+      "case": "close and reopen during cloud verification",
+      "pass": true
+    },
+    {
+      "case": "late queue response cancelled",
+      "pass": true
+    },
+    {
+      "case": "late match remembered without opening",
+      "pass": true
+    },
+    {
+      "case": "lost AI creation reply retries same operation ID",
+      "pass": true
+    }
+  ],
+  "diagnostics": {
+    "schema": 1,
+    "scope": "Tiempos agregados de esta sesión, sin cuenta, URL, fecha ni contenido de operaciones. No se envían automáticamente.",
+    "bucketUpperMs": [
+      100,
+      250,
+      500,
+      1000,
+      2500,
+      5000,
+      10000,
+      30000,
+      65000,
+      120000,
+      null
+    ],
+    "phases": {
+      "Cuenta y guardado": {
+        "count": 5,
+        "errors": 1,
+        "interrupted": 3,
+        "totalMs": 5,
+        "maxMs": 2,
+        "buckets": [
+          5,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      }
+    }
+  }
+}

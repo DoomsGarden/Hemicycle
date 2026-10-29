@@ -1,0 +1,9 @@
+node --test --test-concurrency=2 tests/*.test.cjs tests/online/*.test.cjs
+ℹ tests 621
+ℹ suites 0
+ℹ pass 621
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 44443.15178
