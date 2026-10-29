@@ -1,0 +1,11 @@
+PASS: Google PKCE, saved session, nickname, seven profile sizes, logout, guest, focus and preserved progress.
+
+Checking invalid callback: ?account=recovery#error=access_denied&error_code=otp_expired
+Checking invalid callback: ?account=recovery
+Checking invalid callback: ?account=recovery&code=missing-verifier
+PASS: PKCE marked and authenticated update; PKCE old link and authenticated update; implicit early callback, blocked ordinary profile, reload, update retry and three sizes; implicit late callback, blocked ordinary profile, reload, update retry and three sizes; invalid callback ?account=recovery; invalid callback ?account=recovery; invalid callback ?account=recovery&code=missing-verifier; ordinary saved account unchanged
+
+Upgrade and all 137 precached assets passed.
+PASS: PWA upgrade, cache replacement, offline loading, progress preservation and market layouts.
+
+Real-domain network access, DNS, TLS and deployed provider settings not verified.
