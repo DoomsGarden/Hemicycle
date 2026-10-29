@@ -8,7 +8,7 @@ Ventana entre Iniciar y la entrada a la cuenta/menú, documentos desplegables, a
 
 En las pruebas con documentos publicados ficticios, la opción 12–13 no inicializa Supabase Auth y no ofrece alta ni acceso con Google. Es una declaración de tramo y una restricción de la interfaz, no verificación documental de edad ni una garantía absoluta contra el falseamiento o el acceso directo a APIs. Debe revisarse si resulta proporcionada para el servicio y su público. No se recoge fecha de nacimiento completa.
 
-`legal/documents.json` es la fuente editable. `node _dev/legal/build.cjs` genera `js/legal-documents.js` y la huella. `published:true` prepara la aceptación en esta rama. El cambio aún no está en main. La modalidad de borrador sigue disponible y probada para futuras revisiones. El generador rechaza publicar con datos o apartados pendientes. No se ha cambiado main, ni aplicado SQL, ni instalado plantillas de correo en los paneles.
+`legal/documents.json` es la fuente editable. `node _dev/legal/build.cjs` genera `js/legal-documents.js` y la huella. `published:true` prepara la aceptación en esta rama. SQL completo aplicado por Dooms con resultado Success; activación preparada para su subida a main. La modalidad de borrador sigue disponible y probada para futuras revisiones. El generador rechaza publicar con datos o apartados pendientes. Dooms ha confirmado Success al ejecutar el SQL completo en Supabase. Las plantillas de correo todavía deben instalarse manualmente en su panel.
 
 ## Datos incorporados y comprobaciones operativas
 

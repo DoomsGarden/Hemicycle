@@ -2,7 +2,7 @@
 
 Datos y decisiones confirmadas por Dooms: particular en España, dominio propio, sin compras reales/anuncios/analítica externa; desde 12 años con invitados para 12–13 y cuentas desde 14. Los retratos son ilustraciones generadas por prompts, con referencias visuales en algunos casos. Responsable: Sergey Veselkov. Regiones de Supabase (Irlanda) y Render (Frankfurt) confirmadas por Dooms. Conservación por criterios de finalidad y cuenta activa, sin prometer baja automática.
 
-El paquete de esta rama prepara la versión documental 2026-10-29.1. Las pruebas de aceptación usan los documentos finales; la prueba de borradores emplea una copia desactivada solo en el navegador. No se ha activado en main ni aplicado SQL a Supabase. El nombre del responsable fue facilitado para su publicación.
+El paquete de esta rama prepara la versión documental 2026-10-29.1. Las pruebas de aceptación usan los documentos finales; la prueba de borradores emplea una copia desactivada solo en el navegador. Dooms confirmó Success al aplicar el SQL completo en Supabase. La subida a main se realiza tras esa confirmación; no se consulta el despliegue de Pages. El nombre del responsable fue facilitado para su publicación.
 
 ## Verificación
 
