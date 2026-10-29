@@ -1,0 +1,33 @@
+Checking invalid callback: ?account=recovery#error=access_denied&error_code=otp_expired
+Checking invalid callback: ?account=recovery
+Checking invalid callback: ?account=recovery&code=missing-verifier
+PASS: PKCE marked and authenticated update; PKCE old link and authenticated update; implicit early callback, blocked ordinary profile, reload, update retry and three sizes; implicit late callback, blocked ordinary profile, reload, update retry and three sizes; invalid callback ?account=recovery; invalid callback ?account=recovery; invalid callback ?account=recovery&code=missing-verifier; ordinary saved account unchanged
+
+PASS: Google PKCE, saved session, nickname, seven profile sizes, logout, guest, focus and preserved progress.
+
+Upgrade and all 128 precached assets passed.
+PASS: PWA upgrade, cache replacement, offline loading, progress preservation and market layouts.
+
+✔ account login returns to the active approved domain, while Pages remains usable during migration (3.384233ms)
+✔ a preview or deceptive hostname cannot become an OAuth return destination (2.435643ms)
+✔ version notes cover every recorded playable version and the first repository entry (5.037257ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (3.278334ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.784133ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (0.956803ms)
+✔ same-version market corrections stay with v31.0.2.4 and retain both revisions (0.493494ms)
+✔ horizontal swipes follow the bottom menu order in both directions (1.718651ms)
+✔ short gestures stay put and screens outside the five tabs cannot swipe (0.273222ms)
+✔ touch travel threshold stays useful on small and wide screens without wrapping edges (0.160142ms)
+✔ the Senate cycles twelve speakers and all three phrases, with alternating entry sides (3.004701ms)
+✔ the shared walking cycle alternates support and bent knees instead of repeating one leg (2.404711ms)
+✔ each speaker keeps its complete typed phrase readable for 900 ms before leaving, including the quotation marks (8.913152ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 140.459377
+
+Syntax, reading scale, offline resource check and git diff --check: passed.
