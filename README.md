@@ -57,6 +57,8 @@ Las imágenes muestran la interfaz del juego con una partida de demostración. [
 | **Escaños** | Aportan votos mientras el orador está en mesa. Al expulsar a un rival, sumas los escaños de ese rival. |
 | **Líder** | Empieza en tu mano con bonificación y activa su doctrina mientras está en la Tribuna, salvo que sea neutralizada. |
 
+Los escaños base son **2 / 3 / 4 / 5** para comunes, raros, especiales y legendarios. Cada turno añade también **3 votos base**. [Consultar la tabla de estadísticas y el ajuste de esta versión](docs/balance/ajuste-2026-10-29.md).
+
 Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y una acción disponible; las cartas restantes esperan en el mazo. Cada orador puede intervenir **una vez por turno propio**.
 
 - **Ataque normal:** usa el Zasca actual del cromo.
@@ -134,7 +136,7 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Servicio online y configuración](_dev/online/README.md)
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
-- [Notas de la versión v31.0.2.6](_dev/releases/v31.0.2.6.md)
+- [Notas de la versión v31.0.2.7](_dev/releases/v31.0.2.7.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 

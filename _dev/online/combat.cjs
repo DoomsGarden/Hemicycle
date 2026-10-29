@@ -1,8 +1,8 @@
 'use strict';
-const crypto=require('node:crypto'),A=require('./actions.cjs'),{cards}=require('../market/catalog.cjs');
+const crypto=require('node:crypto'),A=require('./actions.cjs'),{cards}=require('../market/catalog.cjs'),Balance=require('../../js/orator-catalog.js'),Legacy=require('./catalog-legacy-stats.cjs');
 const catalog=Object.fromEntries(cards.map(c=>[c.id,c])),beats={verborrea:'guardia',guardia:'aforado',aforado:'viperina',viperina:'foco',foco:'giro',giro:'verborrea'};
 const random=()=>crypto.randomInt(0,0x100000000)/0x100000000,check=(v,m)=>{if(!v)throw Error(m);};
-function initial(mode='normal'){return {schema:1,ruleset:'actions2',emptyVoteLimit:3,mode,status:'preparing',players:[null,null],side:null,first:null,deadline:null,winner:null,events:[]};}
+function initial(mode='normal'){return {schema:1,catalogVersion:Balance.balanceVersion,ruleset:'actions2',emptyVoteLimit:3,mode,status:'preparing',players:[null,null],side:null,first:null,deadline:null,winner:null,events:[]};}
 function log(s,text){s.events.push(text);s.events=s.events.slice(-40);}
 function visual(s,kind,data){s.visualSequence=(s.visualSequence||0)+1;s.visualEvents=(s.visualEvents||[]).concat({sequence:s.visualSequence,kind,...data}).slice(-60);}
 function doctrine(s,i){const p=s.players[i],l=p.field.find(c=>c.id===p.leader);return l?l.doctrine:null;}
@@ -30,7 +30,8 @@ function begin(s,i,now,rng){s.side=i;const p=s.players[i];p.turn++;p.emptyVotesT
 }
 function end(s,i,now,rng){if(active(s,i)==='guardia')s.players[i].field.forEach(c=>c.buff=Math.min(3,c.buff+1));begin(s,1-i,now,rng);}
 function ready(s,i,choice,now,rng,profile){check(s.status==='preparing','La partida ya ha comenzado');check(!s.players[i],'Ya estás listo');const valid=A.validateCabinet(choice,[...cards.map(c=>c.id),...A.cards.map(c=>c.id)],cards.map(c=>c.id));
- const all=valid.orators.map((id,j)=>{const c=catalog[id],leader=id===valid.leader,edition=require('./progression.cjs').appearance(profile,id);return {uid:i+'-o'+j,id,name:c.n,rarity:c.r,doctrine:c.pa,cost:c.c,...edition,z:c.a+(leader?1:0)+(edition.gold?2:0),hp:c.h+(leader?3:0)+(edition.gold?2:0),maxHp:c.h+(leader?3:0)+(edition.gold?2:0),votes:c.v,q:c.q,ready:true,guard:false,buff:0,buffs:[],enteredTurn:null,strongUsedTurn:null,lastHealTurn:null};});
+ const revision=s.catalogVersion||Legacy.version;if(![Balance.balanceVersion,Legacy.version].includes(revision))throw Error('Versión de catálogo no compatible.');
+ const all=valid.orators.map((id,j)=>{const c=revision===Legacy.version?{...catalog[id],...Legacy.cards[id]}:catalog[id],leader=id===valid.leader,edition=require('./progression.cjs').appearance(profile,id);return {uid:i+'-o'+j,id,name:c.n,rarity:c.r,doctrine:c.pa,cost:c.c,...edition,z:c.a+(leader?1:0)+(edition.gold?2:0),hp:c.h+(leader?3:0)+(edition.gold?2:0),maxHp:c.h+(leader?3:0)+(edition.gold?2:0),votes:c.v,q:c.q,ready:true,guard:false,buff:0,buffs:[],enteredTurn:null,strongUsedTurn:null,lastHealTurn:null};});
  const leader=all.find(c=>c.id===valid.leader),others=A.shuffle(all.filter(c=>c!==leader),rng),actions=valid.actions.map((id,j)=>({uid:i+'-a'+j,id,action:true}));
  s.players[i]={cabinetIds:valid.orators.slice(),cabinetActions:valid.actions.slice(),leader:valid.leader,turn:0,tdp:0,tdpMax:2,votes:0,hand:[leader,others.shift()],deck:A.shuffle([...others,...actions],rng),field:[],rest:[],actionDiscard:[],saved:[],refund:0,usedActions:[],silenced:false};log(s,(i===0?'Anfitrión':'Invitado')+' está listo.');
  if(s.players.every(Boolean)){s.status='active';s.first=rng()<.5?0:1;log(s,'Sorteo: '+(s.first===0?'cara, empieza el anfitrión.':'cruz, empieza el invitado.'));begin(s,s.first,now,rng);}

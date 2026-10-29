@@ -92,7 +92,7 @@
 <link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.3-reading1">
 <script src="js/cabinet-presets.js?v=31.0.1.4"></script>
 <script src="js/legendary-mastery.js?v=31.0.1.2"></script>
-<script src="js/orator-catalog.js?v=31.0.2.3-polish2"></script>
+<script src="js/orator-catalog.js?v=31.0.2.7"></script>
 <script src="js/action-cards.js?v=31.0.2.3-actions2"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-reading1">
 <script src="js/player-backup.js?v=31.0.2.0"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
@@ -100,15 +100,19 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.6"></script>
+<script src="js/changelog.js?v=31.0.2.7"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
 <script src="js/offline-rules-v1.js?v=31.0.2.3"></script>
 <script>window.HemicycleOfflineRulesV1=window.HemicycleOfflineRules;</script>
 <script src="js/offline-rules.js?v=31.0.2.3-actions2"></script>
-<script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;window.HemicycleOfflineRules=Object.assign({},HemicycleOfflineRulesV2,{start:function(t,c,m){return (t.rules==='offline1'?HemicycleOfflineRulesV1:HemicycleOfflineRulesV2).start(t,c,m);}});</script>
-<script src="js/offline-combat.js?v=31.0.2.3"></script>
+<script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rules-v3.js?v=31.0.2.7"></script>
+<script>window.HemicycleOfflineRulesV3=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rule-dispatch.js?v=31.0.2.7"></script>
+<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3});</script>
+<script src="js/offline-combat.js?v=31.0.2.7"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
@@ -122,7 +126,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.6';
+var VERSION='v31.0.2.7';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}

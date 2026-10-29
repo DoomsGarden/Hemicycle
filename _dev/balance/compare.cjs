@@ -1,0 +1,13 @@
+'use strict';
+// Paired seeded simulations. Only the catalog revision differs; this is not a human-play benchmark.
+const fs=require('node:fs'),a=require('node:assert/strict'),E=require('../online/combat.cjs'),AI=require('../online/ai.cjs');
+const docs=[...new Set(E.cards.map(c=>c.pa))],recipes={initial:['comun','comun','raro','raro','especial'],advanced:['raro','especial','especial','legendario','legendario']};
+function random(seed){let x=seed>>>0;return()=>((x=(Math.imul(x,1664525)+1013904223)>>>0)/4294967296);}
+function cabinet(doc,recipe,slots){const used=new Set(),orators=recipe.map(r=>{const c=E.cards.find(c=>c.pa===doc&&c.r===r&&!used.has(c.id));used.add(c.id);return c.id;});return {orators,leader:orators[0],actions:['turno-de-palabra','receso'].slice(0,slots)};}
+function play(c1,c2,seed,first,legacy){const rng=random(seed);let s=E.initial();if(legacy)delete s.catalogVersion;s=E.apply(s,0,{type:'ready',cabinet:c1},0,rng);let n=0;s=E.apply(s,1,{type:'ready',cabinet:c2},0,()=>n++===5+c2.actions.length?(first===0?.25:.75):rng());a.equal(s.first,first);let moves=0;while(s.status==='active'&&moves++<1500)s=E.apply(s,s.side,AI.choose(s,s.side,0),0,rng);a.equal(s.status,'finished');return {winner:s.winner,rounds:Math.max(...s.players.map(p=>p.turn)),votes:s.players.map(p=>p.votes),moves};}
+const groups=[],pairs=[];
+for(const [name,recipe]of Object.entries(recipes))for(const p of docs)for(const e of docs)for(let slots=0;slots<=2;slots++)for(let seed=1;seed<=4;seed++)for(const first of [0,1]){const c1=cabinet(p,recipe,slots),c2=cabinet(e,recipe,slots);pairs.push({recipe:name,p,e,slots,seed,first,before:play(c1,c2,seed,first,true),after:play(c1,c2,seed,first,false)});}
+function summarize(rows){const rounds=rows.map(x=>x.rounds).sort((a,b)=>a-b),mean=rounds.reduce((s,n)=>s+n,0)/rows.length;return {games:rows.length,meanRounds:+mean.toFixed(3),medianRounds:rounds[Math.floor(rounds.length/2)],p10:rounds[Math.floor(rounds.length*.1)],p90:rounds[Math.floor(rounds.length*.9)]};}
+for(const name of Object.keys(recipes))groups.push({recipe:name,before:summarize(pairs.filter(x=>x.recipe===name).map(x=>x.before)),after:summarize(pairs.filter(x=>x.recipe===name).map(x=>x.after))});
+const report={scope:'Mismos gabinetes, doctrinas, semillas, política de IA, 0/1/2 acciones y ambos jugadores iniciales. Solo cambia el catálogo. No demuestra equilibrio ni duración en PvP humano.',pairs:pairs.length,games:pairs.length*2,before:summarize(pairs.map(x=>x.before)),after:summarize(pairs.map(x=>x.after)),groups,details:pairs};
+fs.writeFileSync('_dev/reports/v31.0.2.7/balance-comparison.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({...report,details:undefined}));

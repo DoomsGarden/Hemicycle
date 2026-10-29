@@ -1,5 +1,4 @@
 const assert = require('node:assert/strict');
-const { createHash } = require('node:crypto');
 const { test } = require('node:test');
 const { loadBattle } = require('./helpers/battle.cjs');
 
@@ -48,18 +47,11 @@ for(const p of keys) for(const e of keys) {
   });
 }
 
-test('all 120 names, associations and base stats stay unchanged; only 5-cost specials become 4', () => {
-  const c=loadBattle(),cards=JSON.parse(JSON.stringify(c.CARDS));
-  const invariant=cards.slice().sort((a,b)=>a.id.localeCompare(b.id)).map(({id,n,r,pa,a,h,v})=>({id,n,r,pa,a,h,v}));
-  assert.equal(createHash('sha256').update(JSON.stringify(invariant)).digest('hex'),'059caf3e56f3698f9129d7ec6e87a5054df1dc270ddc213289cad9ef6b912d86');
-  const oldRanges={comun:[1,3],raro:[2,4],especial:[3,5],legendario:[4,6]};
-  for(const doctrine of keys)for(const [tier,names]of Object.entries(c.ROSTER[doctrine])){
-    for(let i=0;i<names.length;i++){
-      const card=c.BYID[c.slug(names[i])],range=oldRanges[tier];
-      const oldCost=range[0]+i%(range[1]-range[0]+1);
-      assert.equal(card.c,tier==='especial'?Math.min(4,oldCost):oldCost,card.id);
-    }
-  }
+test('all 120 names and doctrine associations stay unchanged across balance revisions', () => {
+  const c=loadBattle(), cards=JSON.parse(JSON.stringify(c.CARDS));
+  const old=require('../_dev/balance/catalog-before.json');
+  const identity=cards=>cards.map(({id,n,r,pa})=>({id,n,r,pa})).sort((a,b)=>a.id.localeCompare(b.id));
+  assert.deepEqual(identity(cards),identity(old));
   assert.equal(cards.filter(card=>card.r==='especial').length,24);
   assert.ok(cards.filter(card=>card.r==='especial').every(card=>card.c<=4));
 });

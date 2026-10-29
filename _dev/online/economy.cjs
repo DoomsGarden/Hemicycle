@@ -32,7 +32,7 @@ function operate(input,actor,command,now=Date.now(),rng=random){
  let result={};const type=command.type;
  if(type==='maintenance'){}else if(type==='learning-actions'){for(const id of ['replica','receso'])if(!(me.actionAlbum||[]).includes(id)){A.award(me,[id]);changed.add(actor);}result={granted:true};}else if(type==='offline-settle'){
   const ticket=s.ticket;check(ticket&&ticket.expires+30*86400000>now&&!ticket.result,'Partida descargada no disponible o caducada.');
-  const state=require(ticket.rules==='offline2'?'./offline-v2.cjs':'./offline-v1.cjs').replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
+  const state=require('./offline-engines.cjs').forTicket(ticket).replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
   const before=me.elo,margin=Math.max(0,Math.min(1,Math.abs(own.votes-foe.votes)/Math.max(1,win?own.votes:foe.votes)));
   let fs=win?(competitive?50+Math.floor(rng()*51):20+Math.floor(rng()*31)):competitive?20+Math.floor(rng()*11):0,won=null,lost=null;
   if(win){me.w++;if(M.eligible(own.leader))me.leaderMastery=M.recordWin(me,own.leader);if(competitive){won=pick(A.lootPool(foe.cabinetIds,foe.cabinetActions),rng);A.award(me,[won]);}if(competitive&&own.leader==='donald-trump'){me.dtWins++;if(me.dtWins>=10)me.dtGoldUnlocked=true;}}

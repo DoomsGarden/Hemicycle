@@ -16,7 +16,14 @@ var MAX_TDP=8;
 function doctrineMatchup(k){var d=DOCM[k];return 'Contrarresta: '+DOCM[d.beats].n+'. Debilidad: '+DOCM[d.weak].n+'.';}
 var RARS=[{k:'comun',n:'Común',c:'#b07a45',g:3},{k:'raro',n:'Raro',c:'#4a7fb5',g:4},{k:'especial',n:'Especial',c:'#8b5cf6',g:5},{k:'legendario',n:'Legendario',c:'#e8b923',g:6}];
 var RARM={};RARS.forEach(function(r){RARM[r.k]=r;});
-var TIER={comun:{c:[1,3],a:[2,4],h:[4,7],v:2},raro:{c:[2,4],a:[4,6],h:[6,10],v:3},especial:{c:[3,4],costs:[3,4,4,3],a:[5,7],h:[8,12],v:5},legendario:{c:[4,6],a:[7,9],h:[11,16],v:8}};
+var BALANCE_VERSION='balance-v2';
+var TIER={
+ comun:{c:[1,2],costs:[1,2,2,1,2,2,1,2],a:[2,2],h:[4,5],v:2,stats:{1:{a:2,h:4},2:{a:2,h:5}}},
+ raro:{c:[2,4],a:[4,4],h:[6,7],v:3,stats:{2:{a:4,h:6},3:{a:4,h:7},4:{a:4,h:7}}},
+ especial:{c:[3,5],costs:[3,4,4,3],a:[5,6],h:[8,8],v:4,stats:{3:{a:5,h:8},4:{a:6,h:8},5:{a:6,h:8}}},
+ legendario:{c:[4,5],a:[7,7],h:[11,14],v:5,stats:{4:{a:7,h:11},5:{a:7,h:14}}}
+};
+function statsFor(rarity,cost){var tier=TIER[rarity],stats=tier&&tier.stats[cost];if(!stats)throw Error('Coste no definido para esta rareza: '+rarity+'/'+cost);return {a:stats.a,h:stats.h,v:tier.v};}
 var TIERORDER={legendario:0,especial:1,raro:2,comun:3};
 
 var ROSTER={
@@ -175,12 +182,8 @@ DOCS.forEach(function(d){
  ['legendario','especial','raro','comun'].forEach(function(t){
   var t2=TIER[t];
   ROSTER[d.k][t].forEach(function(nm,ix){
-   var id=slug(nm);
-   var c={id:id,n:CARD_NAMES[id]||nm,r:t,pa:d.k,country:CARD_COUNTRIES[id]||null,
-     c:t2.costs?t2.costs[ix%t2.costs.length]:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),
-     a:t2.a[0]+((ix*3)%(t2.a[1]-t2.a[0]+1)),
-     h:t2.h[0]+((ix*5)%(t2.h[1]-t2.h[0]+1)),
-     v:t2.v};
+   var id=slug(nm),cost=t2.costs?t2.costs[ix%t2.costs.length]:t2.c[0]+(ix%(t2.c[1]-t2.c[0]+1)),stats=statsFor(t,cost);
+   var c={id:id,n:CARD_NAMES[id]||nm,r:t,pa:d.k,country:CARD_COUNTRIES[id]||null,c:cost,a:stats.a,h:stats.h,v:stats.v};
    c.q=QBESP[c.id].slice();
    CARDS.push(c);BYID[c.id]=c;
   });
@@ -194,4 +197,4 @@ var PACKS=[
  {k:'legendario',n:'Sobre legendario',p:1500,d:'1 legendario, 1 especial y 3 raros.'},
  {k:'mitico',n:'Sobre mítico',p:2900,d:'5 legendarios garantizados.'}];
 function validate(data){var seen=new Set();for(const c of data.cards){if(!c||!(/^[a-z0-9-]+$/).test(c.id)||seen.has(c.id)||['constructor','prototype','__proto__'].includes(c.id))throw Error('ID de cromo inválido o repetido');seen.add(c.id);if(!c.country||!(/^[A-Z]{2}$/).test(c.country)||!Object.hasOwn(data.countryNames,c.country)||!Object.hasOwn(data.tier,c.r)||!Object.hasOwn(data.roster,c.pa))throw Error('Metadatos incompletos: '+c.id);if(typeof c.n!=='string'||!c.n.trim()||!Array.isArray(c.q)||c.q.length!==3||c.q.some(q=>typeof q!=='string'||!q.trim()))throw Error('Nombre o frases incompletas: '+c.id);for(const k of ['c','a','h','v'])if(!Number.isSafeInteger(c[k])||c[k]<=0)throw Error('Estadística inválida: '+c.id);}return data;}
-var data={cards:CARDS,docs:DOCS,rars:RARS,tier:TIER,roster:ROSTER,quotes:QBESP,countries:CARD_COUNTRIES,countryNames:COUNTRY_NAMES,countryRoster:COUNTRY_ROSTER,tierOrder:TIERORDER,names:CARD_NAMES,packs:PACKS};validate(data);data.validate=validate;return data;});
+var data={balanceVersion:BALANCE_VERSION,statsFor:statsFor,cards:CARDS,docs:DOCS,rars:RARS,tier:TIER,roster:ROSTER,quotes:QBESP,countries:CARD_COUNTRIES,countryNames:COUNTRY_NAMES,countryRoster:COUNTRY_ROSTER,tierOrder:TIERORDER,names:CARD_NAMES,packs:PACKS};validate(data);data.validate=validate;return data;});
