@@ -13,9 +13,9 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="css/app.css?v=31.0.2.6">
-<link rel="stylesheet" href="css/interface.css?v=31.0.2.4-market2">
+<link rel="stylesheet" href="css/interface.css?v=31.0.2.8-glass1">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
-<link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
+<link rel="stylesheet" href="css/packs.css?v=31.0.2.8-glass1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.8-wave2">
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.8-phrases1">
@@ -104,7 +104,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.8-states1"></script>
+<script src="js/changelog.js?v=31.0.2.8-glass1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -2298,7 +2298,7 @@ SCREENS.liga=function(){
  return '<div class="bar between"><div><h2>Liga &middot; '+(lg.div===1?'Primera':(lg.div===2?'Segunda':'Tercera'))+'</h2>'
  +'<p class="sub">Temp. '+lg.temp+' &middot; J'+lg.jor+'/12 &middot; Vas '+pos+'&ordm; ('+me.pts+' pts)</p></div>'
  +'<button class="btn sm" data-act="ligajugar" title="Jugar contra '+esc(leagueName(rival.n))+'">Jugar J'+lg.jor+'</button></div>'
- +'<div class="panel inner-scroll"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
+ +'<div class="panel inner-scroll league-standings"><table><thead><tr><th>#</th><th>Grupo</th><th>Pts</th><th>V-E-D</th></tr></thead><tbody>'
  +sorted.map(function(t,ix){return '<tr class="'+(t.you?'you':(ix<5?'pro':(ix>24?'des':'')))+'"><td>'+(ix+1)+'</td><td>'+esc(leagueName(t.n))+'</td><td>'+t.pts+'</td><td>'+t.w+'-'+t.d+'-'+t.l+'</td></tr>';}).join('')
  +'</tbody></table></div>'
  +'<div class="bar between"><span class="sub">Los 5 primeros ascienden &middot; 5 últimos descienden</span>'
