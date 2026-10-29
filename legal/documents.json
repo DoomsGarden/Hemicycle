@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-29.1",
+  "version": "2026-10-29.2",
   "date": "2026-10-29",
   "published": true,
   "reviewed": true,
@@ -44,6 +44,14 @@
           "text": "El juego busca ofrecer entretenimiento mediante colección de cromos y estrategia, y familiarizar al público con nombres y rostros de protagonistas políticos. No se presenta como una fuente histórica exhaustiva ni como asesoramiento político. No pretende promover odio, discriminación, acoso ni atribuir respaldos a quienes aparecen."
         },
         {
+          "title": "Frases, humor y contexto",
+          "text": "Las frases de los oradores se seleccionan por su interés público, notoriedad o uso humorístico y se incorporan a un contexto ficticio de estrategia. El catálogo distingue fragmentos documentados, traducciones y adaptaciones. Algunos recortes y adaptaciones omiten o sustituyen referencias concretas a terceros para su uso en la partida; no todas las frases han sido modificadas. Las adaptaciones no se presentan como citas literales. Su uso como ataque, defensa o curación no atribuye una declaración dirigida al rival de juego ni una conducta real a ninguna persona. Las frases y sus fuentes pueden consultarse en la página de Fuentes de los oradores, que explica también los límites de comprobación."
+        },
+        {
+          "title": "Ilustraciones generadas mediante IA",
+          "text": "Según confirma el creador del juego, los retratos son ilustraciones de estilo realista generadas mediante inteligencia artificial a partir de prompts que buscan evocar los rasgos de las personas representadas. No se presentan como fotografías reales ni como prueba de hechos o situaciones. En algunos casos se usaron referencias visuales para orientar el parecido; solo se atribuyen las referencias concretas que estén documentadas. La generación mediante IA no implica autorización, afiliación ni respaldo de las personas o de terceros."
+        },
+        {
           "title": "Personas, imágenes y marcas",
           "text": "Los nombres, imágenes y signos de terceros pueden estar protegidos. Citar una fuente o representar a una persona pública no equivale a obtener una autorización. Las fuentes y créditos identifican la procedencia documentada; no implican afiliación ni una cesión general de derechos."
         },
@@ -63,7 +71,7 @@
         },
         {
           "title": "Contenido y estrategia",
-          "text": "Las capacidades, estadísticas, ataques, defensas y resultados son reglas de juego. No describen cualidades reales de las personas representadas ni deben interpretarse como citas históricas de los efectos de combate. Las frases y atribuciones deben interpretarse en su contexto y pueden requerir corrección."
+          "text": "Las capacidades, estadísticas, ataques, defensas y resultados son reglas de juego. No describen cualidades reales de las personas representadas ni deben interpretarse como citas históricas de los efectos de combate. Las frases y atribuciones deben interpretarse en su contexto y pueden requerir corrección. El uso de frases conocidas o cómicas no convierte la partida en una reproducción de declaraciones reales entre los participantes. Las traducciones y adaptaciones se identifican en Fuentes de los oradores; cuando se modifica una expresión, la versión de juego debe distinguirse de su referencia original."
         },
         {
           "title": "Cuenta y acceso",
@@ -192,7 +200,8 @@
     },
     {
       "name": "Retratos, frases y referencias de los oradores",
-      "text": "Según confirma su creador, los retratos de los oradores se han creado como ilustraciones generadas mediante IA a partir de prompts. En algunos casos se consultaron referencias visuales de la web o se aportaron imágenes para orientar el parecido; no se presentan como fotografías documentales de las personas. La ilustración inicial de Donald Trump se generó sin fotografía de referencia aportada. Se está documentando la procedencia de las referencias concretas y de las variantes. Las fuentes de frases o datos se revisan por separado. La generación por IA no implica afiliación, respaldo ni una autorización general de las personas o de terceros."
+      "text": "Los retratos son ilustraciones realistas generadas mediante IA según la declaración del creador; no son fotografías documentales. La página de Fuentes de los oradores reúne las 360 frases utilizadas por el catálogo actual, su referencia, el tratamiento aplicado y los límites de la documentación. Las fuentes de las frases no se presentan como fuentes de las imágenes ni implican afiliación o autorización.",
+      "page": "../fuentes/"
     }
   ],
   "hostingRegions": {

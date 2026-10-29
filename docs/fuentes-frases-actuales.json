@@ -3,7 +3,7 @@
   "consultado": "2026-10-22",
   "alcance": "Tres fragmentos documentados por cromo, en el orden de las acciones actuales.",
   "tratamiento": "Se permiten recortes literales, traducciones fieles marcadas con *, y la sustitución autorizada del apellido González por presidente en la frase de Aznar, marcada con †. No hay reformulaciones creativas. Se normalizan tildes, mayúsculas y puntuación.",
-  "limites": "354 propuestas documentadas en texto, entradilla o titular leídos; seis se apoyan únicamente en titulares o fragmentos visibles del buscador. Esto no certifica todas las citas en grabaciones o transcripciones primarias.",
+  "limites": "355 propuestas documentadas en texto, entradilla o titular de la página leída; cinco se apoyan únicamente en titulares o fragmentos visibles del buscador. Registro inicial del 22-10-2026, con reconsultas puntuales identificadas el 29-10-2026. Esto no certifica todas las citas en grabaciones o transcripciones primarias.",
   "cromos": [
     {
       "id": "alberto-nunez-feijoo",
@@ -322,9 +322,10 @@
           "fuente": "https://efe.com/economia/2024-05-16/sanchez-la-economia-espanola-va-como-un-cohete/",
           "original": "Como un cohete",
           "tratamiento": "fragmento_literal",
-          "comprobado_en": "titular_o_fragmento_indexado",
-          "nota": "Se conservan las palabras; solo se normalizan mayúsculas, tildes o puntuación.",
-          "consulta": "https://html.duckduckgo.com/html/?q=Sanchez%20economia%20cohete"
+          "comprobado_en": "texto",
+          "nota": "Se conservan las palabras; solo se normalizan mayúsculas, tildes o puntuación. Referencia reconsultada el 29-10-2026: el fragmento aparece en el texto de la noticia de EFE.",
+          "consulta": "https://html.duckduckgo.com/html/?q=Sanchez%20economia%20cohete",
+          "recomprobado": "2026-10-29"
         },
         {
           "tipo": "defensa_curacion",
@@ -788,7 +789,8 @@
           "original": "Váyase, señor González",
           "tratamiento": "nombre_sustituido_por_cargo",
           "comprobado_en": "texto",
-          "nota": "Se sustituye González por presidente; Felipe González era presidente del Gobierno en 1994. No se cambian las demás palabras."
+          "nota": "Se sustituye González por presidente; Felipe González era presidente del Gobierno en 1994. No se cambian las demás palabras.",
+          "recomprobado": "2026-10-29"
         },
         {
           "tipo": "defensa_curacion",
