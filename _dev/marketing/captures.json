@@ -1,0 +1,67 @@
+{
+  "viewport": {
+    "width": 440,
+    "height": 800,
+    "scale": 2
+  },
+  "network": "Sin cuentas reales ni llamadas a servicios de producción",
+  "manifest": [
+    {
+      "name": "inicio",
+      "path": "docs/media/screenshots/01-inicio.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "menu"
+    },
+    {
+      "name": "combate",
+      "path": "docs/media/screenshots/02-combate.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "battle"
+    },
+    {
+      "name": "coleccion",
+      "path": "docs/media/screenshots/03-coleccion.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "coleccion"
+    },
+    {
+      "name": "gabinete",
+      "path": "docs/media/screenshots/04-gabinete.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "builder"
+    },
+    {
+      "name": "sobres",
+      "path": "docs/media/screenshots/05-sobres.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "sobre"
+    },
+    {
+      "name": "liga",
+      "path": "docs/media/screenshots/06-liga.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "liga"
+    },
+    {
+      "name": "mercado",
+      "path": "docs/media/screenshots/07-mercado.png",
+      "width": 880,
+      "height": 1600,
+      "source": "Interfaz real, estado de demostración local aislado",
+      "view": "mercado"
+    }
+  ],
+  "errors": []
+}
