@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
-<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.8-targets1">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.8">
+<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.8-phrases1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.8-phrases1">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
@@ -75,11 +75,11 @@
 <script src="js/battle-rules.js?v=31.0.2.6"></script>
 <script src="js/basic-effects.js?v=31.0.2.8"></script>
 <script src="js/basic-ability-preview.js?v=31.0.2.8-targets1"></script>
-<script src="js/battle-status.js?v=31.0.2.8-targets1"></script>
-<script src="js/battle-actions-ui.js?v=31.0.2.8-targets1"></script>
-<script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
+<script src="js/battle-status.js?v=31.0.2.8-phrases1"></script>
+<script src="js/battle-actions-ui.js?v=31.0.2.8-phrases1"></script>
+<script src="js/battle-visuals.js?v=31.0.2.8-phrases1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.3-polish2"></script>
-<script src="js/battle-tutorial.js?v=31.0.2.8"></script>
+<script src="js/battle-tutorial.js?v=31.0.2.8-phrases1"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
@@ -102,7 +102,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.8-targets1"></script>
+<script src="js/changelog.js?v=31.0.2.8-phrases1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -2099,16 +2099,17 @@ function choosePlayerAction(kind){
  if(checkBattleEnd()||G.side!=='p'||G.networkBusy)return false;
  var card=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  if(!card||!card.ready){G.sel=null;G.move=null;G.support=false;paint();return false;}
+ if(kind==='ability-info'){var info=HemicycleBasicAbilityPreview.describe(G,'p',card);if(!info.id)return false;showModal(info.name,'<p>'+esc(HemicycleBasicAbilityPreview.detail(info.id))+'</p><p class="sub">'+esc(info.availability)+'</p>','Cerrar',false,null,true);return true;}
  if(kind==='cancel'){G.sel=null;G.move=null;G.support=false;}
  else if(kind==='back'){G.support=false;}
- else if(kind==='support'){G.support=true;G.move=null;}
+ else if(kind==='support'){G.support=false;G.move=null;}
  else if(kind==='normal'||kind==='strong'){
   if(!playerHasAttackTarget()){G.move=null;G.support=false;paint();remoteBattleStatus('Ya has retirado los 3 votos de este turno. Puedes defender, curar o pasar.');return false;}
   if(kind==='strong'&&!canStrongAttack('p',card))return false;
   G.move=kind;G.support=false;
  }
  else if(kind==='guard'||kind==='heal'){
-  if(!G.support||!useSupport(card,kind,'p'))return false;
+  if(!useSupport(card,kind,'p'))return false;
   G.sel=null;G.move=null;G.support=false;
  }else return false;
  paint();return true;
@@ -2297,7 +2298,7 @@ SCREENS.ayuda=function(){
  +'<div class="panel"><h3>Combate guiado</h3><p class="sub">Practica paso a paso sin arriesgar cromos ni modificar tu progreso.</p><button class="btn sm" data-act="tutorial">Tutorial de combate</button><button class="btn ghost sm" data-act="menu-tutorial">Guía del menú</button><button class="btn ghost sm" data-act="market-tutorial">Guía de Mercado</button></div>'
  +'<div class="panel"><h3>El debate · Objetivo y tiempo</h3><p class="sub">Cara o cruz decide quién empieza: tú tienes cara y el rival, cruz. Cada ronda incluye un turno de cada jugador. Alcanza 100 votos para ganar inmediatamente, sin esperar al rival. No hay límite de rondas: Normal y Clasificatoria disponen de 90 segundos por turno; Rápida, de 60. Quien empieza segundo recibe +1 TdP exclusivamente en su primer turno. Durante ese tiempo puedes realizar tus acciones y pasar. Agotar el tiempo supone abandonar por inactividad. Cada turno ganas 3 votos base más los escaños de tus oradores en la Tribuna. Expulsar a un orador rival suma sus escaños a tu marcador. Los ataques a bancadas vacías pueden restar, entre todos tus oradores, un máximo de 3 votos por turno propio; al comenzar tu siguiente turno se recupera ese límite.</p></div>'
  +'<div class="panel"><h3>Tu gabinete y su líder</h3><p class="sub">Desde Colección puedes guardar cinco gabinetes favoritos y elegir su líder. Antes del combate seleccionas uno de ellos; sus integrantes solo se editan en Colección. Alineas <b>5 cromos distintos</b>. Hay tres huecos en la Tribuna y dos huecos de orador más uno opcional de acción en la mano; las demás esperan en el mazo. Al comenzar cada turno propio, las cartas sin usar vuelven al mazo y se roban hasta dos oradores y una acción disponible al barajar. Las acciones usadas esperan dos turnos propios completos. Nunca pueden coincidir dos acciones en la mano. Un expulsado no puede volver en tu siguiente turno propio; después se baraja con el mazo pendiente antes de poder ser robado. Tu Líder empieza siempre en tu mano inicial con +1 Zasca y +3 Aguante, y mientras esté en la Tribuna activa su Doctrina.</p></div>'
- +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte está disponible solo en el tercer turno propio del cromo en mesa y después cada tres turnos: 3, 6, 9… Si lo dejas pasar, la oportunidad caduca. Cuesta 1 de Aguante y requiere al menos 2 para ejecutarlo. El ciclo es individual y se reinicia al salir y volver a entrar.</p><p class="sub">La tercera frase cambia el contenido de esa misma ventana para escoger <b>Defensa</b> o <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; si no recibe golpes, caduca al comenzar tu siguiente turno. No se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. Tras curarse, ese cromo debe dejar pasar un turno propio completo antes de volver a curarse; puede atacar o defender durante ese descanso. Esta restricción no afecta a la curación automática de Foco. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
+ +'<div class="panel"><h3>Las tres frases de cada cromo</h3><p class="sub">Toca un orador de tu Tribuna para abrir sus tres frases. Cada cromo dispone de una acción por turno, sin coste adicional de TdP. La primera frase ataca con su Zasca vigente; la segunda causa el 150 %, redondeado hacia arriba. El fuerte está disponible solo en el tercer turno propio del cromo en mesa y después cada tres turnos: 3, 6, 9… Si lo dejas pasar, la oportunidad caduca. Cuesta 1 de Aguante y requiere al menos 2 para ejecutarlo. El ciclo es individual y se reinicia al salir y volver a entrar.</p><p class="sub">Bajo la tercera frase tienes dos botones directos: el escudo para <b>Defensa</b> y la cruz verde para <b>Curación</b>. La defensa reduce a la mitad el próximo golpe recibido por ese cromo y después desaparece; si no recibe golpes, caduca al comenzar tu siguiente turno. No se acumula. La curación restaura la mitad del Aguante perdido, con un mínimo de 3 y sin superar el máximo. Tras curarse, ese cromo debe dejar pasar un turno propio completo antes de volver a curarse; puede atacar o defender durante ese descanso. Esta restricción no afecta a la curación automática de Foco. El daño recibido tras defender y la curación se redondean hacia arriba. La IA sigue estas mismas reglas.</p></div>'
  +basicAbilityHelpHTML()
  +'<div class="panel"><h3>Debilidades circulares</h3><p class="sub">Con ambos líderes en la Tribuna, cada doctrina neutraliza a una rival. Las demás siguen activas. Al salir el líder que la contrarresta, la doctrina se recupera. Los efectos ya resueltos no se deshacen; la bonificación de Vieja Guardia solo se aplica mientras su doctrina esté activa.</p>'
  +DOCS.map(function(d){return '<p class="sub" style="margin-top:4px"><b>'+esc(d.n)+'</b> — '+esc(doctrineMatchup(d.k))+'</p>';}).join('')+'</div>'
@@ -2366,6 +2367,7 @@ document.addEventListener('click',function(ev){
  if(!n||n.disabled||n.getAttribute('aria-disabled')==='true')return;
  if(n.hasAttribute('data-baction')){
   var choice=n.getAttribute('data-baction'),game=G,selected=G&&G.sel;
+  if(choice==='ability-info'){choosePlayerAction(choice);return;}
   if(typeof HemicycleBattleActions!=='undefined'&&n.closest('#battleActionRoot'))HemicycleBattleActions.select(n,function(){if(G===game&&G.sel===selected)choosePlayerAction(choice);});
   else choosePlayerAction(choice);
   return;

@@ -199,3 +199,6 @@
 @keyframes basicEffectHalo{50%{filter:brightness(1.13);box-shadow:0 0 8px #d4c38966}}
 @media(prefers-reduced-motion:reduce){.screen.in-battle .basic-effect-badge{animation:none}}
 @media(max-height:500px) and (min-width:600px){.screen.in-battle .basic-effect-badge{left:62%;top:24%;width:11px;padding:0;border-radius:4px}.basic-effect-badge>b{font-size:6px;right:-3px;bottom:-3px;min-width:6px;padding:0 1px}}
+
+/* Cristal del Acta: texto opaco sobre el tablero visible. */
+.screen.in-battle .battle-wrap>.journal-popover{background:var(--battle-glass);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);box-shadow:0 6px 24px #0007}.screen.in-battle .journal-popover .log{background:transparent;color:#e0e7f2;text-shadow:0 1px 2px #000c}

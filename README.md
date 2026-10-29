@@ -63,7 +63,7 @@ Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y u
 
 - **Ataque normal:** usa el Zasca actual del cromo. Algunos oradores generan un estado como máximo una vez cada dos turnos propios. Cada cromo admite uno; toca su icono para consultar el efecto y la duración. La ficha de Colección explica su habilidad.
 - **Ataque fuerte:** causa el 150 % del Zasca, redondeado hacia arriba, y cuesta un punto de Aguante. Su oportunidad aparece en el tercer turno propio del cromo en mesa y después cada tres turnos; si no la usas, debes esperar al siguiente ciclo.
-- **Defensa o curación:** la tercera frase abre ambas opciones. La defensa reduce a la mitad el próximo golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de tres y sin superar su máximo. Tras curarse, ese orador deja pasar un turno propio completo antes de volver a curarse.
+- **Defensa o curación:** bajo la tercera frase tienes el escudo y la cruz como botones directos. La defensa reduce a la mitad el próximo golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de tres y sin superar su máximo. Tras curarse, ese orador deja pasar un turno propio completo antes de volver a curarse.
 - **Cartas de acción:** puedes usar una por turno. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
 
 La doctrina de tu líder puede neutralizar otra. Los iconos de estado permiten consultar sus efectos; **Acta** muestra las jugadas recientes sin ocupar permanentemente la mesa.
