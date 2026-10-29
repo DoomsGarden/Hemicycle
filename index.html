@@ -17,9 +17,9 @@
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
-<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.3-reading1">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.4">
-<link rel="stylesheet" href="css/tutorial.css?v=31.0.2.3-reading1">
+<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.6-onboarding1">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.6-onboarding1">
+<link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/cloud.css?v=31.0.2.3-reading1">
@@ -77,7 +77,7 @@
 <script src="js/battle-actions-ui.js?v=31.0.2.3-polish2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.3-medium1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.3-polish2"></script>
-<script src="js/battle-tutorial.js?v=31.0.2.6"></script>
+<script src="js/battle-tutorial.js?v=31.0.2.6-onboarding1"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
 <script src="js/objectives.js?v=31.0.1.2-ui2"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
@@ -110,8 +110,8 @@
 <script>window.HemicycleOfflineRulesV2=window.HemicycleOfflineRules;window.HemicycleOfflineRules=Object.assign({},HemicycleOfflineRulesV2,{start:function(t,c,m){return (t.rules==='offline1'?HemicycleOfflineRulesV1:HemicycleOfflineRulesV2).start(t,c,m);}});</script>
 <script src="js/offline-combat.js?v=31.0.2.3"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
-<link rel="stylesheet" href="css/game-select.css?v=31.0.2.4-market2">
-<script src="js/game-select.js?v=31.0.2.4-market2"></script>
+<link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
+<script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
 <script src="js/market-ui.js?v=31.0.2.6"></script>
 <script>
 window.onerror=function(m,src,l,c){
@@ -2182,21 +2182,20 @@ SCREENS.battle=function(){
  var modo=G.tutorial?'TUTORIAL':G.quick?'RÁPIDA':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
  return (G.authoritative?'<p id="networkBattleStatus" class="network-battle-status" role="status" hidden></p>':'')+'<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+(G.enemyTheme==='marble'?'marble':'classic')+'"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'
- +(G.tutorial&&G.n===0?'<button class="tutorial-coin" data-tutorial="coin" data-act="begin">Cara o cruz · Toca para ensayar el sorteo</button>':'')
- +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'&&!G.authoritative?'<span class="pill red">botín</span>':'')+'<button class="pill coin-chip" data-act="coin-info" aria-label="Consultar el sorteo inicial">'+HemicycleBattleStatus.symbol('coin')+(G.coinFace||(G.first==='p'?'Cara':'Cruz'))+'</button></div>'
+ +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'&&!G.authoritative?'<span class="pill red">botín</span>':'')+'<button class="pill coin-chip" '+(G.tutorial&&G.n===0?'data-tutorial="coin" data-act="begin" aria-label="Ensayar el sorteo inicial"':'data-act="coin-info" aria-label="Consultar el sorteo inicial"')+' >'+HemicycleBattleStatus.symbol('coin')+(G.coinFace||(G.first==='p'?'Cara':'Cruz'))+'</button></div>'
  +gabLine()+'</div>'
- +'<p class="sub battle-resources rival-resources">Rival &middot; TdP '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+teamStatusHTML('e')+'</p>'
+ +'<p class="sub battle-resources rival-resources">Rival &middot; <abbr title="Tiempo de Palabra" aria-label="Tiempo de Palabra">TdP</abbr> '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+teamStatusHTML('e')+'</p>'
  +'<div class="tribuna" data-tutorial="enemy">'+ef+'</div>'
  +'<div class="battle-hud"><div class="vbars" aria-label="Marcadores de votos: rojo rival, azul jugador">'
  +'<div class="vbar foe" aria-label="Votos del rival: '+G.votes.e+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.e)+'%"></div></div><b>'+G.votes.e+'<small>/100</small></b></div>'
  +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':(G.quick?'60':'90')+' segundos por turno')+'">'+(G.quick?60:90)+'</span></div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
- +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; TdP '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+teamStatusHTML('p')+'</p>'
+ +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; <abbr title="Tiempo de Palabra" aria-label="Tiempo de Palabra">TdP</abbr> '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+teamStatusHTML('p')+'</p>'
  +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="draw-pile" role="group" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"><span>MAZO</span><b>'+G.deck.p.length+'</b><small>cartas</small>'+recovery.map(function(r){return '<button class="recovery-badge" data-act="recovery-action-info" data-id="'+r.id+'" data-turns="'+r.turns+'" title="'+esc(BYID[r.id].n)+' · '+r.turns+' turnos para volver a robarse">'+r.turns+' t · '+esc(BYID[r.id].n)+'</button>';}).join('')+'</div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
  +(LOCAL_ACTION_TARGET?'<div class="hint action-target-hint" role="status"><b>'+esc(BYID[G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION;})[0].k].n)+'</b>: toca un cromo iluminado. <button class="battle-cancel" data-act="action-cancel">Cancelar</button></div>':G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
         :'')
- +'<section id="battleJournal" class="battle-journal'+(G.tutorial?' practice-journal':' journal-popover')+'"'+(G.tutorial||BATTLE_LOG_OPEN?'':' hidden')+' role="region" aria-label="Acta del debate"><div class="journal-heading"><span>ACTA · Ronda '+roundNum+'</span>'+(G.tutorial?'':'<button class="mini" data-act="battle-log-close" aria-label="Cerrar acta">'+HemicycleBattleStatus.symbol('close')+'</button>')+'</div><div class="log" tabindex="0" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.join('')+'</div></section>'
- +(typeof HemicycleBattleTips!=='undefined'?HemicycleBattleTips.html({tutorial:G.tutorial,ownTurn:G.side==='p',action:G.hand.p.some(function(c){return c.action;}),heal:G.field.p.some(function(c){return c.ready&&canHeal('p',c);}),strong:G.field.p.some(function(c){return c.ready&&canStrongAttack('p',c);})}):'')+'<div class="bar between battle-controls">'+(G.tutorial?'':'<button class="btn ghost sm battle-log-toggle" data-act="battle-log" aria-controls="battleJournal" aria-expanded="'+BATTLE_LOG_OPEN+'">Acta</button>')+'<button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
+ +'<section id="battleJournal" class="battle-journal journal-popover'+(G.tutorial?' practice-journal':'')+'"'+(BATTLE_LOG_OPEN?'':' hidden')+' role="region" aria-label="Acta del debate"><div class="journal-heading"><span>ACTA · Ronda '+roundNum+'</span>'+'<button class="mini" data-act="battle-log-close" aria-label="Cerrar acta">'+HemicycleBattleStatus.symbol('close')+'</button>'+'</div><div class="log" tabindex="0" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.join('')+'</div></section>'
+ +(typeof HemicycleBattleTips!=='undefined'?HemicycleBattleTips.html({tutorial:G.tutorial,ownTurn:G.side==='p',action:G.hand.p.some(function(c){return c.action;}),heal:G.field.p.some(function(c){return c.ready&&canHeal('p',c);}),strong:G.field.p.some(function(c){return c.ready&&canStrongAttack('p',c);})}):'')+'<div class="bar between battle-controls">'+'<button class="btn ghost sm battle-log-toggle" data-act="battle-log" aria-controls="battleJournal" aria-expanded="'+BATTLE_LOG_OPEN+'">Acta</button>'+'<button class="btn sm" style="flex:1" data-act="end"'+(G.side==='p'?'':' disabled')+'>'+(G.n===0?'Esperando sorteo…':(G.side==='p'?'Pasar turno':'Turno rival...'))+'</button>'
  +'<button class="btn ghost sm" data-act="abandon">Abandonar</button></div>'
  +'</div>';
 };

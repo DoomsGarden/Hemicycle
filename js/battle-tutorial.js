@@ -12,7 +12,7 @@ function create(api){
   ['coin','[data-tutorial="coin"]','Tu primer debate','Práctica con cromos prestados. Ensayamos cara y empiezas tú; fuera del tutorial el sorteo es al 50 %. Toca la moneda.','begin'],
   ['votes','.vbars','Gana con 100 votos','Azul: tus votos. Rojo: los del rival. Ganas al llegar a 100. El número lateral es el reloj: 90 segundos en Normal y Clasificatoria; 60 en Rápida. No hay límite de rondas. En esta práctica no corre. Toca los marcadores.'],
   ['cabinet','.gab','Tu gabinete y el mazo','Cinco oradores y hasta dos acciones. Tres oradores en mesa y hasta dos oradores más una acción en mano. Las acciones usadas esperan dos turnos propios completos para regresar. Los expulsados descansan y se barajan con el mazo; no vuelven en tu siguiente turno. Toca el gabinete.'],
-  ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El TdP paga el coste de presentar cromos. Se renueva cada turno; su base crece hasta 6 y algunas pasivas permiten llegar a 8. Toca los cristales.'],
+  ['tdp','[data-tutorial="resources"]','Tiempo de Palabra','El Tiempo de Palabra (TdP) paga el coste de presentar cromos. Se renueva cada turno; su base crece hasta 6 y algunas pasivas permiten llegar a 8. Toca los cristales.'],
   ['play-leader','[data-tutorial="hand"] .lead','Presenta a tu líder','La estrella identifica al líder: +1 Zasca y +3 Aguante. Z indica el daño; A, su resistencia. Este cuesta 1 TdP. Tócalo para presentarlo.','play-leader'],
   ['passive','[data-tutorial="resources"]','Tu pasiva','Vieja Guardia mejora el Zasca al terminar el turno, hasta +3. Requiere al líder en la Tribuna y puede ser neutralizada. Toca la doctrina.'],
   ['select','[data-tutorial="player"] .lead','Abre las tres frases','Cada orador dispone de una acción por turno, incluso al entrar. Toca al líder para abrir sus frases encima del cromo.','select-leader'],
@@ -51,7 +51,7 @@ function create(api){
 
  function introSteps(){return [
  ['coin','[data-tutorial="coin"]','Tu primer debate','Usamos cromos prestados, sin premios ni pérdidas. Toca la moneda para empezar esta práctica.','begin'],
- ['votes','.vbars','El objetivo: 100 votos','Azul eres tú; rojo es el rival. El TdP paga los cromos y se renueva al empezar cada turno. Toca los marcadores.'],
+ ['votes','.vbars','El objetivo: 100 votos','Azul: tus votos. Rojo: los del rival. El Tiempo de Palabra (TdP) paga los cromos y se renueva en tu turno. Toca los marcadores.'],
  ['play-leader','[data-tutorial="hand"] .lead','Presenta un orador','Su número indica el coste en TdP. La estrella marca al líder. Toca este cromo para llevarlo a tu Tribuna.','play-leader'],
  ['select','[data-tutorial="player"] .lead','Elige su intervención','Cada orador puede actuar una vez por turno. Tócalo para abrir sus frases.','select-leader'],
  ['normal','[data-baction="normal"]','Ataque normal','La primera frase causa el daño indicado por Z. Tócala para elegir el ataque.','choose-normal'],
@@ -78,10 +78,10 @@ function create(api){
  }
  function place(){
   if(!highlight||!layer.firstChild)return;
-  var card=layer.querySelector('.tutorial-coach'),screen=document.getElementById('screen').getBoundingClientRect(),r=highlight.getBoundingClientRect();
+  var card=layer.querySelector('.tutorial-coach'),screen=document.getElementById('screen').getBoundingClientRect(),anchor=highlight.closest('#battleActionRoot')||highlight,r=anchor.getBoundingClientRect();
   var top=Math.max(6,screen.top+6),bottom=Math.min(innerHeight-6,screen.bottom-6),left=Math.max(6,screen.left+8),right=Math.min(innerWidth-6,screen.right-8);
   var sideLeft=r.left-left-12,sideRight=right-r.right-12;
-  if(innerWidth>650&&Math.max(sideLeft,sideRight)>200&&Math.max(r.top-top,bottom-r.bottom)<160){var sideWidth=Math.min(260,Math.max(sideLeft,sideRight));card.style.width=sideWidth+'px';card.style.maxHeight=(bottom-top)+'px';card.style.left=(sideRight>=sideLeft?r.right+12:r.left-sideWidth-12)+'px';card.style.top=Math.max(top,Math.min(bottom-card.offsetHeight,r.top))+'px';return;}
+  if(Math.max(sideLeft,sideRight)>200&&(highlight.matches('.tribuna .cromo')||innerWidth>650&&Math.max(r.top-top,bottom-r.bottom)<160)){var sideWidth=Math.min(260,Math.max(sideLeft,sideRight));card.style.width=sideWidth+'px';card.style.maxHeight=(bottom-top)+'px';card.style.left=(sideRight>=sideLeft?r.right+12:r.left-sideWidth-12)+'px';card.style.top=Math.max(top,Math.min(bottom-card.offsetHeight,r.top))+'px';return;}
   var above=r.top-top-12,below=bottom-r.bottom-12,useAbove=above>below,room=Math.max(above,below);
   card.style.width=Math.min(310,right-left)+'px';card.style.maxHeight=Math.max(56,room)+'px';
   var h=card.getBoundingClientRect().height,x=Math.min(right-card.offsetWidth,Math.max(left,r.left+(r.width-card.offsetWidth)/2));
@@ -93,6 +93,7 @@ function create(api){
   if(!api.inBattle()){active=false;api.pause();return;}
   if(document.querySelector('#modalRoot .modal'))return;
   var step=steps[index];if(!step)return;
+  var journal=document.querySelector('.practice-journal');if(journal){journal.hidden=step[1]!=='.log';var journalButton=document.querySelector('[data-act="battle-log"]');if(journalButton)journalButton.setAttribute('aria-expanded',String(!journal.hidden));}
   highlight=document.querySelector(step[1]);if(highlight&&highlight.matches('select')&&root.HemicycleSelect){root.HemicycleSelect.scan(highlight);highlight=document.querySelector('[data-select-for="'+highlight.id+'"]')||highlight;}if(!highlight){if(api.steps){active=false;api.pause();}return;}
   layer.hidden=false;layer.setAttribute('aria-hidden',String(!!document.getElementById('launchScreen')));previous={tabindex:highlight.getAttribute('tabindex'),role:highlight.getAttribute('role'),'aria-describedby':highlight.getAttribute('aria-describedby')};
   highlight.classList.add('tutorial-focus');if(!highlight.matches('button')){highlight.setAttribute('tabindex','0');highlight.setAttribute('role','button');}highlight.setAttribute('aria-describedby',textId);

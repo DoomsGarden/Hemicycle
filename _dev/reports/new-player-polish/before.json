@@ -1,0 +1,81 @@
+[
+  {
+    "size": {
+      "width": 393,
+      "height": 730
+    },
+    "age": {
+      "top": 549.984375,
+      "bottom": 728,
+      "scroll": true,
+      "bar": "none",
+      "options": [
+        {
+          "text": "Elige una opción",
+          "top": 555.984375,
+          "bottom": 595.984375
+        },
+        {
+          "text": "Menos de 12 años",
+          "top": 595.984375,
+          "bottom": 635.984375
+        },
+        {
+          "text": "12–13 años · modo invitado",
+          "top": 635.984375,
+          "bottom": 675.984375
+        },
+        {
+          "text": "14–17 años",
+          "top": 675.984375,
+          "bottom": 715.984375
+        },
+        {
+          "text": "18 años o más",
+          "top": 715.984375,
+          "bottom": 755.984375
+        }
+      ],
+      "height": 730
+    },
+    "steps": [
+      "coin",
+      "votes",
+      "play-leader",
+      "select",
+      "normal",
+      "attack",
+      "end",
+      "ready"
+    ],
+    "geometry": [
+      {
+        "tutorial": {
+          "cardWidth": 57,
+          "cardHeight": 70.296875,
+          "rowWidth": 255,
+          "padding": "5px",
+          "gap": "3px"
+        },
+        "normal": {
+          "cardWidth": 117.65625,
+          "cardHeight": 145.109375,
+          "rowWidth": 365,
+          "padding": "5px",
+          "gap": "3px"
+        },
+        "journalPopover": false,
+        "journalHidden": false,
+        "acta": false
+      }
+    ],
+    "transparency": [
+      {
+        "background": "linear-gradient(145deg, rgb(39, 50, 73), rgb(17, 26, 42))",
+        "opacity": "1"
+      }
+    ],
+    "profilePreserved": true,
+    "errors": []
+  }
+]

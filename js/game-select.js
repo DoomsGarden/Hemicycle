@@ -34,8 +34,13 @@
  }
  function position(){
   if(!opened)return;var r=opened.w.button.getBoundingClientRect(),v=root.visualViewport,left=v?v.offsetLeft:0,top=v?v.offsetTop:0,width=v?v.width:innerWidth,height=v?v.height:innerHeight,menu=opened.menu;
-  var w=Math.min(width-16,Math.max(r.width,Math.min(240,width-16))),below=top+height-r.bottom-8,above=r.top-top-8,up=below<150&&above>below,room=Math.max(40,Math.min(280,up?above:below));
-  menu.style.width=w+'px';menu.style.maxHeight=room+'px';menu.style.left=Math.max(left+8,Math.min(r.left,left+width-w-8))+'px';menu.style.top=(up?Math.max(top+8,r.top-6-Math.min(room,menu.scrollHeight)):r.bottom+6)+'px';
+  var w=Math.min(width-16,Math.max(r.width,Math.min(260,width-16))),below=top+height-r.bottom-8,above=r.top-top-8;
+  menu.style.width=w+'px';menu.classList.remove('has-overflow');menu.style.maxHeight='none';
+  var desired=Math.min(320,menu.scrollHeight+2),up=below<desired&&above>below,room=Math.max(40,Math.min(320,up?above:below));
+  if(room<desired&&desired<=height-16)room=desired;
+  menu.style.maxHeight=room+'px';menu.style.left=Math.max(left+8,Math.min(r.left,left+width-w-8))+'px';
+  menu.classList.toggle('has-overflow',menu.scrollHeight>menu.clientHeight+1);
+  menu.style.top=Math.max(top+8,Math.min(top+height-menu.offsetHeight-8,up?r.top-menu.offsetHeight-6:r.bottom+6))+'px';
  }
  function open(select){
   var w=widgets.get(select);if(!w||select.disabled||select.closest('[inert]'))return;
@@ -43,6 +48,7 @@
   var menu=document.createElement('div');menu.className='game-select-menu';menu.id='options-'+select.id;menu.setAttribute('role','listbox');menu.setAttribute('aria-label',label(select));
   var enabled=[];Array.from(select.options).forEach(function(option){if(option.hidden)return;var disabled=option.disabled||option.parentElement.disabled,el=document.createElement('div');el.className='game-select-option';el.id=menu.id+'-'+option.index;el.dataset.index=option.index;el.setAttribute('role','option');el.setAttribute('aria-selected',String(option.selected));if(disabled)el.setAttribute('aria-disabled','true');else enabled.push(option);el.textContent=option.textContent;menu.append(el);});
   if(!enabled.length){var empty=document.createElement('div');empty.className='game-select-empty';empty.textContent='No hay opciones disponibles.';menu.append(empty);}
+  var note=document.createElement('div');note.className='game-select-scroll-note';note.setAttribute('role','presentation');note.setAttribute('aria-hidden','true');note.textContent='Desliza para ver más opciones';menu.append(note);
   document.body.append(menu);opened={select:select,w:w,menu:menu,options:enabled,index:Math.max(0,enabled.findIndex(function(o){return o.selected;}))};typed='';typedAt=0;
   w.button.setAttribute('aria-expanded','true');w.button.focus({preventScroll:true});position();move(opened.index);
  }

@@ -1,0 +1,478 @@
+[
+  {
+    "size": {
+      "width": 320,
+      "height": 568
+    },
+    "age": {
+      "top": 99.109375,
+      "bottom": 311.109375,
+      "scroll": false,
+      "bar": "thin",
+      "options": [
+        {
+          "text": "Elige una opción",
+          "top": 105.109375,
+          "bottom": 145.109375
+        },
+        {
+          "text": "Menos de 12 años",
+          "top": 145.109375,
+          "bottom": 185.109375
+        },
+        {
+          "text": "12–13 años · modo invitado",
+          "top": 185.109375,
+          "bottom": 225.109375
+        },
+        {
+          "text": "14–17 años",
+          "top": 225.109375,
+          "bottom": 265.109375
+        },
+        {
+          "text": "18 años o más",
+          "top": 265.109375,
+          "bottom": 305.109375
+        }
+      ],
+      "height": 568
+    },
+    "steps": [
+      "coin",
+      "votes",
+      "play-leader",
+      "select",
+      "normal",
+      "attack",
+      "end",
+      "ready"
+    ],
+    "full": [
+      "coin",
+      "votes",
+      "cabinet",
+      "tdp",
+      "play-leader",
+      "passive",
+      "select",
+      "normal",
+      "attack",
+      "log",
+      "end",
+      "enemy",
+      "heal-select",
+      "support-heal",
+      "heal",
+      "member",
+      "guard-select",
+      "support-guard",
+      "guard",
+      "end-guard",
+      "enemy-guard",
+      "guard-log",
+      "strong-select",
+      "strong",
+      "strong-attack",
+      "select-member",
+      "normal-empty",
+      "empty",
+      "action-card",
+      "action-rules",
+      "action-use",
+      "action-target",
+      "action-return",
+      "action-discard",
+      "final-votes",
+      "final-select",
+      "final-normal",
+      "final-attack"
+    ],
+    "geometry": [
+      {
+        "tutorial": {
+          "cardWidth": 72.15625,
+          "cardHeight": 88.984375,
+          "rowWidth": 228.46875,
+          "padding": "5px",
+          "gap": "3px"
+        },
+        "normal": {
+          "cardWidth": 72.15625,
+          "cardHeight": 88.984375,
+          "rowWidth": 228.46875,
+          "padding": "5px",
+          "gap": "3px"
+        },
+        "journalPopover": true,
+        "journalHidden": true,
+        "acta": true
+      }
+    ],
+    "transparency": [
+      {
+        "background": "linear-gradient(145deg, rgba(30, 43, 65, 0.8), rgba(10, 20, 36, 0.74))",
+        "opacity": "1"
+      }
+    ],
+    "profilePreserved": true,
+    "errors": []
+  },
+  {
+    "size": {
+      "width": 393,
+      "height": 730
+    },
+    "age": {
+      "top": 281.984375,
+      "bottom": 493.984375,
+      "scroll": false,
+      "bar": "thin",
+      "options": [
+        {
+          "text": "Elige una opción",
+          "top": 287.984375,
+          "bottom": 327.984375
+        },
+        {
+          "text": "Menos de 12 años",
+          "top": 327.984375,
+          "bottom": 367.984375
+        },
+        {
+          "text": "12–13 años · modo invitado",
+          "top": 367.984375,
+          "bottom": 407.984375
+        },
+        {
+          "text": "14–17 años",
+          "top": 407.984375,
+          "bottom": 447.984375
+        },
+        {
+          "text": "18 años o más",
+          "top": 447.984375,
+          "bottom": 487.984375
+        }
+      ],
+      "height": 730
+    },
+    "steps": [
+      "coin",
+      "votes",
+      "play-leader",
+      "select",
+      "normal",
+      "attack",
+      "end",
+      "ready"
+    ],
+    "full": [
+      "coin",
+      "votes",
+      "cabinet",
+      "tdp",
+      "play-leader",
+      "passive",
+      "select",
+      "normal",
+      "attack",
+      "log",
+      "end",
+      "enemy",
+      "heal-select",
+      "support-heal",
+      "heal",
+      "member",
+      "guard-select",
+      "support-guard",
+      "guard",
+      "end-guard",
+      "enemy-guard",
+      "guard-log",
+      "strong-select",
+      "strong",
+      "strong-attack",
+      "select-member",
+      "normal-empty",
+      "empty",
+      "action-card",
+      "action-rules",
+      "action-use",
+      "action-target",
+      "action-return",
+      "action-discard",
+      "final-votes",
+      "final-select",
+      "final-normal",
+      "final-attack"
+    ],
+    "geometry": [
+      {
+        "tutorial": {
+          "cardWidth": 117.65625,
+          "cardHeight": 145.109375,
+          "rowWidth": 365,
+          "padding": "5px",
+          "gap": "3px"
+        },
+        "normal": {
+          "cardWidth": 117.65625,
+          "cardHeight": 145.109375,
+          "rowWidth": 365,
+          "padding": "5px",
+          "gap": "3px"
+        },
+        "journalPopover": true,
+        "journalHidden": true,
+        "acta": true
+      }
+    ],
+    "transparency": [
+      {
+        "background": "linear-gradient(145deg, rgba(30, 43, 65, 0.8), rgba(10, 20, 36, 0.74))",
+        "opacity": "1"
+      }
+    ],
+    "profilePreserved": true,
+    "errors": []
+  },
+  {
+    "size": {
+      "width": 393,
+      "height": 851
+    },
+    "age": {
+      "top": 402.984375,
+      "bottom": 614.984375,
+      "scroll": false,
+      "bar": "thin",
+      "options": [
+        {
+          "text": "Elige una opción",
+          "top": 408.984375,
+          "bottom": 448.984375
+        },
+        {
+          "text": "Menos de 12 años",
+          "top": 448.984375,
+          "bottom": 488.984375
+        },
+        {
+          "text": "12–13 años · modo invitado",
+          "top": 488.984375,
+          "bottom": 528.984375
+        },
+        {
+          "text": "14–17 años",
+          "top": 528.984375,
+          "bottom": 568.984375
+        },
+        {
+          "text": "18 años o más",
+          "top": 568.984375,
+          "bottom": 608.984375
+        }
+      ],
+      "height": 851
+    },
+    "steps": [
+      "coin",
+      "votes",
+      "play-leader",
+      "select",
+      "normal",
+      "attack",
+      "end",
+      "ready"
+    ],
+    "full": [
+      "coin",
+      "votes",
+      "cabinet",
+      "tdp",
+      "play-leader",
+      "passive",
+      "select",
+      "normal",
+      "attack",
+      "log",
+      "end",
+      "enemy",
+      "heal-select",
+      "support-heal",
+      "heal",
+      "member",
+      "guard-select",
+      "support-guard",
+      "guard",
+      "end-guard",
+      "enemy-guard",
+      "guard-log",
+      "strong-select",
+      "strong",
+      "strong-attack",
+      "select-member",
+      "normal-empty",
+      "empty",
+      "action-card",
+      "action-rules",
+      "action-use",
+      "action-target",
+      "action-return",
+      "action-discard",
+      "final-votes",
+      "final-select",
+      "final-normal",
+      "final-attack"
+    ],
+    "geometry": [
+      {
+        "tutorial": {
+          "cardWidth": 115.65625,
+          "cardHeight": 142.640625,
+          "rowWidth": 359,
+          "padding": "9px 8px 7px",
+          "gap": "5px"
+        },
+        "normal": {
+          "cardWidth": 115.65625,
+          "cardHeight": 142.640625,
+          "rowWidth": 359,
+          "padding": "9px 8px 7px",
+          "gap": "5px"
+        },
+        "journalPopover": true,
+        "journalHidden": true,
+        "acta": true
+      }
+    ],
+    "transparency": [
+      {
+        "background": "linear-gradient(145deg, rgba(30, 43, 65, 0.8), rgba(10, 20, 36, 0.74))",
+        "opacity": "1"
+      }
+    ],
+    "profilePreserved": true,
+    "errors": []
+  },
+  {
+    "size": {
+      "width": 844,
+      "height": 390
+    },
+    "age": {
+      "top": 8,
+      "bottom": 220,
+      "scroll": false,
+      "bar": "thin",
+      "options": [
+        {
+          "text": "Elige una opción",
+          "top": 14,
+          "bottom": 54
+        },
+        {
+          "text": "Menos de 12 años",
+          "top": 54,
+          "bottom": 94
+        },
+        {
+          "text": "12–13 años · modo invitado",
+          "top": 94,
+          "bottom": 134
+        },
+        {
+          "text": "14–17 años",
+          "top": 134,
+          "bottom": 174
+        },
+        {
+          "text": "18 años o más",
+          "top": 174,
+          "bottom": 214
+        }
+      ],
+      "height": 390
+    },
+    "steps": [
+      "coin",
+      "votes",
+      "play-leader",
+      "select",
+      "normal",
+      "attack",
+      "end",
+      "ready"
+    ],
+    "full": [
+      "coin",
+      "votes",
+      "cabinet",
+      "tdp",
+      "play-leader",
+      "passive",
+      "select",
+      "normal",
+      "attack",
+      "log",
+      "end",
+      "enemy",
+      "heal-select",
+      "support-heal",
+      "heal",
+      "member",
+      "guard-select",
+      "support-guard",
+      "guard",
+      "end-guard",
+      "enemy-guard",
+      "guard-log",
+      "strong-select",
+      "strong",
+      "strong-attack",
+      "select-member",
+      "normal-empty",
+      "empty",
+      "action-card",
+      "action-rules",
+      "action-use",
+      "action-target",
+      "action-return",
+      "action-discard",
+      "final-votes",
+      "final-select",
+      "final-normal",
+      "final-attack"
+    ],
+    "geometry": [
+      {
+        "tutorial": {
+          "cardWidth": 42.15625,
+          "cardHeight": 56.1875,
+          "rowWidth": 157.9375,
+          "padding": "5px 10px",
+          "gap": "3px 14px"
+        },
+        "normal": {
+          "cardWidth": 42.15625,
+          "cardHeight": 56.1875,
+          "rowWidth": 157.9375,
+          "padding": "5px 10px",
+          "gap": "3px 14px"
+        },
+        "journalPopover": true,
+        "journalHidden": true,
+        "acta": true
+      }
+    ],
+    "transparency": [
+      {
+        "background": "linear-gradient(145deg, rgba(30, 43, 65, 0.8), rgba(10, 20, 36, 0.74))",
+        "opacity": "1"
+      }
+    ],
+    "profilePreserved": true,
+    "errors": []
+  }
+]
