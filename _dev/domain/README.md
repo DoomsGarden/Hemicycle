@@ -35,3 +35,11 @@ Mantener la cuenta de pruebas en otro navegador o perfil separado. Las pestañas
 - `domain-pwa.cjs`: servidor local en ruta raíz, 137 recursos, consulta legal y licencias, conservación de datos y uso sin conexión.
 
 Las rutas HTTPS se cumplen desde archivos de prueba sin contactar el dominio. Estas pruebas no acreditan DNS público, certificado real ni la configuración desplegada de Supabase/Render. La política de red de este entorno no incluye el dominio nuevo; no se ha eludido esa restricción. Confirmar esos puntos en los paneles y en un navegador real antes de declarar completada la migración.
+
+## Ajustes confirmados por Dooms
+
+Render permite https://hemicycle.online, https://www.hemicycle.online y https://doomsgarden.github.io. La captura de Supabase confirma los retornos raíz de Pages, dominio principal y www, además de rooms-test en Render. Se ha solicitado cambiar Site URL (todavía Pages en la captura) al dominio principal y añadir los dos retornos explícitos de recuperación. Conservamos todas las entradas existentes.
+
+## Activación autorizada
+
+Dooms confirmó el cambio de Site URL a https://hemicycle.online/ y los dos retornos explícitos de recuperación, conservando las cuatro entradas previas. El valor de ALLOWED_ORIGINS también está confirmado. Se publica CNAME en main y se conservan las configuraciones de correo. Confirmar en Settings → Pages la asociación del dominio y el certificado HTTPS tras el build; no se ha comprobado el destino vivo desde este entorno.

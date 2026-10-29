@@ -9,3 +9,44 @@ Upgrade and all 137 precached assets passed.
 PASS: PWA upgrade, cache replacement, offline loading, progress preservation and market layouts.
 
 Real-domain network access, DNS, TLS and deployed provider settings not verified.
+
+✔ account login returns to the active approved domain, while Pages remains usable during migration (2.739549ms)
+✔ a preview or deceptive hostname cannot become an OAuth return destination (1.932873ms)
+✔ version notes cover every recorded playable version and the first repository entry (3.473856ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (3.017729ms)
+✔ public version notes never reveal the hidden achievement or its reward (0.594886ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (0.95485ms)
+✔ same-version market corrections stay with v31.0.2.4 and retain both revisions (0.454064ms)
+✔ fingerprints ignore export time and version, but retain copies, achievements and ranked progress (3.053493ms)
+✔ signing in reads only; activation preserves all progress and autosave requires consent (4.649499ms)
+✔ another device recovers rather than merges and keeps the replaced local copy for download (1.61892ms)
+✔ two devices cannot silently overwrite each other; stale revisions preserve both copies (2.703686ms)
+✔ lost response is reconciled using the operation receipt; new local progress is not lost or duplicated (1.382223ms)
+✔ changing accounts and replacing a local file never auto-uploads the previous account progress (1.395604ms)
+✔ invalid cloud data and restore during a battle cannot replace local progress (0.79584ms)
+✔ explicit conflict resolution can keep local progress, archives the prior cloud copy and still checks its revision (1.972764ms)
+✔ a direct retry after a lost response reconciles its receipt before sending newly earned progress (1.138656ms)
+✔ a delayed upload cannot reattach cloud saving after an explicit local file replacement or reset (1.969449ms)
+✔ RPC requests pin the token of the captured account instead of using a later SDK session (0.659223ms)
+✔ leader mastery survives cloud upload, a second-device restore and later equipment changes (2.938629ms)
+✔ result verification rejects a failed refresh even when an older cloud copy is cached (0.679945ms)
+✔ submitted migration stays explicit across refreshes and reloads, without replacing local progress (0.996673ms)
+✔ failed migration is not labelled submitted and cannot replace local progress (0.408146ms)
+✔ a stable random ID survives repeat reads and travels inside the backup (19.60989ms)
+✔ portable round-trip preserves copies, statistics, hidden progress, receipts and seasonal reward claims (1.999745ms)
+✔ corrupt, incompatible, unknown-card and forged duplicate reward files fail validation before storage is touched (0.980087ms)
+✔ a failed multi-key restore rolls back every original value rather than leaving a mixed identity/profile (0.754928ms)
+✔ a complete 30-team league is preserved; a corrupt season is rejected (0.717572ms)
+✔ the selected bench survives backup and cloud validation without changing progression or pending rewards (0.594466ms)
+✔ unknown bench identifiers cannot enter restored player data (1.282744ms)
+✔ five cabinets round-trip with the selected slot and can retain a known card temporarily missing from the collection (1.036993ms)
+ℹ tests 30
+ℹ suites 0
+ℹ pass 30
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 152.564723
+
+Supabase Site URL, redirect allowlist, recovery URLs and Render origins confirmed by Dooms before activation.
