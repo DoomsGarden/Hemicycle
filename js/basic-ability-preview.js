@@ -11,12 +11,12 @@ function describe(game,side,card){
  if(recovery){reason='En recuperación: '+recovery+(recovery===1?' turno propio.':' turnos propios.');state='recovery';}
  else if(!rivals.length){reason='Requiere golpear a un orador; no se activa en huecos.';state='conditional';}
  else if(def.target==='self'&&B.state(copy)){reason='Bloqueada por el estado activo de este orador.';state='blocked';}
- else if(def.target==='rival'&&!rivals.some(function(c){var s=B.state(c);return !s||['shield','microphone'].includes(s.id);})){reason='Los rivales tienen un estado activo que no se sustituye.';state='blocked';}
+ else if(def.target==='rival'&&!rivals.some(function(c){var s=B.state(c);return (rules.canGrant?rules.canGrant(c,id):!s)||['shield','microphone'].includes(s&&s.id);})){reason=rules.canGrant?'Los rivales tienen un estado negativo que sigue activo; no se sustituye ni renueva.':'Los rivales tienen un estado activo que no se sustituye.';state='blocked';}
  else if(def.instant&&B.state(copy)){reason='Bloqueada por el estado activo de este orador.';state='blocked';}
  else if(id==='fasttrack'&&game.fasttrackUsed&&game.fasttrackUsed[side]){reason='Ventanilla rápida ya se ha usado en esta partida.';state='blocked';}
  else if(id==='summon'&&(game.hand&&game.hand[side]||[]).filter(function(c){return !c.action;}).length>=2){reason='Necesita un hueco de orador en mano.';state='conditional';}
  else if(id==='fasttrack'){reason='Requiere una carta de acción de apoyo en el mazo con al menos 2 turnos de espera; no adelanta la curación de la tercera frase.';state='conditional';}
- else reason=def.target==='rival'?'Si el objetivo sobrevive y queda su plaza libre.':'Si causas daño y tu orador permanece en mesa.';
+ else reason=def.target==='rival'?(rules.canGrant?'Si el objetivo sobrevive: sustituye un positivo; no renueva un negativo que siga activo.':'Si el objetivo sobrevive y queda su plaza libre.'):'Si causas daño y tu orador permanece en mesa.';
  return {id:id,name:def.name,summary:summaries[id],availability:reason,state:state};
 }
 function detail(id){var d=B.definition(id);if(!d)return '';var text=d.description.replace(/^Tras causar daño con un básico(?: a un orador)?, /,'');return text.charAt(0).toUpperCase()+text.slice(1);}

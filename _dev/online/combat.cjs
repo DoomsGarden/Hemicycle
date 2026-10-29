@@ -8,7 +8,7 @@ function visual(s,kind,data){s.visualSequence=(s.visualSequence||0)+1;s.visualEv
 function doctrine(s,i){const p=s.players[i],l=p.field.find(c=>c.id===p.leader);return l?l.doctrine:null;}
 function active(s,i){const own=doctrine(s,i),other=doctrine(s,1-i);return own&&beats[other]!==own?own:null;}
 function power(s,i,c){return c.z+(active(s,i)==='guardia'?c.buff:0)+c.buffs.reduce((n,b)=>n+b.value,0);}
-function normalPower(s,i,c){return s.effectsVersion===B.version?B.normalZ(c,s.players[i].turn,power(s,i,c)):power(s,i,c);}
+function normalPower(s,i,c){const rules=B.forVersion(s.effectsVersion);return rules?rules.normalZ(c,s.players[i].turn,power(s,i,c)):power(s,i,c);}
 function strong(p,c){return c.hp>=2&&c.enteredTurn!==null&&(p.turn-c.enteredTurn)%3===2&&c.strongUsedTurn!==p.turn;}
 function finish(s,winner,reason){s.status='finished';s.winner=winner;s.reason=reason;s.deadline=null;log(s,(winner===0?'Anfitrión':'Invitado')+' gana: '+reason+'.');}
 function victory(s){for(let i=0;i<2;i++)if(s.players[i].votes>=100){finish(s,i,'100 votos');return true;}return false;}
@@ -51,7 +51,7 @@ function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],a=A.b
  log(s,require('../../js/action-cards.js').describeAction(a,i===0?'El anfitrión':'El invitado',scope,affected.map((x,j)=>({name:x.c.name,team:teams[x.owner],amount:a.effect==='heal'?x.c.hp-before[j]:before[j]-x.c.hp}))));s.lastAction={side:i,id,discard:!!a.oncePerBattle,turn:p.turn};
  for(const x of affected)if(x.c.hp<=0&&s.status==='active')expel(s,x.owner,x.c,x.owner===i?null:i,x.doc);
 }
-function apply(original,i,command,now=Date.now(),rng=random,profile){check(i===0||i===1,'Jugador no válido');check(command&&typeof command.type==='string','Acción no válida');if(original.effectsVersion==='basic1')return require('./combat-basic1.cjs').apply(original,i,command,now,rng,profile);const s=structuredClone(original);if(timeout(s,now))return s;
+function apply(original,i,command,now=Date.now(),rng=random,profile){check(i===0||i===1,'Jugador no válido');check(command&&typeof command.type==='string','Acción no válida');if(original.effectsVersion==='basic2')return require('./combat-basic2.cjs').apply(original,i,command,now,rng,profile);if(original.effectsVersion==='basic1')return require('./combat-basic1.cjs').apply(original,i,command,now,rng,profile);const s=structuredClone(original);if(timeout(s,now))return s;
  if(command.type==='ready'){ready(s,i,command.cabinet,now,rng,profile);return s;}
  check(s.status==='active','No hay una partida activa');if(command.type==='resign'){finish(s,1-i,'rendición');return s;}check(s.side===i,'No es tu turno');const p=s.players[i],foe=s.players[1-i];check(!p.silenced,'Turno silenciado');
  if(command.type==='end'){end(s,i,now,rng);return s;}
@@ -66,7 +66,7 @@ function apply(original,i,command,now=Date.now(),rng=random,profile){check(i===0
 
  if(ownDoc==='foco'&&c.id===p.leader)p.votes++;log(s,c.name+': «'+c.q[powerful?1:0]+'» · '+amount+(empty?' votos retirados.':' de daño.'));if(victory(s))return s;if(target&&target.hp<=0)expel(s,1-i,target,i,enemyDoc);if(s.status==='active'&&c.hp<=0)expel(s,i,c,null,ownDoc);if(s.status==='active'){if(!empty&&!powerful&&s.effectsVersion===B.version){const result=B.afterHit(c,target,{damage:amount,attackerHealth:c.hp,targetHealth:target.hp,ownTurn:p.turn,rivalTurn:foe.turn,source:i,team:p,actions:A.byId,random:rng});if(result){visual(s,'basic-state',{uid:result.card.uid,effect:result.id});log(s,result.card.name+': '+B.definition(result.id).name+(result.utility?' · '+result.utility.name:'')+'.');}}}return s;
 }
-function project(state,side,revision,now){if(state.effectsVersion==='basic1')return require('./combat-basic1.cjs').project(state,side,revision,now);const s=structuredClone(state);const foe=s.players[1-side];if(foe){foe.handCount=foe.hand.length;foe.deckCount=foe.deck.length;delete foe.hand;delete foe.deck;delete foe.cabinetIds;delete foe.cabinetActions;delete foe.usedActions;delete foe.saved;}
+function project(state,side,revision,now){if(state.effectsVersion==='basic2')return require('./combat-basic2.cjs').project(state,side,revision,now);if(state.effectsVersion==='basic1')return require('./combat-basic1.cjs').project(state,side,revision,now);const s=structuredClone(state);const foe=s.players[1-side];if(foe){foe.handCount=foe.hand.length;foe.deckCount=foe.deck.length;delete foe.hand;delete foe.deck;delete foe.cabinetIds;delete foe.cabinetActions;delete foe.usedActions;delete foe.saved;}
  // Los mazos y su orden nunca se envían, tampoco al dueño.
  for(let i=0;i<2;i++)if(s.players[i])s.players[i].field.forEach(c=>{c.currentZ=power(state,i,c);c.currentNormalZ=normalPower(state,i,c);});
  const own=s.players[side];if(own){own.actionRecovery=own.deck.filter(c=>c.action&&(c.availableTurn||0)>own.turn).map(c=>({id:c.id,turns:c.availableTurn-own.turn}));own.deckCount=own.deck.length;delete own.deck;own.field.forEach(c=>{c.currentZ=power(state,side,c);c.canStrong=strong(own,c);c.charge=c.enteredTurn===null?0:1+(own.turn-c.enteredTurn)%3;});}

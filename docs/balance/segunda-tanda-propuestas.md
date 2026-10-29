@@ -36,7 +36,7 @@ Tras causar daño con un básico, el rival que sobreviva no puede dirigir su pr�
 
 ## Límites compartidos
 
-Un estado básico por orador: no se sustituye, acumula ni renueva. Una activación cada dos turnos propios; los intentos bloqueados o sin objetivo elegible no gastan la recuperación. Los efectos inmediatos dejan un icono hasta cerrar el turno y ocupan la misma plaza. Solo se activan al causar daño con un básico a un orador; atacante y, para estados negativos, objetivo deben sobrevivir. No se altera el fuerte.
+Un estado básico por orador. Un negativo aplicado al rival puede sustituir su estado positivo; un beneficio propio no limpia estados del rival. Un negativo activo no se sustituye ni renueva, y un positivo no sustituye otro estado. Se conserva el consumo y la caducidad propios de cada efecto. Una activación cada dos turnos propios; los intentos bloqueados o sin objetivo elegible no gastan la recuperación. Los efectos inmediatos dejan un icono hasta cerrar el turno y ocupan la misma plaza. Solo se activan al causar daño con un básico a un orador; atacante y, para estados negativos, objetivo deben sobrevivir. No se altera el fuerte.
 
 Letra pequeña y Debate encarrilado son las utilidades condicionales de los raros de coste 2 y legendarios de coste 4, ya eficientes. Llamada al suplente y Ventanilla rápida quedan en tres especiales cada una. Yo respondo ocupa una plaza sin añadir Aguante; se desvía un básico una sola vez, sin encadenar protectores.
 
@@ -46,4 +46,4 @@ Ventanilla rápida afecta a cartas de acción de apoyo —curación, defensa o m
 
 Se verifican los 14 × 14 bloqueos entre estados y las interacciones con defensa, vulnerabilidad, absorción, reflejos, expulsión y votos. La comparación exploratoria incluye 11.520 partidas con los 120 oradores como líderes y miembros, cruces favorables/desfavorables/espejo, 0/2 acciones y ambas iniciativas. No demuestra equilibrio definitivo entre jugadores humanos ni atribuye a una sola habilidad los cambios de victoria: ambos equipos reciben los añadidos.
 
-Las partidas anteriores conservan sus motores originales. Para las nuevas partidas verificadas se incorpora offline5 sin sobrescribir offline1/2/3/4. La migración solo amplía la descarga admitida; no modifica inventarios, guardados, Elo ni premios.
+Las partidas anteriores conservan sus motores originales. Para las nuevas partidas verificadas se incorpora offline6 sin sobrescribir offline1/2/3/4/5. La migración solo amplía la descarga admitida; no modifica inventarios, guardados, Elo ni premios.

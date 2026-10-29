@@ -74,8 +74,9 @@
 <script src="js/battle-tips.js?v=31.0.2.8-targets1"></script>
 <script src="js/battle-rules.js?v=31.0.2.6"></script>
 <script src="js/basic-effects-v1.js?v=31.0.2.8-wave2"></script>
-<script src="js/basic-effects.js?v=31.0.2.8-wave2"></script>
-<script src="js/basic-ability-preview.js?v=31.0.2.8-wave2"></script>
+<script src="js/basic-effects-v2.js?v=31.0.2.8-states1"></script>
+<script src="js/basic-effects.js?v=31.0.2.8-states1"></script>
+<script src="js/basic-ability-preview.js?v=31.0.2.8-states1"></script>
 <script src="js/battle-status.js?v=31.0.2.8-wave2"></script>
 <script src="js/battle-actions-ui.js?v=31.0.2.8-wave2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.8-phrases1"></script>
@@ -103,7 +104,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.8-wave2"></script>
+<script src="js/changelog.js?v=31.0.2.8-states1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -117,9 +118,11 @@
 <script>window.HemicycleOfflineRulesV4=window.HemicycleOfflineRules;</script>
 <script src="js/offline-rules-v5.js?v=31.0.2.8-wave2"></script>
 <script>window.HemicycleOfflineRulesV5=window.HemicycleOfflineRules;</script>
-<script src="js/offline-rule-dispatch.js?v=31.0.2.8-wave2"></script>
-<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4,offline5:HemicycleOfflineRulesV5});</script>
-<script src="js/offline-combat.js?v=31.0.2.8-wave2"></script>
+<script src="js/offline-rules-v6.js?v=31.0.2.8-states1"></script>
+<script>window.HemicycleOfflineRulesV6=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rule-dispatch.js?v=31.0.2.8-states1"></script>
+<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4,offline5:HemicycleOfflineRulesV5,offline6:HemicycleOfflineRulesV6});</script>
+<script src="js/offline-combat.js?v=31.0.2.8-states1"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
@@ -1327,7 +1330,7 @@ SCREENS.detalle=function(){
 };
 
 function basicAbilityHTML(c){var id=HemicycleBasicEffects.ability(c.id),def=HemicycleBasicEffects.definition(id);return '<section class="basic-ability-detail" data-basic-ability="'+(id||'none')+'"><h3>'+(def?HemicycleBasicEffects.symbol(id)+esc(def.name):'Sin habilidad adicional')+'</h3>'+(def?'<p>'+esc(HemicycleBasicAbilityPreview.detail(id))+'</p>':'')+'</section>';}
-function basicAbilityHelpHTML(){return '<div class="panel"><h3>Habilidades del básico</h3><p class="sub">Los oradores tienen una habilidad que se activa al causar daño con un ataque básico a otro orador. El fuerte, las acciones y atacar huecos no lo activan. La ficha de Colección muestra el efecto propio de cada cromo.</p><p class="sub"><b>Un estado básico por orador:</b> el primero permanece hasta consumirse o caducar; no se acumula, renueva ni sustituye. La habilidad puede activarse <b>una vez cada dos turnos propios</b>. Los efectos inmediatos de robo y recuperación ocupan la plaza hasta cerrar ese turno. Ventanilla rápida tiene además un límite de una activación por jugador y partida; si hay dos acciones elegibles, escoge una al azar. Si la plaza está ocupada, el intento no gasta su recuperación.</p><p class="sub">El icono aparece en el afectado; tócalo para consultar su duración. Los pulsos ocurren al comienzo de sus turnos propios, antes de sumar votos. La defensa, los apoyos y las doctrinas existentes funcionan aparte.</p><details class="basic-ability-roster"><summary>Oradores por habilidad · '+Object.keys(HemicycleBasicEffects.assignments).length+'</summary>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id),names=CARDS.filter(function(c){return HemicycleBasicEffects.ability(c.id)===id;}).sort(function(a,b){return a.n.localeCompare(b.n,'es');}).map(function(c){return c.n;});return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+' · '+names.length+'</h4><p class="sub">'+esc(names.join(', '))+'.</p></section>';}).join('')+'<p class="sub">Las asignaciones responden a su función de juego; no describen a las personas representadas.</p></details></div>';}
+function basicAbilityHelpHTML(){return '<div class="panel"><h3>Habilidades del básico</h3><p class="sub">Los oradores tienen una habilidad que se activa al causar daño con un ataque básico a otro orador. El fuerte, las acciones y atacar huecos no lo activan. La ficha de Colección muestra el efecto propio de cada cromo.</p><p class="sub"><b>Un estado básico por orador:</b> un estado negativo aplicado al rival sustituye su estado positivo. Los beneficios propios no limpian estados del rival. No se acumulan efectos ni se renueva o sustituye un negativo que siga activo; cada estado conserva su consumo y caducidad. La habilidad puede activarse <b>una vez cada dos turnos propios</b>. Los efectos inmediatos de robo y recuperación ocupan la plaza hasta cerrar ese turno. Ventanilla rápida tiene además un límite de una activación por jugador y partida; si hay dos acciones elegibles, escoge una al azar. Si el estado no puede aplicarse, el intento no gasta su recuperación.</p><p class="sub">El icono aparece en el afectado; tócalo para consultar su duración. Los pulsos ocurren al comienzo de sus turnos propios, antes de sumar votos. La defensa, los apoyos y las doctrinas existentes funcionan aparte.</p><details class="basic-ability-roster"><summary>Oradores por habilidad · '+Object.keys(HemicycleBasicEffects.assignments).length+'</summary>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id),names=CARDS.filter(function(c){return HemicycleBasicEffects.ability(c.id)===id;}).sort(function(a,b){return a.n.localeCompare(b.n,'es');}).map(function(c){return c.n;});return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+' · '+names.length+'</h4><p class="sub">'+esc(names.join(', '))+'.</p></section>';}).join('')+'<p class="sub">Las asignaciones responden a su función de juego; no describen a las personas representadas.</p></details></div>';}
 
 function editionBadges(c,d){
  var badges='';
