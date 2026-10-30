@@ -19,6 +19,8 @@ function createSimulator() {
     c.BUILD = { ids: player, leader: player[0] };
     c.buildEnemyTeam = () => enemy;
     c.newBattle('normal');
+    // Isolate doctrine formulas with the established benchmark policy; tactical AI has its own seeded comparison.
+    c.G.aiVersion='benchmark-legacy';
     c.G.first = first;
     c.beginDebate();
     let steps = 0;

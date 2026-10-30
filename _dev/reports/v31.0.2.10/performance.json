@@ -1,0 +1,52 @@
+{
+  "scope": "Three paired local headless Chromium runs, service workers blocked. ScriptDuration is a local observation, not a production latency claim. Historical assets remain precached for offline recovery.",
+  "engineScriptsBefore": 7,
+  "engineScriptsAfter": 1,
+  "deferredBytes": 821796,
+  "scriptDurationMedianMs": {
+    "before": 240.157,
+    "after": 145.03
+  },
+  "concurrentHistoricalLoadsDeduplicated": true,
+  "unknownVersionRejected": true,
+  "rows": [
+    {
+      "version": "v9",
+      "run": 1,
+      "scriptDurationMs": 139.741,
+      "engineScripts": 7
+    },
+    {
+      "version": "v10",
+      "run": 1,
+      "scriptDurationMs": 100.42,
+      "engineScripts": 1
+    },
+    {
+      "version": "v9",
+      "run": 2,
+      "scriptDurationMs": 261.415,
+      "engineScripts": 7
+    },
+    {
+      "version": "v10",
+      "run": 2,
+      "scriptDurationMs": 145.03,
+      "engineScripts": 1
+    },
+    {
+      "version": "v9",
+      "run": 3,
+      "scriptDurationMs": 240.157,
+      "engineScripts": 7
+    },
+    {
+      "version": "v10",
+      "run": 3,
+      "scriptDurationMs": 145.332,
+      "engineScripts": 1
+    }
+  ],
+  "currentEngineBytes": 332453,
+  "initialEngineBytesReduction": 489343
+}

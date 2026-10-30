@@ -37,7 +37,7 @@ function createServer(config={}){
     try{body=JSON.parse(Buffer.concat(chunks).toString());}catch{return reply(400,{error:'JSON no válido.'});}
     if(!body||typeof body!=='object'||Array.isArray(body))return reply(400,{error:'Solicitud no válida.'});
    }
-   if(pathname.startsWith('/api/market/')||pathname==='/economy'||pathname==='/economy/initialize'||pathname==='/economy/import-request'||pathname==='/offline/tickets'||pathname==='/offline/settle'){
+   if(pathname.startsWith('/api/market/')||pathname==='/economy'||pathname==='/economy/initialize'||pathname==='/economy/import-request'||pathname==='/offline/tickets'||pathname==='/offline/risk'||pathname==='/offline/settle'){
     try{return reply(200,await economy(auth,pathname,req.method,body));}catch(e){return reply(e.status||409,{error:e.message,...(e.code?{code:e.code}:{})});}
    }
    if(req.method==='POST'&&pathname==='/ai'){

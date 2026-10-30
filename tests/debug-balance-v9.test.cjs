@@ -6,7 +6,7 @@ const attack=(id,team,card={basicAbility:id})=>B.afterHit(card,{},context(team))
 test('approved reassignment changes exactly 46 of 120, retains stats, and covers each rarity by role',()=>{
  a.equal(B.version,'basic4');a.equal(Object.keys(B.assignments).length,120);a.equal(C.cards.filter(c=>B.ability(c.id)!==Old.ability(c.id)).length,46);
  a.deepEqual(B.assignments,require('../_dev/balance/drafts/ability-reassignment-v1.cjs').assignments);
- a.equal(fs.readFileSync('js/orator-catalog.js','utf8'),execFileSync('git',['show','2d8319a:js/orator-catalog.js'],{encoding:'utf8'}));
+ a.equal(fs.readFileSync('js/orator-catalog-v2.js','utf8'),execFileSync('git',['show','2d8319a:js/orator-catalog.js'],{encoding:'utf8'}).replace('root.HemicycleCatalog=factory()','root.HemicycleCatalogV2=factory()'));
  for(const r of ['comun','raro','especial','legendario'])for(const effects of Object.values(require('../_dev/balance/drafts/ability-reassignment-v1.cjs').categories))a.ok(C.cards.some(c=>c.r===r&&effects.includes(B.ability(c.id))),r);
  for(const c of C.cards.filter(c=>B.ability(c.id)==='escort'))a.ok(c.h===14||c.id==='giorgia-meloni');
 });

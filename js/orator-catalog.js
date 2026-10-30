@@ -16,10 +16,10 @@ var MAX_TDP=8;
 function doctrineMatchup(k){var d=DOCM[k];return 'Contrarresta: '+DOCM[d.beats].n+'. Debilidad: '+DOCM[d.weak].n+'.';}
 var RARS=[{k:'comun',n:'Común',c:'#b07a45',g:3},{k:'raro',n:'Raro',c:'#4a7fb5',g:4},{k:'especial',n:'Especial',c:'#8b5cf6',g:5},{k:'legendario',n:'Legendario',c:'#e8b923',g:6}];
 var RARM={};RARS.forEach(function(r){RARM[r.k]=r;});
-var BALANCE_VERSION='balance-v2';
+var BALANCE_VERSION='balance-v3';
 var TIER={
  comun:{c:[1,2],costs:[1,2,2,1,2,2,1,2],a:[2,2],h:[4,5],v:2,stats:{1:{a:2,h:4},2:{a:2,h:5}}},
- raro:{c:[2,4],a:[4,4],h:[6,7],v:3,stats:{2:{a:4,h:6},3:{a:4,h:7},4:{a:4,h:7}}},
+ raro:{c:[2,3],costs:[2,3,3,2,3,3],a:[4,4],h:[6,7],v:3,stats:{2:{a:4,h:6},3:{a:4,h:7}}},
  especial:{c:[3,5],costs:[3,4,4,3],a:[5,6],h:[8,8],v:4,stats:{3:{a:5,h:8},4:{a:6,h:8},5:{a:6,h:8}}},
  legendario:{c:[4,5],a:[7,7],h:[11,14],v:5,stats:{4:{a:7,h:11},5:{a:7,h:14}}}
 };

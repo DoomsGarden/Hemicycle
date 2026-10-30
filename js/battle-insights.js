@@ -1,0 +1,8 @@
+/* Recuento de jugadas del propio debate. No identifica cromos ni se transmite a terceros. */
+(function(root,factory){var api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.HemicycleBattleInsights=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){'use strict';
+function create(){return {turns:0,presence:0,fieldTotal:0,actions:0,basicAttempts:0,triggered:0,noCandidate:0,occupied:0,recovery:0};}
+function tick(s,size){if(!s)return;s.turns++;s.presence+=size>0?1:0;s.fieldTotal+=size;}
+function hit(s,outcome){if(!s)return;s.basicAttempts++;if(outcome==='triggered')s.triggered++;else if(['noCandidate','occupied','recovery'].includes(outcome))s[outcome]++;}
+function clean(s){if(!s)return null;var out={};Object.keys(create()).forEach(function(k){out[k]=Number.isSafeInteger(s[k])&&s[k]>=0?Math.min(10000,s[k]):0;});return out;}
+function lesson(s){s=clean(s);if(!s||!s.turns)return null;var note=s.noCandidate?'Hubo '+s.noCandidate+' básicos con utilidad sin candidato. Revisa mano, recuperación y acciones equipadas.':s.occupied?'En '+s.occupied+' básicos no se pudo aplicar otro estado. Prueba a cambiar de objetivo.':s.recovery?'En '+s.recovery+' básicos la habilidad seguía recuperándose. Alterna tus oradores.':'Compara tus objetivos y cuándo conviene conservar un orador en mesa.';return {presence:s.presence+'/'+s.turns+' turnos con oradores al comenzar',effects:s.triggered+' habilidades activadas',note:note,practice:s.noCandidate||s.occupied||s.recovery?'basic':'strong'};}
+return {create:create,tick:tick,hit:hit,clean:clean,lesson:lesson};});

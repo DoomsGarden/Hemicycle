@@ -6,13 +6,13 @@ const stats=c=>({c:c.c,a:c.a,h:c.h,v:c.v});
 const expected={comun:{1:[2,4,2],2:[2,5,2]},raro:{2:[4,6,3],3:[4,7,3],4:[4,7,3]},especial:{3:[5,8,4],4:[6,8,4]},legendario:{4:[7,11,5],5:[7,14,5]}};
 test('all 120 speakers match the approved table without changing identity, quotes, countries or doctrines',()=>{
  a.equal(C.cards.length,120);const old=new Map(before.map(c=>[c.id,c]));
- for(const c of C.cards){const previous=old.get(c.id),cost=previous.r==='comun'?Math.min(2,previous.c):previous.c;const [zasca,aguante,votes]=expected[c.r][cost];a.deepEqual(stats(c),{c:cost,a:zasca,h:aguante,v:votes},c.id);const metadata=({c,a,h,v,...rest})=>rest;a.deepEqual(metadata(c),metadata(previous),c.id);}
+ for(const c of C.cards){const previous=old.get(c.id),cost=previous.r==='comun'?Math.min(2,previous.c):previous.r==='raro'?Math.min(3,previous.c):previous.c;const [zasca,aguante,votes]=expected[c.r][cost];a.deepEqual(stats(c),{c:cost,a:zasca,h:aguante,v:votes},c.id);const metadata=({c,a,h,v,...rest})=>rest;a.deepEqual(metadata(c),metadata(previous),c.id);}
  a.deepEqual(C.statsFor('especial',5),{a:6,h:8,v:4});a.equal(C.cards.filter(c=>c.r==='especial'&&c.c===5).length,0);
 });
 test('future utility register contains exactly the 12 former cost-3 commons and 12 cost-4 rares',()=>{
  const marks=require('../_dev/balance/pending-utility.json');a.equal(marks.cards.length,24);
  a.deepEqual(marks.cards.map(c=>c.id).sort(),before.filter(c=>c.r==='comun'&&c.c===3||c.r==='raro'&&c.c===4).map(c=>c.id).sort());
- for(const mark of marks.cards){a.deepEqual(mark.before,stats(before.find(c=>c.id===mark.id)));a.deepEqual(mark.after,stats(C.cards.find(c=>c.id===mark.id)));a.equal(mark.status,'pending-design');}
+ for(const mark of marks.cards){a.deepEqual(mark.before,stats(before.find(c=>c.id===mark.id)));a.deepEqual(mark.after,stats(require('../js/orator-catalog-v2.js').cards.find(c=>c.id===mark.id)));a.equal(mark.status,'pending-design');}
 });
 const ids=['donald-trump','mariano-rajoy','javier-milei','ana-pastor','celia-villalobos'];
 const cabinet={orators:ids,leader:ids[4],actions:[]};
@@ -35,17 +35,17 @@ test('gold and leader bonuses remain additive and do not inflate the new base se
  const s=battle(false,{dtGoldUnlocked:true,dtGoldActive:true});const trump=all(s.players[0]).find(c=>c.id==='donald-trump');a.equal(trump.z,9);a.equal(trump.hp,13);a.equal(trump.votes,5);
 });
 test('browser and server dispatch select the exact historical or current engine and reproduce a complete match',()=>{
- const context=vm.createContext({structuredClone});for(const [file,key]of [['js/offline-rules-v1.js','offline1'],['js/offline-rules.js','offline2'],['js/offline-rules-v3.js','offline3'],['js/offline-rules-v4.js','offline4'],['js/offline-rules-v5.js','offline5'],['js/offline-rules-v6.js','offline6'],['js/offline-rules-v7.js','offline7']]){vm.runInContext(fs.readFileSync(file,'utf8'),context);context[key]=context.HemicycleOfflineRules;}
+ const context=vm.createContext({structuredClone});for(const [file,key]of [['js/offline-rules-v1.js','offline1'],['js/offline-rules.js','offline2'],['js/offline-rules-v3.js','offline3'],['js/offline-rules-v4.js','offline4'],['js/offline-rules-v5.js','offline5'],['js/offline-rules-v6.js','offline6'],['js/offline-rules-v7.js','offline7'],['js/offline-rules-v8.js','offline8']]){vm.runInContext(fs.readFileSync(file,'utf8'),context);context[key]=context.HemicycleOfflineRules;}
  vm.runInContext(fs.readFileSync('js/offline-rule-dispatch.js','utf8'),context);const browser=context.HemicycleOfflineRuleDispatch.create(context);
- for(const version of ['offline1','offline2','offline3','offline4','offline5','offline6','offline7']){const engine=dispatch.forTicket({rules:version});const ticket={rules:version,seed:71,profile:{album:C.cards.map(c=>c.id),actionAlbum:[],elo:0}};let {state,rng}=engine.start(ticket,cabinet,'normal');const commands=[];const client=browser.forTicket(ticket).start(ticket,cabinet,'normal');a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));
+ for(const version of ['offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8']){const engine=dispatch.forTicket({rules:version});const ticket={rules:version,seed:71,profile:{album:C.cards.map(c=>c.id),actionAlbum:[],elo:0}};let {state,rng}=engine.start(ticket,cabinet,'normal');const commands=[];const client=browser.forTicket(ticket).start(ticket,cabinet,'normal');a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));
   for(let n=0;state.status==='active'&&n<1000;n++){const command=AI.choose(state,0,0);commands.push({at:0,command});state=engine.move(state,command,0,rng);client.state=browser.forTicket(ticket).move(client.state,command,0,client.rng);}
   a.equal(state.status,'finished');a.deepEqual(engine.replay(ticket,{mode:'normal',cabinet,commands}),state);a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));a.throws(()=>engine.replay(ticket,{mode:'normal',cabinet,commands:[...commands,{at:0,command:{type:'end'}}]}),/después/);
  }
- for(const rules of ['offline8','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
+ for(const rules of ['offline9','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
 });
 
 test('download negotiation preserves absent-version legacy clients and rejects unknown versions',async()=>{
  const calls=[],service=require('../_dev/online/economy-service.cjs').create({url:'https://example.supabase.co',key:'public',secret:'test',fetcher:async(url,options)=>{if(url.endsWith('/auth/v1/user'))return {ok:true,json:async()=>({id:'actor'})};calls.push(JSON.parse(options.body));return {ok:true,json:async()=>[]};}});
- for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
- const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline8'}),e=>e.status===400);a.equal(calls.length,count);
+ for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
+ const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline9'}),e=>e.status===400);a.equal(calls.length,count);
 });

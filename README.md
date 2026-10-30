@@ -57,6 +57,8 @@ Las imágenes muestran la interfaz del juego con una partida de demostración. [
 | **Escaños** | Aportan votos mientras el orador está en mesa. Al expulsar a un rival, sumas los escaños de ese rival. |
 | **Líder** | Empieza en tu mano con bonificación y activa su doctrina mientras está en la Tribuna, salvo que sea neutralizada. |
 
+Los raros cuestan **2 o 3 TdP**; los doce que costaban 4 pasan a 3 conservando Zasca, Aguante y habilidad.
+
 Los escaños base son **2 / 3 / 4 / 5** para comunes, raros, especiales y legendarios. Cada turno añade también **3 votos base**. [Consultar la tabla de estadísticas y el ajuste de esta versión](docs/balance/ajuste-2026-10-29.md).
 
 Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y una acción disponible; las cartas restantes esperan en el mazo. Cada orador puede intervenir **una vez por turno propio**.
@@ -65,6 +67,8 @@ Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y u
 - **Ataque fuerte:** causa el 150 % del Zasca, redondeado hacia arriba, y cuesta un punto de Aguante. Su oportunidad aparece en el tercer turno propio del cromo en mesa y después cada tres turnos; si no la usas, debes esperar al siguiente ciclo.
 - **Defensa o curación:** bajo la tercera frase tienes el escudo y la cruz como botones directos. La defensa reduce a la mitad el próximo golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de tres y sin superar su máximo. Tras curarse, ese orador deja pasar un turno propio completo antes de volver a curarse.
 - **Cartas de acción:** puedes usar una por turno. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
+
+Al elegir un ataque, cada objetivo muestra el daño previsto y si podrá aplicarse la habilidad. El detalle desplegable explica desvíos, defensa, Aforado y bloqueos; el estado se comprueba de nuevo al jugar.
 
 La doctrina de tu líder puede neutralizar otra. Los iconos de estado permiten consultar sus efectos; **Acta** muestra las jugadas recientes sin ocupar permanentemente la mesa.
 
@@ -85,7 +89,9 @@ En Clasificatoria y Liga hay transferencia de cromos según el resultado, con pr
 
 ## Colección y Mercado
 
-**Cromos** reúne los oradores, las acciones y tus gabinetes. Puedes buscar por nombre y desplegar filtros de país, rareza y doctrina. Toca una carta para consultar sus datos y sus frases.
+**Leer mi gabinete** resume costes, funciones y doctrina, avisa de sinergias sin apoyo y ofrece alternativas baratas que ya posees. Antes de Clasificatoria o Liga se revisa qué cromos podrían transferirse al perder; con cuenta se consulta la colección del servidor.
+
+**Cromos** reúne los oradores, las acciones y tus gabinetes. Puedes buscar por nombre y desplegar filtros de país, rareza y doctrina. Toca una carta para consultar sus datos, frases y contexto documental atribuido.
 
 **Tienda** ofrece sobres que amplían la colección. **FS** es una moneda virtual del juego: actualmente no hay compras con dinero real ni canje por dinero. Desafíos, Logros y Buzón reúnen objetivos y recompensas; despliega la flecha de Inicio para ver los accesos adicionales.
 
@@ -98,6 +104,8 @@ En **Mercado** puedes vender repetidos conservando una copia. Las compras e inte
 - **Copia de seguridad:** desde Ayuda puedes exportar e importar tu guardado. Conserva una copia antes de cambiar de navegador o de origen.
 - **Sin conexión:** prepara los recursos desde **Opciones → Preparar recursos sin conexión**. El invitado dispone del juego local; las partidas descargadas de una cuenta vinculada conservan sus premios pendientes hasta validarlos al reconectar.
 
+Los motores históricos se cargan al reanudar una partida antigua y permanecen preparados sin conexión. Las consultas online sin cambios de revisión conservan la mesa y la selección.
+
 Las funciones de cuenta están disponibles desde los **14 años**. Los jugadores de **12–13 años** utilizan el modo invitado. El mínimo de acceso no sustituye la clasificación que pueda asignar una tienda.
 
 <details>
@@ -107,11 +115,13 @@ El guardado local de GitHub Pages y el de `hemicycle.online` pertenecen a oríge
 
 </details>
 
+La prueba voluntaria para nuevos jugadores está en [Prueba de comprensión](pruebas/). Sus observaciones se descargan localmente y no se envían automáticamente. Los resultados nuevos muestran una pista basada en presencia y habilidades registradas; la exportación de balance puede incluir esos recuentos sin identificar cromos ni cuentas.
+
 ## Ayuda y contacto
 
 | Necesitas… | Dónde encontrarlo |
 | --- | --- |
-| Aprender o practicar | **Ayuda:** combate guiado, guía de menús, guía de Mercado y retos tácticos. |
+| Aprender o practicar | **Ayuda:** combate guiado, guía de menús, guía de Mercado y retos tácticos, incluida la lectura de habilidades básicas. |
 | Consultar habilidades y sus oradores | **Ayuda → Habilidades del básico → Cómo funcionan las 14 habilidades**. Incluye ejemplos; la ficha de cada cromo muestra su efecto particular. |
 | Mejorar la lectura | **Opciones:** tamaño de texto y de iconos. |
 | Ajustar el audio | **Opciones:** volumen maestro, música y efectos. |
@@ -138,8 +148,8 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Servicio online y configuración](_dev/online/README.md)
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
-- [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.9.md)
-- [Notas de la versión v31.0.2.9](_dev/releases/v31.0.2.9.md)
+- [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
+- [Notas de la versión v31.0.2.10](_dev/releases/v31.0.2.10.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 
