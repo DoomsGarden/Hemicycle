@@ -61,7 +61,7 @@ Los escaños base son **2 / 3 / 4 / 5** para comunes, raros, especiales y legend
 
 Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y una acción disponible; las cartas restantes esperan en el mazo. Cada orador puede intervenir **una vez por turno propio**.
 
-- **Ataque normal:** usa el Zasca actual del cromo. Los 120 oradores tienen una habilidad, con activación como máximo una vez cada dos turnos propios. Hay 14 efectos de presión, protección o utilidad. Cada cromo admite un estado: un negativo puede sustituir un positivo rival, y los beneficios propios no limpian estados del adversario. Toca su icono para consultar el efecto y la duración. La ficha de Colección explica su habilidad. Ventanilla rápida recupera antes una carta de acción de apoyo al azar, una vez por partida; no acorta la curación del orador.
+- **Ataque normal:** usa el Zasca actual del cromo. Los 120 oradores tienen una habilidad, con activación como máximo una vez cada dos turnos propios. Hay 14 efectos de presión, protección o utilidad. Cada cromo admite un estado: un negativo puede sustituir un positivo rival, y los beneficios propios no limpian estados del adversario. Toca su icono para consultar el efecto y la duración. La ficha de Colección explica su habilidad. Ventanilla rápida recupera antes una carta de acción de apoyo al azar, una vez por turno propio y jugador; no acorta la curación del orador. Llamada al suplente roba el orador de menor coste del mazo, de cualquier rareza, respetando el máximo de dos en mano y una activación por turno propio.
 - **Ataque fuerte:** causa el 150 % del Zasca, redondeado hacia arriba, y cuesta un punto de Aguante. Su oportunidad aparece en el tercer turno propio del cromo en mesa y después cada tres turnos; si no la usas, debes esperar al siguiente ciclo.
 - **Defensa o curación:** bajo la tercera frase tienes el escudo y la cruz como botones directos. La defensa reduce a la mitad el próximo golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de tres y sin superar su máximo. Tras curarse, ese orador deja pasar un turno propio completo antes de volver a curarse.
 - **Cartas de acción:** puedes usar una por turno. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
@@ -138,7 +138,8 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Servicio online y configuración](_dev/online/README.md)
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
-- [Notas de la versión v31.0.2.8](_dev/releases/v31.0.2.8.md)
+- [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.9.md)
+- [Notas de la versión v31.0.2.9](_dev/releases/v31.0.2.9.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 

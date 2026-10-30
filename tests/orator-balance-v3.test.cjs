@@ -35,17 +35,17 @@ test('gold and leader bonuses remain additive and do not inflate the new base se
  const s=battle(false,{dtGoldUnlocked:true,dtGoldActive:true});const trump=all(s.players[0]).find(c=>c.id==='donald-trump');a.equal(trump.z,9);a.equal(trump.hp,13);a.equal(trump.votes,5);
 });
 test('browser and server dispatch select the exact historical or current engine and reproduce a complete match',()=>{
- const context=vm.createContext({structuredClone});for(const [file,key]of [['js/offline-rules-v1.js','offline1'],['js/offline-rules.js','offline2'],['js/offline-rules-v3.js','offline3'],['js/offline-rules-v4.js','offline4'],['js/offline-rules-v5.js','offline5'],['js/offline-rules-v6.js','offline6']]){vm.runInContext(fs.readFileSync(file,'utf8'),context);context[key]=context.HemicycleOfflineRules;}
+ const context=vm.createContext({structuredClone});for(const [file,key]of [['js/offline-rules-v1.js','offline1'],['js/offline-rules.js','offline2'],['js/offline-rules-v3.js','offline3'],['js/offline-rules-v4.js','offline4'],['js/offline-rules-v5.js','offline5'],['js/offline-rules-v6.js','offline6'],['js/offline-rules-v7.js','offline7']]){vm.runInContext(fs.readFileSync(file,'utf8'),context);context[key]=context.HemicycleOfflineRules;}
  vm.runInContext(fs.readFileSync('js/offline-rule-dispatch.js','utf8'),context);const browser=context.HemicycleOfflineRuleDispatch.create(context);
- for(const version of ['offline1','offline2','offline3','offline4','offline5','offline6']){const engine=dispatch.forTicket({rules:version});const ticket={rules:version,seed:71,profile:{album:C.cards.map(c=>c.id),actionAlbum:[],elo:0}};let {state,rng}=engine.start(ticket,cabinet,'normal');const commands=[];const client=browser.forTicket(ticket).start(ticket,cabinet,'normal');a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));
+ for(const version of ['offline1','offline2','offline3','offline4','offline5','offline6','offline7']){const engine=dispatch.forTicket({rules:version});const ticket={rules:version,seed:71,profile:{album:C.cards.map(c=>c.id),actionAlbum:[],elo:0}};let {state,rng}=engine.start(ticket,cabinet,'normal');const commands=[];const client=browser.forTicket(ticket).start(ticket,cabinet,'normal');a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));
   for(let n=0;state.status==='active'&&n<1000;n++){const command=AI.choose(state,0,0);commands.push({at:0,command});state=engine.move(state,command,0,rng);client.state=browser.forTicket(ticket).move(client.state,command,0,client.rng);}
   a.equal(state.status,'finished');a.deepEqual(engine.replay(ticket,{mode:'normal',cabinet,commands}),state);a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));a.throws(()=>engine.replay(ticket,{mode:'normal',cabinet,commands:[...commands,{at:0,command:{type:'end'}}]}),/después/);
  }
- for(const rules of ['offline7','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
+ for(const rules of ['offline8','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
 });
 
 test('download negotiation preserves absent-version legacy clients and rejects unknown versions',async()=>{
  const calls=[],service=require('../_dev/online/economy-service.cjs').create({url:'https://example.supabase.co',key:'public',secret:'test',fetcher:async(url,options)=>{if(url.endsWith('/auth/v1/user'))return {ok:true,json:async()=>({id:'actor'})};calls.push(JSON.parse(options.body));return {ok:true,json:async()=>[]};}});
- for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
- const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline7'}),e=>e.status===400);a.equal(calls.length,count);
+ for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
+ const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline8'}),e=>e.status===400);a.equal(calls.length,count);
 });

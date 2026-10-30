@@ -1,8 +1,9 @@
 {
-  "version": "basic3",
+  "version": "basic4",
   "catalogVersion": "balance-v2",
   "cooldownOwnTurns": 2,
   "activeStatusSlots": 1,
+  "utilityCaps": "Each utility once per player own turn, shared by its carriers; no eligible candidate consumes neither cap nor personal recovery.",
   "cards": [
     {
       "id": "alberto-nunez-feijoo",
@@ -12,7 +13,9 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "angela-merkel",
@@ -22,7 +25,9 @@
       "zasca": 7,
       "aguante": 14,
       "seats": 5,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "escort",
+      "changed": true
     },
     {
       "id": "barack-obama",
@@ -32,7 +37,9 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "acta",
+      "changed": true
     },
     {
       "id": "boris-johnson",
@@ -42,7 +49,9 @@
       "zasca": 7,
       "aguante": 14,
       "seats": 5,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "microphone",
+      "changed": false
     },
     {
       "id": "carles-puigdemont",
@@ -52,7 +61,9 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "paperwork",
+      "changed": true
     },
     {
       "id": "donald-trump",
@@ -62,7 +73,9 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "surge",
+      "changed": true
     },
     {
       "id": "emmanuel-macron",
@@ -72,7 +85,9 @@
       "zasca": 7,
       "aguante": 14,
       "seats": 5,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "shield",
+      "changed": false
     },
     {
       "id": "isabel-diaz-ayuso",
@@ -82,7 +97,9 @@
       "zasca": 7,
       "aguante": 14,
       "seats": 5,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "coffee",
+      "changed": false
     },
     {
       "id": "mariano-rajoy",
@@ -92,7 +109,9 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "lane",
+      "changed": false
     },
     {
       "id": "pedro-sanchez",
@@ -102,7 +121,9 @@
       "zasca": 7,
       "aguante": 11,
       "seats": 5,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "bank",
+      "changed": true
     },
     {
       "id": "vladimir-putin",
@@ -112,7 +133,9 @@
       "zasca": 7,
       "aguante": 14,
       "seats": 5,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "escort",
+      "changed": true
     },
     {
       "id": "yolanda-diaz",
@@ -122,7 +145,9 @@
       "zasca": 7,
       "aguante": 14,
       "seats": 5,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "fasttrack",
+      "changed": true
     },
     {
       "id": "ada-colau",
@@ -132,7 +157,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "acta",
+      "changed": true
     },
     {
       "id": "andres-manuel-lopez-obrador",
@@ -142,7 +169,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "summon",
+      "changed": true
     },
     {
       "id": "bernie-sanders",
@@ -152,7 +181,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "shield",
+      "changed": false
     },
     {
       "id": "christine-lagarde",
@@ -162,7 +193,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "fasttrack"
+      "previous": "fasttrack",
+      "effect": "fasttrack",
+      "changed": false
     },
     {
       "id": "cristina-fernandez-de-kirchner",
@@ -172,7 +205,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "summon"
+      "previous": "summon",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "felipe-gonzalez",
@@ -182,7 +217,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "paperwork",
+      "changed": true
     },
     {
       "id": "gabriel-rufian",
@@ -192,7 +229,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "giorgia-meloni",
@@ -202,7 +241,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "escort",
+      "changed": false
     },
     {
       "id": "hillary-clinton",
@@ -212,7 +253,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "paperwork",
+      "changed": true
     },
     {
       "id": "javier-milei",
@@ -222,7 +265,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "joe-biden",
@@ -232,7 +277,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "jose-maria-aznar",
@@ -242,7 +289,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "summon"
+      "previous": "summon",
+      "effect": "summon",
+      "changed": false
     },
     {
       "id": "justin-trudeau",
@@ -252,7 +301,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "fasttrack"
+      "previous": "fasttrack",
+      "effect": "lane",
+      "changed": true
     },
     {
       "id": "kamala-harris",
@@ -262,7 +313,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "microphone",
+      "changed": false
     },
     {
       "id": "marine-le-pen",
@@ -272,7 +325,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "matteo-salvini",
@@ -282,7 +337,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "fasttrack",
+      "changed": true
     },
     {
       "id": "nicolas-maduro",
@@ -292,7 +349,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "shield",
+      "changed": false
     },
     {
       "id": "nigel-farage",
@@ -302,7 +361,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "pablo-iglesias",
@@ -312,7 +373,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "summon"
+      "previous": "summon",
+      "effect": "summon",
+      "changed": false
     },
     {
       "id": "recep-tayyip-erdogan",
@@ -322,7 +385,9 @@
       "zasca": 6,
       "aguante": 8,
       "seats": 4,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "microphone",
+      "changed": true
     },
     {
       "id": "salvador-illa",
@@ -332,7 +397,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "santiago-abascal",
@@ -342,7 +409,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "tongue",
+      "changed": true
     },
     {
       "id": "ursula-von-der-leyen",
@@ -352,7 +421,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "fasttrack"
+      "previous": "fasttrack",
+      "effect": "coffee",
+      "changed": true
     },
     {
       "id": "viktor-orban",
@@ -362,7 +433,9 @@
       "zasca": 5,
       "aguante": 8,
       "seats": 4,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "fasttrack",
+      "changed": true
     },
     {
       "id": "adriana-lastra",
@@ -372,7 +445,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "acta"
+      "previous": "acta",
+      "effect": "acta",
+      "changed": false
     },
     {
       "id": "albert-rivera",
@@ -382,7 +457,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "acta"
+      "previous": "acta",
+      "effect": "acta",
+      "changed": false
     },
     {
       "id": "alberto-garzon",
@@ -392,7 +469,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "ana-botella",
@@ -402,7 +481,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "fasttrack",
+      "changed": true
     },
     {
       "id": "anna-gabriel",
@@ -412,7 +493,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "paperwork"
+      "previous": "paperwork",
+      "effect": "paperwork",
+      "changed": false
     },
     {
       "id": "begona-villacis",
@@ -422,7 +505,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "paperwork"
+      "previous": "paperwork",
+      "effect": "paperwork",
+      "changed": false
     },
     {
       "id": "cayetana-alvarez-de-toledo",
@@ -432,7 +517,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "cristina-cifuentes",
@@ -442,7 +529,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "cristobal-montoro",
@@ -452,7 +541,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "dolores-de-cospedal",
@@ -462,7 +553,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "summon",
+      "changed": true
     },
     {
       "id": "edmundo-bal",
@@ -472,7 +565,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "lane",
+      "changed": true
     },
     {
       "id": "esperanza-aguirre",
@@ -482,7 +577,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "lane",
+      "changed": true
     },
     {
       "id": "ines-arrimadas",
@@ -492,7 +589,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "inigo-errejon",
@@ -502,7 +601,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "irene-montero",
@@ -512,7 +613,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "paperwork",
+      "changed": true
     },
     {
       "id": "isabel-cela",
@@ -522,7 +625,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "jordi-turull",
@@ -532,7 +637,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "jorge-fernandez-diaz",
@@ -542,7 +649,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "acta",
+      "changed": true
     },
     {
       "id": "jose-luis-rodriguez-zapatero",
@@ -552,7 +661,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "acta",
+      "changed": true
     },
     {
       "id": "jose-manuel-garcia-margallo",
@@ -562,7 +673,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "escort"
+      "previous": "escort",
+      "effect": "acta",
+      "changed": true
     },
     {
       "id": "julio-anguita",
@@ -572,7 +685,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "laura-borras",
@@ -582,7 +697,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "lane",
+      "changed": false
     },
     {
       "id": "luis-de-guindos",
@@ -592,7 +709,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "shield",
+      "changed": false
     },
     {
       "id": "maria-jesus-montero",
@@ -602,7 +721,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "shield",
+      "changed": false
     },
     {
       "id": "marta-rovira",
@@ -612,7 +733,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "miquel-iceta",
@@ -622,7 +745,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "acta",
+      "changed": true
     },
     {
       "id": "miriam-nogueras",
@@ -632,7 +757,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "fasttrack",
+      "changed": true
     },
     {
       "id": "monica-garcia",
@@ -642,7 +769,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "summon",
+      "changed": true
     },
     {
       "id": "nadia-calvino",
@@ -652,7 +781,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "oriol-junqueras",
@@ -662,7 +793,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "pablo-casado",
@@ -672,7 +805,9 @@
       "zasca": 4,
       "aguante": 6,
       "seats": 3,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "pablo-echenique",
@@ -682,7 +817,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "pilar-alegria",
@@ -692,7 +829,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "fasttrack",
+      "changed": true
     },
     {
       "id": "rocio-monasterio",
@@ -702,7 +841,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "coffee",
+      "changed": false
     },
     {
       "id": "sara-gimenez",
@@ -712,7 +853,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "shield"
+      "previous": "shield",
+      "effect": "summon",
+      "changed": true
     },
     {
       "id": "soraya-saenz-de-santamaria",
@@ -722,7 +865,9 @@
       "zasca": 4,
       "aguante": 7,
       "seats": 3,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "coffee",
+      "changed": false
     },
     {
       "id": "alfonso-alonso",
@@ -732,7 +877,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "alvaro-nadal",
@@ -742,7 +889,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "ana-pastor",
@@ -752,7 +901,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "andrea-levy",
@@ -762,7 +913,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "antonio-maillo",
@@ -772,7 +925,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "acta"
+      "previous": "acta",
+      "effect": "acta",
+      "changed": false
     },
     {
       "id": "borja-semper",
@@ -782,7 +937,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "carlos-floriano",
@@ -792,7 +949,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "acta"
+      "previous": "acta",
+      "effect": "acta",
+      "changed": false
     },
     {
       "id": "carme-forcadell",
@@ -802,7 +961,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "carmen-calvo",
@@ -812,7 +973,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "celia-villalobos",
@@ -822,7 +985,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "fineprint"
+      "previous": "fineprint",
+      "effect": "fineprint",
+      "changed": false
     },
     {
       "id": "cuca-gamarra",
@@ -832,7 +997,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "microphone",
+      "changed": false
     },
     {
       "id": "dolors-montserrat",
@@ -842,7 +1009,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "elias-bendodo",
@@ -852,7 +1021,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "acta"
+      "previous": "acta",
+      "effect": "acta",
+      "changed": false
     },
     {
       "id": "emiliano-garcia-page",
@@ -862,7 +1033,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "bank"
+      "previous": "bank",
+      "effect": "bank",
+      "changed": false
     },
     {
       "id": "esteban-gonzalez-pons",
@@ -872,7 +1045,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "coffee",
+      "changed": false
     },
     {
       "id": "fatima-banez",
@@ -882,7 +1057,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "fernando-grande-marlaska",
@@ -892,7 +1069,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "acta"
+      "previous": "acta",
+      "effect": "acta",
+      "changed": false
     },
     {
       "id": "inigo-mendez-de-vigo",
@@ -902,7 +1081,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "microphone",
+      "changed": false
     },
     {
       "id": "isabel-garcia-tejerina",
@@ -912,7 +1093,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "jaime-de-olano",
@@ -922,7 +1105,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "paperwork"
+      "previous": "paperwork",
+      "effect": "paperwork",
+      "changed": false
     },
     {
       "id": "javier-maroto",
@@ -932,7 +1117,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "jordi-sanchez",
@@ -942,7 +1129,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "jose-luis-abalos",
@@ -952,7 +1141,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "paperwork"
+      "previous": "paperwork",
+      "effect": "paperwork",
+      "changed": false
     },
     {
       "id": "josep-rull",
@@ -962,7 +1153,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "paperwork"
+      "previous": "paperwork",
+      "effect": "paperwork",
+      "changed": false
     },
     {
       "id": "juan-espadas",
@@ -972,7 +1165,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "paperwork"
+      "previous": "paperwork",
+      "effect": "paperwork",
+      "changed": false
     },
     {
       "id": "juan-vicente-herrera",
@@ -982,7 +1177,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "bank",
+      "changed": true
     },
     {
       "id": "marta-lois",
@@ -992,7 +1189,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "marta-rivera-de-la-cruz",
@@ -1002,7 +1201,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "meritxell-batet",
@@ -1012,7 +1213,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "coffee",
+      "changed": false
     },
     {
       "id": "miguel-arias-canete",
@@ -1022,7 +1225,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "nacho-alvarez",
@@ -1032,7 +1237,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "oscar-puente",
@@ -1042,7 +1249,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "pablo-cambronero",
@@ -1052,7 +1261,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "bank"
+      "previous": "bank",
+      "effect": "bank",
+      "changed": false
     },
     {
       "id": "pablo-montesinos",
@@ -1062,7 +1273,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "lane",
+      "changed": false
     },
     {
       "id": "patxi-lopez",
@@ -1072,7 +1285,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "pere-aragones",
@@ -1082,7 +1297,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "microphone"
+      "previous": "microphone",
+      "effect": "shield",
+      "changed": true
     },
     {
       "id": "pilar-llop",
@@ -1092,7 +1309,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "archive"
+      "previous": "archive",
+      "effect": "archive",
+      "changed": false
     },
     {
       "id": "quim-torra",
@@ -1102,7 +1321,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "rafael-catala",
@@ -1112,7 +1333,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "rafael-hernando",
@@ -1122,7 +1345,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "raquel-sanchez",
@@ -1132,7 +1357,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "lane",
+      "changed": false
     },
     {
       "id": "raul-romeva",
@@ -1142,7 +1369,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "bank"
+      "previous": "bank",
+      "effect": "bank",
+      "changed": false
     },
     {
       "id": "reyes-maroto",
@@ -1152,7 +1381,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "roger-torrent",
@@ -1162,7 +1393,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "coffee"
+      "previous": "coffee",
+      "effect": "fineprint",
+      "changed": true
     },
     {
       "id": "susana-diaz",
@@ -1172,7 +1405,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "tongue"
+      "previous": "tongue",
+      "effect": "tongue",
+      "changed": false
     },
     {
       "id": "teodoro-garcia-egea",
@@ -1182,7 +1417,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "lane",
+      "changed": false
     },
     {
       "id": "toni-canto",
@@ -1192,7 +1429,9 @@
       "zasca": 2,
       "aguante": 4,
       "seats": 2,
-      "effect": "surge"
+      "previous": "surge",
+      "effect": "surge",
+      "changed": false
     },
     {
       "id": "toni-comin",
@@ -1202,7 +1441,9 @@
       "zasca": 2,
       "aguante": 5,
       "seats": 2,
-      "effect": "lane"
+      "previous": "lane",
+      "effect": "lane",
+      "changed": false
     }
   ]
 }

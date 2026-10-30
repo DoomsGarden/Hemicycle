@@ -75,8 +75,9 @@
 <script src="js/battle-rules.js?v=31.0.2.6"></script>
 <script src="js/basic-effects-v1.js?v=31.0.2.8-wave2"></script>
 <script src="js/basic-effects-v2.js?v=31.0.2.8-states1"></script>
-<script src="js/basic-effects.js?v=31.0.2.8-states1"></script>
-<script src="js/basic-ability-preview.js?v=31.0.2.8-guide1"></script>
+<script src="js/basic-effects-v3.js?v=31.0.2.9"></script>
+<script src="js/basic-effects.js?v=31.0.2.9"></script>
+<script src="js/basic-ability-preview.js?v=31.0.2.9"></script>
 <script src="js/battle-status.js?v=31.0.2.8-wave2"></script>
 <script src="js/battle-actions-ui.js?v=31.0.2.8-wave2"></script>
 <script src="js/battle-visuals.js?v=31.0.2.8-phrases1"></script>
@@ -104,7 +105,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.8-guide1"></script>
+<script src="js/changelog.js?v=31.0.2.9"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -120,9 +121,11 @@
 <script>window.HemicycleOfflineRulesV5=window.HemicycleOfflineRules;</script>
 <script src="js/offline-rules-v6.js?v=31.0.2.8-states1"></script>
 <script>window.HemicycleOfflineRulesV6=window.HemicycleOfflineRules;</script>
-<script src="js/offline-rule-dispatch.js?v=31.0.2.8-states1"></script>
-<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4,offline5:HemicycleOfflineRulesV5,offline6:HemicycleOfflineRulesV6});</script>
-<script src="js/offline-combat.js?v=31.0.2.8-states1"></script>
+<script src="js/offline-rules-v7.js?v=31.0.2.9"></script>
+<script>window.HemicycleOfflineRulesV7=window.HemicycleOfflineRules;</script>
+<script src="js/offline-rule-dispatch.js?v=31.0.2.9"></script>
+<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline1:HemicycleOfflineRulesV1,offline2:HemicycleOfflineRulesV2,offline3:HemicycleOfflineRulesV3,offline4:HemicycleOfflineRulesV4,offline5:HemicycleOfflineRulesV5,offline6:HemicycleOfflineRulesV6,offline7:HemicycleOfflineRulesV7});</script>
+<script src="js/offline-combat.js?v=31.0.2.9"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
@@ -136,7 +139,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.8';
+var VERSION='v31.0.2.9';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1330,7 +1333,7 @@ SCREENS.detalle=function(){
 };
 
 function basicAbilityHTML(c){var id=HemicycleBasicEffects.ability(c.id),def=HemicycleBasicEffects.definition(id);return '<section class="basic-ability-detail" data-basic-ability="'+(id||'none')+'"><h3>'+(def?HemicycleBasicEffects.symbol(id)+esc(def.name):'Sin habilidad adicional')+'</h3>'+(def?'<p>'+esc(HemicycleBasicAbilityPreview.detail(id))+'</p>':'')+'</section>';}
-function basicAbilityHelpHTML(){return '<div class="panel"><h3>Habilidades del básico</h3><p class="sub">Los oradores tienen una habilidad que se activa al causar daño con un ataque básico a otro orador. El fuerte, las acciones y atacar huecos no lo activan. La ficha de Colección muestra el efecto propio de cada cromo.</p><p class="sub"><b>Un estado básico por orador:</b> un estado negativo aplicado al rival sustituye su estado positivo. Los beneficios propios no limpian estados del rival. No se acumulan efectos ni se renueva o sustituye un negativo que siga activo; cada estado conserva su consumo y caducidad. La habilidad puede activarse <b>una vez cada dos turnos propios</b>. Los efectos inmediatos de robo y recuperación ocupan la plaza hasta cerrar ese turno. Ventanilla rápida tiene además un límite de una activación por jugador y partida; si hay dos acciones elegibles, escoge una al azar. Si el estado no puede aplicarse, el intento no gasta su recuperación.</p><p class="sub">El icono aparece en el afectado; tócalo para consultar su duración. Los pulsos ocurren al comienzo de sus turnos propios, antes de sumar votos. La defensa, los apoyos y las doctrinas existentes funcionan aparte.</p><details class="basic-ability-examples"><summary>Cómo funcionan las 14 habilidades</summary><p class="sub">Ejemplos sin bonificaciones de líder, doctrinas ni otros estados, salvo cuando se indican. Cada habilidad mantiene sus condiciones de activación y recuperación.</p>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id);return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+'</h4><p class="sub">'+esc(HemicycleBasicAbilityPreview.detail(id))+'</p><p class="sub"><b>Ejemplo:</b> '+esc(HemicycleBasicAbilityPreview.example(id))+'</p></section>';}).join('')+'</details><details class="basic-ability-roster"><summary>Oradores por habilidad · '+Object.keys(HemicycleBasicEffects.assignments).length+'</summary>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id),names=CARDS.filter(function(c){return HemicycleBasicEffects.ability(c.id)===id;}).sort(function(a,b){return a.n.localeCompare(b.n,'es');}).map(function(c){return c.n;});return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+' · '+names.length+'</h4><p class="sub">'+esc(names.join(', '))+'.</p></section>';}).join('')+'<p class="sub">Las asignaciones responden a su función de juego; no describen a las personas representadas.</p></details></div>';}
+function basicAbilityHelpHTML(){return '<div class="panel"><h3>Habilidades del básico</h3><p class="sub">Los oradores tienen una habilidad que se activa al causar daño con un ataque básico a otro orador. El fuerte, las acciones y atacar huecos no lo activan. La ficha de Colección muestra el efecto propio de cada cromo.</p><p class="sub"><b>Un estado básico por orador:</b> un estado negativo aplicado al rival sustituye su estado positivo. Los beneficios propios no limpian estados del rival. No se acumulan efectos ni se renueva o sustituye un negativo que siga activo; cada estado conserva su consumo y caducidad. La habilidad puede activarse <b>una vez cada dos turnos propios</b>. Los efectos inmediatos de robo y recuperación ocupan la plaza hasta cerrar ese turno. Ventanilla rápida y Llamada al suplente tienen cada una un límite compartido de una activación por turno propio y jugador. Ventanilla elige al azar entre las acciones elegibles; Llamada roba el orador de menor coste del mazo, de cualquier rareza, si hay hueco en mano. No lo presenta gratis. La mano se renueva al comenzar cada turno: aprovecha el robo durante este turno. Si el estado no puede aplicarse, el intento no gasta su recuperación.</p><p class="sub">El icono aparece en el afectado; tócalo para consultar su duración. Los pulsos ocurren al comienzo de sus turnos propios, antes de sumar votos. La defensa, los apoyos y las doctrinas existentes funcionan aparte.</p><details class="basic-ability-examples"><summary>Cómo funcionan las 14 habilidades</summary><p class="sub">Ejemplos sin bonificaciones de líder, doctrinas ni otros estados, salvo cuando se indican. Cada habilidad mantiene sus condiciones de activación y recuperación.</p>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id);return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+'</h4><p class="sub">'+esc(HemicycleBasicAbilityPreview.detail(id))+'</p><p class="sub"><b>Ejemplo:</b> '+esc(HemicycleBasicAbilityPreview.example(id))+'</p></section>';}).join('')+'</details><details class="basic-ability-roster"><summary>Oradores por habilidad · '+Object.keys(HemicycleBasicEffects.assignments).length+'</summary>'+Object.keys(HemicycleBasicEffects.definitions).map(function(id){var def=HemicycleBasicEffects.definition(id),names=CARDS.filter(function(c){return HemicycleBasicEffects.ability(c.id)===id;}).sort(function(a,b){return a.n.localeCompare(b.n,'es');}).map(function(c){return c.n;});return '<section><h4>'+HemicycleBasicEffects.symbol(id)+esc(def.name)+' · '+names.length+'</h4><p class="sub">'+esc(names.join(', '))+'.</p></section>';}).join('')+'<p class="sub">Las asignaciones responden a su función de juego; no describen a las personas representadas.</p></details></div>';}
 
 function editionBadges(c,d){
  var badges='';
@@ -1643,7 +1646,7 @@ function log(t,cls){if(!G)return;var type=/recupera|curación/.test(t)?'heal':/d
 function doc(s){var l=G.leader[s];if(!l)return null;for(var i=0;i<G.field[s].length;i++)if(G.field[s][i].uid===l.uid)return l.pa;return null;}
 function activeDoc(s){var own=doc(s),foe=doc(s==='p'?'e':'p');return own&&(!foe||DOCM[foe].beats!==own)?own:null;}
 function basicRules(){return HemicycleBasicEffects.forVersion(G.effectsVersion);}
-function basicTeam(side){return {field:G.field[side],hand:G.hand[side],deck:G.deck[side],turn:G.turns[side],fasttrackUsed:!!(G.fasttrackUsed&&G.fasttrackUsed[side])};}
+function basicTeam(side){return {field:G.field[side],hand:G.hand[side],deck:G.deck[side],turn:G.turns[side],fasttrackUsed:!!(G.fasttrackUsed&&G.fasttrackUsed[side]),fasttrackUsedTurn:G.fasttrackUsedTurn&&G.fasttrackUsedTurn[side],summonUsedTurn:G.summonUsedTurn&&G.summonUsedTurn[side]};}
 function basicSupportCost(side,card){return G.effectsVersion===HemicycleBasicEffects.version?HemicycleBasicEffects.supportCost(card,G.turns[side]):0;}
 function battleCanEmpty(side,card,variant){return variant==='strong'||G.effectsVersion!==HemicycleBasicEffects.version||HemicycleBasicEffects.canEmpty(card,G.turns[side]);}
 function battleZasca(s,c){if(G.authoritative)return c.a;return c.a+(activeDoc(s)==='guardia'?(c.buff||0):0)+(c.actionBuffs||[]).filter(function(b){return b.until>=(G.turns?G.turns[s]:0);}).reduce(function(n,b){return n+b.value;},0);}
@@ -1896,7 +1899,7 @@ function attack(atk,tgt,owner,variant){
  if(tgt.h<=0)expel(owner,tgt,atk,foeDoc);
  if(checkBattleEnd())return;
  if(atk.h<=0)expel(foe,atk,null,ownerDoc);
- if(!G.over&&variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version){var team=basicTeam(owner),effect=HemicycleBasicEffects.afterHit(atk,tgt,{damage:received,attackerHealth:atk.h,targetHealth:tgt.h,ownTurn:G.turns[owner],rivalTurn:G.turns[foe],source:owner,team:team,actions:HemicycleActions.byId,random:Math.random});if(team.fasttrackUsed){if(!G.fasttrackUsed)G.fasttrackUsed={};G.fasttrackUsed[owner]=true;}if(effect){log(effect.card.n+': '+HemicycleBasicEffects.definition(effect.id).name+(effect.utility?' · '+effect.utility.name:'')+'.');battleVisual('basic-state',{uid:effect.card.uid,effect:effect.id});}}
+ if(!G.over&&variant==='normal'&&G.effectsVersion===HemicycleBasicEffects.version){var team=basicTeam(owner),effect=HemicycleBasicEffects.afterHit(atk,tgt,{damage:received,attackerHealth:atk.h,targetHealth:tgt.h,ownTurn:G.turns[owner],rivalTurn:G.turns[foe],source:owner,team:team,actions:HemicycleActions.byId,random:Math.random});['fasttrackUsedTurn','summonUsedTurn'].forEach(function(key){if(team[key]!==undefined){if(!G[key])G[key]={};G[key][owner]=team[key];}});if(effect){log(effect.card.n+': '+HemicycleBasicEffects.definition(effect.id).name+(effect.utility?' · '+effect.utility.name:'')+'.');battleVisual('basic-state',{uid:effect.card.uid,effect:effect.id});}}
  return true;
 }
 
@@ -2114,7 +2117,7 @@ function choosePlayerAction(kind){
  if(checkBattleEnd()||G.side!=='p'||G.networkBusy)return false;
  var card=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  if(!card||!card.ready){G.sel=null;G.move=null;G.support=false;paint();return false;}
- if(kind==='ability-info'){var info=HemicycleBasicAbilityPreview.describe(G,'p',card);if(!info.id)return false;showModal(info.name,'<p>'+esc(HemicycleBasicAbilityPreview.detail(info.id))+'</p><p class="sub">'+esc(info.availability)+'</p>','Cerrar',false,null,true);return true;}
+ if(kind==='ability-info'){var info=HemicycleBasicAbilityPreview.describe(G,'p',card);if(!info.id)return false;showModal(info.name,'<p>'+esc(HemicycleBasicAbilityPreview.detail(info.id,G.effectsVersion))+'</p><p class="sub">'+esc(info.availability)+'</p>','Cerrar',false,null,true);return true;}
  if(kind==='cancel'){G.sel=null;G.move=null;G.support=false;}
  else if(kind==='back'){G.support=false;}
  else if(kind==='support'){G.support=false;G.move=null;}
@@ -2193,11 +2196,11 @@ function receiveRemoteBattle(snapshot,controls){
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();
- G={effectsVersion:snapshot.effectsVersion||null,authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,coinFace:snapshot.first===0?'Cara':'Cruz',rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',downloaded:!!snapshot.offline,legacyRules:snapshot.ruleset!=='actions2',actionRecovery:own.actionRecovery||[],rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
+ G={effectsVersion:snapshot.effectsVersion||null,authoritative:true,remoteId:controls.id,remoteRevision:snapshot.revision,coinFace:snapshot.first===0?'Cara':'Cruz',rankedStartElo:previous?previous.rankedStartElo:(snapshot.status!=='finished'&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo:null),networkBusy:!!controls.busy,tutorial:false,mode:snapshot.mode,quick:snapshot.mode==='rapida',downloaded:!!snapshot.offline,legacyRules:snapshot.ruleset!=='actions2',actionRecovery:own.actionRecovery||[],basicUtilityReady:own.basicUtilityReady||null,rival:snapshot.opponentKind==='ai'?'Bancada de la IA':'Rival online',opponentKind:snapshot.opponentKind,
   over:snapshot.status==='finished',done:snapshot.status==='finished',n:own.turn+enemy.turn,side:snapshot.side===snapshot.you?'p':'e',first:snapshot.first===snapshot.you?'p':'e',turns:{p:own.turn,e:enemy.turn},turnDeadline:snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null,
   pTeam:own.cabinetIds||Array.from(new Set(hand.concat(pf,rest).filter(function(c){return !c.action;}).map(function(c){return c.k;}))),eTeam:[],field:{p:pf,e:ef},hand:{p:hand,e:[]},deck:{p:new Array(own.deckCount||0),e:new Array(enemy.deckCount||0)},pas:{p:rest,e:(enemy.rest||[]).map(convert)},
   leader:{p:leader(own,pf.concat(hand,rest)),e:leader(enemy,ef)},votes:{p:own.votes,e:enemy.votes},tdp:{p:own.tdp,e:enemy.tdp},tdpMax:{p:own.tdpMax,e:enemy.tdpMax},refund:{p:0,e:0},saved:{},
-  fasttrackUsed:{p:!!own.fasttrackUsed,e:!!enemy.fasttrackUsed},emptyVotesTaken:{p:own.emptyVotesTaken||0,e:enemy.emptyVotesTaken||0},actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
+  fasttrackUsed:{p:!!own.fasttrackUsed,e:!!enemy.fasttrackUsed},fasttrackUsedTurn:{p:own.fasttrackUsedTurn,e:enemy.fasttrackUsedTurn},summonUsedTurn:{p:own.summonUsedTurn,e:enemy.summonUsedTurn},emptyVotesTaken:{p:own.emptyVotesTaken||0,e:enemy.emptyVotesTaken||0},actionUsed:{p:own.actionUsedTurn,e:enemy.actionUsedTurn},spentActions:{p:(own.actionDiscard||[]).map(convert),e:(enemy.actionDiscard||[]).map(convert)},pendingSilence:{p:own.pendingSilence,e:enemy.pendingSilence},silenceImmune:{p:own.silenceImmuneThrough,e:enemy.silenceImmuneThrough},
   log:(snapshot.events||[]).slice().reverse().map(function(text){return '<div class="log-line'+(text.indexOf(' activa ')>=0?' action-event':'')+'">'+esc(text)+'</div>';}),sel:same?previous.sel:null,move:same?previous.move:null,support:same?previous.support:false};
  // Keep one game object per match: audio uses its identity to continue the score.
  if(previous){Object.assign(previous,G);G=previous;}

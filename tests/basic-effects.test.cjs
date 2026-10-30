@@ -4,7 +4,7 @@ const keys=Object.keys(B.definitions),base=id=>C.cards.find(c=>c.id===id);
 const {fixture}=require('./helpers/basic-effects-fixture.cjs');
 test('all 120 speakers retain approved stats; all have exactly one ability; all marked high-cost cards are covered',()=>{
  a.equal(Object.keys(B.assignments).length,120);for(const id of Object.keys(B.assignments)){a.ok(base(id));a.ok(B.definition(B.ability(id)));}
- a.equal(C.cards.filter(c=>!B.ability(c.id)).length,0);const old=require('../js/basic-effects-v1.js');for(const [id,effect]of Object.entries(old.assignments))a.equal(B.ability(id),effect);
+ a.equal(C.cards.filter(c=>!B.ability(c.id)).length,0);const draft=require('../_dev/balance/drafts/ability-reassignment-v1.cjs');a.deepEqual(B.assignments,draft.assignments);
  for(const c of require('../_dev/balance/pending-utility.json').cards)a.ok(B.ability(c.id),c.id);
 });
 for(const first of keys)for(const second of keys)test(first+' followed by '+second+' obeys one slot and negative priority',()=>{const card={};a.equal(B.grant(card,first,2,0),true);const saved=structuredClone(card.basicStatus),replaces=B.definition(first).polarity==='positive'&&B.definition(second).polarity==='negative';a.equal(B.grant(card,second,3,1),replaces);if(replaces){a.equal(card.basicStatus.id,second);a.equal(card.basicStatus.appliedTurn,3);a.equal(card.basicStatus.source,1);}else a.deepEqual(card.basicStatus,saved);});
