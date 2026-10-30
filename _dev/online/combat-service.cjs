@@ -20,6 +20,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
     result={...result,...receipt.players[actor]};
    }else result={...result,lootStatus:'legacy'};
   }
+  if(state?.status==='finished'&&state.xpVersion==='xp1'&&Array.isArray(state.xpAwards))result={...result,xp:state.xpAwards[load.side]||0};
   return {...E.project(state||E.initial(load.mode||'normal'),load.side,load.revision,load.now),rankedElo:load.rating,result,opponentKind:load.opponentKind||'player'};
  }
  return async function handle(auth,roomId,command,operationId){
@@ -40,6 +41,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
     if(next.mode==='ranked'&&state.status!=='finished')next.lootVersion=1;
     context=await rpc('hemicycle_combat_context',{p_room_id:roomId,p_actor:actor});
     args.p_progress=context.map((entry,side)=>entry?{userId:entry.userId,revision:entry.revision,...require('./progression.cjs').progress(entry.profile,next,side,load.now)}:null);
+    next.xpVersion='xp1';next.xpAwards=args.p_progress.map(p=>p?p.xpGain:0);
    }
    const ok=await rpc(next.status==='finished'?'hemicycle_combat_commit_progress':'hemicycle_combat_commit',args);
    if(!ok)observe.conflict();

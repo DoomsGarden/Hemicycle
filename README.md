@@ -18,6 +18,13 @@ Forma un gabinete de **cinco oradores**, elige a tu líder y añade hasta **dos 
 
 Hemiciclo está en **prelanzamiento**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
+**Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Esta primera colección está disponible completa. Gana experiencia jugando y reclamando desafíos y logros: los niveles llegan hasta el 500 y son independientes del Elo.
+
+<p align="center">
+  <img src="docs/media/profile-v11/profile.png" alt="Perfil de Hemiciclo con nivel, experiencia y estadísticas" width="32%">
+  <img src="docs/media/profile-v11/editor.png" alt="Editor: seis menús y cuatro elecciones visuales independientes" width="32%">
+</p>
+
 <p align="center">
   <a href="press/google-play/es-ES/02-combate.png"><img src="docs/media/promos/02-combate.jpg" alt="Combates por turnos: consigue 100 votos" width="31%"></a>
   <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg" alt="Colecciona 120 oradores con rasgos y frases propios" width="31%"></a>

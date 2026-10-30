@@ -1,5 +1,6 @@
 'use strict';
 // Pure rules. Only the authenticated service can commit their result to PostgreSQL.
+const XP=require('../../js/progression-xp.js');
 const crypto=require('node:crypto'),{cards,packs}=require('../market/catalog.cjs'),A=require('../../js/action-cards.js'),O=require('../../js/objectives.js'),M=require('../../js/legendary-mastery.js'),R=require('../../js/ranked-seasons.js');
 const catalog=[...cards,...A.cards],byId=Object.fromEntries(catalog.map(c=>[c.id,c])),rules=require('../../js/market-rules.js').create(catalog,packs);
 const random=()=>crypto.randomInt(0,0x100000000)/0x100000000,pick=(list,rng)=>list[Math.floor(rng()*list.length)],check=(condition,message)=>{if(!condition)throw Error(message);};
@@ -14,8 +15,8 @@ function contents(kind,rng=random){
 function starter(identity,now,rng=random){
  check(/^HC-[0-9a-f-]{36}$/i.test(identity||''),'ID no válido.');
  const album=[];for(const [r,n]of [['comun',18],['raro',8],['especial',3],['legendario',1]]){const pool=cards.filter(c=>c.r===r);for(let i=pool.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}for(let i=0;i<n;i++)album.push(pool[i%pool.length].id);}
- const profile={fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};profile.objectives=O.snapshot(profile,cards,now);
- return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v31.0.2.0',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
+ const profile={xp:0,fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};profile.objectives=O.snapshot(profile,cards,now);
+ return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v31.0.2.11',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
 }
 function inventory(profile){return [...profile.album,...profile.actionAlbum||[]];}
 function take(profile,id,quantity){rules.card(id);rules.integer(quantity,'Cantidad');const key=byId[id].action?'actionAlbum':'album',album=profile[key]||[];check(rules.duplicates(album,id)>=quantity,'No hay suficientes repetidos. Conservas siempre una copia.');let remaining=quantity;profile[key]=album.filter(c=>c!==id||remaining--<=0);}
@@ -39,8 +40,8 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   else{me.l++;if(competitive){const candidates=A.lootPool(own.cabinetIds,own.cabinetActions,me);if(candidates.length){lost=pick(candidates,rng);A.removeCopy(me,lost);}}}
   if(state.mode==='ranked'){const delta=win?10+Math.floor(15*Math.min(1,margin/.75)):state.reason==='rendición'||state.reason==='inactividad'?-18:-5-Math.floor(13*margin);me.elo=Math.max(0,me.elo+delta);account(actor).payload.ranked=R.advance(account(actor).payload.ranked,before,me.elo,now);}
   if(state.mode==='liga'){const lg=account(actor).payload.league;check(lg,'Crea una Liga antes de jugarla.');const next=require('./league.cjs').advance(lg,win,rng);account(actor).payload.league=next.league;fs+=next.reward;result.season=!!next.reward;if(result.season){result.leaguePosition=next.position;result.leagueTeams=lg.teams.length;result.seasonFS=next.reward;}}
-  credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
-  result={...result,win,mode:state.mode,fs,eloBefore:before,eloAfter:me.elo,eloDelta:me.elo-before,won,lost,votes:own.votes,enemyVotes:foe.votes};
+  const xp=XP.add(me,XP.match(state.mode,win,state.reason));credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
+  result={...result,win,mode:state.mode,fs,xp,eloBefore:before,eloAfter:me.elo,eloDelta:me.elo-before,won,lost,votes:own.votes,enemyVotes:foe.votes};
   require('./battle-history.cjs').record(market,actor,{...result,balance:require('./battle-history.cjs').context(state,0),opponentKind:'ai',firstWasSelf:state.first===0,ownTurns:own.turn,opponentTurns:foe.turn,ruleset:state.ruleset,resultId:'offline:'+ticket.id},now);
  }else if(type==='league-create'){check(!account(actor).payload.league,'Ya tienes una Liga activa.');account(actor).payload.league=require('./league.cjs').create(3,1,rng);changed.add(actor);
  }else if(type==='league-abandon'){account(actor).payload.league=null;changed.add(actor);
@@ -53,7 +54,7 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   const backup=account(actor).payload;let reward;
   if(command.view==='ranked'){const claim=R.claim(backup.ranked,command.id);backup.ranked=claim.state;reward=claim.reward;}
   else{check(['challenges','achievements'].includes(command.view),'Recompensa no válida.');const claim=command.view==='challenges'?O.claim(me,command.id,now):O.claimAchievement(me,cards,command.id,command.step,now);me.objectives=claim.state;reward=claim.reward;if(claim.leader&&M.eligible(claim.leader))me.leaderMastery=M.claim(me,claim.leader);}
-  if(reward.fs)credit(me,reward.fs);if(reward.kind){result={kind:reward.kind,packs:[contents(reward.kind,rng)]};A.award(me,result.packs[0]);}changed.add(actor);
+  if(reward.fs)credit(me,reward.fs);if(reward.xp)result.xp=XP.add(me,reward.xp);if(reward.kind){result={kind:reward.kind,packs:[contents(reward.kind,rng)]};A.award(me,result.packs[0]);}changed.add(actor);
  }else if(type==='machine'){const quote=rules.sale(command.id,command.quantity,'machine');take(touch(actor),command.id,command.quantity);credit(me,quote.total);receipt(actor,'machine',{cardId:command.id,quantity:command.quantity,total:quote.total});result=quote;
  }else if(type==='visibility'){
   check(typeof command.visible==='boolean','Estado no válido.');let p=market.players.find(p=>p.id===actor);if(!p){p={id:actor};market.players.push(p);}p.visible=command.visible;

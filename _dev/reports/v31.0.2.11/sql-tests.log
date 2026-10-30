@@ -1,0 +1,12 @@
+✔ XP migration is idempotent and online wins/losses commit XP exactly once (1183.753946ms)
+✔ competitive XP and the cap agree with the shared curve (1007.691927ms)
+✔ cosmetics save independently, replay safely, preserve XP and cannot mutate resources (1131.068462ms)
+✔ stale settlement retries before awarding XP, and authenticated clients cannot invoke the settlement (936.755245ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 4448.591233

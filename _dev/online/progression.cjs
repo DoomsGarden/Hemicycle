@@ -1,4 +1,5 @@
 'use strict';
+const XP=require('../../js/progression-xp.js');
 const Objectives=require('../../js/objectives.js'),Mastery=require('../../js/legendary-mastery.js'),{cards}=require('../market/catalog.cjs');
 function appearance(profile,id){
  const gold=id==='donald-trump'&&profile?.dtGoldUnlocked===true&&profile.dtGoldActive===true;
@@ -12,6 +13,7 @@ function progress(profile,state,side,now){
  updated.objectives=Objectives.snapshot(updated,cards,now);
  if(win&&Mastery.eligible(leader))updated.leaderMastery=Mastery.recordWin(updated,leader);
  const dtWins=(profile.dtWins||0)+(win&&state.mode==='ranked'&&leader==='donald-trump'?1:0);
- return {objectives:updated.objectives,leaderMastery:updated.leaderMastery||null,dtWins,dtGoldUnlocked:!!profile.dtGoldUnlocked||dtWins>=10};
+ const xpGain=XP.add(updated,XP.match(state.mode,win,state.reason));
+ return {xp:updated.xp,xpGain,objectives:updated.objectives,leaderMastery:updated.leaderMastery||null,dtWins,dtGoldUnlocked:!!profile.dtGoldUnlocked||dtWins>=10};
 }
 module.exports={appearance,progress};

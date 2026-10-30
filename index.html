@@ -57,7 +57,7 @@
 <link rel="stylesheet" href="css/legal.css?v=31.0.2.5-legal1">
 <script src="js/legal-documents.js?v=31.0.2.6-sources1"></script>
 <script src="js/legal-ui.js?v=31.0.2.6-sources1"></script>
-<script src="js/player-profile.js?v=31.0.2.5-legal1"></script>
+<script src="js/player-profile.js?v=31.0.2.11"></script>
 <script src="js/cloud-save.js?v=31.0.2.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/operation-status.js?v=31.0.2.6"></script><script src="js/online-combat-ui.js?v=31.0.2.5"></script><script src="js/online-ui.js?v=31.0.2.6"></script>
 <script src="js/cloud-ui.js?v=31.0.2.3"></script>
@@ -70,7 +70,7 @@
 <link rel="stylesheet" href="css/menu-navigation.css?v=31.0.2.5-sprites1">
 <script src="js/menu-navigation.js?v=31.0.2.5-swipe1"></script>
 <script src="js/league-rewards.js?v=31.0.2.4-league1"></script>
-<script src="js/coin-toss.js?v=31.0.2.4-relief2"></script>
+<script src="js/coin-toss.js?v=31.0.2.11"></script>
 <script src="js/battle-tips.js?v=31.0.2.8-targets1"></script>
 <script src="js/battle-rules.js?v=31.0.2.6"></script>
 <script src="js/basic-effects-v1.js?v=31.0.2.8-wave2"></script>
@@ -89,13 +89,13 @@
 <script src="js/tactical-practice.js?v=31.0.2.10"></script>
 <script src="js/battle-tutorial.js?v=31.0.2.8-phrases1"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
-<script src="js/objectives.js?v=31.0.1.2-ui2"></script>
+<script src="js/objectives.js?v=31.0.2.11"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
 <script src="js/market-tutorial.js?v=31.0.2.4-market2"></script>
 <script src="js/balance-review.js?v=31.0.2.10"></script>
 <script src="js/battle-history-ui.js?v=31.0.2.10"></script>
 <script src="js/result-tally.js?v=31.0.2.2"></script>
-<script src="js/menu-tutorial.js?v=31.0.2.6"></script>
+<script src="js/menu-tutorial.js?v=31.0.2.11"></script>
 <link rel="stylesheet" href="css/objectives.css?v=31.0.2.3-reading1">
 <link rel="preload" href="fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="css/ui-polish.css?v=31.0.2.3-reading1">
@@ -106,13 +106,15 @@
 <script src="js/action-cards.js?v=31.0.2.3-actions2"></script>
 <script src="js/cabinet-analysis.js?v=31.0.2.10"></script>
 <script src="js/strategy-ui.js?v=31.0.2.10"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-reading1">
-<script src="js/player-backup.js?v=31.0.2.0"></script>
+<script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=31.0.2.11"></script><script src="js/cosmetic-ui.js?v=31.0.2.11"></script>
+<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11">
+<script src="js/player-backup.js?v=31.0.2.11"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.10-results1"></script>
+<script src="js/changelog.js?v=31.0.2.11"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.10-results1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -135,7 +137,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.10';
+var VERSION='v31.0.2.11';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -907,20 +909,21 @@ function openObjectives(view,tab,restore){var previouslyOpen=!!document.querySel
  function pendingSection(section){if(view==='achievements')return a.achievements(d,CARDS).some(function(x){return x.section===section&&a.achievementStage(d,x,s).pending!==null;});return Object.values(s.periods).concat(s.archive).filter(function(p){return p.type===section;}).some(function(p){return a.quests(p.type,p.key,p.limits).some(function(q){return a.metric(p,q.metric)>=q.target&&p.claimed.indexOf(q.id)<0;})||a.rewards(p.type).some(function(r){return a.completed(p)>=r.at&&p.claimed.indexOf('bar'+r.at)<0;});});}
  html+='<nav class="objective-tabs '+(view==='challenges'?'period-tabs':'achievement-tabs')+'" aria-label="Secciones">'+sections.map(function(t,i){var pending=pendingSection(t),label=view==='challenges'?a.labels[i]:t;return '<button aria-label="'+esc(label)+(pending?' · Recompensas sin reclamar':'')+'" class="mini '+(t===tab?'on':'')+'" data-act="objective-tab" data-view="'+view+'" data-tab="'+esc(t)+'" aria-pressed="'+(t===tab)+'" title="'+esc(view==='challenges'?a.labels[i]:t)+'">'+esc(view==='challenges'?a.labels[i]:t==='Gabinetes y doctrinas'?'Gabinetes':t)+(pending?'<i class="objective-tab-dot" aria-hidden="true"></i>':'')+'</button>';}).join('')+'</nav><div class="objectives" data-objective-view="'+view+'" data-objective-tab="'+esc(tab)+'">';
  function bar(value,max,segments){if(segments)return '<div class="objective-segments" role="progressbar" aria-label="Misiones completadas" aria-valuenow="'+Math.min(value,max)+'" aria-valuemin="0" aria-valuemax="'+max+'" style="--segments:'+max+'">'+Array.from({length:max},function(_,i){return '<i class="'+(i<value?'complete':'')+'"></i>';}).join('')+'</div><small>'+value+' / '+max+'</small>';return '<progress max="'+max+'" value="'+Math.min(max,value)+'" aria-label="'+value+' de '+max+'"></progress><small>'+value+' / '+max+'</small>';}
+ function dualReward(fs,xp){return '<span class="objective-dual">'+(fs?'<span>'+fs+' FS</span>':'')+(xp?'<span>'+xp+' XP</span>':'')+'</span>';}
  function claim(id,label,done,ready,extra){return '<button class="btn sm objective-reward '+(done?'is-claimed':ready?'is-ready':'is-locked')+'" data-act="objective-claim" data-view="'+view+'" data-id="'+esc(id)+'" '+(extra||'')+(!ready||done?' disabled':'')+'>'+(done?'Reclamado':label)+'</button>';}
  if(view==='challenges'){
  html+='<p class="sub">Calendario de Madrid · reinicio diario, lunes y primer día del mes. Las recompensas ganadas se conservan.</p>';
  [s.periods[tab]].concat(s.archive.filter(function(p){return p.type===tab;})).forEach(function(p,index){var qs=a.quests(p.type,p.key,p.limits),done=a.completed(p),prefix=p.type+'/'+p.key+'/';html+='<section class="objective-period" tabindex="-1"><h4>'+(index?'Recompensas anteriores · ':'Periodo · ')+esc(p.key)+'</h4>'+bar(done,qs.length,true)+'<div class="objective-rewards">'+a.rewards(p.type).map(function(r){return '<div>'+packArt(r.kind)+'<b>'+r.at+' / '+qs.length+'</b>'+claim(prefix+'bar'+r.at,'Reclamar sobre',p.claimed.indexOf('bar'+r.at)>=0,done>=r.at)+'</div>';}).join('')+'</div>';
- qs.forEach(function(q){var value=a.metric(p,q.metric),claimed=p.claimed.indexOf(q.id)>=0;if(index&&(claimed||value<q.target))return;html+='<article class="objective-row" tabindex="-1"><span class="pill">'+['Fácil','Normal','Difícil','Rara'][q.difficulty]+'</span><h4>'+esc(q.title)+'</h4><div class="achievement-summary"><div class="achievement-meter">'+bar(value,q.target)+'</div>'+claim(prefix+q.id,q.fs+' FS',claimed,value>=q.target)+'</div></article>';});html+='</section>';});
+ qs.forEach(function(q){var value=a.metric(p,q.metric),claimed=p.claimed.indexOf(q.id)>=0;if(index&&(claimed||value<q.target))return;html+='<article class="objective-row" tabindex="-1"><span class="pill">'+['Fácil','Normal','Difícil','Rara'][q.difficulty]+'</span><h4>'+esc(q.title)+'</h4><div class="achievement-summary"><div class="achievement-meter">'+bar(value,q.target)+'</div>'+claim(prefix+q.id,dualReward(q.fs,q.xp),claimed,value>=q.target)+'</div></article>';});html+='</section>';});
  }else{a.achievements(d,CARDS).filter(function(x){return x.section===tab;}).forEach(function(x){
   var stage=a.achievementStage(d,x,s),step=stage.pending===null?stage.claimed:stage.pending;
   html+='<article class="objective-row achievement-row" tabindex="-1"><h4>'+esc(x.title)+'</h4><div class="achievement-summary"><div class="achievement-meter">'+bar(Math.min(x.value,stage.target),stage.target)+'</div>'
-   +(step===null?'':claim(x.id,'Reclamar',stage.pending===null,true,'data-step="'+step+'" aria-label="'+esc((stage.pending===null?'Reclamado':'Reclamar')+' · '+x.title+' · hito '+step)+'"'))+'</div></article>';
+   +(step===null?'':claim(x.id,(function(){var r=a.achievementReward(CARDS,x.id,step);return r.fs||r.xp?dualReward(r.fs,r.xp):'Reclamar';})(),stage.pending===null,true,'data-step="'+step+'" aria-label="'+esc((stage.pending===null?'Reclamado':'Reclamar')+' · '+x.title+' · hito '+step)+'"'))+'</div></article>';
  });}
 
  showModal(view==='challenges'?'Desafíos':'Logros',html+'</div>','Cerrar',false,null,true);var cancel=document.querySelector('#modalRoot [data-modal="cancel"]');if(cancel)cancel.hidden=true;var dialog=document.querySelector('#modalRoot .modal');if(dialog){dialog.classList.add('objective-modal');if(previouslyOpen||restore)dialog.style.animation='none';['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=true;});var panel=dialog.querySelector('.objectives'),position=restore||OBJECTIVE_POSITIONS[view+'/'+tab];if(panel&&position)panel.scrollTop=position.top;var selected=dialog.querySelector('.objective-tabs .on');if(restore&&restore.id){var reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id&&el.getAttribute('data-step')===(restore.step||null);});if(!reward&&view==='achievements')reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id;});if(reward)selected=reward.disabled?(reward.closest('.objective-row')||reward.closest('.objective-period')||selected):reward;}if(selected)selected.focus({preventScroll:true});}
 }
-function claimObjective(button){var position=rememberObjectives();if(position){position.id=button.getAttribute('data-id');position.step=button.getAttribute('data-step');}if((MENU_GUIDE&&MENU_GUIDE.active)||(TUTORIAL&&TUTORIAL.active))return;if(typeof verifiedAccount==='function'&&verifiedAccount()){var view=button.getAttribute('data-view');economyTask({type:'claim',view:view,id:button.getAttribute('data-id'),step:Number(button.getAttribute('data-step'))},function(result){closeModal();paint();if(result.packs)go('sobre',{cards:result.packs[0],packs:result.packs,opened:[],packIndex:0,quantity:1,k:result.kind,free:true,objectiveReturn:position});else openObjectives(view,position&&position.tab,position);});return;}var a=HemicycleObjectives,d=JSON.parse(JSON.stringify(D())),view=button.getAttribute('data-view'),id=button.getAttribute('data-id');try{var result=view==='challenges'?a.claim(d,id):a.claimAchievement(d,CARDS,id,Number(button.getAttribute('data-step')));d.objectives=result.state;d.fs+=result.reward.fs||0;if(result.leader&&HemicycleMastery.eligible(result.leader))d.leaderMastery=HemicycleMastery.claim(d,result.leader);var cards=result.reward.kind?packContents(result.reward.kind).map(function(c){return c.id;}):null;if(cards)awardCards(d,cards);d.objectives=a.snapshot(d,CARDS);var values={};values[LS]=d;atomicLocal(values);closeModal();paint();if(cards)go('sobre',{cards:cards,packs:[cards],opened:[],packIndex:0,quantity:1,k:result.reward.kind,free:true,objectiveReturn:position});else openObjectives(view,position&&position.tab,position);}catch(e){closeModal();showModal('No se ha reclamado',e.message,'Volver',false,function(){openObjectives(view,position&&position.tab,position);});}}
+function claimObjective(button){var position=rememberObjectives();if(position){position.id=button.getAttribute('data-id');position.step=button.getAttribute('data-step');}if((MENU_GUIDE&&MENU_GUIDE.active)||(TUTORIAL&&TUTORIAL.active))return;if(typeof verifiedAccount==='function'&&verifiedAccount()){var view=button.getAttribute('data-view');economyTask({type:'claim',view:view,id:button.getAttribute('data-id'),step:Number(button.getAttribute('data-step'))},function(result){closeModal();paint();if(result.packs)go('sobre',{cards:result.packs[0],packs:result.packs,opened:[],packIndex:0,quantity:1,k:result.kind,free:true,objectiveReturn:position});else openObjectives(view,position&&position.tab,position);});return;}var a=HemicycleObjectives,d=JSON.parse(JSON.stringify(D())),view=button.getAttribute('data-view'),id=button.getAttribute('data-id');try{var result=view==='challenges'?a.claim(d,id):a.claimAchievement(d,CARDS,id,Number(button.getAttribute('data-step')));d.objectives=result.state;d.fs+=result.reward.fs||0;if(result.reward.xp&&typeof HemicycleXP!=='undefined')HemicycleXP.add(d,result.reward.xp);if(result.leader&&HemicycleMastery.eligible(result.leader))d.leaderMastery=HemicycleMastery.claim(d,result.leader);var cards=result.reward.kind?packContents(result.reward.kind).map(function(c){return c.id;}):null;if(cards)awardCards(d,cards);d.objectives=a.snapshot(d,CARDS);var values={};values[LS]=d;atomicLocal(values);closeModal();paint();if(cards)go('sobre',{cards:cards,packs:[cards],opened:[],packIndex:0,quantity:1,k:result.reward.kind,free:true,objectiveReturn:position});else openObjectives(view,position&&position.tab,position);}catch(e){closeModal();showModal('No se ha reclamado',e.message,'Volver',false,function(){openObjectives(view,position&&position.tab,position);});}}
 
 function mailButton(){var count=pendingMail().length;return '<button class="mail-button'+(count?' has-mail':'')+'" data-go="buzon" aria-label="Buzón'+(count?': '+count+' recompensas pendientes':': sin recompensas pendientes')+'" title="Buzón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>'+(count?'<span>'+count+'</span>':'')+'</button>';}
 function rankedPanel(){
@@ -929,7 +932,8 @@ function rankedPanel(){
  var nextProgress=p.next===null?'': '<div class="ranked-progress" role="progressbar" aria-label="Progreso a la siguiente subdivisión" aria-valuemin="0" aria-valuemax="'+(p.next-p.start)+'" aria-valuenow="'+p.progress+'"><i style="width:'+Math.min(100,p.progress/(p.next-p.start)*100)+'%"></i></div><p class="sub">Faltan '+(p.next-d.elo)+' Elo para la siguiente subdivisión. Los rangos mantienen sus diez subdivisiones.</p>';
  return '<section class="panel ranked-panel"><h3>Clasificatoria · Temporada '+current.period.id+'</h3><p class="sub"><b>'+esc(p.label)+'</b> · '+d.elo+' Elo'+(p.next===null?' · División máxima':' · Próximo ascenso: '+p.next+' Elo')+'</p>'+nextProgress+'<p class="sub">'+(current.period.frozen?'La temporada 1 permanece abierta durante el prelanzamiento, sin descenso por calendario. La temporada 2 comenzará con el lanzamiento oficial en Google Play.':'Finaliza el '+esc(date)+'. Temporadas de 30 días naturales: al renovarse bajas un rango y conservas tu división, hasta el rango mínimo.')+'</p><p class="sub">Un común por ascenso, un raro adicional cada cinco ascensos y un legendario al subir de rango. Los ascensos repetidos no duplican premios durante la misma temporada.</p><p class="sub">Las recompensas te esperan en el buzón del menú principal, también si cambia la temporada.</p><button class="btn ghost sm" data-go="buzon">Abrir buzón</button></section>';
 }
-function battleTheme(){return D().battleTheme==='marble'?'marble':'classic';}
+function cosmeticMatURL(){var path='assets/cosmetics/mats/'+battleTheme()+'.webp';return typeof document.baseURI==='string'?new URL(path,document.baseURI).href:path;}
+function battleTheme(){return typeof HemicycleCosmetics==='undefined'?(D().battleTheme==='marble'?'marble':'classic'):HemicycleCosmetics.selection(D()).mat;}
 function appearancePanel(){var theme=battleTheme();return '<fieldset class="profile-appearance"><legend>Tu bancada · Gratis en prelanzamiento</legend><button type="button" data-profile="theme" data-theme="classic" aria-pressed="'+(theme==='classic')+'"><i class="theme-swatch classic"></i>Clásico</button><button type="button" data-profile="theme" data-theme="marble" aria-pressed="'+(theme==='marble')+'"><i class="theme-swatch marble"></i>Mármol azul</button></fieldset>';}
 
 function backupPanel(){
@@ -1060,7 +1064,7 @@ function economyTask(command,done){
 }
 function canonicalPreferences(local,remote){
  var next=JSON.parse(JSON.stringify(remote)),p=local.profile,target=next.profile;
- ['cabinets','battleTheme','dtGoldActive'].forEach(function(k){if(p[k]!==undefined)target[k]=p[k];});
+ ['cabinets','battleTheme','cosmetics','dtGoldActive'].forEach(function(k){if(p[k]!==undefined)target[k]=p[k];});
  if(target.leaderMastery&&p.leaderMastery)target.leaderMastery.active=p.leaderMastery.active.filter(function(id){return target.leaderMastery.unlocked.indexOf(id)>=0;});
  target.dtGoldActive=!!target.dtGoldUnlocked&&!!target.dtGoldActive;next.tutorials=local.tutorials;next.exportedAt=local.exportedAt;next.gameVersion=local.gameVersion;return next;
 }
@@ -1078,7 +1082,7 @@ function verifiedResult(receipt,ticketId){
  var won=receipt.win,msg=(won?'Victoria':'Derrota')+' ('+receipt.votes+' a '+receipt.enemyVotes+'). Resultado verificado y guardado.';
  if(receipt.season&&Number.isInteger(receipt.leaguePosition)&&Number.isInteger(receipt.seasonFS))msg+=' Terminas '+receipt.leaguePosition+'º de '+(receipt.leagueTeams||30)+'. Premio de temporada por tu puesto: +'+receipt.seasonFS+' FS.';
  if(receipt.won)msg+=' Consigues el cromo de '+BYID[receipt.won].n+'.';if(receipt.lost)msg+=' Pierdes el cromo de '+BYID[receipt.lost].n+'.';
- return {who:won?'p':'e',votes:receipt.votes,enemyVotes:receipt.enemyVotes,msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,leaguePosition:receipt.leaguePosition,leagueTeams:receipt.leagueTeams,seasonFS:receipt.seasonFS,verified:true,ticketId:ticketId};
+ return {who:won?'p':'e',votes:receipt.votes,enemyVotes:receipt.enemyVotes,msg:msg,mode:receipt.mode,fs:receipt.fs,xp:receipt.xp,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,leaguePosition:receipt.leaguePosition,leagueTeams:receipt.leagueTeams,seasonFS:receipt.seasonFS,verified:true,ticketId:ticketId};
 }
 function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
 async function finishDownloaded(snapshot,ticketId,verification){
@@ -1112,6 +1116,7 @@ function tabbar(){
 }
 
 function paint(){
+ if(typeof HemicycleCosmeticUI!=='undefined')HemicycleCosmeticUI.apply(D());
  if(typeof HemicycleMenuNavigation!=='undefined')HemicycleMenuNavigation.capture();
  if(SCREEN!=='coleccion'&&CABINET_EDIT!==null){CABINET_EDIT=null;loadSelectedCabinet();}
  syncRankedSeason();
@@ -1990,6 +1995,7 @@ function finish(who, abandoned){
   msg='Empate técnico en el hemiciclo ('+G.votes.p+' a '+G.votes.e+'). Recibes 25 FS.';
  }
  if(G.inactivity)msg=(G.inactivity==='p'?'Has abandonado la partida por inactividad al agotarse los '+(G.quick?60:90)+' segundos. ':'El rival ha abandonado la partida por inactividad. ')+msg;
+ var xp=typeof HemicycleXP==='undefined'?0:HemicycleXP.add(d,HemicycleXP.match(G.quick?'rapida':mode,who==='p'?true:who==='e'?false:null,G.inactivity?'inactividad':abandoned?'rendición':null));
  d.fs+=fs;
  d.objectives=HemicycleObjectives.record(d,{win:who==='p',mode:G.quick?'rapida':mode,votes:G.votes.p,enemyVotes:G.votes.e,leader:G.leader&&G.leader.p&&G.leader.p.k,doctrine:G.leader&&G.leader.p&&BYID[G.leader.p.k]&&BYID[G.leader.p.k].pa});
  d.objectives=HemicycleObjectives.snapshot(d,CARDS);
@@ -1998,8 +2004,8 @@ function finish(who, abandoned){
  if(justUnlockedGold){
   showAchievement('¡Logro oculto desbloqueado!','Magnate Dorado: Aspecto dorado de Donald Trump disponible en tu Colección.');
  }
- if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
- go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,eloBefore:oldElo,eloAfter:d.elo,won:won,lost:lost,mode:G.quick?'rapida':mode,reason:G.inactivity?'inactivity':null});
+ if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,xp:xp,won:won,lost:lost});return;}
+ go('result',{who:who,msg:msg,fs:fs,xp:xp,eloDelta:eloDelta,eloBefore:oldElo,eloAfter:d.elo,won:won,lost:lost,mode:G.quick?'rapida':mode,reason:G.inactivity?'inactivity':null});
 }
 function ligaPanel(){
  var lg=ligaLoad();if(!lg)return '';
@@ -2032,6 +2038,7 @@ SCREENS.result=function(){
  if(SO.mode==='ranked'&&Number.isFinite(SO.eloAfter))totals.push('<span>Elo'+(Number.isFinite(SO.eloBefore)?': '+SO.eloBefore+' →':':')+' <b>'+SO.eloAfter+'</b></span>');
  else if(SO.mode==='ranked'&&Number.isFinite(SO.eloDelta))totals.push('<span>Elo: <b>'+(SO.eloDelta>0?'+':'')+SO.eloDelta+'</b></span>');
  if(!SO.rewardsUnavailable&&Number.isFinite(SO.fs))totals.push('<span>FS: <b>'+(SO.fs>=0?'+':'')+SO.fs+'</b></span>');
+ if(Number.isFinite(SO.xp))totals.push('<span>XP: <b>+'+SO.xp+'</b></span>');
  if(totals.length)html+='<p class="result-rating">'+totals.join('<span class="result-metric-separator" aria-hidden="true">·</span>')+'</p>';
  if(SO.rewardsUnavailable)html+='<p class="sub result-legacy">Esta partida no tiene un desglose de FS guardado.</p>';
  html+='<div class="inner-scroll result-details">';if(typeof HemicycleStrategyUI!=='undefined'&&G){var data=G.authoritative?G.insights&&G.insights.p:G.insights&&G.insights.p;html+=HemicycleStrategyUI.result(data);}
@@ -2246,7 +2253,7 @@ function receiveRemoteBattle(snapshot,controls){
   if(G.remoteResultShown)return true;G.remoteResultShown=true;
   closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
   var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
-  var options={who:won?'p':'e',votes:own.votes,enemyVotes:enemy.votes,msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,won:receipt&&receipt.won,lost:receipt&&receipt.lost,lootStatus:receipt&&(receipt.lootStatus||(ranked&&receipt.won===undefined&&receipt.lost===undefined?'legacy':null)),rewardsUnavailable:ranked&&!receipt};
+  var options={who:won?'p':'e',votes:own.votes,enemyVotes:enemy.votes,msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,xp:receipt?receipt.xp:undefined,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,won:receipt&&receipt.won,lost:receipt&&receipt.lost,lootStatus:receipt&&(receipt.lootStatus||(ranked&&receipt.won===undefined&&receipt.lost===undefined?'legacy':null)),rewardsUnavailable:ranked&&!receipt};
   if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(result){if(G===game){if(result.verified)go('result',options);else deferResult(game);}});}else go('result',options);return true;
  }
  if(SCREEN!=='battle')go('battle');else paint();if(!previous&&own.turn+enemy.turn<=2&&typeof HemicycleCoinToss!=='undefined')HemicycleCoinToss.show(controls.id,snapshot.first,snapshot.you);return true;
@@ -2267,7 +2274,7 @@ SCREENS.battle=function(){
  var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&(c.action||G.field.p.length<3)&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
  var modo=G.tutorial?'TUTORIAL':G.quick?'RÁPIDA':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
- return (G.authoritative?'<p id="networkBattleStatus" class="network-battle-status" role="status" hidden></p>':'')+'<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+(G.enemyTheme==='marble'?'marble':'classic')+'"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'
+ return (G.authoritative?'<p id="networkBattleStatus" class="network-battle-status" role="status" hidden></p>':'')+'<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+battleTheme()+'" style="--own-mat:url('+cosmeticMatURL()+');--enemy-mat:url('+cosmeticMatURL()+')"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'
  +'<div class="bar between battle-meta"><div class="bar"><span class="pill">'+modo+'</span><span class="pill gold">Ronda '+roundNum+'</span>'+(G.mode!=='normal'&&!G.authoritative?'<span class="pill red">botín</span>':'')+'<button class="pill coin-chip" '+(G.tutorial&&G.n===0?'data-tutorial="coin" data-act="begin" aria-label="Ensayar el sorteo inicial"':'data-act="coin-info" aria-label="Consultar el sorteo inicial"')+' >'+HemicycleBattleStatus.symbol('coin')+(G.coinFace||(G.first==='p'?'Cara':'Cruz'))+'</button></div>'
  +gabLine()+'</div>'
  +'<p class="sub battle-resources rival-resources">Rival &middot; <abbr title="Tiempo de Palabra" aria-label="Tiempo de Palabra">TdP</abbr> '+G.tdp.e+' '+etdp+' &middot; Doctrina: '+battleDoctrine('e')+teamStatusHTML('e')+'</p>'
@@ -2297,15 +2304,15 @@ function ligaNew(div){
 function ligaLoad(){return lsGet(LS2);}
 function ligaResult(who,info){
  var lg=ligaLoad();
- if(!lg){go('result',{who:who,msg:info.msg,fs:info.fs,won:info.won,lost:info.lost,mode:'liga'});return;}
+ if(!lg){go('result',{who:who,msg:info.msg,fs:info.fs,xp:info.xp,won:info.won,lost:info.lost,mode:'liga'});return;}
  var me=null,i;for(i=0;i<lg.teams.length;i++)if(lg.teams[i].you)me=lg.teams[i];
- if(!me){go('result',{who:who,msg:info.msg,fs:info.fs,won:info.won,lost:info.lost,mode:'liga'});return;}
+ if(!me){go('result',{who:who,msg:info.msg,fs:info.fs,xp:info.xp,won:info.won,lost:info.lost,mode:'liga'});return;}
  if(who==='p'){me.pts+=3;me.w++;}else if(who==='e'){me.l++;}else{me.pts+=1;me.d++;}
  simRound(lg,me);
  lg.jor++;
  if(lg.jor>12){seasonEnd(lg,info);return;}
  lsSet(LS2,lg);if(G&&G.resultExpectedSave)G.resultExpectedSave[LS2]=JSON.parse(JSON.stringify(lg));
- go('result',{who:who,msg:info.msg,fs:info.fs,won:info.won,lost:info.lost,mode:'liga',liga:true});
+ go('result',{who:who,msg:info.msg,fs:info.fs,xp:info.xp,won:info.won,lost:info.lost,mode:'liga',liga:true});
 }
 function simRound(lg,me){
  var others=shuffle(lg.teams.filter(function(t){return t!==me;}));
@@ -2324,7 +2331,7 @@ function seasonEnd(lg,info){
  var msg=info.msg+' Terminas '+pos+'º de 30 en '+nm(lg.div)+' con '+me.pts+' puntos. Recompensa de fin de temporada: +'+reward+' FS. ';
  msg+=nd<lg.div?('¡ASCENSO a '+nm(nd)+'!'):(nd>lg.div?('DESCENSO a '+nm(nd)+'.'):'Mantienes la categoría.');
  var fresh=ligaNew(nd);fresh.temp=lg.temp+1;lsSet(LS2,fresh);if(G&&G.resultExpectedSave)G.resultExpectedSave[LS2]=JSON.parse(JSON.stringify(fresh));
- go('result',{who:'season',msg:msg,fs:info.fs+reward,won:info.won,lost:info.lost,mode:'liga',season:true,leaguePosition:pos,leagueTeams:lg.teams.length,seasonFS:reward});
+ go('result',{who:'season',msg:msg,fs:info.fs+reward,xp:info.xp,won:info.won,lost:info.lost,mode:'liga',season:true,leaguePosition:pos,leagueTeams:lg.teams.length,seasonFS:reward});
 }
 
 SCREENS.liga=function(){
@@ -2366,6 +2373,7 @@ SCREENS.ayuda=function(){
  +backupPanel()
  +'<div class="panel"><h3>Tu progreso</h3><p class="sub">'+D().w+' victorias · '+D().l+' derrotas · '+D().fs+' FS.</p><button class="btn ghost sm" style="margin-top:8px" data-act="reset">Borrar progreso</button></div>'
  +'</div><button class="btn wide sm" data-go="menu">Volver al menú</button>';
+ html+='<div class="panel"><h3>Experiencia y personalización</h3><p>Perfil muestra tu nivel y progreso de experiencia. Normal concede 40 XP por victoria y 20 por derrota; Rápida, 25 y 12; Clasificatoria y Liga, 100 y 50. Las prácticas no conceden experiencia; rendirse o perder por inactividad no concede XP de derrota. Los desafíos y logros indican los FS y la XP de su recompensa y los entregan en una única reclamación.</p><p>Los niveles van del 1 al 500: el avance es suave hasta el 60 y exige más XP después. El nivel no modifica Elo, Zasca, Aguante ni probabilidades.</p><p>En Editar perfil combinas Menú, Tapete, Reverso y Moneda por separado. La primera colección está disponible completa. Clásico conserva el tapete, reverso y moneda originales; el menú clásico usa el nuevo marco de Hemiciclo. Los tapetes ilustrados conservan su paleta; los adaptables distinguen las bancadas por su tono.</p></div>';
  return html.replace(/<(div|section) class="panel(?: [^"]*)?"><h3>([\s\S]*?)<\/h3>([\s\S]*?)<\/\1>/g,function(all,tag,title,body){return '<details class="help-section"'+(title==='Combate guiado'?' open':'')+'><summary><span>'+title+'</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 7.5 5 5 5-5"/></svg></summary><div class="help-body">'+body+'</div></details>';});
 };
 
@@ -2780,7 +2788,7 @@ function firstEntry(){
 document.addEventListener('change',function(e){if(e.target.id==='countryFilter'){FIL.country=e.target.value;paint();}});
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();var initial=D(),initialGoals=HemicycleObjectives.snapshot(Object.assign({},initial,{objectiveCatalog:CARDS}),CARDS);if(JSON.stringify(initial.objectives)!==JSON.stringify(initialGoals)){initial.objectives=initialGoals;var initialSave={};initialSave[LS]=initial;atomicLocal(initialSave);}
- PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,appearance:appearancePanel,setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(window.HemicycleLegal)setTimeout(function(){HemicycleLegal.sync();},0);if(HISTORY)HISTORY.close();if(OFFLINE_COMBAT)OFFLINE_COMBAT.detach();if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},openHistory:function(){PLAYER_PROFILE.close();if(HISTORY)HISTORY.open();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({config:window.HemicycleSupabaseConfig||{},stats:profileStats,experience:function(){return HemicycleCosmeticUI.experience(D());},editor:function(kind){return HemicycleCosmeticUI.editor(D(),kind);},setCosmetic:function(kind,id){var choice=HemicycleCosmetics.selection(D());choice[kind]=id;choice=HemicycleCosmetics.validate(choice);var d=D();d.cosmetics=choice;saveD(d);HemicycleCosmeticUI.apply(d);paint();},setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(window.HemicycleLegal)setTimeout(function(){HemicycleLegal.sync();},0);if(HISTORY)HISTORY.close();if(OFFLINE_COMBAT)OFFLINE_COMBAT.detach();if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},openHistory:function(){PLAYER_PROFILE.close();if(HISTORY)HISTORY.open();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleLegal)HemicycleLegal.configure(function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();});
  ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',mode:function(){return PLAY_MODE;},battle:receiveRemoteBattle,preparation:receiveRemotePreparation,battleStatus:remoteBattleStatus,actionVisual:remoteActionVisual,battleEvents:remoteBattleEvents,clearBattle:function(){if(REMOTE_PREPARATION){REMOTE_PREPARATION=null;CABINET_RETURN=null;if(SCREEN==='builder'&&SO.online)go('menu');}if(G&&G.authoritative){G=null;REMOTE_BATTLE=null;clearBattleClock();closeLocalAction();go('menu');}},cabinet:function(){var d=D(),state=HemicycleCabinets.state(d),slot=state.slots[state.selected];return {orators:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(progress){progress=progress||function(){};progress('Comprobando el guardado de la cuenta…');if(!CLOUD_SAVE)throw Error('Activa primero el guardado en la nube.');await CLOUD_SAVE.refresh();var state=CLOUD_SAVE.state();if(state.phase==='error')throw Error(state.error||'No se pudo verificar la conexión con la nube.');if(!state.enabled)throw Error('Vincula o recupera primero la copia de tu cuenta desde Nube.');progress('Preparando el progreso de tu cuenta…');await CLOUD_SAVE.adopt();progress('Guardando cambios pendientes…');await CLOUD_SAVE.save();state=CLOUD_SAVE.state();if(state.phase==='error')throw Error(state.error||'No se pudieron guardar tus preferencias.');progress('Confirmando el guardado…');await CLOUD_SAVE.refresh();state=CLOUD_SAVE.state();if(state.phase!=='synced')throw Error(state.error||'El guardado ha cambiado durante la comprobación. Vuelve a intentar entrar en Clasificatoria.');},reconcileRanked:async function(snapshot){if(G&&G.authoritative)G.over=true;if(!CLOUD_SAVE)throw Error('No se pudo comprobar el guardado.');if(snapshot&&snapshot.mode!=='ranked'&&!CLOUD_SAVE.state().enabled)return;await CLOUD_SAVE.adopt();},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
