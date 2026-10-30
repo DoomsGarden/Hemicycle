@@ -61,8 +61,8 @@
 <script src="js/cloud-save.js?v=31.0.2.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/operation-status.js?v=31.0.2.6"></script><script src="js/online-combat-ui.js?v=31.0.2.5"></script><script src="js/online-ui.js?v=31.0.2.6"></script>
 <script src="js/cloud-ui.js?v=31.0.2.3"></script>
-<script src="js/ui-preferences.js?v=31.0.2.4"></script>
-<script src="js/game-audio.js?v=31.0.2.6"></script>
+<script src="js/ui-preferences.js?v=31.0.2.10-results1"></script>
+<script src="js/game-audio.js?v=31.0.2.10-results1"></script>
 <script src="js/resource-loading.js?v=31.0.2.6"></script>
 <script src="js/launch-screen.js?v=31.0.2.6"></script>
 <link rel="stylesheet" href="css/menu-senate.css?v=31.0.2.8-guide1">
@@ -112,8 +112,8 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.10"></script>
-<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.3-reading1">
+<script src="js/changelog.js?v=31.0.2.10-results1"></script>
+<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.10-results1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
 <script src="js/offline-rules-v8.js?v=31.0.2.10"></script>
@@ -1078,7 +1078,7 @@ function verifiedResult(receipt,ticketId){
  var won=receipt.win,msg=(won?'Victoria':'Derrota')+' ('+receipt.votes+' a '+receipt.enemyVotes+'). Resultado verificado y guardado.';
  if(receipt.season&&Number.isInteger(receipt.leaguePosition)&&Number.isInteger(receipt.seasonFS))msg+=' Terminas '+receipt.leaguePosition+'º de '+(receipt.leagueTeams||30)+'. Premio de temporada por tu puesto: +'+receipt.seasonFS+' FS.';
  if(receipt.won)msg+=' Consigues el cromo de '+BYID[receipt.won].n+'.';if(receipt.lost)msg+=' Pierdes el cromo de '+BYID[receipt.lost].n+'.';
- return {who:won?'p':'e',msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,leaguePosition:receipt.leaguePosition,leagueTeams:receipt.leagueTeams,seasonFS:receipt.seasonFS,verified:true,ticketId:ticketId};
+ return {who:won?'p':'e',votes:receipt.votes,enemyVotes:receipt.enemyVotes,msg:msg,mode:receipt.mode,fs:receipt.fs,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,leaguePosition:receipt.leaguePosition,leagueTeams:receipt.leagueTeams,seasonFS:receipt.seasonFS,verified:true,ticketId:ticketId};
 }
 function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
 async function finishDownloaded(snapshot,ticketId,verification){
@@ -1515,10 +1515,23 @@ function startQuickBattle(){
 }
 
 var RISK_REVIEW_BUSY=false;
-async function reviewCompetitiveRisk(mode,done){if(RISK_REVIEW_BUSY)return;RISK_REVIEW_BUSY=true;var originScreen=SCREEN;try{var slot={ids:BUILD.ids.slice(),leader:BUILD.leader,actions:(BUILD.actions||[]).slice()},account=PLAYER_PROFILE&&PLAYER_PROFILE.account(),data;if(account){data=await ECONOMY.request('/offline/risk',{mode:mode,cabinet:{orators:slot.ids,leader:slot.leader,actions:slot.actions}});}else data=HemicycleStrategyUI.risk(slot,D(),mode);if(SCREEN!==originScreen||JSON.stringify(slot.ids)!==JSON.stringify(BUILD.ids)||JSON.stringify(slot.actions)!==JSON.stringify(BUILD.actions||[]))return;showModal('Antes de entrar al debate',HemicycleStrategyUI.riskHTML(data,!!account),'Jugar',false,done,true);}catch(e){showModal('Comprobar el gabinete',esc(e.message||'No se pudo comprobar la colección. Vuelve a intentarlo.'),'Entendido',false,null);}finally{RISK_REVIEW_BUSY=false;}}
+async function reviewCompetitiveRisk(mode,done){
+ if(RISK_REVIEW_BUSY)return;RISK_REVIEW_BUSY=true;var originScreen=SCREEN;
+ try{
+  var slot={ids:BUILD.ids.slice(),leader:BUILD.leader,actions:(BUILD.actions||[]).slice()},account=PLAYER_PROFILE&&PLAYER_PROFILE.account(),data;
+  if(account)data=await ECONOMY.request('/offline/risk',{mode:mode,cabinet:{orators:slot.ids,leader:slot.leader,actions:slot.actions}});
+  else data=HemicycleStrategyUI.risk(slot,D(),mode);
+  if(SCREEN!==originScreen||JSON.stringify(slot.ids)!==JSON.stringify(BUILD.ids)||JSON.stringify(slot.actions)!==JSON.stringify(BUILD.actions||[]))return;
+  var optOut;
+  showModal('Antes de entrar al debate',HemicycleStrategyUI.riskHTML(data,!!account)+'<label class="risk-preference"><input type="checkbox" data-risk-hide><span>No volver a mostrar en este dispositivo</span></label>','Jugar',false,function(){if(optOut&&optOut.checked&&typeof HemicycleUIPreferences!=='undefined')HemicycleUIPreferences.setRiskWarning(false);done();},true);
+  optOut=document.querySelector('#modalRoot [data-risk-hide]');
+  var dialog=document.querySelector('#modalRoot .modal');if(dialog)dialog.classList.add('risk-review-modal');
+ }catch(e){showModal('Comprobar el gabinete',esc(e.message||'No se pudo comprobar la colección. Vuelve a intentarlo.'),'Entendido',false,null);}
+ finally{RISK_REVIEW_BUSY=false;}
+}
 function startBattle(riskReviewed){
  if(SCREEN==='builder'){var state=cabinetState();if(!HemicycleCabinets.ready(state.slots[state.selected],D().album,D().actionAlbum||[]))return;var d=D();if(!d.cabinets){d.cabinets=state;saveD(d);}loadSelectedCabinet();}
- if(!riskReviewed&&['ranked','liga'].indexOf(SO.mode)>=0&&typeof HemicycleStrategyUI!=='undefined')return reviewCompetitiveRisk(SO.mode,function(){startBattle(true);});
+ if(!riskReviewed&&['ranked','liga'].indexOf(SO.mode)>=0&&typeof HemicycleStrategyUI!=='undefined'&&(typeof HemicycleUIPreferences==='undefined'||HemicycleUIPreferences.riskWarningEnabled))return reviewCompetitiveRisk(SO.mode,function(){startBattle(true);});
  if(SO.online&&REMOTE_PREPARATION){
   var preparing=REMOTE_PREPARATION;
   if(preparing.controls.busy||preparing.state.players[preparing.state.you])return;
@@ -1986,7 +1999,7 @@ function finish(who, abandoned){
   showAchievement('¡Logro oculto desbloqueado!','Magnate Dorado: Aspecto dorado de Donald Trump disponible en tu Colección.');
  }
  if(mode==='liga'){ligaResult(who,{msg:msg,fs:fs,won:won,lost:lost});return;}
- go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,won:won,lost:lost,mode:G.quick?'rapida':mode,reason:G.inactivity?'inactivity':null});
+ go('result',{who:who,msg:msg,fs:fs,eloDelta:eloDelta,eloBefore:oldElo,eloAfter:d.elo,won:won,lost:lost,mode:G.quick?'rapida':mode,reason:G.inactivity?'inactivity':null});
 }
 function ligaPanel(){
  var lg=ligaLoad();if(!lg)return '';
@@ -2002,22 +2015,28 @@ function resultCard(id,lost){
  var c=BYID[id];return '<section class="panel result-card"><div class="result-card-preview">'+cromoHTML(c,{noCardAttr:true})+'</div><div><h3>'+(lost?'Cromo perdido':'Cromo conseguido')+'</h3><b>'+esc(c.n)+'</b><p class="sub">'+RARM[c.r].n+' · '+copies(D(),id)+' '+(copies(D(),id)===1?'copia':'copias')+' en tu colección</p><p class="sub">'+(lost?'Puedes revisar tu gabinete desde Colección.':'Ya está disponible en Colección.')+'</p></div></section>';
 }
 
+function resultHeroHTML(result,game){
+ var own=Number.isFinite(result.votes)?result.votes:game&&game.votes&&game.votes.p,enemy=Number.isFinite(result.enemyVotes)?result.enemyVotes:game&&game.votes&&game.votes.e;
+ var who=result.who==='season'?(game&&game.resultWho)||'season':result.who,win=who==='p',loss=who==='e',tone=win?'victory':loss?'defeat':'neutral';
+ var label=win?'Victoria':loss?'Derrota':result.who==='season'?'Liga':'Empate';
+ var title=result.reason==='inactivity'?'Abandono por inactividad':win?(own>=100?'Mayoría alcanzada':'Victoria parlamentaria'):loss?(enemy>=100?'Mayoría rival':'Debate perdido'):result.who==='season'?'Temporada cerrada':'Empate técnico';
+ var mark=win?'<path class="result-emblem-fill" d="m48 18 8.7 17.6 19.4 2.8-14 13.7 3.3 19.3L48 62.3l-17.4 9.1 3.3-19.3-14-13.7 19.4-2.8Z"/>':loss?'<path class="result-emblem-fill" d="M48 17 72 27v19c0 17-13 28-24 34-11-6-24-17-24-34V27Z"/><path d="m38 38 20 20m0-20L38 58"/>':'<path class="result-emblem-fill" d="m48 19 29 29-29 29-29-29Z"/><path d="M36 43h24M36 53h24"/>';
+ return '<section class="result-summary result-hero result-'+tone+'" aria-labelledby="resultTitle"><div class="result-emblem" aria-hidden="true"><svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle class="result-emblem-halo" cx="48" cy="48" r="41"/><path class="result-emblem-rays" d="M48 2v7m0 78v7M2 48h7m78 0h7M15.5 15.5l5 5m55 55 5 5m0-65-5 5m-55 55-5 5"/>'+mark+'</svg></div><small class="result-verdict">'+label+'</small><h2 id="resultTitle" class="result-title">'+title+'</h2>'+(Number.isFinite(own)&&Number.isFinite(enemy)?'<p class="result-score" aria-label="Votos: tú '+own+', rival '+enemy+'"><b>'+own+'</b><span>vs</span><b>'+enemy+'</b><small>votos</small></p>':'')+'</section>';
+}
+
 SCREENS.result=function(){
  if(SO.tutorial)return '<div class="panel win"><h2>'+(SO.completed?(SO.short?'¡Ya puedes jugar!':'¡Tutorial completado!'):'Práctica terminada')+'</h2><p class="sub">'+(SO.completed?(SO.short?'Has presentado un orador, atacado y pasado el turno. El objetivo de cada debate es alcanzar 100 votos.':'Has practicado las acciones del debate y la victoria inmediata a 100 votos.'):'Puedes repetir la guía cuando quieras desde Ayuda.')+' Tu colección, FS, Elo y Liga se mantienen intactos.</p></div><div class="bar"><button class="btn" data-act="play">Jugar una partida</button><button class="btn ghost" data-act="menu-tutorial">Conocer los menús</button><button class="mini" data-go="menu">Inicio</button></div>';
  if(SO.who==='info')return '<h2>Aviso</h2><div class="panel"><p>'+esc(SO.msg)+'</p></div>'
   +'<div class="bar"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menú</button></div>';
- var who=SO.who;
- var title=who==='p'?'¡Victoria!':(who==='e'?(SO.reason==='inactivity'?'Abandono por inactividad':'Derrota'):(who==='season'?'Temporada cerrada':'Empate'));
- var pCls=who==='p'?'panel win':(who==='e'?'panel lose':'panel');
- var badges='';
- if(SO.fs)badges+='<span class="pill gold" data-result-gain="fs">+'+SO.fs+' FS</span>';
- if(SO.eloDelta||(SO.mode==='ranked'&&Number.isFinite(SO.eloDelta))){
-  badges+=' <span data-result-gain="elo" class="pill '+(SO.eloDelta>0?'green':SO.eloDelta<0?'red':'')+'">'+(SO.eloDelta>0?'+'+SO.eloDelta:SO.eloDelta)+' Elo</span>';
- }
- var html=(who==='p'&&G&&G.votes.p>=100?'<div class="majority-seal"><span aria-hidden="true">★</span><b>Mayoría alcanzada</b><small>'+G.votes.p+' / 100 votos</small></div>':'')+'<div class="'+pCls+' result-summary"><div class="bar between"><h2>'+title+'</h2><div>'+badges+'</div></div><p style="margin:4px 0 0">'+esc(SO.msg)+'</p></div>';
- if(SO.mode==='ranked'&&Number.isFinite(SO.eloAfter))html+='<p class="result-rating">Elo'+(Number.isFinite(SO.eloBefore)?': '+SO.eloBefore+' →':':')+' <b>'+SO.eloAfter+'</b></p>';
+ var html=resultHeroHTML(SO,G),totals=[];
+ if(SO.mode==='ranked'&&Number.isFinite(SO.eloAfter))totals.push('<span>Elo'+(Number.isFinite(SO.eloBefore)?': '+SO.eloBefore+' →':':')+' <b>'+SO.eloAfter+'</b></span>');
+ else if(SO.mode==='ranked'&&Number.isFinite(SO.eloDelta))totals.push('<span>Elo: <b>'+(SO.eloDelta>0?'+':'')+SO.eloDelta+'</b></span>');
+ if(!SO.rewardsUnavailable&&Number.isFinite(SO.fs))totals.push('<span>FS: <b>'+(SO.fs>=0?'+':'')+SO.fs+'</b></span>');
+ if(totals.length)html+='<p class="result-rating">'+totals.join('<span class="result-metric-separator" aria-hidden="true">·</span>')+'</p>';
  if(SO.rewardsUnavailable)html+='<p class="sub result-legacy">Esta partida no tiene un desglose de FS guardado.</p>';
  html+='<div class="inner-scroll result-details">';if(typeof HemicycleStrategyUI!=='undefined'&&G){var data=G.authoritative?G.insights&&G.insights.p:G.insights&&G.insights.p;html+=HemicycleStrategyUI.result(data);}
+ if(SO.season){var seasonAt=(SO.msg||'').indexOf('Terminas '),seasonText=seasonAt>=0?SO.msg.slice(seasonAt):'Terminas '+SO.leaguePosition+'º de '+(SO.leagueTeams||30)+'. Premio de temporada: +'+SO.seasonFS+' FS.';html+='<section class="panel result-season"><h3>Temporada cerrada</h3><p class="sub">'+esc(seasonText)+'</p></section>';}
+ if(SO.remote&&SO.mode!=='ranked')html+='<p class="sub result-loot-note">Partida amistosa: sin cambios de FS, cromos ni Elo.</p>';
  if(SO.won)html+=resultCard(SO.won,false);
  if(SO.lost){html+=resultCard(SO.lost,true);var affected=HemicycleCabinets.state(D()).slots.map(function(slot,i){return slot.ids.indexOf(SO.lost)>=0&&copies(D(),SO.lost)===0?i:-1;}).filter(function(i){return i>=0;});if(affected.length)html+='<div class="panel affected-cabinets"><b>Un cromo de tu gabinete ya no tiene copias</b><p class="sub">Elige el gabinete que quieres revisar en Colección.</p><div class="bar">'+affected.map(function(i){return '<button class="btn ghost sm" data-act="repair-cabinet" data-slot="'+i+'">Gabinete '+(i+1)+'</button>';}).join('')+'</div></div>';}
  if(SO.lootStatus==='protected'&&!SO.won&&!SO.lost)html+='<p class="sub result-loot-note">No se ha transferido ningún cromo: la colección conserva sus cinco últimos oradores únicos.</p>';
@@ -2227,7 +2246,7 @@ function receiveRemoteBattle(snapshot,controls){
   if(G.remoteResultShown)return true;G.remoteResultShown=true;
   closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
   var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
-  var options={who:won?'p':'e',msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,won:receipt&&receipt.won,lost:receipt&&receipt.lost,lootStatus:receipt&&(receipt.lootStatus||(ranked&&receipt.won===undefined&&receipt.lost===undefined?'legacy':null)),rewardsUnavailable:ranked&&!receipt};
+  var options={who:won?'p':'e',votes:own.votes,enemyVotes:enemy.votes,msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,won:receipt&&receipt.won,lost:receipt&&receipt.lost,lootStatus:receipt&&(receipt.lootStatus||(ranked&&receipt.won===undefined&&receipt.lost===undefined?'legacy':null)),rewardsUnavailable:ranked&&!receipt};
   if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(result){if(G===game){if(result.verified)go('result',options);else deferResult(game);}});}else go('result',options);return true;
  }
  if(SCREEN!=='battle')go('battle');else paint();if(!previous&&own.turn+enemy.turn<=2&&typeof HemicycleCoinToss!=='undefined')HemicycleCoinToss.show(controls.id,snapshot.first,snapshot.you);return true;
