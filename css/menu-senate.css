@@ -68,3 +68,6 @@
 .appbar .hud-metric b span{display:inline-block;max-width:100%;overflow-wrap:anywhere}
 .screen[data-view=menu] .hud-strip{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) 44px}
 @media(max-height:500px) and (min-width:600px){.menu-senate{width:min(100%,900px)}}
+
+.senate-home .hero-fan .cromo .bot{background:linear-gradient(transparent,#050a15ee 28%,#050a15)}
+.senate-home .hero-fan .cromo .bot::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#050a15;pointer-events:none}

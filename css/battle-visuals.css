@@ -202,3 +202,5 @@
 
 /* Cristal del Acta: texto opaco sobre el tablero visible. */
 .screen.in-battle .battle-wrap>.journal-popover{background:var(--battle-glass);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);box-shadow:0 6px 24px #0007}.screen.in-battle .journal-popover .log{background:transparent;color:#e0e7f2;text-shadow:0 1px 2px #000c}
+
+.basic-ability-examples{margin:10px 0}.basic-ability-examples>summary{cursor:pointer;color:#edce8a}.basic-ability-examples section{padding:9px 0;border-bottom:1px solid #293149}.basic-ability-examples h4{display:flex;align-items:center;gap:7px;color:#f0d89d;margin:4px 0 7px}

@@ -1,0 +1,1446 @@
+{
+  "rules": "basic3",
+  "scope": "Current assignments, base stats without leader/doctrine/action bonuses; damage examples compare local and authoritative engines. Role changes are proposals, not applied.",
+  "effects": [
+    {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "role": "Presión",
+      "target": "self",
+      "example": "Un orador de 2 Z causa 2 con este básico. En su próximo turno propio, su básico puede causar 3. Si ese turno defiende, cura o solo usa el fuerte, el aumento caduca sin aprovecharse.",
+      "cards": [
+        {
+          "id": "gabriel-rufian",
+          "name": "Gabriel Rufián",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "marine-le-pen",
+          "name": "Marine Le Pen",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "giro"
+        },
+        {
+          "id": "jordi-turull",
+          "name": "Jordi Turull",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "giro"
+        },
+        {
+          "id": "pablo-echenique",
+          "name": "Pablo Echenique",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "andrea-levy",
+          "name": "Andrea Levy",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "foco"
+        },
+        {
+          "id": "dolors-montserrat",
+          "name": "Dolors Montserrat",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "fatima-banez",
+          "name": "Fátima Báñez",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "oscar-puente",
+          "name": "Óscar Puente",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "quim-torra",
+          "name": "Quim Torra",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "giro"
+        },
+        {
+          "id": "toni-canto",
+          "name": "Toni Cantó",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "verborrea"
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "role": "Sostenimiento",
+      "target": "self",
+      "example": "Ataca con 3 de 4 A. Si sigue en mesa y conserva el efecto, al comenzar su próximo turno recupera 1 y queda en 4 de 4. No cura inmediatamente ni supera su máximo; si lo expulsan antes, no llega a curarse.",
+      "cards": [
+        {
+          "id": "isabel-diaz-ayuso",
+          "name": "Isabel Díaz Ayuso",
+          "rarity": "legendario",
+          "cost": 5,
+          "zasca": 7,
+          "aguante": 14,
+          "leaderAguante": 17,
+          "doctrine": "foco"
+        },
+        {
+          "id": "vladimir-putin",
+          "name": "Vladímir Putin",
+          "rarity": "legendario",
+          "cost": 5,
+          "zasca": 7,
+          "aguante": 14,
+          "leaderAguante": 17,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "hillary-clinton",
+          "name": "Hillary Clinton",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "joe-biden",
+          "name": "Joe Biden",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "rocio-monasterio",
+          "name": "Rocío Monasterio",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "foco"
+        },
+        {
+          "id": "soraya-saenz-de-santamaria",
+          "name": "Soraya Sáenz de Santamaría",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "esteban-gonzalez-pons",
+          "name": "Esteban González Pons",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "foco"
+        },
+        {
+          "id": "isabel-garcia-tejerina",
+          "name": "Isabel García Tejerina",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "juan-vicente-herrera",
+          "name": "Juan Vicente Herrera",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "meritxell-batet",
+          "name": "Meritxell Batet",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "reyes-maroto",
+          "name": "Reyes Maroto",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "roger-torrent",
+          "name": "Roger Torrent",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "giro"
+        }
+      ]
+    },
+    {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "role": "Desgaste",
+      "target": "rival",
+      "example": "El rival sobrevive al golpe y pierde 1 A al comienzo de cada uno de sus dos próximos turnos. Son 2 A en total, antes de sus votos pasivos. El desgaste continúa aunque el atacante haya salido de la mesa.",
+      "cards": [
+        {
+          "id": "cayetana-alvarez-de-toledo",
+          "name": "Cayetana Álvarez de Toledo",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "foco"
+        },
+        {
+          "id": "cristobal-montoro",
+          "name": "Cristóbal Montoro",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "inigo-errejon",
+          "name": "Íñigo Errejón",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "julio-anguita",
+          "name": "Julio Anguita",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "marta-rovira",
+          "name": "Marta Rovira",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "giro"
+        },
+        {
+          "id": "nadia-calvino",
+          "name": "Nadia Calviño",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "carmen-calvo",
+          "name": "Carmen Calvo",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "jordi-sanchez",
+          "name": "Jordi Sànchez",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "giro"
+        },
+        {
+          "id": "marta-rivera-de-la-cruz",
+          "name": "Marta Rivera de la Cruz",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "foco"
+        },
+        {
+          "id": "miguel-arias-canete",
+          "name": "Miguel Arias Cañete",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "nacho-alvarez",
+          "name": "Nacho Álvarez",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "pilar-llop",
+          "name": "Pilar Llop",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "viperina"
+        }
+      ]
+    },
+    {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "role": "Control de daño",
+      "target": "rival",
+      "example": "Un rival de 4 Z hará 3 en su siguiente básico. No reduce su fuerte y nunca deja el básico por debajo de 1 Z. Si no usa el básico, el estado caduca al terminar su siguiente turno.",
+      "cards": [
+        {
+          "id": "nigel-farage",
+          "name": "Nigel Farage",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "recep-tayyip-erdogan",
+          "name": "Recep Tayyip Erdoğan",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "dolores-de-cospedal",
+          "name": "Dolores de Cospedal",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "miriam-nogueras",
+          "name": "Miriam Nogueras",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "giro"
+        },
+        {
+          "id": "monica-garcia",
+          "name": "Mónica García",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "pilar-alegria",
+          "name": "Pilar Alegría",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "borja-semper",
+          "name": "Borja Sémper",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "foco"
+        },
+        {
+          "id": "carme-forcadell",
+          "name": "Carme Forcadell",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "giro"
+        },
+        {
+          "id": "javier-maroto",
+          "name": "Javier Maroto",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "rafael-catala",
+          "name": "Rafael Catalá",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "rafael-hernando",
+          "name": "Rafael Hernando",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "susana-diaz",
+          "name": "Susana Díaz",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "viperina"
+        }
+      ]
+    },
+    {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "role": "Mitigación propia",
+      "target": "self",
+      "example": "Un básico rival de 4 hace 3 tras absorber 1. Con una defensa del 50 % ya preparada, el golpe baja primero a 2 y la absorción lo deja en 1. Se consume una vez; no aumenta el Aguante máximo ni absorbe fuertes o cartas de acción.",
+      "cards": [
+        {
+          "id": "angela-merkel",
+          "name": "Angela Merkel",
+          "rarity": "legendario",
+          "cost": 5,
+          "zasca": 7,
+          "aguante": 14,
+          "leaderAguante": 17,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "emmanuel-macron",
+          "name": "Emmanuel Macron",
+          "rarity": "legendario",
+          "cost": 5,
+          "zasca": 7,
+          "aguante": 14,
+          "leaderAguante": 17,
+          "doctrine": "giro"
+        },
+        {
+          "id": "yolanda-diaz",
+          "name": "Yolanda Díaz",
+          "rarity": "legendario",
+          "cost": 5,
+          "zasca": 7,
+          "aguante": 14,
+          "leaderAguante": 17,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "ada-colau",
+          "name": "Ada Colau",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "foco"
+        },
+        {
+          "id": "bernie-sanders",
+          "name": "Bernie Sanders",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "matteo-salvini",
+          "name": "Matteo Salvini",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "giro"
+        },
+        {
+          "id": "nicolas-maduro",
+          "name": "Nicolás Maduro",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "foco"
+        },
+        {
+          "id": "santiago-abascal",
+          "name": "Santiago Abascal",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "ana-botella",
+          "name": "Ana Botella",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "luis-de-guindos",
+          "name": "Luis de Guindos",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "maria-jesus-montero",
+          "name": "María Jesús Montero",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "sara-gimenez",
+          "name": "Sara Giménez",
+          "rarity": "raro",
+          "cost": 4,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "foco"
+        }
+      ]
+    },
+    {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "role": "Vulnerabilidad",
+      "target": "rival",
+      "example": "Un básico de 4 pasa a 5 al golpear al afectado. Si este tiene defensa del 50 %, recibe 3 al redondear hacia arriba. La vulnerabilidad se consume con ese golpe; no amplifica fuertes ni acciones.",
+      "cards": [
+        {
+          "id": "boris-johnson",
+          "name": "Boris Johnson",
+          "rarity": "legendario",
+          "cost": 5,
+          "zasca": 7,
+          "aguante": 14,
+          "leaderAguante": 17,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "javier-milei",
+          "name": "Javier Milei",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "kamala-harris",
+          "name": "Kamala Harris",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "alfonso-alonso",
+          "name": "Alfonso Alonso",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "cuca-gamarra",
+          "name": "Cuca Gamarra",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "foco"
+        },
+        {
+          "id": "inigo-mendez-de-vigo",
+          "name": "Íñigo Méndez de Vigo",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "marta-lois",
+          "name": "Marta Lois",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "patxi-lopez",
+          "name": "Patxi López",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "pere-aragones",
+          "name": "Pere Aragonès",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "giro"
+        }
+      ]
+    },
+    {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "role": "Control de votos",
+      "target": "rival",
+      "example": "Un raro aporta 2 votos en su próximo turno en vez de 3. Los 3 votos base de su jugador y los 3 escaños que concede al ser expulsado no cambian. Después desaparece el estado.",
+      "cards": [
+        {
+          "id": "adriana-lastra",
+          "name": "Adriana Lastra",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "albert-rivera",
+          "name": "Albert Rivera",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "antonio-maillo",
+          "name": "Antonio Maíllo",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "carlos-floriano",
+          "name": "Carlos Floriano",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "elias-bendodo",
+          "name": "Elías Bendodo",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "foco"
+        },
+        {
+          "id": "fernando-grande-marlaska",
+          "name": "Fernando Grande-Marlaska",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "aforado"
+        }
+      ]
+    },
+    {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "role": "Control de recursos",
+      "target": "rival",
+      "example": "El afectado quiere defender o curarse con su tercera frase: debe pagar 1 TdP y gastar su intervención habitual. Atacar sigue siendo gratuito. No encarece cartas de acción y desaparece tras pagar ese apoyo o al caducar.",
+      "cards": [
+        {
+          "id": "anna-gabriel",
+          "name": "Anna Gabriel",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "giro"
+        },
+        {
+          "id": "begona-villacis",
+          "name": "Begoña Villacís",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "foco"
+        },
+        {
+          "id": "jaime-de-olano",
+          "name": "Jaime de Olano",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "jose-luis-abalos",
+          "name": "José Luis Ábalos",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "josep-rull",
+          "name": "Josep Rull",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "giro"
+        },
+        {
+          "id": "juan-espadas",
+          "name": "Juan Espadas",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "viperina"
+        }
+      ]
+    },
+    {
+      "id": "escort",
+      "name": "Yo respondo",
+      "role": "Protección de aliados",
+      "target": "self",
+      "example": "Si un básico iba dirigido a otro compañero, lo recibe este orador y se consume el desvío. No reduce el daño. Si tiene 7 A y recibe 7, puede ser expulsado. No desvía fuertes, acciones ni ataques a huecos; un golpe dirigido directamente al protector no gasta por sí solo el desvío.",
+      "cards": [
+        {
+          "id": "andres-manuel-lopez-obrador",
+          "name": "Andrés Manuel López Obrador",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "foco"
+        },
+        {
+          "id": "felipe-gonzalez",
+          "name": "Felipe González",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "giorgia-meloni",
+          "name": "Giorgia Meloni",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "salvador-illa",
+          "name": "Salvador Illa",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "giro"
+        },
+        {
+          "id": "viktor-orban",
+          "name": "Viktor Orbán",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "irene-montero",
+          "name": "Irene Montero",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "jose-manuel-garcia-margallo",
+          "name": "José Manuel García-Margallo",
+          "rarity": "raro",
+          "cost": 3,
+          "zasca": 4,
+          "aguante": 7,
+          "leaderAguante": 10,
+          "doctrine": "guardia"
+        }
+      ]
+    },
+    {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "role": "Contra defensa",
+      "target": "self",
+      "example": "Tras preparar el efecto: con 2 Z, un básico contra defensa pasa de 1 a 2; con 4 Z, de 2 a 3; con 7 Z, de 4 a 5. Sin defensa, un básico de 4 sigue haciendo 4 y consume igualmente la preparación. No recupera Aguante ni atraviesa Argumentario plastificado.",
+      "cards": [
+        {
+          "id": "alberto-nunez-feijoo",
+          "name": "Alberto Núñez Feijóo",
+          "rarity": "legendario",
+          "cost": 4,
+          "zasca": 7,
+          "aguante": 11,
+          "leaderAguante": 14,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "barack-obama",
+          "name": "Barack Obama",
+          "rarity": "legendario",
+          "cost": 4,
+          "zasca": 7,
+          "aguante": 11,
+          "leaderAguante": 14,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "carles-puigdemont",
+          "name": "Carles Puigdemont",
+          "rarity": "legendario",
+          "cost": 4,
+          "zasca": 7,
+          "aguante": 11,
+          "leaderAguante": 14,
+          "doctrine": "giro"
+        },
+        {
+          "id": "alberto-garzon",
+          "name": "Alberto Garzón",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "cristina-cifuentes",
+          "name": "Cristina Cifuentes",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "edmundo-bal",
+          "name": "Edmundo Bal",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "foco"
+        },
+        {
+          "id": "esperanza-aguirre",
+          "name": "Esperanza Aguirre",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "ines-arrimadas",
+          "name": "Inés Arrimadas",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "foco"
+        },
+        {
+          "id": "isabel-cela",
+          "name": "Isabel Celaá",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "alvaro-nadal",
+          "name": "Álvaro Nadal",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "ana-pastor",
+          "name": "Ana Pastor",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "foco"
+        },
+        {
+          "id": "celia-villalobos",
+          "name": "Celia Villalobos",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "guardia"
+        }
+      ]
+    },
+    {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "role": "Planificación de recursos",
+      "target": "self",
+      "example": "Acabas el turno con 2 TdP: reserva 1 y quedan 1. Si el próximo turno te correspondían 4, tendrás 5 al sumar la reserva, con máximo de 8. Solo se guarda uno por bancada; salir de mesa o perder el beneficio hace perder la reserva pendiente.",
+      "cards": [
+        {
+          "id": "emiliano-garcia-page",
+          "name": "Emiliano García-Page",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "pablo-cambronero",
+          "name": "Pablo Cambronero",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "raul-romeva",
+          "name": "Raül Romeva",
+          "rarity": "comun",
+          "cost": 1,
+          "zasca": 2,
+          "aguante": 4,
+          "leaderAguante": 7,
+          "doctrine": "giro"
+        }
+      ]
+    },
+    {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "role": "Robo de oradores",
+      "target": "self",
+      "example": "Tienes un orador en mano y un común en el mazo: el básico roba ese común y pasas a tener dos. No lo pone en mesa ni paga su coste. Con dos oradores en mano o sin comunes en el mazo, no roba ni gasta recuperación de habilidad.",
+      "cards": [
+        {
+          "id": "cristina-fernandez-de-kirchner",
+          "name": "Cristina Fernández de Kirchner",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "foco"
+        },
+        {
+          "id": "jose-maria-aznar",
+          "name": "José María Aznar",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "pablo-iglesias",
+          "name": "Pablo Iglesias",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "verborrea"
+        }
+      ]
+    },
+    {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "role": "Recuperación de acciones",
+      "target": "self",
+      "example": "Receso tiene 3 turnos de espera y Escudo parlamentario 2: elige uno al azar y le resta un turno. Una acción a la que solo le queda 1 no es elegible. La acción sigue en el mazo: no se roba ni se lanza automáticamente. Una activación por jugador y partida; no acorta la curación del orador.",
+      "cards": [
+        {
+          "id": "christine-lagarde",
+          "name": "Christine Lagarde",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "justin-trudeau",
+          "name": "Justin Trudeau",
+          "rarity": "especial",
+          "cost": 4,
+          "zasca": 6,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "giro"
+        },
+        {
+          "id": "ursula-von-der-leyen",
+          "name": "Ursula von der Leyen",
+          "rarity": "especial",
+          "cost": 3,
+          "zasca": 5,
+          "aguante": 8,
+          "leaderAguante": 11,
+          "doctrine": "viperina"
+        }
+      ]
+    },
+    {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "role": "Protección de votos",
+      "target": "rival",
+      "example": "El afectado puede usar su básico contra un orador, pero no contra un hueco para retirar votos. Puede defender, curar o usar un fuerte contra un hueco si tiene el fuerte disponible. El estado se consume con su siguiente básico o caduca al terminar su siguiente turno.",
+      "cards": [
+        {
+          "id": "donald-trump",
+          "name": "Donald Trump",
+          "rarity": "legendario",
+          "cost": 4,
+          "zasca": 7,
+          "aguante": 11,
+          "leaderAguante": 14,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "mariano-rajoy",
+          "name": "Mariano Rajoy",
+          "rarity": "legendario",
+          "cost": 4,
+          "zasca": 7,
+          "aguante": 11,
+          "leaderAguante": 14,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "pedro-sanchez",
+          "name": "Pedro Sánchez",
+          "rarity": "legendario",
+          "cost": 4,
+          "zasca": 7,
+          "aguante": 11,
+          "leaderAguante": 14,
+          "doctrine": "foco"
+        },
+        {
+          "id": "jorge-fernandez-diaz",
+          "name": "Jorge Fernández Díaz",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "jose-luis-rodriguez-zapatero",
+          "name": "José Luis Rodríguez Zapatero",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "verborrea"
+        },
+        {
+          "id": "laura-borras",
+          "name": "Laura Borràs",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "giro"
+        },
+        {
+          "id": "miquel-iceta",
+          "name": "Miquel Iceta",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "oriol-junqueras",
+          "name": "Oriol Junqueras",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "giro"
+        },
+        {
+          "id": "pablo-casado",
+          "name": "Pablo Casado",
+          "rarity": "raro",
+          "cost": 2,
+          "zasca": 4,
+          "aguante": 6,
+          "leaderAguante": 9,
+          "doctrine": "aforado"
+        },
+        {
+          "id": "pablo-montesinos",
+          "name": "Pablo Montesinos",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "foco"
+        },
+        {
+          "id": "raquel-sanchez",
+          "name": "Raquel Sánchez",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "viperina"
+        },
+        {
+          "id": "teodoro-garcia-egea",
+          "name": "Teodoro García Egea",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "guardia"
+        },
+        {
+          "id": "toni-comin",
+          "name": "Toni Comín",
+          "rarity": "comun",
+          "cost": 2,
+          "zasca": 2,
+          "aguante": 5,
+          "leaderAguante": 8,
+          "doctrine": "giro"
+        }
+      ]
+    }
+  ],
+  "damage": [
+    {
+      "zasca": 2,
+      "guard": false,
+      "piercing": false,
+      "damage": 2,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 2,
+      "guard": false,
+      "piercing": true,
+      "damage": 2,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 2,
+      "guard": true,
+      "piercing": false,
+      "damage": 1,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 2,
+      "guard": true,
+      "piercing": true,
+      "damage": 2,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 4,
+      "guard": false,
+      "piercing": false,
+      "damage": 4,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 4,
+      "guard": false,
+      "piercing": true,
+      "damage": 4,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 4,
+      "guard": true,
+      "piercing": false,
+      "damage": 2,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 4,
+      "guard": true,
+      "piercing": true,
+      "damage": 3,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 7,
+      "guard": false,
+      "piercing": false,
+      "damage": 7,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 7,
+      "guard": false,
+      "piercing": true,
+      "damage": 7,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 7,
+      "guard": true,
+      "piercing": false,
+      "damage": 4,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 7,
+      "guard": true,
+      "piercing": true,
+      "damage": 5,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 8,
+      "guard": false,
+      "piercing": false,
+      "damage": 8,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 8,
+      "guard": false,
+      "piercing": true,
+      "damage": 8,
+      "statusConsumed": true
+    },
+    {
+      "zasca": 8,
+      "guard": true,
+      "piercing": false,
+      "damage": 4,
+      "statusConsumed": null
+    },
+    {
+      "zasca": 8,
+      "guard": true,
+      "piercing": true,
+      "damage": 5,
+      "statusConsumed": true
+    }
+  ]
+}
