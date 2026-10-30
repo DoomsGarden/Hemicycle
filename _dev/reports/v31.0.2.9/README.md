@@ -1,6 +1,6 @@
 # v31.0.2.9 — Debug y equilibrio
 
-Preparación de la nueva versión. El código implementa las 46 reasignaciones aprobadas, las dos utilidades revisadas y explicaciones sencillas. Se conservan estadísticas, costes, escaños, doctrinas, fuerte y Elo. [Reparto completo](../../../docs/balance/habilidades-v31.0.2.9.md).
+Publicación de la nueva versión. El código implementa las 46 reasignaciones aprobadas, las dos utilidades revisadas y explicaciones sencillas. Se conservan estadísticas, costes, escaños, doctrinas, fuerte y Elo. [Reparto completo](../../../docs/balance/habilidades-v31.0.2.9.md).
 
 ## Evidencia
 
@@ -13,9 +13,9 @@ Preparación de la nueva versión. El código implementa las 46 reasignaciones a
 - **Regresión del bloqueo de ataques**, [resultados](recovery/after.json): un rechazo libera el combate; permite defensa posterior, dos atacantes contra el mismo rival y cancela un objetivo desaparecido sin convertirlo en hueco ni exigir reiniciar.
 - **PostgreSQL aislado**, en la suite: SQL aplicado dos veces, permisos exclusivos de servidor, guardados y tickets anteriores conservados; premios offline6/offline7 liquidados una sola vez. La función antigua sin versión continúa en offline1. Se rechaza offline8.
 
-## Activación pendiente
+## Activación confirmada
 
-La migración [20261030_debug_balance_v9.sql](../../online/20261030_debug_balance_v9.sql) solo amplía la admisión de nuevas partidas a offline7. Este entorno no tiene acceso administrativo a Supabase de producción. La rama `codex/debug-equilibrio-v9` queda preparada para revisión; `main`, la rama de Render y la etiqueta nueva se publicarán después de que el responsable confirme la ejecución del SQL. No se comprueba el despliegue de Pages.
+La migración [20261030_debug_balance_v9.sql](../../online/20261030_debug_balance_v9.sql) solo amplía la admisión de nuevas partidas a offline7. Dooms confirmó `Success` tras ejecutarla en Supabase → SQL Editor. La confirmación procede del responsable; este entorno no ha inspeccionado la base de datos de producción. Se publica el código verificado en `main` y `codex/online-actions-foundation`, con la etiqueta v31.0.2.9 y conservando `codex/debug-equilibrio-v9` para revisión. Esta activación solo documenta la confirmación; no cambia el código de juego comprobado. No se comprueba el despliegue de Pages.
 
 ## Reproducir
 
