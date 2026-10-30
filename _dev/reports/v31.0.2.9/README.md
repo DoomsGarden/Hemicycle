@@ -15,7 +15,7 @@ Preparación de la nueva versión. El código implementa las 46 reasignaciones a
 
 ## Activación pendiente
 
-La migración [20261030_debug_balance_v9.sql](../../online/20261030_debug_balance_v9.sql) solo amplía la admisión de nuevas partidas a offline7. Este entorno no tiene acceso administrativo a Supabase de producción. La rama `codex/debug-equilibrio-v31.0.2.9` queda preparada para revisión; `main`, la rama de Render y la etiqueta nueva se publicarán después de que el responsable confirme la ejecución del SQL. No se comprueba el despliegue de Pages.
+La migración [20261030_debug_balance_v9.sql](../../online/20261030_debug_balance_v9.sql) solo amplía la admisión de nuevas partidas a offline7. Este entorno no tiene acceso administrativo a Supabase de producción. La rama `codex/debug-equilibrio-v9` queda preparada para revisión; `main`, la rama de Render y la etiqueta nueva se publicarán después de que el responsable confirme la ejecución del SQL. No se comprueba el despliegue de Pages.
 
 ## Reproducir
 
