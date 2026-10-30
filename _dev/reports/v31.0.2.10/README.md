@@ -34,9 +34,9 @@ Los 120 contextos tienen fuente y atribución. Se incluyen 118 extractos CC BY-S
 
 Dooms organizará 5–8 jugadores nuevos. El [protocolo](../../../docs/pruebas/comprension-v31.0.2.10.md), la [ficha](../../../pruebas/index.html) y su exportación están preparados. **La sesión humana no se ha realizado**; no se sustituye por bots ni se suma al total de pruebas. Sin nombres, correos, cuentas, fechas de nacimiento o envíos automáticos. No se añade analítica externa. La ampliación de colección queda para después del cierre de interfaces y funcionamiento.
 
-## Activación pendiente
+## Activación y publicación
 
-Ejecutar [`20261030_clarity_balance_v10.sql`](../../online/20261030_clarity_balance_v10.sql) en Supabase → SQL Editor. Este entorno no dispone de acceso administrativo de producción. La migración solo amplía las versiones admitidas a offline8; no reescribe datos ni premios. Después de la confirmación se publicarán `main`, `codex/online-actions-foundation` y la etiqueta v31.0.2.10, conservando `codex/claridad-v10` para revisión. No se comprueba el despliegue de Pages.
+Dooms confirmó «Success» el 30 de octubre de 2026 tras ejecutar [`20261030_clarity_balance_v10.sql`](../../online/20261030_clarity_balance_v10.sql) en Supabase → SQL Editor. Este entorno no dispone de acceso administrativo de producción. La migración solo amplía las versiones admitidas a offline8; no reescribe datos ni premios. La publicación comprende `main`, `codex/online-actions-foundation` y la etiqueta v31.0.2.10, conservando `codex/claridad-v10` para revisión. No se comprueba el despliegue de Pages.
 
 ## Reproducir
 
