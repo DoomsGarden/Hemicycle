@@ -30,4 +30,4 @@ El marco se aplica con nueve zonas, esquinas de tamaño fijo y bordes repetibles
 
 ## Activación
 
-Preparado para `codex/perfil-xp-v11`. Falta la ejecución por el responsable del SQL de [XP y cosméticos](../../online/20261031_profile_xp_cosmetics.sql) en Supabase. Se publicará después de confirmar ese paso; no se comprueba el despliegue de Pages. Los permisos administrativos de producción no están disponibles en este entorno.
+Dooms confirmó «Success» tras ejecutar y guardar el SQL de [XP y cosméticos](../../online/20261031_profile_xp_cosmetics.sql) en Supabase. La publicación comprende `main`, `codex/online-actions-foundation` y la etiqueta v31.0.2.11, conservando `codex/perfil-xp-v11` para revisión. No se comprueba el despliegue de Pages. Los permisos administrativos de producción no están disponibles en este entorno.
