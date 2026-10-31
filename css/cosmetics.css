@@ -1,10 +1,10 @@
 /* Nueve zonas: el perfil del borde y los adornos no se escalan con la ventana. */
-html[data-menu-skin]{--skin-metal:#d5b87b;--skin-ink:#e9edf6;--skin-muted:#b9c4d7;--skin-title:#f4d99c;--skin-fill:rgba(17,27,45,.7);--skin-font:Georgia,'Times New Roman',serif}
-html[data-menu-skin=senate]{--skin-metal:#bc935c;--skin-title:#f0d4a5;--skin-fill:rgba(34,29,25,.7);--skin-font:Georgia,'Times New Roman',serif}
-html[data-menu-skin=parchment]{--skin-metal:#9d7137;--skin-ink:#33281c;--skin-muted:#5f503c;--skin-title:#543a20;--skin-fill:rgba(240,222,178,.86);--skin-font:Georgia,'Times New Roman',serif}
-html[data-menu-skin=book]{--skin-metal:#aa8147;--skin-ink:#33251c;--skin-muted:#5e4c3c;--skin-title:#58391e;--skin-fill:rgba(233,218,185,.88);--skin-font:Georgia,'Times New Roman',serif}
-html[data-menu-skin=orbital]{--skin-metal:#9bafc0;--skin-title:#e5d6ac;--skin-fill:rgba(22,30,40,.7);--skin-font:'Hemicycle UI',system-ui,sans-serif}
-html[data-menu-skin=hologram]{--skin-metal:#8bdff3;--skin-title:#b8effb;--skin-fill:rgba(13,37,55,.7);--skin-font:'Hemicycle UI',system-ui,sans-serif}
+html[data-menu-skin]{--skin-metal:#d5b87b;--skin-ink:#e9edf6;--skin-muted:#b9c4d7;--skin-title:#f4d99c;--skin-fill:rgba(17,27,45,.7);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=senate]{--skin-metal:#bc935c;--skin-title:#f0d4a5;--skin-fill:rgba(34,29,25,.7);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=parchment]{--skin-metal:#9d7137;--skin-ink:#33281c;--skin-muted:#5f503c;--skin-title:#543a20;--skin-fill:rgba(240,222,178,.86);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=book]{--skin-metal:#aa8147;--skin-ink:#33251c;--skin-muted:#5e4c3c;--skin-title:#58391e;--skin-fill:rgba(233,218,185,.88);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=orbital]{--skin-metal:#9bafc0;--skin-title:#e5d6ac;--skin-fill:rgba(22,30,40,.7);--menu-default-font:'Hemicycle UI',system-ui,sans-serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=hologram]{--skin-metal:#8bdff3;--skin-title:#b8effb;--skin-fill:rgba(13,37,55,.7);--menu-default-font:'Hemicycle UI',system-ui,sans-serif;--skin-font:var(--menu-default-font)}
 html[data-menu-skin] :is(.panel,.modal,.player-profile,.audio-options,.history-panel,.cloud-panel,.legal-panel,.strategy-panel,.market-card-row,.trade-compose,.trade-activity,.battle-journal,.game-select-panel,.pack-card,.free-packs,.cabinet-analysis,.cabinet-summary){border-image-source:var(--menu-frame);border-image-slice:17%;border-image-width:20px;border-image-outset:1px;border-image-repeat:round;background-color:transparent;background-image:linear-gradient(var(--skin-fill),var(--skin-fill));color:var(--skin-ink);box-shadow:inset 0 2px 5px #fff1,inset 0 -3px 9px #0005,0 8px 24px #0005}
 html[data-menu-skin] :is(.panel,.modal,.player-profile,.audio-options,.history-panel,.cloud-panel,.legal-panel){padding:16px}
 html[data-menu-skin] :is(.panel,.modal,.player-profile,.audio-options,.history-panel,.cloud-panel,.strategy-panel) :is(h2,h3,h4,legend):not(.cromo *,.action-cromo *){font-family:var(--skin-font);color:var(--skin-title)}
@@ -74,8 +74,10 @@ html[data-menu-skin] :is(.home-options-button,.profile-button,.play-split){borde
 @font-face{font-family:Lora;src:url('../fonts/Lora-Variable.ttf') format('truetype');font-weight:400 700;font-display:block}
 @font-face{font-family:Rajdhani;src:url('../fonts/Rajdhani-Medium.ttf') format('truetype');font-weight:400 600;font-display:block}
 @font-face{font-family:Rajdhani;src:url('../fonts/Rajdhani-Bold.ttf') format('truetype');font-weight:700 900;font-display:block}
-html:is([data-menu-skin=parchment],[data-menu-skin=book]){--skin-font:Lora,Georgia,serif}
-html:is([data-menu-skin=orbital],[data-menu-skin=hologram]){--skin-font:Rajdhani,'Hemicycle UI',sans-serif}
+@font-face{font-family:Cinzel;src:url('../fonts/Cinzel-Variable.ttf') format('truetype');font-weight:400 900;font-display:block}
+@font-face{font-family:Orbitron;src:url('../fonts/Orbitron-Variable.ttf') format('truetype');font-weight:400 900;font-display:block}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]){--menu-default-font:Lora,Georgia,serif;--skin-font:var(--menu-default-font)}
+html:is([data-menu-skin=orbital],[data-menu-skin=hologram]){--menu-default-font:Rajdhani,'Hemicycle UI',sans-serif;--skin-font:var(--menu-default-font)}
 html[data-menu-skin] body,html[data-menu-skin] :is(button,input,select,textarea,.screen,.player-profile,.modal,.audio-options,.history-panel,.cloud-panel,.strategy-panel,.objective-card,.hud-cell,.tab){font-family:var(--skin-font)}
 /* Frases y lecturas largas conservan su tipografía de lectura. */
 html[data-menu-skin] :is(#battleActionRoot,#battleActionRoot *, .legal-panel,.legal-panel *, .orator-context,.orator-context *, .source-context,.source-context *, .profile-hint,.profile-message,.cosmetic-intro,.strategy-panel p){font-family:'Hemicycle UI',system-ui,sans-serif}
