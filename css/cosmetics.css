@@ -229,7 +229,7 @@ html[data-menu-skin] .appbar :is(.profile-button,.mini.news,[data-go=ayuda]){pad
 html[data-menu-skin] .appbar [data-go=ayuda]{width:29px;height:29px;min-height:29px;display:grid;place-items:center}
 html[data-menu-skin] .senate-home .play-split{border:4px solid transparent;border-image:var(--menu-frame) 17% / var(--menu-frame-width) / 0 round;border-radius:0;background:var(--primary-fill);background-clip:padding-box;box-shadow:inset 0 1px #fff6,0 3px 10px #0006}
 html[data-menu-skin] .senate-home :is(.play-main,.play-toggle){color:var(--primary-ink)}
-html[data-menu-skin] .home-action-stack{isolation:isolate}
+html[data-menu-skin] .home-action-stack{isolation:isolate;right:12px}
 html[data-menu-skin] .home-action-stack::before{content:'';position:absolute;inset:-5px;z-index:-2;border-radius:3px;background:var(--tools-fill);box-shadow:inset 0 2px 5px #fff3,inset 0 -3px 6px #0007,0 5px 14px #0008;pointer-events:none}
 html[data-menu-skin] .home-action-stack::after{content:'';position:absolute;inset:-8px;z-index:-1;border:1px solid transparent;border-image:var(--menu-frame) 17% / var(--menu-control-frame-width) / 0 round;filter:drop-shadow(0 0 3px var(--tools-glow));pointer-events:none}
 html:is([data-menu-skin=senate],[data-menu-skin=parchment]) .home-action-stack::before{background:linear-gradient(#fff3,#754b2b66,#eed7a3) center top/100% 7px no-repeat,linear-gradient(#eed7a3,#754b2b66,#fff3) center bottom/100% 7px no-repeat,var(--tools-fill)}
@@ -275,7 +275,7 @@ html[data-menu-skin] .home-action-stack::before{opacity:.7}
 html[data-menu-skin] .home-action-extra{opacity:1;transition:max-height .22s ease,visibility .22s}
 html[data-menu-skin=hologram]{--tools-fill:repeating-linear-gradient(0deg,#8ce8ff12 0 1px,transparent 1px 4px),linear-gradient(100deg,#052339,#0b4860,#041a2b)}
 @media(max-height:500px) and (min-width:500px){
- .senate-home .home-bottom{right:64px}
+ .senate-home .home-bottom{right:72px}
 }
 @media(max-height:360px) and (min-width:500px){
  html[data-menu-skin] .home-action-stack,html[data-menu-skin] .home-action-extra>div{gap:2px}
@@ -283,5 +283,9 @@ html[data-menu-skin=hologram]{--tools-fill:repeating-linear-gradient(0deg,#8ce8f
  html[data-menu-skin] .home-action-stack .home-action-toggle{height:24px;min-height:24px}
 }
 @media(prefers-reduced-motion:reduce){html[data-menu-skin] .home-action-extra{transition:none}}
+/* El foco usa el material del botón; no añade otro rectángulo dentro del marco. */
+html[data-menu-skin] .senate-home :is(.play-main,.play-toggle){border:0;border-radius:0;outline:0;box-shadow:none}
+html[data-menu-skin] .senate-home :is(.play-main,.play-toggle):focus-visible{background:#ffffff20}
+html[data-menu-skin] .senate-home .play-split:has(:focus-visible){filter:drop-shadow(0 0 4px var(--skin-metal))}
 .battle-wrap .battle-backdrop.enemy::before{content:'';position:absolute;inset:0;background-image:inherit;background-color:inherit;background-size:inherit;background-position:inherit;background-blend-mode:inherit;transform:scale(1.2);transform-origin:center;pointer-events:none}
 html[data-menu-skin] .screen.in-battle .battle-resources{background:#091321e8;border-radius:4px;box-shadow:0 0 0 3px #091321e8,0 2px 5px #0008;text-shadow:0 1px 2px #000;color:#e1e8f2}
