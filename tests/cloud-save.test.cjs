@@ -39,3 +39,13 @@ test('submitted migration stays explicit across refreshes and reloads, without r
 test('failed migration is not labelled submitted and cannot replace local progress',async t=>{
  const s=server(),d=device(s,'u',payload(),undefined,{initialize:async()=>{throw Error('Unavailable');}});t.after(()=>d.svc.dispose());const before=clone(d.local);await d.svc.refresh();await assert.rejects(d.svc.activate(),/Unavailable/);await d.svc.refresh();assert.equal(d.svc.state().phase,'empty');assert.deepEqual(d.local,before);
 });
+
+test('approved initial migration restores the canonical copy, preserves recovery, and enables cloud saving',async t=>{
+ const s=server();let d;d=device(s,'u',payload(),undefined,{initialize:async()=>{s.saves.set('u',{user_id:'u',revision:1,payload:clone(d.local),updated_at:new Date().toISOString()});return {status:'approved'};}});t.after(()=>d.svc.dispose());const before=clone(d.local);
+ await d.svc.refresh();await d.svc.activate();assert.equal(d.svc.state().phase,'synced');assert.equal(d.svc.state().enabled,true);assert.deepEqual(d.local,before);assert.deepEqual(d.svc.recovery().payload,before);assert.equal(s.saves.get('u').revision,1);
+});
+
+test('a lost approval response can retry without replacing or duplicating the imported cloud',async t=>{
+ const s=server();let d,calls=0;d=device(s,'u',payload(),undefined,{initialize:async()=>{calls++;if(!s.saves.has('u'))s.saves.set('u',{user_id:'u',revision:1,payload:clone(d.local),updated_at:new Date().toISOString()});if(calls===1)throw Error('lost approval response');return {status:'approved',alreadyApproved:true};}});t.after(()=>d.svc.dispose());const before=clone(d.local);
+ await d.svc.refresh();await assert.rejects(d.svc.activate(),/lost approval/);assert.deepEqual(d.local,before);assert.deepEqual(d.svc.recovery().payload,before);await d.svc.activate();assert.equal(d.svc.state().phase,'synced');assert.equal(s.saves.get('u').revision,1);assert.deepEqual(d.local,before);
+});

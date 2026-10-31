@@ -1,6 +1,22 @@
-# Revisión manual de importaciones
+# Importación inicial automática
 
-Solo para el propietario del proyecto. No hay ruta pública ni aprobación automática; no resuelve ni aprueba por sí sola la incidencia particular de Gmail.
+La política `automatic-local-v1` está autorizada por el propietario: se acepta una primera copia local válida, aunque los respaldos antiguos no tienen firma del servidor. El progreso posterior sigue sujeto a la economía autoritativa.
+
+Activación global, una sola vez en Supabase → SQL Editor: ejecutar completo [`20261031_automatic_legacy_import.sql`](../online/20261031_automatic_legacy_import.sql). El mismo archivo procesa las solicitudes pendientes. Es repetible y devuelve cantidades en `migration_summary`; nunca publica nicks, payloads ni correos.
+
+El servicio valida cada respaldo con `HemicycleBackup.validate` antes de llamar al RPC. El SQL vuelve a comprobar formato, identidad, catálogo, tipos, intervalos numéricos y XP. Las solicitudes antiguas ya pasaron el validador del servicio al enviarse. La política acepta su origen local sin afirmar que acredita partidas o recursos anteriores.
+
+Solo se importa si la cuenta aún no tiene una nube. Se usa un bloqueo transaccional para serializar importaciones; guardado, aprobación y auditoría se confirman juntos. Los reintentos no incrementan revisiones ni duplican recursos. La unicidad de `source_id` evita vincular el mismo progreso a dos cuentas. Una nube existente se recupera; no se sobrescribe ni mezcla. Las decisiones y respaldos son privados, sin acceso para `anon`/`authenticated`.
+
+El resumen distingue aprobadas y omitidas: `existing_cloud`, `source_conflict`, `invalid`, `rejected` (rechazo administrativo previo) o `changed` (cambio concurrente de solicitud). Esas excepciones se conservan sin sustituir datos. Las aprobaciones anteriores no se repiten.
+
+Las solicitudes nuevas se validan e importan durante la activación del jugador. Quienes ya estaban pendientes pueden entrar en Perfil → Cuenta y guardado → Nube, pulsar Comprobar y recuperar la copia disponible. Los clientes anteriores siguen pudiendo hacer esa recuperación. Si todavía aparece «Migración pendiente de activación», comprobar que el SQL global se ha ejecutado.
+
+Este entorno de desarrollo no tiene credenciales administrativas de producción: las pruebas y capturas usan una base aislada. Publicar el código no ejecuta el SQL ni demuestra que las solicitudes reales ya estén aprobadas.
+
+---
+
+## Revisión manual excepcional (procedimiento anterior)
 
 1. Ejecutar `list-imports.sql` en SQL Editor (solo lectura). Localizar al jugador por su UUID/nick y contrastar su progreso con él. Cada fila `review` contiene datos privados: guardarla localmente como JSON, nunca subirla al repositorio ni al chat.
 2. Revisar colección, FS, Elo, victorias y derrotas. La validación de formato no demuestra que un progreso local sea legítimo. La decisión sigue siendo administrativa. No aprobar importaciones si existe otra nube que debe recuperarse.

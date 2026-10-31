@@ -12,6 +12,7 @@ test('profile XP migration preserves old and new tickets, grants and commits XP 
   payload.profile.album=Econ.catalog.filter(c=>!c.action).map(c=>c.id);await rpc('hemicycle_economy_bootstrap',{p_actor:actor,p_payload:payload});
   const old=await rpc('hemicycle_offline_download',{p_actor:actor,p_rules:'offline7'}),contextBefore=await rpc('hemicycle_economy_context',{p_actor:actor});
   await db.exec('reset role');const migration=fs.readFileSync('_dev/online/20261031_profile_xp_cosmetics.sql','utf8');await db.exec(migration);await db.exec(migration);
+  const automatic=fs.readFileSync('_dev/online/20261031_automatic_legacy_import.sql','utf8');await db.exec(automatic);await db.exec(automatic);
   a.deepEqual(stable(await rpc('hemicycle_economy_context',{p_actor:actor})),stable(contextBefore));
   a.deepEqual(await rpc('hemicycle_offline_download',{p_actor:actor,p_rules:'offline7'}),old);
   const current=await rpc('hemicycle_offline_download',{p_actor:actor,p_rules:'offline8'});a.equal(current.length,10);a.ok(current.every(t=>t.rules==='offline8'));a.deepEqual(await rpc('hemicycle_offline_download',{p_actor:actor,p_rules:'offline8'}),current);

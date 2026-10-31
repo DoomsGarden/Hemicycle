@@ -32,3 +32,11 @@ test('temporary saturation or network loss preserves the same pending operation 
 test('authentication outage and truncated RPC responses remain temporary',async()=>{
  for(const brokenAuth of [true,false]){const service=create({url:'https://example.supabase.co',key:'public',secret:'server',fetcher:async url=>url.endsWith('/auth/v1/user')?brokenAuth?{ok:false,status:503}:{ok:true,json:async()=>({id:'actor'})}:{ok:true,json:async()=>{throw SyntaxError('private response');}}});await assert.rejects(service('Bearer user','/offline/tickets','POST',{}),e=>e.status===503&&e.code==='ECONOMY_UNAVAILABLE'&&!e.message.includes('private'));}
 });
+
+test('automatic import succeeds without a manual pending state or a replacement starter collection',async()=>{
+ const paths=[],p={w:1,l:0,album:['one'],fs:1530,elo:0};const c=client(async path=>{paths.push(path);return {ok:true,json:async()=>({status:'approved',alreadyApproved:false})};},p);
+ assert.equal((await c.initialize()).status,'approved');assert.deepEqual(paths,['http://local/economy/import-request']);assert.equal(p.fs,1530);
+});
+test('an unknown import response never claims that migration is complete',async()=>{
+ const c=client(async()=>({ok:true,json:async()=>({})}),{w:1,l:0,album:['one'],fs:1530,elo:0});await assert.rejects(c.initialize(),/confirmar la migración/);
+});
