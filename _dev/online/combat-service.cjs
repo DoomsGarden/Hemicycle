@@ -1,5 +1,5 @@
 'use strict';
-const E=require('./combat.cjs'),crypto=require('node:crypto');
+const E=require('./combat.cjs'),C=require('../../js/cosmetic-catalog.js'),crypto=require('node:crypto');
 function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
  async function rpc(name,args){const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/rpc/'+name,{method:'POST',headers:{apikey:secret,Authorization:'Bearer '+secret,'Content-Type':'application/json'},body:JSON.stringify(args),signal:AbortSignal.timeout(8000)});if(!response.ok)throw Error('No se pudo guardar o recuperar el combate. Comprueba el SQL y la configuración del servidor.');return response.json();}
  async function resultSnapshot(load,roomId,actor){
@@ -21,7 +21,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
    }else result={...result,lootStatus:'legacy'};
   }
   if(state?.status==='finished'&&state.xpVersion==='xp1'&&Array.isArray(state.xpAwards))result={...result,xp:state.xpAwards[load.side]||0};
-  return {...E.project(state||E.initial(load.mode||'normal'),load.side,load.revision,load.now),rankedElo:load.rating,result,opponentKind:load.opponentKind||'player'};
+  return {...E.project(state||E.initial(load.mode||'normal'),load.side,load.revision,load.now),rankedElo:load.rating,result,opponentKind:load.opponentKind||'player',presentation:[0,1].map(side=>C.combat(load.opponentKind==='ai'&&side===1?null:state?.presentation?.[side]))};
  }
  return async function handle(auth,roomId,command,operationId){
   if(!secret){const e=Error('Combate pendiente de configurar: falta la clave privada en Render.');e.status=503;throw e;}
@@ -34,6 +34,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
    let next=structuredClone(state);const timedOut=E.timeout(next,load.now);
    if(!timedOut&&command)next=E.apply(state,load.side,command,load.now,undefined,context?.[load.side]?.profile);
    if(load.opponentKind==='ai'&&command?.type==='ready'&&!next.players[1])next=E.apply(next,1,{type:'ready',cabinet:AI.cabinet(command.cabinet,load.rating||0,undefined,load.mode==='ranked'?undefined:command.cabinet.orators.map(id=>E.catalog[id].r))},load.now);
+   if(!timedOut&&command?.type==='ready'){next.presentation=Array.isArray(state.presentation)?state.presentation.slice(0,2):[null,null];next.presentation[load.side]=C.combat(command.cosmetics||context?.[load.side]?.profile);if(load.opponentKind==='ai')next.presentation[1]=C.combat(null);}
    if(load.opponentKind==='ai')next=AI.advance(next,load.now);
    if(!timedOut&&!command)return resultSnapshot(load,roomId,actor);
    const args={p_room_id:roomId,p_actor:actor,p_expected_revision:load.revision,p_state:next,p_operation_id:operationId||crypto.randomUUID(),p_request:request||{type:'timeout'}};

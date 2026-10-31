@@ -6,5 +6,6 @@ var themes=[['classic','Clásico',true],['marble','Mármol azul',true],['imperia
 function collection(category){if(category==='menu')return menus;return themes.map(function(t){return {id:t[0],name:t[1],adaptive:t[2],available:true,asset:category==='mat'?(['classic','marble'].indexOf(t[0])>=0?null:'assets/cosmetics/mats/'+t[0]+'.webp'):'assets/cosmetics/'+(category==='back'?'backs':'coins')+'/'+t[0]+'.svg'};});}
 function validate(raw){if(!raw||typeof raw!=='object'||Array.isArray(raw)||Object.keys(raw).length!==4||categories.some(function(k){return !collection(k).some(function(t){return t.id===raw[k];});}))throw Error('Selección visual no válida.');return {menu:raw.menu,mat:raw.mat,back:raw.back,coin:raw.coin};}
 function selection(profile){var saved=profile&&profile.cosmetics||{},out={};categories.forEach(function(k){out[k]=collection(k).some(function(t){return t.id===saved[k];})?saved[k]:k==='mat'&&profile&&profile.battleTheme==='marble'?'marble':'classic';});return out;}
-return {categories:categories,collection:collection,selection:selection,validate:validate};
+function combat(raw){var s=selection(raw&&typeof raw==='object'&&('cosmetics' in raw||'battleTheme' in raw)?raw:{cosmetics:raw});return {mat:s.mat,back:s.back};}
+return {combat:combat,categories:categories,collection:collection,selection:selection,validate:validate};
 });
