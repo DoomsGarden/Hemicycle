@@ -33,11 +33,11 @@
 .screen[data-view=menu] .foot{color:#d3b77e;letter-spacing:2px;font-size:calc(9px * var(--ui-text-scale,1));margin-top:3px}
 @media(max-width:350px){.senate-home .hero-caption{font-size:calc(6px * var(--ui-text-scale,1));letter-spacing:.7px}}
 @media(max-height:690px){.senate-home .hero-caption{display:none}.senate-home .senate-display{height:33%;bottom:20px}.senate-home .home-bottom{min-height:85px}.senate-quote{top:22%;bottom:auto;width:56%;font-size:calc(10px * var(--ui-text-scale,1));padding:3px 5px}.senate-quote b{margin-bottom:1px}}
-@media(max-height:500px) and (min-width:600px){.screen[data-view=menu]{max-width:900px}.screen[data-view=menu] .appbar{padding-top:8px;padding-bottom:6px;gap:5px}.screen[data-view=menu] .hud-cell{padding:3px 8px}.screen[data-view=menu] .hud-metric b{font-size:calc(12px * var(--ui-text-scale,1))}.screen[data-view=menu] .hud-metric small{font-size:calc(7px * var(--ui-text-scale,1));margin-bottom:1px}.screen[data-view=menu] .tabbar{height:57px;padding-bottom:5px}.screen[data-view=menu] .tab.on{height:55px}.screen[data-view=menu] .tab.on .nav-icon{height:35px;width:40px}.screen[data-view=menu] .tab{height:45px}.senate-home .hero-scene{min-height:100px}.senate-home .senate-display{height:31%;width:170px;bottom:20px}.senate-home .hero-fan .cromo{max-width:60px}.senate-home .hero-fan .cromo:first-child,.senate-home .hero-fan .cromo:last-child{max-width:54px}.senate-home .hero-fan .bot{font-size:calc(6px * var(--ui-text-scale,1));padding:4px}.senate-home .hero-fan .card-stat{font-size:calc(6px * var(--ui-text-scale,1))}.senate-home .home-bottom{position:absolute;right:0;bottom:0;min-height:0;background:rgba(8,13,24,.5)}.senate-home .home-season{display:none}.senate-home .play-main{font-size:calc(16px * var(--ui-text-scale,1));padding:8px 13px;min-height:38px}.senate-home .play-toggle{width:30px}.senate-home .online-entry{min-height:30px}.senate-quote{font-size:calc(9px * var(--ui-text-scale,1))}.senate-home .home-action-stack{gap:3px}.senate-home .home-action-stack .home-options-button,.senate-home .home-action-stack .mail-button{height:32px;min-height:32px;width:36px}.screen[data-view=menu] .foot{font-size:calc(7px * var(--ui-text-scale,1))}}
+@media(max-height:500px) and (min-width:500px){.screen[data-view=menu]{max-width:900px}.screen[data-view=menu] .appbar{padding-top:8px;padding-bottom:6px;gap:5px}.screen[data-view=menu] .hud-cell{padding:3px 8px}.screen[data-view=menu] .hud-metric b{font-size:calc(12px * var(--ui-text-scale,1))}.screen[data-view=menu] .hud-metric small{font-size:calc(7px * var(--ui-text-scale,1));margin-bottom:1px}.screen[data-view=menu] .tabbar{height:57px;padding-bottom:5px}.screen[data-view=menu] .tab.on{height:55px}.screen[data-view=menu] .tab.on .nav-icon{height:35px;width:40px}.screen[data-view=menu] .tab{height:45px}.senate-home .hero-scene{min-height:100px}.senate-home .senate-display{height:31%;width:170px;bottom:20px}.senate-home .hero-fan .cromo{max-width:60px}.senate-home .hero-fan .cromo:first-child,.senate-home .hero-fan .cromo:last-child{max-width:54px}.senate-home .hero-fan .bot{font-size:calc(6px * var(--ui-text-scale,1));padding:4px}.senate-home .hero-fan .card-stat{font-size:calc(6px * var(--ui-text-scale,1))}.senate-home .home-bottom{position:absolute;right:0;bottom:0;min-height:0;background:rgba(8,13,24,.5)}.senate-home .home-season{display:none}.senate-home .play-main{font-size:calc(16px * var(--ui-text-scale,1));padding:8px 13px;min-height:38px}.senate-home .play-toggle{width:30px}.senate-home .online-entry{min-height:30px}.senate-quote{font-size:calc(9px * var(--ui-text-scale,1))}.senate-home .home-action-stack{gap:3px}.senate-home .home-action-stack .home-options-button,.senate-home .home-action-stack .mail-button{height:32px;min-height:32px;width:36px}.screen[data-view=menu] .foot{font-size:calc(7px * var(--ui-text-scale,1))}}
 @media(prefers-reduced-motion:reduce){.menu-senate canvas{transition:none}.senate-home .senate-display{animation:none;translate:0 0}}
 
 @media(max-width:350px){.screen[data-view=menu] .hud-cell{gap:4px;padding:6px}.screen[data-view=menu] .hud-metric b{font-size:calc(12px * var(--ui-text-scale,1))}.screen[data-view=menu] .hud-metric+.hud-metric{padding-left:5px}.screen[data-view=menu] .hud-metric small{letter-spacing:.5px}.senate-home .hero-fan .nm{font-size:calc(7px * var(--ui-text-scale,1));white-space:nowrap}.senate-home .hero-fan .cromo .bot{padding:7px 4px 4px}}
-@media(max-height:500px) and (min-width:600px){.senate-quote{width:66%;left:0;font-size:calc(8px * var(--ui-text-scale,1))}.senate-quote[data-side=right]{right:0}.senate-quote b{display:none}}
+@media(max-height:500px) and (min-width:500px){.senate-quote{width:66%;left:0;font-size:calc(8px * var(--ui-text-scale,1))}.senate-quote[data-side=right]{right:0}.senate-quote b{display:none}}
 
 
 .screen[data-senate=true]{isolation:isolate;background:transparent;z-index:1}.screen[data-senate=true]>.content{position:relative;z-index:1;background:transparent}.screen[data-senate=true]>.appbar,.screen[data-senate=true]>.tabbar{position:relative;background:rgba(8,13,24,.5);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}.screen[data-senate=true]>.appbar{z-index:29}.screen[data-senate=true]>.tabbar{z-index:30}.senate-home .home-utilities>.eyebrow,.senate-home .home-copy>p{display:none}.senate-home .home-copy{z-index:10}.senate-home .home-action-stack{z-index:30}.menu-senate[hidden]{display:none}.screen[data-view=menu] .hud-cell{background:rgba(14,23,40,.64)}
@@ -45,17 +45,17 @@
 .senate-quote span{font-family:'Senate Dialogue',monospace;font-size:calc(clamp(14px,3.8vw,19px) * var(--ui-text-scale,1));font-weight:400;line-height:1.05;letter-spacing:0}
 
 .screen[data-senate=true]>.tabbar{grid-template-rows:minmax(0,1fr)}
-@media(max-height:500px) and (min-width:600px){.senate-quote{width:36%;left:3%}.senate-quote[data-side=right]{right:3%}.senate-quote b{display:block}.senate-home .hero-caption{display:none}}
+@media(max-height:500px) and (min-width:500px){.senate-quote{width:36%;left:3%}.senate-quote[data-side=right]{right:3%}.senate-quote b{display:block}.senate-home .hero-caption{display:none}}
 
 /* The fan reserves its own lower margin; the play panel never covers a card. */
 .senate-home .home-bottom{padding:6px;gap:8px}.senate-home .play-main{min-height:46px;padding:8px 14px}.senate-home .play-toggle{height:46px}.senate-home .online-entry{min-height:32px;margin-top:5px}.senate-home .play-mode-caption{margin-bottom:4px}
-@media(max-height:500px) and (min-width:600px){.senate-home .home-bottom{max-width:30%;margin-bottom:0}.senate-home .play-main{min-height:38px}.senate-home .play-toggle{height:38px}.senate-home .online-entry{min-height:30px}}
+@media(max-height:500px) and (min-width:500px){.senate-home .home-bottom{max-width:30%;margin-bottom:0}.senate-home .play-main{min-height:38px}.senate-home .play-toggle{height:38px}.senate-home .online-entry{min-height:30px}}
 
 /* Dialogue sits above the speaking figure, clear of the two-line title. */
 @media(max-height:690px){.senate-quote span{font-size:calc(13px * var(--ui-text-scale,1))}}
-@media(max-height:500px) and (min-width:600px){.senate-quote{top:44%;bottom:auto;width:26%;left:2%}.senate-quote[data-side=right]{right:2%}.senate-quote span{font-size:calc(14px * var(--ui-text-scale,1))}}
+@media(max-height:500px) and (min-width:500px){.senate-quote{top:44%;bottom:auto;width:26%;left:2%}.senate-quote[data-side=right]{right:2%}.senate-quote span{font-size:calc(14px * var(--ui-text-scale,1))}}
 
-@media(max-height:500px) and (min-width:600px){.senate-title{bottom:100%}}
+@media(max-height:500px) and (min-width:500px){.senate-title{bottom:100%}}
 
 /* One fixed stage survives navigation; scroll containers never own the canvas. */
 .menu-senate:after{content:'';position:absolute;inset:0;background:rgba(3,5,9,.7);pointer-events:none}
@@ -67,7 +67,7 @@
 .appbar .hud-metric b{white-space:normal;overflow-wrap:anywhere;font-variant-numeric:tabular-nums}
 .appbar .hud-metric b span{display:inline-block;max-width:100%;overflow-wrap:anywhere}
 .screen[data-view=menu] .hud-strip{grid-template-columns:minmax(0,1.7fr) minmax(0,1fr) 44px}
-@media(max-height:500px) and (min-width:600px){.menu-senate{width:min(100%,900px)}}
+@media(max-height:500px) and (min-width:500px){.menu-senate{width:min(100%,900px)}}
 
 .senate-home .hero-fan .cromo .bot{background:linear-gradient(transparent,#050a15ee 28%,#050a15)}
 .senate-home .hero-fan .cromo .bot::after{content:'';position:absolute;left:0;right:0;bottom:-1px;height:2px;background:#050a15;pointer-events:none}
