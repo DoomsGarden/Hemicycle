@@ -46,3 +46,6 @@
 .pack-opening.opening .pack-foil::before,.pack-opening.opening .pack-glints::before{animation-play-state:paused}
 @media(hover:hover) and (pointer:fine){.pack-card .pack-cover{transition:transform .2s ease,filter .2s ease}.pack-card:hover .pack-cover{transform:translateY(-3px) rotate(-1deg);filter:brightness(1.08)}}
 @media(prefers-reduced-motion:reduce){.pack-foil::before{animation:none;transform:translate3d(0,0,0);opacity:.25}.pack-cover .pack-glints::before{animation:none!important}.pack-card .pack-cover{transition:none}.pack-card:hover .pack-cover{transform:none}}
+
+/* El dibujo mantiene su proporción y se centra en una pista que puede encoger. */
+.sealed-pack{width:auto;max-width:100%;aspect-ratio:11/15;grid-template-columns:minmax(0,1fr)}
