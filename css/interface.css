@@ -112,7 +112,7 @@ body{position:fixed;inset:0;overscroll-behavior:none}
  .result-card-preview{width:clamp(76px,calc(28dvh - 72px),112px)}.result-card{padding:8px;gap:6px}.result-card .sub:last-child{display:none}
  .result-details{gap:5px}.result-details>.panel:not(.result-card){padding:7px}
 }
-@media(max-height:500px) and (min-width:600px){
+@media(max-height:500px) and (min-width:500px){
  .screen[data-view=result] .hud-strip{display:none}
  .screen[data-view=result] .view-body{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto auto minmax(0,1fr) auto;grid-template-areas:"seal details" "summary details" "rating details" "controls controls";gap:5px 10px}
  .screen[data-view=result] .majority-seal{grid-area:seal}
@@ -139,3 +139,7 @@ body{position:fixed;inset:0;overscroll-behavior:none}
 .screen[data-view=liga] .league-standings{padding-top:0;isolation:isolate}
 .league-standings table{border-collapse:separate;border-spacing:0}
 .league-standings th{top:0;z-index:2;background:#131b31}
+
+/* El consejo crece dentro del desplazamiento, sin invadir la recompensa. */
+.result-details>.result-learning{flex:0 0 auto;min-width:0;margin:0;padding:16px;overflow-wrap:anywhere}
+.play-options{max-height:var(--play-options-height,none);overflow-y:auto;overscroll-behavior:contain}

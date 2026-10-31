@@ -1,8 +1,8 @@
 /* Nueve zonas: el perfil del borde y los adornos no se escalan con la ventana. */
 html[data-menu-skin]{--menu-frame-width:20px;--menu-control-frame-width:10px;--menu-frame-inset:12px;--skin-metal:#d5b87b;--skin-ink:#e9edf6;--skin-muted:#b9c4d7;--skin-title:#f4d99c;--skin-fill:rgba(17,27,45,.7);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
 html[data-menu-skin=senate]{--skin-metal:#bc935c;--skin-title:#f0d4a5;--skin-fill:rgba(34,29,25,.7);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
-html[data-menu-skin=parchment]{--skin-metal:#9d7137;--skin-ink:#33281c;--skin-muted:#5f503c;--skin-title:#543a20;--skin-fill:rgba(240,222,178,.86);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
-html[data-menu-skin=book]{--skin-metal:#aa8147;--skin-ink:#33251c;--skin-muted:#5e4c3c;--skin-title:#58391e;--skin-fill:rgba(233,218,185,.88);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=parchment]{--skin-metal:#9d7137;--skin-ink:#33281c;--skin-muted:#493b29;--skin-title:#543a20;--skin-fill:rgba(240,222,178,.86);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
+html[data-menu-skin=book]{--skin-metal:#aa8147;--skin-ink:#33251c;--skin-muted:#493827;--skin-title:#58391e;--skin-fill:rgba(233,218,185,.88);--menu-default-font:Georgia,'Times New Roman',serif;--skin-font:var(--menu-default-font)}
 html[data-menu-skin=orbital]{--skin-metal:#9bafc0;--skin-title:#e5d6ac;--skin-fill:rgba(22,30,40,.7);--menu-default-font:'Hemicycle UI',system-ui,sans-serif;--skin-font:var(--menu-default-font)}
 html[data-menu-skin=hologram]{--skin-metal:#8bdff3;--skin-title:#b8effb;--skin-fill:rgba(13,37,55,.7);--menu-default-font:'Hemicycle UI',system-ui,sans-serif;--skin-font:var(--menu-default-font)}
 html[data-menu-skin] :is(.panel,.modal,.player-profile,.audio-options,.history-panel,.cloud-panel,.legal-panel,.strategy-panel,.market-card-row,.trade-compose,.trade-activity,.battle-journal,.game-select-panel,.pack-card,.free-packs,.cabinet-analysis,.cabinet-summary){border-image-source:var(--menu-frame);border-image-slice:17%;border-image-width:var(--menu-frame-width);border-image-outset:1px;border-image-repeat:round;background-color:transparent;background-image:linear-gradient(var(--skin-fill),var(--skin-fill));color:var(--skin-ink);box-shadow:inset 0 2px 5px #fff1,inset 0 -3px 9px #0005,0 8px 24px #0005}
@@ -229,9 +229,9 @@ html[data-menu-skin] .appbar :is(.profile-button,.mini.news,[data-go=ayuda]){pad
 html[data-menu-skin] .appbar [data-go=ayuda]{width:29px;height:29px;min-height:29px;display:grid;place-items:center}
 html[data-menu-skin] .senate-home .play-split{border:4px solid transparent;border-image:var(--menu-frame) 17% / var(--menu-frame-width) / 0 round;border-radius:0;background:var(--primary-fill);background-clip:padding-box;box-shadow:inset 0 1px #fff6,0 3px 10px #0006}
 html[data-menu-skin] .senate-home :is(.play-main,.play-toggle){color:var(--primary-ink)}
-html[data-menu-skin] .home-action-stack{isolation:isolate;right:12px}
-html[data-menu-skin] .home-action-stack::before{content:'';position:absolute;inset:-5px;z-index:-2;border-radius:3px;background:var(--tools-fill);box-shadow:inset 0 2px 5px #fff3,inset 0 -3px 6px #0007,0 5px 14px #0008;pointer-events:none}
-html[data-menu-skin] .home-action-stack::after{content:'';position:absolute;inset:-8px;z-index:-1;border:1px solid transparent;border-image:var(--menu-frame) 17% / var(--menu-control-frame-width) / 0 round;filter:drop-shadow(0 0 3px var(--tools-glow));pointer-events:none}
+html[data-menu-skin] .home-action-stack{isolation:isolate;right:0;padding-block:6px}
+html[data-menu-skin] .home-action-stack::before{content:'';position:absolute;inset:3px;z-index:-2;border-radius:3px;background:var(--tools-fill);box-shadow:inset 0 2px 5px #fff3,inset 0 -3px 6px #0007,0 5px 14px #0008;pointer-events:none}
+html[data-menu-skin] .home-action-stack::after{content:'';position:absolute;inset:0;z-index:-1;border:1px solid transparent;border-image:var(--menu-frame) 17% / var(--menu-control-frame-width) / 0 round;filter:drop-shadow(0 0 3px var(--tools-glow));pointer-events:none}
 html:is([data-menu-skin=senate],[data-menu-skin=parchment]) .home-action-stack::before{background:linear-gradient(#fff3,#754b2b66,#eed7a3) center top/100% 7px no-repeat,linear-gradient(#eed7a3,#754b2b66,#fff3) center bottom/100% 7px no-repeat,var(--tools-fill)}
 html[data-menu-skin=hologram] .home-action-stack::before{box-shadow:inset 0 0 10px #78deff38,0 0 12px #43cfff35,0 4px 16px #0008}
 html[data-menu-skin] .home-action-toggle{box-shadow:inset 0 1px #fff2,0 1px 3px #0008}
@@ -289,3 +289,34 @@ html[data-menu-skin] .senate-home :is(.play-main,.play-toggle):focus-visible{bac
 html[data-menu-skin] .senate-home .play-split:has(:focus-visible){filter:drop-shadow(0 0 4px var(--skin-metal))}
 .battle-wrap .battle-backdrop.enemy::before{content:'';position:absolute;inset:0;background-image:inherit;background-color:inherit;background-size:inherit;background-position:inherit;background-blend-mode:inherit;transform:scale(1.2);transform-origin:center;pointer-events:none}
 html[data-menu-skin] .screen.in-battle .battle-resources{background:#091321e8;border-radius:4px;box-shadow:0 0 0 3px #091321e8,0 2px 5px #0008;text-shadow:0 1px 2px #000;color:#e1e8f2}
+
+/* Sobre materiales claros, cada texto usa tinta; los controles oscuros conservan su contraste. */
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) :is(.sell-sheet,.trade-compose,.trade-activity,.market-card-row) :is(.market-note,.quantity-row label small,.sell-total>span,.row-price small,.trade-quote span,.trade-progress,.market-receipt,.market-receipt small,.market-purchase-review,.trade-activity p,.trade-compose label){color:var(--skin-muted)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) :is(.sell-sheet,.trade-compose,.trade-activity,.market-card-row) :is(.sell-total strong,.sell-total strong small,.row-price,.row-price>span,.trade-quote b,.market-receipt b,.trade-status,.market-card-copy strong){color:var(--skin-title)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .market-card-row .market-card-copy>small{color:var(--skin-muted)!important}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .sell-target button{color:#bdc8da}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .sell-target button.on{color:#ffe2a1}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .trade-status.completed{color:#20583e}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) :is(.trade-status.cancelled,.trade-status.expired){color:var(--skin-muted)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) :is(.objective-row,.objective-period) :is(.achievement-meter small,h4){color:var(--skin-muted)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .strategy-panel :is(summary,a){color:var(--skin-title)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .strategy-panel .strategy-note{color:var(--skin-ink)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .strategy-panel :is(.strategy-curve span,.risk-candidates span){background:#fff4;border-color:#80644166;color:var(--skin-ink)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) :is(.profile-offline-hint,.cloud-description,.history-status){color:var(--skin-muted)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .profile-status{color:#20583e}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .cloud-status{color:var(--skin-title)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .cloud-error{color:#842e23}
+
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .history-entry{color:#e3e9f4}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .cloud-panel .cloud-copy h3{color:#efd79e}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .audio-options :is(.audio-setting-title label,.audio-setting-title output,.audio-remember,.audio-version,header small){color:var(--skin-muted)}
+/* Los títulos fuera de paneles siguen sobre el hemiciclo oscuro. */
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .view-body>h2{color:#f4d99c}
+
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) .history-entry .sub{color:#bdc8da}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) #onlineRoot :is(.online-mode,#online-message,#combat-message){color:var(--skin-title)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) #onlineRoot :is(footer,.online-presence,.online-note,.online-group,.online-empty,.online-player-name small){color:var(--skin-muted)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) #onlineRoot :is(button,select,input){color:#edf1f7}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) #onlineRoot .online-dialog{border-image:var(--menu-frame) 17% / var(--menu-frame-width) / 1px round;border-radius:0;background:linear-gradient(var(--skin-fill),var(--skin-fill));color:var(--skin-ink)}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) #onlineRoot .online-player{background:#fff3}
+html:is([data-menu-skin=parchment],[data-menu-skin=book]) #onlineRoot :is(.online-player,.online-invitation)>button{background:#263750;color:#edf1f7}

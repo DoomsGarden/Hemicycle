@@ -1,0 +1,21 @@
+✔ battle journal is idempotent and history exposes only the current player (0.848139ms)
+✔ history retention stays bounded without changing other players (0.7361ms)
+✔ horizontal swipes follow the bottom menu order in both directions (1.716569ms)
+✔ short gestures stay put and screens outside the five tabs cannot swipe (0.229135ms)
+✔ touch travel threshold stays useful on small and wide screens without wrapping edges (0.116536ms)
+✔ result presents both votes and static rewards without the duplicate panel: p (34.092344ms)
+✔ result presents both votes and static rewards without the duplicate panel: e (2.193278ms)
+✔ result presents both votes and static rewards without the duplicate panel: draw (1.98227ms)
+✔ verified receipt votes take precedence over stale game display (2.90436ms)
+✔ season closure retains standings, reward and division message (8.583245ms)
+✔ risk warning defaults on, persists independently from text settings and can be reset in Options (2.534803ms)
+✔ invalid stored risk preferences keep the warning visible (3.732228ms)
+✔ independent typeface persists with reading sizes and tolerates unknown older preferences (1.830941ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 122.987767

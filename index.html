@@ -13,7 +13,7 @@
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="css/app.css?v=31.0.2.6">
-<link rel="stylesheet" href="css/interface.css?v=31.0.2.8-glass1">
+<link rel="stylesheet" href="css/interface.css?v=31.0.2.11-polish9">
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.11-frames6">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
@@ -105,17 +105,17 @@
 <script src="js/orator-catalog.js?v=31.0.2.10"></script>
 <script src="js/action-cards.js?v=31.0.2.3-actions2"></script>
 <script src="js/cabinet-analysis.js?v=31.0.2.10"></script>
-<script src="js/strategy-ui.js?v=31.0.2.10"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-reading1">
+<script src="js/strategy-ui.js?v=31.0.2.11-polish9"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-reading1">
 <script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=31.0.2.11-mats3"></script><script src="js/cosmetic-ui.js?v=31.0.2.11-frames6"></script>
-<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-edge8">
+<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-polish9">
 <script src="js/player-backup.js?v=31.0.2.11"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.11-edge8"></script>
-<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.10-results1">
+<script src="js/changelog.js?v=31.0.2.11-polish9"></script>
+<link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
 <script src="js/offline-rules-v8.js?v=31.0.2.10"></script>
@@ -827,9 +827,9 @@ window.addEventListener('keydown',function(ev){
   if(ev.key==='Escape'&&G.sel){ev.preventDefault();var selected=G.sel;choosePlayerAction('cancel');var cardButton=document.querySelector('[data-tutorial=player] [data-buid="'+selected+'"]');if(cardButton)cardButton.focus();return;}
   if((ev.key==='Enter'||ev.key===' ')&&ev.target.matches('[data-buid]')){ev.preventDefault();ev.target.click();return;}
  }
- if(PLAY_OPEN&&ev.key==='Escape'){ev.preventDefault();PLAY_OPEN=false;paint();var toggle=document.querySelector('[data-act="play-menu"]');if(toggle)toggle.focus();return;}
+ if(PLAY_OPEN&&ev.key==='Escape'){ev.preventDefault();PLAY_OPEN=false;syncPlayLauncher();var toggle=document.querySelector('[data-act="play-menu"]');if(toggle)toggle.focus({preventScroll:true});return;}
  if(PLAY_OPEN&&(ev.key==='ArrowUp'||ev.key==='ArrowDown')){
-  ev.preventDefault();var items=Array.prototype.slice.call(document.querySelectorAll('.play-option')),index=items.indexOf(document.activeElement);if(items.length)items[(index+(ev.key==='ArrowDown'?1:items.length-1))%items.length].focus();return;
+  ev.preventDefault();var items=Array.prototype.slice.call(document.querySelectorAll('.play-option')),index=items.indexOf(document.activeElement);if(items.length)items[(index+(ev.key==='ArrowDown'?1:items.length-1))%items.length].focus({preventScroll:true});return;
  }
  var modal=document.getElementById('modalRoot');
  if(modal&&modal.firstChild&&ev.key==='Tab'){
@@ -1147,6 +1147,7 @@ function paint(){
  var ab=document.getElementById('appbar');if(ab)ab.innerHTML=appbar();
  var foot=(SCREEN==='battle'||SCREEN==='menu')?'':'<div class="foot">'+CARDS.length+' oradores · '+(typeof HemicycleActions!=='undefined'?HemicycleActions.cards.length:0)+' acciones · gabinete de 5 + 2</div>';
  c.innerHTML='<div class="view-body">'+((SCREENS[SCREEN]||SCREENS.menu)())+'</div>'+foot;
+ if(PLAY_OPEN)syncPlayLauncher();
  if(typeof HemicycleMenuSenate!=='undefined')HemicycleMenuSenate.sync();
  var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
  if(typeof HemicycleMenuNavigation!=='undefined')HemicycleMenuNavigation.sync();
@@ -1241,16 +1242,39 @@ function chooseMenuCards(){
  else if(pool.length>1&&picked.map(function(x){return x.id;}).join(',')===MENU_FEATURED.join(','))picked.push(picked.shift());
  MENU_FEATURED=picked.map(function(x){return x.id;});
 }
+function playModes(){
+ return [['normal','N','Partida normal'],['ranked','VS','Clasificatoria'],['liga','L','Liga de los 30'],['rapida','R','Partida rápida']];
+}
+function playOptionsHTML(){
+ return '<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+playModes().map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'<button class="play-online-ranked" data-act="online-ranked" role="menuitem">Buscar Clasificatoria online</button></div>';
+}
+/* Cambiar el modo conserva la escena y sus animaciones en curso. */
+function syncPlayLauncher(){
+ var launcher=document.querySelector('.play-launcher');if(!launcher)return;
+ var options=launcher.querySelector('#playOptions'),toggle=launcher.querySelector('[data-act="play-menu"]');
+ if(PLAY_OPEN&&!options)launcher.insertAdjacentHTML('afterbegin',playOptionsHTML());
+ else if(!PLAY_OPEN&&options)options.remove();
+ if(PLAY_OPEN){
+  var area=launcher.closest('.view-body').getBoundingClientRect(),anchor=launcher.getBoundingClientRect();
+  launcher.style.setProperty('--play-options-height',Math.max(44,anchor.top-area.top-16)+'px');
+  options=launcher.querySelector('#playOptions');
+  var selected=options.querySelector('.on');
+  if(selected)options.scrollTop=Math.max(0,selected.offsetTop+selected.offsetHeight-options.clientHeight+6);
+ }
+ toggle.setAttribute('aria-expanded',String(PLAY_OPEN));
+ if(PLAY_OPEN)toggle.setAttribute('aria-controls','playOptions');else toggle.removeAttribute('aria-controls');
+ var mode=playModes().filter(function(m){return m[0]===PLAY_MODE;})[0];
+ launcher.querySelector('.play-mode-caption').textContent=mode[2];
+}
 SCREENS.menu=function(){
  var d=D(),u=uniqueAlbum(d).length;
- var modes=[['normal','N','Partida normal'],['ranked','VS','Clasificatoria'],['liga','L','Liga de los 30'],['rapida','R','Partida rápida']];
- var selected=modes.filter(function(mode){return mode[0]===PLAY_MODE;})[0];
+ var selected=playModes().filter(function(mode){return mode[0]===PLAY_MODE;})[0];
  if(!MENU_FEATURED.length)chooseMenuCards();
  var featured=MENU_FEATURED.filter(function(id){return BYID[id]&&copies(d,id)>0;}).map(function(id){return {c:BYID[id]};});
  return '<section class="menu-home senate-home"><div class="home-copy"><div class="home-utilities"><span class="eyebrow">PRELANZAMIENTO · CARA A CARA</span>'+'<div class="home-action-stack'+(HOME_ACTIONS_OPEN?' expanded':'')+'"><button type="button" class="home-options-button" data-audio-open aria-label="Opciones" title="Opciones"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/><circle cx="9" cy="6" r="2" fill="#242c39"/><circle cx="15" cy="12" r="2" fill="#242c39"/><circle cx="10" cy="18" r="2" fill="#242c39"/></svg></button>'+mailButton()+'<div class="home-action-extra" id="homeActionExtra"'+(HOME_ACTIONS_OPEN?'':' inert')+'><div>'+objectiveButton('achievements','★','Logros')+'<button class="home-options-button" data-act="history" aria-label="Historial de combates" title="Historial">'+uiIcon('history')+'</button></div></div><button class="home-options-button home-action-toggle'+(objectivePending(d,'achievements')?' has-pending':'')+'" data-act="home-tools" aria-controls="homeActionExtra" aria-expanded="'+HOME_ACTIONS_OPEN+'" aria-label="'+(HOME_ACTIONS_OPEN?'Ocultar botones adicionales':'Mostrar Logros e Historial')+(objectivePending(d,'achievements')?' · Logros sin reclamar':'')+'">'+uiIcon('chevron')+'</button></div></div><p>Cinco políticos. Una estrategia.<br>Consigue los 100 votos del debate.</p></div>'
  +'<div class="hero-scene"><div class="senate-display"><h1 class="senate-title" aria-label="Toma la palabra"><picture><source media="(prefers-reduced-motion: reduce)" srcset="assets/menu-senate/title-still.webp"><img src="assets/menu-senate/title-still.webp" width="640" height="460" alt="" decoding="async"></picture></h1><div class="hero-fan" aria-hidden="true">'+featured.map(function(x){return cromoHTML(x.c,{noCardAttr:true});}).join('')+'</div></div><span class="hero-caption">Tu gabinete marca la diferencia</span></div>'
  +'<div class="home-bottom"><div class="home-season"><span>TU COLECCIÓN</span><b>'+u+' de '+CARDS.length+' voces.<br>Un debate por ganar.</b></div><div class="play-launcher">'
- +(PLAY_OPEN?'<div class="play-options" id="playOptions" role="menu" aria-label="Modo de juego">'+modes.map(function(mode){return '<button class="play-option'+(PLAY_MODE===mode[0]?' on':'')+'" role="menuitemradio" aria-checked="'+(PLAY_MODE===mode[0])+'" data-act="play-mode" data-mode="'+mode[0]+'"><span>'+mode[1]+'</span>'+mode[2]+'</button>';}).join('')+'<button class="play-online-ranked" data-act="online-ranked" role="menuitem">Buscar Clasificatoria online</button></div>':'')
+ +(PLAY_OPEN?playOptionsHTML():'')
  +'<span class="play-mode-caption">'+selected[2]+'</span><div class="play-split"><button class="play-main" data-act="play">Jugar</button><button class="play-toggle" data-act="play-menu" aria-label="Elegir modo de juego" aria-haspopup="menu" aria-expanded="'+PLAY_OPEN+'"'+(PLAY_OPEN?' aria-controls="playOptions"':'')+'>'+uiIcon('chevron')+'</button></div><button class="mini online-entry" data-act="online" aria-label="Jugadores conectados y desconectados">Jugadores</button></div></div></section>';
 };
 SCREENS.buzon=function(){
@@ -2414,7 +2438,7 @@ document.addEventListener('click',function(ev){
  var tradePick=t.closest('.trade-pick-grid [data-market]');if(tradePick){market().handle(tradePick);return;}
  if(t.closest('.modal'))return;
 
- if(PLAY_OPEN&&!t.closest('.play-launcher')){PLAY_OPEN=false;var options=document.getElementById('playOptions');if(options)options.remove();var toggle=document.querySelector('[data-act="play-menu"]');if(toggle)toggle.setAttribute('aria-expanded','false');}
+ if(PLAY_OPEN&&!t.closest('.play-launcher')){PLAY_OPEN=false;syncPlayLauncher();}
  var marketButton=t.closest('[data-market]');
  if(marketButton){try{market().handle(marketButton);}catch(e){market().state.error=e.message;paint();}return;}
 
@@ -2578,14 +2602,14 @@ document.addEventListener('click',function(ev){
   case 'online':if(ONLINE)ONLINE.open(PLAY_MODE);break;
   case 'remote-retry':if(SO.online&&REMOTE_PREPARATION)REMOTE_PREPARATION.controls.retry();else if(REMOTE_BATTLE)REMOTE_BATTLE.retry();break;
   case 'online-preparation-back':if(REMOTE_PREPARATION){REMOTE_PREPARATION.controls.close();REMOTE_PREPARATION=null;go('menu');}break;
-  case 'online-ranked':PLAY_OPEN=false;if(ONLINE)ONLINE.searchRanked();break;
+  case 'online-ranked':PLAY_OPEN=false;syncPlayLauncher();if(ONLINE)ONLINE.searchRanked();break;
   case 'play-menu':
-   PLAY_OPEN=!PLAY_OPEN;paint();
-   var focus=document.querySelector(PLAY_OPEN?'.play-option.on':'[data-act="play-menu"]');if(focus)focus.focus();
+   PLAY_OPEN=!PLAY_OPEN;syncPlayLauncher();
+   var focus=document.querySelector(PLAY_OPEN?'.play-option.on':'[data-act="play-menu"]');if(focus)focus.focus({preventScroll:true});
    break;
   case 'play-mode':
-   PLAY_MODE=n.getAttribute('data-mode');PLAY_OPEN=false;paint();
-   var play=document.querySelector('[data-act="play"]');if(play)play.focus();
+   PLAY_MODE=n.getAttribute('data-mode');PLAY_OPEN=false;syncPlayLauncher();
+   var play=document.querySelector('[data-act="play"]');if(play)play.focus({preventScroll:true});
    break;
   case 'dismiss-battle-tip':if(window.HemicycleBattleTips){HemicycleBattleTips.dismiss(n.getAttribute('data-tip'));paint();}break;
   case 'connection-diagnostics':{var diagnostic=window.HemicycleOperationStatus&&HemicycleOperationStatus.snapshot(),rows=diagnostic&&Object.keys(diagnostic.phases);showModal('Conexión de esta sesión','<p>Estos tiempos miden operaciones completas, no el ping. Incluyen la conexión y el trabajo de los servicios; una comprobación de cuenta puede reunir varias peticiones.</p><p>Solo se guardan tiempos agregados en esta sesión, sin cuenta ni contenido de operaciones. El archivo no se envía automáticamente.</p>'+(rows&&rows.length?rows.map(function(name){var r=diagnostic.phases[name];return '<p><b>'+esc(name)+'</b>: '+r.count+' '+(r.count===1?'operación':'operaciones')+' · media '+Math.round(r.totalMs/r.count)+' ms · '+r.errors+' '+(r.errors===1?'error':'errores')+(r.interrupted?' · '+r.interrupted+' interrumpidas':'')+'.</p>';}).join(''):'<p>Todavía no hay operaciones registradas. Una sola medición no permite conocer el tiempo habitual.</p>'),'Descargar informe',false,function(){if(window.HemicycleOperationStatus)HemicycleOperationStatus.download();},true);break;}
@@ -2746,7 +2770,7 @@ function medirInsets(){
   st.setProperty('--sab',Math.max(b,12)+'px');
  }catch(e){}
 }
-window.addEventListener('resize',medirInsets);
+window.addEventListener('resize',function(){medirInsets();if(PLAY_OPEN)syncPlayLauncher();});
 window.addEventListener('orientationchange',medirInsets);
 
 function startPractice(guide){if(G&&!G.over&&!G.tutorial){showModal('Debate en curso','Termina o abandona el debate actual antes de comenzar una guía. El reloj sigue avanzando.','Volver al debate',false,function(){if(G&&!G.over)go('battle');});return;}guide.start();}
@@ -2883,8 +2907,8 @@ function boot(){
    if(action==='expand-tools'){HOME_ACTIONS_OPEN=true;paint();}
    if(action==='profile-open')PLAYER_PROFILE.openGuide();
    if(action==='profile-close')PLAYER_PROFILE.close();
-   if(action==='modes'){PLAY_OPEN=true;paint();}
-   if(action==='close-modes'){PLAY_OPEN=false;paint();}
+   if(action==='modes'){PLAY_OPEN=true;syncPlayLauncher();}
+   if(action==='close-modes'){PLAY_OPEN=false;syncPlayLauncher();}
    if(action==='shop'){PLAY_OPEN=false;go('tienda');}
    if(action==='demo-pack'){var examples=CARDS.filter(function(c){return c.r==='comun';}).slice(0,5).map(function(c){return c.id;});go('sobre',{cards:examples,k:'comun',free:true,demo:true});}
    if(action==='demo-reveal')return new Promise(function(resolve){if(!revealPack(resolve))resolve();});
