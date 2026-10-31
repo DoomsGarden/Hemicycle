@@ -149,3 +149,56 @@ html[data-menu-skin] .objective-row[data-tier]{position:relative;isolation:isola
 .objective-row[data-tier] progress::-webkit-progress-value{background:linear-gradient(90deg,color-mix(in srgb,var(--tier-accent) 70%,#413120),var(--tier-accent))}
 .objective-row[data-tier] progress::-moz-progress-bar{background:var(--tier-accent)}
 html:is([data-menu-skin=book],[data-menu-skin=parchment]) .objective-row[data-tier]>.pill{color:var(--skin-ink)}
+/* Los tapetes clásicos y sus miniaturas comparten la misma ilustración. */
+.battle-wrap:is([data-player-theme=classic],[data-player-theme=marble]) .battle-backdrop.player{background-color:#193852;background-image:linear-gradient(#18528755,#18528744),var(--own-mat);background-blend-mode:color,normal;background-size:cover;background-position:center;filter:none}
+.battle-wrap:is([data-enemy-theme=classic],[data-enemy-theme=marble]) .battle-backdrop.enemy{background-color:#4d2330;background-image:linear-gradient(#923e4b66,#923e4b44),var(--enemy-mat);background-blend-mode:color,normal;background-size:cover;background-position:center;filter:none}
+/* Un mismo pie de acciones centrado para resultados y todos los sobres. */
+.completion-actions{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap;width:100%;margin:0;flex-shrink:0}
+html[data-menu-skin] .completion-actions :is(.btn,.mini){position:relative;isolation:isolate;min-width:76px;min-height:42px;padding:12px 16px;border:1px solid transparent;border-image:var(--menu-frame) 17% / 10px / 0 round;border-radius:0;background:none;box-shadow:none;line-height:1.2;color:var(--skin-ink);text-align:center;font-family:var(--skin-font);--completion-fill:var(--skin-fill)}
+html[data-menu-skin] .completion-actions :is(.btn,.mini)::before{content:'';position:absolute;inset:7px;z-index:-1;pointer-events:none;background:var(--completion-fill)}
+html[data-menu-skin] .completion-actions .btn:not(.ghost){--completion-fill:linear-gradient(#f1d394,#c29b55);color:#241c13;font-weight:700}
+html[data-menu-skin] .completion-actions :is(.btn,.mini):focus-visible{outline:2px solid var(--skin-metal);outline-offset:3px}
+html[data-menu-skin] .completion-actions :is(.btn,.mini):disabled{opacity:.55}
+/* Las cifras permanecen estáticas y siempre se leen desde la perspectiva local. */
+.result-hero .result-score{align-items:center;gap:14px;flex-wrap:nowrap}
+.result-score>.result-side{display:grid;justify-items:center;gap:3px;min-width:60px}
+.result-side>span{font-size:calc(10px * var(--ui-text-scale,1));line-height:1.2;color:#c7d0df}
+.result-side>b{font-size:calc(26px * var(--ui-text-scale,1));line-height:1.1;font-variant-numeric:tabular-nums}
+.result-own>b{color:#a3d3ff}.result-enemy>b{color:#efb5b2}.result-score>.result-versus{font-size:calc(12px * var(--ui-text-scale,1));color:#b9c1cf}
+@media(max-width:350px){html[data-menu-skin] .completion-actions :is(.btn,.mini){min-width:66px;padding-inline:13px;font-size:calc(11px * var(--ui-text-scale,1))}.completion-actions{gap:5px}}
+@media(max-height:650px){.result-side>b{font-size:calc(22px * var(--ui-text-scale,1))}.result-score>.result-side{min-width:48px}.result-side>span{font-size:calc(9px * var(--ui-text-scale,1))}}
+.cosmetic-art-mat{aspect-ratio:3/2}
+.pack-results{align-content:start;align-content:safe center}
+.pack-opening.opening>.completion-actions{opacity:0;transition:opacity .15s}
+@media(max-height:500px) and (min-width:600px){
+ html[data-menu-skin] .completion-actions :is(.btn,.mini){min-height:36px;padding:9px 14px;border-image-width:9px}
+ .screen[data-view=sobre] .pack-results{flex:1;min-height:0;grid-template-rows:minmax(0,1fr);align-content:stretch;overflow:hidden}
+ .screen[data-view=sobre] .pack-results .reward-card{display:flex;justify-content:center;align-items:center;height:100%;min-height:0}
+ .screen[data-view=sobre] .pack-results .reward-card>.cromo{height:100%;width:auto;max-width:100%;aspect-ratio:3/4}
+ .sealed-pack{height:min(125px,24dvh)}
+}
+html[data-menu-skin] .result-hero .result-score{align-items:flex-end}
+html[data-menu-skin] .result-score>.result-versus{align-self:flex-end;margin-bottom:calc(7px * var(--ui-text-scale,1))}
+@media(max-height:650px){html[data-menu-skin] .result-score>.result-versus{margin-bottom:calc(5px * var(--ui-text-scale,1))}}
+/* Indicadores legibles sobre cualquier ilustración, incluso con el orador usado. */
+html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy{opacity:1;filter:none}
+html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy>:not(.battle-state-badges):not(.basic-effect-badge):not(.battle-used):not(.strong-signal){opacity:1;filter:saturate(.45) brightness(.75)}
+html[data-menu-skin] .screen.in-battle .battle-state-badges .battle-state-icon{opacity:1;background:#08101d;border:1px solid #8096ac;box-shadow:0 1px 4px #000d,inset 0 0 0 1px #ffffff12;text-shadow:0 1px 2px #000}
+html[data-menu-skin] .screen.in-battle .battle-state-icon.is-off{opacity:1;background:#121c2b;border-color:#607287;color:#aebccd;filter:grayscale(1);animation:none}
+html[data-menu-skin] .screen.in-battle .battle-state-icon.is-on{opacity:1;border-color:currentColor;animation:stateReadabilityPulse 2.4s ease-in-out infinite}
+html[data-menu-skin] .screen.in-battle .battle-state-icon .support-symbol{filter:drop-shadow(0 1px 1px #000)}
+html[data-menu-skin] .screen.in-battle .basic-effect-badge{opacity:1;background:#071c20;box-shadow:0 1px 4px #000d,0 0 5px #54cdb74d}
+html[data-menu-skin] .screen.in-battle .basic-effect-badge.negative{background:#291623}
+@keyframes stateReadabilityPulse{0%,100%{box-shadow:0 1px 4px #000d,0 0 2px currentColor}50%{box-shadow:0 1px 4px #000d,0 0 5px currentColor}}
+@media(prefers-reduced-motion:reduce){html[data-menu-skin] .screen.in-battle .battle-state-icon.is-on{animation:none}}
+/* Un mismo cristal dorado en el recurso y en el coste de Papeles traspapelados. */
+:is(.battle-resources,#battleActionRoot) .crystal{display:inline-block;position:relative;width:10px;height:10px;flex:none;vertical-align:middle;margin:0 2px 1px 0;border:0;border-radius:0;clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%);background:linear-gradient(135deg,#fff2bf,#bf8b35 46%,#f9da87 75%,#d5a548);filter:drop-shadow(0 1px 1px #000)}
+:is(.battle-resources,#battleActionRoot) .crystal::after{content:'';position:absolute;inset:3px;clip-path:inherit;background:linear-gradient(135deg,#fff0ae,#daa538 60%,#a57328)}
+:is(.battle-resources,#battleActionRoot) .crystal.off{background:#718096;filter:none}:is(.battle-resources,#battleActionRoot) .crystal.off::after{inset:1px;background:#121b2b}
+#battleActionRoot .support-cost{display:inline-flex;align-items:center;gap:3px;color:#f2cd80}
+/* La bancada rival mira hacia el jugador; solo se orienta la capa del tapete. */
+.battle-wrap .battle-backdrop.enemy{transform:rotate(180deg);transform-origin:center;border-bottom:0;border-top:5px solid #62452f}
+/* Encuadre rival independiente: acerca la ilustración sin ampliar su superficie. */
+.battle-wrap .battle-backdrop.enemy{overflow:hidden}
+.battle-wrap .battle-backdrop.enemy::before{content:'';position:absolute;inset:0;background-image:inherit;background-color:inherit;background-size:inherit;background-position:inherit;background-blend-mode:inherit;transform:scale(1.2);transform-origin:center;pointer-events:none}
+html[data-menu-skin] .screen.in-battle .battle-resources{background:#091321e8;border-radius:4px;box-shadow:0 0 0 3px #091321e8,0 2px 5px #0008;text-shadow:0 1px 2px #000;color:#e1e8f2}

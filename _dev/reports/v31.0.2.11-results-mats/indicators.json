@@ -1,0 +1,5189 @@
+{
+  "rows": [
+    {
+      "mat": "classic",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "classic",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "marble",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "imperial",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "orbital",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "garden",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    },
+    {
+      "mat": "cats",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "orientation": {
+        "a": -1,
+        "b": 0,
+        "c": 0,
+        "d": -1
+      },
+      "zoom": {
+        "scale": 1.2,
+        "overflow": "hidden",
+        "resourceBackground": "rgba(9, 19, 33, 0.91)"
+      },
+      "hand": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "state": [
+        {
+          "className": "battle-state-icon state-heal is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-off",
+          "opacity": "1",
+          "background": "rgb(18, 28, 43)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgba(255, 255, 255, 0.07) 0px 0px 0px 1px inset",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-heal is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(234, 247, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-guard is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(193, 230, 255) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        },
+        {
+          "className": "battle-state-icon state-boost is-on",
+          "opacity": "1",
+          "background": "rgb(8, 16, 29)",
+          "border": "1px",
+          "shadow": "rgba(0, 0, 0, 0.867) 0px 1px 4px 0px, rgb(207, 255, 170) 0px 0px 5px 0px",
+          "cardOpacity": "1"
+        }
+      ],
+      "crystal": {
+        "shape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "costShape": "polygon(50% 0px, 100% 50%, 50% 100%, 0px 50%)",
+        "fill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "costFill": "linear-gradient(135deg, rgb(255, 242, 191), rgb(191, 139, 53) 46%, rgb(249, 218, 135) 75%, rgb(213, 165, 72))",
+        "emptyFill": "none",
+        "labels": [
+          "Coste: 1 TdP",
+          "Coste: 1 TdP"
+        ]
+      },
+      "full": [
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        },
+        {
+          "opacity": "1",
+          "filter": "saturate(0.35) brightness(0.72)"
+        }
+      ],
+      "playable": [
+        {
+          "opacity": "1",
+          "filter": "none"
+        },
+        {
+          "opacity": "1",
+          "filter": "none"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

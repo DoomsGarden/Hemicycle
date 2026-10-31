@@ -84,12 +84,12 @@
 <script src="js/orator-context.js?v=31.0.2.10"></script>
 <link rel="stylesheet" href="css/strategy.css?v=31.0.2.10">
 <script src="js/battle-status.js?v=31.0.2.8-wave2"></script>
-<script src="js/battle-actions-ui.js?v=31.0.2.8-wave2"></script>
+<script src="js/battle-actions-ui.js?v=31.0.2.11-mats3"></script>
 <script src="js/battle-visuals.js?v=31.0.2.8-phrases1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.10"></script>
 <script src="js/battle-tutorial.js?v=31.0.2.8-phrases1"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
-<script src="js/objectives.js?v=31.0.2.11"></script>
+<script src="js/objectives.js?v=31.0.2.11-mats3"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
 <script src="js/market-tutorial.js?v=31.0.2.4-market2"></script>
 <script src="js/balance-review.js?v=31.0.2.10"></script>
@@ -106,15 +106,15 @@
 <script src="js/action-cards.js?v=31.0.2.3-actions2"></script>
 <script src="js/cabinet-analysis.js?v=31.0.2.10"></script>
 <script src="js/strategy-ui.js?v=31.0.2.10"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-reading1">
-<script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=31.0.2.11-art2"></script><script src="js/cosmetic-ui.js?v=31.0.2.11-art2"></script>
-<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-art2">
+<script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=31.0.2.11-mats3"></script><script src="js/cosmetic-ui.js?v=31.0.2.11-mats3"></script>
+<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-mats3">
 <script src="js/player-backup.js?v=31.0.2.11"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.11-art2"></script>
+<script src="js/changelog.js?v=31.0.2.11-mats3"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.10-results1">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.6"></script>
@@ -1448,10 +1448,10 @@ SCREENS.sobre=function(){
  var p=PACKS.filter(function(x){return x.k===SO.k;})[0],cost=p&&HemicyclePacks.total(p.p,q);
  var canAgain=p&&!SO.free&&d.fs>=cost;
  var heading=(SO.demo?'<span class="pack-demo">DEMOSTRACIÓN · SIN COSTE</span>':'')+(q>1?'<span class="pack-progress">Sobre '+(index+1)+' de '+q+'</span>':'');
- if(!SO.revealed)return '<div class="pack-opening">'+heading+'<span class="eyebrow">'+esc(p?p.n:SO.k==='semanal'?'Sobre semanal':SO.k==='diario'?'Sobre diario':'Tu recompensa')+'</span><button class="sealed-pack" data-act="pack-reveal" aria-label="Cortar el sobre y revelar sus '+ids.length+' cromos">'+packArt(SO.k,SO.coverId)+'</button><button class="btn" data-act="pack-reveal">Cortar y revelar</button></div>';
+ if(!SO.revealed)return '<div class="pack-opening">'+heading+'<span class="eyebrow">'+esc(p?p.n:SO.k==='semanal'?'Sobre semanal':SO.k==='diario'?'Sobre diario':'Tu recompensa')+'</span><button class="sealed-pack" data-act="pack-reveal" aria-label="Cortar el sobre y revelar sus '+ids.length+' cromos">'+packArt(SO.k,SO.coverId)+'</button><div class="completion-actions"><button class="btn" data-act="pack-reveal">Cortar y revelar</button></div></div>';
  return '<div>'+heading+'<h2>'+(SO.demo?'Apertura de ejemplo':'Sobre abierto')+'</h2><p class="sub">'+(SO.demo?'Estos cromos son de muestra; tu colección no cambia.':q>1?q+' sobres · '+(q*5)+' cromos guardados en tu colección.':ids.length+' cromos añadidos a tu colección.')+'</p></div>'
  +'<div class="reveal pack-results">'+ids.map(function(id,i){return '<button class="reward-card" data-act="pack-card" data-id="'+id+'" style="--reveal-delay:'+i*65+'ms" aria-label="Ver '+esc(BYID[id].n)+'">'+cromoHTML(BYID[id],{noCardAttr:true})+'</button>';}).join('')+'</div>'
- +'<div class="bar">'
+ +'<div class="bar completion-actions pack-controls">'
  +(index>0?'<button class="btn ghost sm" data-act="pack-step" data-index="'+(index-1)+'">Anterior</button>':'')
  +(index+1<q?'<button class="btn sm" data-act="pack-step" data-index="'+(index+1)+'">Siguiente sobre ('+(index+2)+'/'+q+')</button>':'')
  +(p&&!SO.free&&index+1===q?'<button class="btn sm" data-act="again" data-k="'+p.k+'" data-quantity="'+q+'"'+(canAgain?'':' disabled')+'>'+(canAgain?(q===1?'Abrir otro':'Abrir otros '+q)+' ('+cost+' FS)':'Sin FS ('+cost+' FS)')+'</button>':'')
@@ -2030,13 +2030,13 @@ function resultHeroHTML(result,game){
  var label=win?'Victoria':loss?'Derrota':result.who==='season'?'Liga':'Empate';
  var title=result.reason==='inactivity'?'Abandono por inactividad':win?(own>=100?'Mayoría alcanzada':'Victoria parlamentaria'):loss?(enemy>=100?'Mayoría rival':'Debate perdido'):result.who==='season'?'Temporada cerrada':'Empate técnico';
  var mark=win?'<path class="result-emblem-fill" d="m48 18 8.7 17.6 19.4 2.8-14 13.7 3.3 19.3L48 62.3l-17.4 9.1 3.3-19.3-14-13.7 19.4-2.8Z"/>':loss?'<path class="result-emblem-fill" d="M48 17 72 27v19c0 17-13 28-24 34-11-6-24-17-24-34V27Z"/><path d="m38 38 20 20m0-20L38 58"/>':'<path class="result-emblem-fill" d="m48 19 29 29-29 29-29-29Z"/><path d="M36 43h24M36 53h24"/>';
- return '<section class="result-summary result-hero result-'+tone+'" aria-labelledby="resultTitle"><div class="result-emblem" aria-hidden="true"><svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle class="result-emblem-halo" cx="48" cy="48" r="41"/><path class="result-emblem-rays" d="M48 2v7m0 78v7M2 48h7m78 0h7M15.5 15.5l5 5m55 55 5 5m0-65-5 5m-55 55-5 5"/>'+mark+'</svg></div><small class="result-verdict">'+label+'</small><h2 id="resultTitle" class="result-title">'+title+'</h2>'+(Number.isFinite(own)&&Number.isFinite(enemy)?'<p class="result-score" aria-label="Votos: tú '+own+', rival '+enemy+'"><b>'+own+'</b><span>vs</span><b>'+enemy+'</b><small>votos</small></p>':'')+'</section>';
+ return '<section class="result-summary result-hero result-'+tone+'" aria-labelledby="resultTitle"><div class="result-emblem" aria-hidden="true"><svg viewBox="0 0 96 96" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle class="result-emblem-halo" cx="48" cy="48" r="41"/><path class="result-emblem-rays" d="M48 2v7m0 78v7M2 48h7m78 0h7M15.5 15.5l5 5m55 55 5 5m0-65-5 5m-55 55-5 5"/>'+mark+'</svg></div><small class="result-verdict">'+label+'</small><h2 id="resultTitle" class="result-title">'+title+'</h2>'+(Number.isFinite(own)&&Number.isFinite(enemy)?'<div class="result-score" role="group" aria-label="Tú '+own+', rival '+enemy+'"><div class="result-side result-own"><span>Tú</span><b>'+own+'</b></div><span class="result-versus" aria-hidden="true">vs</span><div class="result-side result-enemy"><span>Rival</span><b>'+enemy+'</b></div></div>':'')+'</section>';
 }
 
 SCREENS.result=function(){
- if(SO.tutorial)return '<div class="panel win"><h2>'+(SO.completed?(SO.short?'¡Ya puedes jugar!':'¡Tutorial completado!'):'Práctica terminada')+'</h2><p class="sub">'+(SO.completed?(SO.short?'Has presentado un orador, atacado y pasado el turno. El objetivo de cada debate es alcanzar 100 votos.':'Has practicado las acciones del debate y la victoria inmediata a 100 votos.'):'Puedes repetir la guía cuando quieras desde Ayuda.')+' Tu colección, FS, Elo y Liga se mantienen intactos.</p></div><div class="bar"><button class="btn" data-act="play">Jugar una partida</button><button class="btn ghost" data-act="menu-tutorial">Conocer los menús</button><button class="mini" data-go="menu">Inicio</button></div>';
+ if(SO.tutorial)return '<div class="panel win"><h2>'+(SO.completed?(SO.short?'¡Ya puedes jugar!':'¡Tutorial completado!'):'Práctica terminada')+'</h2><p class="sub">'+(SO.completed?(SO.short?'Has presentado un orador, atacado y pasado el turno. El objetivo de cada debate es alcanzar 100 votos.':'Has practicado las acciones del debate y la victoria inmediata a 100 votos.'):'Puedes repetir la guía cuando quieras desde Ayuda.')+' Tu colección, FS, Elo y Liga se mantienen intactos.</p></div><div class="bar completion-actions"><button class="btn" data-act="play">Jugar una partida</button><button class="btn ghost" data-act="menu-tutorial">Conocer los menús</button><button class="mini" data-go="menu">Inicio</button></div>';
  if(SO.who==='info')return '<h2>Aviso</h2><div class="panel"><p>'+esc(SO.msg)+'</p></div>'
-  +'<div class="bar"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menú</button></div>';
+  +'<div class="bar completion-actions"><button class="btn sm" data-go="tienda">Ir a la tienda</button><button class="btn ghost sm" data-go="menu">Menú</button></div>';
  var html=resultHeroHTML(SO,G),totals=[];
  if(SO.mode==='ranked'&&Number.isFinite(SO.eloAfter))totals.push('<span>Elo'+(Number.isFinite(SO.eloBefore)?': '+SO.eloBefore+' →':':')+' <b>'+SO.eloAfter+'</b></span>');
  else if(SO.mode==='ranked'&&Number.isFinite(SO.eloDelta))totals.push('<span>Elo: <b>'+(SO.eloDelta>0?'+':'')+SO.eloDelta+'</b></span>');
@@ -2053,7 +2053,7 @@ SCREENS.result=function(){
  if(SO.lootStatus==='legacy')html+='<p class="sub result-loot-note">Este resultado no contiene un cromo ganado o perdido registrado.</p>';
  if(SO.liga&&!SO.season)html+=ligaPanel();
  html+='</div>';
- html+='<div class="bar result-controls">';
+ html+='<div class="bar completion-actions result-controls">';
  if(SO.liga&&!SO.season){
   html+='<button class="btn ghost sm" data-go="liga">Tabla de Liga</button>';
  } else if(SO.mode!=='liga'){
@@ -2274,7 +2274,7 @@ SCREENS.battle=function(){
  for(i=G.field.p.length;i<3;i++)pf+='<div class="slot">+</div>';
  var ef=G.field.e.map(function(c){return cromoBattle(c,'e');}).join('');
  var selectedCard=G.field.p.filter(function(c){return c.uid===G.sel;})[0],laneBlocked=selectedCard&&!battleCanEmpty('p',selectedCard,G.move),emptyLeft=laneBlocked?0:battleEmptyVotesLeft();for(i=G.field.e.length;i<3;i++)ef+='<div class="slot'+(!emptyLeft?' slot-capped':G.sel&&G.move?' tgt':'')+'" data-buid="__EMPTY" data-side="e" role="button" aria-disabled="'+(!emptyLeft)+'" tabindex="'+(emptyLeft?'0':'-1')+'"'+(!emptyLeft?' title="'+(laneBlocked?'Debate encarrilado: el básico debe dirigirse a un orador':'Ya has retirado los 3 votos de este turno')+'"':'')+'>'+(!emptyLeft?laneBlocked?'Solo oradores':'Límite de 3 votos':G.sel&&G.move?'Restar votos · '+emptyLeft+'/3':'+')+'</div>';
- var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&(c.action||G.field.p.length<3)&&G.side==='p';return cromoBattle(c,'p',can?'':'opacity:.55');}).join('');
+ var hand=G.hand.p.map(function(c){var can=c.c<=G.tdp.p&&(c.action||G.field.p.length<3)&&G.side==='p';return cromoBattle(c,'p',can?'':'filter:saturate(.35) brightness(.72)');}).join('');
  var modo=G.tutorial?'TUTORIAL':G.quick?'RÁPIDA':G.mode==='liga'?'LIGA':(G.mode==='ranked'?'CLASIF.':'NORMAL');
  var roundNum=Math.max(1,Math.ceil(G.n/2));
  return (G.authoritative?'<p id="networkBattleStatus" class="network-battle-status" role="status" hidden></p>':'')+'<div class="battle-wrap" data-turn="'+G.side+'" data-player-theme="'+battleTheme()+'" data-enemy-theme="'+rivalCosmetics().mat+'" data-player-back="'+(typeof HemicycleCosmetics==='undefined'?'classic':HemicycleCosmetics.selection(D()).back)+'" data-enemy-back="'+rivalCosmetics().back+'" style="--own-mat:url('+cosmeticMatURL()+');--enemy-mat:url('+cosmeticMatURL(rivalCosmetics().mat)+')"><div class="battle-backdrop enemy" aria-hidden="true"></div><div class="battle-backdrop player" aria-hidden="true"></div>'

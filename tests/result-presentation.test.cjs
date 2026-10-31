@@ -5,15 +5,15 @@ for(const who of ['p','e','draw'])test('result presents both votes and static re
  c.SO={who,mode:'ranked',fs:80,eloBefore:3506,eloAfter:3531,eloDelta:25,msg:'Repeated result message'};
  const before=JSON.stringify(c.D()),html=c.SCREENS.result();
  assert.match(html,new RegExp('result-'+(who==='p'?'victory':who==='e'?'defeat':'neutral')));
- assert.match(html,/Votos: tú \d+, rival \d+/);assert.match(html,/<span>vs<\/span>/);
+ assert.match(html,/Tú \d+, rival \d+/);assert.match(html,/class="result-versus"[^>]*>vs<\/span>/);
  assert.match(html,/Elo: 3506 → <b>3531<\/b>/);assert.match(html,/FS: <b>\+80<\/b>/);
  assert.doesNotMatch(html,/Repeated result message|panel win|panel lose|data-result-gain|\/ 100 votos/);
- assert.equal(JSON.stringify(c.D()),before);
+ assert.match(html,/result-own"><span>Tú<\/span><b>\d+<\/b>/);assert.match(html,/result-enemy"><span>Rival<\/span><b>\d+<\/b>/);assert.doesNotMatch(html,/<small>votos<\/small>/);assert.equal(JSON.stringify(c.D()),before);
 });
 test('verified receipt votes take precedence over stale game display',()=>{
  const c=loadBattle(),receipt={win:true,mode:'ranked',votes:105,enemyVotes:63,fs:88,eloBefore:10,eloAfter:30,eloDelta:20};
  const source=fs.readFileSync('index.html','utf8');vm.runInContext(source.slice(source.indexOf('function verifiedResult('),source.indexOf('async function finishDownloaded(')),c);c.G.votes={p:1,e:2};c.SO=c.verifiedResult(receipt,'ticket');
- assert.match(c.SCREENS.result(),/Votos: tú 105, rival 63/);
+ assert.match(c.SCREENS.result(),/Tú 105, rival 63/);
  assert.match(c.SCREENS.result(),/Mayoría alcanzada/);
 });
 test('season closure retains standings, reward and division message',()=>{
