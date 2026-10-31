@@ -1,17 +1,9 @@
 'use strict';
-// Iconografía reproducible de reversos y monedas; marcos y tapetes usan imágenes generadas.
-const fs=require('node:fs'),dir='assets/cosmetics',svg=(w,h,body,defs='')=>`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><defs>${defs}</defs>${body}</svg>`;
-const gold='<linearGradient id="metal" x2=".2" y2="1"><stop stop-color="#fff1c0"/><stop offset=".18" stop-color="#be9148"/><stop offset=".38" stop-color="#f8d993"/><stop offset=".58" stop-color="#806035"/><stop offset=".8" stop-color="#d8b26b"/><stop offset="1" stop-color="#fae6af"/></linearGradient>';
-const emblems={classic:'<path d="M33 61a27 27 0 0 1 54 0M40 61a20 20 0 0 1 40 0M47 61a13 13 0 0 1 26 0M49 71h22M54 65h12"/>',marble:'<path d="m60 23 33 37-33 37-33-37Z"/><path d="m60 37 20 23-20 23-20-23Z"/>',imperial:'<path d="m31 46 29-18 29 18ZM36 84h48M41 51v27m12-27v27m14-27v27m12-27v27M32 89h56"/>',orbital:'<ellipse cx="60" cy="60" rx="35" ry="14" transform="rotate(-33 60 60)"/><ellipse cx="60" cy="60" rx="35" ry="14" transform="rotate(33 60 60)"/><circle cx="60" cy="60" r="11"/>',garden:'<path d="M59 88V49q-28-24-30-5 1 18 30 16 30-7 29-24-21-8-29 13M59 75q-25-18-26-3 5 13 26 11"/><circle cx="60" cy="31" r="9"/>',cats:'<path d="m32 45 3-22 19 13q6-2 12 0l19-13 3 22q10 10 4 26-6 21-32 21S17 72 27 53Z" fill="#efe1c5"/><path d="m38 57 8 3 8-3m12 0 8 3 8-3m-26 12 4 4 4-4m-4 4v5m-8 0q8 6 16 0" stroke="#705044" stroke-width="3"/>'};
-const palettes={classic:['#152237','#d6b671'],marble:['#19364e','#d6dce1'],imperial:['#30281e','#d0af66'],orbital:['#172331','#c7d6e3'],garden:['#0d3032','#c4b67b'],cats:['#211f3a','#e4c18d']};
-for(const [id,[bg,fg]]of Object.entries(palettes)){
- const emblem=emblems[id],defs=gold;
- const stars=Array.from({length:12},(_,i)=>{const x=17+(i*37)%86,y=18+(i*53)%138;return `<path d="M${x-2} ${y}h4M${x} ${y-2}v4" stroke="${fg}" stroke-opacity=".35"/>`;}).join('');
- let back=`<rect x="2" y="2" width="116" height="156" rx="10" fill="${bg}" stroke="#080c14" stroke-width="4"/><rect x="6" y="6" width="108" height="148" rx="8" fill="none" stroke="url(#metal)" stroke-width="3"/><rect x="13" y="13" width="94" height="134" rx="5" fill="none" stroke="${fg}" stroke-opacity=".65"/>${stars}<g transform="translate(0 20)" fill="none" stroke="${fg}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">${emblem}</g>`;
- if(id==='marble')back+='<path d="M15 16 26 42 17 68 46 112 40 145M94 14 78 39 90 71 72 107 102 145" fill="none" stroke="#ead297" stroke-opacity=".4"/>';
- fs.writeFileSync(`${dir}/backs/${id}.svg`,svg(120,160,back,defs));
- for(const face of ['cara','cruz']){const symbol=face==='cara'?emblem:id==='cats'?'<ellipse cx="60" cy="70" rx="17" ry="13" fill="#eed5d1"/><g fill="#eed5d1"><ellipse cx="36" cy="51" rx="7" ry="10"/><ellipse cx="51" cy="40" rx="7" ry="10"/><ellipse cx="69" cy="40" rx="7" ry="10"/><ellipse cx="84" cy="51" rx="7" ry="10"/></g>':'<path d="m60 27 8 25 25 8-25 8-8 25-8-25-25-8 25-8Z"/>';
- const coin=`<circle cx="60" cy="60" r="57" fill="#141722" stroke="#060913" stroke-width="2"/><circle cx="60" cy="60" r="53" fill="url(#metal)"/><circle cx="60" cy="60" r="47" fill="${bg}" stroke="${fg}" stroke-width="2"/><circle cx="60" cy="60" r="43" fill="none" stroke="${fg}" stroke-opacity=".6" stroke-dasharray="2 4"/><g fill="none" stroke="${fg}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"${['garden','cats'].includes(id)?'':' style="filter:drop-shadow(0 1px 0 #020409)"'}>${symbol}</g>`;
- fs.writeFileSync(`${dir}/coins/${id}-${face}.svg`,svg(120,120,coin,defs));if(face==='cara')fs.writeFileSync(`${dir}/coins/${id}.svg`,svg(120,120,coin,defs));}
+// El arte activo son ilustraciones: este control impide reemplazarlo por iconos planos.
+const fs=require('node:fs'),a=require('node:assert/strict'),crypto=require('node:crypto'),C=require('../js/cosmetic-catalog.js');
+const manifest=JSON.parse(fs.readFileSync('_dev/design/cosmetic-illustrations.json','utf8'));
+a.equal(manifest.assets.length,18);
+for(const theme of C.collection('back'))for(const path of [theme.asset,...['cara','cruz'].map(face=>'assets/cosmetics/coins/'+theme.id+'-'+face+'.webp')]){
+ const record=manifest.assets.find(r=>r.asset===path);a.ok(record,path+' missing from art manifest');const bytes=fs.readFileSync(path);a.ok(bytes.length>15000,path+' unexpectedly small');a.equal(bytes.toString('ascii',0,4),'RIFF');a.equal(bytes.toString('ascii',8,12),'WEBP');a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),record.sha256,path+' art changed');
 }
-console.log('Generated six backs and six pairs of coin faces.');
+console.log('Verified six illustrated backs and twelve coin faces against the approved art manifest.');

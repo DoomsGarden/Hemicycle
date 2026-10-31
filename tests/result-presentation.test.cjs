@@ -21,7 +21,7 @@ test('season closure retains standings, reward and division message',()=>{
  const html=c.SCREENS.result();assert.match(html,/result-victory/);assert.match(html,/Temporada cerrada/);assert.match(html,/Terminas .*º de 30/);assert.match(html,/Recompensa de fin de temporada/);assert.match(html,/Cromo conseguido/);
 });
 
-function preferences(stored){const store=new Map(stored),listeners={},root={style:{setProperty(){}},dataset:{}};
+function preferences(stored){const store=new Map(stored),listeners={},root={style:{setProperty(){},removeProperty(){}},dataset:{}};
  const context=vm.createContext({localStorage:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v)},document:{documentElement:root,querySelectorAll:()=>[],addEventListener:(k,f)=>listeners[k]=f}});
  vm.runInContext(fs.readFileSync('js/ui-preferences.js','utf8'),context);return {api:context.HemicycleUIPreferences,store,listeners};}
 test('risk warning defaults on, persists independently from text settings and can be reset in Options',()=>{
@@ -32,3 +32,4 @@ test('risk warning defaults on, persists independently from text settings and ca
  assert.equal(restored.api.riskWarningEnabled,true);assert.equal(button.disabled,true);assert.equal(preferences(restored.store).api.riskWarningEnabled,true);
 });
 test('invalid stored risk preferences keep the warning visible',()=>{for(const value of ['null','true','{}','"false"','bad-json'])assert.equal(preferences([['hemicycle_risk_warning_v1',value]]).api.riskWarningEnabled,true);});
+test('independent typeface persists with reading sizes and tolerates unknown older preferences',async()=>{const f=preferences([['hemicycle_ui_v1',JSON.stringify({textSize:112,iconSize:108,typeface:'editorial'})]]);assert.equal(f.api.typeface,'editorial');await f.api.selectTypeface('orbital');f.listeners.input({target:{matches:q=>q==='[data-ui-text-size]',value:116}});const restored=preferences(f.store);assert.equal(restored.api.typeface,'orbital');assert.equal(restored.api.value,116);assert.match(restored.api.fontControl(),/data-ui-typeface="orbital" aria-pressed="true"/);assert.equal(preferences([['hemicycle_ui_v1','{"typeface":"missing"}']]).api.typeface,'auto');});

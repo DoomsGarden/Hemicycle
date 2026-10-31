@@ -1,0 +1,3825 @@
+{
+  "layouts": [
+    {
+      "skin": "classic",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 12.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 10,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "classic",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 12.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 10,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "senate",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 12.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 10,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "parchment",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 12.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 10,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "book",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 12.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 10,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "orbital",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 320,
+      "height": 568,
+      "scale": 100,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 12.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 320,
+      "height": 568,
+      "scale": 116,
+      "market": {
+        "left": 21,
+        "right": 21,
+        "top": 21,
+        "bottom": 21,
+        "gap": 10,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 393,
+      "height": 851,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 393,
+      "height": 851,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 768,
+      "height": 1024,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 768,
+      "height": 1024,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 844,
+      "height": 390,
+      "scale": 100,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 23.75,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    },
+    {
+      "skin": "hologram",
+      "width": 844,
+      "height": 390,
+      "scale": 116,
+      "market": {
+        "left": 23,
+        "right": 23,
+        "top": 23,
+        "bottom": 23,
+        "gap": 19.5625,
+        "overflow": false
+      },
+      "goals": [
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-claimed",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-ready",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "0",
+          "frameFilter": "grayscale(1) sepia(1) saturate(0.85) brightness(0.8)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "1",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "2",
+          "frameFilter": "grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        },
+        {
+          "tier": "3",
+          "frameFilter": "grayscale(1) sepia(1) saturate(2.4) brightness(1.2)",
+          "state": "btn sm objective-reward is-locked",
+          "bottomDifference": 0,
+          "background": "none",
+          "fillInset": 8,
+          "textFits": true
+        }
+      ]
+    }
+  ],
+  "fonts": [
+    {
+      "id": "clear",
+      "menu": "hologram",
+      "family": "\"Hemicycle UI\", system-ui, sans-serif"
+    },
+    {
+      "id": "classic",
+      "menu": "hologram",
+      "family": "Georgia, serif"
+    },
+    {
+      "id": "editorial",
+      "menu": "hologram",
+      "family": "Lora, Georgia, serif"
+    },
+    {
+      "id": "orbital",
+      "menu": "hologram",
+      "family": "Rajdhani, sans-serif"
+    },
+    {
+      "id": "auto",
+      "menu": "hologram",
+      "family": "Rajdhani, \"Hemicycle UI\", sans-serif"
+    }
+  ],
+  "reading": "\"Hemicycle UI\", system-ui, sans-serif",
+  "errors": []
+}

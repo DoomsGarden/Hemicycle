@@ -108,3 +108,44 @@ html[data-menu-skin] :is(.historical-context,.historical-context *, .modal .sour
 html[data-menu-skin] :is(.sell-sheet,.objective-row,.achievement-row,.objective-reward){border-image:var(--menu-frame) 17% / 11px / 0 round;background-image:linear-gradient(var(--skin-fill),var(--skin-fill));color:var(--skin-ink);border-radius:0}
 html[data-menu-skin] .sell-sheet{padding:18px}html[data-menu-skin] :is(.objective-row,.achievement-row){padding:15px}
 html[data-menu-skin] :is(.objective-row,.achievement-row,.sell-sheet) :is(h3,h4,b){color:var(--skin-title)}
+
+/* La lectura extensa y la marca de entrada conservan su tipografía. */
+html[data-menu-skin] :is(.historical-context,.historical-context *, .release-content,.release-content *, .legal-panel,.legal-panel *){font-family:'Hemicycle UI',system-ui,sans-serif!important}
+html[data-menu-skin] .launch-start{font-family:Impact,Anton,'Arial Narrow',sans-serif!important}
+.cosmetic-typefaces{margin:16px 0;padding:12px 0;border:0;border-top:1px solid var(--skin-metal);color:var(--skin-ink)}.cosmetic-typefaces legend{padding:0 8px;font-size:calc(14px * var(--ui-text-scale,1));color:var(--skin-title)}.cosmetic-typefaces p{font:400 calc(11px * var(--ui-text-scale,1))/1.45 'Hemicycle UI',sans-serif;color:var(--skin-muted);margin:4px 0 10px}.typeface-choices{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}.typeface-choices button{min-width:0;min-height:62px;padding:8px 4px;border:1px solid var(--skin-metal);border-radius:5px;background:#102036;color:#ecd7a8;cursor:pointer}.typeface-choices button[aria-pressed=true]{box-shadow:0 0 0 1px #f1cf83,inset 0 0 12px #e9c57133}.typeface-choices span{display:block;font-size:calc(17px * var(--ui-text-scale,1));line-height:1.3}.typeface-choices small{display:block;margin-top:5px;font:400 calc(10px * var(--ui-text-scale,1)) 'Hemicycle UI',sans-serif}.typeface-choices button:focus-visible{outline:2px solid #fff0b9;outline-offset:3px}
+/* El marco tiene espacio propio: no se pinta sobre miniaturas ni controles. */
+html[data-menu-skin] .market-card-row{padding:22px;column-gap:10px;min-width:0;overflow:visible}
+.market-card-row:has(.row-price){grid-template-rows:minmax(28px,auto) minmax(32px,auto);row-gap:8px}.market-card-row:has(.row-price)>.market-thumb{grid-column:1;grid-row:1/3}.market-card-row:has(.row-price)>.market-card-copy{grid-column:2;grid-row:1/3}.market-card-row:has(.row-price)>.row-price{grid-column:3;grid-row:1;align-self:start;line-height:1.25}.market-card-row:has(.row-price)>.market-select{grid-column:3;grid-row:2;align-self:end}.market-card-copy{min-width:0;overflow-wrap:anywhere}.market-card-row>.market-select{white-space:normal;line-height:1.25}
+html[data-menu-skin] .objective-modal .objective-reward{min-height:56px;padding:14px 12px;line-height:1.3}
+html[data-menu-skin] .objective-modal .achievement-summary .objective-reward{flex:0 0 108px;width:108px;min-height:56px;padding:14px 12px}
+html[data-menu-skin] .objective-reward.is-ready{background-image:linear-gradient(#f4d695,#d5ac5e);color:#201b0f}
+html[data-menu-skin] .objective-reward.is-claimed{background-image:linear-gradient(#1e3b35,#17302d)}
+@media(max-width:350px){html[data-menu-skin] .market-card-row{padding:20px;column-gap:7px}.market-card-row:has(.row-price){grid-template-columns:53px minmax(0,1fr) minmax(52px,auto)}html[data-menu-skin] .objective-modal .achievement-summary .objective-reward{flex-basis:100px;width:100px;padding-inline:10px}}
+/* El relleno de recompensa se recoge dentro del bisel, también en las esquinas. */
+html[data-menu-skin] .objective-modal .objective-reward{position:relative;isolation:isolate;background:none;box-shadow:none;--reward-fill:linear-gradient(#1a283c,#1a283c)}
+html[data-menu-skin] .objective-modal .objective-reward::before{content:'';position:absolute;inset:8px;border-radius:1px;background:var(--reward-fill);z-index:-1;pointer-events:none}
+html[data-menu-skin] .objective-modal .objective-reward.is-ready{--reward-fill:linear-gradient(#f4d695,#d5ac5e)}
+html[data-menu-skin] .objective-modal .objective-reward.is-claimed{--reward-fill:linear-gradient(#1e3b35,#17302d)}
+.achievement-summary{min-height:64px;align-items:center}.achievement-meter{position:relative}.achievement-meter small{position:absolute;left:0;top:100%;margin:6px 0 0;line-height:1.25;white-space:nowrap}
+
+html[data-menu-skin] #battleActionRoot :is(.battle-phrase,.battle-support-quote){font-family:'Senate Dialogue',Georgia,serif!important}
+/* El propio dibujo define la silueta del reverso; no se añade otra caja encima. */
+.screen.in-battle .deck-zone>.draw-pile{border:0;border-radius:0;box-shadow:none;background-color:transparent;background-repeat:no-repeat;filter:drop-shadow(2px 3px 3px #0008)}
+/* Tarjetas compactas: el botón comparte la base de la barra, sin una fila alta. */
+html[data-menu-skin] .objective-modal .objective-row{display:grid;grid-template-columns:minmax(0,1fr) 108px;grid-template-rows:auto auto 7px;column-gap:10px;row-gap:0;padding:12px 14px 27px}
+.objective-row>.pill{grid-column:1;grid-row:1;justify-self:start}.objective-row>h4{grid-column:1;grid-row:2;margin:5px 0 7px;align-self:end}.objective-row>.achievement-summary{display:contents}.objective-row .achievement-meter{grid-column:1;grid-row:3;min-width:0;align-self:end}
+html[data-menu-skin] .objective-modal .objective-row .objective-reward{grid-column:2;grid-row:1/4;align-self:end;width:100%;min-height:48px;margin:0;padding:12px 10px;font-size:calc(10px * var(--ui-text-scale,1))}
+html[data-menu-skin] .objective-modal .achievement-row{grid-template-rows:auto 7px}.achievement-row>h4{grid-row:1;margin:0 0 7px}.achievement-row .achievement-meter{grid-row:2}html[data-menu-skin] .objective-modal .achievement-row .objective-reward{grid-row:1/3}
+@media(max-width:350px){html[data-menu-skin] .objective-modal .objective-row{grid-template-columns:minmax(0,1fr) 100px;column-gap:8px}}
+/* La dificultad tiñe solo el marco y el material, sin alterar texto ni reclamos. */
+.objective-row[data-tier="0"]{--tier-accent:#c49364;--tier-tint:#9d633719;--tier-frame:grayscale(1) sepia(1) saturate(.85) brightness(.8)}
+.objective-row[data-tier="1"]{--tier-accent:#80bdff;--tier-tint:#328fe01e;--tier-frame:grayscale(1) sepia(1) hue-rotate(160deg) saturate(3) brightness(1.05)}
+.objective-row[data-tier="2"]{--tier-accent:#c59bff;--tier-tint:#934be01e;--tier-frame:grayscale(1) sepia(1) hue-rotate(220deg) saturate(2.7) brightness(1.05)}
+.objective-row[data-tier="3"]{--tier-accent:#ffe295;--tier-tint:#f5c44a20;--tier-frame:grayscale(1) sepia(1) saturate(2.4) brightness(1.2)}
+html[data-menu-skin] .objective-row[data-tier]{position:relative;isolation:isolate;border-image:none;background:none;box-shadow:none}
+.objective-row[data-tier]::before{content:'';position:absolute;inset:-1px;border:1px solid transparent;border-image:var(--menu-frame) 17% / 11px / 0 round;filter:var(--tier-frame);z-index:-1;pointer-events:none}
+.objective-row[data-tier]::after{content:'';position:absolute;inset:7px;background:linear-gradient(var(--tier-tint),var(--tier-tint)),linear-gradient(var(--skin-fill),var(--skin-fill));z-index:-2;pointer-events:none}
+.objective-row[data-tier]>.pill{border:1px solid color-mix(in srgb,var(--tier-accent) 55%,transparent);color:var(--tier-accent);background:var(--tier-tint)}
+.objective-row[data-tier] progress::-webkit-progress-value{background:linear-gradient(90deg,color-mix(in srgb,var(--tier-accent) 70%,#413120),var(--tier-accent))}
+.objective-row[data-tier] progress::-moz-progress-bar{background:var(--tier-accent)}
+html:is([data-menu-skin=book],[data-menu-skin=parchment]) .objective-row[data-tier]>.pill{color:var(--skin-ink)}
