@@ -1,0 +1,24 @@
+{
+  "date": "2026-11-01",
+  "font": {
+    "family": "Delius",
+    "uiLabel": "Gatitos",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/delius/Delius-Regular.ttf",
+    "license": "fonts/Delius-OFL.txt",
+    "modified": false,
+    "sha256": "c0fd66626926b637d64eb13de013b3318dbd72cdf92c33e41a29a03828bab6f6"
+  },
+  "generatedEdits": [
+    {
+      "asset": "assets/cosmetics/backs/garden.webp",
+      "source": "exec-f606e2f8-8884-46a0-8ad3-6ac464373bc7.png",
+      "purpose": "botanical center replacing crescent moon"
+    },
+    {
+      "asset": "assets/cosmetics/frames/hologram.webp",
+      "source": "exec-a2fccc47-3720-47a2-aac5-b9eec4bf80c1.png",
+      "purpose": "muted steel blue replacing neon cyan"
+    }
+  ],
+  "packaging": "WebP compression only; original generated PNGs retained in workspace/generated_images."
+}
