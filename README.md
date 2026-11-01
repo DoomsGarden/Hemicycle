@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/media/readme-banner.jpg" alt="Hemiciclo: Tu gabinete. Tu estrategia. Capturas reales del juego de colección y combates por turnos." width="100%">
+  <img src="docs/media/readme-banner.jpg?v=20261101-mat12" alt="Hemiciclo: Tu gabinete. Tu estrategia. Capturas reales del juego de colección y combates por turnos." width="100%">
 </p>
 
 <p align="center">
@@ -18,30 +18,30 @@ Forma un gabinete de **cinco oradores**, elige a tu líder y añade hasta **dos 
 
 Hemiciclo está en **prelanzamiento**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
-**Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Esta primera colección está disponible completa. Gana experiencia jugando y reclamando desafíos y logros: los niveles llegan hasta el 500 y son independientes del Elo.
+**Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Esta primera colección está disponible completa. Elige también entre **seis opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
 
 <p align="center">
-  <img src="docs/media/profile-v11/profile.png" alt="Perfil de Hemiciclo con nivel, experiencia y estadísticas" width="32%">
-  <img src="docs/media/profile-v11/editor.png" alt="Editor: seis menús y cuatro elecciones visuales independientes" width="32%">
+  <img src="docs/media/profile-v11/profile.png?v=20261101-mat12" alt="Perfil de Hemiciclo con nivel, experiencia y estadísticas" width="32%">
+  <img src="docs/media/profile-v11/editor.png?v=20261101-mat12" alt="Editor actual: seis menús, seis opciones de tipografía y cuatro elecciones visuales independientes" width="32%">
 </p>
 
 <p align="center">
-  <a href="press/google-play/es-ES/02-combate.png"><img src="docs/media/promos/02-combate.jpg" alt="Combates por turnos: consigue 100 votos" width="31%"></a>
-  <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg" alt="Colecciona 120 oradores con rasgos y frases propios" width="31%"></a>
-  <a href="press/google-play/es-ES/01-inicio.png"><img src="docs/media/promos/01-inicio.jpg" alt="Inicio de Hemiciclo con el hemiciclo y sus cromos" width="31%"></a>
+  <a href="press/google-play/es-ES/02-combate.png"><img src="docs/media/promos/02-combate.jpg?v=20261101-mat12" alt="Combate actual: tapetes independientes de jugador y rival, estados visibles y objetivo de 100 votos" width="31%"></a>
+  <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg?v=20261101-mat12" alt="Colecciona 120 oradores con rasgos y frases propios" width="31%"></a>
+  <a href="press/google-play/es-ES/01-inicio.png"><img src="docs/media/promos/01-inicio.jpg?v=20261101-mat12" alt="Inicio de Hemiciclo con el hemiciclo y sus cromos" width="31%"></a>
 </p>
 
 <details>
 <summary><strong>Más imágenes: gabinete, sobres, Liga y Mercado</strong></summary>
 
 <p align="center">
-  <a href="press/google-play/es-ES/04-gabinete.png"><img src="docs/media/promos/04-gabinete.jpg" alt="Prepara cinco oradores y hasta dos acciones" width="23%"></a>
-  <a href="press/google-play/es-ES/05-sobres.png"><img src="docs/media/promos/05-sobres.jpg" alt="Abre sobres y descubre cartas" width="23%"></a>
-  <a href="press/google-play/es-ES/06-liga.png"><img src="docs/media/promos/06-liga.jpg" alt="Compite en la Liga de los 30" width="23%"></a>
-  <a href="press/google-play/es-ES/07-mercado.png"><img src="docs/media/promos/07-mercado.jpg" alt="Vende, compra e intercambia cromos en el Mercado" width="23%"></a>
+  <a href="press/google-play/es-ES/04-gabinete.png"><img src="docs/media/promos/04-gabinete.jpg?v=20261101-mat12" alt="Prepara cinco oradores y hasta dos acciones" width="23%"></a>
+  <a href="press/google-play/es-ES/05-sobres.png"><img src="docs/media/promos/05-sobres.jpg?v=20261101-mat12" alt="Abre sobres y descubre cartas" width="23%"></a>
+  <a href="press/google-play/es-ES/06-liga.png"><img src="docs/media/promos/06-liga.jpg?v=20261101-mat12" alt="Compite en la Liga de los 30" width="23%"></a>
+  <a href="press/google-play/es-ES/07-mercado.png"><img src="docs/media/promos/07-mercado.jpg?v=20261101-mat12" alt="Vende, compra e intercambia cromos en el Mercado" width="23%"></a>
 </p>
 
-Las imágenes muestran la interfaz del juego con una partida de demostración. [Ver el material promocional y descargar las siete capturas](press/README.md).
+Capturas actualizadas de **v31.0.2.11**, con progreso de demostración, tapetes adaptados y menús personalizables. [Ver el material promocional y descargar las siete capturas](press/README.md).
 
 </details>
 
@@ -107,7 +107,7 @@ En **Mercado** puedes vender repetidos conservando una copia. Las compras e inte
 ## Guardado y cuenta
 
 - **Invitado:** el progreso se conserva en este navegador y dispositivo. Borrar sus datos puede eliminar esa copia.
-- **Cuenta y Nube:** usa siempre tu misma cuenta. Al cambiar de dispositivo, comprueba o recupera su copia antes de continuar. No mezcles partidas de cuentas distintas.
+- **Cuenta y Nube:** usa siempre tu misma cuenta. Al activar el guardado, el progreso local válido puede importarse automáticamente una primera vez si la cuenta aún no tiene una nube. Las copias existentes se recuperan y los inventarios no se suman. Al cambiar de dispositivo, comprueba o recupera su copia antes de continuar.
 - **Copia de seguridad:** desde Ayuda puedes exportar e importar tu guardado. Conserva una copia antes de cambiar de navegador o de origen.
 - **Sin conexión:** prepara los recursos desde **Opciones → Preparar recursos sin conexión**. El invitado dispone del juego local; las partidas descargadas de una cuenta vinculada conservan sus premios pendientes hasta validarlos al reconectar.
 
@@ -118,11 +118,11 @@ Las funciones de cuenta están disponibles desde los **14 años**. Los jugadores
 <details>
 <summary><strong>¿Vienes de la antigua dirección de GitHub Pages?</strong></summary>
 
-El guardado local de GitHub Pages y el de `hemicycle.online` pertenecen a orígenes diferentes: no se trasladan automáticamente. Conserva una copia del guardado antiguo y comprueba la nube de tu cuenta habitual al entrar en el dominio nuevo. Si hay una migración pendiente, revisa su estado desde Nube antes de iniciar partidas con premios vinculados.
+El guardado local de GitHub Pages y el de `hemicycle.online` pertenecen a orígenes diferentes: no se trasladan automáticamente. Conserva una copia del guardado antiguo y comprueba la nube de tu cuenta habitual al entrar en el dominio nuevo. Si tenías una importación pendiente, entra en **Nube → Comprobar** y recupera la copia cuando esté disponible.
 
 </details>
 
-La prueba voluntaria para nuevos jugadores está en [Prueba de comprensión](pruebas/). Sus observaciones se descargan localmente y no se envían automáticamente. Los resultados nuevos muestran una pista basada en presencia y habilidades registradas; la exportación de balance puede incluir esos recuentos sin identificar cromos ni cuentas.
+La prueba voluntaria para nuevos jugadores está en [Prueba de comprensión](pruebas/). Sus observaciones se descargan localmente y no se envían automáticamente. Los resultados nuevos incluyen un consejo desplegable, cerrado inicialmente, basado en presencia y habilidades registradas; la exportación de balance puede incluir esos recuentos sin identificar cromos ni cuentas.
 
 ## Ayuda y contacto
 
@@ -130,7 +130,7 @@ La prueba voluntaria para nuevos jugadores está en [Prueba de comprensión](pru
 | --- | --- |
 | Aprender o practicar | **Ayuda:** combate guiado, guía de menús, guía de Mercado y retos tácticos, incluida la lectura de habilidades básicas. |
 | Consultar habilidades y sus oradores | **Ayuda → Habilidades del básico → Cómo funcionan las 14 habilidades**. Incluye ejemplos; la ficha de cada cromo muestra su efecto particular. |
-| Mejorar la lectura | **Opciones:** tamaño de texto y de iconos. |
+| Mejorar la lectura | **Opciones:** tamaño de texto e iconos. **Perfil → Editar perfil → Menú:** tipografía independiente, con seis opciones. |
 | Ajustar el audio | **Opciones:** volumen maestro, música y efectos. |
 | Consultar partidas anteriores | **Inicio → flecha de accesos → Historial**. |
 | Revisar una espera online | **Ayuda → Si una conexión tarda → Diagnóstico de conexión**. Mide operaciones completas, no ping, y solo se exporta si lo solicitas. |
@@ -156,7 +156,7 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
 - [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
-- [Notas de la versión v31.0.2.10](_dev/releases/v31.0.2.10.md)
+- [Notas de la versión v31.0.2.11](_dev/releases/v31.0.2.11.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 

@@ -319,13 +319,17 @@ html[data-menu-skin=hologram] .personal-profile .xp-level>img,
 .cosmetic-frame-preview[data-preview-skin=hologram]>img,
 .cosmetic-mini-frame[data-preview-skin=hologram]>img{filter:saturate(.5) brightness(.85)}
 
-/* Ilustración en nueve zonas: esquinas proporcionadas, laterales completos y centro flexible. */
-.battle-wrap .battle-backdrop{isolation:isolate;background:none;box-shadow:inset 0 0 12px #0003;--mat-side:clamp(38px,16vw,76px);--mat-cap:calc(var(--mat-side) * .75)}
+/* El encuadre se elige por mitad; cover aplica un único zoom proporcional y centrado. */
+.battle-wrap .battle-backdrop{isolation:isolate;overflow:hidden;background:#0a1422;box-shadow:inset 0 0 12px #0003}
 .battle-wrap .battle-backdrop.player{--mat-image:var(--own-mat);--mat-wash:linear-gradient(#18528755,#18528744)}
 .battle-wrap .battle-backdrop.enemy{--mat-image:var(--enemy-mat);--mat-wash:linear-gradient(#923e4b66,#923e4b44)}
 .battle-wrap:is([data-player-theme=imperial],[data-player-theme=orbital]) .battle-backdrop.player{--mat-wash:linear-gradient(#18528766,#18528755)}
 .battle-wrap:is([data-enemy-theme=imperial],[data-enemy-theme=orbital]) .battle-backdrop.enemy{--mat-wash:linear-gradient(#923e4b77,#923e4b55)}
-.battle-wrap .battle-backdrop::before{content:'';position:absolute;inset:0;z-index:-1;border:1px solid transparent;border-image:var(--mat-image) 24% 22% fill / var(--mat-cap) var(--mat-side) / 0 stretch;pointer-events:none}
-.battle-wrap .battle-backdrop::after{content:'';position:absolute;inset:0;background:var(--mat-wash);mix-blend-mode:color;pointer-events:none}
+.battle-wrap .battle-backdrop::before{content:none}
+.battle-wrap .battle-backdrop::after{content:'';position:absolute;inset:0;background-image:var(--mat-wash),var(--mat-image);background-size:100% 100%,cover;background-position:center;background-repeat:no-repeat;background-blend-mode:color,normal;pointer-events:none}
 .battle-wrap:is([data-player-theme=garden],[data-player-theme=cats]) .battle-backdrop.player,
-.battle-wrap:is([data-enemy-theme=garden],[data-enemy-theme=cats]) .battle-backdrop.enemy{--mat-wash:transparent}
+.battle-wrap:is([data-enemy-theme=garden],[data-enemy-theme=cats]) .battle-backdrop.enemy{--mat-wash:linear-gradient(transparent,transparent)}
+
+/* Sombras exteriores cortas: no sustituyen los brillos de rareza ni atenúan iconos. */
+.screen.in-battle :is(.tribuna,.hand-zone){filter:drop-shadow(0 2px 3px #000b)}
+.screen.in-battle .tribuna>.slot{box-shadow:inset 0 0 14px #0005,0 0 4px 1px #0009}

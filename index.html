@@ -106,15 +106,15 @@
 <script src="js/action-cards.js?v=31.0.2.3-actions2"></script>
 <script src="js/cabinet-analysis.js?v=31.0.2.10"></script>
 <script src="js/strategy-ui.js?v=31.0.2.11-polish9"></script><link rel="stylesheet" href="css/action-cards.css?v=31.0.2.3-reading1">
-<script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=31.0.2.11-soft11"></script><script src="js/cosmetic-ui.js?v=31.0.2.11-soft11"></script>
-<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-soft11">
+<script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=31.0.2.11-mat12"></script><script src="js/cosmetic-ui.js?v=31.0.2.11-mat12"></script>
+<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-mat12">
 <script src="js/player-backup.js?v=31.0.2.11"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.11-soft11"></script>
+<script src="js/changelog.js?v=31.0.2.11-mat12"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.11-import10"></script>
@@ -1147,6 +1147,7 @@ function paint(){
  var ab=document.getElementById('appbar');if(ab)ab.innerHTML=appbar();
  var foot=(SCREEN==='battle'||SCREEN==='menu')?'':'<div class="foot">'+CARDS.length+' oradores · '+(typeof HemicycleActions!=='undefined'?HemicycleActions.cards.length:0)+' acciones · gabinete de 5 + 2</div>';
  c.innerHTML='<div class="view-body">'+((SCREENS[SCREEN]||SCREENS.menu)())+'</div>'+foot;
+ if(typeof HemicycleCosmeticUI!=='undefined'&&typeof HemicycleCosmeticUI.syncBattleMats==='function')HemicycleCosmeticUI.syncBattleMats();
  if(PLAY_OPEN)syncPlayLauncher();
  if(typeof HemicycleMenuSenate!=='undefined')HemicycleMenuSenate.sync();
  var tb=document.getElementById('tabbar');if(tb)tb.innerHTML=tabbar();
@@ -2311,7 +2312,7 @@ SCREENS.battle=function(){
  +'<div class="vbar me" aria-label="Tus votos: '+G.votes.p+' de 100"><div class="track"><div class="fill" style="width:'+Math.min(100,G.votes.p)+'%"></div></div><b>'+G.votes.p+'<small>/100</small></b></div></div><span class="turn-clock" id="turnClock" role="timer" aria-live="off" aria-label="'+(G.tutorial?'Práctica sin límite de tiempo':(G.quick?'60':'90')+' segundos por turno')+'">'+(G.quick?60:90)+'</span></div>'
  +'<div class="tribuna" data-tutorial="player">'+pf+'</div>'
  +'<p class="sub battle-resources own-resources" data-tutorial="resources">Tu Tribuna &middot; <abbr title="Tiempo de Palabra" aria-label="Tiempo de Palabra">TdP</abbr> '+G.tdp.p+' '+tdp+' &middot; Doctrina: '+battleDoctrine('p')+teamStatusHTML('p')+'</p>'
- +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="deck-zone"><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+' cartas pendientes"></div><div class="deck-caption"><b>'+G.deck.p.length+'</b> cartas</div>'+recovery.map(function(r){return '<button class="recovery-badge" data-act="recovery-action-info" data-id="'+r.id+'" data-turns="'+r.turns+'" title="'+esc(BYID[r.id].n)+' · '+r.turns+' turnos para volver a robarse">'+r.turns+' t · '+esc(BYID[r.id].n)+'</button>';}).join('')+'</div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
+ +'<div class="hand-zone"><div class="row" data-tutorial="hand">'+hand+'</div><div class="deck-zone"><div class="draw-pile" role="img" aria-label="Mazo: '+G.deck.p.length+(G.deck.p.length===1?' carta pendiente':' cartas pendientes')+'"></div><div class="deck-caption"><b>'+G.deck.p.length+'</b> '+(G.deck.p.length===1?'carta':'cartas')+'</div>'+recovery.map(function(r){return '<button class="recovery-badge" data-act="recovery-action-info" data-id="'+r.id+'" data-turns="'+r.turns+'" title="'+esc(BYID[r.id].n)+' · '+r.turns+' turnos para volver a robarse">'+r.turns+' t · '+esc(BYID[r.id].n)+'</button>';}).join('')+'</div><div class="action-discard" aria-label="Acciones agotadas">'+(G.spentActions&&G.spentActions.p||[]).map(function(c){return '<button data-act="spent-action-info" data-id="'+c.k+'" aria-label="Consultar '+esc(BYID[c.k].n)+' agotada">'+actionCromoHTML(BYID[c.k],{noCardAttr:true})+'</button>';}).join('')+'</div></div>'
  +(LOCAL_ACTION_TARGET?'<div class="hint action-target-hint" role="status"><b>'+esc(BYID[G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION;})[0].k].n)+'</b>: toca un cromo iluminado. <button class="battle-cancel" data-act="action-cancel">Cancelar</button></div>':G.sel&&G.move?'<div class="hint">'+(G.move==='strong'?'Ataque fuerte':'Ataque normal')+' de <b>'+esc(nmByUid(G.sel))+'</b>: toca un rival o «Restar votos». <button class="battle-cancel" data-baction="cancel">Cancelar</button></div>'
         :'')
  +'<section id="battleJournal" class="battle-journal journal-popover'+(G.tutorial?' practice-journal':'')+'"'+(BATTLE_LOG_OPEN?'':' hidden')+' role="region" aria-label="Acta del debate"><div class="journal-heading"><span>ACTA · Ronda '+roundNum+'</span>'+'<button class="mini" data-act="battle-log-close" aria-label="Cerrar acta">'+HemicycleBattleStatus.symbol('close')+'</button>'+'</div><div class="log" tabindex="0" role="log" aria-label="Acciones recientes, más nuevas primero">'+G.log.join('')+'</div></section>'

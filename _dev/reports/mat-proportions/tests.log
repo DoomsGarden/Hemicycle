@@ -1,0 +1,33 @@
+✔ all six mats choose a centered-cover source suited to each half instead of changing their proportions (1.10741ms)
+✔ a stable random ID survives repeat reads and travels inside the backup (21.492052ms)
+✔ portable round-trip preserves copies, statistics, hidden progress, receipts and seasonal reward claims (1.585801ms)
+✔ corrupt, incompatible, unknown-card and forged duplicate reward files fail validation before storage is touched (1.084957ms)
+✔ a failed multi-key restore rolls back every original value rather than leaving a mixed identity/profile (0.651353ms)
+✔ a complete 30-team league is preserved; a corrupt season is rejected (0.923633ms)
+✔ the selected bench survives backup and cloud validation without changing progression or pending rewards (0.67031ms)
+✔ unknown bench identifiers cannot enter restored player data (1.72428ms)
+✔ five cabinets round-trip with the selected slot and can retain a known card temporarily missing from the collection (1.125878ms)
+✔ XP has exact monotone boundaries through level 500 and a continuous slower curve after 60 (2.558368ms)
+✔ all modes earn XP, competitive modes lead, surrender and inactivity earn no consolation XP (0.476278ms)
+✔ all 1296 initial combinations are independently available and migrate the old marble choice (18.08923ms)
+✔ victory milestones extend to 100000 without losing previous claims or changing their FS (14.994162ms)
+✔ challenge XP is attached to the same single claim as FS, including archived periods (1.392691ms)
+✔ local XP is awarded once and a tutorial never awards experience (20.263373ms)
+✔ portable backup validates XP and independent cosmetics, while older backups remain valid (4.280134ms)
+✔ Los aspectos públicos solo incluyen tapete y reverso y admiten preferencias antiguas (1.025376ms)
+✔ result presents both votes and static rewards without the duplicate panel: p (35.387866ms)
+✔ result presents both votes and static rewards without the duplicate panel: e (2.779242ms)
+✔ result presents both votes and static rewards without the duplicate panel: draw (2.301901ms)
+✔ verified receipt votes take precedence over stale game display (3.119505ms)
+✔ season closure retains standings, reward and division message (5.873127ms)
+✔ risk warning defaults on, persists independently from text settings and can be reset in Options (2.789436ms)
+✔ invalid stored risk preferences keep the warning visible (3.776225ms)
+✔ independent typeface persists with reading sizes and tolerates unknown older preferences (1.961898ms)
+ℹ tests 25
+ℹ suites 0
+ℹ pass 25
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 179.545361
