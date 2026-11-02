@@ -3,9 +3,9 @@
 'use strict';
 var pending=[],current=null,cleanups=new Set(),observer=null,observed=null,positions={},positionGame=null,snapshot=null,sequence=null,waiters=[],hooks={},speech=null,speechQueue=[],speechTimer=0;
 function reduced(){return !!(root.matchMedia&&root.matchMedia('(prefers-reduced-motion: reduce)').matches);}
-function rect(selector){var el=document.querySelector(selector);if(!el)return null;var r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:r.width,h:r.height};}
+function rect(selector){var el=document.querySelector(selector);if(!el)return null;var r=el.getBoundingClientRect();return {x:r.left+r.width/2,y:r.top+r.height/2,w:r.width,h:r.height,side:el.dataset&&el.dataset.side};}
 function card(uid){return uid?rect('.tribuna [data-buid="'+String(uid).replace(/[^a-zA-Z0-9_-]/g,'')+'"]'):null;}
-function lane(side){return rect('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');}
+function lane(side){var point=rect('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');if(point)point.side=side;return point;}
 function cardsOf(game){var all={};if(game)['p','e'].forEach(function(side){['field','hand','pas'].forEach(function(zone){((game[zone]||{})[side]||[]).forEach(function(c){if(c&&!c.action)all[c.uid]={side:side,card:c};});});});return all;}
 function boards(){return ['p','e'].map(function(side){var el=document.querySelector('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');return el?el.innerHTML:null;});}
 function capture(game){
@@ -21,7 +21,7 @@ function settleWaiters(){var waitingNow=waiters;waiters=[];waitingNow.forEach(fu
 function waitFor(game,all){return new Promise(function(resolve){setTimeout(function(){if(waiting(game,all))waiters.push({game:game,all:all,resolve:resolve});else resolve();},0);});}
 function whenIdle(game){return waitFor(game,false);}
 function whenPresented(game){return waitFor(game,true);}
-function speechTiming(text,quiet){var minimum=Math.min(1800,Math.max(1200,Array.from(String(text)).length*22));return {flight:quiet?0:minimum+300,minimum:minimum,duration:minimum+300,fade:quiet?0:160};}
+function speechTiming(text,quiet){var minimum=Math.min(1800,Math.max(1200,Array.from(String(text)).length*22));return {flight:quiet?0:minimum+300,minimum:minimum,duration:minimum+300,fade:0};}
 /* Each principal intervention owns its damage/support events, including reflected damage. */
 function plan(events,quiet){
  var groups=[],group=null,end=0;
@@ -49,7 +49,7 @@ function bar(side){return rect('.vbar.'+(side==='p'?'me':'foe'));}
 function queue(game,type,data){
  if(!game)return;if(!sequence&&!pending.length&&(!snapshot||snapshot.game!==game))capture(game);
  var known=cardsOf(game),entry=known[data.uid]||(snapshot&&snapshot.cards[data.uid]),copy=Object.assign({},data);
- if(entry){copy.side=copy.side||entry.side;if(!copy.quote&&entry.card.q&&(type==='attack'||((type==='guard'||type==='heal')&&copy.phrase)))copy.quote=entry.card.q[type==='attack'?(copy.strong?1:0):2];}
+ if(entry){copy.side=entry.side;if(!copy.quote&&entry.card.q&&(type==='attack'||((type==='guard'||type==='heal')&&copy.phrase)))copy.quote=entry.card.q[type==='attack'?(copy.strong?1:0):2];}
  pending.push({game:game,type:type,data:copy,origin:card(copy.uid)||(positionGame===game?positions[copy.uid]:null),target:card(copy.target)||(positionGame===game?positions[copy.target]:null),lane:lane(copy.side),opponent:lane(copy.side==='p'?'e':'p'),points:(copy.targets||[]).slice(0,6).map(function(uid){return card(uid)||(positionGame===game?positions[uid]:null);}).filter(Boolean)});
 }
 function clear(){
@@ -92,25 +92,36 @@ function actionEffect(host,event){
 function split(){var board=document.querySelector('.battle-wrap'),hud=board&&board.querySelector('.battle-hud');if(board&&hud){var a=board.getBoundingClientRect(),b=hud.getBoundingClientRect();board.style.setProperty('--battle-split-y',(b.top+b.height/2-a.top)+'px');}}
 function later(fn,ms){var timer=setTimeout(function(){cleanups.delete(timer);fn();},ms);cleanups.add(timer);return timer;}
 function node(uid){return document.querySelector('.tribuna [data-buid="'+String(uid).replace(/[^a-zA-Z0-9_-]/g,'')+'"]');}
+function finishSpeech(active){
+ if(speech!==active)return;
+ if(speechTimer){clearTimeout(speechTimer);cleanups.delete(speechTimer);speechTimer=0;}
+ active.node.remove();speech=null;showNextSpeech();settleWaiters();
+}
 function scheduleSpeech(){
- if(!speech||speech.fading)return;
- if(speechTimer){clearTimeout(speechTimer);cleanups.delete(speechTimer);}
- var active=speech,deadline=active.started+active.timing.duration;
- speechTimer=later(function(){
-  speechTimer=0;if(speech!==active)return;active.fading=true;active.node.style.opacity='0';
-  speechTimer=later(function(){speechTimer=0;if(speech!==active)return;active.node.remove();speech=null;showNextSpeech();settleWaiters();},active.timing.fade);
- },Math.max(0,deadline-performance.now()));
+ if(!speech)return;var active=speech;
+ speechTimer=later(function(){speechTimer=0;finishSpeech(active);},Math.max(0,active.started+active.timing.duration-performance.now()));
+}
+function speechRoute(item){
+ var d=item.data,known=cardsOf(item.game),actor=known[d.uid],side=actor?actor.side:d.side==='e'?'e':'p',foe=side==='p'?'e':'p',own=lane(side),other=lane(foe);
+ function inside(point,field){return point&&field&&point.x>=field.x-field.w/2-2&&point.x<=field.x+field.w/2+2&&point.y>=field.y-field.h/2-2&&point.y<=field.y+field.h/2+2;}
+ var from=card(d.uid);if(!from||from.side!==side)from=item.from;if(!inside(from,own))from=own;
+ var attack=item.kind==='normal'||item.kind==='strong',to;
+ if(attack){
+  to=card(d.target);if(!to||to.side!==foe)to=item.to;
+  if(!to||to.side!==foe||!inside(to,other))to=other;
+ }else{var half=rect('.battle-backdrop.'+(side==='p'?'player':'enemy'));to=half&&from?{x:from.x,y:half.y,side:side}:own;}
+ return {side:side,destination:attack?foe:side,from:from,to:to};
 }
 function showNextSpeech(){
  if(speech)return;
  while(speechQueue.length){
   var item=speechQueue.shift();if(item.game!==current||document.hidden)continue;
   var host=document.getElementById('battleFxRoot');if(!host)continue;
-  var d=item.data,from=item.from,to=item.to,timing=speechTiming(d.quote,item.quiet),el=effect(host,'battle-spoken '+item.kind+(item.quiet?' still':''),from,d.quote);if(!el)continue;
+  var d=item.data,route=speechRoute(item),from=route.from,to=route.to;if(!from||!to)continue;var timing=speechTiming(d.quote,item.quiet),el=effect(host,'battle-spoken '+item.kind+(item.quiet?' still':''),from,d.quote);if(!el)continue;
   var peak=1.2,width=Math.min(280,(innerWidth-24)/peak),half=width*peak/2+8,clampX=function(x){return Math.max(half,Math.min(innerWidth-half,x));};
-  el.style.setProperty('--phrase-flight',timing.flight+'ms');el.style.width=width+'px';el.style.setProperty('--phrase-peak',peak);el.style.setProperty('--phrase-half-x',((clampX(to.x)-clampX(from.x))/2)+'px');el.style.setProperty('--phrase-half-y',((to.y-from.y)/2)+'px');el.style.left=clampX(from.x)+'px';el.style.setProperty('--phrase-x',(clampX(to.x)-clampX(from.x))+'px');el.style.setProperty('--phrase-y',(to.y-from.y)+'px');el.dataset.side=d.side;el.dataset.target=d.target||'';
+  el.style.setProperty('--phrase-flight',timing.flight+'ms');el.style.width=width+'px';el.style.setProperty('--phrase-peak',peak);el.style.setProperty('--phrase-half-x',((clampX(to.x)-clampX(from.x))/2)+'px');el.style.setProperty('--phrase-half-y',((to.y-from.y)/2)+'px');el.style.left=clampX(from.x)+'px';el.style.setProperty('--phrase-x',(clampX(to.x)-clampX(from.x))+'px');el.style.setProperty('--phrase-y',(to.y-from.y)+'px');el.dataset.side=route.side;el.dataset.destination=route.destination;el.dataset.target=d.target||'';
   var scale=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ui-text-scale'))||1,size=26*scale;el.style.fontSize=size+'px';while(size>16*scale&&el.offsetHeight>parseFloat(getComputedStyle(el).lineHeight)*2.15){size--;el.style.fontSize=size+'px';}
-  speech={game:item.game,node:el,timing:timing,started:performance.now(),fading:false};scheduleSpeech();return;
+  speech={game:item.game,node:el,timing:timing,started:performance.now()};var active=speech;el.addEventListener('animationend',function(event){if(event.target===el&&event.animationName==='spokenTravel')finishSpeech(active);});el.addEventListener('animationcancel',function(event){if(event.target===el)finishSpeech(active);});scheduleSpeech();return;
  }
  settleWaiters();
 }
@@ -156,7 +167,7 @@ function render(game,options){
   later(function(){if(sequence!==state)return;
    group.events.forEach(function(e){var d=e.data;if(d.uid&&!node(d.uid)){mount(d.uid,known);paintHealth(d.uid,state.health[d.uid]);}var origin=card(d.uid)||e.origin,scope=lane(d.side)||e.lane;
     if(e.type==='action'){e.points=(d.targets||[]).map(function(uid){return card(uid);}).filter(Boolean);actionEffect(host,e);}
-    if(e.type==='attack'){var target=card(d.target)||e.target||lane(d.side==='p'?'e':'p');phrase(host,d,origin,target,d.strong?'strong':'normal',quiet,group.impact);var actor=node(d.uid);if(actor&&!quiet){actor.classList.remove('is-speaking');void actor.offsetWidth;actor.classList.add('is-speaking');}later(function(){if(sequence!==state)return;zasca(host,card(d.target)||target,!!d.strong);},group.impact);}
+    if(e.type==='attack'){var attackRoute={game:game,data:d,kind:d.strong?'strong':'normal',from:origin,to:e.target},target=speechRoute(attackRoute).to;phrase(host,d,origin,target,d.strong?'strong':'normal',quiet,group.impact);var actor=node(d.uid);if(actor&&!quiet){actor.classList.remove('is-speaking');void actor.offsetWidth;actor.classList.add('is-speaking');}later(function(){if(sequence!==state)return;zasca(host,speechRoute(attackRoute).to||target,!!d.strong);},group.impact);}
     if((e.type==='guard'||e.type==='heal')&&group.type!=='action'&&d.quote){var ownHalf=rect('.battle-backdrop.'+(d.side==='p'?'player':'enemy')),local=ownHalf&&origin?{x:origin.x,y:ownHalf.y}:origin;phrase(host,d,origin,local,e.type,quiet,group.impact);}
     if(e.type==='turn'){var hud=document.querySelector('.battle-hud'),r=hud&&hud.getBoundingClientRect();effect(host,'turn-announcement '+(d.side==='p'?'own':'rival'),r?{x:r.left+r.width/2,y:r.top-14}:null,d.side==='p'?'Tu turno':'Turno rival');}
    });

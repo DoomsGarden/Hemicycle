@@ -1,0 +1,13 @@
+{"width":393,"height":851,"perspective":0,"route":{"side":"p","kind":"normal","duration":1500,"own":{"x":17,"y":359.921875,"w":359,"h":162.65625},"opponent":{"x":17,"y":117.125,"w":359,"h":162.65625},"frames":[{"f":0,"x":176,"y":448.234375,"opacity":1,"scale":1},{"f":0.25,"x":186.25,"y":387.53515625,"opacity":1,"scale":1.1},{"f":0.5,"x":196.5,"y":326.83595275878906,"opacity":1,"scale":1.2},{"f":0.75,"x":206.75,"y":266.13671875,"opacity":1,"scale":1.1},{"f":0.95,"x":216.59568786621094,"y":207.831787109375,"opacity":1,"scale":1.00394},{"f":0.999,"x":216.99984741210938,"y":205.43841552734375,"opacity":1,"scale":1},{"f":1,"x":217,"y":205.4375,"opacity":1,"scale":1}]}}
+AssertionError [ERR_ASSERTION]: finished motion must leave no stationary readable phrase
+
+1 !== 0
+
+    at /workspace/Hemicycle/_dev/checks/recorrido-frases-v12.cjs:12:120 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 1,
+  expected: 0,
+  operator: 'strictEqual',
+  diff: 'simple'
+}
