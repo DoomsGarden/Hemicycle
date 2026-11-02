@@ -206,17 +206,16 @@
 .basic-ability-examples{margin:10px 0}.basic-ability-examples>summary{cursor:pointer;color:#edce8a}.basic-ability-examples section{padding:9px 0;border-bottom:1px solid #293149}.basic-ability-examples h4{display:flex;align-items:center;gap:7px;color:#f0d89d;margin:4px 0 7px}
 
 /* Frases: marfil mate, oro, azul defensa y verde curación, con la letra del selector. */
-.battle-spoken{z-index:3;box-sizing:border-box;padding:5px 8px;text-align:center;font:400 26px/1.08 'Senate Dialogue',Georgia,serif;letter-spacing:.2px;overflow-wrap:anywhere;color:#e2dfd4;text-shadow:0 2px 2px #111a20,1px 0 2px #111a20,-1px 0 2px #111a20,0 0 5px #111a20;animation:spokenTravel var(--phrase-flight,340ms) linear both,spokenFade .1s var(--phrase-flight,340ms) linear forwards;--phrase-x:0px;--phrase-y:0px}
+.battle-spoken{z-index:3;box-sizing:border-box;padding:5px 8px;text-align:center;font:400 26px/1.08 'Senate Dialogue',Georgia,serif;letter-spacing:.2px;overflow-wrap:anywhere;color:#e2dfd4;text-shadow:0 2px 2px #111a20,1px 0 2px #111a20,-1px 0 2px #111a20,0 0 5px #111a20;animation:spokenTravel var(--phrase-flight,560ms) ease-in-out both;transition:opacity .16s linear;--phrase-x:0px;--phrase-y:0px}
 .battle-spoken.strong{color:#e4c174}.battle-spoken.guard{color:#9fc9e2}.battle-spoken.heal{color:#a4d2ae}
 .battle-spoken::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.12;background:repeating-linear-gradient(0deg,transparent 0 2px,#101822 3px 4px);mask-image:linear-gradient(transparent,#000,transparent)}
-.battle-spoken.still{animation:spokenStill .33s linear both}
+.battle-spoken.still{animation:none;transition:none}
 .tribuna .cromo.health-changing .aguante{box-shadow:0 0 5px #dfc79077}
 .tribuna .cromo.is-leaving{animation:battleLeave .09s ease-in both;pointer-events:none}
-@keyframes spokenTravel{0%{opacity:1;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(calc(-50% + var(--phrase-half-x)),calc(-50% + var(--phrase-half-y))) scale(var(--phrase-peak,1.2))}100%{opacity:1;transform:translate(calc(-50% + var(--phrase-x)),calc(-50% + var(--phrase-y))) scale(1)}}
-@keyframes spokenFade{to{opacity:0}}
+@keyframes spokenTravel{0%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(calc(-50% + var(--phrase-half-x)),calc(-50% + var(--phrase-half-y))) scale(var(--phrase-peak,1.2))}100%{transform:translate(calc(-50% + var(--phrase-x)),calc(-50% + var(--phrase-y))) scale(1)}}
 @keyframes spokenStill{0%,85%{opacity:1}100%{opacity:0}}
 @keyframes battleLeave{from{opacity:1;transform:none}to{opacity:0;transform:translateY(14px) scale(.95)}}
-@media(prefers-reduced-motion:reduce){.battle-spoken{animation:spokenStill .33s linear both}.tribuna .cromo.is-leaving{animation:none;opacity:0}}
+@media(prefers-reduced-motion:reduce){.battle-spoken{animation:none;transition:none}.tribuna .cromo.is-leaving{animation:none;opacity:0}}
 
 /* Un zasca se expresa con comillas y ondas de diálogo, sin estela ni corte de arma. */
 .zasca-mark{width:var(--fx-size,72px);height:var(--fx-size,72px);color:#ced9dc;animation:zascaReveal .26s ease-out both;filter:drop-shadow(0 1px 3px #071322)}
