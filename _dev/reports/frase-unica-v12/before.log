@@ -1,0 +1,15 @@
+{"kind":"guard","perspective":0,"before":{"text":"Women's rights are human rights","x":36,"y":562.15625,"width":280,"animation":"finished","flight":560},"after":{"x":36,"y":562.15625,"width":280,"animation":"finished","visibleCopies":[{"tag":"SPAN","cls":"battle-fx battle-spoken guard"}],"inert":false}}
+AssertionError [ERR_ASSERTION]: the phrase must still move rather than remain fixed at TdP/the rival
++ actual - expected
+
++ 'finished'
+- 'running'
+
+    at /workspace/Hemicycle/_dev/checks/frase-unica-v12.cjs:13:126 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: 'finished',
+  expected: 'running',
+  operator: 'strictEqual',
+  diff: 'simple'
+}

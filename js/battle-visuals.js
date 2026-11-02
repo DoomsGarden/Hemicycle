@@ -21,7 +21,7 @@ function settleWaiters(){var waitingNow=waiters;waiters=[];waitingNow.forEach(fu
 function waitFor(game,all){return new Promise(function(resolve){setTimeout(function(){if(waiting(game,all))waiters.push({game:game,all:all,resolve:resolve});else resolve();},0);});}
 function whenIdle(game){return waitFor(game,false);}
 function whenPresented(game){return waitFor(game,true);}
-function speechTiming(text,quiet){var minimum=Math.min(1800,Math.max(1200,Array.from(String(text)).length*22));return {flight:quiet?0:560,minimum:minimum,duration:minimum+300,fade:quiet?0:160};}
+function speechTiming(text,quiet){var minimum=Math.min(1800,Math.max(1200,Array.from(String(text)).length*22));return {flight:quiet?0:minimum+300,minimum:minimum,duration:minimum+300,fade:quiet?0:160};}
 /* Each principal intervention owns its damage/support events, including reflected damage. */
 function plan(events,quiet){
  var groups=[],group=null,end=0;
@@ -95,7 +95,7 @@ function node(uid){return document.querySelector('.tribuna [data-buid="'+String(
 function scheduleSpeech(){
  if(!speech||speech.fading)return;
  if(speechTimer){clearTimeout(speechTimer);cleanups.delete(speechTimer);}
- var active=speech,deadline=active.started+(speechQueue.length?active.timing.minimum:active.timing.duration);
+ var active=speech,deadline=active.started+active.timing.duration;
  speechTimer=later(function(){
   speechTimer=0;if(speech!==active)return;active.fading=true;active.node.style.opacity='0';
   speechTimer=later(function(){speechTimer=0;if(speech!==active)return;active.node.remove();speech=null;showNextSpeech();settleWaiters();},active.timing.fade);
@@ -117,7 +117,7 @@ function showNextSpeech(){
 function phrase(host,d,from,to,kind,quiet){
  if(!d.quote||!from||!to)return;
  speechQueue.push({game:current,data:Object.assign({},d),from:from,to:to,kind:kind,quiet:quiet});
- if(speech)scheduleSpeech();else showNextSpeech();
+ if(!speech)showNextSpeech();
 }
 function restoreBoards(saved){['p','e'].forEach(function(side,i){var el=document.querySelector('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');if(el&&saved[i]!==null)el.innerHTML=saved[i];});if(hooks.refreshArt)hooks.refreshArt();}
 function mount(uid,known){

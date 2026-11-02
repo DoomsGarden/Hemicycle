@@ -1,0 +1,405 @@
+{
+  "rows": [
+    {
+      "quiet": false,
+      "kind": "guard",
+      "perspective": 0,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 8.434463500976562,
+        "y": 493.5599670410156,
+        "width": 335.131103515625,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 10.287368774414062,
+        "y": 500.0405578613281,
+        "width": 331.42529296875,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken guard"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "guard",
+      "perspective": 1,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 8.99432373046875,
+        "y": 192.8221435546875,
+        "width": 334.0113525390625,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 9.362350463867188,
+        "y": 191.25692749023438,
+        "width": 333.2752685546875,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken guard"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "heal",
+      "perspective": 0,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 8.435272216796875,
+        "y": 492.91302490234375,
+        "width": 335.12945556640625,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 10.285476684570312,
+        "y": 499.3979187011719,
+        "width": 331.4290771484375,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken heal"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "heal",
+      "perspective": 1,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 8.99554443359375,
+        "y": 192.82310485839844,
+        "width": 334.0089111328125,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 9.363311767578125,
+        "y": 191.25637817382812,
+        "width": 333.27337646484375,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken heal"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "normal",
+      "perspective": 0,
+      "before": {
+        "text": "Deal me in",
+        "x": 8.685699462890625,
+        "y": 307.0553283691406,
+        "width": 334.62860107421875,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 9.3634033203125,
+        "y": 298.26318359375,
+        "width": 333.273193359375,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken normal"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "normal",
+      "perspective": 1,
+      "before": {
+        "text": "Deal me in",
+        "x": 8.995346069335938,
+        "y": 336.32440185546875,
+        "width": 334.00927734375,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 9.361160278320312,
+        "y": 347.6273498535156,
+        "width": 333.2777099609375,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken normal"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "strong",
+      "perspective": 0,
+      "before": {
+        "text": "We are stronger together",
+        "x": 8.684402465820312,
+        "y": 307.04949951171875,
+        "width": 334.6312255859375,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 9.793289184570312,
+        "y": 296.45782470703125,
+        "width": 332.4134521484375,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken strong"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": false,
+      "kind": "strong",
+      "perspective": 1,
+      "before": {
+        "text": "We are stronger together",
+        "x": 8.684906005859375,
+        "y": 337.7646179199219,
+        "width": 334.63018798828125,
+        "animation": "running",
+        "flight": 1500
+      },
+      "after": {
+        "x": 9.794342041015625,
+        "y": 349.7549133300781,
+        "width": 332.41131591796875,
+        "animation": "running",
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken strong"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "guard",
+      "perspective": 0,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 36,
+        "y": 432.4375,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 432.4375,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken guard still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "guard",
+      "perspective": 1,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 36,
+        "y": 214.28125,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 214.28125,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken guard still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "heal",
+      "perspective": 0,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 36,
+        "y": 432.4375,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 432.4375,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken heal still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "heal",
+      "perspective": 1,
+      "before": {
+        "text": "Women's rights are human rights",
+        "x": 36,
+        "y": 214.28125,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 214.28125,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken heal still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "normal",
+      "perspective": 0,
+      "before": {
+        "text": "Deal me in",
+        "x": 36,
+        "y": 429.1953125,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 429.1953125,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken normal still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "normal",
+      "perspective": 1,
+      "before": {
+        "text": "Deal me in",
+        "x": 36,
+        "y": 211.0390625,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 211.0390625,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken normal still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "strong",
+      "perspective": 0,
+      "before": {
+        "text": "We are stronger together",
+        "x": 36,
+        "y": 429.1953125,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 429.1953125,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken strong still"
+          }
+        ],
+        "inert": false
+      }
+    },
+    {
+      "quiet": true,
+      "kind": "strong",
+      "perspective": 1,
+      "before": {
+        "text": "We are stronger together",
+        "x": 36,
+        "y": 211.0390625,
+        "width": 280,
+        "flight": 0
+      },
+      "after": {
+        "x": 36,
+        "y": 211.0390625,
+        "width": 280,
+        "visibleCopies": [
+          {
+            "tag": "SPAN",
+            "cls": "battle-fx battle-spoken strong still"
+          }
+        ],
+        "inert": false
+      }
+    }
+  ],
+  "errors": []
+}
