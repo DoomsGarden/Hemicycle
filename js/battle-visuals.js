@@ -18,7 +18,20 @@ function busy(game){return !!(sequence&&sequence.game===game||pending.some(funct
 function settleWaiters(){var waiting=waiters;waiters=[];waiting.forEach(function(w){if(busy(w.game))waiters.push(w);else w.resolve();});}
 function whenIdle(game){return new Promise(function(resolve){setTimeout(function(){if(busy(game))waiters.push({game:game,resolve:resolve});else resolve();},0);});}
 /* Each principal intervention owns its damage/support events, including reflected damage. */
-function plan(events,quiet){var groups=[],group=null,end=0;events.filter(function(e){return ['attack','action','turn','card','damage','heal','guard','expel','votes'].includes(e.type);}).forEach(function(e){var own=e.type==='attack'||e.type==='action'||e.type==='turn'||e.type==='card'||!group||((e.type==='guard'||e.type==='heal')&&(group.type!=='action'||e.data.phrase));if(own){group={type:e.type,start:end,impact:quiet?90:e.type==='attack'?650:e.type==='action'?450:300,duration:quiet?340:e.type==='card'?450:e.type==='attack'?1900:e.type==='action'?1950:e.type==='turn'?1400:1600,events:[]};groups.push(group);end+=group.duration;}group.events.push(e);});return {groups:groups,duration:end};}
+function plan(events,quiet){
+ var groups=[],group=null,end=0;
+ events.filter(function(e){return ['attack','action','turn','card','damage','heal','guard','expel','votes'].includes(e.type);}).forEach(function(e){
+  var own=['attack','action','turn','card'].includes(e.type)||!group||(['guard','heal'].includes(e.type)&&(group.type!=='action'||e.data.phrase));
+  if(own){group={type:e.type,events:[]};groups.push(group);}group.events.push(e);
+ });
+ groups.forEach(function(g){
+  var strong=g.events.some(function(e){return e.type==='attack'&&e.data.strong;}),leaves=g.events.some(function(e){return e.type==='expel';}),health=g.events.some(function(e){return e.type==='damage'||e.type==='heal'&&e.data.value>0;});
+  g.start=end;g.healthDuration=quiet?90:200;g.departure=quiet?40:90;
+  g.impact=quiet?30:g.type==='attack'?(strong?380:340):g.type==='action'?120:g.type==='heal'?100:g.type==='guard'?80:0;
+  g.duration=g.type==='turn'?0:g.type==='card'?(quiet?40:100):g.impact+(health?g.healthDuration:20)+(leaves?g.departure:0);
+  end+=g.duration;
+ });return {groups:groups,duration:end};
+}
 // Old downloaded games have no action-target metadata. Use their actual effect events;
 // a single boost is identified only when its current buff has exactly one recipient.
 function actionTargets(game,event,following,you){
@@ -44,6 +57,11 @@ function effect(host,kind,point,label,duration){if(!point||!host)return;while(ho
 function particles(el,count,kind){if(!el)return;for(var i=0;i<count;i++){var p=document.createElement('i'),angle=(i/count)*Math.PI*2,radius=kind==='heal'?32:42;p.className='fx-particle '+kind;p.style.setProperty('--px',Math.cos(angle)*radius+'px');p.style.setProperty('--py',Math.sin(angle)*radius+'px');p.style.setProperty('--rot',(i*360/count)+'deg');p.style.setProperty('--delay',(i%3)*25+'ms');el.appendChild(p);}}
 function impact(host,point,strong){var el=effect(host,'impact'+(strong?' strong':''),point,'',950);if(!el)return;el.style.setProperty('--fx-size',Math.max(42,Math.min(strong?104:72,(point.w||72)*(strong?1.05:.8)))+'px');el.innerHTML='<i class="impact-core"></i><i class="impact-wave"></i>'+(strong?'<i class="impact-wave echo"></i><i class="impact-slash second"></i>':'')+'<i class="impact-slash"></i>';if(!reduced())particles(el,strong?12:6,'spark');}
 function projectile(host,from,to,strong){if(!from||!to||reduced())return;var dx=to.x-from.x,dy=to.y-from.y,length=Math.hypot(dx,dy);if(length<4)return;var el=effect(host,'attack-trail'+(strong?' strong':''),from,'',500);el.style.setProperty('--travel',length+'px');el.style.setProperty('--angle',Math.atan2(dy,dx)+'rad');el.innerHTML='<i></i>';}
+function zasca(host,point,strong){
+ var el=effect(host,'zasca-mark'+(strong?' strong':''),point,'',260);if(!el)return;
+ el.style.setProperty('--fx-size',Math.max(40,Math.min(strong?100:82,(point.w||80)*.85))+'px');
+ el.innerHTML='<i class="zasca-wave"></i>'+(strong?'<i class="zasca-wave second"></i>':'')+'<svg viewBox="0 0 96 96" fill="none" aria-hidden="true"><path class="zasca-bubble" d="M22 18h52a10 10 0 0 1 10 10v28a10 10 0 0 1-10 10H51L35 79l3-13H22A10 10 0 0 1 12 56V28a10 10 0 0 1 10-10Z"/><path class="zasca-quotes" d="M29 33h13v12H31c0 8 4 10 10 11M54 33h13v12H56c0 8 4 10 10 11"/><path class="zasca-rays" d="M7 12 1 6m88 6 6-6M6 45H0m90 0h6M12 77l-7 7m79-7 7 7"/></svg>';
+}
 function support(host,kind,point){var el=effect(host,kind==='heal'?'healing-ring':'shield-ring',point,'',1200);if(!el)return;el.style.setProperty('--fx-size',Math.max(54,Math.min(110,(point.w||76)*1.03))+'px');el.innerHTML=root.HemicycleBattleStatus.supportMarkup(kind);if(kind==='heal'&&!reduced())particles(el,7,'heal');}
 
 function actionEffect(host,event){
@@ -69,14 +87,22 @@ function actionEffect(host,event){
 function split(){var board=document.querySelector('.battle-wrap'),hud=board&&board.querySelector('.battle-hud');if(board&&hud){var a=board.getBoundingClientRect(),b=hud.getBoundingClientRect();board.style.setProperty('--battle-split-y',(b.top+b.height/2-a.top)+'px');}}
 function later(fn,ms){var timer=setTimeout(function(){cleanups.delete(timer);fn();},ms);cleanups.add(timer);}
 function node(uid){return document.querySelector('.tribuna [data-buid="'+String(uid).replace(/[^a-zA-Z0-9_-]/g,'')+'"]');}
-function phrase(host,d,from,to,kind,quiet){
- if(!d.quote||!from||!to)return;
- var el=effect(host,'battle-spoken '+kind+(quiet?' still':''),from,d.quote,quiet?330:1050);if(!el)return;
- var width=Math.min(300,innerWidth-32),half=width/2+8,clampX=function(x){return Math.max(half,Math.min(innerWidth-half,x));};
- el.style.width=width+'px';el.style.left=clampX(from.x)+'px';el.style.setProperty('--phrase-x',(clampX(to.x)-clampX(from.x))+'px');el.style.setProperty('--phrase-y',(to.y-from.y)+'px');el.dataset.side=d.side;el.dataset.target=d.target||'';
+function phrase(host,d,from,to,kind,quiet,flight){
+ if(!d.quote||!from||!to)return;host.querySelectorAll('.battle-spoken').forEach(function(n){n.remove();});
+ var el=effect(host,'battle-spoken '+kind+(quiet?' still':''),from,d.quote,quiet?200:520);if(!el)return;
+ var peak=1.2,width=Math.min(280,(innerWidth-24)/peak),half=width*peak/2+8,clampX=function(x){return Math.max(half,Math.min(innerWidth-half,x));};
+ el.style.setProperty('--phrase-flight',Math.max(300,flight||340)+'ms');el.style.width=width+'px';el.style.setProperty('--phrase-peak',peak);el.style.setProperty('--phrase-half-x',((clampX(to.x)-clampX(from.x))/2)+'px');el.style.setProperty('--phrase-half-y',((to.y-from.y)/2)+'px');el.style.left=clampX(from.x)+'px';el.style.setProperty('--phrase-x',(clampX(to.x)-clampX(from.x))+'px');el.style.setProperty('--phrase-y',(to.y-from.y)+'px');el.dataset.side=d.side;el.dataset.target=d.target||'';
  var scale=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ui-text-scale'))||1,size=26*scale;el.style.fontSize=size+'px';while(size>16*scale&&el.offsetHeight>parseFloat(getComputedStyle(el).lineHeight)*2.15){size--;el.style.fontSize=size+'px';}
 }
-function restoreBoards(saved){['p','e'].forEach(function(side,i){var el=document.querySelector('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');if(el&&saved[i]!==null)el.innerHTML=saved[i];});}
+function restoreBoards(saved){['p','e'].forEach(function(side,i){var el=document.querySelector('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');if(el&&saved[i]!==null)el.innerHTML=saved[i];});if(hooks.refreshArt)hooks.refreshArt();}
+function mount(uid,known){
+ if(node(uid)||!known[uid]||!hooks.cardHTML)return;
+ var entry=known[uid],field=document.querySelector('[data-tutorial="'+(entry.side==='p'?'player':'enemy')+'"]');
+ // Cards and empty slots are direct grid children. Never put a card inside either.
+ var slot=field&&Array.from(field.children).find(function(n){return n.matches('.slot,.cromo.is-leaving');});
+ if(!slot)return;var template=document.createElement('template');template.innerHTML=hooks.cardHTML(entry.card,entry.side);var c=template.content.firstElementChild;
+ if(c&&c.matches('.cromo')){slot.replaceWith(c);if(hooks.refreshArt)hooks.refreshArt();}
+}
 function lock(){var board=document.querySelector('.battle-wrap');if(board){board.inert=true;board.setAttribute('aria-busy','true');}var popup=document.getElementById('battleActionRoot');if(popup)popup.hidden=true;}
 function render(game,options){
  if(options)hooks=options;
@@ -91,35 +117,33 @@ function render(game,options){
  if(saved)restoreBoards(saved.boards);
  // New arrivals that act within a server batch may not exist in the previous DOM.
  var needed=new Set();events.forEach(function(e){if(e.data.uid)needed.add(e.data.uid);if(e.data.target)needed.add(e.data.target);(e.data.targets||[]).forEach(function(uid){needed.add(uid);});});
- needed.forEach(function(uid){if(node(uid)||!known[uid]||!hooks.cardHTML||events.some(function(e){return e.type==='card'&&e.data.uid===uid;}))return;var entry=known[uid],field=document.querySelector('[data-tutorial="'+(entry.side==='p'?'player':'enemy')+'"]'),slot=field&&Array.from(field.children).find(function(n){return !n.querySelector('[data-buid]');});if(slot)slot.innerHTML=hooks.cardHTML(entry.card,entry.side);});
+ needed.forEach(function(uid){if(!events.some(function(e){return e.type==='card'&&e.data.uid===uid;}))mount(uid,known);});
  var state={game:game,boards:boards(),health:{},targets:{},tweens:[],frame:0};sequence=state;snapshot=null;lock();host.setAttribute('aria-hidden','true');
  document.querySelectorAll('.tribuna [data-buid]').forEach(function(el){var uid=el.dataset.buid,b=el.querySelector('.aguante b'),start=saved&&saved.cards[uid];state.health[uid]=start?start.hp:b?parseInt(b.textContent,10):0;});
  // A newly played card starts at full health, even if the final snapshot has sent it to the aisle.
  needed.forEach(function(uid){if(saved&&saved.cards[uid]||!known[uid])return;var entry=known[uid];state.health[uid]=entry.card.hm;});
  function paintHealth(uid,value){var el=node(uid),b=el&&el.querySelector('.aguante b'),entry=known[uid]||(saved&&saved.cards[uid]);if(b){var max=entry?entry.card.hm:0;b.textContent=Math.max(0,Math.round(value));var tail=document.createElement('i');tail.textContent='/'+max;b.appendChild(tail);el.querySelector('.aguante').setAttribute('aria-label','Aguante '+Math.max(0,Math.round(value))+' de '+max);}}
  Object.keys(state.health).forEach(function(uid){paintHealth(uid,state.health[uid]);});
- function tween(uid,to,duration){var from=state.health[uid];state.targets[uid]=Math.max(0,to);if(!Number.isFinite(from))return;state.tweens=state.tweens.filter(function(t){return t.uid!==uid;});state.tweens.push({uid:uid,from:from,to:Math.max(0,to),at:performance.now(),duration:duration});var el=node(uid);if(el)el.classList.add('health-changing');}
+ function tween(uid,to,duration){var from=state.health[uid];var survivor=known[uid];if(to<=0&&survivor&&survivor.card.h>0&&game.field[survivor.side].some(function(c){return c.uid===uid;}))to=survivor.card.h;state.targets[uid]=Math.max(0,to);if(!Number.isFinite(from))return;state.tweens=state.tweens.filter(function(t){return t.uid!==uid;});state.tweens.push({uid:uid,from:from,to:Math.max(0,to),at:performance.now(),duration:duration});var el=node(uid);if(el)el.classList.add('health-changing');}
  function tick(now){if(sequence!==state)return;state.tweens=state.tweens.filter(function(t){var fraction=Math.min(1,(now-t.at)/t.duration),value=t.from+(t.to-t.from)*fraction;state.health[t.uid]=value;paintHealth(t.uid,value);if(fraction===1){var el=node(t.uid);if(el)el.classList.remove('health-changing');}return fraction<1;});state.frame=requestAnimationFrame(tick);}
  state.frame=requestAnimationFrame(tick);
  timeline.groups.forEach(function(group){
   later(function(){if(sequence!==state)return;
-   group.events.forEach(function(e){var d=e.data;if(d.uid&&!node(d.uid)&&known[d.uid]&&hooks.cardHTML){var entry=known[d.uid],field=document.querySelector('[data-tutorial="'+(entry.side==='p'?'player':'enemy')+'"]'),slot=field&&Array.from(field.children).find(function(n){var c=n.querySelector('[data-buid]');return !c||c.classList.contains('is-leaving');});if(slot){slot.innerHTML=hooks.cardHTML(entry.card,entry.side);paintHealth(d.uid,state.health[d.uid]);}}var origin=card(d.uid)||e.origin,scope=lane(d.side)||e.lane;
+   group.events.forEach(function(e){var d=e.data;if(d.uid&&!node(d.uid)){mount(d.uid,known);paintHealth(d.uid,state.health[d.uid]);}var origin=card(d.uid)||e.origin,scope=lane(d.side)||e.lane;
     if(e.type==='action'){e.points=(d.targets||[]).map(function(uid){return card(uid);}).filter(Boolean);actionEffect(host,e);}
-    if(e.type==='attack'){var target=card(d.target)||e.target||lane(d.side==='p'?'e':'p');phrase(host,d,origin,target,d.strong?'strong':'normal',quiet);var actor=node(d.uid);if(actor&&!quiet){actor.style.setProperty('--attack-step',d.side==='p'?'-7px':'7px');actor.classList.remove('is-attacking');void actor.offsetWidth;actor.classList.add('is-attacking');}later(function(){if(sequence===state)projectile(host,origin,card(d.target)||target,!!d.strong);},Math.max(0,group.impact-500));later(function(){if(sequence!==state)return;impact(host,card(d.target)||target,!!d.strong);},group.impact);}
-    if((e.type==='guard'||e.type==='heal')&&group.type!=='action'&&d.quote){var ownHalf=rect('.battle-backdrop.'+(d.side==='p'?'player':'enemy')),local=ownHalf&&origin?{x:origin.x,y:ownHalf.y}:origin;phrase(host,d,origin,local,e.type,quiet);}
+    if(e.type==='attack'){var target=card(d.target)||e.target||lane(d.side==='p'?'e':'p');phrase(host,d,origin,target,d.strong?'strong':'normal',quiet,group.impact);var actor=node(d.uid);if(actor&&!quiet){actor.classList.remove('is-speaking');void actor.offsetWidth;actor.classList.add('is-speaking');}later(function(){if(sequence!==state)return;zasca(host,card(d.target)||target,!!d.strong);},group.impact);}
+    if((e.type==='guard'||e.type==='heal')&&group.type!=='action'&&d.quote){var ownHalf=rect('.battle-backdrop.'+(d.side==='p'?'player':'enemy')),local=ownHalf&&origin?{x:origin.x,y:ownHalf.y}:origin;phrase(host,d,origin,local,e.type,quiet,group.impact);}
     if(e.type==='turn'){var hud=document.querySelector('.battle-hud'),r=hud&&hud.getBoundingClientRect();effect(host,'turn-announcement '+(d.side==='p'?'own':'rival'),r?{x:r.left+r.width/2,y:r.top-14}:null,d.side==='p'?'Tu turno':'Turno rival');}
    });
   },group.start);
   later(function(){if(sequence!==state)return;group.events.forEach(function(e){var d=e.data,origin=card(d.uid)||e.origin;
-   if(e.type==='damage'){effect(host,'damage-number',origin,'−'+d.value);if(d.guarded)effect(host,'guard-hit',origin,'',700);tween(d.uid,(state.targets[d.uid]===undefined?state.health[d.uid]||0:state.targets[d.uid])-d.value,quiet?120:420);}
-   if(e.type==='heal'&&d.value>0){support(host,'heal',origin);effect(host,'heal-number',origin,'+'+d.value);tween(d.uid,Math.min(known[d.uid]?known[d.uid].card.hm:Infinity,(state.targets[d.uid]===undefined?state.health[d.uid]||0:state.targets[d.uid])+d.value),quiet?120:420);}
+   if(e.type==='damage'){effect(host,'damage-number',origin,'−'+d.value);if(d.guarded)effect(host,'guard-hit',origin,'',700);tween(d.uid,(state.targets[d.uid]===undefined?state.health[d.uid]||0:state.targets[d.uid])-d.value,group.healthDuration);}
+   if(e.type==='heal'&&d.value>0){support(host,'heal',origin);effect(host,'heal-number',origin,'+'+d.value);tween(d.uid,Math.min(known[d.uid]?known[d.uid].card.hm:Infinity,(state.targets[d.uid]===undefined?state.health[d.uid]||0:state.targets[d.uid])+d.value),group.healthDuration);}
    if(e.type==='guard')support(host,'guard',origin);
    if(e.type==='votes'||e.type==='turn')effect(host,'vote-number '+(d.side==='p'?'own':'rival'),bar(d.side),(d.value>=0?'+':'')+d.value);
   });},group.start+group.impact);
-  later(function(){if(sequence!==state)return;group.events.filter(function(e){return e.type==='expel';}).forEach(function(e){var el=node(e.data.uid);if(el){paintHealth(e.data.uid,0);el.classList.add('is-leaving');}});},group.start+group.duration-(quiet?60:260));
+  later(function(){if(sequence!==state)return;group.events.filter(function(e){return e.type==='expel';}).forEach(function(e){var el=node(e.data.uid);if(el){paintHealth(e.data.uid,0);el.classList.add('is-leaving');}});},group.start+group.duration-group.departure);
  });
- // Reconcile survival effects (e.g. Aforado) against the real state, without changing it.
- later(function(){if(sequence!==state)return;Object.keys(state.health).forEach(function(uid){var entry=known[uid];if(entry&&game.field[entry.side].some(function(c){return c.uid===uid;})&&Math.round(state.health[uid])!==entry.card.h)tween(uid,entry.card.h,quiet?90:220);});},timeline.duration-(quiet?100:240));
  later(function(){if(sequence!==state)return;cancelAnimationFrame(state.frame);sequence=null;if(pending.some(function(e){return e.game===game;}))capture(game);var el=document.querySelector('.battle-wrap');if(el){el.inert=false;el.removeAttribute('aria-busy');}if(hooks.refresh)hooks.refresh();else restoreBoards(currentBoards);settleWaiters();},timeline.duration);
 }
 root.addEventListener('resize',function(){split();});

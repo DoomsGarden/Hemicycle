@@ -1,0 +1,9 @@
+AssertionError [ERR_ASSERTION]: {"root":"slot","width":0,"height":56.25,"artWidth":0,"artHeight":56.25,"nested":false}
+    at /workspace/Hemicycle/_dev/checks/zasca-v12.cjs:14:52 {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
