@@ -156,7 +156,7 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
 - [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
-- [Notas de la versión v31.0.2.11](_dev/releases/v31.0.2.11.md)
+- [Notas de la versión v31.0.2.12](_dev/releases/v31.0.2.12.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 

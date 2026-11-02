@@ -16,3 +16,13 @@
 @media(prefers-reduced-motion:reduce){#battleActionRoot.opening,.tribuna .cromo.sel,.support-emblem *{animation:none!important}.battle-option,.battle-support-button{transition:none}}
 
 .battle-support-button .support-cost{font:700 10px/1 'Hemicycle UI',sans-serif;color:#f2cd80;margin-left:3px}
+
+/* Ancla estable bajo la mesa propia; las frases largas conservan su texto completo. */
+#battleActionRoot{padding:6px}
+.battle-action-content{gap:4px}
+.battle-option{min-height:36px;padding-block:4px}
+.battle-phrase,.battle-support-quote{font-size:calc(20px * var(--ui-text-scale,1));line-height:1.08;white-space:normal}
+.battle-support-quote{font-size:calc(18px * var(--ui-text-scale,1));margin-bottom:3px}
+.battle-support-block{padding-block:4px}
+.battle-support-button{min-height:30px}
+@media(max-height:500px) and (min-width:600px){.battle-option{min-height:58px}.battle-action-head{min-height:19px}.battle-support-quote{font-size:calc(16px * var(--ui-text-scale,1))}}

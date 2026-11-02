@@ -10,13 +10,11 @@
  function place(){
   frame=0;var el=document.getElementById('battleActionRoot');if(!current||!el||el.hidden)return;
   var anchor=document.querySelector('[data-tutorial="player"] [data-buid="'+current.uid+'"]'),screen=document.getElementById('screen');if(!anchor||!screen){render(null);return;}
-  var a=anchor.getBoundingClientRect(),s=screen.getBoundingClientRect(),wide=innerHeight<=500&&innerWidth>=600,bounds=wide?{left:0,right:innerWidth,width:innerWidth}:s;
-  el.style.width=Math.min(wide?660:320,bounds.width-16)+'px';
-  var w=el.offsetWidth,h=el.offsetHeight,left=Math.max(bounds.left+8,Math.min(bounds.right-w-8,a.left+a.width/2-w/2)),limit=Math.max(6,innerHeight-h-8);
-  var cards=Array.from(document.querySelectorAll('.tribuna .cromo,.hand-zone .cromo,.battle-controls')).map(function(n){return {r:n.getBoundingClientRect(),weight:n===anchor?4:n.matches('.battle-controls')?1.5:n.closest('.hand-zone')?0.35:2};});
-  function score(top){return cards.reduce(function(sum,item){var r=item.r,area=Math.max(0,Math.min(left+w,r.right)-Math.max(left,r.left))*Math.max(0,Math.min(top+h,r.bottom)-Math.max(top,r.top));return sum+area*item.weight;},0)+Math.abs(top+h/2-(a.top+a.height/2))*.1;}
-  var choices=[a.top-h-8,a.bottom+8,innerHeight-h-8,6].map(function(top){return Math.max(6,Math.min(limit,top));}),top=choices.sort(function(x,y){return score(x)-score(y);})[0];
-  el.style.left=left+'px';el.style.top=top+'px';el.dataset.placement=top>=a.bottom?'below':top+h<=a.top?'above':'floating';el.style.setProperty('--battle-arrow',Math.max(16,Math.min(w-16,a.left+a.width/2-left))+'px');
+  var a=anchor.getBoundingClientRect(),s=screen.getBoundingClientRect(),table=anchor.closest('.tribuna').getBoundingClientRect(),wide=innerHeight<=500&&innerWidth>=600;
+  el.style.width=Math.min(wide?660:400,s.width-16)+'px';
+  var w=el.offsetWidth,left=Math.max(s.left+8,Math.min(s.right-w-8,table.left+table.width/2-w/2)),top=table.bottom+5;
+  el.style.left=left+'px';el.style.top=top+'px';el.style.maxHeight=Math.max(60,innerHeight-top-8)+'px';el.dataset.placement='below';
+  el.querySelectorAll('.battle-phrase,.battle-support-quote').forEach(function(phrase){phrase.style.fontSize='';var size=parseFloat(getComputedStyle(phrase).fontSize),minimum=size*.72;while(size>minimum&&phrase.getBoundingClientRect().height>parseFloat(getComputedStyle(phrase).lineHeight)*2.1){size-=.5;phrase.style.fontSize=size+'px';}});
  }
  function render(data){
   var el=document.getElementById('battleActionRoot');if(!el)return;var previous=current,hadFocus=el.contains(document.activeElement);current=data;if(pending){clearTimeout(pending);pending=0;}el.inert=false;

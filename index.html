@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="css/cabinets.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/packs.css?v=31.0.2.11-frames6">
 <link rel="stylesheet" href="css/audio.css?v=31.0.2.5-legal1">
-<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.8-wave2">
-<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.8-guide1">
+<link rel="stylesheet" href="css/battle-actions.css?v=31.0.2.12">
+<link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.12">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
@@ -84,8 +84,8 @@
 <script src="js/orator-context.js?v=31.0.2.10"></script>
 <link rel="stylesheet" href="css/strategy.css?v=31.0.2.10">
 <script src="js/battle-status.js?v=31.0.2.8-wave2"></script>
-<script src="js/battle-actions-ui.js?v=31.0.2.11-mats3"></script>
-<script src="js/battle-visuals.js?v=31.0.2.8-phrases1"></script>
+<script src="js/battle-actions-ui.js?v=31.0.2.12"></script>
+<script src="js/battle-visuals.js?v=31.0.2.12"></script>
 <script src="js/tactical-practice.js?v=31.0.2.10"></script>
 <script src="js/battle-tutorial.js?v=31.0.2.8-phrases1"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
@@ -114,7 +114,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=31.0.2.11-mat12"></script>
+<script src="js/changelog.js?v=31.0.2.12"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=31.0.2.11-import10"></script>
@@ -123,7 +123,7 @@
 <script src="js/offline-rule-dispatch.js?v=31.0.2.10"></script>
 <script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline8:HemicycleOfflineRulesV8});</script>
 <script src="js/offline-engine-loader.js?v=31.0.2.10"></script>
-<script src="js/offline-combat.js?v=31.0.2.10"></script>
+<script src="js/offline-combat.js?v=31.0.2.12"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
@@ -137,7 +137,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v31.0.2.11';
+var VERSION='v31.0.2.12';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -1004,7 +1004,14 @@ function restoreColScroll(restoreVertical){
  if(bGrid)bGrid.scrollTop=SCROLL_MEM.builderGrid||0;
 }
 
+function waitBattlePresentation(game){
+ if(typeof HemicycleBattleVisuals==='undefined')return Promise.resolve();
+ if(SCREEN==='battle')paint();
+ return HemicycleBattleVisuals.whenIdle(game);
+}
 function go(s,o){
+ if(s==='result'&&G&&G.done&&SCREEN==='battle'&&!G.presentationReady&&typeof HemicycleBattleVisuals!=='undefined'){var waitingGame=G;G.presentationReady=true;waitBattlePresentation(waitingGame).then(function(){if(G===waitingGame&&SCREEN==='battle')go(s,o);});return;}
+
  if(s==='result'&&o&&['p','e','season'].indexOf(o.who)>=0&&G&&G.done&&!G.tutorial&&!G.sceneShown&&typeof HemicycleResultTransition!=='undefined'){G.sceneShown=true;var sceneGame=G;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,o.who==='p'||o.who==='season'&&G.resultWho==='p'?'p':'e');HemicycleResultTransition.show(o.who==='p'||o.who==='season'&&G.resultWho==='p',function(){return verifyLocalResult(sceneGame);},{retry:function(){return retryLocalResult(sceneGame);}}).then(function(result){if(G===sceneGame){if(result.verified)go(s,o);else deferResult(sceneGame);}});return;}
  var prev=SCREEN;if(s!=='battle')BATTLE_LOG_OPEN=false;
  if(HISTORY&&(s==='battle'||s==='result'))HISTORY.close();
@@ -1088,9 +1095,13 @@ function verifiedResult(receipt,ticketId){
  return {who:won?'p':'e',votes:receipt.votes,enemyVotes:receipt.enemyVotes,msg:msg,mode:receipt.mode,fs:receipt.fs,xp:receipt.xp,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,leaguePosition:receipt.leaguePosition,leagueTeams:receipt.leagueTeams,seasonFS:receipt.seasonFS,verified:true,ticketId:ticketId};
 }
 function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
-async function finishDownloaded(snapshot,ticketId,verification){
- if(G){G.over=true;G.done=true;G.sceneShown=true;}clearBattleClock();closeLocalAction();
- var game=G,win=snapshot.winner===snapshot.you;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,win?'p':'e');
+async function finishDownloaded(snapshot,ticketId,verification,events){
+ var controls=Object.assign({},REMOTE_BATTLE,{deferResult:true});
+ receiveRemoteBattle(snapshot,controls);remoteBattleEvents(events||[],snapshot.you);
+ var game=G;G.sceneShown=true;clearBattleClock();closeLocalAction();
+ await waitBattlePresentation(game);if(G!==game||SCREEN!=='battle')return;
+ G.presentationReady=true;
+ var win=snapshot.winner===snapshot.you;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,win?'p':'e');
  var outcome=await HemicycleResultTransition.show(win,verification,{retry:verification});
  if(G===game){if(outcome.verified)go('result',verifiedResult(outcome.result,ticketId));else deferResult(game);}
 }
@@ -1119,6 +1130,7 @@ function tabbar(){
 }
 
 function paint(){
+ if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.beforePaint(G);
  if(typeof HemicycleCosmeticUI!=='undefined')HemicycleCosmeticUI.apply(D());
  if(typeof HemicycleMenuNavigation!=='undefined')HemicycleMenuNavigation.capture();
  if(SCREEN!=='coleccion'&&CABINET_EDIT!==null){CABINET_EDIT=null;loadSelectedCabinet();}
@@ -1169,7 +1181,7 @@ function paint(){
  syncCoinToss();
  syncBattleClock();
  syncBattleActions();syncLocalAction();
- if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(SCREEN==='battle'?G:null);
+ if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(SCREEN==='battle'?G:null,{refresh:paint,cardHTML:cromoBattle});
  if(TUTORIAL)TUTORIAL.render();if(TACTICAL_GUIDES&&!PRACTICE_PREPARING)Object.keys(TACTICAL_GUIDES).forEach(function(k){TACTICAL_GUIDES[k].render();});
  if(MENU_GUIDE)MENU_GUIDE.render();
  if(MARKET_GUIDE){if(SCREEN==='mercado'&&MARKET_GUIDE_DEMO){var demo=document.createElement('div');demo.className='market-guide-demo trade-visual';demo.innerHTML=CARDS.slice(0,2).map(function(c){return '<div>'+cromoHTML(c,{noCardAttr:true})+'</div>';}).join('');var body=document.getElementById('marketBody');if(body)body.prepend(demo);}MARKET_GUIDE.render();}
@@ -1769,10 +1781,10 @@ function useSupport(card,kind,owner){
  var extra=basicSupportCost(owner,card);if(G.tdp[owner]<extra)return false;G.tdp[owner]-=extra;if(G.effectsVersion===HemicycleBasicEffects.version)HemicycleBasicEffects.consumeSupport(card,G.turns[owner]);
  card.ready=false;
  if(kind==='guard'){
-  card.guard=true;battleVisual('guard',{uid:card.uid});
+  card.guard=true;battleVisual('guard',{uid:card.uid,side:owner,phrase:true});
   log(card.n+' dice «'+card.q[2]+'»: defensa del 50 % frente al próximo golpe, hasta el comienzo de su siguiente turno.','hi');
  }else{
-  card.lastHealTurn=G.turns?G.turns[owner]:0;card.h+=heal;battleVisual('heal',{uid:card.uid,value:heal});
+  card.lastHealTurn=G.turns?G.turns[owner]:0;card.h+=heal;battleVisual('heal',{uid:card.uid,side:owner,value:heal,phrase:true});
   log(card.n+' dice «'+card.q[2]+'»: recupera '+heal+' de Aguante ('+card.h+'/'+card.hm+').','hi');
  }
  return true;
@@ -1867,6 +1879,7 @@ function expel(owner,card,attacker,victimDocSnapshot){
   log(card.n+' invoca el Aforado y se aferra al escaño con 3 de Aguante.','hi');
   return;
  }
+ battleVisual('expel',{uid:card.uid,side:victim});
  G.field[victim]=G.field[victim].filter(function(c){return c.uid!==card.uid;});
  HemicycleBasicEffects.reset(card);card.h=0;card.ready=false;card.buff=0;card.guard=false;card.enteredTurn=null;card.strongUsedTurn=null;card.lastHealTurn=null;
  card.drawAfterTurn=(G.turns?G.turns[victim]:0)+2;
@@ -2152,6 +2165,7 @@ function chooseBattleAction(s){
 }
 
 function aiStep(){
+ if(G&&typeof HemicycleBattleVisuals!=='undefined'&&HemicycleBattleVisuals.busy(G)){var waitingAI=G;HemicycleBattleVisuals.whenIdle(G).then(function(){if(G===waitingAI&&!G.over&&SCREEN==='battle')aiStep();});return;}
  if(checkBattleEnd()||G.side!=='e')return;
  var action=chooseBattleAction('e');
  if(action.type==='spell'){useLocalAction('e',action.card.uid,action.target);paint();if(!G.over)AITIMER=setTimeout(aiStep,500);return;}
@@ -2186,7 +2200,7 @@ function syncBattleActions(){
 }
 function choosePlayerAction(kind){
  if(kind==='cancel'||kind==='back'){if(!G)return false;G.support=false;if(kind==='cancel'){G.sel=null;G.move=null;}paint();return true;}
- if(checkBattleEnd()||G.side!=='p'||G.networkBusy)return false;
+ if(checkBattleEnd()||G.side!=='p'||G.networkBusy||(typeof HemicycleBattleVisuals!=='undefined'&&HemicycleBattleVisuals.busy(G)))return false;
  var card=G.field.p.filter(function(c){return c.uid===G.sel;})[0];
  if(!card||!card.ready){G.sel=null;G.move=null;G.support=false;paint();return false;}
  if(kind==='ability-info'){var info=HemicycleBasicAbilityPreview.describe(G,'p',card);if(!info.id)return false;showModal(info.name,'<p>'+esc(HemicycleBasicAbilityPreview.detail(info.id,G.effectsVersion))+'</p><p class="sub">'+esc(info.availability)+'</p>','Cerrar',false,null,true);return true;}
@@ -2248,6 +2262,7 @@ function receiveRemotePreparation(snapshot,controls){
  return true;
 }
 function sendRemoteBattle(command){
+ if(G&&typeof HemicycleBattleVisuals!=='undefined'&&HemicycleBattleVisuals.busy(G))return false;
  if(!REMOTE_BATTLE||!G||!G.authoritative||G.networkBusy||G.over)return false;
  var game=G;game.networkBusy=true;
  try{var accepted=REMOTE_BATTLE.send(command);if(accepted===false&&G===game)game.networkBusy=false;return accepted!==false;}catch(error){if(G===game)game.networkBusy=false;remoteBattleStatus(error.message||'No se pudo enviar la jugada. Puedes reintentarlo.');return false;}
@@ -2255,10 +2270,25 @@ function sendRemoteBattle(command){
 function remoteBattleStatus(text,retry){var el=document.getElementById('networkBattleStatus');if(el){el.innerHTML='<span>'+esc(text)+'</span>'+(retry!==false&&text&&text!=='Conectando…'?'<button class="mini" data-act="remote-retry">Reintentar</button>':'');el.hidden=!text;}}
 function remoteActionVisual(event){var a=BYID[event.id];if(!a||!a.action||!G||G.over||SCREEN!=='battle')return;gameSound('card');if(typeof document==='undefined'||!document.body||document.hidden)return;document.querySelectorAll('.action-flying').forEach(function(node){node.remove();});var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}
 function remoteBattleEvents(events,you){
- if(!G||!G.authoritative||G.over)return;
- events.forEach(function(event,index){var data=Object.assign({},event);if(typeof data.side==='number')data.side=data.side===you?'p':'e';if(event.kind==='action'){remoteActionVisual(event);if(typeof HemicycleBattleVisuals!=='undefined')data.targets=HemicycleBattleVisuals.actionTargets(G,event,events.slice(index+1),you);}battleVisual(event.kind,data);});
- if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(G);
+ if(!G||!G.authoritative)return;
+ var actionEffect=null,remaining=0,intervention=null;
+ events.forEach(function(event,index){
+  var data=Object.assign({},event);if(typeof data.side==='number')data.side=data.side===you?'p':'e';
+  if(['attack','action','turn','card'].indexOf(event.kind)>=0){intervention=event.kind;actionEffect=null;remaining=0;}
+  if(event.kind==='action'){
+   remoteActionVisual(event);var a=HemicycleActions.byId[event.id],side=data.side,foe=side==='p'?'e':'p';
+   if(a){actionEffect=a.effect;remaining=a.target==='self'||a.target==='rival'?1:a.target==='all'?G.field.p.length+G.field.e.length:G.field[a.target.indexOf('rival')>=0?foe:side].length;}
+   if(typeof HemicycleBattleVisuals!=='undefined')data.targets=HemicycleBattleVisuals.actionTargets(G,event,events.slice(index+1),you);
+  }
+  if(event.kind==='guard'||event.kind==='heal'){
+   if(actionEffect===event.kind&&remaining>0){remaining--;data.phrase=false;}
+   else if(!event.periodic){var own=G.field.p.find(function(c){return c.uid===event.uid;}),card=own||G.field.e.find(function(c){return c.uid===event.uid;}),side=own?'p':'e';data.phrase=event.kind==='guard'||intervention!=='turn'||!!(card&&card.lastHealTurn===G.turns[side]);}
+  }
+  battleVisual(event.kind,data);
+ });
+ if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(G,{refresh:paint,cardHTML:cromoBattle});
 }
+
 function receiveRemoteBattle(snapshot,controls){
  if(snapshot.status==='preparing')return false;
  REMOTE_PREPARATION=null;
@@ -2282,7 +2312,9 @@ function receiveRemoteBattle(snapshot,controls){
   closeModal();closeLocalAction();clearBattleClock();var won=snapshot.winner===snapshot.you,receipt=snapshot.result,ranked=snapshot.mode==='ranked';
   var delta=receipt?receipt.eloDelta:ranked&&G.rankedStartElo!==null&&Number.isFinite(snapshot.rankedElo)?snapshot.rankedElo-G.rankedStartElo:null;
   var options={who:won?'p':'e',votes:own.votes,enemyVotes:enemy.votes,msg:(won?'Victoria':'Derrota')+' ('+own.votes+' a '+enemy.votes+'). '+(ranked?'Resultado guardado en tu cuenta.':'Partida amistosa: sin cambios de FS, cromos ni Elo.'),mode:snapshot.mode,fs:receipt?receipt.fs:0,xp:receipt?receipt.xp:undefined,eloDelta:delta,eloBefore:receipt?receipt.eloBefore:G.rankedStartElo,eloAfter:receipt?receipt.eloAfter:snapshot.rankedElo,remote:true,won:receipt&&receipt.won,lost:receipt&&receipt.lost,lootStatus:receipt&&(receipt.lootStatus||(ranked&&receipt.won===undefined&&receipt.lost===undefined?'legacy':null)),rewardsUnavailable:ranked&&!receipt};
-  if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(result){if(G===game){if(result.verified)go('result',options);else deferResult(game);}});}else go('result',options);return true;
+  if(SCREEN==='battle')paint();else go('battle');if(controls.deferResult)return true;
+  var resultGame=G,showRemoteResult=function(){if(G!==resultGame)return;
+  if(typeof HemicycleResultTransition!=='undefined'){var game=G;G.sceneShown=true;if(typeof HemicycleAudio!=='undefined')HemicycleAudio.sync('result',G,won?'p':'e');HemicycleResultTransition.show(won,controls.verification||function(){return CLOUD_SAVE.adopt();},{retry:controls.retryVerification||function(){return CLOUD_SAVE.adopt();}}).then(function(result){if(G===game){if(result.verified)go('result',options);else deferResult(game);}});}else go('result',options);};if(typeof HemicycleBattleVisuals==='undefined')showRemoteResult();else waitBattlePresentation(resultGame).then(function(){if(SCREEN==='battle')showRemoteResult();});return true;
  }
  if(SCREEN!=='battle')go('battle');else paint();if(!previous&&own.turn+enemy.turn<=2&&typeof HemicycleCoinToss!=='undefined')HemicycleCoinToss.show(controls.id,snapshot.first,snapshot.you);return true;
 }

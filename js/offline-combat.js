@@ -26,7 +26,7 @@
   await lock(id,async function(){var store=await read(id);if(!store.pending.some(p=>p.ticketId===item.ticketId))store.pending.push(item);store.active=null;await write(id,store);});
   var snapshot=project();detach();
   var verification=async function(){var result=await settle(item,id);download().catch(function(){});return result;};
-  notify().catch(function(){});api.finished(snapshot,item.ticketId,verification);
+  notify().catch(function(){});api.finished(snapshot,item.ticketId,verification,(snapshot.visualEvents||[]).filter(e=>e.sequence>match.lastSequence));
  }
  function send(command){if(busy||!live||owner()!==live.owner)return false;busy=true;
   Promise.resolve().then(async function(){try{var at=Math.max(live.record.commands.at(-1)?.at||0,Date.now()-live.record.startedAt),next=live.rules.move(live.state,command,at,live.rng);live.state=next;live.record.commands.push({at,command});var match=live;
