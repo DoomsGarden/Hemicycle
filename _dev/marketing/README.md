@@ -1,10 +1,12 @@
 # Capturas y presentación de Hemiciclo
 
-Edición del 01-11-2026, basada en v31.0.2.11 con el encuadre mat12. Preferencia de Dooms: siete capturas en español, estilo épico sobrio, azul y dorado; sin pantallas legales. También se crea README.md en la raíz, con portada, galería, acceso al juego y ayuda.
+Edición del 03-11-2026, basada en v31.0.2.12. Preferencia de Dooms: siete capturas en español, estilo épico sobrio, azul y dorado; sin pantallas legales. También se crea README.md en la raíz, con portada, galería, acceso al juego y ayuda.
 
 ## Composición
 
 - `docs/media/screenshots/`: siete capturas originales 786×1702 del navegador, viewport 393×851 a escala 2. La interfaz se renderiza con el código actual del juego y datos locales de demostración. No se inicia ninguna cuenta ni se modifican recursos de producción.
+- `docs/media/screenshots/02-combate-wide.png`: captura adicional de la interfaz horizontal para el manifest, 1688×780; no añade una octava pieza promocional.
+- `docs/media/install/`: versiones WebP de Inicio, Combate, Colección y combate horizontal para la instalación de la PWA.
 - `docs/media/marketing-background.webp`: fondo editorial derivado mediante generación de imagen de `assets/menu-senate/chamber.webp`. No contiene interfaces ni personas. La interfaz se coloca como captura original en el HTML, sin pedir a la IA que la reconstruya.
 - `promo.html` y `slides.js`: maquetación y titulares editables. El encuadre incluye todo el contenido de la captura original. Se usan Inter y el wordmark existentes.
 - `press/google-play/es-ES/`: siete PNG RGB de 24 bits sin transparencia, 1080×1920. Cada uno pesa menos de 8 MiB. Titulares, captura y pie tienen áreas propias; se comprueban sus límites antes de exportar.
@@ -20,6 +22,7 @@ Requiere Node, Playwright, Chromium en `/usr/bin/chromium`, ImageMagick (`magick
 
 ```sh
 node _dev/marketing/capture-game.cjs
+node _dev/marketing/package-install.cjs
 node _dev/marketing/render-promos.cjs
 python3 _dev/marketing/package-promos.py
 node _dev/marketing/check-readme.cjs

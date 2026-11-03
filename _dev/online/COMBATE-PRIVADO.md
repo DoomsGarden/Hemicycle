@@ -1,5 +1,7 @@
 # Primera partida privada operativa
 
+> Documento histórico del 24 de octubre. Para el estado actual y la configuración vigente, consulta [README.md](README.md).
+
 24 de octubre de 2026. Servicio de pruebas en Render, sin efectos sobre el juego real.
 
 ## Activación en Supabase y Render

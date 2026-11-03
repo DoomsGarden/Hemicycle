@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/media/readme-banner.jpg?v=20261101-mat12" alt="Hemiciclo: Tu gabinete. Tu estrategia. Capturas reales del juego de colección y combates por turnos." width="100%">
+  <img src="docs/media/readme-banner.jpg?v=20261103-meta6" alt="Hemiciclo: Tu gabinete. Tu estrategia. Capturas reales del juego de colección y combates por turnos." width="100%">
 </p>
 
 <p align="center">
@@ -16,32 +16,32 @@
 
 Forma un gabinete de **cinco oradores**, elige a tu líder y añade hasta **dos cartas de acción**. Presenta tus cromos en la Tribuna, aprovecha sus doctrinas y decide cuándo atacar, defender o recuperar fuerzas. Tu objetivo: **alcanzar 100 votos**.
 
-Hemiciclo está en **prelanzamiento**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
+Hemiciclo está en **prelanzamiento**, versión **v31.0.2.12**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
 **Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Esta primera colección está disponible completa. Elige también entre **seis opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
 
 <p align="center">
-  <img src="docs/media/profile-v11/profile.png?v=20261101-mat12" alt="Perfil de Hemiciclo con nivel, experiencia y estadísticas" width="32%">
-  <img src="docs/media/profile-v11/editor.png?v=20261101-mat12" alt="Editor actual: seis menús, seis opciones de tipografía y cuatro elecciones visuales independientes" width="32%">
+  <img src="docs/media/profile-v11/profile.png?v=20261103-meta6" alt="Perfil de Hemiciclo con nivel, experiencia y estadísticas" width="32%">
+  <img src="docs/media/profile-v11/editor.png?v=20261103-meta6" alt="Editor actual: seis menús, seis opciones de tipografía y cuatro elecciones visuales independientes" width="32%">
 </p>
 
 <p align="center">
-  <a href="press/google-play/es-ES/02-combate.png"><img src="docs/media/promos/02-combate.jpg?v=20261101-mat12" alt="Combate actual: tapetes independientes de jugador y rival, estados visibles y objetivo de 100 votos" width="31%"></a>
-  <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg?v=20261101-mat12" alt="Colecciona 120 oradores con rasgos y frases propios" width="31%"></a>
-  <a href="press/google-play/es-ES/01-inicio.png"><img src="docs/media/promos/01-inicio.jpg?v=20261101-mat12" alt="Inicio de Hemiciclo con el hemiciclo y sus cromos" width="31%"></a>
+  <a href="press/google-play/es-ES/02-combate.png"><img src="docs/media/promos/02-combate.jpg?v=20261103-meta6" alt="Combate actual: tapetes independientes de jugador y rival, estados visibles y objetivo de 100 votos" width="31%"></a>
+  <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg?v=20261103-meta6" alt="Colecciona 120 oradores con rasgos y frases propios" width="31%"></a>
+  <a href="press/google-play/es-ES/01-inicio.png"><img src="docs/media/promos/01-inicio.jpg?v=20261103-meta6" alt="Inicio de Hemiciclo con el hemiciclo y sus cromos" width="31%"></a>
 </p>
 
 <details>
 <summary><strong>Más imágenes: gabinete, sobres, Liga y Mercado</strong></summary>
 
 <p align="center">
-  <a href="press/google-play/es-ES/04-gabinete.png"><img src="docs/media/promos/04-gabinete.jpg?v=20261101-mat12" alt="Prepara cinco oradores y hasta dos acciones" width="23%"></a>
-  <a href="press/google-play/es-ES/05-sobres.png"><img src="docs/media/promos/05-sobres.jpg?v=20261101-mat12" alt="Abre sobres y descubre cartas" width="23%"></a>
-  <a href="press/google-play/es-ES/06-liga.png"><img src="docs/media/promos/06-liga.jpg?v=20261101-mat12" alt="Compite en la Liga de los 30" width="23%"></a>
-  <a href="press/google-play/es-ES/07-mercado.png"><img src="docs/media/promos/07-mercado.jpg?v=20261101-mat12" alt="Vende, compra e intercambia cromos en el Mercado" width="23%"></a>
+  <a href="press/google-play/es-ES/04-gabinete.png"><img src="docs/media/promos/04-gabinete.jpg?v=20261103-meta6" alt="Prepara cinco oradores y hasta dos acciones" width="23%"></a>
+  <a href="press/google-play/es-ES/05-sobres.png"><img src="docs/media/promos/05-sobres.jpg?v=20261103-meta6" alt="Abre sobres y descubre cartas" width="23%"></a>
+  <a href="press/google-play/es-ES/06-liga.png"><img src="docs/media/promos/06-liga.jpg?v=20261103-meta6" alt="Compite en la Liga de los 30" width="23%"></a>
+  <a href="press/google-play/es-ES/07-mercado.png"><img src="docs/media/promos/07-mercado.jpg?v=20261103-meta6" alt="Vende, compra e intercambia cromos en el Mercado" width="23%"></a>
 </p>
 
-Capturas actualizadas de **v31.0.2.11**, con progreso de demostración, tapetes adaptados y menús personalizables. [Ver el material promocional y descargar las siete capturas](press/README.md).
+Capturas actualizadas de **v31.0.2.12**, con progreso de demostración, tapetes adaptados y menús personalizables. [Ver el material promocional y descargar las siete capturas](press/README.md).
 
 </details>
 
@@ -76,6 +76,8 @@ Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y u
 - **Cartas de acción:** puedes usar una por turno. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
 
 Al elegir un ataque, cada objetivo muestra el daño previsto y si podrá aplicarse la habilidad. El detalle desplegable explica desvíos, defensa, Aforado y bloqueos; el estado se comprueba de nuevo al jugar.
+
+Las frases de ataque viajan una sola vez hasta el orador rival elegido. Defensa y curación se muestran en el campo propio. El Aguante cambia de forma animada y los controles conservan su respuesta ágil; los resultados esperan al final de la presentación.
 
 La doctrina de tu líder puede neutralizar otra. Los iconos de estado permiten consultar sus efectos; **Acta** muestra las jugadas recientes sin ocupar permanentemente la mesa.
 
@@ -140,6 +142,8 @@ La prueba voluntaria para nuevos jugadores está en [Prueba de comprensión](pru
 Para comunicar un fallo, indica la pantalla, los pasos para reproducirlo y el navegador/dispositivo. Una captura o la referencia de error pueden ayudar. **No publiques contraseñas, enlaces de recuperación, claves ni archivos completos de guardado.**
 
 ## Para desarrollar o revisar el proyecto
+
+La instalación web admite orientación vertical y horizontal. El manifest incluye capturas reales y mantiene la misma identidad de aplicación. [Instalación y paquetes Android](_dev/android/README.md).
 
 La interfaz se sirve como archivos estáticos. Para abrir una copia local:
 

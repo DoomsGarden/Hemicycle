@@ -2,12 +2,15 @@
   "id": "./",
   "name": "Hemiciclo: Cara a Cara",
   "short_name": "Hemiciclo",
-  "description": "Juego independiente y no oficial de colección y estrategia política. Gana el debate llegando a 100 votos.",
+  "description": "Juego independiente y no oficial de cartas y estrategia política: 120 oradores, gabinetes, personalización y debates por turnos hasta alcanzar 100 votos.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
-  "display_override": ["fullscreen", "standalone"],
-  "orientation": "portrait",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "any",
   "background_color": "#070b16",
   "theme_color": "#0a0e18",
   "lang": "es-ES",
@@ -33,5 +36,36 @@
   ],
   "categories": [
     "games"
+  ],
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "docs/media/install/inicio.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Inicio y accesos de Hemiciclo"
+    },
+    {
+      "src": "docs/media/install/combate.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Combate por turnos con tapetes independientes"
+    },
+    {
+      "src": "docs/media/install/coleccion.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Colección de oradores y filtros"
+    },
+    {
+      "src": "docs/media/install/combate-horizontal.webp",
+      "sizes": "1688x780",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Combate adaptado a pantalla horizontal"
+    }
   ]
 }

@@ -1,0 +1,54 @@
+{
+  "gameVersion": "v31.0.2.12",
+  "date": "2026-11-03",
+  "cache": "hemiciclo-v31.0.2.12-meta6",
+  "precachedAssets": 234,
+  "changedMetadata": [
+    "manifest.json",
+    "index.html",
+    "sw.js",
+    "Readme.html",
+    "README.md",
+    "_dev/online/README.md",
+    "_dev/online/server.cjs",
+    "pruebas/index.html",
+    "_dev/changelog/fuentes.json"
+  ],
+  "preservedArtifacts": [
+    {
+      "file": "Hemiciclo.apk",
+      "unchanged": true,
+      "sha256": "f78e069517e56dedf22ad78ece8ac0e0157cce9a5ee963fe553b840b275d688d"
+    },
+    {
+      "file": "Hemiciclo.aab",
+      "unchanged": true,
+      "sha256": "dca82b548f96756b001c231783c06fbfa7de05f068e87aee7e60aa69c33d4813"
+    },
+    {
+      "file": ".well-known/assetlinks.json",
+      "unchanged": true,
+      "sha256": "28bcae0dae5fdbb08bd0654873990779f5757db4620a775f799ca0f0131d8e1a"
+    },
+    {
+      "file": "icon-192.png",
+      "unchanged": true,
+      "sha256": "2a85243055146520758c12ce4fb457345e559e5047439c7ad0ed9a500d917e19"
+    },
+    {
+      "file": "icon-512.png",
+      "unchanged": true,
+      "sha256": "11adfaf711e957fddd3a97b3022d71074e4df97545ab57f5146cfa048f97a033"
+    }
+  ],
+  "nativeWrappers": {
+    "package": "io.github.doomsgarden.twa",
+    "nativeVersion": "0.0.2.0",
+    "launchOrigin": "https://doomsgarden.github.io/Hemicycle/",
+    "rebuilt": false,
+    "reason": "No native project or reproducible TWA build configuration in repository"
+  },
+  "productionRequests": false,
+  "sqlExecuted": false,
+  "versionTagMoved": false
+}

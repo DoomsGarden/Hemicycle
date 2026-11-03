@@ -1,0 +1,53 @@
+✔ version notes cover every recorded playable version and the first repository entry (6.384003ms)
+✔ development tools are excluded from Pages and never linked or precached by the game (2.314719ms)
+✔ public version notes never reveal the hidden achievement or its reward (1.052797ms)
+✔ same-version corrections retain all published notes from v31.0.1.1 onwards (1.244917ms)
+✔ same-version market corrections stay with v31.0.2.4 and retain both revisions (0.409898ms)
+✔ installation and social metadata agree with the current app and canonical domain (2.917537ms)
+✔ every static module and installation resource exists and is included in the worker (2.065162ms)
+✔ current exports, health and test results identify the current web version (38.938361ms)
+{"event":"hemicycle.operations","instanceId":"73551ed7-29c1-41b9-8d73-6b5f3fc70622","kind":"summary","requests":5,"errors":0,"clientErrors":0,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":5,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/health":{"requests":1,"errors":0,"durationMs":5,"maxMs":5,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":5,"p95UpperMs":5},"/other":{"requests":4,"errors":0,"durationMs":0,"maxMs":0,"buckets":[4,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Health distingue configuración de disponibilidad de combate (149.311733ms)
+{"event":"hemicycle.operations","instanceId":"179226c8-ef17-419c-a0da-6b15326a0a74","kind":"request","requestId":"0eee802c-9f09-4d81-94a1-86517c087325","route":"/rooms","status":503,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"179226c8-ef17-419c-a0da-6b15326a0a74","kind":"summary","requests":1,"errors":1,"clientErrors":0,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":1,"errors":1,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Sin configuración no acepta operaciones (9.47356ms)
+{"event":"hemicycle.operations","instanceId":"e46a9fb5-2337-4504-a988-d97686e94246","kind":"request","requestId":"1c484e7f-bcd9-46d3-8e4b-c9fd58d7ca4b","route":"/rooms","status":403,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"e46a9fb5-2337-4504-a988-d97686e94246","kind":"summary","requests":1,"errors":0,"clientErrors":1,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":1,"errors":1,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+{"event":"hemicycle.operations","instanceId":"dfe78c0c-ad78-4d76-abe3-4e0db6400b08","kind":"summary","requests":1,"errors":0,"clientErrors":0,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":1,"errors":0,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Un origen ajeno no puede usar el servicio (5.852141ms)
+{"event":"hemicycle.operations","instanceId":"8ba2b5ca-9b4d-405f-98f3-023814460e42","kind":"summary","requests":1,"errors":0,"clientErrors":0,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":1,"errors":0,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ La petición previa de CORS permite solo los métodos previstos (3.117298ms)
+{"event":"hemicycle.operations","instanceId":"3b87c987-13f7-4590-8874-01dac878ec3c","kind":"request","requestId":"d88c872e-ab16-4933-9126-6007f982e2fb","route":"/rooms","status":401,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"3b87c987-13f7-4590-8874-01dac878ec3c","kind":"summary","requests":1,"errors":0,"clientErrors":1,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":1,"errors":1,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Sin sesión no crea una identidad ficticia (3.750864ms)
+{"event":"hemicycle.operations","instanceId":"8ec9778f-dca2-463d-a078-2bf3276246c5","kind":"summary","requests":1,"errors":0,"clientErrors":0,"aborted":0,"slow":0,"rpc":1,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":1,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":1,"errors":0,"durationMs":1,"maxMs":1,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":1,"p95UpperMs":1}}}
+✔ Crear reenvía el JWT y la operación; ignora un ID de jugador aportado (4.118838ms)
+{"event":"hemicycle.operations","instanceId":"4ecaaffd-6d92-4f1b-bf1c-9aa29e91f5be","kind":"request","requestId":"63a856a6-011c-43e4-9cd5-d19715f7b733","route":"/rooms/join","status":400,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"4ecaaffd-6d92-4f1b-bf1c-9aa29e91f5be","kind":"summary","requests":2,"errors":0,"clientErrors":1,"aborted":0,"slow":0,"rpc":1,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms/join":{"requests":2,"errors":1,"durationMs":0,"maxMs":0,"buckets":[2,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Unirse solo envía un código validado en mayúsculas (10.763944ms)
+{"event":"hemicycle.operations","instanceId":"1f95fc69-f3c3-44e5-b5e1-b8528adeefea","kind":"request","requestId":"119ec2e3-dc10-489c-84be-3b6d824475e2","route":"/other","status":404,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"1f95fc69-f3c3-44e5-b5e1-b8528adeefea","kind":"summary","requests":2,"errors":0,"clientErrors":1,"aborted":0,"slow":0,"rpc":1,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms/:id":{"requests":1,"errors":0,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0},"/other":{"requests":1,"errors":1,"durationMs":0,"maxMs":0,"buckets":[1,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Consultar una sala necesita UUID; no hay listado público (5.696726ms)
+{"event":"hemicycle.operations","instanceId":"288deda5-d7d4-41b0-87eb-6933b7745da8","kind":"request","requestId":"02b3d736-0bb6-4e1c-855b-df2ecd66ab28","route":"/rooms","status":400,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"288deda5-d7d4-41b0-87eb-6933b7745da8","kind":"request","requestId":"dada3f10-ffe9-48bc-9803-1d45a0b66cdf","route":"/rooms","status":400,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"288deda5-d7d4-41b0-87eb-6933b7745da8","kind":"request","requestId":"0f339d2a-e9a6-4e25-8c33-25352f38b746","route":"/rooms","status":415,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"288deda5-d7d4-41b0-87eb-6933b7745da8","kind":"request","requestId":"57203899-5356-4df9-9b55-4b6d8455d155","route":"/rooms","status":413,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"288deda5-d7d4-41b0-87eb-6933b7745da8","kind":"summary","requests":4,"errors":0,"clientErrors":4,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms":{"requests":4,"errors":4,"durationMs":0,"maxMs":0,"buckets":[4,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ JSON mal formado, tipo incorrecto y exceso de tamaño se rechazan (10.646097ms)
+{"event":"hemicycle.operations","instanceId":"99a6ef36-e2a2-4d22-aaba-53184bd9fbc4","kind":"request","requestId":"ce86f007-5d1c-459b-914c-24d9d474c98f","route":"/rooms/:id","status":401,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"99a6ef36-e2a2-4d22-aaba-53184bd9fbc4","kind":"request","requestId":"36318311-6767-4711-93d8-ba6e8031d1e0","route":"/rooms/:id","status":503,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"99a6ef36-e2a2-4d22-aaba-53184bd9fbc4","kind":"summary","requests":2,"errors":1,"clientErrors":1,"aborted":0,"slow":0,"rpc":2,"rpcErrors":2,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/rooms/:id":{"requests":2,"errors":2,"durationMs":0,"maxMs":0,"buckets":[2,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ Fallos de autenticación y red no se presentan como salas válidas ni filtran datos (3.773607ms)
+{"event":"hemicycle.operations","instanceId":"21733070-0e62-467b-a3a4-fd1565fb3e43","kind":"request","requestId":"b4374667-ead0-4ea1-a284-35abebfeb4fb","route":"/other","status":403,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"21733070-0e62-467b-a3a4-fd1565fb3e43","kind":"request","requestId":"859aa180-bec2-480a-ad0c-bb37cf26f75b","route":"/other","status":403,"durationMs":0,"conflicts":0}
+{"event":"hemicycle.operations","instanceId":"21733070-0e62-467b-a3a4-fd1565fb3e43","kind":"summary","requests":4,"errors":0,"clientErrors":2,"aborted":0,"slow":0,"rpc":0,"rpcErrors":0,"conflicts":0,"rejected":0,"inFlight":0,"peak":1,"durationMs":0,"rpcDurationMs":0,"bucketUpperMs":[50,100,250,500,1000,2500,5000,10000,30000,65000,null],"routes":{"/other":{"requests":4,"errors":2,"durationMs":0,"maxMs":0,"buckets":[4,0,0,0,0,0,0,0,0,0,0],"p50UpperMs":0,"p95UpperMs":0}}}
+✔ El catálogo y la configuración se pueden leer desde el dominio del juego con CORS (6.831577ms)
+✔ an unavailable essential module rejects installation and never replaces a complete worker (72.449235ms)
+ℹ tests 20
+ℹ suites 0
+ℹ pass 20
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 372.716768

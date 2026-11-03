@@ -21,6 +21,7 @@ const injection=`window.PromoScenes={render:async function(scene){
  }
  return scene;
 }};function boot(){`;
+const gameVersion=fs.readFileSync('index.html','utf8').match(/var VERSION='([^']+)'/)[1],captureDate=new Date().toISOString().slice(0,10);
 const names=['inicio','combate','coleccion','gabinete','sobres','liga','mercado'];
 (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox']});try{
  const c=await b.newContext({viewport:{width:393,height:851},deviceScaleFactor:2,reducedMotion:'reduce',serviceWorkers:'block'});
@@ -45,6 +46,7 @@ const names=['inicio','combate','coleccion','gabinete','sobres','liga','mercado'
   a.equal(await p.locator('.legal-panel,.account-entry,#launchScreen').count(),0,name);a.equal(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),true,name);
   const file='docs/media/screenshots/'+String(index+1).padStart(2,'0')+'-'+name+'.png';await p.screenshot({path:file,animations:'disabled'});manifest.push({name,path:file,width:786,height:1702,source:'Interfaz real, estado de demostración local aislado',view:await p.locator('#screen').getAttribute('data-view')});
  }
+ await p.setViewportSize({width:844,height:390});await p.evaluate(()=>PromoScenes.render('combate'));await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(180);await p.screenshot({path:'docs/media/screenshots/02-combate-wide.png',animations:'disabled'});await p.setViewportSize({width:393,height:851});
  fs.mkdirSync('docs/media/profile-v11',{recursive:true});for(const name of ['profile','editor']){await p.evaluate(name=>PromoScenes.render(name),name);await p.waitForSelector(name==='profile'?'.personal-profile':'.cosmetic-editor');await p.evaluate(()=>document.fonts.ready);await p.evaluate(()=>Promise.all(Array.from(document.querySelectorAll('#profileRoot img')).map(im=>im.decode().catch(()=>{}))));if(name==='editor')a.equal(await p.locator('[data-ui-typeface]').count(),6);await p.screenshot({path:'docs/media/profile-v11/'+name+'.png',animations:'disabled'});await p.locator('[data-profile=close]').click();}
- a.deepEqual(errors,[]);fs.writeFileSync('_dev/marketing/captures.json',JSON.stringify({gameVersion:'v31.0.2.11',date:'2026-11-01',viewport:{width:393,height:851,scale:2},network:'Sin cuentas reales ni llamadas a servicios de producción',manifest,errors},null,2));console.log('PASS: seven real game captures, local demo state, no legal overlays, no page errors.');
+ a.deepEqual(errors,[]);fs.writeFileSync('_dev/marketing/captures.json',JSON.stringify({gameVersion,date:captureDate,viewport:{width:393,height:851,scale:2},network:'Sin cuentas reales ni llamadas a servicios de producción',manifest,errors},null,2));console.log('PASS: seven real game captures, local demo state, no legal overlays, no page errors.');
 }finally{await b.close();}})().catch(e=>{console.error(e);process.exitCode=1;});

@@ -1,9 +1,9 @@
 const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),{spawn}=require('node:child_process');
-const root=path.resolve(__dirname,'../..'),out=path.join(root,'_dev/reports/v30.2.55');
+const root=path.resolve(__dirname,'../..'),version=fs.readFileSync(path.join(root,'index.html'),'utf8').match(/var VERSION='([^']+)'/)[1],out=path.join(root,'_dev/reports/'+version+'-verification');
 fs.mkdirSync(out,{recursive:true});
-const checkedFiles=['index.html','sw.js','css/interface.css','js/market-rules.js','js/market-ui.js','js/changelog.js','_dev/market/server.cjs','_dev/market/catalog.cjs'];
+const checkedFiles=['index.html','sw.js','manifest.json','css/battle-visuals.css','js/battle-visuals.js','css/cosmetics.css','js/cosmetic-catalog.js','css/interface.css','js/market-rules.js','js/market-ui.js','js/changelog.js','_dev/market/server.cjs','_dev/market/catalog.cjs'];
 function hashes(){return Object.fromEntries(checkedFiles.map(file=>[file,crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file))).digest('hex')]))}
-const rounds=Number(process.env.VERIFY_ROUNDS||10),report={version:'v30.2.55',requestedRounds:rounds,started:new Date().toISOString(),sourceHashes:hashes(),rounds:[]};
+const rounds=Number(process.env.VERIFY_ROUNDS||10),report={version,requestedRounds:rounds,started:new Date().toISOString(),sourceHashes:hashes(),rounds:[]};
 function save(){fs.writeFileSync(path.join(out,'verification.json'),JSON.stringify(report,null,2)+'\n');}
 function run(name,args,round){return new Promise((resolve,reject)=>{
  const started=Date.now(),file=path.join(out,String(round).padStart(2,'0')+'-'+name+'.log'),stream=fs.createWriteStream(file);
