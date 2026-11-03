@@ -45,6 +45,12 @@ Capturas actualizadas de **v31.0.2.12**, con progreso de demostración, tapetes 
 
 </details>
 
+## Descargas Android
+
+[Descargar APK para Android](https://hemicycle.online/Hemiciclo.apk) · [Descargar AAB para Google Play](https://hemicycle.online/Hemiciclo.aab) · [Ver todos los archivos](https://hemicycle.online/downloads/)
+
+Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v31.0.2.12**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
+
 ## Primeros pasos
 
 1. Abre **[hemicycle.online](https://hemicycle.online/)** y pulsa **Iniciar**. Puedes continuar como invitado o acceder a una cuenta según tu tramo de edad.
