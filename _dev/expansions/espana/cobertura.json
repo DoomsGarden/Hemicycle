@@ -1,0 +1,32 @@
+{
+  "pais": "ES",
+  "revisado": "2026-11-04",
+  "periodo": {
+    "desde": "1986-11-04",
+    "hasta": "2026-11-04",
+    "prioridad": "Actividad pública entre 2010 y 2026; ampliar después hasta el límite de 40 años. Un cargo anterior no excluye a quien siguió activo dentro del intervalo."
+  },
+  "criterio": "Políticos y oradores con actividad pública documentada, incluidos cargos de gobierno y representantes o dirigentes de partidos en la oposición. El Senado es una de las fuentes del censo, no un requisito de admisión.",
+  "ambitos": [
+    {"id": "gobierno_estatal", "incluye": ["Presidencia", "Vicepresidencias", "Ministerios", "Secretarías de Estado y otros cargos políticos documentados", "Exmiembros del Gobierno dentro del periodo"]},
+    {"id": "congreso", "incluye": ["Diputados", "Presidencia y Mesa", "Portavocías de grupos"]},
+    {"id": "senado", "incluye": ["Senadores", "Presidencia y Mesa", "Portavocías", "Diputación Permanente"]},
+    {"id": "partidos", "incluye": ["Dirigentes", "Portavoces", "Representantes con intervenciones públicas documentadas", "Partidos de gobierno y oposición"]},
+    {"id": "autonomico", "incluye": ["Presidencias y gobiernos autonómicos", "Consejerías", "Parlamentos y asambleas", "Ciudades autónomas"]},
+    {"id": "local_insular_provincial", "incluye": ["Alcaldías y concejalías", "Diputaciones", "Cabildos", "Consejos insulares", "Oposición y representación municipal"]},
+    {"id": "europeo", "incluye": ["Representantes políticos españoles en instituciones europeas"]}
+  ],
+  "identidad": {
+    "unidad": "Una persona, un ID y un cromo base, con varios cargos, etapas, afiliaciones documentadas y variantes de pose.",
+    "duplicados": "Comprobar nombre completo, alias y fichas institucionales contra los 120 activos y los 20 reservados. No unir homónimos por coincidencias parciales.",
+    "afiliacion": "Documentar partido, grupo o condición independiente según la etapa; un cargo o un grupo parlamentario no prueban militancia."
+  },
+  "seleccion": {
+    "prioridad": "Relevancia y trayectoria pública documentadas, actividad reciente, participación como orador y calidad de fuentes. La prioridad del Senado se aplica dentro de su listado, no por delante de todos los demás ámbitos.",
+    "rareza": "Asignar tras valorar la trayectoria; pertenecer a una institución o partido no determina automáticamente el tier.",
+    "proporcion": {"comun": 40, "raro": 30, "especial": 20, "legendario": 10},
+    "estadisticas": "Usar los tiers existentes y revisar los cupos de cada tanda.",
+    "frases": "Misma metodología: normal, fuerte y apoyo compartido; fuentes y contexto, sin menciones personales a terceros en la frase de juego, con adaptaciones a cargos documentadas."
+  },
+  "publicacion": "Los candidatos y los 20 reservados continúan fuera del catálogo jugable hasta su activación coordinada."
+}

@@ -7,6 +7,7 @@ Revisión: 4 de noviembre de 2026. **Estado: reservado, desactivado en el juego 
 - [Revisión de retratos, frases, originales y fuentes](revision.html).
 - [Lista de las 60 frases](lista-frases.md) y [registro documental](frases.json).
 - [Censo del Senado en CSV](senado/censo.csv) y [JSON con fuentes y estado temporal](senado/censo.json).
+- [Censo general de políticos españoles y alcance de siguientes tandas](../espana/README.md): Gobierno, Congreso, Senado, partidos y otros ámbitos institucionales.
 - [Propuesta original de identidad, estadísticas, relevancia y arte](../../proposals/espana-1986-2026/propuesta.json).
 - [Comparación del arte y criterios para siguientes tandas](direccion-arte.md).
 - [Revisión de metodología y documentación legal](revision-legal.md).
@@ -35,7 +36,9 @@ La vista interna escucha solo en `127.0.0.1:8096`, con almacenamiento de otro or
 
 La reserva está implementada y probada en el motor local, pero **no se presenta como un lanzamiento de 140 oradores listo para producción**. Su activación requerirá una versión nueva de reglas que preserve las reproducciones offline anteriores y una publicación coordinada de catálogo, backend, arte y fuentes. El materializador solo escribe en `/tmp` o `_dev` y deja `releaseReady:false`; no puede sobrescribir el juego por accidente. Las futuras pruebas de economía y partidas descargadas deben ejecutarse sobre esa versión activada antes de publicarla. Las pruebas actuales verifican que nada de la reserva entra en producción.
 
-## Senado y siguientes tandas
+## Senado como parte del censo general
+
+El alcance de la ampliación comprende políticos de los distintos partidos e instituciones, incluidos ministros, dirigentes y portavoces en gobierno u oposición, Congreso, Senado, gobiernos y parlamentos autonómicos, ámbito local/insular/provincial y representantes españoles en instituciones europeas. Una persona con varios cargos conserva un solo cromo. La prioridad de Mesa y portavocías que se describe abajo organiza únicamente la fuente del Senado; la selección de próximas tandas se hará entre todos los ámbitos según el [criterio general](../espana/cobertura.json).
 
 El sitio oficial informa de la disolución de las Cámaras el 06-10-2026 y anuncia su constitución el 23-12-2026. Por eso se separan:
 
