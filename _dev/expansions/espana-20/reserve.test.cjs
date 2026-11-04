@@ -24,7 +24,7 @@ test('public catalog, economy, source page, worker and installation do not expos
  for(const kind of ['comun','raro','legendario','mitico'])for(const random of [0,.25,.5,.75,.999999])for(const id of economy.contents(kind,()=>random))a.ok(economy.catalog.some(c=>c.id===id));
 });
 test('Senate history and current permanent deputation are distinct and deduplicated',()=>{
- a.equal(census.personas.length,311);a.equal(new Set(census.personas.map(p=>p.senadorId)).size,311);a.equal(census.personas.filter(p=>p.diputacionPermanente).length,71);a.equal(census.personas.filter(p=>p.catalogo).length,4);a.equal(census.totales.revisionIdentidad,0);
+ a.equal(census.personas.length,311);a.equal(new Set(census.personas.map(p=>p.senadorId)).size,311);a.equal(census.personas.filter(p=>p.diputacionPermanente).length,71);a.equal(census.personas.filter(p=>p.catalogo?.estado==='activo').length,4);a.equal(census.personas.filter(p=>p.catalogo?.estado==='reserva60').length,44);a.equal(census.totales.revisionIdentidad,0);
  for(const p of census.personas){a.ok(p.ficha.startsWith('https://www.senado.es/'));a.ok(!JSON.stringify(p).includes('profileText'));}
  for(const p of census.personas.filter(p=>/BALTAR BLANCO|FERNÁNDEZ BLANCO/.test(p.nombreListado)))a.equal(p.catalogo,null);
 });

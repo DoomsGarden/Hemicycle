@@ -19,7 +19,8 @@
   },
   "totales": {
     "catalogo_activo": 4,
-    "pendiente": 307,
+    "catalogo_reserva60": 44,
+    "pendiente": 263,
     "fichasXML": 292,
     "fichasHTML": 19,
     "revisionIdentidad": 0
@@ -328,7 +329,11 @@
         "funcion": "VICEPRESIDENTA SEGUNDA",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "concepcion-andreu-rodriguez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -425,8 +430,8 @@
         }
       ],
       "prioridad": 1,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -449,7 +454,11 @@
         "funcion": "SECRETARIA SEGUNDA",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "consol-cantenys-arboli",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -498,8 +507,8 @@
         }
       ],
       "prioridad": 1,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -522,7 +531,11 @@
         "funcion": "SECRETARIA PRIMERA",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "eva-ortiz-vilella",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -611,8 +624,8 @@
         }
       ],
       "prioridad": 1,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -635,7 +648,11 @@
         "funcion": "PRESIDENTE",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "pedro-manuel-rollan-ojeda",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -676,8 +693,8 @@
         }
       ],
       "prioridad": 1,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -854,7 +871,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "alejo-joaquin-miranda-de-larra-arnaiz",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -943,8 +964,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -1123,7 +1144,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "alfonso-gil-invernon",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1198,8 +1223,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -1222,7 +1247,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "alicia-garcia-rodriguez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1295,8 +1324,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -1622,7 +1651,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "angel-pelayo-gordillo-moreno",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1727,8 +1760,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -2086,7 +2119,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "antonio-poveda-zapata",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -2153,8 +2190,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -2177,7 +2214,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "antonio-silvan-rodriguez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -2290,8 +2331,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -3022,7 +3063,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "cesar-alejandro-mogo-zaro",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -3111,8 +3156,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -3544,7 +3589,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "eduard-pujol-bonell",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -3681,8 +3730,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -3883,7 +3932,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "enric-xavier-morera-catala",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -3980,8 +4033,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -4085,7 +4138,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "estefania-beltran-de-heredia-arroniz",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -4224,8 +4281,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -4535,7 +4592,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "fabian-chinea-correa",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -4736,8 +4797,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -4760,7 +4821,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "fernando-adolfo-gutierrez-diaz-de-otazu",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -4841,8 +4906,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -5083,7 +5148,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-arenas-bocanegra",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -5156,8 +5225,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -5180,7 +5249,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-marquez-sanchez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -5261,8 +5334,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -5532,7 +5605,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "gerardo-camps-devesa",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -5621,8 +5698,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -5722,7 +5799,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "gorka-elejabarrieta-diaz",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -5795,8 +5876,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -7293,7 +7374,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-antonio-monago-terraza",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -7406,8 +7491,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -7863,7 +7948,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-barreiro-fernandez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -7928,8 +8017,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -8021,7 +8110,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-franco-pardo",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -8094,8 +8187,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -8349,7 +8442,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-maria-oleaga-zalvidea",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -8414,8 +8511,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -8890,7 +8987,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "juan-jose-matari-saez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -8955,8 +9056,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -9923,7 +10024,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "luis-javier-santamaria-ruiz",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -9988,8 +10093,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -10429,7 +10534,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-amparo-marco-gual",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -10502,8 +10611,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -12151,7 +12260,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-mar-blanco-garrido",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -12224,8 +12337,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -12514,7 +12627,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-salom-coll",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -12595,8 +12712,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -14505,7 +14622,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "nerea-ahedo-ceza",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -14610,8 +14731,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -15688,7 +15809,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "pedro-manuel-sangines-gutierrez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -15769,8 +15894,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -15947,7 +16072,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "pilar-milagros-rojo-noguera",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16028,8 +16157,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -16307,7 +16436,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "ramon-morales-quesada",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16380,8 +16513,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -16590,7 +16723,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "rocio-briones-morales",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16679,8 +16816,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -16873,7 +17010,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "rosa-maria-romero-sanchez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16938,8 +17079,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -16962,7 +17103,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "salvador-vidal-varela",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -17043,8 +17188,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -17067,7 +17212,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "sara-bailac-ardanuy",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -17188,8 +17337,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -17463,7 +17612,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "vicente-tirado-ochoa",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -17544,8 +17697,8 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -18022,7 +18175,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "fernando-martinez-maillo-toribio",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -18167,8 +18324,8 @@
         }
       ],
       "prioridad": 3,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -18830,7 +18987,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "luisa-fernanda-rudi-ubeda",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -18895,8 +19056,8 @@
         }
       ],
       "prioridad": 3,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -19097,7 +19258,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "paloma-hernandez-cerezo",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -19146,8 +19311,8 @@
         }
       ],
       "prioridad": 3,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -19259,7 +19424,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "pio-garcia-escudero-marquez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -19324,8 +19493,8 @@
         }
       ],
       "prioridad": 3,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -20628,7 +20797,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "eva-maria-granados-galiano",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20644,8 +20817,8 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -22521,7 +22694,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "josep-lluis-cleries-i-gonzalez",
+        "estado": "reserva60",
+        "criterio": "identidad_documentada_y_cromo_preparado_en_reserva"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22537,8 +22714,8 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
     {
@@ -26143,5 +26320,6 @@
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     }
-  ]
+  ],
+  "seguimiento": "La investigación del censo general añadió 44 cromos de esta lista a la segunda tanda reservada; no están disponibles para jugadores."
 }

@@ -1,0 +1,3681 @@
+{
+  "status": "reserved",
+  "date": "2026-11-04",
+  "batch": "espana-60-02",
+  "period": {
+    "from": "1986-11-04",
+    "to": "2026-11-04",
+    "priority": "2010–2026"
+  },
+  "targetNew": {
+    "comun": 24,
+    "raro": 18,
+    "legendario": 6,
+    "especial": 12
+  },
+  "cards": [
+    {
+      "index": 1,
+      "id": "ana-redondo-garcia",
+      "name": "Ana Redondo",
+      "canonicalName": "Ana Redondo García",
+      "aliases": [
+        "Ana Redondo García",
+        "Ana Redondo"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "surge",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Igualdad. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Dark chestnut shoulder-length hair with bangs, long oval face, no glasses, white blazer",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministra de Igualdad",
+        "referenceGroup": "Gobierno de España · Ministra de Igualdad",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-ana-redondo.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra_ana_redondo.jpg?RenditionID=34",
+        "sha256": "a241aac32835e8f1490e91df7ce847981350a1f5685845005918112287b26c32",
+        "profileSha256": "b340a95fdba09c7403639e2a9e12f2da4f04a5129fe85a6e686459aaa2d645f9",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 2,
+      "id": "angel-victor-torres-perez",
+      "name": "Ángel Víctor Torres",
+      "canonicalName": "Ángel Víctor Torres Pérez",
+      "aliases": [
+        "Ángel Víctor Torres Pérez",
+        "Ángel Víctor Torres"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "verborrea",
+      "ability": "coffee",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Política Territorial y Memoria Democrática. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short swept-back silver hair, short silver beard and goatee, broad expressive face, navy suit and pale blue tie",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Política Territorial y Memoria Democrática",
+        "referenceGroup": "Gobierno de España · Ministro de Política Territorial y Memoria Democrática",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-angel-victor-torres.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_angel_victor_torres.jpg?RenditionID=34",
+        "sha256": "50a46e5d245dd10889cbed8525ea1488f16e4ea1104c7cb361616dbc21689645",
+        "profileSha256": "be6bb6c85729f8d3329bc7a9ccf457fe8f0f60c129eef56a7d4fb767578b2ecf",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Café parlamentario",
+      "basicEffect": {
+        "id": "coffee",
+        "name": "Café parlamentario",
+        "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 3,
+      "id": "arcadi-espana-garcia",
+      "name": "Arcadi España",
+      "canonicalName": "Arcadi España García",
+      "aliases": [
+        "Arcadi España García",
+        "Arcadi España"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "guardia",
+      "ability": "tongue",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Hacienda. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short silver-gray hair, trimmed gray stubble, round dark-rimmed glasses, blue suit and teal tie",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Hacienda",
+        "referenceGroup": "Gobierno de España · Ministro de Hacienda",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-arcadi-espana.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro-arcadi-espana.jpg?RenditionID=34",
+        "sha256": "a06ecd17a7e1ea4e7fbe7bdefba6159648304ad833b94c87b5a5cfba48626cb4",
+        "profileSha256": "5357d0aae404356ef79746a8625b6b79410c6be1c4612ed5bbc62b36536358c3",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Lengua de trapo",
+      "basicEffect": {
+        "id": "tongue",
+        "name": "Lengua de trapo",
+        "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 4,
+      "id": "carlos-cuerpo-caballero",
+      "name": "Carlos Cuerpo",
+      "canonicalName": "Carlos Cuerpo Caballero",
+      "aliases": [
+        "Carlos Cuerpo Caballero",
+        "Carlos Cuerpo"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "doctrine": "verborrea",
+      "ability": "escort",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Vicepresidencia primera y Ministerio de Economía, Comercio y Empresa en la composición oficial consultada; función de coordinación económica estatal. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "features": "Short dark brown hair, dark rectangular glasses, neat dark beard, navy suit and dotted tie",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Vicepresidente primero y ministro de Economía, Comercio y Empresa",
+        "referenceGroup": "Gobierno de España · Vicepresidente primero y ministro de Economía, Comercio y Empresa",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-carlos-cuerpo.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_carlos_cuerpo.png?RenditionID=34",
+        "sha256": "65c565c1e8dc75f383b51229af36cd3e6a62af9466f62d1373cb686d9f32ab61",
+        "profileSha256": "14bf23e675d9ef18ab50db4b44377be7963b5bfea870f49d334f8f702743ea3e",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Yo respondo",
+      "basicEffect": {
+        "id": "escort",
+        "name": "Yo respondo",
+        "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 5,
+      "id": "diana-morant-ripoll",
+      "name": "Diana Morant",
+      "canonicalName": "Diana Morant Ripoll",
+      "aliases": [
+        "Diana Morant Ripoll",
+        "Diana Morant"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "guardia",
+      "ability": "microphone",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Ciencia, Innovación y Universidades. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Straight dark chestnut chin-length bob, no glasses, youthful oval face, black turtleneck",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministra de Ciencia, Innovación y Universidades",
+        "referenceGroup": "Gobierno de España · Ministra de Ciencia, Innovación y Universidades",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-diana-morant.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra_diana_morant.JPG?RenditionID=34",
+        "sha256": "7136a78a5d4ba2e901c97292998d816055a52fc491c9f9c9444fd49b1dd148d7",
+        "profileSha256": "9bdec5d62a5c549569737129b4af315db60c4480e0b00b760983bdaa714fa3c2",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Micrófono indiscreto",
+      "basicEffect": {
+        "id": "microphone",
+        "name": "Micrófono indiscreto",
+        "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 6,
+      "id": "elma-saiz-delgado",
+      "name": "Elma Saiz",
+      "canonicalName": "Elma Saiz Delgado",
+      "aliases": [
+        "Elma Saiz Delgado",
+        "Elma Saiz"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "aforado",
+      "ability": "paperwork",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Inclusión, Seguridad Social y Migraciones y portavoz del Gobierno. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Very short curly black pixie hair, no glasses, red high-neck blouse and round gold earrings",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministra de Inclusión, Seguridad Social y Migraciones y portavoz del Gobierno",
+        "referenceGroup": "Gobierno de España · Ministra de Inclusión, Seguridad Social y Migraciones y portavoz del Gobierno",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-elma-saiz.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra_elma_saiz.jpg?RenditionID=34",
+        "sha256": "e7a49c838899202b11b4d2b83fbf1434a4c1e9008b01941f33f8130491915e84",
+        "profileSha256": "8143a5b288b4fb61e422fe8bcb6766b659090c075aa981b66878f2744a3e02a6",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Papeles traspapelados",
+      "basicEffect": {
+        "id": "paperwork",
+        "name": "Papeles traspapelados",
+        "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 7,
+      "id": "ernest-urtasun-domenech",
+      "name": "Ernest Urtasun",
+      "canonicalName": "Ernest Urtasun Domènech",
+      "aliases": [
+        "Ernest Urtasun Domènech",
+        "Ernest Urtasun"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "giro",
+      "ability": "lane",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Cultura. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short tousled dark hair, trimmed brown beard, no glasses, navy suit and patterned tie",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Cultura",
+        "referenceGroup": "Gobierno de España · Ministro de Cultura",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-ernest-urtasun.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_ernest_urtasun.jpg?RenditionID=34",
+        "sha256": "11ccc8e1847480c81fe16cd94536ef42ae824fd38f359a82ae7efc34752cd4c7",
+        "profileSha256": "96fbbd342eb4895160b0d509a51dfdef401977a71be38c40bffd55588689b515",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Debate encarrilado",
+      "basicEffect": {
+        "id": "lane",
+        "name": "Debate encarrilado",
+        "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 8,
+      "id": "isabel-rodriguez-garcia",
+      "name": "Isabel Rodríguez",
+      "canonicalName": "Isabel Rodríguez García",
+      "aliases": [
+        "Isabel Rodríguez García",
+        "Isabel Rodríguez"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "foco",
+      "ability": "summon",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Vivienda y Agenda Urbana. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short chestnut pixie haircut with side fringe, no glasses, patterned black and white jacket",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministra de Vivienda y Agenda Urbana",
+        "referenceGroup": "Gobierno de España · Ministra de Vivienda y Agenda Urbana",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-isabel-rodriguez.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra_isabel_rodriguez.jpg?RenditionID=34",
+        "sha256": "c756e5791afcf566620242768b1914677931fabe664b99daee03f1a102707f1a",
+        "profileSha256": "72a78c290ecf22ea1e36b4dd4cb45f069cd462b0d127cc607c58c6caea7aa749",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Llamada al suplente",
+      "basicEffect": {
+        "id": "summon",
+        "name": "Llamada al suplente",
+        "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 9,
+      "id": "jordi-hereu-boher",
+      "name": "Jordi Hereu",
+      "canonicalName": "Jordi Hereu Boher",
+      "aliases": [
+        "Jordi Hereu Boher",
+        "Jordi Hereu"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "viperina",
+      "ability": "surge",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Industria y Turismo. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Receding short gray hair, round face, clean-shaven, navy suit and blue tie",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Industria y Turismo",
+        "referenceGroup": "Gobierno de España · Ministro de Industria y Turismo",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-jordi-hereu.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_jordi_hereu.jpg?RenditionID=34",
+        "sha256": "1d3cc1275d3392862532fa660d6af121e716e9a6b3cc8a501bbdcef14669b918",
+        "profileSha256": "40796f0e45ef1cdc6badabab812e48ad93c4c0cbf78af130c669c89f59d6764b",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 10,
+      "id": "jose-manuel-albares-bueno",
+      "name": "José Manuel Albares",
+      "canonicalName": "José Manuel Albares Bueno",
+      "aliases": [
+        "José Manuel Albares Bueno",
+        "José Manuel Albares"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "verborrea",
+      "ability": "lane",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Asuntos Exteriores, Unión Europea y Cooperación. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short neatly side-parted dark hair, fine metal glasses, clean-shaven, dark suit and pale green tie",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Asuntos Exteriores, Unión Europea y Cooperación",
+        "referenceGroup": "Gobierno de España · Ministro de Asuntos Exteriores, Unión Europea y Cooperación",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-jose-manuel-albares.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_jose_manuel_albares.jpg?RenditionID=34",
+        "sha256": "eeaca12fde06b4927f24bf6501d521e905d175e760269d81280c3f0f53ebe52d",
+        "profileSha256": "301a6ebfcbfa014b72631351350276ad2a16f0ff3df56e7fe22b759b6ebeac16",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Debate encarrilado",
+      "basicEffect": {
+        "id": "lane",
+        "name": "Debate encarrilado",
+        "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 11,
+      "id": "luis-planas-puchades",
+      "name": "Luis Planas",
+      "canonicalName": "Luis Planas Puchades",
+      "aliases": [
+        "Luis Planas Puchades",
+        "Luis Planas"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "verborrea",
+      "ability": "tongue",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Agricultura, Pesca y Alimentación. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short combed chestnut-gray hair, square jaw, no glasses, clean-shaven, navy suit and burgundy tie",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Agricultura, Pesca y Alimentación",
+        "referenceGroup": "Gobierno de España · Ministro de Agricultura, Pesca y Alimentación",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-luis-planas.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_luis_planas.jpg?RenditionID=34",
+        "sha256": "6d426271c485c1ac2c58549fc0ca4ec4ea5fd89d5b32aec89eb329bdf11e8f72",
+        "profileSha256": "d3048d58c6e1c208c2fa566e0b9fdc69e6773f23447c4839c6518da10d1a04d8",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Lengua de trapo",
+      "basicEffect": {
+        "id": "tongue",
+        "name": "Lengua de trapo",
+        "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 12,
+      "id": "milagros-tolon-jaime",
+      "name": "Milagros Tolón",
+      "canonicalName": "Milagros Tolón Jaime",
+      "aliases": [
+        "Milagros Tolón Jaime",
+        "Milagros Tolón"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "aforado",
+      "ability": "archive",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Educación, Formación Profesional y Deportes. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Long honey-blonde hair, no glasses, angular face, light blue tailored jacket",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministra de Educación, Formación Profesional y Deportes",
+        "referenceGroup": "Gobierno de España · Ministra de Educación, Formación Profesional y Deportes",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-milagros-tolon.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra-milagros-tolon.png",
+        "sha256": "61ee9d1959f6be8bb150d8d46012a632dffcfef181173765b33edef2a58c623e",
+        "profileSha256": "af42cb50aa11d62435ae13d64b370f30ef70bca67cef09fee8c53adf72928395",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Hemeroteca insistente",
+      "basicEffect": {
+        "id": "archive",
+        "name": "Hemeroteca insistente",
+        "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 13,
+      "id": "oscar-lopez-agueda",
+      "name": "Óscar López",
+      "canonicalName": "Óscar López Águeda",
+      "aliases": [
+        "Óscar López Águeda",
+        "Óscar López"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "guardia",
+      "ability": "surge",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro para la Transformación Digital y de la Función Pública. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Thick short salt-and-pepper hair, dark blue rectangular glasses, clean-shaven, blue suit",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro para la Transformación Digital y de la Función Pública",
+        "referenceGroup": "Gobierno de España · Ministro para la Transformación Digital y de la Función Pública",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-oscar-lopez.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro-oscar-lopez.png?RenditionID=34",
+        "sha256": "050b7091946b87ce5961e6a5ecd20c9e19f671531fbc934b3a03fba1f12bcd57",
+        "profileSha256": "639710900803bbb60f85b4d0893a11f927f7c47c72f3a1cc322ad371b9bb2cd7",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 14,
+      "id": "pablo-bustinduy-amador",
+      "name": "Pablo Bustinduy",
+      "canonicalName": "Pablo Bustinduy Amador",
+      "aliases": [
+        "Pablo Bustinduy Amador",
+        "Pablo Bustinduy"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "aforado",
+      "ability": "archive",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Derechos Sociales, Consumo y Agenda 2030. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short cropped dark hair, close dark beard, no glasses, navy suit and light shirt",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministro de Derechos Sociales, Consumo y Agenda 2030",
+        "referenceGroup": "Gobierno de España · Ministro de Derechos Sociales, Consumo y Agenda 2030",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-pablo-bustinduy.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministro_pablo_bustinduy.jpg?RenditionID=34",
+        "sha256": "ae024f77a206118d5766311a155b2ede4bd413193e705cafd0a4dfbdbf4e2da5",
+        "profileSha256": "54e275bbe1172de351dff26e28db63b5f7b122dce40899ce2a5d9bd8880a9fcb",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Hemeroteca insistente",
+      "basicEffect": {
+        "id": "archive",
+        "name": "Hemeroteca insistente",
+        "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 15,
+      "id": "sara-aagesen-munoz",
+      "name": "Sara Aagesen",
+      "canonicalName": "Sara Aagesen Muñoz",
+      "aliases": [
+        "Sara Aagesen Muñoz",
+        "Sara Aagesen"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "giro",
+      "ability": "shield",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Vicepresidenta tercera y ministra para la Transición Ecológica y el Reto Demográfico. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Long honey-blonde hair parted slightly off-center, no glasses, green jacket and white blouse",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "Gobierno de España · Vicepresidenta tercera y ministra para la Transición Ecológica y el Reto Demográfico",
+        "referenceGroup": "Gobierno de España · Vicepresidenta tercera y ministra para la Transición Ecológica y el Reto Demográfico",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-sara-aagesen.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra-sara-aagesen.png?RenditionID=34",
+        "sha256": "6a302f353630f3ca9c5ac86a2b75cec187e60106c99d6ab39c3008ad00fa3dc4",
+        "profileSha256": "374554a9c67bd03e1918ae3d0bf48196854767915ebb8a2512024512c737361c",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Argumentario plastificado",
+      "basicEffect": {
+        "id": "shield",
+        "name": "Argumentario plastificado",
+        "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 16,
+      "id": "sira-rego",
+      "name": "Sira Rego",
+      "canonicalName": "Sira Rego",
+      "aliases": [
+        "Sira Rego",
+        "Sira Rego"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "giro",
+      "ability": "paperwork",
+      "depictedPeriod": "2026 · referencia institucional",
+      "institution": "Gobierno de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Juventud e Infancia. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Dark brown hair swept back into a low updo, no glasses, red lipstick, navy jacket",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "Gobierno de España · Ministra de Juventud e Infancia",
+        "referenceGroup": "Gobierno de España · Ministra de Juventud e Infancia",
+        "basis": "La fuente acredita el cargo, no se infiere militancia partidista."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-sira-rego.aspx",
+        "photo": "https://www.lamoncloa.gob.es/gobierno/PublishingImages/xv-legislatura/biografias/ministra_sira_abed.jpg?RenditionID=34",
+        "sha256": "54fcad12a156523fca97fd92d3da135d90b50393fdf085d572930c987c992146",
+        "profileSha256": "3dc9058e582da8e9d6dca5c8a0dcbb3a4e139092e7d06fc67a1055f43d0cb6f2",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": null,
+      "abilityName": "Papeles traspapelados",
+      "basicEffect": {
+        "id": "paperwork",
+        "name": "Papeles traspapelados",
+        "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 17,
+      "id": "pedro-manuel-rollan-ojeda",
+      "name": "Pedro Rollán",
+      "canonicalName": "PEDRO MANUEL ROLLÁN OJEDA",
+      "aliases": [
+        "PEDRO MANUEL ROLLÁN OJEDA",
+        "Pedro Rollán"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "doctrine": "guardia",
+      "ability": "bank",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Presidencia del Senado desde 2023 y trayectoria institucional previa: responsabilidad de dirección de la cámara. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "features": "Bald crown with dark side hair, close dark and gray beard, no glasses, olive-gray blazer",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19063",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15201.jpg",
+        "sha256": "62e60b3804baddc7b5f0566ff2129971f9c929ef865abc8a5a08c4676230091c",
+        "profileSha256": "343d4fb2ae7ac3b9fa5b59505c10f083a847451fe87797d8f591ce104bb87bbe",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19063",
+      "abilityName": "Dietas guardadas",
+      "basicEffect": {
+        "id": "bank",
+        "name": "Dietas guardadas",
+        "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 18,
+      "id": "francisco-javier-arenas-bocanegra",
+      "name": "Javier Arenas",
+      "canonicalName": "FRANCISCO JAVIER ARENAS BOCANEGRA",
+      "aliases": [
+        "FRANCISCO JAVIER ARENAS BOCANEGRA",
+        "Javier Arenas"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "doctrine": "aforado",
+      "ability": "coffee",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Trayectoria estatal y autonómica, con responsabilidades ministeriales, Vicepresidencia del Gobierno y liderazgo parlamentario. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "features": "Short neatly combed white hair, clean-shaven, no glasses, broad smiling face, light beige jacket",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10154",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15315.jpg",
+        "sha256": "1feae9458d15a979d55a43117d24b2a65b51fa36c30bbe0d9b591acfdd7f4ba6",
+        "profileSha256": "06da433656c14b80f19c9756b0cd58320e5ec76c7676336f30bba742fe492ac3",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "10154",
+      "abilityName": "Café parlamentario",
+      "basicEffect": {
+        "id": "coffee",
+        "name": "Café parlamentario",
+        "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 19,
+      "id": "pio-garcia-escudero-marquez",
+      "name": "Pío García-Escudero",
+      "canonicalName": "PÍO GARCÍA-ESCUDERO MÁRQUEZ",
+      "aliases": [
+        "PÍO GARCÍA-ESCUDERO MÁRQUEZ",
+        "Pío García-Escudero"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "doctrine": "giro",
+      "ability": "escort",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Presidencia del Senado entre 2011 y 2019 y amplia trayectoria parlamentaria. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "features": "Receding gray-brown hair, thin rimless glasses, clean-shaven, rounded face, dark suit and blue tie",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10216",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15204.jpg",
+        "sha256": "e9ab1de34119d28d11af058e30ea10f5d78045f2148e1a0790b4cb3c0799aed1",
+        "profileSha256": "093871f9bbaf46bdb045faf403dc7521c13b92d1760fddb12150aea4423f2c88",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "10216",
+      "abilityName": "Yo respondo",
+      "basicEffect": {
+        "id": "escort",
+        "name": "Yo respondo",
+        "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 20,
+      "id": "luisa-fernanda-rudi-ubeda",
+      "name": "Luisa Fernanda Rudi",
+      "canonicalName": "LUISA FERNANDA RUDI ÚBEDA",
+      "aliases": [
+        "LUISA FERNANDA RUDI ÚBEDA",
+        "Luisa Fernanda Rudi"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "doctrine": "foco",
+      "ability": "bank",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Presidencia del Congreso entre 2000 y 2004 y del Gobierno de Aragón entre 2011 y 2015. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "features": "Short blonde-gray swept bob, no glasses, mature oval face, light cream jacket",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=16685",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15032.jpg",
+        "sha256": "ab95ae29ce7ce0f438f6e5c55743854cd2c0abb264b371f736b4e01bbfa8f8cd",
+        "profileSha256": "160ab280fb74ffb78b5b4af983b2d2aa42b99e581a6b210ca07052350bb80cf7",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "16685",
+      "abilityName": "Dietas guardadas",
+      "basicEffect": {
+        "id": "bank",
+        "name": "Dietas guardadas",
+        "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 21,
+      "id": "josep-lluis-cleries-i-gonzalez",
+      "name": "Josep Lluís Cleries",
+      "canonicalName": "JOSEP LLUÍS CLERIES I GONZÀLEZ",
+      "aliases": [
+        "JOSEP LLUÍS CLERIES I GONZÀLEZ",
+        "Josep Lluís Cleries"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "foco",
+      "ability": "summon",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short swept-back dark-gray hair, dark round rectangular glasses, light gray stubble, blue suit and dotted tie",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
+        "referenceGroup": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=15825",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15019.jpg",
+        "sha256": "a3ea3322f55233ac4b0b0acd9361d8e0bfafc120013418a96c075bbbf0eb0a3d",
+        "profileSha256": "f4d2c19504c0d15f3e1a44967c4e198e1ac89de6ca159f9234adadeda867c835",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "15825",
+      "abilityName": "Llamada al suplente",
+      "basicEffect": {
+        "id": "summon",
+        "name": "Llamada al suplente",
+        "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 22,
+      "id": "alicia-garcia-rodriguez",
+      "name": "Alicia García",
+      "canonicalName": "ALICIA GARCÍA RODRÍGUEZ",
+      "aliases": [
+        "ALICIA GARCÍA RODRÍGUEZ",
+        "Alicia García"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "viperina",
+      "ability": "surge",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Shoulder-length blonde hair, no glasses, oval face, pale blue blazer and subtle necklace",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19824",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15091.jpg",
+        "sha256": "bc2520c896a2eb2bcd4a0b673a7140509e2c250ba78576a4807a3704a8e4921e",
+        "profileSha256": "20740d4a6c32d8b2dc66357cadd5fa6169e3c2705e93ac243f3f201203e9873b",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19824",
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 23,
+      "id": "eva-maria-granados-galiano",
+      "name": "Eva Granados",
+      "canonicalName": "EVA MARÍA GRANADOS GALIANO",
+      "aliases": [
+        "EVA MARÍA GRANADOS GALIANO",
+        "Eva Granados"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "verborrea",
+      "ability": "archive",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short wavy dark brown bob, no glasses, angular face, navy blouse",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19585",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15012.jpg",
+        "sha256": "d21689916f6a8d5158fb278d518cadf0c7a7577c36a25c5c03090897dbc4d6d6",
+        "profileSha256": "7ef4433c5d23c5fc5ed7bc9b4b9f5d3b9b67fe5333b631e9e2f745ac15896051",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19585",
+      "abilityName": "Hemeroteca insistente",
+      "basicEffect": {
+        "id": "archive",
+        "name": "Hemeroteca insistente",
+        "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 24,
+      "id": "concepcion-andreu-rodriguez",
+      "name": "Concha Andreu",
+      "canonicalName": "CONCEPCIÓN ANDREU RODRÍGUEZ",
+      "aliases": [
+        "CONCEPCIÓN ANDREU RODRÍGUEZ",
+        "Concha Andreu"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "doctrine": "viperina",
+      "ability": "coffee",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Presidencia del Gobierno de La Rioja entre 2019 y 2023 y responsabilidades posteriores en el Senado. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "features": "Dark chestnut shoulder-length hair, thick eyebrows, no glasses, large gold hoop earrings and cream blazer",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19914",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15238.jpg",
+        "sha256": "4d0ebba711f6554dce1120d398158c96f3a47f7109d9d960fdd3a51fc0526ef8",
+        "profileSha256": "d4b8b53d3ac6553555894b11c37cc65544a2e0bc9685f349c81b0338ec091c9a",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19914",
+      "abilityName": "Café parlamentario",
+      "basicEffect": {
+        "id": "coffee",
+        "name": "Café parlamentario",
+        "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 25,
+      "id": "jose-antonio-monago-terraza",
+      "name": "José Antonio Monago",
+      "canonicalName": "JOSÉ ANTONIO MONAGO TERRAZA",
+      "aliases": [
+        "JOSÉ ANTONIO MONAGO TERRAZA",
+        "José Antonio Monago"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "guardia",
+      "ability": "microphone",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short receding dark-gray hair, fine rectangular glasses, clean-shaven, broad face, dark suit",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14265",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15157.jpg",
+        "sha256": "0e6ba72cc32225cc73438f6cfd01472df5c37bfa7ccca3df0c4fc530bfed48f9",
+        "profileSha256": "71e9e46e32ea719addc48df53f967ac15c8fc831a6cdb62193e1723d3e4e2193",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "14265",
+      "abilityName": "Micrófono indiscreto",
+      "basicEffect": {
+        "id": "microphone",
+        "name": "Micrófono indiscreto",
+        "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 26,
+      "id": "enric-xavier-morera-catala",
+      "name": "Enric Morera",
+      "canonicalName": "ENRIC XAVIER MORERA CATALÀ",
+      "aliases": [
+        "ENRIC XAVIER MORERA CATALÀ",
+        "Enric Morera"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "aforado",
+      "ability": "paperwork",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short dark-gray crew cut, small metal-rim glasses, clean-shaven, navy blazer and open collar",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
+        "referenceGroup": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19963",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15230.jpg",
+        "sha256": "0afa039067a6bc43952ed236023b2b919ca3904ba2cc8232565f166e8d0a8c8e",
+        "profileSha256": "a2fa6445eac847e822747b12535aa5197a3474429edba02972bc7f0f33a4fbe5",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19963",
+      "abilityName": "Papeles traspapelados",
+      "basicEffect": {
+        "id": "paperwork",
+        "name": "Papeles traspapelados",
+        "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 27,
+      "id": "eduard-pujol-bonell",
+      "name": "Eduard Pujol",
+      "canonicalName": "EDUARD PUJOL BONELL",
+      "aliases": [
+        "EDUARD PUJOL BONELL",
+        "Eduard Pujol"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "giro",
+      "ability": "lane",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Bald crown and very short white side hair, neatly trimmed full white beard, clear round glasses, dark suit",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
+        "referenceGroup": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20013",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15284.jpg",
+        "sha256": "58edaf106b15cf7b6d2640922119f7ba62c450d28c3ad271da329015a2f525cc",
+        "profileSha256": "5ac3ae0cd287ed25b893925025a63b1c7849eb630bbbc22e0e42f3d56a5e6cf8",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "20013",
+      "abilityName": "Debate encarrilado",
+      "basicEffect": {
+        "id": "lane",
+        "name": "Debate encarrilado",
+        "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 28,
+      "id": "maria-mar-blanco-garrido",
+      "name": "Marimar Blanco",
+      "canonicalName": "MARÍA MAR BLANCO GARRIDO",
+      "aliases": [
+        "MARÍA MAR BLANCO GARRIDO",
+        "Marimar Blanco"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "foco",
+      "ability": "summon",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Shoulder-length straight blonde hair, no glasses, fair round face, vivid red blazer",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19803",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15007.jpg",
+        "sha256": "fdf4e88b41c756504d7e82497a80ce8dbc51275b6cc03c691fd05628a8530aee",
+        "profileSha256": "7eb2fa83275a3e80f4d4d68da7dc66ee67f5f880d8da9cb04fbcf5cc37da796b",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19803",
+      "abilityName": "Llamada al suplente",
+      "basicEffect": {
+        "id": "summon",
+        "name": "Llamada al suplente",
+        "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 29,
+      "id": "fernando-martinez-maillo-toribio",
+      "name": "Fernando Martínez-Maíllo",
+      "canonicalName": "FERNANDO MARTÍNEZ-MAÍLLO TORIBIO",
+      "aliases": [
+        "FERNANDO MARTÍNEZ-MAÍLLO TORIBIO",
+        "Fernando Martínez-Maíllo"
+      ],
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "viperina",
+      "ability": "surge",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short dark hair combed to the side, no glasses, clean-shaven, angular face, navy suit and red tie",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18103",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15233.jpg",
+        "sha256": "79c6407a6a1bea5fb85495da244456f72af6a1c88a417752e6d4fd4add246963",
+        "profileSha256": "d12d96c44f03688b05c36b0968808252da1903473fcf4f81dbba0dbe75d8ad09",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18103",
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 30,
+      "id": "eva-ortiz-vilella",
+      "name": "Eva Ortiz",
+      "canonicalName": "EVA ORTIZ VILELLA",
+      "aliases": [
+        "EVA ORTIZ VILELLA",
+        "Eva Ortiz"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "guardia",
+      "ability": "fineprint",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Long straight light blonde hair, no glasses, oval face, light cream blazer",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19817",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15097.jpg",
+        "sha256": "11e4e7f87ba5aaa2202d9e9238bc2b47b62003d667fb4f1f916da55759f52a0f",
+        "profileSha256": "c01f0517e50f2badabe0d037724941cd9317b374682e2ce6acfe33d4813782e9",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19817",
+      "abilityName": "Letra pequeña",
+      "basicEffect": {
+        "id": "fineprint",
+        "name": "Letra pequeña",
+        "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 31,
+      "id": "jose-manuel-barreiro-fernandez",
+      "name": "José Manuel Barreiro",
+      "canonicalName": "JOSÉ MANUEL BARREIRO FERNÁNDEZ",
+      "aliases": [
+        "JOSÉ MANUEL BARREIRO FERNÁNDEZ",
+        "José Manuel Barreiro"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "aforado",
+      "ability": "fasttrack",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short side-parted silver hair, clean-shaven, no glasses, gray suit and striped blue tie",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14087",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15190.jpg",
+        "sha256": "1ca5acb5ad36c034c4368c495ff695d24a6bee8fa2fe94aa69dc73ad2e69dc7d",
+        "profileSha256": "11cfe7b2aaeafe7c2879e0dcd5ce169e323ca10111c35bfa563a46b3d4a291ce",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "14087",
+      "abilityName": "Ventanilla rápida",
+      "basicEffect": {
+        "id": "fasttrack",
+        "name": "Ventanilla rápida",
+        "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 32,
+      "id": "gerardo-camps-devesa",
+      "name": "Gerardo Camps",
+      "canonicalName": "GERARDO CAMPS DEVESA",
+      "aliases": [
+        "GERARDO CAMPS DEVESA",
+        "Gerardo Camps"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "giro",
+      "ability": "coffee",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short curly salt-and-pepper hair, rectangular blue glasses, clean-shaven, dark suit and burgundy tie",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14987",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15100.jpg",
+        "sha256": "96e108c3e985b87c5d5dba90d463efdaad3d0af968067d4c003f8146c3337d79",
+        "profileSha256": "26d511533180c46dd58016c82e65cd273918ba9437d62a5b3364b2b2dc75df10",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "14987",
+      "abilityName": "Café parlamentario",
+      "basicEffect": {
+        "id": "coffee",
+        "name": "Café parlamentario",
+        "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 33,
+      "id": "antonio-silvan-rodriguez",
+      "name": "Antonio Silván",
+      "canonicalName": "ANTONIO SILVÁN RODRÍGUEZ",
+      "aliases": [
+        "ANTONIO SILVÁN RODRÍGUEZ",
+        "Antonio Silván"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "foco",
+      "ability": "tongue",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short silver-blonde hair, rectangular thin glasses, clean-shaven, dark blazer and open collar",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19051",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15042.jpg",
+        "sha256": "3188d6382004df59424c1c1e4e3faece1550538109aa8f6253ee46c70c37f425",
+        "profileSha256": "9db8ffffb0a676410ca7e8b9bbbafbf7969fada9e9bed1564242d4e8061f2eea",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19051",
+      "abilityName": "Lengua de trapo",
+      "basicEffect": {
+        "id": "tongue",
+        "name": "Lengua de trapo",
+        "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 34,
+      "id": "alfonso-gil-invernon",
+      "name": "Alfonso Gil",
+      "canonicalName": "ALFONSO GIL INVERNÓN",
+      "aliases": [
+        "ALFONSO GIL INVERNÓN",
+        "Alfonso Gil"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "viperina",
+      "ability": "microphone",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short receding gray hair, short gray stubble, no glasses, dark high-collar shirt",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19685",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15290.jpg",
+        "sha256": "74f4e56c7aba5b83ad6109b20d5ae88e04cf00bd8744009e0dc78167348b0301",
+        "profileSha256": "76e07e57678ef3f386254f95135b0ca44d635d6d2c3d0f8ae1de7a9eba2539d4",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19685",
+      "abilityName": "Micrófono indiscreto",
+      "basicEffect": {
+        "id": "microphone",
+        "name": "Micrófono indiscreto",
+        "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 35,
+      "id": "gorka-elejabarrieta-diaz",
+      "name": "Gorka Elejabarrieta",
+      "canonicalName": "GORKA ELEJABARRIETA DÍAZ",
+      "aliases": [
+        "GORKA ELEJABARRIETA DÍAZ",
+        "Gorka Elejabarrieta"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "verborrea",
+      "ability": "paperwork",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short black and gray crew cut, round dark glasses, clean-shaven, navy jacket and white shirt",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
+        "referenceGroup": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18249",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15245.jpg",
+        "sha256": "bc154f14025128d64d29ab5b4f7e9f2a2367c738df11718446b4640666c456a8",
+        "profileSha256": "02525e1a8121db0c7977068040eb739190925f7961905b70e153986d2cbe7f8f",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18249",
+      "abilityName": "Papeles traspapelados",
+      "basicEffect": {
+        "id": "paperwork",
+        "name": "Papeles traspapelados",
+        "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 36,
+      "id": "nerea-ahedo-ceza",
+      "name": "Nerea Ahedo",
+      "canonicalName": "NEREA AHEDO CEZA",
+      "aliases": [
+        "NEREA AHEDO CEZA",
+        "Nerea Ahedo"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "guardia",
+      "ability": "lane",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short light brown pixie haircut, no glasses, expressive smile, striped cream blouse and geometric necklace",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
+        "referenceGroup": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17027",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15258.jpg",
+        "sha256": "14f7c428653f4540b4a0d44b0c0b1ffdbbe0051eb74fb36f74fbb4b1e058b7ce",
+        "profileSha256": "f5200859eb8892a32be5f15127ca7e746e71bd187fd2117d224488d5c0fbf503",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "17027",
+      "abilityName": "Debate encarrilado",
+      "basicEffect": {
+        "id": "lane",
+        "name": "Debate encarrilado",
+        "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 37,
+      "id": "sara-bailac-ardanuy",
+      "name": "Sara Bailac",
+      "canonicalName": "SARA BAILAC ARDANUY",
+      "aliases": [
+        "SARA BAILAC ARDANUY",
+        "Sara Bailac"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "aforado",
+      "ability": "summon",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Straight shoulder-length chestnut bob, no glasses, oval face, patterned dark jacket",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
+        "referenceGroup": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18125",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15175.jpg",
+        "sha256": "b19268e771e7ff68d0470c1e62de78f8c11b8f2d26f2eb022cfe434d57ccd9f9",
+        "profileSha256": "93419a9422af15faac1b510dbb559f515ff036d7645fdca5a2810e1a82760bf7",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18125",
+      "abilityName": "Llamada al suplente",
+      "basicEffect": {
+        "id": "summon",
+        "name": "Llamada al suplente",
+        "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 38,
+      "id": "estefania-beltran-de-heredia-arroniz",
+      "name": "Estefanía Beltrán de Heredia",
+      "canonicalName": "ESTEFANÍA BELTRÁN DE HEREDIA ARRONIZ",
+      "aliases": [
+        "ESTEFANÍA BELTRÁN DE HEREDIA ARRONIZ",
+        "Estefanía Beltrán de Heredia"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "giro",
+      "ability": "surge",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Very short dark brown pixie haircut with side fringe, thin oval glasses, narrow face, patterned black and white blouse",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
+        "referenceGroup": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19365",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15291.jpg",
+        "sha256": "ea430ecbf382bade8cb827edfa1e02b13ce551bc148b55fce1975d9d2a9deed4",
+        "profileSha256": "67ece5ab40190c1147bc400332381adff34f8fa193640e7611753df1f804cc28",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19365",
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 39,
+      "id": "pilar-milagros-rojo-noguera",
+      "name": "Pilar Rojo",
+      "canonicalName": "PILAR MILAGROS ROJO NOGUERA",
+      "aliases": [
+        "PILAR MILAGROS ROJO NOGUERA",
+        "Pilar Rojo"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "foco",
+      "ability": "archive",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Dark brown side-parted shoulder-length hair, no glasses, long angular face, charcoal blazer",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19062",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15193.jpg",
+        "sha256": "71cbe4e0d5e08d654fbc129e52f3238a7bdfdeb5d52e20c1e386eee695224eec",
+        "profileSha256": "e4ee4ed89101dcd1d436e284befe05efe14b17ae16826661680f5e71579b3803",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19062",
+      "abilityName": "Hemeroteca insistente",
+      "basicEffect": {
+        "id": "archive",
+        "name": "Hemeroteca insistente",
+        "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 40,
+      "id": "jose-manuel-franco-pardo",
+      "name": "José Manuel Franco",
+      "canonicalName": "JOSÉ MANUEL FRANCO PARDO",
+      "aliases": [
+        "JOSÉ MANUEL FRANCO PARDO",
+        "José Manuel Franco"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "viperina",
+      "ability": "shield",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short receding dark-gray hair, clean-shaven, no glasses, broad serious face, navy suit and dotted tie",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19920",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15221.jpg",
+        "sha256": "aec6eb2e1b022bec563aa4d66a184e1725c11cfa730efcb9066c6628ea9995c8",
+        "profileSha256": "be667615da8812c871c4424888ade57110c46e6d69a2a9e7528432d96d17995f",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19920",
+      "abilityName": "Argumentario plastificado",
+      "basicEffect": {
+        "id": "shield",
+        "name": "Argumentario plastificado",
+        "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 41,
+      "id": "consol-cantenys-arboli",
+      "name": "Consol Cantenys",
+      "canonicalName": "CONSOL CANTENYS ARBOLÍ",
+      "aliases": [
+        "CONSOL CANTENYS ARBOLÍ",
+        "Consol Cantenys"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "foco",
+      "ability": "surge",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short blonde hair with side fringe, no glasses, broad smile, black jacket and gold pendant",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19917",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15134.jpg",
+        "sha256": "dd79157a938d6d178536e925f3b99917f8078b547b20afbce339972d6f82d2cb",
+        "profileSha256": "994f1081deb6a22d1c012d04e2fcba270c3624403956e198183fd1fe67b5de1d",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19917",
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 42,
+      "id": "alejo-joaquin-miranda-de-larra-arnaiz",
+      "name": "Alejo Miranda de Larra",
+      "canonicalName": "ALEJO JOAQUÍN MIRANDA DE LARRA ARNAIZ",
+      "aliases": [
+        "ALEJO JOAQUÍN MIRANDA DE LARRA ARNAIZ",
+        "Alejo Miranda de Larra"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "viperina",
+      "ability": "archive",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short receding light brown hair, light stubble, no glasses, navy blazer and white shirt",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19859",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15053.jpg",
+        "sha256": "2e07bf8f502a44188a8bc2aa2cf465ff5c017f021d647060e4400330b09c82e1",
+        "profileSha256": "797a5e6706e9b762f91577591773a65c2675025f3887d1e5f35546e516b1e135",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19859",
+      "abilityName": "Hemeroteca insistente",
+      "basicEffect": {
+        "id": "archive",
+        "name": "Hemeroteca insistente",
+        "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 43,
+      "id": "angel-pelayo-gordillo-moreno",
+      "name": "Ángel Pelayo Gordillo",
+      "canonicalName": "ÁNGEL PELAYO GORDILLO MORENO",
+      "aliases": [
+        "ÁNGEL PELAYO GORDILLO MORENO",
+        "Ángel Pelayo Gordillo"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "shield",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Close-cropped gray hair, clean-shaven, no glasses, tanned angular face, dark suit and striped tie",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO MIXTO",
+        "referenceGroup": "GRUPO PARLAMENTARIO MIXTO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19809",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15307.jpg",
+        "sha256": "b7a9fb0055e4d189354d7316731760c492c03688c6d2b310a6a1c9a95cd9376b",
+        "profileSha256": "1111ee1a82001425d45529909c4df08f3cb093760eaa9bf0e53535a5ff1154e4",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19809",
+      "abilityName": "Argumentario plastificado",
+      "basicEffect": {
+        "id": "shield",
+        "name": "Argumentario plastificado",
+        "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 44,
+      "id": "antonio-poveda-zapata",
+      "name": "Antonio Poveda",
+      "canonicalName": "ANTONIO POVEDA ZAPATA",
+      "aliases": [
+        "ANTONIO POVEDA ZAPATA",
+        "Antonio Poveda"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "guardia",
+      "ability": "acta",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Receding short gray hair, clean-shaven, no glasses, oval face, gray blazer and open white collar",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19465",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15287.jpg",
+        "sha256": "245040ec68c55296a40dc411e2a762ddbe9c9752cc7c91dbabbf208e85b30733",
+        "profileSha256": "182d75c69a5980f520ee378244bfc2075973ca22ab5e3eae58281d63efd94c2d",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19465",
+      "abilityName": "Fuera del acta",
+      "basicEffect": {
+        "id": "acta",
+        "name": "Fuera del acta",
+        "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 45,
+      "id": "cesar-alejandro-mogo-zaro",
+      "name": "César Mogo",
+      "canonicalName": "CÉSAR ALEJANDRO MOGO ZARO",
+      "aliases": [
+        "CÉSAR ALEJANDRO MOGO ZARO",
+        "César Mogo"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "aforado",
+      "ability": "bank",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short receding silver hair, clean-shaven, no glasses, long face, dark open-collar shirt",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18243",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15176.jpg",
+        "sha256": "b67f547d7deb2518cbb102126933cb93db2e1e59c9dfb31904c07038c30cc4ea",
+        "profileSha256": "4a517f3242cbd53edbd6b8d804f7c4b49cde84ae3fb7e3ae2afa39c10e8c46d1",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18243",
+      "abilityName": "Dietas guardadas",
+      "basicEffect": {
+        "id": "bank",
+        "name": "Dietas guardadas",
+        "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 46,
+      "id": "fabian-chinea-correa",
+      "name": "Fabián Chinea",
+      "canonicalName": "FABIÁN CHINEA CORREA",
+      "aliases": [
+        "FABIÁN CHINEA CORREA",
+        "Fabián Chinea"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "giro",
+      "ability": "fineprint",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short black hair styled upward, light stubble, no glasses, youthful oval face, dark blazer",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
+        "referenceGroup": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18725",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15112.jpg",
+        "sha256": "4f369c0a0e6849621dff9e28187fbfa23ee7360e908ce9c5215c3f4263141182",
+        "profileSha256": "fa8792cda440563d990ebcd0deaae728d7287ec4224b168cbc86cf7c48f21bf8",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18725",
+      "abilityName": "Letra pequeña",
+      "basicEffect": {
+        "id": "fineprint",
+        "name": "Letra pequeña",
+        "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 47,
+      "id": "fernando-adolfo-gutierrez-diaz-de-otazu",
+      "name": "Fernando Gutiérrez Díaz de Otazu",
+      "canonicalName": "FERNANDO ADOLFO GUTIÉRREZ DÍAZ DE OTAZU",
+      "aliases": [
+        "FERNANDO ADOLFO GUTIÉRREZ DÍAZ DE OTAZU",
+        "Fernando Gutiérrez Díaz de Otazu"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "foco",
+      "ability": "coffee",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Gray-brown side-parted hair, prominent gray moustache, no glasses, dark suit and pale blue tie",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19883",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15033.jpg",
+        "sha256": "db33e0cf2ccae4f7ab465eb4f832692589691380846795d670d2e47e5c80b6aa",
+        "profileSha256": "f63a08d2878d0c4f4bed8cccce265820f62798f2292cb1d650a857f2ab06d8b6",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19883",
+      "abilityName": "Café parlamentario",
+      "basicEffect": {
+        "id": "coffee",
+        "name": "Café parlamentario",
+        "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 48,
+      "id": "francisco-javier-marquez-sanchez",
+      "name": "Javier Márquez",
+      "canonicalName": "FRANCISCO JAVIER MÁRQUEZ SÁNCHEZ",
+      "aliases": [
+        "FRANCISCO JAVIER MÁRQUEZ SÁNCHEZ",
+        "Javier Márquez"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "viperina",
+      "ability": "tongue",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Bald head with short gray hair at sides, thick dark rectangular glasses, clean-shaven, navy suit and pink tie",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18100",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15222.jpg",
+        "sha256": "1da9674e6b516e4cf503ebdcfaedf748afc8cafa2cc7e2e0d85f9dac14b6b057",
+        "profileSha256": "d778442b4c28284a4f3ed4fdd7026fdf2804ad897bf2f428bf6b00034f26005e",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18100",
+      "abilityName": "Lengua de trapo",
+      "basicEffect": {
+        "id": "tongue",
+        "name": "Lengua de trapo",
+        "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 49,
+      "id": "jose-maria-oleaga-zalvidea",
+      "name": "José María Oleaga",
+      "canonicalName": "JOSÉ MARÍA OLEAGA ZALVIDEA",
+      "aliases": [
+        "JOSÉ MARÍA OLEAGA ZALVIDEA",
+        "José María Oleaga"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "microphone",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short swept gray hair, no glasses, clean-shaven, oval face, dark suit and patterned tie",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18301",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15074.jpg",
+        "sha256": "704b527f3cfe272e022798ce39957faf15c4b14fae3a43cf47bc250448ab2485",
+        "profileSha256": "493913325f2c970b3476d8dd5ab1d94ce8e18ec2b47179cf3e23cf17c3a5394e",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18301",
+      "abilityName": "Micrófono indiscreto",
+      "basicEffect": {
+        "id": "microphone",
+        "name": "Micrófono indiscreto",
+        "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 50,
+      "id": "juan-jose-matari-saez",
+      "name": "Juan José Matarí",
+      "canonicalName": "JUAN JOSÉ MATARÍ SÁEZ",
+      "aliases": [
+        "JUAN JOSÉ MATARÍ SÁEZ",
+        "Juan José Matarí"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "guardia",
+      "ability": "paperwork",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short curly salt-and-pepper hair, oval thin glasses, clean-shaven, dark suit and light patterned tie",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10148",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15213.jpg",
+        "sha256": "f50a6ceb769ba6b3088b2a1b2b190bddcf4657f8b6ddf3ef25acf756e922b88e",
+        "profileSha256": "0e17984da0de89bd9cb4d0b14359b8cf264c89612f71f9a0fe753b82bfdb9930",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "10148",
+      "abilityName": "Papeles traspapelados",
+      "basicEffect": {
+        "id": "paperwork",
+        "name": "Papeles traspapelados",
+        "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 51,
+      "id": "luis-javier-santamaria-ruiz",
+      "name": "Luis Santamaría",
+      "canonicalName": "LUIS JAVIER SANTAMARÍA RUIZ",
+      "aliases": [
+        "LUIS JAVIER SANTAMARÍA RUIZ",
+        "Luis Santamaría"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "aforado",
+      "ability": "lane",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short soft brown hair swept to one side, no glasses, clean-shaven, round face, dark open-collar shirt",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19857",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15197.jpg",
+        "sha256": "ce35f3b03e687ee92560e237dbe964a7259e7c2498ec4561effb1c7be3c8fbe5",
+        "profileSha256": "ba9d5372216894c89479548cfb52dbb1be3cdfc210e5cc2ed7ebc1ad590638c8",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19857",
+      "abilityName": "Debate encarrilado",
+      "basicEffect": {
+        "id": "lane",
+        "name": "Debate encarrilado",
+        "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 52,
+      "id": "maria-amparo-marco-gual",
+      "name": "Amparo Marco",
+      "canonicalName": "MARÍA AMPARO MARCO GUAL",
+      "aliases": [
+        "MARÍA AMPARO MARCO GUAL",
+        "Amparo Marco"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "giro",
+      "ability": "surge",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Shoulder-length strawberry-blonde hair, no glasses, smiling oval face, white blouse",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19940",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15219.jpg",
+        "sha256": "33447305894147ea9eff6523c9e69e99b67d8a17c485e5022c3c5ebd51cf2864",
+        "profileSha256": "d3f6b35b06fa066a3280f5c31e1f1685835995ebd6b16b7145e69d781f7b9ccb",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19940",
+      "abilityName": "Se viene arriba",
+      "basicEffect": {
+        "id": "surge",
+        "name": "Se viene arriba",
+        "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 53,
+      "id": "maria-salom-coll",
+      "name": "María Salom",
+      "canonicalName": "MARÍA SALOM COLL",
+      "aliases": [
+        "MARÍA SALOM COLL",
+        "María Salom"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "foco",
+      "ability": "archive",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short wavy sandy-blonde hair, no glasses, oval face, subtle patterned blouse and gold necklace",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "elegant parliamentary vestibule with carved wood and cool rim lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18115",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15133.jpg",
+        "sha256": "040667ae28483e209ccb386648c9287778bc24211aa9ee5c1c717c1392ddd21d",
+        "profileSha256": "f25a9d9a41fa1b3a9b5b6efc5de0f725a69d98b6911a196c208a3249a57dd91a",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18115",
+      "abilityName": "Hemeroteca insistente",
+      "basicEffect": {
+        "id": "archive",
+        "name": "Hemeroteca insistente",
+        "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 54,
+      "id": "pedro-manuel-sangines-gutierrez",
+      "name": "Pedro Sanginés",
+      "canonicalName": "PEDRO MANUEL SANGINÉS GUTIÉRREZ",
+      "aliases": [
+        "PEDRO MANUEL SANGINÉS GUTIÉRREZ",
+        "Pedro Sanginés"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "viperina",
+      "ability": "shield",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short dark-gray swept hair, thin metal glasses, close salt-and-pepper beard, light blue suit and striped tie",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
+        "referenceGroup": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "ministerial meeting room with burgundy upholstery and abstract city windows",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19971",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15254.jpg",
+        "sha256": "f2c2c39fb40201f8361b630e203c2a86e06b8021b2c5640fcf615c5febadfa31",
+        "profileSha256": "8673db3d222b1aa0f1d19a338a2c35c281beb46e93d29e23d3a4a143c09b5e22",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19971",
+      "abilityName": "Argumentario plastificado",
+      "basicEffect": {
+        "id": "shield",
+        "name": "Argumentario plastificado",
+        "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 55,
+      "id": "ramon-morales-quesada",
+      "name": "Ramón Morales",
+      "canonicalName": "RAMÓN MORALES QUESADA",
+      "aliases": [
+        "RAMÓN MORALES QUESADA",
+        "Ramón Morales"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "acta",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short silver-gray hair, no glasses, clean-shaven, broad warm face, textured gray blazer",
+      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a televised institutional debate set with slate and teal geometric architecture",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18298",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15092.jpg",
+        "sha256": "9083937e004b257f92a808fff40e2a42074badc6a47e75e77cfb5e1387883345",
+        "profileSha256": "32dbc415f999ab6b285f6715815c34065005de683f69f0e221975836ab9c015b",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18298",
+      "abilityName": "Fuera del acta",
+      "basicEffect": {
+        "id": "acta",
+        "name": "Fuera del acta",
+        "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 56,
+      "id": "rocio-briones-morales",
+      "name": "Rocío Briones",
+      "canonicalName": "ROCÍO BRIONES MORALES",
+      "aliases": [
+        "ROCÍO BRIONES MORALES",
+        "Rocío Briones"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "guardia",
+      "ability": "bank",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Shoulder-length light brown hair with blonde highlights, no glasses, cream and black tailored blouse",
+      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a quiet Senate bench with aged gold ornament and deep red velvet",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19961",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15215.jpg",
+        "sha256": "06ca16bed322f631bf2f94c02d7eb9eeaf5ecab528228121047fafb449919f18",
+        "profileSha256": "fd2df97e5be43c347dab561930692c2c377dd799a4242159a1364759e01200b3",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "19961",
+      "abilityName": "Dietas guardadas",
+      "basicEffect": {
+        "id": "bank",
+        "name": "Dietas guardadas",
+        "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 57,
+      "id": "salvador-vidal-varela",
+      "name": "Salvador Vidal",
+      "canonicalName": "SALVADOR VIDAL VARELA",
+      "aliases": [
+        "SALVADOR VIDAL VARELA",
+        "Salvador Vidal"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "aforado",
+      "ability": "fineprint",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short dark-gray hair, thin rectangular glasses, clean-shaven, navy blazer and pink open-collar shirt",
+      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "diagonal view of the Senate wood-and-burgundy chamber with soft daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18222",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15237.jpg",
+        "sha256": "f20a83574ccc6a3776f1cc27427b57a4ca4d5c3a786fd645887cc0a910525041",
+        "profileSha256": "4a6157227bb40ee8ba0b6441f7547f931962fbe39ae508d71cf6cdb684e70bce",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18222",
+      "abilityName": "Letra pequeña",
+      "basicEffect": {
+        "id": "fineprint",
+        "name": "Letra pequeña",
+        "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 58,
+      "id": "rosa-maria-romero-sanchez",
+      "name": "Rosa Romero",
+      "canonicalName": "ROSA MARÍA ROMERO SÁNCHEZ",
+      "aliases": [
+        "ROSA MARÍA ROMERO SÁNCHEZ",
+        "Rosa Romero"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "giro",
+      "ability": "coffee",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Shoulder-length wavy chestnut hair, no glasses, vivid pink blouse, long earrings",
+      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "institutional press lectern with deep blue bokeh and warm brass accents",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12693",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15240.jpg",
+        "sha256": "dd8d24c262ef5014ffe4c9e7eb6bd547aa74b2032d5ecf4257d726d1fab6057f",
+        "profileSha256": "7b889b6dd457147b34cd2b675d87b20bec250ae7e366b642228d9ce98b8dd83c",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "12693",
+      "abilityName": "Café parlamentario",
+      "basicEffect": {
+        "id": "coffee",
+        "name": "Café parlamentario",
+        "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo.",
+        "target": "self",
+        "polarity": "positive"
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 59,
+      "id": "vicente-tirado-ochoa",
+      "name": "Vicente Tirado",
+      "canonicalName": "VICENTE TIRADO OCHOA",
+      "aliases": [
+        "VICENTE TIRADO OCHOA",
+        "Vicente Tirado"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "foco",
+      "ability": "tongue",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Short thinning dark-gray hair, no glasses, clean-shaven, rounded face, navy suit and dark red tie",
+      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "microphones": true,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "a library-lined parliamentary corridor with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12839",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15028.jpg",
+        "sha256": "06ca37053121a44a27198b28426cfbe3cdd247352bc10c58be879df5c676470b",
+        "profileSha256": "30506c71f162d2ed7ace304f2e0ae3d4f08e1c45848f6a3bcec5e2f32413eb9e",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "12839",
+      "abilityName": "Lengua de trapo",
+      "basicEffect": {
+        "id": "tongue",
+        "name": "Lengua de trapo",
+        "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "foco",
+        "name": "Foco Mediático",
+        "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    },
+    {
+      "index": 60,
+      "id": "paloma-hernandez-cerezo",
+      "name": "Paloma Hernández",
+      "canonicalName": "PALOMA HERNÁNDEZ CEREZO",
+      "aliases": [
+        "PALOMA HERNÁNDEZ CEREZO",
+        "Paloma Hernández"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "viperina",
+      "ability": "microphone",
+      "depictedPeriod": "XV legislatura · fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "features": "Shoulder-length chestnut hair swept away from face, no glasses, white blazer",
+      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "microphones": false,
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo documentado en la ficha del Senado; no implica atribuir militancia individual ni afirmar cargo vigente."
+      },
+      "background": {
+        "description": "contemporary committee room with olive-green chairs and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18193",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15155.jpg",
+        "sha256": "58d4241283049679b2f300d6bfc4c0cfe269b11ddb229c6aaae8d9d4f4e33624",
+        "profileSha256": "876ff7b8379ce5bd1d42cadbc61f1bfe0066fd72cd2a2c36da9d96a24fd08932",
+        "consulted": "2026-11-04"
+      },
+      "senadorId": "18193",
+      "abilityName": "Micrófono indiscreto",
+      "basicEffect": {
+        "id": "microphone",
+        "name": "Micrófono indiscreto",
+        "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno.",
+        "target": "rival",
+        "polarity": "negative"
+      },
+      "passive": {
+        "id": "viperina",
+        "name": "Lengua Viperina",
+        "description": "Tus oradores infligen +2 de daño al Líder rival.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      }
+    }
+  ],
+  "patch": "v31.0.2.13",
+  "active": false,
+  "releaseReady": false
+}

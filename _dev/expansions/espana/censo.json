@@ -28,7 +28,9 @@
     "personas": 440,
     "activos": 97,
     "reserva20": 20,
-    "pendientes": 323,
+    "reserva60": 60,
+    "reservaTotal": 80,
+    "pendientes": 263,
     "registrosSenado": 311,
     "registrosGobierno": 22
   },
@@ -303,9 +305,10 @@
       "id": "alejo-joaquin-miranda-de-larra-arnaiz",
       "nombre": "ALEJO JOAQUÍN MIRANDA DE LARRA ARNAIZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ALEJO JOAQUÍN MIRANDA DE LARRA ARNAIZ"
+        "ALEJO JOAQUÍN MIRANDA DE LARRA ARNAIZ",
+        "Alejo Miranda de Larra"
       ],
       "ambitos": [
         "senado"
@@ -319,10 +322,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "alejo-joaquin-miranda-de-larra-arnaiz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "alfonso-alonso",
@@ -422,9 +431,10 @@
       "id": "alfonso-gil-invernon",
       "nombre": "ALFONSO GIL INVERNÓN",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ALFONSO GIL INVERNÓN"
+        "ALFONSO GIL INVERNÓN",
+        "Alfonso Gil"
       ],
       "ambitos": [
         "senado"
@@ -438,10 +448,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "alfonso-gil-invernon",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "alfredo-perez-rubalcaba",
@@ -477,9 +493,10 @@
       "id": "alicia-garcia-rodriguez",
       "nombre": "ALICIA GARCÍA RODRÍGUEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ALICIA GARCÍA RODRÍGUEZ"
+        "ALICIA GARCÍA RODRÍGUEZ",
+        "Alicia García"
       ],
       "ambitos": [
         "senado"
@@ -493,10 +510,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "alicia-garcia-rodriguez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "alvaro-nadal",
@@ -707,9 +730,10 @@
       "id": "ana-redondo-garcia",
       "nombre": "Ana Redondo García",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Ana Redondo García"
+        "Ana Redondo García",
+        "Ana Redondo"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -724,10 +748,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "ana-redondo-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "ander-gil-garcia",
@@ -802,9 +832,10 @@
       "id": "angel-pelayo-gordillo-moreno",
       "nombre": "ÁNGEL PELAYO GORDILLO MORENO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ÁNGEL PELAYO GORDILLO MORENO"
+        "ÁNGEL PELAYO GORDILLO MORENO",
+        "Ángel Pelayo Gordillo"
       ],
       "ambitos": [
         "senado"
@@ -818,18 +849,25 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO MIXTO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "angel-pelayo-gordillo-moreno",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "angel-victor-torres-perez",
       "nombre": "Ángel Víctor Torres Pérez",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Ángel Víctor Torres Pérez"
+        "Ángel Víctor Torres Pérez",
+        "Ángel Víctor Torres"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -844,10 +882,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "angel-victor-torres-perez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "aniceto-javier-armas-gonzalez",
@@ -1066,9 +1110,10 @@
       "id": "antonio-poveda-zapata",
       "nombre": "ANTONIO POVEDA ZAPATA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ANTONIO POVEDA ZAPATA"
+        "ANTONIO POVEDA ZAPATA",
+        "Antonio Poveda"
       ],
       "ambitos": [
         "senado"
@@ -1082,18 +1127,25 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "antonio-poveda-zapata",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "antonio-silvan-rodriguez",
       "nombre": "ANTONIO SILVÁN RODRÍGUEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ANTONIO SILVÁN RODRÍGUEZ"
+        "ANTONIO SILVÁN RODRÍGUEZ",
+        "Antonio Silván"
       ],
       "ambitos": [
         "senado"
@@ -1107,10 +1159,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "antonio-silvan-rodriguez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "araceli-martinez-esteban",
@@ -1141,9 +1199,10 @@
       "id": "arcadi-espana-garcia",
       "nombre": "Arcadi España García",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Arcadi España García"
+        "Arcadi España García",
+        "Arcadi España"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -1158,10 +1217,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "arcadi-espana-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "aurelia-sanchez-navarro",
@@ -1374,9 +1439,10 @@
       "id": "carlos-cuerpo-caballero",
       "nombre": "Carlos Cuerpo Caballero",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Carlos Cuerpo Caballero"
+        "Carlos Cuerpo Caballero",
+        "Carlos Cuerpo"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -1391,10 +1457,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "carlos-cuerpo-caballero",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "carlos-floriano",
@@ -1720,9 +1792,10 @@
       "id": "cesar-alejandro-mogo-zaro",
       "nombre": "CÉSAR ALEJANDRO MOGO ZARO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "CÉSAR ALEJANDRO MOGO ZARO"
+        "CÉSAR ALEJANDRO MOGO ZARO",
+        "César Mogo"
       ],
       "ambitos": [
         "senado"
@@ -1736,10 +1809,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "cesar-alejandro-mogo-zaro",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "clara-maria-martin-garcia",
@@ -1795,9 +1874,10 @@
       "id": "concepcion-andreu-rodriguez",
       "nombre": "CONCEPCIÓN ANDREU RODRÍGUEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "CONCEPCIÓN ANDREU RODRÍGUEZ"
+        "CONCEPCIÓN ANDREU RODRÍGUEZ",
+        "Concha Andreu"
       ],
       "ambitos": [
         "senado"
@@ -1811,18 +1891,25 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 1,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "concepcion-andreu-rodriguez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "consol-cantenys-arboli",
       "nombre": "CONSOL CANTENYS ARBOLÍ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "CONSOL CANTENYS ARBOLÍ"
+        "CONSOL CANTENYS ARBOLÍ",
+        "Consol Cantenys"
       ],
       "ambitos": [
         "senado"
@@ -1836,10 +1923,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 1,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "consol-cantenys-arboli",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "cristina-casanueva-jimenez",
@@ -2050,9 +2143,10 @@
       "id": "diana-morant-ripoll",
       "nombre": "Diana Morant Ripoll",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Diana Morant Ripoll"
+        "Diana Morant Ripoll",
+        "Diana Morant"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -2067,10 +2161,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "diana-morant-ripoll",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "dionis-ona-martin",
@@ -2158,9 +2258,10 @@
       "id": "eduard-pujol-bonell",
       "nombre": "EDUARD PUJOL BONELL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "EDUARD PUJOL BONELL"
+        "EDUARD PUJOL BONELL",
+        "Eduard Pujol"
       ],
       "ambitos": [
         "senado"
@@ -2174,10 +2275,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "eduard-pujol-bonell",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "elena-castillo-lopez",
@@ -2283,9 +2390,10 @@
       "id": "elma-saiz-delgado",
       "nombre": "Elma Saiz Delgado",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Elma Saiz Delgado"
+        "Elma Saiz Delgado",
+        "Elma Saiz"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -2300,10 +2408,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "elma-saiz-delgado",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "eloy-suarez-lamata",
@@ -2378,9 +2492,10 @@
       "id": "enric-xavier-morera-catala",
       "nombre": "ENRIC XAVIER MORERA CATALÀ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ENRIC XAVIER MORERA CATALÀ"
+        "ENRIC XAVIER MORERA CATALÀ",
+        "Enric Morera"
       ],
       "ambitos": [
         "senado"
@@ -2394,10 +2509,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "enric-xavier-morera-catala",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "enrique-fernandez-rodriguez",
@@ -2453,9 +2574,10 @@
       "id": "ernest-urtasun-domenech",
       "nombre": "Ernest Urtasun Domènech",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Ernest Urtasun Domènech"
+        "Ernest Urtasun Domènech",
+        "Ernest Urtasun"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -2470,10 +2592,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "ernest-urtasun-domenech",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "esperanza-aguirre",
@@ -2517,9 +2645,10 @@
       "id": "estefania-beltran-de-heredia-arroniz",
       "nombre": "ESTEFANÍA BELTRÁN DE HEREDIA ARRONIZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ESTEFANÍA BELTRÁN DE HEREDIA ARRONIZ"
+        "ESTEFANÍA BELTRÁN DE HEREDIA ARRONIZ",
+        "Estefanía Beltrán de Heredia"
       ],
       "ambitos": [
         "senado"
@@ -2533,10 +2662,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "estefania-beltran-de-heredia-arroniz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "estela-del-carmen-darocas-marin",
@@ -2592,9 +2727,10 @@
       "id": "eva-maria-granados-galiano",
       "nombre": "EVA MARÍA GRANADOS GALIANO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "EVA MARÍA GRANADOS GALIANO"
+        "EVA MARÍA GRANADOS GALIANO",
+        "Eva Granados"
       ],
       "ambitos": [
         "senado"
@@ -2608,10 +2744,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 4,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "eva-maria-granados-galiano",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "eva-maria-redondo-gamero",
@@ -2642,9 +2784,10 @@
       "id": "eva-ortiz-vilella",
       "nombre": "EVA ORTIZ VILELLA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "EVA ORTIZ VILELLA"
+        "EVA ORTIZ VILELLA",
+        "Eva Ortiz"
       ],
       "ambitos": [
         "senado"
@@ -2658,10 +2801,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 1,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "eva-ortiz-vilella",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "eva-patricia-bueno-campanario",
@@ -2692,9 +2841,10 @@
       "id": "fabian-chinea-correa",
       "nombre": "FABIÁN CHINEA CORREA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "FABIÁN CHINEA CORREA"
+        "FABIÁN CHINEA CORREA",
+        "Fabián Chinea"
       ],
       "ambitos": [
         "senado"
@@ -2708,10 +2858,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "fabian-chinea-correa",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "fatima-banez",
@@ -2803,9 +2959,10 @@
       "id": "fernando-adolfo-gutierrez-diaz-de-otazu",
       "nombre": "FERNANDO ADOLFO GUTIÉRREZ DÍAZ DE OTAZU",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "FERNANDO ADOLFO GUTIÉRREZ DÍAZ DE OTAZU"
+        "FERNANDO ADOLFO GUTIÉRREZ DÍAZ DE OTAZU",
+        "Fernando Gutiérrez Díaz de Otazu"
       ],
       "ambitos": [
         "senado"
@@ -2819,10 +2976,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "fernando-adolfo-gutierrez-diaz-de-otazu",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "fernando-carbonell-tatay",
@@ -2885,9 +3048,10 @@
       "id": "fernando-martinez-maillo-toribio",
       "nombre": "FERNANDO MARTÍNEZ-MAÍLLO TORIBIO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "FERNANDO MARTÍNEZ-MAÍLLO TORIBIO"
+        "FERNANDO MARTÍNEZ-MAÍLLO TORIBIO",
+        "Fernando Martínez-Maíllo"
       ],
       "ambitos": [
         "senado"
@@ -2901,10 +3065,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 3,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "fernando-martinez-maillo-toribio",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "fernando-priego-chacon",
@@ -3008,9 +3178,10 @@
       "id": "francisco-javier-arenas-bocanegra",
       "nombre": "FRANCISCO JAVIER ARENAS BOCANEGRA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "FRANCISCO JAVIER ARENAS BOCANEGRA"
+        "FRANCISCO JAVIER ARENAS BOCANEGRA",
+        "Javier Arenas"
       ],
       "ambitos": [
         "senado"
@@ -3024,10 +3195,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "francisco-javier-arenas-bocanegra",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "francisco-javier-bermudez-carrillo",
@@ -3133,9 +3310,10 @@
       "id": "francisco-javier-marquez-sanchez",
       "nombre": "FRANCISCO JAVIER MÁRQUEZ SÁNCHEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "FRANCISCO JAVIER MÁRQUEZ SÁNCHEZ"
+        "FRANCISCO JAVIER MÁRQUEZ SÁNCHEZ",
+        "Javier Márquez"
       ],
       "ambitos": [
         "senado"
@@ -3149,10 +3327,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "francisco-javier-marquez-sanchez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "francisco-javier-oblare-torres",
@@ -3327,9 +3511,10 @@
       "id": "gerardo-camps-devesa",
       "nombre": "GERARDO CAMPS DEVESA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "GERARDO CAMPS DEVESA"
+        "GERARDO CAMPS DEVESA",
+        "Gerardo Camps"
       ],
       "ambitos": [
         "senado"
@@ -3343,10 +3528,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "gerardo-camps-devesa",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "gonzalo-jesus-robles-orozco",
@@ -3377,9 +3568,10 @@
       "id": "gorka-elejabarrieta-diaz",
       "nombre": "GORKA ELEJABARRIETA DÍAZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "GORKA ELEJABARRIETA DÍAZ"
+        "GORKA ELEJABARRIETA DÍAZ",
+        "Gorka Elejabarrieta"
       ],
       "ambitos": [
         "senado"
@@ -3393,10 +3585,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "gorka-elejabarrieta-diaz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "guillermo-fernandez-vara",
@@ -3735,9 +3933,10 @@
       "id": "isabel-rodriguez-garcia",
       "nombre": "Isabel Rodríguez García",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Isabel Rodríguez García"
+        "Isabel Rodríguez García",
+        "Isabel Rodríguez"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -3752,10 +3951,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "isabel-rodriguez-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "israel-roberto-perez-jimenez",
@@ -4237,9 +4442,10 @@
       "id": "jordi-hereu-boher",
       "nombre": "Jordi Hereu Boher",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Jordi Hereu Boher"
+        "Jordi Hereu Boher",
+        "Jordi Hereu"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -4254,10 +4460,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "jordi-hereu-boher",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "jordi-sanchez",
@@ -4468,9 +4680,10 @@
       "id": "jose-antonio-monago-terraza",
       "nombre": "JOSÉ ANTONIO MONAGO TERRAZA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "JOSÉ ANTONIO MONAGO TERRAZA"
+        "JOSÉ ANTONIO MONAGO TERRAZA",
+        "José Antonio Monago"
       ],
       "ambitos": [
         "senado"
@@ -4484,10 +4697,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "jose-antonio-monago-terraza",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "jose-antonio-sanchez-bugallo",
@@ -4810,9 +5029,10 @@
       "id": "jose-manuel-albares-bueno",
       "nombre": "José Manuel Albares Bueno",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "José Manuel Albares Bueno"
+        "José Manuel Albares Bueno",
+        "José Manuel Albares"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -4827,10 +5047,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "jose-manuel-albares-bueno",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "jose-manuel-aranda-lassa",
@@ -4911,9 +5137,10 @@
       "id": "jose-manuel-barreiro-fernandez",
       "nombre": "JOSÉ MANUEL BARREIRO FERNÁNDEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "JOSÉ MANUEL BARREIRO FERNÁNDEZ"
+        "JOSÉ MANUEL BARREIRO FERNÁNDEZ",
+        "José Manuel Barreiro"
       ],
       "ambitos": [
         "senado"
@@ -4927,10 +5154,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "jose-manuel-barreiro-fernandez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "jose-manuel-de-la-vega-carrera",
@@ -4986,9 +5219,10 @@
       "id": "jose-manuel-franco-pardo",
       "nombre": "JOSÉ MANUEL FRANCO PARDO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "JOSÉ MANUEL FRANCO PARDO"
+        "JOSÉ MANUEL FRANCO PARDO",
+        "José Manuel Franco"
       ],
       "ambitos": [
         "senado"
@@ -5002,10 +5236,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "jose-manuel-franco-pardo",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "jose-manuel-garcia-margallo",
@@ -5174,9 +5414,10 @@
       "id": "jose-maria-oleaga-zalvidea",
       "nombre": "JOSÉ MARÍA OLEAGA ZALVIDEA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "JOSÉ MARÍA OLEAGA ZALVIDEA"
+        "JOSÉ MARÍA OLEAGA ZALVIDEA",
+        "José María Oleaga"
       ],
       "ambitos": [
         "senado"
@@ -5190,10 +5431,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "jose-maria-oleaga-zalvidea",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "jose-ramon-diez-de-revenga-albacete",
@@ -5247,9 +5494,10 @@
       "id": "josep-lluis-cleries-i-gonzalez",
       "nombre": "JOSEP LLUÍS CLERIES I GONZÀLEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "JOSEP LLUÍS CLERIES I GONZÀLEZ"
+        "JOSEP LLUÍS CLERIES I GONZÀLEZ",
+        "Josep Lluís Cleries"
       ],
       "ambitos": [
         "senado"
@@ -5263,10 +5511,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
           "prioridadDentroDelSenado": 4,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "josep-lluis-cleries-i-gonzalez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "josep-maria-reniu-vilamala",
@@ -5473,9 +5727,10 @@
       "id": "juan-jose-matari-saez",
       "nombre": "JUAN JOSÉ MATARÍ SÁEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "JUAN JOSÉ MATARÍ SÁEZ"
+        "JUAN JOSÉ MATARÍ SÁEZ",
+        "Juan José Matarí"
       ],
       "ambitos": [
         "senado"
@@ -5489,10 +5744,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "juan-jose-matari-saez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "juan-jose-sanz-vitorio",
@@ -6030,9 +6291,10 @@
       "id": "luis-javier-santamaria-ruiz",
       "nombre": "LUIS JAVIER SANTAMARÍA RUIZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "LUIS JAVIER SANTAMARÍA RUIZ"
+        "LUIS JAVIER SANTAMARÍA RUIZ",
+        "Luis Santamaría"
       ],
       "ambitos": [
         "senado"
@@ -6046,10 +6308,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "luis-javier-santamaria-ruiz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "luis-jesus-uribe-etxebarria-apalategui",
@@ -6130,9 +6398,10 @@
       "id": "luis-planas-puchades",
       "nombre": "Luis Planas Puchades",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Luis Planas Puchades"
+        "Luis Planas Puchades",
+        "Luis Planas"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -6147,10 +6416,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "luis-planas-puchades",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "luis-rogelio-rodriguez-comendador-perez",
@@ -6231,9 +6506,10 @@
       "id": "luisa-fernanda-rudi-ubeda",
       "nombre": "LUISA FERNANDA RUDI ÚBEDA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "LUISA FERNANDA RUDI ÚBEDA"
+        "LUISA FERNANDA RUDI ÚBEDA",
+        "Luisa Fernanda Rudi"
       ],
       "ambitos": [
         "senado"
@@ -6247,10 +6523,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 3,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "luisa-fernanda-rudi-ubeda",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "magdalena-alvarez",
@@ -6501,9 +6783,10 @@
       "id": "maria-amparo-marco-gual",
       "nombre": "MARÍA AMPARO MARCO GUAL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "MARÍA AMPARO MARCO GUAL"
+        "MARÍA AMPARO MARCO GUAL",
+        "Amparo Marco"
       ],
       "ambitos": [
         "senado"
@@ -6517,10 +6800,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "maria-amparo-marco-gual",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "maria-angeles-garcia-herrero",
@@ -7408,9 +7697,10 @@
       "id": "maria-mar-blanco-garrido",
       "nombre": "MARÍA MAR BLANCO GARRIDO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "MARÍA MAR BLANCO GARRIDO"
+        "MARÍA MAR BLANCO GARRIDO",
+        "Marimar Blanco"
       ],
       "ambitos": [
         "senado"
@@ -7424,10 +7714,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "maria-mar-blanco-garrido",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "maria-mar-caballero-martinez",
@@ -7508,9 +7804,10 @@
       "id": "maria-salom-coll",
       "nombre": "MARÍA SALOM COLL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "MARÍA SALOM COLL"
+        "MARÍA SALOM COLL",
+        "María Salom"
       ],
       "ambitos": [
         "senado"
@@ -7524,10 +7821,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "maria-salom-coll",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "maria-susana-marques-escoin",
@@ -8247,9 +8550,10 @@
       "id": "milagros-tolon-jaime",
       "nombre": "Milagros Tolón Jaime",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Milagros Tolón Jaime"
+        "Milagros Tolón Jaime",
+        "Milagros Tolón"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -8264,10 +8568,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "milagros-tolon-jaime",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "miquel-iceta",
@@ -8506,9 +8816,10 @@
       "id": "nerea-ahedo-ceza",
       "nombre": "NEREA AHEDO CEZA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "NEREA AHEDO CEZA"
+        "NEREA AHEDO CEZA",
+        "Nerea Ahedo"
       ],
       "ambitos": [
         "senado"
@@ -8522,10 +8833,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "nerea-ahedo-ceza",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "neus-massanet-florit",
@@ -8700,9 +9017,10 @@
       "id": "oscar-lopez-agueda",
       "nombre": "Óscar López Águeda",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Óscar López Águeda"
+        "Óscar López Águeda",
+        "Óscar López"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -8717,10 +9035,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "oscar-lopez-agueda",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "oscar-puente",
@@ -8768,9 +9092,10 @@
       "id": "pablo-bustinduy-amador",
       "nombre": "Pablo Bustinduy Amador",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Pablo Bustinduy Amador"
+        "Pablo Bustinduy Amador",
+        "Pablo Bustinduy"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -8785,10 +9110,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "pablo-bustinduy-amador",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "pablo-cambronero",
@@ -8939,9 +9270,10 @@
       "id": "paloma-hernandez-cerezo",
       "nombre": "PALOMA HERNÁNDEZ CEREZO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "PALOMA HERNÁNDEZ CEREZO"
+        "PALOMA HERNÁNDEZ CEREZO",
+        "Paloma Hernández"
       ],
       "ambitos": [
         "senado"
@@ -8955,10 +9287,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 3,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "paloma-hernandez-cerezo",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "paloma-ines-sanz-jeronimo",
@@ -9133,9 +9471,10 @@
       "id": "pedro-manuel-rollan-ojeda",
       "nombre": "PEDRO MANUEL ROLLÁN OJEDA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "PEDRO MANUEL ROLLÁN OJEDA"
+        "PEDRO MANUEL ROLLÁN OJEDA",
+        "Pedro Rollán"
       ],
       "ambitos": [
         "senado"
@@ -9149,18 +9488,25 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 1,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "pedro-manuel-rollan-ojeda",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "pedro-manuel-sangines-gutierrez",
       "nombre": "PEDRO MANUEL SANGINÉS GUTIÉRREZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "PEDRO MANUEL SANGINÉS GUTIÉRREZ"
+        "PEDRO MANUEL SANGINÉS GUTIÉRREZ",
+        "Pedro Sanginés"
       ],
       "ambitos": [
         "senado"
@@ -9174,10 +9520,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "pedro-manuel-sangines-gutierrez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "pedro-sanchez",
@@ -9353,9 +9705,10 @@
       "id": "pilar-milagros-rojo-noguera",
       "nombre": "PILAR MILAGROS ROJO NOGUERA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "PILAR MILAGROS ROJO NOGUERA"
+        "PILAR MILAGROS ROJO NOGUERA",
+        "Pilar Rojo"
       ],
       "ambitos": [
         "senado"
@@ -9369,18 +9722,25 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "pilar-milagros-rojo-noguera",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "pio-garcia-escudero-marquez",
       "nombre": "PÍO GARCÍA-ESCUDERO MÁRQUEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "PÍO GARCÍA-ESCUDERO MÁRQUEZ"
+        "PÍO GARCÍA-ESCUDERO MÁRQUEZ",
+        "Pío García-Escudero"
       ],
       "ambitos": [
         "senado"
@@ -9394,10 +9754,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 3,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "pio-garcia-escudero-marquez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "quim-torra",
@@ -9560,9 +9926,10 @@
       "id": "ramon-morales-quesada",
       "nombre": "RAMÓN MORALES QUESADA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "RAMÓN MORALES QUESADA"
+        "RAMÓN MORALES QUESADA",
+        "Ramón Morales"
       ],
       "ambitos": [
         "senado"
@@ -9576,10 +9943,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "ramon-morales-quesada",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "raquel-gonzalez-benito",
@@ -9692,9 +10065,10 @@
       "id": "rocio-briones-morales",
       "nombre": "ROCÍO BRIONES MORALES",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ROCÍO BRIONES MORALES"
+        "ROCÍO BRIONES MORALES",
+        "Rocío Briones"
       ],
       "ambitos": [
         "senado"
@@ -9708,10 +10082,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "rocio-briones-morales",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "rocio-monasterio",
@@ -9876,9 +10256,10 @@
       "id": "rosa-maria-romero-sanchez",
       "nombre": "ROSA MARÍA ROMERO SÁNCHEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "ROSA MARÍA ROMERO SÁNCHEZ"
+        "ROSA MARÍA ROMERO SÁNCHEZ",
+        "Rosa Romero"
       ],
       "ambitos": [
         "senado"
@@ -9892,10 +10273,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "rosa-maria-romero-sanchez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "rosa-maria-sanchez-gandara",
@@ -9995,9 +10382,10 @@
       "id": "salvador-vidal-varela",
       "nombre": "SALVADOR VIDAL VARELA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "SALVADOR VIDAL VARELA"
+        "SALVADOR VIDAL VARELA",
+        "Salvador Vidal"
       ],
       "ambitos": [
         "senado"
@@ -10011,10 +10399,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "salvador-vidal-varela",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "santiago-abascal",
@@ -10039,9 +10433,10 @@
       "id": "sara-aagesen-munoz",
       "nombre": "Sara Aagesen Muñoz",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "Sara Aagesen Muñoz"
+        "Sara Aagesen Muñoz",
+        "Sara Aagesen"
       ],
       "ambitos": [
         "gobierno_estatal"
@@ -10056,18 +10451,25 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "sara-aagesen-munoz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "sara-bailac-ardanuy",
       "nombre": "SARA BAILAC ARDANUY",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "SARA BAILAC ARDANUY"
+        "SARA BAILAC ARDANUY",
+        "Sara Bailac"
       ],
       "ambitos": [
         "senado"
@@ -10081,10 +10483,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "sara-bailac-ardanuy",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "sara-gimenez",
@@ -10234,7 +10642,7 @@
       "id": "sira-rego",
       "nombre": "Sira Rego",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
         "Sira Rego"
       ],
@@ -10251,10 +10659,16 @@
           "estadoTemporal": "figura_en_la_pagina_consultada",
           "partido": null,
           "nota": "El cargo no implica militancia. No deducir permanencia posterior ni fechas de nombramiento de esta instantánea."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "sira-rego",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "soraya-saenz-de-santamaria",
@@ -10493,9 +10907,10 @@
       "id": "vicente-tirado-ochoa",
       "nombre": "VICENTE TIRADO OCHOA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60",
       "alias": [
-        "VICENTE TIRADO OCHOA"
+        "VICENTE TIRADO OCHOA",
+        "Vicente Tirado"
       ],
       "ambitos": [
         "senado"
@@ -10509,10 +10924,16 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 2,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-02/propuesta.json",
+          "id": "vicente-tirado-ochoa",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "victor-gonzalez-fernandez",
