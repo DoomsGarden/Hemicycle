@@ -12,7 +12,7 @@ const source = new vm.Script(
   html.slice(html.indexOf('function mk('), html.indexOf('\nSCREENS.liga=function')),
   { filename: 'hemicycle-battle-rules.js' }
 );
-function loadBattle(mode = 'normal', random = 0.25) {
+function loadBattle(mode = 'normal', random = 0.25, overrides = {}) {
   const storage = new Map(), timers = new Map(), elements = {};
   let timerId = 0, now=1000000;
   const intervals=new Map();
@@ -45,7 +45,8 @@ function loadBattle(mode = 'normal', random = 0.25) {
     document: { getElementById: id => elements[id] || null },
     localStorage: { getItem: k => storage.get(k) || null, setItem: (k, v) => storage.set(k, v) },
     setTimeout: fn => { timers.set(++timerId, fn); return timerId; },
-    clearTimeout: id => timers.delete(id)
+    clearTimeout: id => timers.delete(id),
+    ...overrides
   });
   source.runInContext(context);
   vm.runInContext(

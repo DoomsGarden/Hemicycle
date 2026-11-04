@@ -16,7 +16,7 @@
 
 Forma un gabinete de **cinco oradores**, elige a tu líder y añade hasta **dos cartas de acción**. Presenta tus cromos en la Tribuna, aprovecha sus doctrinas y decide cuándo atacar, defender o recuperar fuerzas. Tu objetivo: **alcanzar 100 votos**.
 
-Hemiciclo está en **prelanzamiento**, versión **v31.0.2.12**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
+Hemiciclo está en **prelanzamiento**, versión **v31.0.2.13**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
 **Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Esta primera colección está disponible completa. Elige también entre **seis opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
 
@@ -49,7 +49,7 @@ Capturas actualizadas de **v31.0.2.12**, con progreso de demostración, tapetes 
 
 [Descargar APK para Android](https://hemicycle.online/Hemiciclo.apk) · [Descargar AAB para Google Play](https://hemicycle.online/Hemiciclo.aab) · [Ver todos los archivos](https://hemicycle.online/downloads/)
 
-Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v31.0.2.12**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
+Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v31.0.2.13**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
 
 ## Primeros pasos
 
@@ -166,6 +166,7 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
 - [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
+- [Notas de la versión v31.0.2.13](_dev/releases/v31.0.2.13.md)
 - [Notas de la versión v31.0.2.12](_dev/releases/v31.0.2.12.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.

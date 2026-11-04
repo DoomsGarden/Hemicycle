@@ -1,0 +1,42 @@
+✔ fingerprints ignore export time and version, but retain copies, achievements and ranked progress (1.425188ms)
+✔ a read-only refresh preserves local progress; activation and later saving preserve revisions (8.373579ms)
+✔ another device recovers rather than merges and keeps the replaced local copy for download (1.460051ms)
+✔ two devices cannot silently overwrite each other; stale revisions preserve both copies (2.058262ms)
+✔ lost response is reconciled using the operation receipt; new local progress is not lost or duplicated (1.353329ms)
+✔ changing accounts and replacing a local file never auto-uploads the previous account progress (0.998044ms)
+✔ invalid cloud data and restore during a battle cannot replace local progress (0.724652ms)
+✔ explicit conflict resolution can keep local progress, archives the prior cloud copy and still checks its revision (1.902688ms)
+✔ a direct retry after a lost response reconciles its receipt before sending newly earned progress (0.930562ms)
+✔ a delayed upload cannot reattach cloud saving after an explicit local file replacement or reset (0.943683ms)
+✔ RPC requests pin the token of the captured account instead of using a later SDK session (0.5579ms)
+✔ leader mastery survives cloud upload, a second-device restore and later equipment changes (2.044711ms)
+✔ result verification rejects a failed refresh even when an older cloud copy is cached (0.563169ms)
+✔ submitted migration stays explicit across refreshes and reloads, without replacing local progress (0.736129ms)
+✔ failed migration is not labelled submitted and cannot replace local progress (0.470459ms)
+✔ approved initial migration restores the canonical copy, preserves recovery, and enables cloud saving (0.889711ms)
+✔ a lost approval response can retry without replacing or duplicating the imported cloud (0.733335ms)
+✔ first sign-in automatically imports local progress and enables saving without an activation click (1.463466ms)
+✔ an existing signed-in player activates on their next entry, once across simultaneous reconnects (0.706034ms)
+✔ an unbound existing cloud is recovered automatically and never merged with the local inventory (0.362296ms)
+✔ already enabled local changes use normal revision checks instead of being replaced by automatic restore (0.857963ms)
+✔ a pending initial import becomes enabled on reconnect without another confirmation (0.968219ms)
+✔ a lost initial import response recovers the accepted copy without submitting the inventory twice (0.482798ms)
+✔ changing to a new account creates a separate starter rather than importing another account inventory (0.719444ms)
+✔ a delayed previous-account initialization never restores its copy over the current account (0.545563ms)
+✔ automatic setup waits for account entry and resumes immediately when entry is ready (0.428466ms)
+✔ active games defer automatic recovery; a game started during the read is also preserved (1.110934ms)
+✔ explicit local-file replacement pauses automatic recovery for this entry (0.691412ms)
+✔ an account created elsewhere during initialization is recovered without replacing its cloud (0.414545ms)
+✔ temporary connection failures retry initial activation automatically after fifteen seconds (9.471655ms)
+✔ definitively rejected imports preserve local progress and are not retried in a loop (0.858404ms)
+✔ signing out during initial import never binds or restores the delayed response (0.45796ms)
+✔ hiding the page during initial cloud setup cannot deadlock its lock with an unbound save (1.408963ms)
+✔ a queued save is invalidated before taking its lock when its controller is disposed (0.642909ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 34
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 106.795923

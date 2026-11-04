@@ -17,6 +17,13 @@ test('every static module and installation resource exists and is included in th
 });
 test('current exports, health and test results identify the current web version',()=>{
  a.ok(read('_dev/online/server.cjs').includes("version:'"+version+"'"));a.ok(read('pruebas/index.html').includes("version:'"+version+"'"));
- for(const file of ['_dev/marketing/captures.json','_dev/marketing/exports.json','_dev/marketing/install-assets.json','press/capturas-es.json'])a.equal(json(file).gameVersion,version,file);
+ // Media identify the version that was actually captured, independently of later code fixes.
+ const mediaFiles=['_dev/marketing/captures.json','_dev/marketing/exports.json','_dev/marketing/install-assets.json','press/capturas-es.json'];
+ const captured=json(mediaFiles[0]).gameVersion;
+ for(const file of mediaFiles)a.equal(json(file).gameVersion,captured,file);
+ const numbers=v=>v.replace(/^v/,'').split('.').map(Number),current=numbers(version),previous=numbers(captured);
+ a.equal(previous.length,current.length);a.ok(previous.every(Number.isSafeInteger));
+ let comparison=0;for(let i=0;i<current.length;i++){if(current[i]!==previous[i]){comparison=current[i]-previous[i];break;}}a.ok(comparison>=0,'Captures cannot identify a future version');
+ a.ok(read('README.md').includes('Capturas actualizadas de **'+captured+'**'));
  for(const [file,prefix] of [['_dev/marketing/install-assets.json',''],['press/capturas-es.json','press/']])for(const entry of json(file).files){const bytes=fs.readFileSync(path.join(root,prefix+entry.file));a.equal(bytes.length,entry.bytes);a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),entry.sha256);}
 });

@@ -1,0 +1,80 @@
+✔ fingerprints ignore export time and version, but retain copies, achievements and ranked progress (1.882508ms)
+✔ a read-only refresh preserves local progress; activation and later saving preserve revisions (8.945041ms)
+✔ another device recovers rather than merges and keeps the replaced local copy for download (1.628084ms)
+✔ two devices cannot silently overwrite each other; stale revisions preserve both copies (2.468491ms)
+✔ lost response is reconciled using the operation receipt; new local progress is not lost or duplicated (1.561073ms)
+✔ changing accounts and replacing a local file never auto-uploads the previous account progress (1.358187ms)
+✔ invalid cloud data and restore during a battle cannot replace local progress (0.647235ms)
+✔ explicit conflict resolution can keep local progress, archives the prior cloud copy and still checks its revision (2.505165ms)
+✔ a direct retry after a lost response reconciles its receipt before sending newly earned progress (1.22738ms)
+✔ a delayed upload cannot reattach cloud saving after an explicit local file replacement or reset (1.429224ms)
+✔ RPC requests pin the token of the captured account instead of using a later SDK session (0.445372ms)
+✔ leader mastery survives cloud upload, a second-device restore and later equipment changes (1.861015ms)
+✔ result verification rejects a failed refresh even when an older cloud copy is cached (0.579994ms)
+✔ submitted migration stays explicit across refreshes and reloads, without replacing local progress (1.183734ms)
+✔ failed migration is not labelled submitted and cannot replace local progress (0.357158ms)
+✔ approved initial migration restores the canonical copy, preserves recovery, and enables cloud saving (0.766506ms)
+✔ a lost approval response can retry without replacing or duplicating the imported cloud (0.841678ms)
+✔ first sign-in automatically imports local progress and enables saving without an activation click (1.944561ms)
+✔ an existing signed-in player activates on their next entry, once across simultaneous reconnects (1.189112ms)
+✔ an unbound existing cloud is recovered automatically and never merged with the local inventory (0.425461ms)
+✔ already enabled local changes use normal revision checks instead of being replaced by automatic restore (1.083924ms)
+✔ a pending initial import becomes enabled on reconnect without another confirmation (0.579193ms)
+✔ a lost initial import response recovers the accepted copy without submitting the inventory twice (0.791242ms)
+✔ changing to a new account creates a separate starter rather than importing another account inventory (0.705644ms)
+✔ a delayed previous-account initialization never restores its copy over the current account (0.560484ms)
+✔ automatic setup waits for account entry and resumes immediately when entry is ready (0.484319ms)
+✔ active games defer automatic recovery; a game started during the read is also preserved (1.065776ms)
+✔ explicit local-file replacement pauses automatic recovery for this entry (0.681327ms)
+✔ an account created elsewhere during initialization is recovered without replacing its cloud (0.501145ms)
+✔ temporary connection failures retry initial activation automatically after fifteen seconds (8.880986ms)
+✔ definitively rejected imports preserve local progress and are not retried in a loop (1.117505ms)
+✔ signing out during initial import never binds or restores the delayed response (0.445291ms)
+✖ hiding the page during initial cloud setup cannot deadlock its lock with an unbound save (1.714273ms)
+✖ a queued save is invalidated before taking its lock when its controller is disposed (2.120776ms)
+ℹ tests 34
+ℹ suites 0
+ℹ pass 32
+ℹ fail 2
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 121.187347
+
+✖ failing tests:
+
+test at tests/cloud-save.test.cjs:118:1
+✖ hiding the page during initial cloud setup cannot deadlock its lock with an unbound save (1.714273ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + 'preparing'
+  - 'synced'
+
+      at TestContext.<anonymous> (/workspace/Hemicycle/tests/cloud-save.test.cjs:122:131)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'preparing',
+    expected: 'synced',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/cloud-save.test.cjs:124:1
+✖ a queued save is invalidated before taking its lock when its controller is disposed (2.120776ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  2 !== 1
+
+      at TestContext.<anonymous> (/workspace/Hemicycle/tests/cloud-save.test.cjs:125:412)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 2,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

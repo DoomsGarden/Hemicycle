@@ -60,8 +60,9 @@ function create(api){
   }else if(response.status==='saved'){remember(a,remote,fp);evaluate(a);}else throw new Error('Invalid save result');changed();
  }
  function save(activate){
+  if(!activate&&(!state().enabled||phase==='preparing'))return Promise.resolve(state());
   if(running)return running;var ticket=epoch;
-  running=lock(function(){return put(!!activate);}).catch(function(e){if(ticket===epoch)fail(e);}).finally(function(){running=null;if(phase==='pending')dirty();});return running;
+  running=lock(function(){if(ticket!==epoch)return;return put(!!activate);}).catch(function(e){if(ticket===epoch)fail(e);}).finally(function(){running=null;if(phase==='pending')dirty();});return running;
  }
  function dirty(){
   if(applying||!state().enabled||['conflict','available','checking','preparing','error'].includes(phase))return;clearTimeout(timer);

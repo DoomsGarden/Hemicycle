@@ -114,3 +114,13 @@ test('definitively rejected imports preserve local progress and are not retried 
 test('signing out during initial import never binds or restores the delayed response',async t=>{
  const s=server();let release,started;const ready=new Promise(r=>started=r),d=automaticDevice(s,'u',payload(),undefined,{initialize:async()=>{started();await new Promise(r=>release=r);s.saves.set('u',{user_id:'u',revision:1,payload:payload()});}});t.after(()=>d.svc.dispose());const before=clone(d.local),first=d.svc.accountChanged();await ready;await d.account(null);release();await first;assert.equal(d.svc.state().phase,'guest');assert.equal(d.svc.state().enabled,false);assert.deepEqual(d.local,before);assert.equal(d.storage.getItem(C.ownerKey),null);
 });
+
+test('hiding the page during initial cloud setup cannot deadlock its lock with an unbound save',async t=>{
+ const s=server();let tail=Promise.resolve(),releaseInit,started;const ready=new Promise(r=>started=r);let d;
+ const lock=fn=>{const next=tail.then(fn);tail=next.catch(()=>{});return next;};
+ d=automaticDevice(s,'u',payload(),undefined,{lock,initialize:async()=>{started();await new Promise(r=>releaseInit=r);s.saves.set('u',{user_id:'u',revision:1,payload:clone(d.local)});}});t.after(()=>d.svc.dispose());
+ const entering=d.svc.accountChanged();await ready;const hiding=d.svc.save();releaseInit();await new Promise(setImmediate);assert.equal(d.svc.state().phase,'synced');await entering;await hiding;assert.equal(s.saves.get('u').revision,1);
+});
+test('a queued save is invalidated before taking its lock when its controller is disposed',async t=>{
+ const s=server();let hold=false,release;const lock=fn=>hold?new Promise((resolve,reject)=>{release=()=>Promise.resolve().then(fn).then(resolve,reject);}):Promise.resolve().then(fn);const d=automaticDevice(s,'u',payload(),undefined,{lock});t.after(()=>d.svc.dispose());await d.svc.accountChanged();d.mutate(p=>p.profile.fs=4000);hold=true;const queued=d.svc.save();d.svc.dispose();release();await queued;assert.equal(s.saves.get('u').revision,1);assert.equal(s.saves.get('u').payload.profile.fs,3456);
+});

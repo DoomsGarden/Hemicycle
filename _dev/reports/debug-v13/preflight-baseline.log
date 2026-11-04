@@ -1,0 +1,29 @@
+✔ ranked preflight replaces stale local balances with confirmed server progression (5.330033ms)
+✔ ranked preflight adopts a newer server receipt and preserves cabinet and theme preferences (1.746813ms)
+✖ ranked preflight does not activate an unlinked cloud account (3.161975ms)
+✔ ranked preflight never adopts an unreadable cached save (2.461345ms)
+✔ ranked preflight refuses a different progress identity without modifying it (1.243214ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 4
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 79.263543
+
+✖ failing tests:
+
+test at ../../tmp/hemicycle-preflight-baseline.test.cjs:13:1
+✖ ranked preflight does not activate an unlinked cloud account (3.161975ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async TestContext.<anonymous> (/tmp/hemicycle-preflight-baseline.test.cjs:13:130)
+      at async Test.run (node:internal/test_runner/test:1389:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: /activa|vincula|recupera|sincroniza/i,
+    operator: 'rejects',
+    diff: 'simple'
+  }
