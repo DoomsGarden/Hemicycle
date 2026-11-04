@@ -5,11 +5,11 @@ function server(){const saves=new Map(),calls=[];let lost=false;return {saves,ca
 if(row.last_operation_id===args.p_operation_id)return {data:{status:'saved',save:clone(row)}};
 if(row.revision!==args.p_expected_revision)return {data:{status:'conflict',save:clone(row)}};
 row={user_id:user,revision:row.revision+1,payload:clone(args.p_payload),updated_at:new Date().toISOString(),last_operation_id:args.p_operation_id};saves.set(user,row);if(lost){lost=false;throw new Error('lost response');}return {data:{status:'saved',save:clone(row)}};}};}
-function device(s,user='u',initial=payload(),sharedStorage,extra={}){let local=clone(initial),active=user,allowed=true,seq=0;const values=sharedStorage||new Map(),storage={getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
-const svc=C.create({storage,account:()=>active?{userId:active,client:{rpc:(n,a)=>s.rpc(active,n,a)}}:null,snapshot:()=>clone(local),validate:p=>B.validate(p,['a','b'].concat(require('../js/legendary-mastery.js').ids)),uuid:()=>String(++seq)+'-'+Math.random(),autoRetry:false,debounce:60000,canRestore:()=>allowed,restore:(p,extra)=>{local=clone(p);for(const [k,v] of Object.entries(extra))if(v===null)storage.removeItem(k);else storage.setItem(k,JSON.stringify(v));},...extra});
-return {svc,values,storage,get local(){return local;},mutate:fn=>fn(local),account:id=>{active=id;svc.accountChanged();},allow:v=>allowed=v};}
+function device(s,user='u',initial=payload(),sharedStorage,extra={}){let local=clone(initial),active=user,allowed=true;const values=sharedStorage||new Map(),storage={getItem:k=>values.get(k)||null,setItem:(k,v)=>values.set(k,v),removeItem:k=>values.delete(k)};
+const svc=C.create({storage,account:()=>active?{userId:active,client:{rpc:(n,a)=>s.rpc(active,n,a)}}:null,snapshot:()=>clone(local),validate:p=>B.validate(p,['a','b'].concat(require('../js/legendary-mastery.js').ids)),uuid:()=>require('node:crypto').randomUUID(),autoRetry:false,debounce:60000,canRestore:()=>allowed,restore:(p,extra)=>{local=clone(p);for(const [k,v] of Object.entries(extra))if(v===null)storage.removeItem(k);else storage.setItem(k,JSON.stringify(v));},...extra});
+return {svc,values,storage,get local(){return local;},get user(){return active;},mutate:fn=>fn(local),account:id=>{active=id;return svc.accountChanged();},allow:v=>allowed=v};}
 test('fingerprints ignore export time and version, but retain copies, achievements and ranked progress',()=>{let a=payload(),b=clone(a);b.exportedAt='later';b.gameVersion='later';assert.equal(C.fingerprint(a),C.fingerprint(b));b.profile.album.push('a');assert.notEqual(C.fingerprint(a),C.fingerprint(b));});
-test('signing in reads only; activation preserves all progress and autosave requires consent',async t=>{const s=server(),d=device(s);t.after(()=>d.svc.dispose());await d.svc.refresh();d.svc.dirty();assert.equal(s.calls.filter(c=>c.name==='hemicycle_put_cloud_save').length,0);await d.svc.activate();assert.equal(d.svc.state().phase,'synced');assert.deepEqual(s.saves.get('u').payload.profile,payload().profile);d.mutate(p=>{p.profile.fs+=20;p.profile.w++;});await d.svc.save();assert.equal(s.saves.get('u').revision,2);assert.equal(s.saves.get('u').payload.profile.elo,5588);assert.equal(s.saves.get('u').payload.profile.fs,3476);});
+test('a read-only refresh preserves local progress; activation and later saving preserve revisions',async t=>{const s=server(),d=device(s);t.after(()=>d.svc.dispose());await d.svc.refresh();d.svc.dirty();assert.equal(s.calls.filter(c=>c.name==='hemicycle_put_cloud_save').length,0);await d.svc.activate();assert.equal(d.svc.state().phase,'synced');assert.deepEqual(s.saves.get('u').payload.profile,payload().profile);d.mutate(p=>{p.profile.fs+=20;p.profile.w++;});await d.svc.save();assert.equal(s.saves.get('u').revision,2);assert.equal(s.saves.get('u').payload.profile.elo,5588);assert.equal(s.saves.get('u').payload.profile.fs,3476);});
 test('another device recovers rather than merges and keeps the replaced local copy for download',async t=>{const s=server(),a=device(s),b=device(s,'u',payload('b'));t.after(()=>{a.svc.dispose();b.svc.dispose();});await a.svc.refresh();await a.svc.activate();b.mutate(p=>p.profile.album=['b']);await b.svc.refresh();assert.equal(b.svc.state().phase,'available');await b.svc.restore(1);assert.deepEqual(b.local.profile.album,['a','a','b']);assert.deepEqual(b.svc.recovery().payload.profile.album,['b']);assert.equal(b.local.identity.id,a.local.identity.id);assert.equal(b.svc.state().enabled,true);await b.svc.restore(1);assert.deepEqual(b.local.profile.album,['a','a','b']);});
 test('two devices cannot silently overwrite each other; stale revisions preserve both copies',async t=>{const s=server(),a=device(s),b=device(s,'u',payload('b'));t.after(()=>{a.svc.dispose();b.svc.dispose();});await a.svc.refresh();await a.svc.activate();await b.svc.refresh();await b.svc.restore(1);a.mutate(p=>p.profile.fs=5000);await a.svc.save();b.mutate(p=>p.profile.fs=6000);await b.svc.save();assert.equal(b.svc.state().phase,'conflict');assert.equal(s.saves.get('u').payload.profile.fs,5000);assert.equal(b.local.profile.fs,6000);await assert.rejects(b.svc.restore(1),/ha cambiado/);assert.equal(b.local.profile.fs,6000);await b.svc.restore(2);assert.equal(b.local.profile.fs,5000);assert.equal(b.svc.recovery().payload.profile.fs,6000);});
 test('lost response is reconciled using the operation receipt; new local progress is not lost or duplicated',async t=>{const s=server(),d=device(s);t.after(()=>d.svc.dispose());await d.svc.refresh();await d.svc.activate();d.mutate(p=>p.profile.fs=4000);s.lose();await d.svc.save();assert.equal(d.svc.state().phase,'error');assert.equal(s.saves.get('u').revision,2);d.mutate(p=>p.profile.fs=4500);await d.svc.reconnect();assert.equal(s.saves.get('u').revision,3);assert.equal(s.saves.get('u').payload.profile.fs,4500);assert.equal(d.svc.state().phase,'synced');});
@@ -48,4 +48,69 @@ test('approved initial migration restores the canonical copy, preserves recovery
 test('a lost approval response can retry without replacing or duplicating the imported cloud',async t=>{
  const s=server();let d,calls=0;d=device(s,'u',payload(),undefined,{initialize:async()=>{calls++;if(!s.saves.has('u'))s.saves.set('u',{user_id:'u',revision:1,payload:clone(d.local),updated_at:new Date().toISOString()});if(calls===1)throw Error('lost approval response');return {status:'approved',alreadyApproved:true};}});t.after(()=>d.svc.dispose());const before=clone(d.local);
  await d.svc.refresh();await assert.rejects(d.svc.activate(),/lost approval/);assert.deepEqual(d.local,before);assert.deepEqual(d.svc.recovery().payload,before);await d.svc.activate();assert.equal(d.svc.state().phase,'synced');assert.equal(s.saves.get('u').revision,1);assert.deepEqual(d.local,before);
+});
+
+function automaticDevice(s,user='u',initial=payload(),sharedStorage,extra={}){
+ let d,initializations=[];
+ d=device(s,user,initial,sharedStorage,{initialize:async options=>{
+  const actor=d.user,local=clone(d.local);initializations.push({actor,options});
+  if(s.saves.has(actor))throw Object.assign(Error('Cloud already exists'),{code:'CLOUD_RESTORE_REQUIRED'});
+  const canonical=options&&options.fresh?payload('c'):local;if(options&&options.fresh)canonical.identity.id=options.identityId;
+  s.saves.set(actor,{user_id:actor,revision:1,payload:canonical,updated_at:new Date().toISOString()});
+  return {status:'approved'};
+ },...extra});d.initializations=initializations;return d;
+}
+test('first sign-in automatically imports local progress and enables saving without an activation click',async t=>{
+ const s=server(),d=automaticDevice(s);t.after(()=>d.svc.dispose());const before=clone(d.local);
+ await d.svc.accountChanged();assert.equal(d.svc.state().enabled,true);assert.equal(d.svc.state().phase,'synced');assert.deepEqual(d.local,before);assert.deepEqual(d.svc.recovery().payload,before);assert.equal(d.initializations.length,1);
+});
+test('an existing signed-in player activates on their next entry, once across simultaneous reconnects',async t=>{
+ const s=server(),d=automaticDevice(s);t.after(()=>d.svc.dispose());d.mutate(p=>{p.profile.fs=876543;p.profile.album.push('b');});const before=clone(d.local);
+ await Promise.all(Array.from({length:8},()=>d.svc.reconnect()));assert.equal(d.initializations.length,1);assert.equal(s.saves.get('u').revision,1);assert.deepEqual(s.saves.get('u').payload,before);
+ const reloaded=automaticDevice(s,'u',before,d.values);t.after(()=>reloaded.svc.dispose());await reloaded.svc.accountChanged();assert.equal(reloaded.initializations.length,0);assert.equal(reloaded.svc.state().enabled,true);assert.equal(s.saves.get('u').revision,1);
+});
+test('an unbound existing cloud is recovered automatically and never merged with the local inventory',async t=>{
+ const s=server(),remote=payload('b');remote.profile.fs=900;s.saves.set('u',{user_id:'u',revision:7,payload:remote});const d=automaticDevice(s);t.after(()=>d.svc.dispose());const original=clone(d.local);
+ await d.svc.accountChanged();assert.deepEqual(d.local,remote);assert.deepEqual(d.svc.recovery().payload,original);assert.equal(d.initializations.length,0);assert.equal(s.saves.get('u').revision,7);
+});
+test('already enabled local changes use normal revision checks instead of being replaced by automatic restore',async t=>{
+ const s=server(),d=automaticDevice(s);t.after(()=>d.svc.dispose());await d.svc.accountChanged();d.mutate(p=>p.profile.fs=4000);await d.svc.reconnect();assert.equal(s.saves.get('u').payload.profile.fs,4000);assert.equal(d.local.profile.fs,4000);assert.equal(d.initializations.length,1);
+ s.saves.get('u').revision++;s.saves.get('u').payload.profile.fs=5000;d.mutate(p=>p.profile.fs=6000);await d.svc.reconnect();assert.equal(d.svc.state().phase,'conflict');assert.equal(d.local.profile.fs,6000);assert.equal(s.saves.get('u').payload.profile.fs,5000);
+});
+test('a pending initial import becomes enabled on reconnect without another confirmation',async t=>{
+ const s=server();let d,approved=false,calls=0;d=automaticDevice(s,'u',payload(),undefined,{initialize:async()=>{calls++;if(!approved)throw Object.assign(Error('Pending'),{code:'LEGACY_IMPORT_PENDING'});s.saves.set('u',{user_id:'u',revision:1,payload:clone(d.local)});}});t.after(()=>d.svc.dispose());const before=clone(d.local);
+ await d.svc.accountChanged();assert.equal(d.svc.state().phase,'migration');assert.deepEqual(d.local,before);approved=true;await d.svc.reconnect();assert.equal(d.svc.state().enabled,true);assert.equal(calls,2);assert.equal(s.saves.get('u').revision,1);assert.deepEqual(d.local,before);
+});
+test('a lost initial import response recovers the accepted copy without submitting the inventory twice',async t=>{
+ const s=server();let d,calls=0;d=automaticDevice(s,'u',payload(),undefined,{initialize:async()=>{calls++;s.saves.set('u',{user_id:'u',revision:1,payload:clone(d.local)});throw Error('lost reply');}});t.after(()=>d.svc.dispose());const before=clone(d.local);
+ await d.svc.accountChanged();assert.equal(d.svc.state().phase,'error');assert.equal(d.svc.state().enabled,false);assert.deepEqual(d.local,before);await d.svc.reconnect();assert.equal(calls,1);assert.equal(d.svc.state().enabled,true);assert.equal(s.saves.get('u').revision,1);assert.deepEqual(d.svc.recovery().payload,before);
+});
+test('changing to a new account creates a separate starter rather than importing another account inventory',async t=>{
+ const s=server(),d=automaticDevice(s);t.after(()=>d.svc.dispose());await d.svc.accountChanged();const original=clone(d.local);await d.account('other');const second=d.initializations.at(-1);assert.equal(second.actor,'other');assert.equal(second.options.fresh,true);assert.notEqual(d.local.identity.id,original.identity.id);assert.deepEqual(s.saves.get('u').payload,original);assert.equal(s.saves.get('other').payload.identity.id,second.options.identityId);assert.equal(d.svc.state().enabled,true);
+});
+test('a delayed previous-account initialization never restores its copy over the current account',async t=>{
+ const s=server(),other=payload('b');s.saves.set('other',{user_id:'other',revision:4,payload:other});let release,started;const ready=new Promise(r=>started=r);const d=automaticDevice(s,'u',payload(),undefined,{initialize:async()=>{started();await new Promise(r=>release=r);s.saves.set('u',{user_id:'u',revision:1,payload:payload()});}});t.after(()=>d.svc.dispose());
+ const first=d.svc.accountChanged();await ready;await d.account('other');release();await first;assert.deepEqual(d.local,other);assert.equal(d.svc.state().phase,'synced');assert.equal(d.svc.state().enabled,true);
+});
+test('automatic setup waits for account entry and resumes immediately when entry is ready',async t=>{
+ const s=server();let ready=false;const d=automaticDevice(s,'u',payload(),undefined,{canAutoStart:()=>ready});t.after(()=>d.svc.dispose());await d.svc.accountChanged();assert.equal(d.initializations.length,0);assert.equal(s.calls.length,0);ready=true;await d.svc.reconnect();assert.equal(d.svc.state().enabled,true);assert.equal(d.initializations.length,1);
+});
+test('active games defer automatic recovery; a game started during the read is also preserved',async t=>{
+ const s=server();s.saves.set('u',{user_id:'u',revision:1,payload:payload('b')});const d=automaticDevice(s);t.after(()=>d.svc.dispose());const original=clone(d.local);d.allow(false);await d.svc.accountChanged();assert.deepEqual(d.local,original);assert.equal(d.svc.state().phase,'available');
+ d.allow(true);const rpc=s.rpc.bind(s);let gets=0;s.rpc=async(...args)=>{if(args[1]==='hemicycle_get_cloud_save'&&++gets===2)d.allow(false);return rpc(...args);};await d.svc.reconnect();assert.deepEqual(d.local,original);assert.equal(d.svc.state().phase,'available');d.allow(true);s.rpc=rpc;await d.svc.reconnect();assert.equal(d.svc.state().enabled,true);assert.equal(d.local.identity.id,payload('b').identity.id);
+});
+test('explicit local-file replacement pauses automatic recovery for this entry',async t=>{
+ const s=server(),d=automaticDevice(s);t.after(()=>d.svc.dispose());await d.svc.accountChanged();d.svc.localReplaced();d.mutate(p=>p.profile.fs=17);await d.svc.reconnect();assert.equal(d.local.profile.fs,17);assert.equal(d.svc.state().enabled,false);assert.equal(s.saves.get('u').payload.profile.fs,3456);
+});
+test('an account created elsewhere during initialization is recovered without replacing its cloud',async t=>{
+ const s=server(),remote=payload('b');const d=automaticDevice(s,'u',payload(),undefined,{initialize:async()=>{s.saves.set('u',{user_id:'u',revision:2,payload:remote});throw Object.assign(Error('Exists'),{code:'CLOUD_RESTORE_REQUIRED'});}});t.after(()=>d.svc.dispose());await d.svc.accountChanged();assert.deepEqual(d.local,remote);assert.equal(s.saves.get('u').revision,2);assert.equal(d.svc.state().enabled,true);
+});
+test('temporary connection failures retry initial activation automatically after fifteen seconds',async t=>{
+ t.mock.timers.enable({apis:['setTimeout']});const s=server(),rpc=s.rpc.bind(s);let offline=true;s.rpc=async(...args)=>{if(offline)throw Error('offline');return rpc(...args);};const d=automaticDevice(s,'u',payload(),undefined,{autoRetry:true});t.after(()=>d.svc.dispose());await d.svc.accountChanged();assert.equal(d.svc.state().phase,'error');offline=false;t.mock.timers.tick(15000);await new Promise(setImmediate);assert.equal(d.svc.state().phase,'synced');assert.equal(d.svc.state().enabled,true);assert.equal(d.initializations.length,1);
+});
+test('definitively rejected imports preserve local progress and are not retried in a loop',async t=>{
+ t.mock.timers.enable({apis:['setTimeout']});const s=server();let calls=0;const d=automaticDevice(s,'u',payload(),undefined,{autoRetry:true,initialize:async()=>{calls++;throw Object.assign(Error('Invalid initial copy'),{code:'IMPORT_INVALID',definitive:true});}});t.after(()=>d.svc.dispose());const before=clone(d.local);await d.svc.accountChanged();t.mock.timers.tick(15000);await new Promise(setImmediate);assert.equal(calls,1);assert.equal(d.svc.state().phase,'error');assert.deepEqual(d.local,before);assert.equal(s.saves.size,0);
+});
+test('signing out during initial import never binds or restores the delayed response',async t=>{
+ const s=server();let release,started;const ready=new Promise(r=>started=r),d=automaticDevice(s,'u',payload(),undefined,{initialize:async()=>{started();await new Promise(r=>release=r);s.saves.set('u',{user_id:'u',revision:1,payload:payload()});}});t.after(()=>d.svc.dispose());const before=clone(d.local),first=d.svc.accountChanged();await ready;await d.account(null);release();await first;assert.equal(d.svc.state().phase,'guest');assert.equal(d.svc.state().enabled,false);assert.deepEqual(d.local,before);assert.equal(d.storage.getItem(C.ownerKey),null);
 });

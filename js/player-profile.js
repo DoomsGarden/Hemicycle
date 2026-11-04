@@ -124,7 +124,7 @@ function create(api){
    }else if(mode==='update'){
     if(!session||!recovering||!recoveryValid)throw Error('Recovery session expired');
     result=await client.auth.updateUser({password:password});if(result.error)throw result.error;
-    clearRecovery();emailMode=false;message='Contraseña actualizada. Ya puedes acceder con tu nueva contraseña.';if(resolveEntry)completeEntry();
+    clearRecovery();if(api.accountChanged)api.accountChanged();emailMode=false;message='Contraseña actualizada. Ya puedes acceder con tu nueva contraseña.';if(resolveEntry)completeEntry();
    }else{
     result=await client.auth.signInWithPassword({email:email,password:password});if(result.error)throw result.error;receive(result.data.session);
    }
@@ -181,7 +181,7 @@ function create(api){
  }
  document.addEventListener('hemicycle:legal-accepted',initAccount);
  initAccount();
- return {enter:enter,open:function(){open(false);},openGuide:function(){open(false,true);},close:close,isOpen:function(){return opened;},account:function(){return canUseAccount()&&session?{userId:session.user.id,client:client,accessToken:session.access_token}:null;},refresh:function(){if(opened&&!gate&&!readOnly&&!editing)render();}};
+ return {enter:enter,open:function(){open(false);},openGuide:function(){open(false,true);},close:close,isOpen:function(){return opened;},canSync:function(){return canUseAccount()&&!!session&&!recovering;},account:function(){return canUseAccount()&&session?{userId:session.user.id,client:client,accessToken:session.access_token}:null;},refresh:function(){if(opened&&!gate&&!readOnly&&!editing)render();}};
 }
 root.HemicyclePlayerProfile={create:create};
 })(typeof globalThis!=='undefined'?globalThis:this);

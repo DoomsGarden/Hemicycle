@@ -115,7 +115,7 @@ En **Mercado** puedes vender repetidos conservando una copia. Las compras e inte
 ## Guardado y cuenta
 
 - **Invitado:** el progreso se conserva en este navegador y dispositivo. Borrar sus datos puede eliminar esa copia.
-- **Cuenta y Nube:** usa siempre tu misma cuenta. Al activar el guardado, el progreso local válido puede importarse automáticamente una primera vez si la cuenta aún no tiene una nube. Las copias existentes se recuperan y los inventarios no se suman. Al cambiar de dispositivo, comprueba o recupera su copia antes de continuar.
+- **Cuenta y Nube:** al entrar con correo y contraseña o con Google, el guardado se prepara automáticamente. También se activa en la próxima entrada de las cuentas actuales que aún no lo habían hecho. Si la cuenta no tiene nube, se importa una única vez su progreso local válido; si ya tiene una copia, se recupera y se conserva antes un respaldo local. Los inventarios no se suman. Usa siempre tu misma cuenta.
 - **Copia de seguridad:** desde Ayuda puedes exportar e importar tu guardado. Conserva una copia antes de cambiar de navegador o de origen.
 - **Sin conexión:** prepara los recursos desde **Opciones → Preparar recursos sin conexión**. El invitado dispone del juego local; las partidas descargadas de una cuenta vinculada conservan sus premios pendientes hasta validarlos al reconectar.
 
@@ -126,7 +126,7 @@ Las funciones de cuenta están disponibles desde los **14 años**. Los jugadores
 <details>
 <summary><strong>¿Vienes de la antigua dirección de GitHub Pages?</strong></summary>
 
-El guardado local de GitHub Pages y el de `hemicycle.online` pertenecen a orígenes diferentes: no se trasladan automáticamente. Conserva una copia del guardado antiguo y comprueba la nube de tu cuenta habitual al entrar en el dominio nuevo. Si tenías una importación pendiente, entra en **Nube → Comprobar** y recupera la copia cuando esté disponible.
+El guardado local de GitHub Pages y el de `hemicycle.online` pertenecen a orígenes diferentes: no se trasladan automáticamente. Conserva una copia del guardado antiguo y comprueba la nube de tu cuenta habitual al entrar en el dominio nuevo. Las importaciones pendientes se comprueban automáticamente al entrar y al reconectar. Desde **Nube** puedes consultar el estado, descargar tu copia local o reintentar.
 
 </details>
 

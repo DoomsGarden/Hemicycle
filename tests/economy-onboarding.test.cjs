@@ -40,3 +40,7 @@ test('automatic import succeeds without a manual pending state or a replacement 
 test('an unknown import response never claims that migration is complete',async()=>{
  const c=client(async()=>({ok:true,json:async()=>({})}),{w:1,l:0,album:['one'],fs:1530,elo:0});await assert.rejects(c.initialize(),/confirmar la migración/);
 });
+test('switching accounts initializes a separate starter without sending the previous account inventory',async()=>{
+ const requests=[],p={w:50,l:4,album:['private-card'],fs:876543,elo:4500},c=client(async(url,options)=>{requests.push({url,body:JSON.parse(options.body)});return {ok:true,json:async()=>({initialized:true})};},p);
+ await c.initialize({fresh:true,identityId:'HC-11111111-1111-4111-8111-111111111111'});assert.deepEqual(requests,[{url:'http://local/economy/initialize',body:{identityId:'HC-11111111-1111-4111-8111-111111111111'}}]);
+});

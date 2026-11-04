@@ -1,18 +1,21 @@
-/* Respaldo cloud del prelanzamiento: revisiones, consentimiento y reintentos idempotentes. */
+/* Guardado de cuenta automático: revisiones, recuperación y reintentos idempotentes. */
 (function(root,factory){var api=factory();if(typeof module==='object'&&module.exports)module.exports=api;else root.HemicycleCloudSave=api;})(typeof globalThis!=='undefined'?globalThis:this,function(){
 'use strict';
 var OWNER='hemiciclo_cloud_local_owner_v1',RECOVERY='hemiciclo_cloud_recovery_v1',REMOTE_RECOVERY='hemiciclo_cloud_remote_recovery_v1';
 function canonical(value){if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(function(k){return JSON.stringify(k)+':'+canonical(value[k]);}).join(',')+'}';return JSON.stringify(value);}
 function fingerprint(value){var data=JSON.parse(JSON.stringify(value));delete data.exportedAt;delete data.gameVersion;return canonical(data);}
 function create(api){
- var epoch=0,remote=null,phase='guest',error='',timer=null,running=null,applying=false;
+ var epoch=0,remote=null,phase='guest',error='',timer=null,running=null,applying=false,automatic=null,activation=null,autoPaused=false;
  var bindKey=function(id){return 'hemiciclo_cloud_binding_v1:'+id;},pendingKey=function(id){return 'hemiciclo_cloud_pending_v1:'+id;},importKey=function(id){return 'hemiciclo_cloud_import_v1:'+id;};
  function account(){var a=api.account();return a&&a.userId?a:null;}
  function read(k){try{return JSON.parse(api.storage.getItem(k));}catch(ignore){return null;}}
  function write(k,v){if(v===null)api.storage.removeItem(k);else api.storage.setItem(k,JSON.stringify(v));}
  function changed(){if(api.changed)api.changed(state());}
- function state(){var a=account(),binding=a&&read(bindKey(a.userId)),owner=read(OWNER);return {phase:phase,error:error,remote:remote,connected:!!a,enabled:!!(a&&binding&&owner&&owner.userId===a.userId&&owner.identityId===api.snapshot().identity.id),binding:binding};}
- function fail(e){error=e&&['PGRST202','42P01','42883'].includes(e.code)?'Falta activar el guardado en Supabase. Puedes seguir jugando en este dispositivo.':e&&['P0001','22023'].includes(e.code)?e.message:'No se ha podido guardar en la nube. Tu progreso sigue en este dispositivo.';phase='error';changed();if(state().enabled&&api.autoRetry!==false){clearTimeout(timer);timer=setTimeout(reconnect,15000);}}
+ function state(){var a=account(),binding=a&&read(bindKey(a.userId)),owner=read(OWNER);return {phase:phase,error:error,remote:remote,connected:!!a,automatic:api.autoActivate!==false&&!autoPaused,enabled:!!(a&&binding&&owner&&owner.userId===a.userId&&owner.identityId===api.snapshot().identity.id),binding:binding};}
+ function current(a,ticket){return ticket===epoch&&account()&&account().userId===a.userId;}
+ function retry(){if(api.autoRetry===false||!account()||autoPaused)return;clearTimeout(timer);var ticket=epoch;timer=setTimeout(function(){if(ticket===epoch)reconnect();},15000);}
+ function fail(e){error=e&&['PGRST202','42P01','42883'].includes(e.code)?'Falta activar el guardado en Supabase. Puedes seguir jugando en este dispositivo.':e&&e.code&&e.message?e.message:'No se ha podido guardar en la nube. Tu progreso sigue en este dispositivo.';phase='error';changed();if((state().enabled||api.autoActivate!==false)&&(!e||!e.definitive)&&!['IMPORT_INVALID','IMPORT_REJECTED','IMPORT_ALREADY_LINKED','IMPORT_CONSUMED'].includes(e&&e.code))retry();}
+ function mayRestore(){return !api.canRestore||api.canRestore();}
  async function rpc(a,name,args){var request=a.client.rpc(name,args);if(a.accessToken&&typeof request.setHeader==='function')request=request.setHeader('Authorization','Bearer '+a.accessToken);var r=await request;if(r.error)throw r.error;return r.data;}
  function validateRemote(value,a){if(!value||value.user_id!==a.userId||!Number.isSafeInteger(value.revision)||value.revision<0)throw new Error('Invalid cloud response');if(value.revision>0){value.payload=api.validate(value.payload);if(!value.payload)throw new Error('Invalid backup');}return value;}
  function remember(a,save,fp){write(bindKey(a.userId),{revision:save.revision,fingerprint:fp,identityId:save.payload.identity.id});write(OWNER,{userId:a.userId,identityId:save.payload.identity.id});write(pendingKey(a.userId),null);write(importKey(a.userId),null);}
@@ -61,15 +64,16 @@ function create(api){
   running=lock(function(){return put(!!activate);}).catch(function(e){if(ticket===epoch)fail(e);}).finally(function(){running=null;if(phase==='pending')dirty();});return running;
  }
  function dirty(){
-  if(applying||!state().enabled||['conflict','available','checking','error'].includes(phase))return;clearTimeout(timer);
+  if(applying||!state().enabled||['conflict','available','checking','preparing','error'].includes(phase))return;clearTimeout(timer);
   phase='pending';changed();timer=setTimeout(function(){save(false);},api.debounce==null?1800:api.debounce);
  }
  async function restore(expectedRevision){
-  if(api.canRestore&&!api.canRestore())throw new Error('Termina el debate o la guía antes de recuperar una copia.');
+  if(!mayRestore())throw Object.assign(Error('Termina el debate o la guía antes de recuperar una copia.'),{code:'CLOUD_DEFERRED'});
   var a=account(),ticket=epoch;if(!a)throw new Error('Debes iniciar sesión.');
   var value=validateRemote(await rpc(a,'hemicycle_get_cloud_save'),a);
   if(ticket!==epoch||!account()||account().userId!==a.userId)throw new Error('La cuenta ha cambiado.');
   if(!value.revision||value.revision!==expectedRevision)throw new Error('La copia ha cambiado. Vuelve a revisarla antes de recuperar.');
+  if(!mayRestore())throw Object.assign(Error('La copia se recuperará al terminar el debate o la guía.'),{code:'CLOUD_DEFERRED'});
   var payload=api.validate(value.payload),values={};values[RECOVERY+':'+a.userId]={savedAt:new Date().toISOString(),payload:api.snapshot()};values[bindKey(a.userId)]={revision:value.revision,fingerprint:fingerprint(payload),identityId:payload.identity.id};values[OWNER]={userId:a.userId,identityId:payload.identity.id};values[pendingKey(a.userId)]=null;
   clearTimeout(timer);applying=true;try{api.restore(payload,values);}finally{applying=false;}remote=value;error='';phase='synced';evaluate(a);changed();if(phase==='pending')dirty();
  }
@@ -89,10 +93,52 @@ function create(api){
   write(bindKey(a.userId),{revision:value.revision,fingerprint:fingerprint(value.payload),identityId:value.payload.identity.id});
   write(pendingKey(a.userId),null);remote=value;phase='pending';return save(false);
  }
- function localReplaced(){epoch++;clearTimeout(timer);var a=account();if(a){write(bindKey(a.userId),null);write(pendingKey(a.userId),null);}write(OWNER,null);phase=remote&&remote.revision?'available':account()?'empty':'guest';changed();}
- function accountChanged(){epoch++;clearTimeout(timer);remote=null;phase=account()?'checking':'guest';error='';if(account()){refresh().then(function(){if(phase==='pending')dirty();});}else{changed();}}
- async function reconnect(){if(!account())return;await refresh();if(phase==='pending')return save(false);}
- return {state:state,refresh:refresh,adopt:adopt,save:function(){return save(false);},activate:api.initialize?async function(){var a=account(),ticket=epoch;if(!a)throw Error('Inicia sesión.');var identityId=api.snapshot().identity.id;write(RECOVERY+':'+a.userId,{savedAt:new Date().toISOString(),payload:api.snapshot()});try{await api.initialize();}catch(e){if(ticket!==epoch||account()?.userId!==a.userId)throw Error('La cuenta ha cambiado.');if(e.code!=='LEGACY_IMPORT_PENDING')throw e;write(importKey(a.userId),{identityId:identityId,submittedAt:new Date().toISOString()});error='';phase='migration';changed();return;}if(ticket!==epoch||account()?.userId!==a.userId)throw Error('La cuenta ha cambiado.');await refresh();if(phase==='error')throw Error(error);if(remote&&remote.revision)await restore(remote.revision);}:function(){return save(true);},restore:restore,useLocal:useLocal,localReplaced:localReplaced,dirty:dirty,accountChanged:accountChanged,reconnect:reconnect,recovery:function(){var a=account();return a?read(RECOVERY+':'+a.userId):null;},remoteRecovery:function(){var a=account();return a?read(REMOTE_RECOVERY+':'+a.userId):null;},dispose:function(){epoch++;clearTimeout(timer);}};
+ function localReplaced(){epoch++;autoPaused=true;automatic=null;activation=null;clearTimeout(timer);var a=account();if(a){write(bindKey(a.userId),null);write(pendingKey(a.userId),null);}write(OWNER,null);phase=remote&&remote.revision?'available':account()?'empty':'guest';changed();}
+ function activate(){
+  var a=account(),ticket=epoch;if(!a)return Promise.reject(Error('Inicia sesión.'));
+  if(activation&&activation.ticket===ticket)return activation.promise;
+  var task={ticket:ticket};activation=task;
+  task.promise=lock(async function(){
+   if(!current(a,ticket))throw Error('La cuenta ha cambiado.');
+   if(!mayRestore())throw Object.assign(Error('La nube se preparará al terminar el debate o la guía.'),{code:'CLOUD_DEFERRED'});
+   var local=api.snapshot(),identityId=local.identity.id,owner=read(OWNER),options;
+   if(owner&&owner.userId!==a.userId){
+    if(!api.initialize)throw Error('Este progreso pertenece a otra cuenta. Recupera su copia antes de continuar.');
+    var freshKey='hemiciclo_cloud_fresh_identity_v1:'+a.userId,fresh=read(freshKey);
+    if(!fresh){fresh={identityId:'HC-'+api.uuid()};write(freshKey,fresh);}options={fresh:true,identityId:fresh.identityId};
+   }
+   write(RECOVERY+':'+a.userId,{savedAt:new Date().toISOString(),payload:local});phase='preparing';error='';changed();
+   if(!api.initialize){await put(true);return;}
+   try{await api.initialize(options);}catch(e){
+    if(!current(a,ticket))throw Error('La cuenta ha cambiado.');
+    if(e.code==='LEGACY_IMPORT_PENDING'){write(importKey(a.userId),{identityId:identityId,submittedAt:new Date().toISOString()});error='';phase='migration';changed();retry();return;}
+    if(e.code!=='CLOUD_RESTORE_REQUIRED')throw e;
+   }
+   if(!current(a,ticket))throw Error('La cuenta ha cambiado.');
+   await refresh();if(!current(a,ticket))throw Error('La cuenta ha cambiado.');if(phase==='error')throw Error(error);
+   if(remote&&remote.revision)await restore(remote.revision);else throw Error('No se ha podido confirmar el guardado de la cuenta.');
+  }).finally(function(){if(activation===task)activation=null;});return task.promise;
+ }
+ function reconnect(){
+  var a=account(),ticket=epoch;if(!a)return Promise.resolve(state());
+  if(api.autoActivate!==false&&!autoPaused&&api.canAutoStart&&!api.canAutoStart()){retry();return Promise.resolve(state());}
+  if(automatic&&automatic.ticket===ticket)return automatic.promise;
+  var task={ticket:ticket};automatic=task;
+  task.promise=Promise.resolve().then(async function(){
+   if(!current(a,ticket))return state();
+   if(api.autoActivate!==false&&!autoPaused&&api.canAutoStart&&!api.canAutoStart()){retry();return state();}
+   await refresh();if(!current(a,ticket)||phase==='error')return state();
+   if(api.autoActivate!==false&&!autoPaused){
+    if(['empty','migration','available'].includes(phase)){
+     if(!mayRestore()){retry();return state();}
+     if(phase==='available')await restore(remote.revision);else await activate();
+    }
+   }
+   if(current(a,ticket)&&phase==='pending')await save(false);return state();
+  }).catch(function(e){if(current(a,ticket)){if(e.code==='CLOUD_DEFERRED'){phase=remote&&remote.revision?'available':'empty';changed();retry();}else fail(e);}return state();}).finally(function(){if(automatic===task)automatic=null;});return task.promise;
+ }
+ function accountChanged(){epoch++;automatic=null;activation=null;autoPaused=false;clearTimeout(timer);remote=null;phase=account()?'checking':'guest';error='';changed();return account()?reconnect():Promise.resolve(state());}
+ return {state:state,refresh:refresh,adopt:adopt,save:function(){return save(false);},activate:activate,restore:restore,useLocal:useLocal,localReplaced:localReplaced,dirty:dirty,accountChanged:accountChanged,reconnect:reconnect,recovery:function(){var a=account();return a?read(RECOVERY+':'+a.userId):null;},remoteRecovery:function(){var a=account();return a?read(REMOTE_RECOVERY+':'+a.userId):null;},dispose:function(){epoch++;automatic=null;activation=null;clearTimeout(timer);}};
 }
 return {create:create,fingerprint:fingerprint,ownerKey:OWNER,recoveryKey:RECOVERY};
 });

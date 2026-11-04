@@ -27,7 +27,7 @@ Los retornos OAuth se configuran en Supabase para el dominio del juego. La venta
 
 ## Progreso, economía y combate
 
-- La primera importación local válida puede aprobarse automáticamente mediante `automatic-local-v1` si la cuenta aún no tiene nube. Una nube existente se recupera; no se fusionan inventarios. [Política y activación](../admin/README.md).
+- El cliente prepara automáticamente la nube al entrar con correo o Google, incluidas las cuentas existentes sin activar. La primera importación local válida puede aprobarse automáticamente mediante `automatic-local-v1` si la cuenta aún no tiene nube. Una nube existente se recupera; no se fusionan inventarios. [Política y activación](../admin/README.md).
 - Compras, intercambios, premios y partidas vinculadas se validan en el servidor. La presentación del navegador no concede recursos ni decide el resultado autoritativo.
 - Normal/Clasificatoria usan 90 segundos y Rápida, 60. Las animaciones conservan el plazo real.
 - Las partidas descargadas conservan su motor histórico y sus recibos pendientes. Los motores anteriores no se sustituyen al actualizar la interfaz.
