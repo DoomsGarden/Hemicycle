@@ -1,0 +1,979 @@
+{
+  "status": "proposal-only",
+  "date": "2026-11-04",
+  "period": {
+    "from": "1986-11-04",
+    "to": "2026-11-04",
+    "criterion": "Actividad parlamentaria dentro del intervalo; el retrato representa la etapa indicada, no necesariamente el cargo más conocido."
+  },
+  "activeCatalog": {
+    "total": 120,
+    "spain": 97,
+    "rarities": {
+      "comun": 48,
+      "raro": 36,
+      "especial": 24,
+      "legendario": 12
+    }
+  },
+  "targetNew": {
+    "comun": 8,
+    "raro": 6,
+    "especial": 4,
+    "legendario": 2
+  },
+  "projectedTotal": 140,
+  "artBrief": {
+    "userReference": "A professional TCG trading card game character art portrait of Argentine politician Cristina Fernández de Kirchner, semi-realistic digital illustration, dynamic studio lighting, sharp focus, dramatic charismatic stage orator expression, solid Argentine sky blue and white accent background with subtle media broadcast spotlight atmosphere, perfectly framed from the chest up leaving empty negative space at the top and bottom corners for UI overlays, high quality digital painting style, 8k resolution --ar 3:4",
+    "adaptation": "Rasgos y etapa de la ficha oficial, retrato de pecho hacia arriba, luces de oratoria y espacio para UI. Fondos propios del grupo político o institución de la época, sin fondo nacional genérico de España.",
+    "variants": [
+      "frontal",
+      "tres cuartos izquierda",
+      "tres cuartos derecha",
+      "intervención con gesto",
+      "atril con uno o dos micrófonos"
+    ],
+    "identityRule": "Las poses son variantes del mismo ID de persona; no generan nuevos cromos ni nuevas rarezas.",
+    "backgroundRevision": "Corrección solicitada por el usuario: partidos y cámaras, conservando caras, poses y micrófonos."
+  },
+  "cards": [
+    {
+      "index": 1,
+      "id": "adolfo-suarez",
+      "name": "Adolfo Suárez",
+      "canonicalName": "Suárez González, Adolfo",
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "doctrine": "verborrea",
+      "ability": "escort",
+      "abilityName": "Yo respondo",
+      "depictedPeriod": "1989–1991",
+      "referenceLegislature": 4,
+      "referenceStart": "14/11/1989",
+      "referenceEnd": "29/10/1991",
+      "tierReason": "Liderazgo del CDS en el Congreso; figura de alcance estatal e histórico.",
+      "features": "Pelo castaño oscuro peinado hacia atrás, entradas suaves, rostro alargado y mandíbula marcada; sin barba ni gafas.",
+      "pose": "Tres cuartos, mirada lateral, dos micrófonos de atril de época.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=215&idLegislatura=IV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/215_4.jpg",
+        "sha256": "3c186e7f141b014113af65b696afc350c92205dadfa48b65a7325feae8f8e7a4"
+      },
+      "aliases": [
+        "Adolfo Suárez González"
+      ],
+      "affiliation": {
+        "label": "CDS",
+        "referenceGroup": "Centro Democrático y Social",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Verde y blanco, acentos ámbar y entorno de Congreso.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:adolfo suarez gonzalez"
+    },
+    {
+      "index": 2,
+      "id": "manuel-fraga",
+      "name": "Manuel Fraga",
+      "canonicalName": "Fraga Iribarne, Manuel",
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "doctrine": "guardia",
+      "ability": "shield",
+      "abilityName": "Argumentario plastificado",
+      "depictedPeriod": "1986–1987",
+      "referenceLegislature": 3,
+      "referenceStart": "09/07/1986",
+      "referenceEnd": "03/07/1987",
+      "tierReason": "Liderazgo de Alianza Popular en el Congreso y extensa trayectoria institucional.",
+      "features": "Frente amplia, pelo corto oscuro en laterales con entradas pronunciadas, mandíbula ancha; sin barba ni gafas en esta referencia.",
+      "pose": "Frontal firme, mirada ligeramente lateral; sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=206&idLegislatura=III",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/206_3.jpg",
+        "sha256": "b8bef647c518dff5b6926d915b682b787df8e3dd9dfcb2bd473af48b8dfce963"
+      },
+      "aliases": [
+        "Manuel Fraga Iribarne"
+      ],
+      "affiliation": {
+        "label": "AP · Coalición Popular",
+        "referenceGroup": "Alianza Popular / Coalición Popular",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Hemiciclo de época, madera, granate y acentos azul marino/blanco; sin marca posterior del PP.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:manuel fraga iribarne"
+    },
+    {
+      "index": 3,
+      "id": "alfredo-perez-rubalcaba",
+      "name": "Alfredo Pérez Rubalcaba",
+      "canonicalName": "Pérez Rubalcaba, Alfredo",
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "viperina",
+      "ability": "archive",
+      "abilityName": "Hemeroteca insistente",
+      "depictedPeriod": "2008–2011",
+      "referenceLegislature": 9,
+      "referenceStart": "24/03/2008",
+      "referenceEnd": "13/12/2011",
+      "tierReason": "Liderazgo y trayectoria estatal, con gran presencia en el debate parlamentario.",
+      "features": "Coronilla despejada, pelo corto en los laterales, barba y bigote entrecanos recortados; sin gafas.",
+      "pose": "Tres cuartos e inclinación ligera hacia el atril; un micrófono.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=84&idLegislatura=IX",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/84_9.jpg",
+        "sha256": "19d355b47865aae8cb3062faaafcc02a7af38c1be7cd40447bf1e9d6f67b66d8"
+      },
+      "aliases": [],
+      "affiliation": {
+        "label": "PSOE",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo y blanco del PSOE, atmósfera de intervención y detalles abstractos de rosa.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:alfredo perez rubalcaba"
+    },
+    {
+      "index": 4,
+      "id": "francina-armengol",
+      "name": "Francina Armengol",
+      "canonicalName": "Armengol Socias, Francina",
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "aforado",
+      "ability": "lane",
+      "abilityName": "Debate encarrilado",
+      "depictedPeriod": "2023",
+      "referenceLegislature": 15,
+      "referenceStart": "09/08/2023",
+      "referenceEnd": null,
+      "tierReason": "Presidencia del Congreso y trayectoria autonómica; peso institucional.",
+      "features": "Melena ondulada castaña a la altura de los hombros, reflejos claros, rostro ovalado; sin gafas.",
+      "pose": "Tres cuartos, expresión de intervención institucional; un micrófono.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=185&idLegislatura=XV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/185_15.jpg",
+        "sha256": "8a1ff88a69e4cd2cdc6b261602452d8cbb40670558c9a5c79234cd0006125f60"
+      },
+      "aliases": [
+        "Francina Armengol Socias"
+      ],
+      "affiliation": {
+        "label": "Congreso · Presidencia",
+        "referenceGroup": "Grupo Parlamentario Socialista / PSIB-PSOE",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Presidencia del Congreso: madera tallada, cuero rojo y dorados institucionales.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:francina armengol socias"
+    },
+    {
+      "index": 5,
+      "id": "josep-borrell",
+      "name": "Josep Borrell",
+      "canonicalName": "Borrell Fontelles, Josep",
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "viperina",
+      "ability": "microphone",
+      "abilityName": "Micrófono indiscreto",
+      "depictedPeriod": "2000–2004",
+      "referenceLegislature": 7,
+      "referenceStart": "23/03/2000",
+      "referenceEnd": "02/04/2004",
+      "tierReason": "Trayectoria parlamentaria y de liderazgo, con posterior proyección europea.",
+      "features": "Pelo corto gris, cara alargada, gafas rectangulares finas; sin barba.",
+      "pose": "Tres cuartos con gesto abierto bajo y sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=123&idLegislatura=VII",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/123_7.jpg",
+        "sha256": "6c570bc32221ea4320883d1da432272920b2c3d31eda6a84a396e675156a2b68"
+      },
+      "aliases": [
+        "Josep Borrell Fontelles"
+      ],
+      "affiliation": {
+        "label": "PSC · Grupo Socialista",
+        "referenceGroup": "Grupo Parlamentario Socialista / PSC",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo y blanco con arquitectura parlamentaria del Congreso de 2000–2004.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:josep borrell fontelles"
+    },
+    {
+      "index": 6,
+      "id": "margarita-robles",
+      "name": "Margarita Robles",
+      "canonicalName": "Robles Fernández, Margarita",
+      "country": "ES",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "doctrine": "aforado",
+      "ability": "coffee",
+      "abilityName": "Café parlamentario",
+      "depictedPeriod": "2023",
+      "referenceLegislature": 15,
+      "referenceStart": "10/08/2023",
+      "referenceEnd": "01/12/2023",
+      "tierReason": "Presencia institucional estatal y trayectoria parlamentaria.",
+      "features": "Pelo liso castaño oscuro a los hombros, rostro ovalado alargado, cejas marcadas; sin gafas.",
+      "pose": "Tres cuartos, expresión serena y firme; sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=233&idLegislatura=XV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/233_15.jpg",
+        "sha256": "56b60cb2e8fbc3eb4ed466af7ddc1453c41040f3b7c03cfe381a7778cebea962"
+      },
+      "aliases": [
+        "Margarita Robles Fernández"
+      ],
+      "affiliation": {
+        "label": "Grupo Socialista",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Contexto institucional del Congreso con granate y madera; se representa el grupo, no una afiliación personal inventada.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:margarita robles fernandez"
+    },
+    {
+      "index": 7,
+      "id": "jose-bono",
+      "name": "José Bono",
+      "canonicalName": "Bono Martínez, José",
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "aforado",
+      "ability": "acta",
+      "abilityName": "Fuera del acta",
+      "depictedPeriod": "2008–2011",
+      "referenceLegislature": 9,
+      "referenceStart": "26/03/2008",
+      "referenceEnd": "13/12/2011",
+      "tierReason": "Presidencia del Congreso y trayectoria autonómica y ministerial.",
+      "features": "Pelo corto oscuro peinado hacia atrás, nariz prominente, rostro ancho; sin barba ni gafas.",
+      "pose": "Intervención frontal con palma abierta baja y un micrófono.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=212&idLegislatura=IX",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/212_9.jpg",
+        "sha256": "ba74be98cf9416d8013e446ac631bb78af9fbb23dba0c870db3f6e2890e80cd8"
+      },
+      "aliases": [
+        "José Bono Martínez"
+      ],
+      "affiliation": {
+        "label": "Congreso · Presidencia",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Tribuna y presidencia del Congreso de 2008–2011, maderas y terciopelo rojo.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:jose bono martinez"
+    },
+    {
+      "index": 8,
+      "id": "aitor-esteban",
+      "name": "Aitor Esteban",
+      "canonicalName": "Esteban Bravo, Aitor",
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "verborrea",
+      "ability": "bank",
+      "abilityName": "Dietas guardadas",
+      "depictedPeriod": "2019–2023",
+      "referenceLegislature": 14,
+      "referenceStart": "21/11/2019",
+      "referenceEnd": "17/08/2023",
+      "tierReason": "Portavocía parlamentaria del PNV y visibilidad en el debate estatal.",
+      "features": "Pelo corto castaño con canas, cejas pobladas y cara ancha; sin barba ni gafas.",
+      "pose": "Tres cuartos hacia la izquierda, un micrófono de mesa.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=94&idLegislatura=XIV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/94_14.jpg",
+        "sha256": "97bf2eda2c559e13fc2bfed08cde7089c155fa563f375f3f0b3ed38033a9df43"
+      },
+      "aliases": [
+        "Aitor Esteban Bravo"
+      ],
+      "affiliation": {
+        "label": "EAJ-PNV",
+        "referenceGroup": "Grupo Parlamentario Vasco (EAJ-PNV)",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Verde y blanco del PNV, acentos rojos discretos y contexto parlamentario.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:aitor esteban bravo"
+    },
+    {
+      "index": 9,
+      "id": "juanma-moreno",
+      "name": "Juanma Moreno",
+      "canonicalName": "Moreno Bonilla, Juan Manuel",
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "foco",
+      "ability": "surge",
+      "abilityName": "Se viene arriba",
+      "depictedPeriod": "2011–2012",
+      "referenceLegislature": 10,
+      "referenceStart": "01/12/2011",
+      "referenceEnd": "09/01/2012",
+      "tierReason": "Trayectoria parlamentaria y posterior presidencia de la Junta de Andalucía.",
+      "features": "Pelo negro corto, cejas oscuras, mejillas redondeadas y sonrisa marcada; sin barba ni gafas.",
+      "pose": "Tres cuartos a la derecha, sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=221&idLegislatura=X",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/221_10.jpg",
+        "sha256": "64cc3c2f5e2acdf8a848415149531c757d6ab1cd4611d5947f0e21f6efd2ceb2"
+      },
+      "aliases": [
+        "Juan Manuel Moreno Bonilla"
+      ],
+      "affiliation": {
+        "label": "PP",
+        "referenceGroup": "Grupo Parlamentario Popular en el Congreso",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Azul y blanco del PP, escenario político de 2011–2012.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:juan manuel moreno bonilla"
+    },
+    {
+      "index": 10,
+      "id": "pedro-solbes",
+      "name": "Pedro Solbes",
+      "canonicalName": "Solbes Mira, Pedro",
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "guardia",
+      "ability": "fasttrack",
+      "abilityName": "Ventanilla rápida",
+      "depictedPeriod": "2008–2009",
+      "referenceLegislature": 9,
+      "referenceStart": "26/03/2008",
+      "referenceEnd": "14/09/2009",
+      "tierReason": "Vicepresidencia económica y trayectoria ministerial y europea.",
+      "features": "Entradas amplias, pelo gris fino, barba y bigote grises cortos, gafas metálicas finas.",
+      "pose": "Casi frontal, mirada lateral reflexiva; sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=79&idLegislatura=IX",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/79_9.jpg",
+        "sha256": "8a1ed11f579fcc50d651d80d67a418e886409484613c0930b41f1c4169c46f58"
+      },
+      "aliases": [
+        "Pedro Solbes Mira"
+      ],
+      "affiliation": {
+        "label": "Grupo Socialista",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Escenario institucional económico y parlamentario, rojo/blanco sobrio y madera.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:pedro solbes mira"
+    },
+    {
+      "index": 11,
+      "id": "rosa-diez",
+      "name": "Rosa Díez",
+      "canonicalName": "Díez González, Rosa María",
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "doctrine": "foco",
+      "ability": "tongue",
+      "abilityName": "Lengua de trapo",
+      "depictedPeriod": "2011–2015",
+      "referenceLegislature": 10,
+      "referenceStart": "29/11/2011",
+      "referenceEnd": "13/01/2016",
+      "tierReason": "Fundación y portavocía de UPyD, con presencia parlamentaria propia.",
+      "features": "Media melena corta castaño claro/rubia, raya lateral, gafas rectangulares oscuras y sonrisa marcada.",
+      "pose": "Tres cuartos en intervención, un micrófono.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=42&idLegislatura=X",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/42_10.jpg",
+        "sha256": "fff8095ad89635c971819f916aded818d75e5e0673cacbc598a0a48bf57267a8"
+      },
+      "aliases": [
+        "Rosa María Díez González"
+      ],
+      "affiliation": {
+        "label": "UPyD",
+        "referenceGroup": "Grupo Parlamentario de Unión Progreso y Democracia",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Magenta y blanco de UPyD, paneles de conferencia y sombras ciruela.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:rosa maria diez gonzalez"
+    },
+    {
+      "index": 12,
+      "id": "jose-blanco",
+      "name": "José Blanco",
+      "canonicalName": "Blanco López, José",
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "giro",
+      "ability": "summon",
+      "abilityName": "Llamada al suplente",
+      "depictedPeriod": "2008–2011",
+      "referenceLegislature": 9,
+      "referenceStart": "26/03/2008",
+      "referenceEnd": "27/09/2011",
+      "tierReason": "Trayectoria organizativa y ministerial con presencia en el Congreso.",
+      "features": "Pelo castaño corto, gafas rectangulares finas, rostro ovalado y ancho; sin barba.",
+      "pose": "Ligera inclinación hacia delante, un micrófono de atril.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=271&idLegislatura=IX",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/271_9.jpg",
+        "sha256": "c8be75c6a279cc2716bfe1871ca96629bfe076c28b2c38a27929b9d935bedef6"
+      },
+      "aliases": [
+        "José Blanco López"
+      ],
+      "affiliation": {
+        "label": "PSOE",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo y blanco del PSOE con elementos abstractos de rosa y madera.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:jose blanco lopez"
+    },
+    {
+      "index": 13,
+      "id": "cristina-narbona",
+      "name": "Cristina Narbona",
+      "canonicalName": "Narbona Ruiz, Cristina",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "giro",
+      "ability": "paperwork",
+      "abilityName": "Papeles traspapelados",
+      "depictedPeriod": "2011–2012",
+      "referenceLegislature": 10,
+      "referenceStart": "01/12/2011",
+      "referenceEnd": "28/12/2012",
+      "tierReason": "Trayectoria ministerial y parlamentaria, perfil de gestión.",
+      "features": "Pelo castaño rojizo a los hombros con flequillo suave; rostro ovalado y sin gafas.",
+      "pose": "Tres cuartos hacia la derecha, sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=203&idLegislatura=X",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/203_10.jpg",
+        "sha256": "b80d6df45df439fc8bf12caf35b4ce829bc7013edc2646631b9d4079aed19fa8"
+      },
+      "aliases": [
+        "Cristina Narbona Ruiz"
+      ],
+      "affiliation": {
+        "label": "PSOE",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo/blanco con columnas y bancos parlamentarios desenfocados.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:cristina narbona ruiz"
+    },
+    {
+      "index": 14,
+      "id": "ana-oramas",
+      "name": "Ana Oramas",
+      "canonicalName": "Oramas González-Moro, Ana María",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "acta",
+      "abilityName": "Fuera del acta",
+      "depictedPeriod": "2019–2023",
+      "referenceLegislature": 14,
+      "referenceStart": "25/11/2019",
+      "referenceEnd": "30/05/2023",
+      "tierReason": "Portavocía de Coalición Canaria y presencia sostenida en el Congreso.",
+      "features": "Pelo corto castaño claro/rubio recogido hacia atrás, rostro ovalado y cejas finas; sin gafas.",
+      "pose": "Intervención lateral, un micrófono.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=161&idLegislatura=XIV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/161_14.jpg",
+        "sha256": "f8d9bad62f4340f55113a0c28c1ad37a5ae7991d594c40fa6bc466fc42f04f33"
+      },
+      "aliases": [
+        "Ana María Oramas González-Moro"
+      ],
+      "affiliation": {
+        "label": "Coalición Canaria",
+        "referenceGroup": "Grupo Parlamentario Mixto / CCa-PNC-NC",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Azul, amarillo y blanco canarios, combinados con detalles del Congreso.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:ana maria oramas gonzalez-moro"
+    },
+    {
+      "index": 15,
+      "id": "rosa-aguilar",
+      "name": "Rosa Aguilar",
+      "canonicalName": "Aguilar Rivero, Rosa",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "guardia",
+      "ability": "fineprint",
+      "abilityName": "Letra pequeña",
+      "depictedPeriod": "2011–2015",
+      "referenceLegislature": 10,
+      "referenceStart": "30/11/2011",
+      "referenceEnd": "18/06/2015",
+      "tierReason": "Trayectoria municipal, autonómica y ministerial.",
+      "features": "Pelo castaño oscuro ondulado a la mandíbula, gafas rectangulares moradas y sonrisa amplia.",
+      "pose": "Tres cuartos hacia la derecha, sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=145&idLegislatura=X",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/145_10.jpg",
+        "sha256": "6aae1cd4da5bd226cb704153aa2eb029e525e798a966fc5c96f652652cad452b"
+      },
+      "aliases": [
+        "Rosa Aguilar Rivero"
+      ],
+      "affiliation": {
+        "label": "Grupo Socialista",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo/blanco de su grupo de 2011–2015, sin asociar el fondo a su etapa anterior en IU.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:rosa aguilar rivero"
+    },
+    {
+      "index": 16,
+      "id": "elena-salgado",
+      "name": "Elena Salgado",
+      "canonicalName": "Salgado Méndez, Elena",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "aforado",
+      "ability": "bank",
+      "abilityName": "Dietas guardadas",
+      "depictedPeriod": "2008–2011",
+      "referenceLegislature": 9,
+      "referenceStart": "24/03/2008",
+      "referenceEnd": "27/09/2011",
+      "tierReason": "Perfil económico y ministerial; aporta variedad de función a la tanda.",
+      "features": "Melena corta rubia ondulada y capeada, rostro estrecho y pómulos definidos; sin gafas.",
+      "pose": "Casi frontal, mirada reflexiva; sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=81&idLegislatura=IX",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/81_9.jpg",
+        "sha256": "4c4116ac8cfa36cc37cacfc48abed75ba49e12697c74e3d42a312cb940571275"
+      },
+      "aliases": [
+        "Elena Salgado Méndez"
+      ],
+      "affiliation": {
+        "label": "Grupo Socialista",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo/blanco y tonos carbón en un contexto económico e institucional.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:elena salgado mendez"
+    },
+    {
+      "index": 17,
+      "id": "felix-bolanos",
+      "name": "Félix Bolaños",
+      "canonicalName": "Bolaños García, Félix",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "giro",
+      "ability": "shield",
+      "abilityName": "Argumentario plastificado",
+      "depictedPeriod": "2023",
+      "referenceLegislature": 15,
+      "referenceStart": "10/08/2023",
+      "referenceEnd": "06/10/2026",
+      "tierReason": "Trayectoria ministerial y relación institucional con las Cortes.",
+      "features": "Pelo corto oscuro con canas, gafas rectangulares oscuras y rostro alargado; sin barba.",
+      "pose": "Frontal con mirada lateral, sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=253&idLegislatura=XV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/253_15.jpg",
+        "sha256": "43850780532fc9d4f6a93440549fbf1b8f1e8ff5cee9e0a0e9ecc68cfee2ea82"
+      },
+      "aliases": [
+        "Félix Bolaños García"
+      ],
+      "affiliation": {
+        "label": "PSOE",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo/blanco con paneles institucionales y sombras azul marino.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:felix bolanos garcia"
+    },
+    {
+      "index": 18,
+      "id": "oskar-matute",
+      "name": "Oskar Matute",
+      "canonicalName": "Matute García de Jalón, Oskar",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "viperina",
+      "ability": "microphone",
+      "abilityName": "Micrófono indiscreto",
+      "depictedPeriod": "2023",
+      "referenceLegislature": 15,
+      "referenceStart": "14/08/2023",
+      "referenceEnd": null,
+      "tierReason": "Portavocía parlamentaria de EH Bildu y variedad de bancadas.",
+      "features": "Pelo corto gris/plata, mandíbula definida, afeitado y sin gafas en esta referencia.",
+      "pose": "Tres cuartos en intervención, un micrófono de mesa.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=287&idLegislatura=XV",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/287_15.jpg",
+        "sha256": "a824f8a663da72a8397409940c47bf0f22b8be1bae4a9f9060e94febd4dcbbb9"
+      },
+      "aliases": [
+        "Oskar Matute García de Jalón"
+      ],
+      "affiliation": {
+        "label": "EH Bildu",
+        "referenceGroup": "Grupo Parlamentario Euskal Herria Bildu",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Verde y blanco de EH Bildu con geometrías y bancos de Congreso.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:oskar matute garcia de jalon"
+    },
+    {
+      "index": 19,
+      "id": "jose-antonio-labordeta",
+      "name": "José Antonio Labordeta",
+      "canonicalName": "Labordeta Subías, José Antonio",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "surge",
+      "abilityName": "Se viene arriba",
+      "depictedPeriod": "2004–2008",
+      "referenceLegislature": 8,
+      "referenceStart": "30/03/2004",
+      "referenceEnd": "15/01/2008",
+      "tierReason": "Intervenciones parlamentarias reconocibles y presencia cultural y territorial.",
+      "features": "Coronilla despejada, bigote gris poblado, gafas redondeadas finas; sin barba.",
+      "pose": "Tres cuartos expresivo, dos micrófonos de época.",
+      "microphones": true,
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=276&idLegislatura=VIII",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/276_8.jpg",
+        "sha256": "09636d76d94326bee45780816cbdbf475308016d6b14e4d0e8ac6e5f1aeb6846"
+      },
+      "aliases": [
+        "José Antonio Labordeta Subías"
+      ],
+      "affiliation": {
+        "label": "CHA",
+        "referenceGroup": "Grupo Parlamentario Mixto / Chunta Aragonesista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Verde y blanco de CHA, acentos aragoneses terrosos/granate y cámara parlamentaria.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:jose antonio labordeta subias"
+    },
+    {
+      "index": 20,
+      "id": "magdalena-alvarez",
+      "name": "Magdalena Álvarez",
+      "canonicalName": "Álvarez Arza, Magdalena",
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "foco",
+      "ability": "fasttrack",
+      "abilityName": "Ventanilla rápida",
+      "depictedPeriod": "2008–2009",
+      "referenceLegislature": 9,
+      "referenceStart": "26/03/2008",
+      "referenceEnd": "14/07/2009",
+      "tierReason": "Trayectoria ministerial y parlamentaria; perfil de gestión.",
+      "features": "Pelo corto castaño rojizo con volumen hacia atrás, pómulos marcados y sonrisa amplia; sin gafas.",
+      "pose": "Tres cuartos hacia la izquierda, sin micrófono.",
+      "microphones": false,
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      },
+      "reference": {
+        "profile": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=217&idLegislatura=IX",
+        "photo": "https://www.congreso.es/docu/imgweb/diputados/217_9.jpg",
+        "sha256": "2095e46327b677aa45e14dab1a561cdd6cb1f4a6bb9ec51a4b16b228829cf04d"
+      },
+      "aliases": [
+        "Magdalena Álvarez Arza"
+      ],
+      "affiliation": {
+        "label": "Grupo Socialista",
+        "referenceGroup": "Grupo Parlamentario Socialista",
+        "basis": "Formación electoral o grupo parlamentario de la época; no implica atribuir militancia personal a perfiles independientes."
+      },
+      "background": {
+        "description": "Rojo/blanco del grupo y atmósfera de intervención institucional.",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "personKey": "ES:magdalena alvarez arza"
+    }
+  ]
+}

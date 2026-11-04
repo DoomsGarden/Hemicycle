@@ -1,0 +1,29 @@
+{
+  "tool": "image_gen",
+  "styleReference": "cards/donald-trump.webp",
+  "userPromptReference": "Plantilla aportada para Cristina Fernández de Kirchner, conservada en propuesta.json",
+  "individualOfficialPortraitReferences": 20,
+  "backgroundRevision": "Partidos/grupos y Congreso, por instrucción del usuario; retratos, poses y micrófonos conservados.",
+  "art": [
+    {
+      "file": "art/01-retratos.png",
+      "sha256": "ce818cf53cf4fd5aa3d645d663534bf5697dc2df42d43c2e51eb5af54ca186af"
+    },
+    {
+      "file": "art/02-retratos.png",
+      "sha256": "08b321816749a1737ec36eeea44de3f2b6762d28a0cfbe91e4dccbba314f2c9a"
+    },
+    {
+      "file": "art/03-retratos.png",
+      "sha256": "5c1afe71504949c52a13d102df6e8e911d841b83c9d80468f8ad584e3017232f"
+    },
+    {
+      "file": "art/04-retratos.png",
+      "sha256": "dd2abd5935494dfff43b1b3a7ccf65d6ccab26cbd69e042ccfdad0a61c8fa08d"
+    },
+    {
+      "file": "art/05-retratos.png",
+      "sha256": "f6e4ef08c716ac816eb2696ca8fce14468de66bb2432f828709b54c8885573d9"
+    }
+  ]
+}
