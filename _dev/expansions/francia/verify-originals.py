@@ -11,6 +11,7 @@ from pathlib import Path
 import re
 import subprocess
 import unicodedata
+import urllib.parse
 
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parents[2]
@@ -26,10 +27,31 @@ def clean(value):
 
 def check_source(card, quote, cache):
     from lxml import html
-    source = cache / 'speeches' / quote['cacheKey']
+    senate = quote.get('sourceType') == 'senat_commission_turn'
+    source = cache / ('senat-sources' if senate else 'speeches') / quote['cacheKey']
     raw = source.read_bytes()
     assert hashlib.sha256(raw).hexdigest() == quote['sourceSha256'], source
-    root = html.fromstring(raw)
+    root = html.fromstring(raw.decode('utf-8') if senate else raw)
+    if senate:
+        check = quote['speakerCheck']
+        paragraphs = root.xpath('//p')
+        selected = paragraphs[check['paragraphIndex']]
+        assert quote['originalFR'] in clean(selected.text_content())
+        assert norm(card['name']) in norm(check['speakerFR'])
+        assert check['dateLabelFR'] in clean(root.text_content())
+        # Recheck the last named speaking turn up to the selected paragraph.
+        speaker = None
+        for paragraph in paragraphs[:check['paragraphIndex'] + 1]:
+            value = clean(paragraph.text_content())
+            match = re.match(r'^((?:Mme|MM|M)\.?\s+.{2,170}?)\s*\.\s*[-–—]\s*', value)
+            if match:
+                speaker = match[1]
+            else:
+                bold = paragraph.xpath('./b|./strong')
+                if bold and re.match(r'^(?:Mme|MM|M)\.?\s+', clean(bold[0].text_content())):
+                    speaker = clean(bold[0].text_content())
+        assert speaker == check['speakerFR'], (card['id'], speaker)
+        return quote['source']
     node = root.xpath('//*[contains(@class,"field--name-field-texte-integral")]')[0]
     # Drupal glossary expansions are site explanations, not the speaker's words.
     for tooltip in node.xpath('.//*[@role="tooltip"]|.//script|.//style'):
@@ -49,8 +71,16 @@ def check_source(card, quote, cache):
     if method == 'signed_section':
         assert pos > text.rindex(check['anchorFR'])
     elif method == 'interview_speaker':
-        markers = list(re.finditer(r'FRANÇOIS BAYROU|THOMAS SOTTO|MARC-OLIVIER FOGIEL', text[:pos]))
-        assert markers and markers[-1][0] == check['anchorFR']
+        labels = check.get('speakerLabels', ['FRANÇOIS BAYROU', 'THOMAS SOTTO', 'MARC-OLIVIER FOGIEL'])
+        markers = list(re.finditer('|'.join(re.escape(label) for label in labels), text[:pos], flags=re.I))
+        assert markers and norm(markers[-1][0]) == norm(check['anchorFR'])
+    elif method == 'presidential_interview_answer':
+        markers = list(re.finditer(r'(QUESTION|LE PRESIDENT)\s*\.\s*-', text[:pos]))
+        assert markers and markers[-1][1] == 'LE PRESIDENT'
+    elif method == 'editorially_reviewed_turn':
+        # The contextual attribution is recorded by the editor, not inferred
+        # from a lone metadata author on a potentially multi-speaker transcript.
+        assert check.get('review') and check.get('evidenceNote')
     elif method == 'dated_interview_answer':
         start = text.index(check['anchorFR'])
         end = text.index('Le Monde : 17 juin 1994', start)
@@ -99,13 +129,15 @@ def main():
             seen.add(norm(text))
             assert '1986-11-05' <= quote['spokenOn'] <= '2026-11-05'
             assert quote['ownTranslation'] is True and quote['sourceLanguage'] == 'fr'
-            assert quote['source'].startswith('https://www.vie-publique.fr/discours/')
+            assert quote['source'].startswith(('https://www.vie-publique.fr/discours/', 'https://www.senat.fr/basile/visio.do?'))
             assert re.fullmatch('[a-f0-9]{64}', quote['sourceSha256'])
             assert quote['sourceCheck'] == 'original_y_hablante_revisados'
             assert quote['toneReview'] == 'pending'
             assert quote['adaptation']['thirdPartySubstitutions'] == []
             sources.add(quote['source'])
-            per_source_words[quote['source']] += len(quote['originalFR'].split()) + len(text.split())
+            # Search parameters can differ while pointing at the same transcript.
+            document = quote.get('physicalDocument', quote['source'])
+            per_source_words[document] += len(quote['originalFR'].split()) + len(text.split())
             if args.cache:
                 checked_sources.add(check_source(card, quote, args.cache))
     assert all(n <= 90 for n in per_source_words.values()), per_source_words

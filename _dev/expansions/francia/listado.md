@@ -1,6 +1,6 @@
 # Francia · listado inicial de 100 propuestas
 
-Primera tanda de 100 autorizada para preparar, aún sin integrar. Los tiers se ajustarán conjuntamente al terminar la selección francesa. Con los tres cromos existentes se prevén 103 franceses tras esta tanda; el total final del país sigue sin cerrar. Los cargos, afiliaciones de etapa y tiers requieren contraste documental antes de cerrarse. Hay 28 retratos provisionales y 48 candidatas bilingües para 16 perfiles con original y hablante cotejados. Faltan 72 retratos y 252 selecciones bilingües adicionales; la elección final del tono sigue pendiente. [Revisión privada con arte y fuentes](revision.html).
+Primera tanda de 100 autorizada para preparar, aún sin integrar. Los tiers se ajustarán conjuntamente al terminar la selección francesa. Con los tres cromos existentes se prevén 103 franceses tras esta tanda; el total final del país sigue sin cerrar. Los cargos, afiliaciones de etapa y tiers requieren contraste documental antes de cerrarse. Hay 99 retratos provisionales, todos revisados sin mirada a cámara, y 249 candidatas bilingües para 83 perfiles con original y hablante cotejados. Falta el retrato de Bruno Bernard y 51 selecciones bilingües adicionales; la elección final del tono sigue pendiente. [Revisión privada con arte y fuentes](revision.html).
 
 Se excluyen Emmanuel Macron, Christine Lagarde y Marine Le Pen porque ya existen. Una identidad por persona; las variantes de pose no crean cromos nuevos.
 

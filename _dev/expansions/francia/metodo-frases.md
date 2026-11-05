@@ -35,6 +35,8 @@ Algunas noticias se descartan para seleccionar frases porque solo contienen pala
 
 ## Primera selección bilingüe
 
-`frases-originales.json` incorpora 48 fragmentos cotejados para 16 perfiles. Se identifican como candidatas bilingües y conservan pendiente la revisión del tono para cada acción. Los nombres personales fuera del fragmento elegido no se trasladan a la frase animada; no ha sido necesario sustituir nombres dentro de estos 48 fragmentos.
+`frases-originales.json` incorpora 249 fragmentos cotejados para 83 perfiles. Se identifican como candidatas bilingües y conservan pendiente la revisión del tono para cada acción. Los nombres personales fuera del fragmento elegido no se trasladan a la frase animada; no ha sido necesario sustituir nombres dentro de estos 249 fragmentos.
 
 Se ha comprobado expresamente el turno de respuesta en entrevistas, la sección firmada de Badinter frente al texto previo de Toubon, las respuestas de Borne frente a las preguntas de las senadoras y el día exacto de la entrevista de Rocard dentro de una ficha que reúne varias fechas. Se retiró una candidata de Barnier que citaba a Pierre Mendès France. Las explicaciones emergentes del glosario de la web se eliminan antes del cotejo: no son palabras del orador.
+
+Las nuevas fuentes del Senado conservan el turno explícito y la fecha de la sesión, no solo la semana indicada en la URL. Los nombres en las búsquedas no prueban autoría: se excluyó al ejecutivo de Cisco homónimo de Bruno Bernard. En las nuevas entrevistas se han separado las preguntas y los fragmentos citados de terceros. Una declaración común leída por Lisnard se identifica como tal; no se presenta como una intervención individual escrita exclusivamente por él.

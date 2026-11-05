@@ -30,7 +30,7 @@
     "raro": 30,
     "comun": 40
   },
-  "sourceBlocker": "Los accesos iniciales a fuentes francesas y fotografías de Europa Press funcionan. thumb.wikimedia.org y www2.assemblee-nationale.fr siguen en un segundo borrador sin aplicar; hacen falta para ampliar referencias visuales y parlamentarias. La búsqueda y revisión editorial continúan pendientes para parte del censo.",
+  "sourceBlocker": "Los accesos a thumb.wikimedia.org y www2.assemblee-nationale.fr ya están aplicados. Queda un nuevo borrador para nueve editoriales francesas: permitiría consultar referencias localizadas, incluida la fotografía del político Bruno Bernard. Continúan la selección y revisión editorial de frases, el contraste de etapa y un retrato pendiente.",
   "cards": [
     {
       "id": "francois-mitterrand",
@@ -55,9 +55,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -72,7 +72,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-08.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jacques-chirac",
@@ -99,7 +105,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -118,7 +124,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-02.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -146,7 +153,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -166,7 +173,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-01.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -194,7 +202,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -214,7 +222,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-01.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -240,9 +249,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -257,11 +266,12 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-01.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -289,7 +299,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -308,7 +318,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-01.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -336,7 +347,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -355,7 +366,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-02.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -381,9 +393,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -398,7 +410,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-08.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "simone-veil",
@@ -425,7 +443,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -444,7 +462,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-02.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -472,7 +491,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -491,7 +510,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-02.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -517,9 +537,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -534,7 +554,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-08.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "francois-fillon",
@@ -559,9 +585,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -576,7 +602,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-08.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "manuel-valls",
@@ -601,9 +633,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -619,11 +651,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-07.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -649,9 +682,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -667,11 +700,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-04.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -699,7 +733,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -718,7 +752,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-03.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -746,7 +781,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -766,7 +801,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-04.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -792,9 +828,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -810,11 +846,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-04.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -842,7 +879,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -861,7 +898,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-03.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -887,9 +925,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -904,7 +942,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-09.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "michel-barnier",
@@ -931,7 +975,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -951,7 +995,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-03.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -977,9 +1022,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -994,7 +1039,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-09.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "bernard-cazeneuve",
@@ -1021,7 +1072,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1040,7 +1091,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-03.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1066,9 +1118,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1084,11 +1136,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-07.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1114,9 +1167,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1132,11 +1185,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-07.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1162,9 +1216,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1180,11 +1234,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-05.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1210,9 +1265,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1227,7 +1282,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-09.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "gerard-larcher",
@@ -1252,9 +1313,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1269,7 +1330,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-09.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "yael-braun-pivet",
@@ -1294,9 +1361,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1312,7 +1379,13 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-10.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "francois-de-rugy",
@@ -1337,9 +1410,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1355,7 +1428,13 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-10.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "richard-ferrand",
@@ -1380,9 +1459,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1398,11 +1477,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-04.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1430,7 +1510,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1450,7 +1530,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-05.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1476,9 +1557,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1494,11 +1575,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 2,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-05.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1524,9 +1606,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1542,11 +1624,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-05.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1572,9 +1655,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1589,7 +1672,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-10.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jean-louis-borloo",
@@ -1616,7 +1705,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1635,7 +1724,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-06.png",
         "position": "0% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1661,9 +1751,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1679,11 +1769,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-07.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1709,9 +1800,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1726,7 +1817,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-10.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "bruno-retailleau",
@@ -1751,9 +1848,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1769,11 +1866,12 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-06.png",
         "position": "100% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1799,9 +1897,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1816,7 +1914,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-11.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "valerie-pecresse",
@@ -1843,7 +1947,7 @@
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1863,7 +1967,8 @@
       "art": {
         "sheet": "primera-100/art/fr01-06.png",
         "position": "100% 0%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1889,9 +1994,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "generado_provisional_pendiente_revision_global",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1906,11 +2011,12 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0,
+      "bilingualCandidateCount": 3,
       "art": {
         "sheet": "primera-100/art/fr01-06.png",
         "position": "0% 100%",
-        "status": "generated_provisional"
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
       }
     },
     {
@@ -1936,9 +2042,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1953,7 +2059,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-11.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "marisol-touraine",
@@ -1979,8 +2091,8 @@
         "support": null
       },
       "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -1995,7 +2107,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 3
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-11.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jean-yves-le-drian",
@@ -2020,9 +2138,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2037,7 +2155,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-11.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "florence-parly",
@@ -2062,9 +2186,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2079,7 +2203,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-12.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "sylvie-goulard",
@@ -2104,9 +2234,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2121,7 +2251,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-12.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "stephane-sejourne",
@@ -2146,9 +2282,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2163,7 +2299,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-12.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "pierre-moscovici",
@@ -2188,9 +2330,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2205,7 +2347,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-12.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "benoit-hamon",
@@ -2230,9 +2378,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2247,7 +2395,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-13.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "arnaud-montebourg",
@@ -2272,9 +2426,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2289,7 +2443,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-13.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "olivier-faure",
@@ -2315,8 +2475,8 @@
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2332,7 +2492,13 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-13.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "fabien-roussel",
@@ -2358,8 +2524,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2374,7 +2540,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-13.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "eric-ciotti",
@@ -2399,9 +2571,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2416,7 +2588,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-14.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "eric-zemmour",
@@ -2442,8 +2620,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2458,7 +2636,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-14.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "marion-marechal",
@@ -2484,8 +2668,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2500,7 +2684,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-14.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jordan-bardella",
@@ -2526,8 +2716,8 @@
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2543,7 +2733,13 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-14.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "yannick-jadot",
@@ -2568,9 +2764,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2585,7 +2781,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-15.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "francois-ruffin",
@@ -2610,9 +2812,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2627,7 +2829,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-15.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "raphael-glucksmann",
@@ -2652,9 +2860,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2669,7 +2877,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-15.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "marine-tondelier",
@@ -2694,9 +2908,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2712,7 +2926,13 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-15.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "rama-yade",
@@ -2737,9 +2957,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2754,7 +2974,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-16.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "sandrine-rousseau",
@@ -2779,9 +3005,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2796,7 +3022,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-16.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "clementine-autain",
@@ -2822,8 +3054,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2838,7 +3070,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-16.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "mathilde-panot",
@@ -2863,9 +3101,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2881,7 +3119,13 @@
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-16.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "manon-aubry",
@@ -2906,9 +3150,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2923,7 +3167,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-17.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "aurore-berge",
@@ -2948,9 +3198,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -2965,7 +3215,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-17.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "agnes-pannier-runacher",
@@ -2990,9 +3246,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3007,7 +3263,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-17.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "amelie-de-montchalin",
@@ -3032,9 +3294,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3049,7 +3311,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-17.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "agnes-buzyn",
@@ -3074,9 +3342,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3091,7 +3359,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-18.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "aurelien-pradie",
@@ -3116,9 +3390,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3133,7 +3407,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-18.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jean-francois-cope",
@@ -3158,9 +3438,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3175,7 +3455,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-18.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "valerie-boyer",
@@ -3200,9 +3486,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3217,7 +3503,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-18.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "valerie-rabault",
@@ -3242,9 +3534,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3259,7 +3551,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-19.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "boris-vallaud",
@@ -3284,9 +3582,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3301,7 +3599,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-19.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "carole-delga",
@@ -3326,9 +3630,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3343,7 +3647,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-19.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "johanna-rolland",
@@ -3368,9 +3678,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3385,7 +3695,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-19.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "nathalie-appere",
@@ -3410,9 +3726,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3427,7 +3743,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-20.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "gregory-doucet",
@@ -3453,8 +3775,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3469,7 +3791,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-20.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "bruno-bernard",
@@ -3496,7 +3824,7 @@
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
       "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3537,8 +3865,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3553,7 +3881,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-20.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "pierre-hurmic",
@@ -3579,8 +3913,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3595,7 +3929,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-20.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "eric-piolle",
@@ -3620,9 +3960,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3637,7 +3977,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-21.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "francois-baroin",
@@ -3662,9 +4008,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3679,7 +4025,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-21.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "christian-estrosi",
@@ -3704,9 +4056,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3721,7 +4073,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-21.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "david-lisnard",
@@ -3746,9 +4104,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3763,7 +4121,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-21.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "philippe-poutou",
@@ -3788,9 +4152,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3805,7 +4169,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-25.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "nathalie-arthaud",
@@ -3830,9 +4200,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3847,7 +4217,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-22.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "francois-asselineau",
@@ -3873,8 +4249,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3889,7 +4265,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-22.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jean-lassalle",
@@ -3915,8 +4297,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3931,7 +4313,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-22.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "nicolas-dupont-aignan",
@@ -3956,9 +4344,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -3973,7 +4361,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-22.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "florian-philippot",
@@ -3999,8 +4393,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4015,7 +4409,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-23.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jean-philippe-tanguy",
@@ -4040,9 +4440,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4057,7 +4457,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-23.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "sebastien-chenu",
@@ -4083,8 +4489,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4099,7 +4505,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-23.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "laure-lavalette",
@@ -4125,8 +4537,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4141,7 +4553,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-23.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "louis-aliot",
@@ -4167,8 +4585,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4183,7 +4601,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-24.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "steeve-briois",
@@ -4209,8 +4633,8 @@
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4225,7 +4649,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-24.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "nicolas-bay",
@@ -4250,9 +4680,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4267,7 +4697,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-24.png",
+        "position": "0% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "nathalie-loiseau",
@@ -4292,9 +4728,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4309,7 +4745,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-24.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "clement-beaune",
@@ -4334,9 +4776,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4351,7 +4793,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-25.png",
+        "position": "0% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "marc-fesneau",
@@ -4376,9 +4824,9 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
-      "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
+      "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
       "basicEffectProposal": {
@@ -4393,7 +4841,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-25.png",
+        "position": "100% 0%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     }
   ],
   "workflow": {
@@ -4505,10 +4959,11 @@
     "projectedFrenchCountAfterFirstBatch": 103,
     "countryCensusComplete": false,
     "finalFrenchCount": null,
-    "nextStep": "Contrastar referencias y preparar originales franceses, traducciones y arte de estos 100.",
+    "nextStep": "Completar la referencia visual de Bruno Bernard y las 51 selecciones bilingües pendientes de 17 perfiles; revisar después tono, trayectoria y cierre de los 100, antes de ampliar el censo.",
     "tierReviewTrigger": "Después de completar todos los integrantes de la selección francesa.",
     "tierReviewScope": "Comparar juntos los nuevos franceses; revisar estadísticas y vestuario que cambien de tier. No modificar automáticamente los tres activos.",
-    "publicActivation": false
+    "publicActivation": false,
+    "gazePolicy": "ningun_retrato_con_mirada_a_camara"
   },
   "researchProgress": {
     "consultedOn": "2026-11-05",
@@ -4516,14 +4971,28 @@
     "profilesWithSpanishCandidates": 23,
     "spanishPhraseCandidates": 54,
     "profilesWithThreeSpanishCandidates": 14,
-    "verifiedFrenchOriginals": 48,
-    "generatedPortraits": 28,
+    "verifiedFrenchOriginals": 249,
+    "generatedPortraits": 99,
     "finishedNewCards": 0,
     "integratedNewCards": 0,
-    "note": "48 fragmentos bilingües con original y hablante cotejados; tono por acción pendiente. 28 retratos provisionales. No equivale a cromos terminados ni a 300 frases finales.",
-    "profilesWithBilingualCandidates": 16,
-    "bilingualCandidates": 48,
-    "frenchSourceRecords": 135,
-    "distinctFrenchSourcePages": 134
+    "note": "249 candidatas bilingües para 83 perfiles, con original y hablante cotejados; tono por acción pendiente. 99 retratos provisionales revisados sin contacto visual con cámara. No equivale a cromos terminados ni a 300 frases finales.",
+    "searchesWithResults": 40,
+    "searchesBlocked": 60,
+    "articleFetchErrors": 0,
+    "sourceHashesRecorded": 58,
+    "manualAttributionReview": true,
+    "gamePhrasesWithoutPersonalNames": true,
+    "documentedNameSubstitutions": 1,
+    "profilesWithBilingualCandidates": 83,
+    "bilingualCandidates": 249,
+    "frenchSourceRecords": 293,
+    "distinctFrenchSourcePages": 284,
+    "spanishSearchScope": "Resultados de la consulta previa de 100 nombres en prensa española; no describe el acceso actual a fuentes francesas.",
+    "allSelectedSpeakerAttributionsRechecked": 249,
+    "bilingualDistinctSources": 114,
+    "pendingPortraits": 1,
+    "pendingAdditionalBilingualSelections": 51,
+    "finalGamePhrasesStillUnassigned": 300,
+    "portraitsReviewedOffCamera": 99
   }
 }

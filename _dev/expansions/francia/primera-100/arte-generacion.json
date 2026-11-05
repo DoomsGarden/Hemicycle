@@ -70,7 +70,13 @@
       "tool": "image_gen.imagegen",
       "generatedOn": "2026-11-05",
       "sha256": "29abd23c007c2a576f94823568482ea2d0dd44455c623479a42a3c5ca5f31165",
-      "originalOutput": "exec-eb12e125-673e-4b42-ae17-55893ef4dc7f.png"
+      "originalOutput": "exec-eb12e125-673e-4b42-ae17-55893ef4dc7f.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de cabeza y ojos; sin mirada a cámara."
+      }
     },
     {
       "sheet": "art/fr01-02.png",
@@ -137,7 +143,13 @@
       "tool": "image_gen.imagegen",
       "generatedOn": "2026-11-05",
       "sha256": "b0096b28fac701d06fddd5489d3b33afed05cb397ba007640f2c76241017e481",
-      "originalOutput": "exec-4e69275d-6bab-4980-8335-372472bfe21d.png"
+      "originalOutput": "exec-4e69275d-6bab-4980-8335-372472bfe21d.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de cabeza y ojos; sin mirada a cámara."
+      }
     },
     {
       "sheet": "art/fr01-03.png",
@@ -153,7 +165,6 @@
         "Bernard Cazeneuve",
         "Jean Castex"
       ],
-      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All four are provisional SPECIAL tier: formal professional clothing is mandatory, with individual variation. Turn both head and eyes away from the camera as specified. No flags, logos, card borders or text. TOP LEFT: Michel Barnier. Face: Short neatly side-parted silver-gray hair, long angular face and prominent nose, clean-shaven, no glasses. Pose: head and eyes fifty degrees left toward an unseen colleague, attentive speaking posture, one low microphone. Wardrobe: an elegant dark structured jacket, pale shirt and restrained blue tie. Background: a European committee room, muted blue architecture, warm wood and brass sidelights. TOP RIGHT: François Bayrou. Face: Receding thick wavy dark-gray hair, broad forehead, long nose, lined cheeks, clean-shaven, no glasses. Pose: head and both eyes forty degrees right toward the chamber, one open hand making a persuasive low gesture, two low microphones. Wardrobe: a formal dark tailored suit, white shirt and burgundy tie. Background: a French National Assembly lectern with deep red upholstery and aged-gold details, seen diagonally. BOTTOM LEFT: Bernard Cazeneuve. Face: Bald crown with very short brown-gray side hair, distinctive amber rectangular glasses, long narrow nose, clean-shaven. Pose: head and eyes forty-five degrees left and slightly down as if addressing an interlocutor, a folder low in frame, no microphone. Wardrobe: a formal charcoal jacket, crisp pale shirt and restrained patterned tie. Background: an institutional library with a warm desk lamp, dark green leather and soft book spines, no readable lettering. BOTTOM RIGHT: Jean Castex. Face: High receding bald forehead with short dark-gray side hair, long nose, heavy dark eyebrows and clean-shaven cheeks. NO glasses on his face, as in this reference; do not invent eyewear. Pose: head and both eyes forty-five degrees right toward a colleague, shoulders slightly counter-turned, one slim low side microphone. Wardrobe: a formal dark blue suit, pale shirt and small-pattern blue tie. Background: a parliamentary stone corridor with tall windows, burgundy furniture and soft daylight. ",
       "references": [
         {
           "id": "michel-barnier",
@@ -200,11 +211,25 @@
           "background": "a parliamentary stone corridor with tall windows, burgundy furniture and soft daylight"
         }
       ],
+      "prompt": "Edit the supplied original semi-realistic TCG portrait atlas. In the BOTTOM LEFT panel, Bernard Cazeneuve must turn his whole head and BOTH EYES sixty-five degrees LEFT, looking at a colleague far outside the image; preserve his bald crown and amber rectangular glasses. In the BOTTOM RIGHT panel, Jean Castex must turn his whole head and BOTH EYES sixty-five degrees RIGHT toward an off-frame colleague. Preserve all identities, clothing, backgrounds, other faces and the exact 2x2 panel layout. Every person must look away from the spectator; pupils follow the nose direction and never turn back toward the viewer. No direct eye contact. No added lettering, frames or new people. Keep image proportions and all four separate portraits.",
       "status": "generated_provisional",
-      "tool": "image_gen.imagegen",
+      "tool": "image_gen",
       "generatedOn": "2026-11-05",
-      "sha256": "be973b0904d3e6eb69624f35bebb6d67320ddd14e799b31a50c1d9d62736682a",
-      "originalOutput": "exec-0176b93c-ee7d-486c-95be-c353921ca954.png"
+      "sha256": "dc1a03ac05b139172ac9d9ed71077b943a01d724dfe229cf69cdca7a3a7a0226",
+      "originalOutput": "exec-15d17efc-54a2-4c5e-8001-ae29e07473a8.png",
+      "previousGenerations": [
+        {
+          "sha256": "be973b0904d3e6eb69624f35bebb6d67320ddd14e799b31a50c1d9d62736682a",
+          "originalOutput": "exec-0176b93c-ee7d-486c-95be-c353921ca954.png",
+          "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All four are provisional SPECIAL tier: formal professional clothing is mandatory, with individual variation. Turn both head and eyes away from the camera as specified. No flags, logos, card borders or text. TOP LEFT: Michel Barnier. Face: Short neatly side-parted silver-gray hair, long angular face and prominent nose, clean-shaven, no glasses. Pose: head and eyes fifty degrees left toward an unseen colleague, attentive speaking posture, one low microphone. Wardrobe: an elegant dark structured jacket, pale shirt and restrained blue tie. Background: a European committee room, muted blue architecture, warm wood and brass sidelights. TOP RIGHT: François Bayrou. Face: Receding thick wavy dark-gray hair, broad forehead, long nose, lined cheeks, clean-shaven, no glasses. Pose: head and both eyes forty degrees right toward the chamber, one open hand making a persuasive low gesture, two low microphones. Wardrobe: a formal dark tailored suit, white shirt and burgundy tie. Background: a French National Assembly lectern with deep red upholstery and aged-gold details, seen diagonally. BOTTOM LEFT: Bernard Cazeneuve. Face: Bald crown with very short brown-gray side hair, distinctive amber rectangular glasses, long narrow nose, clean-shaven. Pose: head and eyes forty-five degrees left and slightly down as if addressing an interlocutor, a folder low in frame, no microphone. Wardrobe: a formal charcoal jacket, crisp pale shirt and restrained patterned tie. Background: an institutional library with a warm desk lamp, dark green leather and soft book spines, no readable lettering. BOTTOM RIGHT: Jean Castex. Face: High receding bald forehead with short dark-gray side hair, long nose, heavy dark eyebrows and clean-shaven cheeks. NO glasses on his face, as in this reference; do not invent eyewear. Pose: head and both eyes forty-five degrees right toward a colleague, shoulders slightly counter-turned, one slim low side microphone. Wardrobe: a formal dark blue suit, pale shirt and small-pattern blue tie. Background: a parliamentary stone corridor with tall windows, burgundy furniture and soft daylight. "
+        }
+      ],
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Corrección mediante image_gen y revisión visual; no se admite contacto visual con el espectador."
+      }
     },
     {
       "sheet": "art/fr01-04.png",
@@ -220,7 +245,6 @@
         "Gabriel Attal",
         "Richard Ferrand"
       ],
-      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Élisabeth Borne, tier especial. Face: Short silver-gray pixie hair, narrow face, thin oval metal glasses, no jewelry emphasis. Pose: head and eyes 45 degrees left; two hands low in an explanatory gesture. Wardrobe: a formal charcoal tailored jacket, pale patterned blouse. Background: a parliamentary committee room with walnut desks, red upholstery and a warm practical lamp. TOP RIGHT: Édouard Philippe, tier especial. Face: High receding crown, close-cropped gray side hair, round black glasses, long face. Clean-shaven AS IN THIS PHOTO, not his later beard. Pose: head and eyes 50 degrees right, speaking toward a colleague, one low microphone. Wardrobe: a formal navy suit, white shirt and discreet blue tie. Background: a contemporary party-conference stage with teal panels, angled white lighting and no logos. BOTTOM LEFT: Gabriel Attal, tier especial. Face: IDENTITY: the young man FAR LEFT in the group photo, not the other two men. Short curly brown hair, long narrow youthful face, prominent eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees left, shoulders turned right, a closed folder low in frame. Wardrobe: a formal dark blue tailored suit, white shirt and neat burgundy tie. Background: a ministerial briefing room with cream stone and a dark blue lectern. BOTTOM RIGHT: Richard Ferrand, tier especial. Face: Thick curly gray hair, broad lined face, prominent nose, delicate rimless rectangular glasses, clean-shaven. Pose: head and eyes 45 degrees right, a measured hand gesture, no microphone. Wardrobe: a formal charcoal suit, pale shirt and sober dark tie. Background: an elevated Assembly presidium, red velvet and carved gilt wood viewed diagonally. ",
       "references": [
         {
           "id": "elisabeth-borne",
@@ -267,11 +291,25 @@
           "background": "an elevated Assembly presidium, red velvet and carved gilt wood viewed diagonally"
         }
       ],
+      "prompt": "Edit the supplied original semi-realistic TCG portrait atlas. In the BOTTOM RIGHT panel only, Richard Ferrand must turn his whole head and BOTH EYES sixty-five degrees RIGHT toward a colleague outside the image. Preserve his curly gray hair, rimless glasses and face identity. Keep every other panel, the clothing and backgrounds unchanged. Every person must look away from the spectator; pupils follow the nose direction and never turn back toward the viewer. No direct eye contact. No added lettering, frames or new people. Keep image proportions and all four separate portraits.",
       "status": "generated_provisional",
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
-      "sha256": "5cf9967a5302bbc08c69b78118471f59444bca0fdbe8fd80967abd36fe3dc66c",
-      "originalOutput": "exec-30dba1d7-8927-4b7a-ba19-57135eb73488.png"
+      "sha256": "a3ee6577d92a4ba1c22d0ac8d70f0ea2bdb9d8334d2cc34478c6e7abcc96f6b6",
+      "originalOutput": "exec-67958423-bc25-4c26-a569-01e3ec7929d3.png",
+      "previousGenerations": [
+        {
+          "sha256": "5cf9967a5302bbc08c69b78118471f59444bca0fdbe8fd80967abd36fe3dc66c",
+          "originalOutput": "exec-30dba1d7-8927-4b7a-ba19-57135eb73488.png",
+          "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Élisabeth Borne, tier especial. Face: Short silver-gray pixie hair, narrow face, thin oval metal glasses, no jewelry emphasis. Pose: head and eyes 45 degrees left; two hands low in an explanatory gesture. Wardrobe: a formal charcoal tailored jacket, pale patterned blouse. Background: a parliamentary committee room with walnut desks, red upholstery and a warm practical lamp. TOP RIGHT: Édouard Philippe, tier especial. Face: High receding crown, close-cropped gray side hair, round black glasses, long face. Clean-shaven AS IN THIS PHOTO, not his later beard. Pose: head and eyes 50 degrees right, speaking toward a colleague, one low microphone. Wardrobe: a formal navy suit, white shirt and discreet blue tie. Background: a contemporary party-conference stage with teal panels, angled white lighting and no logos. BOTTOM LEFT: Gabriel Attal, tier especial. Face: IDENTITY: the young man FAR LEFT in the group photo, not the other two men. Short curly brown hair, long narrow youthful face, prominent eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees left, shoulders turned right, a closed folder low in frame. Wardrobe: a formal dark blue tailored suit, white shirt and neat burgundy tie. Background: a ministerial briefing room with cream stone and a dark blue lectern. BOTTOM RIGHT: Richard Ferrand, tier especial. Face: Thick curly gray hair, broad lined face, prominent nose, delicate rimless rectangular glasses, clean-shaven. Pose: head and eyes 45 degrees right, a measured hand gesture, no microphone. Wardrobe: a formal charcoal suit, pale shirt and sober dark tie. Background: an elevated Assembly presidium, red velvet and carved gilt wood viewed diagonally. "
+        }
+      ],
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Corrección mediante image_gen y revisión visual; no se admite contacto visual con el espectador."
+      }
     },
     {
       "sheet": "art/fr01-05.png",
@@ -338,7 +376,13 @@
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
       "sha256": "7516791062672ef286948be72cbf4b73b16c01b9e1007d28623fdbf6f4ad7784",
-      "originalOutput": "exec-15a752fe-3988-4c52-8261-6ce35382fc6f.png"
+      "originalOutput": "exec-15a752fe-3988-4c52-8261-6ce35382fc6f.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de cabeza y ojos; sin mirada a cámara."
+      }
     },
     {
       "sheet": "art/fr01-06.png",
@@ -354,7 +398,6 @@
         "Rachida Dati",
         "Bruno Retailleau"
       ],
-      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Jean-Louis Borloo, tier raro. Face: Dark tousled curly hair, broad lined cheeks, strong eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees left, both hands low as if explaining, one low microphone. Wardrobe: an open-collar pale blue shirt with sleeves casually rolled, no tie. Background: a centrist party conference with blue and cream architecture, soft stage beams, no readable logos. TOP RIGHT: Valérie Pécresse, tier raro. Face: Short straight honey-blond bob, side part, oval face, no glasses. Pose: head and eyes 50 degrees right, a measured hand gesture low in frame. Wardrobe: a comfortable structured red jacket over a pale blouse. Background: a regional-council chamber with royal-blue seating, wood desk edges and angled daylight. BOTTOM LEFT: Rachida Dati, tier raro. Face: IDENTITY: the shorter WOMAN ON THE RIGHT, not the tall man on the left. Short sleek dark brown bob, distinctive black rectangular glasses, olive-toned skin. Pose: head and eyes 45 degrees left and slightly down, holding a closed slim folder. Wardrobe: a soft charcoal jacket over a pale open-collar blouse. Background: a cultural-ministry salon with dark green walls, brass lamps and warm architectural depth. BOTTOM RIGHT: Bruno Retailleau, tier raro. Face: Receding short dark-gray hair, long narrow face, thin round metal glasses, clean-shaven. The caption identifies RETAILLEAU despite the search having been for Le Maire. Pose: head and eyes 50 degrees right, a small precision hand gesture low in frame, handheld microphone below chin. Wardrobe: a dark soft blazer and pale blue open-collar shirt, no tie. Background: a Senate committee room with burgundy upholstery, golden wood and a muted violet stage light. ",
       "references": [
         {
           "id": "jean-louis-borloo",
@@ -401,11 +444,25 @@
           "background": "a Senate committee room with burgundy upholstery, golden wood and a muted violet stage light"
         }
       ],
+      "prompt": "Edit the supplied original semi-realistic TCG portrait atlas. In the BOTTOM LEFT panel only, Rachida Dati must turn her whole head and BOTH EYES sixty-five degrees LEFT toward an off-frame interlocutor, near profile. Keep her short dark bob and black rectangular glasses. Keep every other panel, all clothing and backgrounds unchanged. Every person must look away from the spectator; pupils follow the nose direction and never turn back toward the viewer. No direct eye contact. No added lettering, frames or new people. Keep image proportions and all four separate portraits.",
       "status": "generated_provisional",
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
-      "sha256": "2a6de031c4c056ce213c3291880e8c823829776da1edc86328d6970a686f7e79",
-      "originalOutput": "exec-1a50c017-ea43-4c0b-bc94-fb9a2a41a1d7.png"
+      "sha256": "cec2b47496d134cdd71830292801f4d88d9cb0762446f79d4c538a053176b9ae",
+      "originalOutput": "exec-6fee1d32-42b4-4910-8b02-5f2d6ba28171.png",
+      "previousGenerations": [
+        {
+          "sha256": "2a6de031c4c056ce213c3291880e8c823829776da1edc86328d6970a686f7e79",
+          "originalOutput": "exec-1a50c017-ea43-4c0b-bc94-fb9a2a41a1d7.png",
+          "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Jean-Louis Borloo, tier raro. Face: Dark tousled curly hair, broad lined cheeks, strong eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees left, both hands low as if explaining, one low microphone. Wardrobe: an open-collar pale blue shirt with sleeves casually rolled, no tie. Background: a centrist party conference with blue and cream architecture, soft stage beams, no readable logos. TOP RIGHT: Valérie Pécresse, tier raro. Face: Short straight honey-blond bob, side part, oval face, no glasses. Pose: head and eyes 50 degrees right, a measured hand gesture low in frame. Wardrobe: a comfortable structured red jacket over a pale blouse. Background: a regional-council chamber with royal-blue seating, wood desk edges and angled daylight. BOTTOM LEFT: Rachida Dati, tier raro. Face: IDENTITY: the shorter WOMAN ON THE RIGHT, not the tall man on the left. Short sleek dark brown bob, distinctive black rectangular glasses, olive-toned skin. Pose: head and eyes 45 degrees left and slightly down, holding a closed slim folder. Wardrobe: a soft charcoal jacket over a pale open-collar blouse. Background: a cultural-ministry salon with dark green walls, brass lamps and warm architectural depth. BOTTOM RIGHT: Bruno Retailleau, tier raro. Face: Receding short dark-gray hair, long narrow face, thin round metal glasses, clean-shaven. The caption identifies RETAILLEAU despite the search having been for Le Maire. Pose: head and eyes 50 degrees right, a small precision hand gesture low in frame, handheld microphone below chin. Wardrobe: a dark soft blazer and pale blue open-collar shirt, no tie. Background: a Senate committee room with burgundy upholstery, golden wood and a muted violet stage light. "
+        }
+      ],
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Corrección mediante image_gen y revisión visual; no se admite contacto visual con el espectador."
+      }
     },
     {
       "sheet": "art/fr01-07.png",
@@ -472,7 +529,1326 @@
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
       "sha256": "84f308f87f473b3dfe392822a12883eb6dec7255bcd45b7cf35528b5979754db",
-      "originalOutput": "exec-29ce7e62-3471-45bb-9514-6370248de3f4.png"
+      "originalOutput": "exec-29ce7e62-3471-45bb-9514-6370248de3f4.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de cabeza y ojos; sin mirada a cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-08.png",
+      "ids": [
+        "francois-mitterrand",
+        "laurent-fabius",
+        "alain-juppe",
+        "francois-fillon"
+      ],
+      "names": [
+        "François Mitterrand",
+        "Laurent Fabius",
+        "Alain Juppé",
+        "François Fillon"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: François Mitterrand. Face: High receding forehead, thinning dark-gray side hair, long nose, lined cheeks, clean-shaven, no glasses. The monochrome source is only identity reference; paint natural skin and hair colors. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (legendario provisional): an elegant navy tailored suit, crisp white shirt and restrained burgundy silk tie. Background: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Laurent Fabius. Face: Receding high forehead with fine white-gray side hair, long nose, broad lined face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (legendario provisional): a formal charcoal tailored suit, pale shirt and dark blue silk tie. Background: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Alain Juppé. Face: Bald crown, very short gray side hair, long lined face, prominent nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (especial provisional): a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman. Background: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: François Fillon. Face: Thick short dark hair swept to the side, strong eyebrows, long nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (especial provisional): a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman. Background: a regional council room with blue upholstery, maple wood and oblique cool daylight.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "francois-mitterrand",
+          "page": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/President_Mitterand_bij_slotzitting_Europa_Congres_Mitterand%2C_kop%2C_Bestanddeelnr_934-2444_%28portrait_crop%29.jpg/500px-President_Mitterand_bij_slotzitting_Europa_Congres_Mitterand%2C_kop%2C_Bestanddeelnr_934-2444_%28portrait_crop%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "94c26597f9d54f0dd4b896d7f45b96b3d223e5defb37edeb7197ae2b29e11027",
+          "caption": "François Mitterrand · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "High receding forehead, thinning dark-gray side hair, long nose, lined cheeks, clean-shaven, no glasses. The monochrome source is only identity reference; paint natural skin and hair colors.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "an elegant navy tailored suit, crisp white shirt and restrained burgundy silk tie",
+          "background": "a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light"
+        },
+        {
+          "id": "laurent-fabius",
+          "page": "https://fr.wikipedia.org/wiki/Laurent_Fabius",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Fabius_EP_2016_%28cropped%29.jpg/500px-Fabius_EP_2016_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "a9c1c1451463c3cc7e609b382673f902b050911eee7bb9cb19f626efaa079a20",
+          "caption": "Laurent Fabius · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Receding high forehead with fine white-gray side hair, long nose, broad lined face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal charcoal tailored suit, pale shirt and dark blue silk tie",
+          "background": "a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights"
+        },
+        {
+          "id": "alain-juppe",
+          "page": "https://fr.wikipedia.org/wiki/Alain_Jupp%C3%A9",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/Alain_Jupp%C3%A9_%C3%A0_Qu%C3%A9bec_%28cropped_3%29.jpg/500px-Alain_Jupp%C3%A9_%C3%A0_Qu%C3%A9bec_%28cropped_3%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "95cb63724ff28c022f3e8783d2766856aa13115ee8028bfd978b0bf40616142c",
+          "caption": "Alain Juppé · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Bald crown, very short gray side hair, long lined face, prominent nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman",
+          "background": "a Senate committee library with dark green leather chairs, oak shelving and diffused window light"
+        },
+        {
+          "id": "francois-fillon",
+          "page": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Fillon",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Fran%C3%A7ois_Fillon_2010.jpg/500px-Fran%C3%A7ois_Fillon_2010.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "c37695cba8d0313917a70745473cf859f644ce18365aa07e23ed256a5eabaa24",
+          "caption": "François Fillon · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Thick short dark hair swept to the side, strong eyebrows, long nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman",
+          "background": "a regional council room with blue upholstery, maple wood and oblique cool daylight"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "6c86ef0a12e444db425c0c7944e2b5ce15a4cdd8d7d4cff72e2c53fbf4cfaa63",
+      "originalOutput": "exec-6c425dbd-91f0-470a-bd09-cf4ed5a97189.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-09.png",
+      "ids": [
+        "jean-pierre-raffarin",
+        "sebastien-lecornu",
+        "martine-aubry",
+        "gerard-larcher"
+      ],
+      "names": [
+        "Jean-Pierre Raffarin",
+        "Sébastien Lecornu",
+        "Martine Aubry",
+        "Gérard Larcher"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Jean-Pierre Raffarin. Face: Short side-parted gray hair, broad rounded face, distinctive dark rectangular reading glasses worn slightly low, clean-shaven. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (especial provisional): a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman. Background: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: Sébastien Lecornu. Face: Short dark brown hair, high forehead, prominent eyebrows, round face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (especial provisional): a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman. Background: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Martine Aubry. Face: Short layered brown bob, rounded cheeks, small earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (especial provisional): a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman. Background: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: Gérard Larcher. Face: Short side-parted silver-gray hair, high forehead, broad full rounded cheeks and heavy build, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (legendario provisional): a formal charcoal tailored suit, pale shirt and dark blue silk tie. Background: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "jean-pierre-raffarin",
+          "page": "https://fr.wikipedia.org/wiki/Jean-Pierre_Raffarin",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0f/Jean-Pierre_Raffarin_par_Claude_Truong-Ngoc_2013_%28cropped_2%29.jpg/500px-Jean-Pierre_Raffarin_par_Claude_Truong-Ngoc_2013_%28cropped_2%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "f77da1e9c558be62dc58eeee29ad6f514c3545fa2542dda983fd06365ee03eeb",
+          "caption": "Jean-Pierre Raffarin · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short side-parted gray hair, broad rounded face, distinctive dark rectangular reading glasses worn slightly low, clean-shaven.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman",
+          "background": "a party conference lectern with muted red architectural panels and amber spotlights, no emblems"
+        },
+        {
+          "id": "sebastien-lecornu",
+          "page": "https://fr.wikipedia.org/wiki/S%C3%A9bastien_Lecornu",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/ba/Portrait_officiel_de_S%C3%A9bastien_Lecornu_-_Ministre_des_Arm%C3%A9es_%28cropped_2%29.jpg/500px-Portrait_officiel_de_S%C3%A9bastien_Lecornu_-_Ministre_des_Arm%C3%A9es_%28cropped_2%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "517fd8e129fe720c63e9e076e2fa5975e918ee5bf9a3e00ef1455dfbc89e5499",
+          "caption": "Sébastien Lecornu · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark brown hair, high forehead, prominent eyebrows, round face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman",
+          "background": "a municipal council office with sage-green walls, tall windows and polished wood"
+        },
+        {
+          "id": "martine-aubry",
+          "page": "https://fr.wikipedia.org/wiki/Martine_Aubry",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Martine_Aubry_-_avril_2012_%283%29_crop.jpg/500px-Martine_Aubry_-_avril_2012_%283%29_crop.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "d577b126c997f88f90c2bd3fc6e68136d4dba0f38c22efbbcd210d3b67dcd7b1",
+          "caption": "Martine Aubry · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short layered brown bob, rounded cheeks, small earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman",
+          "background": "an environmental-policy forum with deep green translucent panels and soft stage beams"
+        },
+        {
+          "id": "gerard-larcher",
+          "page": "https://fr.wikipedia.org/wiki/G%C3%A9rard_Larcher",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9d/Portrait_G._Larcher_2014_%28cropped%29.jpg/500px-Portrait_G._Larcher_2014_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "ef1a6cf55f3f40395134e88b0a6bab8e59c3a1fd512702639b3f7755cb4c7b15",
+          "caption": "Gérard Larcher · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short side-parted silver-gray hair, high forehead, broad full rounded cheeks and heavy build, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal charcoal tailored suit, pale shirt and dark blue silk tie",
+          "background": "a press briefing room with navy architectural panels, a slim lectern and warm brass sconces"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "f15348a2d3d82c5a9e9bb7b1ba8269c7cc0ef94deea5f2f6951f7138d72e65e3",
+      "originalOutput": "exec-a13ecf2e-ce37-4e3a-8c3c-60e861d63e05.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-10.png",
+      "ids": [
+        "yael-braun-pivet",
+        "francois-de-rugy",
+        "jean-pierre-chevenement",
+        "laurent-wauquiez"
+      ],
+      "names": [
+        "Yaël Braun-Pivet",
+        "François de Rugy",
+        "Jean-Pierre Chevènement",
+        "Laurent Wauquiez"
+      ],
+      "prompt": "Create a neutral semi-realistic digital painting portrait atlas: exactly two columns and two rows, four equal edge-to-edge chest-up portraits. Vertical canvas 3:4, each quadrant also 3:4. Preserve the public figures' identities from the first four reference photographs in reading order. The fifth reference provides only the painterly TCG art style, no flags or copied clothing. Every head is turned sixty-five degrees sideways and both eyes follow that same side, toward an off-frame interlocutor. Absolutely no eye contact with the viewer, no front-facing gaze. No lettering, logos, borders or UI. TOP LEFT: Yaël Braun-Pivet. Straight shoulder-length dark blond hair with center part, narrow face, small earrings, no glasses. head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman. Setting: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: François de Rugy. Short side-parted dark-blond gray hair, broad forehead, narrow lined face, clean-shaven, no glasses. head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman. Setting: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Jean-Pierre Chevènement. Thick swept-back silver-white hair, long lined face, thin rectangular metal glasses, clean-shaven. head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Setting: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Laurent Wauquiez. Short thick silver-gray hair, neatly trimmed salt-and-pepper beard, angular face, no glasses. head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Setting: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights. ",
+      "references": [
+        {
+          "id": "yael-braun-pivet",
+          "page": "https://fr.wikipedia.org/wiki/Ya%C3%ABl_Braun-Pivet",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/81/Ya%C3%ABl_Braun-Pivet_2023_%28cropped%29.jpg/500px-Ya%C3%ABl_Braun-Pivet_2023_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "9ba93b28ddf429ff1edd225aebbad34147f6057bffa131f17fe1b5c5e7f533d4",
+          "caption": "Yaël Braun-Pivet · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Straight shoulder-length dark blond hair with center part, narrow face, small earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman",
+          "background": "a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight"
+        },
+        {
+          "id": "francois-de-rugy",
+          "page": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_de_Rugy",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b3/Fran%C3%A7ois_de_Rugy.jpg/500px-Fran%C3%A7ois_de_Rugy.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "a9b86e8dcf44e7e48aebcca3ba3f5928a4ac390c0145a425714355c0c606ae0f",
+          "caption": "François de Rugy · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short side-parted dark-blond gray hair, broad forehead, narrow lined face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman",
+          "background": "a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp"
+        },
+        {
+          "id": "jean-pierre-chevenement",
+          "page": "https://fr.wikipedia.org/wiki/Jean-Pierre_Chev%C3%A8nement",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/Jean-Pierre_Chev%C3%A8nement_%285%29_%28cropped%29.JPG/500px-Jean-Pierre_Chev%C3%A8nement_%285%29_%28cropped%29.JPG?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "9f5bfcd4a37a9924414cf9d35a8dd706d28e5eefb53c26b6604e60ff6dacd7ac",
+          "caption": "Jean-Pierre Chevènement · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Thick swept-back silver-white hair, long lined face, thin rectangular metal glasses, clean-shaven.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a centrist party conference with teal geometric architecture and cream-colored overhead lights"
+        },
+        {
+          "id": "laurent-wauquiez",
+          "page": "https://fr.wikipedia.org/wiki/Laurent_Wauquiez",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Laurent_Wauquiez_2021.jpg/250px-Laurent_Wauquiez_2021.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "b81320f9923d244df4558850903da1370af3c8908665874107894235b6f0ab28",
+          "caption": "Laurent Wauquiez · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short thick silver-gray hair, neatly trimmed salt-and-pepper beard, angular face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights"
+        }
+      ],
+      "previousPrompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Yaël Braun-Pivet. Face: Straight shoulder-length dark blond hair with center part, narrow face, small earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (especial provisional): a formal well-fitted dark blue jacket and crisp pale shirt, with a sober tie for a man or neat formal blouse for a woman. Background: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: François de Rugy. Face: Short side-parted dark-blond gray hair, broad forehead, narrow lined face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (especial provisional): a formal charcoal tailored jacket with a pale shirt and dark patterned tie for a man or cream blouse for a woman. Background: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Jean-Pierre Chevènement. Face: Thick swept-back silver-white hair, long lined face, thin rectangular metal glasses, clean-shaven. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Laurent Wauquiez. Face: Short thick silver-gray hair, neatly trimmed salt-and-pepper beard, angular face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "baff644779f282240fb1648384d393a70228c2d8f1ac33edbe079b6b7307a3b2",
+      "originalOutput": "exec-9adf0424-b282-4be0-b6e5-a880a19a6ccc.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-11.png",
+      "ids": [
+        "xavier-bertrand",
+        "najat-vallaud-belkacem",
+        "marisol-touraine",
+        "jean-yves-le-drian"
+      ],
+      "names": [
+        "Xavier Bertrand",
+        "Najat Vallaud-Belkacem",
+        "Marisol Touraine",
+        "Jean-Yves Le Drian"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Xavier Bertrand. Face: Short straight sandy-gray hair with side part, broad rounded face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Najat Vallaud-Belkacem. Face: Short side-parted dark brown hair, oval face, medium olive skin, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Marisol Touraine. Face: Short wavy side-parted brown bob, narrow oval face, no glasses, small simple necklace. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: Jean-Yves Le Drian. Face: Bald crown with short gray side hair, broad lined cheeks, long nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a regional council room with blue upholstery, maple wood and oblique cool daylight.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "xavier-bertrand",
+          "page": "https://fr.wikipedia.org/wiki/Xavier_Bertrand",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Xavier_Bertrand_-_2025_%28cropped%29.jpg/500px-Xavier_Bertrand_-_2025_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "1d43207e370dc3cdaf8dc2c3bf22eb9b8020d8d6e8784dd84f75a46b7bd54e56",
+          "caption": "Xavier Bertrand · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short straight sandy-gray hair with side part, broad rounded face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light"
+        },
+        {
+          "id": "najat-vallaud-belkacem",
+          "page": "https://fr.wikipedia.org/wiki/Najat_Vallaud-Belkacem",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Najat_Vallaud-Belkacem_2018_cropped.jpg/500px-Najat_Vallaud-Belkacem_2018_cropped.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "dafa47ffd8df0d5b9b07311408ffb127cc99cfafb4e63dd6068fbed114d16c89",
+          "caption": "Najat Vallaud-Belkacem · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short side-parted dark brown hair, oval face, medium olive skin, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights"
+        },
+        {
+          "id": "marisol-touraine",
+          "page": "https://fr.wikipedia.org/wiki/Marisol_Touraine",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a3/Marisol_Touraine_2015.jpg/500px-Marisol_Touraine_2015.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "b54f57a5909a0c7965335b0611c52cac8a766fedf9169a93b32d3d261844f375",
+          "caption": "Marisol Touraine · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short wavy side-parted brown bob, narrow oval face, no glasses, small simple necklace.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a Senate committee library with dark green leather chairs, oak shelving and diffused window light"
+        },
+        {
+          "id": "jean-yves-le-drian",
+          "page": "https://fr.wikipedia.org/wiki/Jean-Yves_Le_Drian",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0d/Cop26_1287_%2851654235983%29_%28cropped%29.jpg/500px-Cop26_1287_%2851654235983%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "6071c715a232115e6a9ebd29b1738c9ed29c4a722e6341182125620c93f0da54",
+          "caption": "Jean-Yves Le Drian · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Bald crown with short gray side hair, broad lined cheeks, long nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a regional council room with blue upholstery, maple wood and oblique cool daylight"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "ff1c45383ee87d18f6cea49f80c9f314b7c87814d68fa580d94e47942514ec0c",
+      "originalOutput": "exec-935a0a6d-0583-4a12-93b5-8bf83e7f5be1.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-12.png",
+      "ids": [
+        "florence-parly",
+        "sylvie-goulard",
+        "stephane-sejourne",
+        "pierre-moscovici"
+      ],
+      "names": [
+        "Florence Parly",
+        "Sylvie Goulard",
+        "Stéphane Séjourné",
+        "Pierre Moscovici"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Florence Parly. Face: Chin-length straight chestnut bob with side part, angular face, no glasses, small pendant. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: Sylvie Goulard. Face: Short dense tousled brown-gray pixie hair, oval face, pronounced eyebrows, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Stéphane Séjourné. Face: Short dark curly hair, broad eyebrows, rounded youthful face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: Pierre Moscovici. Face: Balding crown with sparse dark-gray side hair, rounded face, broad nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "florence-parly",
+          "page": "https://fr.wikipedia.org/wiki/Florence_Parly",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Florence_Parly_190907-D-BN624-0170_%2848694393657%29_%28cropped%29.jpg/500px-Florence_Parly_190907-D-BN624-0170_%2848694393657%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "01a1b439cd382023292558fb02966f7253b6a5de2978fcf0ff992bc9ccf63d51",
+          "caption": "Florence Parly · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Chin-length straight chestnut bob with side part, angular face, no glasses, small pendant.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a party conference lectern with muted red architectural panels and amber spotlights, no emblems"
+        },
+        {
+          "id": "sylvie-goulard",
+          "page": "https://fr.wikipedia.org/wiki/Sylvie_Goulard",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/42/Hearing_of_Sylvie_Goulard_%28France%29_%2C_candidate_commissioner_for_internal_market_%2848832160786%29_%28cropped%29.jpg/500px-Hearing_of_Sylvie_Goulard_%28France%29_%2C_candidate_commissioner_for_internal_market_%2848832160786%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "92533377473af411581211e1538de46683e47188691ef69531fc8b728d3ba0ed",
+          "caption": "Sylvie Goulard · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dense tousled brown-gray pixie hair, oval face, pronounced eyebrows, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a municipal council office with sage-green walls, tall windows and polished wood"
+        },
+        {
+          "id": "stephane-sejourne",
+          "page": "https://fr.wikipedia.org/wiki/St%C3%A9phane_S%C3%A9journ%C3%A9",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dc/S%C3%A9journ%C3%A9_EC_Portrait_2024.jpg/500px-S%C3%A9journ%C3%A9_EC_Portrait_2024.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "efb405a9df4cde73c4462b5e17e318dbc19568954da59825f0cf48659fae9616",
+          "caption": "Stéphane Séjourné · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark curly hair, broad eyebrows, rounded youthful face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "an environmental-policy forum with deep green translucent panels and soft stage beams"
+        },
+        {
+          "id": "pierre-moscovici",
+          "page": "https://fr.wikipedia.org/wiki/Pierre_Moscovici",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8e/Moscovici_EC_Portrait_2014.jpg/500px-Moscovici_EC_Portrait_2014.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "03b019c46174115b60ea42c42e5e8a008847f11fb5690e1cd75a4cb6e79ba22c",
+          "caption": "Pierre Moscovici · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Balding crown with sparse dark-gray side hair, rounded face, broad nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a press briefing room with navy architectural panels, a slim lectern and warm brass sconces"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "e98cefe3328cdcd015697c992a47d9804f60ff8896611ad6f09def6ea157921b",
+      "originalOutput": "exec-54bd241c-ce22-44c2-bd04-b003276dbfb6.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-13.png",
+      "ids": [
+        "benoit-hamon",
+        "arnaud-montebourg",
+        "olivier-faure",
+        "fabien-roussel"
+      ],
+      "names": [
+        "Benoît Hamon",
+        "Arnaud Montebourg",
+        "Olivier Faure",
+        "Fabien Roussel"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Benoît Hamon. Face: Short dark hair, high forehead, compact angular face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: Arnaud Montebourg. Face: Thick short wavy gray-brown hair, long angular face and nose, strong eyebrows, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Olivier Faure. Face: Short wavy silver-gray hair, short salt-and-pepper beard, round dark rectangular glasses, lined face. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Fabien Roussel. Face: Short thick swept-back dark-gray hair, broad angular cheeks and strong brows, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "benoit-hamon",
+          "page": "https://fr.wikipedia.org/wiki/Beno%C3%AEt_Hamon",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/Beno%C3%AEt_Hamon_place_de_R%C3%A9publique_plan_serr%C3%A9_%28cropped%29.jpg/500px-Beno%C3%AEt_Hamon_place_de_R%C3%A9publique_plan_serr%C3%A9_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "29d1e740e9481d59afbab6ec78bd6055fca9d78d098c1d11ae5af4878250ac0f",
+          "caption": "Benoît Hamon · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark hair, high forehead, compact angular face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight"
+        },
+        {
+          "id": "arnaud-montebourg",
+          "page": "https://fr.wikipedia.org/wiki/Arnaud_Montebourg",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Arnaud_Montebourg_-_2022_%28cropped%29.jpg/250px-Arnaud_Montebourg_-_2022_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "ec3c04d25ff398c6dac487dbbc353af10638143049efff659316cce6c0ce5623",
+          "caption": "Arnaud Montebourg · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Thick short wavy gray-brown hair, long angular face and nose, strong eyebrows, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp"
+        },
+        {
+          "id": "olivier-faure",
+          "page": "https://fr.wikipedia.org/wiki/Olivier_Faure",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/OF_MATIGNON_-_MAXIME_CLAM_%28cropped%29.png/500px-OF_MATIGNON_-_MAXIME_CLAM_%28cropped%29.png?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "0d3934f43fe5e7999312147908970f75c5496f0c7a5019332bf985661eb433e7",
+          "caption": "Olivier Faure · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short wavy silver-gray hair, short salt-and-pepper beard, round dark rectangular glasses, lined face.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a centrist party conference with teal geometric architecture and cream-colored overhead lights"
+        },
+        {
+          "id": "fabien-roussel",
+          "page": "https://fr.wikipedia.org/wiki/Fabien_Roussel",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Roussel_Fabien_1.jpg/500px-Roussel_Fabien_1.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "fe2a705e1f4b2370b939df2ec8e6e5f5998d2d83d33475fbbc19b01051f246b4",
+          "caption": "Fabien Roussel · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short thick swept-back dark-gray hair, broad angular cheeks and strong brows, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "c8e568b8a531636518d9c5f92e3174137c0488192ec356975e03ce586dc1754d",
+      "originalOutput": "exec-027338b1-32cf-49c8-8319-55296df69351.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-14.png",
+      "ids": [
+        "eric-ciotti",
+        "eric-zemmour",
+        "marion-marechal",
+        "jordan-bardella"
+      ],
+      "names": [
+        "Éric Ciotti",
+        "Éric Zemmour",
+        "Marion Maréchal",
+        "Jordan Bardella"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Éric Ciotti. Face: Bald head, narrow oval face, black round glasses, clean-shaven. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Éric Zemmour. Face: High receding forehead, close-cropped brown-gray side hair, narrow long face and prominent nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Marion Maréchal. Face: Long straight blond hair with side part, oval face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: Jordan Bardella. Face: Short neat dark hair side-parted and brushed up, broad youthful face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a regional council room with blue upholstery, maple wood and oblique cool daylight.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "eric-ciotti",
+          "page": "https://fr.wikipedia.org/wiki/%C3%89ric_Ciotti",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d3/%C3%89ric_Ciotti_%28cropped%29.jpg/500px-%C3%89ric_Ciotti_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "a1e0b8a9eedd198fe2933a06820f39f20ca6c2cef5e13bb16bee6d3a6c39f203",
+          "caption": "Éric Ciotti · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Bald head, narrow oval face, black round glasses, clean-shaven.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light"
+        },
+        {
+          "id": "eric-zemmour",
+          "page": "https://fr.wikipedia.org/wiki/%C3%89ric_Zemmour",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Portrait_d%27%C3%89ric_Zemmour%2C_avril_2022.jpg/500px-Portrait_d%27%C3%89ric_Zemmour%2C_avril_2022.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "089e7d6ce22e6b9f1c15fe8468b6e1a23614f7068b1f05c02f972084806d8506",
+          "caption": "Éric Zemmour · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "High receding forehead, close-cropped brown-gray side hair, narrow long face and prominent nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights"
+        },
+        {
+          "id": "marion-marechal",
+          "page": "https://fr.wikipedia.org/wiki/Marion_Mar%C3%A9chal",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Marion_Mar%C3%A9chal_MEP_%282024%29.jpg/500px-Marion_Mar%C3%A9chal_MEP_%282024%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "01a9b724806517b290140e76a4dcc32f6da4a6dfe06275b7b39a50558210f493",
+          "caption": "Marion Maréchal · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Long straight blond hair with side part, oval face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a Senate committee library with dark green leather chairs, oak shelving and diffused window light"
+        },
+        {
+          "id": "jordan-bardella",
+          "page": "https://fr.wikipedia.org/wiki/Jordan_Bardella",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/MEP_Jordan_Bardella.jpg/500px-MEP_Jordan_Bardella.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "b5af8619731053324c406eb54d858729c2eb2f26c8e4adee8485890421c090dc",
+          "caption": "Jordan Bardella · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short neat dark hair side-parted and brushed up, broad youthful face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a regional council room with blue upholstery, maple wood and oblique cool daylight"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "6d55a7be75789e2db21de53c35422688ef4391c6bbc1e1a93248ac9007bcdb3f",
+      "originalOutput": "exec-9844ee32-0822-496b-b71e-8596581cdf3e.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-15.png",
+      "ids": [
+        "yannick-jadot",
+        "francois-ruffin",
+        "raphael-glucksmann",
+        "marine-tondelier"
+      ],
+      "names": [
+        "Yannick Jadot",
+        "François Ruffin",
+        "Raphaël Glucksmann",
+        "Marine Tondelier"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Yannick Jadot. Face: Short tousled sandy-brown gray hair, short light beard, long angular lined face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: François Ruffin. Face: Short wavy dark-gray hair, long angular face, prominent nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Raphaël Glucksmann. Face: High receding forehead with very short dark-gray side hair, light stubble, narrow face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: Marine Tondelier. Face: Shoulder-length wavy chestnut hair, broad eyebrows, oval face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "yannick-jadot",
+          "page": "https://fr.wikipedia.org/wiki/Yannick_Jadot",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c0/20210819_jadot.yannick_5704.jpg/500px-20210819_jadot.yannick_5704.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "04c05f7d950f89dd4b2b877bbb68cf1299bd652ec7247e6ba707baf3b260149e",
+          "caption": "Yannick Jadot · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short tousled sandy-brown gray hair, short light beard, long angular lined face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a party conference lectern with muted red architectural panels and amber spotlights, no emblems"
+        },
+        {
+          "id": "francois-ruffin",
+          "page": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Ruffin",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/Fran%C3%A7ois_Ruffin_%28cropped%29.jpg/500px-Fran%C3%A7ois_Ruffin_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "302b8f932fa922f3d6702360aa52a31401b3fa899a47865ab1a163b5e03557f1",
+          "caption": "François Ruffin · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short wavy dark-gray hair, long angular face, prominent nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a municipal council office with sage-green walls, tall windows and polished wood"
+        },
+        {
+          "id": "raphael-glucksmann",
+          "page": "https://fr.wikipedia.org/wiki/Rapha%C3%ABl_Glucksmann",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1f/1720448398743_20240708_GLUCKSMANN_Raphael_FR_006.jpg/500px-1720448398743_20240708_GLUCKSMANN_Raphael_FR_006.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "18e93eda99e1990e2769ce3cf9b016b6956d76702a6d56f69f10c1b7586c9725",
+          "caption": "Raphaël Glucksmann · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "High receding forehead with very short dark-gray side hair, light stubble, narrow face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "an environmental-policy forum with deep green translucent panels and soft stage beams"
+        },
+        {
+          "id": "marine-tondelier",
+          "page": "https://fr.wikipedia.org/wiki/Marine_Tondelier",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/60/Huma2023MarineTondelier_%28cropped%29.jpg/500px-Huma2023MarineTondelier_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "46c465f345e023e824d098d0fc2019301c5d5ce0a7e81d304f4edd56592dc6a6",
+          "caption": "Marine Tondelier · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Shoulder-length wavy chestnut hair, broad eyebrows, oval face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a press briefing room with navy architectural panels, a slim lectern and warm brass sconces"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "ce6328d22e698041f7e046f6279151a7559a4ce8435f274f0e88be33b5776a33",
+      "originalOutput": "exec-74ff159a-29b0-4158-9fd7-8fbe411b6db1.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-16.png",
+      "ids": [
+        "rama-yade",
+        "sandrine-rousseau",
+        "clementine-autain",
+        "mathilde-panot"
+      ],
+      "names": [
+        "Rama Yade",
+        "Sandrine Rousseau",
+        "Clémentine Autain",
+        "Mathilde Panot"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Rama Yade. Face: Black woman with dark brown skin, black braided hair gathered back, small earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: Sandrine Rousseau. Face: Short swept-up silver-gray pixie hair, distinctive round dark glasses, narrow face. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Clémentine Autain. Face: Very short side-swept blond pixie hair, pale translucent angular rectangular glasses, angular face. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Mathilde Panot. Face: Brown hair swept tightly back and gathered, rounded face, green earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "rama-yade",
+          "page": "https://fr.wikipedia.org/wiki/Rama_Yade",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/63/UMP_meeting_Paris_regional_elections_2010-03-17_n11.jpg/500px-UMP_meeting_Paris_regional_elections_2010-03-17_n11.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "1e8424bbee3ebf9bbb03e98d9a2809182706dca6868a0cd1ec2f11bb0d585990",
+          "caption": "Rama Yade · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Black woman with dark brown skin, black braided hair gathered back, small earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight"
+        },
+        {
+          "id": "sandrine-rousseau",
+          "page": "https://fr.wikipedia.org/wiki/Sandrine_Rousseau",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cd/Sandrine_Rousseau_20210819_%28cropped%29.jpg/500px-Sandrine_Rousseau_20210819_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "27551868d2cb3f8e85ef4cf7d54807b5bf97d9f774762cc99026e567caf59981",
+          "caption": "Sandrine Rousseau · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short swept-up silver-gray pixie hair, distinctive round dark glasses, narrow face.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp"
+        },
+        {
+          "id": "clementine-autain",
+          "page": "https://fr.wikipedia.org/wiki/Cl%C3%A9mentine_Autain",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/20210821_autin.c_6679_%28cropped%29.jpg/500px-20210821_autin.c_6679_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "532f53ee1082fbe0688599d13df1e4d4bd9c46846fedc909f31fb38da7d63f60",
+          "caption": "Clémentine Autain · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Very short side-swept blond pixie hair, pale translucent angular rectangular glasses, angular face.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a centrist party conference with teal geometric architecture and cream-colored overhead lights"
+        },
+        {
+          "id": "mathilde-panot",
+          "page": "https://fr.wikipedia.org/wiki/Mathilde_Panot",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Mathilde_Panot_2021-3.jpg/500px-Mathilde_Panot_2021-3.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "51476b12ead6b5607f80d031d1ac05ca004cb9429322a75fa1be2c2b69e95454",
+          "caption": "Mathilde Panot · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Brown hair swept tightly back and gathered, rounded face, green earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "49ba49a1b54f69174d0d20a3d64f563bd96148b294692faff11a6a38acc7b877",
+      "originalOutput": "exec-b163967a-ccde-4fb6-8970-aa8511788ee5.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-17.png",
+      "ids": [
+        "manon-aubry",
+        "aurore-berge",
+        "agnes-pannier-runacher",
+        "amelie-de-montchalin"
+      ],
+      "names": [
+        "Manon Aubry",
+        "Aurore Bergé",
+        "Agnès Pannier-Runacher",
+        "Amélie de Montchalin"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Manon Aubry. Face: Shoulder-length dark brown curls, broad eyebrows, oval face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Aurore Bergé. Face: Dark blond hair pulled back into a ponytail, round dark glasses, narrow oval face. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Agnès Pannier-Runacher. Face: Straight shoulder-length blond hair with side part, thin round red glasses, long narrow face. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: Amélie de Montchalin. Face: Straight shoulder-length brown hair with side part, thin tortoiseshell round glasses, oval face. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a regional council room with blue upholstery, maple wood and oblique cool daylight.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "manon-aubry",
+          "page": "https://fr.wikipedia.org/wiki/Manon_Aubry",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/1720623827463_20190528_AUBRY_Manon_FR_9.jpg/500px-1720623827463_20190528_AUBRY_Manon_FR_9.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "33ef4f61bac28b45ea8c664937739c016e4bdfd0630a45c4de34d74063df3d80",
+          "caption": "Manon Aubry · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Shoulder-length dark brown curls, broad eyebrows, oval face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light"
+        },
+        {
+          "id": "aurore-berge",
+          "page": "https://fr.wikipedia.org/wiki/Aurore_Berg%C3%A9",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fc/AURORE_BERG%C3%89_04_%28cropped%29.jpg/500px-AURORE_BERG%C3%89_04_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "3d21566c901d25b81e89a76cdd09e80ee0a64eb895112ab015a6b98d087daaba",
+          "caption": "Aurore Bergé · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Dark blond hair pulled back into a ponytail, round dark glasses, narrow oval face.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights"
+        },
+        {
+          "id": "agnes-pannier-runacher",
+          "page": "https://fr.wikipedia.org/wiki/Agn%C3%A8s_Pannier-Runacher",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ef/Agn%C3%A8s_Pannier-Runacher_-_2023_%28cropped%29.jpg/500px-Agn%C3%A8s_Pannier-Runacher_-_2023_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "5b96055ee8c77a16e2603cd6385c99b718588641409293bda62ca7c46ebad4ea",
+          "caption": "Agnès Pannier-Runacher · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Straight shoulder-length blond hair with side part, thin round red glasses, long narrow face.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a Senate committee library with dark green leather chairs, oak shelving and diffused window light"
+        },
+        {
+          "id": "amelie-de-montchalin",
+          "page": "https://fr.wikipedia.org/wiki/Am%C3%A9lie_de_Montchalin",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/83/Montchalin_Portrait_2025_%28cropped%29.jpg/250px-Montchalin_Portrait_2025_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "12f41d2f459aa215e7ac43d93af4f30a79f2353774e6ab55bb92859bc5108d94",
+          "caption": "Amélie de Montchalin · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Straight shoulder-length brown hair with side part, thin tortoiseshell round glasses, oval face.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a regional council room with blue upholstery, maple wood and oblique cool daylight"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "d89fe7ed83b11ccd679ddf5587a678f02f061ee5b6aae7754799e183ea9c4390",
+      "originalOutput": "exec-ba472aec-55e7-4262-bc54-578e0ea1f27e.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-18.png",
+      "ids": [
+        "agnes-buzyn",
+        "aurelien-pradie",
+        "jean-francois-cope",
+        "valerie-boyer"
+      ],
+      "names": [
+        "Agnès Buzyn",
+        "Aurélien Pradié",
+        "Jean-François Copé",
+        "Valérie Boyer"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Agnès Buzyn. Face: Long dark chestnut hair pulled back from forehead, oval face, small earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: Aurélien Pradié. Face: Short thick wavy dark hair, strong eyebrows, broad youthful face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Jean-François Copé. Face: Balding crown with close-cropped dark-gray side hair, long narrow nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: Valérie Boyer. Face: Long layered chestnut hair with center part, oval face, turquoise drop earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "agnes-buzyn",
+          "page": "https://fr.wikipedia.org/wiki/Agn%C3%A8s_Buzyn",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d8/Agn%C3%A8s_Buzyn_2018-04-06_lancement_strat%C3%A9gie_autisme_2018-2022_%28cropped%29.jpg/500px-Agn%C3%A8s_Buzyn_2018-04-06_lancement_strat%C3%A9gie_autisme_2018-2022_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "458299dc5f6d232f91e3d2a33955ddbb6cdbf8dc1454209a6122d7c091b01754",
+          "caption": "Agnès Buzyn · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Long dark chestnut hair pulled back from forehead, oval face, small earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a party conference lectern with muted red architectural panels and amber spotlights, no emblems"
+        },
+        {
+          "id": "aurelien-pradie",
+          "page": "https://fr.wikipedia.org/wiki/Aur%C3%A9lien_Pradi%C3%A9",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Aur%C3%A9lien_Pradi%C3%A9_-_July_2017_-_Assembl%C3%A9e_Nationale_%28cropped%29.jpg/500px-Aur%C3%A9lien_Pradi%C3%A9_-_July_2017_-_Assembl%C3%A9e_Nationale_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "8a39842af66e0de358a2f41b59d23fa199955fc2b4af9037a1e34c3a086f12b9",
+          "caption": "Aurélien Pradié · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short thick wavy dark hair, strong eyebrows, broad youthful face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a municipal council office with sage-green walls, tall windows and polished wood"
+        },
+        {
+          "id": "jean-francois-cope",
+          "page": "https://fr.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Cop%C3%A9",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/12/Photo_JFC.jpg/500px-Photo_JFC.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "1f48544161054e35c71a642d561dec5062d8941f2f3859ae93fe257b00ff17ee",
+          "caption": "Jean-François Copé · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Balding crown with close-cropped dark-gray side hair, long narrow nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "an environmental-policy forum with deep green translucent panels and soft stage beams"
+        },
+        {
+          "id": "valerie-boyer",
+          "page": "https://fr.wikipedia.org/wiki/Val%C3%A9rie_Boyer",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f7/BOYER_Val%C3%A9rie_TRB.jpg/500px-BOYER_Val%C3%A9rie_TRB.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "b2942827eb81057987625068e26eb9cd478aebf67f7dda55defb133755cb8237",
+          "caption": "Valérie Boyer · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Long layered chestnut hair with center part, oval face, turquoise drop earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a press briefing room with navy architectural panels, a slim lectern and warm brass sconces"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "d9f9942c295ad282324d1fcce80ae78b8e7a1d2bf24a9f14c02d595a50faa723",
+      "originalOutput": "exec-c9347577-6ea4-43fe-828f-f08474c2f807.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-19.png",
+      "ids": [
+        "valerie-rabault",
+        "boris-vallaud",
+        "carole-delga",
+        "johanna-rolland"
+      ],
+      "names": [
+        "Valérie Rabault",
+        "Boris Vallaud",
+        "Carole Delga",
+        "Johanna Rolland"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Valérie Rabault. Face: Short side-parted light brown bob, round face, small earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: Boris Vallaud. Face: Medium-length wavy side-swept brown hair, full short brown-gray beard, long narrow face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Carole Delga. Face: Chin-length thick wavy brown bob, rounded cheeks, no glasses. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (raro provisional): a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie. Background: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Johanna Rolland. Face: Straight dark brown bob with center part and ends turned out, oval face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "valerie-rabault",
+          "page": "https://fr.wikipedia.org/wiki/Val%C3%A9rie_Rabault",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e3/Val%C3%A9rie_Rabault.jpg/500px-Val%C3%A9rie_Rabault.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "5ad1f7fa5c391dfe3a229b48842743eb0be8bcd8d74289f3d6244d70b4702872",
+          "caption": "Valérie Rabault · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short side-parted light brown bob, round face, small earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight"
+        },
+        {
+          "id": "boris-vallaud",
+          "page": "https://fr.wikipedia.org/wiki/Boris_Vallaud",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a1/Boris_Vallaud_%28cropped%29.jpg/500px-Boris_Vallaud_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "4460946fd21d1aa07301fb18950363bf66b41d69d2cae3b6ae11a4805a0bee38",
+          "caption": "Boris Vallaud · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Medium-length wavy side-swept brown hair, full short brown-gray beard, long narrow face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp"
+        },
+        {
+          "id": "carole-delga",
+          "page": "https://fr.wikipedia.org/wiki/Carole_Delga",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Delga-Toulouse-Occitanie_%28cropped%29.jpg/500px-Delga-Toulouse-Occitanie_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "44c0f9a073d1ea2e31532c9538ddc11661f666a670f08f5f2addffd350bb0d0e",
+          "caption": "Carole Delga · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Chin-length thick wavy brown bob, rounded cheeks, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a soft dark blue professional blazer over a pale open-collar shirt or blouse, no tie",
+          "background": "a centrist party conference with teal geometric architecture and cream-colored overhead lights"
+        },
+        {
+          "id": "johanna-rolland",
+          "page": "https://fr.wikipedia.org/wiki/Johanna_Rolland",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/88/Johanna_Rolland_2019_%28cropped%29.jpg/500px-Johanna_Rolland_2019_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "bfa975569f4e3472ee540d592c73ffd52cae2c5b4f503cb3aa6f833b68c4b4f1",
+          "caption": "Johanna Rolland · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Straight dark brown bob with center part and ends turned out, oval face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "a0ad9f671ecfac1925d25306af13f7b077510a70f32d580805c288321b5bf66e",
+      "originalOutput": "exec-1bf644f8-d11b-4df9-8b4c-9d5bbe596a62.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-20.png",
+      "ids": [
+        "nathalie-appere",
+        "gregory-doucet",
+        "jeanne-barseghian",
+        "pierre-hurmic"
+      ],
+      "names": [
+        "Nathalie Appéré",
+        "Grégory Doucet",
+        "Jeanne Barseghian",
+        "Pierre Hurmic"
+      ],
+      "prompt": "Create a neutral semi-realistic digital painting portrait atlas: exactly two columns and two rows, four equal edge-to-edge chest-up portraits. Vertical canvas 3:4, each quadrant also 3:4. Preserve the public figures' identities from the first four reference photographs in reading order. The fifth reference provides only the painterly TCG art style, no flags or copied clothing. Every head is turned sixty-five degrees sideways and both eyes follow that same side, toward an off-frame interlocutor. Absolutely no eye contact with the viewer, no front-facing gaze. No lettering, logos, borders or UI. TOP LEFT: Nathalie Appéré. Very short blond pixie hair, round dark glasses, oval face. head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Setting: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Grégory Doucet. Short tousled dark hair, neatly trimmed dark beard and moustache, angular face, no glasses. head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Setting: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Jeanne Barseghian. Short dense chestnut curls, round face, no glasses. head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a simple blue open-collar cotton shirt or blouse, no tie. Setting: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: Pierre Hurmic. Short neat silver-gray hair, salt-and-pepper beard, round tortoiseshell glasses, long narrow face. head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Setting: a regional council room with blue upholstery, maple wood and oblique cool daylight. ",
+      "references": [
+        {
+          "id": "nathalie-appere",
+          "page": "https://fr.wikipedia.org/wiki/Nathalie_App%C3%A9r%C3%A9",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f5/App%C3%A9r%C3%A9_2023_%28cropped%29.jpg/250px-App%C3%A9r%C3%A9_2023_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "4646ac74058678ba0ce6538cd0296642eb2ba6ed8d3ab5e9194dda8ef81aaa00",
+          "caption": "Nathalie Appéré · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Very short blond pixie hair, round dark glasses, oval face.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light"
+        },
+        {
+          "id": "gregory-doucet",
+          "page": "https://fr.wikipedia.org/wiki/Gr%C3%A9gory_Doucet",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e1/Gr%C3%A9gory_Doucet_%28cropped%29_%28cropped%29.jpg/250px-Gr%C3%A9gory_Doucet_%28cropped%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "7f797f851a871c2b1c703c394c216ec3881517be34d5a2be5ed53619c7bb98ef",
+          "caption": "Grégory Doucet · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short tousled dark hair, neatly trimmed dark beard and moustache, angular face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights"
+        },
+        {
+          "id": "jeanne-barseghian",
+          "page": "https://fr.wikipedia.org/wiki/Jeanne_Barseghian",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Jeanne_Barseghian_%28cropped%29.jpg/500px-Jeanne_Barseghian_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "b481a7f74bad017487d16f6d113fc58adf6f142b400052cebd6780b6b695fa28",
+          "caption": "Jeanne Barseghian · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dense chestnut curls, round face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a Senate committee library with dark green leather chairs, oak shelving and diffused window light"
+        },
+        {
+          "id": "pierre-hurmic",
+          "page": "https://fr.wikipedia.org/wiki/Pierre_Hurmic",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Portrait_Pierre_Hurmic_%28cropped%29.jpg/500px-Portrait_Pierre_Hurmic_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "47bd138bc0e7ee98a8e14bb128e4d00ea25bcca2275f955addbff123c65923b0",
+          "caption": "Pierre Hurmic · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short neat silver-gray hair, salt-and-pepper beard, round tortoiseshell glasses, long narrow face.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a regional council room with blue upholstery, maple wood and oblique cool daylight"
+        }
+      ],
+      "previousPrompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Nathalie Appéré. Face: Very short blond pixie hair, round dark glasses, oval face. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Grégory Doucet. Face: Short tousled dark hair, neatly trimmed dark beard and moustache, angular face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Jeanne Barseghian. Face: Short dense chestnut curls, round face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: Pierre Hurmic. Face: Short neat silver-gray hair, salt-and-pepper beard, round tortoiseshell glasses, long narrow face. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a regional council room with blue upholstery, maple wood and oblique cool daylight.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "970416c99aa16e51f5b634222bb2da6a640e1e98f83a3196267f892bfb9819c9",
+      "originalOutput": "exec-d7143452-9658-4d2a-9064-ee6f8bdc3f64.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-21.png",
+      "ids": [
+        "eric-piolle",
+        "francois-baroin",
+        "christian-estrosi",
+        "david-lisnard"
+      ],
+      "names": [
+        "Éric Piolle",
+        "François Baroin",
+        "Christian Estrosi",
+        "David Lisnard"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Éric Piolle. Face: Short dark hair swept upward, high forehead, light stubble, long face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: François Baroin. Face: Thick wavy gray-brown hair swept to the side, long narrow face, clean-shaven, no glasses in this reference. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (raro provisional): a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie. Background: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Christian Estrosi. Face: Thick side-swept brown hair, lined broad cheeks, long nose, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: David Lisnard. Face: Short neat straight brown-gray hair with side part, narrow lined face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "eric-piolle",
+          "page": "https://fr.wikipedia.org/wiki/%C3%89ric_Piolle",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f0/20210819_piolle.eric5891_%28cropped%29.jpg/500px-20210819_piolle.eric5891_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "ab387c53f06f4292acc7c54956d066611002904c14bde026a6c187c6ac88527e",
+          "caption": "Éric Piolle · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark hair swept upward, high forehead, light stubble, long face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a party conference lectern with muted red architectural panels and amber spotlights, no emblems"
+        },
+        {
+          "id": "francois-baroin",
+          "page": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Baroin",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5e/Fran%C3%A7ois_Baroin_%2850277562053%29_%28cropped%29.jpg/500px-Fran%C3%A7ois_Baroin_%2850277562053%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "59b7348475177e3734768982151ccf146409577b93d509089de568c5a6922b80",
+          "caption": "François Baroin · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Thick wavy gray-brown hair swept to the side, long narrow face, clean-shaven, no glasses in this reference.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable charcoal jacket with an open-collar pale blue shirt or blouse, no tie",
+          "background": "a municipal council office with sage-green walls, tall windows and polished wood"
+        },
+        {
+          "id": "christian-estrosi",
+          "page": "https://fr.wikipedia.org/wiki/Christian_Estrosi",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Christian_Estrosi_-_2017_%2824778920307%29_%28cropped%29.jpg/500px-Christian_Estrosi_-_2017_%2824778920307%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "17259eaf397923a3f65226d0d98f772b6c183b2c176e786810e1fab7934b59df",
+          "caption": "Christian Estrosi · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Thick side-swept brown hair, lined broad cheeks, long nose, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "an environmental-policy forum with deep green translucent panels and soft stage beams"
+        },
+        {
+          "id": "david-lisnard",
+          "page": "https://fr.wikipedia.org/wiki/David_Lisnard",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/ce/David_Lisnard_en_2026.jpg/500px-David_Lisnard_en_2026.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "ff085a193264e835e238d1b312aa7c38a1df0052417a07b42a348f7ffbae336e",
+          "caption": "David Lisnard · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short neat straight brown-gray hair with side part, narrow lined face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a press briefing room with navy architectural panels, a slim lectern and warm brass sconces"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "04de702bf712af88eef623550d51e2c8aa28e9522da642a75748fe96c9110e78",
+      "originalOutput": "exec-fb183172-4d4c-447b-aa12-78feb6e897bc.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-22.png",
+      "ids": [
+        "nathalie-arthaud",
+        "francois-asselineau",
+        "jean-lassalle",
+        "nicolas-dupont-aignan"
+      ],
+      "names": [
+        "Nathalie Arthaud",
+        "François Asselineau",
+        "Jean Lassalle",
+        "Nicolas Dupont-Aignan"
+      ],
+      "prompt": "Create a neutral semi-realistic digital painting portrait atlas: exactly two columns and two rows, four equal edge-to-edge chest-up portraits. Vertical canvas 3:4, each quadrant also 3:4. Preserve the public figures' identities from the first four reference photographs in reading order. The fifth reference provides only the painterly TCG art style, no flags or copied clothing. Every head is turned sixty-five degrees sideways and both eyes follow that same side, toward an off-frame interlocutor. Absolutely no eye contact with the viewer, no front-facing gaze. No lettering, logos, borders or UI. TOP LEFT: Nathalie Arthaud. Short dark-gray pixie hair, large dark rectangular glasses, oval face. head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a simple blue open-collar cotton shirt or blouse, no tie. Setting: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: François Asselineau. Very high receding forehead with very short fine gray side hair, round broad face, clean-shaven, no glasses. head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Setting: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Jean Lassalle. Short straight gray hair, very tall build, long lined angular face, prominent eyebrows, clean-shaven, no glasses. head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Setting: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Nicolas Dupont-Aignan. Short neat side-parted silver-gray hair, long angular face, clean-shaven, no glasses. head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a simple blue open-collar cotton shirt or blouse, no tie. Setting: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights. ",
+      "references": [
+        {
+          "id": "nathalie-arthaud",
+          "page": "https://fr.wikipedia.org/wiki/Nathalie_Arthaud",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Nathalie_Arthaud_%28LO%29_19-05-2024.jpg/500px-Nathalie_Arthaud_%28LO%29_19-05-2024.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "fcb90b4c061737b0d4217f40a4c4d49ff42a90d2d0c1c0e8dc56d838ae6d0cb3",
+          "caption": "Nathalie Arthaud · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark-gray pixie hair, large dark rectangular glasses, oval face.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight"
+        },
+        {
+          "id": "francois-asselineau",
+          "page": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Asselineau",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b4/Fran%C3%A7ois_ASSELINEAU.jpg/500px-Fran%C3%A7ois_ASSELINEAU.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "5d3ee39e785a052320ce2c3e1c96d9ba3297784eea957226119e44541d3bb3e8",
+          "caption": "François Asselineau · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Very high receding forehead with very short fine gray side hair, round broad face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp"
+        },
+        {
+          "id": "jean-lassalle",
+          "page": "https://fr.wikipedia.org/wiki/Jean_Lassalle",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Jean_Lassalle.jpg/500px-Jean_Lassalle.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "6433def292583cd0a39ac6a3a681007be476d4b56334a43de657168a33276a60",
+          "caption": "Jean Lassalle · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short straight gray hair, very tall build, long lined angular face, prominent eyebrows, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a centrist party conference with teal geometric architecture and cream-colored overhead lights"
+        },
+        {
+          "id": "nicolas-dupont-aignan",
+          "page": "https://fr.wikipedia.org/wiki/Nicolas_Dupont-Aignan",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/13/Nicolas_Dupont-Aignan%2C_homme_politique_fran%C3%A7ais.jpg/500px-Nicolas_Dupont-Aignan%2C_homme_politique_fran%C3%A7ais.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "f7bd5cc942f96d3916a5cb3ff78df3c80bded7de3335d6335454238693a3d67d",
+          "caption": "Nicolas Dupont-Aignan · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short neat side-parted silver-gray hair, long angular face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights"
+        }
+      ],
+      "previousPrompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Nathalie Arthaud. Face: Short dark-gray pixie hair, large dark rectangular glasses, oval face. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a parliamentary corridor with honey-colored stone arches, wine-red seating and slanting daylight. TOP RIGHT: François Asselineau. Face: Very high receding forehead with very short fine gray side hair, round broad face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a cultural committee salon with a forest-green wall, books and a warm shaded desk lamp. BOTTOM LEFT: Jean Lassalle. Face: Short straight gray hair, very tall build, long lined angular face, prominent eyebrows, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a centrist party conference with teal geometric architecture and cream-colored overhead lights. BOTTOM RIGHT: Nicolas Dupont-Aignan. Face: Short neat side-parted silver-gray hair, long angular face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a civic debate room with burgundy chairs, cool slate-blue walls and reflected gold highlights.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "38b4372c8081a2e9c94d2fe9118322ca4214598f728e16fef2edbc8407e25b73",
+      "originalOutput": "exec-eb9ecd06-f701-44f1-a27d-7dbfbd042e32.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-23.png",
+      "ids": [
+        "florian-philippot",
+        "jean-philippe-tanguy",
+        "sebastien-chenu",
+        "laure-lavalette"
+      ],
+      "names": [
+        "Florian Philippot",
+        "Jean-Philippe Tanguy",
+        "Sébastien Chenu",
+        "Laure Lavalette"
+      ],
+      "prompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Florian Philippot. Face: Short dark side-parted hair, high forehead, long angular face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light. TOP RIGHT: Jean-Philippe Tanguy. Face: Short dark side-parted hair, neatly trimmed dark beard, youthful broad face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights. BOTTOM LEFT: Sébastien Chenu. Face: Receding short dark-gray hair, short salt-and-pepper beard and moustache, round face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a Senate committee library with dark green leather chairs, oak shelving and diffused window light. BOTTOM RIGHT: Laure Lavalette. Face: Dark shoulder-length hair tucked behind ears, long oval face, small hoop earrings, no glasses. Pose: head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: a regional council room with blue upholstery, maple wood and oblique cool daylight.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "references": [
+        {
+          "id": "florian-philippot",
+          "page": "https://fr.wikipedia.org/wiki/Florian_Philippot",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/2022-04-16_16-49-26_MAM-Paris_02.jpg/500px-2022-04-16_16-49-26_MAM-Paris_02.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "33228b0e64a610af1e970307e6bedd3fef310a0abf8f8a5b319ff1653ed12e87",
+          "caption": "Florian Philippot · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark side-parted hair, high forehead, long angular face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a French Assembly chamber viewed diagonally, burgundy velvet and carved gilt wood, warm side light"
+        },
+        {
+          "id": "jean-philippe-tanguy",
+          "page": "https://fr.wikipedia.org/wiki/Jean-Philippe_Tanguy",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/JeanPhilippe_Tanguy.jpg/500px-JeanPhilippe_Tanguy.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "4300d190a7ef82fb9d443014297c000ee55ea367b1affd66c769c3440d610ea1",
+          "caption": "Jean-Philippe Tanguy · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark side-parted hair, neatly trimmed dark beard, youthful broad face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a diplomatic committee room with midnight-blue seating, cream stone and soft golden practical lights"
+        },
+        {
+          "id": "sebastien-chenu",
+          "page": "https://fr.wikipedia.org/wiki/S%C3%A9bastien_Chenu",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/S%C3%A9bastien_Chenu_%282%29.jpg/500px-S%C3%A9bastien_Chenu_%282%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "d9c05939529db2f9595bb8735756a6baa7c815e8905bf5ed51ce253633b4015f",
+          "caption": "Sébastien Chenu · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Receding short dark-gray hair, short salt-and-pepper beard and moustache, round face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, a measured precision hand gesture and two low lectern microphones; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a Senate committee library with dark green leather chairs, oak shelving and diffused window light"
+        },
+        {
+          "id": "laure-lavalette",
+          "page": "https://fr.wikipedia.org/wiki/Laure_Lavalette",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a9/Laure_Lavalette.jpg/500px-Laure_Lavalette.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "8785d0cffc9de7222ee4e2099c305579c413b9f75f7c69d10e2a672c294b2527",
+          "caption": "Laure Lavalette · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Dark shoulder-length hair tucked behind ears, long oval face, small hoop earrings, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, shoulders counter-turned, one handheld microphone kept below the chin; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "a regional council room with blue upholstery, maple wood and oblique cool daylight"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "df43426b50e80560ef6dc9428ead525f90d5efed5bd5cbaf36b8016d7c7c6e12",
+      "originalOutput": "exec-2599d344-3cf2-44b8-996b-e96108ced589.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-24.png",
+      "ids": [
+        "louis-aliot",
+        "steeve-briois",
+        "nicolas-bay",
+        "nathalie-loiseau"
+      ],
+      "names": [
+        "Louis Aliot",
+        "Steeve Briois",
+        "Nicolas Bay",
+        "Nathalie Loiseau"
+      ],
+      "prompt": "Create a neutral semi-realistic digital painting portrait atlas: exactly two columns and two rows, four equal edge-to-edge chest-up portraits. Vertical canvas 3:4, each quadrant also 3:4. Preserve the public figures' identities from the first four reference photographs in reading order. The fifth reference provides only the painterly TCG art style, no flags or copied clothing. Every head is turned sixty-five degrees sideways and both eyes follow that same side, toward an off-frame interlocutor. Absolutely no eye contact with the viewer, no front-facing gaze. No lettering, logos, borders or UI. TOP LEFT: Louis Aliot. Short dark-gray hair with receding temples, round broad face, clean-shaven, no glasses. head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Setting: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: Steeve Briois. Very high receding forehead with short fine gray side hair, long narrow clean-shaven face, no glasses. head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a simple blue open-collar cotton shirt or blouse, no tie. Setting: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Nicolas Bay. Short neat side-parted dark-gray hair, close-trimmed dark beard, long oval face, no glasses. head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Setting: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: Nathalie Loiseau. Chin-length thick side-parted blond-gray bob, full rounded face, no glasses. head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator. Clothing: a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Setting: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces. ",
+      "references": [
+        {
+          "id": "louis-aliot",
+          "page": "https://fr.wikipedia.org/wiki/Louis_Aliot",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f6/Louis_Aliot_2015_02_%28cropped%29_%28cropped%29.jpg/500px-Louis_Aliot_2015_02_%28cropped%29_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "5ad1accf657d3451d2e4cc22833ac0dd6f0c8a5ec982ecf4cc353c454ef46150",
+          "caption": "Louis Aliot · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short dark-gray hair with receding temples, round broad face, clean-shaven, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a party conference lectern with muted red architectural panels and amber spotlights, no emblems"
+        },
+        {
+          "id": "steeve-briois",
+          "page": "https://fr.wikipedia.org/wiki/Steeve_Briois",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/21/Lille_-_Meeting_de_Marine_Le_Pen_pour_l%27%C3%A9lection_pr%C3%A9sidentielle%2C_le_26_mars_2017_%C3%A0_Lille_Grand_Palais_%28025%29.JPG/500px-Lille_-_Meeting_de_Marine_Le_Pen_pour_l%27%C3%A9lection_pr%C3%A9sidentielle%2C_le_26_mars_2017_%C3%A0_Lille_Grand_Palais_%28025%29.JPG?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "fed8160883e8acc9c4de0b4dcaa936891c619b99ff906ab1a6b3dbe82d58a81b",
+          "caption": "Steeve Briois · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Very high receding forehead with short fine gray side hair, long narrow clean-shaven face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a simple blue open-collar cotton shirt or blouse, no tie",
+          "background": "a municipal council office with sage-green walls, tall windows and polished wood"
+        },
+        {
+          "id": "nicolas-bay",
+          "page": "https://fr.wikipedia.org/wiki/Nicolas_Bay",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/38/1718699899690_20240617_BAY_Nicolas_FR_011.jpg/500px-1718699899690_20240617_BAY_Nicolas_FR_011.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "5aa2e6c70a94d6913c44d6fc45c14fc3f567898f241dc0a9b1afc4c9dca3dbc9",
+          "caption": "Nicolas Bay · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Short neat side-parted dark-gray hair, close-trimmed dark beard, long oval face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie",
+          "background": "an environmental-policy forum with deep green translucent panels and soft stage beams"
+        },
+        {
+          "id": "nathalie-loiseau",
+          "page": "https://fr.wikipedia.org/wiki/Nathalie_Loiseau",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c4/1718798747666_20240618_LOISEAU_Nathalie_FR_006.jpg/500px-1718798747666_20240618_LOISEAU_Nathalie_FR_006.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "2ffa3c0dc0d520834e3c6d3e02c2e546832246ef51c8c7980326d3f099a29e1b",
+          "caption": "Nathalie Loiseau · fotografía de referencia enlazada desde su perfil biográfico",
+          "features": "Chin-length thick side-parted blond-gray bob, full rounded face, no glasses.",
+          "pose": "head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone; both pupils look the same off-camera direction, no eye contact with the spectator",
+          "wardrobe": "a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie",
+          "background": "a press briefing room with navy architectural panels, a slim lectern and warm brass sconces"
+        }
+      ],
+      "previousPrompt": "Create original SEMI-REALISTIC DIGITAL PAINTING character art for the fictional Hemiciclo trading card game. One exact 2-column by 2-row atlas of FOUR equal edge-to-edge portraits in reading order. Total canvas vertical 3:4, so EACH separate quadrant is also vertical 3:4. No gutters, frames, lettering, numbers, logos, flags or UI. Bust portraits with full hair and room above the head; bottom corners reserved for UI. The FIRST FOUR photos identify the people in order. Preserve each individual face, age, hair, glasses and beard; NEVER transfer traits between panels. The FINAL Trump card image is ONLY a style reference: painterly rendering, dramatic studio light, charismatic orator presence, architectural depth. Do not transfer its face or flag background. Clearly hand-painted, visible fine brushwork, not a documentary photograph. Crucially BOTH HEAD AND EYES must face 60–75 degrees OFF CAMERA, looking at an unseen colleague in the specified direction. No frontal eye contact. Vary backgrounds and gestures. Clothing must match the provisional tier. TOP LEFT: Louis Aliot. Face: Short dark-gray hair with receding temples, round broad face, clean-shaven, no glasses. Pose: head AND both eyes turned sixty-five degrees left, listening posture, hands out of view, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a party conference lectern with muted red architectural panels and amber spotlights, no emblems. TOP RIGHT: Steeve Briois. Face: Very high receding forehead with short fine gray side hair, long narrow clean-shaven face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a persuasive open-palm gesture, one slim microphone low at the side. Clothing (comun provisional): a simple blue open-collar cotton shirt or blouse, no tie. Background: a municipal council office with sage-green walls, tall windows and polished wood. BOTTOM LEFT: Nicolas Bay. Face: Short neat side-parted dark-gray hair, close-trimmed dark beard, long oval face, no glasses. Pose: head AND both eyes turned sixty-five degrees left, one open palm low in frame and one slim low lectern microphone. Clothing (comun provisional): a comfortable dark cardigan over a plain light open-collar shirt or blouse, no tie. Background: an environmental-policy forum with deep green translucent panels and soft stage beams. BOTTOM RIGHT: Nathalie Loiseau. Face: Chin-length thick side-parted blond-gray bob, full rounded face, no glasses. Pose: head AND both eyes turned sixty-five degrees right, a closed folder held low, no microphone. Clothing (comun provisional): a relaxed olive or navy soft jacket over a simple open-collar shirt or blouse, no tie. Background: a press briefing room with navy architectural panels, a slim lectern and warm brass sconces.  ABSOLUTE REQUIREMENT FOR EVERY PANEL: zero eye contact with the spectator. Head turned 60–75 degrees toward the stated side; pupils and gaze follow the nose toward that same off-frame colleague, never back toward the viewer. Some faces may be near profile showing just one clear eye. Do not retain front-facing eyes or a camera-facing smile from any reference. Reject any frontal eye contact in your composition. ",
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "68705ae2eff236558627c7418160def55a942fbfbfd91268fd88c0bb7d0a8c23",
+      "originalOutput": "exec-8ac63988-11aa-4c96-aa2b-a17a548b99c0.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
+      }
+    },
+    {
+      "sheet": "art/fr01-25.png",
+      "ids": [
+        "clement-beaune",
+        "marc-fesneau",
+        "philippe-poutou"
+      ],
+      "names": [
+        "Clément Beaune",
+        "Marc Fesneau",
+        "Philippe Poutou"
+      ],
+      "references": [
+        {
+          "id": "clement-beaune",
+          "page": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_Beaune",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Cl%C3%A9ment_Beaune_-_2023_%28cropped%29.jpg/500px-Cl%C3%A9ment_Beaune_-_2023_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "84b9438fcf7ea279dae5d92e7a3554002c562a20baf13c9135dea3ba21edb680",
+          "caption": "Clément Beaune · referencia biográfica inspeccionada",
+          "features": "Short wavy light brown hair, close-trimmed brown beard and moustache, round youthful face, no glasses.",
+          "pose": "head and both eyes sixty-five degrees LEFT, one open hand low, no microphone",
+          "wardrobe": "a comfortable navy soft jacket over a pale open-collar shirt, no tie",
+          "background": "a municipal debate room with slate-blue walls, cream stone and soft daylight"
+        },
+        {
+          "id": "marc-fesneau",
+          "page": "https://fr.wikipedia.org/wiki/Marc_Fesneau",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7f/Marc_Fesneau_2024_%28cropped%29.jpg/500px-Marc_Fesneau_2024_%28cropped%29.jpg?utm_source=fr.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "c416160d7cd43199cb9e54a8f2617ac21aa4bc62dfd5f6838f883402fe6a29e8",
+          "caption": "Marc Fesneau · referencia biográfica inspeccionada",
+          "features": "Tousled short sandy-gray blond hair, large round black glasses, short blond-gray beard and moustache, long narrow face.",
+          "pose": "head and both eyes sixty-five degrees RIGHT, a low explanatory gesture and one slim lectern microphone",
+          "wardrobe": "a dark green cardigan over a pale blue open-collar shirt, no tie",
+          "background": "an agricultural committee room with dark green seating, oak wood and warm desk lamps"
+        },
+        {
+          "id": "philippe-poutou",
+          "page": "https://en.wikipedia.org/wiki/Philippe_Poutou",
+          "photo": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Philippe_Poutou_-_Gilets_jaunes_%282019%29.jpg/250px-Philippe_Poutou_-_Gilets_jaunes_%282019%29.jpg?utm_source=en.wikipedia.org&utm_campaign=parser&utm_content=thumbnail",
+          "photoSha256": "a609b07a5715ece35e840316ae4813cc2ac9ac3df9b45864dded799bd507227e",
+          "caption": "Philippe Poutou · referencia biográfica inspeccionada",
+          "features": "Very high receding forehead with short fine gray side hair, long lined clean-shaven face, black rectangular reading glasses resting ON TOP OF HIS HEAD, never on his eyes, as in the reference.",
+          "pose": "head and both eyes sixty-five degrees LEFT, one handheld microphone below the chin",
+          "wardrobe": "a relaxed olive cotton jacket over a simple white open-collar shirt, no tie",
+          "background": "a grassroots public-meeting stage with muted deep-red panels, a simple wooden lectern and soft amber light"
+        }
+      ],
+      "pendingPanels": [
+        {
+          "index": 3,
+          "id": "bruno-bernard",
+          "reason": "Referencia fotográfica todavía pendiente; panel vacío, no cuenta como retrato generado."
+        }
+      ],
+      "prompt": "Create a semi-realistic hand-painted TCG character-art atlas, exactly TWO columns and TWO rows with FOUR equal edge-to-edge panels. Total canvas 3:4, each quadrant 3:4. The FIRST THREE references identify THREE French public figures in reading order. The FOURTH reference is ONLY a style reference; do not depict that fourth reference person anywhere. TOP LEFT, TOP RIGHT and BOTTOM LEFT each contain one chest-up portrait; BOTTOM RIGHT must contain ONLY AN EMPTY dark green municipal council room, no people, no face, no text, a reserved empty background. No lettering, frames, flags, logos or UI. Fine visible brushwork, dramatic studio illumination, illustrated rather than documentary photography. ALL THREE heads AND pupils look sixty-five degrees toward their stated side, near profile, toward an off-frame colleague. Zero eye contact with the camera or spectator. Leave room above hair and clear bottom corners. These three are provisional COMMON tier: comfortable professional clothing, no ties. TOP LEFT: Clément Beaune. Face: Short wavy light brown hair, close-trimmed brown beard and moustache, round youthful face, no glasses. Pose: head and both eyes sixty-five degrees LEFT, one open hand low, no microphone. Clothing: a comfortable navy soft jacket over a pale open-collar shirt, no tie. Background: a municipal debate room with slate-blue walls, cream stone and soft daylight. TOP RIGHT: Marc Fesneau. Face: Tousled short sandy-gray blond hair, large round black glasses, short blond-gray beard and moustache, long narrow face. Pose: head and both eyes sixty-five degrees RIGHT, a low explanatory gesture and one slim lectern microphone. Clothing: a dark green cardigan over a pale blue open-collar shirt, no tie. Background: an agricultural committee room with dark green seating, oak wood and warm desk lamps. BOTTOM LEFT: Philippe Poutou. Face: Very high receding forehead with short fine gray side hair, long lined clean-shaven face, black rectangular reading glasses resting ON TOP OF HIS HEAD, never on his eyes, as in the reference. Pose: head and both eyes sixty-five degrees LEFT, one handheld microphone below the chin. Clothing: a relaxed olive cotton jacket over a simple white open-collar shirt, no tie. Background: a grassroots public-meeting stage with muted deep-red panels, a simple wooden lectern and soft amber light. ",
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "671984176ebcb7c401245524e23b1b093694b8398d1dd54ccbf62c6ecdb87fe9",
+      "originalOutput": "exec-959f1fa1-0a13-4cfe-b288-595d1727b5d0.png",
+      "gazeReview": {
+        "status": "reviewed_off_camera",
+        "reviewedOn": "2026-11-05",
+        "directEyeContact": false,
+        "scope": "Inspección visual de los tres retratos generados; cabezas y ojos orientados fuera de cámara. El cuarto cuadrante está vacío y no cuenta como retrato."
+      }
     }
-  ]
+  ],
+  "gazePolicy": "Cero contacto visual con cámara en todos los retratos franceses; revisar cabeza y ojos, también en los ya generados."
 }

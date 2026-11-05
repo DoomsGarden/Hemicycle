@@ -9,8 +9,8 @@ Estado de investigación: **5 de noviembre de 2026**. Todo permanece en `_dev`, 
 | Identidades | 100 nombres nuevos, sin duplicados con los 120 activos ni los 339 españoles reservados | Ampliar después el censo francés; su total final sigue abierto |
 | Tiers y mecánicas | Propuesta para los 100, con estadísticas, efecto básico y doctrina existentes | Ajuste global al terminar toda la selección francesa; no por cuotas de tanda |
 | Perfiles | 100 páginas consultadas; homónimo de Bruno Bernard resuelto al político | Contraste integral de trayectoria, afiliación y etapa representada |
-| Arte | 28 retratos provisionales en 7 atlas originales | 72 retratos, revisión de identidad, vestuario y poses |
-| Frases bilingües | 48 fragmentos para 16 perfiles, con original y hablante cotejados en 20 fuentes | 252 selecciones adicionales; revisión del tono para las 48 candidatas |
+| Arte | 99 retratos provisionales en 25 atlas originales, todos con cabeza y ojos fuera de cámara | Retrato de Bruno Bernard; revisión final de identidad y vestuario |
+| Frases bilingües | 249 fragmentos para 83 perfiles, con original y hablante cotejados en 114 fuentes | 51 selecciones adicionales; revisión del tono para las 249 candidatas |
 | Prensa española | 54 candidatas previas para 23 perfiles, cotejadas en 22 noticias | No se consideran originales franceses verificados ni se suman como frases finales |
 | Cromos terminados e integrados | 0 | Completar la preparación antes de incorporarlos a una reserva de prueba |
 
@@ -22,21 +22,23 @@ La distribución propuesta sigue siendo 40 comunes, 30 raros, 20 especiales y 10
 
 ## Material de revisión
 
-- `frases-originales.json`: fragmento francés continuo, traducción editorial española, fecha, URL consultada, hash y comprobación del turno de palabra. Sus 48 traducciones tienen un máximo de 47 caracteres y no duplican las 1377 frases del catálogo activo y la reserva española. El encaje del tono en ataque, ataque fuerte o apoyo permanece pendiente; todavía no son frases finales del juego.
-- `fuentes-francesas.json`: 135 registros de investigación en 134 fichas distintas. Se distingue la disponibilidad del texto de su atribución: una ficha puede incluir periodistas, varios oradores, citas ajenas o carecer de transcripción. No todas sus frases se han revisado.
+- `frases-originales.json`: fragmento francés continuo, traducción editorial española, fecha, URL consultada, hash y comprobación del turno de palabra. Sus 249 traducciones tienen un máximo de 47 caracteres y no duplican las 1377 frases del catálogo activo y la reserva española. El encaje del tono en ataque, ataque fuerte o apoyo permanece pendiente; todavía no son frases finales del juego.
+- `fuentes-francesas.json`: 293 registros de investigación en 284 documentos físicos distintos. Se distingue la disponibilidad del texto de su atribución: una ficha puede incluir periodistas, varios oradores, citas ajenas o carecer de transcripción. No todas sus frases se han revisado.
 - `perfiles-consultados.json`: URL y hash de los 100 perfiles, y fotografías localizadas cuando las hay. Una URL de imagen localizada no implica descarga ni inspección visual. Bruno Bernard no debe confundirse con el fotógrafo ni el tipógrafo homónimos; su página política no contiene retrato utilizable.
-- `primera-100/arte-generacion.json`: nombres y orden de los cuadrantes, referencia visual inspeccionada, rasgos, pose, vestuario, fondo, prompt y hash de los 7 atlas generados. Las fotografías de referencia no se redistribuyen.
+- `primera-100/arte-generacion.json`: nombres y orden de los cuadrantes, referencia visual inspeccionada, rasgos, pose, vestuario, fondo, prompt y hash de los 25 atlas generados. Las fotografías de referencia no se redistribuyen.
 - `frases-candidatas.json` y `fuentes-consultadas.json`: investigación previa en prensa española. Se ha repetido el cotejo de sus 54 candidatas con las capturas recuperadas, conservando los hashes anteriores en el historial de las fuentes. La sustitución de Bayrou por su cargo sigue documentada.
 
-En el arte predominan cabeza y ojos orientados hacia el interlocutor, con fondos institucionales o de partido variados y micrófonos en algunos retratos. Hay excepciones con mirada más frontal, que siguen sujetas a revisión. Los tiers altos llevan vestuario formal; los raros usan también chaquetas más cómodas y cuellos abiertos. No se aplica una bandera francesa uniforme.
+Ningún retrato de esta selección debe mirar a cámara: tanto la cabeza como los ojos se orientan hacia un interlocutor o el hemiciclo fuera del encuadre. Se han revisado visualmente los 99 generados y corregido cuatro retratos anteriores que resultaban demasiado frontales; el historial de generación conserva sus versiones anteriores. El retrato pendiente y las futuras tandas siguen la misma regla, sin excepciones. Se mantienen fondos institucionales o de partido variados y micrófonos en algunos retratos. Los tiers altos llevan vestuario formal; los raros usan también chaquetas más cómodas y cuellos abiertos. No se aplica una bandera francesa uniforme.
 
 ## Accesos y continuación
 
 Los accesos iniciales a Vie publique, Elíseo, Senado, Asamblea Nacional, Wikipedia francesa y fotografías de Europa Press funcionan. Se han recuperado transcripciones mediante navegación normal cuando la descarga directa no entregaba el texto. Se conservan el proxy y la verificación TLS del entorno.
 
-Quedan en un segundo borrador de configuración **`thumb.wikimedia.org`**, para las fotografías localizadas en Wikipedia, y **`www2.assemblee-nationale.fr`**, donde están las fichas y documentos parlamentarios enlazados por la Asamblea. Guardar el borrador no aplica esos permisos; su revisión y publicación se realizan en la configuración del entorno. Esto no publica el juego.
+Los accesos a **`thumb.wikimedia.org`** y **`www2.assemblee-nationale.fr`** ya se aplicaron. Las miniaturas se descargaron con una identificación descriptiva del cliente y se inspeccionaron antes de generar los retratos.
 
-La búsqueda documental, las traducciones restantes y la revisión editorial no están terminadas. Estos dos accesos permitirán ampliar las referencias visuales y parlamentarias; no se afirma que sean el único trabajo pendiente.
+Hay un nuevo borrador pendiente para Lyon Capitale, RTL, Le Figaro, Le Monde, Libération, Franceinfo, France 3, L’Humanité y Sud Ouest: son editores de referencias realmente localizadas para los perfiles restantes. Su revisión y publicación se realizan en la configuración del entorno; guardar el borrador no aplica los permisos. Esto no publica el juego. Los nombres exactos y el estado están en `qa/network-access.json`.
+
+Bruno Bernard sigue sin retrato: su biografía política no aporta fotografía y la referencia localizada está en Lyon Capitale. No se ha confundido con otros homónimos. El cuadrante vacío del atlas 25 no se cuenta como cromo. Además faltan 51 selecciones bilingües para 17 perfiles y la revisión editorial de las 249 existentes; los accesos pendientes no equivalen a terminar esos trabajos.
 
 ## Comprobaciones
 
@@ -49,4 +51,4 @@ NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/
 
 El cotejo de originales requiere las capturas HTML externas del directorio de investigación indicado. La comprobación de prensa usa `/tmp/hemicycle-france-press-cache`. Las copias de trabajo se preservan también fuera del repositorio en `/workspace/.hemicycle-tools/state/`; los textos íntegros y fotografías de prensa no se distribuyen en Git. Una restauración que no conserve las capturas necesitará recuperarlas y volver a cotejarlas: no debe darse por verificado un hash distinto.
 
-El control del navegador levanta y cierra su propio servidor HTTP de revisión en la interfaz local. Comprueba los 100 perfiles, los 28 retratos cargados, las 48 candidatas bilingües, los filtros, las fuentes y el ajuste a pantallas de 320, 393, 768 y 1200 píxeles. Los controles no equivalen a una validación final de la selección editorial ni del equilibrio de los cromos.
+El control del navegador levanta y cierra su propio servidor HTTP de revisión en la interfaz local. Comprueba los 100 perfiles, los 99 retratos cargados, las 249 candidatas bilingües, los filtros, las fuentes y el ajuste a pantallas de 320, 393, 768 y 1200 píxeles. Los controles no equivalen a una validación final de la selección editorial ni del equilibrio de los cromos.
