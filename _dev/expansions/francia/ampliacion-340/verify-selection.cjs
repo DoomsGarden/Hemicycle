@@ -1,0 +1,18 @@
+'use strict';
+const fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),a=require('node:assert/strict');
+const d=require('./seleccion.json'),art=require('./arte-generacion.json'),first=require('../censo.json'),catalog=require('../../../../js/orator-catalog.js'),es=require('../../reserva-espana/prepare.cjs'),baseline=require('./baseline.json');
+const norm=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().split(/[^a-z0-9]+/).filter(Boolean).sort().join(' ');
+const old=new Set([...catalog.cards.map(x=>norm(x.n)),...es.sourceCards.map(x=>norm(x.name)),...first.cards.map(x=>norm(x.name))]);
+const reviewed=d.globalReview?.status==='reviewed';
+a.equal(d.enabled,false);a.equal(d.cards.length,340);a.deepEqual(d.period.from,'2010-11-05');a.equal(d.period.to,'2026-11-05');a.equal(d.projectedFrenchCountAfterExpansion,443);
+const ids=new Set(),names=new Set();for(const c of d.cards){
+ a.ok(!ids.has(c.id));a.ok(!names.has(norm(c.name)));a.ok(!old.has(norm(c.name)));ids.add(c.id);names.add(norm(c.name));
+ a.ok(!/^(ministre|secrétaire|président)\b/i.test(c.name));a.match(c.profileResearch.htmlSha256,/^[a-f0-9]{64}$/);
+ a.ok(c.recentPeriodEvidence.length>0);for(const e of c.recentPeriodEvidence){a.match(e.sourceSha256,/^[a-f0-9]{64}$/);a.ok(e.roleFR);a.ok(e.source.startsWith('https://'));if(e.method==='dated_biography_office_interval'){a.ok(e.start<=d.period.to);a.ok(e.end>=d.period.from);}}
+ if(!reviewed){a.equal(c.rarityProposal,null);a.equal(c.passiveProposal,null);a.equal(c.basicEffectProposal,null);}
+ a.ok(!catalog.cards.some(x=>x.id===c.id));
+}
+if(!reviewed){const current=Object.fromEntries(first.cards.map(c=>[c.id,Object.fromEntries(baseline.mechanicsFields.map(k=>[k,c[k]]))]));const canonical=x=>Array.isArray(x)?x.map(canonical):x&&typeof x==='object'?Object.fromEntries(Object.keys(x).sort().map(k=>[k,canonical(x[k])])):x;const hash=crypto.createHash('sha256').update(JSON.stringify(canonical(current))).digest('hex');a.equal(hash,baseline.first100MechanicsSha256);}
+const generated=new Set();for(const sheet of art.sheets){a.equal(sheet.ids.length,4);a.equal(sheet.references.length,4);a.equal(sheet.gazeReview.status,'reviewed_off_camera');a.equal(sheet.gazeReview.directEyeContact,false);const bytes=fs.readFileSync(path.join(__dirname,sheet.sheet));a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),sheet.sha256);a.equal(bytes.toString('hex',0,8),'89504e470d0a1a0a');a.equal(bytes.readUInt32BE(16)*4,bytes.readUInt32BE(20)*3);a.equal(bytes.readUInt32BE(16)%2,0);a.equal(bytes.readUInt32BE(20)%2,0);for(const [i,id]of sheet.ids.entries()){a.ok(ids.has(id));a.ok(!generated.has(id));generated.add(id);a.equal(sheet.references[i].id,id);a.match(sheet.references[i].photoSha256,/^[a-f0-9]{64}$/);a.equal(d.cards.find(c=>c.id===id).art.sheet,sheet.sheet);}}
+a.equal(d.progress.generatedPortraits,generated.size);a.equal(d.progress.pendingPortraits,340-generated.size);a.equal(d.progress.integratedCards,0);if(reviewed)a.equal(generated.size,340);
+const result={selected:340,distinctIds:ids.size,duplicatesWithExisting:false,recentPeriodEvidenceRecorded:true,profilesConsulted:d.cards.filter(c=>c.profileResearch.htmlSha256).length,generatedPortraits:generated.size,pendingPortraits:340-generated.size,allGeneratedGazeReviewed:true,first100MechanicsUnchanged:!reviewed,globalMechanicsReview:reviewed?'reviewed':'deferred_until_artwork_complete',publicActivation:false};fs.mkdirSync(path.join(__dirname,'qa'),{recursive:true});fs.writeFileSync(path.join(__dirname,'qa/selection-verification.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));

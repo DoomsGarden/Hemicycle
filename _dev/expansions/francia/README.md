@@ -4,12 +4,14 @@
 
 [Revisión legal del 05-11-2026](revision-legal.md): los avisos vigentes describen esta metodología; se documentan la trazabilidad y las actualizaciones necesarias al activar la ampliación. La reserva está oculta en el juego y excluida de Pages; los archivos de desarrollo enviados a GitHub son consultables según la visibilidad del repositorio.
 
+La [ampliación autorizada de 340](ampliacion-340/README.md) exige actividad documentada en 2010–2026 y está en preparación. Tras su arte se revisarán conjuntamente tiers, pasivas y efectos del zasca normal de los nuevos franceses. La primera tanda conserva durante ese trabajo sus tiers actuales. El objetivo de esta fase es de 443 franceses, sin cerrar el censo del país.
+
 Estado de investigación: **5 de noviembre de 2026**. Todo permanece en `_dev`, excluido de Pages y del catálogo jugable. No se ha cambiado la versión pública ni se han anunciado estos cromos en el changelog.
 
 | Parte | Preparado | Pendiente |
 | --- | --- | --- |
-| Identidades | 100 nombres nuevos, sin duplicados con los 120 activos ni los 339 españoles reservados | Ampliar después el censo francés; su total final sigue abierto |
-| Tiers y mecánicas | Propuesta para los 100, con estadísticas, efecto básico y doctrina existentes | Ajuste global al terminar toda la selección francesa; no por cuotas de tanda |
+| Identidades | 100 nombres nuevos, sin duplicados con los 120 activos ni los 339 españoles reservados | Preparar los 340 adicionales de 2010–2026; el censo definitivo sigue abierto |
+| Tiers y mecánicas | Propuesta para los 100, con estadísticas, efecto básico y doctrina existentes | Ajuste global tras el arte de los 440 nuevos de esta fase; no por cuotas de tanda |
 | Perfiles | 100 páginas consultadas; homónimo de Bruno Bernard resuelto al político | Contraste integral de trayectoria, afiliación y etapa representada |
 | Arte | 100 retratos provisionales en 25 atlas originales, todos con cabeza y ojos fuera de cámara | Revisión final de identidad y vestuario |
 | Frases bilingües | 252 fragmentos para 84 perfiles, con original y hablante cotejados en 115 fuentes | 48 selecciones adicionales; revisión del tono para las 252 candidatas |

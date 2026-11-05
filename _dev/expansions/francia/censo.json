@@ -4965,11 +4965,23 @@
     "projectedFrenchCountAfterFirstBatch": 103,
     "countryCensusComplete": false,
     "finalFrenchCount": null,
-    "nextStep": "Completar las 48 selecciones bilingües pendientes de 16 perfiles; revisar tono, trayectoria y cierre de los 100, antes de ampliar el censo.",
-    "tierReviewTrigger": "Después de completar todos los integrantes de la selección francesa.",
+    "nextStep": "Completar el arte de los 340 adicionales con actividad política documentada en 2010–2026; revisar después conjuntamente los 440 nuevos tiers, pasivas y efectos de zasca normal. Continúa pendiente la revisión y atribución de frases originales por acción.",
+    "tierReviewTrigger": "Después de completar las ilustraciones de los 440 nuevos franceses de esta fase (100 iniciales + 340 adicionales), sin esperar a agotar el censo histórico del país.",
     "tierReviewScope": "Comparar juntos los nuevos franceses; revisar estadísticas y vestuario que cambien de tier. No modificar automáticamente los tres activos.",
     "publicActivation": false,
-    "gazePolicy": "ningun_retrato_con_mirada_a_camara"
+    "gazePolicy": "ningun_retrato_con_mirada_a_camara",
+    "additionalSelectionTarget": 340,
+    "additionalPeriod": {
+      "from": "2010-11-05",
+      "to": "2026-11-05"
+    },
+    "additionalSelection": "ampliacion-340/seleccion.json",
+    "projectedFrenchCountAfterAdditionalSelection": 443,
+    "laterGlobalReview": [
+      "tiers",
+      "passives",
+      "normal_zasca_effects"
+    ]
   },
   "researchProgress": {
     "consultedOn": "2026-11-05",
