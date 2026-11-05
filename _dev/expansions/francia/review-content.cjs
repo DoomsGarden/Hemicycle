@@ -12,7 +12,7 @@ function originalHTML(card){
  return '<details class="bilingual"><summary>'+item.candidates.length+' candidatas bilingües · original y hablante revisados</summary>'+
  '<p>'+esc(item.contextSummaryES)+'</p>'+item.candidates.map(q=>
  '<h3>'+actions[q.action]+' · propuesta</h3><blockquote lang="es">'+esc(q.textES)+'</blockquote>'+
- '<p lang="fr">Original: «'+esc(q.originalFR)+'»</p><a href="'+esc(q.source)+'" target="_blank" rel="noreferrer">Fuente francesa · '+q.spokenOn+'</a>'+
+ '<p lang="fr">Original: «'+esc(q.originalFR)+'»</p><a href="'+esc(q.source)+'" target="_blank" rel="noreferrer">Fuente francesa · '+esc(q.spokenOn||'publicación '+q.publishedOn+'; fecha de declaración no precisada')+'</a>'+
  '<p class="muted">Traducción propia de un fragmento continuo. '+esc(q.speakerCheck.review)+' Revisión del tono para esta acción: pendiente.</p>').join('')+'</details>';
 }
 

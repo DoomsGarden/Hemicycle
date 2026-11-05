@@ -42,3 +42,5 @@ Si la activación cambia materialmente la metodología o las condiciones, habrá
 - Registro SQL `20261029_sources_release.sql`: versión y hash coinciden con los documentos vigentes; no se conecta ni se modifica la base de datos.
 
 Es una revisión de coherencia entre documentos, contenido y preparación técnica, no un dictamen sobre todos los derechos implicados ni una auditoría de la configuración real de los proveedores.
+
+Actualización documental del 05-11-2026, posterior al estado de `f77451c`: el atlas 25 ya incluye a Bruno Bernard y se añaden tres fragmentos directos de Lyon Capitale con traducción propia, sin menciones personales de terceros. El estado pasa a 100 retratos y 252 candidatas para 84 perfiles. Se registra la publicación del artículo por separado del día no confirmado de la conversación. Se mantiene la separación entre fuente fotográfica y fuente de frases, y las fotografías consultadas no se distribuyen en Git. Esta preparación no cambia los textos públicos ni su versión o huella.

@@ -28,10 +28,24 @@ def clean(value):
 def check_source(card, quote, cache):
     from lxml import html
     senate = quote.get('sourceType') == 'senat_commission_turn'
-    source = cache / ('senat-sources' if senate else 'speeches') / quote['cacheKey']
+    press = quote.get('sourceType') == 'press_direct_quote'
+    source = cache / ('press-fr' if press else 'senat-sources' if senate else 'speeches') / quote['cacheKey']
     raw = source.read_bytes()
     assert hashlib.sha256(raw).hexdigest() == quote['sourceSha256'], source
-    root = html.fromstring(raw.decode('utf-8') if senate else raw)
+    root = html.fromstring(raw.decode('utf-8') if senate or press else raw)
+    if press:
+        check = quote['speakerCheck']
+        paragraphs = root.xpath('//article//div[contains(concat(" ",normalize-space(@class)," ")," entry-content ")]//p')
+        paragraph = clean(paragraphs[check['paragraphIndex']].text_content())
+        quotes = re.findall('“([^”]+)”', paragraph)
+        assert quote['originalFR'] in quotes[check['quoteIndex']]
+        assert check['attributionFR'] in paragraph
+        assert norm(card['name']) in norm(check['attributionFR'])
+        dates = root.xpath('//meta[@property="article:published_time"]/@content')
+        assert dates and dates[0][:10] == quote['publishedOn']
+        assert quote['spokenOn'] is None
+        assert quote['dateEvidence'] == 'publication_not_confirmed_speech_date'
+        return quote['source']
     if senate:
         check = quote['speakerCheck']
         paragraphs = root.xpath('//p')
@@ -127,9 +141,16 @@ def main():
             assert 1 <= len(text) <= 47, (card['id'], len(text))
             assert norm(text) not in old | seen, (card['id'], text)
             seen.add(norm(text))
-            assert '1986-11-05' <= quote['spokenOn'] <= '2026-11-05'
+            press = quote.get('sourceType') == 'press_direct_quote'
+            date = quote['publishedOn'] if press else quote['spokenOn']
+            assert '1986-11-05' <= date <= '2026-11-05'
             assert quote['ownTranslation'] is True and quote['sourceLanguage'] == 'fr'
-            assert quote['source'].startswith(('https://www.vie-publique.fr/discours/', 'https://www.senat.fr/basile/visio.do?'))
+            if press:
+                assert quote['source'].startswith('https://www.lyoncapitale.fr/actualite/')
+                assert quote['spokenOn'] is None
+                assert quote['dateEvidence'] == 'publication_not_confirmed_speech_date'
+            else:
+                assert quote['source'].startswith(('https://www.vie-publique.fr/discours/', 'https://www.senat.fr/basile/visio.do?'))
             assert re.fullmatch('[a-f0-9]{64}', quote['sourceSha256'])
             assert quote['sourceCheck'] == 'original_y_hablante_revisados'
             assert quote['toneReview'] == 'pending'

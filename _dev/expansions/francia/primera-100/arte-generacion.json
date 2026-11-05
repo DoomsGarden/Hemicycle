@@ -1787,12 +1787,14 @@
       "ids": [
         "clement-beaune",
         "marc-fesneau",
-        "philippe-poutou"
+        "philippe-poutou",
+        "bruno-bernard"
       ],
       "names": [
         "Clément Beaune",
         "Marc Fesneau",
-        "Philippe Poutou"
+        "Philippe Poutou",
+        "Bruno Bernard"
       ],
       "references": [
         {
@@ -1827,27 +1829,51 @@
           "pose": "head and both eyes sixty-five degrees LEFT, one handheld microphone below the chin",
           "wardrobe": "a relaxed olive cotton jacket over a simple white open-collar shirt, no tie",
           "background": "a grassroots public-meeting stage with muted deep-red panels, a simple wooden lectern and soft amber light"
-        }
-      ],
-      "pendingPanels": [
+        },
         {
-          "index": 3,
           "id": "bruno-bernard",
-          "reason": "Referencia fotográfica todavía pendiente; panel vacío, no cuenta como retrato generado."
+          "page": "https://www.lyoncapitale.fr/actualite/elections-a-lyon-qui-est-bruno-bernard-eelv",
+          "photo": "https://www.lyoncapitale.fr/wp-content/uploads/2020/03/Bruno-BernardA30O9172.jpg",
+          "photoSha256": "797d92689014a9f245310e820d75ff23609b0f70ef7b4fc54ecc94198cae5b43",
+          "pageSha256": "1c22b1affc42e2a07e5046e4f4934bdf892a7f0c818b87e70d7ad09cedbedfa9",
+          "caption": "Bruno Bernard, la tête de liste écologiste.",
+          "publisher": "Lyon Capitale",
+          "publishedOn": "2020-03-12",
+          "consulted": "2026-11-05",
+          "features": "Short dark-blond/light-brown hair with receding temples and gray at the sides, high forehead, long fairly narrow face, light eyebrows, prominent straight nose, pale eyes, light salt-and-pepper stubble and subtle moustache; no glasses.",
+          "pose": "Head and both eyes turned to the right toward an off-frame colleague; restrained speaking gesture, low lectern microphone.",
+          "wardrobe": "Comfortable dark olive-gray fine-knit cardigan over a pale open-collar shirt, no tie.",
+          "background": "Dark-green municipal council room, carved oak, green seats and soft daylight.",
+          "representedStage": "Campaña metropolitana de 2020; tier común provisional.",
+          "rightsNote": "Referencia visual identificada, no fotografía redistribuida ni afirmación de licencia o autorización."
         }
       ],
-      "prompt": "Create a semi-realistic hand-painted TCG character-art atlas, exactly TWO columns and TWO rows with FOUR equal edge-to-edge panels. Total canvas 3:4, each quadrant 3:4. The FIRST THREE references identify THREE French public figures in reading order. The FOURTH reference is ONLY a style reference; do not depict that fourth reference person anywhere. TOP LEFT, TOP RIGHT and BOTTOM LEFT each contain one chest-up portrait; BOTTOM RIGHT must contain ONLY AN EMPTY dark green municipal council room, no people, no face, no text, a reserved empty background. No lettering, frames, flags, logos or UI. Fine visible brushwork, dramatic studio illumination, illustrated rather than documentary photography. ALL THREE heads AND pupils look sixty-five degrees toward their stated side, near profile, toward an off-frame colleague. Zero eye contact with the camera or spectator. Leave room above hair and clear bottom corners. These three are provisional COMMON tier: comfortable professional clothing, no ties. TOP LEFT: Clément Beaune. Face: Short wavy light brown hair, close-trimmed brown beard and moustache, round youthful face, no glasses. Pose: head and both eyes sixty-five degrees LEFT, one open hand low, no microphone. Clothing: a comfortable navy soft jacket over a pale open-collar shirt, no tie. Background: a municipal debate room with slate-blue walls, cream stone and soft daylight. TOP RIGHT: Marc Fesneau. Face: Tousled short sandy-gray blond hair, large round black glasses, short blond-gray beard and moustache, long narrow face. Pose: head and both eyes sixty-five degrees RIGHT, a low explanatory gesture and one slim lectern microphone. Clothing: a dark green cardigan over a pale blue open-collar shirt, no tie. Background: an agricultural committee room with dark green seating, oak wood and warm desk lamps. BOTTOM LEFT: Philippe Poutou. Face: Very high receding forehead with short fine gray side hair, long lined clean-shaven face, black rectangular reading glasses resting ON TOP OF HIS HEAD, never on his eyes, as in the reference. Pose: head and both eyes sixty-five degrees LEFT, one handheld microphone below the chin. Clothing: a relaxed olive cotton jacket over a simple white open-collar shirt, no tie. Background: a grassroots public-meeting stage with muted deep-red panels, a simple wooden lectern and soft amber light. ",
+      "prompt": "Edit the FIRST image, the existing Hemiciclo TCG 2-by-2 portrait atlas. Preserve its total 3:4 canvas, equal four quadrants and panel boundaries. Keep the TOP LEFT portrait of Clément Beaune, TOP RIGHT portrait of Marc Fesneau and BOTTOM LEFT portrait of Philippe Poutou unchanged in identity, pose, clothing, painterly texture, lighting and composition. Modify ONLY the currently EMPTY BOTTOM RIGHT quadrant. Fill that quadrant with a new illustrated chest-up portrait of French politician Bruno Bernard, identified by the SECOND image, his verified 2020 reference photograph. Use that photograph only to identify his facial features; do not copy its camera-facing pose, bar location or photographic texture. Bruno Bernard: short dark-blond/light-brown hair, receding temples and high forehead, gray at the sides, long fairly narrow face, light eyebrows, prominent straight nose, pale eyes, light short salt-and-pepper facial stubble and subtle moustache, no full beard, NO glasses. Match the fine visible digital-painting brushwork and dramatic studio light of the other three panels, visibly an illustration rather than documentary photography. COMMON tier provisional wardrobe: comfortable dark olive-gray fine-knit cardigan over a pale open-collar shirt, no tie, no medals. HEAD AND BOTH EYES must turn approximately 65 degrees RIGHT, looking toward a colleague outside the right edge, absolutely ZERO eye contact with the camera or viewer. Show an attentive speaking expression and a restrained open hand low in frame, one slim low lectern microphone not crossing the face. Keep the existing bottom-right dark-green municipal council setting with warm carved oak, green seats and soft daylight, distinct from the adjacent red meeting stage. Leave breathing room above the hair and clear lower corners for game UI. No words, lettering, logos, flags, frames, interface, labels or watermarks. The result must contain exactly FOUR different portraits, with Bruno Bernard only in bottom right and the other three preserved.",
       "status": "generated_provisional",
-      "tool": "image_gen",
+      "tool": "image_gen.imagegen",
       "generatedOn": "2026-11-05",
-      "sha256": "671984176ebcb7c401245524e23b1b093694b8398d1dd54ccbf62c6ecdb87fe9",
-      "originalOutput": "exec-959f1fa1-0a13-4cfe-b288-595d1727b5d0.png",
+      "sha256": "c40b40ce81df260a5a77affdc630ce9ad6b1825c71088c2e4bd44343efaf6237",
+      "originalOutput": "exec-2f8d42ec-edf9-4cfd-85b4-44df416dc0af.png",
       "gazeReview": {
         "status": "reviewed_off_camera",
         "reviewedOn": "2026-11-05",
         "directEyeContact": false,
-        "scope": "Inspección visual de los tres retratos generados; cabezas y ojos orientados fuera de cámara. El cuarto cuadrante está vacío y no cuenta como retrato."
-      }
+        "scope": "Inspección visual de los cuatro retratos: cabeza y ojos fuera de cámara. Bruno Bernard completa el cuarto cuadrante; los tres retratos anteriores conservan identidad y dirección de mirada."
+      },
+      "previousGenerations": [
+        {
+          "sha256": "671984176ebcb7c401245524e23b1b093694b8398d1dd54ccbf62c6ecdb87fe9",
+          "originalOutput": "exec-959f1fa1-0a13-4cfe-b288-595d1727b5d0.png",
+          "prompt": "Create a semi-realistic hand-painted TCG character-art atlas, exactly TWO columns and TWO rows with FOUR equal edge-to-edge panels. Total canvas 3:4, each quadrant 3:4. The FIRST THREE references identify THREE French public figures in reading order. The FOURTH reference is ONLY a style reference; do not depict that fourth reference person anywhere. TOP LEFT, TOP RIGHT and BOTTOM LEFT each contain one chest-up portrait; BOTTOM RIGHT must contain ONLY AN EMPTY dark green municipal council room, no people, no face, no text, a reserved empty background. No lettering, frames, flags, logos or UI. Fine visible brushwork, dramatic studio illumination, illustrated rather than documentary photography. ALL THREE heads AND pupils look sixty-five degrees toward their stated side, near profile, toward an off-frame colleague. Zero eye contact with the camera or spectator. Leave room above hair and clear bottom corners. These three are provisional COMMON tier: comfortable professional clothing, no ties. TOP LEFT: Clément Beaune. Face: Short wavy light brown hair, close-trimmed brown beard and moustache, round youthful face, no glasses. Pose: head and both eyes sixty-five degrees LEFT, one open hand low, no microphone. Clothing: a comfortable navy soft jacket over a pale open-collar shirt, no tie. Background: a municipal debate room with slate-blue walls, cream stone and soft daylight. TOP RIGHT: Marc Fesneau. Face: Tousled short sandy-gray blond hair, large round black glasses, short blond-gray beard and moustache, long narrow face. Pose: head and both eyes sixty-five degrees RIGHT, a low explanatory gesture and one slim lectern microphone. Clothing: a dark green cardigan over a pale blue open-collar shirt, no tie. Background: an agricultural committee room with dark green seating, oak wood and warm desk lamps. BOTTOM LEFT: Philippe Poutou. Face: Very high receding forehead with short fine gray side hair, long lined clean-shaven face, black rectangular reading glasses resting ON TOP OF HIS HEAD, never on his eyes, as in the reference. Pose: head and both eyes sixty-five degrees LEFT, one handheld microphone below the chin. Clothing: a relaxed olive cotton jacket over a simple white open-collar shirt, no tie. Background: a grassroots public-meeting stage with muted deep-red panels, a simple wooden lectern and soft amber light. ",
+          "pendingPanels": [
+            {
+              "index": 3,
+              "id": "bruno-bernard",
+              "reason": "Referencia fotográfica todavía pendiente; panel vacío, no cuenta como retrato generado."
+            }
+          ]
+        }
+      ]
     }
   ],
   "gazePolicy": "Cero contacto visual con cámara en todos los retratos franceses; revisar cabeza y ojos, también en los ya generados."

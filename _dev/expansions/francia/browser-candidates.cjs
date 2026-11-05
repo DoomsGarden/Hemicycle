@@ -30,6 +30,14 @@ const http=require('node:http');
   a.equal(await bilingual.locator('blockquote').count(),3);a.equal(await bilingual.locator('[lang=fr]').count(),3);
   for(const width of [320,393,768,1200]){await p.setViewportSize({width,height:900});a.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
   await p.setViewportSize({width:393,height:900});await p.screenshot({path:path.join(__dirname,'qa/bilingual-art-393.png'),fullPage:true});
+  await p.locator('#search').fill('Bruno Bernard');a.equal(await p.locator('article:visible').count(),1);
+  const bruno=p.locator('#bruno-bernard'),brunoQuotes=bruno.locator('.bilingual');
+  a.equal(await bruno.locator('.portrait').count(),1);
+  a.ok((await bruno.locator('.portrait img').getAttribute('style')).includes('left:-100%;top:-100%'));
+  await brunoQuotes.evaluate(e=>e.open=true);a.equal(await brunoQuotes.locator('blockquote').count(),3);
+  a.ok((await brunoQuotes.textContent()).includes('publicación 2020-03-12; fecha de declaración no precisada'));
+  for(const width of [320,393,768,1200]){await p.setViewportSize({width,height:900});a.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
+  await p.setViewportSize({width:393,height:900});await bruno.scrollIntoViewIfNeeded();await p.screenshot({path:path.join(__dirname,'qa/bruno-bernard-393.png'),fullPage:true});
   await p.locator('#search').fill('');a.deepEqual(errors,[]);
   fs.writeFileSync(path.join(__dirname,'qa/candidates-browser.json'),JSON.stringify({candidates:100,spanishPressCandidates:54,bilingualCandidates:review.bilingualCandidates,generatedPortraits:review.generatedPortraits,allPortraitImagesLoaded:true,widths:[320,393,768,1200],tierFilter:true,artFilter:true,search:true,documentedSubstitutionVisible:true,bilingualSourcesVisible:true,errors},null,2)+'\n');
   console.log('PASS:100 perfiles,arte y originales bilingües, filtros,fuentes y revisión adaptable.');

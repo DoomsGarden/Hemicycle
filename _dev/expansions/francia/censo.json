@@ -30,7 +30,7 @@
     "raro": 30,
     "comun": 40
   },
-  "sourceBlocker": "Los accesos a fuentes y miniaturas, incluidos los nueve editores franceses adicionales, ya están aplicados (05-11-2026). Continúan la consulta de las referencias localizadas, la selección y revisión editorial de frases, el contraste de etapa y la referencia visual del retrato pendiente. Permiso de red no equivale a fuente verificada.",
+  "sourceBlocker": "Los accesos documentales están aplicados y se ha consultado la referencia visual de Bruno Bernard. Los 100 retratos están generados. Restan 48 selecciones bilingües para 16 perfiles y las revisiones editoriales y de etapa antes de cerrar la tanda.",
   "cards": [
     {
       "id": "francois-mitterrand",
@@ -3822,8 +3822,8 @@
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y ambos ojos hacia un interlocutor o el hemiciclo fuera de cámara. No se admite ninguna mirada al espectador, tampoco en retratos ya generados.",
       "wardrobeBrief": "Polo, punto, cárdigan o blusa cómoda, coherente con la etapa.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -3839,7 +3839,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
-      "bilingualCandidateCount": 0
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-25.png",
+        "position": "100% 100%",
+        "status": "generated_provisional",
+        "gazeReviewedOffCamera": true
+      }
     },
     {
       "id": "jeanne-barseghian",
@@ -4959,7 +4965,7 @@
     "projectedFrenchCountAfterFirstBatch": 103,
     "countryCensusComplete": false,
     "finalFrenchCount": null,
-    "nextStep": "Completar la referencia visual de Bruno Bernard y las 51 selecciones bilingües pendientes de 17 perfiles; revisar después tono, trayectoria y cierre de los 100, antes de ampliar el censo.",
+    "nextStep": "Completar las 48 selecciones bilingües pendientes de 16 perfiles; revisar tono, trayectoria y cierre de los 100, antes de ampliar el censo.",
     "tierReviewTrigger": "Después de completar todos los integrantes de la selección francesa.",
     "tierReviewScope": "Comparar juntos los nuevos franceses; revisar estadísticas y vestuario que cambien de tier. No modificar automáticamente los tres activos.",
     "publicActivation": false,
@@ -4971,11 +4977,11 @@
     "profilesWithSpanishCandidates": 23,
     "spanishPhraseCandidates": 54,
     "profilesWithThreeSpanishCandidates": 14,
-    "verifiedFrenchOriginals": 249,
-    "generatedPortraits": 99,
+    "verifiedFrenchOriginals": 252,
+    "generatedPortraits": 100,
     "finishedNewCards": 0,
     "integratedNewCards": 0,
-    "note": "249 candidatas bilingües para 83 perfiles, con original y hablante cotejados; tono por acción pendiente. 99 retratos provisionales revisados sin contacto visual con cámara. No equivale a cromos terminados ni a 300 frases finales.",
+    "note": "252 candidatas bilingües para 84 perfiles, con original y hablante cotejados; tono por acción pendiente. Los 100 retratos están generados y revisados sin mirada a cámara. No equivale a 100 cromos cerrados ni a 300 frases finales.",
     "searchesWithResults": 40,
     "searchesBlocked": 60,
     "articleFetchErrors": 0,
@@ -4983,16 +4989,16 @@
     "manualAttributionReview": true,
     "gamePhrasesWithoutPersonalNames": true,
     "documentedNameSubstitutions": 1,
-    "profilesWithBilingualCandidates": 83,
-    "bilingualCandidates": 249,
-    "frenchSourceRecords": 293,
-    "distinctFrenchSourcePages": 284,
+    "profilesWithBilingualCandidates": 84,
+    "bilingualCandidates": 252,
+    "frenchSourceRecords": 294,
+    "distinctFrenchSourcePages": 285,
     "spanishSearchScope": "Resultados de la consulta previa de 100 nombres en prensa española; no describe el acceso actual a fuentes francesas.",
-    "allSelectedSpeakerAttributionsRechecked": 249,
-    "bilingualDistinctSources": 114,
-    "pendingPortraits": 1,
-    "pendingAdditionalBilingualSelections": 51,
+    "allSelectedSpeakerAttributionsRechecked": 252,
+    "bilingualDistinctSources": 115,
+    "pendingPortraits": 0,
+    "pendingAdditionalBilingualSelections": 48,
     "finalGamePhrasesStillUnassigned": 300,
-    "portraitsReviewedOffCamera": 99
+    "portraitsReviewedOffCamera": 100
   }
 }
