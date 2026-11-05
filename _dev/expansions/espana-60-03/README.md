@@ -2,7 +2,7 @@
 
 Preparadas entre el 04 y el 05-11-2026 para **v31.0.2.13**, con activación deshabilitada. [Revisión visual, efectos y fuentes](revision.html) · [Lista CSV](cromos.csv).
 
-Las **60 identidades, estadísticas, básicos, pasivas y 180 frases están preparadas**. Se recibieron **44 retratos nuevos** en 11 atlas; **16 retratos siguen pendientes** tras rechazos/interrupciones del generador de imágenes. La tanda no se presenta como terminada de arte ni lista para publicar. Las fichas pendientes muestran «Arte pendiente» y conservan sus referencias individuales, rasgos y prompts.
+Las **60 identidades, estadísticas, básicos, pasivas, 180 frases y 60 retratos están completos**. La primera entrega recibió 44 retratos y dejó 16 pendientes; el reintento solicitado por el usuario el 05-11-2026 completó los cuatro atlas restantes con los mismos prompts y referencias. [Registro del reintento](reintento-arte-2026-11-05.json). La reserva permanece desactivada.
 
 ## Selección y rareza
 
@@ -33,22 +33,22 @@ python _dev/expansions/espana-60-03/verify-sources.py
 
 La verificación automática comprueba los bytes y el fragmento; la atribución y el contexto se revisaron aparte. Las fuentes empleadas están dentro del periodo prioritario 2010–2026.
 
-## Arte recibido y pendiente
+## Arte completo e historial de generación
 
-Los 44 retratos recibidos están en 11 PNG originales de cuatro cuadrantes 3:4, sin edición ni recortes destructivos. Se contrastaron los rasgos con las fotografías de las fichas institucionales del Senado. El arte existente de Trump y el prompt aportado para Cristina Fernández orientan el acabado de ilustración TCG. Se varían cámara, iluminación, pose y presencia de micrófonos; los fondos representan hemiciclo, tribuna, biblioteca, comisiones y salas parlamentarias, con acentos del grupo documentado. No se deduce militancia de un grupo mixto ni se usa una bandera española genérica.
+Los 60 retratos recibidos están en 15 PNG originales de cuatro cuadrantes 3:4, sin edición ni recortes destructivos. Se contrastaron los rasgos con las fotografías de las fichas institucionales del Senado. El arte existente de Trump y el prompt aportado para Cristina Fernández orientan el acabado de ilustración TCG. Se varían cámara, iluminación, pose y presencia de micrófonos; los fondos representan hemiciclo, tribuna, biblioteca, comisiones y salas parlamentarias, con acentos del grupo documentado. No se deduce militancia de un grupo mixto ni se usa una bandera española genérica.
 
-Están pendientes los atlas solicitados `03-04` a `03-07`, correspondientes a:
+Los atlas `03-04` a `03-07`, recibidos en el reintento, corresponden a:
 
 - María José García-Pelayo, José Manuel Rey Varela, Ana Beltrán y Mar Caballero.
 - Javier Remírez, Francisco Bernabé, Luis Uribe-Etxebarria y Dolores Etxano.
 - Joan Bagué, Idurre Bideguren, Laura Castel e Igotz López.
 - Jordi Gaseni, Teresa Pallarès, Javier Armas y Paloma Martín.
 
-El generador devolvió rechazos `moderation_blocked / public-figure`; una solicitud conjunta se interrumpió sin recibir las otras imágenes. Se registran esos resultados sin eludir el bloqueo ni inventar entregas. [Prompts y referencias](prompts-arte.json), [registro de generación](generacion.json), [dimensiones y hashes](art/manifest.json). Las referencias visuales y sus hashes permanecen en [propuesta.json](propuesta.json); las fotografías originales no se incorporan al juego.
+El generador devolvió rechazos `moderation_blocked / public-figure`; una solicitud conjunta se interrumpió sin recibir las otras imágenes. El reintento, sin cambiar los prompts ni las referencias, devolvió correctamente los 16 retratos; se conserva el historial inicial junto al resultado posterior. [Prompts y referencias](prompts-arte.json), [registro de generación](generacion.json), [dimensiones y hashes](art/manifest.json). Las referencias visuales y sus hashes permanecen en [propuesta.json](propuesta.json); las fotografías originales no se incorporan al juego.
 
 ## Reserva, aislamiento y pendientes
 
-La [reserva conjunta](../reserva-espana/README.md) reúne **140 fichas reservadas**, 260 oradores internos y 780 frases: 104 comunes, 78 raros, 52 especiales y 26 legendarios. Hay 124 retratos reservados recibidos y 16 pendientes. Se preservan las definiciones de los 200 oradores de la vista anterior.
+Con la cuarta tanda, la [reserva conjunta](../reserva-espana/README.md) reúne **200 cromos reservados y 200 retratos**, 320 oradores internos y 960 frases: 128 comunes, 96 raros, 64 especiales y 32 legendarios. La nueva ampliación conserva las definiciones y básicos de los 260 oradores de la vista anterior.
 
 ```sh
 node _dev/expansions/reserva-espana/prepare.cjs --preview /tmp/hemicycle-reserva
@@ -56,16 +56,16 @@ node _dev/expansions/reserva-espana/preview-server.cjs
 node --test _dev/expansions/reserva-espana/reserve.test.cjs _dev/expansions/espana-20/reserve.test.cjs
 ```
 
-La vista completa escucha en `127.0.0.1:8097`, con almacenamiento de otro origen, sin service worker ni conexión a API remotas. El materializador solo escribe en `/tmp` o `_dev`. Su manifiesto cuenta los retratos pendientes y exige completarlos antes de activar; mantiene `enabled:false` y `releaseReady:false`, junto con los requisitos de entrega coordinada y compatibilidad offline histórica.
+La vista completa escucha en `127.0.0.1:8097`, con almacenamiento de otro origen, sin service worker ni conexión a API remotas. El materializador solo escribe en `/tmp` o `_dev`. Su manifiesto confirma que no quedan retratos pendientes; mantiene `enabled:false` y `releaseReady:false`, junto con los requisitos de entrega coordinada y compatibilidad offline histórica.
 
 El juego público conserva **120 oradores y 360 frases**. Sobres, colección, IA, búsquedas, backend, fuentes y caché no incorporan los nuevos IDs ni el arte. Todo el trabajo está bajo `_dev`, excluido de Pages. Esa exclusión no hace confidencial un repositorio público. Se conserva el parche v31.0.2.13, sin retocar su etiqueta, versión ni changelog público.
 
-El [censo actual](../espana/README.md) sigue teniendo 440 identidades españolas: **97 activas, 140 reservadas y 203 por preparar**. Los 16 retratos pendientes están contados aparte entre las reservadas. El censo sigue abierto: quedan instituciones por incorporar sistemáticamente, por lo que 203 no es un total exhaustivo de todos los políticos españoles del periodo.
+El [censo actual](../espana/README.md) sigue teniendo 440 identidades españolas: **97 activas, 200 reservadas y 143 por preparar**. No quedan retratos pendientes en las tandas reservadas. El censo sigue abierto: quedan instituciones por incorporar sistemáticamente, por lo que 143 no es un total exhaustivo de todos los políticos españoles del periodo.
 
-Se mantiene la metodología legal existente de ilustración mediante IA, fragmentos documentados y combate ficticio. No cambian los términos ni su hash de aceptación. Antes de activar deberán completarse el arte, los créditos y las fuentes del nuevo catálogo; las referencias no equivalen a una autorización de imagen o marcas.
+Se mantiene la metodología legal existente de ilustración mediante IA, fragmentos documentados y combate ficticio. No cambian los términos ni su hash de aceptación. Antes de activar deberán publicarse los créditos y las fuentes del nuevo catálogo; las referencias no equivalen a una autorización de imagen o marcas.
 
 ## Verificación
 
-[1.569 pruebas aprobadas](qa/final-tests.log): 1.405 de la reserva conjunta y 164 de la primera tanda. Incluyen los cuatro movimientos de los 140 reservados en ambos bandos, básicos, pasivas, conservación de las 200 fichas anteriores, proporciones, 780 frases diferentes, arte recibido, marcadores pendientes y exclusión pública. El censo distingue los 203 perfiles por preparar de los 16 retratos pendientes.
+[2.169 pruebas aprobadas en la ampliación actual](../espana-60-04/qa/final-tests.log): 2.005 de la reserva conjunta y 164 de la primera tanda. Comprueban el combate de los 200 reservados en ambos bandos, las definiciones y básicos anteriores, 960 frases únicas, hashes del arte completo y exclusión pública. El [registro inicial de 1.569 pruebas](qa/final-tests.log) se conserva como evidencia de la entrega que aún tenía 16 retratos pendientes.
 
-La [revisión en Chromium](qa/browser.json) comprueba 124 retratos internos y 16 marcadores explícitos, los 60 artículos y 180 frases de la galería, filtros y ausencia de desbordamiento en 320, 393, 768 y 1200 px, sin registrar service workers.
+La [revisión actualizada en Chromium](qa/browser.json) comprueba 200 retratos internos sin marcadores pendientes, los 60 artículos y 180 frases de esta galería, filtros y ausencia de desbordamiento en 320, 393, 768 y 1200 px, sin registrar service workers.

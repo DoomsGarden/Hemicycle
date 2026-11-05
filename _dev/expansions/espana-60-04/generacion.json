@@ -1,0 +1,193 @@
+{
+  "tool": "image_gen.imagegen",
+  "finished": "2026-11-05",
+  "styleReference": "cards/donald-trump.webp",
+  "method": "Retratos originales TCG con referencias institucionales individuales; PNG recibidos intactos. Un reintento se realizó con el mismo prompt y referencias, conservando el resultado inicial en el historial.",
+  "atlases": [
+    {
+      "path": "/workspace/generated_images/exec-d04d1f3e-c5a0-4069-a9c1-a977ee4a7eaf.png",
+      "error": null,
+      "sheet": "art/04-01.png",
+      "names": [
+        "Ximo Puig",
+        "Luis Tudanca",
+        "Juan Lobato",
+        "Jesús Julio Carnero"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-96286192-f696-498e-9a11-1f11e34ff741.png",
+      "error": null,
+      "sheet": "art/04-02.png",
+      "initialAttempt": {
+        "path": null,
+        "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 358ba120-b477-44ef-93ab-11aec39191ef.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")",
+        "sheet": "art/04-02.png"
+      },
+      "names": [
+        "José Manuel Baltar",
+        "Pedro Martín",
+        "José Hila",
+        "José Entrena"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-301f0d69-814c-4879-9a47-2ab97fc66aad.png",
+      "error": null,
+      "sheet": "art/04-03.png",
+      "names": [
+        "Luis Rodríguez-Comendador",
+        "María Eugenia Limón",
+        "Emma Buj",
+        "Antonio Muñoz"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-d1a85def-bd4f-48c7-b80b-6d50bbb70d5d.png",
+      "error": null,
+      "sheet": "art/04-04.png",
+      "names": [
+        "Australia Navarro",
+        "Lorena Roldán",
+        "Íñigo Fernández",
+        "Mayte Pérez"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-fb4ef594-8529-46c2-9efa-dbc775708db7.png",
+      "error": null,
+      "sheet": "art/04-05.png",
+      "names": [
+        "María Jesús Bonilla",
+        "José Ignacio Landaluce",
+        "Josep Maria Reniu",
+        "Josu Estarrona"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-bd32c5de-7d8f-46d8-b86d-ab81372dd888.png",
+      "error": null,
+      "sheet": "art/04-06.png",
+      "names": [
+        "Olaia Duarte",
+        "Mario Zubiaga",
+        "Francesc Xavier Ten",
+        "Paloma Gómez"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-c1bdb67b-9d7a-4fca-a358-992c80e648d9.png",
+      "error": null,
+      "sheet": "art/04-07.png",
+      "names": [
+        "Carmen Riolobos",
+        "Arenales Serrano",
+        "Teresa Ruiz-Sillero",
+        "Javier Lacalle"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-17857d6f-9a57-4087-b34c-47314aa1769b.png",
+      "error": null,
+      "sheet": "art/04-08.png",
+      "names": [
+        "Juan Ramón Amores",
+        "Sergio Ramos Acosta",
+        "Fernando Priego",
+        "José Manuel Balseiro"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-16d1e77d-576b-4e13-a633-10bb7d5acb3d.png",
+      "error": null,
+      "sheet": "art/04-09.png",
+      "names": [
+        "Mar Cotelo",
+        "Carlos Polanco",
+        "Asunción Mayo",
+        "Agustín Almodóbar"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-56f452ce-0b7b-456f-b178-b5de12b6387a.png",
+      "error": null,
+      "sheet": "art/04-10.png",
+      "names": [
+        "Bienvenido de Arriba",
+        "Melania Mur",
+        "Miguel Ángel Jerez",
+        "Ángeles Luna"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-9a09e70a-7cd9-4b45-a783-88f37d36394d.png",
+      "error": null,
+      "sheet": "art/04-11.png",
+      "names": [
+        "Manuel Ruiz Rivas",
+        "Elena Castillo",
+        "Rafael Lemus",
+        "Vicente Azpitarte"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-f3d36e2a-4f8e-4dd3-9447-7c840dc20a69.png",
+      "error": null,
+      "sheet": "art/04-12.png",
+      "names": [
+        "María Fernández",
+        "Isabel Moreno Mohamed",
+        "Amparo Torres",
+        "Pasión Romero"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-ee3c4ce9-0102-41ad-9587-5640c36b0453.png",
+      "error": null,
+      "sheet": "art/04-13.png",
+      "names": [
+        "Kilian Sánchez",
+        "Amaro Huelva",
+        "Rafael Rodríguez Villarino",
+        "Cristina Moreno"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-68d41db6-a625-4d99-8785-bb2a79bb05ea.png",
+      "error": null,
+      "sheet": "art/04-14.png",
+      "names": [
+        "Raúl Valero",
+        "José Manuel de la Vega",
+        "Isabel Moreno Duque",
+        "Paula Somalo"
+      ],
+      "tool": "image_gen.imagegen"
+    },
+    {
+      "path": "/workspace/generated_images/exec-1b8a5bce-e1bc-4cee-97da-ddeccbdb3171.png",
+      "error": null,
+      "sheet": "art/04-15.png",
+      "names": [
+        "Araceli Martínez",
+        "María Patricio Zafra",
+        "Miriam Bravo",
+        "Ana Martínez Zaragoza"
+      ],
+      "tool": "image_gen.imagegen"
+    }
+  ]
+}

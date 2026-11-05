@@ -1,0 +1,52 @@
+{
+  "checkedOn": "2026-11-05",
+  "previousPortraitsCompleted": 16,
+  "newIdentities": 60,
+  "newPortraits": 60,
+  "publicOrators": 120,
+  "publicQuotes": 360,
+  "reservedIdentities": 200,
+  "reservedPortraits": 200,
+  "pendingPortraits": 0,
+  "remainingCurrentCensus": 143,
+  "internalOrators": 320,
+  "internalQuotes": 960,
+  "testsPassed": 2169,
+  "publicVersion": "v31.0.2.13",
+  "releaseTagTarget": "181a8a4659c6bb12ec698165195535fc8942e72a",
+  "changesLimitedTo": "_dev/expansions",
+  "manualReview": [
+    "Speaker attribution and context of all 180 new fragments",
+    "Quoted third-party words, ironic support and reversed negation rejected",
+    "Individual institutional photo references and all 76 received portraits",
+    "Names and institutional IDs cross-checked against every prior batch"
+  ],
+  "sourceVerification": {
+    "checkedQuotes": 180,
+    "checkedPdfs": 86,
+    "hashes": true,
+    "physicalPages": true,
+    "literalFragments": true
+  },
+  "browserVerification": {
+    "images": {
+      "portraits": 200,
+      "pending": 0,
+      "atlases": 50,
+      "cards": 320
+    },
+    "newCards": 60,
+    "quotes": 180,
+    "widths": [
+      320,
+      393,
+      768,
+      1200
+    ],
+    "rarityFilter": 6,
+    "doctrineFilter": 10,
+    "search": true,
+    "serviceWorkers": 0,
+    "errors": []
+  }
+}

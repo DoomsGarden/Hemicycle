@@ -26,7 +26,9 @@ test('public catalog, economy, source page, worker and installation do not expos
 test('Senate history and current permanent deputation are distinct and deduplicated',()=>{
  a.equal(census.personas.length,311);a.equal(new Set(census.personas.map(p=>p.senadorId)).size,311);a.equal(census.personas.filter(p=>p.diputacionPermanente).length,71);a.equal(census.personas.filter(p=>p.catalogo?.estado==='activo').length,4);a.equal(census.personas.filter(p=>p.catalogo?.estado==='reserva60').length,44);a.equal(census.totales.revisionIdentidad,0);
  for(const p of census.personas){a.ok(p.ficha.startsWith('https://www.senado.es/'));a.ok(!JSON.stringify(p).includes('profileText'));}
- for(const p of census.personas.filter(p=>/BALTAR BLANCO|FERNÁNDEZ BLANCO/.test(p.nombreListado)))a.equal(p.catalogo,null);
+ const baltar=census.personas.find(p=>p.senadorId==='19966'),fernandez=census.personas.find(p=>p.nombreListado.startsWith('FERNÁNDEZ BLANCO,'));
+ a.equal(baltar.catalogo.id,'jose-manuel-baltar-blanco');a.equal(baltar.catalogo.estado,'reserva60-04');a.equal(fernandez.catalogo,null);
+ a.notEqual(baltar.catalogo.id,reserve.sourceCards.find(c=>c.name==='José Blanco').id);
 });
 for(const item of reserve.sourceCards)for(const side of ['p','e'])for(const action of ['normal','strong','guard','heal'])test(item.id+' '+side+' '+action+' uses its assigned phrase in the actual local engine',()=>{
  const c=loadBattle('normal',.25,{HemicycleCatalog:preview.catalog,HemicycleBasicEffects:preview.effects});

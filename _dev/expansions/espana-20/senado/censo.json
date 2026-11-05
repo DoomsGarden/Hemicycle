@@ -20,11 +20,12 @@
   "totales": {
     "catalogo_activo": 4,
     "catalogo_reserva60": 44,
-    "pendiente": 203,
+    "pendiente": 143,
     "fichasXML": 292,
     "fichasHTML": 19,
     "revisionIdentidad": 0,
-    "catalogo_reserva60_03": 60
+    "catalogo_reserva60_03": 60,
+    "catalogo_reserva60_04": 60
   },
   "prioridades": {
     "0": "Persona ya presente o reservada: no crear duplicado",
@@ -783,7 +784,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "agustin-almodobar-barcelo",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -848,9 +853,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19859",
@@ -1345,7 +1350,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "amaro-huelva-betanzos",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1434,9 +1443,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Vicepresidente segundo en comisión de defensa; Vicepresidente segundo en comisión de asuntos iberoamericanos. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19907",
@@ -1454,7 +1463,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "amparo-torres-valencoso",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1535,9 +1548,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18297",
@@ -1555,7 +1568,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "ana-martinez-zaragoza",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1628,9 +1645,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de suplicatorios. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19809",
@@ -1876,10 +1893,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de agricultura, ganadería y alimentación; Portavoz en comisión de despoblación y reto demográfico. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de agricultura, ganadería y alimentación; Portavoz en comisión de despoblación y reto demográfico. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19912",
@@ -2367,7 +2381,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "araceli-martinez-esteban",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -2416,9 +2434,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Vicepresidenta segunda en comisión de cultura. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18088",
@@ -2436,7 +2454,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "bienvenido-de-arriba-sanchez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -2501,9 +2523,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19799",
@@ -2650,7 +2672,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "carlos-alfonso-polanco-rebolleda",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -2707,9 +2733,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de hacienda. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19972",
@@ -3378,7 +3404,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "cristina-moreno-fernandez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -3435,9 +3465,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de transformación digital. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19405",
@@ -3782,7 +3812,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "elena-castillo-lopez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -3863,9 +3897,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19982",
@@ -5075,7 +5109,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francesc-xavier-ten-costa",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -5172,9 +5210,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de cultura; Portavoz en comisión de derechos sociales, consumo y agenda 2030. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "10154",
@@ -6077,10 +6115,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de industria y turismo; Portavoz en comisión de pesca. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de industria y turismo; Portavoz en comisión de pesca. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19921",
@@ -6201,10 +6236,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de cultura; Portavoz en comisión de entidades locales. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de cultura; Portavoz en comisión de entidades locales. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19800",
@@ -6222,7 +6254,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "inigo-fernandez-garcia",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -6279,9 +6315,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Trayectoria de diputado en el Parlamento de Cantabria y responsabilidades de portavocía en el Senado. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19953",
@@ -6529,7 +6565,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "isabel-maria-moreno-mohamed",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -6626,9 +6666,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "20015",
@@ -6818,10 +6858,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "especial",
-      "notaRareza": "La ficha institucional documenta su actividad parlamentaria y procedencia Electo: Navarra.. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta su actividad parlamentaria y procedencia Electo: Navarra.. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "18207",
@@ -7035,10 +7072,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de derechos de las familias; Portavoz en comisión de hacienda. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de derechos de las familias; Portavoz en comisión de hacienda. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19893",
@@ -7448,10 +7482,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de agricultura, ganadería y alimentación; Portavoz en comisión de entidades locales. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de agricultura, ganadería y alimentación; Portavoz en comisión de entidades locales. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "14265",
@@ -7699,7 +7730,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-entrena-avila",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -7748,9 +7783,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Presidencia de la Diputación de Granada entre 2015 y 2023 y alcaldía de Villanueva Mesía. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19970",
@@ -7768,7 +7803,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-francisco-hila-vargas",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -7865,9 +7904,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Alcaldía de Palma entre 2015–2017 y 2019–2023. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19931",
@@ -8148,7 +8187,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-de-la-vega-carrera",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -8197,9 +8240,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19920",
@@ -8751,7 +8794,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "josu-estarrona-elizondo",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -8896,9 +8943,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de cultura; Portavoz en comisión de defensa. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19933",
@@ -9470,7 +9517,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "juan-ramon-amores-garcia",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -9511,9 +9562,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Vicepresidente segundo en comisión de vivienda y agenda urbana. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19919",
@@ -9753,7 +9804,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "kilian-sanchez-san-juan",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -9834,9 +9889,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de sanidad. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "17369",
@@ -9983,10 +10038,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de economía, comercio y empresa; Portavoz en comisión de función pública. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de economía, comercio y empresa; Portavoz en comisión de función pública. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19826",
@@ -10358,10 +10410,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de asuntos exteriores; Portavoz en comisión de ciencia, innovación y universidades. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de asuntos exteriores; Portavoz en comisión de ciencia, innovación y universidades. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "15205",
@@ -10379,7 +10428,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "luis-rogelio-rodriguez-comendador-perez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -10428,9 +10481,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Alcaldía de Almería entre 2003 y 2015, presidencia provincial y trayectoria en ambas cámaras. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19916",
@@ -10517,7 +10570,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "manuel-santos-ruiz-rivas",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -10574,9 +10631,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de pesca. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19987",
@@ -10594,7 +10651,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "mar-cotelo-balmaseda",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -10659,9 +10720,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19940",
@@ -10780,7 +10841,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-arenales-serrano-arguello",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -10837,9 +10902,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19886",
@@ -10857,7 +10922,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-asuncion-mayo-fernandez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -10914,9 +10983,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de igualdad. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19968",
@@ -11199,7 +11268,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-carmen-riolobos-regadera",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -11272,9 +11345,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18187",
@@ -11292,7 +11365,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-de-los-angeles-luna-morales",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -11381,9 +11458,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "14005",
@@ -11763,10 +11840,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de educación, formación profesional y deportes; Portavoz en comisión de función pública. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de educación, formación profesional y deportes; Portavoz en comisión de función pública. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19860",
@@ -11784,7 +11858,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-emma-buj-sanchez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -11841,9 +11919,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Alcaldía de Teruel en los mandatos 2015–2019 y 2019–2023 y responsabilidades provinciales. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19896",
@@ -11861,7 +11939,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-eugenia-limon-bayo",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -11950,9 +12032,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Presidencia de la Diputación de Huelva en el mandato 2019–2023 y alcaldía de San Bartolomé de la Torre. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "17785",
@@ -11974,7 +12056,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-fernandez-alvarez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -12047,9 +12133,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18240",
@@ -12067,7 +12153,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-isabel-moreno-duque",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -12116,9 +12206,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Vicepresidenta segunda en comisión de juventud e infancia. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19185",
@@ -12672,10 +12762,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "especial",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión constitucional; Portavoz en comisión de cooperación internacional al desarrollo. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión constitucional; Portavoz en comisión de cooperación internacional al desarrollo. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19870",
@@ -12697,7 +12784,11 @@
         "funcion": "MIEMBROS SUPLENTES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-patricio-zafra",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -12786,9 +12877,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de incompatibilidades. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18115",
@@ -13274,10 +13365,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Portavoz en comisión de defensa; Portavoz en comisión de economía, comercio y empresa. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de defensa; Portavoz en comisión de economía, comercio y empresa. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "20016",
@@ -13295,7 +13383,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-teresa-perez-esteban",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -13352,9 +13444,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Consejerías de Educación y Presidencia del Gobierno de Aragón entre 2015 y 2023 y portavocía parlamentaria posterior. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "17965",
@@ -13372,7 +13464,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-teresa-ruiz-sillero-bernal",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -13445,9 +13541,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19806",
@@ -13639,7 +13735,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "mario-zubiaga-garate",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -13720,9 +13820,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión constitucional; Portavoz en comisión de ciencia, innovación y universidades. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19942",
@@ -14108,7 +14208,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "melania-mur-sangra",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -14165,9 +14269,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19812",
@@ -14351,7 +14455,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "miguel-angel-jerez-juan",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -14416,9 +14524,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión constitucional. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "17805",
@@ -14751,7 +14859,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "miriam-bravo-sanchez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -14808,9 +14920,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de transformación digital. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "17027",
@@ -15220,7 +15332,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "olaia-duarte-lopez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -15309,9 +15425,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de cooperación internacional al desarrollo; Portavoz en comisión de derechos de las familias. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19820",
@@ -15478,7 +15594,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "paloma-gomez-enriquez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -15623,9 +15743,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión conjunta de las comisiones constitucional y de justicia; Portavoz en comisión de defensa. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19954",
@@ -15718,10 +15838,7 @@
       "prioridad": 2,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "raro",
-      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de transición ecológica. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de transición ecológica. Cupo raro asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19929",
@@ -15739,7 +15856,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "pasion-gador-romero-garcia",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -15812,9 +15933,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de derechos de las familias. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19947",
@@ -15832,7 +15953,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "paula-alicia-somalo-garcia",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -15929,9 +16054,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de pesca. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19904",
@@ -15949,7 +16074,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "pedro-manuel-martin-dominguez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16006,9 +16135,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
+      "notaRareza": "Presidencia del Cabildo de Tenerife entre 2019 y 2023, alcaldía de Guía de Isora y trayectoria insular. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales."
     },
     {
       "senadorId": "19971",
@@ -16398,7 +16527,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "rafael-damian-lemus-rubiales",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16439,9 +16572,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta Portavoz en comisión de asuntos exteriores. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19897",
@@ -16536,7 +16669,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "rafael-rodriguez-villarino",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16633,9 +16770,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18298",
@@ -16859,7 +16996,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "raul-dalmacio-valero-mejia",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -16924,9 +17065,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19961",
@@ -17764,7 +17905,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "vicente-azpitarte-perez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -17821,9 +17966,9 @@
         }
       ],
       "prioridad": 2,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "comun",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "12839",
@@ -18179,10 +18324,7 @@
       "prioridad": 3,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "especial",
-      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de asuntos exteriores. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de asuntos exteriores. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19845",
@@ -18679,10 +18821,7 @@
       "prioridad": 3,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "especial",
-      "notaRareza": "La ficha institucional documenta Presidente en comisión de vivienda y agenda urbana. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Presidente en comisión de vivienda y agenda urbana. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19915",
@@ -19011,7 +19150,11 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-baltar-blanco",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -19068,9 +19211,9 @@
         }
       ],
       "prioridad": 3,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
+      "notaRareza": "Presidencia de la Diputación de Ourense hasta 2023 y responsabilidades en la Mesa del Parlamento de Galicia. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales."
     },
     {
       "senadorId": "19967",
@@ -19155,10 +19298,7 @@
       "prioridad": 3,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "especial",
-      "notaRareza": "La ficha institucional documenta Presidente en comisión de defensa. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Presidente en comisión de defensa. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19908",
@@ -19409,10 +19549,7 @@
       "prioridad": 3,
       "estadoTrabajo": "ya_catalogado",
       "rareza": "especial",
-      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de cultura. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente.",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "notaRareza": "La ficha institucional documenta Vicepresidenta primera en comisión de cultura. Cupo especial asignado en relación con las trayectorias de esta tanda, respetando las proporciones existentes; no mide capacidades personales ni afirma que el cargo siga vigente."
     },
     {
       "senadorId": "19997",
@@ -20240,7 +20377,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "antonio-munoz-martinez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20273,9 +20414,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Alcaldía de Sevilla entre 2022 y 2023 y responsabilidades autonómicas en turismo. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19425",
@@ -21114,7 +21255,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "fernando-priego-chacon",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21163,9 +21308,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Presidente en comisión de entidades locales. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "18846",
@@ -21313,7 +21458,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-lacalle-lacalle",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21378,9 +21527,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Presidente en comisión de industria y turismo. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19984",
@@ -22014,7 +22163,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jesus-julio-carnero-garcia",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22063,9 +22216,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
+      "notaRareza": "Alcaldía de Valladolid desde 2023 en el periodo representado, presidencia provincial y consejerías autonómicas entre 2019 y 2023. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales."
     },
     {
       "senadorId": "13806",
@@ -22112,7 +22265,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "joaquin-francisco-puig-ferrer",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22128,9 +22285,9 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
+      "notaRareza": "Presidencia de la Generalitat Valenciana entre 2015 y 2023, además de trayectoria en Morella y las Corts. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales."
     },
     {
       "senadorId": "20023",
@@ -22578,7 +22735,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-ignacio-landaluce-calleja",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22643,9 +22804,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Trayectoria en el Congreso, el Senado y la alcaldía de Algeciras. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19046",
@@ -22740,7 +22901,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-balseiro-orol",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22797,9 +22962,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta Vicepresidente primero en comisión de investigación sobre los contratos, licencias, concesiones, ayudas y otras operaciones del gobierno y del sector público, relacionadas con la intermediación de koldo garcía izaguirre y con las demás personas vinculadas a la trama investigada en la operación delorme, y respecto a los presuntos delitos relativos a la corrupción que tengan una relación, directa o indirecta, o conexión con las mismas. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19819",
@@ -23019,7 +23184,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "josep-maria-reniu-vilamala",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23035,9 +23204,9 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "20022",
@@ -23149,7 +23318,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "juan-lobato-gandarias",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23214,9 +23387,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
+      "notaRareza": "Dirección del PSOE de Madrid entre 2021 y 2024, portavocía autonómica y alcaldía de Soto del Real. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales."
     },
     {
       "senadorId": "18101",
@@ -23413,7 +23586,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "lorena-roldan-suarez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23429,9 +23606,9 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Portavocía de grupo en el Senado en legislaturas anteriores, diputación autonómica y portavocía del PP de Cataluña en la ficha consultada. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19847",
@@ -23663,7 +23840,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "luis-tudanca-fernandez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23720,9 +23901,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "legendario",
+      "notaRareza": "Dirección del PSOE de Castilla y León entre 2014 y 2025 y liderazgo de la oposición autonómica. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales."
     },
     {
       "senadorId": "20027",
@@ -24001,7 +24182,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-australia-navarro-de-paz",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24017,9 +24202,9 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Consejería del Gobierno de Canarias, portavocía autonómica y dirección del PP de Canarias documentadas en su biografía. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "20038",
@@ -24916,7 +25101,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-jesus-bonilla-dominguez",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25021,9 +25210,9 @@
         }
       ],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "especial",
+      "notaRareza": "Alcaldía de Tarancón entre 2011 y 2015, diputación autonómica y trayectoria parlamentaria estatal. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "19868",
@@ -26184,7 +26373,11 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "sergio-ramos-acosta",
+        "estado": "reserva60-04",
+        "criterio": "Identidad institucional y alias verificados para la cuarta tanda reservada."
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26200,9 +26393,9 @@
       ],
       "cargosFuente": [],
       "prioridad": 4,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
-      "rareza": null,
-      "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
+      "estadoTrabajo": "ya_catalogado",
+      "rareza": "raro",
+      "notaRareza": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo."
     },
     {
       "senadorId": "17565",
@@ -26610,5 +26803,5 @@
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     }
   ],
-  "seguimiento": "La investigación del censo general añadió 44 cromos de esta lista a la segunda tanda reservada; no están disponibles para jugadores."
+  "seguimiento": "Segunda tanda: 44 identidades de esta lista reservadas; tercera y cuarta: 60 adicionales en cada una. Quedan 143 perfiles de este historial por preparar. Todo permanece fuera del catálogo público y no quedan retratos pendientes en las tandas preparadas."
 }

@@ -53,4 +53,4 @@ La metodología sigue cubierta por las explicaciones actuales de ilustraciones m
 
 [968 pruebas aprobadas en la ejecución conjunta](qa/final-tests.log) y [revisión de navegador](qa/browser.json) de los 80 retratos internos, las 60 fichas y las 180 frases, con filtros y anchos de 320, 393, 768 y 1200 px.
 
-Actualización 05-11-2026: la [tercera tanda](../espana-60-03/README.md) amplía la reserva conjunta a 140 fichas y 780 frases en 260 oradores internos. Incluye 16 retratos pendientes. Los resultados y cifras anteriores describen la entrega de esta segunda tanda.
+Actualización 05-11-2026: la [cuarta tanda](../espana-60-04/README.md) amplía la reserva conjunta a 200 cromos y 960 frases en 320 oradores internos. Los 16 retratos pendientes de la tercera tanda ya están completos. Los resultados y cifras anteriores describen la entrega original de esta segunda tanda.

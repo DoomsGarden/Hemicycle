@@ -5,7 +5,7 @@ Revisión: 4 de noviembre de 2026. **Estado: reservado, desactivado en el juego 
 ## Consulta
 
 - [Revisión de retratos, frases, originales y fuentes](revision.html).
-- [Segunda tanda de 60 cromos](../espana-60-02/README.md), [tercera tanda de 60 fichas](../espana-60-03/README.md) y [reserva conjunta de 140](../reserva-espana/README.md), con 16 retratos de la tercera pendientes de arte.
+- [Segunda tanda de 60 cromos](../espana-60-02/README.md), [tercera tanda de 60 fichas](../espana-60-03/README.md), [cuarta tanda de 60](../espana-60-04/README.md) y [reserva conjunta de 200](../reserva-espana/README.md), con los 16 retratos pendientes ya completos.
 - [Lista de las 60 frases](lista-frases.md) y [registro documental](frases.json).
 - [Censo del Senado en CSV](senado/censo.csv) y [JSON con fuentes y estado temporal](senado/censo.json).
 - [Censo general de políticos españoles y alcance de siguientes tandas](../espana/README.md): Gobierno, Congreso, Senado, partidos y otros ámbitos institucionales.
@@ -25,7 +25,7 @@ Se revisaron los límites de intervención: la presidenta Armengol se distingue 
 
 ## Integración reservada
 
-La herramienta de esta carpeta conserva la vista original de 20. Para revisar las 140 fichas reservadas se usa `../reserva-espana/prepare.cjs` y su servidor de vista interna, con 260 oradores en total y un marcador explícito en los 16 retratos pendientes de la tercera tanda.
+La herramienta de esta carpeta conserva la vista original de 20. Para revisar los 200 cromos reservados se usa `../reserva-espana/prepare.cjs` y su servidor de vista interna, con 320 oradores en total y todos los retratos completos.
 
 `prepare.cjs` integra los datos en una copia del catálogo, las asignaciones de habilidades, la maestría de los dos nuevos legendarios, el contexto documental y el registro de fuentes. Conserva exactamente las 120 fichas anteriores. La vista interna contiene 140 oradores y 420 frases. `preview-server.cjs` utiliza el render real del juego y los cuadrantes de los cinco atlas originales mediante CSS, sin modificar las ilustraciones.
 
@@ -47,11 +47,11 @@ El sitio oficial informa de la disolución de las Cámaras el 06-10-2026 y anunc
 
 - **311 personas** que aparecen en el historial de la XV legislatura, incluidas altas, bajas y sustituciones. No son escaños simultáneos.
 - **71 integrantes** de la Diputación Permanente en su listado oficial: 5 de Mesa, 32 titulares y 34 suplentes.
-- **4 personas ya catalogadas**: Javier Maroto, Juan Espadas, Susana Díaz y María Jesús Montero. Se reutiliza su ID; no se proponen cromos duplicados. La investigación inicial dejó 307 identidades pendientes. La segunda tanda reservó 44 y la tercera otras 60: quedan **203 pendientes de preparar** en esta fuente, sin afirmar que todas sigan siendo senadores actuales. Hay 16 retratos pendientes entre las 60 fichas nuevas; sus identidades ya están reservadas y no se duplican.
+- **4 personas ya catalogadas**: Javier Maroto, Juan Espadas, Susana Díaz y María Jesús Montero. Se reutiliza su ID; no se proponen cromos duplicados. La investigación inicial dejó 307 identidades pendientes. La segunda tanda reservó 44, la tercera otras 60 y la cuarta otras 60: quedan **143 pendientes de preparar** en esta fuente, sin afirmar que todas sigan siendo senadores actuales. Los 16 retratos pendientes de la tercera tanda ya están completos.
 
 Se consultaron 292 fichas XML y 19 fichas HTML cuando el exportador XML no devolvía datos. Se guardan fuente y hash, sin copiar fechas de nacimiento ni datos familiares. Las fechas de baja vacías del XML no certifican un cargo vigente. La pertenencia actual a la Diputación Permanente procede de la lista específica del órgano.
 
-La cola prioriza su Mesa, portavocías documentadas y miembros de Diputación Permanente, después el resto del historial reciente. Se revisaron alias completos para evitar falsos duplicados: José Manuel Baltar Blanco y José Fernández Blanco no son José Blanco López. Las siguientes tandas deben centrarse en 2010–2026; después se ampliará hasta 1986, siempre cotejando las 140 identidades ya activas o reservadas. Los cupos de cada nueva tanda deben conservar el reparto de rarezas antes de asignar estadísticas; el censo no inventa frases ni rarezas para personas todavía no investigadas.
+La cola prioriza su Mesa, portavocías documentadas y miembros de Diputación Permanente, después el resto del historial reciente. Se revisaron alias completos para evitar falsos duplicados: José Manuel Baltar Blanco y José Fernández Blanco no son José Blanco López. Las siguientes tandas deben centrarse en 2010–2026; después se ampliará hasta 1986, siempre cotejando las identidades activas y todas las tandas del registro de reserva. Los cupos de cada nueva tanda deben conservar el reparto de rarezas antes de asignar estadísticas; el censo no inventa frases ni rarezas para personas todavía no investigadas.
 
 ## Validación
 
