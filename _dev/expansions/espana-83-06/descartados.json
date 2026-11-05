@@ -1,0 +1,644 @@
+{
+  "date": "2026-11-05",
+  "decision": "Omitir estos cuatro políticos por indicación del creador tras los rechazos del generador. No volver a proponerlos como pendientes ni sustituir su identidad.",
+  "excludedFromReserve": true,
+  "cards": [
+    {
+      "id": "estela-del-carmen-darocas-marin",
+      "canonicalName": "ESTELA DEL CARMEN DAROCAS MARÍN",
+      "name": "Estela Darocas",
+      "senadorId": "19855",
+      "sourceSex": "M",
+      "index": 25,
+      "aliases": [
+        "ESTELA DEL CARMEN DAROCAS MARÍN",
+        "Estela Darocas"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "verborrea",
+      "ability": "bank",
+      "abilityName": "Dietas guardadas",
+      "basicEffect": {
+        "id": "bank",
+        "name": "Dietas guardadas",
+        "polarity": "positive",
+        "target": "self",
+        "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+      },
+      "passive": {
+        "id": "verborrea",
+        "name": "Verborrea",
+        "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "depictedPeriod": "XV legislatura · rasgos de la fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
+      "features": "Long gray-blonde hair partly pulled back, burgundy cat-eye glasses",
+      "pose": "head turned forty degrees left, eyes following the same leftward direction toward an unseen colleague, explicitly not looking at the viewer. one slim side microphone and a restrained open-hand gesture",
+      "gaze": "off_camera",
+      "microphones": true,
+      "wardrobe": {
+        "description": "soft unstructured blazer over a simple blouse",
+        "formality": "raro",
+        "fictitiousStyling": true
+      },
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo de la instantánea institucional XV, sin inferir militancia individual ni vigencia actual de un cargo."
+      },
+      "background": {
+        "description": "diagonal Senate chamber with carved wood, burgundy benches and daylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/06-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "pending",
+        "pendingReason": "Generador rechazó esta solicitud y su repetición sin cambios; no hay retrato generado."
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19855",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15095.jpg",
+        "sha256": "5b07a08466c1ca345b06943530eb78d44d1be7c409d1a7d9532288684b331344",
+        "profileSha256": "f25dcc72ac7134afa52c154fb348f1c5d308fe88f163c928e08b40b32b63319b",
+        "consulted": "2026-11-05"
+      },
+      "documentedAreas": [
+        "senado",
+        "local_insular_provincial"
+      ],
+      "documentedSenateRoles": [
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE INVESTIGACIÓN SOBRE LAS CIRCUNSTANCIAS QUE INFLUYERON EN LA CATÁSTROFE SUFRIDA COMO CONSECUENCIA DE LA DANA DEL PASADO 29 DE OCTUBRE DE 2024, ASÍ COMO DE LA GESTIÓN LLEVADA A CABO POR LAS DISTINTAS ADMINISTRACIONES IMPLICADAS Y POSIBLES ACTUACIONES PARA LA RECUPERACIÓN Y PREVENCIÓN DE FUTURAS DANA",
+          "cargoCod": "2",
+          "cargoNombre": "VICEPRESIDENTA PRIMERA",
+          "cargoAltaFec": "20/01/2025",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN MIXTA DE RELACIONES CON EL DEFENSOR DEL PUEBLO",
+          "cargoCod": "4",
+          "cargoNombre": "SECRETARIA PRIMERA",
+          "cargoAltaFec": "12/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE DERECHOS DE LAS FAMILIAS",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE DERECHOS SOCIALES, CONSUMO Y AGENDA 2030",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE DESPOBLACIÓN Y RETO DEMOGRÁFICO",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE JUVENTUD E INFANCIA",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE POLÍTICAS INTEGRALES DE DISCAPACIDAD",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "02/02/2024",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE INVESTIGACIÓN SOBRE LA INTERRUPCIÓN DEL SUMINISTRO ELÉCTRICO Y DE LAS COMUNICACIONES EL 28 DE ABRIL DE 2025",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "12/06/2025",
+          "cargoBajaFec": ""
+        }
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": null,
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19855"
+      }
+    },
+    {
+      "id": "francisco-javier-bermudez-carrillo",
+      "canonicalName": "FRANCISCO JAVIER BERMÚDEZ CARRILLO",
+      "name": "Javier Bermúdez",
+      "senadorId": "19841",
+      "sourceSex": "V",
+      "index": 26,
+      "aliases": [
+        "FRANCISCO JAVIER BERMÚDEZ CARRILLO",
+        "Javier Bermúdez"
+      ],
+      "country": "ES",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "doctrine": "guardia",
+      "ability": "summon",
+      "abilityName": "Llamada al suplente",
+      "basicEffect": {
+        "id": "summon",
+        "name": "Llamada al suplente",
+        "polarity": "positive",
+        "target": "self",
+        "instant": true,
+        "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+      },
+      "passive": {
+        "id": "guardia",
+        "name": "Vieja Guardia",
+        "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "depictedPeriod": "XV legislatura · rasgos de la fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
+      "features": "Short curly dark hair with gray at the temples, clean-shaven, no glasses",
+      "pose": "head turned thirty-five degrees right, eyes also looking right toward the chamber, explicitly not looking at the viewer. no microphone, hands low or resting on a small folder",
+      "gaze": "off_camera",
+      "microphones": false,
+      "wardrobe": {
+        "description": "a comfortable plain polo shirt without logos",
+        "formality": "comun",
+        "fictitiousStyling": true
+      },
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo de la instantánea institucional XV, sin inferir militancia individual ni vigencia actual de un cargo."
+      },
+      "background": {
+        "description": "institutional press area with deep blue bokeh, architectural depth and warm brass",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/06-07.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "pending",
+        "pendingReason": "Generador rechazó esta solicitud y su repetición sin cambios; no hay retrato generado."
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19841",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15093.jpg",
+        "sha256": "c8375e611a394744de09161ad73051095380bb04568574566b12b07a59210ce1",
+        "profileSha256": "46a57b04bab927543952a7edab420aadd92dca6e17f4dbed030780c213d2383d",
+        "consulted": "2026-11-05"
+      },
+      "documentedAreas": [
+        "senado",
+        "local_insular_provincial"
+      ],
+      "documentedSenateRoles": [
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE INDUSTRIA Y TURISMO",
+          "cargoCod": "2",
+          "cargoNombre": "VICEPRESIDENTE PRIMERO",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE DESPOBLACIÓN Y RETO DEMOGRÁFICO",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE JUVENTUD E INFANCIA",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "05/12/2023",
+          "cargoBajaFec": ""
+        },
+        {
+          "cargoOrganoTipo": "COMIS",
+          "cargoOrganoNombre": "COMISIÓN DE TRANSICIÓN ECOLÓGICA",
+          "cargoCod": "10",
+          "cargoNombre": "VOCAL",
+          "cargoAltaFec": "12/06/2025",
+          "cargoBajaFec": ""
+        }
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": null,
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19841"
+      }
+    },
+    {
+      "id": "francisco-javier-iglesias-garcia",
+      "canonicalName": "FRANCISCO JAVIER IGLESIAS GARCÍA",
+      "name": "Javier Iglesias",
+      "senadorId": "12884",
+      "sourceSex": "V",
+      "index": 27,
+      "aliases": [
+        "FRANCISCO JAVIER IGLESIAS GARCÍA",
+        "Javier Iglesias"
+      ],
+      "country": "ES",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "doctrine": "aforado",
+      "ability": "fasttrack",
+      "abilityName": "Ventanilla rápida",
+      "basicEffect": {
+        "id": "fasttrack",
+        "name": "Ventanilla rápida",
+        "polarity": "positive",
+        "target": "self",
+        "instant": true,
+        "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+      },
+      "passive": {
+        "id": "aforado",
+        "name": "Aforado",
+        "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "depictedPeriod": "XV legislatura · rasgos de la fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia de la Diputación de Salamanca; Mandatos en el Congreso; 1 legislaturas anteriores documentadas. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
+      "features": "Bald crown with very short gray side hair, dark rectangular glasses, clean-shaven",
+      "pose": "three-quarter left view, chin gently raised, eyes toward the upper gallery, explicitly not looking at the viewer. two low lectern microphones and a restrained speaking gesture",
+      "gaze": "off_camera",
+      "microphones": true,
+      "wardrobe": {
+        "description": "well-fitted tailored blazer and pressed shirt with a restrained tie",
+        "formality": "especial",
+        "fictitiousStyling": true
+      },
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "referenceGroup": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
+        "basis": "Grupo de la instantánea institucional XV, sin inferir militancia individual ni vigencia actual de un cargo."
+      },
+      "background": {
+        "description": "parliamentary library shelves with amber side lighting",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/06-07.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "pending",
+        "pendingReason": "Generador rechazó esta solicitud y su repetición sin cambios; no hay retrato generado."
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12884",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15324.jpg",
+        "sha256": "0323126cfc8e7b05bb3a0161597425125740f42c9d6f6ea551116bb92fc1a793",
+        "profileSha256": "8bebc97f931232d2c192769f3dc2434b2ccf26225b59a38660e8c2d82d721564",
+        "consulted": "2026-11-05"
+      },
+      "documentedAreas": [
+        "senado"
+      ],
+      "documentedSenateRoles": [],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": null,
+        "criterion": "Presidencia de la Diputación de Salamanca; Mandatos en el Congreso; 1 legislaturas anteriores documentadas.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12884"
+      }
+    },
+    {
+      "id": "francisco-javier-lamban-montanes",
+      "canonicalName": "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
+      "name": "Javier Lambán",
+      "senadorId": "19984",
+      "sourceSex": "V",
+      "index": 28,
+      "aliases": [
+        "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
+        "Javier Lambán"
+      ],
+      "country": "ES",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "doctrine": "giro",
+      "ability": "lane",
+      "abilityName": "Debate encarrilado",
+      "basicEffect": {
+        "id": "lane",
+        "name": "Debate encarrilado",
+        "polarity": "negative",
+        "target": "rival",
+        "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+      },
+      "passive": {
+        "id": "giro",
+        "name": "Giro de Guion",
+        "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
+        "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "depictedPeriod": "XV legislatura · rasgos de la fotografía institucional",
+      "institution": "Senado de España",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia del Gobierno de Aragón y trayectoria provincial. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
+      "features": "Receding short dark hair, small gray goatee and moustache, rimless glasses",
+      "pose": "three-quarter right view, chin slightly lowered, eyes following a speaker off frame, explicitly not looking at the viewer. no microphone, hands low or resting on a small folder",
+      "gaze": "off_camera",
+      "microphones": false,
+      "wardrobe": {
+        "description": "formal dark tailored suit, crisp white shirt and restrained silk tie",
+        "formality": "legendario",
+        "fictitiousStyling": true
+      },
+      "affiliation": {
+        "label": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "referenceGroup": "GRUPO PARLAMENTARIO SOCIALISTA",
+        "basis": "Grupo de la instantánea institucional XV, sin inferir militancia individual ni vigencia actual de un cargo."
+      },
+      "background": {
+        "description": "committee room with olive-green upholstery and diffused skylight",
+        "nationalFlag": false,
+        "linkedToRepresentedPeriod": true
+      },
+      "art": {
+        "sheet": "art/06-07.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "pending",
+        "pendingReason": "Generador rechazó esta solicitud y su repetición sin cambios; no hay retrato generado."
+      },
+      "reference": {
+        "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19984",
+        "photo": "https://www.senado.es/legis15/senadores/fotos/S15271.jpg",
+        "sha256": "3886c532034465017e088a7a2400c48600d0d37011d6226a6f2a7ed92e8e230c",
+        "profileSha256": "e01613a1a4d57f095ea22789d229814828a6e874bc5b588c448b60969d471131",
+        "consulted": "2026-11-05"
+      },
+      "documentedAreas": [
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
+      ],
+      "documentedSenateRoles": [],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": null,
+        "criterion": "Presidencia del Gobierno de Aragón y trayectoria provincial.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19984"
+      }
+    }
+  ],
+  "phrases": [
+    {
+      "id": "estela-del-carmen-darocas-marin",
+      "nombre": "Estela Darocas",
+      "frases": [
+        {
+          "tipo": "ataque_normal",
+          "frase": "No imponer, sino compartir",
+          "original": "no imponer, sino compartir",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis15/publicaciones/pdf/senado/ds/DS_P_15_83.PDF#page=27",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "ceab1ec9527209751db32151029f92d9e8d78997aa0e453d0b056aa514396c6a",
+          "paginaPDF": 27,
+          "fechaIntervencion": "2025-05-28",
+          "cabeceraOrador": "La señora DAROCAS MARÍN:",
+          "contexto": "romiso. Como decía madre Teresa de Calcuta: «El amor comienza en casa, y no es cuánto hacemos, sino cuánto amor ponemos en lo que hacemos». Eso es la corresponsabilidad: no imponer, sino compartir. España enfrenta un reto demográfico de enorme calado. En los últimos diez años, los nacimientos han descendido un 24,1 %, una caída sin precedentes que amenaza nuestro futuro como país. La tasa de f",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        },
+        {
+          "tipo": "ataque_fuerte",
+          "frase": "No basta con anunciar políticas",
+          "original": "No basta con anunciar políticas",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis15/publicaciones/pdf/senado/ds/DS_C_15_459.PDF#page=19",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "e4874b9974eb2ce968565e3669ed5bd4e272c7aecb06591c71bd8a7229aa1ff3",
+          "paginaPDF": 19,
+          "fechaIntervencion": "2025-06-30",
+          "cabeceraOrador": "La señora DAROCAS MARÍN:",
+          "contexto": "capacidad atrás. La propuesta fue aprobada, pero, a día de hoy, no se ha hecho nada. Y lo que duele no es solo la falta de las medidas que se planteaban, sino el olvido. No basta con anunciar políticas, hay que aplicarlas, porque, mientras tanto, la realidad no espera y las personas mueren. Como consecuencia del último apagón fallecieron seis personas, una de ellas, en Alzira, una población muy cer",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        },
+        {
+          "tipo": "defensa_curacion",
+          "frase": "Para garantizar sus derechos",
+          "original": "Para garantizar sus derechos",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis15/publicaciones/pdf/senado/ds/DS_C_15_214.PDF#page=19",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "c35de5a948e00f3441d1574c5cd15fe8285221f9dc0402a7bdee0f3e4c8813e0",
+          "paginaPDF": 19,
+          "fechaIntervencion": "2024-10-28",
+          "cabeceraOrador": "La señora DAROCAS MARÍN:",
+          "contexto": "l día a día para quienes la padecen, por lo que es fundamental la detección y la atención tempranas. En España se estima que hay unas 120 000 personas en esta situación. Para garantizar sus derechos, es muy importante la detección temprana, que es primordial para el futuro desarrollo del niño o de la niña con parálisis cerebral. Es por ello clave que el personal médico tenga una formación especí",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        }
+      ]
+    },
+    {
+      "id": "francisco-javier-bermudez-carrillo",
+      "nombre": "Javier Bermúdez",
+      "frases": [
+        {
+          "tipo": "ataque_normal",
+          "frase": "No es que esperemos otra cosa de usted",
+          "original": "no es que esperemos otra cosa de usted",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis15/publicaciones/pdf/senado/ds/DS_P_15_77.PDF#page=62",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "f08ac0a15b07afe2755c39949cd6211d181a51f36fff8259a22ec08a9de8be8d",
+          "paginaPDF": 62,
+          "fechaIntervencion": "2025-04-22",
+          "cabeceraOrador": "El señor BERMÚDEZ CARRILLO:",
+          "contexto": "euros para la conexión de 1,12 hectómetros cúbicos de agua potable. Digo yo que será porque no tenemos parador nacional. ¿Será por eso, señora ministra? Señora ministra, no es que esperemos otra cosa de usted, pero después de estos cien días ya podemos confirmar que usted es más de lo mismo que teníamos con la señora Rivera. Le insisto: salga de La Moraleja, visite y pise el terreno de la sierra de Segura",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        },
+        {
+          "tipo": "ataque_fuerte",
+          "frase": "Su Gobierno tiene el motor gripado",
+          "original": "su Gobierno tiene el motor gripado",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis15/publicaciones/pdf/senado/ds/DS_P_15_21.PDF#page=15",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "8386b8550b953a38041feb006f97f43fba6fa5ef7dc73fa0f177930b2760ca15",
+          "paginaPDF": 15,
+          "fechaIntervencion": "2024-03-19",
+          "cabeceraOrador": "El señor BERMÚDEZ CARRILLO:",
+          "contexto": " les gripó la legislatura. A un coche, cuando se le gripa el motor, le quedan dos opciones: o cambiar el motor o llevar el coche a desguace. Por lo tanto, señora Ribera, su Gobierno tiene el motor gripado. Presente y apruebe los presupuestos para el año 2024; de lo contrario…",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        },
+        {
+          "tipo": "defensa_curacion",
+          "frase": "En defensa de la moción",
+          "original": "En defensa de la moción",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis15/publicaciones/pdf/senado/ds/DS_C_15_662.PDF#page=2",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "027edf32347a25d87f73acfa821fe3577fc2cd7ce6dc4776186702a8b637b838",
+          "paginaPDF": 2,
+          "fechaIntervencion": "2026-04-16",
+          "cabeceraOrador": "El señor VICEPRESIDENTE PRIMERO (Bermúdez Carrillo):",
+          "contexto": "En defensa de la moción, por el portavoz del Grupo Parlamentario Popular en el Senado, durante cinco minutos, señor Javier Lacalle.",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        }
+      ]
+    },
+    {
+      "id": "francisco-javier-iglesias-garcia",
+      "nombre": "Javier Iglesias",
+      "frases": [
+        {
+          "tipo": "ataque_normal",
+          "frase": "No es una excepción",
+          "original": "no es una excepción",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis12/publicaciones/pdf/senado/ds/DS_C_12_311.PDF#page=2",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "3444fe3a92a13df6615b0ac465d371f329932e62577619dcc59257010d05aad8",
+          "paginaPDF": 2,
+          "fechaIntervencion": "2018-06-28",
+          "cabeceraOrador": "El señor IGLESIAS GARCÍA:",
+          "contexto": "o de Europa, y yo diría también que en el conjunto del mundo, de concentración de la población en torno a las grandes zonas urbanas. El caso de España, desgraciadamente, no es una excepción. Desde hace décadas existe una tendencia constante a la concentración de la población, por una parte, en los grandes núcleos de población y, por otra, en las zonas de costa, la zona del litoral españ",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        },
+        {
+          "tipo": "ataque_fuerte",
+          "frase": "No voy a hacer un análisis exhaustivo",
+          "original": "no voy a hacer un análisis exhaustivo",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis12/publicaciones/pdf/senado/ds/DS_C_12_311.PDF#page=2",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "3444fe3a92a13df6615b0ac465d371f329932e62577619dcc59257010d05aad8",
+          "paginaPDF": 2,
+          "fechaIntervencion": "2018-06-28",
+          "cabeceraOrador": "El señor IGLESIAS GARCÍA:",
+          "contexto": "oblación, por una parte, en los grandes núcleos de población y, por otra, en las zonas de costa, la zona del litoral español. Son múltiples lo factores y, como he dicho, no voy a hacer un análisis exhaustivo, pero hay que mencionar el envejecimiento de la población, el abandono de las actividades del sector primario debido a la concentración de las explotaciones por la enorme mecanización, incluso factor",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        },
+        {
+          "tipo": "defensa_curacion",
+          "frase": "Defendemos aquí en el Senado",
+          "original": "defendemos aquí en el Senado",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.senado.es/legis12/publicaciones/pdf/senado/ds/DS_C_12_192.PDF#page=29",
+          "comprobado_en": "diario_oficial_texto",
+          "comprobado_el": "2026-11-05",
+          "pdfSha256": "98a23c9deaced4e35b90c8539e3a287f6258640833c4d091bc3ea88d01edc043",
+          "paginaPDF": 29,
+          "fechaIntervencion": "2017-11-15",
+          "cabeceraOrador": "El señor IGLESIAS GARCÍA:",
+          "contexto": "de el punto de vista climatológico—, que puede tener una incidencia no deseada en el recibo de la luz. Pero ese es el compromiso cierto y que nosotros, el Grupo Popular, defendemos aquí en el Senado. Señorías, hay que compaginar la eficiencia energética deseable de la cogeneración con la eficiencia económica de la producción del sistema y con la eficiencia medioambiental. El Gobierno sí está hac",
+          "nota": "Fragmento de intervención parlamentaria; se conservan las palabras con normalización de caja, tildes y puntuación. La asignación al combate es ficticia y no atribuye al orador la autoría exclusiva de una expresión común."
+        }
+      ]
+    },
+    {
+      "id": "francisco-javier-lamban-montanes",
+      "nombre": "Javier Lambán",
+      "frases": [
+        {
+          "tipo": "ataque_normal",
+          "frase": "Hasta el último aliento de mi vida",
+          "original": "hasta el último aliento de mi vida",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.europapress.es/aragon/noticia-javier-lamban-me-siento-huerfano-representacion-partido-refiere-tanto-madrid-aragon-20250710152220.html",
+          "sourceFormat": "html",
+          "editor": "Europa Press",
+          "comprobado_en": "declaracion_atribuida_en_prensa",
+          "comprobado_el": "2026-11-05",
+          "htmlSha256": "797897f1c7ee7159d59ac170ca05447d0c637051dec5be71ec36a04d544e095e",
+          "fechaIntervencion": "2025-07-10",
+          "cabeceraOrador": "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
+          "contexto": "Es la Comunidad aragonesa la que le \"alegra\" el corazón frente al sentimiento de orfandad política que le provoca la situación del PSOE tanto en Madrid como en Aragón, y la vía en la que canaliza su \"pasión política\" que, ha asegurado, \"tendré hasta el último aliento de mi vida\".",
+          "nota": "Declaración propia atribuida expresamente por Europa Press; fragmento literal sin nombres personales de terceros. La acción es una asignación de juego, no el propósito original de la declaración."
+        },
+        {
+          "tipo": "ataque_fuerte",
+          "frase": "Vergüenza e indignación ante esta infamia",
+          "original": "vergüenza e indignación ante esta infamia",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.europapress.es/aragon/noticia-lamban-aval-amnistia-siento-verguenza-indignacion-infamia-20250626115529.html",
+          "sourceFormat": "html",
+          "editor": "Europa Press",
+          "comprobado_en": "declaracion_atribuida_en_prensa",
+          "comprobado_el": "2026-11-05",
+          "htmlSha256": "da200db9ca15e555acab60dad93ea181f66be52f0c79a2a8b1e25dd84700082b",
+          "fechaIntervencion": "2025-06-26",
+          "cabeceraOrador": "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
+          "contexto": "El expresidente del Gobierno de Aragón y exlíder de los socialistas en la comunidad autónoma, Javier Lambán, ha afirmado que el aval del Tribunal Constitucional a la ley de amnistía es \"un golpe letal a la Constitución\" y ha reconocido: \"Siento vergüenza e indignación ante esta infamia\".",
+          "nota": "Declaración propia atribuida expresamente por Europa Press; fragmento literal sin nombres personales de terceros. La acción es una asignación de juego, no el propósito original de la declaración."
+        },
+        {
+          "tipo": "defensa_y_curacion",
+          "frase": "Un proyecto común y compartido por todos",
+          "original": "un proyecto común y compartido por todos",
+          "tratamiento": "fragmento_literal",
+          "fuente": "https://www.europapress.es/aragon/noticia-javier-lamban-me-siento-huerfano-representacion-partido-refiere-tanto-madrid-aragon-20250710152220.html",
+          "sourceFormat": "html",
+          "editor": "Europa Press",
+          "comprobado_en": "declaracion_atribuida_en_prensa",
+          "comprobado_el": "2026-11-05",
+          "htmlSha256": "797897f1c7ee7159d59ac170ca05447d0c637051dec5be71ec36a04d544e095e",
+          "fechaIntervencion": "2025-07-10",
+          "cabeceraOrador": "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
+          "contexto": "El expresidente ha defendido que ese \"empeño\" por Aragón ha de ser un proyecto \"compartido\" para que no resulte fallido: \"Debe ser un proyecto común y compartido por todos, al que todos arrimemos el hombro\". Por ello ha mostrado públicamente su \"alegría\", \"sin ninguna reticencia de ninguna índole\" por los éxitos del presidente Azcón porque los éxitos del presidente de un Gobierno son de manera absolutamente irrebatible los éxitos de la Comunidad a la que sirve\". Y por ello se ha puesto a su disposición.",
+          "nota": "Declaración propia atribuida expresamente por Europa Press; fragmento literal sin nombres personales de terceros. La acción es una asignación de juego, no el propósito original de la declaración."
+        }
+      ]
+    }
+  ]
+}

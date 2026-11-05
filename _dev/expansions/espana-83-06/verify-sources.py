@@ -1,4 +1,4 @@
-"""Verify 249 fragments against PDF pages or attributed HTML statements and recorded hashes."""
+"""Verify 237 retained fragments against PDF pages or attributed HTML statements and recorded hashes."""
 import argparse
 import hashlib
 import json

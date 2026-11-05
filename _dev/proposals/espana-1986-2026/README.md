@@ -1,4 +1,4 @@
-> **Estado vigente — 5-11-2026:** las 20 propuestas forman parte de la reserva interna y sus tiers fueron revisados conjuntamente con los otros 323. Consulta la [galería actual](../../expansions/espana-20/revision.html) y la [revisión global](../../expansions/reserva-espana/revision-global/README.md). Los PDF, PNG exportados, ZIP y galería original de esta carpeta conservan la propuesta histórica anterior, no los tiers actuales.
+> **Estado vigente — 5-11-2026:** las 20 propuestas forman parte de la reserva interna y sus tiers fueron revisados conjuntamente con los otros 319 conservados. Consulta la [galería actual](../../expansions/espana-20/revision.html) y la [revisión global](../../expansions/reserva-espana/revision-global/README.md). Los PDF, PNG exportados, ZIP y galería original de esta carpeta conservan la propuesta histórica anterior, no los tiers actuales.
 
 # España · 20 propuestas de cromos · 1986–2026
 

@@ -27,7 +27,8 @@
     "catalogo_reserva60_03": 60,
     "catalogo_reserva60_04": 60,
     "catalogo_reserva60_05": 60,
-    "catalogo_reserva83_06": 83
+    "catalogo_reserva83_06": 79,
+    "descartados": 4
   },
   "prioridades": {
     "0": "Persona ya presente o reservada: no crear duplicado",
@@ -21370,7 +21371,7 @@
       "diputacionPermanente": null,
       "catalogo": {
         "id": "estela-del-carmen-darocas-marin",
-        "estado": "reserva83-06"
+        "estado": "descartado"
       },
       "revisionIdentidad": [],
       "credenciales": [
@@ -21452,7 +21453,7 @@
         }
       ],
       "prioridad": 0,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
+      "estadoTrabajo": "omitido_por_decision_del_creador",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
@@ -21627,7 +21628,7 @@
       "diputacionPermanente": null,
       "catalogo": {
         "id": "francisco-javier-bermudez-carrillo",
-        "estado": "reserva83-06"
+        "estado": "descartado"
       },
       "revisionIdentidad": [],
       "credenciales": [
@@ -21677,7 +21678,7 @@
         }
       ],
       "prioridad": 0,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
+      "estadoTrabajo": "omitido_por_decision_del_creador",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
@@ -21699,13 +21700,13 @@
       "diputacionPermanente": null,
       "catalogo": {
         "id": "francisco-javier-iglesias-garcia",
-        "estado": "reserva83-06"
+        "estado": "descartado"
       },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
       "prioridad": 0,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
+      "estadoTrabajo": "omitido_por_decision_del_creador",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },
@@ -21816,7 +21817,7 @@
       "diputacionPermanente": null,
       "catalogo": {
         "id": "francisco-javier-lamban-montanes",
-        "estado": "reserva83-06"
+        "estado": "descartado"
       },
       "revisionIdentidad": [],
       "credenciales": [
@@ -21833,7 +21834,7 @@
       ],
       "cargosFuente": [],
       "prioridad": 0,
-      "estadoTrabajo": "pendiente_de_frases_y_arte",
+      "estadoTrabajo": "omitido_por_decision_del_creador",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     },

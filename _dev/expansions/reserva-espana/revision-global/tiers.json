@@ -1,13 +1,13 @@
 {
   "date": "2026-11-05",
-  "scope": 343,
+  "scope": 339,
   "distribution": {
-    "legendario": 34,
+    "legendario": 33,
     "especial": 69,
-    "raro": 103,
-    "comun": 137
+    "raro": 102,
+    "comun": 135
   },
-  "method": "Orden editorial conjunto por alcance institucional y trayectoria, con proporción global aproximada 40/30/20/10. No hay cuotas por tanda. El orden dentro de un tier no constituye una clasificación personal. Se conservan efectos, pasivas y frases previas.",
+  "method": "Revisión editorial conjunta originalmente de 343; se mantienen los tiers de los 339 conservados tras omitir cuatro perfiles por decisión del creador. Sin cupo por tanda.",
   "cards": [
     {
       "id": "adolfo-suarez",
@@ -6819,104 +6819,6 @@
       "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19985"
     },
     {
-      "id": "estela-del-carmen-darocas-marin",
-      "name": "Estela Darocas",
-      "batch": "espana-83-06",
-      "before": {
-        "rarity": "raro",
-        "cost": 2,
-        "zasca": 4,
-        "aguante": 6,
-        "escanos": 3
-      },
-      "after": {
-        "rarity": "comun",
-        "cost": 2,
-        "zasca": 2,
-        "aguante": 5,
-        "escanos": 2
-      },
-      "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
-      "criteria": [
-        "Alcaldía documentada",
-        "Responsabilidad de Mesa o portavocía en comisión"
-      ],
-      "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19855"
-    },
-    {
-      "id": "francisco-javier-bermudez-carrillo",
-      "name": "Javier Bermúdez",
-      "batch": "espana-83-06",
-      "before": {
-        "rarity": "comun",
-        "cost": 2,
-        "zasca": 2,
-        "aguante": 5,
-        "escanos": 2
-      },
-      "after": {
-        "rarity": "comun",
-        "cost": 2,
-        "zasca": 2,
-        "aguante": 5,
-        "escanos": 2
-      },
-      "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
-      "criteria": [
-        "Alcaldía documentada",
-        "Responsabilidad de Mesa o portavocía en comisión"
-      ],
-      "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19841"
-    },
-    {
-      "id": "francisco-javier-iglesias-garcia",
-      "name": "Javier Iglesias",
-      "batch": "espana-83-06",
-      "before": {
-        "rarity": "especial",
-        "cost": 3,
-        "zasca": 5,
-        "aguante": 8,
-        "escanos": 4
-      },
-      "after": {
-        "rarity": "raro",
-        "cost": 3,
-        "zasca": 4,
-        "aguante": 7,
-        "escanos": 3
-      },
-      "criterion": "Presidencia de la Diputación de Salamanca; Mandatos en el Congreso; 1 legislaturas anteriores documentadas.",
-      "criteria": [
-        "Presidencia de la Diputación de Salamanca",
-        "Mandatos en el Congreso",
-        "1 legislaturas anteriores documentadas"
-      ],
-      "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12884"
-    },
-    {
-      "id": "francisco-javier-lamban-montanes",
-      "name": "Javier Lambán",
-      "batch": "espana-83-06",
-      "before": {
-        "rarity": "legendario",
-        "cost": 5,
-        "zasca": 7,
-        "aguante": 14,
-        "escanos": 5
-      },
-      "after": {
-        "rarity": "legendario",
-        "cost": 5,
-        "zasca": 7,
-        "aguante": 14,
-        "escanos": 5
-      },
-      "criterion": "Presidencia del Gobierno de Aragón y trayectoria provincial.",
-      "criteria": [],
-      "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19984"
-    },
-    {
       "id": "francisco-javier-oblare-torres",
       "name": "Javier Oblaré",
       "batch": "espana-83-06",
@@ -8270,5 +8172,12 @@
       ],
       "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20040"
     }
+  ],
+  "originalReviewScope": 343,
+  "excludedIds": [
+    "estela-del-carmen-darocas-marin",
+    "francisco-javier-bermudez-carrillo",
+    "francisco-javier-iglesias-garcia",
+    "francisco-javier-lamban-montanes"
   ]
 }

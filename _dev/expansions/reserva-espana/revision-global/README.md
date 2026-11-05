@@ -1,8 +1,8 @@
-# Revisión global de tiers y vestuario · 343 reservados
+# Revisión global de tiers y vestuario · 339 reservados conservados
 
 [Galería conjunta](revision.html) · [Lista completa](cromos.csv) · [Antes/después y criterio](tiers.csv) · [Datos de tiers](tiers.json) · [Vestuario](vestuario.json).
 
-Se revisan todas las tandas como una sola colección. El alcance institucional de los cargos y la trayectoria pública pesan por encima de la fecha en que se creó el cromo. El reparto global aproximado 40/30/20/10 queda en **137 comunes, 103 raros, 69 especiales y 34 legendarios**. Las cuotas antiguas por tanda dejan de aplicarse.
+Se revisan todas las tandas como una sola colección. El alcance institucional de los cargos y la trayectoria pública pesan por encima de la fecha en que se creó el cromo. El reparto global aproximado 40/30/20/10 queda en **135 comunes, 102 raros, 69 especiales y 33 legendarios**. Las cuotas antiguas por tanda dejan de aplicarse.
 
 El máximo tier prioriza presidencias estatales, autonómicas o de las Cortes, vicepresidencias, ministerios de gran alcance y trayectorias estatales o europeas destacadas. El especial reúne otras responsabilidades ministeriales, ejecutivas autonómicas, direcciones parlamentarias y presidencias territoriales relevantes. Raro y común consideran la experiencia documentada, mandatos, responsabilidad ejecutiva local, representación autonómica y funciones parlamentarias. La división es una decisión editorial para esta colección; no es una medición objetiva de capacidad, mérito personal o afinidad política. Dentro de un tier no se establece una clasificación personal.
 
@@ -18,6 +18,6 @@ Se recalcularon coste, Zasca, Aguante y escaños con los tiers actuales del jueg
 
 Las 25 láminas son PNG originales intactos del generador. `generacion.json` conserva las incidencias y repeticiones sin cambios; todos los ajustes de vestuario terminaron generados. `prompts-vestuario.json` enlaza fotos institucionales y sus hashes. Los cuadrantes están asignados por identidad, no por el orden posterior del ranking. Las fotografías de referencia no se redistribuyen.
 
-La reserva completa conserva cuatro retratos nuevos bloqueados en la última tanda; no afecta a estas 97 variantes completadas. Sigue desactivada y excluida de Pages.
+La revisión original abarcó 343 perfiles. El creador indicó después omitir a los cuatro que carecían de arte; se conservan 339, todos ilustrados, y no se promueve a nadie para cubrir su hueco. `originalReviewScope` y la referencia histórica de cada ficha conservan el alcance de la revisión original. Las 97 variantes completadas no cambian. La reserva sigue desactivada y excluida de Pages.
 
-Validación actual: [3.599 pruebas](../../espana-83-06/qa/final-tests.log), [navegador y render real](../../espana-83-06/qa/browser.json), [fuentes nuevas](../../espana-83-06/qa/source-verification.json). Los QA anteriores son históricos.
+Validación actual: [3.559 pruebas](../../espana-83-06/qa/final-tests.log), [navegador y render real](../../espana-83-06/qa/browser.json), [fuentes nuevas](../../espana-83-06/qa/source-verification.json). Los QA anteriores son históricos.

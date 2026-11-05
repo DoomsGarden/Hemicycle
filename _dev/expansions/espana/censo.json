@@ -32,9 +32,10 @@
     "reserva60_03": 60,
     "reserva60_04": 60,
     "reserva60_05": 60,
-    "reserva83_06": 83,
-    "reservaTotal": 343,
-    "reservadosPendientesArte": 4,
+    "reserva83_06": 79,
+    "descartados": 4,
+    "reservaTotal": 339,
+    "reservadosPendientesArte": 0,
     "pendientes": 0,
     "registrosSenado": 311,
     "registrosGobierno": 22
@@ -3082,14 +3083,12 @@
       "id": "estela-del-carmen-darocas-marin",
       "nombre": "ESTELA DEL CARMEN DAROCAS MARÍN",
       "pais": "ES",
-      "catalogo": "reserva83-06",
+      "catalogo": "descartado",
       "alias": [
-        "ESTELA DEL CARMEN DAROCAS MARÍN",
-        "Estela Darocas"
+        "ESTELA DEL CARMEN DAROCAS MARÍN"
       ],
       "ambitos": [
-        "senado",
-        "local_insular_provincial"
+        "senado"
       ],
       "referencias": [
         {
@@ -3100,19 +3099,10 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
-        },
-        {
-          "tipo": "reserva_preparada",
-          "archivo": "_dev/expansions/espana-83-06/propuesta.json",
-          "id": "estela-del-carmen-darocas-marin",
-          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "ya_catalogado_no_duplicar",
-      "rarezaPropuesta": "comun",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "estadoTrabajo": "omitido_por_decision_del_creador",
+      "rarezaPropuesta": null
     },
     {
       "id": "esther-basilia-del-brio-gonzalez",
@@ -3681,14 +3671,12 @@
       "id": "francisco-javier-bermudez-carrillo",
       "nombre": "FRANCISCO JAVIER BERMÚDEZ CARRILLO",
       "pais": "ES",
-      "catalogo": "reserva83-06",
+      "catalogo": "descartado",
       "alias": [
-        "FRANCISCO JAVIER BERMÚDEZ CARRILLO",
-        "Javier Bermúdez"
+        "FRANCISCO JAVIER BERMÚDEZ CARRILLO"
       ],
       "ambitos": [
-        "senado",
-        "local_insular_provincial"
+        "senado"
       ],
       "referencias": [
         {
@@ -3699,28 +3687,18 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
-        },
-        {
-          "tipo": "reserva_preparada",
-          "archivo": "_dev/expansions/espana-83-06/propuesta.json",
-          "id": "francisco-javier-bermudez-carrillo",
-          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "ya_catalogado_no_duplicar",
-      "rarezaPropuesta": "comun",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "estadoTrabajo": "omitido_por_decision_del_creador",
+      "rarezaPropuesta": null
     },
     {
       "id": "francisco-javier-iglesias-garcia",
       "nombre": "FRANCISCO JAVIER IGLESIAS GARCÍA",
       "pais": "ES",
-      "catalogo": "reserva83-06",
+      "catalogo": "descartado",
       "alias": [
-        "FRANCISCO JAVIER IGLESIAS GARCÍA",
-        "Javier Iglesias"
+        "FRANCISCO JAVIER IGLESIAS GARCÍA"
       ],
       "ambitos": [
         "senado"
@@ -3734,19 +3712,10 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
           "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
-        },
-        {
-          "tipo": "reserva_preparada",
-          "archivo": "_dev/expansions/espana-83-06/propuesta.json",
-          "id": "francisco-javier-iglesias-garcia",
-          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "ya_catalogado_no_duplicar",
-      "rarezaPropuesta": "raro",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "estadoTrabajo": "omitido_por_decision_del_creador",
+      "rarezaPropuesta": null
     },
     {
       "id": "francisco-javier-lacalle-lacalle",
@@ -3784,15 +3753,12 @@
       "id": "francisco-javier-lamban-montanes",
       "nombre": "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
       "pais": "ES",
-      "catalogo": "reserva83-06",
+      "catalogo": "descartado",
       "alias": [
-        "FRANCISCO JAVIER LAMBÁN MONTAÑÉS",
-        "Javier Lambán"
+        "FRANCISCO JAVIER LAMBÁN MONTAÑÉS"
       ],
       "ambitos": [
-        "senado",
-        "autonomico",
-        "local_insular_provincial"
+        "senado"
       ],
       "referencias": [
         {
@@ -3803,19 +3769,10 @@
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
           "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
-        },
-        {
-          "tipo": "reserva_preparada",
-          "archivo": "_dev/expansions/espana-83-06/propuesta.json",
-          "id": "francisco-javier-lamban-montanes",
-          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "ya_catalogado_no_duplicar",
-      "rarezaPropuesta": "legendario",
-      "pendientesReserva": [
-        "arte"
-      ]
+      "estadoTrabajo": "omitido_por_decision_del_creador",
+      "rarezaPropuesta": null
     },
     {
       "id": "francisco-javier-marquez-sanchez",
