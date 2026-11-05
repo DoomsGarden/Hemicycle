@@ -1,0 +1,210 @@
+{
+  "scope": "Primera tanda autorizada de 100; arte provisional de tiers antes del ajuste global final.",
+  "sheets": [
+    {
+      "sheet": "art/fr01-01.png",
+      "ids": [
+        "francois-hollande",
+        "nicolas-sarkozy",
+        "valery-giscard-d-estaing",
+        "lionel-jospin"
+      ],
+      "names": [
+        "François Hollande",
+        "Nicolas Sarkozy",
+        "Valéry Giscard d’Estaing",
+        "Lionel Jospin"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All four are provisional LEGENDARY tier: formal well-fitted clothing is mandatory. Crucially, turn BOTH HEAD AND EYES AWAY FROM THE CAMERA as specified, toward a colleague or the chamber; do not keep frontal eye contact from the reference photos. Vary pose, lighting and institutional background among all panels. TOP LEFT: François Hollande. Face: Short thinning dark-gray hair, high forehead, rounded cheeks, small rectangular metal glasses; clean-shaven. Pose: head and eyes turned 45 degrees toward the left, both eyes following the left direction, speaking toward an unseen colleague, one open hand low in frame. Clothing: a formal navy tailored suit, crisp white shirt and deep burgundy silk tie. Background: a French parliamentary committee room, carved warm wood and wine-red upholstery, soft sidelight. Include one or two low lectern microphones, never across the face. TOP RIGHT: Nicolas Sarkozy. Face: Short dark-gray hair combed upward, strong angular eyebrows, pronounced nose and smile lines, clean-shaven, no glasses. Pose: head and eyes turned 50 degrees toward the right, both eyes looking right, shoulders slightly counter-turned, holding a slim closed folder below chest level. Clothing: a formal charcoal tailored suit, pale shirt and sober dark blue silk tie. Background: an institutional press lectern with cobalt light and bronze architectural details. No microphone. BOTTOM LEFT: Valéry Giscard d’Estaing. Face: Very high bald forehead with fine gray hair at the sides, long narrow face and pronounced curved nose, clean-shaven, no glasses. Pose: head and eyes turned 45 degrees toward the left, head slightly raised and both eyes toward the upper left side of the chamber, one restrained speaking hand. Clothing: a formal dark navy tailored suit, white shirt and restrained patterned silk tie. Background: a European parliamentary library, amber light, deep green leather and tall architectural depth. Include one or two low lectern microphones, never across the face. BOTTOM RIGHT: Lionel Jospin. Face: Thick softly curly white hair, pale eyebrows, rectangular thin metal glasses, long nose, clean-shaven. Pose: head and eyes turned 40 degrees toward the right, chin slightly lowered, both eyes following an unseen interlocutor to the right, calm attentive posture. Clothing: a formal dark blue tailored suit, pale blue shirt and subdued violet silk tie. Background: a parliamentary corridor with cool daylight, stone columns and softly blurred burgundy benches. No microphone.",
+      "references": [
+        {
+          "id": "francois-hollande",
+          "page": "https://www.europapress.es/internacional/noticia-hollande-asegura-no-candidato-liderar-gobierno-francia-20240707221428.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20240707221428_1200.jpg",
+          "photoSha256": "67d42334fab165a5eafaa10808f894c502fe905ccef4afa30b6efa87d0e6a269",
+          "caption": "El expresidente francés François Hollande  - Europa Press/Contacto/Laetitia Notarianni",
+          "features": "Short thinning dark-gray hair, high forehead, rounded cheeks, small rectangular metal glasses; clean-shaven.",
+          "pose": "45 degrees toward the left, both eyes following the left direction, speaking toward an unseen colleague, one open hand low in frame.",
+          "wardrobe": "a formal navy tailored suit, crisp white shirt and deep burgundy silk tie",
+          "background": "a French parliamentary committee room, carved warm wood and wine-red upholstery, soft sidelight",
+          "microphones": true
+        },
+        {
+          "id": "nicolas-sarkozy",
+          "page": "https://www.europapress.es/internacional/noticia-expresidente-frances-nicolas-sarkozy-recurre-justicia-evitar-uso-brazalete-electronico-20260126163309.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260126163309_1200.jpg",
+          "photoSha256": "c8ebe8595f6a11673b21e635b34734f85f431a9236ac5e860a66045910c19ffc",
+          "caption": "Archivo - El expresidente de Francia Nicolas Sarkozy  - picture alliance / dpa - Archivo",
+          "features": "Short dark-gray hair combed upward, strong angular eyebrows, pronounced nose and smile lines, clean-shaven, no glasses.",
+          "pose": "50 degrees toward the right, both eyes looking right, shoulders slightly counter-turned, holding a slim closed folder below chest level.",
+          "wardrobe": "a formal charcoal tailored suit, pale shirt and sober dark blue silk tie",
+          "background": "an institutional press lectern with cobalt light and bronze architectural details",
+          "microphones": false
+        },
+        {
+          "id": "valery-giscard-d-estaing",
+          "page": "https://www.europapress.es/internacional/noticia-ue-recuerda-giscard-destaing-arquitectos-actual-bloque-20201203143339.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20201203143339_1200.jpg",
+          "photoSha256": "671902a4a7f2568bfa24248a18ba6d5d96f2aaabfb58a3e8c33cd415524f5209",
+          "caption": "Valery Giscard d'Estaing, ex presidente de Francia  - picture alliance / dpa - Archivo",
+          "features": "Very high bald forehead with fine gray hair at the sides, long narrow face and pronounced curved nose, clean-shaven, no glasses.",
+          "pose": "45 degrees toward the left, head slightly raised and both eyes toward the upper left side of the chamber, one restrained speaking hand.",
+          "wardrobe": "a formal dark navy tailored suit, white shirt and restrained patterned silk tie",
+          "background": "a European parliamentary library, amber light, deep green leather and tall architectural depth",
+          "microphones": true
+        },
+        {
+          "id": "lionel-jospin",
+          "page": "https://www.europapress.es/internacional/noticia-muere-88-anos-ex-primer-ministro-lionel-jospin-destacada-figura-socialismo-francia-20260323104422.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260323104422_1200.jpg",
+          "photoSha256": "5aa22b799f6b3dc137e2c3face12fc6d4e14c5f4368dfcb15671672ffae1e285",
+          "caption": "Archivo - El ex primer ministro de Francia Lionel Jospin durante un acto en 2021 (archivo)  - Europa Press/Contacto/Alexis Sciard - Archivo",
+          "features": "Thick softly curly white hair, pale eyebrows, rectangular thin metal glasses, long nose, clean-shaven.",
+          "pose": "40 degrees toward the right, chin slightly lowered, both eyes following an unseen interlocutor to the right, calm attentive posture.",
+          "wardrobe": "a formal dark blue tailored suit, pale blue shirt and subdued violet silk tie",
+          "background": "a parliamentary corridor with cool daylight, stone columns and softly blurred burgundy benches",
+          "microphones": false
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen.imagegen",
+      "generatedOn": "2026-11-05",
+      "sha256": "29abd23c007c2a576f94823568482ea2d0dd44455c623479a42a3c5ca5f31165",
+      "originalOutput": "exec-eb12e125-673e-4b42-ae17-55893ef4dc7f.png"
+    },
+    {
+      "sheet": "art/fr01-02.png",
+      "ids": [
+        "jacques-chirac",
+        "michel-rocard",
+        "simone-veil",
+        "robert-badinter"
+      ],
+      "names": [
+        "Jacques Chirac",
+        "Michel Rocard",
+        "Simone Veil",
+        "Robert Badinter"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. The first three are provisional LEGENDARY tier with formal clothing; the fourth is SPECIAL tier with professional formal clothing. Never keep frontal eye contact: BOTH HEAD AND EYES point toward the colleague or chamber as specified. No flags, no French tricolor backdrop, no text or UI. TOP LEFT: Jacques Chirac. Face identity: In reference 1, use ONLY the older man seated on the RIGHT of the bench: Jacques Chirac, not the woman and not the young man. High receding hairline, gray side hair, long face and pronounced long nose, strong dark eyebrows; clean-shaven, no glasses. Pose: head and both eyes forty-five degrees LEFT toward a colleague; authoritative speaking gesture with one raised hand, one low microphone. Wardrobe: a formal dark charcoal suit, white shirt and dark red silk tie. Background: a French presidential meeting room with golden carved wood, deep red upholstery and warm daylight. TOP RIGHT: Michel Rocard. Face identity: Reference 2: Michel Rocard, bald crown with very short fine gray hair at the sides, deeply lined narrow face, prominent nose, clean-shaven, no glasses. Pose: head and both eyes fifty degrees RIGHT toward the chamber; thoughtful pose with a small closed notebook low below chest. Wardrobe: a formal navy suit, white shirt and sober blue silk tie. Background: a parliamentary committee room seen diagonally, dark green leather, wood and a cool window glow. BOTTOM LEFT: Simone Veil. Face identity: Reference 3: Simone Veil at the lectern, gray hair swept back into a low bun, thin oval metal glasses, pronounced cheekbones and chin, small elegant earrings. Pose: head and both eyes forty degrees LEFT and slightly upward toward an unseen audience; composed speaking expression, two low microphones clear of her face. Wardrobe: an elegant formal structured navy jacket over an ivory blouse with a simple pearl necklace; professional and dignified, no casual shawl. Background: a European parliamentary hall with blue architectural depth, warm brass and dark wood, no flags or logos. BOTTOM RIGHT: Robert Badinter. Face identity: In reference 4, use ONLY the large black-and-white portrait on the banner: Robert Badinter, not any person in the crowd below. Receding dark-gray hair at the sides, arched prominent nose, expressive dark eyebrows, clean-shaven, no glasses. Render him in natural painted color. Pose: head and both eyes fifty degrees RIGHT toward an unseen interlocutor; one relaxed speaking hand low in frame. Wardrobe: a well-fitted professional dark blazer and pressed pale shirt with a sober tie, matching the provisional special tier. Background: an institutional law library with amber side light, burgundy leather and tall shelves, no readable book titles. ",
+      "references": [
+        {
+          "id": "jacques-chirac",
+          "page": "https://www.europapress.es/internacional/noticia-muere-93-anos-ex-primera-dama-francia-bernadette-chirac-20260606114911.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260606114911_1200.jpg",
+          "photoSha256": "5d863136261076b7e24d749e0315862ba98394970ea98aef51475934d21d5ac9",
+          "caption": "Archivo - La familia Chirac en imagen de archivo   - Europa Press/Contacto/G.Gaffiot - Archivo",
+          "features": "In reference 1, use ONLY the older man seated on the RIGHT of the bench: Jacques Chirac, not the woman and not the young man. High receding hairline, gray side hair, long face and pronounced long nose, strong dark eyebrows; clean-shaven, no glasses.",
+          "pose": "head and both eyes forty-five degrees LEFT toward a colleague; authoritative speaking gesture with one raised hand, one low microphone",
+          "wardrobe": "a formal dark charcoal suit, white shirt and dark red silk tie",
+          "background": "a French presidential meeting room with golden carved wood, deep red upholstery and warm daylight"
+        },
+        {
+          "id": "michel-rocard",
+          "page": "https://www.europapress.es/internacional/noticia-muere-ex-primer-ministro-frances-michel-rocard-20160702210428.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20160702210428_1200.jpg",
+          "photoSha256": "a5aa44262f65c8c5810f0306435cd2a57359860f24310d12393fc27cfa4e0e2c",
+          "caption": "  CHARLES PLATIAU / REUTERS",
+          "features": "Reference 2: Michel Rocard, bald crown with very short fine gray hair at the sides, deeply lined narrow face, prominent nose, clean-shaven, no glasses.",
+          "pose": "head and both eyes fifty degrees RIGHT toward the chamber; thoughtful pose with a small closed notebook low below chest",
+          "wardrobe": "a formal navy suit, white shirt and sober blue silk tie",
+          "background": "a parliamentary committee room seen diagonally, dark green leather, wood and a cool window glow"
+        },
+        {
+          "id": "simone-veil",
+          "page": "https://www.europapress.es/madrid/noticia-ayuntamiento-repondra-breve-placa-centrica-zona-verde-dedicada-referente-feminista-simone-veil-20260823121148.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260823121148_1200.jpg",
+          "photoSha256": "0d4cb54183a9f659160967a740af63c4d99288b72c14818edd74815ad623e99f",
+          "caption": "Bruselas lanza el Premio Simone Veil para reconocer el patrimonio cultural judío en Europa  - SEBASTIEN PIRLET - Archivo",
+          "features": "Reference 3: Simone Veil at the lectern, gray hair swept back into a low bun, thin oval metal glasses, pronounced cheekbones and chin, small elegant earrings.",
+          "pose": "head and both eyes forty degrees LEFT and slightly upward toward an unseen audience; composed speaking expression, two low microphones clear of her face",
+          "wardrobe": "an elegant formal structured navy jacket over an ivory blouse with a simple pearl necklace; professional and dignified, no casual shawl",
+          "background": "a European parliamentary hall with blue architectural depth, warm brass and dark wood, no flags or logos"
+        },
+        {
+          "id": "robert-badinter",
+          "page": "https://www.europapress.es/internacional/noticia-atacan-tumba-exministro-frances-robert-badinter-dia-entrada-panteon-20251009145007.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20251009145007_1200.jpg",
+          "photoSha256": "3cc9e05c4b6cb5ec5ff0cf0845713d6c4d17788b49d502345858ac0ed5275509",
+          "caption": "Archivo - Homenaje nacional al exministro Robert Badinter tras su fallecimiento en febrero de 2024  - Europa Press/Contacto/Julien Mattia - Archivo",
+          "features": "In reference 4, use ONLY the large black-and-white portrait on the banner: Robert Badinter, not any person in the crowd below. Receding dark-gray hair at the sides, arched prominent nose, expressive dark eyebrows, clean-shaven, no glasses. Render him in natural painted color.",
+          "pose": "head and both eyes fifty degrees RIGHT toward an unseen interlocutor; one relaxed speaking hand low in frame",
+          "wardrobe": "a well-fitted professional dark blazer and pressed pale shirt with a sober tie, matching the provisional special tier",
+          "background": "an institutional law library with amber side light, burgundy leather and tall shelves, no readable book titles"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen.imagegen",
+      "generatedOn": "2026-11-05",
+      "sha256": "b0096b28fac701d06fddd5489d3b33afed05cb397ba007640f2c76241017e481",
+      "originalOutput": "exec-4e69275d-6bab-4980-8335-372472bfe21d.png"
+    },
+    {
+      "sheet": "art/fr01-03.png",
+      "ids": [
+        "michel-barnier",
+        "francois-bayrou",
+        "bernard-cazeneuve",
+        "jean-castex"
+      ],
+      "names": [
+        "Michel Barnier",
+        "François Bayrou",
+        "Bernard Cazeneuve",
+        "Jean Castex"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All four are provisional SPECIAL tier: formal professional clothing is mandatory, with individual variation. Turn both head and eyes away from the camera as specified. No flags, logos, card borders or text. TOP LEFT: Michel Barnier. Face: Short neatly side-parted silver-gray hair, long angular face and prominent nose, clean-shaven, no glasses. Pose: head and eyes fifty degrees left toward an unseen colleague, attentive speaking posture, one low microphone. Wardrobe: an elegant dark structured jacket, pale shirt and restrained blue tie. Background: a European committee room, muted blue architecture, warm wood and brass sidelights. TOP RIGHT: François Bayrou. Face: Receding thick wavy dark-gray hair, broad forehead, long nose, lined cheeks, clean-shaven, no glasses. Pose: head and both eyes forty degrees right toward the chamber, one open hand making a persuasive low gesture, two low microphones. Wardrobe: a formal dark tailored suit, white shirt and burgundy tie. Background: a French National Assembly lectern with deep red upholstery and aged-gold details, seen diagonally. BOTTOM LEFT: Bernard Cazeneuve. Face: Bald crown with very short brown-gray side hair, distinctive amber rectangular glasses, long narrow nose, clean-shaven. Pose: head and eyes forty-five degrees left and slightly down as if addressing an interlocutor, a folder low in frame, no microphone. Wardrobe: a formal charcoal jacket, crisp pale shirt and restrained patterned tie. Background: an institutional library with a warm desk lamp, dark green leather and soft book spines, no readable lettering. BOTTOM RIGHT: Jean Castex. Face: High receding bald forehead with short dark-gray side hair, long nose, heavy dark eyebrows and clean-shaven cheeks. NO glasses on his face, as in this reference; do not invent eyewear. Pose: head and both eyes forty-five degrees right toward a colleague, shoulders slightly counter-turned, one slim low side microphone. Wardrobe: a formal dark blue suit, pale shirt and small-pattern blue tie. Background: a parliamentary stone corridor with tall windows, burgundy furniture and soft daylight. ",
+      "references": [
+        {
+          "id": "michel-barnier",
+          "page": "https://www.europapress.es/internacional/noticia-ex-primer-ministro-francia-michel-barnier-aconseja-lecornu-no-confiar-agrupacion-nacional-20250914141339.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20250914141339_1200.jpg",
+          "photoSha256": "64bc73c9d434569c4ca17de1ba1cda6d7e0017ac601bd1911d58ee5a431d2a4b",
+          "caption": "Archivo - El ex primer ministro de Francia Michel Barnier  - Europa Press/Contacto/Alexis Sciard - Archivo",
+          "features": "Short neatly side-parted silver-gray hair, long angular face and prominent nose, clean-shaven, no glasses.",
+          "pose": "head and eyes fifty degrees left toward an unseen colleague, attentive speaking posture, one low microphone",
+          "wardrobe": "an elegant dark structured jacket, pale shirt and restrained blue tie",
+          "background": "a European committee room, muted blue architecture, warm wood and brass sidelights"
+        },
+        {
+          "id": "francois-bayrou",
+          "page": "https://www.europapress.es/internacional/noticia-bayrou-formaliza-dimision-macron-debe-ahora-nombrar-sustituto-20250909164536.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20250909164536_1200.jpg",
+          "photoSha256": "9e2ed8312a4c4245e56725a03cdb661d8ca2546d0c90cb58cd03fdf9169c9082",
+          "caption": "François Bayrou, primer ministro de Francia, habla ante la Asamblea Nacional  -  Stefano Lorusso/ZUMA Press Wire/ DPA",
+          "features": "Receding thick wavy dark-gray hair, broad forehead, long nose, lined cheeks, clean-shaven, no glasses.",
+          "pose": "head and both eyes forty degrees right toward the chamber, one open hand making a persuasive low gesture, two low microphones",
+          "wardrobe": "a formal dark tailored suit, white shirt and burgundy tie",
+          "background": "a French National Assembly lectern with deep red upholstery and aged-gold details, seen diagonally"
+        },
+        {
+          "id": "bernard-cazeneuve",
+          "page": "https://www.europapress.es/internacional/noticia-macron-reune-lunes-ex-primer-ministro-cazeneuve-medio-negociaciones-gobierno-20240901160247.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20240901160247_1200.jpg",
+          "photoSha256": "62ed41c3f08d16ce1288721d01f8df39136e177e5ddab77603cee1e8d2fdc2d4",
+          "caption": "Archivo - Bernard Cazeneuve   - Europa Press/Contacto/Julien Mattia - Archivo",
+          "features": "Bald crown with very short brown-gray side hair, distinctive amber rectangular glasses, long narrow nose, clean-shaven.",
+          "pose": "head and eyes forty-five degrees left and slightly down as if addressing an interlocutor, a folder low in frame, no microphone",
+          "wardrobe": "a formal charcoal jacket, crisp pale shirt and restrained patterned tie",
+          "background": "an institutional library with a warm desk lamp, dark green leather and soft book spines, no readable lettering"
+        },
+        {
+          "id": "jean-castex",
+          "page": "https://www.europapress.es/internacional/noticia-francia-celebra-consejo-ministros-duda-si-sera-ultimo-jean-castex-20220428141652.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20220428141652_1200.jpg",
+          "photoSha256": "ce02dbe89c58eae38e32585fdc742859f19278932584122bf077088c9545b4db",
+          "caption": "Archivo - Jean Castex, primer ministro de Francia  - Julien Mattia/Le Pictorium Agenc / DPA - Archivo",
+          "features": "High receding bald forehead with short dark-gray side hair, long nose, heavy dark eyebrows and clean-shaven cheeks. NO glasses on his face, as in this reference; do not invent eyewear.",
+          "pose": "head and both eyes forty-five degrees right toward a colleague, shoulders slightly counter-turned, one slim low side microphone",
+          "wardrobe": "a formal dark blue suit, pale shirt and small-pattern blue tie",
+          "background": "a parliamentary stone corridor with tall windows, burgundy furniture and soft daylight"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen.imagegen",
+      "generatedOn": "2026-11-05",
+      "sha256": "be973b0904d3e6eb69624f35bebb6d67320ddd14e799b31a50c1d9d62736682a",
+      "originalOutput": "exec-0176b93c-ee7d-486c-95be-c353921ca954.png"
+    }
+  ]
+}
