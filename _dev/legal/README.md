@@ -1,5 +1,7 @@
 # Información legal — paquete preparado para activación
 
+Revisión del 05-11-2026: los documentos incluidos en el juego están publicados en la versión `2026-10-29.2`; los generadores de documentos y fuentes pasan sus comprobaciones. La [revisión de la reserva francesa](../expansions/francia/revision-legal.md) confirma que la preparación oculta mantiene la metodología descrita y documenta los puntos que deben revisarse al activarla. Esta revisión no cambia textos públicos, huella ni recibos. Los párrafos fechados el 29-10-2026 conservan el contexto de la implantación inicial, no una comprobación actual del panel de proveedores.
+
 Estado del 29-10-2026: España, responsable particular Sergey Veselkov, dominio propio. Sin compras reales, publicidad o analítica externa de uso. Edad mínima 12; 12–13 invitados; cuentas desde 14. El creador confirma que todos los retratos son ilustraciones generadas mediante prompts, algunos con referencias visuales. El correo transaccional de alta y recuperación ya funciona con Brevo y Supabase, incluida la corrección de la pantalla de recuperación.
 
 ## Qué está construido
@@ -27,7 +29,7 @@ Los datos de juego no deben utilizarse para atribuir ideología política a los 
 
 ## Activación cuando esté completo
 
-El archivo para SQL Editor es `_dev/legal/20261029_legal_release.sql`: reúne la infraestructura y el registro exacto de la versión y huella final. El generador `_dev/legal/publish-catalog.cjs` produce la parte del catálogo sin conectarse al servidor. Aplicar el archivo completo antes de activar la entrada en main. Cambiar el texto requiere regenerar y actualizar también el SQL: no registrar una huella que no corresponda al contenido. Si una versión ya publicada cambia sustancialmente, asignar nueva versión documental.
+`_dev/legal/20261029_legal_release.sql` conserva la infraestructura y el registro inicial `2026-10-29.1`. `_dev/legal/20261029_sources_release.sql` registra la versión vigente `2026-10-29.2`, cuya huella debe coincidir con `js/legal-documents.js`. En una instalación nueva, el segundo presupone la infraestructura del primero; el archivo inicial por sí solo no registra la versión vigente. Esta revisión no exige repetir los SQL ya aplicados. El generador `_dev/legal/publish-catalog.cjs` produce la parte del catálogo sin conectarse al servidor. Cambiar el texto requiere regenerar y actualizar también el SQL: no registrar una huella que no corresponda al contenido. Si una versión ya publicada cambia sustancialmente, asignar nueva versión documental.
 
 El servidor autentica con `auth.uid()`, no con un ID enviado por el cliente; valida el catálogo activo; las tablas tienen RLS y el recibo inicial no se sobrescribe al reintentar. Este registro prueba recepción autenticada de una declaración, no la identidad física de quien pulsó ni la exactitud de una fecha offline.
 

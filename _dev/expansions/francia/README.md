@@ -2,6 +2,8 @@
 
 [Revisión privada con arte y frases](revision.html) · [Listado](listado.md) · [CSV](censo.csv) · [Datos](censo.json) · [Método de traducción](metodo-frases.md).
 
+[Revisión legal del 05-11-2026](revision-legal.md): los avisos vigentes describen esta metodología; se documentan la trazabilidad y las actualizaciones necesarias al activar la ampliación. La reserva está oculta en el juego y excluida de Pages; los archivos de desarrollo enviados a GitHub son consultables según la visibilidad del repositorio.
+
 Estado de investigación: **5 de noviembre de 2026**. Todo permanece en `_dev`, excluido de Pages y del catálogo jugable. No se ha cambiado la versión pública ni se han anunciado estos cromos en el changelog.
 
 | Parte | Preparado | Pendiente |
@@ -36,7 +38,7 @@ Los accesos iniciales a Vie publique, Elíseo, Senado, Asamblea Nacional, Wikipe
 
 Los accesos a **`thumb.wikimedia.org`** y **`www2.assemblee-nationale.fr`** ya se aplicaron. Las miniaturas se descargaron con una identificación descriptiva del cliente y se inspeccionaron antes de generar los retratos.
 
-Hay un nuevo borrador pendiente para Lyon Capitale, RTL, Le Figaro, Le Monde, Libération, Franceinfo, France 3, L’Humanité y Sud Ouest: son editores de referencias realmente localizadas para los perfiles restantes. Su revisión y publicación se realizan en la configuración del entorno; guardar el borrador no aplica los permisos. Esto no publica el juego. Los nombres exactos y el estado están en `qa/network-access.json`.
+La configuración para Lyon Capitale, RTL, Le Figaro, Le Monde, Libération, Franceinfo, France 3, L’Humanité y Sud Ouest ya está publicada y aplicada, comprobado el 05-11-2026. Son editores de referencias localizadas para los perfiles restantes; el permiso de red no equivale a haber consultado ni verificado cada referencia. Los nombres exactos y el estado están en `qa/network-access.json`.
 
 Bruno Bernard sigue sin retrato: su biografía política no aporta fotografía y la referencia localizada está en Lyon Capitale. No se ha confundido con otros homónimos. El cuadrante vacío del atlas 25 no se cuenta como cromo. Además faltan 51 selecciones bilingües para 17 perfiles y la revisión editorial de las 249 existentes; los accesos pendientes no equivalen a terminar esos trabajos.
 
