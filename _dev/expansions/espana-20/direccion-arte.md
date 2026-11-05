@@ -7,7 +7,8 @@ Las propuestas mantienen una familia visual coherente, pero repiten más los pan
 | Elemento | Variantes compatibles |
 |---|---|
 | Escenario | Hemiciclo visto en diagonal, escaños y madera, tribuna, rueda de prensa, sala de grupo, vestíbulo institucional |
-| Cámara | Frontal, tres cuartos a cada lado y leve contrapicado; evitar perfiles que oculten el parecido |
+| Cámara | Priorizar tres cuartos a ambos lados y leve contrapicado; reservar pocas composiciones frontales y evitar perfiles que oculten el parecido |
+| Mirada | Cabeza y ojos dirigidos hacia la cámara parlamentaria o un interlocutor fuera de plano; la fotografía frontal documenta los rasgos, no obliga a copiar su pose |
 | Acción | Escuchar, señalar con mano abierta, sostener notas, pausa antes de hablar, intervención con gesto |
 | Micrófonos | Ninguno, uno lateral o dos de tribuna; nunca delante de los ojos o la boca |
 | Luz | Foco lateral cálido, luz institucional suave o contraste de escenario; variar la dirección |
@@ -17,6 +18,8 @@ El color acompaña al partido o institución, no a la rareza ni a una bandera na
 
 Plantilla futura, basada en el prompt aportado de Cristina Fernández y la composición actual de Trump:
 
-> Professional TCG character portrait of [name, represented period], semi-realistic digital painting, recognizable [verified facial traits and hairstyle of that period], [specific expression and gesture], [front / three-quarter view], [institution or parliamentary group setting appropriate to that period], [documented party/group accent palette], varied architectural depth and subtle broadcast lighting, [no microphone / one side microphone / two period podium microphones], chest-up composition, face unobstructed, clear negative space for card UI at the top and bottom corners, dramatic but readable studio lighting, vertical 3:4. No text, statistics, card frame or invented historical insignia.
+> Professional TCG character portrait of [name, represented period], semi-realistic digital painting, recognizable [verified facial traits and hairstyle of that period], [specific expression and gesture], three-quarter view with head and eyes turned toward an unseen colleague or the chamber, not toward the viewer unless a rare frontal composition is explicitly requested, [institution or parliamentary group setting appropriate to that period], [documented party/group accent palette], varied architectural depth and subtle broadcast lighting, [no microphone / one side microphone / two period podium microphones], chest-up composition, face unobstructed, clear negative space for card UI at the top and bottom corners, dramatic but readable studio lighting, vertical 3:4. No text, statistics, card frame or invented historical insignia.
+
+La quinta tanda aplica la preferencia del usuario del 05-11-2026: 56 miradas fuera de cámara y cuatro frontales entre 60 retratos. Se conserva este criterio para futuras tandas, sin regenerar las artes ya aceptadas.
 
 Antes de generar: verificar rasgos, edad de la etapa y afiliación con la ficha institucional y una referencia visual documentada; comprobar duplicados por nombre completo y alias. Después: revisar parecido, manos, ojos, micrófonos, símbolos, época y legibilidad a tamaño de mesa. Las poses son variantes de una misma persona, no entradas adicionales del catálogo.

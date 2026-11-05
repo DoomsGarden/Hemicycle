@@ -62,3 +62,5 @@ El [censo actual](../espana/README.md) conserva 440 identidades españolas: **97
 [2.169 pruebas aprobadas](qa/final-tests.log): 2.005 de la reserva conjunta y 164 de la primera tanda. Cubren las cuatro acciones y las pasivas de los 200 reservados en ambos bandos, conservación de los 260 oradores anteriores, proporciones, 960 frases distintas, hashes del arte, censo e aislamiento público. Se conserva expresamente la distinción entre José Manuel Baltar Blanco, José Fernández Blanco y José Blanco.
 
 Las revisiones de Chromium de [esta tanda](qa/browser.json) y de la [tercera ya completa](../espana-60-03/qa/browser.json) verifican 200 retratos internos sin marcadores pendientes, 60 artículos y 180 frases por galería, filtros y ausencia de desbordamiento en 320, 393, 768 y 1200 px, sin registrar service workers.
+
+Actualización posterior: la [quinta tanda](../espana-60-05/README.md) eleva la reserva a 260 cromos y deja 83 pendientes en el censo actual. Las cifras y evidencias anteriores describen el cierre de esta cuarta tanda.

@@ -31,9 +31,10 @@
     "reserva60": 60,
     "reserva60_03": 60,
     "reserva60_04": 60,
-    "reservaTotal": 200,
+    "reserva60_05": 60,
+    "reservaTotal": 260,
     "reservadosPendientesArte": 0,
-    "pendientes": 143,
+    "pendientes": 83,
     "registrosSenado": 311,
     "registrosGobierno": 22
   },
@@ -136,12 +137,14 @@
       "id": "adolfo-lander-vera",
       "nombre": "ADOLFO LANDER VERA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "ADOLFO LANDER VERA"
+        "ADOLFO LANDER VERA",
+        "Adolfo Lander"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -150,12 +153,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19941",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "adolfo-lander-vera",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "adolfo-suarez",
@@ -366,12 +375,14 @@
       "id": "alfonso-carlos-moscoso-gonzalez",
       "nombre": "ALFONSO CARLOS MOSCOSO GONZÁLEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "ALFONSO CARLOS MOSCOSO GONZÁLEZ"
+        "ALFONSO CARLOS MOSCOSO GONZÁLEZ",
+        "Alfonso Moscoso"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -380,12 +391,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18311",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "alfonso-carlos-moscoso-gonzalez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "alfonso-carlos-serrano-sanchez-capuchino",
@@ -862,12 +879,15 @@
       "id": "angel-luis-gonzalez-munoz",
       "nombre": "ÁNGEL LUIS GONZÁLEZ MUÑOZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "ÁNGEL LUIS GONZÁLEZ MUÑOZ"
+        "ÁNGEL LUIS GONZÁLEZ MUÑOZ",
+        "Ángel Luis González Muñoz"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso",
+        "partidos"
       ],
       "referencias": [
         {
@@ -876,12 +896,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19845",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "angel-luis-gonzalez-munoz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "angel-pelayo-gordillo-moreno",
@@ -1613,12 +1639,14 @@
       "id": "carlos-luis-bone-amela",
       "nombre": "CARLOS LUIS BONÉ AMELA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "CARLOS LUIS BONÉ AMELA"
+        "CARLOS LUIS BONÉ AMELA",
+        "Carlos Boné"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -1627,23 +1655,31 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19972",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "carlos-luis-bone-amela",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "carlos-yecora-roca",
       "nombre": "CARLOS YÉCORA ROCA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "CARLOS YÉCORA ROCA"
+        "CARLOS YÉCORA ROCA",
+        "Carlos Yécora"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -1652,12 +1688,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19065",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "carlos-yecora-roca",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "carme-forcadell",
@@ -1707,12 +1749,14 @@
       "id": "carmen-ballester-feliu",
       "nombre": "CARMEN BALLESTER FELIU",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "CARMEN BALLESTER FELIU"
+        "CARMEN BALLESTER FELIU",
+        "Carmen Ballester"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -1721,12 +1765,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19980",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "carmen-ballester-feliu",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "carmen-belen-lopez-zapata",
@@ -1833,12 +1883,15 @@
       "id": "carmen-torralba-valiente",
       "nombre": "CARMEN TORRALBA VALIENTE",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "CARMEN TORRALBA VALIENTE"
+        "CARMEN TORRALBA VALIENTE",
+        "Carmen Torralba"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -1847,12 +1900,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18228",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "carmen-torralba-valiente",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "carolina-agudo-alonso",
@@ -2206,12 +2265,14 @@
       "id": "cristobal-marques-palliser",
       "nombre": "CRISTÓBAL MARQUÉS PALLISER",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "CRISTÓBAL MARQUÉS PALLISER"
+        "CRISTÓBAL MARQUÉS PALLISER",
+        "Cristóbal Marqués"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -2220,12 +2281,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19405",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "cristobal-marques-palliser",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "cristobal-montoro",
@@ -2269,12 +2336,14 @@
       "id": "david-matute-perez",
       "nombre": "DAVID MATUTE PÉREZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "DAVID MATUTE PÉREZ"
+        "DAVID MATUTE PÉREZ",
+        "David Matute"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -2283,12 +2352,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20019",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "david-matute-perez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "diana-morant-ripoll",
@@ -2939,12 +3014,15 @@
       "id": "eva-maria-redondo-gamero",
       "nombre": "EVA MARÍA REDONDO GAMERO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "EVA MARÍA REDONDO GAMERO"
+        "EVA MARÍA REDONDO GAMERO",
+        "Eva Redondo"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "partidos"
       ],
       "referencias": [
         {
@@ -2953,12 +3031,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19993",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "eva-maria-redondo-gamero",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "eva-ortiz-vilella",
@@ -2996,12 +3080,14 @@
       "id": "eva-patricia-bueno-campanario",
       "nombre": "EVA PATRICIA BUENO CAMPANARIO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "EVA PATRICIA BUENO CAMPANARIO"
+        "EVA PATRICIA BUENO CAMPANARIO",
+        "Eva Bueno"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso"
       ],
       "referencias": [
         {
@@ -3010,12 +3096,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19898",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "eva-patricia-bueno-campanario",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "fabian-chinea-correa",
@@ -3355,12 +3447,15 @@
       "id": "francisco-diaz-munoz",
       "nombre": "FRANCISCO DÍAZ MUÑOZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "FRANCISCO DÍAZ MUÑOZ"
+        "FRANCISCO DÍAZ MUÑOZ",
+        "Francisco Díaz Muñoz"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -3369,12 +3464,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18846",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "francisco-diaz-munoz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "francisco-javier-arenas-bocanegra",
@@ -3576,12 +3677,14 @@
       "id": "francisco-joaquin-camacho-borrego",
       "nombre": "FRANCISCO JOAQUÍN CAMACHO BORREGO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "FRANCISCO JOAQUÍN CAMACHO BORREGO"
+        "FRANCISCO JOAQUÍN CAMACHO BORREGO",
+        "Francisco Camacho"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -3590,12 +3693,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19828",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "francisco-joaquin-camacho-borrego",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "francisco-jose-fernandez-perez",
@@ -3690,9 +3799,10 @@
       "id": "gabriel-colome-garcia",
       "nombre": "GABRIEL COLOMÉ GARCÍA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "GABRIEL COLOMÉ GARCÍA"
+        "GABRIEL COLOMÉ GARCÍA",
+        "Gabriel Colomé"
       ],
       "ambitos": [
         "senado"
@@ -3704,12 +3814,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19918",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "gabriel-colome-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "gabriel-rufian",
@@ -3766,12 +3882,15 @@
       "id": "gonzalo-jesus-robles-orozco",
       "nombre": "GONZALO JESÚS ROBLES OROZCO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "GONZALO JESÚS ROBLES OROZCO"
+        "GONZALO JESÚS ROBLES OROZCO",
+        "Gonzalo Robles"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso",
+        "gobierno_estatal"
       ],
       "referencias": [
         {
@@ -3780,12 +3899,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17045",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "gonzalo-jesus-robles-orozco",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "gorka-elejabarrieta-diaz",
@@ -3855,9 +3980,10 @@
       "id": "hector-sanchez-mira",
       "nombre": "HÉCTOR SÁNCHEZ MIRA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "HÉCTOR SÁNCHEZ MIRA"
+        "HÉCTOR SÁNCHEZ MIRA",
+        "Héctor Sánchez Mira"
       ],
       "ambitos": [
         "senado"
@@ -3869,12 +3995,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19978",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "hector-sanchez-mira",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "idurre-bideguren-gabantxo",
@@ -4284,12 +4416,14 @@
       "id": "jaime-morales-garcia",
       "nombre": "JAIME MORALES GARCÍA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JAIME MORALES GARCÍA"
+        "JAIME MORALES GARCÍA",
+        "Jaime Morales"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -4298,12 +4432,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20015",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "jaime-morales-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "jan-pomes-lopez",
@@ -4359,12 +4499,16 @@
       "id": "javier-anton-cacho",
       "nombre": "JAVIER ANTÓN CACHO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JAVIER ANTÓN CACHO"
+        "JAVIER ANTÓN CACHO",
+        "Javier Antón"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -4373,20 +4517,27 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19915",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "javier-anton-cacho",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "javier-campoy-monreal",
       "nombre": "JAVIER CAMPOY MONREAL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JAVIER CAMPOY MONREAL"
+        "JAVIER CAMPOY MONREAL",
+        "Javier Campoy"
       ],
       "ambitos": [
         "senado"
@@ -4398,23 +4549,31 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19945",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "javier-campoy-monreal",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "javier-jimenez-santamaria",
       "nombre": "JAVIER JIMÉNEZ SANTAMARÍA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JAVIER JIMÉNEZ SANTAMARÍA"
+        "JAVIER JIMÉNEZ SANTAMARÍA",
+        "Javier Jiménez Santamaría"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -4423,12 +4582,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19863",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "javier-jimenez-santamaria",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "javier-maroto",
@@ -4498,9 +4663,10 @@
       "id": "javier-valentin-alonso-coronel",
       "nombre": "JAVIER VALENTÍN ALONSO CORONEL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JAVIER VALENTÍN ALONSO CORONEL"
+        "JAVIER VALENTÍN ALONSO CORONEL",
+        "Javier Alonso Coronel"
       ],
       "ambitos": [
         "senado"
@@ -4512,12 +4678,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20032",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO MIXTO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "javier-valentin-alonso-coronel",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "jesus-caicedo-bernabe",
@@ -4548,12 +4720,14 @@
       "id": "jesus-caro-adanero",
       "nombre": "JESÚS CARO ADANERO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JESÚS CARO ADANERO"
+        "JESÚS CARO ADANERO",
+        "Jesús Caro"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -4562,12 +4736,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18207",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "jesus-caro-adanero",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "jesus-julio-carnero-garcia",
@@ -4865,12 +5045,15 @@
       "id": "jorge-domingo-martinez-antolin",
       "nombre": "JORGE DOMINGO MARTÍNEZ ANTOLÍN",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JORGE DOMINGO MARTÍNEZ ANTOLÍN"
+        "JORGE DOMINGO MARTÍNEZ ANTOLÍN",
+        "Jorge Martínez Antolín"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -4879,12 +5062,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18102",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "jorge-domingo-martinez-antolin",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "jorge-fernandez-diaz",
@@ -4959,12 +5148,15 @@
       "id": "jose-angel-alonso-perez",
       "nombre": "JOSÉ ÁNGEL ALONSO PÉREZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JOSÉ ÁNGEL ALONSO PÉREZ"
+        "JOSÉ ÁNGEL ALONSO PÉREZ",
+        "José Ángel Alonso"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -4973,12 +5165,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18086",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "jose-angel-alonso-perez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "jose-antonio-labordeta",
@@ -5732,9 +5930,10 @@
       "id": "jose-manuel-rodriguez-gonzalez",
       "nombre": "JOSÉ MANUEL RODRÍGUEZ GONZÁLEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JOSÉ MANUEL RODRÍGUEZ GONZÁLEZ"
+        "JOSÉ MANUEL RODRÍGUEZ GONZÁLEZ",
+        "José Manuel Rodríguez González"
       ],
       "ambitos": [
         "senado"
@@ -5746,12 +5945,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19986",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "jose-manuel-rodriguez-gonzalez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "jose-manuel-tofino-perez",
@@ -6029,12 +6234,14 @@
       "id": "juan-antonio-sagredo-marco",
       "nombre": "JUAN ANTONIO SAGREDO MARCO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JUAN ANTONIO SAGREDO MARCO"
+        "JUAN ANTONIO SAGREDO MARCO",
+        "Juan Antonio Sagredo"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -6043,23 +6250,33 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19933",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "juan-antonio-sagredo-marco",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "juan-bautista-milian-querol",
       "nombre": "JUAN BAUTISTA MILIÁN QUEROL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JUAN BAUTISTA MILIÁN QUEROL"
+        "JUAN BAUTISTA MILIÁN QUEROL",
+        "Juan Milián"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -6068,23 +6285,31 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20022",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "juan-bautista-milian-querol",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "juan-carlos-garcia-diego",
       "nombre": "JUAN CARLOS GARCÍA DIEGO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JUAN CARLOS GARCÍA DIEGO"
+        "JUAN CARLOS GARCÍA DIEGO",
+        "Juan Carlos García Diego"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -6093,12 +6318,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19957",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "juan-carlos-garcia-diego",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "juan-carlos-serrano-lopez",
@@ -6291,9 +6522,10 @@
       "id": "juan-manuel-gonzalez-camacho",
       "nombre": "JUAN MANUEL GONZÁLEZ CAMACHO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JUAN MANUEL GONZÁLEZ CAMACHO"
+        "JUAN MANUEL GONZÁLEZ CAMACHO",
+        "Juan Manuel González Camacho"
       ],
       "ambitos": [
         "senado"
@@ -6305,12 +6537,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19838",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "juan-manuel-gonzalez-camacho",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "juan-pablo-martin-martin",
@@ -6456,12 +6694,15 @@
       "id": "julia-maria-liberal-liberal",
       "nombre": "JULIA MARÍA LIBERAL LIBERAL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JULIA MARÍA LIBERAL LIBERAL"
+        "JULIA MARÍA LIBERAL LIBERAL",
+        "Julia Liberal"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -6470,23 +6711,31 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18295",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "julia-maria-liberal-liberal",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "julian-nieva-delgado",
       "nombre": "JULIÁN NIEVA DELGADO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "JULIÁN NIEVA DELGADO"
+        "JULIÁN NIEVA DELGADO",
+        "Julián Nieva"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -6495,12 +6744,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19908",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "julian-nieva-delgado",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "julio-anguita",
@@ -6724,12 +6979,15 @@
       "id": "lucas-castillo-rodriguez",
       "nombre": "LUCAS CASTILLO RODRÍGUEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "LUCAS CASTILLO RODRÍGUEZ"
+        "LUCAS CASTILLO RODRÍGUEZ",
+        "Lucas Castillo"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -6738,12 +6996,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19866",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "lucas-castillo-rodriguez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "lucia-yeves-leal",
@@ -6857,12 +7121,15 @@
       "id": "luis-martinez-portillo-subero",
       "nombre": "LUIS MARTÍNEZ-PORTILLO SUBERO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "LUIS MARTÍNEZ-PORTILLO SUBERO"
+        "LUIS MARTÍNEZ-PORTILLO SUBERO",
+        "Luis Martínez-Portillo"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -6871,12 +7138,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19887",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "luis-martinez-portillo-subero",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "luis-menor-perez",
@@ -7006,12 +7279,14 @@
       "id": "luisa-blanch-fulcara",
       "nombre": "LUISA BLANCH FULCARÀ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "LUISA BLANCH FULCARÀ"
+        "LUISA BLANCH FULCARÀ",
+        "Luisa Blanch"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -7020,12 +7295,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19916",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "luisa-blanch-fulcara",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "luisa-fernanda-rudi-ubeda",
@@ -7547,12 +7828,16 @@
       "id": "maria-carmen-isabel-pobo-sanchez",
       "nombre": "MARÍA CARMEN ISABEL POBO SÁNCHEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA CARMEN ISABEL POBO SÁNCHEZ"
+        "MARÍA CARMEN ISABEL POBO SÁNCHEZ",
+        "Carmen Pobo"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -7561,12 +7846,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=16989",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-carmen-isabel-pobo-sanchez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "maria-carmen-riolobos-regadera",
@@ -7795,12 +8086,14 @@
       "id": "maria-del-pilar-zamora-bastante",
       "nombre": "MARÍA DEL PILAR ZAMORA BASTANTE",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA DEL PILAR ZAMORA BASTANTE"
+        "MARÍA DEL PILAR ZAMORA BASTANTE",
+        "Pilar Zamora"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -7809,12 +8102,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19975",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-del-pilar-zamora-bastante",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "maria-del-rocio-divar-conde",
@@ -7959,12 +8258,15 @@
       "id": "maria-elena-diego-castellanos",
       "nombre": "MARÍA ELENA DIEGO CASTELLANOS",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA ELENA DIEGO CASTELLANOS"
+        "MARÍA ELENA DIEGO CASTELLANOS",
+        "Elena Diego"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -7973,12 +8275,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=15314",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-elena-diego-castellanos",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "maria-emma-buj-sanchez",
@@ -8296,12 +8604,15 @@
       "id": "maria-jose-ortega-gomez",
       "nombre": "MARÍA JOSÉ ORTEGA GÓMEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA JOSÉ ORTEGA GÓMEZ"
+        "MARÍA JOSÉ ORTEGA GÓMEZ",
+        "María José Ortega"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -8310,12 +8621,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19872",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-jose-ortega-gomez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "maria-jose-pardo-pumar",
@@ -8353,9 +8670,10 @@
       "id": "maria-jose-villalba-chavarria",
       "nombre": "MARÍA JOSÉ VILLALBA CHAVARRÍA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA JOSÉ VILLALBA CHAVARRÍA"
+        "MARÍA JOSÉ VILLALBA CHAVARRÍA",
+        "María José Villalba"
       ],
       "ambitos": [
         "senado"
@@ -8367,12 +8685,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18221",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-jose-villalba-chavarria",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "maria-mar-blanco-garrido",
@@ -8614,12 +8938,16 @@
       "id": "maria-teresa-mallada-de-castro",
       "nombre": "MARÍA TERESA MALLADA DE CASTRO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA TERESA MALLADA DE CASTRO"
+        "MARÍA TERESA MALLADA DE CASTRO",
+        "Teresa Mallada"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -8628,12 +8956,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19821",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-teresa-mallada-de-castro",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "maria-teresa-pallares-pique",
@@ -8739,9 +9073,10 @@
       "id": "maria-yolanda-ibarrola-de-la-fuente",
       "nombre": "MARÍA YOLANDA IBARROLA DE LA FUENTE",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARÍA YOLANDA IBARROLA DE LA FUENTE"
+        "MARÍA YOLANDA IBARROLA DE LA FUENTE",
+        "Yolanda Ibarrola"
       ],
       "ambitos": [
         "senado"
@@ -8753,12 +9088,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19806",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "maria-yolanda-ibarrola-de-la-fuente",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "mariano-rajoy",
@@ -8872,12 +9213,15 @@
       "id": "marta-arocha-correa",
       "nombre": "MARTA AROCHA CORREA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARTA AROCHA CORREA"
+        "MARTA AROCHA CORREA",
+        "Marta Arocha"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "autonomico"
       ],
       "referencias": [
         {
@@ -8886,12 +9230,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19942",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "marta-arocha-correa",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "marta-jorgina-saavedra-domenech",
@@ -9011,9 +9361,10 @@
       "id": "martin-sans-pairuto",
       "nombre": "MARTÍN SANS PAIRUTÓ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MARTÍN SANS PAIRUTÓ"
+        "MARTÍN SANS PAIRUTÓ",
+        "Martín Sans"
       ],
       "ambitos": [
         "senado"
@@ -9025,23 +9376,32 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19937",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "martin-sans-pairuto",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "melania-alvarez-garcia",
       "nombre": "MELANIA ÁLVAREZ GARCÍA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MELANIA ÁLVAREZ GARCÍA"
+        "MELANIA ÁLVAREZ GARCÍA",
+        "Melania Álvarez"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "autonomico"
       ],
       "referencias": [
         {
@@ -9050,12 +9410,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19992",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "melania-alvarez-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "melania-mur-sangra",
@@ -9169,12 +9535,15 @@
       "id": "miguel-angel-de-la-rosa-martin",
       "nombre": "MIGUEL ÁNGEL DE LA ROSA MARTÍN",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MIGUEL ÁNGEL DE LA ROSA MARTÍN"
+        "MIGUEL ÁNGEL DE LA ROSA MARTÍN",
+        "Miguel Ángel de la Rosa"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -9183,12 +9552,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19973",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "miguel-angel-de-la-rosa-martin",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "miguel-angel-jerez-juan",
@@ -9228,12 +9603,14 @@
       "id": "miguel-angel-nacarino-muriel",
       "nombre": "MIGUEL ÁNGEL NACARINO MURIEL",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MIGUEL ÁNGEL NACARINO MURIEL"
+        "MIGUEL ÁNGEL NACARINO MURIEL",
+        "Miguel Ángel Nacarino"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "partidos"
       ],
       "referencias": [
         {
@@ -9242,12 +9619,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17805",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "miguel-angel-nacarino-muriel",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "miguel-arias-canete",
@@ -9272,12 +9655,15 @@
       "id": "miguel-carmelo-dalmau-blanco",
       "nombre": "MIGUEL CARMELO DALMAU BLANCO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MIGUEL CARMELO DALMAU BLANCO"
+        "MIGUEL CARMELO DALMAU BLANCO",
+        "Miguel Dalmau"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -9286,12 +9672,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18204",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "miguel-carmelo-dalmau-blanco",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "miguel-gracia-ferrer",
@@ -9446,12 +9838,14 @@
       "id": "miriam-garcia-navarro",
       "nombre": "MIRIAM GARCÍA NAVARRO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "MIRIAM GARCÍA NAVARRO"
+        "MIRIAM GARCÍA NAVARRO",
+        "Miriam García Navarro"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -9460,12 +9854,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19813",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "miriam-garcia-navarro",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "miriam-nogueras",
@@ -9724,12 +10124,16 @@
       "id": "nuria-medina-santos",
       "nombre": "NURIA MEDINA SANTOS",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "NURIA MEDINA SANTOS"
+        "NURIA MEDINA SANTOS",
+        "Nuria Medina"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -9738,20 +10142,27 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19923",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "nuria-medina-santos",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "nuria-rovira-costas",
       "nombre": "NÚRIA ROVIRA COSTAS",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "NÚRIA ROVIRA COSTAS"
+        "NÚRIA ROVIRA COSTAS",
+        "Núria Rovira"
       ],
       "ambitos": [
         "senado"
@@ -9763,12 +10174,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19930",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "nuria-rovira-costas",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "olaia-duarte-lopez",
@@ -9991,12 +10408,15 @@
       "id": "pablo-gonzalez-menendez",
       "nombre": "PABLO GONZÁLEZ MENÉNDEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "PABLO GONZÁLEZ MENÉNDEZ"
+        "PABLO GONZÁLEZ MENÉNDEZ",
+        "Pablo González Menéndez"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -10005,12 +10425,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19820",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "pablo-gonzalez-menendez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "pablo-iglesias",
@@ -10119,12 +10545,15 @@
       "id": "paloma-ines-sanz-jeronimo",
       "nombre": "PALOMA INÉS SANZ JERÓNIMO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "PALOMA INÉS SANZ JERÓNIMO"
+        "PALOMA INÉS SANZ JERÓNIMO",
+        "Paloma Sanz"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "autonomico",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -10133,12 +10562,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=15317",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 3,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "paloma-ines-sanz-jeronimo",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "paloma-martin-martin",
@@ -10462,12 +10897,15 @@
       "id": "pere-joan-pons-sampietro",
       "nombre": "PERE JOAN PONS SAMPIETRO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "PERE JOAN PONS SAMPIETRO"
+        "PERE JOAN PONS SAMPIETRO",
+        "Pere Joan Pons"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "congreso",
+        "partidos"
       ],
       "referencias": [
         {
@@ -10476,20 +10914,27 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19900",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "pere-joan-pons-sampietro",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "legendario"
     },
     {
       "id": "piedad-sanchez-garcia",
       "nombre": "PIEDAD SÁNCHEZ GARCÍA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "PIEDAD SÁNCHEZ GARCÍA"
+        "PIEDAD SÁNCHEZ GARCÍA",
+        "Piedad Sánchez"
       ],
       "ambitos": [
         "senado"
@@ -10501,12 +10946,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19825",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "piedad-sanchez-garcia",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "pilar-alegria",
@@ -10685,9 +11136,10 @@
       "id": "rafael-granados-ruiz",
       "nombre": "RAFAEL GRANADOS RUIZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "RAFAEL GRANADOS RUIZ"
+        "RAFAEL GRANADOS RUIZ",
+        "Rafael Granados"
       ],
       "ambitos": [
         "senado"
@@ -10699,12 +11151,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19897",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO VASCO EN EL SENADO (EAJ-PNV)",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "rafael-granados-ruiz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "rafael-guia-marques",
@@ -11089,12 +11547,14 @@
       "id": "rosa-maria-aldea-gomez",
       "nombre": "ROSA MARÍA ALDEA GÓMEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "ROSA MARÍA ALDEA GÓMEZ"
+        "ROSA MARÍA ALDEA GÓMEZ",
+        "Rosa Aldea"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -11103,23 +11563,32 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=16999",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "rosa-maria-aldea-gomez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "rosa-maria-gallego-neira",
       "nombre": "ROSA MARÍA GALLEGO NEIRA",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "ROSA MARÍA GALLEGO NEIRA"
+        "ROSA MARÍA GALLEGO NEIRA",
+        "Rosa Gallego"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial",
+        "partidos"
       ],
       "referencias": [
         {
@@ -11128,12 +11597,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19810",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "rosa-maria-gallego-neira",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "especial"
     },
     {
       "id": "rosa-maria-romero-sanchez",
@@ -11221,12 +11696,14 @@
       "id": "salvador-de-foronda-vaquero",
       "nombre": "SALVADOR DE FORONDA VAQUERO",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "SALVADOR DE FORONDA VAQUERO"
+        "SALVADOR DE FORONDA VAQUERO",
+        "Salvador de Foronda"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -11235,12 +11712,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19911",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
-          "prioridadDentroDelSenado": 4,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "salvador-de-foronda-vaquero",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "salvador-illa",
@@ -11400,12 +11883,14 @@
       "id": "secundino-caso-roiz",
       "nombre": "SECUNDINO CASO ROIZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "SECUNDINO CASO ROIZ"
+        "SECUNDINO CASO ROIZ",
+        "Secundino Caso"
       ],
       "ambitos": [
-        "senado"
+        "senado",
+        "local_insular_provincial"
       ],
       "referencias": [
         {
@@ -11414,12 +11899,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19906",
           "estadoTemporal": "diputacion_permanente_a_fecha_consulta",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "secundino-caso-roiz",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "comun"
     },
     {
       "id": "sergio-barasoain-rodrigo",
@@ -11843,9 +12334,10 @@
       "id": "victor-gonzalez-fernandez",
       "nombre": "VÍCTOR GONZÁLEZ FERNÁNDEZ",
       "pais": "ES",
-      "catalogo": "pendiente",
+      "catalogo": "reserva60-05",
       "alias": [
-        "VÍCTOR GONZÁLEZ FERNÁNDEZ"
+        "VÍCTOR GONZÁLEZ FERNÁNDEZ",
+        "Víctor González Fernández"
       ],
       "ambitos": [
         "senado"
@@ -11857,12 +12349,18 @@
           "fuente": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19789",
           "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
           "grupoParlamentario": "GRUPO PARLAMENTARIO SOCIALISTA",
-          "prioridadDentroDelSenado": 2,
+          "prioridadDentroDelSenado": 0,
           "nota": "La prioridad de esta fuente no ordena la selección general de todas las instituciones."
+        },
+        {
+          "tipo": "reserva_preparada",
+          "archivo": "_dev/expansions/espana-60-05/propuesta.json",
+          "id": "victor-gonzalez-fernandez",
+          "estado": "oculto_no_jugable"
         }
       ],
-      "estadoTrabajo": "pendiente_de_investigacion",
-      "rarezaPropuesta": null
+      "estadoTrabajo": "ya_catalogado_no_duplicar",
+      "rarezaPropuesta": "raro"
     },
     {
       "id": "vidal-galicia-jaramillo",

@@ -1,0 +1,440 @@
+{
+  "date": "2026-11-05",
+  "method": "Inspección visual de las 15 imágenes originales y los tres paneles del render real, contrastados con los contactos de las 60 fotografías institucionales. Revisión manual; el test de metadatos no clasifica automáticamente las miradas.",
+  "offCamera": 56,
+  "directCamera": 4,
+  "portraits": 60,
+  "microphones": 30,
+  "withoutMicrophones": 30,
+  "originalPngsUnmodified": true,
+  "checks": [
+    "Identidad y rasgos de la referencia individual",
+    "Cabeza y ojos fuera de cámara salvo las cuatro composiciones frontales previstas",
+    "Encuadre vertical 3:4 y caras dentro del cuadrante",
+    "Variedad de fondos institucionales y micrófonos",
+    "Ausencia de texto, marcos y estadísticas incorporados al arte",
+    "Lectura con marco real y superposiciones a tamaño de cromo"
+  ],
+  "cards": [
+    {
+      "id": "gonzalo-jesus-robles-orozco",
+      "sheet": "art/05-01.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "pere-joan-pons-sampietro",
+      "sheet": "art/05-01.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-teresa-mallada-de-castro",
+      "sheet": "art/05-01.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "melania-alvarez-garcia",
+      "sheet": "art/05-01.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-carmen-isabel-pobo-sanchez",
+      "sheet": "art/05-02.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-del-pilar-zamora-bastante",
+      "sheet": "art/05-02.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "javier-jimenez-santamaria",
+      "sheet": "art/05-02.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "juan-antonio-sagredo-marco",
+      "sheet": "art/05-02.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "rosa-maria-gallego-neira",
+      "sheet": "art/05-03.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "gabriel-colome-garcia",
+      "sheet": "art/05-03.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "juan-bautista-milian-querol",
+      "sheet": "art/05-03.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-yolanda-ibarrola-de-la-fuente",
+      "sheet": "art/05-03.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "luis-martinez-portillo-subero",
+      "sheet": "art/05-04.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-elena-diego-castellanos",
+      "sheet": "art/05-04.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "marta-arocha-correa",
+      "sheet": "art/05-04.png",
+      "quadrant": "bottom-left",
+      "gaze": "camera",
+      "reviewed": true
+    },
+    {
+      "id": "julian-nieva-delgado",
+      "sheet": "art/05-04.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "javier-campoy-monreal",
+      "sheet": "art/05-05.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "adolfo-lander-vera",
+      "sheet": "art/05-05.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "nuria-medina-santos",
+      "sheet": "art/05-05.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "miguel-carmelo-dalmau-blanco",
+      "sheet": "art/05-05.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-jose-ortega-gomez",
+      "sheet": "art/05-06.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "eva-maria-redondo-gamero",
+      "sheet": "art/05-06.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "eva-patricia-bueno-campanario",
+      "sheet": "art/05-06.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "pablo-gonzalez-menendez",
+      "sheet": "art/05-06.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "carmen-ballester-feliu",
+      "sheet": "art/05-07.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "victor-gonzalez-fernandez",
+      "sheet": "art/05-07.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "jaime-morales-garcia",
+      "sheet": "art/05-07.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "jose-manuel-rodriguez-gonzalez",
+      "sheet": "art/05-07.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "miguel-angel-nacarino-muriel",
+      "sheet": "art/05-08.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "lucas-castillo-rodriguez",
+      "sheet": "art/05-08.png",
+      "quadrant": "top-right",
+      "gaze": "camera",
+      "reviewed": true
+    },
+    {
+      "id": "alfonso-carlos-moscoso-gonzalez",
+      "sheet": "art/05-08.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "martin-sans-pairuto",
+      "sheet": "art/05-08.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "miguel-angel-de-la-rosa-martin",
+      "sheet": "art/05-09.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "david-matute-perez",
+      "sheet": "art/05-09.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "nuria-rovira-costas",
+      "sheet": "art/05-09.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "maria-jose-villalba-chavarria",
+      "sheet": "art/05-09.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "francisco-joaquin-camacho-borrego",
+      "sheet": "art/05-10.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "rosa-maria-aldea-gomez",
+      "sheet": "art/05-10.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "cristobal-marques-palliser",
+      "sheet": "art/05-10.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "juan-manuel-gonzalez-camacho",
+      "sheet": "art/05-10.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "carlos-luis-bone-amela",
+      "sheet": "art/05-11.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "piedad-sanchez-garcia",
+      "sheet": "art/05-11.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "carlos-yecora-roca",
+      "sheet": "art/05-11.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "juan-carlos-garcia-diego",
+      "sheet": "art/05-11.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "jesus-caro-adanero",
+      "sheet": "art/05-12.png",
+      "quadrant": "top-left",
+      "gaze": "camera",
+      "reviewed": true
+    },
+    {
+      "id": "secundino-caso-roiz",
+      "sheet": "art/05-12.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "luisa-blanch-fulcara",
+      "sheet": "art/05-12.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "julia-maria-liberal-liberal",
+      "sheet": "art/05-12.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "rafael-granados-ruiz",
+      "sheet": "art/05-13.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "carmen-torralba-valiente",
+      "sheet": "art/05-13.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "paloma-ines-sanz-jeronimo",
+      "sheet": "art/05-13.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "javier-anton-cacho",
+      "sheet": "art/05-13.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "jose-angel-alonso-perez",
+      "sheet": "art/05-14.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "angel-luis-gonzalez-munoz",
+      "sheet": "art/05-14.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "salvador-de-foronda-vaquero",
+      "sheet": "art/05-14.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "miriam-garcia-navarro",
+      "sheet": "art/05-14.png",
+      "quadrant": "bottom-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "jorge-domingo-martinez-antolin",
+      "sheet": "art/05-15.png",
+      "quadrant": "top-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "hector-sanchez-mira",
+      "sheet": "art/05-15.png",
+      "quadrant": "top-right",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "francisco-diaz-munoz",
+      "sheet": "art/05-15.png",
+      "quadrant": "bottom-left",
+      "gaze": "off_camera",
+      "reviewed": true
+    },
+    {
+      "id": "javier-valentin-alonso-coronel",
+      "sheet": "art/05-15.png",
+      "quadrant": "bottom-right",
+      "gaze": "camera",
+      "reviewed": true
+    }
+  ]
+}
