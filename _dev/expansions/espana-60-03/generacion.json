@@ -1,0 +1,188 @@
+{
+  "tool": "image_gen.imagegen",
+  "finished": "2026-11-05",
+  "styleReference": "cards/donald-trump.webp",
+  "method": "Retratos originales TCG basados en referencias institucionales individuales; atlas 2×2 sin editar los PNG recibidos.",
+  "atlases": [
+    {
+      "sheet": "art/03-01.png",
+      "names": [
+        "Uxue Barcos",
+        "Ander Gil",
+        "Manuel Cruz",
+        "Guillermo Fernández Vara"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-2d4caf3c-7559-4d4d-a771-049538b3749f.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-02.png",
+      "names": [
+        "Jesús Aguirre",
+        "María Jesús Álvarez",
+        "Carla Antonelli",
+        "Carmen da Silva"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-a65dd977-84b0-461b-8091-d3687bc48a4f.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-03.png",
+      "names": [
+        "Joan Queralt",
+        "Enrique Ruiz Escudero",
+        "Alfonso Serrano",
+        "Miguel Ángel Castellón"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-49e87b85-803f-4857-93cd-3bec685ae2af.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-04.png",
+      "names": [
+        "María José García-Pelayo",
+        "José Manuel Rey Varela",
+        "Ana Beltrán",
+        "Mar Caballero"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": null,
+      "error": "Solicitud conjunta interrumpida tras rechazo public-figure del generador (ecaf665e-c588-4885-8c13-b5e5ae1441bf). No se recibió imagen."
+    },
+    {
+      "sheet": "art/03-05.png",
+      "names": [
+        "Javier Remírez",
+        "Francisco Bernabé",
+        "Luis Uribe-Etxebarria",
+        "Dolores Etxano"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": null,
+      "error": "Solicitud conjunta interrumpida tras rechazo public-figure del generador (ecaf665e-c588-4885-8c13-b5e5ae1441bf). No se recibió imagen."
+    },
+    {
+      "sheet": "art/03-06.png",
+      "names": [
+        "Joan Bagué",
+        "Idurre Bideguren",
+        "Laura Castel",
+        "Igotz López"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": null,
+      "error": "Solicitud conjunta interrumpida tras rechazo public-figure del generador (ecaf665e-c588-4885-8c13-b5e5ae1441bf). No se recibió imagen."
+    },
+    {
+      "sheet": "art/03-07.png",
+      "names": [
+        "Jordi Gaseni",
+        "Teresa Pallarès",
+        "Javier Armas",
+        "Paloma Martín"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": null,
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 70256672-685f-4455-8057-4cdfddb356e9.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    },
+    {
+      "sheet": "art/03-08.png",
+      "names": [
+        "Eloy Suárez",
+        "José Ramón Díez de Revenga",
+        "José Antonio Valbuena",
+        "Marta Saavedra"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-4303005d-afbb-4941-80a1-bc1d90c86215.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-09.png",
+      "names": [
+        "Carmela Silva",
+        "Miguel Gracia",
+        "Antonio Gutiérrez Limones",
+        "Esther del Brío"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-12f391ab-2de8-4c13-b1f4-2585b69b918a.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-10.png",
+      "names": [
+        "Fernando Carbonell",
+        "Juanjo Ferrer",
+        "Nidia Arévalo",
+        "Juan Manuel Ávila"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-b061fccd-6143-4a22-99a7-741c270898b2.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-11.png",
+      "names": [
+        "Rocío Dívar",
+        "Antonio Luengo",
+        "Inmaculada Hernández",
+        "Cristina Díaz"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-a463ee1e-604a-4988-aa0c-6366c3290ced.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-12.png",
+      "names": [
+        "Antonio Magdaleno",
+        "Javier Izquierdo",
+        "Mario Soler",
+        "José Latorre"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-f81be96a-cd2b-4c50-99b5-5d20513c072f.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-13.png",
+      "names": [
+        "Juan José Sanz Vitorio",
+        "Lorena Guerra",
+        "María José Pardo",
+        "Raquel González"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-8527809d-d322-4e3d-baa1-4cf3fc6b2193.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-14.png",
+      "names": [
+        "Cristina Casanueva",
+        "Teresa Macías",
+        "Inmaculada Sánchez",
+        "Rosa Viera"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-ddede855-1c65-49e9-b2a3-b62047569a0b.png",
+      "error": null
+    },
+    {
+      "sheet": "art/03-15.png",
+      "names": [
+        "Manuel Hernando",
+        "Belén López",
+        "Severiano Cuesta",
+        "Francisco Fajardo"
+      ],
+      "tool": "image_gen.imagegen",
+      "generatedPath": "/workspace/generated_images/exec-07df96b9-7b01-4d33-9c84-34dd4b4aa6b9.png",
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "checkedOn": "2026-11-05",
+  "newIdentities": 60,
+  "publicOrators": 120,
+  "publicQuotes": 360,
+  "reservedIdentities": 140,
+  "remainingCurrentCensus": 203,
+  "newPortraits": 44,
+  "pendingPortraits": 16,
+  "testsPassed": 1569,
+  "publicVersion": "v31.0.2.13",
+  "releaseTagUnchanged": "09699badbc747d016934668dfb676178c7a778f1",
+  "changesLimitedTo": "_dev",
+  "manualReview": [
+    "Speaker headers, attribution and context of all 180 fragments",
+    "Third-party quotations, ironic support and negation rejected",
+    "Individual photo references and appearance of received atlases",
+    "Explicit placeholders for 16 missing portraits; no photo substitution"
+  ],
+  "sourceVerification": {
+    "checkedQuotes": 180,
+    "checkedPdfs": 70,
+    "hashes": true,
+    "physicalPages": true,
+    "literalFragments": true
+  }
+}

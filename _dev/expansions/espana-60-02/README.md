@@ -52,3 +52,5 @@ La metodología sigue cubierta por las explicaciones actuales de ilustraciones m
 804 pruebas de la reserva conjunta: conservación de las 140 fichas anteriores, proporciones, estadísticas, 600 frases distintas, 15 atlas nuevos con hash y tamaño, exclusión pública y las cuatro acciones de los 80 reservados en ambos bandos. Se comprueba que cada básico dispara su efecto con requisitos válidos y que las pasivas requieren al líder y respetan el contrarresto. También se conserva la suite de 164 pruebas de la primera reserva. Las evidencias visuales y los resultados están en `qa/`.
 
 [968 pruebas aprobadas en la ejecución conjunta](qa/final-tests.log) y [revisión de navegador](qa/browser.json) de los 80 retratos internos, las 60 fichas y las 180 frases, con filtros y anchos de 320, 393, 768 y 1200 px.
+
+Actualización 05-11-2026: la [tercera tanda](../espana-60-03/README.md) amplía la reserva conjunta a 140 fichas y 780 frases en 260 oradores internos. Incluye 16 retratos pendientes. Los resultados y cifras anteriores describen la entrega de esta segunda tanda.
