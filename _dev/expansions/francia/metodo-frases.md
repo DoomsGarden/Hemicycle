@@ -22,3 +22,13 @@ Cuando una traducción fiel no cabe en 47 caracteres, se busca otro fragmento co
 Primero se consultarán transcripciones institucionales y archivos de discursos; después, declaraciones claramente atribuidas en prensa. Wikiquote y Wikipedia servirán para localizar referencias, no sustituirán por sí solos la comprobación de la fuente. Una página inaccesible seguirá marcada como pendiente, aunque se conozca una frase popular de memoria.
 
 El uso como ataque, defensa o curación es una asignación ficticia del juego. Ninguna frase se integrará en el catálogo privado de prueba hasta tener original, traducción y fuente comprobados. Las frases y cambios se mostrarán en la futura galería de revisión, manteniendo todo oculto al jugador hasta una activación coordinada.
+
+## Investigación complementaria en prensa española
+
+Para avanzar mientras no se accede a las fuentes francesas, se conservan candidatas en `frases-candidatas.json` obtenidas de declaraciones atribuidas por Europa Press. Se verifica el texto publicado en español y quién lo dice. No se inventa un original francés mediante traducción inversa ni se presenta la versión periodística como traducción propia.
+
+`originalFR` e `originalSpeechLanguage` siguen en `null`: una intervención de una persona francesa en Barcelona o Madrid también podría haber sido en español o catalán. La fecha `published` corresponde a la publicación de la noticia, no necesariamente al día en que se pronunció la declaración.
+
+Estas candidatas son material de investigación, no frases finales ni cromos integrados. Se distinguen los fragmentos literales del texto periodístico de las adaptaciones: por ejemplo, «El Gobierno de Bayrou ya es historia» pasa a «El Gobierno del primer ministro ya es historia», con el cargo acreditado en la misma noticia de septiembre de 2025. El original publicado se conserva y el cambio no se oculta.
+
+Algunas noticias se descartan para seleccionar frases porque solo contienen palabras de familiares, portavoces, jueces u otros políticos. Se puede haber localizado una noticia sobre un orador sin encontrar ninguna declaración propia adecuada.

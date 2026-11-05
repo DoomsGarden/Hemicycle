@@ -8,20 +8,24 @@
   ],
   "observedError": "Tunnel connection failed: 403 Forbidden",
   "requestedAdditionalDomains": [
-    "elysee.fr",
-    "www.elysee.fr",
-    "senat.fr",
-    "www.senat.fr",
     "assemblee-nationale.fr",
-    "www.assemblee-nationale.fr",
-    "vie-publique.fr",
-    "www.vie-publique.fr",
+    "elysee.fr",
     "fr.wikipedia.org",
-    "fr.wikiquote.org"
+    "fr.wikiquote.org",
+    "img.europapress.es",
+    "senat.fr",
+    "vie-publique.fr",
+    "www.assemblee-nationale.fr",
+    "www.elysee.fr",
+    "www.senat.fr",
+    "www.vie-publique.fr"
   ],
-  "configurationDraft": "saved",
+  "configurationDraft": "saved_with_photo_domain_added",
   "requiresReviewAndPublish": true,
   "applied": false,
   "existingNetworkEntries": "preserved",
-  "scriptsAndRepositoryConfiguration": "unchanged"
+  "scriptsAndRepositoryConfiguration": "unchanged",
+  "blockedImageUrl": "https://img.europapress.es/fotoweb/fotonoticia_20240707221428_1200.jpg",
+  "spanishArticleAccess": "58 articles retrieved through the permitted www.europapress.es host",
+  "frenchOfficialAccess": "Still blocked by the applied destination policy"
 }
