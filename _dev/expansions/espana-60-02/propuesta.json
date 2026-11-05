@@ -1,5 +1,5 @@
 {
-  "status": "reserved",
+  "status": "reserved_not_public",
   "date": "2026-11-04",
   "batch": "espana-60-02",
   "period": {
@@ -8,10 +8,10 @@
     "priority": "2010–2026"
   },
   "targetNew": {
-    "comun": 24,
-    "raro": 18,
-    "legendario": 6,
-    "especial": 12
+    "especial": 24,
+    "legendario": 13,
+    "raro": 13,
+    "comun": 10
   },
   "cards": [
     {
@@ -24,16 +24,16 @@
         "Ana Redondo"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "verborrea",
       "ability": "surge",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Igualdad. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Dark chestnut shoulder-length hair with bangs, long oval face, no glasses, white blazer",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -73,6 +73,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-ana-redondo.aspx"
       }
     },
     {
@@ -85,16 +92,16 @@
         "Ángel Víctor Torres"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "verborrea",
       "ability": "coffee",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Política Territorial y Memoria Democrática. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia de Canarias y responsabilidad ministerial estatal. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short swept-back silver hair, short silver beard and goatee, broad expressive face, navy suit and pale blue tie",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -134,6 +141,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Presidencia de Canarias y responsabilidad ministerial estatal.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-angel-victor-torres.aspx"
       }
     },
     {
@@ -146,16 +160,16 @@
         "Arcadi España"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "guardia",
       "ability": "tongue",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Hacienda. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short silver-gray hair, trimmed gray stubble, round dark-rimmed glasses, blue suit and teal tie",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -195,6 +209,13 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-arcadi-espana.aspx"
       }
     },
     {
@@ -216,7 +237,7 @@
       "ability": "escort",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Vicepresidencia primera y Ministerio de Economía, Comercio y Empresa en la composición oficial consultada; función de coordinación económica estatal. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Economía y coordinación económica estatal. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark brown hair, dark rectangular glasses, neat dark beard, navy suit and dotted tie",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -256,6 +277,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Ministerio de Economía y coordinación económica estatal.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-carlos-cuerpo.aspx"
       }
     },
     {
@@ -268,16 +296,16 @@
         "Diana Morant"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "especial",
       "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "guardia",
       "ability": "microphone",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Ciencia, Innovación y Universidades. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight dark chestnut chin-length bob, no glasses, youthful oval face, black turtleneck",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -317,6 +345,13 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-diana-morant.aspx"
       }
     },
     {
@@ -329,16 +364,16 @@
         "Elma Saiz"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
       "doctrine": "aforado",
       "ability": "paperwork",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Inclusión, Seguridad Social y Migraciones y portavoz del Gobierno. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Inclusión y trayectoria ejecutiva autonómica. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Very short curly black pixie hair, no glasses, red high-neck blouse and round gold earrings",
       "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
       "microphones": false,
@@ -378,6 +413,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Ministerio de Inclusión y trayectoria ejecutiva autonómica.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-elma-saiz.aspx"
       }
     },
     {
@@ -390,16 +432,16 @@
         "Ernest Urtasun"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "especial",
       "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "giro",
       "ability": "lane",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Cultura. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short tousled dark hair, trimmed brown beard, no glasses, navy suit and patterned tie",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -439,6 +481,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-ernest-urtasun.aspx"
       }
     },
     {
@@ -451,16 +500,16 @@
         "Isabel Rodríguez"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "foco",
       "ability": "summon",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Vivienda y Agenda Urbana. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short chestnut pixie haircut with side fringe, no glasses, patterned black and white jacket",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -500,6 +549,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-isabel-rodriguez.aspx"
       }
     },
     {
@@ -512,16 +568,16 @@
         "Jordi Hereu"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "especial",
       "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "viperina",
       "ability": "surge",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Industria y Turismo. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Receding short gray hair, round face, clean-shaven, navy suit and blue tie",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -561,6 +617,13 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-jordi-hereu.aspx"
       }
     },
     {
@@ -573,16 +636,16 @@
         "José Manuel Albares"
       ],
       "country": "ES",
-      "rarity": "especial",
-      "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "verborrea",
       "ability": "lane",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Asuntos Exteriores, Unión Europea y Cooperación. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Asuntos Exteriores y representación exterior del Estado. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short neatly side-parted dark hair, fine metal glasses, clean-shaven, dark suit and pale green tie",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -622,6 +685,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Ministerio de Asuntos Exteriores y representación exterior del Estado.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-jose-manuel-albares.aspx"
       }
     },
     {
@@ -634,16 +704,16 @@
         "Luis Planas"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "verborrea",
       "ability": "tongue",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Agricultura, Pesca y Alimentación. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Agricultura y trayectoria ejecutiva y europea. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short combed chestnut-gray hair, square jaw, no glasses, clean-shaven, navy suit and burgundy tie",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -683,6 +753,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Ministerio de Agricultura y trayectoria ejecutiva y europea.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-luis-planas.aspx"
       }
     },
     {
@@ -695,16 +772,16 @@
         "Milagros Tolón"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "aforado",
       "ability": "archive",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Educación, Formación Profesional y Deportes. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long honey-blonde hair, no glasses, angular face, light blue tailored jacket",
       "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
       "microphones": false,
@@ -744,6 +821,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-milagros-tolon.aspx"
       }
     },
     {
@@ -756,16 +840,16 @@
         "Óscar López"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "legendario",
       "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "guardia",
       "ability": "surge",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro para la Transformación Digital y de la Función Pública. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Transformación Digital, dirección de gabinete y trayectoria partidaria estatal. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Thick short salt-and-pepper hair, dark blue rectangular glasses, clean-shaven, blue suit",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -805,6 +889,13 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Ministerio de Transformación Digital, dirección de gabinete y trayectoria partidaria estatal.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-oscar-lopez.aspx"
       }
     },
     {
@@ -826,7 +917,7 @@
       "ability": "archive",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministro de Derechos Sociales, Consumo y Agenda 2030. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short cropped dark hair, close dark beard, no glasses, navy suit and light shirt",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -866,6 +957,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministro-pablo-bustinduy.aspx"
       }
     },
     {
@@ -878,16 +976,16 @@
         "Sara Aagesen"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "legendario",
       "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "giro",
       "ability": "shield",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Vicepresidenta tercera y ministra para la Transición Ecológica y el Reto Demográfico. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Vicepresidencia del Gobierno y Ministerio de Transición Ecológica. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long honey-blonde hair parted slightly off-center, no glasses, green jacket and white blouse",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -927,6 +1025,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Vicepresidencia del Gobierno y Ministerio de Transición Ecológica.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-sara-aagesen.aspx"
       }
     },
     {
@@ -939,16 +1044,16 @@
         "Sira Rego"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "giro",
       "ability": "paperwork",
       "depictedPeriod": "2026 · referencia institucional",
       "institution": "Gobierno de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La fuente del Gobierno registra su cargo de Ministra de Juventud e Infancia. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Dark brown hair swept back into a low updo, no glasses, red lipstick, navy jacket",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -988,6 +1093,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.lamoncloa.gob.es/gobierno/Paginas/biografias-xv-legislatura/ministra-sira-rego.aspx"
       }
     },
     {
@@ -1009,9 +1121,9 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia del Senado desde 2023 y trayectoria institucional previa: responsabilidad de dirección de la cámara. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia del Senado y vicepresidencia autonómica. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald crown with dark side hair, close dark and gray beard, no glasses, olive-gray blazer",
-      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -1024,9 +1136,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-05.png",
+        "sheet": "../reserva-espana/revision-global/art/07-01.png",
         "position": "0% 0%",
-        "quadrant": "top-left"
+        "quadrant": "top-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19063",
@@ -1049,7 +1162,30 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidencia del Senado y vicepresidencia autonómica.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19063"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-05.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+        "tier": "legendario",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15201.jpg",
+        "referenceSha256": "62e60b3804baddc7b5f0566ff2129971f9c929ef865abc8a5a08c4676230091c",
+        "sheet": "art/07-01.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+      "gaze": "off_camera"
     },
     {
       "index": 18,
@@ -1070,9 +1206,9 @@
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Trayectoria estatal y autonómica, con responsabilidades ministeriales, Vicepresidencia del Gobierno y liderazgo parlamentario. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Vicepresidencia del Gobierno, ministerios y liderazgo del PP andaluz. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short neatly combed white hair, clean-shaven, no glasses, broad smiling face, light beige jacket",
-      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -1085,9 +1221,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-05.png",
+        "sheet": "../reserva-espana/revision-global/art/07-01.png",
         "position": "100% 0%",
-        "quadrant": "top-right"
+        "quadrant": "top-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10154",
@@ -1110,7 +1247,30 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Vicepresidencia del Gobierno, ministerios y liderazgo del PP andaluz.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10154"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+        "tier": "legendario",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15315.jpg",
+        "referenceSha256": "1feae9458d15a979d55a43117d24b2a65b51fa36c30bbe0d9b591acfdd7f4ba6",
+        "sheet": "art/07-01.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+      "gaze": "off_camera"
     },
     {
       "index": 19,
@@ -1131,7 +1291,7 @@
       "ability": "escort",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia del Senado entre 2011 y 2019 y amplia trayectoria parlamentaria. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia del Senado y extensa trayectoria parlamentaria. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Receding gray-brown hair, thin rimless glasses, clean-shaven, rounded face, dark suit and blue tie",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -1171,6 +1331,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidencia del Senado y extensa trayectoria parlamentaria.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10216"
       }
     },
     {
@@ -1192,7 +1359,7 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia del Congreso entre 2000 y 2004 y del Gobierno de Aragón entre 2011 y 2015. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencias del Congreso y del Gobierno de Aragón. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short blonde-gray swept bob, no glasses, mature oval face, light cream jacket",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -1232,6 +1399,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidencias del Congreso y del Gobierno de Aragón.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=16685"
       }
     },
     {
@@ -1253,7 +1427,7 @@
       "ability": "summon",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short swept-back dark-gray hair, dark round rectangular glasses, light gray stubble, blue suit and dotted tie",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -1293,6 +1467,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=15825"
       }
     },
     {
@@ -1314,7 +1495,7 @@
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length blonde hair, no glasses, oval face, pale blue blazer and subtle necklace",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -1354,6 +1535,13 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19824"
       }
     },
     {
@@ -1375,7 +1563,7 @@
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short wavy dark brown bob, no glasses, angular face, navy blouse",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -1415,6 +1603,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19585"
       }
     },
     {
@@ -1436,7 +1631,7 @@
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia del Gobierno de La Rioja entre 2019 y 2023 y responsabilidades posteriores en el Senado. Selección editorial dentro de los seis legendarios de esta tanda; no es una medida de valor personal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia del Gobierno de La Rioja. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Dark chestnut shoulder-length hair, thick eyebrows, no glasses, large gold hoop earrings and cream blazer",
       "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
       "microphones": false,
@@ -1476,6 +1671,13 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidencia del Gobierno de La Rioja.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19914"
       }
     },
     {
@@ -1488,18 +1690,18 @@
         "José Antonio Monago"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "legendario",
       "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "guardia",
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia de la Junta de Extremadura. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short receding dark-gray hair, fine rectangular glasses, clean-shaven, broad face, dark suit",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -1512,9 +1714,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-07.png",
-        "position": "0% 0%",
-        "quadrant": "top-left"
+        "sheet": "../reserva-espana/revision-global/art/07-01.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14265",
@@ -1537,7 +1740,30 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Presidencia de la Junta de Extremadura.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14265"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+        "tier": "legendario",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15157.jpg",
+        "referenceSha256": "0e6ba72cc32225cc73438f6cfd01472df5c37bfa7ccca3df0c4fc530bfed48f9",
+        "sheet": "art/07-01.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+      "gaze": "off_camera"
     },
     {
       "index": 26,
@@ -1558,7 +1784,7 @@
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-gray crew cut, small metal-rim glasses, clean-shaven, navy blazer and open collar",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -1598,6 +1824,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19963"
       }
     },
     {
@@ -1610,16 +1843,16 @@
         "Eduard Pujol"
       ],
       "country": "ES",
-      "rarity": "especial",
-      "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "giro",
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald crown and very short white side hair, neatly trimmed full white beard, clear round glasses, dark suit",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -1659,6 +1892,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20013"
       }
     },
     {
@@ -1671,16 +1911,16 @@
         "Marimar Blanco"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "raro",
       "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "summon",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length straight blonde hair, no glasses, fair round face, vivid red blazer",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -1720,6 +1960,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19803"
       }
     },
     {
@@ -1741,7 +1988,7 @@
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo especial asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark hair combed to the side, no glasses, clean-shaven, angular face, navy suit and red tie",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -1781,6 +2028,13 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18103"
       }
     },
     {
@@ -1802,7 +2056,7 @@
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight light blonde hair, no glasses, oval face, light cream blazer",
       "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
       "microphones": false,
@@ -1842,6 +2096,13 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19817"
       }
     },
     {
@@ -1854,16 +2115,16 @@
         "José Manuel Barreiro"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "aforado",
       "ability": "fasttrack",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short side-parted silver hair, clean-shaven, no glasses, gray suit and striped blue tie",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -1903,6 +2164,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14087"
       }
     },
     {
@@ -1915,16 +2183,16 @@
         "Gerardo Camps"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "especial",
       "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "giro",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short curly salt-and-pepper hair, rectangular blue glasses, clean-shaven, dark suit and burgundy tie",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -1964,6 +2232,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14987"
       }
     },
     {
@@ -1976,16 +2251,16 @@
         "Antonio Silván"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "foco",
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short silver-blonde hair, rectangular thin glasses, clean-shaven, dark blazer and open collar",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -2025,6 +2300,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19051"
       }
     },
     {
@@ -2046,7 +2328,7 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short receding gray hair, short gray stubble, no glasses, dark high-collar shirt",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -2086,6 +2368,13 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19685"
       }
     },
     {
@@ -2098,16 +2387,16 @@
         "Gorka Elejabarrieta"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "verborrea",
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short black and gray crew cut, round dark glasses, clean-shaven, navy jacket and white shirt",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -2147,6 +2436,13 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18249"
       }
     },
     {
@@ -2159,16 +2455,16 @@
         "Nerea Ahedo"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "guardia",
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short light brown pixie haircut, no glasses, expressive smile, striped cream blouse and geometric necklace",
       "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
       "microphones": false,
@@ -2208,6 +2504,13 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17027"
       }
     },
     {
@@ -2220,16 +2523,16 @@
         "Sara Bailac"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "aforado",
       "ability": "summon",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight shoulder-length chestnut bob, no glasses, oval face, patterned dark jacket",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -2269,6 +2572,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18125"
       }
     },
     {
@@ -2281,16 +2591,16 @@
         "Estefanía Beltrán de Heredia"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "especial",
       "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "giro",
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Very short dark brown pixie haircut with side fringe, thin oval glasses, narrow face, patterned black and white blouse",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -2330,6 +2640,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19365"
       }
     },
     {
@@ -2342,16 +2659,16 @@
         "Pilar Rojo"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "foco",
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Dark brown side-parted shoulder-length hair, no glasses, long angular face, charcoal blazer",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -2391,6 +2708,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19062"
       }
     },
     {
@@ -2403,16 +2727,16 @@
         "José Manuel Franco"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "especial",
       "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "viperina",
       "ability": "shield",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo raro asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short receding dark-gray hair, clean-shaven, no glasses, broad serious face, navy suit and dotted tie",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -2452,6 +2776,13 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19920"
       }
     },
     {
@@ -2473,9 +2804,9 @@
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short blonde hair with side fringe, no glasses, broad smile, black jacket and gold pendant",
-      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -2488,9 +2819,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-11.png",
-        "position": "0% 0%",
-        "quadrant": "top-left"
+        "sheet": "../reserva-espana/revision-global/art/07-01.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19917",
@@ -2513,7 +2845,30 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19917"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain cotton blouse without a business blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15134.jpg",
+        "referenceSha256": "dd79157a938d6d178536e925f3b99917f8078b547b20afbce339972d6f82d2cb",
+        "sheet": "art/07-01.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain cotton blouse without a business blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 42,
@@ -2534,9 +2889,9 @@
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short receding light brown hair, light stubble, no glasses, navy blazer and white shirt",
-      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2549,9 +2904,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-11.png",
-        "position": "100% 0%",
-        "quadrant": "top-right"
+        "sheet": "../reserva-espana/revision-global/art/07-24.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19859",
@@ -2574,7 +2930,30 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19859"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15053.jpg",
+        "referenceSha256": "2e07bf8f502a44188a8bc2aa2cf465ff5c017f021d647060e4400330b09c82e1",
+        "sheet": "art/07-24.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 43,
@@ -2586,18 +2965,18 @@
         "Ángel Pelayo Gordillo"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "verborrea",
       "ability": "shield",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Close-cropped gray hair, clean-shaven, no glasses, tanned angular face, dark suit and striped tie",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO MIXTO",
@@ -2610,9 +2989,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-11.png",
-        "position": "0% 100%",
-        "quadrant": "bottom-left"
+        "sheet": "../reserva-espana/revision-global/art/07-02.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19809",
@@ -2635,7 +3015,30 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19809"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15307.jpg",
+        "referenceSha256": "b7a9fb0055e4d189354d7316731760c492c03688c6d2b310a6a1c9a95cd9376b",
+        "sheet": "art/07-02.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 44,
@@ -2656,9 +3059,9 @@
       "ability": "acta",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Receding short gray hair, clean-shaven, no glasses, oval face, gray blazer and open white collar",
-      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -2671,9 +3074,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-11.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right"
+        "sheet": "../reserva-espana/revision-global/art/07-02.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19465",
@@ -2696,7 +3100,30 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19465"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15287.jpg",
+        "referenceSha256": "245040ec68c55296a40dc411e2a762ddbe9c9752cc7c91dbabbf208e85b30733",
+        "sheet": "art/07-02.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+      "gaze": "off_camera"
     },
     {
       "index": 45,
@@ -2717,7 +3144,7 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short receding silver hair, clean-shaven, no glasses, long face, dark open-collar shirt",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -2757,6 +3184,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18243"
       }
     },
     {
@@ -2778,9 +3212,9 @@
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short black hair styled upward, light stubble, no glasses, youthful oval face, dark blazer",
-      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO IZQUIERDA CONFEDERAL (MÁS MADRID, EIVISSA I FORMENTERA AL SENAT, COMPROMÍS, AGRUPACIÓN SOCIALISTA GOMERA Y GEROA BAI)",
@@ -2793,9 +3227,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-12.png",
-        "position": "100% 0%",
-        "quadrant": "top-right"
+        "sheet": "../reserva-espana/revision-global/art/07-02.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18725",
@@ -2818,7 +3253,30 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18725"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15112.jpg",
+        "referenceSha256": "4f369c0a0e6849621dff9e28187fbfa23ee7360e908ce9c5215c3f4263141182",
+        "sheet": "art/07-02.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+      "gaze": "off_camera"
     },
     {
       "index": 47,
@@ -2830,18 +3288,18 @@
         "Fernando Gutiérrez Díaz de Otazu"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Gray-brown side-parted hair, prominent gray moustache, no glasses, dark suit and pale blue tie",
-      "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2854,9 +3312,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-12.png",
-        "position": "0% 100%",
-        "quadrant": "bottom-left"
+        "sheet": "../reserva-espana/revision-global/art/07-02.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19883",
@@ -2879,7 +3338,30 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en el Congreso; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19883"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15033.jpg",
+        "referenceSha256": "db33e0cf2ccae4f7ab465eb4f832692589691380846795d670d2e47e5c80b6aa",
+        "sheet": "art/07-02.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 48,
@@ -2891,18 +3373,18 @@
         "Javier Márquez"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "viperina",
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía de Jaén; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald head with short gray hair at sides, thick dark rectangular glasses, clean-shaven, navy suit and pink tie",
-      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2915,9 +3397,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-12.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right"
+        "sheet": "../reserva-espana/revision-global/art/07-03.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18100",
@@ -2940,7 +3423,30 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía de Jaén; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18100"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15222.jpg",
+        "referenceSha256": "1da9674e6b516e4cf503ebdcfaedf748afc8cafa2cc7e2e0d85f9dac14b6b057",
+        "sheet": "art/07-03.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 49,
@@ -2952,18 +3458,18 @@
         "José María Oleaga"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "verborrea",
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short swept gray hair, no glasses, clean-shaven, oval face, dark suit and patterned tie",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -2976,9 +3482,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-13.png",
-        "position": "0% 0%",
-        "quadrant": "top-left"
+        "sheet": "../reserva-espana/revision-global/art/07-03.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18301",
@@ -3001,7 +3508,30 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18301"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15074.jpg",
+        "referenceSha256": "704b527f3cfe272e022798ce39957faf15c4b14fae3a43cf47bc250448ab2485",
+        "sheet": "art/07-03.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 50,
@@ -3013,18 +3543,18 @@
         "Juan José Matarí"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "guardia",
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short curly salt-and-pepper hair, oval thin glasses, clean-shaven, dark suit and light patterned tie",
-      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -3037,9 +3567,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-13.png",
-        "position": "100% 0%",
-        "quadrant": "top-right"
+        "sheet": "../reserva-espana/revision-global/art/07-03.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10148",
@@ -3062,7 +3593,30 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=10148"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15213.jpg",
+        "referenceSha256": "f50a6ceb769ba6b3088b2a1b2b190bddcf4657f8b6ddf3ef25acf756e922b88e",
+        "sheet": "art/07-03.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 51,
@@ -3074,16 +3628,16 @@
         "Luis Santamaría"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "aforado",
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short soft brown hair swept to one side, no glasses, clean-shaven, round face, dark open-collar shirt",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -3123,6 +3677,13 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19857"
       }
     },
     {
@@ -3135,16 +3696,16 @@
         "Amparo Marco"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "giro",
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length strawberry-blonde hair, no glasses, smiling oval face, white blouse",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -3184,6 +3745,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19940"
       }
     },
     {
@@ -3196,16 +3764,16 @@
         "María Salom"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short wavy sandy-blonde hair, no glasses, oval face, subtle patterned blouse and gold necklace",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -3245,6 +3813,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18115"
       }
     },
     {
@@ -3257,18 +3832,18 @@
         "Pedro Sanginés"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "viperina",
       "ability": "shield",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de presidencia provincial o insular; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-gray swept hair, thin metal glasses, close salt-and-pepper beard, light blue suit and striped tie",
-      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO PLURAL EN EL SENADO JUNTS PER CATALUNYA-COALICIÓN CANARIA-AGRUPACIÓN HERREÑA INDEPENDIENTE-BLOQUE NACIONALISTA GALEGO",
@@ -3281,9 +3856,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-14.png",
-        "position": "100% 0%",
-        "quadrant": "top-right"
+        "sheet": "../reserva-espana/revision-global/art/07-03.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19971",
@@ -3306,7 +3882,30 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de presidencia provincial o insular; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19971"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15254.jpg",
+        "referenceSha256": "f2c2c39fb40201f8361b630e203c2a86e06b8021b2c5640fcf615c5febadfa31",
+        "sheet": "art/07-03.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 55,
@@ -3327,9 +3926,9 @@
       "ability": "acta",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short silver-gray hair, no glasses, clean-shaven, broad warm face, textured gray blazer",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3342,9 +3941,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-14.png",
-        "position": "0% 100%",
-        "quadrant": "bottom-left"
+        "sheet": "../reserva-espana/revision-global/art/07-04.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18298",
@@ -3367,7 +3967,30 @@
         "name": "Verborrea",
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18298"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-14.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15092.jpg",
+        "referenceSha256": "9083937e004b257f92a808fff40e2a42074badc6a47e75e77cfb5e1387883345",
+        "sheet": "art/07-04.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+      "gaze": "off_camera"
     },
     {
       "index": 56,
@@ -3388,7 +4011,7 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length light brown hair with blonde highlights, no glasses, cream and black tailored blouse",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -3428,6 +4051,13 @@
         "name": "Vieja Guardia",
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa).",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19961"
       }
     },
     {
@@ -3449,9 +4079,9 @@
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-gray hair, thin rectangular glasses, clean-shaven, navy blazer and pink open-collar shirt",
-      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3464,9 +4094,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-15.png",
-        "position": "0% 0%",
-        "quadrant": "top-left"
+        "sheet": "../reserva-espana/revision-global/art/07-04.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18222",
@@ -3489,7 +4120,30 @@
         "name": "Aforado",
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18222"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-15.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15237.jpg",
+        "referenceSha256": "f20a83574ccc6a3776f1cc27427b57a4ca4d5c3a786fd645887cc0a910525041",
+        "sheet": "art/07-04.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 58,
@@ -3501,16 +4155,16 @@
         "Rosa Romero"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "giro",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length wavy chestnut hair, no glasses, vivid pink blouse, long earrings",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -3550,6 +4204,13 @@
         "name": "Giro de Guion",
         "description": "Quien ataca a un orador tuyo recibe 1 de daño.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12693"
       }
     },
     {
@@ -3562,16 +4223,16 @@
         "Vicente Tirado"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "foco",
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short thinning dark-gray hair, no glasses, clean-shaven, rounded face, navy suit and dark red tie",
       "pose": "speaking with a restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -3611,6 +4272,13 @@
         "name": "Foco Mediático",
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12839"
       }
     },
     {
@@ -3632,9 +4300,9 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Cupo comun asignado por trayectoria pública y función institucional documentadas. La ficha del Senado documenta su trayectoria, grupo y responsabilidades parlamentarias en la XV legislatura; el detalle histórico se conserva en esa fuente. Las estadísticas siguen el tier; no se valoran capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length chestnut hair swept away from face, no glasses, white blazer",
-      "pose": "looking toward the chamber, no microphone, holding a small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3647,9 +4315,10 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/02-15.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right"
+        "sheet": "../reserva-espana/revision-global/art/07-04.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
       },
       "reference": {
         "profile": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18193",
@@ -3672,10 +4341,34 @@
         "name": "Lengua Viperina",
         "description": "Tus oradores infligen +2 de daño al Líder rival.",
         "activation": "Doctrina del líder, con los requisitos y contrarrestos actuales del juego."
-      }
+      },
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en el Congreso.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18193"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/02-15.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable knitted top with a soft scarf",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15155.jpg",
+        "referenceSha256": "58d4241283049679b2f300d6bfc4c0cfe269b11ddb229c6aaae8d9d4f4e33624",
+        "sheet": "art/07-04.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable knitted top with a soft scarf",
+      "gaze": "off_camera"
     }
   ],
   "patch": "v31.0.2.13",
   "active": false,
-  "releaseReady": false
+  "releaseReady": false,
+  "tierReview": "revision-global-343-2026-11-05"
 }

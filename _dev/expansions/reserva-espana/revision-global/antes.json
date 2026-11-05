@@ -1,0 +1,5385 @@
+{
+  "commit": "80ef141",
+  "cards": [
+    {
+      "id": "adolfo-suarez",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "verborrea",
+      "q": [
+        "La cautela del escepticismo",
+        "Y eso a usted no le preocupa; me consta",
+        "Por ahí avanzaríamos mucho"
+      ],
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      }
+    },
+    {
+      "id": "manuel-fraga",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "shield",
+      "doctrine": "guardia",
+      "q": [
+        "Yo no vi ese documento en ningún lugar oscuro",
+        "No es por culpa mía ni por decisión mía",
+        "Hemos defendido en todo momento"
+      ],
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      }
+    },
+    {
+      "id": "alfredo-perez-rubalcaba",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "No estoy de acuerdo, y ya está",
+        "No le digan a la gente lo que no deben decirle",
+        "Vivir sin ningún tipo de miedo"
+      ],
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      }
+    },
+    {
+      "id": "francina-armengol",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Por favor, silencio y respeto a la Cámara",
+        "Señor diputado, por favor, silencio y respeto",
+        "Está en el uso de la palabra, siga"
+      ],
+      "art": {
+        "sheet": "art/01-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      }
+    },
+    {
+      "id": "josep-borrell",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "¿Por qué este sí y no los anteriores?",
+        "El debate en sí mismo no daría más de sí",
+        "Para conseguir un mundo más estable"
+      ],
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      }
+    },
+    {
+      "id": "margarita-robles",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "coffee",
+      "doctrine": "aforado",
+      "q": [
+        "Yo le exijo un poco de respeto",
+        "No se entera bien de las cosas",
+        "Todos tenemos que trabajar unidos"
+      ],
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      }
+    },
+    {
+      "id": "jose-bono",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "acta",
+      "doctrine": "aforado",
+      "q": [
+        "No partimos de cero, señorías",
+        "No podemos quedarnos anclados en recetas",
+        "Podemos sentirnos complacidos"
+      ],
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      }
+    },
+    {
+      "id": "aitor-esteban",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "bank",
+      "doctrine": "verborrea",
+      "q": [
+        "No nos hagamos tampoco trampas",
+        "Esto no se sostiene",
+        "No hay que humillar a nadie"
+      ],
+      "art": {
+        "sheet": "art/02-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      }
+    },
+    {
+      "id": "juanma-moreno",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "No puedo compartir esa afirmación",
+        "No resulta creíble",
+        "Estamos avanzando"
+      ],
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      }
+    },
+    {
+      "id": "pedro-solbes",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "fasttrack",
+      "doctrine": "guardia",
+      "q": [
+        "No hay ideas nuevas",
+        "Pero no diga usted lo que yo no he dicho",
+        "Yo creo que es positivo"
+      ],
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      }
+    },
+    {
+      "id": "rosa-diez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "tongue",
+      "doctrine": "foco",
+      "q": [
+        "No todo es economía, señor candidato",
+        "No me lo va a oír jamás",
+        "De verdad que no pierdo la esperanza"
+      ],
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      }
+    },
+    {
+      "id": "jose-blanco",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "No se trata de gastar por gastar",
+        "Se trata de gastar inteligentemente",
+        "Anticipar la salida de la crisis"
+      ],
+      "art": {
+        "sheet": "art/03-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      }
+    },
+    {
+      "id": "cristina-narbona",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "giro",
+      "q": [
+        "No garantiza resultados muy diferentes",
+        "No es solo un fallo del sector privado",
+        "Más protegidos ante crisis financieras"
+      ],
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      }
+    },
+    {
+      "id": "ana-oramas",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "Siempre la misma estrategia",
+        "Es que no lo entiende nadie",
+        "Yo hoy estoy contenta"
+      ],
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      }
+    },
+    {
+      "id": "rosa-aguilar",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "guardia",
+      "q": [
+        "Eso no es ni mucho menos casualidad",
+        "Díganlo ustedes, hablen con claridad",
+        "Es verdad que la ley se puede mejorar"
+      ],
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      }
+    },
+    {
+      "id": "elena-salgado",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "No es lo que yo piense",
+        "No ponga en duda su autonomía o independencia",
+        "De acuerdo con la legislación vigente"
+      ],
+      "art": {
+        "sheet": "art/04-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      }
+    },
+    {
+      "id": "felix-bolanos",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "giro",
+      "q": [
+        "Yo, a lo que importa a la gente",
+        "Ustedes son más de la Edad de Piedra",
+        "Espíritu reparador"
+      ],
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "top-left",
+        "position": "0% 0%"
+      }
+    },
+    {
+      "id": "oskar-matute",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "Eso no es el bien común",
+        "Hoy no acaba nada",
+        "Hemos hecho un esfuerzo por alcanzar acuerdos"
+      ],
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "top-right",
+        "position": "100% 0%"
+      }
+    },
+    {
+      "id": "jose-antonio-labordeta",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "verborrea",
+      "q": [
+        "No es sólo la economía",
+        "Cosas realmente asombrosas",
+        "Resolver las necesidades de nuestro territorio"
+      ],
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "bottom-left",
+        "position": "0% 100%"
+      }
+    },
+    {
+      "id": "magdalena-alvarez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "fasttrack",
+      "doctrine": "foco",
+      "q": [
+        "Ya sabe la respuesta",
+        "Usted en la oposición y yo en el Gobierno",
+        "Un gran equipo"
+      ],
+      "art": {
+        "sheet": "art/05-retratos.png",
+        "quadrant": "bottom-right",
+        "position": "100% 100%"
+      }
+    },
+    {
+      "id": "ana-redondo-garcia",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "verborrea",
+      "q": [
+        "No por gritar más usted tiene más razones",
+        "Ustedes propagan bulos y mentiras",
+        "Vamos a seguir avanzando en derechos"
+      ],
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "angel-victor-torres-perez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "coffee",
+      "doctrine": "verborrea",
+      "q": [
+        "No vengan a dar ustedes ningún tipo de lección",
+        "No quiero engañarle",
+        "Hemos llegado a acuerdos"
+      ],
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "arcadi-espana-garcia",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "guardia",
+      "q": [
+        "No sé qué les parece mal",
+        "No se enmienden a sí mismos",
+        "Defender la igualdad ante la ley"
+      ],
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "carlos-cuerpo-caballero",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "verborrea",
+      "q": [
+        "Creo que ha quedado claro",
+        "No debemos caer en la complacencia",
+        "Defenderles y protegerles"
+      ],
+      "art": {
+        "sheet": "art/02-01.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "diana-morant-ripoll",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Para que le quede a usted claro",
+        "No quieren hacerlo",
+        "Queremos seguir mejorando"
+      ],
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "elma-saiz-delgado",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes hacen exactamente lo contrario",
+        "Basta ya de hipocresía",
+        "Acuerdos para mejorar la convivencia"
+      ],
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "ernest-urtasun-domenech",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "No hacen ustedes ninguna propuesta",
+        "No vamos a tolerar",
+        "Necesita apoyo, respeto y cooperación"
+      ],
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "isabel-rodriguez-garcia",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "foco",
+      "q": [
+        "No esperamos mucho de ustedes",
+        "Ustedes se niegan",
+        "Expreso mi respeto a su trabajo"
+      ],
+      "art": {
+        "sheet": "art/02-02.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "jordi-hereu-boher",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "viperina",
+      "q": [
+        "Se lo digo, claramente",
+        "Yo estoy bien de peso",
+        "Este es un objetivo que nos une"
+      ],
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "jose-manuel-albares-bueno",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "lane",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes ya lo han dejado claro",
+        "Se basa solo en mentiras y descalificaciones",
+        "Le he reiterado el apoyo a la democracia"
+      ],
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "luis-planas-puchades",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "No se equivoquen ustedes",
+        "Eso es absolutamente falso",
+        "Buscando soluciones y avanzando"
+      ],
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "milagros-tolon-jaime",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "aforado",
+      "q": [
+        "Me parece muy simple ese argumento de ustedes",
+        "No den lecciones",
+        "Es invertir más y mejor"
+      ],
+      "art": {
+        "sheet": "art/02-03.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "oscar-lopez-agueda",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "surge",
+      "doctrine": "guardia",
+      "q": [
+        "Usted mismo se contradecía",
+        "Yo le digo que esos datos no son correctos",
+        "Espero que podamos llegar a acuerdos"
+      ],
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "pablo-bustinduy-amador",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "archive",
+      "doctrine": "aforado",
+      "q": [
+        "No tienen ustedes otra patria que el dinero",
+        "No tienen bandera ni vergüenza",
+        "La protección de familias vulnerables"
+      ],
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "sara-aagesen-munoz",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "shield",
+      "doctrine": "giro",
+      "q": [
+        "Creo que usted no ve la realidad",
+        "Creo que a usted le da igual la verdad",
+        "Está plenamente comprometido"
+      ],
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "sira-rego",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes no suelen aportar soluciones",
+        "No me venga con lecciones",
+        "Proteger es escuchar"
+      ],
+      "art": {
+        "sheet": "art/02-04.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "pedro-manuel-rollan-ojeda",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "No estoy hablando con ustedes",
+        "Hay que guardar respeto",
+        "Muchísimas gracias a todos por su colaboración"
+      ],
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "francisco-javier-arenas-bocanegra",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "aforado",
+      "q": [
+        "Me parece que este debate es artificial",
+        "Esto no es un patio de colegio",
+        "El respaldo de la mayoría de los ciudadanos"
+      ],
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "pio-garcia-escudero-marquez",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "giro",
+      "q": [
+        "No lo consiguieron",
+        "Ayer no dijo la verdad",
+        "Al pueblo no se le elimina su libertad"
+      ],
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "luisa-fernanda-rudi-ubeda",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "foco",
+      "q": [
+        "No voy a poder decir todo lo que quería",
+        "No claudiquen ante las minorías radicales",
+        "Claro que respeto a esta Cámara"
+      ],
+      "art": {
+        "sheet": "art/02-05.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "josep-lluis-cleries-i-gonzalez",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "summon",
+      "doctrine": "foco",
+      "q": [
+        "No habla de lo que usted ha presentado",
+        "Debería caérseles la cara de vergüenza",
+        "Lo defendemos con la fuerza de la palabra"
+      ],
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "alicia-garcia-rodriguez",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "surge",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no se dan cuenta de lo más importante",
+        "Son el Gobierno de la mentira",
+        "Debemos proteger a nuestros jóvenes"
+      ],
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "eva-maria-granados-galiano",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "archive",
+      "doctrine": "verborrea",
+      "q": [
+        "Para ustedes todo vale",
+        "Eso no es servir a la sociedad española",
+        "Respeto, diálogo y avanzar"
+      ],
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "concepcion-andreu-rodriguez",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "No son capaces de abordar los problemas",
+        "Vaya irresponsabilidad",
+        "Apoyemos lo que viene"
+      ],
+      "art": {
+        "sheet": "art/02-06.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "jose-antonio-monago-terraza",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes no consolidan la democracia",
+        "No haga hoy otra promesa, con una basta",
+        "Yo sí soy capaz de apoyar una moción"
+      ],
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "enric-xavier-morera-catala",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "No son de fiar ustedes, señorías",
+        "Lo suyo es una riada de mentiras",
+        "Hay que fortalecer la cogobernanza"
+      ],
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "eduard-pujol-bonell",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes son el Gobierno de la yenka",
+        "Mentiras, las que quieran",
+        "Defender la lengua"
+      ],
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "maria-mar-blanco-garrido",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "summon",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no han perdido la memoria",
+        "Ustedes han perdido la vergüenza",
+        "Jamás las dejaremos solas"
+      ],
+      "art": {
+        "sheet": "art/02-07.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "fernando-martinez-maillo-toribio",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "surge",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no tienen palabra",
+        "Utilizando argumentos completamente falsos",
+        "Estamos completamente de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "eva-ortiz-vilella",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "fineprint",
+      "doctrine": "guardia",
+      "q": [
+        "No ha dado ni una sola explicación",
+        "No se lo consiento",
+        "Yo estoy de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "jose-manuel-barreiro-fernandez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "fasttrack",
+      "doctrine": "aforado",
+      "q": [
+        "Usted no vive en la calle",
+        "Rigurosamente falso",
+        "Seguro que España lo agradecería"
+      ],
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "gerardo-camps-devesa",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "coffee",
+      "doctrine": "giro",
+      "q": [
+        "No se lo tome usted a mal",
+        "Es una vergüenza democrática",
+        "Es hora de trabajar unidos"
+      ],
+      "art": {
+        "sheet": "art/02-08.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "antonio-silvan-rodriguez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "tongue",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no están legislando",
+        "Ustedes se han instalado en la mentira",
+        "Defender la dignidad del Senado"
+      ],
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "alfonso-gil-invernon",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "Esto lo dicen ustedes, no nosotros",
+        "Perdieron ustedes la vergüenza",
+        "Con pactos y acuerdos"
+      ],
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "gorka-elejabarrieta-diaz",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "verborrea",
+      "q": [
+        "Usted mismo lo ha dicho",
+        "Para más vergüenza",
+        "La negociación y el acuerdo"
+      ],
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "nerea-ahedo-ceza",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "guardia",
+      "q": [
+        "No lo tengo tan claro",
+        "No nos intenten engañar",
+        "Garantizando la continuidad de los cuidados"
+      ],
+      "art": {
+        "sheet": "art/02-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "sara-bailac-ardanuy",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes no hacen ni dejan hacer",
+        "No nos van a poder callar",
+        "Avanzar en derechos es legislar"
+      ],
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "estefania-beltran-de-heredia-arroniz",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "giro",
+      "q": [
+        "Lo que ustedes quieren es uniformizarlo",
+        "Una absoluta irresponsabilidad política",
+        "Avanzar en el reconocimiento de derechos"
+      ],
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "pilar-milagros-rojo-noguera",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "archive",
+      "doctrine": "foco",
+      "q": [
+        "Son ustedes pura contradicción",
+        "No han cumplido lo que dijeron",
+        "Nosotros vamos a seguir trabajando"
+      ],
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "jose-manuel-franco-pardo",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "shield",
+      "doctrine": "viperina",
+      "q": [
+        "Esto a ustedes no les gusta",
+        "Se envuelven en la bandera de la mentira",
+        "Los acuerdos en política son públicos"
+      ],
+      "art": {
+        "sheet": "art/02-10.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "consol-cantenys-arboli",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "El Gobierno debe rendir cuentas",
+        "No es un privilegio",
+        "Efectivamente accesible, cercana y humanista"
+      ],
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "alejo-joaquin-miranda-de-larra-arnaiz",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "Usted sabe que no son verdad",
+        "Qué poca vergüenza",
+        "Pónganse de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "angel-pelayo-gordillo-moreno",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes no tienen freno",
+        "Viven en un mundo de mentiras",
+        "Defendemos una visión distinta"
+      ],
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "antonio-poveda-zapata",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "Vuelvan ustedes a ser creíbles",
+        "No leen las leyes que obligan",
+        "Vamos a trabajar conjuntamente"
+      ],
+      "art": {
+        "sheet": "art/02-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "cesar-alejandro-mogo-zaro",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "No nos van a tener con ustedes en eso",
+        "Nos tendrán enfrente, pero no engañen",
+        "La garantía de quien les habla"
+      ],
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "fabian-chinea-correa",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "Lo que dicen algunos de ustedes",
+        "No podemos obtener nada bueno",
+        "Es urgente avanzar en una solución"
+      ],
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "fernando-adolfo-gutierrez-diaz-de-otazu",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes confunden el relato con la realidad",
+        "Parece que no existe un criterio sólido",
+        "Defender nuestra seguridad"
+      ],
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "francisco-javier-marquez-sanchez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "No somos como ustedes",
+        "Deja bastante que desear",
+        "En eso estoy de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/02-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "jose-maria-oleaga-zalvidea",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes saben que esta ley es innecesaria",
+        "Basta ya de locuras",
+        "Hay que defenderla todos los días"
+      ],
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "juan-jose-matari-saez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Usted lo sabe, pero no actúa",
+        "No hay más herencia que la suya ya",
+        "Almería necesita seguridad"
+      ],
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "luis-javier-santamaria-ruiz",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Eso no se lo creen ustedes",
+        "Mentiras y mentiras",
+        "Para apoyar a la Guardia Civil"
+      ],
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "maria-amparo-marco-gual",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "giro",
+      "q": [
+        "No lo han entendido ustedes todavía",
+        "Esta es una moción llena de mentiras",
+        "Transparencia y seguridad jurídica"
+      ],
+      "art": {
+        "sheet": "art/02-13.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "maria-salom-coll",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes lo mezclan todo y sin pudor",
+        "No se entera de eso",
+        "Seguridad, sí, toda la necesaria"
+      ],
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "pedro-manuel-sangines-gutierrez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "viperina",
+      "q": [
+        "Hagan ustedes su trabajo",
+        "Ni van a callar ustedes nuestra voz",
+        "Para garantizar la coordinación"
+      ],
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "ramon-morales-quesada",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes no paran de sorprender",
+        "Su credibilidad es bastante dudosa",
+        "Hasta ahí estamos de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "rocio-briones-morales",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Es algo que ustedes no practican",
+        "Basta de mentiras",
+        "La sociedad española avanza"
+      ],
+      "art": {
+        "sheet": "art/02-14.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "salvador-vidal-varela",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "No caben medias tintas",
+        "Qué vergüenza esas fotos",
+        "Respeten a los periodistas"
+      ],
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "0% 0%",
+        "quadrant": "top-left"
+      }
+    },
+    {
+      "id": "rosa-maria-romero-sanchez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes están en otras cosas",
+        "No ha dado ninguna explicación seria",
+        "Defender a la sanidad pública"
+      ],
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "100% 0%",
+        "quadrant": "top-right"
+      }
+    },
+    {
+      "id": "vicente-tirado-ochoa",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "foco",
+      "q": [
+        "No miren para otro lado",
+        "No valen excusas ni dilaciones",
+        "Hay que defender a quien nos defiende"
+      ],
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left"
+      }
+    },
+    {
+      "id": "paloma-hernandez-cerezo",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "No puede ser más incongruente",
+        "No confundamos a la ciudadanía",
+        "Esperemos contar con su apoyo"
+      ],
+      "art": {
+        "sheet": "art/02-15.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right"
+      }
+    },
+    {
+      "id": "miren-uxue-barcos-berruezo",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "verborrea",
+      "q": [
+        "No los acredita a ustedes",
+        "La mitad es mentira y la otra mitad nostalgia",
+        "Llegar a acuerdos de mínimos"
+      ],
+      "art": {
+        "sheet": "art/03-01.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "ander-gil-garcia",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "No se ponga nervioso, no pasa nada",
+        "No acuden ni los suyos",
+        "Con calma y con tranquilidad"
+      ],
+      "art": {
+        "sheet": "art/03-01.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "manuel-cruz-rodriguez",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "aforado",
+      "q": [
+        "Nuestro voto será negativo",
+        "Una moción rigurosamente innecesaria",
+        "Incluir varias mejoras en su protección"
+      ],
+      "art": {
+        "sheet": "art/03-01.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "guillermo-fernandez-vara",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "giro",
+      "q": [
+        "Al final las cosas no ocurren por casualidad",
+        "No hace falta que yo lo repita",
+        "Estos son los pilares del estado del bienestar"
+      ],
+      "art": {
+        "sheet": "art/03-01.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jesus-ramon-aguirre-munoz",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "foco",
+      "q": [
+        "Esto es un auténtico problema de salud pública",
+        "Tolerancia en menores: tolerancia cero",
+        "Tenemos confianza en su sensibilidad"
+      ],
+      "art": {
+        "sheet": "art/03-02.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-jesus-alvarez-gonzalez",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "Viene el Gobierno y ustedes no le escuchan",
+        "No les interesa hablar de transparencia",
+        "Estamos trabajando para resolver los problemas"
+      ],
+      "art": {
+        "sheet": "art/03-02.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carla-delgado-gomez",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "No lo olviden ustedes nunca",
+        "No lo duden jamás",
+        "Podamos avanzar hacia un consenso amplio"
+      ],
+      "art": {
+        "sheet": "art/03-02.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-carmen-da-silva-mendez",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Sean ustedes claros",
+        "Está teñida de falsedades y de mentiras",
+        "Siempre hay que seguir avanzando"
+      ],
+      "art": {
+        "sheet": "art/03-02.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "joan-josep-queralt-jimenez",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "Parece que esto ustedes no lo han visto",
+        "No será creíble nada de lo que digan",
+        "Con todas las garantías"
+      ],
+      "art": {
+        "sheet": "art/03-03.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "enrique-ruiz-escudero",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "fasttrack",
+      "doctrine": "giro",
+      "q": [
+        "A pesar de lo que ustedes digan",
+        "Yo no voy a entrar en su colección de mentiras",
+        "Más gestión y más acuerdos"
+      ],
+      "art": {
+        "sheet": "art/03-03.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "alfonso-carlos-serrano-sanchez-capuchino",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "No nos fiamos de ustedes",
+        "Venga, señorías, no sean hipócritas",
+        "Dignificar y defender esta Cámara"
+      ],
+      "art": {
+        "sheet": "art/03-03.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miguel-angel-castellon-rubio",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "No falten ustedes más a la verdad",
+        "No buscan llegar hasta el final",
+        "Necesitamos avanzar en el autoconsumo"
+      ],
+      "art": {
+        "sheet": "art/03-03.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-jose-garcia-pelayo-jurado",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "No se quiere a quién no se respeta",
+        "No basta con la palmadita en la espalda",
+        "Tenemos que respetarlos"
+      ],
+      "art": {
+        "sheet": "art/03-04.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-manuel-rey-varela",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes vienen aquí a repetir lo de siempre",
+        "No esperaba esa referencia personal",
+        "Esto mejorará su seguridad"
+      ],
+      "art": {
+        "sheet": "art/03-04.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "ana-maria-beltran-villalba",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "No será que no está tan claro",
+        "Una gran trampa y una gran mentira",
+        "Contra la impunidad"
+      ],
+      "art": {
+        "sheet": "art/03-04.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-mar-caballero-martinez",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes no son transparentes ni creíbles",
+        "Ineficacia y vergüenza nacional",
+        "Consensos y respeto al diferente"
+      ],
+      "art": {
+        "sheet": "art/03-04.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "javier-remirez-apesteguia",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "Usted no lo ha dicho",
+        "No nieguen la evidencia",
+        "Con diálogo y acuerdo"
+      ],
+      "art": {
+        "sheet": "art/03-05.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "francisco-martin-bernabe-perez",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "No me digan ustedes que no tiene guasa la cosa",
+        "Pillado en un montón de nuevas mentiras",
+        "Créanme que merece la pena"
+      ],
+      "art": {
+        "sheet": "art/03-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "luis-jesus-uribe-etxebarria-apalategui",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "No es una idea nueva",
+        "No nos parece una buena idea",
+        "Debemos permanecer activos y firmes"
+      ],
+      "art": {
+        "sheet": "art/03-05.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-dolores-etxano-varela",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "No queda muy claro lo que proponen",
+        "No basta con anunciar grandes cifras globales",
+        "Garantizar el estado del bienestar"
+      ],
+      "art": {
+        "sheet": "art/03-05.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "joan-baptista-bague-roura",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Está claro que no lo están haciendo bien",
+        "Parece claro que esto ha fallado",
+        "Intentar llegar a acuerdos"
+      ],
+      "art": {
+        "sheet": "art/03-06.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "idurre-bideguren-gabantxo",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "No es suficiente tener en cuenta la situación",
+        "Por tanto, basta ya de hipocresía",
+        "Hay que fortalecer el estado del bienestar"
+      ],
+      "art": {
+        "sheet": "art/03-06.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "laura-castel-fort",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no saben lo que significa diálogo",
+        "No hay voluntad de arreglarlo",
+        "Es el momento de defender el bien común"
+      ],
+      "art": {
+        "sheet": "art/03-06.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "igotz-lopez-torre",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "No creo que eso sea cierto",
+        "Entendemos que sería una irresponsabilidad",
+        "Defender la imparcialidad"
+      ],
+      "art": {
+        "sheet": "art/03-06.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jordi-gaseni-blanch",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "Ni tampoco lo conseguirán ustedes",
+        "Es muy decepcionante, una vergüenza",
+        "Defender sus derechos y su dignidad"
+      ],
+      "art": {
+        "sheet": "art/03-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-teresa-pallares-pique",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes piden un cheque en blanco",
+        "Yo creo que ya basta",
+        "Estamos aquí para defender el interés general"
+      ],
+      "art": {
+        "sheet": "art/03-07.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "aniceto-javier-armas-gonzalez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "Hablaban ustedes de planes, pero no existen",
+        "No hay manera de progresar de esta manera",
+        "Cualquier acuerdo de Estado debe ser útil"
+      ],
+      "art": {
+        "sheet": "art/03-07.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "paloma-martin-martin",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes legislan y otros pagan",
+        "Viven en la mentira y el engaño",
+        "Dar seguridad jurídica"
+      ],
+      "art": {
+        "sheet": "art/03-07.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "eloy-suarez-lamata",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "fasttrack",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no pueden dimitir",
+        "Esa fue su primera gran mentira",
+        "Defender algo que es razonable"
+      ],
+      "art": {
+        "sheet": "art/03-08.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-ramon-diez-de-revenga-albacete",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "No sé en qué ensoñación están ustedes",
+        "Basta ya de peleas inútiles",
+        "Hay otras formas de proteger la soberanía"
+      ],
+      "art": {
+        "sheet": "art/03-08.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-antonio-valbuena-alonso",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "No venimos a simplificar",
+        "Nada hay más falso",
+        "Una fortaleza estratégica"
+      ],
+      "art": {
+        "sheet": "art/03-08.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "marta-jorgina-saavedra-domenech",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Esa es la coherencia que ustedes exhiben",
+        "Ustedes no están siendo serios",
+        "Garantizando el marco competencial vigente"
+      ],
+      "art": {
+        "sheet": "art/03-08.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-del-carmen-silva-rego",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Mírense a ustedes mismos",
+        "No me cansaré de repetirlo",
+        "Estoy segura de que podremos llegar a acuerdos"
+      ],
+      "art": {
+        "sheet": "art/03-09.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miguel-gracia-ferrer",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "No les interesa Cataluña",
+        "Su posición siempre es la misma",
+        "Apoyo al emprendimiento"
+      ],
+      "art": {
+        "sheet": "art/03-09.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "antonio-gutierrez-limones",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "foco",
+      "q": [
+        "No hable en nombre de Cataluña",
+        "No por improvisaciones",
+        "Debemos fortalecer nuestra cooperación"
+      ],
+      "art": {
+        "sheet": "art/03-09.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "esther-basilia-del-brio-gonzalez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes qué están haciendo",
+        "Nada más falso que eso",
+        "Buscamos reforzar la seguridad jurídica"
+      ],
+      "art": {
+        "sheet": "art/03-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "fernando-carbonell-tatay",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "No lo aclaran ustedes bien",
+        "No basta con gestionar la crisis",
+        "Defendemos el respeto a los usuarios"
+      ],
+      "art": {
+        "sheet": "art/03-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juanjo-ferrer-martinez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes manipulan los datos",
+        "Falso de toda falsedad",
+        "Las defenderemos todas"
+      ],
+      "art": {
+        "sheet": "art/03-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "nidia-maria-arevalo-gomez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes no están cómodos con esta ley",
+        "No se lleven a engaño",
+        "Defendemos a los concejales de pueblo"
+      ],
+      "art": {
+        "sheet": "art/03-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-manuel-avila-gutierrez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "Usted no me ha hecho caso",
+        "Basta ya de mentiras",
+        "Aquí estamos y seguiremos defendiéndola"
+      ],
+      "art": {
+        "sheet": "art/03-10.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-del-rocio-divar-conde",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "No desprecie a quien sabe más que usted",
+        "No aceptamos sus mentiras",
+        "Le vamos a dar un voto de confianza"
+      ],
+      "art": {
+        "sheet": "art/03-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "antonio-luengo-zapata",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no salen de sus despachos",
+        "Una auténtica vergüenza",
+        "Alimentos seguros y alimentos saludables"
+      ],
+      "art": {
+        "sheet": "art/03-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "inmaculada-hernandez-rodriguez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes van a golpe de ocurrencia",
+        "Basta ya de bulos y de mentiras",
+        "Recuperemos la confianza en el tren de España"
+      ],
+      "art": {
+        "sheet": "art/03-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "cristina-diaz-moreno",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes no han presentado una enmienda",
+        "No basta con admitir el problema",
+        "Ahora garantícenos la seguridad"
+      ],
+      "art": {
+        "sheet": "art/03-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "antonio-magdaleno-alegria",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "Saben ustedes que no fue así",
+        "Basta ya de excusas",
+        "La democracia da nuevas oportunidades"
+      ],
+      "art": {
+        "sheet": "art/03-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-javier-izquierdo-roncero",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes no hacen política",
+        "No se ha mentido y no hay bulos",
+        "Tengan sus rentas garantizadas"
+      ],
+      "art": {
+        "sheet": "art/03-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "mario-soler-santos",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "No les entiendo a ustedes",
+        "Basta de falacias",
+        "No vamos a dejar a nadie atrás"
+      ],
+      "art": {
+        "sheet": "art/03-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-latorre-ruiz",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no la apoyan",
+        "Por tanto, no nos vengan con cuentos",
+        "Les pido diálogo, les pido consenso"
+      ],
+      "art": {
+        "sheet": "art/03-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-jose-sanz-vitorio",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes no pueden planificar",
+        "Ustedes engañan a aquellos con los que firman",
+        "Estamos de acuerdo con lo que propone"
+      ],
+      "art": {
+        "sheet": "art/03-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "lorena-guerra-sanchez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "No les interesa escuchar, claro",
+        "Al campo no se le engaña",
+        "He venido a defender a mi sector"
+      ],
+      "art": {
+        "sheet": "art/03-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-jose-pardo-pumar",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes tienen un problema",
+        "No se empeñen en construir un relato falso",
+        "Defendemos sus símbolos oficiales"
+      ],
+      "art": {
+        "sheet": "art/03-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "raquel-gonzalez-benito",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "giro",
+      "q": [
+        "No son ustedes ejemplo de nada",
+        "Basta de soflamas",
+        "Merece una protección específica"
+      ],
+      "art": {
+        "sheet": "art/03-13.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "cristina-casanueva-jimenez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "foco",
+      "q": [
+        "No nos tomen el pelo, por favor",
+        "Así que no nos engañen",
+        "La vamos a defender"
+      ],
+      "art": {
+        "sheet": "art/03-14.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-teresa-macias-mateos",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "viperina",
+      "q": [
+        "Vayan ustedes a construir desde la realidad",
+        "No las manosea ni las instrumentaliza",
+        "Más respeto y menos ponerse de perfil"
+      ],
+      "art": {
+        "sheet": "art/03-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "inmaculada-sanchez-roca",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes están empleados en la erosión",
+        "No se puede normalizar lo inaceptable",
+        "Seguro que en esto estamos de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/03-14.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "rosa-faustina-viera-fernandez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes tienen otras prioridades claras",
+        "Esta moción es una propuesta engañosa",
+        "Pedimos seguridad jurídica y garantías"
+      ],
+      "art": {
+        "sheet": "art/03-14.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-manuel-hernando-garcia",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "Siempre nos vamos a distinguir de ustedes",
+        "La irresponsabilidad es manifiesta",
+        "Todos debemos remar en la misma dirección"
+      ],
+      "art": {
+        "sheet": "art/03-15.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carmen-belen-lopez-zapata",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "giro",
+      "q": [
+        "A quien no me creo es a usted",
+        "Basta ya de excusas y de minimizar lo ocurrido",
+        "Le pedimos protección"
+      ],
+      "art": {
+        "sheet": "art/03-15.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "severiano-angel-cuesta-alonso",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no fallan",
+        "No va a impedir que se sepa la verdad",
+        "El respeto a la independencia judicial"
+      ],
+      "art": {
+        "sheet": "art/03-15.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "francisco-manuel-fajardo-palarea",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no van a presentar nada",
+        "No han buscado el consenso",
+        "Por tanto, hay que defenderla"
+      ],
+      "art": {
+        "sheet": "art/03-15.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "joaquin-francisco-puig-ferrer",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "verborrea",
+      "q": [
+        "No pueden ponerse de acuerdo",
+        "No saben gestionar la diversidad",
+        "La realidad es el diálogo"
+      ],
+      "art": {
+        "sheet": "art/04-01.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "luis-tudanca-fernandez",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "No se lo van a creer",
+        "Para hacer demagogia, no cuenten conmigo",
+        "Para que salgamos unidos"
+      ],
+      "art": {
+        "sheet": "art/04-01.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-lobato-gandarias",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "aforado",
+      "q": [
+        "Se meten hasta con ustedes mismos",
+        "Así que no se engañen ni nos engañen a nosotros",
+        "Vamos a seguir defendiendo la democracia"
+      ],
+      "art": {
+        "sheet": "art/04-01.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jesus-julio-carnero-garcia",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "giro",
+      "q": [
+        "No lo duden ustedes",
+        "Ténganlo ustedes claro",
+        "En ello estamos trabajando"
+      ],
+      "art": {
+        "sheet": "art/04-01.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-manuel-baltar-blanco",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "foco",
+      "q": [
+        "No hay calendario",
+        "No hay indicadores",
+        "El respeto al pluralismo político"
+      ],
+      "art": {
+        "sheet": "art/04-02.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "pedro-manuel-martin-dominguez",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no vienen con argumentos sólidos",
+        "Algo absolutamente falso",
+        "Mire, estamos completamente de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/04-02.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-francisco-hila-vargas",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "Usted no podría decir eso",
+        "No hay que engañarlos",
+        "Es momento de consensos y de trabajar unidos"
+      ],
+      "art": {
+        "sheet": "art/04-02.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-entrena-avila",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "No se preocupe usted",
+        "Nada más ajeno a la realidad y a la verdad",
+        "Vamos a seguir consiguiendo fondos europeos"
+      ],
+      "art": {
+        "sheet": "art/04-02.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "luis-rogelio-rodriguez-comendador-perez",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "No es una explicación razonable",
+        "No engañen más a los almerienses",
+        "Nosotros debemos reforzar este compromiso"
+      ],
+      "art": {
+        "sheet": "art/04-03.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-eugenia-limon-bayo",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "fasttrack",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes hablan de competitividad",
+        "La mentira y la propaganda",
+        "Andalucía merece respeto"
+      ],
+      "art": {
+        "sheet": "art/04-03.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-emma-buj-sanchez",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "Esto no va de Cataluña",
+        "Sino de mantener un sillón",
+        "Esa misma tarde se solucionó"
+      ],
+      "art": {
+        "sheet": "art/04-03.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "antonio-munoz-martinez",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes inventan un problema donde no lo hay",
+        "Vamos a ver si se aclaran",
+        "Las ayudas están llegando"
+      ],
+      "art": {
+        "sheet": "art/04-03.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-australia-navarro-de-paz",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "Diga usted lo que diga",
+        "Esas son las preguntas que no contesta",
+        "Por eso vamos a apoyar su moción"
+      ],
+      "art": {
+        "sheet": "art/04-04.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "lorena-roldan-suarez",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Qué han hecho ustedes",
+        "Yo mucho rigor a esto no le veo",
+        "Nos parece bien que existan estos acuerdos"
+      ],
+      "art": {
+        "sheet": "art/04-04.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "inigo-fernandez-garcia",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Usted buscó que no hubiera consenso",
+        "Otra mentira del ministro",
+        "La confianza hay que ganársela"
+      ],
+      "art": {
+        "sheet": "art/04-04.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-teresa-perez-esteban",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes responderán por ello",
+        "No seremos cómplices",
+        "Es defender la generosidad y la responsabilidad"
+      ],
+      "art": {
+        "sheet": "art/04-04.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-jesus-bonilla-dominguez",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no pueden dar ninguna lección",
+        "Esto es una vergüenza",
+        "Defender a los jueces es respetar su función"
+      ],
+      "art": {
+        "sheet": "art/04-05.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-ignacio-landaluce-calleja",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "No nos inventamos absolutamente nada",
+        "No se basa en consensos",
+        "Necesitamos ayuda y compromiso"
+      ],
+      "art": {
+        "sheet": "art/04-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "josep-maria-reniu-vilamala",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes en su momento no hicieron nada",
+        "Con esto no basta",
+        "Para defender al sector de la pesca"
+      ],
+      "art": {
+        "sheet": "art/04-05.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "josu-estarrona-elizondo",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes no la están aplicando",
+        "Mentiras irresponsables y mentiras interesadas",
+        "Ese es el modelo que se debe proteger"
+      ],
+      "art": {
+        "sheet": "art/04-05.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "olaia-duarte-lopez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes no aportan ninguna propuesta",
+        "No leen las estadísticas",
+        "Fortalecer el periodismo independiente"
+      ],
+      "art": {
+        "sheet": "art/04-06.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "mario-zubiaga-garate",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes no piensan institucionalmente",
+        "Nosotros no engañamos a nadie",
+        "Garantizar la tutela judicial efectiva"
+      ],
+      "art": {
+        "sheet": "art/04-06.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "francesc-xavier-ten-costa",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "A ustedes no les gusta escucharlo",
+        "No callaremos nunca",
+        "Defendamos la protección de los menores"
+      ],
+      "art": {
+        "sheet": "art/04-06.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "paloma-gomez-enriquez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no pintan nada",
+        "Eso es engaño y tibieza",
+        "Hay que proteger a nuestros trabajadores"
+      ],
+      "art": {
+        "sheet": "art/04-06.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-carmen-riolobos-regadera",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes no hicieron nada",
+        "Me da usted vergüenza",
+        "Garantizar las compensaciones"
+      ],
+      "art": {
+        "sheet": "art/04-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-arenales-serrano-arguello",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "No se rían ustedes",
+        "No más mentiras, no más patrañas",
+        "Para fortalecer nuestro sistema productivo"
+      ],
+      "art": {
+        "sheet": "art/04-07.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-teresa-ruiz-sillero-bernal",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes no dicen la verdad jamás",
+        "Basta ya de esas estrategias electorales",
+        "Rectifiquen y apoyen esta moción"
+      ],
+      "art": {
+        "sheet": "art/04-07.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "francisco-javier-lacalle-lacalle",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "Eso son realidades y no cifras parciales",
+        "Se le debiera caer la cara de vergüenza",
+        "Ese apoyo a los yacimientos arqueológicos"
+      ],
+      "art": {
+        "sheet": "art/04-07.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-ramon-amores-garcia",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "fasttrack",
+      "doctrine": "foco",
+      "q": [
+        "No somos raros ni tampoco invisibles",
+        "No comparto que sea un derecho de segunda",
+        "Sigamos avanzando en el desarrollo de la ley"
+      ],
+      "art": {
+        "sheet": "art/04-08.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "sergio-ramos-acosta",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "No me dan ustedes lecciones",
+        "Es absolutamente mentira",
+        "Hemos hecho nuestro trabajo"
+      ],
+      "art": {
+        "sheet": "art/04-08.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "fernando-priego-chacon",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "En realidad ustedes hacen lo de siempre",
+        "No necesitamos tutelas",
+        "Trabaje por los derechos de los españoles"
+      ],
+      "art": {
+        "sheet": "art/04-08.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-manuel-balseiro-orol",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes no están aquí para adular al Gobierno",
+        "No pedimos más que nadie",
+        "Para garantizar sus comunicaciones"
+      ],
+      "art": {
+        "sheet": "art/04-08.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "mar-cotelo-balmaseda",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes se equivocan con eso",
+        "No lo compartimos y no lo permitimos",
+        "Mejores protocolos de seguridad"
+      ],
+      "art": {
+        "sheet": "art/04-09.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carlos-alfonso-polanco-rebolleda",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes han optado por parches",
+        "No intenten confundir, por favor",
+        "En eso estamos todos de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/04-09.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-asuncion-mayo-fernandez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "foco",
+      "q": [
+        "No va usted realmente más allá",
+        "No trate de engañar a la gente",
+        "Tiene toda nuestra colaboración"
+      ],
+      "art": {
+        "sheet": "art/04-09.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "agustin-almodobar-barcelo",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "viperina",
+      "q": [
+        "Usted no lidera el turismo",
+        "No basta con gestionar",
+        "Seguridad ciudadana y confianza institucional"
+      ],
+      "art": {
+        "sheet": "art/04-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "bienvenido-de-arriba-sanchez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes han perdido el norte",
+        "Basta ya de tanta hipocresía",
+        "Debemos fortalecer nuestro estado de bienestar"
+      ],
+      "art": {
+        "sheet": "art/04-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "melania-mur-sangra",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes se empeñan en maquillar las cifras",
+        "No subestimen a los jóvenes",
+        "Seguro que lo lograremos"
+      ],
+      "art": {
+        "sheet": "art/04-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miguel-angel-jerez-juan",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes no tienen límite",
+        "Ya está bien, basta ya",
+        "Es defender la democracia"
+      ],
+      "art": {
+        "sheet": "art/04-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-de-los-angeles-luna-morales",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "Usted no ha sido riguroso",
+        "No nos van a engañar",
+        "Garantizando la seguridad jurídica"
+      ],
+      "art": {
+        "sheet": "art/04-10.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "manuel-santos-ruiz-rivas",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "Vive usted fuera de la realidad",
+        "Vergüenza le debería dar",
+        "Hay ayudas que son posibles"
+      ],
+      "art": {
+        "sheet": "art/04-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "elena-castillo-lopez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "No confiamos en su palabra",
+        "Allí la mentira tiene consecuencias",
+        "Diálogo, talante, trabajo constructivo"
+      ],
+      "art": {
+        "sheet": "art/04-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "rafael-damian-lemus-rubiales",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes son alternativa de Gobierno",
+        "No se pongan nerviosos",
+        "Seguridad y derechos humanos"
+      ],
+      "art": {
+        "sheet": "art/04-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "vicente-azpitarte-perez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "Ha dejado claro que no se sabe usted el tema",
+        "No les da vergüenza",
+        "Aquí venimos a defender unos principios"
+      ],
+      "art": {
+        "sheet": "art/04-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-fernandez-alvarez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes y sus gobiernos carecen sin duda alguna",
+        "No busquen excusas",
+        "De defender la democracia en sí misma"
+      ],
+      "art": {
+        "sheet": "art/04-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "isabel-maria-moreno-mohamed",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes ni tienen excusa ni tienen remedio",
+        "No engañan a nadie",
+        "Vamos a proteger a quien trabaja"
+      ],
+      "art": {
+        "sheet": "art/04-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "amparo-torres-valencoso",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "No las podemos aceptar",
+        "No son un negocio",
+        "Hay que apoyar al personal científico"
+      ],
+      "art": {
+        "sheet": "art/04-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "pasion-gador-romero-garcia",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes presentan una propuesta vacía",
+        "Todo esto no es retórica",
+        "Reforzamos la protección del donante"
+      ],
+      "art": {
+        "sheet": "art/04-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "kilian-sanchez-san-juan",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "No creo que le resulte desconocida",
+        "No quieren transparencia",
+        "Segura y eficiente"
+      ],
+      "art": {
+        "sheet": "art/04-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "amaro-huelva-betanzos",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes solo buscan un titular",
+        "Es mentira que hubiera seis votos particulares",
+        "El escudo protector de las personas"
+      ],
+      "art": {
+        "sheet": "art/04-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "rafael-rodriguez-villarino",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes son nihilistas",
+        "No sé si usted puede aportar algún dato",
+        "Todavía queda trabajo por delante"
+      ],
+      "art": {
+        "sheet": "art/04-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "cristina-moreno-fernandez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "giro",
+      "q": [
+        "Eso no lo dicen ustedes",
+        "No lo podemos aceptar",
+        "Tenemos que trabajar"
+      ],
+      "art": {
+        "sheet": "art/04-13.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "raul-dalmacio-valero-mejia",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "foco",
+      "q": [
+        "A ustedes eso no les interesa",
+        "Eso es una vergüenza",
+        "Digitalización garantizada"
+      ],
+      "art": {
+        "sheet": "art/04-14.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-manuel-de-la-vega-carrera",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes practican la política del fracaso",
+        "No nos pueden dar clases",
+        "Garantizar oportunidades, empleo y futuro"
+      ],
+      "art": {
+        "sheet": "art/04-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-isabel-moreno-duque",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "Lo que no son cuentas son cuentos",
+        "No trasladen la responsabilidad",
+        "Garantizar un marco común"
+      ],
+      "art": {
+        "sheet": "art/04-14.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "paula-alicia-somalo-garcia",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Esto no va de ustedes y nosotros",
+        "No me señale con el dedo",
+        "Remangarnos y ayudar"
+      ],
+      "art": {
+        "sheet": "art/04-14.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "araceli-martinez-esteban",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "No se entiende que ustedes hablen de esa manera",
+        "No es una propuesta de vanguardia",
+        "Seguimos avanzando"
+      ],
+      "art": {
+        "sheet": "art/04-15.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-patricio-zafra",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "giro",
+      "q": [
+        "No tengan ustedes la piel tan fina",
+        "Son un Gobierno de cuentos y mentiras",
+        "Nos han puesto aquí para defenderles"
+      ],
+      "art": {
+        "sheet": "art/04-15.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miriam-bravo-sanchez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes están de brazos cruzados",
+        "No aceptaremos ni bulos ni bulas",
+        "Garantizar una respuesta humana"
+      ],
+      "art": {
+        "sheet": "art/04-15.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "ana-martinez-zaragoza",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "Qué van a hacer ustedes ahora",
+        "¿No tienen humanidad?",
+        "Más vivienda protegida y asequible"
+      ],
+      "art": {
+        "sheet": "art/04-15.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "gonzalo-jesus-robles-orozco",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "verborrea",
+      "q": [
+        "Ni estamos presentes ni se nos espera",
+        "No son simples datos",
+        "Es el momento de construir puentes y no muros"
+      ],
+      "art": {
+        "sheet": "art/05-01.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "pere-joan-pons-sampietro",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Son ustedes de primero de demagogia",
+        "No vamos a aceptar la enmienda",
+        "Este grupo va a apoyar esta moción"
+      ],
+      "art": {
+        "sheet": "art/05-01.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-teresa-mallada-de-castro",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "aforado",
+      "q": [
+        "Por lo visto ustedes no lo saben",
+        "Mire, esto es una vergüenza",
+        "Acompañar a la persona trabajadora"
+      ],
+      "art": {
+        "sheet": "art/05-01.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "melania-alvarez-garcia",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "escort",
+      "doctrine": "giro",
+      "q": [
+        "No desvíen la atención",
+        "No se engañen y no engañen",
+        "Seguiremos trabajando"
+      ],
+      "art": {
+        "sheet": "art/05-01.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-carmen-isabel-pobo-sanchez",
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
+      "ability": "bank",
+      "doctrine": "foco",
+      "q": [
+        "Por qué no nos cuenta la verdad",
+        "Basta ya de este discurso hipócrita",
+        "Proteger a sus ciudadanos"
+      ],
+      "art": {
+        "sheet": "art/05-02.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-del-pilar-zamora-bastante",
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "No les sirve a ustedes para nada",
+        "Es una verdadera vergüenza",
+        "Estamos aquí para avanzar"
+      ],
+      "art": {
+        "sheet": "art/05-02.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "javier-jimenez-santamaria",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "A España no pueden definirla ustedes",
+        "No se les cae la cara de vergüenza",
+        "La libertad existe cuando hay seguridad"
+      ],
+      "art": {
+        "sheet": "art/05-02.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-antonio-sagredo-marco",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes proclaman la libertad",
+        "No estaba bromeando",
+        "Apoyen los servicios públicos"
+      ],
+      "art": {
+        "sheet": "art/05-02.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "rosa-maria-gallego-neira",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "Usted es ministro, no influencer",
+        "Siete años de mentiras y corrupción",
+        "Protección y respeto"
+      ],
+      "art": {
+        "sheet": "art/05-03.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "gabriel-colome-garcia",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "fasttrack",
+      "doctrine": "giro",
+      "q": [
+        "Tengo una pregunta para ustedes",
+        "No confundan la institución con la presidencia",
+        "Es fruto del diálogo y del acuerdo"
+      ],
+      "art": {
+        "sheet": "art/05-03.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-bautista-milian-querol",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "Pues lo mismo ustedes con la vivienda",
+        "Basta de mirar hacia otro lado",
+        "Defendemos poner Cataluña en marcha"
+      ],
+      "art": {
+        "sheet": "art/05-03.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-yolanda-ibarrola-de-la-fuente",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no sienten bochorno ante esta situación",
+        "Sin ninguna vergüenza",
+        "Defendemos más efectivos"
+      ],
+      "art": {
+        "sheet": "art/05-03.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "luis-martinez-portillo-subero",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "No citan ustedes ni un artículo",
+        "No es una rueda de prensa",
+        "Estamos pidiendo que lo apoye"
+      ],
+      "art": {
+        "sheet": "art/05-04.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-elena-diego-castellanos",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "No lo va a entender absolutamente nadie",
+        "No hay sistema patriarcal que nos detenga",
+        "La sororidad significa apoyo entre las mujeres"
+      ],
+      "art": {
+        "sheet": "art/05-04.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "marta-arocha-correa",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "No parece ni serio ni responsable",
+        "Es rotundamente falso",
+        "Garantizando más y mejores derechos"
+      ],
+      "art": {
+        "sheet": "art/05-04.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "julian-nieva-delgado",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "Siempre ustedes han estado en contra",
+        "No puede ser más real el problema",
+        "Hay que seguir avanzando en esa línea"
+      ],
+      "art": {
+        "sheet": "art/05-04.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "javier-campoy-monreal",
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes viven de dividir",
+        "Hay que tener muy poca vergüenza",
+        "Tengan una cosa por segura"
+      ],
+      "art": {
+        "sheet": "art/05-05.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "adolfo-lander-vera",
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "Pues, empiecen por ustedes mismos",
+        "No aporta nada positivo",
+        "Pactando y avanzando desde el consenso"
+      ],
+      "art": {
+        "sheet": "art/05-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "nuria-medina-santos",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "Ustedes no lo soportan",
+        "No resultan creíbles",
+        "Los derechos se garantizan"
+      ],
+      "art": {
+        "sheet": "art/05-05.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miguel-carmelo-dalmau-blanco",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Esto es lo que ustedes están haciendo",
+        "No nos van a amedrentar",
+        "Invertir en defensa es invertir en seguridad"
+      ],
+      "art": {
+        "sheet": "art/05-05.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-jose-ortega-gomez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Siguen ustedes ahí",
+        "Basta de mensajes grandilocuentes y vacíos",
+        "El Grupo Popular apoyará esta moción"
+      ],
+      "art": {
+        "sheet": "art/05-06.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "eva-maria-redondo-gamero",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "giro",
+      "q": [
+        "No sé qué les molesta tanto",
+        "Los docentes no somos el enemigo de nadie",
+        "Es necesario llegar a un gran acuerdo de país"
+      ],
+      "art": {
+        "sheet": "art/05-06.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "eva-patricia-bueno-campanario",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes les quitan el apoyo",
+        "No vamos a dar ni un paso atrás",
+        "La ley ha ido sumando acuerdos y consensos"
+      ],
+      "art": {
+        "sheet": "art/05-06.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "pablo-gonzalez-menendez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes pegan bandazos",
+        "No nos hagan perder el tiempo",
+        "Es fácil estar de acuerdo con ellos"
+      ],
+      "art": {
+        "sheet": "art/05-06.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carmen-ballester-feliu",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "No rinde cuentas ante esta Cámara",
+        "No ha sido capaz de gestionar la crisis",
+        "Va de proteger el empleo"
+      ],
+      "art": {
+        "sheet": "art/05-07.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "victor-gonzalez-fernandez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes crearon copagos",
+        "No hablen de financiación",
+        "Los vamos a defender"
+      ],
+      "art": {
+        "sheet": "art/05-07.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jaime-morales-garcia",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "No se fían de ustedes",
+        "No se gobierna contra las autonomías",
+        "Respetando el contenido de su propuesta"
+      ],
+      "art": {
+        "sheet": "art/05-07.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-manuel-rodriguez-gonzalez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "Le parece a usted razonable",
+        "No está haciendo nada",
+        "Creo que estamos de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/05-07.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miguel-angel-nacarino-muriel",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "fasttrack",
+      "doctrine": "foco",
+      "q": [
+        "No debemos permitirlo",
+        "No estamos ante una situación alarmante",
+        "Seguiremos defendiendo un sistema fiscal justo"
+      ],
+      "art": {
+        "sheet": "art/05-08.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "lucas-castillo-rodriguez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "coffee",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes no las asumen",
+        "No rechazan el contenido, rechazan la autoría",
+        "Para dar seguridad jurídica"
+      ],
+      "art": {
+        "sheet": "art/05-08.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "alfonso-carlos-moscoso-gonzalez",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "Son ustedes una máquina de reprobar",
+        "No aporta nada al debate democrático",
+        "Garantizando la igualdad"
+      ],
+      "art": {
+        "sheet": "art/05-08.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "martin-sans-pairuto",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "Usted es conservador y yo soy socialista",
+        "He de decirles algo que a lo mejor no les gusta",
+        "Seguro que haremos una gran legislatura"
+      ],
+      "art": {
+        "sheet": "art/05-08.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miguel-angel-de-la-rosa-martin",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Yo creo que la cosa no va por ahí",
+        "Basta de tácticas intimidatorias",
+        "Solicitamos el apoyo favorable a esta moción"
+      ],
+      "art": {
+        "sheet": "art/05-09.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "david-matute-perez",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "A ustedes la ciencia y el CNIO no les interesan",
+        "Construyendo un relato político falso",
+        "Nuestro compromiso es claro"
+      ],
+      "art": {
+        "sheet": "art/05-09.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "nuria-rovira-costas",
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
+      "ability": "summon",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes generan la incertidumbre",
+        "No quieren entenderlo",
+        "La paz y los derechos sociales sean centrales"
+      ],
+      "art": {
+        "sheet": "art/05-09.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "maria-jose-villalba-chavarria",
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
+      "ability": "surge",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes se han apresurado a instrumentalizarlo",
+        "No me las va a dar usted",
+        "Vamos a seguir trabajando para mejorar"
+      ],
+      "art": {
+        "sheet": "art/05-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "francisco-joaquin-camacho-borrego",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "verborrea",
+      "q": [
+        "No defienden ustedes los derechos sociales",
+        "Hacen un flaco favor con ese debate falso",
+        "Sería una medida de apoyo claro a las familias"
+      ],
+      "art": {
+        "sheet": "art/05-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "rosa-maria-aldea-gomez",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "guardia",
+      "q": [
+        "No somos lo mismo",
+        "No aceptamos sus enmiendas",
+        "Respeten la Constitución"
+      ],
+      "art": {
+        "sheet": "art/05-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "cristobal-marques-palliser",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "aforado",
+      "q": [
+        "Ustedes no tienen ninguna credibilidad",
+        "No se puede hacer más el ridículo",
+        "Pedimos respeto a la insularidad"
+      ],
+      "art": {
+        "sheet": "art/05-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-manuel-gonzalez-camacho",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "giro",
+      "q": [
+        "La realidad no se tapa con eslóganes",
+        "No es una tertulia de sobremesa",
+        "La seguridad ferroviaria exige inversión"
+      ],
+      "art": {
+        "sheet": "art/05-10.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carlos-luis-bone-amela",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "foco",
+      "q": [
+        "El problema no es el diagnóstico",
+        "Sin urgencia y sin vergüenza",
+        "Garantizar el acceso a las ayudas"
+      ],
+      "art": {
+        "sheet": "art/05-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "piedad-sanchez-garcia",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "viperina",
+      "q": [
+        "No quieren promesas",
+        "No trunquen sus ilusiones",
+        "Apoyar al autónomo es creer en la libertad"
+      ],
+      "art": {
+        "sheet": "art/05-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carlos-yecora-roca",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "verborrea",
+      "q": [
+        "Aquí no todo vale",
+        "Es que han perdido la vergüenza",
+        "Desde el pluralismo y la independencia"
+      ],
+      "art": {
+        "sheet": "art/05-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "juan-carlos-garcia-diego",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "guardia",
+      "q": [
+        "Ustedes están cambiando los ecosistemas",
+        "Eso de que no existen es mentira",
+        "También hay que protegerlas"
+      ],
+      "art": {
+        "sheet": "art/05-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jesus-caro-adanero",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "aforado",
+      "q": [
+        "La verdad es que creo que se equivocan",
+        "Una serie de premisas falsas",
+        "Ampliar y mejorar la protección"
+      ],
+      "art": {
+        "sheet": "art/05-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "secundino-caso-roiz",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "giro",
+      "q": [
+        "La cosecha no la van a recoger ustedes",
+        "No lo puedo entender",
+        "Necesitamos un compromiso con el mundo rural"
+      ],
+      "art": {
+        "sheet": "art/05-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "luisa-blanch-fulcara",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "foco",
+      "q": [
+        "La tercera enmienda tampoco será aceptada",
+        "Ya sabemos que no es suficiente",
+        "Ayudas a los nuevos emprendedores"
+      ],
+      "art": {
+        "sheet": "art/05-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "julia-maria-liberal-liberal",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "viperina",
+      "q": [
+        "Esta es la realidad que a ustedes les duele",
+        "No han querido aceptar nuestra enmienda",
+        "Reconocimiento y apoyo"
+      ],
+      "art": {
+        "sheet": "art/05-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "rafael-granados-ruiz",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "verborrea",
+      "q": [
+        "Parece ser que no se va a aceptar",
+        "Pero no tengo más remedio",
+        "Dentro del respeto competencial"
+      ],
+      "art": {
+        "sheet": "art/05-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "carmen-torralba-valiente",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "paperwork",
+      "doctrine": "guardia",
+      "q": [
+        "Qué memoria más floja tienen ustedes",
+        "No confundan ya más a la gente",
+        "Apoyamos a la ciudadanía"
+      ],
+      "art": {
+        "sheet": "art/05-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "paloma-ines-sanz-jeronimo",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "lane",
+      "doctrine": "aforado",
+      "q": [
+        "Yo creo que el fin no justifica los medios",
+        "No podemos aceptarla",
+        "Estamos en gran parte de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/05-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "javier-anton-cacho",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "surge",
+      "doctrine": "giro",
+      "q": [
+        "Ustedes se dejaron llevar",
+        "No lo bloqueen en el Congreso",
+        "Tenemos una oportunidad única"
+      ],
+      "art": {
+        "sheet": "art/05-13.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jose-angel-alonso-perez",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "archive",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes son el Gobierno del sablazo fiscal",
+        "Su irresponsabilidad tiene consecuencias",
+        "Trabajar por España"
+      ],
+      "art": {
+        "sheet": "art/05-14.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "angel-luis-gonzalez-munoz",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "shield",
+      "doctrine": "viperina",
+      "q": [
+        "Con esto queda explicado el informe",
+        "Por faltarles las indicaciones indispensables",
+        "Agradeciendo a todos sus miembros el trabajo"
+      ],
+      "art": {
+        "sheet": "art/05-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "salvador-de-foronda-vaquero",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "acta",
+      "doctrine": "verborrea",
+      "q": [
+        "No quieren ustedes trabajar para los ciudadanos",
+        "El Gobierno pierde la vergüenza",
+        "Es garantizar los servicios esenciales"
+      ],
+      "art": {
+        "sheet": "art/05-14.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "miriam-garcia-navarro",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "bank",
+      "doctrine": "guardia",
+      "q": [
+        "Usted no combate los bulos",
+        "Irresponsable e incompetente",
+        "Lo pueden tener seguro"
+      ],
+      "art": {
+        "sheet": "art/05-14.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "jorge-domingo-martinez-antolin",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "fineprint",
+      "doctrine": "aforado",
+      "q": [
+        "No están haciendo ustedes absolutamente nada",
+        "No engañen a los agricultores",
+        "Nuestro apoyo a nuestros agricultores"
+      ],
+      "art": {
+        "sheet": "art/05-15.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "hector-sanchez-mira",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "coffee",
+      "doctrine": "giro",
+      "q": [
+        "No podemos cambiar el pasado",
+        "No se puede volver hacia allí",
+        "Garantizando un trabajo digno"
+      ],
+      "art": {
+        "sheet": "art/05-15.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "francisco-diaz-munoz",
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
+      "ability": "tongue",
+      "doctrine": "foco",
+      "q": [
+        "Ustedes no quieren hablar de servicios públicos",
+        "No vengan aquí a escurrir el bulto",
+        "En eso estaremos de acuerdo"
+      ],
+      "art": {
+        "sheet": "art/05-15.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      }
+    },
+    {
+      "id": "javier-valentin-alonso-coronel",
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
+      "ability": "microphone",
+      "doctrine": "viperina",
+      "q": [
+        "Ustedes tienen ese argumento pueril",
+        "No basta con el reconocimiento legal",
+        "Seguridad jurídica y medios suficientes"
+      ],
+      "art": {
+        "sheet": "art/05-15.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      }
+    }
+  ]
+}

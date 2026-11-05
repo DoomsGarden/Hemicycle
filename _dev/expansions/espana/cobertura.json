@@ -77,26 +77,29 @@
   },
   "seleccion": {
     "prioridad": "Relevancia y trayectoria pública documentadas, actividad reciente, participación como orador y calidad de fuentes. La prioridad del Senado se aplica dentro de su listado, no por delante de todos los demás ámbitos.",
-    "rareza": "Asignar tras valorar la trayectoria; pertenecer a una institución o partido no determina automáticamente el tier.",
+    "rareza": "Revisión conjunta por alcance institucional y trayectoria documentada. Pertenecer a una institución o partido no fija automáticamente un tier. La proporción se aplica al conjunto, no a cada tanda.",
     "proporcion": {
       "comun": 40,
       "raro": 30,
       "especial": 20,
       "legendario": 10
     },
-    "estadisticas": "Usar los tiers existentes y revisar los cupos de cada tanda.",
+    "estadisticas": "Usar statsFor de los tiers existentes. Revisar todas las reservas juntas; no asignar legendarios por cuota de tanda.",
     "frases": "Misma metodología: normal, fuerte y apoyo compartido; fuentes y contexto, sin menciones personales a terceros en la frase de juego, con adaptaciones a cargos documentadas."
   },
-  "publicacion": "Las tandas preparadas permanecen reservadas y fuera del catálogo jugable hasta su activación coordinada. Actualmente: una tanda de 20 y cuatro de 60, en v31.0.2.13.",
+  "publicacion": "Una tanda de 20, cuatro de 60 y una de 83 permanecen reservadas, fuera del catálogo jugable y de Pages, sin nueva versión pública.",
   "tandas": {
-    "tamano": 60,
-    "reparto": {
-      "comun": 24,
-      "raro": 18,
-      "especial": 12,
-      "legendario": 6
+    "tamanoHistorico": 60,
+    "ultima": 83,
+    "repartoGlobal": {
+      "comun": 137,
+      "raro": 103,
+      "especial": 69,
+      "legendario": 34
     },
-    "reservaPreparada": 260,
-    "pendientesArte": 0
+    "criterio": "Los tamaños de tanda solo organizan trabajo; no determinan tier.",
+    "reservaPreparada": 343,
+    "retratosGenerados": 339,
+    "pendientesArte": 4
   }
 }

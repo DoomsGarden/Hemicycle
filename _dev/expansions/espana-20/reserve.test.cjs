@@ -5,7 +5,7 @@ const {loadBattle}=require('../../../tests/helpers/battle.cjs'),norm=s=>s.normal
 test('reservation preserves all active cards, validates tiers and maintains rarity proportions',()=>{
  a.equal(reserve.policy.enabled,false);a.equal(active.cards.length,120);a.equal(preview.catalog.cards.length,140);preview.catalog.validate(preview.catalog);
  for(const c of active.cards)a.equal(JSON.stringify(preview.catalog.cards.find(x=>x.id===c.id)),JSON.stringify(c));
- for(const [r,n]of [['comun',56],['raro',42],['especial',28],['legendario',14]])a.equal(preview.catalog.cards.filter(c=>c.r===r).length,n);
+ for(const [r,n]of [['comun',48],['raro',36],['especial',29],['legendario',27]])a.equal(preview.catalog.cards.filter(c=>c.r===r).length,n);
  for(const c of reserve.sourceCards){a.equal(preview.effects.ability(c.id),c.ability);a.equal(preview.mastery.eligible(c.id),c.rarity==='legendario');}
 });
 test('60 distinct supported phrases: source, author, context, page, date and explicit name substitutions',()=>{
@@ -27,7 +27,7 @@ test('Senate history and current permanent deputation are distinct and deduplica
  a.equal(census.personas.length,311);a.equal(new Set(census.personas.map(p=>p.senadorId)).size,311);a.equal(census.personas.filter(p=>p.diputacionPermanente).length,71);a.equal(census.personas.filter(p=>p.catalogo?.estado==='activo').length,4);a.equal(census.personas.filter(p=>p.catalogo?.estado==='reserva60').length,44);a.equal(census.totales.revisionIdentidad,0);
  for(const p of census.personas){a.ok(p.ficha.startsWith('https://www.senado.es/'));a.ok(!JSON.stringify(p).includes('profileText'));}
  const baltar=census.personas.find(p=>p.senadorId==='19966'),fernandez=census.personas.find(p=>p.nombreListado.startsWith('FERNÁNDEZ BLANCO,'));
- a.equal(baltar.catalogo.id,'jose-manuel-baltar-blanco');a.equal(baltar.catalogo.estado,'reserva60-04');a.equal(fernandez.catalogo,null);
+ a.equal(baltar.catalogo.id,'jose-manuel-baltar-blanco');a.equal(baltar.catalogo.estado,'reserva60-04');a.equal(fernandez.catalogo.id,'jose-fernandez-blanco');a.equal(fernandez.catalogo.estado,'reserva83-06');a.notEqual(fernandez.catalogo.id,'jose-blanco');
  a.notEqual(baltar.catalogo.id,reserve.sourceCards.find(c=>c.name==='José Blanco').id);
 });
 for(const item of reserve.sourceCards)for(const side of ['p','e'])for(const action of ['normal','strong','guard','heal'])test(item.id+' '+side+' '+action+' uses its assigned phrase in the actual local engine',()=>{

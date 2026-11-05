@@ -1,3 +1,5 @@
+> **Revisión vigente — 5-11-2026:** los tiers y el vestuario de todas las tandas se revisaron juntos. Consulta la [revisión global de 343](../reserva-espana/revision-global/README.md), la [galería de esta tanda](revision.html) y la [validación actual](../espana-83-06/README.md). El contenido que sigue y sus QA conservan la instantánea histórica anterior; sus repartos por tanda ya no son los vigentes.
+
 # España · Segunda tanda: 60 cromos reservados
 
 Preparada el 04-11-2026 para **v31.0.2.13**, con activación deshabilitada. [Revisión visual, efectos y fuentes](revision.html) · [Lista CSV](cromos.csv).

@@ -1,0 +1,466 @@
+{
+  "date": "2026-11-05",
+  "preserveOriginalPng": true,
+  "sheets": [
+    {
+      "sheet": "art/06-01.png",
+      "ids": [
+        "alfonso-garcia-rodriguez",
+        "jose-manuel-tofino-perez",
+        "maria-del-lirio-martin-garcia",
+        "maria-susana-marques-escoin"
+      ],
+      "names": [
+        "Alfonso García Rodríguez",
+        "José Manuel Tofiño",
+        "Lirio Martín",
+        "Susana Marqués"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-b813f019-5d85-4d48-9089-a09f68818005.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-02.png",
+      "ids": [
+        "martin-angel-torres-valls",
+        "beatriz-artolazabal-albeniz",
+        "abdelhakim-abdeselam-al-lal",
+        "abigail-garrido-tinta"
+      ],
+      "names": [
+        "Martín Torres Valls",
+        "Beatriz Artolazabal",
+        "Abdelhakim Abdeselam",
+        "Abigail Garrido"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-f8e9af69-9542-4187-8d36-56d43d5be27f.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-03.png",
+      "ids": [
+        "adelina-escandell-grases",
+        "alvaro-zancajo-fenoll",
+        "antonia-lopez-moya",
+        "antonio-martinez-rodriguez"
+      ],
+      "names": [
+        "Adelina Escandell",
+        "Álvaro Zancajo",
+        "Antonia López Moya",
+        "Antonio Martínez Rodríguez"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-0824e596-760f-4228-a701-6e1c8953e30a.png",
+      "unchangedRetry": true,
+      "initialError": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 2c31f668-fd88-4291-b5a5-3419a98a5b35.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "error": null
+    },
+    {
+      "sheet": "art/06-04.png",
+      "ids": [
+        "aurelia-sanchez-navarro",
+        "benjamin-prieto-valencia",
+        "carmelo-romero-hernandez",
+        "carmen-maria-diaz-ruiz"
+      ],
+      "names": [
+        "Aurelia Sánchez",
+        "Benjamín Prieto",
+        "Carmelo Romero",
+        "Carmen Díaz Ruiz"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-94bd595e-3362-40e3-a554-57972fd0dfad.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-05.png",
+      "ids": [
+        "carmen-pagador-lopez",
+        "carolina-agudo-alonso",
+        "clara-maria-martin-garcia",
+        "clemente-sanchez-garnica-gomez"
+      ],
+      "names": [
+        "Carmen Pagador",
+        "Carolina Agudo",
+        "Clara Martín",
+        "Clemente Sánchez-Garnica"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-01f37500-f224-42b0-9d85-5c0897b297d8.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-06.png",
+      "ids": [
+        "dionis-ona-martin",
+        "elena-vila-gomez",
+        "emilio-jose-navarro-castanedo",
+        "enrique-fernandez-rodriguez"
+      ],
+      "names": [
+        "Dionís Oña",
+        "Elena Vila",
+        "Emilio Navarro",
+        "Enrique Fernández"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-38b6e68c-8f1e-4ce8-9a7b-9eccc83b093d.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-07.png",
+      "ids": [
+        "estela-del-carmen-darocas-marin",
+        "francisco-javier-bermudez-carrillo",
+        "francisco-javier-iglesias-garcia",
+        "francisco-javier-lamban-montanes"
+      ],
+      "names": [
+        "Estela Darocas",
+        "Javier Bermúdez",
+        "Javier Iglesias",
+        "Javier Lambán"
+      ],
+      "status": "pending",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": null,
+      "unchangedRetry": true,
+      "initialError": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 99b16fa6-35b7-49a9-8d4c-7677ea193fd8.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID a72b964d-0b73-4c90-8fe0-4468b616d99d.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")"
+    },
+    {
+      "sheet": "art/06-08.png",
+      "ids": [
+        "francisco-javier-oblare-torres",
+        "francisco-jose-fernandez-perez",
+        "israel-roberto-perez-jimenez",
+        "jan-pomes-lopez"
+      ],
+      "names": [
+        "Javier Oblaré",
+        "Francisco José Fernández",
+        "Israel Pérez Jiménez",
+        "Jan Pomés"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-96f3a4d3-9ced-4a56-821c-c50e0b79df90.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-09.png",
+      "ids": [
+        "jaume-llorens-monzonis",
+        "jesus-caicedo-bernabe",
+        "jorge-amado-borrella",
+        "jorge-garcia-vega"
+      ],
+      "names": [
+        "Jaume Llorens",
+        "Jesús Caicedo",
+        "Jorge Amado",
+        "Jorge García Vega"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-e7cd6871-4ee0-4658-bf34-c16184bb34ec.png",
+      "unchangedRetry": true,
+      "initialError": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 4f7d13b1-1eb8-494f-ae5f-04713585b6b1.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"input\\\",\\n      \\\"categories\\\": [\\n        \\\"public-figure\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "error": null
+    },
+    {
+      "sheet": "art/06-10.png",
+      "ids": [
+        "jose-alberto-armijo-navas",
+        "jose-antonio-sanchez-bugallo",
+        "jose-crespo-iglesias",
+        "jose-fernandez-blanco"
+      ],
+      "names": [
+        "José Alberto Armijo",
+        "José Antonio Sánchez Bugallo",
+        "José Crespo",
+        "José Fernández Blanco"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-af3aa132-6097-4fb9-8f82-8eba10ffed70.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-11.png",
+      "ids": [
+        "jose-manuel-aranda-lassa",
+        "jose-manuel-fernandez-diaz",
+        "jose-maria-barrios-tejero",
+        "juan-carlos-serrano-lopez"
+      ],
+      "names": [
+        "José Manuel Aranda",
+        "José Manuel Fernández Díaz",
+        "José María Barrios",
+        "Juan Carlos Serrano"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-5a22bf36-6100-4d77-bbee-0592f53691c3.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-12.png",
+      "ids": [
+        "juan-pablo-martin-martin",
+        "laureano-leon-rodriguez",
+        "leopoldo-jeronimo-sierra-gallardo",
+        "lucia-yeves-leal"
+      ],
+      "names": [
+        "Juan Pablo Martín",
+        "Laureano León",
+        "Leopoldo Sierra",
+        "Lucía Yeves"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-6c62ff6e-6bc7-40a8-9ed7-28d6a456dfe9.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-13.png",
+      "ids": [
+        "luis-menor-perez",
+        "manuel-borrego-rodriguez",
+        "manuel-miras-franqueira",
+        "marcos-albaladejo-gutierrez"
+      ],
+      "names": [
+        "Luis Menor",
+        "Manuel Borrego",
+        "Manuel Mirás",
+        "Marcos Albaladejo"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-c3b52ae2-a65e-4dfa-80c1-bfe8f92335d1.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-14.png",
+      "ids": [
+        "maria-angeles-garcia-herrero",
+        "maria-auxiliadora-pastor-perez-angulo",
+        "maria-cristina-rubio-blasco",
+        "maria-del-carmen-leyte-coello"
+      ],
+      "names": [
+        "Ángeles García Herrero",
+        "Auxiliadora Pastor",
+        "Cristina Rubio",
+        "Carmen Leyte"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-b8b60acd-ff2d-46b4-a4fa-049e2a15a844.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-15.png",
+      "ids": [
+        "maria-del-carmen-perez-becerra",
+        "maria-del-mar-san-martin-ibarra",
+        "maria-dolores-esteve-juan",
+        "maria-dolores-flores-garcia"
+      ],
+      "names": [
+        "Carmen Pérez Becerra",
+        "Mar San Martín",
+        "Dolores Esteve",
+        "Dolores Flores"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-ff141205-e8e6-48cd-a66c-2de2a7f7010e.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-16.png",
+      "ids": [
+        "maria-dolores-marcos-moyano",
+        "maria-eva-martin-perez",
+        "maria-jose-gomez-rodriguez",
+        "maria-montserrat-rivas-de-la-torre"
+      ],
+      "names": [
+        "Dolores Marcos",
+        "Eva Martín Pérez",
+        "María José Gómez",
+        "Montserrat Rivas"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-8e18a95d-6241-4769-a74d-bbbed1680cb7.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-17.png",
+      "ids": [
+        "maria-teresa-fernandez-molina",
+        "mariola-aranda-garcia",
+        "miguel-angel-adrian-gutierrez",
+        "monica-grados-caro"
+      ],
+      "names": [
+        "Teresa Fernández Molina",
+        "Mariola Aranda",
+        "Miguel Ángel Adrián",
+        "Mónica Grados"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-dc7bab9f-b6c7-4795-a685-3bef67032ffc.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-18.png",
+      "ids": [
+        "natalia-ucero-perez",
+        "neus-massanet-florit",
+        "nuria-marin-martinez",
+        "pau-furriol-fornells"
+      ],
+      "names": [
+        "Natalia Ucero",
+        "Neus Massanet",
+        "Núria Marín",
+        "Pau Furriol"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-59e26747-24b0-4fca-939b-9082588141ec.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-19.png",
+      "ids": [
+        "rafael-guia-marques",
+        "rosa-maria-sanchez-gandara",
+        "rosa-maria-serrano-sierra",
+        "sergio-barasoain-rodrigo"
+      ],
+      "names": [
+        "Rafael Guía",
+        "Rosa Sánchez Gándara",
+        "Rosa Serrano",
+        "Sergio Barasoain"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-c40884c7-858f-4618-af0e-addbb3b57e01.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-20.png",
+      "ids": [
+        "simon-valentin-bueno-vargas",
+        "teresa-maria-belmonte-sanchez",
+        "veronica-maria-casal-miguez",
+        "vicente-martinez-mus"
+      ],
+      "names": [
+        "Valentín Bueno",
+        "Teresa Belmonte",
+        "Verónica Casal",
+        "Vicente Martínez Mus"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-0fce67f5-e233-4cd1-8c2d-bdf9d095fccd.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    },
+    {
+      "sheet": "art/06-21.png",
+      "ids": [
+        "vicente-tejedo-tormo",
+        "vidal-galicia-jaramillo",
+        "virginia-perez-galindo"
+      ],
+      "names": [
+        "Vicente Tejedo",
+        "Vidal Galicia",
+        "Virginia Pérez"
+      ],
+      "status": "generated",
+      "tool": "image_gen.imagegen",
+      "date": "2026-11-05",
+      "originalOutputBasename": "exec-0c5934ed-78c3-4e1d-af6d-9a174f23f99f.png",
+      "unchangedRetry": false,
+      "initialError": null,
+      "error": null
+    }
+  ]
+}

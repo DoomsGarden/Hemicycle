@@ -1,33 +1,29 @@
 'use strict';
 const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto');
-const reserve=require('./prepare.cjs'),preview=reserve.preview(),active=require('../../../js/orator-catalog.js'),batch=require('../espana-60-05/propuesta.json'),phrases=require('../espana-60-05/frases.json'),old=require('../espana-20/prepare.cjs'),{loadBattle}=require('../../../tests/helpers/battle.cjs');
-const {createReserve}=require('./create-reserve.cjs'),priorBatches=require('./batches.cjs').slice(0,4);
-const prior=createReserve({id:'prior',consulted:'2026-11-04',cards:priorBatches.flatMap(b=>require(b.proposal).cards.map(c=>({...c,bundleId:b.id,artRoot:path.resolve(__dirname,b.artRoot)}))),phrases:{cromos:priorBatches.flatMap(b=>require(b.phrases).cromos)}});
+const reserve=require('./prepare.cjs'),preview=reserve.preview(),active=require('../../../js/orator-catalog.js'),batch=require('../espana-83-06/propuesta.json'),phrases=require('../espana-83-06/frases.json'),baseline=require('./revision-global/antes.json'),{loadBattle}=require('../../../tests/helpers/battle.cjs');
 const root=path.resolve(__dirname,'../../..'),normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
-test('260 reserved cards extend only the internal overlay; the previous 320 definitions are preserved',()=>{
- a.equal(reserve.policy.enabled,false);a.equal(reserve.policy.pendingPortraits,0);a.equal(reserve.policy.reservedCount,260);a.equal(active.cards.length,120);a.equal(preview.catalog.cards.length,380);preview.catalog.validate(preview.catalog);
- const priorPreview=prior.preview();for(const c of priorPreview.catalog.cards){a.equal(JSON.stringify(preview.catalog.cards.find(v=>v.id===c.id)),JSON.stringify(c));a.equal(preview.effects.ability(c.id),priorPreview.effects.ability(c.id));}
- for(const [rarity,total,added]of [['comun',152,24],['raro',114,18],['especial',76,12],['legendario',38,6]]){a.equal(preview.catalog.cards.filter(c=>c.r===rarity).length,total);a.equal(batch.cards.filter(c=>c.rarity===rarity).length,added);}
- for(const d of active.docs)a.equal(batch.cards.filter(c=>c.doctrine===d.k).length,10);a.equal(new Set(batch.cards.map(c=>c.ability)).size,14);
+test('343 reserved cards use a single global tier distribution and preserve public definitions and previous mechanics',()=>{
+ a.equal(reserve.policy.enabled,false);a.equal(reserve.policy.pendingPortraits,4);a.equal(reserve.policy.reservedCount,343);a.equal(active.cards.length,120);a.equal(preview.catalog.cards.length,463);preview.catalog.validate(preview.catalog);
+ for(const c of active.cards)a.equal(JSON.stringify(preview.catalog.cards.find(v=>v.id===c.id)),JSON.stringify(c));
+ for(const c of baseline.cards){const next=reserve.sourceCards.find(v=>v.id===c.id);a.ok(next);a.deepEqual(next.q,c.q);a.equal(next.ability,c.ability);a.equal(next.doctrine,c.doctrine);}
+ for(const [tier,added,total]of [['comun',137,185],['raro',103,139],['especial',69,93],['legendario',34,46]]){a.equal(reserve.sourceCards.filter(c=>c.rarity===tier).length,added);a.equal(preview.catalog.cards.filter(c=>c.r===tier).length,total);}
+ for(const c of reserve.sourceCards){a.equal(preview.mastery.eligible(c.id),c.rarity==='legendario');a.equal(c.globalTierReview.scope,343);a.ok(!/cupo.*tanda/.test(c.tierReason.split('. ').slice(1).join('. ')));}
 });
-test('180 new phrases have attributable originals, context and official evidence; all 1140 phrases remain distinct',()=>{
- const registry=JSON.parse(preview.files['docs/fuentes-frases-actuales.json']);a.equal(registry.cromos.length,380);const all=registry.cromos.flatMap(c=>c.frases);a.equal(all.length,1140);a.equal(new Set(all.map(q=>normalize(q.frase))).size,1140);a.equal(phrases.cromos.length,60);
- for(const c of phrases.cromos){a.equal(c.frases.length,3);for(const q of c.frases){a.ok(q.frase.length<=47);a.equal(normalize(q.frase),normalize(q.original));a.ok(normalize(q.contexto).includes(normalize(q.original)));a.match(q.pdfSha256,/^[a-f0-9]{64}$/);a.match(q.fuente,/^https:\/\/www\.(?:senado|congreso)\.es\/.+\.PDF#page=\d+$/);a.ok(q.fechaIntervencion>='2010-01-01'&&q.fechaIntervencion<='2026-11-05');a.ok(q.cabeceraOrador);}}
+test('249 new phrases distinguish official journals and attributed press; all 1389 phrases remain distinct',()=>{
+ const registry=JSON.parse(preview.files['docs/fuentes-frases-actuales.json']),all=registry.cromos.flatMap(c=>c.frases);a.equal(registry.cromos.length,463);a.equal(all.length,1389);a.equal(new Set(all.map(q=>normalize(q.frase))).size,1389);a.equal(phrases.cromos.length,83);
+ let pdf=0,html=0;for(const c of phrases.cromos){a.equal(c.frases.length,3);for(const q of c.frases){a.ok(q.frase.length<=47);a.equal(normalize(q.frase),normalize(q.original));a.ok(normalize(q.contexto).includes(normalize(q.original)));a.ok(q.fechaIntervencion>='2010-01-01'&&q.fechaIntervencion<='2026-11-05');a.ok(q.cabeceraOrador);if(q.sourceFormat==='html'){html++;a.match(q.htmlSha256,/^[a-f0-9]{64}$/);a.match(q.fuente,/^https:\/\/www\.europapress\.es\//);a.equal(q.comprobado_en,'declaracion_atribuida_en_prensa');}else{pdf++;a.match(q.pdfSha256,/^[a-f0-9]{64}$/);a.match(q.fuente,/^https:\/\/www\.(?:senado|congreso)\.es\/.+\.PDF#page=\d+$/);}}}a.equal(pdf,219);a.equal(html,30);
 });
-test('all 260 reserved portraits exist; the previous and new atlases match their recorded hashes',()=>{
- a.equal(Object.keys(reserve.artAssets).length,65);
- a.equal(batch.cards.filter(c=>c.gaze==='off_camera').length,56);a.equal(batch.cards.filter(c=>c.gaze==='camera').length,4);
- for(const dir of ['espana-60-04','espana-60-05']){
-  const sheets=require('../'+dir+'/art/manifest.json');a.equal(sheets.files.length,15);a.equal(sheets.pending.length,0);
-  for(const item of sheets.files){const bytes=fs.readFileSync(path.join(__dirname,'../'+dir,item.file));a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),item.sha256);a.equal(bytes.readUInt32BE(16)*4,bytes.readUInt32BE(20)*3);}
- }
- a.equal(reserve.sourceCards.filter(c=>c.art.status==='pending').length,0);for(const file of Object.values(reserve.artAssets))a.ok(fs.existsSync(file));
+test('portraits and wardrobe atlases retain original PNG hashes and blocked portraits stay explicit',()=>{
+ for(const folder of ['../espana-83-06','./revision-global']){const manifest=require(folder+'/art/manifest.json');for(const item of manifest.files){const file=path.join(__dirname,folder,item.file),bytes=fs.readFileSync(file);a.equal(crypto.createHash('sha256').update(bytes).digest('hex'),item.sha256);a.equal(bytes.readUInt32BE(16)*4,bytes.readUInt32BE(20)*3);}}
+ a.equal(batch.cards.filter(c=>c.art.status==='pending').length,4);a.equal(reserve.sourceCards.filter(c=>c.art.status==='pending').length,4);for(const file of Object.values(reserve.artAssets))a.ok(fs.existsSync(file));
+ const pending=batch.cards.filter(c=>c.art.status==='pending').map(c=>c.name);a.deepEqual(pending,['Estela Darocas','Javier Bermúdez','Javier Iglesias','Javier Lambán']);
+ for(const c of reserve.sourceCards.filter(c=>c.wardrobeReview?.status==='generated')){a.ok(c.artBeforeGlobalReview);a.ok(c.art.sheet.includes('revision-global'));a.equal(c.gaze,'off_camera');}
 });
-test('public installation, client modules, sources, economy and backend rules still exclude every reserved ID',()=>{
+test('public installation, client, economy and backend exclude all reserved IDs; activation is gated',()=>{
  const economy=require('../../online/economy.cjs'),rules=require('../../../js/market-rules.js').create(economy.catalog,active.packs);
  const files=['index.html','sw.js','manifest.json','Readme.html','README.md','fuentes/index.html','docs/fuentes-frases-actuales.json',...fs.readdirSync(path.join(root,'js')).filter(f=>f.endsWith('.js')).map(f=>'js/'+f)];
  for(const c of reserve.sourceCards){a.ok(!economy.catalog.some(x=>x.id===c.id));a.throws(()=>rules.card(c.id));for(const f of files)a.ok(!fs.readFileSync(path.join(root,f),'utf8').includes(c.id),f+' exposes '+c.id);}
- a.match(fs.readFileSync(path.join(root,'_config.yml'),'utf8'),/exclude:\s*\n\s*- _dev/);a.throws(()=>reserve.emit(root));const dir=fs.mkdtempSync('/tmp/hemicycle-reserve-test-');try{reserve.emit(dir);const manifest=JSON.parse(fs.readFileSync(path.join(dir,'RESERVED.json')));a.equal(manifest.pendingPortraits,0);a.equal(manifest.releaseReady,false);a.ok(!manifest.requiredBeforeActivation.some(s=>s.includes('retratos pendientes')));}finally{fs.rmSync(dir,{recursive:true,force:true});}
+ a.match(fs.readFileSync(path.join(root,'_config.yml'),'utf8'),/exclude:\s*\n\s*- _dev/);a.throws(()=>reserve.emit(root));const dir=fs.mkdtempSync('/tmp/hemicycle-reserve-test-');try{reserve.emit(dir);const manifest=JSON.parse(fs.readFileSync(path.join(dir,'RESERVED.json')));a.equal(manifest.pendingPortraits,4);a.equal(manifest.releaseReady,false);a.ok(manifest.requiredBeforeActivation.some(s=>s.includes('retratos pendientes')));}finally{fs.rmSync(dir,{recursive:true,force:true});}
 });
 function duel(item,side){
  const c=loadBattle('normal',.25,{HemicycleCatalog:preview.catalog,HemicycleBasicEffects:preview.effects});c.G.side=side;c.G.n=1;c.G.turnDeadline=null;c.G.leader={p:{uid:'absent-p'},e:{uid:'absent-e'}};
@@ -49,6 +45,7 @@ for(const item of reserve.sourceCards)for(const side of ['p','e']){
  });
 }
 
-test('census retains unique identities, 260 reserved profiles, 83 remaining profiles and no pending art',()=>{
- const {build}=require('../espana/build-census.cjs'),c=build();a.equal(c.totales.personas,440);a.equal(c.totales.activos,97);a.equal(c.totales.reservaTotal,260);a.equal(c.totales.pendientes,83);a.equal(c.totales.reservadosPendientesArte,0);a.equal(new Set(c.personas.map(p=>p.id)).size,440);for(const item of batch.cards){const p=c.personas.find(p=>p.id===item.id);a.equal(p.catalogo,'reserva60-05');a.equal(p.referencias.filter(r=>r.tipo==='senado_XV').length,1);a.equal(p.pendientesReserva?.includes('arte')||false,item.art.status==='pending');}
+
+test('census has 343 reserved identities and no unresearched profiles in the covered source lists',()=>{
+ const {build}=require('../espana/build-census.cjs'),c=build();a.equal(c.totales.personas,440);a.equal(c.totales.activos,97);a.equal(c.totales.reservaTotal,343);a.equal(c.totales.pendientes,0);a.equal(c.totales.reservadosPendientesArte,4);a.equal(c.completo,false);a.equal(new Set(c.personas.map(p=>p.id)).size,440);for(const item of batch.cards){const p=c.personas.find(p=>p.id===item.id);a.equal(p.catalogo,'reserva83-06');a.equal(p.referencias.filter(r=>r.tipo==='senado_XV').length,1);a.equal(p.pendientesReserva?.includes('arte')||false,item.art.status==='pending');}
 });

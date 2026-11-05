@@ -7,7 +7,7 @@ const proposal={cards:config.cards},phrases=config.phrases;
 const read=f=>fs.readFileSync(path.join(root,f),'utf8');
 const currentCatalog=require('../../../js/orator-catalog.js'),currentEffects=require('../../../js/basic-effects.js');
 const sourceCards=proposal.cards.map(c=>{const d=currentCatalog.docs.find(d=>d.k===c.doctrine),b=currentEffects.definition(c.ability);return {...c,abilityName:b.name,basicEffect:{id:c.ability,name:b.name,description:b.description,target:b.target,polarity:b.polarity},passive:{id:d.k,name:d.n,description:d.d,activation:'Doctrina del líder, con los requisitos y contrarrestos actuales.'},q:phrases.cromos.find(q=>q.id===c.id).frases.map(q=>q.frase)};});
-const policy=Object.freeze({id:config.id,state:'reserved',enabled:false,publicCatalogSize:120,reservedCount:sourceCards.length,previewCatalogSize:120+sourceCards.length,pendingPortraits:sourceCards.filter(c=>c.art.status==='pending').length});
+const policy=Object.freeze({id:config.id,state:'reserved',enabled:false,publicCatalogSize:120,reservedCount:sourceCards.length,previewCatalogSize:120+sourceCards.length,pendingWardrobeVariants:sourceCards.filter(c=>c.wardrobeReview?.status==='pending').length,pendingPortraits:sourceCards.filter(c=>c.art.status==='pending').length});
 const artAssets=Object.fromEntries(sourceCards.filter(c=>c.art.status!=='pending').map(c=>[(c.bundleId||config.id)+'-'+path.basename(c.art.sheet),path.resolve(c.artRoot,c.art.sheet)]));
 function insert(source,marker,text){if(source.split(marker).length!==2)throw Error('Ha cambiado el punto de integración: '+marker);return source.replace(marker,text+'\n'+marker);}
 function compile(){
@@ -27,7 +27,7 @@ function compile(){
  const mastery=read('js/legendary-mastery.js').replace(']),FINAL=250;','].concat('+legends+')),FINAL=250;');
  if(mastery===read('js/legendary-mastery.js'))throw Error('Ha cambiado maestría');
  const context={...require('../../../js/orator-context.js')};
- for(const c of sourceCards)context[c.id]={id:c.id,name:c.name,extract:'La ilustración representa su etapa '+c.depictedPeriod+' en '+c.affiliation.referenceGroup+'. Las frases proceden de intervenciones parlamentarias oficiales y pueden corresponder a otra etapa, indicada en cada referencia.',source:c.reference.profile,consulted:config.consulted,attribution:(c.institution||'Congreso de los Diputados')+' · síntesis editorial propia',license:'Hechos sintetizados; texto propio'};
+ for(const c of sourceCards)context[c.id]={id:c.id,name:c.name,extract:'La ilustración representa su etapa '+c.depictedPeriod+' en '+c.affiliation.referenceGroup+'. Las frases proceden de intervenciones parlamentarias o declaraciones propias atribuidas por la fuente indicada y pueden corresponder a otra etapa, indicada en cada referencia.',source:c.reference.profile,consulted:config.consulted,attribution:(c.institution||'Congreso de los Diputados')+' · síntesis editorial propia',license:'Hechos sintetizados; texto propio'};
  const contextJS='(function(root,data){if(typeof module==="object"&&module.exports)module.exports=data;else root.HemicycleOratorContext=data;})(typeof globalThis!=="undefined"?globalThis:this,'+JSON.stringify(context)+');\n';
  const current=require('../../../docs/fuentes-frases-actuales.json');
  const registry={...current,reservaConsultado:phrases.consultado,alcance:'Vista interna: catálogo activo más reserva. No publicado. Las referencias anteriores conservan su fecha de consulta; las nuevas indican comprobado_el.',cromos:[...current.cromos,...phrases.cromos]};
@@ -51,7 +51,7 @@ function emit(destination){
  if(!out.startsWith('/tmp/')&&!out.startsWith(path.join(root,'_dev')+path.sep))throw Error('La reserva solo se materializa en /tmp o _dev.');
  const data=compile();
  for(const [file,source]of Object.entries(data.files)){const target=path.join(out,file);fs.mkdirSync(path.dirname(target),{recursive:true});fs.writeFileSync(target,source);}
- fs.writeFileSync(path.join(out,'RESERVED.json'),JSON.stringify({...policy,releaseReady:false,requiredBeforeActivation:[...(policy.pendingPortraits?['Completar y revisar los '+policy.pendingPortraits+' retratos pendientes']:[]),'Nueva versión de reglas y preservación de reproducciones offline históricas','Publicación coordinada de cliente, backend, fuentes y arte','Pruebas completas de progresión, economía, sobres, maestría y PWA sobre la versión activada']},null,2));
+ fs.writeFileSync(path.join(out,'RESERVED.json'),JSON.stringify({...policy,releaseReady:false,requiredBeforeActivation:[...(policy.pendingWardrobeVariants?['Revisar los '+policy.pendingWardrobeVariants+' cambios de vestuario pendientes']:[]),...(policy.pendingPortraits?['Completar y revisar los '+policy.pendingPortraits+' retratos pendientes']:[]),'Nueva versión de reglas y preservación de reproducciones offline históricas','Publicación coordinada de cliente, backend, fuentes y arte','Pruebas completas de progresión, economía, sobres, maestría y PWA sobre la versión activada']},null,2));
  return out;
 }
 return {policy,compile,preview,previewIndex,emit,sourceCards,artAssets};

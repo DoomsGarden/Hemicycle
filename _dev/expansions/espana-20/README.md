@@ -1,3 +1,5 @@
+> **Revisión vigente — 5-11-2026:** los tiers y el vestuario de todas las tandas se revisaron juntos. Consulta la [revisión global de 343](../reserva-espana/revision-global/README.md), la [galería de esta tanda](revision.html) y la [validación actual](../espana-83-06/README.md). El contenido que sigue y sus QA conservan la instantánea histórica anterior; sus repartos por tanda ya no son los vigentes.
+
 # Reserva de España · 20 cromos
 
 Revisión: 4 de noviembre de 2026. **Estado: reservado, desactivado en el juego publicado.**

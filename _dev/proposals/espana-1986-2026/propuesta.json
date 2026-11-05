@@ -1,5 +1,5 @@
 {
-  "status": "proposal-only",
+  "status": "reserved_not_public",
   "date": "2026-11-04",
   "period": {
     "from": "1986-11-04",
@@ -17,10 +17,8 @@
     }
   },
   "targetNew": {
-    "comun": 8,
-    "raro": 6,
-    "especial": 4,
-    "legendario": 2
+    "legendario": 15,
+    "especial": 5
   },
   "projectedTotal": 140,
   "artBrief": {
@@ -55,7 +53,7 @@
       "referenceLegislature": 4,
       "referenceStart": "14/11/1989",
       "referenceEnd": "29/10/1991",
-      "tierReason": "Liderazgo del CDS en el Congreso; figura de alcance estatal e histórico.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidente del Gobierno y liderazgo del CDS; actividad parlamentaria dentro del intervalo. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo castaño oscuro peinado hacia atrás, entradas suaves, rostro alargado y mandíbula marcada; sin barba ni gafas.",
       "pose": "Tres cuartos, mirada lateral, dos micrófonos de atril de época.",
       "microphones": true,
@@ -82,7 +80,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:adolfo suarez gonzalez"
+      "personKey": "ES:adolfo suarez gonzalez",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidente del Gobierno y liderazgo del CDS; actividad parlamentaria dentro del intervalo.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=215&idLegislatura=IV"
+      }
     },
     {
       "index": 2,
@@ -102,7 +107,7 @@
       "referenceLegislature": 3,
       "referenceStart": "09/07/1986",
       "referenceEnd": "03/07/1987",
-      "tierReason": "Liderazgo de Alianza Popular en el Congreso y extensa trayectoria institucional.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia de la Xunta y liderazgo estatal de AP/PP. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Frente amplia, pelo corto oscuro en laterales con entradas pronunciadas, mandíbula ancha; sin barba ni gafas en esta referencia.",
       "pose": "Frontal firme, mirada ligeramente lateral; sin micrófono.",
       "microphones": false,
@@ -129,7 +134,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:manuel fraga iribarne"
+      "personKey": "ES:manuel fraga iribarne",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidencia de la Xunta y liderazgo estatal de AP/PP.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=206&idLegislatura=III"
+      }
     },
     {
       "index": 3,
@@ -137,11 +149,11 @@
       "name": "Alfredo Pérez Rubalcaba",
       "canonicalName": "Pérez Rubalcaba, Alfredo",
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "legendario",
       "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "viperina",
       "ability": "archive",
       "abilityName": "Hemeroteca insistente",
@@ -149,7 +161,7 @@
       "referenceLegislature": 9,
       "referenceStart": "24/03/2008",
       "referenceEnd": "13/12/2011",
-      "tierReason": "Liderazgo y trayectoria estatal, con gran presencia en el debate parlamentario.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Vicepresidencia del Gobierno, ministerios y liderazgo estatal del PSOE. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Coronilla despejada, pelo corto en los laterales, barba y bigote entrecanos recortados; sin gafas.",
       "pose": "Tres cuartos e inclinación ligera hacia el atril; un micrófono.",
       "microphones": true,
@@ -174,7 +186,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:alfredo perez rubalcaba"
+      "personKey": "ES:alfredo perez rubalcaba",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Vicepresidencia del Gobierno, ministerios y liderazgo estatal del PSOE.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=84&idLegislatura=IX"
+      }
     },
     {
       "index": 4,
@@ -182,11 +201,11 @@
       "name": "Francina Armengol",
       "canonicalName": "Armengol Socias, Francina",
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "legendario",
       "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "aforado",
       "ability": "lane",
       "abilityName": "Debate encarrilado",
@@ -194,7 +213,7 @@
       "referenceLegislature": 15,
       "referenceStart": "09/08/2023",
       "referenceEnd": null,
-      "tierReason": "Presidencia del Congreso y trayectoria autonómica; peso institucional.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencias del Congreso y del Govern balear. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Melena ondulada castaña a la altura de los hombros, reflejos claros, rostro ovalado; sin gafas.",
       "pose": "Tres cuartos, expresión de intervención institucional; un micrófono.",
       "microphones": true,
@@ -221,7 +240,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:francina armengol socias"
+      "personKey": "ES:francina armengol socias",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Presidencias del Congreso y del Govern balear.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=185&idLegislatura=XV"
+      }
     },
     {
       "index": 5,
@@ -229,11 +255,11 @@
       "name": "Josep Borrell",
       "canonicalName": "Borrell Fontelles, Josep",
       "country": "ES",
-      "rarity": "especial",
-      "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
       "doctrine": "viperina",
       "ability": "microphone",
       "abilityName": "Micrófono indiscreto",
@@ -241,7 +267,7 @@
       "referenceLegislature": 7,
       "referenceStart": "23/03/2000",
       "referenceEnd": "02/04/2004",
-      "tierReason": "Trayectoria parlamentaria y de liderazgo, con posterior proyección europea.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia del Parlamento Europeo, ministerio y alta representación de la UE. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto gris, cara alargada, gafas rectangulares finas; sin barba.",
       "pose": "Tres cuartos con gesto abierto bajo y sin micrófono.",
       "microphones": false,
@@ -268,7 +294,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:josep borrell fontelles"
+      "personKey": "ES:josep borrell fontelles",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Presidencia del Parlamento Europeo, ministerio y alta representación de la UE.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=123&idLegislatura=VII"
+      }
     },
     {
       "index": 6,
@@ -276,11 +309,11 @@
       "name": "Margarita Robles",
       "canonicalName": "Robles Fernández, Margarita",
       "country": "ES",
-      "rarity": "especial",
-      "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "aforado",
       "ability": "coffee",
       "abilityName": "Café parlamentario",
@@ -288,7 +321,7 @@
       "referenceLegislature": 15,
       "referenceStart": "10/08/2023",
       "referenceEnd": "01/12/2023",
-      "tierReason": "Presencia institucional estatal y trayectoria parlamentaria.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Defensa y trayectoria de responsabilidad institucional estatal. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo liso castaño oscuro a los hombros, rostro ovalado alargado, cejas marcadas; sin gafas.",
       "pose": "Tres cuartos, expresión serena y firme; sin micrófono.",
       "microphones": false,
@@ -315,7 +348,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:margarita robles fernandez"
+      "personKey": "ES:margarita robles fernandez",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Ministerio de Defensa y trayectoria de responsabilidad institucional estatal.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=233&idLegislatura=XV"
+      }
     },
     {
       "index": 7,
@@ -323,11 +363,11 @@
       "name": "José Bono",
       "canonicalName": "Bono Martínez, José",
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "aforado",
       "ability": "acta",
       "abilityName": "Fuera del acta",
@@ -335,7 +375,7 @@
       "referenceLegislature": 9,
       "referenceStart": "26/03/2008",
       "referenceEnd": "13/12/2011",
-      "tierReason": "Presidencia del Congreso y trayectoria autonómica y ministerial.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencias del Congreso y de Castilla-La Mancha; Ministerio de Defensa. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto oscuro peinado hacia atrás, nariz prominente, rostro ancho; sin barba ni gafas.",
       "pose": "Intervención frontal con palma abierta baja y un micrófono.",
       "microphones": true,
@@ -362,7 +402,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:jose bono martinez"
+      "personKey": "ES:jose bono martinez",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Presidencias del Congreso y de Castilla-La Mancha; Ministerio de Defensa.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=212&idLegislatura=IX"
+      }
     },
     {
       "index": 8,
@@ -370,11 +417,11 @@
       "name": "Aitor Esteban",
       "canonicalName": "Esteban Bravo, Aitor",
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "verborrea",
       "ability": "bank",
       "abilityName": "Dietas guardadas",
@@ -382,7 +429,7 @@
       "referenceLegislature": 14,
       "referenceStart": "21/11/2019",
       "referenceEnd": "17/08/2023",
-      "tierReason": "Portavocía parlamentaria del PNV y visibilidad en el debate estatal.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto castaño con canas, cejas pobladas y cara ancha; sin barba ni gafas.",
       "pose": "Tres cuartos hacia la izquierda, un micrófono de mesa.",
       "microphones": true,
@@ -409,7 +456,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:aitor esteban bravo"
+      "personKey": "ES:aitor esteban bravo",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=94&idLegislatura=XIV"
+      }
     },
     {
       "index": 9,
@@ -417,11 +471,11 @@
       "name": "Juanma Moreno",
       "canonicalName": "Moreno Bonilla, Juan Manuel",
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "foco",
       "ability": "surge",
       "abilityName": "Se viene arriba",
@@ -429,7 +483,7 @@
       "referenceLegislature": 10,
       "referenceStart": "01/12/2011",
       "referenceEnd": "09/01/2012",
-      "tierReason": "Trayectoria parlamentaria y posterior presidencia de la Junta de Andalucía.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia de la Junta de Andalucía y trayectoria estatal. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo negro corto, cejas oscuras, mejillas redondeadas y sonrisa marcada; sin barba ni gafas.",
       "pose": "Tres cuartos a la derecha, sin micrófono.",
       "microphones": false,
@@ -456,7 +510,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:juan manuel moreno bonilla"
+      "personKey": "ES:juan manuel moreno bonilla",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Presidencia de la Junta de Andalucía y trayectoria estatal.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=221&idLegislatura=X"
+      }
     },
     {
       "index": 10,
@@ -464,11 +525,11 @@
       "name": "Pedro Solbes",
       "canonicalName": "Solbes Mira, Pedro",
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "guardia",
       "ability": "fasttrack",
       "abilityName": "Ventanilla rápida",
@@ -476,7 +537,7 @@
       "referenceLegislature": 9,
       "referenceStart": "26/03/2008",
       "referenceEnd": "14/09/2009",
-      "tierReason": "Vicepresidencia económica y trayectoria ministerial y europea.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Vicepresidencia económica, ministerios y Comisión Europea. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Entradas amplias, pelo gris fino, barba y bigote grises cortos, gafas metálicas finas.",
       "pose": "Casi frontal, mirada lateral reflexiva; sin micrófono.",
       "microphones": false,
@@ -503,7 +564,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:pedro solbes mira"
+      "personKey": "ES:pedro solbes mira",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Vicepresidencia económica, ministerios y Comisión Europea.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=79&idLegislatura=IX"
+      }
     },
     {
       "index": 11,
@@ -511,11 +579,11 @@
       "name": "Rosa Díez",
       "canonicalName": "Díez González, Rosa María",
       "country": "ES",
-      "rarity": "raro",
-      "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "foco",
       "ability": "tongue",
       "abilityName": "Lengua de trapo",
@@ -523,7 +591,7 @@
       "referenceLegislature": 10,
       "referenceStart": "29/11/2011",
       "referenceEnd": "13/01/2016",
-      "tierReason": "Fundación y portavocía de UPyD, con presencia parlamentaria propia.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Media melena corta castaño claro/rubia, raya lateral, gafas rectangulares oscuras y sonrisa marcada.",
       "pose": "Tres cuartos en intervención, un micrófono.",
       "microphones": true,
@@ -550,7 +618,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:rosa maria diez gonzalez"
+      "personKey": "ES:rosa maria diez gonzalez",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=42&idLegislatura=X"
+      }
     },
     {
       "index": 12,
@@ -558,11 +633,11 @@
       "name": "José Blanco",
       "canonicalName": "Blanco López, José",
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
       "doctrine": "giro",
       "ability": "summon",
       "abilityName": "Llamada al suplente",
@@ -570,7 +645,7 @@
       "referenceLegislature": 9,
       "referenceStart": "26/03/2008",
       "referenceEnd": "27/09/2011",
-      "tierReason": "Trayectoria organizativa y ministerial con presencia en el Congreso.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Fomento y responsabilidad organizativa estatal. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo castaño corto, gafas rectangulares finas, rostro ovalado y ancho; sin barba.",
       "pose": "Ligera inclinación hacia delante, un micrófono de atril.",
       "microphones": true,
@@ -597,7 +672,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:jose blanco lopez"
+      "personKey": "ES:jose blanco lopez",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Ministerio de Fomento y responsabilidad organizativa estatal.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=271&idLegislatura=IX"
+      }
     },
     {
       "index": 13,
@@ -605,11 +687,11 @@
       "name": "Cristina Narbona",
       "canonicalName": "Narbona Ruiz, Cristina",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "giro",
       "ability": "paperwork",
       "abilityName": "Papeles traspapelados",
@@ -617,7 +699,7 @@
       "referenceLegislature": 10,
       "referenceStart": "01/12/2011",
       "referenceEnd": "28/12/2012",
-      "tierReason": "Trayectoria ministerial y parlamentaria, perfil de gestión.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Medio Ambiente y vicepresidencia del Senado. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo castaño rojizo a los hombros con flequillo suave; rostro ovalado y sin gafas.",
       "pose": "Tres cuartos hacia la derecha, sin micrófono.",
       "microphones": false,
@@ -644,7 +726,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:cristina narbona ruiz"
+      "personKey": "ES:cristina narbona ruiz",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Ministerio de Medio Ambiente y vicepresidencia del Senado.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=203&idLegislatura=X"
+      }
     },
     {
       "index": 14,
@@ -652,11 +741,11 @@
       "name": "Ana Oramas",
       "canonicalName": "Oramas González-Moro, Ana María",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "verborrea",
       "ability": "acta",
       "abilityName": "Fuera del acta",
@@ -664,7 +753,7 @@
       "referenceLegislature": 14,
       "referenceStart": "25/11/2019",
       "referenceEnd": "30/05/2023",
-      "tierReason": "Portavocía de Coalición Canaria y presencia sostenida en el Congreso.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto castaño claro/rubio recogido hacia atrás, rostro ovalado y cejas finas; sin gafas.",
       "pose": "Intervención lateral, un micrófono.",
       "microphones": true,
@@ -691,7 +780,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:ana maria oramas gonzalez-moro"
+      "personKey": "ES:ana maria oramas gonzalez-moro",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=161&idLegislatura=XIV"
+      }
     },
     {
       "index": 15,
@@ -699,11 +795,11 @@
       "name": "Rosa Aguilar",
       "canonicalName": "Aguilar Rivero, Rosa",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "guardia",
       "ability": "fineprint",
       "abilityName": "Letra pequeña",
@@ -711,7 +807,7 @@
       "referenceLegislature": 10,
       "referenceStart": "30/11/2011",
       "referenceEnd": "18/06/2015",
-      "tierReason": "Trayectoria municipal, autonómica y ministerial.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Medio Ambiente, consejería y alcaldía de Córdoba. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo castaño oscuro ondulado a la mandíbula, gafas rectangulares moradas y sonrisa amplia.",
       "pose": "Tres cuartos hacia la derecha, sin micrófono.",
       "microphones": false,
@@ -738,7 +834,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:rosa aguilar rivero"
+      "personKey": "ES:rosa aguilar rivero",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Ministerio de Medio Ambiente, consejería y alcaldía de Córdoba.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=145&idLegislatura=X"
+      }
     },
     {
       "index": 16,
@@ -746,11 +849,11 @@
       "name": "Elena Salgado",
       "canonicalName": "Salgado Méndez, Elena",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "aforado",
       "ability": "bank",
       "abilityName": "Dietas guardadas",
@@ -758,7 +861,7 @@
       "referenceLegislature": 9,
       "referenceStart": "24/03/2008",
       "referenceEnd": "27/09/2011",
-      "tierReason": "Perfil económico y ministerial; aporta variedad de función a la tanda.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Vicepresidencia económica y trayectoria ministerial. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Melena corta rubia ondulada y capeada, rostro estrecho y pómulos definidos; sin gafas.",
       "pose": "Casi frontal, mirada reflexiva; sin micrófono.",
       "microphones": false,
@@ -785,7 +888,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:elena salgado mendez"
+      "personKey": "ES:elena salgado mendez",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Vicepresidencia económica y trayectoria ministerial.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=81&idLegislatura=IX"
+      }
     },
     {
       "index": 17,
@@ -793,11 +903,11 @@
       "name": "Félix Bolaños",
       "canonicalName": "Bolaños García, Félix",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "legendario",
+      "cost": 4,
+      "zasca": 7,
+      "aguante": 11,
+      "escanos": 5,
       "doctrine": "giro",
       "ability": "shield",
       "abilityName": "Argumentario plastificado",
@@ -805,7 +915,7 @@
       "referenceLegislature": 15,
       "referenceStart": "10/08/2023",
       "referenceEnd": "06/10/2026",
-      "tierReason": "Trayectoria ministerial y relación institucional con las Cortes.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerios de Presidencia y Justicia; coordinación entre Gobierno y Cortes. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto oscuro con canas, gafas rectangulares oscuras y rostro alargado; sin barba.",
       "pose": "Frontal con mirada lateral, sin micrófono.",
       "microphones": false,
@@ -832,7 +942,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:felix bolanos garcia"
+      "personKey": "ES:felix bolanos garcia",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Ministerios de Presidencia y Justicia; coordinación entre Gobierno y Cortes.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=253&idLegislatura=XV"
+      }
     },
     {
       "index": 18,
@@ -840,11 +957,11 @@
       "name": "Oskar Matute",
       "canonicalName": "Matute García de Jalón, Oskar",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "viperina",
       "ability": "microphone",
       "abilityName": "Micrófono indiscreto",
@@ -852,7 +969,7 @@
       "referenceLegislature": 15,
       "referenceStart": "14/08/2023",
       "referenceEnd": null,
-      "tierReason": "Portavocía parlamentaria de EH Bildu y variedad de bancadas.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto gris/plata, mandíbula definida, afeitado y sin gafas en esta referencia.",
       "pose": "Tres cuartos en intervención, un micrófono de mesa.",
       "microphones": true,
@@ -879,7 +996,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:oskar matute garcia de jalon"
+      "personKey": "ES:oskar matute garcia de jalon",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=287&idLegislatura=XV"
+      }
     },
     {
       "index": 19,
@@ -887,11 +1011,11 @@
       "name": "José Antonio Labordeta",
       "canonicalName": "Labordeta Subías, José Antonio",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "especial",
+      "cost": 3,
+      "zasca": 5,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "verborrea",
       "ability": "surge",
       "abilityName": "Se viene arriba",
@@ -899,7 +1023,7 @@
       "referenceLegislature": 8,
       "referenceStart": "30/03/2004",
       "referenceEnd": "15/01/2008",
-      "tierReason": "Intervenciones parlamentarias reconocibles y presencia cultural y territorial.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Coronilla despejada, bigote gris poblado, gafas redondeadas finas; sin barba.",
       "pose": "Tres cuartos expresivo, dos micrófonos de época.",
       "microphones": true,
@@ -926,7 +1050,14 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:jose antonio labordeta subias"
+      "personKey": "ES:jose antonio labordeta subias",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=276&idLegislatura=VIII"
+      }
     },
     {
       "index": 20,
@@ -934,11 +1065,11 @@
       "name": "Magdalena Álvarez",
       "canonicalName": "Álvarez Arza, Magdalena",
       "country": "ES",
-      "rarity": "comun",
-      "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "rarity": "legendario",
+      "cost": 5,
+      "zasca": 7,
+      "aguante": 14,
+      "escanos": 5,
       "doctrine": "foco",
       "ability": "fasttrack",
       "abilityName": "Ventanilla rápida",
@@ -946,7 +1077,7 @@
       "referenceLegislature": 9,
       "referenceStart": "26/03/2008",
       "referenceEnd": "14/07/2009",
-      "tierReason": "Trayectoria ministerial y parlamentaria; perfil de gestión.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Ministerio de Fomento y trayectoria autonómica. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Pelo corto castaño rojizo con volumen hacia atrás, pómulos marcados y sonrisa amplia; sin gafas.",
       "pose": "Tres cuartos hacia la izquierda, sin micrófono.",
       "microphones": false,
@@ -973,7 +1104,15 @@
         "nationalFlag": false,
         "linkedToRepresentedPeriod": true
       },
-      "personKey": "ES:magdalena alvarez arza"
+      "personKey": "ES:magdalena alvarez arza",
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Ministerio de Fomento y trayectoria autonómica.",
+        "source": "https://www.congreso.es/es/busqueda-de-diputados?p_p_id=diputadomodule&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&_diputadomodule_mostrarFicha=true&codParlamentario=217&idLegislatura=IX"
+      }
     }
-  ]
+  ],
+  "tierReview": "revision-global-343-2026-11-05"
 }

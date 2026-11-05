@@ -1,5 +1,5 @@
 {
-  "status": "reserved_ready_for_internal_review",
+  "status": "reserved_not_public",
   "date": "2026-11-05",
   "patch": "v31.0.2.13",
   "active": false,
@@ -10,10 +10,10 @@
     "priority": "2010–2026"
   },
   "targetNew": {
-    "legendario": 6,
-    "especial": 12,
-    "raro": 18,
-    "comun": 24
+    "legendario": 1,
+    "especial": 13,
+    "raro": 23,
+    "comun": 23
   },
   "cards": [
     {
@@ -35,9 +35,9 @@
       "ability": "escort",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia de la Generalitat Valenciana entre 2015 y 2023, además de trayectoria en Morella y las Corts. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Presidencia de la Generalitat Valenciana y trayectoria autonómica. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short side-parted gray hair, rectangular metal-rim glasses, clean-shaven, broad face, navy jacket and open white collar",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -50,9 +50,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-01.png",
-        "position": "0% 0%",
-        "quadrant": "top-left",
+        "sheet": "../reserva-espana/revision-global/art/07-09.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
         "status": "generated"
       },
       "reference": {
@@ -81,7 +81,31 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Presidencia de la Generalitat Valenciana y trayectoria autonómica.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19964"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-01.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+        "tier": "legendario",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15214.jpg",
+        "referenceSha256": "0c9e06b621491986e23ffcd30476bf87eed1ebd5c86957ca9bfc936a2eb3ec03",
+        "sheet": "art/07-09.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a formal dark tailored suit, crisp white shirt and restrained silk tie",
+      "gaze": "off_camera"
     },
     {
       "index": 2,
@@ -93,16 +117,16 @@
         "Luis Tudanca"
       ],
       "country": "ES",
-      "rarity": "legendario",
-      "cost": 5,
-      "zasca": 7,
-      "aguante": 14,
-      "escanos": 5,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "guardia",
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Dirección del PSOE de Castilla y León entre 2014 y 2025 y liderazgo de la oposición autonómica. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short tousled dark-brown hair, neatly trimmed dark goatee, no glasses, navy jacket and open white shirt",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -146,7 +170,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20018"
+      }
     },
     {
       "index": 3,
@@ -158,16 +189,16 @@
         "Juan Lobato"
       ],
       "country": "ES",
-      "rarity": "legendario",
+      "rarity": "especial",
       "cost": 4,
-      "zasca": 7,
-      "aguante": 11,
-      "escanos": 5,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "aforado",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Dirección del PSOE de Madrid entre 2021 y 2024, portavocía autonómica y alcaldía de Soto del Real. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short neatly combed brown hair, clean-shaven, no glasses, oval face, dark jacket and pale blue open collar",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -213,7 +244,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19807"
+      }
     },
     {
       "index": 4,
@@ -225,16 +263,16 @@
         "Jesús Julio Carnero"
       ],
       "country": "ES",
-      "rarity": "legendario",
-      "cost": 5,
-      "zasca": 7,
-      "aguante": 14,
-      "escanos": 5,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "giro",
       "ability": "escort",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Alcaldía de Valladolid desde 2023 en el periodo representado, presidencia provincial y consejerías autonómicas entre 2019 y 2023. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald head, clean-shaven, no glasses, broad friendly face, dark jacket and open white shirt",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -280,7 +318,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19853"
+      }
     },
     {
       "index": 5,
@@ -292,16 +337,16 @@
         "José Manuel Baltar"
       ],
       "country": "ES",
-      "rarity": "legendario",
+      "rarity": "especial",
       "cost": 4,
-      "zasca": 7,
-      "aguante": 11,
-      "escanos": 5,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "foco",
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia de la Diputación de Ourense hasta 2023 y responsabilidades en la Mesa del Parlamento de Galicia. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald head, large black square glasses, clean-shaven, rounded face, navy suit and green tie",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -347,7 +392,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19966"
+      }
     },
     {
       "index": 6,
@@ -359,16 +411,16 @@
         "Pedro Martín"
       ],
       "country": "ES",
-      "rarity": "legendario",
-      "cost": 5,
-      "zasca": 7,
-      "aguante": 14,
-      "escanos": 5,
+      "rarity": "especial",
+      "cost": 4,
+      "zasca": 6,
+      "aguante": 8,
+      "escanos": 4,
       "doctrine": "viperina",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia del Cabildo de Tenerife entre 2019 y 2023, alcaldía de Guía de Isora y trayectoria insular. Selección editorial dentro del cupo legendario de esta tanda; la rareza no mide capacidades personales reales.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Dark-gray hair swept back, fine rectangular glasses, clean-shaven, navy suit and striped pale blue tie",
       "pose": "looking toward the chamber, no microphone, holding small folder below chest",
       "microphones": false,
@@ -412,7 +464,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "legendario",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19904"
+      }
     },
     {
       "index": 7,
@@ -433,7 +492,7 @@
       "ability": "acta",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Alcaldía de Palma entre 2015–2017 y 2019–2023. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short side-parted brown-gray hair, full short salt-and-pepper beard, dark rectangular glasses, navy suit and red tie",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -478,7 +537,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19970"
+      }
     },
     {
       "index": 8,
@@ -499,7 +565,7 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia de la Diputación de Granada entre 2015 y 2023 y alcaldía de Villanueva Mesía. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short side-parted gray hair, rectangular dark glasses, clean-shaven, navy suit and lilac tie",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -544,7 +610,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19895"
+      }
     },
     {
       "index": 9,
@@ -565,7 +638,7 @@
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Alcaldía de Almería entre 2003 y 2015, presidencia provincial y trayectoria en ambas cámaras. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald crown with dark side hair, round gray glasses, neatly trimmed dark-gray beard, blue suit and patterned green tie",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -611,7 +684,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=15205"
+      }
     },
     {
       "index": 10,
@@ -632,7 +712,7 @@
       "ability": "fasttrack",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Presidencia de la Diputación de Huelva en el mandato 2019–2023 y alcaldía de San Bartolomé de la Torre. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short voluminous golden-brown tight curls, no glasses, white blazer and large hoop earrings",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -677,7 +757,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19896"
+      }
     },
     {
       "index": 11,
@@ -689,16 +776,16 @@
         "Emma Buj"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "raro",
       "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Alcaldía de Teruel en los mandatos 2015–2019 y 2019–2023 y responsabilidades provinciales. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía de Teruel; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short wavy chestnut chin-length bob, no glasses, red blouse and silver pendant",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -743,7 +830,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Alcaldía de Teruel; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19860"
+      }
     },
     {
       "index": 12,
@@ -764,7 +858,7 @@
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Alcaldía de Sevilla entre 2022 y 2023 y responsabilidades autonómicas en turismo. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Very short silver-gray hair, clean-shaven, no glasses, angular face and gray open-collar shirt",
       "pose": "looking toward the chamber, no microphone, holding small folder below chest",
       "microphones": false,
@@ -809,7 +903,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19899"
+      }
     },
     {
       "index": 13,
@@ -830,7 +931,7 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Consejería del Gobierno de Canarias, portavocía autonómica y dirección del PP de Canarias documentadas en su biografía. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight chin-length blonde bob, no glasses, red blouse and subtle pendant",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -876,7 +977,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12830"
+      }
     },
     {
       "index": 14,
@@ -897,7 +1005,7 @@
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Portavocía de grupo en el Senado en legislaturas anteriores, diputación autonómica y portavocía del PP de Cataluña en la ficha consultada. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight shoulder-length chestnut hair, no glasses, green blouse and small earrings",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -943,7 +1051,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17705"
+      }
     },
     {
       "index": 15,
@@ -955,16 +1070,16 @@
         "Íñigo Fernández"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "raro",
       "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "aforado",
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Trayectoria de diputado en el Parlamento de Cantabria y responsabilidades de portavocía en el Senado. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short curly salt-and-pepper hair, no glasses, light stubble, beige open-collar linen shirt",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -1010,7 +1125,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19800"
+      }
     },
     {
       "index": 16,
@@ -1031,7 +1153,7 @@
       "ability": "summon",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Consejerías de Educación y Presidencia del Gobierno de Aragón entre 2015 y 2023 y portavocía parlamentaria posterior. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight shoulder-length dark-blonde hair, dark cat-eye glasses, brown patterned jacket and dark blouse",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -1077,7 +1199,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Responsabilidad ministerial, ejecutiva autonómica, presidencia institucional, dirección de grupo o representación supramunicipal destacada; trayectoria contrastada en la ficha institucional.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20016"
+      }
     },
     {
       "index": 17,
@@ -1089,16 +1218,16 @@
         "María Jesús Bonilla"
       ],
       "country": "ES",
-      "rarity": "especial",
+      "rarity": "raro",
       "cost": 3,
-      "zasca": 5,
-      "aguante": 8,
-      "escanos": 4,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Alcaldía de Tarancón entre 2011 y 2015, diputación autonómica y trayectoria parlamentaria estatal. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length wavy dark-blonde hair, no glasses, green blazer and black blouse",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -1144,7 +1273,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=12676"
+      }
     },
     {
       "index": 18,
@@ -1156,18 +1292,18 @@
         "José Ignacio Landaluce"
       ],
       "country": "ES",
-      "rarity": "especial",
-      "cost": 4,
-      "zasca": 6,
-      "aguante": 8,
-      "escanos": 4,
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "viperina",
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "Trayectoria en el Congreso, el Senado y la alcaldía de Algeciras. Cupo especial relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Alcaldía documentada; 2 legislaturas anteriores documentadas; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Receding short gray hair, clean-shaven, no glasses, navy suit and burgundy tie",
-      "pose": "looking toward the chamber, no microphone, holding small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO MIXTO",
@@ -1180,9 +1316,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-05.png",
-        "position": "100% 0%",
-        "quadrant": "top-right",
+        "sheet": "../reserva-espana/revision-global/art/07-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
         "status": "generated"
       },
       "reference": {
@@ -1210,7 +1346,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "especial",
+        "criterion": "Mandatos en el Congreso; Alcaldía documentada; 2 legislaturas anteriores documentadas; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17147"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-05.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15085.jpg",
+        "referenceSha256": "8f0aef616bc3c503c3bec12dacd3b0b47b2586dfbe992cb679f23d94aefc882e",
+        "sheet": "art/07-09.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 19,
@@ -1222,16 +1382,16 @@
         "Josep Maria Reniu"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "comun",
       "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "verborrea",
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Actividad parlamentaria acreditada en la ficha y en sus intervenciones. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short swept gray-brown hair, gray goatee and moustache, no glasses, blue checked shirt",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -1275,7 +1435,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Actividad parlamentaria acreditada en la ficha y en sus intervenciones.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19486"
+      }
     },
     {
       "index": 20,
@@ -1296,7 +1463,7 @@
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de cultura; Portavoz en comisión de defensa. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Bald crown and close-cropped dark hair, trimmed gray stubble, no glasses, gray blazer and pale cream T-shirt",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -1341,7 +1508,14 @@
       "documentedAreas": [
         "senado",
         "autonomico"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19892"
+      }
     },
     {
       "index": 21,
@@ -1353,16 +1527,16 @@
         "Olaia Duarte"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "comun",
       "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "aforado",
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de cooperación internacional al desarrollo; Portavoz en comisión de derechos de las familias. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight shoulder-length blonde hair, large clear rectangular glasses, striped green and yellow blouse",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -1407,7 +1581,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19890"
+      }
     },
     {
       "index": 22,
@@ -1419,18 +1600,18 @@
         "Mario Zubiaga"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "giro",
       "ability": "summon",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión constitucional; Portavoz en comisión de ciencia, innovación y universidades. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short tousled brown-gray hair, blue rectangular glasses, clean-shaven, gray blazer and dark polo",
-      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO IZQUIERDAS POR LA INDEPENDENCIA (ESQUERRA REPUBLICANA-EUSKAL HERRIA BILDU)",
@@ -1443,9 +1624,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-06.png",
-        "position": "100% 0%",
-        "quadrant": "top-right",
+        "sheet": "../reserva-espana/revision-global/art/07-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
         "status": "generated"
       },
       "reference": {
@@ -1472,7 +1653,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19891"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-06.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15243.jpg",
+        "referenceSha256": "216df4e438b638cfd01519d2b399286d18ec43e44d0faa4f678467e497f6a813",
+        "sheet": "art/07-10.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+      "gaze": "off_camera"
     },
     {
       "index": 23,
@@ -1493,7 +1698,7 @@
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de cultura; Portavoz en comisión de derechos sociales, consumo y agenda 2030. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-gray hair, clean-shaven, no glasses, angular face, pale blue jacket and patterned white shirt",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -1538,7 +1743,14 @@
       "documentedAreas": [
         "senado",
         "autonomico"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=20002"
+      }
     },
     {
       "index": 24,
@@ -1550,18 +1762,18 @@
         "Paloma Gómez"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
       "doctrine": "viperina",
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión conjunta de las comisiones constitucional y de justicia; Portavoz en comisión de defensa. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long wavy black hair, no glasses, navy blue jacket and small hoop earrings",
-      "pose": "looking toward the chamber, no microphone, holding small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO MIXTO",
@@ -1574,9 +1786,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-06.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right",
+        "sheet": "../reserva-espana/revision-global/art/07-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
         "status": "generated"
       },
       "reference": {
@@ -1604,7 +1816,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19955"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-06.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a fine-knit cardigan over a simple top",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15023.jpg",
+        "referenceSha256": "c492ce2b52b18eec0ae06d1e31d9056ec398d82d48c67543a6c55f1cf5bd3bf8",
+        "sheet": "art/07-10.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a fine-knit cardigan over a simple top",
+      "gaze": "off_camera"
     },
     {
       "index": 25,
@@ -1625,7 +1861,7 @@
       "ability": "shield",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; 1 legislaturas anteriores documentadas; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short curly golden-brown bob, pink-rimmed oval glasses, bright pink jacket and coral top",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -1671,7 +1907,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; 1 legislaturas anteriores documentadas; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=13785"
+      }
     },
     {
       "index": 26,
@@ -1692,7 +1935,7 @@
       "ability": "acta",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length wavy dark-brown hair, no glasses, light blue blazer and hoop earrings",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -1738,7 +1981,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14247"
+      }
     },
     {
       "index": 27,
@@ -1759,7 +2009,7 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight honey-brown hair, no glasses, white open-collar shirt and gold hoop earrings",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -1805,7 +2055,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17965"
+      }
     },
     {
       "index": 28,
@@ -1826,7 +2083,7 @@
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Presidente en comisión de industria y turismo. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía de Burgos y representación en el Congreso; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short light-brown hair, short pale stubble, no glasses, navy jacket and open white shirt",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -1870,7 +2127,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Alcaldía de Burgos y representación en el Congreso; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18098"
+      }
     },
     {
       "index": 29,
@@ -1891,7 +2155,7 @@
       "ability": "fasttrack",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidente segundo en comisión de vivienda y agenda urbana. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de presidencia provincial o insular; Vicepresidencia provincial o insular; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short black hair, full dark beard and moustache, no glasses, round face and black open-collar shirt",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -1936,7 +2200,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Alcaldía documentada; Responsabilidad de presidencia provincial o insular; Vicepresidencia provincial o insular; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19977"
+      }
     },
     {
       "index": 30,
@@ -1948,18 +2219,18 @@
         "Sergio Ramos Acosta"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "comun",
+      "cost": 2,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "viperina",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Actividad parlamentaria acreditada en la ficha y en sus intervenciones. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short swept-back brown hair, full trimmed dark beard, dark rectangular glasses, navy suit and dotted tie",
-      "pose": "looking toward the chamber, no microphone, holding small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -1972,9 +2243,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-08.png",
-        "position": "100% 0%",
-        "quadrant": "top-right",
+        "sheet": "../reserva-espana/revision-global/art/07-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
         "status": "generated"
       },
       "reference": {
@@ -2001,7 +2272,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Actividad parlamentaria acreditada en la ficha y en sus intervenciones.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18108"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-08.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15171.jpg",
+        "referenceSha256": "02072a81badbc05a130a02e53a6f638204bd819991b7dea40bf4d48c8cf76807",
+        "sheet": "art/07-10.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+      "gaze": "off_camera"
     },
     {
       "index": 31,
@@ -2013,16 +2308,16 @@
         "Fernando Priego"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "comun",
       "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "verborrea",
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Presidente en comisión de entidades locales. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short wavy brown hair, light stubble, no glasses, pale gray open-collar shirt",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -2066,7 +2361,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17353"
+      }
     },
     {
       "index": 32,
@@ -2087,9 +2389,9 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidente primero en comisión de investigación sobre los contratos, licencias, concesiones, ayudas y otras operaciones del gobierno y del sector público, relacionadas con la intermediación de koldo garcía izaguirre y con las demás personas vinculadas a la trama investigada en la operación delorme, y respecto a los presuntos delitos relativos a la corrupción que tengan una relación, directa o indirecta, o conexión con las mismas. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short gray hair, close gray beard and moustache, no glasses, navy suit and dotted navy tie",
-      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2102,7 +2404,7 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-08.png",
+        "sheet": "../reserva-espana/revision-global/art/07-10.png",
         "position": "100% 100%",
         "quadrant": "bottom-right",
         "status": "generated"
@@ -2133,7 +2435,31 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19995"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-08.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15278.jpg",
+        "referenceSha256": "fe92e1bd8a2ccb8ad5417d13dbdb4c6e92a70cca80aeaa8f65f6c49831d91a4b",
+        "sheet": "art/07-10.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 33,
@@ -2154,7 +2480,7 @@
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length tight dark-chestnut curls, no glasses, long oval face, gray blazer and white top",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -2200,7 +2526,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19987"
+      }
     },
     {
       "index": 34,
@@ -2221,9 +2554,9 @@
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de hacienda. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía de Palencia; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Receding short dark hair, thin rectangular glasses, clean-shaven, navy suit and mint-green tie",
-      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2236,9 +2569,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-09.png",
-        "position": "100% 0%",
-        "quadrant": "top-right",
+        "sheet": "../reserva-espana/revision-global/art/07-11.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
         "status": "generated"
       },
       "reference": {
@@ -2266,7 +2599,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Alcaldía de Palencia; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19873"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-09.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15098.jpg",
+        "referenceSha256": "3d128f776dd02bcb4a1e85aa36a3b6ff67df29a4460daeaf5886e2da33fcc6dd",
+        "sheet": "art/07-11.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 35,
@@ -2278,16 +2635,16 @@
         "Asunción Mayo"
       ],
       "country": "ES",
-      "rarity": "raro",
+      "rarity": "comun",
       "cost": 2,
-      "zasca": 4,
-      "aguante": 6,
-      "escanos": 3,
+      "zasca": 2,
+      "aguante": 5,
+      "escanos": 2,
       "doctrine": "foco",
       "ability": "summon",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de igualdad. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length side-parted gray-brown bob, no glasses, floral pastel blouse and small earrings",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -2331,7 +2688,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19886"
+      }
     },
     {
       "index": 36,
@@ -2343,18 +2707,18 @@
         "Agustín Almodóbar"
       ],
       "country": "ES",
-      "rarity": "raro",
-      "cost": 3,
-      "zasca": 4,
-      "aguante": 7,
-      "escanos": 3,
+      "rarity": "comun",
+      "cost": 1,
+      "zasca": 2,
+      "aguante": 4,
+      "escanos": 2,
       "doctrine": "viperina",
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo raro relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short brown hair combed upward, clear rectangular glasses, short stubble, navy suit and red-striped tie",
-      "pose": "looking toward the chamber, no microphone, holding small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2367,9 +2731,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-09.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right",
+        "sheet": "../reserva-espana/revision-global/art/07-11.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
         "status": "generated"
       },
       "reference": {
@@ -2396,7 +2760,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "raro",
+        "criterion": "Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=14445"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-09.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15060.jpg",
+        "referenceSha256": "f484c6db21b16e5d81c626311b18ca3eb4f63dc20b4d4b62c65d423c6b591f2f",
+        "sheet": "art/07-11.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+      "gaze": "off_camera"
     },
     {
       "index": 37,
@@ -2417,9 +2805,9 @@
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Close-cropped brown-gray hair, full short gray beard, no glasses, light beige jacket and open white shirt",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2432,7 +2820,7 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-10.png",
+        "sheet": "../reserva-espana/revision-global/art/07-25.png",
         "position": "0% 0%",
         "quadrant": "top-left",
         "status": "generated"
@@ -2461,7 +2849,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18088"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-10.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15183.jpg",
+        "referenceSha256": "ceddaf24f12bc34a3d91e3d61b3e3cd64389edec62fde16dc53e7bca23a384d0",
+        "sheet": "art/07-25.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+      "gaze": "off_camera"
     },
     {
       "index": 38,
@@ -2482,9 +2894,9 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight shoulder-length blonde hair, no glasses, magenta jacket and cream top",
-      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2497,9 +2909,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-10.png",
-        "position": "100% 0%",
-        "quadrant": "top-right",
+        "sheet": "../reserva-espana/revision-global/art/07-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
         "status": "generated"
       },
       "reference": {
@@ -2526,7 +2938,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19889"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-10.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain cotton blouse without a business blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15200.jpg",
+        "referenceSha256": "59fe48de2d28234b5e395041386dec82ed82a9f90af48b780b9212a97af87a3f",
+        "sheet": "art/07-11.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain cotton blouse without a business blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 39,
@@ -2538,18 +2974,18 @@
         "Miguel Ángel Jerez"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "aforado",
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión constitucional. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short combed salt-and-pepper hair, clean-shaven, no glasses, broad smile, navy suit and dotted tie",
-      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2562,9 +2998,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-10.png",
-        "position": "0% 100%",
-        "quadrant": "bottom-left",
+        "sheet": "../reserva-espana/revision-global/art/07-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
         "status": "generated"
       },
       "reference": {
@@ -2593,7 +3029,31 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Mandatos en el Congreso; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19969"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-10.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15220.jpg",
+        "referenceSha256": "41537985e5cc7c37d1811453cc45f9bc50e8b5fb38ff7f8e4bc63c3493cbd848",
+        "sheet": "art/07-11.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 40,
@@ -2614,9 +3074,9 @@
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight blonde hair, thick dark cat-eye glasses, blue shirt and pale jacket",
-      "pose": "gentle low camera angle, calm assertive expression, no microphone",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -2629,9 +3089,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-10.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right",
+        "sheet": "../reserva-espana/revision-global/art/07-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
         "status": "generated"
       },
       "reference": {
@@ -2658,7 +3118,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18187"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-10.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable knitted top with a soft scarf",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15106.jpg",
+        "referenceSha256": "ceacb43b94e83bbca0a3dd0de3b8ebb90a7e6b31086068d7a16109a60437279f",
+        "sheet": "art/07-12.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable knitted top with a soft scarf",
+      "gaze": "off_camera"
     },
     {
       "index": 41,
@@ -2670,16 +3154,16 @@
         "Manuel Ruiz Rivas"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de pesca. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short swept gray hair, clean-shaven, no glasses, angular face, textured navy jacket and striped open-collar shirt",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -2725,7 +3209,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19811"
+      }
     },
     {
       "index": 42,
@@ -2737,16 +3228,16 @@
         "Elena Castillo"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "viperina",
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight golden-blonde hair, no glasses, navy blouse and silver pendant",
       "pose": "looking toward the chamber, no microphone, holding small folder below chest",
       "microphones": false,
@@ -2791,7 +3282,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en el Congreso; Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19835"
+      }
     },
     {
       "index": 43,
@@ -2812,9 +3310,9 @@
       "ability": "shield",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de asuntos exteriores. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short brown hair swept upward, neatly trimmed brown beard and moustache, no glasses, navy suit and red tie",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -2827,9 +3325,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-11.png",
-        "position": "0% 100%",
-        "quadrant": "bottom-left",
+        "sheet": "../reserva-espana/revision-global/art/07-12.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
         "status": "generated"
       },
       "reference": {
@@ -2857,7 +3355,31 @@
       "documentedAreas": [
         "senado",
         "autonomico"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=16586"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-11.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15035.jpg",
+        "referenceSha256": "f5f26fd747a20af1291be7a8e795dd46c96f5264be54cc5c4378c302b18b4270",
+        "sheet": "art/07-12.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a fine-knit crew-neck sweater over a plain cotton shirt, no tie and no formal jacket",
+      "gaze": "off_camera"
     },
     {
       "index": 44,
@@ -2878,9 +3400,9 @@
       "ability": "acta",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short wavy silver-gray hair, clean-shaven, no glasses, dark gray suit and green tie",
-      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -2893,9 +3415,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-11.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right",
+        "sheet": "../reserva-espana/revision-global/art/07-12.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
         "status": "generated"
       },
       "reference": {
@@ -2922,7 +3444,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18090"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-11.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15124.jpg",
+        "referenceSha256": "be724a951ca7888bf82f085c393cfaae6f8cda744cc7f4334fc6edd9b9117a5f",
+        "sheet": "art/07-12.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 45,
@@ -2943,9 +3489,9 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-brown spiky pixie haircut, no glasses, black blazer and black-and-white striped top",
-      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -2958,9 +3504,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-12.png",
-        "position": "0% 0%",
-        "quadrant": "top-left",
+        "sheet": "../reserva-espana/revision-global/art/07-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
         "status": "generated"
       },
       "reference": {
@@ -2988,7 +3534,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=17785"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-12.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable knitted top with a soft scarf",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15048.jpg",
+        "referenceSha256": "50405e2226111ad9935810eccbe4d3551f9d11f70ad637277d9a601bcb203010",
+        "sheet": "art/07-12.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable knitted top with a soft scarf",
+      "gaze": "off_camera"
     },
     {
       "index": 46,
@@ -3009,7 +3579,7 @@
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length wavy chestnut hair, no glasses, white blouse and small pendant",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -3053,7 +3623,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19913"
+      }
     },
     {
       "index": 47,
@@ -3065,16 +3642,16 @@
         "Amparo Torres"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "foco",
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de presidencia provincial o insular; Vicepresidencia provincial o insular; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight light-brown hair with blonde highlights, no glasses, white blouse and red lipstick",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -3119,7 +3696,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de presidencia provincial o insular; Vicepresidencia provincial o insular; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19907"
+      }
     },
     {
       "index": 48,
@@ -3140,9 +3724,9 @@
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de derechos de las familias. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short layered chestnut hair with side fringe, no glasses, pink blazer and black top",
-      "pose": "looking toward the chamber, no microphone, holding small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3155,9 +3739,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-12.png",
-        "position": "100% 100%",
-        "quadrant": "bottom-right",
+        "sheet": "../reserva-espana/revision-global/art/07-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
         "status": "generated"
       },
       "reference": {
@@ -3184,7 +3768,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19929"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-12.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain cotton blouse without a business blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15116.jpg",
+        "referenceSha256": "c2f4c73a3bb0f0bfd31dbe2a71cf3c12b818507fb5d58f9a11ec93dfa3eaba23",
+        "sheet": "art/07-13.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain cotton blouse without a business blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 49,
@@ -3205,9 +3813,9 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de sanidad. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-gray hair, close salt-and-pepper beard, no glasses, navy suit and blue patterned tie",
-      "pose": "three-quarter speaking view, one low side microphone and open hand",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3220,9 +3828,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-13.png",
-        "position": "0% 0%",
-        "quadrant": "top-left",
+        "sheet": "../reserva-espana/revision-global/art/07-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
         "status": "generated"
       },
       "reference": {
@@ -3249,7 +3857,31 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19903"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-13.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15202.jpg",
+        "referenceSha256": "c750f8d2f54539ed63eb801498d4286c67bb3730aecf94802f0510cb20d29f60",
+        "sheet": "art/07-13.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 50,
@@ -3261,18 +3893,18 @@
         "Amaro Huelva"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "guardia",
       "ability": "paperwork",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidente segundo en comisión de defensa; Vicepresidente segundo en comisión de asuntos iberoamericanos. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Vicepresidencia provincial o insular; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short dark-brown hair combed upward, clean-shaven, no glasses, gray suit and red tie",
-      "pose": "frontal attentive expression, no microphone, hands below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3285,9 +3917,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-13.png",
-        "position": "100% 0%",
-        "quadrant": "top-right",
+        "sheet": "../reserva-espana/revision-global/art/07-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
         "status": "generated"
       },
       "reference": {
@@ -3315,7 +3947,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía documentada; Vicepresidencia provincial o insular; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=16969"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-13.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15142.jpg",
+        "referenceSha256": "08cf689e2643d22db9d13c33ff285a71034c3b90c06457e7e7b303e194d6fc1b",
+        "sheet": "art/07-13.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 51,
@@ -3327,18 +3983,18 @@
         "Rafael Rodríguez Villarino"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "aforado",
       "ability": "lane",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Receding short gray hair, clean-shaven, no glasses, broad smile, navy suit and diagonal striped tie",
-      "pose": "three-quarter opposite-side view with two low podium microphones",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3351,9 +4007,9 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-13.png",
-        "position": "0% 100%",
-        "quadrant": "bottom-left",
+        "sheet": "../reserva-espana/revision-global/art/07-13.png",
+        "position": "100% 100%",
+        "quadrant": "bottom-right",
         "status": "generated"
       },
       "reference": {
@@ -3381,7 +4037,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19928"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-13.png",
+        "position": "0% 100%",
+        "quadrant": "bottom-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+        "tier": "raro",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15130.jpg",
+        "referenceSha256": "3dbd461b74ea29f223fdaab39b94726f868582091e2861bff7bfebbd9dca06c5",
+        "sheet": "art/07-13.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a soft unstructured blazer over a plain open-collar shirt, NO tie",
+      "gaze": "off_camera"
     },
     {
       "index": 52,
@@ -3393,16 +4073,16 @@
         "Cristina Moreno"
       ],
       "country": "ES",
-      "rarity": "comun",
+      "rarity": "raro",
       "cost": 2,
-      "zasca": 2,
-      "aguante": 5,
-      "escanos": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "giro",
       "ability": "surge",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de transformación digital. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight light-brown hair with bangs, no glasses, cream blouse and fine gold necklace",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -3447,7 +4127,14 @@
       "documentedAreas": [
         "senado",
         "autonomico"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19924"
+      }
     },
     {
       "index": 53,
@@ -3468,9 +4155,9 @@
       "ability": "archive",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short spiky dark hair, short dark beard, no glasses, navy suit and blue dotted tie",
-      "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": true,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO POPULAR EN EL SENADO",
@@ -3483,7 +4170,7 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-14.png",
+        "sheet": "../reserva-espana/revision-global/art/07-14.png",
         "position": "0% 0%",
         "quadrant": "top-left",
         "status": "generated"
@@ -3513,7 +4200,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Alcaldía documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19856"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-14.png",
+        "position": "0% 0%",
+        "quadrant": "top-left",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15102.jpg",
+        "referenceSha256": "e563ed2e8e4255c64d55abb2ab39121510cf3ef4ba584e1b78b2725643b8a175",
+        "sheet": "art/07-14.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a relaxed plain polo shirt without logos, no tie or blazer",
+      "gaze": "off_camera"
     },
     {
       "index": 54,
@@ -3534,9 +4245,9 @@
       "ability": "shield",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta su procedencia y actividad parlamentaria. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short side-parted light-brown hair, clean-shaven, no glasses, navy suit and muted burgundy tie",
-      "pose": "looking toward the chamber, no microphone, holding small folder below chest",
+      "pose": "Head and eyes turned toward the chamber, off camera; wardrobe variant for the globally reviewed tier.",
       "microphones": false,
       "affiliation": {
         "label": "GRUPO PARLAMENTARIO SOCIALISTA",
@@ -3549,7 +4260,7 @@
         "linkedToRepresentedPeriod": true
       },
       "art": {
-        "sheet": "art/04-14.png",
+        "sheet": "../reserva-espana/revision-global/art/07-14.png",
         "position": "100% 0%",
         "quadrant": "top-right",
         "status": "generated"
@@ -3579,7 +4290,31 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19165"
+      },
+      "artBeforeGlobalReview": {
+        "sheet": "art/04-14.png",
+        "position": "100% 0%",
+        "quadrant": "top-right",
+        "status": "generated"
+      },
+      "wardrobeReview": {
+        "status": "generated",
+        "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+        "tier": "comun",
+        "sourcePhoto": "https://www.senado.es/legis15/senadores/fotos/S15113.jpg",
+        "referenceSha256": "9645533c4c9a87fad06f965543ec2a7872714b700f7b6004ca64be4ef2cf1dce",
+        "sheet": "art/07-14.png",
+        "date": "2026-11-05"
+      },
+      "wardrobe": "a comfortable cardigan over an open-collar linen shirt, no tie",
+      "gaze": "off_camera"
     },
     {
       "index": 55,
@@ -3591,16 +4326,16 @@
         "Isabel Moreno Duque"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 2,
+      "zasca": 4,
+      "aguante": 6,
+      "escanos": 3,
       "doctrine": "verborrea",
       "ability": "acta",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidenta segunda en comisión de juventud e infancia. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long straight honey-brown hair, no glasses, pale pink bow-neck blouse",
       "pose": "three-quarter speaking view, one low side microphone and open hand",
       "microphones": true,
@@ -3645,7 +4380,14 @@
       "documentedAreas": [
         "senado",
         "autonomico"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad ejecutiva o de dirección institucional documentada; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18240"
+      }
     },
     {
       "index": 56,
@@ -3666,7 +4408,7 @@
       "ability": "bank",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de pesca. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Long wavy auburn-brown hair swept over one shoulder, no glasses, white patterned blouse and silver hoop earrings",
       "pose": "frontal attentive expression, no microphone, hands below chest",
       "microphones": false,
@@ -3710,7 +4452,14 @@
       },
       "documentedAreas": [
         "senado"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19947"
+      }
     },
     {
       "index": 57,
@@ -3722,16 +4471,16 @@
         "Araceli Martínez"
       ],
       "country": "ES",
-      "rarity": "comun",
-      "cost": 1,
-      "zasca": 2,
-      "aguante": 4,
-      "escanos": 2,
+      "rarity": "raro",
+      "cost": 3,
+      "zasca": 4,
+      "aguante": 7,
+      "escanos": 3,
       "doctrine": "aforado",
       "ability": "fineprint",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidenta segunda en comisión de cultura. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Short layered silver-gray bob, no glasses, pale blue top and subtle earrings",
       "pose": "three-quarter opposite-side view with two low podium microphones",
       "microphones": true,
@@ -3777,7 +4526,14 @@
         "senado",
         "autonomico",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19909"
+      }
     },
     {
       "index": 58,
@@ -3798,7 +4554,7 @@
       "ability": "coffee",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidenta primera en comisión de incompatibilidades. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Straight shoulder-length black hair parted in the middle, no glasses, cream lace blouse and gold pendant",
       "pose": "gentle low camera angle, calm assertive expression, no microphone",
       "microphones": false,
@@ -3843,7 +4599,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19870"
+      }
     },
     {
       "index": 59,
@@ -3864,7 +4627,7 @@
       "ability": "tongue",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Vicepresidenta primera en comisión de transformación digital. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length dark layered black hair with side fringe, no glasses, white embroidered blouse and small pendant",
       "pose": "speaking with restrained open-hand gesture, one slim microphone at chest height",
       "microphones": true,
@@ -3909,7 +4672,14 @@
       "documentedAreas": [
         "senado",
         "autonomico"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Mandatos en parlamento autonómico; Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=19805"
+      }
     },
     {
       "index": 60,
@@ -3930,7 +4700,7 @@
       "ability": "microphone",
       "depictedPeriod": "XV legislatura · fotografía institucional",
       "institution": "Senado de España",
-      "tierReason": "La ficha institucional documenta Portavoz en comisión de suplicatorios. Cupo comun relativo a las trayectorias de esta tanda, manteniendo las proporciones del juego; no mide capacidades personales ni afirma vigencia del cargo.",
+      "tierReason": "Revisión global de los 343 reservados, sin cupo por tanda. Responsabilidad de Mesa o portavocía en comisión. Asignación editorial de juego por alcance institucional y trayectoria; no valora capacidades personales ni afinidad política.",
       "features": "Shoulder-length brown hair swept away from the face, no glasses, cream blouse and small gold hoop earrings",
       "pose": "looking toward the chamber, no microphone, holding small folder below chest",
       "microphones": false,
@@ -3975,7 +4745,14 @@
       "documentedAreas": [
         "senado",
         "local_insular_provincial"
-      ]
+      ],
+      "globalTierReview": {
+        "date": "2026-11-05",
+        "scope": 343,
+        "previousRarity": "comun",
+        "criterion": "Responsabilidad de Mesa o portavocía en comisión.",
+        "source": "https://www.senado.es/web/composicionorganizacion/senadores/composicionsenado/fichasenador/index.html?legis=15&id1=18297"
+      }
     }
   ],
   "completedOn": "2026-11-05",
@@ -3985,5 +4762,6 @@
     "portraitsGenerated": 60,
     "portraitsPending": 0,
     "publiclyEnabled": false
-  }
+  },
+  "tierReview": "revision-global-343-2026-11-05"
 }

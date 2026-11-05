@@ -20,13 +20,14 @@
   "totales": {
     "catalogo_activo": 4,
     "catalogo_reserva60": 44,
-    "pendiente": 83,
+    "pendiente": 0,
     "fichasXML": 292,
     "fichasHTML": 19,
     "revisionIdentidad": 0,
     "catalogo_reserva60_03": 60,
     "catalogo_reserva60_04": 60,
-    "catalogo_reserva60_05": 60
+    "catalogo_reserva60_05": 60,
+    "catalogo_reserva83_06": 83
   },
   "prioridades": {
     "0": "Persona ya presente o reservada: no crear duplicado",
@@ -1060,7 +1061,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "alfonso-garcia-rodriguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -1134,7 +1138,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 2,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -8588,7 +8592,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-tofino-perez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -8636,7 +8643,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 2,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -11644,7 +11651,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-del-lirio-martin-garcia",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -11724,7 +11734,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 2,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -13099,7 +13109,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-susana-marques-escoin",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -13163,7 +13176,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 2,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -14179,7 +14192,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "martin-angel-torres-valls",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -14243,7 +14259,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 2,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -18584,11 +18600,14 @@
         "funcion": "MIEMBROS TITULARES",
         "fuente": "https://www.senado.es/web/composicionorganizacion/organossenado/diputacionpermanente/composicion/index.html"
       },
-      "catalogo": null,
+      "catalogo": {
+        "id": "beatriz-artolazabal-albeniz",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 3,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20100,7 +20119,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "abdelhakim-abdeselam-al-lal",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20156,7 +20178,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20177,7 +20199,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "abigail-garrido-tinta",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20225,7 +20250,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20246,7 +20271,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "adelina-escandell-grases",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20261,7 +20289,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20282,11 +20310,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "alvaro-zancajo-fenoll",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20347,7 +20378,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "antonia-lopez-moya",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20403,7 +20437,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20489,7 +20523,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "antonio-martinez-rodriguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20537,7 +20574,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20615,7 +20652,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "aurelia-sanchez-navarro",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20630,7 +20670,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20651,7 +20691,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "benjamin-prieto-valencia",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20707,7 +20750,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20728,7 +20771,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "carmelo-romero-hernandez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20784,7 +20830,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20805,11 +20851,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "carmen-maria-diaz-ruiz",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20830,7 +20879,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "carmen-pagador-lopez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20886,7 +20938,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20907,7 +20959,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "carolina-agudo-alonso",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20922,7 +20977,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20943,11 +20998,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "clara-maria-martin-garcia",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -20968,7 +21026,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "clemente-sanchez-garnica-gomez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -20983,7 +21044,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21004,7 +21065,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "dionis-ona-martin",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21100,7 +21164,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21121,7 +21185,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "elena-vila-gomez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21161,7 +21228,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21182,7 +21249,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "emilio-jose-navarro-castanedo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21238,7 +21308,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21259,7 +21329,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "enrique-fernandez-rodriguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21274,7 +21347,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21295,7 +21368,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "estela-del-carmen-darocas-marin",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21375,7 +21451,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21549,7 +21625,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-bermudez-carrillo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21597,7 +21676,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21618,11 +21697,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-iglesias-garcia",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21732,7 +21814,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-lamban-montanes",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21747,7 +21832,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21768,11 +21853,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-javier-oblare-torres",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21793,7 +21881,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "francisco-jose-fernandez-perez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -21849,7 +21940,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -21950,7 +22041,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "israel-roberto-perez-jimenez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22006,7 +22100,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22027,7 +22121,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jan-pomes-lopez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22067,7 +22164,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22088,7 +22185,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jaume-llorens-monzonis",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22152,7 +22252,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22283,7 +22383,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jesus-caicedo-bernabe",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22339,7 +22442,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22502,11 +22605,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jorge-amado-borrella",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22608,7 +22714,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jorge-garcia-vega",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22664,7 +22773,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22685,7 +22794,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-alberto-armijo-navas",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22749,7 +22861,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22770,7 +22882,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-antonio-sanchez-bugallo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22785,7 +22900,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22806,7 +22921,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-crespo-iglesias",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22854,7 +22972,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -22875,7 +22993,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-fernandez-blanco",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -22915,7 +23036,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23025,7 +23146,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-aranda-lassa",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23081,7 +23205,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23183,7 +23307,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-manuel-fernandez-diaz",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23239,7 +23366,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23260,7 +23387,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "jose-maria-barrios-tejero",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23324,7 +23454,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23454,7 +23584,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "juan-carlos-serrano-lopez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23502,7 +23635,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23612,7 +23745,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "juan-pablo-martin-martin",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23668,7 +23804,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23689,11 +23825,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "laureano-leon-rodriguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23714,7 +23853,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "leopoldo-jeronimo-sierra-gallardo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23770,7 +23912,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -23831,7 +23973,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "lucia-yeves-leal",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -23903,7 +24048,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24013,7 +24158,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "luis-menor-perez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24028,7 +24176,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24130,11 +24278,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "manuel-borrego-rodriguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24220,7 +24371,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "manuel-miras-franqueira",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24268,7 +24422,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24289,11 +24443,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "marcos-albaladejo-gutierrez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24314,7 +24471,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-angeles-garcia-herrero",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24370,7 +24530,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24431,11 +24591,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-auxiliadora-pastor-perez-angulo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24537,7 +24700,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-cristina-rubio-blasco",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24593,7 +24759,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24614,7 +24780,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-del-carmen-leyte-coello",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24670,7 +24839,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24691,7 +24860,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-del-carmen-perez-becerra",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24755,7 +24927,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24776,7 +24948,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-del-mar-san-martin-ibarra",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -24832,7 +25007,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -24942,7 +25117,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-dolores-esteve-juan",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25006,7 +25184,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25027,7 +25205,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-dolores-flores-garcia",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25083,7 +25264,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25104,7 +25285,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-dolores-marcos-moyano",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25176,7 +25360,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25237,7 +25421,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-eva-martin-perez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25301,7 +25488,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25451,7 +25638,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-jose-gomez-rodriguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25466,7 +25656,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25487,7 +25677,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-montserrat-rivas-de-la-torre",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25543,7 +25736,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25564,7 +25757,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "maria-teresa-fernandez-molina",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25579,7 +25775,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25697,7 +25893,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "mariola-aranda-garcia",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25745,7 +25944,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25806,7 +26005,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "miguel-angel-adrian-gutierrez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -25854,7 +26056,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -25972,7 +26174,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "monica-grados-caro",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26036,7 +26241,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26057,7 +26262,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "natalia-ucero-perez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26129,7 +26337,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26150,11 +26358,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "neus-massanet-florit",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26175,7 +26386,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "nuria-marin-martinez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26200,7 +26414,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26221,7 +26435,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "pau-furriol-fornells",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26236,7 +26453,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26257,11 +26474,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "rafael-guia-marques",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26371,7 +26591,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "rosa-maria-sanchez-gandara",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26435,7 +26658,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26456,7 +26679,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "rosa-maria-serrano-sierra",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26471,7 +26697,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26589,11 +26815,14 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "sergio-barasoain-rodrigo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26654,7 +26883,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "simon-valentin-bueno-vargas",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26702,7 +26934,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26723,7 +26955,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "teresa-maria-belmonte-sanchez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26787,7 +27022,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26808,7 +27043,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "veronica-maria-casal-miguez",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26864,7 +27102,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26885,7 +27123,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "vicente-martinez-mus",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26900,7 +27141,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26921,7 +27162,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "vicente-tejedo-tormo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -26936,7 +27180,7 @@
         }
       ],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -26957,7 +27201,10 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "vidal-galicia-jaramillo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [
         {
@@ -27013,7 +27260,7 @@
           "cargoBajaFec": ""
         }
       ],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
@@ -27034,15 +27281,19 @@
       "legislatura": 15,
       "estadoTemporal": "historial_XV_no_afirmar_escaño_actual",
       "diputacionPermanente": null,
-      "catalogo": null,
+      "catalogo": {
+        "id": "virginia-perez-galindo",
+        "estado": "reserva83-06"
+      },
       "revisionIdentidad": [],
       "credenciales": [],
       "cargosFuente": [],
-      "prioridad": 4,
+      "prioridad": 0,
       "estadoTrabajo": "pendiente_de_frases_y_arte",
       "rareza": null,
       "notaRareza": "Asignar por relevancia documentada y cupos 40/30/20/10; la afiliación no determina la rareza."
     }
   ],
-  "seguimiento": "Segunda tanda: 44 identidades reservadas; tercera, cuarta y quinta: 60 adicionales cada una. Quedan 83 perfiles de este historial por preparar. Todo permanece fuera del catálogo público y no quedan retratos pendientes en las tandas preparadas."
+  "seguimiento": "Segunda tanda: 44 identidades reservadas; tercera, cuarta y quinta: 60 adicionales cada una. Quedan 83 perfiles de este historial por preparar. Todo permanece fuera del catálogo público y no quedan retratos pendientes en las tandas preparadas.",
+  "estadoTrabajoRevisado": "2026-11-05"
 }
