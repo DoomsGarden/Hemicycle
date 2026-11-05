@@ -1,31 +1,24 @@
 {
   "checkedOn": "2026-11-05",
-  "blockedUrls": [
-    "https://www.elysee.fr/",
-    "https://www.senat.fr/",
-    "https://www.assemblee-nationale.fr/",
-    "https://www.vie-publique.fr/"
-  ],
-  "observedError": "Tunnel connection failed: 403 Forbidden",
-  "requestedAdditionalDomains": [
-    "assemblee-nationale.fr",
-    "elysee.fr",
-    "fr.wikipedia.org",
-    "fr.wikiquote.org",
-    "img.europapress.es",
-    "senat.fr",
-    "vie-publique.fr",
-    "www.assemblee-nationale.fr",
-    "www.elysee.fr",
+  "initialExpansionApplied": true,
+  "policyEnforced": true,
+  "workingAccess": [
+    "www.vie-publique.fr (navegación normal y JavaScript del sitio)",
+    "www.elysee.fr (navegación normal)",
     "www.senat.fr",
-    "www.vie-publique.fr"
+    "www.assemblee-nationale.fr (navegación normal)",
+    "fr.wikipedia.org (navegación normal)",
+    "img.europapress.es"
   ],
-  "configurationDraft": "saved_with_photo_domain_added",
+  "additionalDomainsPending": [
+    "thumb.wikimedia.org",
+    "www2.assemblee-nationale.fr"
+  ],
+  "additionalDraftSaved": true,
+  "additionalDraftApplied": false,
   "requiresReviewAndPublish": true,
-  "applied": false,
   "existingNetworkEntries": "preserved",
   "scriptsAndRepositoryConfiguration": "unchanged",
-  "blockedImageUrl": "https://img.europapress.es/fotoweb/fotonoticia_20240707221428_1200.jpg",
-  "spanishArticleAccess": "58 articles retrieved through the permitted www.europapress.es host",
-  "frenchOfficialAccess": "Still blocked by the applied destination policy"
+  "proxyAndTLS": "preserved",
+  "limits": "Aplicar los dominios pendientes no completa por sí solo los retratos, las frases ni la revisión editorial."
 }

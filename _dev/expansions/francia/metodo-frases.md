@@ -32,3 +32,9 @@ Para avanzar mientras no se accede a las fuentes francesas, se conservan candida
 Estas candidatas son material de investigación, no frases finales ni cromos integrados. Se distinguen los fragmentos literales del texto periodístico de las adaptaciones: por ejemplo, «El Gobierno de Bayrou ya es historia» pasa a «El Gobierno del primer ministro ya es historia», con el cargo acreditado en la misma noticia de septiembre de 2025. El original publicado se conserva y el cambio no se oculta.
 
 Algunas noticias se descartan para seleccionar frases porque solo contienen palabras de familiares, portavoces, jueces u otros políticos. Se puede haber localizado una noticia sobre un orador sin encontrar ninguna declaración propia adecuada.
+
+## Primera selección bilingüe
+
+`frases-originales.json` incorpora 48 fragmentos cotejados para 16 perfiles. Se identifican como candidatas bilingües y conservan pendiente la revisión del tono para cada acción. Los nombres personales fuera del fragmento elegido no se trasladan a la frase animada; no ha sido necesario sustituir nombres dentro de estos 48 fragmentos.
+
+Se ha comprobado expresamente el turno de respuesta en entrevistas, la sección firmada de Badinter frente al texto previo de Toubon, las respuestas de Borne frente a las preguntas de las senadoras y el día exacto de la entrevista de Rocard dentro de una ficha que reúne varias fechas. Se retiró una candidata de Barnier que citaba a Pierre Mendès France. Las explicaciones emergentes del glosario de la web se eliminan antes del cotejo: no son palabras del orador.

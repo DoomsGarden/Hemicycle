@@ -30,7 +30,7 @@
     "raro": 30,
     "comun": 40
   },
-  "sourceBlocker": "Fuentes oficiales francesas e imágenes de img.europapress.es bloqueadas por la política de red aplicada. Se ha podido consultar prensa española y guardar candidatas contrastadas sin inventar originales franceses.",
+  "sourceBlocker": "Los accesos iniciales a fuentes francesas y fotografías de Europa Press funcionan. thumb.wikimedia.org y www2.assemblee-nationale.fr siguen en un segundo borrador sin aplicar; hacen falta para ampliar referencias visuales y parlamentarias. La búsqueda y revisión editorial continúan pendientes para parte del censo.",
   "cards": [
     {
       "id": "francois-mitterrand",
@@ -49,7 +49,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Mitterrand",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -71,7 +71,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jacques-chirac",
@@ -90,14 +91,14 @@
       "affiliationOfStage": "RPR / UMP, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jacques_Chirac",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -112,7 +113,13 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-02.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "nicolas-sarkozy",
@@ -131,14 +138,14 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Nicolas_Sarkozy",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -154,7 +161,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-01.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "francois-hollande",
@@ -173,14 +186,14 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Hollande",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -196,7 +209,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-01.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "valery-giscard-d-estaing",
@@ -215,14 +234,14 @@
       "affiliationOfStage": "UDF",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Val%C3%A9ry_Giscard_d%27Estaing",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -237,7 +256,13 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-01.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "lionel-jospin",
@@ -256,14 +281,14 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Lionel_Jospin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -278,7 +303,13 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-01.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "michel-rocard",
@@ -297,14 +328,14 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Michel_Rocard",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -319,7 +350,13 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-02.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "laurent-fabius",
@@ -338,7 +375,7 @@
       "affiliationOfStage": "PS / función institucional, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Laurent_Fabius",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -360,7 +397,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "simone-veil",
@@ -379,14 +417,14 @@
       "affiliationOfStage": "Centro / UDF, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Simone_Veil",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Vestimenta formal de máxima responsabilidad institucional.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -401,7 +439,13 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-02.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "robert-badinter",
@@ -420,14 +464,14 @@
       "affiliationOfStage": "PS / función institucional, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Robert_Badinter",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -442,7 +486,13 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-02.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "alain-juppe",
@@ -461,7 +511,7 @@
       "affiliationOfStage": "RPR / UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Alain_Jupp%C3%A9",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -483,7 +533,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "francois-fillon",
@@ -502,7 +553,7 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Fillon",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -524,7 +575,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "manuel-valls",
@@ -543,14 +595,14 @@
       "affiliationOfStage": "PS, en la etapa ministerial",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Manuel_Valls",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -566,7 +618,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-07.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "edouard-philippe",
@@ -585,14 +643,14 @@
       "affiliationOfStage": "LR / Horizons, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/%C3%89douard_Philippe",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -608,7 +666,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-04.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "jean-castex",
@@ -627,14 +691,14 @@
       "affiliationOfStage": "LR / independiente, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean_Castex",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -649,7 +713,13 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-03.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "elisabeth-borne",
@@ -668,14 +738,14 @@
       "affiliationOfStage": "Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/%C3%89lisabeth_Borne",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -691,7 +761,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-04.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "gabriel-attal",
@@ -710,14 +786,14 @@
       "affiliationOfStage": "Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Gabriel_Attal",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -733,7 +809,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-04.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "francois-bayrou",
@@ -752,14 +834,14 @@
       "affiliationOfStage": "UDF / MoDem, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Bayrou",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -774,7 +856,13 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-03.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "jean-pierre-raffarin",
@@ -793,7 +881,7 @@
       "affiliationOfStage": "UDF / UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Pierre_Raffarin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -815,7 +903,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "michel-barnier",
@@ -834,14 +923,14 @@
       "affiliationOfStage": "RPR / UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Michel_Barnier",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -857,7 +946,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 2,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-03.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "sebastien-lecornu",
@@ -876,7 +971,7 @@
       "affiliationOfStage": "LR / Renaissance, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/S%C3%A9bastien_Lecornu",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -898,7 +993,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "bernard-cazeneuve",
@@ -917,14 +1013,14 @@
       "affiliationOfStage": "PS / La Convention, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Bernard_Cazeneuve",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -939,7 +1035,13 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-03.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "dominique-de-villepin",
@@ -958,14 +1060,14 @@
       "affiliationOfStage": "UMP, en la etapa ministerial",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Dominique_de_Villepin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -981,7 +1083,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-07.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "jean-luc-melenchon",
@@ -1000,14 +1108,14 @@
       "affiliationOfStage": "PS / PG / LFI, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Luc_M%C3%A9lenchon",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1023,7 +1131,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-07.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "segolene-royal",
@@ -1042,14 +1156,14 @@
       "affiliationOfStage": "PS, en la etapa representada",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/S%C3%A9gol%C3%A8ne_Royal",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1065,7 +1179,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-05.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "martine-aubry",
@@ -1084,7 +1204,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Martine_Aubry",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1106,7 +1226,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "gerard-larcher",
@@ -1125,7 +1246,7 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/G%C3%A9rard_Larcher",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1147,7 +1268,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "yael-braun-pivet",
@@ -1166,7 +1288,7 @@
       "affiliationOfStage": "LREM / Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Ya%C3%ABl_Braun-Pivet",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1189,7 +1311,8 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "francois-de-rugy",
@@ -1208,7 +1331,7 @@
       "affiliationOfStage": "Ecologistas / LREM, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_de_Rugy",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1231,7 +1354,8 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "richard-ferrand",
@@ -1250,14 +1374,14 @@
       "affiliationOfStage": "LREM, en la etapa parlamentaria",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Richard_Ferrand",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Traje o conjunto profesional formal.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1273,7 +1397,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-04.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "bruno-le-maire",
@@ -1292,14 +1422,14 @@
       "affiliationOfStage": "UMP / LR / Renaissance, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Bruno_Le_Maire",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1315,7 +1445,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-05.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "gerald-darmanin",
@@ -1334,14 +1470,14 @@
       "affiliationOfStage": "LR / Renaissance, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/G%C3%A9rald_Darmanin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1357,7 +1493,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 2,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-05.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "christiane-taubira",
@@ -1376,14 +1518,14 @@
       "affiliationOfStage": "PRG / izquierda, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Christiane_Taubira",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1399,7 +1541,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-05.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "jean-pierre-chevenement",
@@ -1418,7 +1566,7 @@
       "affiliationOfStage": "PS / MDC / MRC, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Pierre_Chev%C3%A8nement",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1440,7 +1588,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jean-louis-borloo",
@@ -1459,14 +1608,14 @@
       "affiliationOfStage": "Partido Radical / UDI, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Louis_Borloo",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1481,7 +1630,13 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-06.png",
+        "position": "0% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "anne-hidalgo",
@@ -1500,14 +1655,14 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Anne_Hidalgo",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1523,7 +1678,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-07.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "laurent-wauquiez",
@@ -1542,7 +1703,7 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Laurent_Wauquiez",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1564,7 +1725,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "bruno-retailleau",
@@ -1583,14 +1745,14 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Bruno_Retailleau",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1606,7 +1768,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-06.png",
+        "position": "100% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "xavier-bertrand",
@@ -1625,7 +1793,7 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Xavier_Bertrand",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1647,7 +1815,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "valerie-pecresse",
@@ -1666,14 +1835,14 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Val%C3%A9rie_P%C3%A9cresse",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "candidatas_es_contrastadas_original_fr_pendiente",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1689,7 +1858,13 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 2,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3,
+      "art": {
+        "sheet": "primera-100/art/fr01-06.png",
+        "position": "100% 0%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "rachida-dati",
@@ -1708,14 +1883,14 @@
       "affiliationOfStage": "UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Rachida_Dati",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
       "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
-      "artStatus": "pendiente_referencias_visuales_y_generacion",
+      "artStatus": "generado_provisional_pendiente_revision_global",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
       "backgroundBrief": "Variar hemiciclo, comisión, biblioteca, atril y medios; vinculados a institución o formación de la etapa, sin bandera francesa uniforme.",
@@ -1730,7 +1905,13 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0,
+      "art": {
+        "sheet": "primera-100/art/fr01-06.png",
+        "position": "0% 100%",
+        "status": "generated_provisional"
+      }
     },
     {
       "id": "najat-vallaud-belkacem",
@@ -1749,7 +1930,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Najat_Vallaud-Belkacem",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1771,7 +1952,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "marisol-touraine",
@@ -1790,13 +1972,13 @@
       "affiliationOfStage": "PS, en la etapa ministerial",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Marisol_Touraine",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
         "support": null
       },
-      "phraseStatus": "pendiente_fuente_original_fr_y_traduccion",
+      "phraseStatus": "originales_y_traducciones_candidatos_no_finales",
       "artStatus": "pendiente_referencias_visuales_y_generacion",
       "gazeBrief": "Cabeza y mirada predominantemente hacia un interlocutor o el hemiciclo; evitar frontalidad repetitiva.",
       "wardrobeBrief": "Americana suave, camisa abierta o conjunto profesional relajado.",
@@ -1812,7 +1994,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 3
     },
     {
       "id": "jean-yves-le-drian",
@@ -1831,7 +2014,7 @@
       "affiliationOfStage": "PS / apoyo presidencial, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Yves_Le_Drian",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1853,7 +2036,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "florence-parly",
@@ -1872,7 +2056,7 @@
       "affiliationOfStage": "PS / independiente, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Florence_Parly",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1894,7 +2078,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "sylvie-goulard",
@@ -1913,7 +2098,7 @@
       "affiliationOfStage": "MoDem / centro, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Sylvie_Goulard",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1935,7 +2120,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "stephane-sejourne",
@@ -1954,7 +2140,7 @@
       "affiliationOfStage": "Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/St%C3%A9phane_S%C3%A9journ%C3%A9",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -1976,7 +2162,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "pierre-moscovici",
@@ -1995,7 +2182,7 @@
       "affiliationOfStage": "PS / función institucional, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Pierre_Moscovici",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2017,7 +2204,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "benoit-hamon",
@@ -2036,7 +2224,7 @@
       "affiliationOfStage": "PS / Génération.s, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Beno%C3%AEt_Hamon",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2058,7 +2246,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "arnaud-montebourg",
@@ -2077,7 +2266,7 @@
       "affiliationOfStage": "PS / independiente, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Arnaud_Montebourg",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2099,7 +2288,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "olivier-faure",
@@ -2118,7 +2308,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Olivier_Faure",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2141,7 +2331,8 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "fabien-roussel",
@@ -2160,7 +2351,7 @@
       "affiliationOfStage": "PCF",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fabien_Roussel",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2182,7 +2373,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "eric-ciotti",
@@ -2201,7 +2393,7 @@
       "affiliationOfStage": "UMP / LR / UDR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/%C3%89ric_Ciotti",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2223,7 +2415,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "eric-zemmour",
@@ -2242,7 +2435,7 @@
       "affiliationOfStage": "Reconquête",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/%C3%89ric_Zemmour",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2264,7 +2457,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "marion-marechal",
@@ -2283,7 +2477,7 @@
       "affiliationOfStage": "FN / Reconquête / Identité-Libertés, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Marion_Mar%C3%A9chal",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2305,7 +2499,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jordan-bardella",
@@ -2324,7 +2519,7 @@
       "affiliationOfStage": "RN",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jordan_Bardella",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2347,7 +2542,8 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "yannick-jadot",
@@ -2366,7 +2562,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Yannick_Jadot",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2388,7 +2584,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "francois-ruffin",
@@ -2407,7 +2604,7 @@
       "affiliationOfStage": "LFI / Picardie Debout, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Ruffin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2429,7 +2626,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "raphael-glucksmann",
@@ -2448,7 +2646,7 @@
       "affiliationOfStage": "Place publique",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Rapha%C3%ABl_Glucksmann",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2470,7 +2668,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "marine-tondelier",
@@ -2489,7 +2688,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Marine_Tondelier",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2512,7 +2711,8 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 3,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "rama-yade",
@@ -2531,7 +2731,7 @@
       "affiliationOfStage": "UMP / centro, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Rama_Yade",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2553,7 +2753,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "sandrine-rousseau",
@@ -2572,7 +2773,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Sandrine_Rousseau",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2594,7 +2795,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "clementine-autain",
@@ -2613,7 +2815,7 @@
       "affiliationOfStage": "Ensemble! (formación de izquierda) / LFI / L’Après, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Cl%C3%A9mentine_Autain",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2635,7 +2837,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "mathilde-panot",
@@ -2654,7 +2857,7 @@
       "affiliationOfStage": "LFI",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Mathilde_Panot",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2677,7 +2880,8 @@
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
       "pressCandidateCount": 1,
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "manon-aubry",
@@ -2696,7 +2900,7 @@
       "affiliationOfStage": "LFI; grupo The Left en el Parlamento Europeo",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Manon_Aubry",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2718,7 +2922,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "aurore-berge",
@@ -2737,7 +2942,7 @@
       "affiliationOfStage": "LR / Renaissance, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Aurore_Berg%C3%A9",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2759,7 +2964,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "agnes-pannier-runacher",
@@ -2778,7 +2984,7 @@
       "affiliationOfStage": "Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Agn%C3%A8s_Pannier-Runacher",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2800,7 +3006,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "amelie-de-montchalin",
@@ -2819,7 +3026,7 @@
       "affiliationOfStage": "LREM / Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Am%C3%A9lie_de_Montchalin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2841,7 +3048,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "agnes-buzyn",
@@ -2860,7 +3068,7 @@
       "affiliationOfStage": "LREM, en la etapa ministerial",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Agn%C3%A8s_Buzyn",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2882,7 +3090,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "aurelien-pradie",
@@ -2901,7 +3110,7 @@
       "affiliationOfStage": "LR / independiente, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Aur%C3%A9lien_Pradi%C3%A9",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2923,7 +3132,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jean-francois-cope",
@@ -2942,7 +3152,7 @@
       "affiliationOfStage": "UMP / LR",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Fran%C3%A7ois_Cop%C3%A9",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -2964,7 +3174,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "valerie-boyer",
@@ -2983,7 +3194,7 @@
       "affiliationOfStage": "UMP / LR",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Val%C3%A9rie_Boyer",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3005,7 +3216,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "valerie-rabault",
@@ -3024,7 +3236,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Val%C3%A9rie_Rabault",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3046,7 +3258,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "boris-vallaud",
@@ -3065,7 +3278,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Boris_Vallaud",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3087,7 +3300,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "carole-delga",
@@ -3106,7 +3320,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Carole_Delga",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3128,7 +3342,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "johanna-rolland",
@@ -3147,7 +3362,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Johanna_Rolland",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3169,7 +3384,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "nathalie-appere",
@@ -3188,7 +3404,7 @@
       "affiliationOfStage": "PS",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Nathalie_App%C3%A9r%C3%A9",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3210,7 +3426,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "gregory-doucet",
@@ -3229,7 +3446,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Gr%C3%A9gory_Doucet",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3251,7 +3468,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "bruno-bernard",
@@ -3269,8 +3487,8 @@
       "roleStatus": "resumen_preliminar_no_afirma_cargo_actual_pendiente_contraste_documental",
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
-      "referenceToCheck": "https://fr.wikipedia.org/wiki/Bruno_Bernard",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceToCheck": "https://fr.wikipedia.org/wiki/Bruno_Bernard_(homme_politique)",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3292,7 +3510,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jeanne-barseghian",
@@ -3311,7 +3530,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jeanne_Barseghian",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3333,7 +3552,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "pierre-hurmic",
@@ -3352,7 +3572,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Pierre_Hurmic",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3374,7 +3594,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "eric-piolle",
@@ -3393,7 +3614,7 @@
       "affiliationOfStage": "EELV / Les Écologistes",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/%C3%89ric_Piolle",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3415,7 +3636,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "francois-baroin",
@@ -3434,7 +3656,7 @@
       "affiliationOfStage": "RPR / UMP / LR, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Baroin",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3456,7 +3678,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "christian-estrosi",
@@ -3475,7 +3698,7 @@
       "affiliationOfStage": "UMP / LR / Horizons, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Christian_Estrosi",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3497,7 +3720,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "david-lisnard",
@@ -3516,7 +3740,7 @@
       "affiliationOfStage": "LR / Nouvelle Énergie",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/David_Lisnard",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3538,7 +3762,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "philippe-poutou",
@@ -3557,7 +3782,7 @@
       "affiliationOfStage": "NPA / Nouveau Parti anticapitaliste",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Philippe_Poutou",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3579,7 +3804,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "nathalie-arthaud",
@@ -3598,7 +3824,7 @@
       "affiliationOfStage": "Lutte ouvrière",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Nathalie_Arthaud",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3620,7 +3846,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "francois-asselineau",
@@ -3639,7 +3866,7 @@
       "affiliationOfStage": "UPR",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Asselineau",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3661,7 +3888,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jean-lassalle",
@@ -3680,7 +3908,7 @@
       "affiliationOfStage": "MoDem / Résistons, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean_Lassalle",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3702,7 +3930,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "nicolas-dupont-aignan",
@@ -3721,7 +3950,7 @@
       "affiliationOfStage": "Debout la France",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Nicolas_Dupont-Aignan",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3743,7 +3972,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "florian-philippot",
@@ -3762,7 +3992,7 @@
       "affiliationOfStage": "FN / Les Patriotes, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Florian_Philippot",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3784,7 +4014,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "jean-philippe-tanguy",
@@ -3803,7 +4034,7 @@
       "affiliationOfStage": "RN",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Jean-Philippe_Tanguy",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3825,7 +4056,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "sebastien-chenu",
@@ -3844,7 +4076,7 @@
       "affiliationOfStage": "RN",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/S%C3%A9bastien_Chenu",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3866,7 +4098,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "laure-lavalette",
@@ -3885,7 +4118,7 @@
       "affiliationOfStage": "RN",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Laure_Lavalette",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3907,7 +4140,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "louis-aliot",
@@ -3926,7 +4160,7 @@
       "affiliationOfStage": "FN / RN",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Louis_Aliot",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3948,7 +4182,8 @@
         "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "steeve-briois",
@@ -3967,7 +4202,7 @@
       "affiliationOfStage": "FN / RN",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Steeve_Briois",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -3989,7 +4224,8 @@
         "description": "Tus oradores infligen +2 de daño al Líder rival."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "nicolas-bay",
@@ -4008,7 +4244,7 @@
       "affiliationOfStage": "FN / RN / Reconquête, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Nicolas_Bay",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -4030,7 +4266,8 @@
         "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "nathalie-loiseau",
@@ -4049,7 +4286,7 @@
       "affiliationOfStage": "LREM / Horizons, según etapa",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Nathalie_Loiseau",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -4071,7 +4308,8 @@
         "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "clement-beaune",
@@ -4090,7 +4328,7 @@
       "affiliationOfStage": "Renaissance",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Cl%C3%A9ment_Beaune",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -4112,7 +4350,8 @@
         "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     },
     {
       "id": "marc-fesneau",
@@ -4131,7 +4370,7 @@
       "affiliationOfStage": "MoDem",
       "affiliationStatus": "orientacion_para_investigar_etapa_no_inferir_militancia_actual",
       "referenceToCheck": "https://fr.wikipedia.org/wiki/Marc_Fesneau",
-      "referenceStatus": "enlace_de_investigacion_no_consultado_no_cuenta_como_evidencia",
+      "referenceStatus": "perfil_consultado_contraste_integral_de_trayectoria_pendiente",
       "phrases": {
         "normal": null,
         "strong": null,
@@ -4153,7 +4392,8 @@
         "description": "Quien ataca a un orador tuyo recibe 1 de daño."
       },
       "mechanicsStatus": "propuesta_de_juego_no_integrada_ni_atribucion_de_cualidades_reales",
-      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa"
+      "biographyResearchStatus": "pendiente_contraste_integral_de_trayectoria_y_etapa",
+      "bilingualCandidateCount": 0
     }
   ],
   "workflow": {
@@ -4276,10 +4516,14 @@
     "profilesWithSpanishCandidates": 23,
     "spanishPhraseCandidates": 54,
     "profilesWithThreeSpanishCandidates": 14,
-    "verifiedFrenchOriginals": 0,
-    "generatedPortraits": 0,
+    "verifiedFrenchOriginals": 48,
+    "generatedPortraits": 28,
     "finishedNewCards": 0,
     "integratedNewCards": 0,
-    "note": "Las candidatas no cierran las 300 frases ni los 100 cromos. El arte requiere fotos verificadas y los textos conservan pendiente su contraste francés."
+    "note": "48 fragmentos bilingües con original y hablante cotejados; tono por acción pendiente. 28 retratos provisionales. No equivale a cromos terminados ni a 300 frases finales.",
+    "profilesWithBilingualCandidates": 16,
+    "bilingualCandidates": 48,
+    "frenchSourceRecords": 135,
+    "distinctFrenchSourcePages": 134
   }
 }

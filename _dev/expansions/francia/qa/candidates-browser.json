@@ -1,6 +1,9 @@
 {
   "candidates": 100,
-  "spanishPhraseCandidates": 54,
+  "spanishPressCandidates": 54,
+  "bilingualCandidates": 48,
+  "generatedPortraits": 28,
+  "allPortraitImagesLoaded": true,
   "widths": [
     320,
     393,
@@ -8,7 +11,9 @@
     1200
   ],
   "tierFilter": true,
+  "artFilter": true,
   "search": true,
   "documentedSubstitutionVisible": true,
+  "bilingualSourcesVisible": true,
   "errors": []
 }

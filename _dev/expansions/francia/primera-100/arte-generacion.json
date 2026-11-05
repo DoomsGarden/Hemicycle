@@ -205,6 +205,274 @@
       "generatedOn": "2026-11-05",
       "sha256": "be973b0904d3e6eb69624f35bebb6d67320ddd14e799b31a50c1d9d62736682a",
       "originalOutput": "exec-0176b93c-ee7d-486c-95be-c353921ca954.png"
+    },
+    {
+      "sheet": "art/fr01-04.png",
+      "ids": [
+        "elisabeth-borne",
+        "edouard-philippe",
+        "gabriel-attal",
+        "richard-ferrand"
+      ],
+      "names": [
+        "Élisabeth Borne",
+        "Édouard Philippe",
+        "Gabriel Attal",
+        "Richard Ferrand"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Élisabeth Borne, tier especial. Face: Short silver-gray pixie hair, narrow face, thin oval metal glasses, no jewelry emphasis. Pose: head and eyes 45 degrees left; two hands low in an explanatory gesture. Wardrobe: a formal charcoal tailored jacket, pale patterned blouse. Background: a parliamentary committee room with walnut desks, red upholstery and a warm practical lamp. TOP RIGHT: Édouard Philippe, tier especial. Face: High receding crown, close-cropped gray side hair, round black glasses, long face. Clean-shaven AS IN THIS PHOTO, not his later beard. Pose: head and eyes 50 degrees right, speaking toward a colleague, one low microphone. Wardrobe: a formal navy suit, white shirt and discreet blue tie. Background: a contemporary party-conference stage with teal panels, angled white lighting and no logos. BOTTOM LEFT: Gabriel Attal, tier especial. Face: IDENTITY: the young man FAR LEFT in the group photo, not the other two men. Short curly brown hair, long narrow youthful face, prominent eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees left, shoulders turned right, a closed folder low in frame. Wardrobe: a formal dark blue tailored suit, white shirt and neat burgundy tie. Background: a ministerial briefing room with cream stone and a dark blue lectern. BOTTOM RIGHT: Richard Ferrand, tier especial. Face: Thick curly gray hair, broad lined face, prominent nose, delicate rimless rectangular glasses, clean-shaven. Pose: head and eyes 45 degrees right, a measured hand gesture, no microphone. Wardrobe: a formal charcoal suit, pale shirt and sober dark tie. Background: an elevated Assembly presidium, red velvet and carved gilt wood viewed diagonally. ",
+      "references": [
+        {
+          "id": "elisabeth-borne",
+          "page": "https://www.europapress.es/internacional/noticia-ex-primera-ministra-elisabeth-borne-postula-liderar-partido-macron-20240821210539.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20240821210539_1200.jpg",
+          "photoSha256": "782fbe16422618eec3577e80c928398996b9b744fd3dcce68875598065e35115",
+          "caption": "Archivo - Elisabeth Borne, ex primera ministra de Francia  - Kay Nietfeld/dpa - Archivo",
+          "features": "Short silver-gray pixie hair, narrow face, thin oval metal glasses, no jewelry emphasis.",
+          "pose": "head and eyes 45 degrees left; two hands low in an explanatory gesture",
+          "wardrobe": "a formal charcoal tailored jacket, pale patterned blouse",
+          "background": "a parliamentary committee room with walnut desks, red upholstery and a warm practical lamp"
+        },
+        {
+          "id": "edouard-philippe",
+          "page": "https://www.europapress.es/internacional/noticia-ex-primer-ministro-frances-edouard-philippe-reprocha-macron-falta-decisiones-le-exige-restaurar-orden-20261019065211.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20261019065211_1200.jpg",
+          "photoSha256": "50c742884d59f0cafcde55ebdee512a9aa51cb099c7564767c23f850e5dfb02c",
+          "caption": "Archivo - El presidente del partido Horizons, ex primer ministro de Francia y candidato presidencial para 2027, Édouard Philippe, durante un mitin en París.  - Matthieu Mirville / Zuma Press / Europa Press",
+          "features": "High receding crown, close-cropped gray side hair, round black glasses, long face. Clean-shaven AS IN THIS PHOTO, not his later beard.",
+          "pose": "head and eyes 50 degrees right, speaking toward a colleague, one low microphone",
+          "wardrobe": "a formal navy suit, white shirt and discreet blue tie",
+          "background": "a contemporary party-conference stage with teal panels, angled white lighting and no logos"
+        },
+        {
+          "id": "gabriel-attal",
+          "page": "https://www.europapress.es/internacional/noticia-ex-primer-ministro-gabriel-attal-anuncia-candidatura-elecciones-presidenciales-2027-francia-20260522144836.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260522144836_1200.jpg",
+          "photoSha256": "2ed28cdeb2a49456900e15847cf5b78b595d6df5ab4babfce89a35d4ef75b26c",
+          "caption": "Gabriel Attal   - Europa Press/Contacto/Sandrine Thesillat",
+          "features": "IDENTITY: the young man FAR LEFT in the group photo, not the other two men. Short curly brown hair, long narrow youthful face, prominent eyebrows, clean-shaven, no glasses.",
+          "pose": "head and eyes 45 degrees left, shoulders turned right, a closed folder low in frame",
+          "wardrobe": "a formal dark blue tailored suit, white shirt and neat burgundy tie",
+          "background": "a ministerial briefing room with cream stone and a dark blue lectern"
+        },
+        {
+          "id": "richard-ferrand",
+          "page": "https://www.europapress.es/internacional/noticia-richard-ferrand-elegido-presidente-grupo-parlamentario-partido-macron-20170624133302.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20170624133302_1200.jpg",
+          "photoSha256": "b9e87d1e9ab67ddc6c588260b57a27ea9cb82de88c00081ca06923e45d36a4a0",
+          "caption": "  REUTERS / CHARLES PLATIAU",
+          "features": "Thick curly gray hair, broad lined face, prominent nose, delicate rimless rectangular glasses, clean-shaven.",
+          "pose": "head and eyes 45 degrees right, a measured hand gesture, no microphone",
+          "wardrobe": "a formal charcoal suit, pale shirt and sober dark tie",
+          "background": "an elevated Assembly presidium, red velvet and carved gilt wood viewed diagonally"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "5cf9967a5302bbc08c69b78118471f59444bca0fdbe8fd80967abd36fe3dc66c",
+      "originalOutput": "exec-30dba1d7-8927-4b7a-ba19-57135eb73488.png"
+    },
+    {
+      "sheet": "art/fr01-05.png",
+      "ids": [
+        "bruno-le-maire",
+        "gerald-darmanin",
+        "segolene-royal",
+        "christiane-taubira"
+      ],
+      "names": [
+        "Bruno Le Maire",
+        "Gérald Darmanin",
+        "Ségolène Royal",
+        "Christiane Taubira"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Bruno Le Maire, tier raro. Face: Short neat silver-gray hair, high forehead, narrow angular cheeks, clean-shaven, no glasses. Pose: head and eyes 50 degrees left, one low slim microphone. Wardrobe: a soft professional blue blazer, open-collar pale blue shirt, no tie. Background: a ministerial economics briefing room, navy panels and steel-blue reflected light. TOP RIGHT: Gérald Darmanin, tier raro. Face: Short dark hair with gray temples, rounded face, expressive dark eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees right, one open hand low. Wardrobe: a charcoal soft jacket, white open-collar shirt, no tie. Background: a parliamentary corridor with neutral stone, dark blue doors and warm side light. BOTTOM LEFT: Ségolène Royal, tier especial. Face: IDENTITY: the brown-haired WOMAN RIGHT of the seated pair, not the man on the left. Shoulder-length wavy chestnut hair, long oval face, no glasses. Pose: head and eyes 50 degrees left toward an unseen interlocutor, no microphone. Wardrobe: a formal dark fitted jacket, cream blouse and restrained burgundy scarf. Background: an environmental-policy conference with green glass, a warm wooden table and soft daylight. BOTTOM RIGHT: Christiane Taubira, tier raro. Face: Black woman with dark brown skin, tightly braided black hair pulled back, broad expressive face, no glasses. Pose: head and eyes 45 degrees right, speaking with a low open palm, one low lectern microphone. Wardrobe: a comfortable dark blue jacket, simple pale blouse and turquoise scarf. Background: a justice committee library with warm shelving, green leather and a blue side light. ",
+      "references": [
+        {
+          "id": "bruno-le-maire",
+          "page": "https://www.europapress.es/economia/macroeconomia-00338/noticia-le-maire-tacha-ineficaz-programa-nfp-alerta-riesgo-crisis-financiera-20240708142119.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20240708142119_1200.jpg",
+          "photoSha256": "cc20ef406a15ceb2fa0b1aa148883f4dcd7ff3496491009843823ed88fc9f8ce",
+          "caption": "Archivo - FILED - 19 February 2019, Berlin: French Minister of Economics Bruno Le Maire speaks during a press conference at the Federal Ministry of Economics after his meeting with German Minister of Economics Peter Altmaier. The novel coronavirus is se  - Wolfgang Kumm/dpa - Archivo",
+          "features": "Short neat silver-gray hair, high forehead, narrow angular cheeks, clean-shaven, no glasses.",
+          "pose": "head and eyes 50 degrees left, one low slim microphone",
+          "wardrobe": "a soft professional blue blazer, open-collar pale blue shirt, no tie",
+          "background": "a ministerial economics briefing room, navy panels and steel-blue reflected light"
+        },
+        {
+          "id": "gerald-darmanin",
+          "page": "https://www.europapress.es/internacional/noticia-darmanin-pide-suspender-tres-anos-inmigracion-legal-francia-estar-limite-capacidad-asimilacion-20260524152537.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260524152537_1200.jpg",
+          "photoSha256": "cd81b959ff5808a85c04e299fe17be448f401503163180e46c1b7a5d4b95696a",
+          "caption": "Archivo - El ministro de  Justicia francés, Gérald Darmanin  - Europa Press/Contacto/Michael Baucher - Archivo",
+          "features": "Short dark hair with gray temples, rounded face, expressive dark eyebrows, clean-shaven, no glasses.",
+          "pose": "head and eyes 45 degrees right, one open hand low",
+          "wardrobe": "a charcoal soft jacket, white open-collar shirt, no tie",
+          "background": "a parliamentary corridor with neutral stone, dark blue doors and warm side light"
+        },
+        {
+          "id": "segolene-royal",
+          "page": "https://www.europapress.es/epagro/noticia-hugo-moran-segolene-royal-discrepan-coste-asumir-ciudadanos-transicion-ecologica-20211021165251.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20211021165251_1200_v3.jpg",
+          "photoSha256": "37165675e08a074c8fc3d1b37062e8c662ac647df2d0102131d6763ffd3a5364",
+          "caption": " La exministra de Transición Ecológica de Francia, Ségolène Royal, y el secretario de Estado de Medio Ambiente, Hugo Morán, debaten en el último bloque de la segunda jornada de sostenibilidad  - GRUPO RED ELÉCTRICA",
+          "features": "IDENTITY: the brown-haired WOMAN RIGHT of the seated pair, not the man on the left. Shoulder-length wavy chestnut hair, long oval face, no glasses.",
+          "pose": "head and eyes 50 degrees left toward an unseen interlocutor, no microphone",
+          "wardrobe": "a formal dark fitted jacket, cream blouse and restrained burgundy scarf",
+          "background": "an environmental-policy conference with green glass, a warm wooden table and soft daylight"
+        },
+        {
+          "id": "christiane-taubira",
+          "page": "https://www.europapress.es/internacional/noticia-taubira-ratifica-candidatura-presidencia-francia-presenta-programa-politico-20220115123810.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20220115123810_1200.jpg",
+          "photoSha256": "f31c54238664884d145ed0136277341244ca2c76e576a5eadc185eadca18c093",
+          "caption": "Archivo - La exministra de Justicia Christiane Taubira  - PASCAL LE SEGRETAIN - Archivo",
+          "features": "Black woman with dark brown skin, tightly braided black hair pulled back, broad expressive face, no glasses.",
+          "pose": "head and eyes 45 degrees right, speaking with a low open palm, one low lectern microphone",
+          "wardrobe": "a comfortable dark blue jacket, simple pale blouse and turquoise scarf",
+          "background": "a justice committee library with warm shelving, green leather and a blue side light"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "7516791062672ef286948be72cbf4b73b16c01b9e1007d28623fdbf6f4ad7784",
+      "originalOutput": "exec-15a752fe-3988-4c52-8261-6ce35382fc6f.png"
+    },
+    {
+      "sheet": "art/fr01-06.png",
+      "ids": [
+        "jean-louis-borloo",
+        "valerie-pecresse",
+        "rachida-dati",
+        "bruno-retailleau"
+      ],
+      "names": [
+        "Jean-Louis Borloo",
+        "Valérie Pécresse",
+        "Rachida Dati",
+        "Bruno Retailleau"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. All tiers are provisional. Formal tailored clothing for SPECIAL tier; softer jackets and open collars for RARE tier. FOLLOW each clothing brief. Turn BOTH HEAD AND EYES 45–50 degrees OFF CAMERA in the stated direction: no frontal eye contact. Vary scene, light and gestures, keeping all faces clear. TOP LEFT: Jean-Louis Borloo, tier raro. Face: Dark tousled curly hair, broad lined cheeks, strong eyebrows, clean-shaven, no glasses. Pose: head and eyes 45 degrees left, both hands low as if explaining, one low microphone. Wardrobe: an open-collar pale blue shirt with sleeves casually rolled, no tie. Background: a centrist party conference with blue and cream architecture, soft stage beams, no readable logos. TOP RIGHT: Valérie Pécresse, tier raro. Face: Short straight honey-blond bob, side part, oval face, no glasses. Pose: head and eyes 50 degrees right, a measured hand gesture low in frame. Wardrobe: a comfortable structured red jacket over a pale blouse. Background: a regional-council chamber with royal-blue seating, wood desk edges and angled daylight. BOTTOM LEFT: Rachida Dati, tier raro. Face: IDENTITY: the shorter WOMAN ON THE RIGHT, not the tall man on the left. Short sleek dark brown bob, distinctive black rectangular glasses, olive-toned skin. Pose: head and eyes 45 degrees left and slightly down, holding a closed slim folder. Wardrobe: a soft charcoal jacket over a pale open-collar blouse. Background: a cultural-ministry salon with dark green walls, brass lamps and warm architectural depth. BOTTOM RIGHT: Bruno Retailleau, tier raro. Face: Receding short dark-gray hair, long narrow face, thin round metal glasses, clean-shaven. The caption identifies RETAILLEAU despite the search having been for Le Maire. Pose: head and eyes 50 degrees right, a small precision hand gesture low in frame, handheld microphone below chin. Wardrobe: a dark soft blazer and pale blue open-collar shirt, no tie. Background: a Senate committee room with burgundy upholstery, golden wood and a muted violet stage light. ",
+      "references": [
+        {
+          "id": "jean-louis-borloo",
+          "page": "https://www.europapress.es/internacional/noticia-jean-louis-borloo-allana-posibilidades-electorales-sarkozy-20111003135317.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20111003135317_1200.jpg",
+          "photoSha256": "a8d068b4aa993d60930f05524dd9aa2e2fcd803b8c157e8c5a00a3926a358895",
+          "caption": "  REUTERS",
+          "features": "Dark tousled curly hair, broad lined cheeks, strong eyebrows, clean-shaven, no glasses.",
+          "pose": "head and eyes 45 degrees left, both hands low as if explaining, one low microphone",
+          "wardrobe": "an open-collar pale blue shirt with sleeves casually rolled, no tie",
+          "background": "a centrist party conference with blue and cream architecture, soft stage beams, no readable logos"
+        },
+        {
+          "id": "valerie-pecresse",
+          "page": "https://www.europapress.es/internacional/noticia-pecresse-avisa-fracturas-francia-resultado-inedito-le-pen-20220424210627.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20220424210627_1200.jpg",
+          "photoSha256": "a28cef9d86d6e27f92f1bfbfaf25cda8e2b88fe47c7d7a812a66f573d1216c8f",
+          "caption": "Archivo - Valérie Pécresse, candidata de Los Republicanos en la primera vuelta  - -/EPP/dpa - Archivo",
+          "features": "Short straight honey-blond bob, side part, oval face, no glasses.",
+          "pose": "head and eyes 50 degrees right, a measured hand gesture low in frame",
+          "wardrobe": "a comfortable structured red jacket over a pale blouse",
+          "background": "a regional-council chamber with royal-blue seating, wood desk edges and angled daylight"
+        },
+        {
+          "id": "rachida-dati",
+          "page": "https://www.europapress.es/internacional/noticia-fiscalia-pide-cuatro-anos-carcel-cinco-inhabilitacion-exministra-francesa-rachida-dati-20260928150945.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20260928150945_1200.jpg",
+          "photoSha256": "7423dc3ff47defe0505abab49f132636d1d86dac953844982d36a9b49822e423",
+          "caption": "Archivo - Rachida Dati, exministra francesa  - Sebastien Toubon / Zuma Press / Europa Press",
+          "features": "IDENTITY: the shorter WOMAN ON THE RIGHT, not the tall man on the left. Short sleek dark brown bob, distinctive black rectangular glasses, olive-toned skin.",
+          "pose": "head and eyes 45 degrees left and slightly down, holding a closed slim folder",
+          "wardrobe": "a soft charcoal jacket over a pale open-collar blouse",
+          "background": "a cultural-ministry salon with dark green walls, brass lamps and warm architectural depth"
+        },
+        {
+          "id": "bruno-retailleau",
+          "page": "https://www.europapress.es/internacional/noticia-lider-republicanos-acusa-lecornu-ocultarle-vuelta-exministro-le-maire-20251006180820.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20251006180820_1200.jpg",
+          "photoSha256": "311cbe038820dfd034cbcc1b6448f7f78197655ca419b4f0e0d141b9745f0b6d",
+          "caption": "Bruno Retailleau, ministro del Interior en funciones de Francia  - Europa Press/Contacto/Vincent Isore",
+          "features": "Receding short dark-gray hair, long narrow face, thin round metal glasses, clean-shaven. The caption identifies RETAILLEAU despite the search having been for Le Maire.",
+          "pose": "head and eyes 50 degrees right, a small precision hand gesture low in frame, handheld microphone below chin",
+          "wardrobe": "a dark soft blazer and pale blue open-collar shirt, no tie",
+          "background": "a Senate committee room with burgundy upholstery, golden wood and a muted violet stage light"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "2a6de031c4c056ce213c3291880e8c823829776da1edc86328d6970a686f7e79",
+      "originalOutput": "exec-1a50c017-ea43-4c0b-bc94-fb9a2a41a1d7.png"
+    },
+    {
+      "sheet": "art/fr01-07.png",
+      "ids": [
+        "dominique-de-villepin",
+        "manuel-valls",
+        "jean-luc-melenchon",
+        "anne-hidalgo"
+      ],
+      "names": [
+        "Dominique de Villepin",
+        "Manuel Valls",
+        "Jean-Luc Mélenchon",
+        "Anne Hidalgo"
+      ],
+      "prompt": "Create NEW original semi-realistic digital-painting character art for the fictional Hemiciclo trading-card game: one atlas with exactly TWO columns and TWO rows, four equal edge-to-edge panels. Total canvas vertical 3:4; every quadrant is a separate vertical 3:4 bust portrait. No gutters, card frames, text, numbers, emblems, flags or UI. The first four photographs identify the four French politicians in reading order; preserve each individual’s face, hair and glasses. The final image, existing Trump TCG art, guides ONLY the painterly style, sharp facial rendering, studio light, dramatic architectural depth and visual polish. Do not copy its identity, clothing or flag background. Clearly illustrated, not documentary photography. Keep full hair with breathing room above and leave the bottom corners clear for UI. First three portraits SPECIAL tier in formal tailored clothes; fourth RARE in relaxed professional clothes. ALL heads AND EYES directed OFF CAMERA, with no frontal eye contact. Follow each source-group identity carefully. TOP LEFT: Dominique de Villepin. Face: IDENTITY: the seated silver-haired man in the CENTER of the group, behind the monitor, not the others. Thick silver hair swept back, long face, long narrow nose, clean-shaven, no glasses. Pose: head and eyes fifty degrees left, a resolute debating posture, one low microphone. Wardrobe: a formal dark tailored suit, white shirt, dark blue silk tie. Background: a diplomatic chamber with honey-colored wood, navy upholstery and warm side light. TOP RIGHT: Manuel Valls. Face: IDENTITY: the man FAR LEFT of the three standing men, not the other two. Short dark hair, long angular face, pronounced eyebrows, clean-shaven, no glasses. Pose: head and eyes forty-five degrees right, one restrained open-palm gesture. Wardrobe: a formal fitted charcoal suit, pale shirt and burgundy tie. Background: a ministerial press room, cream stone pilasters and wine-red upholstery. BOTTOM LEFT: Jean-Luc Mélenchon. Face: Swept-back short gray hair with a slight quiff, rectangular dark metal glasses, rounded cheeks, clean-shaven. Pose: head and eyes fifty degrees left, explaining with one low raised hand, two low microphones. Wardrobe: a formal dark tailored jacket, white shirt and deep red tie. Background: a left-party conference stage with deep red architectural panels, amber light and no logos. BOTTOM RIGHT: Anne Hidalgo. Face: IDENTITY: the brown-haired WOMAN FAR LEFT of this three-woman collage, not the blond woman in the middle nor the gray-haired woman on the right. Shoulder-length chestnut hair with soft bangs, oval face, no glasses. Pose: head and eyes forty-five degrees right toward a colleague, a slim folder low in frame, no microphone. Wardrobe: a comfortable navy soft blazer, pale open-collar blouse, small earrings. Background: a municipal council room with green upholstered seating, carved wood and tall sunlit windows. ",
+      "references": [
+        {
+          "id": "dominique-de-villepin",
+          "page": "https://www.europapress.es/internacional/noticia-villepin-desmarca-familia-politica-apoyar-macron-20170420200413.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20170420200413_1200.jpg",
+          "photoSha256": "0d2de942ab021e14cb71fb47584949983940e02fb285e5bc99fc50d93670301f",
+          "caption": "  BENOIT TESSIER/REUTERS",
+          "features": "IDENTITY: the seated silver-haired man in the CENTER of the group, behind the monitor, not the others. Thick silver hair swept back, long face, long narrow nose, clean-shaven, no glasses.",
+          "pose": "head and eyes fifty degrees left, a resolute debating posture, one low microphone",
+          "wardrobe": "a formal dark tailored suit, white shirt, dark blue silk tie",
+          "background": "a diplomatic chamber with honey-colored wood, navy upholstery and warm side light"
+        },
+        {
+          "id": "manuel-valls",
+          "page": "https://www.europapress.es/catalunya/noticia-manuel-valls-preside-nombramiento-romain-fornell-chevalier-legion-dhonneur-20251120224206.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20251120224206_1200.jpg",
+          "photoSha256": "7757dfc9a365517dbb1bdbbbfabedc7b723219daa441cd094917e65653c22c37",
+          "caption": "Manuel Valls, Romain Fornel y Jaume Collboni.  - EUROPA PRESS",
+          "features": "IDENTITY: the man FAR LEFT of the three standing men, not the other two. Short dark hair, long angular face, pronounced eyebrows, clean-shaven, no glasses.",
+          "pose": "head and eyes forty-five degrees right, one restrained open-palm gesture",
+          "wardrobe": "a formal fitted charcoal suit, pale shirt and burgundy tie",
+          "background": "a ministerial press room, cream stone pilasters and wine-red upholstery"
+        },
+        {
+          "id": "jean-luc-melenchon",
+          "page": "https://www.europapress.es/internacional/noticia-melenchon-cree-hay-elementos-situacion-revolucionaria-francia-20261025232335.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20261025232335_1200.jpg",
+          "photoSha256": "00324684277247807d4f07197931d163dba407061e434b16fd42a0039128abf0",
+          "caption": "El candidato presidencial francés Jean-Luc Mélenchon (archivo)  - Julien Mattia / Zuma Press / Europa Press",
+          "features": "Swept-back short gray hair with a slight quiff, rectangular dark metal glasses, rounded cheeks, clean-shaven.",
+          "pose": "head and eyes fifty degrees left, explaining with one low raised hand, two low microphones",
+          "wardrobe": "a formal dark tailored jacket, white shirt and deep red tie",
+          "background": "a left-party conference stage with deep red architectural panels, amber light and no logos"
+        },
+        {
+          "id": "anne-hidalgo",
+          "page": "https://www.europapress.es/catalunya/firadebarcelona-00630/noticia-hidalgo-minton-rossbach-participaran-congreso-vivienda-asequible-hows-barcelona-20261015181325.html",
+          "photo": "https://img.europapress.es/fotoweb/fotonoticia_20261015181325_1200.jpg",
+          "photoSha256": "76e085336cec388e2171aa94f1edb3878e5fd4d5462241fd31098667fba3999b",
+          "caption": "Archivo - Imágenes de Hidalgo, Minton y Rossbach  - FIRA DE BARCELONA - Archivo",
+          "features": "IDENTITY: the brown-haired WOMAN FAR LEFT of this three-woman collage, not the blond woman in the middle nor the gray-haired woman on the right. Shoulder-length chestnut hair with soft bangs, oval face, no glasses.",
+          "pose": "head and eyes forty-five degrees right toward a colleague, a slim folder low in frame, no microphone",
+          "wardrobe": "a comfortable navy soft blazer, pale open-collar blouse, small earrings",
+          "background": "a municipal council room with green upholstered seating, carved wood and tall sunlit windows"
+        }
+      ],
+      "status": "generated_provisional",
+      "tool": "image_gen",
+      "generatedOn": "2026-11-05",
+      "sha256": "84f308f87f473b3dfe392822a12883eb6dec7255bcd45b7cf35528b5979754db",
+      "originalOutput": "exec-29ce7e62-3471-45bb-9514-6370248de3f4.png"
     }
   ]
 }

@@ -1,33 +1,52 @@
-# Francia · censo inicial de propuestas
+# Francia · primera tanda de 100 en preparación
 
-[Listado completo de 100 candidatos](listado.md) · [CSV](censo.csv) · [Datos y propuestas de efectos](censo.json) · [Método de traducción](metodo-frases.md) · [Revisión con las candidatas](revision.html).
+[Revisión privada con arte y frases](revision.html) · [Listado](listado.md) · [CSV](censo.csv) · [Datos](censo.json) · [Método de traducción](metodo-frases.md).
 
-El listado inicial propone **40 comunes, 30 raros, 20 especiales y 10 legendarios**. Se valora todo el conjunto, sin cupo por tanda. El creador ha autorizado empezar por estos 100. Los tiers serán provisionales durante la preparación: el ajuste global se hará después de completar la selección francesa, como se hizo con España. En ese momento se revisarán también las estadísticas y el vestuario que cambien de tier. Los enlaces por persona están marcados expresamente como pendientes de consulta; no son pruebas de verificación.
+Estado de investigación: **5 de noviembre de 2026**. Todo permanece en `_dev`, excluido de Pages y del catálogo jugable. No se ha cambiado la versión pública ni se han anunciado estos cromos en el changelog.
 
-Se excluyen **Emmanuel Macron, Christine Lagarde y Marine Le Pen**, ya presentes en el catálogo. Se contrastaron los nombres e identificadores con los 120 activos y los 339 españoles reservados. Una nueva pose o cambio de cargo no crea una segunda identidad.
+| Parte | Preparado | Pendiente |
+| --- | --- | --- |
+| Identidades | 100 nombres nuevos, sin duplicados con los 120 activos ni los 339 españoles reservados | Ampliar después el censo francés; su total final sigue abierto |
+| Tiers y mecánicas | Propuesta para los 100, con estadísticas, efecto básico y doctrina existentes | Ajuste global al terminar toda la selección francesa; no por cuotas de tanda |
+| Perfiles | 100 páginas consultadas; homónimo de Bruno Bernard resuelto al político | Contraste integral de trayectoria, afiliación y etapa representada |
+| Arte | 28 retratos provisionales en 7 atlas originales | 72 retratos, revisión de identidad, vestuario y poses |
+| Frases bilingües | 48 fragmentos para 16 perfiles, con original y hablante cotejados en 20 fuentes | 252 selecciones adicionales; revisión del tono para las 48 candidatas |
+| Prensa española | 54 candidatas previas para 23 perfiles, cotejadas en 22 noticias | No se consideran originales franceses verificados ni se suman como frases finales |
+| Cromos terminados e integrados | 0 | Completar la preparación antes de incorporarlos a una reserva de prueba |
 
-La ventana es 5-11-1986 a 5-11-2026, priorizando 2010–2026. Un mandato anterior no excluye a quien continuó activo durante la ventana: Giscard d’Estaing se incluye por su representación europea y la Convención Europea; Badinter por el Consejo Constitucional y el Senado. Los resúmenes no afirman que las personas conserven sus cargos hoy. Las afiliaciones son referencias de etapas a documentar, no militancia actual deducida de un cargo.
+Se excluyen **Emmanuel Macron, Christine Lagarde y Marine Le Pen**, ya presentes en el catálogo. Con los 100 nuevos se prevén 103 franceses; no es el total definitivo del país. `countryCensusComplete` permanece en `false` y `finalFrenchCount` en `null`.
 
-## Preparado y pendiente
+La ventana comprende **5-11-1986 a 5-11-2026**, priorizando 2010–2026. Un mandato anterior no excluye a quien continuó activo durante la ventana: Giscard d’Estaing se incluye por su representación europea y la Convención Europea; Badinter por el Consejo Constitucional y el Senado. Los resúmenes no afirman que las personas conserven sus cargos hoy. Las afiliaciones son referencias de etapas pendientes de contraste.
 
-Preparados: 100 nombres, resumen de trayectoria, tier propuesto, estadísticas de los tiers existentes, efecto del básico y doctrina pasiva propuestos, pautas de vestuario, mirada y fondo. Las mecánicas son asignaciones ficticias y provisionales.
+La distribución propuesta sigue siendo 40 comunes, 30 raros, 20 especiales y 10 legendarios. Es provisional. El ajuste conjunto se hará tras completar a todos los integrantes de la selección francesa, revisando también las estadísticas y el vestuario que cambien de tier. Las asignaciones de efectos y pasivas son mecánicas ficticias del juego.
 
-Pendientes: contraste documental individual, **300 frases** (normal, fuerte y apoyo), traducciones al español, sustituciones justificadas de menciones a terceros y referencias visuales. No se han inventado ni rellenado las frases finales. Sí se ha avanzado en la investigación: **58 noticias consultadas y 54 candidatas en español para 23 perfiles**, de los cuales 14 tienen tres candidatas. Son declaraciones contrastadas en el texto periodístico; los originales franceses siguen pendientes. Tampoco se han generado retratos ni añadido estas propuestas al registro de reserva o al juego.
+## Material de revisión
 
-`frases-candidatas.json` conserva atribución, contexto, URL, fecha de publicación, hash y una sustitución documentada de nombre por cargo. `fuentes-consultadas.json` distingue los textos leídos de las imágenes solo localizadas. Las candidatas no se consideran 54 frases finales ni completan 23 cromos. La revisión muestra su estado y sus fuentes.
+- `frases-originales.json`: fragmento francés continuo, traducción editorial española, fecha, URL consultada, hash y comprobación del turno de palabra. Sus 48 traducciones tienen un máximo de 47 caracteres y no duplican las 1377 frases del catálogo activo y la reserva española. El encaje del tono en ataque, ataque fuerte o apoyo permanece pendiente; todavía no son frases finales del juego.
+- `fuentes-francesas.json`: 135 registros de investigación en 134 fichas distintas. Se distingue la disponibilidad del texto de su atribución: una ficha puede incluir periodistas, varios oradores, citas ajenas o carecer de transcripción. No todas sus frases se han revisado.
+- `perfiles-consultados.json`: URL y hash de los 100 perfiles, y fotografías localizadas cuando las hay. Una URL de imagen localizada no implica descarga ni inspección visual. Bruno Bernard no debe confundirse con el fotógrafo ni el tipógrafo homónimos; su página política no contiene retrato utilizable.
+- `primera-100/arte-generacion.json`: nombres y orden de los cuadrantes, referencia visual inspeccionada, rasgos, pose, vestuario, fondo, prompt y hash de los 7 atlas generados. Las fotografías de referencia no se redistribuyen.
+- `frases-candidatas.json` y `fuentes-consultadas.json`: investigación previa en prensa española. Se ha repetido el cotejo de sus 54 candidatas con las capturas recuperadas, conservando los hashes anteriores en el historial de las fuentes. La sustitución de Bayrou por su cargo sigue documentada.
 
-Las fuentes francesas del Elíseo, Senado, Asamblea Nacional y Vie publique devolvieron denegación de destino al consultarlas desde este entorno. El borrador de ampliación de dominios está guardado para revisión y publicación en la configuración del entorno. Incluye ahora también `img.europapress.es`: los artículos sí se pueden consultar, pero ese dominio de fotografías devuelve denegación y no se han podido verificar sus rasgos. Guardar ese borrador no activa la red ni publica el juego. Hasta que el acceso esté aplicado, el estado de las frases seguirá siendo pendiente.
+En el arte predominan cabeza y ojos orientados hacia el interlocutor, con fondos institucionales o de partido variados y micrófonos en algunos retratos. Hay excepciones con mirada más frontal, que siguen sujetas a revisión. Los tiers altos llevan vestuario formal; los raros usan también chaquetas más cómodas y cuellos abiertos. No se aplica una bandera francesa uniforme.
 
-Primera fase autorizada: completar estos 100. Con los tres cromos franceses existentes, esta fase dejaría 103 franceses preparados o activos; no es el total definitivo del país ni el número actual del catálogo jugable. `countryCensusComplete` sigue en `false` y `finalFrenchCount` en `null`. Después se ampliará el censo por tandas de 60, manteniendo el criterio de tiers sobre el censo completo y sin elevar un perfil a legendario solo para completar su tanda. Los fondos variarán según la institución y formación de la etapa; no se usará una bandera francesa común. Predominarán poses con cabeza y ojos orientados hacia un interlocutor. La vestimenta será más formal en los tiers altos y progresivamente más cómoda en los bajos.
+## Accesos y continuación
 
-El material permanece en `_dev`, excluido de Pages. La versión pública, el manifest, las fuentes públicas y los términos conservan su estado actual.
+Los accesos iniciales a Vie publique, Elíseo, Senado, Asamblea Nacional, Wikipedia francesa y fotografías de Europa Press funcionan. Se han recuperado transcripciones mediante navegación normal cuando la descarga directa no entregaba el texto. Se conservan el proxy y la verificación TLS del entorno.
 
-## Comprobaciones de investigación
+Quedan en un segundo borrador de configuración **`thumb.wikimedia.org`**, para las fotografías localizadas en Wikipedia, y **`www2.assemblee-nationale.fr`**, donde están las fichas y documentos parlamentarios enlazados por la Asamblea. Guardar el borrador no aplica esos permisos; su revisión y publicación se realizan en la configuración del entorno. Esto no publica el juego.
+
+La búsqueda documental, las traducciones restantes y la revisión editorial no están terminadas. Estos dos accesos permitirán ampliar las referencias visuales y parlamentarias; no se afirma que sean el único trabajo pendiente.
+
+## Comprobaciones
 
 ```sh
 node _dev/expansions/francia/verify-list.cjs
+python _dev/expansions/francia/verify-originals.py --cache /tmp/hemicycle-france
 python _dev/expansions/francia/verify-candidates.py --offline
 NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/browser-candidates.cjs
 ```
 
-El cotejo offline requiere los bytes ya descargados en `/tmp/hemicycle-france-press-cache`. Los textos completos y las fotografías de prensa no se redistribuyen. La comprobación valida literalidad o adaptación registrada, atribución contextual guardada y hashes de los artículos; no valida un original francés inaccesible ni todos los hechos del artículo.
+El cotejo de originales requiere las capturas HTML externas del directorio de investigación indicado. La comprobación de prensa usa `/tmp/hemicycle-france-press-cache`. Las copias de trabajo se preservan también fuera del repositorio en `/workspace/.hemicycle-tools/state/`; los textos íntegros y fotografías de prensa no se distribuyen en Git. Una restauración que no conserve las capturas necesitará recuperarlas y volver a cotejarlas: no debe darse por verificado un hash distinto.
+
+El control del navegador levanta y cierra su propio servidor HTTP de revisión en la interfaz local. Comprueba los 100 perfiles, los 28 retratos cargados, las 48 candidatas bilingües, los filtros, las fuentes y el ajuste a pantallas de 320, 393, 768 y 1200 píxeles. Los controles no equivalen a una validación final de la selección editorial ni del equilibrio de los cromos.
