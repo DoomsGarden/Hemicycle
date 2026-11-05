@@ -2,7 +2,7 @@
 
 [Listado completo de 100 candidatos](listado.md) · [CSV](censo.csv) · [Datos y propuestas de efectos](censo.json) · [Método de traducción](metodo-frases.md).
 
-El listado inicial propone **40 comunes, 30 raros, 20 especiales y 10 legendarios**. Se valora todo el conjunto, sin cupo por tanda. Los tiers son provisionales: se cerrarán tras contrastar las trayectorias y antes de generar ilustraciones o integrar cromos. Los enlaces por persona están marcados expresamente como pendientes de consulta; no son pruebas de verificación.
+El listado inicial propone **40 comunes, 30 raros, 20 especiales y 10 legendarios**. Se valora todo el conjunto, sin cupo por tanda. El creador ha autorizado empezar por estos 100. Los tiers serán provisionales durante la preparación: el ajuste global se hará después de completar la selección francesa, como se hizo con España. En ese momento se revisarán también las estadísticas y el vestuario que cambien de tier. Los enlaces por persona están marcados expresamente como pendientes de consulta; no son pruebas de verificación.
 
 Se excluyen **Emmanuel Macron, Christine Lagarde y Marine Le Pen**, ya presentes en el catálogo. Se contrastaron los nombres e identificadores con los 120 activos y los 339 españoles reservados. Una nueva pose o cambio de cargo no crea una segunda identidad.
 
@@ -16,6 +16,6 @@ Pendientes: contraste documental individual, **300 frases** (normal, fuerte y ap
 
 Las fuentes francesas del Elíseo, Senado, Asamblea Nacional y Vie publique devolvieron denegación de destino al consultarlas desde este entorno. Se prepara una ampliación limitada de los dominios permitidos para que el creador la revise en la configuración del entorno. Guardar ese borrador no activa la red ni publica el juego. Hasta que el acceso esté aplicado, el estado de las frases seguirá siendo pendiente.
 
-Se propone trabajar después por tandas de 60, manteniendo el criterio de tiers sobre el censo completo y sin elevar un perfil a legendario solo para completar su tanda. Los fondos variarán según la institución y formación de la etapa; no se usará una bandera francesa común. Predominarán poses con cabeza y ojos orientados hacia un interlocutor. La vestimenta será más formal en los tiers altos y progresivamente más cómoda en los bajos.
+Primera fase autorizada: completar estos 100. Con los tres cromos franceses existentes, esta fase dejaría 103 franceses preparados o activos; no es el total definitivo del país ni el número actual del catálogo jugable. `countryCensusComplete` sigue en `false` y `finalFrenchCount` en `null`. Después se ampliará el censo por tandas de 60, manteniendo el criterio de tiers sobre el censo completo y sin elevar un perfil a legendario solo para completar su tanda. Los fondos variarán según la institución y formación de la etapa; no se usará una bandera francesa común. Predominarán poses con cabeza y ojos orientados hacia un interlocutor. La vestimenta será más formal en los tiers altos y progresivamente más cómoda en los bajos.
 
 El material permanece en `_dev`, excluido de Pages. La versión pública, el manifest, las fuentes públicas y los términos conservan su estado actual.

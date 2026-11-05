@@ -1,6 +1,6 @@
 # Francia · listado inicial de 100 propuestas
 
-Propuesta editorial preliminar, aún sin integrar. Los cargos, afiliaciones de etapa y tiers requieren contraste documental antes de cerrarse. Las frases siguen pendientes de fuentes originales y traducción; no se han rellenado con citas inventadas.
+Primera tanda de 100 autorizada para preparar, aún sin integrar. Los tiers se ajustarán conjuntamente al terminar la selección francesa. Con los tres cromos existentes se prevén 103 franceses tras esta tanda; el total final del país sigue sin cerrar. Los cargos, afiliaciones de etapa y tiers requieren contraste documental antes de cerrarse. Las frases siguen pendientes de fuentes originales y traducción; no se han rellenado con citas inventadas.
 
 Se excluyen Emmanuel Macron, Christine Lagarde y Marine Le Pen porque ya existen. Una identidad por persona; las variantes de pose no crean cromos nuevos.
 
