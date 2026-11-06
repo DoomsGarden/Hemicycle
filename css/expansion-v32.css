@@ -45,7 +45,13 @@ html:not([data-locale=es]) .senate-title>.localized-cta{display:flex}
 .battle-state-icon:is(.state-action-confused,.state-action-weakness,.state-action-attrition,.state-action-exposed,.state-action-wound,.state-action-fatigue){color:#ffb0a7;border-color:#bf706f}
 .battle-state-icon:is(.state-action-strength,.state-action-fullness,.state-action-regeneration,.state-action-fortress,.state-action-relief,.state-action-precision){color:#b0ebcb;border-color:#77ad94}
 .country-choice>span>img{display:inline-block;width:22px;height:16px;object-fit:contain;vertical-align:middle;border-radius:2px}
-.home-action-stack.expanded .home-action-extra:has(.mail-comment-hint){overflow:visible}
+.home-action-stack.expanded .home-action-extra{overflow:visible}
 
-/* El contador permanece dentro del botón, incluso sin la viñeta del evento. */
-.home-action-stack .mail-button>span{right:2px;top:2px;z-index:1}
+/* El contador es una capa independiente del botón y del marco del desplegable. */
+.mail-anchor{isolation:isolate;overflow:visible;z-index:3}
+.mail-pending-badge{position:absolute;right:0;top:-2px;z-index:20;display:grid;place-items:center;box-sizing:border-box;min-width:18px;min-height:18px;padding:1px 4px;border:1px solid #ffedba;border-radius:999px;background:#dbbd77;color:#1b1720;box-shadow:0 2px 5px #0009;font:800 calc(10px * var(--ui-text-scale,1))/1.2 'Hemicycle UI',system-ui,sans-serif;font-variant-numeric:tabular-nums;white-space:nowrap;pointer-events:none}
+.home-action-stack:not(.expanded) .mail-pending-badge{display:none}
+.home-action-stack:not(.expanded) .home-action-toggle.has-pending{animation:none}
+.home-action-stack:not(.expanded) .home-action-toggle.has-pending>svg{animation:mail-tools-indicator 1.8s ease-in-out infinite}
+@keyframes mail-tools-indicator{0%,100%{opacity:1;filter:drop-shadow(0 0 4px #efd18c)}50%{opacity:.35;filter:none}}
+@media(prefers-reduced-motion:reduce){.home-action-stack:not(.expanded) .home-action-toggle.has-pending>svg{animation:none;opacity:1;filter:drop-shadow(0 0 3px #efd18c)}}
