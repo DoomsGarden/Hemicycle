@@ -4,6 +4,7 @@ on:
   workflow_dispatch:
 permissions:
   contents: read
+  pages: read
 concurrency:
   group: hemicycle-controlled-pages
   cancel-in-progress: false
