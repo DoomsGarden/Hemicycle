@@ -1,0 +1,1226 @@
+{
+  "date": "2026-11-06",
+  "cards": [
+    {
+      "id": "bernard-accoyer",
+      "name": "Bernard Accoyer",
+      "contextSummaryES": "Evaluación de las fusiones municipales en Annecy, 2023. Reivindica al ciudadano y el interés general como brújula de los representantes. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "En revanche, la situation est différente pour les communes plus grandes.",
+          "textES": "En los municipios grandes es distinto.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20230522/dct_bulletin_2023-05-25.html",
+          "sourceTitle": "Compte rendu du 22/05/2023 (Delegation aux collectivites territoriales)",
+          "spokenOn": "2023-05-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "22dd0f5d75ea517521ae9a5425a2cabe9cd1c82be21e1024d9384c30978bc67e",
+          "cacheKey": "21d8873aee4e56ab6b5b.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Bernard Accoyer, ancien maire d'Annecy-le-Vieux, ancien adjoint au maire de la commune nouvelle d'Annecy, ancien président de l'Assemblée nationale",
+            "dateLabelFR": "Jeudi 25 mai 2023",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 43,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Nous constatons une dilution de l'efficacité",
+          "textES": "Constatamos una pérdida de eficacia.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20230522/dct_bulletin_2023-05-25.html",
+          "sourceTitle": "Compte rendu du 22/05/2023 (Delegation aux collectivites territoriales)",
+          "spokenOn": "2023-05-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "22dd0f5d75ea517521ae9a5425a2cabe9cd1c82be21e1024d9384c30978bc67e",
+          "cacheKey": "21d8873aee4e56ab6b5b.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Bernard Accoyer, ancien maire d'Annecy-le-Vieux, ancien adjoint au maire de la commune nouvelle d'Annecy, ancien président de l'Assemblée nationale",
+            "dateLabelFR": "Jeudi 25 mai 2023",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 43,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Le citoyen et l'intérêt général doivent toujours rester la boussole des élus.",
+          "textES": "La ciudadanía y el bien común deben guiarnos.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20230522/dct_bulletin_2023-05-25.html",
+          "sourceTitle": "Compte rendu du 22/05/2023 (Delegation aux collectivites territoriales)",
+          "spokenOn": "2023-05-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "22dd0f5d75ea517521ae9a5425a2cabe9cd1c82be21e1024d9384c30978bc67e",
+          "cacheKey": "21d8873aee4e56ab6b5b.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Bernard Accoyer, ancien maire d'Annecy-le-Vieux, ancien adjoint au maire de la commune nouvelle d'Annecy, ancien président de l'Assemblée nationale",
+            "dateLabelFR": "Jeudi 25 mai 2023",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 44,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "claude-bartolone",
+      "name": "Claude Bartolone",
+      "contextSummaryES": "Audiencia como presidente del consejo general de Seine-Saint-Denis, 2010, sobre financiación territorial y protección social. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "La situation devient inextricable",
+          "textES": "La situación se vuelve inextricable.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20100503/finances.html",
+          "sourceTitle": "Compte rendu du 03/05/2010 (Commission des finances)",
+          "spokenOn": "2010-05-05",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "a8f2e2c2f00861fd697d17cdb2c0ef7291cbbdc65ddff624d7b81dd83b07bcd2",
+          "cacheKey": "8b304986367e6bc61d83.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Claude Bartolone, président du conseil général de la Seine-Saint-Denis",
+            "dateLabelFR": "Mercredi 5 mai 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 291,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "rien ne nous laisse espérer une amélioration de la situation économique.",
+          "textES": "Nada augura una mejora de la economía.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20100503/finances.html",
+          "sourceTitle": "Compte rendu du 03/05/2010 (Commission des finances)",
+          "spokenOn": "2010-05-05",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "a8f2e2c2f00861fd697d17cdb2c0ef7291cbbdc65ddff624d7b81dd83b07bcd2",
+          "cacheKey": "8b304986367e6bc61d83.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Claude Bartolone, président du conseil général de la Seine-Saint-Denis",
+            "dateLabelFR": "Mercredi 5 mai 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 291,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Les départements constituent un filet de protection sociale.",
+          "textES": "Los departamentos son una red de apoyo social.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20100503/finances.html",
+          "sourceTitle": "Compte rendu du 03/05/2010 (Commission des finances)",
+          "spokenOn": "2010-05-05",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "a8f2e2c2f00861fd697d17cdb2c0ef7291cbbdc65ddff624d7b81dd83b07bcd2",
+          "cacheKey": "8b304986367e6bc61d83.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Claude Bartolone, président du conseil général de la Seine-Saint-Denis",
+            "dateLabelFR": "Mercredi 5 mai 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 291,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "christian-poncelet",
+      "name": "Christian Poncelet",
+      "contextSummaryES": "Intervenciones de 2012 sobre cooperación exterior. El apoyo se refiere al acompañamiento de pymes en mercados internacionales. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Mais le contrat n'a toujours pas été conclu.",
+          "textES": "Pero el contrato sigue sin cerrarse.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20121210/etr.html",
+          "sourceTitle": "Compte rendu du 10/12/2012 (Commission des affaires etrangeres)",
+          "spokenOn": "2012-12-12",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "d58bd82e7f87030a82a19c82ee875517090706db5b07f49810dffc665da8f29a",
+          "cacheKey": "bfd2a7a655dd9a15fae2.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Christian Poncelet, rapporteur",
+            "dateLabelFR": "Mercredi 12 décembre 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 39,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Le non-respect de ce principe nous a souvent causé des difficultés par le passé.",
+          "textES": "Incumplir ese principio nos creó dificultades.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20121119/etr.html",
+          "sourceTitle": "Compte rendu du 19/11/2012 (Commission des affaires etrangeres)",
+          "spokenOn": "2012-11-22",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "4fa3c20742525d6e9e3d2e8932361b2808e0cdcd5e55a505890e456734254509",
+          "cacheKey": "fd810dc1a37997211b2b.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Christian Poncelet",
+            "dateLabelFR": "Jeudi 22 novembre 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 391,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Cette démarche donnait des résultats très positifs.",
+          "textES": "Este enfoque daba resultados muy positivos.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20121119/etr.html",
+          "sourceTitle": "Compte rendu du 19/11/2012 (Commission des affaires etrangeres)",
+          "spokenOn": "2012-11-22",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "4fa3c20742525d6e9e3d2e8932361b2808e0cdcd5e55a505890e456734254509",
+          "cacheKey": "fd810dc1a37997211b2b.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Christian Poncelet",
+            "dateLabelFR": "Jeudi 22 novembre 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 525,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jean-louis-debre",
+      "name": "Jean-Louis Debré",
+      "contextSummaryES": "Audiencia de enero de 2021 sobre organización de elecciones. Defiende la democracia local y reclama adaptarse a las nuevas prácticas. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "En l'espèce, pas la peine de faire des lois.",
+          "textES": "En este caso, no hace falta legislar.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20210111/lois.html",
+          "sourceTitle": "Compte rendu du 11/01/2021 (Commission des lois)",
+          "spokenOn": "2021-01-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "362cdec804cdad9fd93875447e0483ff376821b013e684e1f1700f4e2d11e577",
+          "cacheKey": "2ae7e39ea29ad8c9ea77.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Louis Debré",
+            "dateLabelFR": "Mercredi 13 janvier 2021",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 959,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "C'est fini, nous sommes à une autre époque !",
+          "textES": "¡Eso acabó, estamos en otra época!",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20210111/lois.html",
+          "sourceTitle": "Compte rendu du 11/01/2021 (Commission des lois)",
+          "spokenOn": "2021-01-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "362cdec804cdad9fd93875447e0483ff376821b013e684e1f1700f4e2d11e577",
+          "cacheKey": "2ae7e39ea29ad8c9ea77.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Louis Debré",
+            "dateLabelFR": "Mercredi 13 janvier 2021",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 955,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Ne portons pas atteinte à la démocratie de proximité !",
+          "textES": "¡No dañemos la democracia de proximidad!",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20210111/lois.html",
+          "sourceTitle": "Compte rendu du 11/01/2021 (Commission des lois)",
+          "spokenOn": "2021-01-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "362cdec804cdad9fd93875447e0483ff376821b013e684e1f1700f4e2d11e577",
+          "cacheKey": "2ae7e39ea29ad8c9ea77.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Louis Debré",
+            "dateLabelFR": "Mercredi 13 janvier 2021",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 910,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "alain-lamassoure",
+      "name": "Alain Lamassoure",
+      "contextSummaryES": "Debates sobre gobernanza europea e historia compartida. La autocrítica concierne al intento de redactar un manual único; el apoyo ofrece trabajar en la reconciliación entre países. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Sans consensus, ce n'est pas possible.",
+          "textES": "Sin consenso, esto no es posible.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20120220/europ.html",
+          "sourceTitle": "Compte rendu du 20/02/2012 (Commission des affaires europeennes)",
+          "spokenOn": "2012-02-22",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f8ba8ebcfba17db3f7f0847ec2ecf018e2af7928b062ac57472b49aec365404f",
+          "cacheKey": "3cc8b0de19b2ef922dd3.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Alain Lamassoure, député européen",
+            "dateLabelFR": "Mercredi 22 février 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 115,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "c'est une erreur absolue",
+          "textES": "Es un error absoluto.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20240205/cult.html",
+          "sourceTitle": "Compte rendu du 05/02/2024 (Commission de la culture)",
+          "spokenOn": "2024-02-07",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "2c0ff484589de58069319ae1a3cc08b3015d9efff0db439e29cf4bd352c7e732",
+          "cacheKey": "3d0f5ddf5d3a93f4ad35.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Alain Lamassoure",
+            "dateLabelFR": "Mercredi 7 février 2024",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 163,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "nous sommes prêts à y travailler.",
+          "textES": "Estamos dispuestos a trabajar en ello.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20240205/cult.html",
+          "sourceTitle": "Compte rendu du 05/02/2024 (Commission de la culture)",
+          "spokenOn": "2024-02-07",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "2c0ff484589de58069319ae1a3cc08b3015d9efff0db439e29cf4bd352c7e732",
+          "cacheKey": "3d0f5ddf5d3a93f4ad35.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Alain Lamassoure",
+            "dateLabelFR": "Mercredi 7 février 2024",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 191,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "dominique-voynet",
+      "name": "Dominique Voynet",
+      "contextSummaryES": "Intervenciones de 2026 sobre donación de órganos y suelo. La solidaridad corresponde al modelo de donación; la firmeza distingue los medios urbanísticos de sus fines. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "La situation s'améliore mais reste délicate.",
+          "textES": "La situación mejora, pero sigue delicada.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20260622/opecst_2026_06_25.html",
+          "sourceTitle": "Compte rendu du 22/06/2026 (Office parlementaire d'evaluation des choix scient. tech.)",
+          "spokenOn": "2026-06-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "5facee1c8cb54ab1e59a47d4356cc7634e16336589e366bd2e751a351ee1b7ac",
+          "cacheKey": "f9fca58d77bf78ce79f7.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "Mme Dominique Voynet, députée, corapporteure",
+            "dateLabelFR": "Jeudi 25 juin 2026",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 60,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "La disponibilité foncière est un moyen, pas une fin en soi.",
+          "textES": "Disponer de suelo es un medio, no un fin.",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-jeudi-29-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du jeudi 29 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-29",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "b4e5ac198c2196c25608bb9f7d2d80ef468ec5b2f6995cf52280cc8fad3d949d",
+          "cacheKey": "36691438a016c0c2f947.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Dominique Voynet (EcoS)",
+            "interventionId": "4208037",
+            "titleDate": "Compte rendu de la première séance du jeudi 29 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "C'est donc un principe de solidarité qui prévaut.",
+          "textES": "Así pues, prevalece un principio solidario.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20260622/opecst_2026_06_25.html",
+          "sourceTitle": "Compte rendu du 22/06/2026 (Office parlementaire d'evaluation des choix scient. tech.)",
+          "spokenOn": "2026-06-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "5facee1c8cb54ab1e59a47d4356cc7634e16336589e366bd2e751a351ee1b7ac",
+          "cacheKey": "f9fca58d77bf78ce79f7.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "Mme Dominique Voynet, députée, corapporteure",
+            "dateLabelFR": "Jeudi 25 juin 2026",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 45,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "herve-morin",
+      "name": "Hervé Morin",
+      "contextSummaryES": "Declaraciones como ministro de Defensa, 2009-2010, sobre programación presupuestaria y calidad del servicio de sanidad militar. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Il ne s'agit donc pas de dégrader le service, mais de le rationaliser.",
+          "textES": "Racionalizar el servicio, sin degradarlo.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20101011/etr.html",
+          "sourceTitle": "Compte rendu du 11/10/2010 (Commission des affaires etrangeres)",
+          "spokenOn": "2010-10-12",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "9788a4c46a5dc5921a7cc68e1d16e6489d59d1a76a4f9c2a16ebb9d4f57117aa",
+          "cacheKey": "1576cd14cbb2ed12de86.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Hervé Morin, ministre",
+            "dateLabelFR": "Mardi 12 octobre 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 81,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Jamais un tel niveau de sincérité n'a été atteint",
+          "textES": "Nunca se alcanzó semejante sinceridad.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20090622/fin.html",
+          "sourceTitle": "Compte rendu du 22/06/2009 (Commission des finances)",
+          "spokenOn": "2009-06-24",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "eca0dda4fdd8388164dd52a5dccdc5113f7fdf8fcb036757b44a42f5a462fe40",
+          "cacheKey": "9cc3bfacce6dba71eacc.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Hervé Morin",
+            "dateLabelFR": "Mercredi 24 juin 2009",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 321,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "je veux exprimer ma confiance envers le service de santé des armées.",
+          "textES": "Quiero expresar mi fe en la sanidad militar.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20101011/etr.html",
+          "sourceTitle": "Compte rendu du 11/10/2010 (Commission des affaires etrangeres)",
+          "spokenOn": "2010-10-12",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "9788a4c46a5dc5921a7cc68e1d16e6489d59d1a76a4f9c2a16ebb9d4f57117aa",
+          "cacheKey": "1576cd14cbb2ed12de86.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Hervé Morin, ministre",
+            "dateLabelFR": "Mardi 12 octobre 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 81,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "robert-hue",
+      "name": "Robert Hue",
+      "contextSummaryES": "Debates de cooperación y finanzas, 2011-2012. Critica retrasos en la ayuda y respalda avances concretos de supervisión bancaria. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Dès le départ nous avons pris du retard.",
+          "textES": "Nos retrasamos desde el principio.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20111024/etr.html",
+          "sourceTitle": "Compte rendu du 24/10/2011 (Commission des affaires etrangeres)",
+          "spokenOn": "2011-10-27",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "61677e6eab57b8d680b0b8a82b8f2be4a8f6991ef7d476be11da6fe7672e81eb",
+          "cacheKey": "4577736f7b9996517508.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Robert Hue",
+            "dateLabelFR": "Jeudi 27 octobre 2011",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 510,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Je suis en contradiction totale avec cette démarche.",
+          "textES": "Discrepo totalmente de este enfoque.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20111024/etr.html",
+          "sourceTitle": "Compte rendu du 24/10/2011 (Commission des affaires etrangeres)",
+          "spokenOn": "2011-10-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "61677e6eab57b8d680b0b8a82b8f2be4a8f6991ef7d476be11da6fe7672e81eb",
+          "cacheKey": "4577736f7b9996517508.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Robert Hue",
+            "dateLabelFR": "Mardi 25 octobre 2011",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 59,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "La supervision bancaire est un pas intéressant, qu'il faut poursuivre.",
+          "textES": "La supervisión bancaria es un paso a continuar.",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20121011_11&idtable=&_c=%22Daniel+Cohn-Bendit%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du jeudi 11 octobre 2012 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2012-10-11",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "e412c02f7fcb900868f169982862683d37b967a82070239f0a7b3e0fe0a4269a",
+          "cacheKey": "937d4ba07036dc66ea7e.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Robert Hue",
+            "dateLabelFR": "SEANCE du jeudi 11 octobre 2012 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 119,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "didier-migaud",
+      "name": "Didier Migaud",
+      "contextSummaryES": "Intervenciones como presidente del Tribunal de Cuentas. La libertad de programación se refiere a la autonomía para decidir las auditorías. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "L'Etat est certes endetté, mais pas ruiné.",
+          "textES": "El Estado está endeudado, pero no arruinado.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20100525/fin.html",
+          "sourceTitle": "Compte rendu du 25/05/2010 (Commission des finances)",
+          "spokenOn": "2010-05-26",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "dfccc070ec028ba04f2051d33b980a94c46ecc6e87c69fa9fff5a64a3c75ff02",
+          "cacheKey": "cf7b0d390011c8a5379d.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Didier Migaud",
+            "dateLabelFR": "Mercredi 26 mai 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 713,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Si nous ne le disions pas, nous ne ferions pas notre travail.",
+          "textES": "Si no lo dijéramos, faltaríamos al deber.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20180702/ce_hfp.html",
+          "sourceTitle": "Compte rendu du 02/07/2018 (CE mutations Haute fonction publique)",
+          "spokenOn": "2018-07-04",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "0840480280ffde6d2c0ef57ab06faa658abc24a8675810bb1605a8f81bc7c632",
+          "cacheKey": "8230e4df1979f7c94f21.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Didier Migaud",
+            "dateLabelFR": "Mercredi 4 juillet 2018",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 563,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "L'indépendance implique la liberté de programmation.",
+          "textES": "Ser independientes exige programar libremente.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20180702/ce_hfp.html",
+          "sourceTitle": "Compte rendu du 02/07/2018 (CE mutations Haute fonction publique)",
+          "spokenOn": "2018-07-04",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "0840480280ffde6d2c0ef57ab06faa658abc24a8675810bb1605a8f81bc7c632",
+          "cacheKey": "8230e4df1979f7c94f21.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Didier Migaud",
+            "dateLabelFR": "Mercredi 4 juillet 2018",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 542,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "alfred-marie-jeanne",
+      "name": "Alfred Marie-Jeanne",
+      "contextSummaryES": "Audiencia de junio de 2020 sobre organización y financiación de los territorios de ultramar. Rechaza los costes de los contratos subvencionados y defiende consultar a la población. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Ces statuts doivent être évolutifs.",
+          "textES": "Estos estatutos deben poder evolucionar.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20200608/otm_8_juin.html",
+          "sourceTitle": "Compte rendu du 08/06/2020 (Delegation senatoriale aux outre-mer)",
+          "spokenOn": "2020-06-10",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "15d140cca20c2dbd7c8b5422684b7c55dab88a0f18dafc5b302d86dd28580289",
+          "cacheKey": "55d53d65cc762543157e.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Alfred Marie-Jeanne",
+            "dateLabelFR": "Mercredi 10 juin 2020",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 238,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "c'est un leurre coûteux pour les collectivités.",
+          "textES": "Es un costoso señuelo para las colectividades.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20200608/otm_8_juin.html",
+          "sourceTitle": "Compte rendu du 08/06/2020 (Delegation senatoriale aux outre-mer)",
+          "spokenOn": "2020-06-10",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "15d140cca20c2dbd7c8b5422684b7c55dab88a0f18dafc5b302d86dd28580289",
+          "cacheKey": "55d53d65cc762543157e.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Alfred Marie-Jeanne",
+            "dateLabelFR": "Mercredi 10 juin 2020",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 216,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "La démocratie doit être intouchable !",
+          "textES": "¡La democracia debe ser intocable!",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20200608/otm_8_juin.html",
+          "sourceTitle": "Compte rendu du 08/06/2020 (Delegation senatoriale aux outre-mer)",
+          "spokenOn": "2020-06-10",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "15d140cca20c2dbd7c8b5422684b7c55dab88a0f18dafc5b302d86dd28580289",
+          "cacheKey": "55d53d65cc762543157e.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Alfred Marie-Jeanne",
+            "dateLabelFR": "Mercredi 10 juin 2020",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 232,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    }
+  ]
+}

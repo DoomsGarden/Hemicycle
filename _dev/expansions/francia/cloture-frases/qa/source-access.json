@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-06",
+  "state": "published_enforced",
+  "draftId": "4f4d8b62-6fa1-4527-85d1-3b629f6bec01~cecfgdraft_6aed9432da5c819296253ddf5a56c175",
+  "requiresPublish": false,
+  "note": "El usuario publicó el entorno; se verificó la política aplicada, revisión 20. El acceso permitido no garantiza que una URL antigua exista ni que el servidor responda.",
+  "references": [
+    {
+      "host": "www.rtes.fr",
+      "id": "jeanne-barseghian",
+      "url": "https://www.rtes.fr/le-conseil-de-l-ess-de-strasbourg-fonctionne-comme-une-fabrique-de-politiques-publiques-entretien",
+      "status": 200,
+      "finalUrl": "https://www.rtes.fr/le-conseil-de-l-ess-de-strasbourg-fonctionne-comme-une-fabrique-de-politiques-publiques-entretien",
+      "cacheKey": "a77435123905e69ee507.html",
+      "sha256": "b6f04c003976ac9c61fc2845e59a6bbd15f1aa8154ab729df15d65bb9f7d8bbc",
+      "bytes": 35544,
+      "title": "\"Le conseil de l’ESS de Strasbourg fonctionne comme une \"fabrique de politiques publiques\"\" - Entretien croisé avec Jeanne Barseghian et Jean-Baptiste Gernet | RTES",
+      "dateMetadata": [],
+      "bodyExcerpt": "var _paq = _paq || [];(function(){var u=((\"https:\" == document.location.protocol) ? \"https://piwik.insite.coop/\" : \"http://piwik.insite.coop/\");_paq.push([\"setSiteId\", \"76\"]);_paq.push([\"setTrackerUrl\", u+\"matomo.php\"]);_paq.push([\"setDoNotTrack\", 1]);if (!window.matomo_search_results_active) {_paq.push([\"trackPageView\"]);}_paq.push([\"setIgnoreClasses\", [\"no-tracking\",\"colorbox\"]]);_paq.push([\"enableLinkTracking\"]);var d=document,g=d.createElement(\"script\"),s=d.getElementsByTagName(\"script\")[0];"
+    },
+    {
+      "host": "www.capital.fr",
+      "id": "pierre-hurmic",
+      "url": "https://www.capital.fr/economie-politique/pas-de-sapin-de-noel-a-bordeaux-lopinion-des-fachos-je-massieds-dessus-repond-le-maire-pierre-hurmic-1380481",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "status": null
+    },
+    {
+      "host": "information.tv5monde.com",
+      "id": "francois-asselineau",
+      "url": "https://information.tv5monde.com/info/portrait-francois-asselineau-le-candidat-inconnu-du-frexit-162264",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404
+    },
+    {
+      "host": "la1ere.francetvinfo.fr",
+      "id": "alcide-ponga",
+      "url": "https://la1ere.francetvinfo.fr/nouvellecaledonie/journal-campagne-du-vendredi-10-mai-2019-708871.html",
+      "error": "<urlopen error Tunnel connection failed: 403 Forbidden>",
+      "status": null
+    },
+    {
+      "host": "www.province-sud.nc",
+      "id": "cynthia-ligeard",
+      "url": "https://www.province-sud.nc/actualites/province-sud/8944-cynthia-ligeardn-le-temps-de-la-conviction",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404
+    },
+    {
+      "host": "www.lnc.nc",
+      "id": "philippe-germain",
+      "url": "https://www.lnc.nc/article/pays/antitrust-cynthia-ligeard-repond",
+      "error": "HTTP Error 404: Not Found",
+      "status": 404
+    }
+  ],
+  "observedSpecRevision": "20",
+  "resolvedWithAlternativeVerifiedSources": {
+    "pierre-hurmic": "https://www.lefigaro.fr/bordeaux/environnement-securite-endettement-quel-est-le-bilan-du-maire-ecologiste-pierre-hurmic-cinq-ans-apres-son-election-a-bordeaux-20250704",
+    "francois-asselineau": "http://www.lefigaro.fr/elections/presidentielles/2017/03/10/35003-20170310ARTFIG00231-francois-asselineau-candidat-pourfendeur-de-l-europe-et-de-l-imperialisme-americain.php"
+  }
+}

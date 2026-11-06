@@ -1,0 +1,1444 @@
+{
+  "date": "2026-11-06",
+  "corrections": [
+    {
+      "id": "pap-ndiaye",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "Là-dessus, vous ne dites pas un mot.",
+        "textES": "Sobre eso, no decís una palabra.",
+        "source": "https://www.vie-publique.fr/discours/290451-pap-ndiaye-11072023-mixite-sociale-et-scolaire-rentree-scolaire",
+        "sourceTitle": "Déclaration de M. Pap Ndiaye, ministre de l'éducation nationale et de la jeunesse, sur la mixité sociale et scolaire et la préparation de la rentrée scolaire, à l'Assemblée nationale le 11 juillet 2023.",
+        "spokenOn": "2023-07-11",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "b6877089cf3c934b8228f484948a13330e61abdbb2faac6f7ccb1ee2cb889492",
+        "cacheKey": "290451.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Pap Ndiaye"
+          ],
+          "speakerFR": "Pap Ndiaye"
+        },
+        "paragraphIndex": 34,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "after": {
+        "action": "strong",
+        "originalFR": "Je ne le répéterai jamais assez",
+        "textES": "Nunca lo repetiré lo suficiente.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20230703/cult.html",
+        "sourceTitle": "Compte rendu du 03/07/2023 (Commission de la culture)",
+        "spokenOn": "2023-07-04",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "17badf0f9937625643e1a7f1e378df3beb9c837edd8aa7da477b26a745fead1f",
+        "cacheKey": "3e87b0919ba091d29c87.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Pap Ndiaye, ministre de l'éducation nationale et de la jeunesse",
+          "dateLabelFR": "Mardi 4 juillet 2023",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 80,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "astrid-panosyan-bouvet",
+      "action": "support",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "support",
+        "originalFR": "Le respect du cadre de la négociation est fondamental.",
+        "textES": "Respetar el marco negociador es fundamental.",
+        "source": "https://www.vie-publique.fr/discours/299486-astrid-panosyan-bouvet-23062025-accords-en-faveur-de-l-emploi",
+        "sourceTitle": "Déclaration de Mme Astrid Panosyan-Bouvet, ministre chargée du travail et de l'emploi, sur le projet de loi relatif à l'emploi des salariés expérimentés et l'évolution du dialogue social, à l'Assemblée nationale le 23 juin 2025.",
+        "spokenOn": "2025-06-23",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "3755bd3ca549dd5ca3e950ebf7dc64816fddac7a32ec375bbecfd3e0f8f9131b",
+        "cacheKey": "299486.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Astrid Panosyan-Bouvet"
+          ],
+          "speakerFR": "Astrid Panosyan-Bouvet"
+        },
+        "paragraphIndex": 66,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        }
+      },
+      "after": {
+        "action": "support",
+        "originalFR": "Changer la loi, nous allons le faire ensemble",
+        "textES": "Cambiar la ley: lo haremos juntos.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20250519/soci.html",
+        "sourceTitle": "Compte rendu du 19/05/2025 (Commission des affaires sociales)",
+        "spokenOn": "2025-05-21",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "e2e8023908f212ca7f6dd25d10f3963c87fb8b36379cf1fce578498d6f68ee9d",
+        "cacheKey": "8daba7919befac4bbfa1.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "Mme Astrid Panosyan-Bouvet, ministre auprès de la ministre du travail, de la santé, de la solidarité et des familles, chargée du travail et de l'emploi",
+          "dateLabelFR": "Mercredi 21 mai 2025",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 310,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "annie-genevard",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "Mais, pas à pas, le climat évolue.",
+        "textES": "Pero, paso a paso, el clima evoluciona.",
+        "source": "https://www.vie-publique.fr/discours/304764-annie-genevard-16092026-politique-agricole",
+        "sourceTitle": "Déclaration de Mme Annie Genevard, ministre de l'agriculture, de l'agro-alimentaire et de la souveraineté alimentaire, sur la politique agricole, à l'Assemblée nationale le 16 septembre 2026.",
+        "spokenOn": "2026-09-16",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "7829aa2c5ec86bd68fd4caa325c6d3b8b6893b35c0b5b25f48096fd45e84f246",
+        "cacheKey": "304764.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Annie Genevard"
+          ],
+          "speakerFR": "Annie Genevard"
+        },
+        "paragraphIndex": 105,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "after": {
+        "action": "strong",
+        "originalFR": "Nous ne lâcherons pas l’affaire",
+        "textES": "No abandonaremos este asunto.",
+        "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/deuxieme-seance-du-lundi-03-juin-2024",
+        "sourceTitle": "Compte rendu de la deuxième séance du lundi 03 juin 2024 - Assemblée nationale",
+        "spokenOn": "2024-06-03",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "d996769247a912abb5aa2cd3b83e21da06d9d5e037cc0ea0ac650dc2485e2d21",
+        "cacheKey": "b94a2b1913dcd3213df6.html",
+        "sourceType": "assemblee_named_intervention",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "assembly_intervention_id",
+          "speakerFR": "Mme Annie Genevard",
+          "interventionId": "3496112",
+          "titleDate": "Compte rendu de la deuxième séance du lundi 03 juin 2024 - Assemblée nationale"
+        },
+        "paragraphIndex": 0,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "rima-abdul-malak",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "Côté presse, les choses ne changent pas.",
+        "textES": "En la prensa, las cosas no cambian.",
+        "source": "https://www.vie-publique.fr/discours/291731-rima-abdul-malak-25102023-projet-de-loi-de-finances-2024-mission-culture",
+        "sourceTitle": "Déclaration de Mme Rima Abdul-Malak, ministre de la culture sur le projet de loi de finances (PLF) pour 2024 consacré à la mission de la culture et éducation, à l'Assemblée nationale le 25 octobre 2023.",
+        "spokenOn": "2023-10-25",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "6417e7c084a565e87cb3d0d95d4e19a6a28ceb9904b8fc635876f68a521bec98",
+        "cacheKey": "291731.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Rima Abdul-Malak"
+          ],
+          "speakerFR": "Rima Abdul-Malak"
+        },
+        "paragraphIndex": 190,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Tous les acteurs de la filière ne sont pas d'accord.",
+        "textES": "No todos en el sector están de acuerdo.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20221024/cult.html",
+        "sourceTitle": "Compte rendu du 24/10/2022 (Commission de la culture)",
+        "spokenOn": "2022-10-25",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "9f8f558809fd43293a1f4143ae1c1dccc32f9091d9cbe23494ee91f339af235b",
+        "cacheKey": "ff0035411a3249bae058.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "Mme Rima Abdul Malak, ministre de la culture",
+          "dateLabelFR": "Mardi 25 octobre 2022",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 366,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "gil-averous",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "Je ne conclurai pas sans dire un mot du SNU.",
+        "textES": "No concluiré sin hablar del SNU.",
+        "source": "https://www.vie-publique.fr/discours/296318-gil-averous-29102024-ministere-des-sports-jeunesse-credits-plf-2025",
+        "sourceTitle": "Déclaration de M. Gil Avérous, ministre des sports, de la jeunesse et de la vie associative, sur les crédits alloués à son ministère dans le projet de loi de finances pour 2025, à l'Assemblée nationale le 29 octobre 2024.",
+        "spokenOn": "2024-10-29",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "6f03463e39e68e32959c7e885dd9e744ba16c73c989e34dc9a4310ffa9072cfa",
+        "cacheKey": "296318.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Gil Avérous"
+          ],
+          "speakerFR": "Gil Avérous"
+        },
+        "paragraphIndex": 82,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "after": {
+        "action": "strong",
+        "originalFR": "On ne peut donc pas dire que rien n'a été fait.",
+        "textES": "No cabe decir que no se haya hecho nada.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20241028/cult.html",
+        "sourceTitle": "Compte rendu du 28/10/2024 (Commission de la culture)",
+        "spokenOn": "2024-10-30",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "3dc9789b438e03813e7cd33da84912d494407c40b3b48bd92d090cab34250d92",
+        "cacheKey": "fed6b8d42accd79aea81.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Gil Avérous, ministre",
+          "dateLabelFR": "Mercredi 30 octobre 2024",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 313,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "eric-coquerel",
+      "action": "support",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "support",
+        "originalFR": "Il s'agit de faire avancer la machine.",
+        "textES": "Se trata de hacer avanzar la maquinaria.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20250127/cmp.html",
+        "sourceTitle": "Compte rendu du 27/01/2025 (Commission mixte paritaire)",
+        "spokenOn": "2025-01-30",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "55dd3da56defba18eb059b746c0293a3e52d36e1ce0f96d1a35f468ed0a590af",
+        "cacheKey": "5f8f020095bb453e0bd2.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Éric Coquerel, député, président.",
+          "dateLabelFR": "Jeudi 30 janvier 2025",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 1034,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        }
+      },
+      "after": {
+        "action": "support",
+        "originalFR": "Ayez confiance dans la capacité de votre pays",
+        "textES": "Confiad en la capacidad de vuestro país.",
+        "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/deuxieme-seance-du-mercredi-14-octobre-2026",
+        "sourceTitle": "Compte rendu de la deuxième séance du mercredi 14 octobre 2026 - Assemblée nationale",
+        "spokenOn": "2026-10-14",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "6c5a539ba2a3124d12f7b907c3db0bde8084bef749c2b1081803ac4fb8ad8a36",
+        "cacheKey": "adfdd54f16b6205cb6dd.html",
+        "sourceType": "assemblee_named_intervention",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "assembly_intervention_id",
+          "speakerFR": "M. Éric Coquerel, président de la commission des finances",
+          "interventionId": "4187446",
+          "titleDate": "Compte rendu de la deuxième séance du mercredi 14 octobre 2026 - Assemblée nationale"
+        },
+        "paragraphIndex": 0,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "thierry-breton",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "Même vos amis ne vous croient pas !",
+        "textES": "¡Ni vuestros amigos os creen!",
+        "source": "https://www.senat.fr/basile/visio.do?id=s20061130_3&idtable=&_c=%22Jean-Claude+Trichet%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+        "sourceTitle": "SEANCE du jeudi 30 novembre 2006 (compte rendu intégral des débats du Sénat)",
+        "spokenOn": "2006-11-30",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "dc3bb483794ed20d50d50f3657a07daf54fc0f6697c4db0288c7b0ca76b5698d",
+        "cacheKey": "e7f83ffd95fc1188f344.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Thierry Breton, ministre. Cela a d'ailleurs été reconfirmé par l'OCDE. Les perspectives de la France",
+          "dateLabelFR": "SEANCE du jeudi 30 novembre 2006 (compte rendu intégral des débats du Sénat)",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 133,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Mais notre souveraineté ne se négocie pas.",
+        "textES": "Nuestra soberanía no se negocia.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20250127/euro.html",
+        "sourceTitle": "Compte rendu du 27/01/2025 (Commission des affaires europeennes)",
+        "spokenOn": "2025-01-29",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "ae0cd968e1fc50653b64fe67b99a625e5c7f127c646037936e12acc0c7024883",
+        "cacheKey": "6f7fd215c53b7a0f802e.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Thierry Breton",
+          "dateLabelFR": "Mercredi 29 janvier 2025",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 36,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "guillaume-kasbarian",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "Malheureusement, le compte n'y est pas.",
+        "textES": "Por desgracia, las cuentas no salen.",
+        "source": "https://www.vie-publique.fr/discours/296014-guillaume-kasbarian-23102024-fonction-publique",
+        "sourceTitle": "Déclaration de M. Guillaume Kasbarian, ministre de la Fonction publique, de la Simplification et de la Transformation de l'action publique, sur la politique du gouvernement en matière de fonction publique et les crédits de la mission \" Transformation et Fonction publiques \", à l'Assemblée nationale le 23 octobre 2024.",
+        "spokenOn": "2024-10-23",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "50db22938b089f3a7445bb50e0fcc256312cad94e0f9dfc503479c7dd034a67e",
+        "cacheKey": "296014.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Guillaume Kasbarian"
+          ],
+          "speakerFR": "Guillaume Kasbarian"
+        },
+        "paragraphIndex": 35,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Tout ne passe pas par la voie législative.",
+        "textES": "No todo pasa por la vía legislativa.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20240513/affecos.html",
+        "sourceTitle": "Compte rendu du 13/05/2024 (Commission des affaires economiques)",
+        "spokenOn": "2024-05-15",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "ea9fc7412afca10bde8e5b5603d1f1c11d03f0c8924829f1ad55504bff72582f",
+        "cacheKey": "b29b6a78796a13584839.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Guillaume Kasbarian, ministre délégué",
+          "dateLabelFR": "Mercredi 15 mai 2024",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 394,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "philippe-tabarot",
+      "action": "support",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "support",
+        "originalFR": "C'est la condition de la confiance.",
+        "textES": "Es la condición de la confianza.",
+        "source": "https://www.vie-publique.fr/discours/304434-philippe-tabarot-29062026-politique-des-transports",
+        "sourceTitle": "Déclaration de M. Philippe Tabarot, ministre des transports, sur le projet de loi-cadre relatif au développement des transports, à l'Assemblée nationale le 29 juin 2026.",
+        "spokenOn": "2026-06-29",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "0ae751bcfb2b051df8e5ae635ef04b20a3b43f428e1cf58f29459f31563f2f94",
+        "cacheKey": "304434.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Philippe Tabarot"
+          ],
+          "speakerFR": "Philippe Tabarot"
+        },
+        "paragraphIndex": 78,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        }
+      },
+      "after": {
+        "action": "support",
+        "originalFR": "Elle a du sens et elle va beaucoup nous aider.",
+        "textES": "Tiene sentido y nos va a ayudar mucho.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20251103/devdur.html",
+        "sourceTitle": "Compte rendu du 03/11/2025 (Commission amenagement du territoire / developpement durable)",
+        "spokenOn": "2025-11-05",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "dcf3cf8e7972f28979136d04c6f1aa0a7392efe8dfdeadf20b40feeb2266f873",
+        "cacheKey": "b7e582a03ec74be48777.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Philippe Tabarot, ministre",
+          "dateLabelFR": "Mercredi 5 novembre 2025",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 285,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "veronique-louwagie",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Cambio de interviniente omitido por el primer detector de etiquetas sin guion. Registro histórico descartado, no frase válida del cromo.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "Nous n'avons pas su établir de stratégie.",
+        "textES": "No hemos sabido establecer una estrategia.",
+        "source": "https://www.vie-publique.fr/discours/298937-veronique-louwagie28052025-terres-rares-et-materiaux-critiques",
+        "sourceTitle": "Déclaration de Mme Véronique Louwagie, ministre déléguée chargée du commerce, de l'artisanat, des petites et moyennes entreprises et de l'économie sociale et solidaire, sur le thème : \" Terres rares et matériaux critiques : quel potentiel dans les territoires français et quelle stratégie pour renforcer notre approvisionnement ? \", au Sénat le 28 mai 2025.",
+        "spokenOn": "2025-05-28",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "2c395e7643d50ff5a875585eab73bbe19ac065552a7f0297f3648e591e972e84",
+        "cacheKey": "298937.html",
+        "sourceType": "vie_publique_declaration",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "method": "single_named_declaration_with_turn_boundaries",
+          "authors": [
+            "Véronique Louwagie"
+          ],
+          "speakerFR": "Véronique Louwagie"
+        },
+        "paragraphIndex": 121,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Je ne partage pas l'avis des présidents",
+        "textES": "No comparto la opinión de los presidentes.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20221212/cmp.html",
+        "sourceTitle": "Compte rendu du 12/12/2022 (Commission mixte paritaire)",
+        "spokenOn": "2022-12-15",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "32e3afafb4dad17a1282cb5451e43f848da6e66aca4784bda96c32f20b1645b2",
+        "cacheKey": "fe5bd19dd0b51d734993.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "Mme Véronique Louwagie, députée",
+          "dateLabelFR": "Jeudi 15 décembre 2022",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 95,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se reemplaza la atribución incorrecta detectada al auditar cambios de interviniente sin guion. El nuevo fragmento pertenece al turno explícito del orador y se verifica de nuevo contra la captura."
+      }
+    },
+    {
+      "id": "jean-michel-jacques",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Anotación editorial en cursiva sobre el resultado de una votación, no palabras del interviniente.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "La proposition de rédaction n'est pas adoptée.",
+        "textES": "La propuesta de redacción no se adopta.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20230710/cmp.html",
+        "sourceTitle": "Compte rendu du 10/07/2023 (Commission mixte paritaire)",
+        "spokenOn": "2023-07-10",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "8a1af191119d4b75fba4a4ecd9586c683c4895ccce846b8bb49faeac0df2b0d7",
+        "cacheKey": "6c2bce65ff06d4ffef36.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Jean-Michel Jacques, rapporteur pour l'Assemblée nationale",
+          "dateLabelFR": "Lundi 10 juillet 2023",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 706,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Il ne faut pas déformer mes propos",
+        "textES": "No hay que deformar mis palabras.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20260622/cmp.html",
+        "sourceTitle": "Compte rendu du 22/06/2026 (Commission mixte paritaire)",
+        "spokenOn": "2026-06-23",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "dfca295f89b57cac9b07874ff76a644344a24187bfa3298b1f95ace13a684964",
+        "cacheKey": "3fd04fe15c9412d73d60.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Jean-Michel Jacques, député, vice-président",
+          "dateLabelFR": "Mardi 23 juin 2026",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 27,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se sustituye un resultado de votación editorial escrito en cursiva, que no era una intervención oral, por palabras propias del orador."
+      }
+    },
+    {
+      "id": "gerard-longuet",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "Anotación editorial o cita del título de un informe, excluida de las frases personales.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "Nous n'avançons jamais que d'un pas à la fois.",
+        "textES": "Solo avanzamos de un paso cada vez.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20140630/cs_regions.html",
+        "sourceTitle": "Compte rendu du 30/06/2014 (Commission speciale sur la delimitation des regions)",
+        "spokenOn": "2014-07-01",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "c41f73c3e9ddf40e0d245a1362679f74d7f90e00b8e15822b033efa02c167fe5",
+        "cacheKey": "a612498b5f2fd27bb788.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Gérard Longuet",
+          "dateLabelFR": "Mardi 1er juillet 2014",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 63,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "after": {
+        "action": "strong",
+        "originalFR": "Vous ne voulez pas aller dans cette voie",
+        "textES": "No queréis ir por ese camino.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20140630/cs_regions.html",
+        "sourceTitle": "Compte rendu du 30/06/2014 (Commission speciale sur la delimitation des regions)",
+        "spokenOn": "2014-07-01",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "c41f73c3e9ddf40e0d245a1362679f74d7f90e00b8e15822b033efa02c167fe5",
+        "cacheKey": "a612498b5f2fd27bb788.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Gérard Longuet",
+          "dateLabelFR": "Mardi 1er juillet 2014",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 55,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        },
+        "editorialChangeNote": "Se sustituye una anotación editorial o título de informe en cursiva; no eran palabras propias atribuibles al orador. El reemplazo se coteja con su turno explícito."
+      }
+    },
+    {
+      "id": "philippe-mouiller",
+      "action": "support",
+      "previousAttributionValid": false,
+      "reason": "Anotación editorial o cita del título de un informe, excluida de las frases personales.",
+      "beforeInvalid": {
+        "action": "support",
+        "originalFR": "IVG, une liberté garantie, mais un accès fragile.",
+        "textES": "Aborto: libertad garantizada, acceso frágil.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20241014/soci.html",
+        "sourceTitle": "Compte rendu du 14/10/2024 (Commission des affaires sociales)",
+        "spokenOn": "2024-10-16",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "5c63855518542985373c07d71eb514d31854c56cd8c7b7343a5bb74362f88797",
+        "cacheKey": "baf2497388f7cd0905d1.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Philippe Mouiller, président",
+          "dateLabelFR": "Mercredi 16 octobre 2024",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 229,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        }
+      },
+      "after": {
+        "action": "support",
+        "originalFR": "Je remercie nos rapporteurs pour leur travail de qualité.",
+        "textES": "Gracias a los ponentes por su buen trabajo.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20241014/soci.html",
+        "sourceTitle": "Compte rendu du 14/10/2024 (Commission des affaires sociales)",
+        "spokenOn": "2024-10-16",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "5c63855518542985373c07d71eb514d31854c56cd8c7b7343a5bb74362f88797",
+        "cacheKey": "baf2497388f7cd0905d1.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Philippe Mouiller, président",
+          "dateLabelFR": "Mercredi 16 octobre 2024",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 229,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        },
+        "editorialChangeNote": "Se sustituye una anotación editorial o título de informe en cursiva; no eran palabras propias atribuibles al orador. El reemplazo se coteja con su turno explícito."
+      }
+    },
+    {
+      "id": "nathalie-delattre",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Anotación editorial o cita del título de un informe, excluida de las frases personales.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "Le compte rendu ne sera pas publié.",
+        "textES": "No se publicará el acta de la sesión.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20200615/ce_radicalisation.html",
+        "sourceTitle": "Compte rendu du 15/06/2020 (CE Combattre la radicalisation islamiste)",
+        "spokenOn": "2020-06-18",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "91914738be9357ce40eb4870aeaf7cd43ce3620b997f39849b2963a77cab271b",
+        "cacheKey": "1559632066d7547d489d.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "Mme Nathalie Delattre, présidente",
+          "dateLabelFR": "Jeudi 18 juin 2020",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 188,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Je ne retire pas l'amendement.",
+        "textES": "No retiro la enmienda.",
+        "source": "https://www.senat.fr/basile/visio.do?id=s20201208_8&idtable=&_c=%22Christelle+Moran%C3%A7ais%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+        "sourceTitle": "SEANCE du mardi 08 décembre 2020 (compte rendu intégral des débats du Sénat)",
+        "spokenOn": "2020-12-08",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "9667b0d1fc595b79945eccca7890a6137229bbfba11a0e2539c67d02356f25d7",
+        "cacheKey": "c8a993e9649d3ff1eba1.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "Mme Nathalie Delattre",
+          "dateLabelFR": "SEANCE du mardi 08 décembre 2020 (compte rendu intégral des débats du Sénat)",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 21,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se sustituye una anotación editorial o título de informe en cursiva; no eran palabras propias atribuibles al orador. El reemplazo se coteja con su turno explícito."
+      }
+    },
+    {
+      "id": "francois-bonneau",
+      "action": "normal",
+      "previousAttributionValid": false,
+      "reason": "Homónimo con el mismo nombre completo y otra trayectoria institucional.",
+      "beforeInvalid": {
+        "action": "normal",
+        "originalFR": "C'est une question que nous n'avons pas manqué de poser.",
+        "textES": "Es una pregunta que hemos planteado.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20250217/etrang.html",
+        "sourceTitle": "Compte rendu du 17/02/2025 (Commission des affaires etrangeres)",
+        "spokenOn": "2025-02-19",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "44d6542495344a0d991b80fb711cfc6046307ab692cb5152801d39f9bfd57d17",
+        "cacheKey": "54c69f0a11ff03d06f68.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. François Bonneau, rapporteur",
+          "dateLabelFR": "Mercredi 19 février 2025",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 331,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        }
+      },
+      "after": {
+        "action": "normal",
+        "originalFR": "Il y a eu des avancées, mais elles sont partielles.",
+        "textES": "Ha habido avances, pero son parciales.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20200518/2020_05_18.html",
+        "sourceTitle": "Compte rendu du 18/05/2020 (Delegation aux entreprises)",
+        "spokenOn": "2020-05-18",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "9bdbc3b8d61dc51a567fe145992e5a809f4329fb0438b9b2049d524c1dc40116",
+        "cacheKey": "f3345faabc9ea6ce99d6.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. François Bonneau",
+          "dateLabelFR": "Lundi 18 mai 2020",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 40,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Réplica, objeción o afirmación de posición en el debate."
+        },
+        "editorialChangeNote": "Se corrige la confusión entre homónimos: la fuente identifica el cargo que corresponde a la persona representada."
+      }
+    },
+    {
+      "id": "philippe-martin",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "Homónimo con el mismo nombre completo y otra trayectoria institucional.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "L'exercice n'est pas économiquement impossible.",
+        "textES": "No es un ejercicio económicamente imposible.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20200309/ce_autoroutes.html",
+        "sourceTitle": "Compte rendu du 09/03/2020 (CE Concessions autoroutieres)",
+        "spokenOn": "2020-03-11",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "6311bc73a589ff187b05a6aee6dd5eca362a0ab25c329f049f8308fdbbd036e3",
+        "cacheKey": "607dc5f2d113bda6b2fe.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Philippe Martin",
+          "dateLabelFR": "Mercredi 11 mars 2020",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 123,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "after": {
+        "action": "strong",
+        "originalFR": "La rigueur administrative sera ma marque de fabrique.",
+        "textES": "El rigor administrativo será mi sello.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20170130/devdur.html",
+        "sourceTitle": "Compte rendu du 30/01/2017 (Commission amenagement du territoire / developpement durable)",
+        "spokenOn": "2017-02-01",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "14d248f0241e04482cde727c7ff91eaff1bc8344730c22ac8109e65c2f92799d",
+        "cacheKey": "6ccae649c0f77a27324e.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Philippe Martin",
+          "dateLabelFR": "Mercredi 1er février 2017",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 60,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        },
+        "editorialChangeNote": "Se corrige la confusión entre homónimos: la fuente identifica el cargo que corresponde a la persona representada."
+      }
+    },
+    {
+      "id": "francois-bonneau",
+      "action": "support",
+      "previousAttributionValid": false,
+      "reason": "Declaración del senador homónimo de Charente, no del presidente regional representado.",
+      "beforeInvalid": {
+        "action": "support",
+        "originalFR": "Avant tout merci pour vos exposés.",
+        "textES": "Ante todo, gracias por las exposiciones.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20231016/etran.html",
+        "sourceTitle": "Compte rendu du 16/10/2023 (Commission des affaires etrangeres)",
+        "spokenOn": "2023-10-18",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "8199d0663a6045e6bf70fc6cac2c370687b468762723a41a5656c6278db10235",
+        "cacheKey": "cb39bfa269910a397ccd.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. François Bonneau",
+          "dateLabelFR": "Mercredi 18 octobre 2023",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 188,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        }
+      },
+      "after": {
+        "action": "support",
+        "originalFR": "Nous avons voulu que ces fonds soient très réactifs.",
+        "textES": "Quisimos que esos fondos fueran muy ágiles.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20200518/2020_05_18.html",
+        "sourceTitle": "Compte rendu du 18/05/2020 (Delegation aux entreprises)",
+        "spokenOn": "2020-05-18",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "9bdbc3b8d61dc51a567fe145992e5a809f4329fb0438b9b2049d524c1dc40116",
+        "cacheKey": "f3345faabc9ea6ce99d6.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. François Bonneau",
+          "dateLabelFR": "Lundi 18 mai 2020",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 37,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Cooperación y apoyo a la recuperación."
+        },
+        "editorialChangeNote": "La atribución se vincula al presidente de Centre-Val de Loire identificado al inicio de la audiencia; se descarta al senador homónimo de Charente."
+      }
+    }
+  ]
+}

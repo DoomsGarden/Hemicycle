@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-06",
+  "people": {
+    "francois-bonneau": {
+      "expectedProfile": "https://fr.wikipedia.org/wiki/Fran%C3%A7ois_Bonneau_%28homme_politique%2C_1953%29",
+      "identityReview": "Presidente de Centre-Val de Loire; se excluye al senador de Charente homónimo.",
+      "approvedDocuments": [
+        {
+          "source": "https://www.senat.fr/compte-rendu-commissions/20200518/2020_05_18.html",
+          "sourceCollection": "closure_parliament",
+          "cacheKey": "f3345faabc9ea6ce99d6.html",
+          "sourceSha256": "9bdbc3b8d61dc51a567fe145992e5a809f4329fb0438b9b2049d524c1dc40116",
+          "spokenOn": "2020-05-18",
+          "identityEvidenceXPath": "(//p)[19]",
+          "identityEvidenceFR": "M. François Bonneau, président délégué de Régions de France et président de la région Centre-Val de Loire"
+        }
+      ]
+    },
+    "philippe-martin": {
+      "expectedProfile": "https://fr.wikipedia.org/wiki/Philippe_Martin_%28homme_politique%2C_1953%29",
+      "identityReview": "Exministro de Ecología y candidato a la presidencia de la AFB; se excluye al presidente de sección del Consejo de Estado homónimo.",
+      "approvedDocuments": [
+        {
+          "source": "https://www.senat.fr/compte-rendu-commissions/20170130/devdur.html",
+          "sourceCollection": "closure_parliament",
+          "cacheKey": "6ccae649c0f77a27324e.html",
+          "sourceSha256": "14d248f0241e04482cde727c7ff91eaff1bc8344730c22ac8109e65c2f92799d",
+          "spokenOn": "2017-02-01",
+          "identityEvidenceXPath": "(//p)[26]",
+          "identityEvidenceFR": "M. Philippe Martin, candidat proposé aux fonctions de Président du conseil d'administration de l'Agence française pour la biodiversité"
+        }
+      ]
+    },
+    "bruno-bernard": {
+      "expectedProfile": "https://fr.wikipedia.org/wiki/Bruno_Bernard_%28homme_politique%29",
+      "identityReview": "Político ecologista de Lyon; se excluyen el ejecutivo de Cisco y otros homónimos.",
+      "approvedDocuments": [
+        {
+          "source": "https://www.lyoncapitale.fr/actualite/elections-a-lyon-qui-est-bruno-bernard-eelv",
+          "sourceCollection": "first100_research",
+          "cacheKey": "lyon-capitale-bruno-bernard-20200312.html",
+          "sourceSha256": "1c22b1affc42e2a07e5046e4f4934bdf892a7f0c818b87e70d7ad09cedbedfa9",
+          "spokenOn": null,
+          "identityEvidenceXPath": "//h1",
+          "identityEvidenceFR": "Élections à Lyon : qui est Bruno Bernard (EELV) ?"
+        }
+      ]
+    },
+    "maurice-leroy": {
+      "expectedProfile": "https://fr.wikipedia.org/wiki/Maurice_Leroy",
+      "identityReview": "Ministro de la Ciudad y diputado; se excluye al químico homónimo de las audiencias sobre energía nuclear.",
+      "approvedDocuments": [
+        {
+          "sourceSha256": "8ebd06dc8880b461b69e22442405a012615624d148b9cda6e20d4ae3241efe3a",
+          "cacheKey": "da8e1c5697e13b81cdc5.html",
+          "sourceCollection": "closure_parliament",
+          "spokenOn": "2011-03-22",
+          "identityEvidenceXPath": "(//p)[18]",
+          "identityEvidenceFR": "M. Maurice Leroy, ministre."
+        }
+      ]
+    }
+  }
+}

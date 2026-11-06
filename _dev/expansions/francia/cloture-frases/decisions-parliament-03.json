@@ -1,0 +1,380 @@
+{
+  "date": "2026-11-06",
+  "cards": [
+    {
+      "id": "clementine-autain",
+      "name": "Clémentine Autain",
+      "contextSummaryES": "Intervenciones propias recogidas en las fuentes y fechas individuales. La acción de juego es ficticia y no afirma que las palabras se dirigiesen originalmente al rival representado.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "La vie est un peu plus complexe que vous ne le dites",
+          "textES": "La vida es algo más compleja de lo que decís.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/deuxieme-seance-du-jeudi-10-fevrier-2022",
+          "sourceTitle": "Compte rendu de la deuxième séance du jeudi 10 février 2022 - Assemblée nationale",
+          "spokenOn": "2022-02-10",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "8a3190c543bb7930440d368773e073315a54ec9163bff7fff2a144b690597a3c",
+          "cacheKey": "c4abe2cc48ef51dbdba6.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Clémentine Autain",
+            "interventionId": "2789043",
+            "titleDate": "Compte rendu de la deuxième séance du jeudi 10 février 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Il faut agir vite et fort !",
+          "textES": "¡Hay que actuar rápido y con fuerza!",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/seance-du-mardi-25-janvier-2022",
+          "sourceTitle": "Compte rendu de la séance du mardi 25 janvier 2022 - Assemblée nationale",
+          "spokenOn": "2022-01-25",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "461dd8236040ea3534373b2c2c499a9616a21a57eaacdc440895f5e5bd987c48",
+          "cacheKey": "7341b4c1c079ceb223df.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Clémentine Autain",
+            "interventionId": "2766054",
+            "titleDate": "Compte rendu de la séance du mardi 25 janvier 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Vous pouvez compter sur nous",
+          "textES": "Podéis contar con nosotros.",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-mardi-13-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du mardi 13 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "e033c06c4f97605eec4466a9ddd125fde3bc402da06d9fea4ffec66505e5fab9",
+          "cacheKey": "99e030ed109998fc7b4d.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Clémentine Autain",
+            "interventionId": "4184154",
+            "titleDate": "Compte rendu de la première séance du mardi 13 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jean-lassalle",
+      "name": "Jean Lassalle",
+      "contextSummaryES": "Intervenciones propias recogidas en las fuentes y fechas individuales. La acción de juego es ficticia y no afirma que las palabras se dirigiesen originalmente al rival representado.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Vous avez raison mais vous nous opposez une réponse technique.",
+          "textES": "Tiene razón, pero su respuesta es técnica.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/troisieme-seance-du-vendredi-04-fevrier-2022",
+          "sourceTitle": "Compte rendu de la troisième séance du vendredi 04 février 2022 - Assemblée nationale",
+          "spokenOn": "2022-02-04",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "ecb62c80ac024de7919e23d45e13fda74ab53530a4b6ca36fb8ef248d501fe75",
+          "cacheKey": "1042a666359093c6bb28.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Jean Lassalle",
+            "interventionId": "2782054",
+            "titleDate": "Compte rendu de la troisième séance du vendredi 04 février 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Malgré tout, quelle honte pour notre pays !",
+          "textES": "¡Aun así, qué vergüenza para nuestro país!",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/deuxieme-seance-du-jeudi-27-janvier-2022",
+          "sourceTitle": "Compte rendu de la deuxième séance du jeudi 27 janvier 2022 - Assemblée nationale",
+          "spokenOn": "2022-01-27",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f0f7792c9bed6ae214bc0a38926be67ee76984202e26f02f49b8615d7a8e4381",
+          "cacheKey": "7e84d81d185c39ca2f1f.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Jean Lassalle",
+            "interventionId": "2770970",
+            "titleDate": "Compte rendu de la deuxième séance du jeudi 27 janvier 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "c’est donc une aide que nous apportons.",
+          "textES": "Así pues, estamos prestando una ayuda.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/deuxieme-seance-du-jeudi-27-janvier-2022",
+          "sourceTitle": "Compte rendu de la deuxième séance du jeudi 27 janvier 2022 - Assemblée nationale",
+          "spokenOn": "2022-01-27",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f0f7792c9bed6ae214bc0a38926be67ee76984202e26f02f49b8615d7a8e4381",
+          "cacheKey": "7e84d81d185c39ca2f1f.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Jean Lassalle",
+            "interventionId": "2770967",
+            "titleDate": "Compte rendu de la deuxième séance du jeudi 27 janvier 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "laure-lavalette",
+      "name": "Laure Lavalette",
+      "contextSummaryES": "Intervenciones propias recogidas en las fuentes y fechas individuales. La acción de juego es ficticia y no afirma que las palabras se dirigiesen originalmente al rival representado.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "On veut bien tout entendre, sauf ça !",
+          "textES": "¡Podemos oírlo todo, salvo eso!",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-vendredi-23-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du vendredi 23 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-23",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "2edb747b532aa083ba2d4cbc6453f96bbdf02462642c1dd8dab7ed4729e95218",
+          "cacheKey": "03268cdca53e9ca0c8bd.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Laure Lavalette",
+            "interventionId": "4203329",
+            "titleDate": "Compte rendu de la première séance du vendredi 23 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Vous n’avez honte de rien !",
+          "textES": "¡No tenéis vergüenza de nada!",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-jeudi-15-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du jeudi 15 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-15",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "66fb907faceba9fa4d646560f9c91bc95cd7a6d81ca59d728c0d9265cd9f0e80",
+          "cacheKey": "a35ba916e842cb80d69c.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Laure Lavalette",
+            "interventionId": "4187062",
+            "titleDate": "Compte rendu de la première séance du jeudi 15 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "C’est de vivre qui rend digne.",
+          "textES": "Vivir es lo que da dignidad.",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/premiere-seance-du-lundi-03-juin-2024",
+          "sourceTitle": "Compte rendu de la première séance du lundi 03 juin 2024 - Assemblée nationale",
+          "spokenOn": "2024-06-03",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "6cfcae711abe0d6a21517a3e2d48d7ad5e38ecdaea1a1c6fcae2231fb306f21e",
+          "cacheKey": "2fccb80b3561d3bc974a.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Laure Lavalette",
+            "interventionId": "3495577",
+            "titleDate": "Compte rendu de la première séance du lundi 03 juin 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    }
+  ]
+}

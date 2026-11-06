@@ -42,3 +42,7 @@ Se ha comprobado expresamente el turno de respuesta en entrevistas, la sección 
 Las nuevas fuentes del Senado conservan el turno explícito y la fecha de la sesión, no solo la semana indicada en la URL. Los nombres en las búsquedas no prueban autoría: se excluyó al ejecutivo de Cisco homónimo de Bruno Bernard. En las nuevas entrevistas se han separado las preguntas y los fragmentos citados de terceros. Una declaración común leída por Lisnard se identifica como tal; no se presenta como una intervención individual escrita exclusivamente por él.
 
 El perfil de Bruno Bernard en Lyon Capitale aporta citas directas en francés y una referencia visual identificada. Se conserva su fecha de publicación (`publishedOn`) y `spokenOn: null`, porque la noticia no confirma el día de la conversación. La galería muestra explícitamente esa diferencia. No se confunden las citas del entrevistado con las palabras del periodista o de otra persona citada en el perfil.
+
+## Cierre editorial del 06-11-2026
+
+El registro actual está en [cloture-frases/frases-validees.json](cloture-frases/frases-validees.json), con 1137 textos para 379 perfiles. Las candidatas iniciales se conservan como historial. Se refuerza la identificación del interviniente en transcripciones con varias voces, se descartan anotaciones editoriales y títulos de informes y se conservan las fechas de declaraciones retrospectivas. El resto del trabajo y los accesos necesarios se detallan en [el estado de cierre](cloture-frases/README.md).

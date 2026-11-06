@@ -1,0 +1,1366 @@
+{
+  "date": "2026-11-06",
+  "cards": [
+    {
+      "id": "alexis-corbiere",
+      "name": "Alexis Corbière",
+      "contextSummaryES": "Intervenciones parlamentarias de 2022-2026. La llamada al valor se pronunció al defender una resolución sobre un alertador, cuyo nombre queda fuera del fragmento. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Votre démarche est donc purement idéologique.",
+          "textES": "Vuestro enfoque es puramente ideológico.",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/premiere-seance-du-mercredi-22-mai-2024",
+          "sourceTitle": "Compte rendu de la première séance du mercredi 22 mai 2024 - Assemblée nationale",
+          "spokenOn": "2024-05-22",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "c16735df8c3d6424121b3bb754b861243395ca1ffae9ecf10e36781ce7cf92d7",
+          "cacheKey": "c461aec8fe918a732454.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Alexis Corbière",
+            "interventionId": "3468109",
+            "titleDate": "Compte rendu de la première séance du mercredi 22 mai 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Vos informations ne sont pas vraies !",
+          "textES": "¡Vuestras informaciones son falsas!",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-mardi-20-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du mardi 20 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-20",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "1245ed74e75faff786a35340f86179244d28bbb71b2f1e97245e220682b6924d",
+          "cacheKey": "a95dbebc5320de70561d.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Alexis Corbière",
+            "interventionId": "4195553",
+            "titleDate": "Compte rendu de la première séance du mardi 20 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "faisons preuve de courage.",
+          "textES": "Demostremos valor.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/troisieme-seance-du-vendredi-04-fevrier-2022",
+          "sourceTitle": "Compte rendu de la troisième séance du vendredi 04 février 2022 - Assemblée nationale",
+          "spokenOn": "2022-02-04",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "ecb62c80ac024de7919e23d45e13fda74ab53530a4b6ca36fb8ef248d501fe75",
+          "cacheKey": "1042a666359093c6bb28.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Alexis Corbière",
+            "interventionId": "2781972",
+            "titleDate": "Compte rendu de la troisième séance du vendredi 04 février 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "david-amiel",
+      "name": "David Amiel",
+      "contextSummaryES": "Intervenciones como ministro de Cuentas Públicas en octubre de 2026. Discute déficit y fiscalidad, y ofrece trabajar en común contra la optimización fiscal abusiva. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Pour cette raison, je n’y serai pas favorable.",
+          "textES": "Por ese motivo, no estaré a favor.",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/troisieme-seance-du-vendredi-30-octobre-2026",
+          "sourceTitle": "Compte rendu de la troisième séance du vendredi 30 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-30",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "4462ef8ef3a2bc1dbdc4e3ed40e5d2e6baaf5b852754b388ab37b6fb6ecdf2b7",
+          "cacheKey": "b69b2214db142c7d3ed3.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. David Amiel, ministre",
+            "interventionId": "4213666",
+            "titleDate": "Compte rendu de la troisième séance du vendredi 30 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "un tel niveau de déficit est financièrement inacceptable.",
+          "textES": "Tal déficit es financieramente inaceptable.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20261012/soc.html",
+          "sourceTitle": "Compte rendu du 12/10/2026 (Commission des affaires sociales)",
+          "spokenOn": "2026-10-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "a44212719430b395ccb1ef13a2a85be029f3c250b4e4c778b1eda06ec8972e64",
+          "cacheKey": "4abf390005185254146e.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. David Amiel, ministre de l'action et des comptes publics",
+            "dateLabelFR": "Mardi 13 octobre 2026",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 26,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Je sais que nous pourrons y travailler ensemble.",
+          "textES": "Sé que podremos trabajar juntos en ello.",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-mercredi-28-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du mercredi 28 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-28",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "6ae3ed7da9cc78312156b6ad761cbbb411b2d5084b19a8c841a055f1500fc422",
+          "cacheKey": "17bc8614902f6f7349c8.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. David Amiel, ministre de l’action et des comptes publics",
+            "interventionId": "4206423",
+            "titleDate": "Compte rendu de la première séance du mercredi 28 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "philippe-bas",
+      "name": "Philippe Bas",
+      "contextSummaryES": "Intervenciones como presidente o ponente de la comisión de leyes, 2018-2022. Distingue hechos sin acreditar, justifica una medida excepcional y defiende la libertad electoral. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Les faits pour l'instant ne sont pas établis.",
+          "textES": "Por ahora, los hechos no están acreditados.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20180723/lois.html",
+          "sourceTitle": "Compte rendu du 23/07/2018 (Commission des lois)",
+          "spokenOn": "2018-07-26",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "526cf5b05a70b70234b84b0777fbd2e39b712724c5b7ce30214cb24e3cbe2e5f",
+          "cacheKey": "1d321cf4ebdbb295df5d.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Philippe Bas, président",
+            "dateLabelFR": "Jeudi 26 juillet 2018",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 1196,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "C'est la raison - et la seule raison !",
+          "textES": "¡Ese es el motivo, y el único!",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20220718/cmp.html",
+          "sourceTitle": "Compte rendu du 18/07/2022 (Commission mixte paritaire)",
+          "spokenOn": "2022-07-21",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "810658b04d59017f3094d0271b4c21e07ee6a739df5373c205b2f020f70e52e7",
+          "cacheKey": "9ef913a3f780ad08d1d3.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Philippe Bas, rapporteur pour le Sénat",
+            "dateLabelFR": "Jeudi 21 juillet 2022",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 116,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Conservons la liberté de choix des électeurs.",
+          "textES": "Conservemos la libertad de elegir del elector.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20190930/lois.html",
+          "sourceTitle": "Compte rendu du 30/09/2019 (Commission des lois)",
+          "spokenOn": "2019-10-02",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f5a972d605dfc34aa8c0c9b2d45c8e93f7f778e4873768f209c39f5c7e057e36",
+          "cacheKey": "874a0640ca245b1afffd.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Philippe Bas, président",
+            "dateLabelFR": "Mercredi 2 octobre 2019",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 905,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "francois-xavier-bellamy",
+      "name": "François-Xavier Bellamy",
+      "contextSummaryES": "Audiencias sobre escuela y defensa europea, 2015 y 2025. El apoyo exhorta a Francia a participar en la cooperación industrial de defensa. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "C'est un paradoxe qui ne cesse de m'étonner.",
+          "textES": "Es una paradoja que no deja de asombrarme.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20150316/ce_education.html",
+          "sourceTitle": "Compte rendu du 16/03/2015 (CE Service public de l'education)",
+          "spokenOn": "2015-03-19",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "a65737867c7a2e64d3c27417f3e51e3d06f050c3c8697b37c1175517d2ea89d5",
+          "cacheKey": "7437bf2dfc62d78b75d6.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. François-Xavier Bellamy",
+            "dateLabelFR": "Jeudi 19 mars 2015",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 347,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Je ne crois pas à la fiction d'une armée européenne.",
+          "textES": "No creo en la ficción de un ejército europeo.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20250630/euro.html",
+          "sourceTitle": "Compte rendu du 30/06/2025 (Commission des affaires europeennes)",
+          "spokenOn": "2025-07-03",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "69c69af61d39d4dabe3ea8dcc4670932b636a0017429d271f62f61e2e6a127b3",
+          "cacheKey": "ffca8a36420fe14a19de.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. François-Xavier Bellamy",
+            "dateLabelFR": "Jeudi 3 juillet 2025",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 409,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "La France ne doit pas manquer ce rendez-vous.",
+          "textES": "Francia no debe faltar a esta cita.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20250630/euro.html",
+          "sourceTitle": "Compte rendu du 30/06/2025 (Commission des affaires europeennes)",
+          "spokenOn": "2025-07-03",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "69c69af61d39d4dabe3ea8dcc4670932b636a0017429d271f62f61e2e6a127b3",
+          "cacheKey": "ffca8a36420fe14a19de.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. François-Xavier Bellamy",
+            "dateLabelFR": "Jeudi 3 juillet 2025",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 423,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "bertrand-pancher",
+      "name": "Bertrand Pancher",
+      "contextSummaryES": "Intervenciones de 2022 sobre descarbonización, iniciativa legislativa y respuesta a la invasión de Ucrania. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "En la matière, il reste encore beaucoup à faire.",
+          "textES": "En este ámbito aún queda mucho por hacer.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/premiere-seance-du-mercredi-26-janvier-2022",
+          "sourceTitle": "Compte rendu de la première séance du mercredi 26 janvier 2022 - Assemblée nationale",
+          "spokenOn": "2022-01-26",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "d03c9bf4713bd6a5016126afde7b9227430ddf89a67de775af6a6cc8b1ec121f",
+          "cacheKey": "a7c3a47200e75da3b66e.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Bertrand Pancher",
+            "interventionId": "2768015",
+            "titleDate": "Compte rendu de la première séance du mercredi 26 janvier 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Vous n’avez même pas osé déposer une proposition de loi !",
+          "textES": "¡Ni os atrevisteis a proponer una ley!",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/premiere-seance-du-jeudi-03-fevrier-2022",
+          "sourceTitle": "Compte rendu de la première séance du jeudi 03 février 2022 - Assemblée nationale",
+          "spokenOn": "2022-02-03",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "30e760bf25b7a49c916d4c03588b9c5873b959175bd00931ebdc176840a6ec17",
+          "cacheKey": "b470c220442bb9ff91f9.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Bertrand Pancher",
+            "interventionId": "2778192",
+            "titleDate": "Compte rendu de la première séance du jeudi 03 février 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Nous ne devons pas croiser les bras.",
+          "textES": "No debemos cruzarnos de brazos.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/premiere-seance-du-jeudi-24-fevrier-2022",
+          "sourceTitle": "Compte rendu de la première séance du jeudi 24 février 2022 - Assemblée nationale",
+          "spokenOn": "2022-02-24",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "98903fbd0afca785708b9dc7722751032ecaee274765526ea22d6317f722e25d",
+          "cacheKey": "abe0be59c6a72a23eeb6.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Bertrand Pancher",
+            "interventionId": "2800106",
+            "titleDate": "Compte rendu de la première séance du jeudi 24 février 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "manuel-bompard",
+      "name": "Manuel Bompard",
+      "contextSummaryES": "Debates de octubre de 2026 sobre deuda y procedimiento parlamentario. Defiende la deliberación y la posibilidad efectiva de votar. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Il est légitime de pouvoir en discuter.",
+          "textES": "Es legítimo poder debatirlo.",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/deuxieme-seance-du-mercredi-14-octobre-2026",
+          "sourceTitle": "Compte rendu de la deuxième séance du mercredi 14 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-14",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "6c5a539ba2a3124d12f7b907c3db0bde8084bef749c2b1081803ac4fb8ad8a36",
+          "cacheKey": "adfdd54f16b6205cb6dd.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Manuel Bompard",
+            "interventionId": "4186937",
+            "titleDate": "Compte rendu de la deuxième séance du mercredi 14 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Vous ne croyez pas vous-même à ce que vous dites !",
+          "textES": "¡Ni vosotros creéis lo que estáis diciendo!",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/deuxieme-seance-du-mercredi-14-octobre-2026",
+          "sourceTitle": "Compte rendu de la deuxième séance du mercredi 14 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-14",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "6c5a539ba2a3124d12f7b907c3db0bde8084bef749c2b1081803ac4fb8ad8a36",
+          "cacheKey": "adfdd54f16b6205cb6dd.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Manuel Bompard",
+            "interventionId": "4186767",
+            "titleDate": "Compte rendu de la deuxième séance du mercredi 14 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "On ne peut pas laisser un membre du gouvernement nous en empêcher !",
+          "textES": "¡No dejemos que el Gobierno nos impida votar!",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/troisieme-seance-du-jeudi-29-octobre-2026",
+          "sourceTitle": "Compte rendu de la troisième séance du jeudi 29 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-29",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f2bdbee95c6d90effeef010644ebf4bc845a60a127542420472e8f845acc9c21",
+          "cacheKey": "c125d5e5cc43ed253622.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Manuel Bompard",
+            "interventionId": "4210706",
+            "titleDate": "Compte rendu de la troisième séance du jeudi 29 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jerome-cahuzac",
+      "name": "Jérôme Cahuzac",
+      "contextSummaryES": "Intervenciones como ministro de Presupuesto en octubre de 2012. Argumenta sobre cuentas públicas y respalda el ejercicio colegiado de sus competencias. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "La comparaison ne nous est pas défavorable.",
+          "textES": "La comparación no nos es desfavorable.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20121008/soc.html",
+          "sourceTitle": "Compte rendu du 08/10/2012 (Commission des affaires sociales)",
+          "spokenOn": "2012-10-11",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f9ba23058977cfe6836be97bedf4f16720be4241e749bc8cf56c4f81b5c3c84a",
+          "cacheKey": "b659ddf80d4716fcff51.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jérôme Cahuzac, ministre délégué chargé du budget",
+            "dateLabelFR": "Jeudi 11 octobre 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 481,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Nous ne nous laissons pas aller à la facilité.",
+          "textES": "No nos dejamos llevar por lo fácil.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20121015/fin.html",
+          "sourceTitle": "Compte rendu du 15/10/2012 (Commission des finances)",
+          "spokenOn": "2012-10-17",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "a7532d556699920699a5d5a6a61e79ecb5149ac48eb8b1c13924db4ab1d1cce7",
+          "cacheKey": "be4bd9d8523f75c349bb.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jérôme Cahuzac",
+            "dateLabelFR": "Mercredi 17 octobre 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 464,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Cette solidarité me paraît une très bonne chose.",
+          "textES": "Esa solidaridad me parece muy positiva.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20121022/fin.html",
+          "sourceTitle": "Compte rendu du 22/10/2012 (Commission des finances)",
+          "spokenOn": "2012-10-24",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "8ab3a60c03381129a7ed49cff3ae93a4d878e9884786d0c995ca43e03ce7b836",
+          "cacheKey": "f9af41f41d649bc3b36d.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jérôme Cahuzac",
+            "dateLabelFR": "Mercredi 24 octobre 2012",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 459,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "catherine-deroche",
+      "name": "Catherine Deroche",
+      "contextSummaryES": "Debates de comisión de 2015-2020. Rechaza reabrir la discusión sobre un aceite, acepta parcialmente una observación y expresa confianza en el ponente. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Ce n'est pas totalement faux...",
+          "textES": "No es completamente falso...",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20201109/soc.html",
+          "sourceTitle": "Compte rendu du 09/11/2020 (Commission des affaires sociales)",
+          "spokenOn": "2020-11-09",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "be8bfb61aa8e7d18ad56739ec8e51cae6a4913a36046857f30e7142bcc29e6b4",
+          "cacheKey": "e4c80c7c89f667eed682.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "Mme Catherine Deroche, présidente",
+            "dateLabelFR": "Lundi 9 novembre 2020",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 680,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Nous n'allons pas non plus rouvrir ce débat.",
+          "textES": "Tampoco vamos a reabrir este debate.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20150720/soc.html",
+          "sourceTitle": "Compte rendu du 20/07/2015 (Commission des affaires sociales)",
+          "spokenOn": "2015-07-22",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "5b444567be2f6d89518d2d2aa4f4febec66a9f3bb5234f86220a333262567319",
+          "cacheKey": "032eb95ed65c1927642c.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "Mme Catherine Deroche, rapporteure",
+            "dateLabelFR": "Mercredi 22 juillet 2015",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 622,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Je fais confiance au rapporteur.",
+          "textES": "Deposito mi confianza en el ponente.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20200120/cs_bioethique.html",
+          "sourceTitle": "Compte rendu du 20/01/2020 (CS sur la bioethique)",
+          "spokenOn": "2020-01-22",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "813c21b5246318757763f2c27b47597c8ee8932b694918c0daca4f11a47e7e0b",
+          "cacheKey": "f1dbab21ac9708c5d186.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "Mme Catherine Deroche",
+            "dateLabelFR": "Mercredi 22 janvier 2020",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 1019,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "clemence-guette",
+      "name": "Clémence Guetté",
+      "contextSummaryES": "Intervenciones de 2024 y 2026 sobre océanos y protesta social. La exhortación de apoyo pide tomar en consideración a los niños. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "L’océan mondial ne connaît pas de frontières.",
+          "textES": "El océano mundial no conoce fronteras.",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/premiere-seance-du-mercredi-29-mai-2024",
+          "sourceTitle": "Compte rendu de la première séance du mercredi 29 mai 2024 - Assemblée nationale",
+          "spokenOn": "2024-05-29",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "acf983b518f33a90d2c1b4dcb8ac44720f7fb703634c0ea7e622b9788c0c0993",
+          "cacheKey": "00372a139513bb4cbe1e.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Clémence Guetté (LFI-NUPES)",
+            "interventionId": "3483614",
+            "titleDate": "Compte rendu de la première séance du mercredi 29 mai 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "À la colère légitime, vous avez répondu par le chaos.",
+          "textES": "A la cólera legítima respondisteis con caos.",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/premiere-seance-du-mardi-27-octobre-2026",
+          "sourceTitle": "Compte rendu de la première séance du mardi 27 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-27",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "7d1101f83d76b280b2bb92d5ca38f05662ddad4042ebbfcea0c45a1c9ec4665f",
+          "cacheKey": "de44f73013533df68191.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Clémence Guetté (LFI-NFP)",
+            "interventionId": "4204253",
+            "titleDate": "Compte rendu de la première séance du mardi 27 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Pensez un peu aux gamins, pensez à eux !",
+          "textES": "¡Pensad un poco en los niños, pensad en ellos!",
+          "source": "https://www.assemblee-nationale.fr/dyn/17/comptes-rendus/seance/session-ordinaire-de-2026-2027/troisieme-seance-du-jeudi-29-octobre-2026",
+          "sourceTitle": "Compte rendu de la troisième séance du jeudi 29 octobre 2026 - Assemblée nationale",
+          "spokenOn": "2026-10-29",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "f2bdbee95c6d90effeef010644ebf4bc845a60a127542420472e8f845acc9c21",
+          "cacheKey": "c125d5e5cc43ed253622.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Clémence Guetté",
+            "interventionId": "4209656",
+            "titleDate": "Compte rendu de la troisième séance du jeudi 29 octobre 2026 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "daniele-obono",
+      "name": "Danièle Obono",
+      "contextSummaryES": "Intervenciones de 2022-2024. Comparte las preguntas de sus colegas, rechaza que se desfiguren sus palabras y pide calma en el hemiciclo. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Je partage les interrogations de mes collègues.",
+          "textES": "Comparto las preguntas de mis colegas.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20231218/cmp.html",
+          "sourceTitle": "Compte rendu du 18/12/2023 (Commission mixte paritaire)",
+          "spokenOn": "2023-12-19",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "c1fbda15cf75563c9d532d6c526457e071db58003793b543194dc1fd49a33458",
+          "cacheKey": "833423015ff83f104f98.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "Mme Danièle Obono, députée",
+            "dateLabelFR": "Mardi 19 décembre 2023",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 957,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "C’est indigne de travestir ainsi nos propos !",
+          "textES": "¡Es indigno desfigurar así nuestras palabras!",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/premiere-seance-du-jeudi-24-fevrier-2022",
+          "sourceTitle": "Compte rendu de la première séance du jeudi 24 février 2022 - Assemblée nationale",
+          "spokenOn": "2022-02-24",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "98903fbd0afca785708b9dc7722751032ecaee274765526ea22d6317f722e25d",
+          "cacheKey": "abe0be59c6a72a23eeb6.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Danièle Obono",
+            "interventionId": "2800239",
+            "titleDate": "Compte rendu de la première séance du jeudi 24 février 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Qu’ils se calment en face",
+          "textES": "¡Que se calmen los de enfrente!",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/deuxieme-seance-du-mardi-28-mai-2024",
+          "sourceTitle": "Compte rendu de la deuxième séance du mardi 28 mai 2024 - Assemblée nationale",
+          "spokenOn": "2024-05-28",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "78703d2a0ca13ecf794956b928867c48996620f0b6390c8aab4c859212d0eb83",
+          "cacheKey": "89d8f13f3e4677ac705f.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "Mme Danièle Obono",
+            "interventionId": "3481153",
+            "titleDate": "Compte rendu de la deuxième séance du mardi 28 mai 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "gilles-le-gendre",
+      "name": "Gilles Le Gendre",
+      "contextSummaryES": "Debates de junio de 2024. Reclama revisar la redacción de un apartado y avanzar en la respuesta legislativa que espera la sociedad. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Il faut donc retravailler cet alinéa.",
+          "textES": "Hay que reelaborar este apartado.",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/deuxieme-seance-du-jeudi-06-juin-2024",
+          "sourceTitle": "Compte rendu de la deuxième séance du jeudi 06 juin 2024 - Assemblée nationale",
+          "spokenOn": "2024-06-06",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "3090db844471751eed3d0dfdd40d1d92bd84bdb3ff120fc914509d2f52d19a6a",
+          "cacheKey": "9a2e7cd10c370e6dd58d.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Gilles Le Gendre",
+            "interventionId": "3502860",
+            "titleDate": "Compte rendu de la deuxième séance du jeudi 06 juin 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "C’est pas très moderne.",
+          "textES": "Eso no es muy moderno.",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/premiere-seance-du-jeudi-06-juin-2024",
+          "sourceTitle": "Compte rendu de la première séance du jeudi 06 juin 2024 - Assemblée nationale",
+          "spokenOn": "2024-06-06",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "b3afdf4d246c5654aa47ab4cf9613bad96e59877f5b1311cc31132f50f51b249",
+          "cacheKey": "a68694a27c0e99b2136d.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Gilles Le Gendre",
+            "interventionId": "3501185",
+            "titleDate": "Compte rendu de la première séance du jeudi 06 juin 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "La société attend que nous avancions.",
+          "textES": "La sociedad espera que avancemos.",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/troisieme-seance-du-jeudi-06-juin-2024",
+          "sourceTitle": "Compte rendu de la troisième séance du jeudi 06 juin 2024 - Assemblée nationale",
+          "spokenOn": "2024-06-06",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "16d4cbd8a381e5f8479da8b4d84f56ba91545d9ee708306578796d7c7ac9361a",
+          "cacheKey": "594aa9b3f5ace54eb28c.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Gilles Le Gendre",
+            "interventionId": "3504740",
+            "titleDate": "Compte rendu de la troisième séance du jeudi 06 juin 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    }
+  ]
+}
