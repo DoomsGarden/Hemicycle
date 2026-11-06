@@ -40,6 +40,13 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){},rejected(){}
     }throw require('./write-queue.cjs').busy();});
     context=await rpc('hemicycle_economy_context',{p_actor:actor});
    }
+   if(part==='/pack-openings'){
+    const current=E.view(context,actor,part),known=new Set(current.map(r=>r.id));
+    try{const response=await fetcher(url.replace(/\/$/,'')+'/rest/v1/hemicycle_economy_operations?user_id=eq.'+encodeURIComponent(actor)+'&result->packs=not.is.null&select=operation_id,request,result,created_at&order=created_at.desc&limit=1000',{headers:{apikey:secret,Authorization:'Bearer '+secret},signal:AbortSignal.timeout(10000)});
+    if(response.ok){const old=await read(response);if(Array.isArray(old))for(const r of old){const result=r.result,request=r.request||{};if(!Array.isArray(result?.packs)||known.has(result.presentationId||r.operation_id))continue;current.push({id:result.presentationId||r.operation_id,k:result.kind||request.kind||'comun',country:result.country||request.country||'',from:request.type==='pack'?'tienda':'buzon',created:Date.parse(r.created_at)||Date.now(),packs:result.packs,opened:result.packs.map(()=>false),free:request.type!=='pack'||!!request.free,legacy:true});}}
+    }catch(ignore){/* Los recibos nuevos siguen disponibles aunque falle la consulta histórica. */}
+    return current;
+   }
    return E.view(context,actor,part);
   }
   if(method!=='POST')throw Error('Ruta no disponible.');
