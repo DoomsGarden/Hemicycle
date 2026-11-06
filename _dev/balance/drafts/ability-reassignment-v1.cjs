@@ -1,6 +1,6 @@
 'use strict';
 // Propuesta aislada; ningún módulo del juego importa este fichero.
-const C=require('../../../js/orator-catalog.js'),B=require('../../../js/basic-effects-v3.js');
+const C=require('../../expansions/activation-v32/baseline/orator-catalog.js'),B=require('../../../js/basic-effects-v3.js');
 const groups={
  comun:{
   surge:['toni-canto','dolors-montserrat','fatima-banez','quim-torra','andrea-levy','oscar-puente'],

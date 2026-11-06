@@ -1,0 +1,71 @@
+{
+  "id": "./",
+  "name": "Hemicycle: Face to Face",
+  "short_name": "Hemicycle",
+  "description": "Independent, unofficial political strategy card game: 899 orators, 92 actions, country packs, achievements and turn-based debates to 100 votes.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "any",
+  "background_color": "#070b16",
+  "theme_color": "#0a0e18",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "games"
+  ],
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "docs/media/install/inicio.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Inicio y accesos de Hemiciclo"
+    },
+    {
+      "src": "docs/media/install/combate.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Combate por turnos con tapetes independientes"
+    },
+    {
+      "src": "docs/media/install/coleccion.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Colección de oradores y filtros"
+    },
+    {
+      "src": "docs/media/install/combate-horizontal.webp",
+      "sizes": "1688x780",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Combate adaptado a pantalla horizontal"
+    }
+  ]
+}

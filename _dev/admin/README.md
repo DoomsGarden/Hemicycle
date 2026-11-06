@@ -1,3 +1,5 @@
+> La ampliación v32 actualiza las listas admitidas de oradores y acciones mediante [`deploy.sql`](../releases/v32/deploy.sql). Debe aplicarse después de la activación inicial descrita aquí; no se vuelve a importar una cuenta ya vinculada.
+
 # Importación inicial automática
 
 La política `automatic-local-v1` está autorizada por el propietario: se acepta una primera copia local válida, aunque los respaldos antiguos no tienen firma del servidor. El progreso posterior sigue sujeto a la economía autoritativa.

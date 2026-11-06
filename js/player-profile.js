@@ -181,7 +181,7 @@ function create(api){
  }
  document.addEventListener('hemicycle:legal-accepted',initAccount);
  initAccount();
- return {enter:enter,open:function(){open(false);},openGuide:function(){open(false,true);},close:close,isOpen:function(){return opened;},canSync:function(){return canUseAccount()&&!!session&&!recovering;},account:function(){return canUseAccount()&&session?{userId:session.user.id,client:client,accessToken:session.access_token}:null;},refresh:function(){if(opened&&!gate&&!readOnly&&!editing)render();}};
+ return {nickname:function(){return profile&&profile.nickname||'Invitado';},enter:enter,open:function(){open(false);},openGuide:function(){open(false,true);},close:close,isOpen:function(){return opened;},canSync:function(){return canUseAccount()&&!!session&&!recovering;},account:function(){return canUseAccount()&&session?{userId:session.user.id,client:client,accessToken:session.access_token}:null;},refresh:function(){if(opened&&!gate&&!readOnly&&!editing)render();}};
 }
 root.HemicyclePlayerProfile={create:create};
 })(typeof globalThis!=='undefined'?globalThis:this);

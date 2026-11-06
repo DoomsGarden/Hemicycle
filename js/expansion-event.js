@@ -1,0 +1,17 @@
+/* Evento de ampliación: cinco entregas independientes, con recibos persistentes. */
+(function(root,factory){var api=factory(typeof module==='object'&&module.exports?require('./cosmetic-entitlements.js'):root.HemicycleAppearance);if(typeof module==='object'&&module.exports)module.exports=api;else root.HemicycleExpansionEvent=api;})(typeof globalThis!=='undefined'?globalThis:this,function(A){
+'use strict';
+var presentation={id:'expansion-2026-11',title:'¡Celebramos la ampliación!',image:'assets/events/expansion-gift.webp',imageAlt:'Regalo con sobres y monedas FS',durationMs:15000,buttonLabel:'Genial!',reminder:'¡Tienes recompensas sin reclamar!',paragraphs:['Tu buzón tiene 10.000 FS y 3 sobres generales de cada tipo: común, raro, legendario y mítico.','Cinco entregas para reclamar por separado, una vez por cuenta. ¡Prueba las novedades y prepara tus gabinetes!']};
+var id='expansion-2026-11',grants=[{key:'fs',fs:10000,name:'10.000 FS'}].concat(['comun','raro','legendario','mitico'].map(function(kind){return {key:kind,kind:kind,quantity:3,name:'3 sobres '+({comun:'comunes',raro:'raros',legendario:'legendarios',mitico:'míticos'})[kind]};}));
+function eligible(profile,now){return Date.parse(A.state(profile,now).firstSeenAt)<A.cutoff;}
+function state(profile){var saved=profile&&profile.expansionEvent;return saved?validate(saved):{id:id,announced:false,mailVisited:false,claimed:[]};}
+function validate(raw){if(!raw||raw.id!==id||typeof raw.announced!=='boolean'||raw.mailVisited!==undefined&&typeof raw.mailVisited!=='boolean'||!Array.isArray(raw.claimed)||new Set(raw.claimed).size!==raw.claimed.length||raw.claimed.some(function(key){return !grants.some(function(g){return g.key===key;});}))throw Error('Recibo del evento no válido.');return {id:id,announced:raw.announced,mailVisited:raw.mailVisited===true||raw.mailVisited===undefined&&raw.claimed.length>0,claimed:raw.claimed.slice()};}
+function pending(profile,now){if(!eligible(profile,now))return [];var saved=state(profile);return grants.filter(function(g){return saved.claimed.indexOf(g.key)<0;});}
+function announce(profile,now){if(!eligible(profile,now))return false;var saved=state(profile);saved.announced=true;profile.expansionEvent=saved;return true;}
+function visit(profile,now){if(!eligible(profile,now))return false;var saved=state(profile);saved.mailVisited=true;profile.expansionEvent=saved;return true;}
+function claim(profile,key,now){if(!eligible(profile,now))throw Error('El periodo de acceso a este evento ha terminado.');var grant=grants.find(function(g){return g.key===key;}),saved=state(profile);if(!grant||saved.claimed.indexOf(key)>=0)throw Error('Esta recompensa ya se ha reclamado o no está disponible.');saved.claimed.push(key);profile.expansionEvent=saved;return Object.assign({},grant);}
+// Receipts live outside imported profiles. Unioning them prevents an older backup
+// from making an already collected delivery available again.
+function merge(profile,receipt){var saved=state(profile);if(receipt){var prior=validate(receipt);saved.announced=saved.announced||prior.announced;saved.mailVisited=saved.mailVisited||prior.mailVisited;grants.forEach(function(g){if(prior.claimed.indexOf(g.key)>=0&&saved.claimed.indexOf(g.key)<0)saved.claimed.push(g.key);});}profile.expansionEvent=saved;return saved;}
+return Object.freeze({id:id,presentation:Object.freeze(presentation),grants:grants,state:state,validate:validate,eligible:eligible,pending:pending,announce:announce,visit:visit,claim:claim,merge:merge});
+});

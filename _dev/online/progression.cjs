@@ -14,6 +14,6 @@ function progress(profile,state,side,now){
  if(win&&Mastery.eligible(leader))updated.leaderMastery=Mastery.recordWin(updated,leader);
  const dtWins=(profile.dtWins||0)+(win&&state.mode==='ranked'&&leader==='donald-trump'?1:0);
  const xpGain=XP.add(updated,XP.match(state.mode,win,state.reason));
- return {xp:updated.xp,xpGain,objectives:updated.objectives,leaderMastery:updated.leaderMastery||null,dtWins,dtGoldUnlocked:!!profile.dtGoldUnlocked||dtWins>=10};
+ return {xp:updated.xp,xpGain,objectives:updated.objectives,leaderMastery:updated.leaderMastery||null,dtWins,dtGoldUnlocked:!!profile.dtGoldUnlocked||dtWins>=require('../../js/cosmetic-entitlements.js').goldWins(profile)};
 }
 module.exports={appearance,progress};

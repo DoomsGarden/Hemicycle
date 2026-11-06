@@ -1,6 +1,7 @@
 # Las herramientas de trabajo se conservan en Git, pero no se publican en Pages.
 exclude:
   - _dev
+  - tests
 
 # Asociación del dominio con la aplicación Android.
 include:

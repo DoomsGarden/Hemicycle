@@ -1,3 +1,5 @@
+> **Ampliación v32.0.0:** estos cromos se incorporan al catálogo público. La documentación y verificaciones de reserva que siguen describen la fase anterior. La integración conserva su base de 120 en `../activation-v32/baseline`; no se debe volver a anexar una reserva ya activada.
+
 # Reserva conjunta de España
 
 Revisión vigente: 5 de noviembre de 2026. Hay **339 cromos reservados, todos con retrato completo**; los cuatro perfiles que carecían de arte fueron omitidos por decisión del creador. La vista interna reúne 459 oradores y 1.377 frases. El catálogo publicado conserva 120 oradores y 360 frases.

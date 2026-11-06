@@ -1,22 +1,15 @@
 'use strict';
 // Pure rules. Only the authenticated service can commit their result to PostgreSQL.
-const XP=require('../../js/progression-xp.js');
+const XP=require('../../js/progression-xp.js'),Appearance=require('../../js/cosmetic-entitlements.js'),PackRules=require('../../js/pack-rules.js'),Event=require('../../js/expansion-event.js');
 const crypto=require('node:crypto'),{cards,packs}=require('../market/catalog.cjs'),A=require('../../js/action-cards.js'),O=require('../../js/objectives.js'),M=require('../../js/legendary-mastery.js'),R=require('../../js/ranked-seasons.js');
 const catalog=[...cards,...A.cards],byId=Object.fromEntries(catalog.map(c=>[c.id,c])),rules=require('../../js/market-rules.js').create(catalog,packs);
 const random=()=>crypto.randomInt(0,0x100000000)/0x100000000,pick=(list,rng)=>list[Math.floor(rng()*list.length)],check=(condition,message)=>{if(!condition)throw Error(message);};
-function contents(kind,rng=random){
- const tier=r=>pick(cards.filter(c=>c.r===r),rng);let out=[];
- if(['comun','diario'].includes(kind))out=[...Array.from({length:4},()=>tier('comun')),tier(rng()<.2?'raro':'comun')];
- else if(['raro','semanal'].includes(kind))out=[...Array.from({length:4},()=>tier('raro')),tier(rng()<.25?'especial':'raro')];
- else if(kind==='legendario')out=[tier('legendario'),tier('especial'),tier('raro'),tier('raro'),tier('raro')];
- else if(kind==='mitico')out=Array.from({length:5},()=>tier('legendario'));else throw Error('Sobre no válido.');
- return A.inject(out,rng,kind).map(c=>c.id);
-}
+function contents(kind,rng=random,country=''){return PackRules.contents(kind,country,rng);}
 function starter(identity,now,rng=random){
  check(/^HC-[0-9a-f-]{36}$/i.test(identity||''),'ID no válido.');
  const album=[];for(const [r,n]of [['comun',18],['raro',8],['especial',3],['legendario',1]]){const pool=cards.filter(c=>c.r===r);for(let i=pool.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}for(let i=0;i<n;i++)album.push(pool[i%pool.length].id);}
- const profile={xp:0,fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};profile.objectives=O.snapshot(profile,cards,now);
- return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v31.0.2.11',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
+ const profile={xp:0,fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};Appearance.initialize(profile,now,new Date(now).toISOString());profile.objectives=O.snapshot(profile,cards,now);
+ return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v32.0.0',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
 }
 function inventory(profile){return [...profile.album,...profile.actionAlbum||[]];}
 function take(profile,id,quantity){rules.card(id);rules.integer(quantity,'Cantidad');const key=byId[id].action?'actionAlbum':'album',album=profile[key]||[];check(rules.duplicates(album,id)>=quantity,'No hay suficientes repetidos. Conservas siempre una copia.');let remaining=quantity;profile[key]=album.filter(c=>c!==id||remaining--<=0);}
@@ -26,17 +19,26 @@ function operate(input,actor,command,now=Date.now(),rng=random){
  const s=structuredClone(input),market=s.market||={players:[],listings:[],trades:[],quotes:[],receipts:[]};const changed=new Set();
  const account=id=>{const a=s.accounts[id];check(a?.payload,'Activa primero el progreso en la nube.');return a;},profile=id=>account(id).payload.profile;
  const touch=id=>{changed.add(id);return profile(id);},me=profile(actor);
+ if(!me.appearance){Appearance.initialize(me,now,account(actor).payload.identity.createdAt);changed.add(actor);}
+ const eventLedger=market.expansionClaims||=(Object.create(null)),eventPrefix=Event.id+'/'+actor+'/';
+ if(Event.eligible(me,now)){
+  const before=JSON.stringify(me.expansionEvent),stored={id:Event.id,announced:Object.hasOwn(eventLedger,eventPrefix+'notice'),mailVisited:!!eventLedger[eventPrefix+'notice']?.mailVisited,claimed:Event.grants.filter(g=>Object.hasOwn(eventLedger,eventPrefix+g.key)).map(g=>g.key)};
+  const merged=Event.merge(me,stored);if(merged.announced||merged.mailVisited){eventLedger[eventPrefix+'notice']||={at:now};if(merged.mailVisited)eventLedger[eventPrefix+'notice'].mailVisited=true;}for(const key of merged.claimed)eventLedger[eventPrefix+key]||={at:now,grant:key};if(JSON.stringify(merged)!==before)changed.add(actor);
+ }
+ const recordMarket=(id,kind,n)=>{const p=touch(id);Appearance.initialize(p,now,account(id).payload.identity.createdAt);p.objectives=O.recordMarket(p,kind,n,now);};
  const receipt=(id,kind,data)=>market.receipts.push({id:crypto.randomUUID(),player:id,kind,data,created:now});
  const refund=t=>{A.award(touch(t.proposer),t.terms.give.flatMap(c=>Array(c.quantity).fill(c.id)));credit(profile(t.proposer),t.terms.giveFS);};
  // Expired proposals return only the proposer's escrow; the recipient never loses anything before accepting.
  for(const t of market.trades)if(t.status==='pending'&&t.expires<=now){refund(t);t.status='expired';}
  let result={};const type=command.type;
- if(type==='maintenance'){}else if(type==='learning-actions'){for(const id of ['replica','receso'])if(!(me.actionAlbum||[]).includes(id)){A.award(me,[id]);changed.add(actor);}result={granted:true};}else if(type==='offline-settle'){
+ if(type==='maintenance'){}else if(type==='expansion-notice'){check(Event.announce(me,now),'Evento no disponible para esta cuenta.');eventLedger[eventPrefix+'notice']||={at:now};if(command.mailVisited===true){Event.visit(me,now);eventLedger[eventPrefix+'notice'].mailVisited=true;}changed.add(actor);result={announced:true};}else if(type==='expansion-claim'){
+  const key=Event.id+'/'+actor+'/'+command.grant,ledger=market.expansionClaims||=(Object.create(null));check(!Object.hasOwn(ledger,key),'Esta recompensa ya se ha reclamado.');const grant=Event.claim(me,command.grant,now);ledger[key]={at:now,grant:command.grant};if(grant.fs){credit(me,grant.fs);result={fs:grant.fs,event:Event.id};}else{const opened=Array.from({length:grant.quantity},()=>contents(grant.kind,rng));opened.forEach(ids=>A.award(me,ids));result={packs:opened,kind:grant.kind,event:Event.id};}changed.add(actor);receipt(actor,'expansion-event',{grant:command.grant});
+ }else if(type==='learning-actions'){for(const id of ['replica','receso'])if(!(me.actionAlbum||[]).includes(id)){A.award(me,[id]);changed.add(actor);}result={granted:true};}else if(type==='offline-settle'){
   const ticket=s.ticket;check(ticket&&ticket.expires+30*86400000>now&&!ticket.result,'Partida descargada no disponible o caducada.');
   const state=require('./offline-engines.cjs').forTicket(ticket).replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
   const before=me.elo,margin=Math.max(0,Math.min(1,Math.abs(own.votes-foe.votes)/Math.max(1,win?own.votes:foe.votes)));
   let fs=win?(competitive?50+Math.floor(rng()*51):20+Math.floor(rng()*31)):competitive?20+Math.floor(rng()*11):0,won=null,lost=null;
-  if(win){me.w++;if(M.eligible(own.leader))me.leaderMastery=M.recordWin(me,own.leader);if(competitive){won=pick(A.lootPool(foe.cabinetIds,foe.cabinetActions),rng);A.award(me,[won]);}if(competitive&&own.leader==='donald-trump'){me.dtWins++;if(me.dtWins>=10)me.dtGoldUnlocked=true;}}
+  if(win){me.w++;if(M.eligible(own.leader))me.leaderMastery=M.recordWin(me,own.leader);if(competitive){won=pick(A.lootPool(foe.cabinetIds,foe.cabinetActions),rng);A.award(me,[won]);}if(competitive&&own.leader==='donald-trump'){me.dtWins++;if(me.dtWins>=Appearance.goldWins(me,now))me.dtGoldUnlocked=true;}}
   else{me.l++;if(competitive){const candidates=A.lootPool(own.cabinetIds,own.cabinetActions,me);if(candidates.length){lost=pick(candidates,rng);A.removeCopy(me,lost);}}}
   if(state.mode==='ranked'){const delta=win?10+Math.floor(15*Math.min(1,margin/.75)):state.reason==='rendición'||state.reason==='inactividad'?-18:-5-Math.floor(13*margin);me.elo=Math.max(0,me.elo+delta);account(actor).payload.ranked=R.advance(account(actor).payload.ranked,before,me.elo,now);}
   if(state.mode==='liga'){const lg=account(actor).payload.league;check(lg,'Crea una Liga antes de jugarla.');const next=require('./league.cjs').advance(lg,win,rng);account(actor).payload.league=next.league;fs+=next.reward;result.season=!!next.reward;if(result.season){result.leaguePosition=next.position;result.leagueTeams=lg.teams.length;result.seasonFS=next.reward;}}
@@ -46,16 +48,17 @@ function operate(input,actor,command,now=Date.now(),rng=random){
  }else if(type==='league-create'){check(!account(actor).payload.league,'Ya tienes una Liga activa.');account(actor).payload.league=require('./league.cjs').create(3,1,rng);changed.add(actor);
  }else if(type==='league-abandon'){account(actor).payload.league=null;changed.add(actor);
  }else if(type==='pack'){
-  const {kind,quantity,free}=command;check(Number.isSafeInteger(quantity)&&[1,5,10].includes(quantity),'Cantidad no válida.');
+  const {kind,quantity,free}=command,country=PackRules.country(command.country);check(PackRules.available(kind,country),'Sobre no disponible para este país.');check(Number.isSafeInteger(quantity)&&[1,5,10].includes(quantity),'Cantidad no válida.');
   if(free){check(quantity===1&&['diario','semanal'].includes(kind),'Sobre gratuito no válido.');const key=kind==='diario'?'lastDaily':'lastWeekly',wait=kind==='diario'?86400000:604800000;check(now>=me[key]+wait,'El sobre gratuito todavía no está disponible.');me[key]=now;}
-  else{const pack=packs.find(p=>p.k===kind);check(pack,'Sobre no válido.');pay(me,pack.p*quantity);}
-  const opened=Array.from({length:quantity},()=>contents(kind,rng));opened.forEach(ids=>A.award(me,ids));changed.add(actor);result={packs:opened,kind};
+  else{const pack=packs.find(p=>p.k===kind);check(pack,'Sobre no válido.');pay(me,PackRules.price(kind,country)*quantity);}
+  const opened=Array.from({length:quantity},()=>contents(kind,rng,country));opened.forEach(ids=>A.award(me,ids));changed.add(actor);result={packs:opened,kind,country};
  }else if(type==='claim'){
   const backup=account(actor).payload;let reward;
   if(command.view==='ranked'){const claim=R.claim(backup.ranked,command.id);backup.ranked=claim.state;reward=claim.reward;}
   else{check(['challenges','achievements'].includes(command.view),'Recompensa no válida.');const claim=command.view==='challenges'?O.claim(me,command.id,now):O.claimAchievement(me,cards,command.id,command.step,now);me.objectives=claim.state;reward=claim.reward;if(claim.leader&&M.eligible(claim.leader))me.leaderMastery=M.claim(me,claim.leader);}
+  if(reward.cosmetics)result.cosmetics=Appearance.grant(me,reward.cosmetics,now);
   if(reward.fs)credit(me,reward.fs);if(reward.xp)result.xp=XP.add(me,reward.xp);if(reward.kind){result={kind:reward.kind,packs:[contents(reward.kind,rng)]};A.award(me,result.packs[0]);}changed.add(actor);
- }else if(type==='machine'){const quote=rules.sale(command.id,command.quantity,'machine');take(touch(actor),command.id,command.quantity);credit(me,quote.total);receipt(actor,'machine',{cardId:command.id,quantity:command.quantity,total:quote.total});result=quote;
+ }else if(type==='machine'){const quote=rules.sale(command.id,command.quantity,'machine');take(touch(actor),command.id,command.quantity);credit(me,quote.total);recordMarket(actor,'market-sales',command.quantity);receipt(actor,'machine',{cardId:command.id,quantity:command.quantity,total:quote.total});result=quote;
  }else if(type==='visibility'){
   check(typeof command.visible==='boolean','Estado no válido.');let p=market.players.find(p=>p.id===actor);if(!p){p={id:actor};market.players.push(p);}p.visible=command.visible;
  }else if(type==='listing'){
@@ -67,7 +70,7 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   const l=market.listings.find(l=>l.id===command.listing);check(l?.status==='active'&&l.seller!==actor,'Oferta no disponible.');rules.integer(command.quantity,'Cantidad');check(command.quantity<=l.remaining,'La cantidad disponible ha cambiado.');check(me.fs>=l.unit*command.quantity,'No hay suficientes FS.');
   result={id:crypto.randomUUID(),buyer:actor,listing:l.id,quantity:command.quantity,revision:l.revision,unit:l.unit,total:l.unit*command.quantity,cardId:l.card,expires:now+60000};market.quotes.push(result);
  }else if(type==='purchase'){
-  const q=market.quotes.find(q=>q.id===command.quote&&q.buyer===actor);check(q,'Revisión no disponible.');if(q.completed)result=q.result;else{const l=market.listings.find(l=>l.id===q.listing);check(q.expires>now&&l?.status==='active'&&l.revision===q.revision&&l.remaining>=q.quantity,'La oferta cambió o la revisión ha caducado. Vuelve a revisarla.');pay(touch(actor),q.total);credit(touch(l.seller),q.total);A.award(me,Array(q.quantity).fill(l.card));l.remaining-=q.quantity;l.revision++;if(!l.remaining)l.status='sold';receipt(actor,'purchase',{cardId:l.card,quantity:q.quantity,total:q.total});receipt(l.seller,'player-sale',{cardId:l.card,quantity:q.quantity,total:q.total});q.completed=true;result=q.result={total:q.total,cardId:l.card,quantity:q.quantity};}
+  const q=market.quotes.find(q=>q.id===command.quote&&q.buyer===actor);check(q,'Revisión no disponible.');if(q.completed)result=q.result;else{const l=market.listings.find(l=>l.id===q.listing);check(q.expires>now&&l?.status==='active'&&l.revision===q.revision&&l.remaining>=q.quantity,'La oferta cambió o la revisión ha caducado. Vuelve a revisarla.');pay(touch(actor),q.total);credit(touch(l.seller),q.total);A.award(me,Array(q.quantity).fill(l.card));l.remaining-=q.quantity;l.revision++;if(!l.remaining)l.status='sold';recordMarket(actor,'market-purchases',q.quantity);recordMarket(l.seller,'market-sales',q.quantity);receipt(actor,'purchase',{cardId:l.card,quantity:q.quantity,total:q.total});receipt(l.seller,'player-sale',{cardId:l.card,quantity:q.quantity,total:q.total});q.completed=true;result=q.result={total:q.total,cardId:l.card,quantity:q.quantity};}
  }else if(type==='trade'){
   check(command.recipient!==actor&&market.players.some(p=>p.id===command.recipient&&p.visible),'Jugador no disponible para intercambiar.');check(market.trades.filter(t=>t.proposer===actor&&t.status==='pending').length<20,'Ya tienes demasiadas propuestas pendientes.');
   const terms=rules.trade(command.give,command.receive),other=profile(command.recipient);for(const c of terms.receive)check(rules.duplicates(inventory(other),c.id)>=c.quantity,'El otro jugador ya no tiene esos repetidos.');
@@ -75,7 +78,7 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   result={id:crypto.randomUUID(),proposer:actor,recipient:command.recipient,terms,status:'pending',expires:now+86400000,created:now};market.trades.push(result);
  }else if(type==='accept-trade'||type==='cancel-trade'){
   const t=market.trades.find(t=>t.id===command.id&&(t.proposer===actor||t.recipient===actor));check(t,'Intercambio no disponible.');
-  if(type==='accept-trade'){check(t.recipient===actor,'Solo el destinatario puede aceptar.');check(t.status==='pending'&&t.expires>now,'El intercambio ya no está disponible.');t.terms.receive.forEach(c=>take(touch(actor),c.id,c.quantity));pay(touch(actor),t.terms.receiveFS);A.award(profile(actor),t.terms.give.flatMap(c=>Array(c.quantity).fill(c.id)));credit(profile(actor),t.terms.giveFS);A.award(touch(t.proposer),t.terms.receive.flatMap(c=>Array(c.quantity).fill(c.id)));credit(profile(t.proposer),t.terms.receiveFS);t.status='completed';receipt(actor,'trade',{trade:t.id});receipt(t.proposer,'trade',{trade:t.id});}
+  if(type==='accept-trade'){check(t.recipient===actor,'Solo el destinatario puede aceptar.');check(t.status==='pending'&&t.expires>now,'El intercambio ya no está disponible.');t.terms.receive.forEach(c=>take(touch(actor),c.id,c.quantity));pay(touch(actor),t.terms.receiveFS);A.award(profile(actor),t.terms.give.flatMap(c=>Array(c.quantity).fill(c.id)));credit(profile(actor),t.terms.giveFS);A.award(touch(t.proposer),t.terms.receive.flatMap(c=>Array(c.quantity).fill(c.id)));credit(profile(t.proposer),t.terms.receiveFS);t.status='completed';recordMarket(actor,'market-trades',1);recordMarket(t.proposer,'market-trades',1);receipt(actor,'trade',{trade:t.id});receipt(t.proposer,'trade',{trade:t.id});}
   else if(t.status==='pending'){refund(t);t.status='cancelled';}
  }else throw Error('Operación no válida.');
  for(const id of changed)profile(id).objectives=O.snapshot(profile(id),cards,now);

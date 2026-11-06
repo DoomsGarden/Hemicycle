@@ -1,0 +1,41 @@
+{
+  "version": "v32.0.0",
+  "date": "2026-11-06",
+  "status": "verified-locally-awaiting-production-migration",
+  "catalog": {
+    "orators": 899,
+    "actions": 92,
+    "countries": {
+      "ES": 436,
+      "US": 6,
+      "GB": 2,
+      "DE": 2,
+      "FR": 443,
+      "RU": 1,
+      "IT": 2,
+      "TR": 1,
+      "HU": 1,
+      "CA": 1,
+      "VE": 1,
+      "MX": 1,
+      "AR": 2
+    }
+  },
+  "regression": {
+    "files": 90,
+    "cases": 2049,
+    "passed": 90,
+    "failed": 0
+  },
+  "additionalChecks": [
+    "five gift deliveries exactly once; local/SQL/three browser layouts",
+    "15-second boundary, button, outside dismissal and inbox hint",
+    "80 new action activations plus 338 state-pair forecasts and reflected hits",
+    "all six visual milestone routes, collection percentages and 100000 without reward",
+    "all 89 legendary confetti IDs and special/legendary leader achievements",
+    "country packs and double-price repeat purchase, loot filters, three locales",
+    "December owned-only profile and committed reward reveal",
+    "combined SQL applied twice without losing profiles or old tickets",
+    "historical offline bundles1–8 retained; deterministic new9 replay"
+  ]
+}

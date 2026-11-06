@@ -1,5 +1,6 @@
 /* Previsión pura: reglas compartidas, sin azar, guardados ni acceso a la red. */
 (function(root,factory){var api=factory(typeof module==='object'&&module.exports?require('./basic-effects.js'):root.HemicycleBasicEffects);if(typeof module==='object'&&module.exports)module.exports=api;else root.HemicycleAttackForecast=api;})(typeof globalThis!=='undefined'?globalThis:this,function(B){'use strict';
+var S=typeof module==='object'&&module.exports?require('./action-status.js'):globalThis.HemicycleActionStatus;
 function copy(c){return c?Object.assign({},c,{basicStatus:c.basicStatus&&Object.assign({},c.basicStatus)}):null;}
 function calculate(x){
  var a=copy(x.attacker),rules=B.forVersion(x.version),strong=x.variant==='strong',field=(x.field||[]).map(copy),target=x.target&&field.find(function(c){return c.uid===x.target;});
@@ -8,18 +9,20 @@ function calculate(x){
  if(!target&&x.target!=='empty')return invalid('El objetivo ya no está disponible.');
  if(!target&&field.length>=3)return invalid('No hay huecos rivales.');
  if(!target&&(x.emptyLeft||0)<=0)return invalid('Ya has retirado los 3 votos de este turno.');
+ if(!target&&S&&!S.canEmpty(a))return invalid('Confundido: elige un orador.');
  if(!target&&!strong&&rules&&rules.canEmpty&&!rules.canEmpty(a,x.ownTurn))return invalid('Debate encarrilado: elige un orador.');
  var requested=target&&target.uid;if(target&&!strong&&rules&&rules.redirect)target=rules.redirect(field,target,x.rivalTurn);
- var amount=strong?Math.ceil(x.power*1.5):rules?rules.normalZ(a,x.ownTurn,x.power):x.power,pierce=!strong&&rules&&rules.pierces&&rules.pierces(a,x.ownTurn);
+ var amount=strong?Math.ceil(x.power*1.5):rules?rules.normalZ(a,x.ownTurn,x.power):x.power,pierce=(S&&S.pierces(a))||(!strong&&rules&&rules.pierces&&rules.pierces(a,x.ownTurn));
  if(!strong&&rules)rules.consumeAttack(a,x.ownTurn);
  if(target&&x.ownDoc==='viperina'&&target.id===x.enemyLeader)amount+=2;
  var reflection=0,selfCost=strong?1:0,expels=false,saved=false,targetHp=null,attackerHp=a.hp-selfCost;
  if(!target)amount=Math.max(0,Math.min(amount,x.enemyVotes||0,x.emptyLeft||0));else{
+  if(S)amount=S.incoming(target,amount);
   if(!strong&&rules)amount=rules.beforeDefense(target,x.rivalTurn,amount);
   amount=B.guardedDamage(amount,!!target.guard,!!pierce);
   if(!strong&&rules)amount=rules.afterDefense(target,x.rivalTurn,amount);
   targetHp=target.hp-amount;
-  if(x.enemyDoc==='giro'){reflection=a.guard?1:1;attackerHp-=reflection;}
+  if(x.enemyDoc==='giro'){reflection=B.guardedDamage(S?S.incoming(a,1):1,!!a.guard,false);attackerHp-=reflection;}
   saved=targetHp<=0&&x.enemyDoc==='aforado'&&!target.aforadoSpent;
   if(saved)targetHp=3;else expels=targetHp<=0;
  }

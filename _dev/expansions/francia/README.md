@@ -1,3 +1,5 @@
+> **Ampliación v32.0.0:** estos cromos se incorporan al catálogo público. La documentación y verificaciones de reserva que siguen describen la fase anterior. La integración conserva su base de 120 en `../activation-v32/baseline`; no se debe volver a anexar una reserva ya activada.
+
 # Francia · reserva de 440 oradores
 
 **Cierre editorial actual (06-11-2026):** [1320 frases revisadas para 440 de los 440 perfiles](cloture-frases/README.md), con [galería y fuentes](cloture-frases/revision.html). Selección y atribución completas; 100 de los 100 iniciales y 340 de los 340 adicionales ya tienen sus tres frases revisadas. La investigación inicial de esta página se conserva como historial. La [reserva de prueba](prepare.cjs) reúne arte, frases y mecánicas; permanece fuera del catálogo público y desactivada.

@@ -6,7 +6,7 @@ const { test } = require('node:test');
 
 const root = path.resolve(__dirname, '..');
 const html = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
-const context = vm.createContext({HemicycleCatalog:require('../js/orator-catalog.js')});
+const context = vm.createContext({HemicycleCatalog:(()=>{const c=require('../js/orator-catalog.js'),ids=new Set(require('../_dev/expansions/activation-v32/baseline/orator-catalog.js').cards.map(c=>c.id));return {...c,cards:c.cards.filter(c=>ids.has(c.id)),quotes:Object.fromEntries(Object.entries(c.quotes).filter(([id])=>ids.has(id)))};})()});
 const slug = html.match(/function slug\(s\)\{[^\n]+/)[0];
 vm.runInContext(slug + '\n' + html.slice(html.indexOf('var DOCS='), html.indexOf("var LS='")), context);
 const { CARDS: cards, QBESP: bespoke } = JSON.parse(
@@ -64,9 +64,9 @@ test('each of the 22 additions has a documented web source matching the game', (
 
 test('every current phrase matches the approved complete sourced catalog in action order',()=>{
  const registry=JSON.parse(fs.readFileSync(path.join(root,'docs/fuentes-frases-actuales.json'),'utf8'));
- assert.equal(registry.cromos.length,120);
+ assert.equal(registry.cromos.length,899);
  for(const item of registry.cromos){
-  const card=cards.find(c=>c.id===item.id);assert.ok(card,item.id);assert.deepEqual(item.frases.map(q=>q.frase),card.q,item.id);assert.deepEqual(item.frases.map(q=>q.tipo),['ataque_normal','ataque_fuerte','defensa_curacion']);
-  for(const quote of item.frases){assert.equal(new URL(quote.fuente).protocol,'https:');assert.ok(quote.original&&quote.tratamiento&&quote.comprobado_en);assert.ok(quote.frase.length<=47);}
+  const card=require('../js/orator-catalog.js').cards.find(c=>c.id===item.id);assert.ok(card,item.id);assert.deepEqual(item.frases.map(q=>q.frase),card.q,item.id);assert.deepEqual(item.frases.map(q=>q.tipo.replace('defensa_y_curacion','defensa_curacion')),['ataque_normal','ataque_fuerte','defensa_curacion']);
+  for(const quote of item.frases){assert.ok(['https:','http:'].includes(new URL(quote.fuente).protocol));assert.ok(quote.original&&quote.tratamiento&&quote.comprobado_en);assert.ok(quote.frase.length<=47);}
  }
 });

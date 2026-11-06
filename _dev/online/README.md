@@ -1,6 +1,6 @@
-# Servicio online · Estado de v31.0.2.12
+# Servicio online · Estado de v32.0.0
 
-Revisado el 3 de noviembre de 2026 contra el código del repositorio. El juego integra cuentas, directorio e invitaciones, combates privados Normal/Rápida, Clasificatoria, economía y Mercado autoritativos y partidas descargadas verificables. El catálogo vigente contiene 120 oradores y 12 acciones.
+Revisado el 6 de noviembre de 2026 contra el código del repositorio. El juego integra cuentas, directorio e invitaciones, combates privados Normal/Rápida, Clasificatoria, economía y Mercado autoritativos y partidas descargadas verificables. El catálogo vigente contiene 899 oradores y 92 acciones.
 
 Esta página describe el código y su configuración. La revisión local no consulta ni cambia los servicios de producción.
 
@@ -33,7 +33,7 @@ Los retornos OAuth se configuran en Supabase para el dominio del juego. La venta
 - Las partidas descargadas conservan su motor histórico y sus recibos pendientes. Los motores anteriores no se sustituyen al actualizar la interfaz.
 - El cliente conserva el combate y la selección cuando no cambia la revisión; las jugadas confirmadas conservan su identificador al reintentar.
 
-En un servicio instalado no deben repetirse las instrucciones de activación de los prototipos. Para cambios de base de datos, consultar la migración concreta y sus notas. Esta actualización de metadatos no añade ni ejecuta SQL.
+En un servicio instalado no deben repetirse las instrucciones de activación de los prototipos. Para cambios de base de datos, consultar la migración concreta y sus notas. La ampliación requiere aplicar [`deploy.sql`](../releases/v32/deploy.sql) antes de desplegar el servicio y la web. Incluye los permisos visuales, recibos de eventos, catálogo de acciones, offline9 y la edición legal. Publicar código no ejecuta esta migración.
 
 ## Verificación y operación
 
@@ -46,6 +46,6 @@ node --test tests/online/*.test.cjs
 Las pruebas usan transporte simulado y bases aisladas. Las comprobaciones con cuentas alojadas y dispositivos son verificaciones de producción separadas.
 
 - [Supervisión, métricas y límites](../operations/README.md).
-- [Notas de v31.0.2.12](../releases/v31.0.2.12.md).
+- [Notas de v32.0.0](../releases/v32.0.0.md).
 - [Historial de salas, prototipos e instrucciones iniciales](HISTORIAL-FUNDACION.md).
 - [Primera partida privada, documento histórico](COMBATE-PRIVADO.md).
