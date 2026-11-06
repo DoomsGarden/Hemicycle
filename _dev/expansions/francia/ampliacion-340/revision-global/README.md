@@ -1,6 +1,6 @@
 # Francia · revisión conjunta de 440 nuevos oradores
 
-Revisión editorial completada el **06-11-2026** para los 100 iniciales y los 340 adicionales. Las 440 ilustraciones están completas. Se han ajustado conjuntamente rarezas, estadísticas, pasivas y efectos del zasca normal. **La selección y atribución final de frases sigue pendiente; la reserva permanece desactivada y sin integrar en el catálogo jugable.** Los tres franceses activos conservan sus datos.
+Revisión editorial completada el **06-11-2026** para los 100 iniciales y los 340 adicionales. Las 440 ilustraciones están completas. Se han ajustado conjuntamente rarezas, estadísticas, pasivas y efectos del zasca normal. **La selección y atribución de las 1.320 frases está completa. La [reserva de prueba](../../prepare.cjs) permanece desactivada y fuera del catálogo público.** Los tres franceses activos conservan sus datos.
 
 [Galería de 440](revision.html) · [CSV](ajuste.csv) · [Antes y después](ajuste.json) · [Decisiones](decisiones.json) · [Propuestas previas](antes.json) · [Registro de cargos](preparacion-cargos.json).
 
@@ -18,7 +18,7 @@ Los 340 adicionales acreditan actividad entre **05-11-2010 y 05-11-2026**; la pr
 
 Se utilizan las **seis doctrinas y los catorce efectos básicos existentes**, sin modificar las reglas públicas. Las afinidades parten de funciones documentadas: finanzas, justicia, seguridad, cuidados, cultura, diplomacia, gestión territorial, actividad parlamentaria o ejecutiva y continuidad. La asignación reduce concentraciones globales y por rareza y combinaciones repetidas, conservando una relación documentada con el cargo. Cada ficha guarda la justificación de ambas mecánicas. Son efectos ficticios; no atribuyen conductas reales a las personas representadas.
 
-La pasiva se propone como **doctrina del líder**, con los requisitos y contrarrestos del juego; no es una habilidad permanente adicional de cada orador. Esta revisión comprueba compatibilidad y distribución, pero la prueba de equilibrio en partidas requiere cerrar primero las frases e integrar una reserva de prueba.
+La pasiva se propone como **doctrina del líder**, con los requisitos y contrarrestos del juego; no es una habilidad permanente adicional de cada orador. La reserva de prueba comprueba para los 440 oradores las cuatro acciones en ambos lados, los efectos del zasca normal y la activación y contrarresto de la doctrina del líder.
 
 Los 440 retratos se revisaron con cabeza y ojos fuera de cámara. Los 44 máximos tienen una revisión de vestuario formal vinculada al hash de su atlas en `vestuario-revisado.json`. Se corrigieron las vestimentas de Bruno Le Maire, Jean-Pierre Chevènement y Jean-Yves Le Drian. Josette Borel-Lincertin y Daniel Zaïdani completan el atlas 85 con referencias institucionales verificadas. Los registros de generación conservan prompts, versiones y fuentes; las fotografías originales no se redistribuyen.
 

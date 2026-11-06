@@ -11,12 +11,22 @@ p=R/'ampliacion-340/README.md';s=p.read_text();s=re.sub(r'\*\*Cierre de frases a
 p=R/'metodo-frases.md';s=p.read_text();s=re.sub(r'con \d+ textos para \d+ perfiles',f'con {phrases} textos para {n} perfiles',s);p.write_text(singular(s))
 p=R/'revision-legal.md';s=p.read_text();s=re.sub(r'el registro de cierre incorpora \d+ fragmentos franceses y traducciones españolas para \d+ perfiles',f'el registro de cierre incorpora {phrases} fragmentos franceses y traducciones españolas para {n} perfiles',s);s=re.sub(r'quedan \d+ perfiles por cerrar',f'quedan {pending} perfiles por cerrar',s);p.write_text(singular(s))
 source_access=json.loads((Q/'qa/source-access.json').read_text());access=source_access.get('nextSourceAccess',{})
-revision=access.get('observedSpecRevision','20')if not access.get('requiresPublish')else'20'
+revision=source_access.get('observedSpecRevision',access.get('observedSpecRevision','20'))
 net=f'El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión {revision}. RTES y fuentes alternativas de Le Figaro permitieron cerrar los 100 perfiles iniciales. Quedan {pending} perfiles y {pending*3} frases por cerrar.'
 if access.get('requiresPublish'):net+=' Se guardó una ampliación de acceso para 18 dominios con referencias concretas bloqueadas. El gestor exige que el usuario revise, guarde y publique el nuevo borrador para aplicarlo; todavía no está aplicado.'
 last_access=source_access.get('finalProfileSourceAccess',{})
 if last_access.get('requiresPublish'):net+=' Los 18 dominios de la ampliación anterior ya están aplicados. Se guardó un último borrador para los tres dominios del blog oficial y la reproducción de entrevista de Jean-François Macaire, únicos accesos nuevos pendientes de publicación.'
-net+=' El [listado pendiente](pendientes-fuentes.json) separa las referencias por consultar de las citas aprobadas. Habilitar un dominio no garantiza que una URL antigua siga existiendo ni valida una cita. Francia no se marca como terminada.'
+net+=(' El [estado de pendientes](pendientes-fuentes.json) confirma el cierre de los 440 perfiles. Macaire se cerró con tres publicaciones firmadas en su blog y una identificación independiente de su cargo y del enlace al blog. La reserva está preparada para pruebas internas y permanece desactivada.'if not pending else' El [listado pendiente](pendientes-fuentes.json) separa las referencias por consultar de las citas aprobadas. Habilitar un dominio no garantiza que una URL antigua siga existiendo ni valida una cita. Francia no se marca como terminada.')
 p=Q/'README.md';s=p.read_text();s=re.sub(r'Estado del \*\*06-11-2026\*\*:.*?(?=\n)',f'Estado del **06-11-2026**: **{phrases} frases revisadas para {n} de los 440 nuevos oradores**. Quedan **{pending} perfiles y {pending*3} frases por cerrar**. La primera tanda tiene {a} de 100 perfiles revisados; los adicionales, {b} de 340. Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.',s,count=1);s=re.sub(r'Se cotejaron \d+ (?:fuentes distintas|direcciones de fuentes) para las [\d.]+ frases actuales',f'Se cotejaron {qa["distinctSourcesChecked"]} direcciones de fuentes para las {phrases} frases actuales',s);s=re.sub(r'\[\d+ perfiles pendientes\]',f'[{pending} perfiles pendientes]',s);s=re.sub(r'(?:Hay un borrador de acceso guardado|El usuario publicó el entorno).*?(?=\n\n)',net,s,flags=re.S);p.write_text(singular(s))
 p=R/'build-list.cjs';s=p.read_text();s=re.sub(r'registra \d+ de estos 100 perfiles',r'registra ${data.quoteClosure.reviewedProfiles} de estos 100 perfiles',s);p.write_text(singular(s))
 print(json.dumps({'profilesReviewed':n,'phrasesReviewed':phrases,'profilesPending':pending,'first100':a,'additional340':b}))
+if not pending:
+ replacements={
+  R/'README.md': [('Quedan 0 perfiles;','Selección y atribución completas;'),('La reserva sigue sin integrar ni activar.','La [reserva de prueba](prepare.cjs) reúne arte, frases y mecánicas; permanece fuera del catálogo público y desactivada.')],
+  Q/'README.md': [('Quedan **0 perfiles y 0 frases por cerrar**.','**No quedan perfiles ni frases pendientes**.'),('Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.','El cierre editorial está completo y la reserva de prueba permanece desactivada, con cero cromos nuevos integrados en el catálogo público.'),('[1 perfil pendiente]','[Sin perfiles pendientes]'),('[0 perfiles pendientes]','[Sin perfiles pendientes]')],
+  R/'revision-legal.md': [('queda 1 perfil por cerrar','no quedan perfiles por cerrar'),('quedan 0 perfiles por cerrar','no quedan perfiles por cerrar')]
+ }
+ for file,pairs in replacements.items():
+  text=file.read_text()
+  for before,after in pairs:text=text.replace(before,after)
+  file.write_text(text)

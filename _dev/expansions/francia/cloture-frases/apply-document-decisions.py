@@ -1,15 +1,17 @@
-"""Import explicit reviewed selections from named interviews and official PDFs."""
+"""Import explicit reviewed selections from named interviews, official PDFs and signed posts."""
 from pathlib import Path
 import argparse, copy, hashlib, json, subprocess
 from lxml import html
 from legacy_assembly import legacy_turns
+from blog_source import signed_post
 
 p=argparse.ArgumentParser();p.add_argument('--cache',type=Path,required=True);p.add_argument('--decisions',type=Path,required=True);a=p.parse_args()
 Q=Path(__file__).resolve().parent;data=json.loads((Q/'frases-validees.json').read_text());by={c['id']:c for c in data['cards']}
 template=by['louis-mapou']['candidates'][0]
 for decision in json.loads(a.decisions.read_text()):
     candidates=[]
-    for action,index,fr,es in decision['quotes']:
+    for selection in decision['quotes']:
+        action,index,fr,es,*overrides=selection
         assert 1<=len(es)<=47
         q=copy.deepcopy(template)
         for k in ['speechDateEvidence','publishedOn','paragraphIndex']:
@@ -17,9 +19,14 @@ for decision in json.loads(a.decisions.read_text()):
         q.update({k:v for k,v in decision.items()if k not in ['id','name','quotes','contextSummaryES']})
         q.update(action=action,originalFR=fr,textES=es,gameActions=data['actions'][action])
         q['speakerCheck']=copy.deepcopy(decision['speakerCheck'])
+        if overrides:q.update(copy.deepcopy(overrides[0]))
         if q['sourceType']=='official_pdf_speech':
             q['pageIndex']=index;raw=(a.cache/'pdf'/q['cacheKey']).read_bytes()
             text=subprocess.check_output(['pdftotext','-layout',str(a.cache/'pdf'/q['cacheKey']),'-']).decode().split('\f')[index]
+        elif q['sourceType']=='signed_blog_post':
+            raw=(a.cache/'press'/q['cacheKey']).read_bytes()
+            text,published=signed_post(html.fromstring(raw.decode('utf-8')),q['speakerCheck']['postId'],decision['name'])
+            assert published==q['publishedOn']
         elif q['sourceType']=='assemblee_legacy_turn':
             q['paragraphIndex']=index;raw=(a.cache/'assembly'/q['cacheKey']).read_bytes()
             turn=next(t for t in legacy_turns(html.fromstring(raw))if t[0]==index)

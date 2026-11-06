@@ -1,12 +1,45 @@
-# Francia · primera tanda de 100 en preparación
+# Francia · reserva de 440 oradores
 
-**Cierre editorial actual (06-11-2026):** [1317 frases revisadas para 439 de los 440 perfiles](cloture-frases/README.md), con [galería y fuentes](cloture-frases/revision.html). Queda 1 perfil; 100 de los 100 iniciales y 339 de los 340 adicionales ya tienen sus tres frases revisadas. La investigación inicial de esta página se conserva como historial. La reserva sigue sin integrar ni activar.
+**Cierre editorial actual (06-11-2026):** [1320 frases revisadas para 440 de los 440 perfiles](cloture-frases/README.md), con [galería y fuentes](cloture-frases/revision.html). Selección y atribución completas; 100 de los 100 iniciales y 340 de los 340 adicionales ya tienen sus tres frases revisadas. La investigación inicial de esta página se conserva como historial. La [reserva de prueba](prepare.cjs) reúne arte, frases y mecánicas; permanece fuera del catálogo público y desactivada.
+
+La selección autorizada está completa: **440 nuevos oradores**, además de los tres franceses activos. Se mantienen ocultos en el cliente, los inventarios, sobres, tienda e IA públicos. Los archivos de desarrollo se conservan en GitHub y `_dev` permanece excluido de Pages.
+
+| Parte | Resultado |
+| --- | --- |
+| Ilustraciones | 440 retratos en 110 atlas, con cabeza y ojos fuera de cámara |
+| Frases | 1.320 fragmentos franceses y traducciones españolas, cotejados en 707 fuentes |
+| Rarezas | 176 comunes, 132 raros, 88 especiales y 44 legendarios |
+| Mecánicas | Estadísticas, seis doctrinas y catorce efectos del zasca normal revisados conjuntamente |
+| Prueba de combate | 3.520 acciones y 880 casos de presencia y contrarresto del líder, en ambos lados |
+| Catálogo público | 120 oradores; cero nuevos franceses activados |
+
+[Galería con frases y fuentes](cloture-frases/revision.html) · [Tiers, efectos y pasivas](ampliacion-340/revision-global/revision.html) · [Estado](cloture-frases/estado.json) · [Fuentes verificadas](cloture-frases/qa/verification.json) · [Pruebas de combate](cloture-frases/qa/reserve-gameplay.json) · [Render del juego](cloture-frases/qa/reserve-render-1300.png) · [Revisión legal](revision-legal.md).
+
+## Reserva de prueba
+
+`prepare.cjs` combina las dos selecciones originales con el cierre editorial y genera en memoria un catálogo interno de 560 oradores: 120 activos y 440 reservados. Exige la verificación vigente de los originales y conserva cada frase en su acción, con el apoyo compartido por defensa y curación. No escribe sobre los archivos publicados. La reserva española conserva sus datos y su país.
+
+```sh
+node --test _dev/expansions/francia/reserve.test.cjs
+NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/browser-reserve.cjs
+node _dev/expansions/francia/prepare.cjs --preview /tmp/hemicycle-reserva-francia
+node _dev/expansions/francia/preview-server.cjs
+```
+
+La vista de prueba escucha únicamente en localhost, bloquea conexiones remotas y no registra un service worker. La activación pública queda para una entrega posterior; esta preparación no cambia la versión, el changelog, los documentos legales ni las fuentes públicas. No quedan cromos pendientes dentro de la selección autorizada. El censo de posibles perfiles franceses se conserva abierto como investigación.
+
+## Investigación inicial conservada
+
+Los apartados siguientes documentan el estado de trabajo anterior al cierre de los 440. Las candidatas, los huecos de las propuestas y sus comprobaciones antiguas se mantienen como historial; el registro y preparador actuales están enlazados arriba.
+
+<details>
+<summary>Primera tanda y método de investigación original</summary>
 
 [Revisión privada con arte y frases](revision.html) · [Listado](listado.md) · [CSV](censo.csv) · [Datos](censo.json) · [Método de traducción](metodo-frases.md).
 
 [Revisión legal actualizada el 06-11-2026](revision-legal.md): los avisos vigentes describen esta metodología; se documentan la trazabilidad y las actualizaciones necesarias al activar la ampliación. La reserva está oculta en el juego y excluida de Pages; los archivos de desarrollo enviados a GitHub son consultables según la visibilidad del repositorio.
 
-La [ampliación de 340](ampliacion-340/README.md) ya tiene sus ilustraciones completas. Se ha realizado la [revisión conjunta de 440](ampliacion-340/revision-global/revision.html), con 176 comunes, 132 raros, 88 especiales y 44 legendarios, además de pasivas y efectos básicos ajustados a cargos y trayectoria. El objetivo de esta fase es de 443 franceses incluidos los tres activos, cuyos datos se conservan. El cierre de frases permanece pendiente y la reserva no está activada.
+La [ampliación de 340](ampliacion-340/README.md) ya tiene sus ilustraciones completas. Se ha realizado la [revisión conjunta de 440](ampliacion-340/revision-global/revision.html), con 176 comunes, 132 raros, 88 especiales y 44 legendarios, además de pasivas y efectos básicos ajustados a cargos y trayectoria. El objetivo de esta fase es de 443 franceses incluidos los tres activos, cuyos datos se conservan. El cierre de las 1.320 frases está completo. La reserva de prueba reúne sus datos sin activar ni publicar los nuevos cromos.
 
 Estado de investigación: **5 de noviembre de 2026**. Todo permanece en `_dev`, excluido de Pages y del catálogo jugable. No se ha cambiado la versión pública ni se han anunciado estos cromos en el changelog.
 
@@ -58,3 +91,5 @@ NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/
 El cotejo de originales requiere las capturas HTML externas del directorio de investigación indicado. La comprobación de prensa usa `/tmp/hemicycle-france-press-cache`. Las copias de trabajo se preservan también fuera del repositorio en `/workspace/.hemicycle-tools/state/`; los textos íntegros y fotografías de prensa no se distribuyen en Git. Una restauración que no conserve las capturas necesitará recuperarlas y volver a cotejarlas: no debe darse por verificado un hash distinto.
 
 El control del navegador levanta y cierra su propio servidor HTTP de revisión en la interfaz local. Comprueba los 100 perfiles, los 100 retratos cargados, las 252 candidatas bilingües, los filtros, las fuentes y el ajuste a pantallas de 320, 393, 768 y 1200 píxeles. Los controles no equivalen a una validación final de la selección editorial ni del equilibrio de los cromos.
+
+</details>

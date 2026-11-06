@@ -4,7 +4,7 @@
 
 El creador autorizó 340 propuestas adicionales y precisó que, en esta ampliación, exige actividad política documentada entre **05-11-2010 y 05-11-2026**. Los 100 anteriores mantienen su ventana original. No se incluyen en esta selección perfiles históricos solo por haber vivido después de 2010. Una función anterior no basta por sí sola: cada ficha conserva evidencia de actividad dentro del intervalo. Las fechas y cargos citados no afirman que todas las personas sigan en el cargo hoy.
 
-Son 340 identidades nuevas respecto a los 103 franceses ya contemplados y a los nombres del catálogo público y la reserva española. La previsión de esta fase es **443 franceses**: tres activos, 100 propuestas iniciales y 340 adicionales. Es un objetivo de preparación, no un recuento de cromos terminados ni el censo definitivo de Francia.
+Son 340 identidades nuevas respecto a los 103 franceses ya contemplados y a los nombres del catálogo público y la reserva española. La previsión de esta fase es **443 franceses**: tres activos, 100 propuestas iniciales y 340 adicionales. La selección autorizada está completada en la reserva interna; no constituye un censo exhaustivo de Francia ni una activación pública.
 
 La selección combina responsabilidades de gobierno, representación parlamentaria, dirección política y ejecutivos territoriales. Los directorios de ambas cámaras localizaron 898 nombres adicionales, pero no se autoriza generarlos todos. Se conserva esa instantánea como investigación en `../censo-institucional.json`: 348 fichas del Senado y 574 de la Asamblea. Los 574 perfiles observados no se sustituyen por los 577 escaños legales. Los homónimos y alias requieren contraste individual; el presidente regional François Bonneau, nacido en 1953, no es el senador homónimo de Charente.
 
@@ -12,7 +12,7 @@ La selección combina responsabilidades de gobierno, representación parlamentar
 
 Las 340 ilustraciones adicionales están generadas y revisadas; junto a las 100 iniciales, completan 440 retratos nuevos. Josette Borel-Lincertin y Daniel Zaïdani ya ocupan sus dos paneles del atlas 85, con referencias institucionales identificadas. El registro de acceso queda [resuelto](referencias-pendientes.json). Todos miran fuera de cámara.
 
-**Cierre de frases actualizado:** 339 de los 340 adicionales tienen sus tres textos revisados; faltan 1. El conjunto francés suma 439 perfiles y 1317 frases revisadas. [Estado, fuentes y pendientes](../cloture-frases/README.md).
+**Cierre de frases actualizado:** 340 de los 340 adicionales tienen sus tres textos revisados; faltan 0. El conjunto francés suma 440 perfiles y 1320 frases revisadas. [Estado, fuentes y pendientes](../cloture-frases/README.md).
 
 La [revisión conjunta](revision-global/revision.html) asigna tiers, estadísticas, pasivas y efectos del zasca normal a los 440 nuevos franceses: **176 comunes, 132 raros, 88 especiales y 44 legendarios**, sin cupos por tanda. Se conserva el antes y después y la fuente del cargo utilizado. Se adaptó a vestimenta formal el arte de Bruno Le Maire, Jean-Pierre Chevènement y Jean-Yves Le Drian al subir al máximo tier.
 

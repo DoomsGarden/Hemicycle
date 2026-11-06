@@ -1,8 +1,8 @@
 # Francia · cierre editorial de frases
 
-Estado del **06-11-2026**: **1317 frases revisadas para 439 de los 440 nuevos oradores**. Queda **1 perfil y 3 frases por cerrar**. La primera tanda tiene 100 de 100 perfiles revisados; los adicionales, 339 de 340. Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.
+Estado del **06-11-2026**: **1320 frases revisadas para 440 de los 440 nuevos oradores**. **No quedan perfiles ni frases pendientes**. La primera tanda tiene 100 de 100 perfiles revisados; los adicionales, 340 de 340. El cierre editorial está completo y la reserva de prueba permanece desactivada, con cero cromos nuevos integrados en el catálogo público.
 
-[Galería de los 440 perfiles](revision.html) · [CSV](frases.csv) · [Registro revisado](frases-validees.json) · [Estado](estado.json) · [Comprobación de fuentes](qa/verification.json) · [Estado de accesos](qa/source-access.json) · [1 perfil pendiente](pendientes-fuentes.json).
+[Galería de los 440 perfiles](revision.html) · [CSV](frases.csv) · [Registro revisado](frases-validees.json) · [Estado](estado.json) · [Comprobación de fuentes](qa/verification.json) · [Estado de accesos](qa/source-access.json) · [Sin perfiles pendientes](pendientes-fuentes.json).
 
 ## Selección y atribución
 
@@ -24,14 +24,14 @@ Las fechas de publicación se leen de metadatos explícitos del editor, del art�
 
 ## Fuentes y accesos
 
-Se cotejaron 704 direcciones de fuentes para las 1317 frases actuales. Las capturas completas y los documentos de investigación se conservan fuera de Git:
+Se cotejaron 707 direcciones de fuentes para las 1320 frases actuales. Las capturas completas y los documentos de investigación se conservan fuera de Git:
 
 - Investigación inicial: `/workspace/.hemicycle-tools/state/france-research`.
 - Cierre actual: `/workspace/.hemicycle-tools/state/france-quote-closure`.
 
 La investigación descargada o una coincidencia de palabras no valida automáticamente una cita. Las candidatas extraídas conservan su estado sin revisar hasta comprobar autor, contexto, sentido y traducción. Los artículos completos y las fotografías de referencia no se redistribuyen en el repositorio.
 
-El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión 22. RTES y fuentes alternativas de Le Figaro permitieron cerrar los 100 perfiles iniciales. Queda 1 perfil y 3 frases por cerrar. Los 18 dominios de la ampliación anterior ya están aplicados. Se guardó un último borrador para los tres dominios del blog oficial y la reproducción de entrevista de Jean-François Macaire, únicos accesos nuevos pendientes de publicación. El [listado pendiente](pendientes-fuentes.json) separa las referencias por consultar de las citas aprobadas. Habilitar un dominio no garantiza que una URL antigua siga existiendo ni valida una cita. Francia no se marca como terminada.
+El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión 24. RTES y fuentes alternativas de Le Figaro permitieron cerrar los 100 perfiles iniciales. Quedan 0 perfiles y 0 frases por cerrar. El [estado de pendientes](pendientes-fuentes.json) confirma el cierre de los 440 perfiles. Macaire se cerró con tres publicaciones firmadas en su blog y una identificación independiente de su cargo y del enlace al blog. La reserva está preparada para pruebas internas y permanece desactivada.
 
 ## Comprobaciones y continuación
 
@@ -42,8 +42,23 @@ node _dev/expansions/francia/cloture-frases/build-review.cjs
 NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/cloture-frases/browser-review.cjs
 ```
 
-El generador de la galería exige un informe de verificación vigente que coincida con los hashes del registro, del verificador, de los detectores de hablantes y del lector de fechas. Las 26 pruebas de regresión cubren también cambios de presidencia, interrupciones y fechas originales frente a migraciones o barras laterales. La opción `--require-complete` del verificador rechaza el cierre del país mientras falte algún perfil. Las comprobaciones del navegador revisan las 440 imágenes, la asociación de cada texto con su autor y fuente, los filtros, el apoyo compartido y pantallas de 320, 393, 768 y 1200 píxeles.
+El generador de la galería exige un informe de verificación vigente que coincida con los hashes del registro, del verificador, de los detectores de hablantes y del lector de fechas. Las 29 pruebas de regresión cubren también cambios de presidencia, interrupciones y fechas originales frente a migraciones o barras laterales. La opción `--require-complete` del verificador rechaza el cierre del país mientras falte algún perfil. Las comprobaciones del navegador revisan las 440 imágenes, la asociación de cada texto con su autor y fuente, los filtros, el apoyo compartido y pantallas de 320, 393, 768 y 1200 píxeles.
 
 Para continuar, se reconstruye la investigación con el detector actualizado, se revisan los originales y se congela una selección explícita antes de traducirla. `apply-parliament-decisions.py` exige `--reviewed-fragments` con estado `originals_manually_reviewed_and_frozen`; una lista automática de candidatas no puede importarse directamente. Después se coteja todo el registro y se regenera la galería. Los lotes descartados de la carpeta de investigación no se reutilizan sin volver a comprobar la pareja original-traducción.
 
 Los retratos, tiers, estadísticas, pasivas y efectos permanecen como en la revisión conjunta anterior. El trabajo se limita a Francia; los logros, sobres y cromos de acción quedan para después, tal como ha indicado el usuario.
+
+## Reserva interna completa
+
+Los [tres textos escritos de Macaire](decisions-documents-02.json) completan las 1.320 frases. Su fecha es la publicación del artículo firmado, no una supuesta intervención oral. Se cotejan el identificador exacto de cada entrada, su autor, el cuerpo sin comentarios y una referencia independiente que vincula su cargo con el blog. Las citas de su trayectoria anterior conservan su fecha; la actividad política entre 2010 y 2026 se acredita por separado.
+
+[prepare.cjs](../prepare.cjs) combina los 440 retratos, las mecánicas revisadas y este registro en una reserva interna de 560 cromos, incluidos los 120 activos. Las propuestas originales conservan separados sus huecos de frases como historial: el preparador utiliza exclusivamente el registro revisado y exige hashes de verificación vigentes. No modifica el cliente, el servidor, el catálogo, las fuentes ni los archivos de instalación publicados. La reserva continúa desactivada; no se añade al inventario, sobres, tienda o IA públicos.
+
+```sh
+node --test _dev/expansions/francia/reserve.test.cjs
+NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/browser-reserve.cjs
+node _dev/expansions/francia/prepare.cjs --preview /tmp/hemicycle-reserva-francia
+node _dev/expansions/francia/preview-server.cjs
+```
+
+La vista de prueba escucha únicamente en localhost. El informe [reserve-gameplay.json](qa/reserve-gameplay.json) registra las 3.520 acciones comprobadas y los 880 casos de presencia y contrarresto del líder. La activación pública y sus tareas de publicación quedan separadas de este cierre.
