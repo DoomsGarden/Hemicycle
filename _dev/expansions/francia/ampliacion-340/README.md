@@ -8,6 +8,12 @@ Son 340 identidades nuevas respecto a los 103 franceses ya contemplados y a los 
 
 La selección combina responsabilidades de gobierno, representación parlamentaria, dirección política y ejecutivos territoriales. Los directorios de ambas cámaras localizaron 898 nombres adicionales, pero no se autoriza generarlos todos. Se conserva esa instantánea como investigación en `../censo-institucional.json`: 348 fichas del Senado y 574 de la Asamblea. Los 574 perfiles observados no se sustituyen por los 577 escaños legales. Los homónimos y alias requieren contraste individual; el presidente regional François Bonneau, nacido en 1953, no es el senador homónimo nacido en 1958.
 
+## Estado del 06-11-2026
+
+338 de las 340 ilustraciones están generadas y revisadas. Permanecen pendientes Josette Borel-Lincertin y Daniel Zaïdani, por el acceso a sus referencias visuales documentado en [referencias-pendientes.json](referencias-pendientes.json). Sus dos huecos del atlas 85 están vacíos y no aparecen como arte de un cromo. La corrección de orientación de Émile Zuccarelli conserva el resultado anterior y el prompt de edición en el registro de arte.
+
+La revisión de mirada se vincula al hash de la imagen concreta aprobada; una generación posterior no sustituye automáticamente el resultado revisado. La preparación de cargos de los 440 perfiles para el ajuste conjunto está en [revision-global](revision-global/README.md); todavía no asigna nuevos tiers, pasivas ni efectos.
+
 ## Orden de trabajo autorizado
 
 1. Completar las ilustraciones con referencias identificadas, poses variadas y **cero miradas a cámara**. Se revisan cabeza y ambos ojos; se incluyen micrófonos en algunos retratos. Los fondos varían según el ámbito institucional o político, sin bandera nacional uniforme.

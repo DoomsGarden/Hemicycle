@@ -49,6 +49,15 @@ for card in selection['cards']:
             assert evidence['start'] <= selection['period']['to'] and evidence['end'] >= selection['period']['from'], card['name']
         methods[evidence['method']] += 1
 
-report = {'profilesChecked': len(selection['cards']), 'sourceHashesMatched': len(documents), 'period': selection['period'], 'roleTextFoundInSources': True, 'evidenceMethods': dict(methods), 'scope': 'Contraste de las capturas consultadas; no certifica que el cargo siga vigente ni sustituye la revisión editorial individual.'}
+photos = {hashlib.sha256(p.read_bytes()).hexdigest() for p in (args.cache / 'photo-references').iterdir() if p.is_file()}
+artwork = json.loads((base / 'arte-generacion.json').read_text())
+reference_ids = set()
+for sheet in artwork['sheets']:
+    for reference in sheet['references']:
+        document(reference['pageSha256'])
+        assert reference['photoSha256'] in photos, 'Reference absent or changed: ' + reference['id']
+        reference_ids.add(reference['id'])
+
+report = {'profilesChecked': len(selection['cards']), 'sourceHashesMatched': len(documents), 'generatedPortraitReferencesMatched': len(reference_ids), 'period': selection['period'], 'roleTextFoundInSources': True, 'evidenceMethods': dict(methods), 'scope': 'Contraste de las capturas consultadas y hashes de las referencias visuales; no certifica que el cargo siga vigente ni sustituye la revisión editorial individual.'}
 (base / 'qa/source-cache-verification.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n')
 print(json.dumps(report, ensure_ascii=False))
