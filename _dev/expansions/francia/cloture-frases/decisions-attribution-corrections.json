@@ -1439,6 +1439,256 @@
         },
         "editorialChangeNote": "La atribución se vincula al presidente de Centre-Val de Loire identificado al inicio de la audiencia; se descarta al senador homónimo de Charente."
       }
+    },
+    {
+      "id": "christian-noyer",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "El registro anterior procedía de un resumen indirecto con nombre en negrita, no de un turno literal. Se sustituye por palabras propias contrastadas.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "Actuellement, sa cession n'est pas justifiée.",
+        "textES": "Actualmente, su venta no está justificada.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20080609/fin.html",
+        "sourceTitle": "Compte rendu du 09/06/2008 (Commission des finances)",
+        "spokenOn": "2008-06-12",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "d33db473228dac6d68f2b7ac31fa7c236f154803789bcc583182b747a7ac82a2",
+        "cacheKey": "996f14d03214189e0d76.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Christian Noyer",
+          "dateLabelFR": "Jeudi 12 juin 2008",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 203,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "afterReviewed": {
+        "action": "strong",
+        "originalFR": "les conditions étaient inacceptables",
+        "textES": "Las condiciones eran inaceptables.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20121015/fin.html",
+        "sourceTitle": "Compte rendu du 15/10/2012 (Commission des finances)",
+        "spokenOn": "2012-10-16",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "a7532d556699920699a5d5a6a61e79ecb5149ac48eb8b1c13924db4ab1d1cce7",
+        "cacheKey": "be4bd9d8523f75c349bb.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Christian Noyer",
+          "dateLabelFR": "Mardi 16 octobre 2012",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 54,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Afirmación firme en el debate."
+        }
+      }
+    },
+    {
+      "id": "herve-morin",
+      "action": "strong",
+      "previousAttributionValid": false,
+      "reason": "El registro anterior procedía de un resumen indirecto con nombre en negrita, no de un turno literal. Se sustituye por palabras propias contrastadas.",
+      "beforeInvalid": {
+        "action": "strong",
+        "originalFR": "Jamais un tel niveau de sincérité n'a été atteint",
+        "textES": "Nunca se alcanzó semejante sinceridad.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20090622/fin.html",
+        "sourceTitle": "Compte rendu du 22/06/2009 (Commission des finances)",
+        "spokenOn": "2009-06-24",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "eca0dda4fdd8388164dd52a5dccdc5113f7fdf8fcb036757b44a42f5a462fe40",
+        "cacheKey": "9cc3bfacce6dba71eacc.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Hervé Morin",
+          "dateLabelFR": "Mercredi 24 juin 2009",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 321,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Contrarréplica o afirmación enfática."
+        }
+      },
+      "afterReviewed": {
+        "action": "strong",
+        "originalFR": "Aucun pays n'envoie ses hommes en opération s'il ne peut les soigner correctement !",
+        "textES": "¡No se envían tropas sin poder atenderlas!",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20101011/etr.html",
+        "sourceTitle": "Compte rendu du 11/10/2010 (Commission des affaires etrangeres)",
+        "spokenOn": "2010-10-12",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "9788a4c46a5dc5921a7cc68e1d16e6489d59d1a76a4f9c2a16ebb9d4f57117aa",
+        "cacheKey": "1576cd14cbb2ed12de86.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Hervé Morin, ministre",
+          "dateLabelFR": "Mardi 12 octobre 2010",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 81,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "strong_attack"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Afirmación firme en el debate."
+        }
+      }
+    },
+    {
+      "id": "pierre-mehaignerie",
+      "action": "support",
+      "previousAttributionValid": false,
+      "reason": "El registro anterior procedía de un resumen indirecto con nombre en negrita, no de un turno literal. Se sustituye por palabras propias contrastadas.",
+      "beforeInvalid": {
+        "action": "support",
+        "originalFR": "Il est grand temps d'agir en matière de lutte contre le surpoids et l'obésité.",
+        "textES": "Urge actuar contra el sobrepeso y la obesidad.",
+        "source": "https://www.senat.fr/compte-rendu-commissions/20090615/cmp.html",
+        "sourceTitle": "Compte rendu du 15/06/2009 (Commission mixte paritaire)",
+        "spokenOn": "2009-06-16",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "83b42fbad19d67772b6071db974b5c96e9220d8cb845353330b22f22d443e1eb",
+        "cacheKey": "67e8811a38eee5261f65.html",
+        "sourceType": "senat_turn",
+        "sourceCollection": "closure_parliament",
+        "speakerCheck": {
+          "speakerFR": "M. Pierre Méhaignerie, député, vice-président,",
+          "dateLabelFR": "Mardi 16 juin 2009",
+          "method": "named_parliamentary_turn"
+        },
+        "paragraphIndex": 534,
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+          "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+        }
+      },
+      "afterReviewed": {
+        "action": "support",
+        "originalFR": "il faut aussi travailler pour que la population se sente bien",
+        "textES": "Hay que trabajar por el bienestar de la gente.",
+        "source": "http://www.lefigaro.fr/politique/2013/11/01/01002-20131101ARTFIG00390--vitre-mehaignerie-tient-a-son-fauteuil-de-maire.php",
+        "sourceTitle": "À Vitré, Méhaignerie tient à son fauteuil de maire",
+        "spokenOn": null,
+        "publishedOn": "2013-11-01",
+        "dateEvidence": "publication_not_confirmed_speech_date",
+        "consulted": "2026-11-06",
+        "sourceLanguage": "fr",
+        "translationLanguage": "es",
+        "ownTranslation": true,
+        "sourceSha256": "25f11753c7f7f7f457ba5508324d8984e3946c9c32e715158eafd2f30bb2d987",
+        "cacheKey": "e65e0e34d774620d23af.html",
+        "sourceType": "press_editorially_identified_quote",
+        "sourceCollection": "closure_press",
+        "speakerCheck": {
+          "method": "editorially_identified_quote",
+          "paragraphIndex": 8,
+          "review": "Declaración directa de Pierre Méhaignerie como alcalde de Vitré en el perfil publicado por Le Figaro el 01-11-2013. Se separa de los testimonios de otros entrevistados."
+        },
+        "adaptation": {
+          "type": "translated_fragment",
+          "thirdPartySubstitutions": [],
+          "note": "Fragmento continuo y traducción editorial española. La referencia de juego es ficticia; se conserva el sentido y se excluyen nombres personales fuera del fragmento."
+        },
+        "sourceCheck": "original_y_hablante_revisados",
+        "toneReview": "reviewed",
+        "reviewedOn": "2026-11-06",
+        "gameActions": [
+          "defense",
+          "heal"
+        ],
+        "editorialReview": {
+          "status": "reviewed",
+          "attribution": "Atribución contextual individual cotejada; se excluyen citas ajenas.",
+          "translation": "Traducción editorial propia revisada.",
+          "tone": "Compromiso de apoyo a la población."
+        }
+      }
     }
   ]
 }

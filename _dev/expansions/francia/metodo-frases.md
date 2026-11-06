@@ -45,4 +45,4 @@ El perfil de Bruno Bernard en Lyon Capitale aporta citas directas en francés y 
 
 ## Cierre editorial del 06-11-2026
 
-El registro actual está en [cloture-frases/frases-validees.json](cloture-frases/frases-validees.json), con 1137 textos para 379 perfiles. Las candidatas iniciales se conservan como historial. Se refuerza la identificación del interviniente en transcripciones con varias voces, se descartan anotaciones editoriales y títulos de informes y se conservan las fechas de declaraciones retrospectivas. El resto del trabajo y los accesos necesarios se detallan en [el estado de cierre](cloture-frases/README.md).
+El registro actual está en [cloture-frases/frases-validees.json](cloture-frases/frases-validees.json), con 1263 textos para 421 perfiles. Las candidatas iniciales se conservan como historial. Se refuerza la identificación del interviniente en transcripciones con varias voces, se descartan anotaciones editoriales y títulos de informes y se conservan las fechas de declaraciones retrospectivas. El resto del trabajo y los accesos necesarios se detallan en [el estado de cierre](cloture-frases/README.md).

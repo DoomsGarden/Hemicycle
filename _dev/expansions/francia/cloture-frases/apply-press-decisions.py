@@ -7,7 +7,10 @@ def fold(s):return s.lower().replace('’',"'").replace('\xa0',' ')
 for d in decisions:
  source=next(x for x in index if x['id']==d['id']and x.get('cacheKey')==d['sourceKey']);c=next(c for c in cards if c['id']==d['id']);qs=[]
  assert source['dateMetadata']
- for action,paragraph,fr,es in d['quotes']:
+ for decision in d['quotes']:
+  action,paragraph,fr,es,*sourceKey=decision
+  source=next(x for x in index if x['id']==d['id']and x.get('cacheKey')==(sourceKey[0]if sourceKey else d['sourceKey']))
+  assert source['dateMetadata']
   text=source['paragraphs'][paragraph];pos=fold(text).find(fold(fr));assert pos>=0,(d['id'],fr);literal=text[pos:pos+len(fr)];assert 1<=len(es)<=47,(d['id'],len(es),es)
   qs.append({'action':action,'originalFR':literal,'textES':es,'source':source['url'],'sourceTitle':source['title'],'spokenOn':None,'publishedOn':source['dateMetadata'][0][:10],'dateEvidence':'publication_not_confirmed_speech_date','consulted':'2026-11-06','sourceLanguage':'fr','translationLanguage':'es','ownTranslation':True,'sourceSha256':source['sha256'],'cacheKey':source['cacheKey'],'sourceType':'press_editorially_identified_quote','sourceCollection':'closure_press','speakerCheck':{'method':'editorially_identified_quote','paragraphIndex':paragraph,'review':d['contextSummaryES']},'adaptation':{'type':'translated_fragment','thirdPartySubstitutions':[],'note':'Fragmento continuo y traducción editorial española. La referencia de juego es ficticia; se conserva el sentido y se excluyen nombres personales fuera del fragmento.'},'sourceCheck':'original_y_hablante_revisados','toneReview':'reviewed','reviewedOn':'2026-11-06','gameActions':result['actions'][action],'editorialReview':{'status':'reviewed','attribution':'Atribución contextual individual cotejada; se excluyen citas ajenas.','translation':'Traducción editorial propia revisada.','tone':{'normal':'Réplica o afirmación de posición.','strong':'Contrarréplica, crítica o afirmación enfática.','support':'Protección, compromiso, confianza o perseverancia.'}[action]}})
  by[c['id']]={'id':c['id'],'name':c['name'],'contextSummaryES':d['contextSummaryES'],'candidates':qs}

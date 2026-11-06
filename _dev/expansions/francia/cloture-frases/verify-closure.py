@@ -29,7 +29,7 @@ def check(c,q):
   assert urllib.parse.unquote(profile)==urllib.parse.unquote(rule['expectedProfile'])
   allowed=[d for d in rule['approvedDocuments']if d['sourceSha256']==q['sourceSha256']and d['cacheKey']==q['cacheKey']and d['sourceCollection']==q['sourceCollection']and d['spokenOn']==q.get('spokenOn')]
   assert allowed,(c['id'],'Fuente sin desambiguación del cargo; puede pertenecer a un homónimo.')
-  folder=args.initial_cache/'press-fr'if q['sourceCollection']=='first100_research'else D/'senate';raw=(folder/q['cacheKey']).read_bytes();assert hashlib.sha256(raw).hexdigest()==q['sourceSha256'];root=html.fromstring(raw.decode('utf-8'));evidence=root.xpath(allowed[0]['identityEvidenceXPath']);assert evidence and allowed[0]['identityEvidenceFR']in clean(evidence[0].text_content())
+  folder=args.initial_cache/'press-fr'if q['sourceCollection']=='first100_research'else D/('assembly'if q['sourceType']=='assemblee_named_intervention'else'senate');raw=(folder/q['cacheKey']).read_bytes();assert hashlib.sha256(raw).hexdigest()==q['sourceSha256'];root=html.fromstring(raw.decode('utf-8'));evidence=root.xpath(allowed[0]['identityEvidenceXPath']);assert evidence and allowed[0]['identityEvidenceFR']in clean(evidence[0].text_content())
  if q['sourceCollection']=='first100_research':return initial.check_source(c,q,args.initial_cache)
  kind=q['sourceType'];expected=norm(c['name'])
  if kind=='senat_turn':

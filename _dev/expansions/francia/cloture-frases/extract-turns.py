@@ -17,14 +17,16 @@ def who(s):
  name=re.sub(r'^(?:Mme|MM|M)\.?\s+','',s).split(',')[0].split(' (')[0].strip(' .-–—')
  return byname.get(norm(name))
 def clauses(t):
- if re.search(r'https?://|comme le (?:dit|disait)|selon |cit(?:e|ait|er)\b',t,re.I):return []
  if t.count('«')!=t.count('»')or t.count('“')!=t.count('”')or t.count('"')%2:return []
  quoted=[m.span()for m in re.finditer(r'«[^»]*»|“[^”]*”|"[^"]*"',t)]
  out=[];offset=0
- for raw in re.split(r'(?<=[.!?;:])\s+',t):
+ for raw in re.split(r'(?<=[.!?;:])(?:\s+|(?=[A-ZÀ-ÖØ-Ý]))',t):
   pos=t.find(raw,offset);offset=pos+len(raw)
   if any(pos<b and offset>a for a,b in quoted):continue
   s=raw.strip(' ,;:–—-')
+  # Archives sometimes store an entire speech, including its source URL,
+  # in one field without <p>. Reject references per sentence, not per document.
+  if re.search(r'https?://|comme le (?:dit|disait)|selon |cit(?:e|ait|er)\b',s,re.I):continue
   if not 16<=len(s)<=88 or not 3<=len(s.split())<=15:continue
   if re.search(r'\d',s)or re.search(r'\b(?:M|Mme|MM)\.$',s):continue
   proper=re.findall(r'\b[A-ZÀ-ÖØ-Ý][a-zà-öø-ÿ-]+',s)[1:]

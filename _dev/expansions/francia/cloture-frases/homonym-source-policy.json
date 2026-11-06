@@ -59,6 +59,20 @@
           "identityEvidenceFR": "M. Maurice Leroy, ministre."
         }
       ]
+    },
+    "jean-christophe-lagarde": {
+      "expectedProfile": "https://fr.wikipedia.org/wiki/Jean-Christophe_Lagarde",
+      "identityReview": "Diputado del grupo UDI-I en la Asamblea Nacional. Se excluyen las audiencias del presidente agroalimentario homónimo de Area Normandie.",
+      "approvedDocuments": [
+        {
+          "sourceSha256": "aadfeabfb6f6b4c09841f12c0dac9e6bbfc6bc9d4e37ff868eabf8b441ed115a",
+          "cacheKey": "be36312a38626c824383.html",
+          "sourceCollection": "closure_parliament",
+          "spokenOn": "2022-03-01",
+          "identityEvidenceXPath": "//div[@id=\"2803138\"]//p[@class=\"orateur\"]",
+          "identityEvidenceFR": "M. Jean-Christophe Lagarde"
+        }
+      ]
     }
   }
 }

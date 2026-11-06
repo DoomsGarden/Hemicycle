@@ -1,8 +1,8 @@
 # Francia · cierre editorial de frases
 
-Estado del **06-11-2026**: **1137 frases revisadas para 379 de los 440 nuevos oradores**. Quedan **61 perfiles y 183 frases por cerrar**. La primera tanda tiene 100 de 100 perfiles revisados; los adicionales, 279 de 340. Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.
+Estado del **06-11-2026**: **1263 frases revisadas para 421 de los 440 nuevos oradores**. Quedan **19 perfiles y 57 frases por cerrar**. La primera tanda tiene 100 de 100 perfiles revisados; los adicionales, 321 de 340. Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.
 
-[Galería de los 440 perfiles](revision.html) · [CSV](frases.csv) · [Registro revisado](frases-validees.json) · [Estado](estado.json) · [Comprobación de fuentes](qa/verification.json) · [Estado de accesos](qa/source-access.json).
+[Galería de los 440 perfiles](revision.html) · [CSV](frases.csv) · [Registro revisado](frases-validees.json) · [Estado](estado.json) · [Comprobación de fuentes](qa/verification.json) · [Estado de accesos](qa/source-access.json) · [19 perfiles pendientes](pendientes-fuentes.json).
 
 ## Selección y atribución
 
@@ -14,20 +14,20 @@ Los 340 adicionales acreditan actividad política entre 2010 y 2026. Sus frases 
 
 La comprobación del hablante contempla turnos con guion, etiquetas sin guion de la Asamblea, nombres seguidos de salto de línea en ruedas de prensa y respuestas explícitas de entrevistas. Una mención a un diputado dentro de una respuesta no cambia al hablante. Se distinguen homónimos por identidad completa y se excluyen pies de página, resultados de votación editoriales y títulos de informes citados. Las cursivas de préstamos como *lobbying* u *open bar* se mantienen dentro de una intervención propia.
 
-La auditoría reforzada corrigió diez atribuciones de intervenciones ajenas y descartó cuatro anotaciones editoriales o títulos que se habían tomado como palabras personales. El [historial de correcciones](decisions-attribution-corrections.json) identifica explícitamente las entradas anteriores como inválidas. El registro `frases-validees.json` contiene sus reemplazos comprobados. Además se corrigieron tres citas de homónimos y se fijaron pruebas explícitas de cargo para François Bonneau, Philippe Martin, Bruno Bernard y Maurice Leroy. Los archivos de decisiones conservan el historial de trabajo; el registro actual y las correcciones deben consultarse conjuntamente.
+La auditoría reforzada corrigió diez atribuciones de intervenciones ajenas y descartó cuatro anotaciones editoriales o títulos que se habían tomado como palabras personales. El [historial de correcciones](decisions-attribution-corrections.json) identifica explícitamente las entradas anteriores como inválidas. El registro `frases-validees.json` contiene sus reemplazos comprobados. Además se corrigieron tres citas de homónimos y se fijaron pruebas explícitas de cargo para François Bonneau, Philippe Martin, Bruno Bernard, Maurice Leroy y Jean-Christophe Lagarde. Se reemplazaron también tres fragmentos procedentes de resúmenes indirectos con nombres en negrita. Los archivos de decisiones conservan el historial de trabajo; el registro actual y las correcciones deben consultarse conjuntamente.
 
 Se corrigieron también [20 fechas de intervenciones](decisions-session-date-corrections.json): una fecha de ley o referencia histórica en el título temático no es la fecha de la audiencia. El verificador utiliza el encabezado explícito del día de sesión y comprueba cada pasaje.
 
 ## Fuentes y accesos
 
-Se cotejaron 624 fuentes distintas para las 1137 frases actuales. Las capturas completas y los documentos de investigación se conservan fuera de Git:
+Se cotejaron 684 direcciones de fuentes para las 1263 frases actuales. Las capturas completas y los documentos de investigación se conservan fuera de Git:
 
 - Investigación inicial: `/workspace/.hemicycle-tools/state/france-research`.
 - Cierre actual: `/workspace/.hemicycle-tools/state/france-quote-closure`.
 
 La investigación descargada o una coincidencia de palabras no valida automáticamente una cita. Las candidatas extraídas conservan su estado sin revisar hasta comprobar autor, contexto, sentido y traducción. Los artículos completos y las fotografías de referencia no se redistribuyen en el repositorio.
 
-El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión 20. La entrevista de RTES y fuentes alternativas de Le Figaro permiten cerrar a Jeanne Barseghian, Pierre Hurmic y François Asselineau; los 100 perfiles iniciales tienen sus tres frases. Algunas URL antiguas de otras fuentes devuelven 404 o un error de acceso y requieren referencias alternativas. Solo parte de los 96 perfiles restantes depende de esos accesos; los demás necesitan continuar su cierre editorial.
+El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión 20. RTES y fuentes alternativas de Le Figaro permitieron cerrar los 100 perfiles iniciales. Quedan 19 perfiles y 57 frases por cerrar. Se guardó una ampliación de acceso para 18 dominios con referencias concretas bloqueadas. El gestor exige que el usuario revise, guarde y publique el nuevo borrador para aplicarlo; todavía no está aplicado. El [listado pendiente](pendientes-fuentes.json) separa las referencias por consultar de las citas aprobadas. Habilitar un dominio no garantiza que una URL antigua siga existiendo ni valida una cita. Francia no se marca como terminada.
 
 ## Comprobaciones y continuación
 

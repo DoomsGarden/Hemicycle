@@ -1,0 +1,1001 @@
+{
+  "date": "2026-11-06",
+  "cards": [
+    {
+      "id": "pierre-mauroy",
+      "name": "Pierre Mauroy",
+      "contextSummaryES": "Intervenciones de 2009 y 2010. Critica la reforma electoral y defiende no poner en peligro a las tropas durante la crisis marfileña. Se excluye el resumen indirecto de otra audiencia de 2007. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Ce scrutin portera également atteinte à la parité.",
+          "textES": "Este escrutinio también dañará la paridad.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20091130/lois.html",
+          "sourceTitle": "Compte rendu du 30/11/2009 (Commission des lois)",
+          "spokenOn": "2009-12-02",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "9a5c0a7e97b39fd82eb93205cf99fee71129fa8ff3c6494c1b66ef9b948a746e",
+          "cacheKey": "154ffe740f641f1912a0.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Pierre Mauroy",
+            "dateLabelFR": "Mercredi 2 décembre 2009",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 170,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Le Gouvernement s'est ainsi engagé dans une véritable contre-réforme.",
+          "textES": "El Gobierno se ha lanzado a una contrarreforma.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20091130/lois.html",
+          "sourceTitle": "Compte rendu du 30/11/2009 (Commission des lois)",
+          "spokenOn": "2009-12-02",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "9a5c0a7e97b39fd82eb93205cf99fee71129fa8ff3c6494c1b66ef9b948a746e",
+          "cacheKey": "154ffe740f641f1912a0.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Pierre Mauroy",
+            "dateLabelFR": "Mercredi 2 décembre 2009",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 169,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "il ne faut pas mettre nos troupes en danger",
+          "textES": "No hay que poner a nuestras tropas en peligro.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20101220/etr.html",
+          "sourceTitle": "Compte rendu du 20/12/2010 (Commission des affaires etrangeres)",
+          "spokenOn": "2010-12-21",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "ada5098d18515436f4fd948db2799a1f425d8f151c558472e3ac9107d55f8a40",
+          "cacheKey": "20beadd9ff4ced3e4450.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Pierre Mauroy",
+            "dateLabelFR": "Mardi 21 décembre 2010",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 46,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jean-pierre-bel",
+      "name": "Jean-Pierre Bel",
+      "contextSummaryES": "Debates de 2008-2009 sobre funcionamiento del Senado y mayoría parlamentaria. Su llamada colectiva se refiere a una renovación democrática de la cámara. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Cela étant, nous le savons, beaucoup de questions se posent.",
+          "textES": "Sabemos que surgen muchas preguntas.",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20091020_4&idtable=&_c=%22Oscar+Temaru%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du mardi 20 octobre 2009 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2009-10-20",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "0df38d16d0d31de005c32c4539ff21682ce0c75a529129cd29092e93752cf1da",
+          "cacheKey": "3a71531a5d6c58abf2d5.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Pierre Bel",
+            "dateLabelFR": "SEANCE du mardi 20 octobre 2009 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 27,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Demandez à vos amis du Sénat ce qu'il en est !",
+          "textES": "¡Preguntad a vuestros amigos del Senado!",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20080618_13&idtable=&_c=%22Jean-Marie+Le+Pen%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du mercredi 18 juin 2008 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2008-06-18",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "e1f279303bbf1c11197683c90be626dfa337fe3a04c0176f3c84dffcd55b9985",
+          "cacheKey": "54f72778ca27577de2a6.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Pierre Bel",
+            "dateLabelFR": "SEANCE du mercredi 18 juin 2008 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 24,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Aussi, je fais appel à la majorité sénatoriale.",
+          "textES": "Apelo, pues, a la mayoría del Senado.",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20081007_3&idtable=&_c=%22Jean-Claude+Gaudin%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du mardi 07 octobre 2008 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2008-10-07",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "6e15626da03220485b9aa35666750e2af010daa6555d22b6324643b3e75f29d6",
+          "cacheKey": "00719bd076bf9292a229.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Pierre Bel",
+            "dateLabelFR": "SEANCE du mardi 07 octobre 2008 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 148,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "louis-mermaz",
+      "name": "Louis Mermaz",
+      "contextSummaryES": "Intercambios de 2006 y 2010 en el Senado. El apoyo escolar es una réplica irónica en el debate, usada aquí como apoyo ficticio del juego. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "C'est possible à titre exceptionnel !",
+          "textES": "¡Es posible, como excepción!",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20100121_14&idtable=&_c=%22Yves+Cochet%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du jeudi 21 janvier 2010 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2010-01-21",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "da8e6587aed78d74598fabb3808f572e913d94cd965b9ed1ae0d18730995f0e0",
+          "cacheKey": "09b360221d39ce7f38fa.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Louis Mermaz",
+            "dateLabelFR": "SEANCE du jeudi 21 janvier 2010 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 100,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Oui, mais il faut être doué pour la pratiquer !",
+          "textES": "¡Sí, pero hay que tener talento para hacerlo!",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20061206_6&idtable=&_c=%22Daniel+Vaillant%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du mercredi 06 décembre 2006 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2006-12-06",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "9f750fb8936ae43cd4372513100abd9806ba92ac574634ae704096a5fb4a1f99",
+          "cacheKey": "dc56b7107fccf1543f93.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Louis Mermaz",
+            "dateLabelFR": "SEANCE du mercredi 06 décembre 2006 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 367,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Je fais du soutien scolaire !",
+          "textES": "¡Doy apoyo escolar!",
+          "source": "https://www.senat.fr/basile/visio.do?id=s20061206_6&idtable=&_c=%22Daniel+Vaillant%22&rch=gs&de=20061106&au=20261106&dp=20+ans&radio=dp&aff=sep&tri=p&off=0&afd=ppr&afd=ppl&afd=pjl&afd=cvn&isFirst=true",
+          "sourceTitle": "SEANCE du mercredi 06 décembre 2006 (compte rendu intégral des débats du Sénat)",
+          "spokenOn": "2006-12-06",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "9f750fb8936ae43cd4372513100abd9806ba92ac574634ae704096a5fb4a1f99",
+          "cacheKey": "dc56b7107fccf1543f93.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Louis Mermaz",
+            "dateLabelFR": "SEANCE du mercredi 06 décembre 2006 (compte rendu intégral des débats du Sénat)",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 364,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pierre-mehaignerie",
+      "name": "Pierre Méhaignerie",
+      "contextSummaryES": "Intervenciones de 1997, 2009 y 2011. Defiende una simplificación, afirma su coherencia y pide actuar contra el sobrepeso y la obesidad. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "C'est avant tout une mesure de simplification !",
+          "textES": "¡Es, ante todo, una medida simplificadora!",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20110704/cmp.html",
+          "sourceTitle": "Compte rendu du 04/07/2011 (Commission mixte paritaire)",
+          "spokenOn": "2011-07-06",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "fa10b7f774b4e60f15a9c2aa89d34e84bda3a295c3c024d4cce02c83e851587d",
+          "cacheKey": "7606a3e140e22b9e7204.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Pierre Méhaignerie, député, président",
+            "dateLabelFR": "Mercredi 6 juillet 2011",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 451,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "je pense n’avoir jamais été pris en défaut.",
+          "textES": "Creo que nunca se me ha pillado en falta.",
+          "source": "https://www.vie-publique.fr/discours/247616-pierre-mehaignerie-24011997-debat-sur-la-reforme-de-la-justice",
+          "sourceTitle": "Article de M. Pierre Méhaignerie, président d'honneur de Force démocrate et ancien ministre de la justice, dans \"Le Figaro\" du 24 janvier 1997, sur les propositions pour la réforme de la justice, intitulé \"Trois mesures pour un nouvel équilibre\".",
+          "spokenOn": "1997-01-24",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "e120446705fbc3b84c5129a36662ed1d29ce0b46250446e11ff26947e27fc682",
+          "cacheKey": "247616.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "single_named_declaration_with_turn_boundaries",
+            "authors": [
+              "Pierre Méhaignerie"
+            ],
+            "speakerFR": "Pierre Méhaignerie"
+          },
+          "paragraphIndex": 5,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Il est grand temps d'agir en matière de lutte contre le surpoids et l'obésité.",
+          "textES": "Urge actuar contra el sobrepeso y la obesidad.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20090615/cmp.html",
+          "sourceTitle": "Compte rendu du 15/06/2009 (Commission mixte paritaire)",
+          "spokenOn": "2009-06-16",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "83b42fbad19d67772b6071db974b5c96e9220d8cb845353330b22f22d443e1eb",
+          "cacheKey": "67e8811a38eee5261f65.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Pierre Méhaignerie, député, vice-président,",
+            "dateLabelFR": "Mardi 16 juin 2009",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 534,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "daniel-cohn-bendit",
+      "name": "Daniel Cohn-Bendit",
+      "contextSummaryES": "Audiencia de febrero de 2013 sobre presupuesto europeo. Rechaza su lógica de excepciones y reivindica el control democrático. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Pourquoi n'organise-t-on aucun débat public sur le sujet ?",
+          "textES": "¿Por qué no se abre un debate público?",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20130211/europ.html",
+          "sourceTitle": "Compte rendu du 11/02/2013 (Commission des affaires europeennes)",
+          "spokenOn": "2013-02-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "0e68f420e650c75ab7d53a6713d884a94439f64d6cb422ca86110a7eec3f9c14",
+          "cacheKey": "2d30b3a7d1bb190dd8ec.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Daniel Cohn-Bendit",
+            "dateLabelFR": "Mercredi 13 février 2013",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 54,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Cette logique financière aberrante est incontrôlable !",
+          "textES": "¡Esa lógica financiera absurda es ingobernable!",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20130211/europ.html",
+          "sourceTitle": "Compte rendu du 11/02/2013 (Commission des affaires europeennes)",
+          "spokenOn": "2013-02-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "0e68f420e650c75ab7d53a6713d884a94439f64d6cb422ca86110a7eec3f9c14",
+          "cacheKey": "2d30b3a7d1bb190dd8ec.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Daniel Cohn-Bendit",
+            "dateLabelFR": "Mercredi 13 février 2013",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 52,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "C'est la gouvernance démocratique de l'Europe qui est en jeu",
+          "textES": "Nos jugamos la gobernanza democrática europea.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20130211/europ.html",
+          "sourceTitle": "Compte rendu du 11/02/2013 (Commission des affaires europeennes)",
+          "spokenOn": "2013-02-13",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "0e68f420e650c75ab7d53a6713d884a94439f64d6cb422ca86110a7eec3f9c14",
+          "cacheKey": "2d30b3a7d1bb190dd8ec.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Daniel Cohn-Bendit",
+            "dateLabelFR": "Mercredi 13 février 2013",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 55,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "olivier-besancenot",
+      "name": "Olivier Besancenot",
+      "contextSummaryES": "Entrevistas de 2008 y 2009. La crítica se refiere a políticas económicas y el balance positivo a la actividad de su formación. Se distinguen contextos y fechas. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Ce bilan est catastrophique en Europe.",
+          "textES": "El balance es catastrófico en Europa.",
+          "source": "https://www.vie-publique.fr/discours/171636-interview-de-m-olivier-besancenot-porte-parole-de-la-lcr-sur-le-site",
+          "sourceTitle": "Interview de M. Olivier Besancenot, porte-parole de la LCR, sur le site \"médiapart.fr\" le 10 juillet 2008, sur l'évolution de La Poste et les transformations annoncées de l'entreprise.",
+          "spokenOn": "2008-07-10",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "e4f236e12833f27524547c9e146561a01b1f9794974731aeb59de63cd9198990",
+          "cacheKey": "171636.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "interview_explicit_answer",
+            "authors": [
+              "Olivier Besancenot"
+            ],
+            "answerMarker": "R - ",
+            "answerIndex": 3
+          },
+          "paragraphIndex": 3,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Mais c'est aussi d'une hypocrisie totale.",
+          "textES": "Pero eso es también una hipocresía total.",
+          "source": "https://www.vie-publique.fr/discours/171636-interview-de-m-olivier-besancenot-porte-parole-de-la-lcr-sur-le-site",
+          "sourceTitle": "Interview de M. Olivier Besancenot, porte-parole de la LCR, sur le site \"médiapart.fr\" le 10 juillet 2008, sur l'évolution de La Poste et les transformations annoncées de l'entreprise.",
+          "spokenOn": "2008-07-10",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "e4f236e12833f27524547c9e146561a01b1f9794974731aeb59de63cd9198990",
+          "cacheKey": "171636.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "interview_explicit_answer",
+            "authors": [
+              "Olivier Besancenot"
+            ],
+            "answerMarker": "R - ",
+            "answerIndex": 11
+          },
+          "paragraphIndex": 11,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "C'est un bilan positif, on n'a pas à rougir.",
+          "textES": "El balance es positivo, no hay que sonrojarse.",
+          "source": "https://www.vie-publique.fr/discours/176282-interview-de-m-olivier-besancenot-porte-parole-du-npa-lafp-le-21",
+          "sourceTitle": "Interview de M. Olivier Besancenot, porte-parole du NPA, à l'\"AFP\" le 21 août 2009, sur le bilan du NPA 6 mois après sa fondation et sa stratégie de discussion et d'alliance politique.",
+          "spokenOn": "2009-08-21",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "4f4a06b360c7a68e00cff87b01fe837b5e567677ac4a7a3c1402639be3cbe7c9",
+          "cacheKey": "176282.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "interview_explicit_answer",
+            "authors": [
+              "Olivier Besancenot"
+            ],
+            "answerMarker": "R : ",
+            "answerIndex": 1
+          },
+          "paragraphIndex": 1,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jean-louis-bourlanges",
+      "name": "Jean-Louis Bourlanges",
+      "contextSummaryES": "Intervenciones de 2016, 2022 y 2024. Combina ironía sobre su propio optimismo, una pregunta sobre los plazos y reconocimiento a las intervenciones de sus colegas. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Serait-il donc impossible d’aller plus vite ?",
+          "textES": "¿Sería imposible ir más deprisa?",
+          "source": "https://www.assemblee-nationale.fr/dyn/16/comptes-rendus/seance/session-ordinaire-de-2023-2024/premiere-seance-du-mercredi-29-mai-2024",
+          "sourceTitle": "Compte rendu de la première séance du mercredi 29 mai 2024 - Assemblée nationale",
+          "spokenOn": "2024-05-29",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "acf983b518f33a90d2c1b4dcb8ac44720f7fb703634c0ea7e622b9788c0c0993",
+          "cacheKey": "00372a139513bb4cbe1e.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Jean-Louis Bourlanges, président de la commission des affaires étrangères",
+            "interventionId": "3483099",
+            "titleDate": "Compte rendu de la première séance du mercredi 29 mai 2024 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Personne ne m'a jamais accusé d'un optimisme excessif.",
+          "textES": "Nunca me acusaron de exceso de optimismo.",
+          "source": "https://www.senat.fr/compte-rendu-commissions/20161003/brexit.html",
+          "sourceTitle": "Compte rendu du 03/10/2016 (Groupe de suivi Retrait Royaume-Uni et refondation de l?UE)",
+          "spokenOn": "2016-10-05",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "77bf2af0478542c2578ee94727483dfb373de8f1d597fcbb8dc91ea8a98441c9",
+          "cacheKey": "8e0e30aa4b915526919a.html",
+          "sourceType": "senat_turn",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "speakerFR": "M. Jean-Louis Bourlanges",
+            "dateLabelFR": "Mercredi 5 octobre 2016",
+            "method": "named_parliamentary_turn"
+          },
+          "paragraphIndex": 100,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Tout a été dit, et bien dit, par l’ensemble des collègues.",
+          "textES": "Los colegas lo han dicho todo, y bien.",
+          "source": "https://www.assemblee-nationale.fr/dyn/15/comptes-rendus/seance/session-ordinaire-de-2021-2022/seance-du-mardi-01-mars-2022",
+          "sourceTitle": "Compte rendu de la séance du mardi 01 mars 2022 - Assemblée nationale",
+          "spokenOn": "2022-03-01",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "aadfeabfb6f6b4c09841f12c0dac9e6bbfc6bc9d4e37ff868eabf8b441ed115a",
+          "cacheKey": "be36312a38626c824383.html",
+          "sourceType": "assemblee_named_intervention",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "assembly_intervention_id",
+            "speakerFR": "M. Jean-Louis Bourlanges, président de la commission des affaires étrangères",
+            "interventionId": "2803069",
+            "titleDate": "Compte rendu de la séance du mardi 01 mars 2022 - Assemblée nationale"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jose-bove",
+      "name": "José Bové",
+      "contextSummaryES": "Declaraciones y programa de campaña de 2007. Critica la confianza exclusiva en el mercado y el lucro, y afirma que otro mundo es posible y necesario. La acción del juego es ficticia.",
+      "candidates": [
+        {
+          "action": "normal",
+          "originalFR": "Dans la réalité, ça n'est pas ce qui se passe.",
+          "textES": "En realidad, eso no es lo que ocurre.",
+          "source": "https://www.vie-publique.fr/discours/166207-interview-de-m-jose-bove-candidat-lelection-presidentielle-2007-au",
+          "sourceTitle": "Interview de M. José Bové, candidat à l'élection présidentielle 2007, au Courrier de Mantes du 28 mars 2007, sur les problèmes des banlieues et le pouvoir d'achat.",
+          "spokenOn": "2007-03-28",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "50ab523b8632d6bd95f93dc1df1dced8b025b8ebeec07bab9dcf2fbe8a632132",
+          "cacheKey": "166207.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "interview_explicit_answer",
+            "authors": [
+              "José Bové"
+            ],
+            "answerMarker": "R - ",
+            "answerIndex": 5
+          },
+          "paragraphIndex": 5,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Réplica, objeción o afirmación de posición en el debate."
+          }
+        },
+        {
+          "action": "strong",
+          "originalFR": "Faire confiance à la loi du marché et du profit, même régulée, ne peut suffire.",
+          "textES": "Mercado y lucro, aun regulados, no bastan.",
+          "source": "https://www.vie-publique.fr/discours/166097-propositions-de-m-jose-bove-candidat-lelection-presidentielle-2007",
+          "sourceTitle": "Propositions de M. José Bové, candidat à l'élection présidentielle 2007, en matière d'urgence environnementale, Paris le 23 mars 2007.",
+          "spokenOn": "2007-03-23",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "1273f78e5cace090d4b6e9094f6ccdb204a12398b8afebc51627707769e7a78b",
+          "cacheKey": "166097.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "single_named_declaration_with_turn_boundaries",
+            "authors": [
+              "José Bové"
+            ],
+            "speakerFR": "José Bové"
+          },
+          "paragraphIndex": 0,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "strong_attack"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Contrarréplica o afirmación enfática."
+          }
+        },
+        {
+          "action": "support",
+          "originalFR": "Un autre monde est possible, il est nécessaire.",
+          "textES": "Otro mundo es posible, y es necesario.",
+          "source": "https://www.vie-publique.fr/discours/166095-programme-defendu-par-m-jose-bove-candidat-lelection-presidentielle",
+          "sourceTitle": "Programme défendu par M. José Bové, candidat à l'élection présidentielle 2007, intitulé \"Ce que nous voulons\" et décliné en 125 propositions, Paris le 15 février 2007.",
+          "spokenOn": "2007-02-15",
+          "consulted": "2026-11-06",
+          "sourceLanguage": "fr",
+          "translationLanguage": "es",
+          "ownTranslation": true,
+          "sourceSha256": "87ab0578c9946f68a0645ab32762d240812875dc62b8f5027d6568c50607c919",
+          "cacheKey": "166095.html",
+          "sourceType": "vie_publique_declaration",
+          "sourceCollection": "closure_parliament",
+          "speakerCheck": {
+            "method": "single_named_declaration_with_turn_boundaries",
+            "authors": [
+              "José Bové"
+            ],
+            "speakerFR": "José Bové"
+          },
+          "paragraphIndex": 1,
+          "adaptation": {
+            "type": "translated_fragment",
+            "thirdPartySubstitutions": [],
+            "note": "Fragmento literal continuo y traducción editorial española. Sin nombres personales de terceros dentro del fragmento."
+          },
+          "sourceCheck": "original_y_hablante_revisados",
+          "toneReview": "reviewed",
+          "reviewedOn": "2026-11-06",
+          "gameActions": [
+            "defense",
+            "heal"
+          ],
+          "editorialReview": {
+            "status": "reviewed",
+            "translation": "Traducción española propia revisada; se conserva el sentido de la réplica.",
+            "tone": "Protección, confianza, cooperación, compromiso o perseverancia."
+          }
+        }
+      ]
+    }
+  ]
+}

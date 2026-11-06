@@ -1,6 +1,6 @@
 # Francia · primera tanda de 100 en preparación
 
-**Cierre editorial actual (06-11-2026):** [1137 frases revisadas para 379 de los 440 perfiles](cloture-frases/README.md), con [galería y fuentes](cloture-frases/revision.html). Quedan 61 perfiles; 100 de los 100 iniciales y 279 de los 340 adicionales ya tienen sus tres frases revisadas. La investigación inicial de esta página se conserva como historial. La reserva sigue sin integrar ni activar.
+**Cierre editorial actual (06-11-2026):** [1263 frases revisadas para 421 de los 440 perfiles](cloture-frases/README.md), con [galería y fuentes](cloture-frases/revision.html). Quedan 19 perfiles; 100 de los 100 iniciales y 321 de los 340 adicionales ya tienen sus tres frases revisadas. La investigación inicial de esta página se conserva como historial. La reserva sigue sin integrar ni activar.
 
 [Revisión privada con arte y frases](revision.html) · [Listado](listado.md) · [CSV](censo.csv) · [Datos](censo.json) · [Método de traducción](metodo-frases.md).
 

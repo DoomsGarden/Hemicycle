@@ -18,6 +18,10 @@ class AttributionRegression(unittest.TestCase):
   self.assertIsNone(self.marker('<p>Mme Cynthia Ligeard, présidente du gouvernement de la Nouvelle-Calédonie, nous a décrit celui-ci comme une machine lente.</p>'))
  def test_real_label_with_office_without_dash_is_a_turn(self):
   self.assertEqual(canonical_name(self.marker('<p>M. Bernard Debré, député, rapporteur. Leur information médicale continue doit être développée.</p>')[0]),'bernarddebre')
+ def test_bold_name_in_reported_summary_is_not_a_turn(self):
+  self.assertIsNone(self.marker('<p><strong>M. Pierre Mauroy</strong> a estimé que la crise était un facteur de déstabilisation.</p>'))
+ def test_bold_name_with_office_in_reported_summary_is_not_a_turn(self):
+  self.assertIsNone(self.marker('<p><strong>M. Jean-Paul Garraud</strong>, rapporteur, a rappelé que des points restaient en discussion.</p>'))
  def test_session_heading_gives_date_of_hearing(self):
   self.assertTrue(is_session_date_heading('Mercredi 20 mars 2024'))
  def test_law_date_in_topic_does_not_replace_date_of_hearing(self):

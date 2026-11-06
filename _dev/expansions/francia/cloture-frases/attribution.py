@@ -27,7 +27,10 @@ def speaker_marker(element):
  bold=element.xpath('.//b|.//strong')
  if bold:
   head=clean(bold[0].text_content())
-  if text.startswith(head)and re.match(r'^(?:Mme|MM|M)\.?\s+',head):return head,len(head)
+  if text.startswith(head)and re.match(r'^(?:Mme|MM|M)\.?\s+',head):
+   tail=text[len(head):].lstrip()
+   if (tail.startswith(',')or re.match(r"^(?:a|avait|ont|avaient|s'est|s'était)\s+",tail,re.I))and REPORTED_REFERENCE.search(tail.split('.',1)[0]):return None
+   return head,len(head)
  markup=html.tostring(element,encoding='unicode')
  # A name followed by <br> is a real boundary in the press-conference archive.
  prefix=markup.split('<br',1)[0]
