@@ -12,7 +12,7 @@ La selección combina responsabilidades de gobierno, representación parlamentar
 
 Las 340 ilustraciones adicionales están generadas y revisadas; junto a las 100 iniciales, completan 440 retratos nuevos. Josette Borel-Lincertin y Daniel Zaïdani ya ocupan sus dos paneles del atlas 85, con referencias institucionales identificadas. El registro de acceso queda [resuelto](referencias-pendientes.json). Todos miran fuera de cámara.
 
-**Cierre de frases actualizado:** 321 de los 340 adicionales tienen sus tres textos revisados; faltan 19. El conjunto francés suma 421 perfiles y 1263 frases revisadas. [Estado, fuentes y pendientes](../cloture-frases/README.md).
+**Cierre de frases actualizado:** 339 de los 340 adicionales tienen sus tres textos revisados; faltan 1. El conjunto francés suma 439 perfiles y 1317 frases revisadas. [Estado, fuentes y pendientes](../cloture-frases/README.md).
 
 La [revisión conjunta](revision-global/revision.html) asigna tiers, estadísticas, pasivas y efectos del zasca normal a los 440 nuevos franceses: **176 comunes, 132 raros, 88 especiales y 44 legendarios**, sin cupos por tanda. Se conserva el antes y después y la fuente del cargo utilizado. Se adaptó a vestimenta formal el arte de Bruno Le Maire, Jean-Pierre Chevènement y Jean-Yves Le Drian al subir al máximo tier.
 

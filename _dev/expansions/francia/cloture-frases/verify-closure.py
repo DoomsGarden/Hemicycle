@@ -2,6 +2,8 @@
 from pathlib import Path
 from lxml import html
 from attribution import speaker_marker,spoken_text,is_editorial_excerpt,is_session_date_heading
+from publication import publication_date
+from legacy_assembly import legacy_turns
 import argparse,collections,hashlib,importlib.util,json,re,subprocess,unicodedata
 R=Path(__file__).resolve().parent.parent;P=argparse.ArgumentParser();P.add_argument('--cache',type=Path,required=True);P.add_argument('--initial-cache',type=Path,required=True);P.add_argument('--require-complete',action='store_true');args=P.parse_args();D=args.cache
 spec=importlib.util.spec_from_file_location('initial_verifier',R/'verify-originals.py');initial=importlib.util.module_from_spec(spec);spec.loader.exec_module(initial)
@@ -32,6 +34,16 @@ def check(c,q):
   folder=args.initial_cache/'press-fr'if q['sourceCollection']=='first100_research'else D/('assembly'if q['sourceType']=='assemblee_named_intervention'else'senate');raw=(folder/q['cacheKey']).read_bytes();assert hashlib.sha256(raw).hexdigest()==q['sourceSha256'];root=html.fromstring(raw.decode('utf-8'));evidence=root.xpath(allowed[0]['identityEvidenceXPath']);assert evidence and allowed[0]['identityEvidenceFR']in clean(evidence[0].text_content())
  if q['sourceCollection']=='first100_research':return initial.check_source(c,q,args.initial_cache)
  kind=q['sourceType'];expected=norm(c['name'])
+ if kind=='assemblee_legacy_turn':
+  raw=(D/'assembly'/q['cacheKey']).read_bytes();assert hashlib.sha256(raw).hexdigest()==q['sourceSha256']
+  # These official records declare ISO-8859-1; preserve the original bytes.
+  root=html.fromstring(raw);headings=root.xpath('//h1');assert headings and {dateof(clean(h.text_content()))for h in headings}=={q['spokenOn']}
+  for index,speaker,text,chair in legacy_turns(root):
+   if index==q['paragraphIndex']:
+    assert speaker==expected and q['originalFR']in text
+    if q['speakerCheck'].get('chairIdentityEvidenceFR'):assert chair==q['speakerCheck']['chairIdentityEvidenceFR']
+    return q['source']
+  raise AssertionError('Legacy intervention not found')
  if kind=='senat_turn':
   root=source(q,'senate');speaker=None;pi=-1;day=None
   if q['sourceTitle'].startswith('SEANCE du'):day=dateof(q['sourceTitle'])
@@ -57,9 +69,15 @@ def check(c,q):
  if kind=='vie_publique_declaration':
   root=source(q,'speeches');node=root.xpath('//*[contains(@class,"field--name-field-texte-integral")]')[0]
   for tooltip in node.xpath('.//*[@role="tooltip"]|.//script|.//style'):tooltip.drop_tree()
-  authors=[clean(x.text_content())for x in root.xpath('//*[contains(@class,"vp-intervenant")]//a')];assert len(authors)==1 and norm(authors[0])==expected
+  authors=[clean(x.text_content())for x in root.xpath('//*[contains(@class,"vp-intervenant")]//a')]
+  named_interview=q['speakerCheck']['method']=='interview_named_answer'
+  assert (expected in [norm(a)for a in authors])if named_interview else (len(authors)==1 and norm(authors[0])==expected)
   dates=root.xpath('//*[contains(@class,"field--name-field-date-prononciation-discour")]//time/@datetime');assert dates and dates[0][:10]==q['spokenOn']
   assert not re.search(r'^Conseil des ministres|^Compte rendu du Conseil|^Communiqué du Conseil',q['sourceTitle'],re.I)
+  if named_interview:
+   paragraphs=node.xpath('.//p');text=clean(paragraphs[q['paragraphIndex']].text_content());label=text.split(':',1)
+   assert len(label)==2 and norm(label[0])==expected and q['originalFR']in label[1]
+   return q['source']
   if q['speakerCheck']['method']=='interview_explicit_answer':
    text=clean(node.text_content());markers=list(ANSWER.finditer(text));i=q['speakerCheck']['answerIndex'];m=markers[i];assert norm(m[1])in ['r','reponse','lepresident'];segment=text[m.end():markers[i+1].start()if i+1<len(markers)else len(text)];assert q['originalFR']in segment;return q['source']
   paragraphs=node.xpath('.//p')or[node];speaker=authors[0]
@@ -71,12 +89,19 @@ def check(c,q):
     assert name(speaker)==expected,(c['id'],speaker);assert q['originalFR']in text;return q['source']
   raise AssertionError('Speech paragraph not found')
  if kind=='press_editorially_identified_quote':
-  root=source(q,'press');articles=root.xpath('//article');node=articles[0]if articles else root
+  root=source(q,'press');published=publication_date(root);articles=root.xpath('//article');node=articles[0]if articles else root
+  selected=root.xpath(q['speakerCheck']['paragraphXPath'])if q['speakerCheck'].get('paragraphXPath')else None
   for e in node.xpath('.//script|.//style|.//nav|.//footer'):e.drop_tree()
-  paragraphs=[clean(e.text_content())for e in node.xpath('.//p')];text=paragraphs[q['speakerCheck']['paragraphIndex']]
+  paragraphs=[clean(e.text_content())for e in (selected if selected is not None else node.xpath('.//p'))];text=paragraphs[q['speakerCheck']['paragraphIndex']]
   assert q['originalFR']in text,(c['id'],q['originalFR']);assert q['speakerCheck']['review']
   # Attribution is an explicit individual editorial decision, not name proximity.
-  assert q['spokenOn']is None and q['dateEvidence']=='publication_not_confirmed_speech_date'
+  if q['dateEvidence']=='explicit_speech_date_in_publisher_context':
+   evidence=q['speechDateEvidence'];assert evidence['textFR']in paragraphs[evidence['paragraphIndex']]
+   # The article supplies day/month; its explicit publication year supplies the year.
+   day=dateof(evidence['textFR'])or dateof(evidence['textFR']+' '+q['publishedOn'][:4])
+   assert day==q['spokenOn'] and q['spokenOn']<=q['publishedOn']
+  else:
+   assert q['spokenOn']is None and q['dateEvidence']=='publication_not_confirmed_speech_date'
   if q['speakerCheck'].get('method')=='rtes_explicit_interview_answer':
    from urllib.parse import urlparse
    assert urlparse(q['source']).hostname=='www.rtes.fr' and c['id']=='jeanne-barseghian'
@@ -87,7 +112,17 @@ def check(c,q):
    dates=root.xpath('//article/div[@class="article-header"]/div[@class="date"]')
    assert len(dates)==1 and dateof(clean(dates[0].text_content()))==q['publishedOn']
   else:
-   dates=root.xpath('//meta[@property="article:published_time"]/@content');assert dates and dates[0][:10]==q['publishedOn']
+   assert published==q['publishedOn']
+  return q['source']
+ if kind=='official_pdf_speech':
+  raw=(D/'pdf'/q['cacheKey']).read_bytes();assert hashlib.sha256(raw).hexdigest()==q['sourceSha256']
+  pages=subprocess.check_output(['pdftotext','-layout',str(D/'pdf'/q['cacheKey']),'-']).decode('utf-8').split('\f')
+  evidence=q['speakerCheck'];header=clean(pages[evidence['identityPageIndex']]);assert evidence['identityFR']in header and expected in norm(evidence['identityFR'])
+  assert evidence['dateFR']in header and dateof(evidence['dateFR'])==q['spokenOn']
+  assert q['originalFR']in clean(pages[q['pageIndex']])
+  parent=q['parentSource'];landing=(D/'press'/parent['cacheKey']).read_bytes();assert hashlib.sha256(landing).hexdigest()==parent['sha256']
+  root=html.fromstring(landing.decode('utf-8'));assert q['source']in root.xpath('//a/@href')
+  assert expected in norm(root.findtext('.//title',''))
   return q['source']
  raise AssertionError(kind)
 def main():
@@ -104,6 +139,6 @@ def main():
    sources.add(check(c,q));doc=q.get('physicalDocument',q['source']);words[doc]+=len(q['originalFR'].split())+len(q['textES'].split())
  missing=[{'id':c['id'],'name':c['name']}for c in allcards if c['id']not in ids]
  assert data['enabled']is False
- report={'status':'passed','registrySha256':hashlib.sha256((R/'cloture-frases/frases-validees.json').read_bytes()).hexdigest(),'validatorSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'attributionParserSha256':hashlib.sha256((R/'cloture-frases/attribution.py').read_bytes()).hexdigest(),'homonymSourcePolicySha256':hashlib.sha256((R/'cloture-frases/homonym-source-policy.json').read_bytes()).hexdigest(),'homonymOfficeEvidenceChecked':True,'profilesReviewed':len(ids),'phrasesReviewed':len(seen),'profilesPending':len(missing),'distinctSourcesChecked':len(sources),'allSourceHashesAndSpeakingTurnsChecked':True,'maxSpanishLength':47,'duplicatesWithPublicOrSpanishReserve':False,'enabled':False,'integratedCards':0,'missing':missing};(R/'cloture-frases/qa').mkdir(exist_ok=True);(R/'cloture-frases/qa/verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items()if k!='missing'},ensure_ascii=False))
+ report={'status':'passed','registrySha256':hashlib.sha256((R/'cloture-frases/frases-validees.json').read_bytes()).hexdigest(),'validatorSha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'publicationDateParserSha256':hashlib.sha256((R/'cloture-frases/publication.py').read_bytes()).hexdigest(),'legacyAssemblyParserSha256':hashlib.sha256((R/'cloture-frases/legacy_assembly.py').read_bytes()).hexdigest(),'attributionParserSha256':hashlib.sha256((R/'cloture-frases/attribution.py').read_bytes()).hexdigest(),'homonymSourcePolicySha256':hashlib.sha256((R/'cloture-frases/homonym-source-policy.json').read_bytes()).hexdigest(),'homonymOfficeEvidenceChecked':True,'profilesReviewed':len(ids),'phrasesReviewed':len(seen),'profilesPending':len(missing),'distinctSourcesChecked':len(sources),'allSourceHashesAndSpeakingTurnsChecked':True,'maxSpanishLength':47,'duplicatesWithPublicOrSpanishReserve':False,'enabled':False,'integratedCards':0,'missing':missing};(R/'cloture-frases/qa').mkdir(exist_ok=True);(R/'cloture-frases/qa/verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items()if k!='missing'},ensure_ascii=False))
  if args.require_complete:assert not missing, f'{len(missing)} perfiles todavía sin cierre editorial; no se puede marcar Francia como terminada.'
 if __name__=='__main__':main()

@@ -2,18 +2,19 @@
 from pathlib import Path
 from lxml import html
 import argparse,concurrent.futures,hashlib,json,re,urllib.request,urllib.parse
-p=argparse.ArgumentParser();p.add_argument('--cache',type=Path,required=True);p.add_argument('--ids',type=Path);p.add_argument('--remaining',action='store_true');p.add_argument('--per-profile',type=int,default=8);p.add_argument('--new-only',action='store_true');a=p.parse_args();D=a.cache;R=Path(__file__).resolve().parent.parent;F=Path('/workspace/.hemicycle-tools/state/france-research');S=Path('/workspace/.hemicycle-tools/state/france-selection-work');(D/'press').mkdir(exist_ok=True)
+p=argparse.ArgumentParser();p.add_argument('--cache',type=Path,required=True);p.add_argument('--ids',type=Path);p.add_argument('--remaining',action='store_true');p.add_argument('--per-profile',type=int,default=8);p.add_argument('--new-only',action='store_true');p.add_argument('--additional-hosts',type=Path);a=p.parse_args();D=a.cache;R=Path(__file__).resolve().parent.parent;F=Path('/workspace/.hemicycle-tools/state/france-research');S=Path('/workspace/.hemicycle-tools/state/france-selection-work');(D/'press').mkdir(exist_ok=True)
 cards=json.loads((R/'censo.json').read_text())['cards']+json.loads((R/'ampliacion-340/seleccion.json').read_text())['cards'];old={c['id']for c in json.loads((R/'frases-originales.json').read_text())['cards']};ids=set(json.loads(a.ids.read_text()))if a.ids else{c['id']for c in cards[:100]if c['id']not in old}
 if a.remaining:ids={c['id']for c in cards}-{c['id']for c in json.loads((R/'cloture-frases/frases-validees.json').read_text())['cards']}
 previous=json.loads((D/'press-reference-index.json').read_text())if(D/'press-reference-index.json').exists()else[];known={(r['id'],r['url'])for r in previous}
 allowed={'rtl.fr','lefigaro.fr','lemonde.fr','liberation.fr','francetvinfo.fr','france3-regions.francetvinfo.fr','humanite.fr','sudouest.fr','lyoncapitale.fr','vie-publique.fr','elysee.fr','assemblee-nationale.fr','senat.fr','rtes.fr','information.tv5monde.com','province-sud.nc','lnc.nc'};targets=[]
+if a.additional_hosts:allowed.update(h.removeprefix('www.')for h in json.loads(a.additional_hosts.read_text()))
 for card in cards:
  if card['id']not in ids:continue
  file=(F/'wiki'/f"{card['id']}.html")if card in cards[:100]else(S/'selected-profiles'/f"{card['id']}.html")
  if not file.exists():continue
  root=html.fromstring(file.read_bytes().decode('utf-8'));links=[]
  for anchor in root.xpath('//span[contains(@class,"reference-text")]//a[@href]|//span[contains(@class,"reference-text")]/ancestor::li//a[@href]'):
-  u=anchor.get('href');host=urllib.parse.urlparse(u).hostname or'';host=host.removeprefix('www.')
+  u=anchor.get('href');u=('https://'+u[7:])if u.startswith('http://')else u;u=urllib.parse.urldefrag(u)[0];host=urllib.parse.urlparse(u).hostname or'';host=host.removeprefix('www.')
   if host not in allowed:continue
   text=' '.join(anchor.getparent().text_content().split())
   if not u.startswith('http')or u in[x['url']for x in links]:continue

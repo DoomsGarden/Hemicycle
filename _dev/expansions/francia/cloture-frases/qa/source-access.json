@@ -3,7 +3,7 @@
   "state": "published_enforced",
   "draftId": "4f4d8b62-6fa1-4527-85d1-3b629f6bec01~cecfgdraft_6aed9432da5c819296253ddf5a56c175",
   "requiresPublish": false,
-  "note": "El usuario publicó el entorno; se verificó la política aplicada, revisión 20. El acceso permitido no garantiza que una URL antigua exista ni que el servidor responda.",
+  "note": "El primer borrador se aplicó en la revisión 20 y la ampliación de 18 dominios en la revisión 22. El acceso permitido no garantiza que una URL antigua exista ni que el servidor responda. El último borrador de Macaire sigue pendiente de publicación.",
   "references": [
     {
       "host": "www.rtes.fr",
@@ -54,16 +54,16 @@
       "status": 404
     }
   ],
-  "observedSpecRevision": "20",
+  "observedSpecRevision": "22",
   "resolvedWithAlternativeVerifiedSources": {
     "pierre-hurmic": "https://www.lefigaro.fr/bordeaux/environnement-securite-endettement-quel-est-le-bilan-du-maire-ecologiste-pierre-hurmic-cinq-ans-apres-son-election-a-bordeaux-20250704",
     "francois-asselineau": "http://www.lefigaro.fr/elections/presidentielles/2017/03/10/35003-20170310ARTFIG00231-francois-asselineau-candidat-pourfendeur-de-l-europe-et-de-l-imperialisme-americain.php"
   },
   "nextSourceAccess": {
-    "state": "draft_saved_requires_user_publish",
+    "state": "published_enforced",
     "requiresNewDraft": false,
-    "draftApplied": false,
-    "currentPublishedRevision": "20",
+    "draftApplied": true,
+    "currentPublishedRevision": "22",
     "references": [
       {
         "id": "louis-mapou",
@@ -229,6 +229,36 @@
       }
     ],
     "draftId": "4f4d8b62-6fa1-4527-85d1-3b629f6bec01~cecfgdraft_6aedc263a2d0819286a13e4e51c95046",
-    "requiresPublish": true
+    "requiresPublish": false,
+    "observedSpecRevision": "22"
+  },
+  "latestReview": {
+    "observedSpecRevision": "22",
+    "all18RequestedHostsPresent": true,
+    "profilesClosedThisTurn": 18,
+    "profilesStillPending": 1,
+    "noteES": "Se consultaron los nuevos dominios y buscadores oficiales, se revisaron individualmente originales y traducciones y se cerraron 18 perfiles. No todos los servidores o enlaces antiguos responden aunque su dominio esté permitido."
+  },
+  "finalProfileSourceAccess": {
+    "state": "draft_saved_not_applied",
+    "draftId": "4f4d8b62-6fa1-4527-85d1-3b629f6bec01~cecfgdraft_6aedcdbc7e708192a6455ee7738d8847",
+    "requiresPublish": true,
+    "profileId": "jean-francois-macaire",
+    "domains": [
+      "revolutionsilencieuse.blogspot.fr",
+      "revolutionsilencieuse.blogspot.com",
+      "desirsdavenirparis.over-blog.com"
+    ],
+    "references": [
+      {
+        "url": "https://revolutionsilencieuse.blogspot.fr/",
+        "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+      },
+      {
+        "url": "https://desirsdavenirparis.over-blog.com/pages/JeanFrancois_Macaire-2413765.html",
+        "error": "<urlopen error Tunnel connection failed: 403 Forbidden>"
+      }
+    ],
+    "noteES": "Referencias identificadas en el perfil documentado, pendientes de consulta y revisión. El dominio .com cubre la posible redirección del blog histórico .fr. No se atribuyen citas a partir de títulos ni de resúmenes."
   }
 }

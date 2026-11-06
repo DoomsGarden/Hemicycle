@@ -1,8 +1,8 @@
 # Francia · cierre editorial de frases
 
-Estado del **06-11-2026**: **1263 frases revisadas para 421 de los 440 nuevos oradores**. Quedan **19 perfiles y 57 frases por cerrar**. La primera tanda tiene 100 de 100 perfiles revisados; los adicionales, 321 de 340. Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.
+Estado del **06-11-2026**: **1317 frases revisadas para 439 de los 440 nuevos oradores**. Queda **1 perfil y 3 frases por cerrar**. La primera tanda tiene 100 de 100 perfiles revisados; los adicionales, 339 de 340. Francia sigue en preparación y la reserva permanece desactivada, con cero cromos integrados en el juego.
 
-[Galería de los 440 perfiles](revision.html) · [CSV](frases.csv) · [Registro revisado](frases-validees.json) · [Estado](estado.json) · [Comprobación de fuentes](qa/verification.json) · [Estado de accesos](qa/source-access.json) · [19 perfiles pendientes](pendientes-fuentes.json).
+[Galería de los 440 perfiles](revision.html) · [CSV](frases.csv) · [Registro revisado](frases-validees.json) · [Estado](estado.json) · [Comprobación de fuentes](qa/verification.json) · [Estado de accesos](qa/source-access.json) · [1 perfil pendiente](pendientes-fuentes.json).
 
 ## Selección y atribución
 
@@ -18,27 +18,31 @@ La auditoría reforzada corrigió diez atribuciones de intervenciones ajenas y d
 
 Se corrigieron también [20 fechas de intervenciones](decisions-session-date-corrections.json): una fecha de ley o referencia histórica en el título temático no es la fecha de la audiencia. El verificador utiliza el encabezado explícito del día de sesión y comprueba cada pasaje.
 
+La última selección se conserva en [decisiones de prensa](decisions-press-07.json) y [decisiones de documentos oficiales](decisions-documents-01.json). Los discursos en PDF de Harold Martin y Philippe Germain se comprueban contra los bytes originales, la página exacta, el encabezado de autor y fecha y el enlace desde el portal oficial. Las actas antiguas de la Asamblea conservan su codificación declarada; una interrupción cambia al hablante. En las intervenciones presididas por Tony Dreyfus se comprueba además el encabezado de presidencia, sin atribuirle los discursos a los que concede la palabra. En la entrevista de Paul Quilès se diferencian las respuestas que llevan su nombre de las preguntas y del entrevistador que también figura en los metadatos.
+
+Las fechas de publicación se leen de metadatos explícitos del editor, del artículo estructurado o de la fecha visible. En el antiguo portal de Nueva Caledonia se conserva la fecha original `dc:date`: el metadato social de 2016 puede corresponder a la migración del sitio. Cuando la noticia confirma el día de la intervención, se guarda también el pasaje que lo acredita. Nunca se infiere una fecha a partir de la dirección de la página.
+
 ## Fuentes y accesos
 
-Se cotejaron 684 direcciones de fuentes para las 1263 frases actuales. Las capturas completas y los documentos de investigación se conservan fuera de Git:
+Se cotejaron 704 direcciones de fuentes para las 1317 frases actuales. Las capturas completas y los documentos de investigación se conservan fuera de Git:
 
 - Investigación inicial: `/workspace/.hemicycle-tools/state/france-research`.
 - Cierre actual: `/workspace/.hemicycle-tools/state/france-quote-closure`.
 
 La investigación descargada o una coincidencia de palabras no valida automáticamente una cita. Las candidatas extraídas conservan su estado sin revisar hasta comprobar autor, contexto, sentido y traducción. Los artículos completos y las fotografías de referencia no se redistribuyen en el repositorio.
 
-El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión 20. RTES y fuentes alternativas de Le Figaro permitieron cerrar los 100 perfiles iniciales. Quedan 19 perfiles y 57 frases por cerrar. Se guardó una ampliación de acceso para 18 dominios con referencias concretas bloqueadas. El gestor exige que el usuario revise, guarde y publique el nuevo borrador para aplicarlo; todavía no está aplicado. El [listado pendiente](pendientes-fuentes.json) separa las referencias por consultar de las citas aprobadas. Habilitar un dominio no garantiza que una URL antigua siga existiendo ni valida una cita. Francia no se marca como terminada.
+El usuario publicó el entorno y se comprobó la política de acceso aplicada, revisión 22. RTES y fuentes alternativas de Le Figaro permitieron cerrar los 100 perfiles iniciales. Queda 1 perfil y 3 frases por cerrar. Los 18 dominios de la ampliación anterior ya están aplicados. Se guardó un último borrador para los tres dominios del blog oficial y la reproducción de entrevista de Jean-François Macaire, únicos accesos nuevos pendientes de publicación. El [listado pendiente](pendientes-fuentes.json) separa las referencias por consultar de las citas aprobadas. Habilitar un dominio no garantiza que una URL antigua siga existiendo ni valida una cita. Francia no se marca como terminada.
 
 ## Comprobaciones y continuación
 
 ```sh
-PYTHONDONTWRITEBYTECODE=1 python _dev/expansions/francia/cloture-frases/test_attribution.py
+PYTHONDONTWRITEBYTECODE=1 python -m unittest discover -s _dev/expansions/francia/cloture-frases -p 'test_*.py'
 PYTHONDONTWRITEBYTECODE=1 python _dev/expansions/francia/cloture-frases/verify-closure.py --cache /workspace/.hemicycle-tools/state/france-quote-closure --initial-cache /workspace/.hemicycle-tools/state/france-research
 node _dev/expansions/francia/cloture-frases/build-review.cjs
 NODE_PATH=/workspace/.hemicycle-tools/node_modules node _dev/expansions/francia/cloture-frases/browser-review.cjs
 ```
 
-El generador de la galería exige un informe de verificación vigente que coincida con los hashes del registro, del verificador y del detector de hablantes. La opción `--require-complete` del verificador rechaza el cierre del país mientras falte algún perfil. Las comprobaciones del navegador revisan las 440 imágenes, la asociación de cada texto con su autor y fuente, los filtros, el apoyo compartido y pantallas de 320, 393, 768 y 1200 píxeles.
+El generador de la galería exige un informe de verificación vigente que coincida con los hashes del registro, del verificador, de los detectores de hablantes y del lector de fechas. Las 26 pruebas de regresión cubren también cambios de presidencia, interrupciones y fechas originales frente a migraciones o barras laterales. La opción `--require-complete` del verificador rechaza el cierre del país mientras falte algún perfil. Las comprobaciones del navegador revisan las 440 imágenes, la asociación de cada texto con su autor y fuente, los filtros, el apoyo compartido y pantallas de 320, 393, 768 y 1200 píxeles.
 
 Para continuar, se reconstruye la investigación con el detector actualizado, se revisan los originales y se congela una selección explícita antes de traducirla. `apply-parliament-decisions.py` exige `--reviewed-fragments` con estado `originals_manually_reviewed_and_frozen`; una lista automática de candidatas no puede importarse directamente. Después se coteja todo el registro y se regenera la galería. Los lotes descartados de la carpeta de investigación no se reutilizan sin volver a comprobar la pareja original-traducción.
 
