@@ -10,9 +10,11 @@ La selección combina responsabilidades de gobierno, representación parlamentar
 
 ## Estado del 06-11-2026
 
-338 de las 340 ilustraciones están generadas y revisadas. Permanecen pendientes Josette Borel-Lincertin y Daniel Zaïdani, por el acceso a sus referencias visuales documentado en [referencias-pendientes.json](referencias-pendientes.json). Sus dos huecos del atlas 85 están vacíos y no aparecen como arte de un cromo. La corrección de orientación de Émile Zuccarelli conserva el resultado anterior y el prompt de edición en el registro de arte.
+Las 340 ilustraciones adicionales están generadas y revisadas; junto a las 100 iniciales, completan 440 retratos nuevos. Josette Borel-Lincertin y Daniel Zaïdani ya ocupan sus dos paneles del atlas 85, con referencias institucionales identificadas. El registro de acceso queda [resuelto](referencias-pendientes.json). Todos miran fuera de cámara.
 
-La revisión de mirada se vincula al hash de la imagen concreta aprobada; una generación posterior no sustituye automáticamente el resultado revisado. La preparación de cargos de los 440 perfiles para el ajuste conjunto está en [revision-global](revision-global/README.md); todavía no asigna nuevos tiers, pasivas ni efectos.
+La [revisión conjunta](revision-global/revision.html) asigna tiers, estadísticas, pasivas y efectos del zasca normal a los 440 nuevos franceses: **176 comunes, 132 raros, 88 especiales y 44 legendarios**, sin cupos por tanda. Se conserva el antes y después y la fuente del cargo utilizado. Se adaptó a vestimenta formal el arte de Bruno Le Maire, Jean-Pierre Chevènement y Jean-Yves Le Drian al subir al máximo tier.
+
+La revisión de mirada está vinculada al hash de la imagen concreta aprobada. Las correcciones de pose, vestuario y cierre del atlas conservan sus prompts e historial. **Queda pendiente el cierre de las frases; la reserva sigue sin integrarse o activarse.**
 
 ## Orden de trabajo autorizado
 
@@ -20,7 +22,7 @@ La revisión de mirada se vincula al hash de la imagen concreta aprobada; una ge
 2. Al terminar las ilustraciones, revisar conjuntamente **tiers, pasivas y efectos del zasca normal** de los nuevos franceses, atendiendo a relevancia, responsabilidad y etapa representada, además del equilibrio del juego. La tanda de procedencia no fija el tier. Las mecánicas son ficticias, no descripciones de cualidades personales.
 3. Las frases siguen el método acordado: original y hablante comprobados, traducción española, encaje en zasca normal, fuerte o apoyo compartido por defensa y curación, fuentes y contexto. Las menciones personales de terceros se sustituyen por cargos acreditados o expresiones neutras y se documentan. No se considera aprobada una frase solo por haberla encontrado.
 
-Los tiers, efectos y pasivas de los 100 anteriores se conservan durante la generación. Los 340 adicionales tienen esos campos pendientes de la revisión conjunta; el número de prioridad del CSV solo organiza la selección y no es una rareza. El progreso real de arte se consulta en `seleccion.json` y la galería; las referencias descargadas no equivalen a ilustraciones generadas.
+El ajuste ya incluye los 100 anteriores y los 340 adicionales. Las decisiones y su justificación están en `revision-global/ajuste.json`; `revision-global/antes.json` conserva las propuestas previas. La prioridad de selección inicial no se ha reutilizado como rareza. El progreso real de arte se consulta en `seleccion.json` y la galería; las referencias descargadas no equivalen a ilustraciones generadas.
 
 ## Publicación y trazabilidad
 

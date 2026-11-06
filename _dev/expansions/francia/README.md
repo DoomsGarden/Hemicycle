@@ -2,27 +2,27 @@
 
 [Revisión privada con arte y frases](revision.html) · [Listado](listado.md) · [CSV](censo.csv) · [Datos](censo.json) · [Método de traducción](metodo-frases.md).
 
-[Revisión legal del 05-11-2026](revision-legal.md): los avisos vigentes describen esta metodología; se documentan la trazabilidad y las actualizaciones necesarias al activar la ampliación. La reserva está oculta en el juego y excluida de Pages; los archivos de desarrollo enviados a GitHub son consultables según la visibilidad del repositorio.
+[Revisión legal actualizada el 06-11-2026](revision-legal.md): los avisos vigentes describen esta metodología; se documentan la trazabilidad y las actualizaciones necesarias al activar la ampliación. La reserva está oculta en el juego y excluida de Pages; los archivos de desarrollo enviados a GitHub son consultables según la visibilidad del repositorio.
 
-La [ampliación autorizada de 340](ampliacion-340/README.md) exige actividad documentada en 2010–2026 y está en preparación. Tras su arte se revisarán conjuntamente tiers, pasivas y efectos del zasca normal de los nuevos franceses. La primera tanda conserva durante ese trabajo sus tiers actuales. El objetivo de esta fase es de 443 franceses, sin cerrar el censo del país.
+La [ampliación de 340](ampliacion-340/README.md) ya tiene sus ilustraciones completas. Se ha realizado la [revisión conjunta de 440](ampliacion-340/revision-global/revision.html), con 176 comunes, 132 raros, 88 especiales y 44 legendarios, además de pasivas y efectos básicos ajustados a cargos y trayectoria. El objetivo de esta fase es de 443 franceses incluidos los tres activos, cuyos datos se conservan. El cierre de frases permanece pendiente y la reserva no está activada.
 
 Estado de investigación: **5 de noviembre de 2026**. Todo permanece en `_dev`, excluido de Pages y del catálogo jugable. No se ha cambiado la versión pública ni se han anunciado estos cromos en el changelog.
 
 | Parte | Preparado | Pendiente |
 | --- | --- | --- |
-| Identidades | 100 nombres nuevos, sin duplicados con los 120 activos ni los 339 españoles reservados | Preparar los 340 adicionales de 2010–2026; el censo definitivo sigue abierto |
-| Tiers y mecánicas | Propuesta para los 100, con estadísticas, efecto básico y doctrina existentes | Ajuste global tras el arte de los 440 nuevos de esta fase; no por cuotas de tanda |
+| Identidades | 100 nombres nuevos y 340 adicionales preparados, sin duplicados con los 120 activos ni los 339 españoles reservados | El censo definitivo sigue abierto |
+| Tiers y mecánicas | Ajuste conjunto de 440 completado, con estadísticas, efecto básico y doctrina existentes | Prueba de juego tras cerrar las frases e integrar una reserva de prueba |
 | Perfiles | 100 páginas consultadas; homónimo de Bruno Bernard resuelto al político | Contraste integral de trayectoria, afiliación y etapa representada |
-| Arte | 100 retratos provisionales en 25 atlas originales, todos con cabeza y ojos fuera de cámara | Revisión final de identidad y vestuario |
+| Arte | 100 retratos revisados en 25 atlas originales, todos con cabeza y ojos fuera de cámara; vestuario formal revisado en el máximo tier | Conservación del historial y de las referencias |
 | Frases bilingües | 252 fragmentos para 84 perfiles, con original y hablante cotejados en 115 fuentes | 48 selecciones adicionales; revisión del tono para las 252 candidatas |
 | Prensa española | 54 candidatas previas para 23 perfiles, cotejadas en 22 noticias | No se consideran originales franceses verificados ni se suman como frases finales |
 | Cromos terminados e integrados | 0 | Completar la preparación antes de incorporarlos a una reserva de prueba |
 
-Se excluyen **Emmanuel Macron, Christine Lagarde y Marine Le Pen**, ya presentes en el catálogo. Con los 100 nuevos se prevén 103 franceses; no es el total definitivo del país. `countryCensusComplete` permanece en `false` y `finalFrenchCount` en `null`.
+Se excluyen **Emmanuel Macron, Christine Lagarde y Marine Le Pen**, ya presentes en el catálogo. Esta primera tanda y los tres activos suman 103; con los 340 adicionales, la fase reúne 443 franceses. No es el censo definitivo del país. `countryCensusComplete` permanece en `false` y `finalFrenchCount` en `null`.
 
 La ventana comprende **5-11-1986 a 5-11-2026**, priorizando 2010–2026. Un mandato anterior no excluye a quien continuó activo durante la ventana: Giscard d’Estaing se incluye por su representación europea y la Convención Europea; Badinter por el Consejo Constitucional y el Senado. Los resúmenes no afirman que las personas conserven sus cargos hoy. Las afiliaciones son referencias de etapas pendientes de contraste.
 
-La distribución propuesta sigue siendo 40 comunes, 30 raros, 20 especiales y 10 legendarios. Es provisional. El ajuste conjunto se hará tras completar a todos los integrantes de la selección francesa, revisando también las estadísticas y el vestuario que cambien de tier. Las asignaciones de efectos y pasivas son mecánicas ficticias del juego.
+La distribución conjunta revisada es de 176 comunes, 132 raros, 88 especiales y 44 legendarios para los 440 nuevos. La primera tanda contiene ahora 32 comunes, 13 raros, 24 especiales y 31 legendarios; esa distribución se deriva del conjunto y no de un cupo por tanda. Las mecánicas usan las estadísticas, seis doctrinas y catorce efectos ya existentes.
 
 ## Material de revisión
 

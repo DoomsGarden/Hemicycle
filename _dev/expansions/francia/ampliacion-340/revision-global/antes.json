@@ -1,0 +1,4762 @@
+{
+  "francois-mitterrand": {
+    "rarityProposal": "legendario",
+    "cost": 4,
+    "zasca": 7,
+    "aguante": 11,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "jacques-chirac": {
+    "rarityProposal": "legendario",
+    "cost": 5,
+    "zasca": 7,
+    "aguante": 14,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "nicolas-sarkozy": {
+    "rarityProposal": "legendario",
+    "cost": 4,
+    "zasca": 7,
+    "aguante": 11,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "francois-hollande": {
+    "rarityProposal": "legendario",
+    "cost": 5,
+    "zasca": 7,
+    "aguante": 14,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "valery-giscard-d-estaing": {
+    "rarityProposal": "legendario",
+    "cost": 4,
+    "zasca": 7,
+    "aguante": 11,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "lionel-jospin": {
+    "rarityProposal": "legendario",
+    "cost": 5,
+    "zasca": 7,
+    "aguante": 14,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "michel-rocard": {
+    "rarityProposal": "legendario",
+    "cost": 4,
+    "zasca": 7,
+    "aguante": 11,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "laurent-fabius": {
+    "rarityProposal": "legendario",
+    "cost": 5,
+    "zasca": 7,
+    "aguante": 14,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "simone-veil": {
+    "rarityProposal": "legendario",
+    "cost": 4,
+    "zasca": 7,
+    "aguante": 11,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "robert-badinter": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "alain-juppe": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "francois-fillon": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "manuel-valls": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "edouard-philippe": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "jean-castex": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "elisabeth-borne": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "gabriel-attal": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "francois-bayrou": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "jean-pierre-raffarin": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "michel-barnier": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "sebastien-lecornu": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "bernard-cazeneuve": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "dominique-de-villepin": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "jean-luc-melenchon": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "segolene-royal": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "martine-aubry": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "gerard-larcher": {
+    "rarityProposal": "legendario",
+    "cost": 4,
+    "zasca": 7,
+    "aguante": 11,
+    "escanos": 5,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "yael-braun-pivet": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "francois-de-rugy": {
+    "rarityProposal": "especial",
+    "cost": 3,
+    "zasca": 5,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "richard-ferrand": {
+    "rarityProposal": "especial",
+    "cost": 4,
+    "zasca": 6,
+    "aguante": 8,
+    "escanos": 4,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "bruno-le-maire": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "gerald-darmanin": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "christiane-taubira": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "jean-pierre-chevenement": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "jean-louis-borloo": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "anne-hidalgo": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "laurent-wauquiez": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "bruno-retailleau": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "xavier-bertrand": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "valerie-pecresse": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "rachida-dati": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "najat-vallaud-belkacem": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "marisol-touraine": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "jean-yves-le-drian": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "florence-parly": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "sylvie-goulard": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "stephane-sejourne": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "pierre-moscovici": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "benoit-hamon": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "arnaud-montebourg": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "olivier-faure": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "fabien-roussel": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "eric-ciotti": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "eric-zemmour": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "marion-marechal": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "jordan-bardella": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "yannick-jadot": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "francois-ruffin": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "raphael-glucksmann": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "marine-tondelier": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "rama-yade": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "sandrine-rousseau": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "clementine-autain": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "mathilde-panot": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "manon-aubry": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "aurore-berge": {
+    "rarityProposal": "raro",
+    "cost": 3,
+    "zasca": 4,
+    "aguante": 7,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "agnes-pannier-runacher": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "amelie-de-montchalin": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "agnes-buzyn": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "aurelien-pradie": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "jean-francois-cope": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "valerie-boyer": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "valerie-rabault": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "boris-vallaud": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "carole-delga": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "johanna-rolland": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "nathalie-appere": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "gregory-doucet": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "bruno-bernard": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "jeanne-barseghian": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "pierre-hurmic": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "eric-piolle": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "francois-baroin": {
+    "rarityProposal": "raro",
+    "cost": 2,
+    "zasca": 4,
+    "aguante": 6,
+    "escanos": 3,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "christian-estrosi": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "david-lisnard": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "philippe-poutou": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "nathalie-arthaud": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "archive",
+      "name": "Hemeroteca insistente",
+      "description": "Tras causar daño con un básico, el rival que sobreviva pierde 1 Aguante al comienzo de sus dos próximos turnos propios."
+    }
+  },
+  "francois-asselineau": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "tongue",
+      "name": "Lengua de trapo",
+      "description": "Tras causar daño con un básico, el siguiente básico del rival que sobreviva tiene −1 Zasca, con mínimo de 1. Caduca al terminar su siguiente turno."
+    }
+  },
+  "jean-lassalle": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "shield",
+      "name": "Argumentario plastificado",
+      "description": "Tras causar daño con un básico a un orador, absorbe 1 punto del siguiente básico recibido, después de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "nicolas-dupont-aignan": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "microphone",
+      "name": "Micrófono indiscreto",
+      "description": "Tras causar daño con un básico, el rival que sobreviva recibe +1 de daño del próximo básico que lo golpee, antes de la defensa. Caduca al terminar su siguiente turno."
+    }
+  },
+  "florian-philippot": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "acta",
+      "name": "Fuera del acta",
+      "description": "Tras causar daño con un básico, el rival que sobreviva aporta 1 voto pasivo menos en su próximo turno. No cambia sus escaños de expulsión ni los 3 votos base."
+    }
+  },
+  "jean-philippe-tanguy": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "paperwork",
+      "name": "Papeles traspapelados",
+      "description": "Tras causar daño con un básico, la próxima defensa o curación voluntaria del rival que sobreviva cuesta 1 TdP. Caduca al terminar su siguiente turno. No afecta a cartas de acción."
+    }
+  },
+  "sebastien-chenu": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "escort",
+      "name": "Yo respondo",
+      "description": "Tras causar daño con un básico a un orador, desvía hacia sí el próximo básico dirigido a otro compañero, una sola vez. Caduca al terminar su siguiente turno. No atrae fuertes, acciones ni ataques a huecos."
+    }
+  },
+  "laure-lavalette": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "fineprint",
+      "name": "Letra pequeña",
+      "description": "Tras causar daño con un básico a un orador, su siguiente básico recupera 1 punto del daño evitado por una defensa del 50 %, sin superar el daño sin defensa. Se consume aunque no haya defensa y caduca al terminar su siguiente turno."
+    }
+  },
+  "louis-aliot": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "foco",
+      "name": "Foco Mediático",
+      "description": "Tu Líder regenera 1 de Aguante por turno y sus ataques suman +1 voto."
+    },
+    "basicEffectProposal": {
+      "id": "bank",
+      "name": "Dietas guardadas",
+      "description": "Tras causar daño con un básico a un orador, reserva 1 TdP sobrante al cerrar el turno y lo devuelve al comenzar el siguiente. Una reserva por bancada, tope de 8 TdP. Se pierde si sale el portador; no crea recursos."
+    }
+  },
+  "steeve-briois": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "viperina",
+      "name": "Lengua Viperina",
+      "description": "Tus oradores infligen +2 de daño al Líder rival."
+    },
+    "basicEffectProposal": {
+      "id": "summon",
+      "name": "Llamada al suplente",
+      "description": "Tras causar daño con un básico a un orador, roba el orador de menor coste de tu propio mazo, de cualquier rareza, si tienes menos de dos oradores en mano. En empates sigue el orden del mazo. Una activación por turno propio y jugador. No crea copias ni rescata expulsados. Hay que pagar su coste para presentarlo."
+    }
+  },
+  "nicolas-bay": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "verborrea",
+      "name": "Verborrea",
+      "description": "+1 TdP al entrar el Líder y por turno. Las expulsiones reservan +2 TdP para el próximo turno activo. Máximo: 8 TdP."
+    },
+    "basicEffectProposal": {
+      "id": "fasttrack",
+      "name": "Ventanilla rápida",
+      "description": "Tras causar daño con un básico a un orador, adelanta 1 turno la recuperación de una carta de acción de apoyo del mazo a la que le queden al menos 2 turnos. Si hay dos elegibles, escoge una al azar. Una activación por turno propio y jugador, compartida entre sus portadores. No afecta a la curación del orador."
+    }
+  },
+  "nathalie-loiseau": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "guardia",
+      "name": "Vieja Guardia",
+      "description": "Tus oradores ganan +1 Zasca al terminar tu turno (máx. +3 mientras esté activa)."
+    },
+    "basicEffectProposal": {
+      "id": "lane",
+      "name": "Debate encarrilado",
+      "description": "Tras causar daño con un básico, el rival que sobreviva no puede dirigir su próximo básico a un hueco para retirar votos. Puede atacar oradores o usar apoyos y fuertes. Caduca al terminar su siguiente turno."
+    }
+  },
+  "clement-beaune": {
+    "rarityProposal": "comun",
+    "cost": 1,
+    "zasca": 2,
+    "aguante": 4,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "aforado",
+      "name": "Aforado",
+      "description": "Cada orador puede evitar una expulsión por debate y quedarse con 3 de Aguante."
+    },
+    "basicEffectProposal": {
+      "id": "surge",
+      "name": "Se viene arriba",
+      "description": "Tras causar daño con un básico a un orador, gana +1 Zasca para su básico del próximo turno propio. Caduca al terminar ese turno."
+    }
+  },
+  "marc-fesneau": {
+    "rarityProposal": "comun",
+    "cost": 2,
+    "zasca": 2,
+    "aguante": 5,
+    "escanos": 2,
+    "passiveProposal": {
+      "id": "giro",
+      "name": "Giro de Guion",
+      "description": "Quien ataca a un orador tuyo recibe 1 de daño."
+    },
+    "basicEffectProposal": {
+      "id": "coffee",
+      "name": "Café parlamentario",
+      "description": "Tras causar daño con un básico a un orador, recupera 1 Aguante al comenzar su próximo turno propio, sin superar su máximo."
+    }
+  },
+  "jean-marc-ayrault": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pierre-mauroy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gerard-collomb": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bernard-accoyer": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "claude-bartolone": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-pierre-bel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christian-poncelet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-louis-debre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-strauss-kahn": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "louis-mermaz": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michele-alliot-marie": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nicolas-hulot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jack-lang": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "charles-pasqua": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pierre-mehaignerie": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christian-noyer": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-claude-trichet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-villeroy-de-galhau": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michel-delebarre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-pierre-soisson": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alain-lamassoure": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-arthuis": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-noel-barrot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-baudis": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-michel-baylet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "daniel-cohn-bendit": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "olivier-besancenot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-louis-bourlanges": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jose-bove": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-george-buffet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-vautrin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-marie-cavada": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "cecile-duflot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-christophe-lagarde": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "joseph-daul": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-de-villiers": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-voynet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "herve-morin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "robert-hue": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-marie-le-pen": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pierre-laurent": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "noel-mamere": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michel-sapin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "roland-lescure": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nicole-belloubet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "eric-besson": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-michel-blanquer": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christophe-castaner": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-colonna": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "luc-chatel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "eric-dupond-moretti": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "matthias-fekl": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gerard-longuet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-jacques-urvoas": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-nunez": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michel-mercier": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "vincent-peillon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "anne-genetet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "antoine-armand": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "claude-gueant": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "didier-migaud": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "edouard-geffray": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "eric-lombard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pap-ndiaye": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alain-rousset": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alfred-marie-jeanne": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "ary-chalus": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "huguette-bello": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "benoit-payan": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bertrand-delanoe": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-bonneau": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christian-bourquin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-bussereau": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "loig-chesnais-girard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christelle-morancais": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-claude-gaudin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "didier-robert": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-guite-dufay": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gabriel-serville": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gilles-simeoni": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-paul-huchon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-jack-queyranne": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-luc-moudenc": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-marcangeli": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "serge-letchimy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "victorin-lurel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "martin-malvy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "martine-vassal": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "renaud-muselier": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "paul-verges": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-richert": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "annick-girardin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "roselyne-bachelot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alain-le-vern": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "damien-alary": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "rodolphe-alexandre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "annie-genevard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jacques-auxiette": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-paul-bachy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-beauvais": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "josette-borel-lincertin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "claude-gewerc": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "daniel-percheron": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-paul-denanot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jerome-durain": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "eric-woerth": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "fabrice-pannekoucke": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marina-ferrari": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "stephane-le-foll": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "franck-leroy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "franck-riester": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-francois-macaire": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gerard-vandenbroucke": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-pierre-masseret": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-rottner": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pierrick-massiot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nicolas-mayer-rossignol": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michel-vauzelle": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "rene-souchon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "amelie-oudea-castera": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "benoist-apparu": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "astrid-panosyan-bouvet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "audrey-azoulay": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "aurelie-filippetti": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-baptiste": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "barbara-pompili": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "ericka-bareigts": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christophe-bechu": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bernard-kouchner": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "brigitte-bourguignon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nicole-bricq": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-noel-buffet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "emmanuelle-cosse": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "genevieve-darrieussecq": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "henri-de-raincourt": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "julien-denormandie": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-perben": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "olivier-dussopt": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "myriam-el-khomri": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marc-ferracci": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "genevieve-fioraso": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laura-flessel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "valerie-fourneyron": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francoise-gatel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francoise-nyssen": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "frederic-mitterrand": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "frederique-vidal": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jacqueline-gourault": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "stanislas-guerini": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "guillaume-kasbarian": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jacques-mezard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "patrick-kanner": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurence-rossignol": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-saint-martin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marylise-lebranchu": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "valerie-letard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-luce-penchard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "roxana-maracineanu": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nadine-morano": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "naima-moutchou": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "muriel-penicaud": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "olivier-veran": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-tabarot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "sylvia-pinel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "sylvie-retailleau": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "damien-abad": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "rima-abdul-malak": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "agnes-firmin-le-bodo": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alberic-de-montgolfier": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alexandre-loubet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alexis-corbiere": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "franck-allisio": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "david-amiel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "andre-chassaigne": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gil-averous": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "monique-barbut": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-barsacq": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-bas": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "julien-bayou": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-xavier-bellamy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bertrand-pancher": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-douste-blazy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "manuel-bompard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "florent-boudie": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bruno-sido": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jerome-cahuzac": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christian-cambon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "maryse-carrere": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gilles-carrez": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-deroche": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-morin-desailly": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-pegard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "cecile-cukierman": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "cedric-perrin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "herve-de-charette": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "charles-de-courson": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "charlotte-parmentier-lecocq": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "cyrielle-chatelain": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christine-lavarde": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christophe-naegelen": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "paul-christophe": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-claude-lenoir": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "claude-malhuret": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "claude-raynal": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "clemence-guette": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "eric-coquerel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "david-cormand": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "daniel-raoul": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "daniele-obono": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "danielle-simonnet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "xavier-darcos": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "mathieu-darnaud": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "david-douillet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "josselin-de-rohan": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marielle-de-sarnez": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "edwige-diaz": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "didier-guillaume": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-estrosi-sassone": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "vincent-eble": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "elisabeth-guigou": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "fabrice-leggeri": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "fadila-khattabi": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-pierre-farandou": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-francois-husson": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-francois-longeot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-patriat": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-rebsamen": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "francois-sauvadet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "frederic-valletoux": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-paul-garraud": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "thomas-gassilloud": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gilles-le-gendre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "joel-giraud": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "guillaume-gontard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "valerie-hayer": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "herve-marseille": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "herve-maurey": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "patrick-hetzel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "sacha-houlie": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-jacobelli": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-michel-jacques": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-leonetti": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-paul-mattei": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-pierre-sueur": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-vincent-place": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "vincent-jeanbrun": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "muriel-jourda": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "julien-odoul": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "roger-karoutchi": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-lafon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "maurice-leroy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "sylvain-maillard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "thierry-mariani": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-marini": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "olivier-marleix": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-martin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "thomas-menage": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "robert-menard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-mouiller": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "yannick-neuder": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "patrick-ollier": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "younous-omarjee": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "serge-papin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "paul-quiles": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "stephane-peu": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "sophie-primas": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "stephanie-rist": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "stephane-travert": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "brice-hortefeux": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pascal-clement": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jacques-toubon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alain-richard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alcide-ponga": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "thierry-breton": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "moetai-brotherson": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christian-sautter": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "cynthia-ligeard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "daniel-vaillant": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "edouard-fritch": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gaston-flosse": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "gaston-tong-sang": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-germain": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "philippe-gomes": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "harold-martin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "louis-mapou": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "oscar-temaru": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "thierry-santa": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "ben-issa-ousseni": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "daniel-zaidani": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "soibahadine-ibrahim-ramadani": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nicole-ameline": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "andre-laignel": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "brigitte-girardin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-tasca": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "patrick-devedjian": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "herve-gaymard": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alain-carignon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "andre-rossinot": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-louis-bianco": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "frederique-bredin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "brice-lalonde": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bruno-durieux": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "catherine-trautmann": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michel-charasse": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christian-jacob": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marc-philippe-daubresse": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-paul-delevoye": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "tony-dreyfus": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "emile-zuccarelli": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-glavany": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michele-andre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "bernard-debre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "christine-boutin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "yves-cochet": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "frederic-cuvillier": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "fleur-pellerin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "roger-gerard-schwartzenberg": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "martin-hirsch": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-josee-roig": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "serge-lepeltier": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-agnes-poussier-winsback": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "veronique-louwagie": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "alain-vidalies": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "kader-arif": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "marie-arlette-carlotti": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-baptiste-djebbari": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "jean-baptiste-lemoyne": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "yamina-benguigui": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "benjamin-haddad": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-bertinotti": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "maud-bregeon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "pascal-canfin": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "laurent-cathala": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "thomas-cazenave": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "clara-chappaz": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "nathalie-delattre": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "michele-delaunay": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "dominique-faure": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "sarah-el-hairy": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  },
+  "emmanuelle-wargon": {
+    "rarityProposal": null,
+    "cost": null,
+    "zasca": null,
+    "aguante": null,
+    "escanos": null,
+    "passiveProposal": null,
+    "basicEffectProposal": null
+  }
+}

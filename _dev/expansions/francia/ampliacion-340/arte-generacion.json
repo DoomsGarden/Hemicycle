@@ -8058,14 +8058,33 @@
       "sheet": "art/fr02-85.png",
       "ids": [
         "sarah-el-hairy",
-        "emmanuelle-wargon"
+        "emmanuelle-wargon",
+        "josette-borel-lincertin",
+        "daniel-zaidani"
       ],
       "names": [
         "Sarah El Haïry",
-        "Emmanuelle Wargon"
+        "Emmanuelle Wargon",
+        "Josette Borel-Lincertin",
+        "Daniel Zaïdani"
       ],
       "prompt": "Create a provisional Hemiciclo TCG portrait atlas in exactly TWO COLUMNS AND TWO ROWS, overall vertical 3:4, each equal quadrant 3:4. Generate ONLY TWO people, one in each TOP quadrant. The BOTTOM TWO quadrants are deliberately pending: fill each with a quiet empty dark institutional backdrop, NO people, NO faces, NO silhouettes, NO text or icons. The FIRST TWO photos identify the TWO different politicians in reading order. The THIRD reference is ONLY the digital painting STYLE; never reproduce its subjects. Original semi-realistic digital painting, visible fine brushwork, dramatic but natural stage lighting, sharp recognizable individual faces, architectural depth, full hair and breathing room, empty lower corners for later UI. No text, emblems, logos, flags, borders, jewelry logos or UI. ALL heads and eyes must look well away from the camera, toward an off-frame colleague. TOP LEFT: Sarah El Haïry, match the corresponding photo and these observed features: shoulder-length straight dark hair, a broad warm smile, distinctive dark eyebrows, no glasses. Chest-up, full head rotated clearly 65 degrees RIGHT, BOTH pupils also RIGHT, absolutely no glance back at the viewer. Clothing: a tailored navy jacket over an elegant pale open-neck blouse, restrained earrings, no tie. Background: a contemporary state briefing room with teal panels, warm oak and cool sidelight, a single low slender lectern microphone. TOP RIGHT: Emmanuelle Wargon, match the corresponding photo and these observed features: short tightly curled brown hair, rectangular glasses, a narrow face and distinctive high cheekbones. Chest-up, full head rotated clearly 65 degrees LEFT, BOTH pupils also LEFT, absolutely no glance back at the viewer. Clothing: a softly tailored burgundy jacket over a cream blouse, understated everyday professional attire. Background: a public regulatory committee room with pale stone, deep-green seating and warm library lighting, no microphone. ",
-      "edits": [],
+      "edits": [
+        {
+          "tool": "image_gen.imagegen",
+          "prompt": "Complete ONLY the TWO EMPTY BOTTOM PANELS of the FIRST image, a four-portrait Hemiciclo TCG atlas. Preserve the two existing TOP portraits, faces, gazes, clothes and compositions. The SECOND photo identifies Josette Borel-Lincertin, who belongs ONLY in BOTTOM LEFT. The THIRD photo identifies Daniel Zaïdani, who belongs ONLY in BOTTOM RIGHT. Create original semi-realistic digital paintings matching the atlas's fine brushwork, sharp individual faces, lighting and architectural depth, not pasted photographs. BOTTOM LEFT: Josette Borel-Lincertin, mature woman, brown skin, black hair smoothly pulled back, distinctive broad face, red lipstick, gold hoop earrings, a light beige tailored jacket, softly patterned scarf and understated pearl necklace based on her reference. Chest-up, full hair and breathing room, head rotated a clear 65–75 degrees RIGHT and BOTH eyes and pupils looking RIGHT at an unseen colleague far outside the frame. Her background is a regional council chamber with warm cream stone, dark teal panels and soft amber side lighting; no microphone. BOTTOM RIGHT: Daniel Zaïdani, broad rounded face, dark skin, clean shaven, very short tightly curled dark hair with gray at temples, recognizable warm speaking expression from his photo. Gray professional suit, pale shirt and restrained patterned tie. Chest-up, entire head clearly rotated 65–75 degrees LEFT, BOTH pupils LEFT, looking toward an off-frame colleague, one low slender lectern microphone and a restrained low speaking hand. Background: an institutional meeting room, green leather, warm oak and cool window light. ABSOLUTELY NO EYE CONTACT with the camera in any portrait; no almost-frontal head. Four equal edge-to-edge panels, 2 columns by 2 rows, exact overall vertical 3:4. No extra people, no text, no flags, no emblems, no logos, no borders or UI.",
+          "baseOriginalOutput": "exec-2e7c1467-0a00-43a9-8b66-e5190302ba3b.png",
+          "targetIds": [
+            "josette-borel-lincertin",
+            "daniel-zaidani"
+          ],
+          "referencedImages": [
+            "exec-2e7c1467-0a00-43a9-8b66-e5190302ba3b.png",
+            "josette-borel-lincertin-institutional.jpg",
+            "daniel-zaidani-institutional.jpg"
+          ]
+        }
+      ],
       "references": [
         {
           "id": "sarah-el-hairy",
@@ -8088,31 +8107,42 @@
           "consulted": "2026-11-05",
           "identityPhotoReview": "reference_visually_reviewed",
           "rightsNote": "Referencia identificada, sin redistribución de la fotografía ni afirmación de licencia o autorización."
-        }
-      ],
-      "pendingPanels": [
-        {
-          "index": 2,
-          "id": "josette-borel-lincertin",
-          "reason": "pending_verified_photo_reference"
         },
         {
-          "index": 3,
+          "id": "josette-borel-lincertin",
+          "page": "https://departements.fr/deux-vies-de-josette-borel-lincertin/",
+          "pageSha256": "a4d357356831f3cf2b150f78242d4b8fff3e258cef9eb7717b0f495a66bd531c",
+          "photo": "https://www.departements.fr/wp-content/uploads/2017/04/971_Guadeloupe_Josette-Borel-Lincertin.jpg",
+          "photoSha256": "6ecde377b0b6ac7c2923bfdcd798d43afbe24a75bd89135f9722f25faf28e036",
+          "caption": "Josette Borel-Lincertin · portrait identifié dans sa présentation par Départements de France.",
+          "consulted": "2026-11-06",
+          "identityPhotoReview": "reference_visually_reviewed",
+          "rightsNote": "Referencia identificada, sin redistribución de la fotografía ni afirmación de licencia o autorización."
+        },
+        {
           "id": "daniel-zaidani",
-          "reason": "pending_verified_photo_reference"
+          "page": "https://www.mayotte.fr/le-departement/fonctionnement-institutionnel/les-presidents-depuis-1977/zaidani",
+          "pageSha256": "cd6f14e89dfa0a22e57ddd71529a3cc0d41a8bc0961cec1cff0e84465aeb72e1",
+          "photo": "https://www.mayotte.fr/medias/presidents/d_zaidani.jpg",
+          "photoSha256": "9dc651bf8b339975604abe2332db557d82f258967b78de120e462d9843eacaf6",
+          "caption": "Daniel ZAÏDANI : Président de l’Assemblée de Mayotte de Mayotte de 2011 à 2015",
+          "consulted": "2026-11-06",
+          "identityPhotoReview": "reference_visually_reviewed",
+          "rightsNote": "Referencia identificada, sin redistribución de la fotografía ni afirmación de licencia o autorización."
         }
       ],
+      "pendingPanels": [],
       "status": "generated_provisional_pending_global_review",
       "tool": "image_gen.imagegen",
       "generatedOn": "2026-11-06",
-      "sha256": "2991e2711b6d047b60e1f6a1a93dc5fd69433a18b27b89feef41d97f778130ff",
-      "originalOutput": "exec-2e7c1467-0a00-43a9-8b66-e5190302ba3b.png",
+      "sha256": "8ea5f41237a317b0fad66b0423e64367d5fee80ce645e1b22856768c20fa3bc2",
+      "originalOutput": "exec-ae730241-e9e6-4b33-a9d2-4785202add81.png",
       "gazeReview": {
         "status": "reviewed_off_camera",
         "reviewedOn": "2026-11-06",
-        "reviewedImageSha256": "2991e2711b6d047b60e1f6a1a93dc5fd69433a18b27b89feef41d97f778130ff",
+        "reviewedImageSha256": "8ea5f41237a317b0fad66b0423e64367d5fee80ce645e1b22856768c20fa3bc2",
         "directEyeContact": false,
-        "scope": "Inspección visual de los 2 retratos generados; cabeza y ojos orientados fuera de cámara. Los paneles pendientes no se cuentan como retratos."
+        "scope": "Inspección visual de los 4 retratos generados; cabeza y ojos orientados fuera de cámara. Los paneles pendientes no se cuentan como retratos."
       }
     }
   ]

@@ -24,8 +24,8 @@ const data=require('./seleccion.json');
   }
   await page.locator('#search').fill('Raymond Barre');assert.equal(await page.locator('article:visible').count(),0);
   await page.locator('#search').fill('Ayrault');assert.equal(await page.locator('article:visible').count(),1);
-  const card=page.locator('article:visible');await card.locator('details').evaluate(el=>el.open=true);
-  assert.equal(await card.locator('details a').first().getAttribute('href'),data.cards.find(c=>c.id==='jean-marc-ayrault').recentPeriodEvidence[0].source);
+  const card=page.locator('article:visible'),evidence=card.locator('details').first();await evidence.evaluate(el=>el.open=true);
+  assert.equal(await evidence.locator('a').first().getAttribute('href'),data.cards.find(c=>c.id==='jean-marc-ayrault').recentPeriodEvidence[0].source);
   for(const width of [320,393,768,1200]){
    await page.setViewportSize({width,height:900});
    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Overflow at '+width);

@@ -12,7 +12,7 @@ for(const c of data.cards){
  assert.ok(c.gazeBrief.includes('No se admite ninguna mirada al espectador'));
  assert.equal(c.referenceStatus,'perfil_consultado_contraste_integral_de_trayectoria_pendiente');assert.ok(!catalog.cards.some(x=>x.id===c.id));assert.ok(!reserve.sourceCards.some(x=>x.id===c.id));
 }
-const distribution=Object.fromEntries(['comun','raro','especial','legendario'].map(t=>[t,data.cards.filter(c=>c.rarityProposal===t).length]));assert.deepEqual(distribution,{comun:40,raro:30,especial:20,legendario:10});
+const distribution=Object.fromEntries(['comun','raro','especial','legendario'].map(t=>[t,data.cards.filter(c=>c.rarityProposal===t).length]));assert.deepEqual(distribution,data.workflow.tierReviewStatus==='reviewed'?data.distribution:{comun:40,raro:30,especial:20,legendario:10});
 const profiles=require('./perfiles-consultados.json').profiles,art=require('./primera-100/arte-generacion.json').sheets,originals=require('./frases-originales.json');
 assert.equal(profiles.length,100);assert.equal(new Set(profiles.map(p=>p.id)).size,100);
 for(const p of profiles){assert.equal(data.cards.find(c=>c.id===p.id).referenceToCheck,p.url);assert.match(p.htmlSha256,/^[a-f0-9]{64}$/);}

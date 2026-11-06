@@ -1,22 +1,31 @@
 {
-  "status": "pending_verified_visual_references",
+  "status": "resolved",
   "date": "2026-11-06",
   "profiles": [
     {
       "id": "josette-borel-lincertin",
       "name": "Josette Borel-Lincertin",
       "source": "https://departements.fr/deux-vies-de-josette-borel-lincertin/",
-      "domain": "departements.fr"
+      "domain": "departements.fr",
+      "photo": "https://www.departements.fr/wp-content/uploads/2017/04/971_Guadeloupe_Josette-Borel-Lincertin.jpg",
+      "photoSha256": "6ecde377b0b6ac7c2923bfdcd798d43afbe24a75bd89135f9722f25faf28e036",
+      "sourceSha256": "a4d357356831f3cf2b150f78242d4b8fff3e258cef9eb7717b0f495a66bd531c",
+      "portraitStatus": "generated_and_reviewed"
     },
     {
       "id": "daniel-zaidani",
       "name": "Daniel Zaïdani",
       "source": "https://www.mayotte.fr/le-departement/fonctionnement-institutionnel/les-presidents-depuis-1977/zaidani",
-      "domain": "www.mayotte.fr"
+      "domain": "www.mayotte.fr",
+      "photo": "https://www.mayotte.fr/medias/presidents/d_zaidani.jpg",
+      "photoSha256": "9dc651bf8b339975604abe2332db557d82f258967b78de120e462d9843eacaf6",
+      "sourceSha256": "cd6f14e89dfa0a22e57ddd71529a3cc0d41a8bc0961cec1cff0e84465aeb72e1",
+      "portraitStatus": "generated_and_reviewed"
     }
   ],
-  "lastAccessResult": "Tunnel connection failed: 403 Forbidden",
+  "lastAccessResult": "200 OK: páginas y retratos identificados consultados y descargados",
   "networkDraft": "4f4d8b62-6fa1-4527-85d1-3b629f6bec01~cecfgdraft_6aed0f1d298c819299f30e4827ad40c7",
-  "requiresPublish": true,
-  "noGeneratedIdentityWithoutVerifiedReference": true
+  "requiresPublish": false,
+  "noGeneratedIdentityWithoutVerifiedReference": true,
+  "resolvedOn": "2026-11-06"
 }

@@ -21,7 +21,7 @@ const http=require('node:http');
   await p.selectOption('#art','true');a.equal(await p.locator('article:visible').count(),review.generatedPortraits);
   await p.selectOption('#art','false');a.equal(await p.locator('article:visible').count(),100-review.generatedPortraits);await p.selectOption('#art','');
   for(const width of [320,393,768,1200]){await p.setViewportSize({width,height:900});a.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
-  await p.selectOption('#tier','legendario');a.equal(await p.locator('article:visible').count(),10);await p.selectOption('#tier','');
+  await p.selectOption('#tier','legendario');a.equal(await p.locator('article:visible').count(),require('./censo.json').cards.filter(c=>c.rarityProposal==='legendario').length);await p.selectOption('#tier','');
   await p.locator('#search').fill('Bardella');a.equal(await p.locator('article:visible').count(),1);
   const card=p.locator('article:visible');a.equal(await card.locator('blockquote').count(),3);a.ok((await card.textContent()).includes('El Gobierno del primer ministro ya es historia'));
   await card.locator('details').nth(1).evaluate(e=>e.open=true);await p.setViewportSize({width:393,height:900});await card.scrollIntoViewIfNeeded();await p.screenshot({path:path.join(__dirname,'qa/candidates-393.png'),fullPage:true});

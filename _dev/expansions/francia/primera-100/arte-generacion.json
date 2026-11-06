@@ -375,14 +375,26 @@
       "status": "generated_provisional",
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
-      "sha256": "7516791062672ef286948be72cbf4b73b16c01b9e1007d28623fdbf6f4ad7784",
-      "originalOutput": "exec-15a752fe-3988-4c52-8261-6ce35382fc6f.png",
+      "sha256": "7fb79a8eae3c455db45af63f07a04430a6a96e42805fff7257ecbb9fcddab9ef",
+      "originalOutput": "exec-b814c9a7-ae22-4702-a7de-639e0fab8016.png",
       "gazeReview": {
         "status": "reviewed_off_camera",
-        "reviewedOn": "2026-11-05",
+        "reviewedOn": "2026-11-06",
         "directEyeContact": false,
-        "scope": "Inspección visual de cabeza y ojos; sin mirada a cámara."
-      }
+        "scope": "Inspección visual de cabeza y ojos; sin mirada a cámara.",
+        "reviewedImageSha256": "7fb79a8eae3c455db45af63f07a04430a6a96e42805fff7257ecbb9fcddab9ef"
+      },
+      "wardrobeEdits": [
+        {
+          "date": "2026-11-06",
+          "tool": "image_gen.imagegen",
+          "prompt": "Edit ONLY the CLOTHING in the TOP LEFT portrait (bruno-le-maire) of this existing four-panel TCG atlas. Close the shirt collar neatly, add a deep navy silk tie, and refine that person's jacket into a well-fitted formal dark tailored suit appropriate for a senior national institutional responsibility. Preserve the face and recognizable identity, facial expression, age, hair, ALL head angles and BOTH eye directions exactly; the person must continue looking OFF CAMERA. Preserve the speaking hand, microphone, posture, background and digital-painting style. Leave the other THREE portraits, clothes, faces and gazes unchanged. Keep the exact four equal panels, two by two grid and overall vertical 3:4 canvas. No text, logos, flags, frames or UI.",
+          "targetId": "bruno-le-maire",
+          "baseSha256": "7516791062672ef286948be72cbf4b73b16c01b9e1007d28623fdbf6f4ad7784",
+          "previousOriginalOutput": "exec-15a752fe-3988-4c52-8261-6ce35382fc6f.png",
+          "resultOriginalOutput": "exec-b814c9a7-ae22-4702-a7de-639e0fab8016.png"
+        }
+      ]
     },
     {
       "sheet": "art/fr01-06.png",
@@ -748,14 +760,26 @@
       "status": "generated_provisional",
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
-      "sha256": "baff644779f282240fb1648384d393a70228c2d8f1ac33edbe079b6b7307a3b2",
-      "originalOutput": "exec-9adf0424-b282-4be0-b6e5-a880a19a6ccc.png",
+      "sha256": "151ede54c8b8412971bc5b5d75dda3b33c2ee9a4e06e3f5c02e43fbf10d47416",
+      "originalOutput": "exec-ad6dd0df-2c1e-46aa-ae2a-fa02a2ef5e5e.png",
       "gazeReview": {
         "status": "reviewed_off_camera",
-        "reviewedOn": "2026-11-05",
+        "reviewedOn": "2026-11-06",
         "directEyeContact": false,
-        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
-      }
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara.",
+        "reviewedImageSha256": "151ede54c8b8412971bc5b5d75dda3b33c2ee9a4e06e3f5c02e43fbf10d47416"
+      },
+      "wardrobeEdits": [
+        {
+          "date": "2026-11-06",
+          "tool": "image_gen.imagegen",
+          "prompt": "Edit ONLY the CLOTHING in the BOTTOM LEFT portrait (jean-pierre-chevenement) of this existing four-panel TCG atlas. Close the shirt collar neatly, add a restrained burgundy silk tie, and refine that person's jacket into a well-fitted formal dark tailored suit appropriate for a senior national institutional responsibility. Preserve the face and recognizable identity, facial expression, age, hair, ALL head angles and BOTH eye directions exactly; the person must continue looking OFF CAMERA. Preserve the speaking hand, microphone, posture, background and digital-painting style. Leave the other THREE portraits, clothes, faces and gazes unchanged. Keep the exact four equal panels, two by two grid and overall vertical 3:4 canvas. No text, logos, flags, frames or UI.",
+          "targetId": "jean-pierre-chevenement",
+          "baseSha256": "baff644779f282240fb1648384d393a70228c2d8f1ac33edbe079b6b7307a3b2",
+          "previousOriginalOutput": "exec-9adf0424-b282-4be0-b6e5-a880a19a6ccc.png",
+          "resultOriginalOutput": "exec-ad6dd0df-2c1e-46aa-ae2a-fa02a2ef5e5e.png"
+        }
+      ]
     },
     {
       "sheet": "art/fr01-11.png",
@@ -821,14 +845,26 @@
       "status": "generated_provisional",
       "tool": "image_gen",
       "generatedOn": "2026-11-05",
-      "sha256": "ff1c45383ee87d18f6cea49f80c9f314b7c87814d68fa580d94e47942514ec0c",
-      "originalOutput": "exec-935a0a6d-0583-4a12-93b5-8bf83e7f5be1.png",
+      "sha256": "4c442e1545997d50eaebb972aba07c5582ceccd4cf92566ed08095a53ab0f3b6",
+      "originalOutput": "exec-8e9ea881-7663-43bf-80ff-9ab407a50bab.png",
       "gazeReview": {
         "status": "reviewed_off_camera",
-        "reviewedOn": "2026-11-05",
+        "reviewedOn": "2026-11-06",
         "directEyeContact": false,
-        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara."
-      }
+        "scope": "Inspección visual de los cuatro cuadrantes; cabezas y ojos orientados fuera de cámara.",
+        "reviewedImageSha256": "4c442e1545997d50eaebb972aba07c5582ceccd4cf92566ed08095a53ab0f3b6"
+      },
+      "wardrobeEdits": [
+        {
+          "date": "2026-11-06",
+          "tool": "image_gen.imagegen",
+          "prompt": "Edit ONLY the CLOTHING in the BOTTOM RIGHT portrait (jean-yves-le-drian) of this existing four-panel TCG atlas. Close the shirt collar neatly, add a restrained dark-blue silk tie, and refine that person's jacket into a well-fitted formal dark tailored suit appropriate for a senior national institutional responsibility. Preserve the face and recognizable identity, facial expression, age, hair, ALL head angles and BOTH eye directions exactly; the person must continue looking OFF CAMERA. Preserve the speaking hand, microphone, posture, background and digital-painting style. Leave the other THREE portraits, clothes, faces and gazes unchanged. Keep the exact four equal panels, two by two grid and overall vertical 3:4 canvas. No text, logos, flags, frames or UI.",
+          "targetId": "jean-yves-le-drian",
+          "baseSha256": "ff1c45383ee87d18f6cea49f80c9f314b7c87814d68fa580d94e47942514ec0c",
+          "previousOriginalOutput": "exec-935a0a6d-0583-4a12-93b5-8bf83e7f5be1.png",
+          "resultOriginalOutput": "exec-8e9ea881-7663-43bf-80ff-9ab407a50bab.png"
+        }
+      ]
     },
     {
       "sheet": "art/fr01-12.png",
