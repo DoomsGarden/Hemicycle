@@ -14,7 +14,11 @@ with open('/tmp/hemicycle-individual-portraits.lock','w') as lock:
   if control.exists() and json.loads(control.read_text()).get('pause'):
    print('[]');sys.exit(0)
   allowed=set(json.loads(Path(sys.argv[3]).read_text())) if len(sys.argv)>3 else None
-  jobs=[j for j in data['jobs'] if j['status']=='pending' and (allowed is None or j['source'] in allowed)][:int(sys.argv[2])]
+  candidates=[j for j in data['jobs'] if j['status']=='pending' and (allowed is None or j['source'] in allowed)]
+  candidates.sort(key=lambda j:not bool(j.get('failedAttempts')))
+  active=sum(j['status']=='generating' for j in data['jobs'])
+  limit=json.loads(control.read_text()).get('maxInFlight',24) if control.exists() else 24
+  jobs=candidates[:max(0,min(int(sys.argv[2]),limit-active))]
   for job in jobs:job.update(status='generating',startedAt=datetime.datetime.now(datetime.timezone.utc).isoformat())
   manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');print(json.dumps([{k:j[k] for k in ['id','name','country','rarity','source','quadrant','target']} for j in jobs],ensure_ascii=False));sys.exit(0)
  if sys.argv[1]=='--failed':
@@ -23,6 +27,7 @@ with open('/tmp/hemicycle-individual-portraits.lock','w') as lock:
   valid=job.get('generated') and target.exists() and hashlib.sha256(target.read_bytes()).hexdigest()==job.get('sha256')
   if valid:
    job.setdefault('failedAttempts',[]).append({'error':sys.argv[3],'preservedRecordedImage':True})
+   if job['status']!='approved':job['status']='generated_pending_review'
   else:job.update(status='blocked',error=sys.argv[3])
   manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');sys.exit(0)
  if sys.argv[1]=='--unreserve':

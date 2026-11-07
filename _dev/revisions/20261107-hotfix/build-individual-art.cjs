@@ -14,7 +14,7 @@ function apply(data,options={}){
  for(const j of ready){
   assert.equal(j.target,'assets/orators/individuals-20261107/'+j.id+'.webp');assert.equal(j.dimensions[0]*4,j.dimensions[1]*3,j.id+': AR');
   assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,j.target))).digest('hex'),j.sha256,j.id+': hash');
-  data[j.id]={url:j.target,key:j.id,columns:1,rows:1,aspect:[3,4],framing:{scale:1,x:0,y:0}};
+  data[j.id]={url:j.target+'?v='+j.sha256.slice(0,12),key:j.id,columns:1,rows:1,aspect:[3,4],framing:{scale:1,x:0,y:0}};
  }
  return data;
 }

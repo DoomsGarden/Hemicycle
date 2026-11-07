@@ -23,7 +23,7 @@ const html=fs.readFileSync(root+'/index.html','utf8').replace('function boot(){'
   for(let offset=0;!process.argv.includes('--isolation-only')&&offset<ids.length;offset+=24){
    const batch=ids.slice(offset,offset+24);await page.evaluate(batch=>Repair.render(batch),batch);
    await page.evaluate(async()=>{for(const src of new Set(Array.from(document.querySelectorAll('.hotfix-audit svg image'),el=>el.getAttribute('href')))){const i=new Image();i.src=src;await i.decode();}});
-   const file=(unreviewed?reviewPrefix:preview?'individual-preview-':'all-new-')+String(offset/24).padStart(2,'0')+'.png';await page.locator('.hotfix-audit').screenshot({path:path.join(qa,file)});sheets.push({file,ids:batch});
+   const file=(unreviewed?reviewPrefix:preview?'individual-preview-':'all-new-')+String(offset/24).padStart(2,'0')+'.jpg';await page.locator('.hotfix-audit').screenshot({path:path.join(qa,file),type:'jpeg',quality:90});sheets.push({file,ids:batch});
   }
   // For every actual framing, alter ONLY the neighbouring cells. The target's
   // rendered pixels must remain identical, in collection, enlarged and pack sizes.
