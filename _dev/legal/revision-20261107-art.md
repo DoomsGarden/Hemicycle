@@ -9,3 +9,5 @@ Se ha detectado una cifra obsoleta en los créditos legales: «360 frases utiliz
 Aunque el cambio es editorial, el contenido aceptado tiene una huella completa. Por ello se prepara la edición documental `2026-11-07.1`, sin sobrescribir la edición anterior ni sus recibos. Antes de publicar el cliente, registrar `_dev/legal/20261107_art_correction_release.sql` en Supabase. El SQL es idempotente, conserva las ediciones anteriores y se ha probado dos veces sobre la infraestructura legal existente. La versión visible del juego sigue siendo **v32.0.0.2**.
 
 El usuario confirmó «Success» al aplicar el SQL en Supabase el 7 de noviembre de 2026. Las ilustraciones pendientes siguen sin considerarse terminadas ni publicadas.
+
+El usuario ha aprobado conservar provisionalmente sólo el arte anterior de Renaud Muselier con el encuadre mostrado y ha autorizado la publicación. El resto de la ampliación incluye 778 retratos individuales nuevos; también se sustituyen cuatro retratos de la colección original que compartían lámina. La excepción y su prueba de aislamiento quedan documentadas por separado de las nuevas generaciones.

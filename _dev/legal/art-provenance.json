@@ -20756,11 +20756,39 @@
         }
       }
     },
-    "pending": [
-      {
-        "id": "renaud-muselier",
-        "status": "blocked"
+    "pending": [],
+    "retainedExistingArtwork": {
+      "renaud-muselier": {
+        "file": "assets/orators/francia-fr02-23.webp",
+        "sourceSha256": "7428f8b44e58518a5be88aeb72b0e264357876b9c25c0092ac870c447694c0aa",
+        "method": "Existing illustration retained with isolated framing; not a new generation.",
+        "art": {
+          "url": "assets/orators/francia-fr02-23.webp",
+          "key": "renaud-muselier",
+          "columns": 2,
+          "rows": 2,
+          "column": 0,
+          "row": 0,
+          "aspect": [
+            3,
+            4
+          ],
+          "clipInset": 0.020000000000000018,
+          "framing": {
+            "scale": 1.02,
+            "x": -0.010000000000000009,
+            "y": -0.010000000000000009
+          }
+        },
+        "approval": {
+          "answer": "Conservar provisionalmente solo su arte anterior y publicar",
+          "recordedAt": "2026-11-07T21:28:14.051838+00:00",
+          "preview": "qa/renaud-legacy-preview.jpg",
+          "isolationReport": "qa/renaud-legacy-preview.json"
+        }
       }
-    ]
+    },
+    "expandedPortraitsIndividuallyRenewed": 778,
+    "originalPortraitReplacements": 4
   }
 }

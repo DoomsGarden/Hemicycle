@@ -18,7 +18,7 @@ Forma un gabinete de **ocho oradores**, elige a tu líder y añade **cuatro cart
 
 Hemiciclo está en **prelanzamiento**, versión **v32.0.0.2**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
-La corrección de esta edición utiliza retratos individuales verticales 3:4 para la ampliación de España y Francia, con encuadre coherente en cromos y sobres. También recupera el aviso animado de regalos y el recordatorio del buzón cuando quedan recompensas pendientes.
+La corrección de esta edición renueva 778 retratos de España y Francia con ilustraciones individuales verticales 3:4 y encuadre coherente en cromos y sobres. Renaud Muselier conserva provisionalmente su arte anterior con el encuadre corregido. También recupera el aviso animado de regalos y el recordatorio del buzón cuando quedan recompensas pendientes.
 
 **Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Los jugadores anteriores a diciembre conservan los estilos de la ampliación; los nuevos los incorporan al reclamar los hitos correspondientes. Elige también entre **ocho opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
 

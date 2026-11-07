@@ -5,7 +5,18 @@ function apply(data,options={}){
  const jobs=JSON.parse(fs.readFileSync(manifest,'utf8')).jobs,expected=require('../20261107/tier-review.json').cards.filter(c=>!c.original).map(c=>c.id);
  assert.equal(jobs.length,779);assert.equal(new Set(jobs.map(j=>j.id)).size,779);assert.deepEqual(jobs.map(j=>j.id).sort(),expected.sort());
  const ready=jobs.filter(j=>j.status==='approved'||options.preview&&j.status==='generated_pending_review');
- if(!options.preview)assert.equal(ready.length,779,'No publicar una sustitución parcial: faltan ilustraciones individuales aprobadas.');
+ const retained=jobs.filter(j=>j.status==='legacy_retained_approved');
+ assert.ok(retained.length<=1,'Sólo está autorizada una excepción de arte anterior.');
+ for(const j of retained){
+  assert.equal(j.id,'renaud-muselier');assert.equal(j.userApprovedException.answer,'Conservar provisionalmente solo su arte anterior y publicar');
+  const proof=JSON.parse(fs.readFileSync(path.join(__dirname,j.userApprovedException.isolationReport),'utf8'));
+  assert.equal(proof.id,j.id);assert.equal(proof.sourceSha256,j.legacySourceSha256);assert.deepEqual(proof.art,j.legacyArt);
+  assert.ok(proof.trials.some(t=>t.scale===j.legacyArt.framing.scale&&t.differences.length===5&&t.differences.every(d=>d.changed===0)));
+  assert.equal(j.legacyArt.url,j.source);assert.equal(j.legacyArt.context,undefined);assert.deepEqual(j.legacyArt.aspect,[3,4]);
+  assert.equal(crypto.createHash('sha256').update(fs.readFileSync(path.join(root,j.source))).digest('hex'),j.legacySourceSha256);
+  data[j.id]={...j.legacyArt,url:j.source+'?v='+j.legacySourceSha256.slice(0,12)};
+ }
+ if(!options.preview)assert.equal(ready.length+retained.length,779,'Faltan retratos aprobados o la excepción expresamente autorizada.');
  const originals=JSON.parse(fs.readFileSync(path.join(__dirname,'original-individual-portraits.json'),'utf8')).jobs;
  assert.deepEqual(originals.map(j=>j.id).sort(),['javier-maroto','jordi-turull','patxi-lopez','teodoro-garcia-egea']);
  const originalReady=originals.filter(j=>j.status==='approved'||options.preview&&j.status==='generated_pending_review');
@@ -21,6 +32,6 @@ function apply(data,options={}){
 if(require.main===module){
  const preview=process.argv.includes('--preview'),data=apply(JSON.parse(fs.readFileSync(path.join(__dirname,'art-before.json'),'utf8')),{preview});
  if(preview){fs.mkdirSync(path.join(__dirname,'qa'),{recursive:true});fs.writeFileSync(path.join(__dirname,'qa/preview-art.json'),JSON.stringify(data));console.log('Preview only; application unchanged.');}
- else{const target=path.join(root,'js/orator-art.js'),text='(function(root,data){if(typeof module==="object"&&module.exports)module.exports=data;else root.HemicycleOratorArt=data;})(typeof globalThis!=="undefined"?globalThis:this,'+JSON.stringify(data)+');\n';if(process.argv.includes('--check'))assert.equal(fs.readFileSync(target,'utf8'),text);else fs.writeFileSync(target,text);console.log('779 independent 3:4 portraits, full-bleed, approved.');}
+ else{const target=path.join(root,'js/orator-art.js'),text='(function(root,data){if(typeof module==="object"&&module.exports)module.exports=data;else root.HemicycleOratorArt=data;})(typeof globalThis!=="undefined"?globalThis:this,'+JSON.stringify(data)+');\n';if(process.argv.includes('--check'))assert.equal(fs.readFileSync(target,'utf8'),text);else fs.writeFileSync(target,text);console.log('778 approved individual expansion portraits, four original replacements and one expressly approved retained illustration.');}
 }
 module.exports={apply};

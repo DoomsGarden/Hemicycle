@@ -10722,7 +10722,7 @@
       "source": "assets/orators/francia-fr02-23.webp",
       "quadrant": "TOP LEFT",
       "target": "assets/orators/individuals-20261107/renaud-muselier.webp",
-      "status": "blocked",
+      "status": "legacy_retained_approved",
       "role": "Président du conseil régional de Provence-Alpes-Côte d'Azur",
       "startedAt": "2026-11-07T20:56:56.859726+00:00",
       "failedAttempts": [
@@ -10740,7 +10740,32 @@
           "reference": "https://fr.wikipedia.org/wiki/Renaud_Muselier"
         }
       ],
-      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 1e6e0790-a5ef-4975-be67-e428a06ce236.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")"
+      "error": "image generation failed: http 400 Bad Request: Some(\"{\\n  \\\"error\\\": {\\n    \\\"message\\\": \\\"Your request was rejected by the safety system. If you believe this is an error, contact us at help.openai.com and include the request ID 1e6e0790-a5ef-4975-be67-e428a06ce236.\\\",\\n    \\\"type\\\": \\\"image_generation_user_error\\\",\\n    \\\"param\\\": null,\\n    \\\"code\\\": \\\"moderation_blocked\\\",\\n    \\\"moderation_details\\\": {\\n      \\\"moderation_stage\\\": \\\"output\\\",\\n      \\\"categories\\\": [\\n        \\\"other\\\"\\n      ]\\n    }\\n  }\\n}\")",
+      "legacyArt": {
+        "url": "assets/orators/francia-fr02-23.webp",
+        "key": "renaud-muselier",
+        "columns": 2,
+        "rows": 2,
+        "column": 0,
+        "row": 0,
+        "aspect": [
+          3,
+          4
+        ],
+        "clipInset": 0.020000000000000018,
+        "framing": {
+          "scale": 1.02,
+          "x": -0.010000000000000009,
+          "y": -0.010000000000000009
+        }
+      },
+      "legacySourceSha256": "7428f8b44e58518a5be88aeb72b0e264357876b9c25c0092ac870c447694c0aa",
+      "userApprovedException": {
+        "answer": "Conservar provisionalmente solo su arte anterior y publicar",
+        "recordedAt": "2026-11-07T21:28:14.051838+00:00",
+        "preview": "qa/renaud-legacy-preview.jpg",
+        "isolationReport": "qa/renaud-legacy-preview.json"
+      }
     },
     {
       "id": "rosa-maria-romero-sanchez",

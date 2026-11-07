@@ -1,0 +1,53 @@
+{
+  "gameVersion": "v32.0.0.2",
+  "checkedAt": "2026-11-07T21:37:28.626431+00:00",
+  "newExpansionPortraits": 778,
+  "originalReplacements": 4,
+  "retainedExistingIllustrations": [
+    "renaud-muselier"
+  ],
+  "tests": {
+    "passed": 119,
+    "failed": 0
+  },
+  "portraitIsolation": {
+    "newCards": 779,
+    "allPortraitsChecked": 783,
+    "renderSizes": 3,
+    "neighbourLeakFailures": 0,
+    "sheets": [],
+    "portraits": [],
+    "errors": []
+  },
+  "floatingPhases": [
+    {
+      "time": 0,
+      "y": 522.5,
+      "translate": "0px 2.5px",
+      "animations": 1
+    },
+    {
+      "time": 1000,
+      "y": 519.5247802734375,
+      "translate": "0px -0.475183px",
+      "animations": 1
+    },
+    {
+      "time": 2500,
+      "y": 519.0714721679688,
+      "translate": "0px -0.928535px",
+      "animations": 1
+    }
+  ],
+  "workerAssets": 1062,
+  "fileHashes": {
+    "index.html": "72c92f30cf5cc676e514d0c76237cc3d4cd21644c3dfa0b2bb7ddfea48585422",
+    "sw.js": "4b7b37edf0ee4fbcc7bd35490bce8e1379981e6b9bcd107277cdab39ecdab3bd",
+    "js/orator-art.js": "b7699c3fc0cb5519bf8ac8a9f0fdd2c5014c6ff0fe199eb51b3ba5566f9f4cc9",
+    "js/event-presenter.js": "b54d101681e974fc96d5bbb0121ec7f5a6914b87cfb633e2fefdd7577b7452f2",
+    "js/portrait-layout.js": "1625672d9519a00a6d396a77bb88dac0263fa0661ae0fb346725977e1d9b792a",
+    "js/legal-documents.js": "691471d2101285e2101fdb5d5393358b8e55bf6f5726ef291045cc90804e44e9",
+    "fuentes/index.html": "0be40b10fca3e5a87b22c5acd867538c6a5b98d7fadabded00bbefce4d9c1113"
+  },
+  "legalCatalogUserConfirmed": true
+}
