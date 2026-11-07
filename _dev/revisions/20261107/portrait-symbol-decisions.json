@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-07",
+  "rule": "No inferir un partido de un grupo parlamentario mixto. Mantener símbolo y texto breve del emblema real; usar una institución documentada si corresponde.",
+  "overrides": {
+    "juanjo-ferrer-martinez": {
+      "symbol": "Senado de España",
+      "reason": "Izquierda Confederal reúne varias afiliaciones; no atribuir PSOE por la mención a la Agrupación Socialista Gomera dentro del grupo."
+    },
+    "maria-teresa-pallares-pique": {
+      "symbol": "Senado de España",
+      "reason": "Grupo Plural; no atribuir PP. Se representa su cámara documentada."
+    },
+    "sergio-barasoain-rodrigo": {
+      "symbol": "Senado de España",
+      "reason": "Grupo de Izquierda Confederal; no atribuir PSOE por coincidencia textual."
+    },
+    "enric-xavier-morera-catala": {
+      "symbol": "Senado de España",
+      "reason": "No atribuir PSOE por una etiqueta de grupo que contiene varios partidos."
+    },
+    "pierre-laurent": {
+      "symbol": "Sénat",
+      "reason": "Senador de París, no diputado de la Asamblea Nacional."
+    },
+    "jean-vincent-place": {
+      "symbol": "Sénat",
+      "reason": "Senador y secretario de Estado; no diputado de la Asamblea Nacional."
+    },
+    "david-cormand": {
+      "symbol": "Bandera europea de doce estrellas",
+      "reason": "Eurodiputado, no diputado de la Asamblea Nacional francesa."
+    },
+    "thierry-breton": {
+      "symbol": "Bandera europea de doce estrellas",
+      "reason": "Comisario europeo y ministro de Economía; no diputado de la Asamblea Nacional."
+    },
+    "philippe-baptiste": {
+      "symbol": "Sin emblema de cámara; contexto ministerial/académico",
+      "reason": "Ministro de enseñanza superior, no diputado de la Asamblea Nacional."
+    },
+    "charles-pasqua": {
+      "symbol": "Sénat",
+      "reason": "Trayectoria de senador y ministro dentro del periodo representado; no atribuir una legislatura de la Asamblea anterior a 1986."
+    },
+    "jose-bono": {
+      "symbol": "Congreso de los Diputados",
+      "reason": "Presidencia del Congreso, no del Senado."
+    }
+  }
+}

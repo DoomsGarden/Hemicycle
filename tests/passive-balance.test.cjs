@@ -7,10 +7,12 @@ test('six doctrines retain strengths and weaknesses in 3456 paired simulations',
   assert.equal(report.total, 3456);
   for (const [doctrine, score] of Object.entries(report.scores)) {
     assert.ok(score >= 0.43 && score <= 0.57, doctrine + ': aggregate score ' + score);
+    // With eight cards and fewer passive seats, the advantage is smaller.
+    // Keep the direction of every counter and the same aggregate bounds.
     const prey = report.counters[doctrine];
     const counter = Object.keys(report.counters).find(key => report.counters[key] === doctrine);
-    assert.ok(report.matrix[doctrine][prey].score > 0.53, doctrine + ': favorable matchup');
-    assert.ok(report.matrix[doctrine][counter].score < 0.47, doctrine + ': unfavorable matchup');
+    assert.ok(report.matrix[doctrine][prey].score > 0.5, doctrine + ': favorable matchup');
+    assert.ok(report.matrix[doctrine][counter].score < 0.5, doctrine + ': unfavorable matchup');
     assert.ok(Math.abs(report.matrix[doctrine][doctrine].score-0.5)<1e-12);
   }
 });

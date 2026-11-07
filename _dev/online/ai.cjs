@@ -3,15 +3,15 @@ const E=require('./combat.cjs'),A=require('./actions.cjs'),Policy=require('../..
 function cabinet(human,elo,random=Math.random,recipeOverride){
  const tiersList=['comun','raro','especial','legendario'],level=r=>tiersList.indexOf(r);
  let recipe=recipeOverride||(elo<2500?['comun','comun','comun','raro','raro']:elo<5000?['comun','comun','raro','raro','especial']:elo<7500?['comun','raro','raro','especial','legendario']:['raro','raro','especial','especial','legendario']);
- if(!recipeOverride&&human.orators?.length===5){const own=human.orators.map(id=>E.catalog[id].r).sort((a,b)=>level(a)-level(b));recipe=recipe.slice().sort((a,b)=>level(a)-level(b)).map((r,i)=>tiersList[Math.max(level(r),level(own[i]))]);}
-
+ recipe=recipe.length===8?recipe:recipe.concat(recipe.slice(0,3));
+ if(!recipeOverride&&human.orators?.length===8){const own=human.orators.map(id=>E.catalog[id].r).sort((a,b)=>level(a)-level(b));recipe=recipe.slice().sort((a,b)=>level(a)-level(b)).map((r,i)=>tiersList[Math.max(level(r),level(own[i]))]);}
  const orators=[];for(const rarity of recipe){const pool=E.cards.filter(c=>c.r===rarity&&!orators.includes(c.id));orators.push(pool[Math.floor(random()*pool.length)].id);}
  const tiers={comun:0,raro:1,especial:2,legendario:3},leader=orators.slice().sort((a,b)=>tiers[E.catalog[b].r]-tiers[E.catalog[a].r])[0],actions=[];
  for(const id of human.actions){const pool=A.cards.filter(c=>c.r===A.byId[id].r&&!actions.includes(c.id));actions.push(pool[Math.floor(random()*pool.length)].id);}
  return {orators,leader,actions};
 }
 function choose(state,side=1,now=Date.now()){
- if(state.catalogVersion!=='balance-v3')return require('./ai-v9.cjs').choose(state,side,now);
+ if(state.catalogVersion!=='balance-v4')return require('./legacy-v32.cjs').ai.choose(state,side,now);
  const p=state.players[side],foe=state.players[1-side];
  const valid=command=>{try{E.apply(state,side,command,now,()=>.5);return true;}catch{return false;}};
  const opening=p.field.length<2&&p.hand.filter(c=>!c.action&&c.cost<=p.tdp).sort((a,b)=>(b.id===p.leader)-(a.id===p.leader)||b.votes-a.votes)[0];if(opening)return {type:'play',uid:opening.uid};

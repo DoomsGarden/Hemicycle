@@ -15,7 +15,7 @@ test('authoritative purchase and event store all rewards once, while pack-seen c
  const now=Date.parse('2026-11-06T12:00:00Z'),actor=crypto.randomUUID(),other=crypto.randomUUID(),payload=E.starter('HC-'+crypto.randomUUID(),now,()=>.25);
  const state={accounts:{[actor]:{revision:0,payload},[other]:{revision:0,payload:structuredClone(payload)}},market:{players:[],listings:[],trades:[],quotes:[],receipts:[]}};
  const purchase=E.operate(state,actor,{type:'pack',kind:'comun',quantity:1,free:false},now,()=>.25),r=purchase.market.packOpenings[0];
- a.equal(purchase.updates[0].payload.profile.fs,payload.profile.fs-400);a.equal(purchase.updates[0].payload.profile.album.length+(purchase.updates[0].payload.profile.actionAlbum||[]).length,payload.profile.album.length+5);a.equal(purchase.result.presentationId,r.id);
+ a.equal(purchase.updates[0].payload.profile.fs,payload.profile.fs-400);a.equal(purchase.updates[0].payload.profile.album.length+(purchase.updates[0].payload.profile.actionAlbum||[]).length,payload.profile.album.length+payload.profile.actionAlbum.length+5);a.equal(purchase.result.presentationId,r.id);
  const paid=structuredClone(state);paid.market=purchase.market;paid.accounts[actor].payload=purchase.updates[0].payload;const before=JSON.stringify(paid.accounts);
  const acknowledged=E.operate(paid,actor,{type:'pack-seen',receipts:[{id:r.id,opened:[true]}]},now,()=>.25);a.deepEqual(acknowledged.updates,[]);a.equal(JSON.stringify(paid.accounts),before);a.equal(acknowledged.market.packOpenings[0].opened[0],true);
  a.throws(()=>E.operate(paid,other,{type:'pack-seen',receipts:[{id:r.id,opened:[true]}]},now),/esta cuenta/);a.equal(E.view(paid,other,'/pack-openings').length,0);

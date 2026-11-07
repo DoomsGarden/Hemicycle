@@ -14,11 +14,11 @@
   &nbsp; · &nbsp; <a href="#ayuda-y-contacto">Ayuda</a>
 </p>
 
-Forma un gabinete de **cinco oradores**, elige a tu líder y añade hasta **dos cartas de acción**. Presenta tus cromos en la Tribuna, aprovecha sus doctrinas y decide cuándo atacar, defender o recuperar fuerzas. Tu objetivo: **alcanzar 100 votos**.
+Forma un gabinete de **ocho oradores**, elige a tu líder y añade **cuatro cartas de acción distintas**. Presenta tus cromos en la Tribuna, aprovecha sus doctrinas y decide cuándo atacar, defender o recuperar fuerzas. Tu objetivo: **alcanzar 100 votos**.
 
-Hemiciclo está en **prelanzamiento**, versión **v32.0.0**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
+Hemiciclo está en **prelanzamiento**, versión **v32.1.0**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
-**Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Esta primera colección está disponible completa. Elige también entre **ocho opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
+**Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Los jugadores anteriores a diciembre conservan los estilos de la ampliación; los nuevos los incorporan al reclamar los hitos correspondientes. Elige también entre **ocho opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
 
 <p align="center">
   <img src="docs/media/profile-v11/profile.png?v=20261103-meta6" alt="Perfil de Hemiciclo con nivel, experiencia y estadísticas" width="32%">
@@ -35,7 +35,7 @@ Hemiciclo está en **prelanzamiento**, versión **v32.0.0**. Puedes jugar en el 
 <summary><strong>Más imágenes: gabinete, sobres, Liga y Mercado</strong></summary>
 
 <p align="center">
-  <a href="press/google-play/es-ES/04-gabinete.png"><img src="docs/media/promos/04-gabinete.jpg?v=20261103-meta6" alt="Prepara cinco oradores y hasta dos acciones" width="23%"></a>
+  <a href="press/google-play/es-ES/04-gabinete.png"><img src="docs/media/promos/04-gabinete.jpg?v=20261103-meta6" alt="Captura de gabinete de una versión anterior" width="23%"></a>
   <a href="press/google-play/es-ES/05-sobres.png"><img src="docs/media/promos/05-sobres.jpg?v=20261103-meta6" alt="Abre sobres y descubre cartas" width="23%"></a>
   <a href="press/google-play/es-ES/06-liga.png"><img src="docs/media/promos/06-liga.jpg?v=20261103-meta6" alt="Compite en la Liga de los 30" width="23%"></a>
   <a href="press/google-play/es-ES/07-mercado.png"><img src="docs/media/promos/07-mercado.jpg?v=20261103-meta6" alt="Vende, compra e intercambia cromos en el Mercado" width="23%"></a>
@@ -49,17 +49,21 @@ La ampliación incorpora 436 oradores de España y 443 de Francia, además de lo
 
 El evento de ampliación ofrece 10.000 FS y doce sobres generales en cinco entregas del buzón, una vez por cuenta elegible. Su aviso se cierra con «Genial!», al tocar fuera o tras 15 segundos; la viñeta del buzón permanece hasta abrirlo. Son elegibles los jugadores que hayan entrado antes del 1 de diciembre de 2026, hora de Madrid; los premios pueden reclamarse después.
 
+La revisión de gabinetes añade otro evento independiente con 10.000 FS y tres sobres generales de cada tipo, conservando los premios del evento anterior. Se aplica el mismo corte de acceso de noviembre.
+
+Ganar cinco partidas seguidas con recompensas activa un bonus aleatorio del 25 % al 50 % de FS y XP durante una hora, seguido de 30 minutos de descanso. La quinta victoria lo activa para las partidas siguientes; las victorias durante el bonus y el descanso no se acumulan. Prácticas, amistosas, regalos, logros, Mercado y premios de temporada quedan fuera. En partidas descargadas se confirma al reconectar, con el reloj del servidor.
+
 ## Descargas Android
 
 [Descargar APK para Android](https://hemicycle.online/Hemiciclo.apk) · [Descargar AAB para Google Play](https://hemicycle.online/Hemiciclo.aab) · [Ver todos los archivos](https://hemicycle.online/downloads/)
 
-Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v32.0.0**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
+Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v32.1.0**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
 
 ## Primeros pasos
 
 1. Abre **[hemicycle.online](https://hemicycle.online/)** y pulsa **Iniciar**. Puedes continuar como invitado o acceder a una cuenta según tu tramo de edad.
 2. Completa la práctica inicial de ocho pasos. No concede ni consume premios; las guías completas se pueden repetir desde **Ayuda**.
-3. En **Cromos → Gabinete**, prepara cinco oradores distintos y marca al líder. Puedes guardar cinco gabinetes favoritos y equipar hasta dos acciones distintas.
+3. En **Cromos → Gabinete**, prepara ocho oradores distintos y marca al líder. Puedes guardar cinco gabinetes favoritos y equipar cuatro acciones distintas.
 4. Vuelve a **Inicio**, abre la flecha junto a **Jugar** y elige una modalidad. La partida rápida prepara un gabinete automáticamente con tu colección.
 5. Usa el **Tiempo de Palabra (TdP)** para presentar cartas. Toca un orador de tu Tribuna para escoger su intervención y pulsa **Pasar turno** cuando termines.
 6. Gana llegando a **100 votos**. Al principio de cada turno sumas votos por tu bancada; expulsar a un orador rival también aporta sus escaños.
@@ -76,7 +80,7 @@ Versión Android **0.0.3.0**, código **3**, con el identificador y la firma ori
 
 Los raros cuestan **2 o 3 TdP**; los doce que costaban 4 pasan a 3 conservando Zasca, Aguante y habilidad.
 
-Los escaños base son **2 / 3 / 4 / 5** para comunes, raros, especiales y legendarios. Cada turno añade también **3 votos base**. [Consultar la tabla de estadísticas y el ajuste de esta versión](docs/balance/ajuste-2026-10-29.md).
+Los escaños base son **1 / 2 / 3 / 4** para comunes, raros, especiales y legendarios. Cada turno añade también **3 votos base**. [Consultar la revisión de estadísticas y formato](docs/balance/revision-2026-11-07.md).
 
 Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y una acción disponible; las cartas restantes esperan en el mazo. Cada orador puede intervenir **una vez por turno propio**.
 
@@ -104,7 +108,7 @@ La doctrina de tu líder puede neutralizar otra. Los iconos de estado permiten c
 
 **Jugadores** permite invitar a otras cuentas a Normal o Rápida. Desde el selector de Jugar puedes buscar rival para Clasificatoria online. Estas funciones necesitan conexión y una cuenta habilitada.
 
-En Clasificatoria y Liga hay transferencia de cromos según el resultado, con protección de los cinco últimos oradores únicos. Revisa las reglas de la modalidad antes de entrar.
+En Clasificatoria y Liga hay transferencia de cromos según el resultado, con protección de los ocho últimos oradores y cuatro últimas acciones únicos. Revisa las reglas de la modalidad antes de entrar.
 
 ## Colección y Mercado
 
@@ -170,8 +174,8 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
 - [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
-- [Notas de la versión v32.0.0](_dev/releases/v32.0.0.md)
-- [Notas de la versión v32.0.0](_dev/releases/v32.0.0.md)
+- [Notas de la versión v32.1.0](_dev/releases/v32.1.0.md)
+- [Notas de la ampliación v32.0.0](_dev/releases/v32.0.0.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.
 

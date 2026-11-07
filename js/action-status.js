@@ -6,7 +6,9 @@ function symbol(kind){return '<svg class="support-symbol" viewBox="0 0 24 24" fi
 function states(card){return (card&&card.actionStates||[]).filter(function(s){return Object.hasOwn(definitions,s.kind);});}
 function value(card,kind){return states(card).filter(function(s){return s.kind===kind;}).reduce(function(n,s){return n+s.value;},0);}
 function grant(card,kind,power,duration,turn,source){if(!Object.hasOwn(definitions,kind)||!Number.isInteger(power)||power<1||power>3||!Number.isInteger(duration)||duration<1||duration>2)throw Error('Estado de acción no válido.');var list=states(card).filter(function(s){return s.kind!==kind;}),prior=states(card).find(function(s){return s.kind===kind;});list.push({kind:kind,value:Math.max(power,prior&&prior.value||0),expires:Math.max(turn+duration,prior&&prior.expires||0),lastTick:turn,source:source});card.actionStates=list;}
-function clear(card,polarity){card.actionStates=states(card).filter(function(s){return polarity&&definitions[s.kind].polarity!==polarity;});if(!card.actionStates.length)delete card.actionStates;}
+function clear(card,polarity,limit){var removed=0,max=limit===undefined?Infinity:limit;card.actionStates=states(card).filter(function(s){if((!polarity||definitions[s.kind].polarity===polarity)&&removed<max){removed++;return false;}return true;});if(!card.actionStates.length)delete card.actionStates;return removed;}
+function purge(card,limit){var left=limit===undefined?Infinity:limit;left-=clear(card,'positive',left);if(left>0&&card.guard){card.guard=false;left--;}['buffs','actionBuffs'].forEach(function(key){if(!Array.isArray(card[key]))return;card[key]=card[key].filter(function(){if(left>0){left--;return false;}return true;});});}
+
 function power(card,base){return Math.max(1,base+value(card,'strength')-value(card,'weakness'));}
 function incoming(card,amount){return amount<=0?0:Math.max(0,amount+value(card,'exposed')-value(card,'fortress')-(value(card,'fullness')?1:0));}
 function healing(card,amount){return amount<=0?0:Math.max(0,amount+value(card,'relief')+value(card,'fullness')-value(card,'wound'));}
@@ -16,5 +18,5 @@ function pierces(card){return !!value(card,'precision');}
 function begin(card,turn){card.actionStates=states(card).filter(function(s){return s.expires>=turn;});var heal=0,damage=0,source=null;card.actionStates.forEach(function(s){if(s.lastTick>=turn)return;s.lastTick=turn;if(s.kind==='regeneration')heal+=s.value;if(s.kind==='attrition'){damage+=s.value;source=s.source;}});return {heal:heal,damage:damage,source:source};}
 function end(card,turn){card.actionStates=states(card).filter(function(s){return s.expires>turn;});if(!card.actionStates.length)delete card.actionStates;}
 function view(card,turn){return states(card).map(function(s){var d=definitions[s.kind];return {icon:'action-'+s.kind,short:d.name,text:d.name+' · '+d.text+' Potencia '+s.value+'. Hasta el final de su turno '+s.expires+' ('+Math.max(0,s.expires-turn)+' próximos turnos propios).',active:true};});}
-return Object.freeze({definitions:definitions,symbol:symbol,states:states,value:value,grant:grant,clear:clear,power:power,incoming:incoming,healing:healing,passive:passive,canEmpty:canEmpty,pierces:pierces,begin:begin,end:end,view:view});
+return Object.freeze({definitions:definitions,symbol:symbol,states:states,value:value,grant:grant,clear:clear,purge:purge,power:power,incoming:incoming,healing:healing,passive:passive,canEmpty:canEmpty,pierces:pierces,begin:begin,end:end,view:view});
 });

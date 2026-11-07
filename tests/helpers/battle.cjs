@@ -24,6 +24,11 @@ function loadBattle(mode = 'normal', random = 0.25, overrides = {}) {
   const math = Object.create(Math);
   math.random = typeof random === 'function' ? random : () => random;
   const context = vm.createContext({
+    verifiedAccount: ()=>false,
+    HemicycleFormat: require('../../js/game-format.js'),
+    HemicycleVictoryBoost: require('../../js/victory-boost.js'),
+    HemicycleXP: require('../../js/progression-xp.js'),
+    HemicycleI18n: {t:text=>text},
     HemicycleAttackForecast: require('../../js/attack-forecast.js'),
     HemicycleBattleInsights: require('../../js/battle-insights.js'),
     HemicycleTacticalPolicy: require('../../js/tactical-policy.js'),
@@ -35,10 +40,12 @@ function loadBattle(mode = 'normal', random = 0.25, overrides = {}) {
     HemicycleCatalog: require('../../js/orator-catalog.js'),
     HemicycleAppearance: require('../../js/cosmetic-entitlements.js'),
     HemicycleActionStatus: require('../../js/action-status.js'),
+    HemicycleActionStateVisuals: require('../../js/action-state-visuals.js'),
     HemicycleExpansionEvent: require('../../js/expansion-event.js'),
     HemicyclePackRules: require('../../js/pack-rules.js'),
     HemicycleBackup: require('../../js/player-backup.js'),
     HemicycleActions: require('../../js/action-cards.js'),
+    HemicycleLegacyActions: require('../../js/action-data-v32.js'),
     HemicycleBattleStatus: require('../../js/battle-status.js'),
     HemicycleCoinToss: {...require('../../js/coin-toss.js'),show(){},schedule(){},cancel(){}},
     HemicycleObjectives: require('../../js/objectives.js'),
@@ -53,11 +60,12 @@ function loadBattle(mode = 'normal', random = 0.25, overrides = {}) {
     clearTimeout: id => timers.delete(id),
     ...overrides
   });
+  context.window=context;context.addEventListener=function(){};
   source.runInContext(context);
   vm.runInContext(
     "var profile=D();profile.album=CARDS.map(function(c){return c.id;});profile.elo=300;saveD(profile);" +
-    "var ids=CARDS.filter(function(c){return c.r==='comun';}).slice(0,5).map(function(c){return c.id;});" +
-    "BUILD={ids:ids,leader:ids[0]};lsSet(LS2,ligaNew(3));",
+    "var ids=CARDS.filter(function(c){return c.r==='comun';}).slice(0,8).map(function(c){return c.id;});" +
+    "BUILD={ids:ids,leader:ids[0],actions:HemicycleFormat.starterActions.slice()};lsSet(LS2,ligaNew(3));",
     context
   );
   context.newBattle(mode);

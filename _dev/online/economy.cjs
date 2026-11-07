@@ -1,5 +1,7 @@
 'use strict';
 // Pure rules. Only the authenticated service can commit their result to PostgreSQL.
+const Format=require('../../js/game-format.js');
+const Boost=require('../../js/victory-boost.js');
 const XP=require('../../js/progression-xp.js'),Appearance=require('../../js/cosmetic-entitlements.js'),PackRules=require('../../js/pack-rules.js'),Event=require('../../js/expansion-event.js');
 const crypto=require('node:crypto'),{cards,packs}=require('../market/catalog.cjs'),A=require('../../js/action-cards.js'),O=require('../../js/objectives.js'),M=require('../../js/legendary-mastery.js'),R=require('../../js/ranked-seasons.js');
 const catalog=[...cards,...A.cards],byId=Object.fromEntries(catalog.map(c=>[c.id,c])),rules=require('../../js/market-rules.js').create(catalog,packs);
@@ -8,8 +10,8 @@ function contents(kind,rng=random,country=''){return PackRules.contents(kind,cou
 function starter(identity,now,rng=random){
  check(/^HC-[0-9a-f-]{36}$/i.test(identity||''),'ID no válido.');
  const album=[];for(const [r,n]of [['comun',18],['raro',8],['especial',3],['legendario',1]]){const pool=cards.filter(c=>c.r===r);for(let i=pool.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}for(let i=0;i<n;i++)album.push(pool[i%pool.length].id);}
- const profile={xp:0,fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};Appearance.initialize(profile,now,new Date(now).toISOString());profile.objectives=O.snapshot(profile,cards,now);
- return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v32.0.0',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
+ const profile={xp:0,fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};Format.ensureCollection(profile,cards.filter(c=>!c.action),A.cards);Appearance.initialize(profile,now,new Date(now).toISOString());profile.objectives=O.snapshot(profile,cards,now);
+ return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v32.1.0',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
 }
 function inventory(profile){return [...profile.album,...profile.actionAlbum||[]];}
 function take(profile,id,quantity){rules.card(id);rules.integer(quantity,'Cantidad');const key=byId[id].action?'actionAlbum':'album',album=profile[key]||[];check(rules.duplicates(album,id)>=quantity,'No hay suficientes repetidos. Conservas siempre una copia.');let remaining=quantity;profile[key]=album.filter(c=>c!==id||remaining--<=0);}
@@ -20,19 +22,22 @@ function operate(input,actor,command,now=Date.now(),rng=random){
  const account=id=>{const a=s.accounts[id];check(a?.payload,'Activa primero el progreso en la nube.');return a;},profile=id=>account(id).payload.profile;
  const touch=id=>{changed.add(id);return profile(id);},me=profile(actor);
  if(!me.appearance){Appearance.initialize(me,now,account(actor).payload.identity.createdAt);changed.add(actor);}
- const eventLedger=market.expansionClaims||=(Object.create(null)),eventPrefix=Event.id+'/'+actor+'/';
- if(Event.eligible(me,now)){
-  const before=JSON.stringify(me.expansionEvent),stored={id:Event.id,announced:Object.hasOwn(eventLedger,eventPrefix+'notice'),mailVisited:!!eventLedger[eventPrefix+'notice']?.mailVisited,claimed:Event.grants.filter(g=>Object.hasOwn(eventLedger,eventPrefix+g.key)).map(g=>g.key)};
-  const merged=Event.merge(me,stored);if(merged.announced||merged.mailVisited){eventLedger[eventPrefix+'notice']||={at:now};if(merged.mailVisited)eventLedger[eventPrefix+'notice'].mailVisited=true;}for(const key of merged.claimed)eventLedger[eventPrefix+key]||={at:now,grant:key};if(JSON.stringify(merged)!==before)changed.add(actor);
- }
+ const formatAdded=Format.ensureCollection(me,cards.filter(c=>!c.action),A.cards);if(formatAdded.orators.length||formatAdded.actions.length)changed.add(actor);
+ if(me.cabinets?.slots.some(slot=>slot.ids.length===5)){me.cabinets=require('../../js/cabinet-presets.js').state(me);changed.add(actor);}
+ const eventLedger=market.expansionClaims||=(Object.create(null));
+ for(const event of Event.all){const eventPrefix=event.id+'/'+actor+'/';if(event.eligible(me,now)){
+  const before=JSON.stringify(me[event.profileKey]),stored={id:event.id,announced:Object.hasOwn(eventLedger,eventPrefix+'notice'),mailVisited:!!eventLedger[eventPrefix+'notice']?.mailVisited,claimed:event.grants.filter(g=>Object.hasOwn(eventLedger,eventPrefix+g.key)).map(g=>g.key)};
+  const merged=event.merge(me,stored);if(merged.announced||merged.mailVisited){eventLedger[eventPrefix+'notice']||={at:now};if(merged.mailVisited)eventLedger[eventPrefix+'notice'].mailVisited=true;}for(const key of merged.claimed)eventLedger[eventPrefix+key]||={at:now,grant:key};if(JSON.stringify(merged)!==before)changed.add(actor);
+ }}
+ const ActiveEvent=Event.forEvent(command.event||Event.id),eventPrefix=ActiveEvent.id+'/'+actor+'/';
  const recordMarket=(id,kind,n)=>{const p=touch(id);Appearance.initialize(p,now,account(id).payload.identity.createdAt);p.objectives=O.recordMarket(p,kind,n,now);};
  const receipt=(id,kind,data)=>market.receipts.push({id:crypto.randomUUID(),player:id,kind,data,created:now});
  const refund=t=>{A.award(touch(t.proposer),t.terms.give.flatMap(c=>Array(c.quantity).fill(c.id)));credit(profile(t.proposer),t.terms.giveFS);};
  // Expired proposals return only the proposer's escrow; the recipient never loses anything before accepting.
  for(const t of market.trades)if(t.status==='pending'&&t.expires<=now){refund(t);t.status='expired';}
  let result={};const type=command.type;
- if(type==='pack-seen'){check(Array.isArray(command.receipts)&&command.receipts.length<=500,'Recibos no válidos.');for(const item of command.receipts){const r=(market.packOpenings||[]).find(r=>r.id===item.id&&r.player===actor);check(r&&Array.isArray(item.opened)&&item.opened.length===r.packs.length&&item.opened.every(x=>typeof x==='boolean'),'Recibo no disponible para esta cuenta.');r.opened=r.opened.map((v,i)=>v||item.opened[i]);}result={acknowledged:true};}else if(type==='maintenance'){}else if(type==='expansion-notice'){check(Event.announce(me,now),'Evento no disponible para esta cuenta.');eventLedger[eventPrefix+'notice']||={at:now};if(command.mailVisited===true){Event.visit(me,now);eventLedger[eventPrefix+'notice'].mailVisited=true;}changed.add(actor);result={announced:true};}else if(type==='expansion-claim'){
-  const key=Event.id+'/'+actor+'/'+command.grant,ledger=market.expansionClaims||=(Object.create(null));check(!Object.hasOwn(ledger,key),'Esta recompensa ya se ha reclamado.');const grant=Event.claim(me,command.grant,now);ledger[key]={at:now,grant:command.grant};if(grant.fs){credit(me,grant.fs);result={fs:grant.fs,event:Event.id};}else{const opened=Array.from({length:grant.quantity},()=>contents(grant.kind,rng));opened.forEach(ids=>A.award(me,ids));result={packs:opened,kind:grant.kind,event:Event.id};}changed.add(actor);receipt(actor,'expansion-event',{grant:command.grant});
+ if(type==='format-upgrade'){result={format:Format.id,added:formatAdded};}else if(type==='pack-seen'){check(Array.isArray(command.receipts)&&command.receipts.length<=500,'Recibos no válidos.');for(const item of command.receipts){const r=(market.packOpenings||[]).find(r=>r.id===item.id&&r.player===actor);check(r&&Array.isArray(item.opened)&&item.opened.length===r.packs.length&&item.opened.every(x=>typeof x==='boolean'),'Recibo no disponible para esta cuenta.');r.opened=r.opened.map((v,i)=>v||item.opened[i]);}result={acknowledged:true};}else if(type==='maintenance'){}else if(type==='expansion-notice'){check(ActiveEvent.announce(me,now),'Evento no disponible para esta cuenta.');eventLedger[eventPrefix+'notice']||={at:now};if(command.mailVisited===true){ActiveEvent.visit(me,now);eventLedger[eventPrefix+'notice'].mailVisited=true;}changed.add(actor);result={announced:true};}else if(type==='expansion-claim'){
+  const key=ActiveEvent.id+'/'+actor+'/'+command.grant,ledger=market.expansionClaims||=(Object.create(null));check(!Object.hasOwn(ledger,key),'Esta recompensa ya se ha reclamado.');const grant=ActiveEvent.claim(me,command.grant,now);ledger[key]={at:now,grant:command.grant};if(grant.fs){credit(me,grant.fs);result={fs:grant.fs,event:ActiveEvent.id};}else{const opened=Array.from({length:grant.quantity},()=>contents(grant.kind,rng));opened.forEach(ids=>A.award(me,ids));result={packs:opened,kind:grant.kind,event:ActiveEvent.id};}changed.add(actor);receipt(actor,'expansion-event',{grant:command.grant});
  }else if(type==='learning-actions'){for(const id of ['replica','receso'])if(!(me.actionAlbum||[]).includes(id)){A.award(me,[id]);changed.add(actor);}result={granted:true};}else if(type==='offline-settle'){
   const ticket=s.ticket;check(ticket&&ticket.expires+30*86400000>now&&!ticket.result,'Partida descargada no disponible o caducada.');
   const state=require('./offline-engines.cjs').forTicket(ticket).replay(ticket,command.record),own=state.players[0],foe=state.players[1],win=state.winner===0,competitive=state.mode==='ranked'||state.mode==='liga';
@@ -42,8 +47,12 @@ function operate(input,actor,command,now=Date.now(),rng=random){
   else{me.l++;if(competitive){const candidates=A.lootPool(own.cabinetIds,own.cabinetActions,me);if(candidates.length){lost=pick(candidates,rng);A.removeCopy(me,lost);}}}
   if(state.mode==='ranked'){const delta=win?10+Math.floor(15*Math.min(1,margin/.75)):state.reason==='rendición'||state.reason==='inactividad'?-18:-5-Math.floor(13*margin);me.elo=Math.max(0,me.elo+delta);account(actor).payload.ranked=R.advance(account(actor).payload.ranked,before,me.elo,now);}
   if(state.mode==='liga'){const lg=account(actor).payload.league;check(lg,'Crea una Liga antes de jugarla.');const next=require('./league.cjs').advance(lg,win,rng);account(actor).payload.league=next.league;fs+=next.reward;result.season=!!next.reward;if(result.season){result.leaguePosition=next.position;result.leagueTeams=lg.teams.length;result.seasonFS=next.reward;}}
-  const xp=XP.add(me,XP.match(state.mode,win,state.reason));credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
-  result={...result,win,mode:state.mode,fs,xp,eloBefore:before,eloAfter:me.elo,eloDelta:me.elo-before,won,lost,votes:own.votes,enemyVotes:foe.votes};
+  // Only the match payout is multiplied, not a separate end-of-season prize.
+  // Downloaded matches qualify when the server validates their unique ticket;
+  // client-supplied wall clocks cannot backdate or extend this hour.
+  const boost=Boost.settle(me,{win,fs:fs-(result.seasonFS||0),xp:XP.match(state.mode,win,state.reason)},now,rng);
+  fs+=boost.bonusFS;const xp=XP.add(me,boost.xp);boost.xp=xp;boost.bonusXP=Math.max(0,xp-Math.min(xp,boost.baseXP));credit(me,fs);me.objectives=O.record(me,{win,mode:state.mode,votes:own.votes,enemyVotes:foe.votes,leader:own.leader,doctrine:byId[own.leader].pa},now);changed.add(actor);
+  result={...result,win,mode:state.mode,fs,xp,boost,eloBefore:before,eloAfter:me.elo,eloDelta:me.elo-before,won,lost,votes:own.votes,enemyVotes:foe.votes};
   require('./battle-history.cjs').record(market,actor,{...result,balance:require('./battle-history.cjs').context(state,0),opponentKind:'ai',firstWasSelf:state.first===0,ownTurns:own.turn,opponentTurns:foe.turn,ruleset:state.ruleset,resultId:'offline:'+ticket.id},now);
  }else if(type==='league-create'){check(!account(actor).payload.league,'Ya tienes una Liga activa.');account(actor).payload.league=require('./league.cjs').create(3,1,rng);changed.add(actor);
  }else if(type==='league-abandon'){account(actor).payload.league=null;changed.add(actor);

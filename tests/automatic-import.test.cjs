@@ -4,7 +4,7 @@ const E=require('../_dev/online/economy.cjs'),Backup=require('../js/player-backu
 const migration=fs.readFileSync('_dev/online/20261031_automatic_legacy_import.sql','utf8');
 const source=fs.readFileSync('_dev/online/20261025_economy_authority.sql','utf8');
 const copy=x=>JSON.parse(JSON.stringify(x));
-const payload=()=>{const p=E.starter('HC-'+crypto.randomUUID(),Date.now());p.profile.album=require('../_dev/expansions/activation-v32/baseline/orator-catalog.js').cards.slice(0,30).map(c=>c.id);return p;};
+const payload=()=>{const p=E.starter('HC-'+crypto.randomUUID(),Date.now());delete p.profile.cabinets;p.profile.actionAlbum=['replica','receso'];p.profile.album=require('../_dev/expansions/activation-v32/baseline/orator-catalog.js').cards.slice(0,30).map(c=>c.id);return p;};
 test('automatic initial imports approve pending and new requests exactly once, preserving existing clouds and private audit',async()=>{
  const db=new PGlite();try{
   await db.exec("create role anon;create role authenticated;create role service_role;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;");

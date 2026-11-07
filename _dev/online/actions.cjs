@@ -17,10 +17,10 @@ function renewBalanced(hand,deck,turn,random=Math.random){
 function recycle(rest,deck,turn,random=Math.random){const eligible=rest.filter(c=>turn>=c.availableTurn);return {rest:rest.filter(c=>!eligible.includes(c)),deck:shuffle([...deck,...eligible.map(c=>({...c,hp:c.maxHp}))],random)};}
 function validateCabinet(cabinet,owned,oratorIds){
  check(cabinet&&Array.isArray(cabinet.orators)&&Array.isArray(cabinet.actions),'Gabinete no válido');
- check(cabinet.orators.length===5&&new Set(cabinet.orators).size===5,'Elige cinco oradores distintos');
+ check(cabinet.orators.length===8&&new Set(cabinet.orators).size===8,'Elige ocho oradores distintos');
  check(cabinet.orators.every(id=>oratorIds.includes(id)&&owned.includes(id)),'Orador no disponible');
  check(cabinet.orators.includes(cabinet.leader),'Líder no válido');
- check(cabinet.actions.length<=2&&new Set(cabinet.actions).size===cabinet.actions.length,'Hasta dos acciones distintas');
+ check(cabinet.actions.length===4&&new Set(cabinet.actions).size===cabinet.actions.length,'Elige cuatro acciones distintas');
  check(cabinet.actions.every(id=>byId[id]&&owned.includes(id)),'Acción no disponible');
  return structuredClone(cabinet);
 }
@@ -55,9 +55,9 @@ function apply(original,side,id,uid){
  }
  p.tdp-=card.cost;p.usedActions.push(id);p.actionUsedTurn=p.turn;const instance=p.hand.find(c=>c.action&&c.id===id);p.hand=p.hand.filter(c=>c!==instance);if(card.oncePerBattle){p.actionDiscard=p.actionDiscard||[];p.actionDiscard.push(instance);}else p.deck.push(instance);
  for(const {s:owner,c}of affected){
-  if(card.effect==='heal')c.hp=Math.min(c.maxHp,c.hp+card.value);
-  if(card.effect==='boost'){const until=s.players[owner].turn+(owner===side?0:1);c.buffs.push({value:card.value,until});}
-  if(card.effect==='guard')c.guard=true;
+  if(['heal','guard-heal','boost-heal'].includes(card.effect))c.hp=Math.min(c.maxHp,c.hp+card.value);
+  if(['boost','boost-heal'].includes(card.effect)){const until=s.players[owner].turn+(owner===side?0:1);c.buffs.push({value:card.value,until});}
+  if(['guard','guard-heal'].includes(card.effect))c.guard=true;
   if(card.effect==='damage'){const amount=c.guard?Math.ceil(card.value/2):card.value;c.guard=false;c.hp-=amount;}
  }
  for(const player of s.players){const expelled=player.field.filter(c=>c.hp<=0);player.field=player.field.filter(c=>c.hp>0);player.rest.push(...expelled.map(c=>({...c,availableTurn:player.turn+2,guard:false,buffs:[]})));}

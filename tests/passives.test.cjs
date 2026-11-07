@@ -50,9 +50,10 @@ for(const p of keys) for(const e of keys) {
 test('all 120 names and doctrine associations stay unchanged across balance revisions', () => {
   const c=loadBattle(), cards=JSON.parse(JSON.stringify(c.CARDS)).filter(card=>require('../_dev/balance/catalog-before.json').some(old=>old.id===card.id));
   const old=require('../_dev/balance/catalog-before.json');
-  const identity=cards=>cards.map(({id,n,r,pa})=>({id,n,r,pa})).sort((a,b)=>a.id.localeCompare(b.id));
+  const identity=cards=>cards.map(({id,n,pa})=>({id,n,pa})).sort((a,b)=>a.id.localeCompare(b.id));
   assert.deepEqual(identity(cards),identity(old));
-  assert.equal(cards.filter(card=>card.r==='especial').length,24);
+  assert.equal(cards.length,120);
+  for(const card of cards){const previous=old.find(x=>x.id===card.id),rank={comun:0,raro:1,especial:2,legendario:3};assert.ok(rank[card.r]>=rank[previous.r],card.id);}
   assert.ok(cards.filter(card=>card.r==='especial').every(card=>card.c<=4));
 });
 

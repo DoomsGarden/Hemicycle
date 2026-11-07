@@ -41,7 +41,7 @@
 }
 @media(max-height:500px) and (min-width:600px){.screen[data-view=builder] .hud-strip{display:none}}
 
-/* Todos los favoritos muestran sus cinco oradores sin ocultar una segunda fila. */
+/* Distribución anterior; la composición de ocho miembros se adapta al final de este archivo. */
 .screen[data-view=builder] .inner-scroll{container-type:size;display:flex;align-items:center;overflow:hidden;padding:2px 0}
 .screen[data-view=builder] .cabinet-preview{display:flex;gap:5px;justify-content:center;align-items:center;width:100%;height:100%;max-width:600px}
 .screen[data-view=builder] .cabinet-preview .cromo{flex:0 0 auto;width:auto;height:min(100%,calc((100cqw - 20px)*4.1/15));max-height:180px}
@@ -73,3 +73,12 @@
 #collectionFilters{flex-shrink:0}
 @media(max-width:380px){.collection-cabinet-heading .collection-disclosure span{display:none}.collection-cabinet-heading .collection-disclosure{width:40px;padding:7px!important}}
 @media(prefers-reduced-motion:reduce){.collection-disclosure svg{transition:none}}
+/* Ocho miembros legibles: dos filas, sin comprimir ocho retratos en una tira. */
+.screen[data-view=builder] .inner-scroll{display:block;overflow:auto;container-type:inline-size;padding:6px 0}
+.screen[data-view=builder] .cabinet-preview{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;height:auto;width:100%;max-width:640px;margin:0 auto;align-items:start}
+.screen[data-view=builder] .cabinet-preview .cromo{width:100%;height:auto;max-height:none;min-width:0;aspect-ratio:3/4.1}
+.screen[data-view=builder] .cabinet-preview .cromo .nm{font-size:calc(clamp(8px,2.3vw,12px) * var(--ui-text-scale,1));line-height:1.1}
+.screen[data-view=builder] .cabinet-preview .card-stat b{font-size:calc(clamp(9px,2.4vw,13px) * var(--ui-text-scale,1))}
+@media(max-width:350px){.screen[data-view=builder] .cabinet-preview{gap:5px}}
+
+.cabinet-members{grid-template-columns:repeat(4,minmax(0,1fr))}

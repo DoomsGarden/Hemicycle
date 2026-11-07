@@ -36,7 +36,8 @@ test('all 120 cards use three own quotes and all 360 lines are distinct', () => 
 
 test('the 84 formerly generic cards have sources and three proposed future uses', () => {
   const sources = JSON.parse(fs.readFileSync(path.join(root, 'docs/fuentes-cromos-restantes.json'), 'utf8'));
-  const expected = cards.filter(c => c.r === 'comun' || c.r === 'raro');
+  const historical=require('../_dev/expansions/activation-v32/baseline/orator-catalog.js');
+  const expected = historical.cards.filter(c => c.r === 'comun' || c.r === 'raro');
   assert.equal(sources.cromos.length, 84);
   assert.deepEqual(sources.cromos.map(c => c.id).sort(), expected.map(c => c.id).sort());
   for (const source of sources.cromos) {

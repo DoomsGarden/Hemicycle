@@ -42,7 +42,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){}}}){
     if(next.mode==='ranked'&&state.status!=='finished')next.lootVersion=1;
     context=await rpc('hemicycle_combat_context',{p_room_id:roomId,p_actor:actor});
     args.p_progress=context.map((entry,side)=>entry?{userId:entry.userId,revision:entry.revision,...require('./progression.cjs').progress(entry.profile,next,side,load.now)}:null);
-    next.xpVersion='xp1';next.xpAwards=args.p_progress.map(p=>p?p.xpGain:0);
+    next.xpVersion='xp1';next.xpAwards=args.p_progress.map(p=>p?p.xpGain+(p.boostXPGain||0):0);
    }
    const ok=await rpc(next.status==='finished'?'hemicycle_combat_commit_progress':'hemicycle_combat_commit',args);
    if(!ok)observe.conflict();

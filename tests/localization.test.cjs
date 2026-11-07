@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),vm=require('node:vm');
-function language(locale){const context={localStorage:{getItem:()=>locale},requestAnimationFrame:()=>1,document:{readyState:'loading',addEventListener(){}},HemicycleCatalog:require('../js/orator-catalog.js'),HemicycleActions:require('../js/action-cards.js')};context.window=context;context.globalThis=context;vm.createContext(context);for(const f of ['localization-data','localization','localization-extra','localization-reviewed','localization-gameplay'])vm.runInContext(fs.readFileSync('js/'+f+'.js','utf8'),context);return context.HemicycleI18n;}
+function language(locale){const context={localStorage:{getItem:()=>locale},requestAnimationFrame:()=>1,document:{readyState:'loading',addEventListener(){}},HemicycleCatalog:require('../js/orator-catalog.js'),HemicycleActions:require('../js/action-cards.js')};context.window=context;context.globalThis=context;vm.createContext(context);for(const f of ['localization-data','localization','localization-extra','localization-reviewed','localization-gameplay','localization-review321'])vm.runInContext(fs.readFileSync('js/'+f+'.js','utf8'),context);return context.HemicycleI18n;}
 for(const locale of ['en','fr'])test(locale+' preserves symbols, original English quotes and names while localizing the complete rule text',()=>{
  const I=language(locale);for(const symbol of ['×','‹','›','+','−','/','389','49'])a.equal(I.t(symbol),symbol);
  a.equal(I.t('Clasificatoria · Temporada 1'),locale==='en'?'Ranked · Season 1':'Classé · Saison 1');a.equal(I.t('Elo'),'Elo');
@@ -8,3 +8,5 @@ for(const locale of ['en','fr'])test(locale+' preserves symbols, original Englis
  for(const row of JSON.parse(fs.readFileSync('_dev/i18n/help-reviewed-v32.json','utf8')))a.equal(I.t(row[0]),row[locale==='en'?1:2]);
  a.equal(I.t('Vence con distintas doctrinas'),locale==='en'?'Win with different doctrines':'Gagnez avec différentes doctrines');
 });
+
+test('new cabinet, reward and action rules have reviewed English and French translations',()=>{for(const locale of ['en','fr']){const I=language(locale);for(const text of ['Elige ocho oradores distintos','Elige cuatro acciones distintas','No se ha transferido ningún cromo: la colección conserva al menos ocho oradores y cuatro acciones únicos.','¡Ventaja de racha!'])a.notEqual(I.t(text),text,text+' '+locale);for(const card of require('../js/action-cards.js').cards)a.notEqual(I.t(card.text),card.text,card.id+' '+locale);}});

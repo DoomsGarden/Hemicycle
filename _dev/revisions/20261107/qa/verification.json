@@ -1,0 +1,46 @@
+{
+  "dateUTC": "2026-11-07T15:29:43.748105+00:00",
+  "version": "v32.1.0",
+  "regression": {
+    "tests": 2160,
+    "failures": 0,
+    "command": "node --test --test-concurrency=1 tests/*.test.cjs tests/online/*.test.cjs"
+  },
+  "postRegressionCompatibility": {
+    "tests": 994,
+    "failures": 0,
+    "note": "Incluye una nueva prueba de datos de presentación históricos y repite las suites afectadas; no se suman como casos únicos a la regresión."
+  },
+  "art": {
+    "catalogueReviewed": 899,
+    "portraitsRegeneratedOrCorrected": 93,
+    "gazeCasesRegenerated": 74,
+    "exclusiveActionPanels": 92,
+    "geometry": "Recorte SVG proporcional en cartas, portadas y archivo documental; comparación con originales.",
+    "finalIndividualReferenceCorrections": "Láminas200–206 corregidas con fotos individuales y símbolo del Senado; fondos franceses de Senado, Asamblea y cargos europeos contrastados, sin inferir militancia de grupos mixtos. Inspección visual final completada. Revisión del catálogo899 refiere encuadre/miradas, no una certificación fotográfica de todas las identidades.",
+    "postCorrectionTests": {
+      "tests": 103,
+      "failures": 0,
+      "scope": "revisión98, fuentes2 y metadatos3"
+    }
+  },
+  "browser": {
+    "tested": "Chromium aislado, invitado, móvil 412×915; bonus es412×915, en393×851 y fr851×393; escala116%, movimiento reducido y foco. Tres momentos de animación de cromos flotantes.",
+    "productionDeviceTested": false
+  },
+  "legal": {
+    "version": "2026-11-06.1",
+    "hash": "32f0bdb37a0a02d3da0ca4d53aeb4040beda526216376ae743babf534e0fb072",
+    "acceptanceChanged": false
+  },
+  "sql": {
+    "file": "_dev/releases/v32.1.0/deploy.sql",
+    "sha256": "695838ab7964717617ec7d530361dcbbd104ef0e8f45c42f25bdf286d0d8e6d9",
+    "isolatedDatabase": "PGlite / PostgreSQL",
+    "rerunnableTested": true,
+    "appliedInProduction": false
+  },
+  "publication": {
+    "status": "Preparada, pendiente de aplicar SQL en Supabase; no se ha lanzado Pages ni actualizado la rama del servicio."
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "apunte-oportuno": {
+    "effect": "boost-heal",
+    "value": 1,
+    "cost": 2,
+    "text": "Un orador propio gana +1 Zasca este turno y recupera 1 de Aguante."
+  },
+  "inciso-punzante": {
+    "value": 3,
+    "cost": 2,
+    "text": "Causa 3 de daño a un orador rival."
+  },
+  "vaso-de-agua": {
+    "value": 3,
+    "cost": 2,
+    "text": "Restaura 3 de Aguante a un orador propio."
+  },
+  "guion-compartido": {
+    "effect": "boost-heal",
+    "value": 1,
+    "cost": 3,
+    "text": "Tus oradores ganan +1 Zasca este turno y recuperan 1 de Aguante cada uno."
+  },
+  "proteccion-de-bancada": {
+    "effect": "guard-heal",
+    "target": "self",
+    "value": 3,
+    "cost": 3,
+    "text": "Un orador propio prepara defensa del 50 % para el próximo golpe y recupera 3 de Aguante."
+  },
+  "cordon-parlamentario": {
+    "effect": "guard-heal",
+    "value": 3,
+    "cost": 6,
+    "text": "Tus oradores preparan defensa del 50 % para el próximo golpe y recuperan 3 de Aguante cada uno."
+  },
+  "ronda-de-replicas": {
+    "value": 1,
+    "cost": 2,
+    "text": "Causa 1 de daño a cada orador rival."
+  },
+  "discurso-coral": {
+    "effect": "boost-heal",
+    "value": 2,
+    "cost": 6,
+    "text": "Tus oradores ganan +2 Zasca este turno y recuperan 2 de Aguante cada uno."
+  },
+  "cruce-de-argumentos": {
+    "duration": 2,
+    "cost": 2
+  },
+  "punteria-dialectica": {
+    "duration": 2,
+    "cost": 2
+  },
+  "turno-prudente": {
+    "effect": "guard-heal",
+    "value": 2,
+    "cost": 2,
+    "text": "Un orador propio prepara defensa del 50 % para el próximo golpe y recupera 2 de Aguante."
+  },
+  "argumento-directo": {
+    "value": 5,
+    "cost": 3,
+    "text": "Causa 5 de daño a un orador rival."
+  },
+  "respiro-oportuno": {
+    "value": 5,
+    "cost": 3,
+    "text": "Restaura 5 de Aguante a un orador propio."
+  },
+  "acuerdo-reparador": {
+    "effect": "cleanse-heal",
+    "value": 3,
+    "cost": 6,
+    "text": "Retira hasta 3 estados negativos de cada orador propio y restaura 3 de Aguante a cada uno."
+  }
+}

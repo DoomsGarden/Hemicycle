@@ -71,3 +71,17 @@ html:not([data-locale=es]) .localized-brand{text-transform:uppercase;font-family
 /* El rótulo se adapta al espacio restante junto a los controles del encabezado. */
 .brand>.localized-brand{width:100%;max-width:185px;min-width:0;filter:drop-shadow(0 1px 1px #000)}
 .localized-wordmark-art{display:block;width:100%;height:auto;overflow:visible}
+
+/* El atlas conserva 3:4: el viewport puede recortar, nunca estirar un rostro. */
+svg.orator-atlas{position:absolute;inset:0;width:100%;height:100%;display:block;overflow:hidden;background:none}
+svg.pack-atlas{display:block;overflow:hidden;background:none}
+/* El marco termina antes del bloque opaco del pie, incluso entre píxeles de animación. */
+.senate-home .hero-fan .cromo{isolation:isolate;clip-path:inset(0 round 10px);backface-visibility:hidden}
+.senate-home .hero-fan .cromo .frame-overlay{clip-path:inset(0 0 24% 0)}
+.senate-home .hero-fan .cromo .bot{background:linear-gradient(transparent,#050a15 28%,#050a15);isolation:isolate}
+
+/* Ocho integrantes y cuatro acciones caben sin comprimir las caras. */
+.cabinet-members{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cabinet-action-slots{grid-template-columns:repeat(2,minmax(0,1fr));flex-wrap:wrap}
+/* La escala se mide contra los retratos originales; el borde suave integra la escena. */
+.portrait-plane-fit{mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent),linear-gradient(180deg,transparent,#000 8%,#000 80%,transparent);mask-composite:intersect}

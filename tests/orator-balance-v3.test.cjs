@@ -1,6 +1,6 @@
 'use strict';
 const {test}=require('node:test'),a=require('node:assert/strict'),vm=require('node:vm'),fs=require('node:fs');
-const C=(()=>{const active=require('../js/orator-catalog.js'),legacy=new Set(require('../_dev/expansions/activation-v32/baseline/orator-catalog.js').cards.map(c=>c.id));return {...active,cards:active.cards.filter(c=>legacy.has(c.id))};})(),before=require('../_dev/balance/catalog-before.json'),E=require('../_dev/online/combat.cjs'),AI=require('../_dev/online/ai.cjs'),dispatch=require('../_dev/online/offline-engines.cjs');
+const C=(()=>{const active=require('../_dev/online/legacy-v32.cjs').frozenModule('js/orator-catalog.js'),legacy=new Set(require('../_dev/expansions/activation-v32/baseline/orator-catalog.js').cards.map(c=>c.id));return {...active,cards:active.cards.filter(c=>legacy.has(c.id))};})(),before=require('../_dev/balance/catalog-before.json'),E=require('../_dev/online/legacy-v32.cjs').combat,AI=require('../_dev/online/ai.cjs'),dispatch=require('../_dev/online/offline-engines.cjs');
 test('before snapshot comes from the published catalog, not a regenerated baseline',()=>{const context=vm.createContext({});vm.runInContext(require('node:child_process').execFileSync('git',['show','3a00b45:js/orator-catalog.js'],{encoding:'utf8'}),context);a.deepEqual(JSON.parse(JSON.stringify(context.HemicycleCatalog.cards)),before);});
 const stats=c=>({c:c.c,a:c.a,h:c.h,v:c.v});
 const expected={comun:{1:[2,4,2],2:[2,5,2]},raro:{2:[4,6,3],3:[4,7,3],4:[4,7,3]},especial:{3:[5,8,4],4:[6,8,4]},legendario:{4:[7,11,5],5:[7,14,5]}};
@@ -41,11 +41,11 @@ test('browser and server dispatch select the exact historical or current engine 
   for(let n=0;state.status==='active'&&n<1000;n++){const command=AI.choose(state,0,0);commands.push({at:0,command});state=engine.move(state,command,0,rng);client.state=browser.forTicket(ticket).move(client.state,command,0,client.rng);}
   a.equal(state.status,'finished');a.deepEqual(engine.replay(ticket,{mode:'normal',cabinet,commands}),state);a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));a.throws(()=>engine.replay(ticket,{mode:'normal',cabinet,commands:[...commands,{at:0,command:{type:'end'}}]}),/después/);
  }
- for(const rules of ['offline10','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
+ for(const rules of ['offline11','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
 });
 
 test('download negotiation preserves absent-version legacy clients and rejects unknown versions',async()=>{
  const calls=[],service=require('../_dev/online/economy-service.cjs').create({url:'https://example.supabase.co',key:'public',secret:'test',fetcher:async(url,options)=>{if(url.endsWith('/auth/v1/user'))return {ok:true,json:async()=>({id:'actor'})};calls.push(JSON.parse(options.body));return {ok:true,json:async()=>[]};}});
- for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8','offline9']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
- const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline10'}),e=>e.status===400);a.equal(calls.length,count);
+ for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8','offline9','offline10']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
+ const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline11'}),e=>e.status===400);a.equal(calls.length,count);
 });

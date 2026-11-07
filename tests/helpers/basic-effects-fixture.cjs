@@ -1,7 +1,7 @@
 const a=require('node:assert/strict'),C=require('../../js/orator-catalog.js'),B=require('../../js/basic-effects.js'),E=require('../../_dev/online/combat.cjs'),{loadBattle}=require('./battle.cjs');
 const base=id=>C.cards.find(c=>c.id===id);
 function fixture(attacker='toni-canto',target='hillary-clinton'){
- let remote=E.initial();const ids=C.cards.slice(0,5).map(c=>c.id),cabinet={orators:ids,leader:ids[0],actions:[]};for(const i of [0,1])remote=E.apply(remote,i,{type:'ready',cabinet},0,()=>.1);
+ let remote=E.initial();const ids=C.cards.slice(0,8).map(c=>c.id),cabinet={orators:ids,leader:ids[0],actions:require('../../js/game-format.js').starterActions.slice()};for(const i of [0,1])remote=E.apply(remote,i,{type:'ready',cabinet},0,()=>.1);
  const local=loadBattle();local.G.n=4;local.G.side='p';local.G.turns={p:2,e:2};local.G.votes={p:0,e:0};local.G.tdp={p:8,e:8};local.G.tdpMax={p:6,e:6};local.G.hand={p:[],e:[]};local.G.deck={p:[],e:[]};local.G.pas={p:[],e:[]};local.G.field={p:[],e:[]};
  for(const [i,id]of [[0,attacker],[1,target]]){const c=base(id),side=i===0?'p':'e';remote.players[i].field=[{uid:'c'+i,id,name:c.n,rarity:c.r,doctrine:c.pa,cost:c.c,z:c.a,hp:c.h,maxHp:c.h,votes:c.v,q:c.q,ready:true,guard:false,buff:0,buffs:[],enteredTurn:0,strongUsedTurn:null,lastHealTurn:null,basicAbility:B.ability(id)}];Object.assign(remote.players[i],{leader:'outside',turn:2,votes:0,tdp:8,tdpMax:6,hand:[],deck:[],rest:[]});const card=local.mk(c,false,side);card.uid='c'+i;card.enteredTurn=0;card.strongUsedTurn=null;card.lastHealTurn=null;local.G.field[side]=[card];local.G.leader[side]={uid:'outside',k:'outside'};}
  remote.side=0;

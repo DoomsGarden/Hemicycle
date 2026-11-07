@@ -1,3 +1,5 @@
+Revisión vigente: [v32.1.0, 7 de noviembre de 2026](revision-20261107.md). Conserva la edición documental `2026-11-06.1` y su huella de aceptación. Los párrafos siguientes conservan su contexto histórico.
+
 # Información legal — paquete preparado para activación
 
 Revisión del 05-11-2026: los documentos incluidos en el juego están publicados en la versión `2026-10-29.2`; los generadores de documentos y fuentes pasan sus comprobaciones. La [revisión de la reserva francesa](../expansions/francia/revision-legal.md) confirma que la preparación oculta mantiene la metodología descrita y documenta los puntos que deben revisarse al activarla. Esta revisión no cambia textos públicos, huella ni recibos. Los párrafos fechados el 29-10-2026 conservan el contexto de la implantación inicial, no una comprobación actual del panel de proveedores.

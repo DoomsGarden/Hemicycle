@@ -11,7 +11,8 @@ function seededRandom(seed) {
 function createSimulator() {
   const c = loadBattle();
   function team(doctrine, recipe) {
-    return recipes[recipe].map(([tier,index]) => c.slug(c.ROSTER[doctrine][tier][index]));
+    const picked=Array.from(new Set(recipes[recipe].map(([tier,index]) => {const pool=c.CARDS.filter(card=>card.pa===doctrine&&card.r===tier);return pool[index%pool.length].id;})));
+    const same=c.CARDS.filter(card=>card.pa===doctrine);for(const card of same)if(picked.length<8&&!picked.includes(card.id))picked.push(card.id);return picked;
   }
   function play({p, e, recipe, seed, first, policy = 'lider'}) {
     c.Math.random = seededRandom(seed);
@@ -19,6 +20,14 @@ function createSimulator() {
     c.BUILD = { ids: player, leader: player[0] };
     c.buildEnemyTeam = () => enemy;
     c.newBattle('normal');
+    // Compare doctrines with equal stat/cost recipes. Named cards can now move
+    // tiers, so choosing their real stats would confound doctrine strength with
+    // the editorial relevance review. Full-catalogue battles have separate tests.
+    const slots=recipes[recipe].concat(recipes[recipe].slice(0,3));
+    for(const side of ['p','e'])for(const card of c.G.hand[side].concat(c.G.deck[side])){
+      if(card.action)continue;const id=card.k,index=(side==='p'?player:enemy).indexOf(id),tier=slots[index][0],cost={comun:2,raro:3,especial:4,legendario:5}[tier],stats=c.HemicycleCatalog.statsFor(tier,cost),leader=id===(side==='p'?player:enemy)[0];
+      Object.assign(card,{r:tier,c:cost,a:stats.a+(leader?1:0),h:stats.h+(leader?3:0),hm:stats.h+(leader?3:0),v:stats.v,basicAbility:null});
+    }
     // Isolate doctrine formulas with the established benchmark policy; tactical AI has its own seeded comparison.
     c.G.aiVersion='benchmark-legacy';
     c.G.first = first;

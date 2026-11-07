@@ -11,11 +11,11 @@ t('La misma instancia no puede estar en mano y mazo',()=>err(()=>R.renew([{uid:1
 t('La baraja se mueve con el azar inyectado',()=>{a.notDeepEqual(R.renew([],[1,2,3,4].map(uid=>({uid})),()=>0),R.renew([],[1,2,3,4].map(uid=>({uid})),()=>.99));});
 t('Expulsión impide regresar en el siguiente turno propio',()=>{a.equal(R.recycle([{uid:1,availableTurn:3}],[],2).rest.length,1);});
 t('Al terminar el descanso se recicla curado una sola vez',()=>{const r=R.recycle([{uid:1,availableTurn:3,hp:0,maxHp:10}],[],3);a.equal(r.deck[0].hp,10);a.equal(r.rest.length,0);});
-const cabinet={orators:['a','b','c','d','e'],leader:'a',actions:['replica','receso']},owned=[...cabinet.orators,...cabinet.actions];
-t('Cinco oradores y dos acciones son válidos',()=>a.deepEqual(R.validateCabinet(cabinet,owned,cabinet.orators),cabinet));
-t('Un gabinete anterior sin acciones sigue siendo válido',()=>a.equal(R.validateCabinet({...cabinet,actions:[]},owned,cabinet.orators).actions.length,0));
+const cabinet={orators:['a','b','c','d','e','f','g','h'],leader:'a',actions:['replica','receso','turno-de-palabra','carpeta-protectora']},owned=[...cabinet.orators,...cabinet.actions];
+t('Ocho oradores y cuatro acciones son válidos',()=>a.deepEqual(R.validateCabinet(cabinet,owned,cabinet.orators),cabinet));
+t('Un gabinete sin acciones necesita migrarse antes de iniciar una partida nueva',()=>err(()=>R.validateCabinet({...cabinet,actions:[]},owned,cabinet.orators)));
 t('No se equipan acciones ajenas a la colección',()=>err(()=>R.validateCabinet(cabinet,cabinet.orators,cabinet.orators)));
-t('No se equipan tres acciones',()=>err(()=>R.validateCabinet({...cabinet,actions:[...cabinet.actions,'turno-de-palabra']},[...owned,'turno-de-palabra'],cabinet.orators)));
+t('No se equipan tres ni cinco acciones',()=>{err(()=>R.validateCabinet({...cabinet,actions:cabinet.actions.slice(0,3)},owned,cabinet.orators));err(()=>R.validateCabinet({...cabinet,actions:[...cabinet.actions,'pregunta-incomoda']},[...owned,'pregunta-incomoda'],cabinet.orators));});
 t('No se repite un orador o una acción',()=>{err(()=>R.validateCabinet({...cabinet,orators:['a','a','b','c','d']},owned,cabinet.orators));err(()=>R.validateCabinet({...cabinet,actions:['replica','replica']},owned,cabinet.orators));});
 t('El líder debe pertenecer al gabinete',()=>err(()=>R.validateCabinet({...cabinet,leader:'z'},owned,cabinet.orators)));
 const slots=['comun','raro','especial','legendario','raro'].map((r,i)=>({id:'o'+i,r}));

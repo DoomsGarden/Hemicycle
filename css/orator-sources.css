@@ -8,3 +8,6 @@
 @media(prefers-reduced-motion:reduce){.card-chevron{transition:none}}
 
 .orator-card>summary:focus-visible{outline-offset:-3px}
+
+/* El archivo documental comparte el recorte proporcional de los cromos. */
+.source-atlas-image{display:block;width:100%;height:100%;overflow:hidden}

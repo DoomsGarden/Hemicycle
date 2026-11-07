@@ -209,3 +209,16 @@ o|or|ou
 a|to|à`;
 var entries=[];text.split('\n').forEach(function(row){var p=row.split('|');entries.push(p);if(p[0].length>2){entries.push(p.map(function(v){return v.toUpperCase();}));entries.push(p.map(function(v){return v.toLowerCase();}));}});I.register(entries);
 })(typeof globalThis!=='undefined'?globalThis:this);
+
+(function(root){if(!root.HemicycleI18n)return;root.HemicycleI18n.register([
+['5 victorias consecutivas','5 consecutive wins','5 victoires consécutives'],
+['¡Ventaja de racha!','Streak bonus unlocked!','Bonus de série débloqué !'],
+['Ventaja de racha','Streak bonus','Bonus de série'],
+['FS extra','Bonus FS','FS bonus'],['XP extra','Bonus XP','XP bonus'],
+['Durante 1 hora, tus partidas dan más FS y XP. Después habrá 30 minutos de descanso antes de poder iniciar otra racha.','For 1 hour, your matches award more FS and XP. A 30-minute cooldown follows before you can start another streak.','Pendant 1 heure, vos matchs rapportent plus de FS et de XP. Un repos de 30 minutes suit avant de pouvoir commencer une nouvelle série.'],
+['La ventaja ya está guardada y se aplica a partir de tu próxima partida.','Your bonus is saved and applies from your next match.','Votre bonus est enregistré et s’applique à partir de votre prochain match.'],
+['Evento de revisión y gabinetes','Cabinet update event','Événement de mise à jour des équipes'],
+['¡Tu gabinete crece!','Your cabinet is growing!','Votre équipe s’agrandit !'],
+['El Seguro Parlamentario protege tus 8 últimos oradores y 4 últimas acciones únicos.','Parliamentary Insurance protects your last 8 unique speakers and 4 unique actions.','L’assurance parlementaire protège vos 8 derniers orateurs et vos 4 dernières actions uniques.'],
+['No se ha transferido ningún cromo: la colección conserva al menos ocho oradores y cuatro acciones únicos.','No card was transferred: your collection keeps at least eight unique speakers and four unique actions.','Aucune carte n’a été transférée : votre collection conserve au moins huit orateurs et quatre actions uniques.']
+]);})(typeof globalThis!=='undefined'?globalThis:this);

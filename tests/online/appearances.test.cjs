@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),a=require('node:assert/strict'),E=require('../../_dev/online/combat.cjs'),P=require('../../_dev/online/progression.cjs');
-const ids=['donald-trump',...E.cards.filter(c=>c.r==='comun').slice(0,4).map(c=>c.id)],cabinet={orators:ids,leader:'donald-trump',actions:[]};
+const ids=['donald-trump',...E.cards.filter(c=>c.r==='comun').slice(0,4).map(c=>c.id)],cabinet=require('../helpers/current-cabinet.cjs').complete({orators:ids,leader:'donald-trump',actions:[]});
 function prepared(profile,leader='donald-trump'){return E.apply(E.initial('ranked'),0,{type:'ready',cabinet:{...cabinet,leader}},1000,()=>.25,profile);}
 function own(s){return s.players[0].hand.concat(s.players[0].deck,s.players[0].field,s.players[0].rest).find(c=>c.id==='donald-trump');}
 test('La edición equipada se conserva en la mano y la mesa con sus estadísticas de líder',()=>{let s=prepared({dtGoldUnlocked:true,dtGoldActive:true});const c=own(s),base=E.catalog[c.id];a.equal(c.appearance,'golden');a.equal(c.z,base.a+3);a.equal(c.maxHp,base.h+5);s=E.apply(s,1,{type:'ready',cabinet},1000,()=>.25);s.players[0].tdp=8;s=E.apply(s,0,{type:'play',uid:c.uid},1000);a.equal(s.players[0].field[0].appearance,'golden');a.equal(E.project(s,0,2,1000).players[0].field[0].appearance,'golden');a.equal(s.players[1].hand[0].appearance,'normal');});

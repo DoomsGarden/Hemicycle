@@ -1,0 +1,4 @@
+'use strict';
+const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict'),art=require('../../../js/orator-art.js'),current={};let count=0;
+for(const file of ['art-jobs.json','gaze-art-jobs.json'])for(const j of JSON.parse(fs.readFileSync(__dirname+'/'+file)).jobs){if(!j.status.startsWith('generated'))continue;assert.equal(crypto.createHash('sha256').update(fs.readFileSync(j.target)).digest('hex'),j.sha256,j.target);assert.equal(j.status,'generated_visual_review_passed');j.ids.forEach((id,i)=>current[id]={url:j.target,position:(i%2)*100+'% '+Math.floor(i/2)*100+'%'});count++;}
+for(const [id,entry]of Object.entries(current)){assert.equal(art[id].url,entry.url,id);assert.equal(art[id].position,entry.position,id);}assert.equal(Object.keys(current).length,93);console.log('PASS',count,'generated atlases;',Object.keys(current).length,'current revised portraits; all hashes/panels match.');
