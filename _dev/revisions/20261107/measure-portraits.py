@@ -29,6 +29,9 @@ for row in rows:
  elif b:
   scale=1.0 if b[3]<=target['height']*1.10 else float(np.clip(target['height']/b[3],.58,1.0));row['framing']={'scale':round(scale,4),'x':0 if scale==1 else round(float(np.clip(.5-(b[0]+b[2]/2)*scale,0,1-scale)),4),'y':0 if scale==1 else round(float(np.clip(target['y']-b[1]*scale,0,.14)),4)}
  else:row['framing']={'scale':.82,'x':.09,'y':.11,'manualReviewRequired':True}
+overrides=json.loads((folder/'portrait-framing-overrides.json').read_text())
+for row in rows:
+ if row['id'] in overrides:row['framing']=overrides[row['id']]
 (folder/'portrait-geometry.json').write_text(json.dumps({'reference':'Median detected face of the 120 original portraits; geometry only, not gaze certification.','target':target,'cards':rows},ensure_ascii=False,indent=2)+'\n')
 print('Measured',sum(r['face'] is not None for r in rows),'/',len(rows),'target',target)
 for id in ['barack-obama','ander-gil-garcia','carlos-cuerpo-caballero','francois-hollande']:
