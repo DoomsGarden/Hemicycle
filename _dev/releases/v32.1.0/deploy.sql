@@ -74,7 +74,11 @@ begin
  select * into save from public.hemicycle_cloud_saves where user_id=p_actor;
  if not found or save.payload is null then raise exception 'Sincroniza primero tu progreso en la nube.';end if;
  slot:=save.payload#>array['profile','cabinets','slots',coalesce(save.payload#>>'{profile,cabinets,selected}','0')];
- if slot is null or jsonb_typeof(slot->'ids') is distinct from 'array' or jsonb_array_length(slot->'ids')<>8 or jsonb_typeof(slot->'actions') is distinct from 'array' or jsonb_array_length(slot->'actions')<>4 then raise exception 'Guarda un gabinete de ocho oradores y cuatro acciones en Colección.';end if;
+ -- La preparación sigue admitiendo favoritos históricos durante el intervalo
+ -- entre aplicar este SQL y actualizar el servicio/web. El motor balance-v4
+ -- exige 8+4 antes de confirmar una partida nueva.
+ if slot is null or jsonb_typeof(slot->'ids') is distinct from 'array' or jsonb_typeof(coalesce(slot->'actions','[]'::jsonb)) is distinct from 'array' then raise exception 'Guarda un gabinete en Colección.';end if;
+ if not ((jsonb_array_length(slot->'ids')=5 and jsonb_array_length(coalesce(slot->'actions','[]'::jsonb))<=2) or (jsonb_array_length(slot->'ids')=8 and jsonb_array_length(coalesce(slot->'actions','[]'::jsonb))=4)) then raise exception 'Guarda un gabinete de ocho oradores y cuatro acciones en Colección.';end if;
  rating:=(save.payload#>>'{profile,elo}')::bigint;
  insert into public.hemicycle_online_rankings(user_id,elo) values(p_actor,rating) on conflict(user_id) do nothing;
  insert into public.hemicycle_online_rooms(host_id,request_id,mode,opponent_kind,expires_at)

@@ -35,10 +35,11 @@
   },
   "sql": {
     "file": "_dev/releases/v32.1.0/deploy.sql",
-    "sha256": "695838ab7964717617ec7d530361dcbbd104ef0e8f45c42f25bdf286d0d8e6d9",
+    "sha256": "54f31f5480c2282672a51317bc6354aad855a26916452d0234be38d32fbfbc8c",
     "isolatedDatabase": "PGlite / PostgreSQL",
     "rerunnableTested": true,
-    "appliedInProduction": false
+    "appliedInProduction": false,
+    "preDeployCompatibility": "La preparación SQL admite temporalmente favoritos históricos5+2 mientras se actualiza el servicio; el motor nuevo sigue exigiendo8+4. Comprobado con PostgreSQL aislado."
   },
   "publication": {
     "status": "Preparada, pendiente de aplicar SQL en Supabase; no se ha lanzado Pages ni actualizado la rama del servicio."
