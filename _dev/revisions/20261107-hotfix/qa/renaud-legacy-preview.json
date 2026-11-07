@@ -1,0 +1,87 @@
+{
+  "kind": "Preview of retained existing artwork; no new generation and no publication approval",
+  "id": "renaud-muselier",
+  "art": {
+    "url": "assets/orators/francia-fr02-23.webp",
+    "key": "renaud-muselier",
+    "columns": 2,
+    "rows": 2,
+    "column": 0,
+    "row": 0,
+    "aspect": [
+      3,
+      4
+    ],
+    "clipInset": 0.020000000000000018,
+    "framing": {
+      "scale": 1.02,
+      "x": -0.010000000000000009,
+      "y": -0.010000000000000009
+    }
+  },
+  "sourceSha256": "7428f8b44e58518a5be88aeb72b0e264357876b9c25c0092ac870c447694c0aa",
+  "trials": [
+    {
+      "scale": 1,
+      "differences": [
+        {
+          "w": 120,
+          "h": 160,
+          "changed": 0
+        },
+        {
+          "w": 300,
+          "h": 410,
+          "changed": 0
+        },
+        {
+          "w": 74,
+          "h": 100,
+          "changed": 0
+        },
+        {
+          "w": 48,
+          "h": 64,
+          "changed": 144
+        },
+        {
+          "w": 35,
+          "h": 48,
+          "changed": 0
+        }
+      ]
+    },
+    {
+      "scale": 1.02,
+      "differences": [
+        {
+          "w": 120,
+          "h": 160,
+          "changed": 0
+        },
+        {
+          "w": 300,
+          "h": 410,
+          "changed": 0
+        },
+        {
+          "w": 74,
+          "h": 100,
+          "changed": 0
+        },
+        {
+          "w": 48,
+          "h": 64,
+          "changed": 0
+        },
+        {
+          "w": 35,
+          "h": 48,
+          "changed": 0
+        }
+      ]
+    }
+  ],
+  "screenshot": "qa/renaud-legacy-preview.jpg",
+  "errors": []
+}

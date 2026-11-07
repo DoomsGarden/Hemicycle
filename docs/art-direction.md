@@ -4,7 +4,7 @@ El patrón de referencia es la primera colección: ilustración digital semirrea
 
 ## Composición compartida
 
-Retrato vertical 3:4, de pecho hacia arriba, con ambos hombros y espacio arquitectónico visible. Pelo a aproximadamente el 16–19 % del alto; barbilla alrededor del 49–53 %. Cabeza como máximo del 35–37 % del panel. Reservar las esquinas para coste, copias y estadísticas. Mirada natural hacia una persona fuera de plano: cabeza y pupilas giradas juntas unos 20–25 grados, sin mirar a cámara ni forzar un perfil extremo. Variar lado, gesto, expresión y presencia de uno o dos micrófonos bajos.
+Retrato vertical 3:4, de pecho hacia arriba, con ambos hombros y espacio arquitectónico visible. Comparar el peso visual de cabeza, hombros y fondo con Obama y con el retrato individual aprobado. Las posiciones porcentuales del prompt son orientativas; no alejar ni encoger al orador para imponer una medida uniforme. Reservar las esquinas para coste, copias y estadísticas. Mirada natural hacia una persona fuera de plano: cabeza y pupilas giradas juntas unos 20–25 grados, sin mirar a cámara ni forzar un perfil extremo. Variar lado, gesto, expresión y presencia de uno o dos micrófonos bajos.
 
 Las cartas y las portadas de sobre usan el mismo retrato y recorte proporcional. El encuadre se compara con las cartas originales y nunca se corrige deformando la imagen por separado en el sobre.
 
@@ -12,7 +12,7 @@ Cada nueva ilustración se genera por separado en un archivo 3:4 de una sola per
 
 ## Identidad y símbolo
 
-Usar una referencia individual identificada y fechada para cada persona; no tomar otra cara de un atlas como sustituto. Comprobar pelo, gafas o ausencia de ellas, forma del rostro y época. No mezclar rasgos entre personas.
+Usar una referencia individual identificada y fechada para cada persona; no tomar otra cara de un atlas como sustituto. Comprobar pelo, gafas o ausencia de ellas, forma del rostro y época. No mezclar rasgos entre personas. Un nombre asociado a un cuadrante antiguo no verifica por sí solo que su referencia sea correcta. Si hay una discrepancia, apartar ese resultado, consultar una referencia individual documentada y corregirlo antes de aprobar la ilustración.
 
 El fondo puede evocar el partido o la cámara/institución pertinente, con arquitectura, colores y un emblema pequeño. Consultar el diseño real: si incluye símbolo y siglas o una denominación integrada, conservar el conjunto. No convertirlo en iniciales genéricas, inventar sellos, añadir listas de partidos, párrafos explicativos o la palabra «grupo» como si fuera el nombre de un partido. Un grupo parlamentario puede contener afiliaciones distintas; no inferir una militancia individual por ese dato. Usar la referencia institucional documentada cuando corresponda. No atribuir un Senado a quien presidió otra cámara.
 

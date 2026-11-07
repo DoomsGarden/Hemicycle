@@ -27,7 +27,7 @@ with open('/tmp/hemicycle-individual-portraits.lock','w') as lock:
   valid=job.get('generated') and target.exists() and hashlib.sha256(target.read_bytes()).hexdigest()==job.get('sha256')
   if valid:
    job.setdefault('failedAttempts',[]).append({'error':sys.argv[3],'preservedRecordedImage':True})
-   if job['status']!='approved':job['status']='generated_pending_review'
+   if job['status'] not in ['approved','needs_regeneration']:job['status']='generated_pending_review'
   else:job.update(status='blocked',error=sys.argv[3])
   manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');sys.exit(0)
  if sys.argv[1]=='--unreserve':

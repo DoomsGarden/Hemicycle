@@ -1,5 +1,10 @@
 {
   "requestedByUser": true,
   "phase": "after all currently generatable pending portraits",
-  "instructions": "Retry remaining generation failures using the same individual portrait request; do not rephrase to bypass a refusal."
+  "instructions": "Retry remaining generation failures using the same individual portrait request; do not rephrase to bypass a refusal.",
+  "completed": true,
+  "remaining": [
+    "renaud-muselier"
+  ],
+  "outcome": "Other portraits generated and reviewed. Awaiting user decision on retaining the reviewed existing Renaud illustration or holding publication."
 }
