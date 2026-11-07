@@ -4,6 +4,8 @@ from PIL import Image
 import sys,json,hashlib,fcntl,datetime
 root=Path(__file__).resolve().parents[3]
 manifest=Path(__file__).with_name('individual-portraits.json')
+if len(sys.argv)>1 and sys.argv[1]=='--original':
+ sys.argv.pop(1);manifest=Path(__file__).with_name('original-individual-portraits.json')
 with open('/tmp/hemicycle-individual-portraits.lock','w') as lock:
  fcntl.flock(lock,fcntl.LOCK_EX)
  data=json.loads(manifest.read_text())

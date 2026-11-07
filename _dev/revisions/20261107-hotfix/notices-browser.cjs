@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'../../..'),legal=require(root+'/js/legal-docu
 fs.mkdirSync(qa,{recursive:true});
 const html=fs.readFileSync(root+'/index.html','utf8').replace('function boot(){','window.Repair={profile:D,go:go,notice:maybeExpansionNotice};function boot(){');
 (async()=>{const b=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--disable-dev-shm-usage']});try{
- for(const mode of ['button','outside','timeout','interrupted']){
+ for(const mode of process.argv.includes('--escape-only')?['escape']:['button','outside','timeout','interrupted','escape']){
   const context=await b.newContext({viewport:{width:mode==='timeout'?393:412,height:mode==='timeout'?851:915},isMobile:true,hasTouch:true,serviceWorkers:'block'});
   await context.route('https://**/*',r=>r.abort());await context.route('http://127.0.0.1:8025/',r=>r.fulfill({contentType:'text/html',body:html}));
   await context.addInitScript(({legal,cards,actions})=>{
@@ -26,6 +26,7 @@ const html=fs.readFileSync(root+'/index.html','utf8').replace('function boot(){'
   }
   if(mode==='button')await p.screenshot({path:path.join(qa,'recovered-event.png')});
   if(mode==='button'||mode==='interrupted')await p.locator('.expansion-notice [data-modal=confirm]').click();
+  else if(mode==='escape')await p.keyboard.press('Escape');
   else if(mode==='outside')await p.locator('.modal-bg').click({position:{x:2,y:2}});
   else await p.waitForSelector('.expansion-notice',{state:'hidden',timeout:18000});
   await p.waitForSelector('.mail-comment-hint',{state:'visible'});const hint=await p.locator('.mail-comment-hint').boundingBox();assert.ok(hint.x>=0&&hint.x+hint.width<= (mode==='timeout'?393:412));

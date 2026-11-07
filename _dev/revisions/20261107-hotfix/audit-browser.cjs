@@ -2,7 +2,8 @@
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),{chromium}=require('playwright');
 const root=path.resolve(__dirname,'../../..'),P=require(root+'/js/portrait-layout.js'),preview=process.argv.includes('--individual-preview'),art=preview?require('./build-individual-art.cjs').apply(JSON.parse(fs.readFileSync(path.join(__dirname,'art-before.json'),'utf8')),{preview:true}):require(root+'/js/orator-art.js'),catalog=require(root+'/js/orator-catalog.js'),actions=require(root+'/js/action-cards.js'),legal=require(root+'/js/legal-documents.js'),tiers=require('../20261107/tier-review.json');
 const qa=path.join(__dirname,'qa');fs.mkdirSync(qa,{recursive:true});
-const ids=tiers.cards.filter(c=>!c.original&&(!preview||art[c.id].columns===1)).map(c=>c.id).sort();if(!preview)assert.equal(ids.length,779);
+const unreviewed=process.argv.includes('--unreviewed'),reviewPrefix='review-'+Date.now().toString(36)+'-',jobs=preview?['individual-portraits.json','original-individual-portraits.json'].flatMap(file=>JSON.parse(fs.readFileSync(path.join(__dirname,file),'utf8')).jobs):[],pendingReview=new Set(jobs.filter(j=>j.status==='generated_pending_review').map(j=>j.id));
+const ids=tiers.cards.filter(c=>(!c.original||unreviewed&&pendingReview.has(c.id))&&(!preview||art[c.id]&&art[c.id].columns===1)&&(!unreviewed||pendingReview.has(c.id))).map(c=>c.id).sort();if(!preview)assert.equal(ids.length,779);
 const html=fs.readFileSync(root+'/index.html','utf8').replace('function boot(){','window.Repair={go:go,profile:D,paint:paint,notice:maybeExpansionNotice,stopTutorial:function(){if(TUTORIAL)TUTORIAL.active=false;},render:function(ids){go("coleccion");document.getElementById("content").innerHTML="<div class=hotfix-audit>"+ids.map(id=>"<div>"+cromoHTML(BYID[id],{count:1})+"<p>"+esc(id)+"</p></div>").join("")+"</div>";},zoom:function(id){go("detalle",{id:id});ZOOM_OPEN=true;renderZoomOverlay();}};function boot(){');
 (async()=>{
  const browser=await chromium.launch({executablePath:'/usr/bin/chromium',args:['--no-sandbox','--disable-dev-shm-usage']});
@@ -22,11 +23,11 @@ const html=fs.readFileSync(root+'/index.html','utf8').replace('function boot(){'
   for(let offset=0;!process.argv.includes('--isolation-only')&&offset<ids.length;offset+=24){
    const batch=ids.slice(offset,offset+24);await page.evaluate(batch=>Repair.render(batch),batch);
    await page.evaluate(async()=>{for(const src of new Set(Array.from(document.querySelectorAll('.hotfix-audit svg image'),el=>el.getAttribute('href')))){const i=new Image();i.src=src;await i.decode();}});
-   const file=(preview?'individual-preview-':'all-new-')+String(offset/24).padStart(2,'0')+'.png';await page.locator('.hotfix-audit').screenshot({path:path.join(qa,file)});sheets.push({file,ids:batch});
+   const file=(unreviewed?reviewPrefix:preview?'individual-preview-':'all-new-')+String(offset/24).padStart(2,'0')+'.png';await page.locator('.hotfix-audit').screenshot({path:path.join(qa,file)});sheets.push({file,ids:batch});
   }
   // For every actual framing, alter ONLY the neighbouring cells. The target's
   // rendered pixels must remain identical, in collection, enlarged and pack sizes.
-  const cases=Object.entries(art).filter(([id,a])=>!preview||a.columns===1).map(([id,a])=>({id,art:a}));let checked=0;
+  const cases=Object.entries(art).filter(([id,a])=>(!preview||a.columns===1)&&(!unreviewed||ids.includes(id))).map(([id,a])=>({id,art:a}));let checked=0;
   for(const item of cases){
    const variants=await page.evaluate(a=>{
     const cols=a.columns||2,rows=a.rows||2,p=(a.position||'0% 0%').split(/\s+/),col=Number.isInteger(a.column)?a.column:Math.round(parseFloat(p[0])/100*(cols-1)),row=Number.isInteger(a.row)?a.row:Math.round(parseFloat(p[1])/100*(rows-1));
@@ -38,6 +39,6 @@ const html=fs.readFileSync(root+'/index.html','utf8').replace('function boot(){'
    },svgs);
    assert.equal(differences.some(d=>d.changed>0),false,item.id+': neighbour pixels leaked '+JSON.stringify(differences));checked++;
   }
-  assert.deepEqual(errors,[]);const result={newCards:ids.length,allPortraitsChecked:checked,renderSizes:3,neighbourLeakFailures:0,sheets,errors};fs.writeFileSync(path.join(qa,preview?'individual-preview.json':'portrait-audit.json'),JSON.stringify(result,null,2)+'\n');console.log('PASS',ids.length,'new-card renders and',checked,'portrait isolation checks × 3 sizes.');
+  assert.deepEqual(errors,[]);const result={newCards:ids.length,allPortraitsChecked:checked,renderSizes:3,neighbourLeakFailures:0,sheets,portraits:jobs.filter(j=>ids.includes(j.id)).map(j=>({id:j.id,sha256:j.sha256})),errors},report=unreviewed?reviewPrefix+'audit.json':preview?'individual-preview.json':'portrait-audit.json';fs.writeFileSync(path.join(qa,report),JSON.stringify(result,null,2)+'\n');if(unreviewed)fs.writeFileSync(path.join(qa,'latest-review.json'),JSON.stringify({report}));console.log('PASS',ids.length,'new-card renders and',checked,'portrait isolation checks × 3 sizes.',report);
  }finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});
