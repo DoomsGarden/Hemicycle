@@ -18,7 +18,13 @@ with open('/tmp/hemicycle-individual-portraits.lock','w') as lock:
   for job in jobs:job.update(status='generating',startedAt=datetime.datetime.now(datetime.timezone.utc).isoformat())
   manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');print(json.dumps([{k:j[k] for k in ['id','name','country','rarity','source','quadrant','target']} for j in jobs],ensure_ascii=False));sys.exit(0)
  if sys.argv[1]=='--failed':
-  job=next(j for j in data['jobs'] if j['id']==sys.argv[2]);job.update(status='blocked',error=sys.argv[3]);manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');sys.exit(0)
+  job=next(j for j in data['jobs'] if j['id']==sys.argv[2])
+  target=root/job['target']
+  valid=job.get('generated') and target.exists() and hashlib.sha256(target.read_bytes()).hexdigest()==job.get('sha256')
+  if valid:
+   job.setdefault('failedAttempts',[]).append({'error':sys.argv[3],'preservedRecordedImage':True})
+  else:job.update(status='blocked',error=sys.argv[3])
+  manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n');sys.exit(0)
  if sys.argv[1]=='--unreserve':
   ids=set(json.loads(sys.argv[2]))
   for job in data['jobs']:

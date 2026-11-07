@@ -1,4 +1,4 @@
-Revisión vigente: [v32.0.0.2, 7 de noviembre de 2026](revision-20261107.md). Conserva la edición documental `2026-11-06.1` y su huella de aceptación. Los párrafos siguientes conservan su contexto histórico.
+Corrección en preparación: [arte y avisos de v32.0.0.2](revision-20261107-art.md). Corrige una cifra obsoleta de créditos y prepara la edición documental `2026-11-07.1`, que requiere registrar su SQL antes de publicar el cliente. La [revisión anterior](revision-20261107.md) conserva su contexto histórico.
 
 # Información legal — paquete preparado para activación
 
