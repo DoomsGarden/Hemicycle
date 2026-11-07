@@ -16,4 +16,5 @@ function theme(r){
  return {colors:['#342633','#795867']};
 }
 const data={};for(const row of geometry.cards){if(row.original)continue;const r=decisions.get(row.id);data[row.id]={...row.source,key:row.id,framing:row.framing,context:theme(r)};}
+if(fs.existsSync(path.join(__dirname,'../20261107-hotfix/individual-portraits.json')))require('../20261107-hotfix/build-individual-art.cjs').apply(data);
 fs.writeFileSync(path.join(root,'js/orator-art.js'),'(function(root,data){if(typeof module==="object"&&module.exports)module.exports=data;else root.HemicycleOratorArt=data;})(typeof globalThis!=="undefined"?globalThis:this,'+JSON.stringify(data)+');\n');console.log('Art layout:',Object.keys(data).length,'atlas portraits; proportional crop and documented group/institution context.');

@@ -972,21 +972,27 @@ function ensureAccountFormat(){
 window.addEventListener('online',function(){FORMAT_UPGRADE_AFTER=0;ensureAccountFormat();});
 function pendingMail(){var current=syncRankedSeason();return expansionMail().concat(current?current.state.rewards.filter(function(r){return !r.claimed;}):[]).concat(pendingPackPresentations().map(function(r){return {presentation:true,id:r.id};}));}
 var EXPANSION_NOTICE_TIMER=null,EXPANSION_NOTICE_BUSY=false,EVENT_PRESENTER=null;
+function eventNoticeKey(event){return 'hemicycle_event_presentations_v2:'+expansionReceiptKey(event);}
 function eventPresenter(){if(!EVENT_PRESENTER)EVENT_PRESENTER=HemicycleEventPresenter.create({open:function(title,html,label){showModal(title,html,label,false,null,true);var dialog=document.querySelector('#modalRoot .modal');dialog.querySelector('[data-modal=cancel]').hidden=true;return dialog;},close:closeModal});return EVENT_PRESENTER;}
 function maybeExpansionNotice(){
  clearTimeout(EXPANSION_NOTICE_TIMER);
  if(SCREEN!=='menu'||!window.HemicycleEntered)return;
  EXPANSION_NOTICE_TIMER=setTimeout(function(){
   if(SCREEN!=='menu')return;
-  if(EXPANSION_NOTICE_BUSY||document.querySelector('#modalRoot .modal, #legalRoot .legal-panel, .player-profile')||(TUTORIAL&&TUTORIAL.active)||(MENU_GUIDE&&MENU_GUIDE.active)||!lsGet('hemiciclo_tutorial_v1')){maybeExpansionNotice();return;}
-  var E=HemicycleExpansionEvent.all.find(function(event){var p=expansionProfile(event);return event.eligible(p,Date.now())&&!event.state(p).announced;});if(!E)return;var d=expansionProfile(E);
+  if(EXPANSION_NOTICE_BUSY||document.querySelector('#modalRoot .modal, #legalRoot .legal-panel, .player-profile')||(TUTORIAL&&TUTORIAL.active)||(MENU_GUIDE&&MENU_GUIDE.active)){maybeExpansionNotice();return;}
+  var E=HemicycleExpansionEvent.all.find(function(event){return HemicycleEventPresenter.shouldPresent(event,expansionProfile(event),lsGet(eventNoticeKey(event)),Date.now());});if(!E)return;var d=expansionProfile(E),noticeKey=eventNoticeKey(E);
+  eventPresenter().show(E.presentation,function(id,detail){
+   if(eventNoticeKey(E)!==noticeKey)return;
+   if(detail&&detail.reason==='interrupted'){maybeExpansionNotice();return;}
+   var dismissed={};dismissed[noticeKey]=HemicycleEventPresenter.dismissal(E,Date.now());try{atomicLocal(dismissed);}catch(ignore){}
+   if(SCREEN==='menu'){HOME_ACTIONS_OPEN=true;paint();}
+  });
   E.announce(d,Date.now());var values={};values[expansionReceiptKey(E)]=E.state(d);
   // Announcing never collects a prize. Offline guests commit the notice with
   // their profile; signed-in accounts keep a separate device receipt until sync.
   if(!economyAccount())values[LS]=d;
   try{atomicLocal(values);}catch(e){return;}
   if(verifiedAccount()&&!ECONOMY_WORK&&!ECONOMY.pending())ECONOMY.execute({type:'expansion-notice',event:E.id}).catch(function(){});
-  eventPresenter().show(E.presentation,function(){if(SCREEN==='menu'){HOME_ACTIONS_OPEN=true;paint();}});
  },600);
 }
 async function claimExpansion(key,button){
@@ -1047,8 +1053,8 @@ function showCosmeticRewards(rewards,done){
 }
 function claimObjective(button){var position=rememberObjectives();if(position){position.id=button.getAttribute('data-id');position.step=button.getAttribute('data-step');}if((MENU_GUIDE&&MENU_GUIDE.active)||(TUTORIAL&&TUTORIAL.active))return;if(typeof verifiedAccount==='function'&&verifiedAccount()){var view=button.getAttribute('data-view');economyTask({type:'claim',view:view,id:button.getAttribute('data-id'),step:Number(button.getAttribute('data-step'))},function(result){closeModal();paint();if(result.packs)go('sobre',{receiptId:result.presentationId,cards:result.packs[0],packs:result.packs,opened:[],packIndex:0,quantity:1,k:result.kind,free:true,objectiveReturn:position});else showCosmeticRewards(result.cosmetics,function(){openObjectives(view,position&&position.tab,position);});});return;}var a=HemicycleObjectives,d=JSON.parse(JSON.stringify(D())),view=button.getAttribute('data-view'),id=button.getAttribute('data-id');try{var result=view==='challenges'?a.claim(d,id):a.claimAchievement(d,CARDS,id,Number(button.getAttribute('data-step')));d.objectives=result.state;var newVisuals=HemicycleAppearance.grant(d,result.reward.cosmetics||[]);d.fs+=result.reward.fs||0;if(result.reward.xp&&typeof HemicycleXP!=='undefined')HemicycleXP.add(d,result.reward.xp);if(result.leader&&HemicycleMastery.eligible(result.leader))d.leaderMastery=HemicycleMastery.claim(d,result.leader);var cards=result.reward.kind?packContents(result.reward.kind).map(function(c){return c.id;}):null;if(cards)awardCards(d,cards);d.objectives=a.snapshot(d,CARDS);var values={};values[LS]=d;atomicLocal(values);closeModal();paint();if(cards)go('sobre',{cards:cards,packs:[cards],opened:[],packIndex:0,quantity:1,k:result.reward.kind,free:true,objectiveReturn:position});else showCosmeticRewards(newVisuals,function(){openObjectives(view,position&&position.tab,position);});}catch(e){closeModal();showModal('No se ha reclamado',e.message,'Volver',false,function(){openObjectives(view,position&&position.tab,position);});}}
 
-function expansionHintActive(){return !document.querySelector('#modalRoot .expansion-notice')&&HemicycleExpansionEvent.all.some(function(event){var d=expansionProfile(event),state=event.state(d);return event.eligible(d,Date.now())&&state.announced&&!state.mailVisited&&event.pending(d,Date.now()).length>0;});}
-function acknowledgeExpansionMail(){var d=D(),values={},events=[];HemicycleExpansionEvent.all.forEach(function(event){event.merge(d,lsGet(expansionReceiptKey(event)));if(event.visit(d,Date.now())){values[expansionReceiptKey(event)]=event.state(d);events.push(event);}});if(!economyAccount())values[LS]=d;try{atomicLocal(values);}catch(e){return;}if(verifiedAccount())events.forEach(function(event){ECONOMY.execute({type:'expansion-notice',event:event.id,mailVisited:true}).catch(function(){});});}
+function expansionHintActive(){return !document.querySelector('#modalRoot .expansion-notice')&&HemicycleExpansionEvent.all.some(function(event){return HemicycleEventPresenter.reminder(event,expansionProfile(event),lsGet(eventNoticeKey(event)),Date.now());});}
+function acknowledgeExpansionMail(){var d=D(),values={},events=[];HemicycleExpansionEvent.all.forEach(function(event){event.merge(d,lsGet(expansionReceiptKey(event)));if(event.visit(d,Date.now())){values[expansionReceiptKey(event)]=event.state(d);var notice=lsGet(eventNoticeKey(event));if(notice)values[eventNoticeKey(event)]=Object.assign({},notice,{mailVisited:true});events.push(event);}});if(!economyAccount())values[LS]=d;try{atomicLocal(values);}catch(e){return;}if(verifiedAccount())events.forEach(function(event){ECONOMY.execute({type:'expansion-notice',event:event.id,mailVisited:true}).catch(function(){});});}
 function mailButton(){var count=pendingMail().length,hint=expansionHintActive();return '<span class="mail-anchor"><button class="mail-button'+(count?' has-mail':'')+'" data-go="buzon" aria-label="Buzón'+(count?': '+count+' recompensas pendientes':': sin recompensas pendientes')+'" title="Buzón"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg></button>'+(count?'<span class="mail-pending-badge" aria-hidden="true">'+count+'</span>':'')+(hint?HemicycleEventPresenter.hintHTML(HemicycleExpansionEvent.presentation.reminder):'')+'</span>';}
 function rankedPanel(){
  var current=syncRankedSeason();if(!current)return '';
