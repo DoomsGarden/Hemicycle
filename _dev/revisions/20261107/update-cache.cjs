@@ -3,9 +3,9 @@ const fs=require('node:fs'),cp=require('node:child_process'),root=require('node:
 const files=new Set(cp.execFileSync('git',['diff','--name-only'],{encoding:'utf8'}).trim().split('\n').filter(f=>/^(js|css)\//.test(f)));
 for(const f of ['js/action-data-v32.js','js/action-art.js','js/action-state-visuals.js','js/game-format.js','js/localization-review321.js','js/offline-rules-v10.js','js/portrait-layout.js','js/victory-boost-ui.js','js/victory-boost.js','css/action-state-visuals.css','css/victory-boost.css'])files.add(f);
 const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
-let html=fs.readFileSync('index.html','utf8');for(const f of files)html=html.replace(new RegExp(escape(f)+'\\?v=[^"\\s<>]+','g'),f+'?v=32.1.0');fs.writeFileSync('index.html',html);
+let html=fs.readFileSync('index.html','utf8');for(const f of files)html=html.replace(new RegExp(escape(f)+'\\?v=[^"\\s<>]+','g'),f+'?v=32.0.0.2');fs.writeFileSync('index.html',html);
 let sw=fs.readFileSync('sw.js','utf8'),match=sw.match(/const ASSETS = (\[[^;]+\]);/),assets=JSON.parse(match[1]);
-assets=assets.map(url=>{const file=url.replace(/^\.\//,'').split('?')[0];return files.has(file)||/^manifest(?:\.(?:en|fr))?\.json$/.test(file)?'./'+file+'?v=32.1.0':url;});
+assets=assets.map(url=>{const file=url.replace(/^\.\//,'').split('?')[0];return files.has(file)||/^manifest(?:\.(?:en|fr))?\.json$/.test(file)?'./'+file+'?v=32.0.0.2':url;});
 for(const m of html.matchAll(/(?:src|href)="((?:js|css)\/[^"<>]+|manifest(?:\.(?:en|fr))?\.json[^"<>]*)"/g))assets.push('./'+m[1]);
 assets=[...new Set(assets)];for(const url of assets)if(!fs.existsSync(url.split('?')[0]))throw Error('Recurso inexistente: '+url);
 sw=sw.replace(match[0],'const ASSETS = '+JSON.stringify(assets)+';');fs.writeFileSync('sw.js',sw);console.log('Versioned resources:',files.size,'; cached resources:',assets.length);

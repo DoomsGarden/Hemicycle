@@ -1,4 +1,4 @@
-/* Reglas de acciones y de gabinetes revisadas para v32.1.0. */
+/* Reglas de acciones y de gabinetes revisadas para v32.0.0.2. */
 (function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory;else if(root.HemicycleI18n)root.HemicycleI18n.register(factory(root.HemicycleActions.cards,root.HemicycleI18n.dictionary));})(typeof globalThis!=='undefined'?globalThis:this,function(cards,dictionary){'use strict';
 var rows=[
 ["Se protegen tus últimos ocho oradores y cuatro acciones únicos. Puedes perder copias repetidas sin bajar de esos mínimos. El resultado vuelve a comprobar la colección si ha cambiado.", "Your last eight unique speakers and four unique actions are protected. Duplicate copies may transfer without reducing those minimums. The result checks the collection again if it has changed.", "Vos huit derniers orateurs et quatre dernières actions uniques sont protégés. Les exemplaires en double peuvent être transférés sans passer sous ces minimums. Le résultat vérifie à nouveau la collection si elle a changé."],

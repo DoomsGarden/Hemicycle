@@ -1,4 +1,4 @@
-Revisión vigente: [v32.1.0, 7 de noviembre de 2026](revision-20261107.md). Conserva la edición documental `2026-11-06.1` y su huella de aceptación. Los párrafos siguientes conservan su contexto histórico.
+Revisión vigente: [v32.0.0.2, 7 de noviembre de 2026](revision-20261107.md). Conserva la edición documental `2026-11-06.1` y su huella de aceptación. Los párrafos siguientes conservan su contexto histórico.
 
 # Información legal — paquete preparado para activación
 

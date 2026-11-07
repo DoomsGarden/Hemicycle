@@ -1,4 +1,4 @@
-# Servicio online · Estado de v32.1.0
+# Servicio online · Estado de v32.0.0.2
 
 Revisado el 7 de noviembre de 2026 contra el código del repositorio. El juego integra cuentas, directorio e invitaciones, combates privados Normal/Rápida, Clasificatoria, economía y Mercado autoritativos y partidas descargadas verificables. El catálogo vigente contiene 899 oradores y 92 acciones.
 
@@ -46,8 +46,8 @@ node --test tests/online/*.test.cjs
 Las pruebas usan transporte simulado y bases aisladas. Las comprobaciones con cuentas alojadas y dispositivos son verificaciones de producción separadas.
 
 - [Supervisión, métricas y límites](../operations/README.md).
-- [Notas de v32.1.0](../releases/v32.1.0.md).
+- [Notas de v32.0.0.2](../releases/v32.0.0.2.md).
 - [Historial de salas, prototipos e instrucciones iniciales](HISTORIAL-FUNDACION.md).
 - [Primera partida privada, documento histórico](COMBATE-PRIVADO.md).
 
-La revisión v32.1.0 requiere aplicar [`20261107_review_v321.sql`](20261107_review_v321.sql) después del bloque de v32. Admite gabinetes de ocho oradores y cuatro acciones, conserva importaciones históricas y offline1–9, y añade offline10. Guarda de forma autoritativa el evento independiente de revisión y el bonus por racha. La migración es repetible y no se ejecuta al publicar código.
+La revisión v32.0.0.2 requiere aplicar [`20261107_review_v321.sql`](20261107_review_v321.sql) después del bloque de v32. Admite gabinetes de ocho oradores y cuatro acciones, conserva importaciones históricas y offline1–9, y añade offline10. Guarda de forma autoritativa el evento independiente de revisión y el bonus por racha. La migración es repetible y no se ejecuta al publicar código.

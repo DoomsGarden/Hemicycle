@@ -11,7 +11,7 @@ function starter(identity,now,rng=random){
  check(/^HC-[0-9a-f-]{36}$/i.test(identity||''),'ID no válido.');
  const album=[];for(const [r,n]of [['comun',18],['raro',8],['especial',3],['legendario',1]]){const pool=cards.filter(c=>c.r===r);for(let i=pool.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}for(let i=0;i<n;i++)album.push(pool[i%pool.length].id);}
  const profile={xp:0,fs:1500,elo:0,w:0,l:0,album,actionAlbum:[],lastDaily:0,lastWeekly:0,dtWins:0,dtGoldUnlocked:false,dtGoldActive:false};Format.ensureCollection(profile,cards.filter(c=>!c.action),A.cards);Appearance.initialize(profile,now,new Date(now).toISOString());profile.objectives=O.snapshot(profile,cards,now);
- return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v32.1.0',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
+ return {format:'hemiciclo-backup',schemaVersion:1,identity:{id:identity,createdAt:new Date(now).toISOString()},exportedAt:new Date(now).toISOString(),gameVersion:'v32.0.0.2',profile,league:null,ranked:R.sync(null,0,now).state,tutorials:{battle:null,menu:null}};
 }
 function inventory(profile){return [...profile.album,...profile.actionAlbum||[]];}
 function take(profile,id,quantity){rules.card(id);rules.integer(quantity,'Cantidad');const key=byId[id].action?'actionAlbum':'album',album=profile[key]||[];check(rules.duplicates(album,id)>=quantity,'No hay suficientes repetidos. Conservas siempre una copia.');let remaining=quantity;profile[key]=album.filter(c=>c!==id||remaining--<=0);}
