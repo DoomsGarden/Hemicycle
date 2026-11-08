@@ -175,7 +175,7 @@ html[data-menu-skin] .result-score>.result-versus{align-self:flex-end;margin-bot
 @media(max-height:650px){html[data-menu-skin] .result-score>.result-versus{margin-bottom:calc(5px * var(--ui-text-scale,1))}}
 /* Indicadores legibles sobre cualquier ilustración, incluso con el orador usado. */
 html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy{opacity:1;filter:none}
-html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy>:not(.battle-state-badges):not(.basic-effect-badge):not(.battle-used):not(.strong-signal){opacity:1;filter:saturate(.45) brightness(.75)}
+html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy>:not(.battle-state-badges):not(.basic-effect-badge):not(.battle-used):not(.strong-signal):not(.action-state-loops){opacity:1;filter:saturate(.45) brightness(.75)}
 html[data-menu-skin] .screen.in-battle .battle-state-badges .battle-state-icon{opacity:1;background:#08101d;border:1px solid #8096ac;box-shadow:0 1px 4px #000d,inset 0 0 0 1px #ffffff12;text-shadow:0 1px 2px #000}
 html[data-menu-skin] .screen.in-battle .battle-state-icon.is-off{opacity:1;background:#121c2b;border-color:#607287;color:#aebccd;filter:grayscale(1);animation:none}
 html[data-menu-skin] .screen.in-battle .battle-state-icon.is-on{opacity:1;border-color:currentColor;animation:stateReadabilityPulse 2.4s ease-in-out infinite}

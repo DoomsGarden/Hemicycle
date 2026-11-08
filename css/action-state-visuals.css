@@ -1,30 +1,87 @@
-/* Halos suaves en los bordes: texto, rostro e interacción permanecen visibles. */
-.action-state-loops{position:absolute;inset:4px;z-index:2;pointer-events:none;overflow:hidden;border-radius:8px;isolation:isolate}
-.state-loop{position:absolute;inset:0;color:var(--state-color);--state-period:4.8s;opacity:.55;pointer-events:none}
-.state-loop-orbit{position:absolute;inset:7% 5% 28%;border:1.5px solid currentColor;border-radius:48%;opacity:.34;animation:state-orbit var(--state-period) linear infinite;animation-delay:var(--state-phase)}
-.state-loop-symbol{position:absolute;width:24%;height:23%;right:2%;top:22%;opacity:.65;animation:state-rise var(--state-period) ease-in-out infinite;animation-delay:var(--state-phase)}
-.state-loop-symbol>.support-symbol{display:block;width:100%;height:100%;margin:0;color:inherit;filter:none}
-.state-loop-particles{position:absolute;left:4%;bottom:30%;width:4px;height:4px;border-radius:50%;background:currentColor;box-shadow:5px -18px 0 -1px currentColor,1px -37px 0 -1px currentColor;opacity:.6;animation:state-rise var(--state-period) linear infinite;animation-delay:var(--state-phase)}
-.state-loop-confused .state-loop-orbit{inset:10% 10% 41%;border-style:dashed;transform:rotate(16deg)}
-.state-loop-confused .state-loop-symbol{animation-name:state-confused;top:13%;right:9%}
-.state-loop-weakness .state-loop-orbit{border-radius:15% 15% 48% 48%;border-top:0;border-left:0;animation-name:state-fall}
-.state-loop-weakness .state-loop-symbol,.state-loop-fatigue .state-loop-symbol,.state-loop-attrition .state-loop-symbol{animation-name:state-fall}
-.state-loop-strength .state-loop-orbit{border-radius:3px;clip-path:polygon(0 0,30% 0,30% 12%,70% 12%,70% 0,100% 0,100% 100%,0 100%);animation-name:state-breathe}
-.state-loop-fullness .state-loop-orbit{border-radius:50% 50% 44% 44%;border-width:2px;animation-name:state-breathe}
-.state-loop-regeneration .state-loop-orbit{border-style:dotted;border-width:2px;animation-duration:9.6s}
-.state-loop-attrition .state-loop-orbit{border-radius:3px;border-style:dashed;border-top:0;animation-name:state-fall}
-.state-loop-fortress .state-loop-orbit,.state-loop-guard .state-loop-orbit{border-radius:10% 10% 45% 45%;border-width:2px;animation-name:state-breathe}
-.state-loop-exposed .state-loop-orbit{border-radius:0;clip-path:polygon(50% 0,100% 100%,0 100%);border-width:3px;animation-name:state-breathe}
-.state-loop-relief .state-loop-orbit{border-top:0;border-bottom:0;border-radius:50%;animation-name:state-wave}
-.state-loop-wound .state-loop-orbit{border-style:dashed;border-radius:10%;transform:rotate(-8deg);animation-name:state-wave}
-.state-loop-precision .state-loop-orbit{inset:12% 6% 39%;border-style:dashed;border-radius:50%;animation-duration:9.6s}
-.state-loop-precision .state-loop-symbol{top:15%;right:3%;animation-name:state-breathe}
-.state-loop-fatigue .state-loop-orbit{border-radius:0;border-left:0;border-right:0;border-style:dotted;animation-name:state-fall}
-.state-loop-silence .state-loop-orbit{border-radius:8px;border-style:dashed;animation-name:state-breathe}
-@keyframes state-orbit{to{transform:rotate(360deg)}}
-@keyframes state-rise{0%,100%{transform:translateY(7px);opacity:.35}50%{transform:translateY(-7px);opacity:.65}}
-@keyframes state-fall{0%,100%{transform:translateY(-5px);opacity:.35}50%{transform:translateY(7px);opacity:.65}}
-@keyframes state-confused{0%,100%{transform:translate(-3px,2px) rotate(-12deg)}50%{transform:translate(3px,-3px) rotate(12deg)}}
-@keyframes state-breathe{0%,100%{transform:scale(.96);opacity:.25}50%{transform:scale(1.02);opacity:.55}}
-@keyframes state-wave{0%,100%{transform:translateX(-3px);opacity:.3}50%{transform:translateX(3px);opacity:.55}}
-@media(prefers-reduced-motion:reduce){.state-loop *{animation:none!important}.state-loop{opacity:.35}.state-loop-particles{display:none}}
+/* Auras persistentes: luz volumétrica y corrientes orgánicas en torno al retrato.
+   El centro del rostro, nombre, estadísticas y botones conservan su propia capa. */
+.action-state-loops{position:absolute;inset:-3px -2px 18%;z-index:3;pointer-events:none;border-radius:12px;isolation:isolate}
+.state-loop{position:absolute;inset:0;color:var(--state-color);--aura-speed:4.8s;pointer-events:none;opacity:.95}
+.state-aura-bloom{position:absolute;inset:0;border-radius:44% 42% 35% 40%;background:radial-gradient(ellipse at 4% 64%,var(--state-color),transparent 36%),radial-gradient(ellipse at 96% 62%,var(--state-color),transparent 36%),radial-gradient(ellipse at 50% 98%,var(--state-color),transparent 45%);opacity:.32;filter:blur(3px);animation:aura-breathe var(--aura-speed) ease-in-out infinite;animation-delay:var(--state-phase)}
+.state-aura-streams{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;animation:aura-sway var(--aura-speed) ease-in-out infinite;animation-delay:var(--state-phase)}
+.state-aura-haze{stroke-width:9;filter:blur(2.2px);opacity:.5}
+.state-aura-thread{stroke-width:1.35;stroke:var(--state-accent);stroke-dasharray:38 122;opacity:.9;filter:drop-shadow(0 0 2px var(--state-color))}
+.state-aura-thread path{animation:aura-current var(--aura-speed) linear infinite;animation-delay:var(--state-phase)}
+.state-aura-thread path:nth-child(2){animation-delay:calc(var(--state-phase) - 1.8s)}
+.state-aura-thread path:nth-child(3){animation-delay:calc(var(--state-phase) - 3.2s)}
+.state-aura-motes{position:absolute;inset:0}
+.state-aura-motes>i{position:absolute;left:6%;top:84%;width:3px;height:5px;border-radius:60% 40% 50% 50%;background:var(--state-accent);box-shadow:0 0 4px 1px var(--state-color);opacity:.75;animation:aura-ascend 3.6s ease-in-out infinite;animation-delay:calc(var(--state-phase) - var(--mote)*.59s)}
+.state-aura-motes>i:nth-child(even){left:auto;right:6%}
+.state-aura-motes>i:nth-child(3n){left:16%;top:68%}
+.state-aura-motes>i:nth-child(6){left:auto;right:16%}
+/* Domes: broad, cool protective light; resistance carries a second inner mantle. */
+.aura-flow-shelter .state-aura-bloom{inset:-1% -1% 0;background:radial-gradient(ellipse at 50% 0,var(--state-color),transparent 42%),radial-gradient(ellipse at 0 48%,var(--state-color),transparent 33%),radial-gradient(ellipse at 100% 48%,var(--state-color),transparent 33%);opacity:.36}
+.aura-flow-shelter .state-aura-haze{stroke-width:7;opacity:.65}
+.aura-flow-shelter .state-aura-thread{stroke-dasharray:58 102;stroke-width:1.7}
+.aura-flow-shelter .state-aura-motes>i{width:2px;height:2px;animation-name:aura-glimmer}
+.state-loop-guard{--aura-speed:5.6s}
+.state-loop-fortress{--aura-speed:6.4s}
+/* Strength burns upwards; regeneration rises in soft green currents and healing motes. */
+.state-loop-strength .state-aura-haze{stroke-width:11;opacity:.65}
+.state-loop-strength .state-aura-streams{animation-name:aura-flame}
+.state-loop-strength .state-aura-motes>i{height:8px;width:2px;border-radius:90% 20% 70% 30%}
+.state-loop-regeneration{--aura-speed:6s}
+.state-loop-regeneration .state-aura-motes>i{width:5px;height:5px;background:linear-gradient(var(--state-accent),var(--state-accent)) center/1.5px 100% no-repeat,linear-gradient(var(--state-accent),var(--state-accent)) center/100% 1.5px no-repeat;box-shadow:none;filter:drop-shadow(0 0 2px var(--state-color));border-radius:0}
+.aura-flow-bloom .state-aura-bloom{inset:-2%;opacity:.43}
+.aura-flow-bloom .state-aura-thread{stroke-dasharray:68 92}
+.aura-flow-bloom .state-aura-motes>i{width:4px;height:4px;animation-name:aura-glimmer}
+.aura-flow-tide .state-aura-streams{animation-name:aura-tide}
+.aura-flow-tide .state-aura-thread{stroke-dasharray:60 100}
+.aura-flow-tide .state-aura-motes>i{width:3px;height:6px;border-radius:70% 20% 70% 40%;animation-duration:5s}
+/* Penalties drain downwards: smoke, cinders, torn red energy, or binding magenta wisps. */
+.aura-flow-sink .state-aura-thread,.aura-flow-drain .state-aura-thread,.aura-flow-bind .state-aura-thread{stroke-dasharray:28 132}
+.aura-flow-sink .state-aura-motes>i,.aura-flow-drain .state-aura-motes>i,.aura-flow-bind .state-aura-motes>i{top:16%;animation-name:aura-descend}
+.aura-flow-sink .state-aura-haze{stroke-width:13;opacity:.6}
+.state-loop-fatigue{--aura-speed:7.2s}
+.state-loop-fatigue .state-aura-bloom{background:radial-gradient(ellipse at 7% 80%,var(--state-color),transparent 46%),radial-gradient(ellipse at 93% 80%,var(--state-color),transparent 46%)}
+.state-loop-fatigue .state-aura-motes>i{height:2px;animation-duration:6s}
+.aura-flow-drain{--aura-speed:4s}
+.aura-flow-drain .state-aura-motes>i{height:3px;width:3px;background:var(--state-color)}
+.aura-flow-bind .state-aura-streams{animation-name:aura-constrict}
+.aura-flow-bind .state-aura-thread{stroke-width:1.8}
+.aura-flow-fracture{--aura-speed:3.8s}
+.aura-flow-fracture .state-aura-haze{stroke-width:7;opacity:.7}
+.aura-flow-fracture .state-aura-thread{stroke-dasharray:16 15 8 121;stroke-width:1.9}
+.aura-flow-fracture .state-aura-streams{animation-name:aura-fracture}
+/* Confusion swirls around the head; precision races along narrow, clear light trails. */
+.aura-flow-swirl .state-aura-streams{animation-name:aura-confusion}
+.aura-flow-swirl .state-aura-bloom{background:radial-gradient(ellipse at 15% 20%,var(--state-color),transparent 44%),radial-gradient(ellipse at 85% 23%,var(--state-accent),transparent 44%)}
+.aura-flow-swirl .state-aura-motes>i{top:15%;animation-name:aura-wander}
+.aura-flow-swirl .state-aura-thread{stroke-dasharray:24 136}
+.aura-flow-focus{--aura-speed:2.8s}
+.aura-flow-focus .state-aura-haze{stroke-width:5;opacity:.7}
+.aura-flow-focus .state-aura-thread{stroke-width:1.1;stroke-dasharray:48 112}
+.aura-flow-focus .state-aura-motes>i{width:1px;height:10px;animation-duration:2.8s}
+.aura-flow-hush{--aura-speed:6.8s}
+.aura-flow-hush .state-aura-streams{animation-name:aura-constrict}
+.aura-flow-hush .state-aura-thread{stroke-dasharray:7 12 7 134}
+.aura-flow-hush .state-aura-motes>i{width:5px;height:1px;animation-name:aura-glimmer}
+/* Several states remain visible together without washing out the portrait. */
+.action-state-loops:not([data-aura-count="1"]){--aura-density:.2}
+.action-state-loops:not([data-aura-count="1"]) .state-aura-bloom{opacity:.2}
+.action-state-loops:not([data-aura-count="1"]) .state-aura-haze{opacity:.38}
+html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy>.action-state-loops{filter:none;opacity:1}
+.screen.in-battle .battle-state-badges:has([class*=state-action-]){flex-wrap:nowrap;gap:1px;box-sizing:border-box;padding-inline:0}
+.screen.in-battle .battle-state-badges:has([class*=state-action-]) .battle-state-icon{position:static;transform:none;flex:1 1 0;min-width:0;width:auto;max-width:14px;box-sizing:border-box}
+.screen.in-battle .battle-state-badges .battle-state-icon[class*=state-action-]{position:relative;inset:auto}
+.screen.in-battle .battle-state-badges:has([class*=state-action-]) .state-guard{flex:2 1 0;min-width:23px;max-width:32px}
+.status-effect-count{position:absolute;right:-3px;bottom:-3px;display:grid;place-items:center;min-width:9px;height:10px;padding:0 1px;border:1px solid #d1b879;border-radius:4px;background:#091320;color:#fff0b4;font:700 8px/1 sans-serif}
+@keyframes aura-current{from{stroke-dashoffset:0}to{stroke-dashoffset:160}}
+@keyframes aura-breathe{0%,100%{transform:scale(.98) translateY(1%);opacity:calc(var(--aura-density,.4)*.7)}50%{transform:scale(1.04) translateY(-1%);opacity:var(--aura-density,.4)}}
+@keyframes aura-sway{0%,100%{transform:translateX(-.8%) scaleX(.98)}50%{transform:translateX(.8%) scaleX(1.02)}}
+@keyframes aura-flame{0%,100%{transform:scaleX(.97) translateY(1%)}40%{transform:scaleX(1.03) translateY(-2%)}70%{transform:scaleX(.99) translateY(-.5%)}}
+@keyframes aura-tide{0%,100%{transform:translateY(2%) scaleX(.97)}50%{transform:translateY(-2%) scaleX(1.03)}}
+@keyframes aura-constrict{0%,100%{transform:scaleX(1.02)}50%{transform:scaleX(.96)}}
+@keyframes aura-fracture{0%,100%{transform:translateY(1%) scaleX(.98)}45%{transform:translateY(-1%) scaleX(1.04)}}
+@keyframes aura-confusion{0%,100%{transform:translate(-1%,1%) rotate(-2deg)}50%{transform:translate(1%,-1%) rotate(2deg)}}
+@keyframes aura-ascend{0%{transform:translate(0,5px) scale(.5);opacity:0}18%{opacity:.9}78%{opacity:.7}100%{transform:translate(var(--drift),-42px) scale(.45);opacity:0}}
+@keyframes aura-descend{0%{transform:translate(0,-5px) scale(.4);opacity:0}18%{opacity:.8}78%{opacity:.6}100%{transform:translate(var(--drift),42px) scale(.5);opacity:0}}
+@keyframes aura-glimmer{0%,100%{transform:translateY(-8px) scale(.6);opacity:.25}50%{transform:translateY(8px) scale(1);opacity:.9}}
+@keyframes aura-wander{0%,100%{transform:translate(-4px,0);opacity:.5}50%{transform:translate(6px,9px);opacity:.95}}
+/* Keep distinct static auras when movement is reduced. */
+@media(prefers-reduced-motion:reduce){.action-state-loops *{animation:none!important}.state-aura-motes>i{opacity:.7;transform:translateY(calc(var(--mote)*-7px))}.state-aura-thread{stroke-dasharray:none;opacity:.65}.state-aura-bloom{opacity:.32}}

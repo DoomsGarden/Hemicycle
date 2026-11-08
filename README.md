@@ -118,6 +118,8 @@ En Clasificatoria y Liga hay transferencia de cromos según el resultado, con pr
 
 **Cromos** reúne los oradores, las acciones y tus gabinetes. Puedes buscar por nombre y desplegar filtros de país, rareza y doctrina. Toca una carta para consultar sus datos, frases y contexto documental atribuido.
 
+En combate, las auras distinguen protección, aumento de Zasca, regeneración y los demás estados mediante luz, corrientes y partículas propias. Permanecen hasta que termina el efecto, también en oradores que ya han actuado. Toca el indicador de estados para consultar sus reglas y duración; si hay varios, muestra su cantidad. Con movimiento reducido se conserva una versión estática de cada aura.
+
 **Tienda** ofrece sobres que amplían la colección. **FS** es una moneda virtual del juego: actualmente no hay compras con dinero real ni canje por dinero. Desafíos, Logros y Buzón reúnen objetivos y recompensas; despliega la flecha de Inicio para ver los accesos adicionales.
 
 En **Mercado** puedes vender repetidos conservando una copia. Las compras e intercambios entre jugadores requieren conexión y cuenta. Revisa cantidad e importe antes de confirmar; las cartas de una oferta publicada pueden quedar reservadas hasta su compra o retirada.

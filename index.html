@@ -103,6 +103,7 @@
 <script src="js/basic-effects-v3.js?v=31.0.2.9"></script>
 <script src="js/basic-effects.js?v=32.0.0.2"></script>
 <script src="js/basic-ability-preview.js?v=31.0.2.9"></script>
+<script src="js/action-status.js?v=32.0.0.2"></script>
 <script src="js/attack-forecast.js?v=32.0.0"></script>
 <script src="js/battle-insights.js?v=31.0.2.10"></script>
 <script src="js/tactical-policy.js?v=31.0.2.10"></script>
@@ -117,14 +118,13 @@
 <script src="js/orator-catalog.js?v=32.0.0.2"></script>
 <script src="js/orator-art.js?v=32.0.0.2-fix1"></script>
 <script src="js/portrait-layout.js?v=32.0.0.2-fix1"></script><script src="js/action-art.js?v=32.0.0.2"></script>
-<script src="js/action-status.js?v=32.0.0.2"></script>
-<script src="js/action-state-visuals.js?v=32.0.0.2"></script>
-<link rel="stylesheet" href="css/action-state-visuals.css?v=32.0.0.2">
+<script src="js/action-state-visuals.js?v=32.0.0.2-auras1"></script>
+<link rel="stylesheet" href="css/action-state-visuals.css?v=32.0.0.2-auras1">
 <script src="js/action-data-v32.js?v=32.0.0.2"></script>
 <script src="js/action-cards.js?v=32.0.0.2"></script>
 <script src="js/localization-extra.js?v=32.0.0"></script>
 <script src="js/localization-reviewed.js?v=32.0.0.2"></script>
-<script src="js/localization-gameplay.js?v=32.0.0-fixes1"></script><script src="js/localization-review321.js?v=32.0.0.2-fix1"></script>
+<script src="js/localization-gameplay.js?v=32.0.0-fixes1"></script><script src="js/localization-review321.js?v=32.0.0.2-auras1"></script>
 <script src="js/pack-rules.js?v=32.0.0"></script>
 <script src="js/objectives.js?v=32.0.0"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
@@ -144,14 +144,14 @@
 <script src="js/strategy-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/action-cards.css?v=32.0.0.2">
 <script src="js/victory-boost.js?v=32.0.0.2"></script><script src="js/victory-boost-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/victory-boost.css?v=32.0.0.2">
 <script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=32.0.0"></script><script src="js/cosmetic-ui.js?v=32.0.0-fixes1"></script>
-<link rel="stylesheet" href="css/cosmetics.css?v=31.0.2.11-mat12">
+<link rel="stylesheet" href="css/cosmetics.css?v=32.0.0.2-auras1">
 <script src="js/player-backup.js?v=32.0.0.2"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=32.0.0.2-fix1"></script>
+<script src="js/changelog.js?v=32.0.0.2-auras1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=32.0.0-fixes1"></script>
@@ -2357,7 +2357,12 @@ function choosePlayerAction(kind){
  paint();return true;
 }
 
-function battleStatusHTML(side,c){var statuses=HemicycleBattleStatus.indicators(G,side,c);return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+statuses.map(function(s){return '<span class="battle-state-icon state-'+s.icon+(s.active?' is-on':' is-off')+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+(s.icon==='guard'?'<b class="status-value">50 %</b>':'')+'</span>';}).join('')+'</button>':'';}
+function battleStatusHTML(side,c){
+ var statuses=HemicycleBattleStatus.indicators(G,side,c),actions=statuses.filter(function(s){return s.icon.indexOf('action-')===0;}),visible=statuses.filter(function(s){return s.icon.indexOf('action-')!==0;});
+ // Una sola posición para estados de acción: el contador abre la lista completa.
+ if(actions.length)visible.push(Object.assign({},actions[0],{count:actions.length,text:actions.map(function(s){return s.text;}).join(' ')}));
+ return statuses.length?'<button class="battle-state-badges" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="Consultar efectos de '+esc(c.n)+': '+esc(statuses.map(function(s){return s.text;}).join(' '))+'" title="'+esc(statuses.map(function(s){return s.text;}).join(' '))+'">'+visible.map(function(s){return '<span class="battle-state-icon state-'+s.icon+(s.active?' is-on':' is-off')+'" title="'+esc(s.text)+'">'+HemicycleBattleStatus.marker(s.icon)+(s.icon==='guard'?'<b class="status-value">50 %</b>':'')+(s.count>1?'<b class="status-effect-count">'+s.count+'</b>':'')+'</span>';}).join('')+'</button>':'';
+}
 function basicStatusHTML(side,c){var state=basicRules()?basicRules().view(c,G.turns[side]):null;return state?'<button type="button" class="basic-effect-badge '+state.polarity+'" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'" title="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'">'+HemicycleBasicEffects.symbol(state.id)+'<b>'+state.count+'</b></button>':'';}
 function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+HemicycleBattleStatus.symbol(states[0].icon)+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
@@ -2371,7 +2376,7 @@ function cromoBattle(c,side,extra){
   +'<div class="frame-overlay"></div>'
   +'<div class="top"><span class="cost" title="Coste en Tiempo de Palabra" aria-label="'+c.c+' TdP">'+c.c+'</span>'+gem(c.r, r.c)+'</div>'
   +(isLead?'<span class="crown">&#9733;</span>':'')
-  +(inField?HemicycleActionStateVisuals.markup(c,{silenced:!!(G.silenced&&G.silenced[side])})+battleStatusHTML(side,c)+basicStatusHTML(side,c):'')+(inField&&side==='e'?forecastHTML(c):'')
+  +(inField?HemicycleActionStateVisuals.markup(c,{silenced:!!(G.silenced&&G.silenced[side]),turn:G.turns[side]})+battleStatusHTML(side,c)+basicStatusHTML(side,c):'')+(inField&&side==='e'?forecastHTML(c):'')
   +(inField&&side==='p'&&!c.ready?'<span class="battle-used" title="Intervención utilizada" aria-label="Intervención utilizada"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg></span>':'')
   +(inField&&c.ready&&canStrongAttack(side,c)?'<span class="strong-signal" title="Ataque fuerte disponible" aria-label="Ataque fuerte disponible">'+HemicycleBattleStatus.symbol('strong')+'</span>':'')
   +'<div class="bot"><span class="nm" title="'+esc(c.n)+'">'+countryHTML(c,false)+'<span>'+esc(c.n)+'</span></span><span class="st"><span class="card-stat zasca" aria-label="Zasca básico '+battleNormalZasca(side,c)+'"><small>Z</small><b>'+battleNormalZasca(side,c)+'</b></span><span class="card-stat aguante" aria-label="Aguante '+Math.max(0,c.h)+' de '+c.hm+'"><small>A</small><b>'+Math.max(0,c.h)+'<i>/'+c.hm+'</i></b></span></span></div></div>';
