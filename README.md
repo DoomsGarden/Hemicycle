@@ -118,6 +118,8 @@ En Clasificatoria y Liga hay transferencia de cromos según el resultado, con pr
 
 **Cromos** reúne los oradores, las acciones y tus gabinetes. Puedes buscar por nombre y desplegar filtros de país, rareza y doctrina. Toca una carta para consultar sus datos, frases y contexto documental atribuido.
 
+En horizontal, la navegación pasa al lateral y los menús aprovechan el ancho disponible. Colección separa los controles del gabinete y la galería; el combate mantiene las bancadas junto a un panel de mano, frases y controles. Puedes girar la pantalla durante una partida sin reiniciarla.
+
 En combate, las auras distinguen protección, aumento de Zasca, regeneración y los demás estados mediante luz, corrientes y partículas propias. Permanecen hasta que termina el efecto, también en oradores que ya han actuado. Toca el indicador de estados para consultar sus reglas y duración; si hay varios, muestra su cantidad. Con movimiento reducido se conserva una versión estática de cada aura.
 
 **Tienda** ofrece sobres que amplían la colección. **FS** es una moneda virtual del juego: actualmente no hay compras con dinero real ni canje por dinero. Desafíos, Logros y Buzón reúnen objetivos y recompensas; despliega la flecha de Inicio para ver los accesos adicionales.
@@ -186,3 +188,11 @@ Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan 
 ---
 
 **Hemiciclo es un proyecto independiente y no oficial**, sin afiliación a partidos, instituciones ni personas representadas. Los retratos son ilustraciones de estilo realista generadas mediante IA; las estadísticas y los combates son reglas ficticias. Consulta las [fuentes](https://hemicycle.online/fuentes/) y la [información legal y de contacto](https://hemicycle.online/legal/).
+
+### Corrección de auras y Confundido
+
+La opción A utiliza materiales y luz diferenciados. Los catorce emblemas del zasca tienen un acabado propio y se mantienen por encima de las auras, con tamaños comprobados entre el 100 % y el 116 % en vertical y horizontal. Se conservan las animaciones manuales de defensa y curación.
+
+En nuevas partidas, Confundido afecta al próximo zasca normal o fuerte: 50 % al objetivo elegido, 25 % al propio orador y 25 % a otro aliado (sin aliados, 50 % de autoataque). Se sortea al confirmar el ataque y se consume con él. Defender y curar no sortean ni consumen el estado, que también puede caducar por duración. Las previsiones no revelan el resultado. El fuego amigo no activa la habilidad adicional del básico ni concede votos al propio atacante; una expulsión por confusión concede los escaños al rival.
+
+Las nuevas descargas usan `offline11`; partidas y recibos anteriores conservan sus motores. La [migración de compatibilidad](_dev/online/20261108_confusion_actions2.sql) se aplica antes del despliegue; el usuario confirmó su ejecución correcta el 8 de noviembre de 2026. [Revisión y comprobaciones](_dev/revisions/20261108-auras-a/README.md). La revisión visual y la publicación de esta corrección fueron aprobadas el 8 de noviembre de 2026.

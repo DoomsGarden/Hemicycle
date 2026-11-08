@@ -9,8 +9,9 @@ function calculate(x){
  if(!target&&x.target!=='empty')return invalid('El objetivo ya no está disponible.');
  if(!target&&field.length>=3)return invalid('No hay huecos rivales.');
  if(!target&&(x.emptyLeft||0)<=0)return invalid('Ya has retirado los 3 votos de este turno.');
- if(!target&&S&&!S.canEmpty(a))return invalid('Confundido: elige un orador.');
+ if(!target&&S&&!S.canEmpty(a,x.actionEffectsVersion||1))return invalid('Confundido: elige un orador.');
  if(!target&&!strong&&rules&&rules.canEmpty&&!rules.canEmpty(a,x.ownTurn))return invalid('Debate encarrilado: elige un orador.');
+
  var requested=target&&target.uid;if(target&&!strong&&rules&&rules.redirect)target=rules.redirect(field,target,x.rivalTurn);
  var amount=strong?Math.ceil(x.power*1.5):rules?rules.normalZ(a,x.ownTurn,x.power):x.power,pierce=(S&&S.pierces(a))||(!strong&&rules&&rules.pierces&&rules.pierces(a,x.ownTurn));
  if(!strong&&rules)rules.consumeAttack(a,x.ownTurn);
@@ -43,7 +44,8 @@ function calculate(x){
   else if(def.instant){var ready=x.utilityReady&&x.utilityReady[id];if(ready===undefined&&x.team)ready=rules.utilityCandidates(id,x.team,x.actions).length>0;if(ready){effect=id;reason=def.name+': hay candidato; se aplica al golpear.';}else reason=id==='summon'?'Sin robo: mano llena, límite del turno o mazo sin oradores.':'Sin adelanto: límite del turno o sin apoyo elegible.';}
   else {effect=id;reason=def.name+(def.target==='self'?' para el atacante.':' sobre el rival.');}
  }
+ if(S&&x.actionEffectsVersion>=2&&S.value(a,'confused'))return {valid:true,uncertain:true,damage:amount,confusionRisk:amount*.5,expels:false,win:false,effect:null,selfCost:strong?1:0,attackerRemaining:attackerHp,empty:!target,reason:'Confundido: 50 % al objetivo elegido, '+((x.ownField||[]).filter(function(c){return c.uid!==a.uid;}).length?'25 % a sí mismo y 25 % a otro orador propio.':'50 % a sí mismo.'),probabilities:[.5,(x.ownField||[]).length>1?.25:.5,(x.ownField||[]).length>1?.25:0]};
  return {valid:true,damage:amount,target:target&&target.uid,redirected:!!target&&requested!==target.uid,expels:expels,saved:saved,remaining:targetHp,reflection:reflection,selfCost:selfCost,attackerRemaining:attackerHp,effect:effect,reason:reason,win:win,empty:!target};
 }
-function summary(f){if(!f.valid)return f.reason;return (f.empty?f.damage+' votos retirados':f.damage+' de daño')+(f.redirected?' · desvío':'')+(f.saved?' · Aforado conserva 3 A':f.expels?' · expulsión':'')+(f.reflection?' · rebote '+f.reflection:'')+'. '+f.reason;}
+function summary(f){if(!f.valid||f.uncertain)return f.reason;return (f.empty?f.damage+' votos retirados':f.damage+' de daño')+(f.redirected?' · desvío':'')+(f.saved?' · Aforado conserva 3 A':f.expels?' · expulsión':'')+(f.reflection?' · rebote '+f.reflection:'')+'. '+f.reason;}
 return {calculate:calculate,summary:summary};});

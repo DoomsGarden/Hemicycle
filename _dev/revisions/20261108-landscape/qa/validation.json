@@ -1,0 +1,24 @@
+{
+  "checkedAt": "2026-11-08T19:42:06.617621+00:00",
+  "gameVersion": "v32.0.0.2",
+  "cache": "hemiciclo-v32.0.0.2-landscape1",
+  "testsPassed": 158,
+  "functional": "PASS: ten landscape viewport/text-scale combinations, rotation, safe areas and actual attack",
+  "additional": "PASS: es/en/fr, League, Market, mailbox, details and zoom, paid pack with five cards, short viewport options, rotated collection",
+  "physicalDeviceTested": false,
+  "files": {
+    "index.html": "867d6e7f473ea67ee0bb80968dfd6ab79704ed6ab27e0881a923b03ea3e4a6d2",
+    "css/landscape.css": "39a581284f2404bc39dcaebcce7fe2850de351c1ca688841cec4765f75554a36",
+    "js/battle-actions-ui.js": "e18f957283be8c4953c3a67c4ca9e887e4655053e087c8d034f3c9c449b9c668",
+    "js/changelog.js": "79e5872647410118b94bd823874aa1b3df082c126cb675bac8d6f14e7d7b8287",
+    "js/localization-review321.js": "77984e12ca65232728dc8c47c0c9c4e80f7e25b3c7283d0926bf00b6b5379eaa",
+    "sw.js": "3f23f057be5b8289c448f0088a91083da998b2033be53e2e04f03e61003917ec"
+  },
+  "hand": {
+    "speakers": 2,
+    "actions": 1,
+    "cardsAndDeckInOwnTerritory": true
+  },
+  "latestCombinedValidation": "../../20261108-auras-a/qa/validation.json",
+  "followUp": "La corrección incluye ahora el acabado A y las reglas versionadas de Confundido. El informe combinado contiene los hashes y la caché actuales; los valores anteriores de este documento corresponden a la revisión horizontal inicial."
+}

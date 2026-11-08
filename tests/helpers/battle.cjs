@@ -40,6 +40,7 @@ function loadBattle(mode = 'normal', random = 0.25, overrides = {}) {
     HemicycleCatalog: require('../../js/orator-catalog.js'),
     HemicycleAppearance: require('../../js/cosmetic-entitlements.js'),
     HemicycleActionStatus: require('../../js/action-status.js'),
+    HemicycleStatusArt: require('../../js/status-art.js'),
     HemicycleActionStateVisuals: require('../../js/action-state-visuals.js'),
     HemicycleExpansionEvent: require('../../js/expansion-event.js'),
     HemicyclePackRules: require('../../js/pack-rules.js'),

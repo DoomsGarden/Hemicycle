@@ -79,10 +79,14 @@ function actionEffect(host,event){
  }
  if(!points.length){if(a.effect==='boost'&&source)effect(host,'boost-number',source,'+'+a.value+' Zasca');return;}
  points.forEach(function(point){
+  if(root.HemicycleStatusArt&&['cleanse','cleanse-heal','purge','purge-damage'].includes(a.effect)){
+   var material=effect(host,'action-material '+(a.effect.startsWith('purge')?'material-purge':'material-cleanse'),point,'',1450);material.style.width=point.w+'px';material.style.height=point.h+'px';material.innerHTML=root.HemicycleStatusArt.transient(a.effect.startsWith('purge')?'purge':'cleanse');
+  }
+
   if(a.effect==='damage'){projectile(host,source,point,powerful);impact(host,point,powerful);var burst=effect(host,'action-burst tier-'+a.r,point,'',900);if(burst&&!reduced())burst.innerHTML='<i></i><i></i><i></i>';}
   if(a.effect==='boost'){
    effect(host,'boost-number',point,'+'+a.value+' Zasca');if(reduced())return;
-   var boost=effect(host,'inspiration-ring tier-'+a.r,point,'',1150);boost.style.setProperty('--fx-size',Math.max(55,Math.min(110,point.w))+'px');boost.innerHTML='<i class="inspiration-aura"></i><i class="inspiration-orbit"></i><svg viewBox="0 0 60 70"><path d="m12 40 18-16 18 16M12 55l18-16 18 16M18 24l12-11 12 11"/></svg>';particles(boost,powerful?8:5,'inspire');
+   var boost=effect(host,'action-material material-arrival',point,'',1350);boost.style.width=point.w+'px';boost.style.height=point.h+'px';boost.innerHTML=root.HemicycleStatusArt.aura('strength');
   }
   if((a.effect==='heal'||a.effect==='guard')&&!reduced()){
    var halo=effect(host,'action-support '+a.effect+' tier-'+a.r,point,'',1250);halo.style.width=Math.max(54,Math.min(120,point.w*1.1))+'px';halo.style.height=Math.max(65,Math.min(150,point.h*.9))+'px';halo.innerHTML='<i></i><i></i>';
@@ -108,7 +112,7 @@ function speechRoute(item){
  var attack=item.kind==='normal'||item.kind==='strong',to;
  if(attack){
   to=card(d.target);if(!to||to.side!==foe)to=item.to;
-  if(!to||to.side!==foe||!inside(to,other))to=other;
+  if(d.confusion&&d.target){var actual=known[d.target],destination=actual?actual.side:side,half=lane(destination);to=card(d.target)||item.to;if(!inside(to,half))to=half;foe=destination;}else if(!to||to.side!==foe||!inside(to,other))to=other;
  }else{var half=rect('.battle-backdrop.'+(side==='p'?'player':'enemy'));to=half&&from?{x:from.x,y:half.y,side:side}:own;}
  return {side:side,destination:attack?foe:side,from:from,to:to};
 }

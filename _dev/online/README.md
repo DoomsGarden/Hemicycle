@@ -51,3 +51,5 @@ Las pruebas usan transporte simulado y bases aisladas. Las comprobaciones con cu
 - [Primera partida privada, documento histórico](COMBATE-PRIVADO.md).
 
 La revisión v32.0.0.2 requiere aplicar [`20261107_review_v321.sql`](20261107_review_v321.sql) después del bloque de v32. Admite gabinetes de ocho oradores y cuatro acciones, conserva importaciones históricas y offline1–9, y añade offline10. Guarda de forma autoritativa el evento independiente de revisión y el bonus por racha. La migración es repetible y no se ejecuta al publicar código.
+
+La corrección del 8 de noviembre de 2026 añade `actionEffectsVersion:2`, la nueva regla de Confundido y `offline11`. La migración `20261108_confusion_actions2.sql` fue aplicada correctamente según la confirmación del usuario. Los motores anteriores siguen disponibles para salas y registros pendientes. El despliegue utiliza la rama del servicio indicada arriba y se comprueba por la revisión devuelta por `/health`.

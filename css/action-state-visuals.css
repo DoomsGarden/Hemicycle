@@ -1,87 +1,61 @@
-/* Auras persistentes: luz volumétrica y corrientes orgánicas en torno al retrato.
-   El centro del rostro, nombre, estadísticas y botones conservan su propia capa. */
-.action-state-loops{position:absolute;inset:-3px -2px 18%;z-index:3;pointer-events:none;border-radius:12px;isolation:isolate}
-.state-loop{position:absolute;inset:0;color:var(--state-color);--aura-speed:4.8s;pointer-events:none;opacity:.95}
-.state-aura-bloom{position:absolute;inset:0;border-radius:44% 42% 35% 40%;background:radial-gradient(ellipse at 4% 64%,var(--state-color),transparent 36%),radial-gradient(ellipse at 96% 62%,var(--state-color),transparent 36%),radial-gradient(ellipse at 50% 98%,var(--state-color),transparent 45%);opacity:.32;filter:blur(3px);animation:aura-breathe var(--aura-speed) ease-in-out infinite;animation-delay:var(--state-phase)}
-.state-aura-streams{display:block;position:absolute;inset:0;width:100%;height:100%;overflow:visible;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round;animation:aura-sway var(--aura-speed) ease-in-out infinite;animation-delay:var(--state-phase)}
-.state-aura-haze{stroke-width:9;filter:blur(2.2px);opacity:.5}
-.state-aura-thread{stroke-width:1.35;stroke:var(--state-accent);stroke-dasharray:38 122;opacity:.9;filter:drop-shadow(0 0 2px var(--state-color))}
-.state-aura-thread path{animation:aura-current var(--aura-speed) linear infinite;animation-delay:var(--state-phase)}
-.state-aura-thread path:nth-child(2){animation-delay:calc(var(--state-phase) - 1.8s)}
-.state-aura-thread path:nth-child(3){animation-delay:calc(var(--state-phase) - 3.2s)}
-.state-aura-motes{position:absolute;inset:0}
-.state-aura-motes>i{position:absolute;left:6%;top:84%;width:3px;height:5px;border-radius:60% 40% 50% 50%;background:var(--state-accent);box-shadow:0 0 4px 1px var(--state-color);opacity:.75;animation:aura-ascend 3.6s ease-in-out infinite;animation-delay:calc(var(--state-phase) - var(--mote)*.59s)}
-.state-aura-motes>i:nth-child(even){left:auto;right:6%}
-.state-aura-motes>i:nth-child(3n){left:16%;top:68%}
-.state-aura-motes>i:nth-child(6){left:auto;right:16%}
-/* Domes: broad, cool protective light; resistance carries a second inner mantle. */
-.aura-flow-shelter .state-aura-bloom{inset:-1% -1% 0;background:radial-gradient(ellipse at 50% 0,var(--state-color),transparent 42%),radial-gradient(ellipse at 0 48%,var(--state-color),transparent 33%),radial-gradient(ellipse at 100% 48%,var(--state-color),transparent 33%);opacity:.36}
-.aura-flow-shelter .state-aura-haze{stroke-width:7;opacity:.65}
-.aura-flow-shelter .state-aura-thread{stroke-dasharray:58 102;stroke-width:1.7}
-.aura-flow-shelter .state-aura-motes>i{width:2px;height:2px;animation-name:aura-glimmer}
-.state-loop-guard{--aura-speed:5.6s}
-.state-loop-fortress{--aura-speed:6.4s}
-/* Strength burns upwards; regeneration rises in soft green currents and healing motes. */
-.state-loop-strength .state-aura-haze{stroke-width:11;opacity:.65}
-.state-loop-strength .state-aura-streams{animation-name:aura-flame}
-.state-loop-strength .state-aura-motes>i{height:8px;width:2px;border-radius:90% 20% 70% 30%}
-.state-loop-regeneration{--aura-speed:6s}
-.state-loop-regeneration .state-aura-motes>i{width:5px;height:5px;background:linear-gradient(var(--state-accent),var(--state-accent)) center/1.5px 100% no-repeat,linear-gradient(var(--state-accent),var(--state-accent)) center/100% 1.5px no-repeat;box-shadow:none;filter:drop-shadow(0 0 2px var(--state-color));border-radius:0}
-.aura-flow-bloom .state-aura-bloom{inset:-2%;opacity:.43}
-.aura-flow-bloom .state-aura-thread{stroke-dasharray:68 92}
-.aura-flow-bloom .state-aura-motes>i{width:4px;height:4px;animation-name:aura-glimmer}
-.aura-flow-tide .state-aura-streams{animation-name:aura-tide}
-.aura-flow-tide .state-aura-thread{stroke-dasharray:60 100}
-.aura-flow-tide .state-aura-motes>i{width:3px;height:6px;border-radius:70% 20% 70% 40%;animation-duration:5s}
-/* Penalties drain downwards: smoke, cinders, torn red energy, or binding magenta wisps. */
-.aura-flow-sink .state-aura-thread,.aura-flow-drain .state-aura-thread,.aura-flow-bind .state-aura-thread{stroke-dasharray:28 132}
-.aura-flow-sink .state-aura-motes>i,.aura-flow-drain .state-aura-motes>i,.aura-flow-bind .state-aura-motes>i{top:16%;animation-name:aura-descend}
-.aura-flow-sink .state-aura-haze{stroke-width:13;opacity:.6}
-.state-loop-fatigue{--aura-speed:7.2s}
-.state-loop-fatigue .state-aura-bloom{background:radial-gradient(ellipse at 7% 80%,var(--state-color),transparent 46%),radial-gradient(ellipse at 93% 80%,var(--state-color),transparent 46%)}
-.state-loop-fatigue .state-aura-motes>i{height:2px;animation-duration:6s}
-.aura-flow-drain{--aura-speed:4s}
-.aura-flow-drain .state-aura-motes>i{height:3px;width:3px;background:var(--state-color)}
-.aura-flow-bind .state-aura-streams{animation-name:aura-constrict}
-.aura-flow-bind .state-aura-thread{stroke-width:1.8}
-.aura-flow-fracture{--aura-speed:3.8s}
-.aura-flow-fracture .state-aura-haze{stroke-width:7;opacity:.7}
-.aura-flow-fracture .state-aura-thread{stroke-dasharray:16 15 8 121;stroke-width:1.9}
-.aura-flow-fracture .state-aura-streams{animation-name:aura-fracture}
-/* Confusion swirls around the head; precision races along narrow, clear light trails. */
-.aura-flow-swirl .state-aura-streams{animation-name:aura-confusion}
-.aura-flow-swirl .state-aura-bloom{background:radial-gradient(ellipse at 15% 20%,var(--state-color),transparent 44%),radial-gradient(ellipse at 85% 23%,var(--state-accent),transparent 44%)}
-.aura-flow-swirl .state-aura-motes>i{top:15%;animation-name:aura-wander}
-.aura-flow-swirl .state-aura-thread{stroke-dasharray:24 136}
-.aura-flow-focus{--aura-speed:2.8s}
-.aura-flow-focus .state-aura-haze{stroke-width:5;opacity:.7}
-.aura-flow-focus .state-aura-thread{stroke-width:1.1;stroke-dasharray:48 112}
-.aura-flow-focus .state-aura-motes>i{width:1px;height:10px;animation-duration:2.8s}
-.aura-flow-hush{--aura-speed:6.8s}
-.aura-flow-hush .state-aura-streams{animation-name:aura-constrict}
-.aura-flow-hush .state-aura-thread{stroke-dasharray:7 12 7 134}
-.aura-flow-hush .state-aura-motes>i{width:5px;height:1px;animation-name:aura-glimmer}
-/* Several states remain visible together without washing out the portrait. */
-.action-state-loops:not([data-aura-count="1"]){--aura-density:.2}
-.action-state-loops:not([data-aura-count="1"]) .state-aura-bloom{opacity:.2}
-.action-state-loops:not([data-aura-count="1"]) .state-aura-haze{opacity:.38}
+/* Opción A: materiales, luz y siluetas semirrealistas. Solo presentación. */
+.action-state-loops{position:absolute;inset:0;z-index:3;pointer-events:none;isolation:isolate;border-radius:12px}
+.state-loop{position:absolute;inset:0;pointer-events:none;color:var(--state-color);opacity:.95}
+.state-aura-visual{display:block;width:100%;height:100%;overflow:visible;pointer-events:none}
+.aura-ground{opacity:.45;animation:material-breathe 5.6s ease-in-out infinite;animation-delay:var(--state-phase);transform-origin:200px 300px}
+.aura-matter{filter:drop-shadow(0 0 1.5px var(--state-color))}
+.aura-shell{transform-origin:200px 210px;animation:material-breathe 5.6s ease-in-out infinite;animation-delay:var(--state-phase)}
+.aura-fire{transform-origin:200px 310px;animation:material-flame 2.8s ease-in-out infinite;animation-delay:calc(var(--state-phase) - var(--flame)*.3s)}
+.aura-focus{animation:material-focus 3.8s ease-in-out infinite;animation-delay:var(--state-phase)}
+.aura-confusion{transform-origin:200px 78px;animation:material-dizzy 5.2s ease-in-out infinite;animation-delay:var(--state-phase)}
+.aura-dizzy-light{animation:material-light 3.6s ease-in-out infinite;animation-delay:calc(var(--state-phase) - var(--mote)*.6s)}
+.aura-ballot{animation:material-ballot 4.8s ease-in-out infinite;animation-delay:calc(var(--state-phase) - var(--mote)*.55s)}
+.aura-seal{animation:material-seal 4s ease-in-out infinite;animation-delay:var(--state-phase)}
+.state-aura-motes{position:absolute;inset:0;pointer-events:none}
+.state-aura-motes>i{position:absolute;left:5%;top:78%;width:2px;height:3px;border-radius:70% 30%;background:var(--state-color);box-shadow:0 0 3px 1px var(--state-color);opacity:.7;animation:material-rise 4.4s ease-in-out infinite;animation-delay:calc(var(--state-phase) - var(--mote)*.7s)}
+.state-aura-motes>i:nth-child(even){left:auto;right:5%}.state-aura-motes>i:nth-child(3n){top:62%;left:13%}.state-aura-motes>i:nth-child(6){left:auto;right:13%}
+.state-loop-strength .state-aura-motes>i{background:#ffe4b6;width:1.5px;height:5px}
+.state-loop-regeneration .state-aura-motes>i{width:3px;height:4px;background:#baffd4}
+.state-loop-fullness .aura-matter,.state-loop-relief .aura-matter{animation:material-breathe 6s ease-in-out infinite;animation-delay:var(--state-phase);transform-origin:200px 260px}
+.state-loop-weakness .state-aura-motes>i,.state-loop-attrition .state-aura-motes>i,.state-loop-fatigue .state-aura-motes>i,.state-loop-wound .state-aura-motes>i{top:20%;animation-name:material-fall}
+.state-loop-confused .state-aura-motes,.state-loop-silence .state-aura-motes,.state-loop-fortress .state-aura-motes{display:none}
+.action-state-loops:not([data-aura-count="1"]) .aura-ground{opacity:.18}.action-state-loops:not([data-aura-count="1"]) .state-loop{opacity:.78}
+/* El bot y los estados son capas de lectura por encima de toda aura continua. */
 html[data-menu-skin] .screen.in-battle .tribuna .cromo.busy>.action-state-loops{filter:none;opacity:1}
+.screen.in-battle .cromo>.bot{position:relative;z-index:5}
+.screen.in-battle .battle-state-badges{z-index:8}
 .screen.in-battle .battle-state-badges:has([class*=state-action-]){flex-wrap:nowrap;gap:1px;box-sizing:border-box;padding-inline:0}
 .screen.in-battle .battle-state-badges:has([class*=state-action-]) .battle-state-icon{position:static;transform:none;flex:1 1 0;min-width:0;width:auto;max-width:14px;box-sizing:border-box}
 .screen.in-battle .battle-state-badges .battle-state-icon[class*=state-action-]{position:relative;inset:auto}
 .screen.in-battle .battle-state-badges:has([class*=state-action-]) .state-guard{flex:2 1 0;min-width:23px;max-width:32px}
 .status-effect-count{position:absolute;right:-3px;bottom:-3px;display:grid;place-items:center;min-width:9px;height:10px;padding:0 1px;border:1px solid #d1b879;border-radius:4px;background:#091320;color:#fff0b4;font:700 8px/1 sans-serif}
-@keyframes aura-current{from{stroke-dashoffset:0}to{stroke-dashoffset:160}}
-@keyframes aura-breathe{0%,100%{transform:scale(.98) translateY(1%);opacity:calc(var(--aura-density,.4)*.7)}50%{transform:scale(1.04) translateY(-1%);opacity:var(--aura-density,.4)}}
-@keyframes aura-sway{0%,100%{transform:translateX(-.8%) scaleX(.98)}50%{transform:translateX(.8%) scaleX(1.02)}}
-@keyframes aura-flame{0%,100%{transform:scaleX(.97) translateY(1%)}40%{transform:scaleX(1.03) translateY(-2%)}70%{transform:scaleX(.99) translateY(-.5%)}}
-@keyframes aura-tide{0%,100%{transform:translateY(2%) scaleX(.97)}50%{transform:translateY(-2%) scaleX(1.03)}}
-@keyframes aura-constrict{0%,100%{transform:scaleX(1.02)}50%{transform:scaleX(.96)}}
-@keyframes aura-fracture{0%,100%{transform:translateY(1%) scaleX(.98)}45%{transform:translateY(-1%) scaleX(1.04)}}
-@keyframes aura-confusion{0%,100%{transform:translate(-1%,1%) rotate(-2deg)}50%{transform:translate(1%,-1%) rotate(2deg)}}
-@keyframes aura-ascend{0%{transform:translate(0,5px) scale(.5);opacity:0}18%{opacity:.9}78%{opacity:.7}100%{transform:translate(var(--drift),-42px) scale(.45);opacity:0}}
-@keyframes aura-descend{0%{transform:translate(0,-5px) scale(.4);opacity:0}18%{opacity:.8}78%{opacity:.6}100%{transform:translate(var(--drift),42px) scale(.5);opacity:0}}
-@keyframes aura-glimmer{0%,100%{transform:translateY(-8px) scale(.6);opacity:.25}50%{transform:translateY(8px) scale(1);opacity:.9}}
-@keyframes aura-wander{0%,100%{transform:translate(-4px,0);opacity:.5}50%{transform:translate(6px,9px);opacity:.95}}
-/* Keep distinct static auras when movement is reduced. */
-@media(prefers-reduced-motion:reduce){.action-state-loops *{animation:none!important}.state-aura-motes>i{opacity:.7;transform:translateY(calc(var(--mote)*-7px))}.state-aura-thread{stroke-dasharray:none;opacity:.65}.state-aura-bloom{opacity:.32}}
+/* Materiales de los catorce emblemas del zasca: base opaca y borde independiente. */
+html[data-menu-skin] .screen.in-battle .basic-effect-badge,.screen.in-battle .basic-effect-badge{z-index:9;left:6%;top:35%;width:clamp(17px,calc(23% * var(--ui-icon-scale,1)),30px);height:auto;padding:2px;border-radius:7px;background:linear-gradient(135deg,#243b48,#06141c 65%);border:1px solid #a0e2d1;box-shadow:0 0 0 2px #06101be8,0 2px 5px #000b;opacity:1;filter:none;animation:basic-material-breathe 4.2s ease-in-out infinite}
+html[data-menu-skin] .screen.in-battle .basic-effect-badge.negative{background:linear-gradient(135deg,#513b43,#1c111e 65%);border-color:#ecb596;box-shadow:0 0 0 2px #100d1ce8,0 2px 5px #000b}
+.basic-effect-badge .material-state-symbol{display:block;filter:drop-shadow(0 1px 1px #0009)}
+.screen.in-battle .basic-effect-badge>b{z-index:1;right:-4px;bottom:-4px;min-width:10px;min-height:10px;font-size:calc(8px * var(--ui-text-scale,1));background:#07101c;border-color:#e5d5a6;padding:1px 2px;color:#fff0bd}
+@keyframes material-breathe{0%,100%{transform:scale(.99);opacity:.8}50%{transform:scale(1.015);opacity:1}}
+@keyframes material-flame{0%,100%{transform:scaleY(.91) skewX(-1deg)}45%{transform:scaleY(1.04) skewX(1deg)}75%{transform:scaleY(.97)}}
+@keyframes material-focus{0%,100%{transform:translateY(1px);opacity:.65}50%{transform:translateY(-2px);opacity:1}}
+@keyframes material-dizzy{0%,100%{transform:rotate(-5deg) translateX(-2px)}50%{transform:rotate(5deg) translateX(2px)}}
+@keyframes material-light{0%,100%{opacity:.3}50%{opacity:1}}
+@keyframes material-ballot{0%,100%{transform:translateY(-3px);opacity:.45}60%{transform:translateY(7px);opacity:.9}}
+@keyframes material-seal{0%,100%{transform:translateY(-1px)}50%{transform:translateY(2px)}}
+@keyframes material-rise{0%{transform:translate(0,5px) scale(.5);opacity:0}20%,75%{opacity:.8}100%{transform:translate(3px,-35px) scale(.5);opacity:0}}
+@keyframes material-fall{0%{transform:translate(0,-5px);opacity:0}20%,75%{opacity:.8}100%{transform:translate(4px,35px);opacity:0}}
+@keyframes basic-material-breathe{0%,100%{border-color:#a0e2d1}50%{border-color:#ebffee}}
+@media(prefers-reduced-motion:reduce){.action-state-loops *,.screen.in-battle .basic-effect-badge{animation:none!important}.state-aura-motes>i{opacity:.65;transform:translateY(calc(var(--mote)*-5px))}.aura-ground{opacity:.25}}
+.action-material{animation:material-arrival 1.4s ease-out both;pointer-events:none}
+.material-cleanse .material-sweep{animation:material-sweep 1.4s ease-in-out both}
+.material-purge .material-peel{transform-origin:200px 230px;animation:material-peel 1.4s ease-out both;animation-delay:calc(var(--peel)*.04s)}
+.confusion-choice-note{margin:3px 6px 7px;padding:7px 9px;border:1px solid #b99bd377;border-radius:8px;background:#241e35e8;color:#e4c9f5;font-size:calc(11px * var(--ui-text-scale,1));line-height:1.4}
+@keyframes material-arrival{0%,100%{opacity:0}20%,70%{opacity:1}}
+@keyframes material-sweep{0%{transform:translateY(45px);opacity:0}20%{opacity:1}90%,100%{transform:translateY(-125px);opacity:0}}
+@keyframes material-peel{0%{transform:translate(0,0);opacity:1}100%{transform:translate(calc(var(--peel-side)*35px),-50px) rotate(calc(var(--peel-side)*20deg));opacity:0}}
+@media(prefers-reduced-motion:reduce){.action-material{display:none}}
+.state-loop-weakness .aura-matter{filter:blur(.5px) drop-shadow(0 2px 3px #a995bb66)}
+.state-loop-relief .aura-matter{animation:material-water 5.8s ease-in-out infinite;animation-delay:var(--state-phase)}
+@keyframes material-water{0%,100%{transform:translateY(2px)}50%{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){.state-loop-relief .aura-matter{animation:none!important}}
+html[data-menu-skin] .screen.in-battle .basic-effect-badge.negative{animation-name:basic-material-negative}
+@keyframes basic-material-negative{0%,100%{border-color:#ecb596}50%{border-color:#fff0d8}}

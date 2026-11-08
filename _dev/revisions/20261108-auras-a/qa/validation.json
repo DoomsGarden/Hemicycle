@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-08",
+  "version": "v32.0.0.2",
+  "published": false,
+  "productionSQLApplied": true,
+  "browserLayouts": 60,
+  "browserErrors": [],
+  "confusionChoices": {
+    "viewports": [
+      "412x915",
+      "568x320"
+    ],
+    "textAndIconScales": [
+      100,
+      116
+    ],
+    "allFourChoicesVisible": true
+  },
+  "landscapeFunctional": "passed; 10 layouts, navigation, hand ownership, rotation, attack and safe areas",
+  "tests": {
+    "regression": 362,
+    "additional": 130,
+    "finalRulesAndLocales": 39,
+    "finalUI": 80,
+    "note": "Runs overlap; these counts are not a sum of unique tests."
+  },
+  "SQL": "Idempotence, existing RPC preservation and role permissions tested in isolated PostgreSQL",
+  "replay": "offline11 deterministic replay passed; offline10 and older hashes preserved",
+  "sourceSHA256": {
+    "js/status-art.js": "afe42afc5dbc351e4ad3703e668eb2bfc84bbdba90fce473568b39538ff443ac",
+    "js/action-state-visuals.js": "0c0e57ea94792c70fbc881327c4b8abc3fe14046cbb258970f3154b9707ddbd1",
+    "css/action-state-visuals.css": "5b06076c4c9196b8298148d16155ecdaae392d1452b8902be93f6181c8516c3c",
+    "js/action-status.js": "77dcaeed49b18c61199bfccee3bf1e1ecce65800cf6be9788521d15457a0a642",
+    "js/action-cards.js": "a59b9a60be0f5ec790a1a539a4926e6f98247dde6680f4a512fa2e72f1a98904",
+    "js/battle-status.js": "8b3b914921ca30e80aabf17dbb824e7ec0b898e8443b64e60a76f76c759771e0",
+    "js/battle-visuals.js": "bdd2baf4b5cd9b9686550cf4e6a0dea22e397e741b62470fe4138903b4a116c1",
+    "js/battle-actions-ui.js": "34b9f9d2760f8d0fd307e0c43dbb2e782eef1cef298bab2a02ac4a397396e172",
+    "js/attack-forecast.js": "30fb70e418735d04696368fe4d7c482a5c5fd2f94dd773d9afcb44f186fe2289",
+    "js/game-audio.js": "e573848eeb6770c2a5d645ad4b9ac50337c837792d20ffe738aa4c29a98c790a",
+    "css/landscape.css": "bfcb5a62eb032a38d1b6979f251457ee219d4369585f2af3579b70520cb1226a",
+    "index.html": "3a42e36bf89a24c06aeefcedb43f333026d213af22f4a8f04bdfb354f290a7ac",
+    "sw.js": "11552c028085110b62a371939dd8f1e7e358c73d9762005d802d11e24992d434",
+    "js/offline-rules-v11.js": "da8a7fa2a6f4147e4844c4403f5b84422e93c423c9e9b6724e7654904304ca56",
+    "_dev/online/offline-v11.cjs": "74adb49b0c55c459bd56bb56f60ce3c2199556c33485bc6742e1f44cd82f5dc4",
+    "_dev/online/20261108_confusion_actions2.sql": "08826e86d06f80fd690e6a12ba8a2b361404e34d2fb5429decb1fe091a951b47"
+  },
+  "publicationAuthorized": true,
+  "productionSQLConfirmation": "Confirmed by the user; no administrative database verification from this environment.",
+  "preflightCheckedAt": "2026-11-08T21:39:36.261932+00:00",
+  "preflightTestsPassed": 47,
+  "deploymentRecord": "deployment-verification.json"
+}
