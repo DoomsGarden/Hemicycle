@@ -12,6 +12,17 @@ test('permission failures and unknown SQL failures remain distinct and do not ex
  await assert.rejects(service({code:'42501',message:'private role data'})('Bearer user','/offline/tickets','POST',{}),e=>e.code==='ECONOMY_PERMISSION_REQUIRED'&&!e.message.includes('private'));
  await assert.rejects(service({code:'23505',message:'private user data'})('Bearer user','/offline/tickets','POST',{}),e=>e.code==='ECONOMY_UNAVAILABLE'&&e.status===503&&!e.message.includes('private'));
 });
+for(const [message,code]of [
+ ['Reglas no compatibles.','OFFLINE_SCHEMA_REQUIRED'],
+ ['Operación reutilizada con otros datos.','ECONOMY_OPERATION_CONFLICT'],
+ ['El ID vinculado no coincide.','ECONOMY_IDENTITY_CONFLICT'],
+ ['Operación no válida.','ECONOMY_OPERATION_INVALID'],
+ ['Cuenta no válida.','ECONOMY_ACCOUNT_REQUIRED']
+])test('known SQL rejection '+code+' has a safe diagnosis without discarding a pending operation',async()=>{
+ const path=code==='OFFLINE_SCHEMA_REQUIRED'?'/offline/tickets':'/economy';
+ const body=path==='/economy'?{operationId:require('node:crypto').randomUUID(),command:{type:'format-upgrade'}}:{};
+ await assert.rejects(service({code:'P0001',message})('Bearer user',path,'POST',body),e=>e.code===code&&e.status===503&&/conserva/.test(e.message)&&!/No se pudo contactar/.test(e.message));
+});
 function client(fetcher,profile){const c=vm.createContext({window:{},fetch:fetcher,AbortSignal,localStorage:{getItem:()=>null},crypto:require('node:crypto')});vm.runInContext(fs.readFileSync('js/economy-client.js','utf8'),c);return c.window.HemicycleEconomyClient.create({base:'http://local',account:()=>({userId:'actor',accessToken:'token'}),snapshot:()=>({identity:{id:'local'},profile}),reconcile(){}});}
 test('one guest match requests migration and never initializes a replacement collection',async()=>{
  const paths=[],p={w:1,l:0,album:['one'],fs:1500,elo:0};const c=client(async path=>{paths.push(path);return {ok:true,json:async()=>({status:'pending'})};},p);
@@ -28,6 +39,16 @@ test('temporary saturation or network loss preserves the same pending operation 
  const c=context.window.HemicycleEconomyClient.create({base:'http://local',account:()=>({userId:'actor',accessToken:'secret'}),reconcile:async()=>reconciles++});
  await assert.rejects(c.execute({type:'machine',id:'replica',quantity:1}),e=>!e.definitive&&e.code==='ECONOMY_BUSY'&&e.message.includes('Consulta: 11111111'));
  assert.equal(store.size,1);unavailable=false;await c.resume();assert.deepEqual(sent[0],sent[1]);assert.equal(store.size,0);assert.equal(reconciles,1);
+});
+test('a rejected financial operation keeps its exact request and ID for review, with no automatic retry under a new ID',async()=>{
+ const store=new Map(),sent=[];let diagnostic='ECONOMY_OPERATION_CONFLICT',reconciles=0;
+ const context=vm.createContext({window:{},AbortSignal,crypto:require('node:crypto'),localStorage:{getItem:k=>store.get(k)||null,setItem:(k,v)=>store.set(k,v),removeItem:k=>store.delete(k)},fetch:async(path,o)=>{sent.push(JSON.parse(o.body));return {ok:false,status:503,json:async()=>({error:'La operación se conserva para revisión.',code:diagnostic})};}});
+ vm.runInContext(fs.readFileSync('js/economy-client.js','utf8'),context);
+ const c=context.window.HemicycleEconomyClient.create({base:'http://local',account:()=>({userId:'actor',accessToken:'secret'}),reconcile:async()=>reconciles++});
+ await assert.rejects(c.execute({type:'pack',kind:'comun',quantity:3}),e=>e.code===diagnostic&&!e.definitive);
+ const pending=[...store.values()][0];diagnostic='ECONOMY_IDENTITY_CONFLICT';
+ await assert.rejects(c.resume(),e=>e.code===diagnostic&&!e.definitive);
+ assert.deepEqual(sent[0],sent[1]);assert.equal([...store.values()][0],pending);assert.equal(reconciles,0);
 });
 test('authentication outage and truncated RPC responses remain temporary',async()=>{
  for(const brokenAuth of [true,false]){const service=create({url:'https://example.supabase.co',key:'public',secret:'server',fetcher:async url=>url.endsWith('/auth/v1/user')?brokenAuth?{ok:false,status:503}:{ok:true,json:async()=>({id:'actor'})}:{ok:true,json:async()=>{throw SyntaxError('private response');}}});await assert.rejects(service('Bearer user','/offline/tickets','POST',{}),e=>e.status===503&&e.code==='ECONOMY_UNAVAILABLE'&&!e.message.includes('private'));}

@@ -1,5 +1,5 @@
 'use strict';
-const crypto=require('node:crypto'),E=require('./economy.cjs');
+const crypto=require('node:crypto'),E=require('./economy.cjs'),Offline=require('./offline-engines.cjs');
 function create({url,key,secret,fetcher=fetch,observe={conflict(){},rejected(){}},queueOptions={}}){
  async function read(response){try{return await response.json();}catch{throw Object.assign(Error('La respuesta del servidor está incompleta. Tu operación se conserva para reintentar.'),{status:503,code:'ECONOMY_UNAVAILABLE'});}}
  const writes=require('./write-queue.cjs').create({...queueOptions,onReject:()=>observe.rejected()});
@@ -11,6 +11,11 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){},rejected(){}
    else if(code==='P0001'&&['Partida descargada no disponible.','Partida descargada ya procesada o caducada.'].includes(message)){status=409;kind='OFFLINE_TICKET_UNAVAILABLE';text='Esta preparación ya no puede validarse. El registro se conserva para revisión; los demás resultados pueden sincronizarse.';}
    else if(code==='P0001'&&message==='Activa primero la nube.'){status=409;kind='CLOUD_REQUIRED';text='El guardado de tu cuenta aún no está listo. Se prepara automáticamente al entrar; revisa el estado en Perfil → Nube si no termina.';}
    else if(code==='P0001'&&message==='Esta cuenta ya tiene un respaldo vinculado. Recupéralo primero.'){status=409;kind='CLOUD_RESTORE_REQUIRED';text='Esta cuenta ya tiene un respaldo vinculado. Recupéralo desde Perfil → Nube antes de continuar.';}
+   else if(code==='P0001'&&message==='Reglas no compatibles.'){kind='OFFLINE_SCHEMA_REQUIRED';text='La preparación de partidas necesita una actualización en Supabase. Tu progreso y las operaciones pendientes se conservan.';}
+   else if(code==='P0001'&&message==='Operación reutilizada con otros datos.'){kind='ECONOMY_OPERATION_CONFLICT';text='La operación pendiente no coincide con su recibo guardado. Se conserva para revisión; no se repetirá la compra ni se borrará tu progreso.';}
+   else if(code==='P0001'&&message==='El ID vinculado no coincide.'){kind='ECONOMY_IDENTITY_CONFLICT';text='El servidor ha detectado una discrepancia en la vinculación del guardado. La operación se conserva para revisión, sin modificar tus recursos.';}
+   else if(code==='P0001'&&message==='Operación no válida.'){kind='ECONOMY_OPERATION_INVALID';text='El servidor no ha podido validar el formato de la operación. Se conserva para revisión, sin modificar tus recursos.';}
+   else if(code==='P0001'&&message==='Cuenta no válida.'){kind='ECONOMY_ACCOUNT_REQUIRED';text='El servidor no ha podido verificar la cuenta vinculada. Inicia sesión de nuevo; tu progreso y las operaciones pendientes se conservan.';}
    const label=name==='hemicycle_request_legacy_import'?'MIGRACION':name==='hemicycle_economy_bootstrap'?'ACTIVACION':name==='hemicycle_offline_download'?'PARTIDA':'GUARDADO',reference=/^(?:[A-Z0-9]{5}|PGRST[0-9]+)$/.test(code||'')?code:'HTTP'+r.status;const e=Error(text+' Referencia: '+label+'-'+reference+'.');e.status=status;e.code=kind;throw e;
   }return read(r);}
  return async(auth,path,method,body={})=>{
@@ -26,7 +31,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){},rejected(){}
    throw Object.assign(Error(failure?failure[1]:'No se pudo confirmar la migración. Comprueba la nube antes de reintentar.'),{status:failure?409:503,code:failure?failure[0]:'ECONOMY_UNAVAILABLE'});
   }
   if(path==='/offline/risk'&&method==='POST'){const c=body.cabinet,actions=require('./actions.cjs');if(!c||!Array.isArray(c.orators)||c.orators.length!==8||new Set(c.orators).size!==8||!Array.isArray(c.actions)||c.actions.length!==4||!['ranked','liga'].includes(body.mode))throw Object.assign(Error('Gabinete no válido.'),{status:400});const context=await rpc('hemicycle_economy_context',{p_actor:actor}),profile=context.accounts[actor]?.payload.profile;if(!profile)throw Error('Activa primero la nube.');actions.validateCabinet(c,[...profile.album,...profile.actionAlbum||[]],E.catalog.filter(x=>!x.action).map(x=>x.id));const ids=require('../../js/action-cards.js').lootPool(c.orators,c.actions,profile);return {mode:body.mode,competitive:true,ids,protected:!ids.length,verified:true};}
-  if(path==='/offline/tickets'&&method==='POST'){const rules=body.rules==null?'offline1':body.rules;if(!['offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8','offline9','offline10'].includes(rules))throw Object.assign(Error('Versión de partida descargada no compatible.'),{status:400});return rpc('hemicycle_offline_download',{p_actor:actor,p_rules:rules});}
+  if(path==='/offline/tickets'&&method==='POST'){const rules=body.rules==null?'offline1':body.rules;if(!Offline.supports(rules))throw Object.assign(Error('Versión de partida descargada no compatible.'),{status:400});return rpc('hemicycle_offline_download',{p_actor:actor,p_rules:rules});}
   const market=path.startsWith('/api/market'),part=market?path.slice(11):null;
   if(market&&method==='GET'){
    let context=await rpc('hemicycle_economy_context',{p_actor:actor});
