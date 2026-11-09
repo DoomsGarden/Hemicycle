@@ -15,12 +15,12 @@ const migrations=[
  '_dev/online/20261107_review_v321.sql','_dev/online/20261108_confusion_actions2.sql'
 ];
 test('authenticated HTTP download, match and settlement use the same engine registry and real SQL',async t=>{
- const db=new PGlite(),actor=crypto.randomUUID();let server;
+ const db=new PGlite(),actor=crypto.randomUUID(),other=crypto.randomUUID();let server;
  const rpc=async(name,args)=>(await db.query('select public.'+name+'('+Object.keys(args).map((k,i)=>k+'=> $'+(i+1)).join(',')+') as v',Object.values(args).map(v=>v!==null&&typeof v==='object'?JSON.stringify(v):v))).rows[0].v;
  try{
   await db.exec("create role anon;create role authenticated;create role service_role;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");
   for(const file of migrations)await db.exec(fs.readFileSync(file,'utf8'));
-  await db.query('insert into auth.users values($1)',[actor]);
+  await db.query('insert into auth.users values($1),($2)',[actor,other]);
   const payload=E.starter('HC-'+crypto.randomUUID(),Date.now());
   payload.profile.album=E.catalog.filter(c=>!c.action).map(c=>c.id);
   payload.profile.actionAlbum=E.catalog.filter(c=>c.action).map(c=>c.id);
@@ -29,7 +29,7 @@ test('authenticated HTTP download, match and settlement use the same engine regi
   const saved=async()=>(await rpc('hemicycle_economy_context',{p_actor:actor})).accounts[actor].payload;
   const before=await saved();
   server=createServer({url:'https://example.supabase.co',key:'public',secret:'server',origins:'https://hemicycle.online',logger:()=>{},fetch:async(url,options)=>{
-   if(url.endsWith('/auth/v1/user'))return options.headers.Authorization==='Bearer test-session'?{ok:true,json:async()=>({id:actor})}:{ok:false,status:401};
+   if(url.endsWith('/auth/v1/user')){const id=options.headers.Authorization==='Bearer test-session'?actor:options.headers.Authorization==='Bearer other-session'?other:null;return id?{ok:true,json:async()=>({id})}:{ok:false,status:401};}
    try{const data=await rpc(url.split('/').at(-1),JSON.parse(options.body));return {ok:true,json:async()=>data};}
    catch(error){return {ok:false,status:400,json:async()=>({code:error.code,message:error.message})};}
   }});
@@ -52,23 +52,34 @@ test('authenticated HTTP download, match and settlement use the same engine regi
   let {state,rng}=engine.start(ticket,cabinet,'normal');const commands=[];
   for(let i=0;state.status==='active'&&i<1500;i++){const command=AI.choose(state,0,0);commands.push({at:0,command});state=engine.move(state,command,0,rng);}
   a.equal(state.status,'finished');
-  const record={cabinet,mode:'normal',commands},settle={ticketId:ticket.id,operationId:ticket.id,record};
+  const record={ticketId:ticket.id,startedAt:Date.now(),cabinet,mode:'normal',commands},settle={ticketId:ticket.id,operationId:ticket.id,record};
   const first=await call('/offline/settle',settle);a.equal(first.status,200,JSON.stringify(first));
   const after=await saved();a.equal(after.profile.w+after.profile.l,472);
   a.deepEqual(await call('/offline/settle',settle),first,'same receipt after retry');a.deepEqual(await saved(),after,'no duplicate rewards');
-  // A replay with changed data cannot replace a previously confirmed result.
-  const conflict=await call('/offline/settle',{...settle,record:{...record,mode:'rapida'}});
-  a.equal(conflict.status,503);a.equal(conflict.data.code,'ECONOMY_OPERATION_CONFLICT');a.deepEqual(await saved(),after);
+  // An already consumed ticket returns its one canonical receipt. Changed
+  // clocks or gameplay cannot replace that outcome or trigger another payout.
+  for(const changed of [{...record,startedAt:record.startedAt+1},{...record,mode:'rapida',commands:[]}]){
+   a.deepEqual(await call('/offline/settle',{...settle,record:changed}),first);a.deepEqual(await saved(),after);
+  }
+  const foreign=await call('/offline/settle',settle,'other-session');a.equal(foreign.status,409);a.equal(foreign.data.code,'OFFLINE_TICKET_UNAVAILABLE');a.equal(foreign.data.fs,undefined);
+  // Recovery is never used for a different operation type, an uncommitted
+  // ticket or a colliding unrelated operation ID.
+  const strict=await call('/economy',{operationId:ticket.id,command:{type:'pack',kind:'comun',quantity:1}});
+  a.equal(strict.status,503);a.equal(strict.data.code,'ECONOMY_OPERATION_CONFLICT');a.deepEqual(await saved(),after);
+  const unused=newest[1];a.equal((await call('/economy',{operationId:unused.id,command:{type:'format-upgrade'}})).status,200);
+  const beforeCollision=await saved(),collision=await call('/offline/settle',{...settle,operationId:unused.id,ticketId:unused.id});
+  a.equal(collision.status,409);a.equal(collision.data.code,'OFFLINE_RECEIPT_CONFLICT');a.deepEqual(await saved(),beforeCollision);
+  const unrelated=await call('/offline/settle',{...settle,operationId:unused.id});a.equal(unrelated.status,409);a.equal(unrelated.data.code,'OFFLINE_RECEIPT_CONFLICT');a.deepEqual(await saved(),beforeCollision);
   await db.exec('reset role');
   await db.query("insert into public.hemicycle_account_profiles(user_id,nickname,nickname_changed_at) values($1,'DoomsGarden',now())",[actor]);
   const diagnose=async()=>{const results=await db.exec(fs.readFileSync('_dev/revisions/20261109-offline-api/diagnostico-solo-lectura.sql','utf8'));return results.find(r=>r.rows?.[0]?.diagnostico).rows[0].diagnostico;};
   const diagnostic=await diagnose();a.equal(diagnostic.offline11_habilitado,true);a.equal(diagnostic.cuentas_coincidentes,1);a.equal(diagnostic.guardados[0].identidad_coincide,true);
-  a.ok(!JSON.stringify(diagnostic).includes(actor));a.deepEqual(await saved(),after);
+  a.ok(!JSON.stringify(diagnostic).includes(actor));a.deepEqual(await saved(),beforeCollision);
   // A mismatched binding must stop the transaction, never silently relink it.
   await db.query('update public.hemicycle_cloud_saves set source_id=$1 where user_id=$2',['HC-'+crypto.randomUUID(),actor]);
   await db.exec('set role service_role');
   const rejected=await call('/economy',{operationId:crypto.randomUUID(),command:{type:'pack',kind:'comun',quantity:1}});
-  a.equal(rejected.status,503);a.equal(rejected.data.code,'ECONOMY_IDENTITY_CONFLICT');a.deepEqual(await saved(),after);
+  a.equal(rejected.status,503);a.equal(rejected.data.code,'ECONOMY_IDENTITY_CONFLICT');a.deepEqual(await saved(),beforeCollision);
   await db.exec('reset role');a.equal((await diagnose()).guardados[0].identidad_coincide,false);
  }finally{if(server)await new Promise(r=>server.close(r));await db.close();}
 });

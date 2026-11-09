@@ -12,7 +12,7 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){},rejected(){}
    else if(code==='P0001'&&message==='Activa primero la nube.'){status=409;kind='CLOUD_REQUIRED';text='El guardado de tu cuenta aún no está listo. Se prepara automáticamente al entrar; revisa el estado en Perfil → Nube si no termina.';}
    else if(code==='P0001'&&message==='Esta cuenta ya tiene un respaldo vinculado. Recupéralo primero.'){status=409;kind='CLOUD_RESTORE_REQUIRED';text='Esta cuenta ya tiene un respaldo vinculado. Recupéralo desde Perfil → Nube antes de continuar.';}
    else if(code==='P0001'&&message==='Reglas no compatibles.'){kind='OFFLINE_SCHEMA_REQUIRED';text='La preparación de partidas necesita una actualización en Supabase. Tu progreso y las operaciones pendientes se conservan.';}
-   else if(code==='P0001'&&message==='Operación reutilizada con otros datos.'){kind='ECONOMY_OPERATION_CONFLICT';text='La operación pendiente no coincide con su recibo guardado. Se conserva para revisión; no se repetirá la compra ni se borrará tu progreso.';}
+   else if(code==='P0001'&&message==='Operación reutilizada con otros datos.'){kind='ECONOMY_OPERATION_CONFLICT';text='La operación pendiente no coincide con su recibo guardado. Se conserva para revisión, sin repetir cargos ni recompensas ni borrar tu progreso.';}
    else if(code==='P0001'&&message==='El ID vinculado no coincide.'){kind='ECONOMY_IDENTITY_CONFLICT';text='El servidor ha detectado una discrepancia en la vinculación del guardado. La operación se conserva para revisión, sin modificar tus recursos.';}
    else if(code==='P0001'&&message==='Operación no válida.'){kind='ECONOMY_OPERATION_INVALID';text='El servidor no ha podido validar el formato de la operación. Se conserva para revisión, sin modificar tus recursos.';}
    else if(code==='P0001'&&message==='Cuenta no válida.'){kind='ECONOMY_ACCOUNT_REQUIRED';text='El servidor no ha podido verificar la cuenta vinculada. Inicia sesión de nuevo; tu progreso y las operaciones pendientes se conservan.';}
@@ -69,14 +69,28 @@ function create({url,key,secret,fetcher=fetch,observe={conflict(){},rejected(){}
   else throw Error('Ruta no disponible.');
   if(command?.type==='ranked-loot')throw Error('La recompensa de Clasificatoria solo la confirma el servidor.');
   if(!command||typeof command!=='object'||Array.isArray(command)||!(/^[0-9a-f-]{36}$/i).test(operationId||''))throw Error('Operación no válida.');
-  return writes.run(async()=>{for(let attempt=0;attempt<5;attempt++){
+  return writes.run(async()=>{try{for(let attempt=0;attempt<5;attempt++){
    const context=await rpc('hemicycle_economy_context',{p_actor:actor,p_operation_id:operationId,p_request:command});if(context.processed)return context.result;
-   const next=E.operate(context,actor,command,context.now);
+   const next=E.operate(context,actor,structuredClone(command),context.now);
    const saved=await rpc('hemicycle_economy_commit',{p_actor:actor,p_operation_id:operationId,p_request:command,p_version:context.version,p_market:next.market,p_updates:next.updates,p_result:next.result});
    if(saved){const receipt=await rpc('hemicycle_economy_context',{p_actor:actor,p_operation_id:operationId,p_request:command});if(receipt.processed)return receipt.result;throw require('./write-queue.cjs').busy();}
    observe.conflict();await new Promise(resolve=>setTimeout(resolve,10*(attempt+1)));
   }
-  throw require('./write-queue.cjs').busy();});
+  throw require('./write-queue.cjs').busy();
+  }catch(error){
+   // A consumed match has exactly one authoritative outcome. Recover it from
+   // the actor-bound ticket; never accept a changed request as a new payout.
+   // Keep strict request comparisons for purchases and all other operations.
+   if(error.code==='ECONOMY_OPERATION_CONFLICT'&&command.type==='offline-settle'){
+    if(command.ticketId===operationId){
+     const recovered=await rpc('hemicycle_economy_context',{p_actor:actor,p_request:{type:'offline-settle',ticketId:command.ticketId}});
+     const ticket=recovered?.ticket,result=ticket?.result;
+     if(ticket?.id===command.ticketId&&result&&typeof result==='object'&&!Array.isArray(result)&&typeof result.win==='boolean'&&['normal','rapida','ranked','liga'].includes(result.mode)&&Number.isSafeInteger(result.fs)&&result.fs>=0)return result;
+    }
+    throw Object.assign(Error('No se ha podido recuperar un recibo confirmado para esta partida. Su registro se conserva para revisión; los demás resultados pueden sincronizarse.'),{status:409,code:'OFFLINE_RECEIPT_CONFLICT'});
+   }
+   throw error;
+  }});
  };
 }
 module.exports={create};

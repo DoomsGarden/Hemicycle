@@ -22,6 +22,8 @@ Corrección del servicio del 9 de noviembre: la descarga de partidas utiliza el 
 
 Nube sincroniza automáticamente el progreso y los resultados al entrar y al volver a la aplicación. Su contador distingue los resultados por confirmar de los regalos del buzón y se actualiza después de validarlos. Las copias de recuperación están en un apartado plegado; el botón Reintentar aparece cuando hay un problema.
 
+Los resultados ya validados recuperan su recibo confirmado aunque el reintento difiera del registro original, sin repetir premios. Los conflictos sin recibo confirmado se conservan para revisión y permiten sincronizar las partidas siguientes.
+
 La corrección de esta edición renueva 778 retratos de España y Francia con ilustraciones individuales verticales 3:4 y encuadre coherente en cromos y sobres. Renaud Muselier conserva provisionalmente su arte anterior con el encuadre corregido. También recupera el aviso animado de regalos y el recordatorio del buzón cuando quedan recompensas pendientes.
 
 **Tu perfil, tu estilo:** combina Menú, Tapete, Reverso y Moneda por separado desde Editar perfil. Los jugadores anteriores a diciembre conservan los estilos de la ampliación; los nuevos los incorporan al reclamar los hitos correspondientes. Elige también entre **ocho opciones de tipografía**, independientes del menú, incluida la letra redondeada Gatitos. Los tapetes se encuadran por separado para tu mesa y la del rival, y las sombras de mano y Tribuna ayudan a distinguir las cartas. Gana experiencia jugando y reclamando desafíos y logros: los niveles son independientes del Elo.
