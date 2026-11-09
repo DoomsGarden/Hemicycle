@@ -1,14 +1,15 @@
 /* Partidas descargadas: jugadas reproducibles, premios pendientes y consumo único al validar. */
 (function(root){'use strict';root.HemicycleOfflineCombat={create:function(api){
- var Rules=root.HemicycleOfflineRules,live=null,clock=null,busy=false,preparing=false,connection=null,dbPromise,releaseLease=null;
+ var Rules=root.HemicycleOfflineRules,live=null,clock=null,busy=false,preparing=false,connection=null,dbPromise,releaseLease=null,notice=0,settlements=new Map();
  function db(){return dbPromise||(dbPromise=new Promise(function(resolve,reject){var r=indexedDB.open('hemicycle-offline-v1',1);r.onupgradeneeded=function(){r.result.createObjectStore('accounts');};r.onsuccess=function(){resolve(r.result);};r.onerror=function(){reject(Error('No se pudo abrir el registro de partidas descargadas.'));};}));}
  async function read(id){var d=await db();return new Promise(function(resolve,reject){var tx=d.transaction('accounts'),q=tx.objectStore('accounts').get(id);q.onsuccess=function(){resolve(q.result||{tickets:[],pending:[],active:null});};q.onerror=function(){reject(q.error);};});}
  async function write(id,value){var d=await db();return new Promise(function(resolve,reject){var tx=d.transaction('accounts','readwrite');tx.objectStore('accounts').put(value,id);tx.oncomplete=resolve;tx.onerror=function(){reject(Error('No se pudo guardar la partida. Comprueba el espacio disponible.'));};tx.onabort=tx.onerror;});}
  function owner(){return api.account()&&api.account().userId;}
  async function lock(id,fn){return navigator.locks?navigator.locks.request('hemicycle-offline:'+id,fn):fn();}
- async function notify(){if(api.changed)api.changed(await status());}
+ async function notify(){var sequence=++notice,id=owner(),value=await status();if(sequence===notice&&id===owner()&&api.changed)api.changed(value);}
  async function download(){var id=owner();if(!id||!navigator.onLine)return;var tickets=await api.economy.request('/offline/tickets',{rules:'offline11'});await lock(id,async function(){var store=await read(id),keep=store.tickets.filter(t=>store.pending.some(p=>p.ticketId===t.id)||store.active&&store.active.ticketId===t.id);store.tickets=Array.from(new Map(keep.concat(tickets).map(t=>[t.id,t])).values());await write(id,store);});await notify();}
- async function settle(item,id){
+ function settle(item,id){var key=id+':'+item.operationId;if(settlements.has(key))return settlements.get(key);var task=settleOnce(item,id).finally(function(){if(settlements.get(key)===task)settlements.delete(key);});settlements.set(key,task);return task;}
+ async function settleOnce(item,id){
   if(!navigator.onLine)throw Error('Sin conexión.');if(owner()!==id)throw Error('La cuenta ha cambiado.');
   var result=await api.economy.request('/offline/settle',item);await api.economy.reconcile();
   if(owner()!==id)throw Error('La cuenta ha cambiado.');
@@ -50,5 +51,5 @@ if(owner()!==id)throw Error('La cuenta ha cambiado.');await lock(id,async functi
  }
  async function status(){var id=owner();if(!id)return {tickets:0,pending:0};var store=await read(id);return {tickets:store.tickets.filter(t=>t.rules==='offline11'&&t.expires>Date.now()&&!store.pending.some(p=>p.ticketId===t.id)&&(!store.active||store.active.ticketId!==t.id)).length,rejected:(store.rejected||[]).length,pending:store.pending.length,active:!!store.active};}
  async function resume(){var id=owner();if(!id)return false;var active=(await read(id)).active;if(!active)return false;await start(active.cabinet,active.mode);return true;}
- return {start,resume,flush,download,detach,status,rejected:async function(){var id=owner();return id?(await read(id)).rejected||[]:[];}};
+ return {start,resume,flush,download,detach,status,refresh:notify,rejected:async function(){var id=owner();return id?(await read(id)).rejected||[]:[];}};
 }};})(window);

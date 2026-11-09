@@ -40,7 +40,7 @@
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
-<link rel="stylesheet" href="css/cloud.css?v=31.0.2.3-reading1">
+<link rel="stylesheet" href="css/cloud.css?v=32.0.0.2-cloud1">
 <link rel="stylesheet" href="css/readability.css?v=31.0.2.11-options5">
 </head>
 <body>
@@ -77,8 +77,9 @@
 <script src="js/legal-ui.js?v=31.0.2.6-sources1"></script>
 <script src="js/player-profile.js?v=32.0.0-fixes1"></script>
 <script src="js/cloud-save.js?v=31.0.2.13-debug1"></script>
+<script src="js/account-sync.js?v=32.0.0.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/operation-status.js?v=31.0.2.6"></script><script src="js/online-combat-ui.js?v=32.0.0.2"></script><script src="js/online-ui.js?v=31.0.2.6"></script>
-<script src="js/cloud-ui.js?v=32.0.0-fixes1"></script>
+<script src="js/cloud-ui.js?v=32.0.0.2-cloud1"></script>
 <script src="js/cosmetic-entitlements.js?v=32.0.0"></script>
 <script src="js/event-presenter.js?v=32.0.0.2-fix1"></script>
 <script src="js/pack-journal.js?v=32.0.0-fixes1"></script>
@@ -125,7 +126,7 @@
 <script src="js/action-cards.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/localization-extra.js?v=32.0.0"></script>
 <script src="js/localization-reviewed.js?v=32.0.0.2"></script>
-<script src="js/localization-gameplay.js?v=32.0.0-fixes1"></script><script src="js/localization-review321.js?v=32.0.0.2-auras-a1"></script>
+<script src="js/localization-gameplay.js?v=32.0.0-fixes1"></script><script src="js/localization-review321.js?v=32.0.0.2-cloud1"></script>
 <script src="js/pack-rules.js?v=32.0.0"></script>
 <script src="js/objectives.js?v=32.0.0"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
@@ -152,7 +153,7 @@
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=32.0.0.2-landscape1"></script>
+<script src="js/changelog.js?v=32.0.0.2-cloud1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=32.0.0-fixes1"></script>
@@ -161,7 +162,7 @@
 <script src="js/offline-rule-dispatch.js?v=32.0.0.2-auras-a1"></script>
 <script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline11:HemicycleOfflineRulesV11});</script>
 <script src="js/offline-engine-loader.js?v=32.0.0.2-auras-a1"></script>
-<script src="js/offline-combat.js?v=32.0.0.2-auras-a1"></script>
+<script src="js/offline-combat.js?v=32.0.0.2-cloud1"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/expansion-v32.css?v=32.0.0.2-fix1">
@@ -1097,7 +1098,7 @@ function importPlayerBackup(file){
 var COL_MODE='oradores',COL_CAB_OPEN=false,COL_FILTER_OPEN=false,BATTLE_LOG_OPEN=false,HOME_ACTIONS_OPEN=false;
 var SCREEN='menu',SO={},TICK=null,FIL={q:'',r:'',d:''},BUILD={ids:[],leader:null},LAST_BUILD={ids:[],leader:null},G=null,AITIMER=null,TURN_CLOCK=null,NOHIST=false;
 var HISTORY=null,MARKET_GUIDE=null,MARKET_GUIDE_DEMO=false,MARKET_GUIDE_RETURN_TAB='sell';
-var ECONOMY=null,OFFLINE_COMBAT=null,ECONOMY_WORK=false,DOWNLOAD_START_BUSY=false,OFFLINE_STATUS={tickets:0,pending:0},ONLINE=null,CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false,CLOUD_ENTRY_READY=false,CLOUD_ENTRY_PENDING=false;
+var ECONOMY=null,OFFLINE_COMBAT=null,ACCOUNT_SYNC=null,ECONOMY_WORK=false,DOWNLOAD_START_BUSY=false,OFFLINE_STATUS={tickets:0,pending:0},ONLINE=null,CLOUD_SAVE=null,CLOUD_UI=null,PLAYER_PROFILE=null,ACCOUNT_ENTRY_READY=false,ACCOUNT_ENTRY_PENDING=false,CLOUD_ENTRY_READY=false,CLOUD_ENTRY_PENDING=false;
 var CABINET_EDIT=null,CABINET_RETURN=null;
 var PLAY_MODE='normal',PLAY_OPEN=false,MARKET=null,NAV_SECTION='menu',MENU_FEATURED=[];
 var SCROLL_MEM={rChips:0,dChips:0,colScreen:0,builderGrid:0};
@@ -1162,7 +1163,7 @@ function go(s,o){
  SCREEN=s;if(o!==undefined&&o!==null)SO=o;
  if(!NOHIST){try{history.pushState({s:s,nav:NAV_SECTION},'');}catch(e){}}
  paint();
- if(s==='buzon'||s==='tienda'||s==='menu')refreshPackJournal();if(s==='menu')ensureAccountFormat();
+ if(s==='buzon'||s==='tienda'||s==='menu')refreshPackJournal();if(s==='menu'){ensureAccountFormat();if(ACCOUNT_SYNC)ACCOUNT_SYNC.wake();}
  if(s==='mercado'){market().enter();setTimeout(function(){if(MARKET_GUIDE&&!MARKET_GUIDE.seen()&&!MARKET_GUIDE.active&&SCREEN==='mercado'&&!(G&&!G.over)&&!(MENU_GUIDE&&MENU_GUIDE.active))MARKET_GUIDE.start();},0);}
  var ct=document.getElementById('content');
  if(s==='coleccion'&&prev==='detalle'){
@@ -1187,7 +1188,7 @@ window.addEventListener('popstate',function(ev){
  if(s==='detalle'&&!SO.id)s='coleccion';
  if(s===SCREEN)return;
  NOHIST=true;SCREEN=s;if(s==='menu'){chooseMenuCards();if(CLOUD_SAVE&&ACCOUNT_ENTRY_READY&&!CLOUD_SAVE.state().enabled)Promise.resolve().then(function(){CLOUD_SAVE.reconnect();});}NAV_SECTION=(ev.state&&ev.state.nav)||(['menu','coleccion','tienda','liga','mercado'].indexOf(s)>=0?s:'menu');paint();
- if(s==='buzon'||s==='tienda'||s==='menu')refreshPackJournal();if(s==='menu')ensureAccountFormat();
+ if(s==='buzon'||s==='tienda'||s==='menu')refreshPackJournal();if(s==='menu'){ensureAccountFormat();if(ACCOUNT_SYNC)ACCOUNT_SYNC.wake();}
  if(s==='mercado'){market().enter();setTimeout(function(){if(MARKET_GUIDE&&!MARKET_GUIDE.seen()&&!MARKET_GUIDE.active&&SCREEN==='mercado'&&!(G&&!G.over)&&!(MENU_GUIDE&&MENU_GUIDE.active))MARKET_GUIDE.start();},0);}
  var ct=document.getElementById('content');
  if(s==='coleccion'&&prev==='detalle'){
@@ -3016,20 +3017,30 @@ document.addEventListener('hemicycle:typeface',function(e){var d=D();if(Hemicycl
 document.addEventListener('change',function(e){if(e.target.id==='countryFilter'){FIL.country=e.target.value;paint();}});
 function boot(){
  HemicycleBackup.identity(lsGet,lsSet);syncRankedSeason();var initial=D(),initialGoals=HemicycleObjectives.snapshot(Object.assign({},initial,{objectiveCatalog:CARDS}),CARDS);if(JSON.stringify(initial.objectives)!==JSON.stringify(initialGoals)){initial.objectives=initialGoals;var initialSave={};initialSave[LS]=initial;atomicLocal(initialSave);}
- PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({changed:function(){var nick=document.querySelector('[data-player-nick]');if(nick&&PLAYER_PROFILE)nick.textContent=playerNickname();},config:window.HemicycleSupabaseConfig||{},stats:profileStats,experience:function(){return HemicycleCosmeticUI.experience(D());},editor:function(kind){return HemicycleCosmeticUI.editor(D(),kind);},setCosmetic:setCosmetic,prepareCategory:function(kind){return Promise.all(HemicycleCosmetics.available(D(),kind).map(function(item){return HemicycleCosmeticUI.prepare(kind,item.id);}));},refreshEditor:function(host,kind,changed){HemicycleCosmeticUI.refreshEditor(host,D(),kind,changed);},setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(window.HemicycleLegal)setTimeout(function(){HemicycleLegal.sync();},0);if(HISTORY)HISTORY.close();if(OFFLINE_COMBAT)OFFLINE_COMBAT.detach();if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();},openHistory:function(){PLAYER_PROFILE.close();if(HISTORY)HISTORY.open();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
+ PLAYER_PROFILE=window.HemicyclePlayerProfile?HemicyclePlayerProfile.create({changed:function(){var nick=document.querySelector('[data-player-nick]');if(nick&&PLAYER_PROFILE)nick.textContent=playerNickname();},config:window.HemicycleSupabaseConfig||{},stats:profileStats,experience:function(){return HemicycleCosmeticUI.experience(D());},editor:function(kind){return HemicycleCosmeticUI.editor(D(),kind);},setCosmetic:setCosmetic,prepareCategory:function(kind){return Promise.all(HemicycleCosmetics.available(D(),kind).map(function(item){return HemicycleCosmeticUI.prepare(kind,item.id);}));},refreshEditor:function(host,kind,changed){HemicycleCosmeticUI.refreshEditor(host,D(),kind,changed);},setAppearance:function(theme){if(['classic','marble'].indexOf(theme)<0)return;var d=D();d.battleTheme=theme;saveD(d);},accountChanged:function(){if(window.HemicycleLegal)setTimeout(function(){HemicycleLegal.sync();},0);if(HISTORY)HISTORY.close();if(OFFLINE_COMBAT)OFFLINE_COMBAT.detach();if(ONLINE)ONLINE.accountChanged();if(CLOUD_SAVE)CLOUD_SAVE.accountChanged();if(ACCOUNT_SYNC)ACCOUNT_SYNC.wake();},openHistory:function(){PLAYER_PROFILE.close();if(HISTORY)HISTORY.open();},cloudLabel:function(){return CLOUD_UI?CLOUD_UI.label():'El progreso sigue guardado en este dispositivo.';},openCloud:function(){if(CLOUD_UI){PLAYER_PROFILE.close();CLOUD_UI.open();}},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleLegal)HemicycleLegal.configure(function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();});
  ONLINE=window.HemicycleOnlineUI?HemicycleOnlineUI.create({base:'https://hemicycle-w578.onrender.com',mode:function(){return PLAY_MODE;},battle:receiveRemoteBattle,preparation:receiveRemotePreparation,battleStatus:remoteBattleStatus,actionVisual:remoteActionVisual,battleEvents:remoteBattleEvents,clearBattle:function(){if(REMOTE_PREPARATION){REMOTE_PREPARATION=null;CABINET_RETURN=null;if(SCREEN==='builder'&&SO.online)go('menu');}if(G&&G.authoritative){G=null;REMOTE_BATTLE=null;clearBattleClock();closeLocalAction();go('menu');}},cabinet:function(){var d=D(),state=HemicycleCabinets.state(d),slot=state.slots[state.selected];return {orators:slot.ids.slice(),leader:slot.leader,actions:(slot.actions||[]).slice()};},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},login:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.open();},openCloud:function(){if(CLOUD_UI)CLOUD_UI.open();},ensureCloud:async function(progress){progress=progress||function(){};progress('Comprobando el guardado de la cuenta…');if(!CLOUD_SAVE)throw Error('El guardado en la nube aún no está disponible.');await CLOUD_SAVE.reconnect();var state=CLOUD_SAVE.state();if(state.phase==='error')throw Error(state.error||'No se pudo verificar la conexión con la nube.');if(!state.enabled)throw Error('El guardado de tu cuenta se está preparando. Puedes consultar su estado en Nube.');progress('Preparando el progreso de tu cuenta…');await CLOUD_SAVE.adopt();progress('Guardando cambios pendientes…');await CLOUD_SAVE.save();state=CLOUD_SAVE.state();if(state.phase==='error')throw Error(state.error||'No se pudieron guardar tus preferencias.');progress('Confirmando el guardado…');await CLOUD_SAVE.refresh();state=CLOUD_SAVE.state();if(state.phase!=='synced')throw Error(state.error||'El guardado ha cambiado durante la comprobación. Vuelve a intentar entrar en Clasificatoria.');},reconcileRanked:async function(snapshot){if(G&&G.authoritative)G.over=true;if(!CLOUD_SAVE)throw Error('No se pudo comprobar el guardado.');if(snapshot&&snapshot.mode!=='ranked'&&!CLOUD_SAVE.state().enabled)return;await CLOUD_SAVE.adopt();},canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);}}):null;
  if(window.HemicycleCloudSave&&window.HemicycleCloudUI){
   CLOUD_SAVE=HemicycleCloudSave.create({storage:localStorage,account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},snapshot:backupSnapshot,prepare:canonicalPreferences,applyCanonical:applyCanonical,initialize:function(options){return ECONOMY.initialize(options);},canAutoStart:function(){return ACCOUNT_ENTRY_READY&&!!window.HemicycleEntered&&PLAYER_PROFILE.canSync();},validate:function(data){return HemicycleBackup.validate(data,CARDS.map(function(c){return c.id;}));},uuid:function(){return crypto.randomUUID();},lock:function(fn){return navigator.locks?navigator.locks.request('hemicycle-cloud-save',fn):fn();},canRestore:function(){return !(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},restore:function(data,extra){
    atomicLocal(Object.assign(HemicycleBackup.storageValues(data),extra),true);MEM={};clearAI();clearBattleClock();G=null;BUILD={ids:[],leader:null};LAST_BUILD={ids:[],leader:null};FIL={q:'',r:'',d:''};MARKET=null;syncRankedSeason();go('menu');
-  },changed:function(){if(CLOUD_UI)CLOUD_UI.changed();if(OFFLINE_COMBAT&&CLOUD_SAVE&&CLOUD_SAVE.state().phase==='synced')OFFLINE_COMBAT.download().catch(function(){});}});
-  CLOUD_UI=HemicycleCloudUI.create({service:CLOUD_SAVE,offlineInfo:function(){return 'Partidas descargadas: '+OFFLINE_STATUS.tickets+' · Premios pendientes: '+OFFLINE_STATUS.pending+' · Para revisar: '+(OFFLINE_STATUS.rejected||0);},downloadRejected:async function(){var rows=await OFFLINE_COMBAT.rejected(),blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hemicycle-resultados-para-revisar.json';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);},syncOffline:async function(){if(ECONOMY)await ECONOMY.resume();if(OFFLINE_COMBAT)await OFFLINE_COMBAT.flush();},snapshot:backupSnapshot,export:exportPlayerBackup,download:downloadBackup,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},changed:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();}});
+  },changed:function(){if(CLOUD_UI)CLOUD_UI.changed();if(ACCOUNT_SYNC&&CLOUD_SAVE.state().phase==='synced')ACCOUNT_SYNC.wake();}});
+  CLOUD_UI=HemicycleCloudUI.create({service:CLOUD_SAVE,
+   offlineStatus:function(){return OFFLINE_STATUS;},refreshOffline:function(){return OFFLINE_COMBAT&&OFFLINE_COMBAT.refresh();},
+   sync:function(force){return ACCOUNT_SYNC?ACCOUNT_SYNC.wake(force):CLOUD_SAVE.reconnect();},syncState:function(){return ACCOUNT_SYNC?ACCOUNT_SYNC.state():{};},
+   downloadRejected:async function(){var rows=await OFFLINE_COMBAT.rejected(),blob=new Blob([JSON.stringify(rows,null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='hemicycle-resultados-para-revisar.json';a.click();setTimeout(function(){URL.revokeObjectURL(url);},1000);},
+   snapshot:backupSnapshot,export:exportPlayerBackup,download:downloadBackup,canOpen:function(){return SCREEN==='menu'&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},changed:function(){if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();}
+  });
   ECONOMY=HemicycleEconomyClient.create({base:'https://hemicycle-w578.onrender.com',account:economyAccount,snapshot:backupSnapshot,onResult:function(result,info){if(result.packs){var values={};stagePackReceipt(values,{k:result.kind||info.command.kind,packs:result.packs,country:result.country||info.command.country,free:info.command.type!=='pack'||!!info.command.free,from:info.command.type==='pack'?'tienda':'buzon'},result.presentationId||info.operationId);atomicLocal(values);}},reconcile:async function(){if(CLOUD_SAVE)await CLOUD_SAVE.adopt();}});
-  OFFLINE_COMBAT=HemicycleOfflineCombat.create({account:economyAccount,economy:ECONOMY,battle:receiveRemoteBattle,events:remoteBattleEvents,preparing:function(value){DOWNLOAD_START_BUSY=value;if(SCREEN==='builder')paint();},changed:function(status){OFFLINE_STATUS=status;if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();},error:function(message){showModal('No se pudo realizar la jugada',message==='TdP insuficiente'?'No tienes suficiente Tiempo de Palabra para jugar este cromo. Puedes elegir otro o pasar el turno.':message,'Entendido',false,null);},finished:finishDownloaded,onReceipt:function(ticketId,receipt){if(SCREEN==='result'&&SO.ticketId===ticketId){SO=verifiedResult(receipt,ticketId);paint();}}});
-  window.addEventListener('hemicycle:entered',function(){if(PLAYER_PROFILE&&PLAYER_PROFILE.account())OFFLINE_COMBAT.flush().catch(function(){});});
+  OFFLINE_COMBAT=HemicycleOfflineCombat.create({account:economyAccount,economy:ECONOMY,battle:receiveRemoteBattle,events:remoteBattleEvents,preparing:function(value){DOWNLOAD_START_BUSY=value;if(SCREEN==='builder')paint();},changed:function(status){OFFLINE_STATUS=status;if(CLOUD_UI)CLOUD_UI.offlineChanged();if(PLAYER_PROFILE)PLAYER_PROFILE.refresh();},error:function(message){showModal('No se pudo realizar la jugada',message==='TdP insuficiente'?'No tienes suficiente Tiempo de Palabra para jugar este cromo. Puedes elegir otro o pasar el turno.':message,'Entendido',false,null);},finished:finishDownloaded,onReceipt:function(ticketId,receipt){if(SCREEN==='result'&&SO.ticketId===ticketId){SO=verifiedResult(receipt,ticketId);paint();}}});
+  ACCOUNT_SYNC=HemicycleAccountSync.create({account:economyAccount,cloud:CLOUD_SAVE,economy:ECONOMY,offline:OFFLINE_COMBAT,
+   online:function(){return navigator.onLine;},visible:function(){return !document.hidden;},
+   ready:function(){return ACCOUNT_ENTRY_READY&&!!window.HemicycleEntered&&PLAYER_PROFILE.canSync()&&!(G&&!G.over)&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active);},
+   hasPending:function(){return OFFLINE_STATUS.pending>0||!!ECONOMY.pending();},changed:function(){if(CLOUD_UI)CLOUD_UI.offlineChanged();}
+  });
+  window.addEventListener('hemicycle:entered',function(){ACCOUNT_SYNC.wake();});
   document.addEventListener('hemicycle:local-save',function(){CLOUD_SAVE.dirty();});
-  window.addEventListener('online',function(){if(ECONOMY)ECONOMY.resume().catch(function(){}).finally(function(){if(OFFLINE_COMBAT)OFFLINE_COMBAT.flush().catch(function(){});});CLOUD_SAVE.reconnect();});
-  document.addEventListener('visibilitychange',function(){if(document.hidden)CLOUD_SAVE.save();else CLOUD_SAVE.reconnect();});
+  window.addEventListener('online',function(){ACCOUNT_SYNC.wake();});
+  document.addEventListener('visibilitychange',function(){if(document.hidden)CLOUD_SAVE.save();else ACCOUNT_SYNC.wake();});
   window.addEventListener('storage',function(event){if(event.key===HemicycleCloudSave.ownerKey&&event.newValue===null){CLOUD_SAVE.localReplaced();return;}if([LS,LS2,HemicycleRanked.key,'hemiciclo_tutorial_v1','hemiciclo_menu_tutorial_v1'].indexOf(event.key)>=0)CLOUD_SAVE.dirty();if(event.key===HemicycleRanked.key&&['menu','buzon'].indexOf(SCREEN)>=0&&!(TUTORIAL&&TUTORIAL.active)&&!(MENU_GUIDE&&MENU_GUIDE.active))paint();});
  }
  HISTORY=window.HemicycleHistory?HemicycleHistory.create({base:'https://hemicycle-w578.onrender.com',identity:function(){return backupSnapshot().identity.id;},account:function(){return PLAYER_PROFILE&&PLAYER_PROFILE.account();},card:function(id){return BYID[id];},preview:function(c){if(c.action)return actionArtHTML(c,'action-thumb');return '<img src="cards/'+c.id+'.webp" alt="" loading="lazy">';}}):null;
