@@ -88,7 +88,7 @@
 <script src="js/localization-data.js?v=32.0.0-fixes1"></script>
 <script src="js/localization.js?v=32.0.0.2"></script>
 <script src="js/ui-preferences.js?v=32.0.0"></script>
-<script src="js/game-audio.js?v=32.0.0.2-auras-a1"></script>
+<script src="js/game-audio.js?v=32.0.0.2-storage1"></script>
 <script src="js/resource-loading.js?v=31.0.2.6"></script>
 <script src="js/launch-screen.js?v=31.0.2.6"></script>
 <link rel="stylesheet" href="css/menu-senate.css?v=31.0.2.11-uniform7">
@@ -146,14 +146,14 @@
 <script src="js/strategy-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/action-cards.css?v=32.0.0.2">
 <script src="js/victory-boost.js?v=32.0.0.2"></script><script src="js/victory-boost-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/victory-boost.css?v=32.0.0.2">
 <script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=32.0.0"></script><script src="js/cosmetic-ui.js?v=32.0.0-fixes1"></script>
-<link rel="stylesheet" href="css/cosmetics.css?v=32.0.0.2-auras1">
+<link rel="stylesheet" href="css/cosmetics.css?v=32.0.0.2-storage1">
 <script src="js/player-backup.js?v=32.0.0.2"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=32.0.0.2-cloud2"></script>
+<script src="js/changelog.js?v=32.0.0.2-storage1"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
 <script src="js/economy-client.js?v=32.0.0-fixes1"></script>
@@ -162,11 +162,11 @@
 <script src="js/offline-rule-dispatch.js?v=32.0.0.2-auras-a1"></script>
 <script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline11:HemicycleOfflineRulesV11});</script>
 <script src="js/offline-engine-loader.js?v=32.0.0.2-auras-a1"></script>
-<script src="js/offline-combat.js?v=32.0.0.2-cloud2"></script>
+<script src="js/offline-combat.js?v=32.0.0.2-storage1"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/expansion-v32.css?v=32.0.0.2-fix1">
-<link rel="stylesheet" href="css/landscape.css?v=32.0.0.2-auras-a1">
+<link rel="stylesheet" href="css/landscape.css?v=32.0.0.2-storage1">
 <script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
 <script src="js/market-ui.js?v=31.0.2.6"></script>
 <script>
@@ -616,8 +616,8 @@ function fichaHTML(c){
 
 /* === SISTEMA DE VENTANA EMERGENTE (MODAL CORREGIDO SIN STOPPROPAGATION) === */
 var MODAL_CB=null;
-function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, requiresReview){
- if(document.querySelector('#modalRoot .objective-modal'))closeModal();
+function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, requiresReview, preserveObjectives){
+ if(document.querySelector('#modalRoot .objective-modal'))closeModal(preserveObjectives===true);
  MODAL_CB=onConfirm;
  var mr=document.getElementById('modalRoot');
  if(!mr)return;
@@ -632,16 +632,16 @@ function showModal(title, msg, confirmLabel, isDanger, onConfirm, trustedHtml, r
   +'</div></div></div>';
  var content=document.getElementById('content');if(content)content.inert=true;
  if(typeof HemicycleBattleActions!=='undefined')HemicycleBattleActions.render(null);
- var focus=mr.querySelector(requiresReview?'[data-modal="review"]':'[data-modal="confirm"]');if(focus)focus.focus();
+ var focus=mr.querySelector(requiresReview?'[data-modal="review"]':'[data-modal="confirm"]');if(focus)focus.focus({preventScroll:true});
 }
-function closeModal(){
+function closeModal(preserveObjectives){
  if(typeof COSMETIC_REVEAL_TIMER!=='undefined')clearTimeout(COSMETIC_REVEAL_TIMER);
  var lootStrip=document.querySelector('#modalRoot .loot-modal .country-strip');if(lootStrip)LOOT_SCROLL=lootStrip.scrollLeft;
- var objectivesOpen=document.querySelector('#modalRoot .objective-modal');if(objectivesOpen)rememberObjectives();
+ var objectivesOpen=document.querySelector('#modalRoot .objective-modal');if(objectivesOpen){if(preserveObjectives)rememberObjectives();else OBJECTIVE_POSITIONS={};}
  MODAL_CB=null;
  var mr=document.getElementById('modalRoot');
  if(mr)mr.innerHTML='';
- if(objectivesOpen){['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=false;});if(OBJECTIVE_FOCUS&&OBJECTIVE_FOCUS.isConnected)OBJECTIVE_FOCUS.focus({preventScroll:true});OBJECTIVE_FOCUS=null;}
+ if(objectivesOpen&&!preserveObjectives){['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=false;});if(OBJECTIVE_FOCUS&&OBJECTIVE_FOCUS.isConnected)OBJECTIVE_FOCUS.focus({preventScroll:true});OBJECTIVE_FOCUS=null;}
  var content=document.getElementById('content');if(content)content.inert=!!(SCREEN==='battle'&&G&&!G.over&&G.n===0&&!G.tutorial);
  syncBattleActions();
  if(TUTORIAL)TUTORIAL.render();if(TACTICAL_GUIDES&&!PRACTICE_PREPARING)Object.keys(TACTICAL_GUIDES).forEach(function(k){TACTICAL_GUIDES[k].render();});
@@ -1041,7 +1041,7 @@ function openObjectives(view,tab,restore){var previouslyOpen=!!document.querySel
    +(step===null?'':claim(x.id,(function(){var r=a.achievementReward(CARDS,x.id,step);return r.fs||r.xp?dualReward(r.fs,r.xp):step===100000?'Registrar hito':'Reclamar';})(),stage.pending===null,true,'data-step="'+step+'" aria-label="'+esc((stage.pending===null?'Reclamado':'Reclamar')+' · '+x.title+' · hito '+step)+'"'))+'</div></article>';
  });}
 
- showModal(view==='challenges'?'Desafíos':'Logros',html+'</div>','Cerrar',false,null,true);var cancel=document.querySelector('#modalRoot [data-modal="cancel"]');if(cancel)cancel.hidden=true;var dialog=document.querySelector('#modalRoot .modal');if(dialog){dialog.classList.add('objective-modal');if(previouslyOpen||restore)dialog.style.animation='none';['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=true;});var panel=dialog.querySelector('.objectives'),position=restore||OBJECTIVE_POSITIONS[view+'/'+tab];if(panel&&position)panel.scrollTop=position.top;var selected=dialog.querySelector('.objective-tabs .on');if(restore&&restore.id){var reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id&&el.getAttribute('data-step')===(restore.step||null);});if(!reward&&view==='achievements')reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id;});if(reward)selected=reward.disabled?(reward.closest('.objective-row')||reward.closest('.objective-period')||selected):reward;}if(selected)selected.focus({preventScroll:true});}
+ showModal(view==='challenges'?'Desafíos':'Logros',html+'</div>','Cerrar',false,null,true,false,true);var cancel=document.querySelector('#modalRoot [data-modal="cancel"]');if(cancel)cancel.hidden=true;var dialog=document.querySelector('#modalRoot .modal');if(dialog){dialog.classList.add('objective-modal');if(previouslyOpen||restore)dialog.style.animation='none';['appbar','tabbar'].forEach(function(id){var el=document.getElementById(id);if(el)el.inert=true;});var panel=dialog.querySelector('.objectives'),position=restore||OBJECTIVE_POSITIONS[view+'/'+tab];if(panel&&position)panel.scrollTop=position.top;var selected=dialog.querySelector('.objective-tabs .on'),tabs=dialog.querySelector('.objective-tabs');if(selected&&tabs&&tabs.scrollHeight>tabs.clientHeight){var selectedBounds=selected.getBoundingClientRect(),tabBounds=tabs.getBoundingClientRect();if(selectedBounds.bottom>tabBounds.bottom)tabs.scrollTop+=selectedBounds.bottom-tabBounds.bottom;else if(selectedBounds.top<tabBounds.top)tabs.scrollTop-=tabBounds.top-selectedBounds.top;}if(restore&&restore.id){var reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id&&el.getAttribute('data-step')===(restore.step||null);});if(!reward&&view==='achievements')reward=Array.prototype.find.call(dialog.querySelectorAll('[data-act=objective-claim]'),function(el){return el.getAttribute('data-id')===restore.id;});if(reward)selected=reward.disabled?(reward.closest('.objective-row')||reward.closest('.objective-period')||selected):reward;}if(selected)selected.focus({preventScroll:true});}
 }
 var COSMETIC_REVEAL_TIMER=null;
 function showCosmeticRewards(rewards,done){
@@ -1620,7 +1620,7 @@ SCREENS.sobre=function(){
  var canAgain=p&&!SO.free&&d.fs>=cost;
  var heading=(SO.demo?'<span class="pack-demo">DEMOSTRACIÓN · SIN COSTE</span>':'')+(q>1?'<span class="pack-progress">Sobre '+(index+1)+' de '+q+'</span>':'');
  if(!SO.revealed)return '<div class="pack-opening">'+heading+'<span class="eyebrow">'+esc(p?p.n:SO.k==='semanal'?'Sobre semanal':SO.k==='diario'?'Sobre diario':'Tu recompensa')+'</span><button class="sealed-pack" data-act="pack-reveal" aria-label="Cortar el sobre y revelar sus '+ids.length+' cromos">'+packArt(SO.k,SO.coverId)+'</button><div class="completion-actions"><button class="btn" data-act="pack-reveal">Cortar y revelar</button></div></div>';
- return '<div>'+heading+'<h2>'+(SO.demo?'Apertura de ejemplo':'Sobre abierto')+'</h2><p class="sub">'+(SO.demo?'Estos cromos son de muestra; tu colección no cambia.':q>1?q+' sobres · '+(q*5)+' cromos guardados en tu colección.':ids.length+' cromos añadidos a tu colección.')+'</p></div>'
+ return '<div class="pack-summary">'+heading+'<h2>'+(SO.demo?'Apertura de ejemplo':'Sobre abierto')+'</h2><p class="sub">'+(SO.demo?'Estos cromos son de muestra; tu colección no cambia.':q>1?q+' sobres · '+(q*5)+' cromos guardados en tu colección.':ids.length+' cromos añadidos a tu colección.')+'</p></div>'
  +'<div class="reveal pack-results">'+ids.map(function(id,i){return '<button class="reward-card" data-act="pack-card" data-id="'+id+'" style="--reveal-delay:'+i*65+'ms" aria-label="Ver '+esc(BYID[id].n)+'">'+cromoHTML(BYID[id],{noCardAttr:true})+'</button>';}).join('')+'</div>'
  +'<div class="bar completion-actions pack-controls">'
  +(index>0?'<button class="btn ghost sm" data-act="pack-step" data-index="'+(index-1)+'">Anterior</button>':'')
@@ -3012,6 +3012,7 @@ function firstEntry(){
  if(MENU_GUIDE&&MENU_GUIDE.active){MENU_GUIDE.render();return;}
  if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start('short');return;}
  if(!lsGet('hemiciclo_objectives_intro_v1'))lsSet('hemiciclo_objectives_intro_v1',true);
+ maybeExpansionNotice();
 }
 document.addEventListener('hemicycle:typeface',function(e){var d=D();if(HemicycleAppearance.owns(d,'font',e.detail)){d.typeface=e.detail;saveD(d);}});
 document.addEventListener('change',function(e){if(e.target.id==='countryFilter'){FIL.country=e.target.value;paint();}});

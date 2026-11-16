@@ -18,6 +18,8 @@ Forma un gabinete de **ocho oradores**, elige a tu líder y añade **cuatro cart
 
 Hemiciclo está en **prelanzamiento**, versión **v32.0.0.2**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
+Corrección del 16 de noviembre: las conexiones cerradas del registro local de partidas se reabren automáticamente, conservando partidas y resultados pendientes. También se ajustan los sobres y el cartel de Inicio en horizontal, los marcos y el desplazamiento de Logros y Desafíos, y el aviso de regalos tras entrar al juego.
+
 Corrección del servicio del 9 de noviembre: la descarga de partidas utiliza el mismo registro de versiones que su validación, incluyendo las reglas actuales. Los rechazos conocidos de operaciones pendientes tienen un diagnóstico específico y conservan su identificador para revisión.
 
 Nube sincroniza automáticamente el progreso y los resultados al entrar y al volver a la aplicación. Su contador distingue los resultados por confirmar de los regalos del buzón y se actualiza después de validarlos. Las copias de recuperación están en un apartado plegado; el botón Reintentar aparece cuando hay un problema.

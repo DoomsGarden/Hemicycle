@@ -1,9 +1,31 @@
 /* Partidas descargadas: jugadas reproducibles, premios pendientes y consumo único al validar. */
 (function(root){'use strict';root.HemicycleOfflineCombat={create:function(api){
- var Rules=root.HemicycleOfflineRules,live=null,clock=null,busy=false,preparing=false,connection=null,dbPromise,releaseLease=null,notice=0,settlements=new Map();
- function db(){return dbPromise||(dbPromise=new Promise(function(resolve,reject){var r=indexedDB.open('hemicycle-offline-v1',1);r.onupgradeneeded=function(){r.result.createObjectStore('accounts');};r.onsuccess=function(){resolve(r.result);};r.onerror=function(){reject(Error('No se pudo abrir el registro de partidas descargadas.'));};}));}
- async function read(id){var d=await db();return new Promise(function(resolve,reject){var tx=d.transaction('accounts'),q=tx.objectStore('accounts').get(id);q.onsuccess=function(){resolve(q.result||{tickets:[],pending:[],active:null});};q.onerror=function(){reject(q.error);};});}
- async function write(id,value){var d=await db();return new Promise(function(resolve,reject){var tx=d.transaction('accounts','readwrite');tx.objectStore('accounts').put(value,id);tx.oncomplete=resolve;tx.onerror=function(){reject(Error('No se pudo guardar la partida. Comprueba el espacio disponible.'));};tx.onabort=tx.onerror;});}
+ var Rules=root.HemicycleOfflineRules,live=null,clock=null,busy=false,preparing=false,connection=null,dbPromise,dbConnection=null,releaseLease=null,notice=0,settlements=new Map();
+ function forgetDatabase(d){if(dbConnection===d){dbConnection=null;dbPromise=null;}try{d.close();}catch(e){}}
+ function db(){
+  if(dbPromise)return dbPromise;
+  var attempt=new Promise(function(resolve,reject){var r=indexedDB.open('hemicycle-offline-v1',1);
+   r.onupgradeneeded=function(){if(!r.result.objectStoreNames.contains('accounts'))r.result.createObjectStore('accounts');};
+   r.onsuccess=function(){var d=r.result;dbConnection=d;d.onversionchange=function(){forgetDatabase(d);};d.onclose=function(){forgetDatabase(d);};resolve(d);};
+   r.onerror=function(){if(dbPromise===attempt)dbPromise=null;reject(Error('No se pudo abrir el registro de partidas descargadas. Reinténtalo en unos instantes.'));};
+  });dbPromise=attempt;attempt.catch(function(){if(dbPromise===attempt)dbPromise=null;});return attempt;
+ }
+ async function transaction(mode,operation){
+  var d=await db(),tx;
+  try{tx=d.transaction('accounts',mode);}catch(e){
+   // A closing connection has not started a transaction: reopening is safe.
+   // Never replay an operation after its transaction has started or committed.
+   if(e.name!=='InvalidStateError')throw e;forgetDatabase(d);d=await db();
+   try{tx=d.transaction('accounts',mode);}catch(retryError){if(retryError.name==='InvalidStateError')forgetDatabase(d);throw retryError;}
+  }
+  return new Promise(function(resolve,reject){var result;
+   tx.oncomplete=function(){resolve(result);};
+   tx.onabort=function(){reject(Error(mode==='readonly'?'No se pudo leer el registro de partidas. Reinténtalo en unos instantes.':'No se pudo guardar la partida. Comprueba el espacio disponible.'));};
+   try{operation(tx.objectStore('accounts'),function(value){result=value;});}catch(e){tx.abort();reject(e);}
+  });
+ }
+ function read(id){return transaction('readonly',function(store,done){var q=store.get(id);q.onsuccess=function(){done(q.result||{tickets:[],pending:[],active:null});};});}
+ function write(id,value){return transaction('readwrite',function(store){store.put(value,id);});}
  function owner(){return api.account()&&api.account().userId;}
  async function lock(id,fn){return navigator.locks?navigator.locks.request('hemicycle-offline:'+id,fn):fn();}
  async function notify(){var sequence=++notice,id=owner(),value=await status();if(sequence===notice&&id===owner()&&api.changed)api.changed(value);}
