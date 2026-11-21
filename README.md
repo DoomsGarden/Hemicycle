@@ -16,7 +16,7 @@
 
 Forma un gabinete de **ocho oradores**, elige a tu líder y añade **cuatro cartas de acción distintas**. Presenta tus cromos en la Tribuna, aprovecha sus doctrinas y decide cuándo atacar, defender o recuperar fuerzas. Tu objetivo: **alcanzar 100 votos**.
 
-Hemiciclo está en **prelanzamiento**, versión **v32.0.0.3**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
+Hemiciclo está en **prelanzamiento**, versión **v33.0.0.1**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
 Corrección del 16 de noviembre: las conexiones cerradas del registro local de partidas se reabren automáticamente, conservando partidas y resultados pendientes. También se ajustan los sobres y el cartel de Inicio en horizontal, los marcos y el desplazamiento de Logros y Desafíos, y el aviso de regalos tras entrar al juego.
 
@@ -67,7 +67,7 @@ Ganar cinco partidas seguidas con recompensas activa un bonus aleatorio del 25 %
 
 [Descargar APK para Android](https://hemicycle.online/Hemiciclo.apk) · [Descargar AAB para Google Play](https://hemicycle.online/Hemiciclo.aab) · [Ver todos los archivos](https://hemicycle.online/downloads/)
 
-Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v32.0.0.3**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
+Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v33.0.0.1**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
 
 ## Primeros pasos
 
@@ -190,7 +190,7 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
 - [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
-- [Notas de la versión v32.0.0.3](_dev/releases/v32.0.0.3.md)
+- [Notas de la versión v33.0.0.1](_dev/releases/v33.0.0.1.md)
 - [Notas de la ampliación v32.0.0](_dev/releases/v32.0.0.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.

@@ -45,7 +45,7 @@ test('successor browser/server bundles use cost six while issued offline11 retai
  for(const [text,needle]of [[build.browser,'root.HemicycleOfflineRules=load("_dev/online/offline-rules.cjs");'],[build.server,'module.exports=load("_dev/online/offline-rules.cjs");']]){
   a.ok(text.includes(needle));const context=vm.createContext({module:{exports:{}},structuredClone});vm.runInContext(text.replace(needle,'root.actions=load("js/action-cards.js");'+needle),context);for(const id of changed)a.equal(context.actions.byId[id].cost,6);
  }
- const manifest=require('../_dev/releases/v32.0.0.3/offline12-manifest.json');
+ const manifest=require('../_dev/releases/v33.0.0.1/offline12-manifest.json');
  for(const key of ['browser','server'])a.equal(require('node:crypto').createHash('sha256').update(build[key]).digest('hex'),manifest[key+'Sha256']);
  const old=fs.readFileSync('js/offline-rules-v11.js','utf8'),needle='root.HemicycleOfflineRules=load("_dev/online/offline-rules.cjs");',context=vm.createContext({structuredClone});a.ok(old.includes(needle));vm.runInContext(old.replace(needle,'root.actions=load("js/action-cards.js");'+needle),context);for(const id of changed)a.equal(context.actions.byId[id].cost,7);
  for(const row of JSON.parse(fs.readFileSync('_dev/revisions/20261117-action-cost/legacy-engines.json','utf8')))a.equal(require('node:crypto').createHash('sha256').update(fs.readFileSync(row.file)).digest('hex'),row.sha256,row.file);
