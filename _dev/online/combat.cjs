@@ -1,5 +1,6 @@
 'use strict';
 const S=require('../../js/action-status.js');
+const ActionCosts=require('../../js/action-costs.js');
 const crypto=require('node:crypto'),A=require('./actions.cjs'),{cards}=require('../market/catalog.cjs'),Balance=require('../../js/orator-catalog.js'),Legacy=require('./catalog-legacy-stats.cjs'),B=require('../../js/basic-effects.js'),Insights=require('../../js/battle-insights.js'),Forecast=require('../../js/attack-forecast.js');
 const catalog=Object.fromEntries(cards.map(c=>[c.id,c])),beats={verborrea:'guardia',guardia:'aforado',aforado:'viperina',viperina:'foco',foco:'giro',giro:'verborrea'};
 const random=()=>crypto.randomInt(0,0x100000000)/0x100000000,check=(v,m)=>{if(!v)throw Error(m);};
@@ -41,7 +42,7 @@ function ready(s,i,choice,now,rng,profile){check(s.status==='preparing','La part
  s.players[i]={cabinetIds:valid.orators.slice(),cabinetActions:valid.actions.slice(),leader:valid.leader,turn:0,tdp:0,tdpMax:2,votes:0,hand:[leader,others.shift()],deck:A.shuffle([...others,...actions],rng),field:[],rest:[],actionDiscard:[],saved:[],insights:s.insightsVersion?Insights.create():undefined,refund:0,usedActions:[],silenced:false};log(s,(i===0?'Anfitrión':'Invitado')+' está listo.');
  if(s.players.every(Boolean)){s.status='active';s.first=rng()<.5?0:1;log(s,'Sorteo: '+(s.first===0?'cara, empieza el anfitrión.':'cruz, empieza el invitado.'));begin(s,s.first,now,rng);}
 }
-function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],a=A.byId[id],c=p.hand.find(c=>c.action&&c.id===id);check(a&&c,'Acción fuera de la mano');check((c.availableTurn||0)<=p.turn,'La acción sigue en recuperación');check(p.tdp>=a.cost,'TdP insuficiente');check(p.actionUsedTurn!==p.turn,'Solo una acción por turno');check(!a.oncePerBattle||!p.usedActions.includes(id),'Acción agotada');
+function actionCard(s,i,id,target){const p=s.players[i],foe=s.players[1-i],c=p.hand.find(c=>c.action&&c.id===id),a=ActionCosts.forInstance(A.byId[id],c);check(a&&c,'Acción fuera de la mano');check((c.availableTurn||0)<=p.turn,'La acción sigue en recuperación');check(p.tdp>=a.cost,'TdP insuficiente');check(p.actionUsedTurn!==p.turn,'Solo una acción por turno');check(!a.oncePerBattle||!p.usedActions.includes(id),'Acción agotada');
  const owners=a.target==='all'?[i,1-i]:[a.target.includes('rival')?1-i:i];let affected=owners.flatMap(owner=>s.players[owner].field.map(c=>({owner,c,doc:active(s,owner)})));if(!a.target.startsWith('all'))affected=affected.filter(x=>x.c.uid===target);
  check(a.effect==='silence'||affected.length,'Objetivo no válido');if(a.effect==='heal')check(affected.some(x=>x.c.hp<x.c.maxHp),'No falta Aguante');if(a.effect==='guard')check(affected.some(x=>!x.c.guard),'Defensa ya activa');
  if(a.effect==='silence'){check(p.field.length===3&&p.field.every(c=>c.ready),'Necesitas tres oradores listos');check(p.votes<foe.votes,'Debes tener menos votos');check(!foe.pendingSilence&&foe.turn>(foe.silenceImmuneThrough??-1),'Rival protegido');foe.pendingSilence=true;p.field.forEach(c=>c.ready=false);}

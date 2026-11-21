@@ -1,7 +1,13 @@
 'use strict';
 const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('node:fs'),crypto=require('node:crypto');
-const {PGlite}=require('@electric-sql/pglite'),{createServer}=require('../../_dev/online/server.cjs');
-const Offline=require('../../_dev/online/offline-engines.cjs'),E=require('../../_dev/online/economy.cjs');
+const path=require('node:path'),{PGlite}=require('@electric-sql/pglite');
+const workspace=path.resolve(__dirname,'../..');
+const override=process.env.HEMICYCLE_RELEASE_STAGE;
+const root=override?path.resolve(override):workspace;
+const online=name=>require(path.join(root,'_dev/online',name+'.cjs'));
+const {createServer}=online('server'),Offline=online('offline-engines'),E=online('economy');
+const staged=Offline.supports('offline12');
+const oldIds=new Set(require('../../_dev/online/frozen-v11/orator-catalog.js').cards.map(c=>c.id));
 const migrations=[
  '_dev/supabase/20261021_account_profiles.sql','_dev/supabase/20261021_cloud_saves.sql',
  '_dev/online/rooms.sql','_dev/online/20261024_test_players.sql','_dev/online/20261024_private_combat.sql',
@@ -20,9 +26,15 @@ test('authenticated HTTP download, match and settlement use the same engine regi
  try{
   await db.exec("create role anon;create role authenticated;create role service_role;create schema auth;create table auth.users(id uuid primary key);create function auth.uid() returns uuid language sql stable as $$select nullif(current_setting('request.jwt.claim.sub',true),'')::uuid$$;grant usage on schema auth to anon,authenticated;grant execute on function auth.uid() to anon,authenticated;");
   for(const file of migrations)await db.exec(fs.readFileSync(file,'utf8'));
+  if(staged){
+   const migration=fs.readFileSync('_dev/expansions/gb-de/release/deploy.sql','utf8');
+   await db.exec(migration);await db.exec(migration);
+   const privileges=await db.query("select has_function_privilege('anon','public.hemicycle_offline_download(uuid,text)','EXECUTE') as anon,has_function_privilege('authenticated','public.hemicycle_offline_download(uuid,text)','EXECUTE') as auth");
+   a.deepEqual(privileges.rows,[{anon:false,auth:false}]);
+  }
   await db.query('insert into auth.users values($1),($2)',[actor,other]);
   const payload=E.starter('HC-'+crypto.randomUUID(),Date.now());
-  payload.profile.album=E.catalog.filter(c=>!c.action).map(c=>c.id);
+  payload.profile.album=E.catalog.filter(c=>oldIds.has(c.id)).map(c=>c.id);
   payload.profile.actionAlbum=E.catalog.filter(c=>c.action).map(c=>c.id);
   payload.profile.w=415;payload.profile.l=56;payload.profile.fs=3929;payload.profile.elo=3738;
   await db.exec('set role service_role');await rpc('hemicycle_economy_bootstrap',{p_actor:actor,p_payload:payload});
@@ -35,8 +47,10 @@ test('authenticated HTTP download, match and settlement use the same engine regi
   }});
   await new Promise(r=>server.listen(0,'127.0.0.1',r));
   const base='http://127.0.0.1:'+server.address().port;
-  async function call(path,body,token='test-session'){
-   const response=await fetch(base+path,{method:'POST',headers:{Authorization:'Bearer '+token,'Content-Type':'application/json',Origin:'https://hemicycle.online'},body:JSON.stringify(body)});
+  async function call(path,body,token='test-session',includeEdition=true){
+   const headers={Authorization:'Bearer '+token,'Content-Type':'application/json',Origin:'https://hemicycle.online'};
+   if(staged&&includeEdition)headers['X-Hemicycle-Catalog']='gb-de-2010-2026';
+   const response=await fetch(base+path,{method:'POST',headers,body:JSON.stringify(body)});
    return {status:response.status,data:await response.json()};
   }
   a.equal((await call('/offline/tickets',{rules:'offline11'},'invalid')).status,401);
@@ -45,7 +59,8 @@ test('authenticated HTTP download, match and settlement use the same engine regi
   a.ok(newest,'latest published client rules are downloadable');
   a.deepEqual((await call('/offline/tickets',{rules:'offline11'})).data,newest,'retries reuse unused preparations');
   a.ok((await call('/offline/tickets',{})).data.every(ticket=>ticket.rules==='offline1'));
-  for(const rules of ['offline12','__proto__','toString',{},['offline11'],11])a.equal((await call('/offline/tickets',{rules})).status,400);
+  const invalidRules=staged?['offline13']:['offline12'];
+  for(const rules of invalidRules.concat(['__proto__','toString',{},['offline11'],11]))a.equal((await call('/offline/tickets',{rules})).status,400);
   a.deepEqual(await saved(),before,'downloading/rejecting rules never changes resources');
   const ticket=newest[0],engine=Offline.forTicket(ticket),AI=require('../../_dev/online/ai.cjs');
   const cabinet={orators:ticket.profile.album.slice(0,8),leader:ticket.profile.album[0],actions:ticket.profile.actionAlbum.slice(0,4)};
@@ -62,6 +77,47 @@ test('authenticated HTTP download, match and settlement use the same engine regi
    a.deepEqual(await call('/offline/settle',{...settle,record:changed}),first);a.deepEqual(await saved(),after);
   }
   const foreign=await call('/offline/settle',settle,'other-session');a.equal(foreign.status,409);a.equal(foreign.data.code,'OFFLINE_TICKET_UNAVAILABLE');a.equal(foreign.data.fs,undefined);
+  if(staged){
+   a.equal(Offline.versions.at(-1),'offline12');
+   const health=await (await fetch(base+'/health')).json();
+   a.equal(health.catalogEdition,'gb-de-2010-2026');a.equal(health.catalogOrators,1767);
+   const catalog=require(path.join(root,'js/orator-catalog.js'));
+   const newOrators=catalog.cards.filter(c=>!oldIds.has(c.id));
+   a.equal(newOrators.length,868);
+   const art=require(path.join(root,'js/orator-art.js'));
+   const oldPortrait=[...oldIds].find(id=>art[id]?.columns===1&&!fs.existsSync(path.join(root,'cards',id+'.webp')));
+   a.ok(oldPortrait);
+   for(const id of [oldPortrait,newOrators[0].id]){
+    const photo=await fetch(base+'/rooms-test/portraits/'+id+'.webp');
+    a.equal(photo.status,200,id);a.equal(photo.headers.get('Content-Type'),'image/webp');
+    a.ok((await photo.arrayBuffer()).byteLength>0);
+   }
+   a.equal((await fetch(base+'/rooms-test/portraits/inexistent-card.webp')).status,404);
+   const roster=['GB','DE'].flatMap(country=>newOrators.filter(c=>c.country===country).slice(0,4)).map(c=>c.id);
+   const fixture=E.starter('HC-'+crypto.randomUUID(),Date.parse('2026-11-21T12:00:00Z'));
+   fixture.profile.album=roster;fixture.profile.actionAlbum=payload.profile.actionAlbum.slice(0,4);
+   await rpc('hemicycle_economy_bootstrap',{p_actor:other,p_payload:fixture});
+   async function otherState(){return (await rpc('hemicycle_economy_context',{p_actor:other})).accounts[other].payload;}
+   const response=await call('/offline/tickets',{rules:'offline12'},'other-session');
+   a.equal(response.status,200,JSON.stringify(response));
+   const future=response.data[0],cabinet={orators:roster,leader:roster[0],actions:fixture.profile.actionAlbum};
+   a.deepEqual(new Set(future.profile.album),new Set(roster));
+   const replay={cabinet,mode:'normal',startedAt:Date.now(),commands:[{at:1000,command:{type:'resign'}}]};
+   const args={operationId:future.id,ticketId:future.id,record:replay},result=await call('/offline/settle',args,'other-session');
+   a.equal(result.status,200,JSON.stringify(result));a.equal(result.data.win,false);
+   const afterMatch=await otherState();a.equal(afterMatch.profile.l,1);
+   a.deepEqual(await call('/offline/settle',args,'other-session'),result);
+   a.deepEqual(await otherState(),afterMatch);
+   const claim={operationId:crypto.randomUUID(),command:{type:'expansion-claim',event:'expansion-gb-de-2026-11',grant:'fs'}};
+   const stale=await call('/economy',claim,'other-session',false);
+   a.equal(stale.status,503);a.equal(stale.data.code,'CATALOG_UPDATE_REQUIRED');
+   a.deepEqual(await otherState(),afterMatch);
+   a.deepEqual(await call('/offline/settle',settle,'test-session',false),first,'older clients can still confirm old match results');
+   const event=await call('/economy',claim,'other-session');
+   a.equal(event.status,200,JSON.stringify(event));a.equal(event.data.fs,10000);
+   a.deepEqual(await call('/economy',claim,'other-session'),event);
+   a.equal((await otherState()).profile.fs,afterMatch.profile.fs+10000);
+  }
   // Recovery is never used for a different operation type, an uncommitted
   // ticket or a colliding unrelated operation ID.
   const strict=await call('/economy',{operationId:ticket.id,command:{type:'pack',kind:'comun',quantity:1}});

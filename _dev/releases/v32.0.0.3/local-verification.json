@@ -1,0 +1,69 @@
+{
+  "checkedOn": "2026-11-21",
+  "version": "v32.0.0.3",
+  "edition": "gb-de-2010-2026",
+  "orators": 1767,
+  "newPortraits": 868,
+  "actions": 92,
+  "sources": {
+    "orators": 1767,
+    "phrases": 5301,
+    "references": 2498,
+    "partial": 5
+  },
+  "sql": "release/deploy.sql",
+  "sqlSha256": "122bc9ef41bf17e02d7d7a6526b35cc90dc892f9c314ae309fb0f3243ca2e669",
+  "sqlAppliedTwiceOnLocalDatabase": true,
+  "onlineAuthorityInProductionChecked": false,
+  "finalOffline12RoutesVerified": true,
+  "previousOffline11Reproducible": true,
+  "catalogUpdateGuardVerified": true,
+  "olderMatchReceiptRecoveryVerified": true,
+  "realBrowser": {
+    "ui": "qa/release-ui.json",
+    "events": "qa/release-event/report.json",
+    "offline": "qa/release-pwa.json"
+  },
+  "transfers": {
+    "candidateFileInventory": {
+      "files": 2408,
+      "bytes": 532106576
+    },
+    "index": {
+      "bytes": 300019,
+      "gzipBytes": 90683
+    },
+    "catalog": {
+      "bytes": 1141816,
+      "gzipBytes": 356095
+    },
+    "rules": {
+      "bytes": 4008907,
+      "gzipBytes": 1021077
+    },
+    "sourceArchive": {
+      "bytes": 6858701,
+      "gzipBytes": 542264
+    },
+    "engineNotExecutedAtStartup": true,
+    "deviceTested": "Chromium in the cloud workspace",
+    "pairedUiRuns": 1
+  },
+  "tests": {
+    "serviceSQLAndOnlinePortraits": {
+      "passed": 13
+    },
+    "bugRegressions": {
+      "passed": 38
+    },
+    "rulesAndCatalog": {
+      "passed": 50
+    },
+    "languageAndLegalReceipts": {
+      "passed": 11
+    }
+  },
+  "supabaseAppliedRemotely": false,
+  "serviceDeployedRemotely": false,
+  "pagesPublished": false
+}

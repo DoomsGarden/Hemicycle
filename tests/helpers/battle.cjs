@@ -46,6 +46,7 @@ function loadBattle(mode = 'normal', random = 0.25, overrides = {}) {
     HemicyclePackRules: require('../../js/pack-rules.js'),
     HemicycleBackup: require('../../js/player-backup.js'),
     HemicycleActions: require('../../js/action-cards.js'),
+    HemicycleActionCosts: require('../../js/action-costs.js'),
     HemicycleLegacyActions: require('../../js/action-data-v32.js'),
     HemicycleBattleStatus: require('../../js/battle-status.js'),
     HemicycleCoinToss: {...require('../../js/coin-toss.js'),show(){},schedule(){},cancel(){}},

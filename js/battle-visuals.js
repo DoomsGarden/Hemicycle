@@ -121,7 +121,7 @@ function showNextSpeech(){
  while(speechQueue.length){
   var item=speechQueue.shift();if(item.game!==current||document.hidden)continue;
   var host=document.getElementById('battleFxRoot');if(!host)continue;
-  var d=item.data,route=speechRoute(item),from=route.from,to=route.to;if(!from||!to)continue;if(root.HemicycleI18n)d=Object.assign({},d,{quote:root.HemicycleI18n.quote(d.quote)});var timing=speechTiming(d.quote,item.quiet),el=effect(host,'battle-spoken '+item.kind+(item.quiet?' still':''),from,d.quote);if(!el)continue;var words=document.createElement('span');words.className='battle-spoken-copy';words.textContent=d.quote;el.replaceChildren(words);
+  var d=item.data,route=speechRoute(item),from=route.from,to=route.to;if(!from||!to)continue;if(root.HemicycleI18n)d=Object.assign({},d,{quote:root.HemicycleI18n.quote(d.quote,item.sourceCardId)});var timing=speechTiming(d.quote,item.quiet),el=effect(host,'battle-spoken '+item.kind+(item.quiet?' still':''),from,d.quote);if(!el)continue;var words=document.createElement('span');words.className='battle-spoken-copy';words.textContent=d.quote;el.replaceChildren(words);
   var peak=1.2,clearance=Math.min(from.x,innerWidth-from.x,to.x,innerWidth-to.x),width=Math.min(280,Math.max(80,(clearance-8)*2/peak));
   el.style.setProperty('--phrase-flight',timing.flight+'ms');el.style.width=width+'px';el.style.setProperty('--phrase-peak',peak);el.style.left=from.x+'px';el.style.setProperty('--phrase-x',(to.x-from.x)+'px');el.style.setProperty('--phrase-y',(to.y-from.y)+'px');el.dataset.side=route.side;el.dataset.destination=route.destination;el.dataset.target=d.target||'';
   var scale=parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--ui-text-scale'))||1,size=26*scale;el.style.fontSize=size+'px';while(size>16*scale&&el.offsetHeight>parseFloat(getComputedStyle(el).lineHeight)*2.15){size--;el.style.fontSize=size+'px';}
@@ -131,7 +131,8 @@ function showNextSpeech(){
 }
 function phrase(host,d,from,to,kind,quiet){
  if(!d.quote||!from||!to)return;
- speechQueue.push({game:current,data:Object.assign({},d),from:from,to:to,kind:kind,quiet:quiet});
+ var actor=cardsOf(current)[d.uid]||(snapshot&&snapshot.game===current&&snapshot.cards[d.uid]);
+ speechQueue.push({game:current,data:Object.assign({},d),sourceCardId:actor&&actor.card.id,from:from,to:to,kind:kind,quiet:quiet});
  if(!speech)showNextSpeech();
 }
 function restoreBoards(saved){['p','e'].forEach(function(side,i){var el=document.querySelector('[data-tutorial="'+(side==='p'?'player':'enemy')+'"]');if(el&&saved[i]!==null)el.innerHTML=saved[i];});if(hooks.refreshArt)hooks.refreshArt();}

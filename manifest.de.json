@@ -1,0 +1,71 @@
+{
+  "id": "./",
+  "name": "Hemizykel: Im direkten Duell",
+  "short_name": "Hemizykel",
+  "description": "Unabhängiges, inoffizielles politisches Strategie-Kartenspiel: 1.767 Redner, 92 Aktionskarten und Kabinette aus 8 Rednern und 4 Aktionen. Rundenbasierte Debatten bis 100 Stimmen.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "display_override": [
+    "fullscreen",
+    "standalone"
+  ],
+  "orientation": "any",
+  "background_color": "#070b16",
+  "theme_color": "#0a0e18",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": [
+    "games"
+  ],
+  "dir": "ltr",
+  "screenshots": [
+    {
+      "src": "docs/media/install/inicio.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Startseite und Zugänge von Hemizykel"
+    },
+    {
+      "src": "docs/media/install/combate.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Rundenbasierter Kampf mit unabhängig wählbaren Spielmatten"
+    },
+    {
+      "src": "docs/media/install/coleccion.webp",
+      "sizes": "786x1702",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Rednersammlung und Filter"
+    },
+    {
+      "src": "docs/media/install/combate-horizontal.webp",
+      "sizes": "1688x780",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "An das Querformat angepasster Kampf"
+    }
+  ]
+}

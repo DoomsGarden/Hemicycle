@@ -9,7 +9,8 @@
  function update(select){
   var w=widgets.get(select);if(!w)return;
   var option=select.options[select.selectedIndex],text=option?option.textContent:'Seleccionar';
-  if(w.value.textContent!==text)w.value.textContent=text;
+  if(select.hasAttribute('data-entry-locale')&&root.HemicycleEntryLocale&&option)root.HemicycleEntryLocale.paint(w.value,option.value,true);
+  else if(w.value.textContent!==text)w.value.textContent=text;
   w.button.disabled=select.disabled;
   var name=label(select)+': '+text;if(w.button.getAttribute('aria-label')!==name)w.button.setAttribute('aria-label',name);
  }
@@ -49,6 +50,7 @@
   var enabled=[];Array.from(select.options).forEach(function(option){if(option.hidden)return;var disabled=option.disabled||option.parentElement.disabled,el=document.createElement('div');el.className='game-select-option';el.id=menu.id+'-'+option.index;el.dataset.index=option.index;el.setAttribute('role','option');el.setAttribute('aria-selected',String(option.selected));if(disabled)el.setAttribute('aria-disabled','true');else enabled.push(option);el.textContent=option.textContent;menu.append(el);});
   if(!enabled.length){var empty=document.createElement('div');empty.className='game-select-empty';empty.textContent='No hay opciones disponibles.';menu.append(empty);}
   var note=document.createElement('div');note.className='game-select-scroll-note';note.setAttribute('role','presentation');note.setAttribute('aria-hidden','true');note.textContent='Desliza para ver más opciones';menu.append(note);
+  if(select.hasAttribute('data-entry-locale')&&root.HemicycleEntryLocale){menu.classList.add('entry-locale-menu');menu.setAttribute('data-no-translate','');menu.querySelectorAll('[role=option]').forEach(function(el){root.HemicycleEntryLocale.paint(el,select.options[Number(el.dataset.index)].value,false);});}
   document.body.append(menu);opened={select:select,w:w,menu:menu,options:enabled,index:Math.max(0,enabled.findIndex(function(o){return o.selected;}))};typed='';typedAt=0;
   w.button.setAttribute('aria-expanded','true');w.button.focus({preventScroll:true});position();move(opened.index);
  }

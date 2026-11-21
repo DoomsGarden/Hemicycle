@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
 <meta name="theme-color" content="#0a0e18">
-<meta name="description" content="Juego independiente y no oficial de cartas y estrategia política: 899 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.">
+<meta name="description" content="Juego independiente y no oficial de cartas y estrategia política: 1.767 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -16,7 +16,7 @@
 <meta property="og:locale" content="es_ES">
 <meta property="og:site_name" content="Hemiciclo">
 <meta property="og:title" content="Hemiciclo: Cara a Cara">
-<meta property="og:description" content="Juego independiente y no oficial de cartas y estrategia política: 899 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.">
+<meta property="og:description" content="Juego independiente y no oficial de cartas y estrategia política: 1.767 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.">
 <meta property="og:url" content="https://hemicycle.online/">
 <meta property="og:image" content="https://hemicycle.online/docs/media/readme-banner.jpg?v=20261103-meta6">
 <meta property="og:image:width" content="1680">
@@ -24,10 +24,10 @@
 <meta property="og:image:alt" content="Hemiciclo: tu gabinete, tu estrategia. Capturas reales del juego.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Hemiciclo: Cara a Cara">
-<meta name="twitter:description" content="Juego independiente y no oficial de cartas y estrategia política: 899 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.">
+<meta name="twitter:description" content="Juego independiente y no oficial de cartas y estrategia política: 1.767 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.">
 <meta name="twitter:image" content="https://hemicycle.online/docs/media/readme-banner.jpg?v=20261103-meta6">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Hemiciclo: Cara a Cara","url":"https://hemicycle.online/","description":"Juego independiente y no oficial de cartas y estrategia política: 899 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.","inLanguage":["es-ES","en","fr"],"applicationCategory":"GameApplication","gamePlatform":"Navegador web","softwareVersion":"32.0.0.2","isAccessibleForFree":true,"image":"https://hemicycle.online/docs/media/readme-banner.jpg?v=20261103-meta6"}</script>
-<link rel="manifest" href="manifest.json?v=32.0.0.2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Hemiciclo: Cara a Cara","url":"https://hemicycle.online/","description":"Juego independiente y no oficial de cartas y estrategia política: 1.767 oradores, 92 acciones y gabinetes de 8 oradores y 4 acciones. Debate por turnos hasta alcanzar 100 votos.","inLanguage":["es-ES","en","fr"],"applicationCategory":"GameApplication","gamePlatform":"Navegador web","softwareVersion":"32.0.0.2","isAccessibleForFree":true,"image":"https://hemicycle.online/docs/media/readme-banner.jpg?v=20261103-meta6"}</script>
+<link rel="manifest" href="manifest.json?v=gb-de-2010-2026">
 <link rel="icon" href="icon-192.png">
 <link rel="apple-touch-icon" href="icon-192.png">
 <link rel="stylesheet" href="css/app.css?v=31.0.2.6">
@@ -39,6 +39,7 @@
 <link rel="stylesheet" href="css/battle-visuals.css?v=31.0.2.12-ida5">
 <link rel="stylesheet" href="css/tutorial.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/launch.css?v=31.0.2.5-legal1">
+<link rel="stylesheet" href="css/entry-locale.css?v=32.0.0.2-entry1">
 <link rel="stylesheet" href="css/profile.css?v=31.0.2.3-reading1">
 <link rel="stylesheet" href="css/cloud.css?v=32.0.0.2-cloud1">
 <link rel="stylesheet" href="css/readability.css?v=31.0.2.11-options5">
@@ -46,6 +47,7 @@
 <body>
 
 <section class="launch-screen" id="launchScreen" role="dialog" aria-modal="true" aria-labelledby="launchTitle">
+ <div class="launch-locale" data-entry-locale-slot></div>
  <picture class="launch-backdrop" aria-hidden="true"><source media="(prefers-reduced-motion: reduce)" srcset="assets/launch/chamber-still.webp"><img src="assets/launch/chamber-still.webp" alt="" width="640" height="960" decoding="async" fetchpriority="high" draggable="false"></picture>
  <svg class="launch-logo" viewBox="120 120 272 260" role="img" aria-label="Logo de Hemiciclo" fill="url(#launchLogoMetal)"><defs><linearGradient id="launchLogoMetal" gradientUnits="userSpaceOnUse" x1="0" y1="141.5" x2="0" y2="367"><stop stop-color="#fff0c1"/><stop offset=".45" stop-color="#d7b675"/><stop offset=".65" stop-color="#8c7148"/><stop offset="1" stop-color="#efcf92"/></linearGradient></defs><path d="M149.5 248a106.5 106.5 0 0 1 213 0H312a56 56 0 0 0-112 0Z"/><circle cx="156" cy="270" r="6"/><circle cx="176" cy="270" r="6"/><circle cx="196" cy="270" r="6"/><circle cx="216" cy="270" r="6"/><circle cx="236" cy="270" r="6"/><circle cx="256" cy="270" r="6"/><circle cx="276" cy="270" r="6"/><circle cx="296" cy="270" r="6"/><circle cx="316" cy="270" r="6"/><circle cx="336" cy="270" r="6"/><circle cx="356" cy="270" r="6"/><circle cx="176" cy="292" r="6"/><circle cx="196" cy="292" r="6"/><circle cx="216" cy="292" r="6"/><circle cx="236" cy="292" r="6"/><circle cx="256" cy="292" r="6"/><circle cx="276" cy="292" r="6"/><circle cx="296" cy="292" r="6"/><circle cx="316" cy="292" r="6"/><circle cx="336" cy="292" r="6"/><circle cx="196" cy="314" r="6"/><circle cx="216" cy="314" r="6"/><circle cx="236" cy="314" r="6"/><circle cx="256" cy="314" r="6"/><circle cx="276" cy="314" r="6"/><circle cx="296" cy="314" r="6"/><circle cx="316" cy="314" r="6"/><path d="M250 336h12v31h-12Z"/></svg>
  <h1 class="launch-name" id="launchTitle" aria-label="HEMICICLO"><svg viewBox="0 0 322 48" aria-hidden="true" fill="none" stroke="url(#launchMetal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><defs><linearGradient id="launchMetal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff0c1"/><stop offset=".45" stop-color="#d7b675"/><stop offset=".65" stop-color="#8c7148"/><stop offset="1" stop-color="#efcf92"/></linearGradient></defs><path transform="translate(0 0)" d="M3 3v42M27 3v42M3 24h24M8 3v16h14V3M8 45V29h14v16"/><path transform="translate(36 0)" d="M28 3H3v42h25M28 8H8v11h17M25 29H8v11h20M3 24h22"/><path transform="translate(72 0)" d="M3 45V3l12 17L27 3v42M8 45V19l7 10 7-10v26"/><path transform="translate(108 0)" d="M3 3h24M3 45h24M12 3v42M18 3v42"/><path transform="translate(144 0)" d="M28 3H8L3 8v32l5 5h20M28 8H10l-2 2v28l2 2h18"/><path transform="translate(180 0)" d="M3 3h24M3 45h24M12 3v42M18 3v42"/><path transform="translate(216 0)" d="M28 3H8L3 8v32l5 5h20M28 8H10l-2 2v28l2 2h18"/><path transform="translate(252 0)" d="M3 3v42h25M8 3v37h20"/><path transform="translate(288 0)" d="M8 3h14l5 5v32l-5 5H8l-5-5V8ZM10 8l-2 2v28l2 2h10l2-2V10l-2-2Z"/></svg><span class="launch-subtitle">CARA A CARA</span></h1>
@@ -74,25 +76,25 @@
 <script src="js/supabase-config.js?v=31.0.0.4"></script>
 <link rel="stylesheet" href="css/legal.css?v=31.0.2.5-legal1">
 <script src="js/legal-documents.js?v=32.0.0.2-fix1"></script>
-<script src="js/legal-ui.js?v=31.0.2.6-sources1"></script>
+<script src="js/legal-ui.js?v=32.0.0.2-entry1"></script>
 <script src="js/player-profile.js?v=32.0.0-fixes1"></script>
 <script src="js/cloud-save.js?v=31.0.2.13-debug1"></script>
 <script src="js/account-sync.js?v=32.0.0.2-cloud1"></script>
 <link rel="stylesheet" href="css/online.css?v=31.0.2.3-reading1"><script src="js/operation-status.js?v=31.0.2.6"></script><script src="js/online-combat-ui.js?v=32.0.0.2"></script><script src="js/online-ui.js?v=31.0.2.6"></script>
 <script src="js/cloud-ui.js?v=32.0.0.2-cloud1"></script>
-<script src="js/cosmetic-entitlements.js?v=32.0.0"></script>
+<script src="js/cosmetic-entitlements.js?v=32.0.0.2-gbde1"></script>
 <script src="js/event-presenter.js?v=32.0.0.2-fix1"></script>
 <script src="js/pack-journal.js?v=32.0.0-fixes1"></script>
-<script src="js/expansion-event.js?v=32.0.0.2"></script>
-<script src="js/localized-title.js?v=32.0.0-fixes1"></script>
+<script src="js/expansion-event.js?v=32.0.0.2-gbde1"></script>
+<script src="js/localized-title.js?v=32.0.0.2-de1"></script>
 <script src="js/localization-data.js?v=32.0.0-fixes1"></script>
-<script src="js/localization.js?v=32.0.0.2"></script>
+<script src="js/localization.js?v=gb-de-2010-2026"></script>
 <script src="js/ui-preferences.js?v=32.0.0"></script>
-<script src="js/game-audio.js?v=32.0.0.2-storage1"></script>
+<script src="js/game-audio.js?v=32.0.0.2-de1"></script>
 <script src="js/resource-loading.js?v=31.0.2.6"></script>
 <script src="js/launch-screen.js?v=31.0.2.6"></script>
 <link rel="stylesheet" href="css/menu-senate.css?v=31.0.2.11-uniform7">
-<script src="js/menu-senate.js?v=32.0.0-fixes1"></script>
+<script src="js/menu-senate.js?v=32.0.0.2-de1"></script>
 <link rel="stylesheet" href="css/menu-navigation.css?v=31.0.2.5-sprites1">
 <script src="js/menu-navigation.js?v=31.0.2.11-nav4"></script>
 <script src="js/league-rewards.js?v=31.0.2.4-league1"></script>
@@ -102,7 +104,7 @@
 <script src="js/basic-effects-v1.js?v=31.0.2.8-wave2"></script>
 <script src="js/basic-effects-v2.js?v=31.0.2.8-states1"></script>
 <script src="js/basic-effects-v3.js?v=31.0.2.9"></script>
-<script src="js/basic-effects.js?v=32.0.0.2"></script>
+<script src="js/basic-effects.js?v=32.0.0.2-gbde1"></script>
 <script src="js/basic-ability-preview.js?v=31.0.2.9"></script>
 <script src="js/action-status.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/attack-forecast.js?v=32.0.0.2-auras-a1"></script>
@@ -113,22 +115,27 @@
 <script src="js/status-art.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/battle-status.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/battle-actions-ui.js?v=32.0.0.2-auras-a1"></script>
-<script src="js/battle-visuals.js?v=32.0.0.2-auras-a1"></script>
+<script src="js/battle-visuals.js?v=32.0.0.2-gbde1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.10"></script>
 <script src="js/battle-tutorial.js?v=32.0.0.2"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
-<script src="js/orator-catalog.js?v=32.0.0.2"></script>
+<script src="js/orator-catalog.js?v=gb-de-2010-2026"></script>
 <script src="js/orator-art.js?v=32.0.0.2-fix1"></script>
 <script src="js/portrait-layout.js?v=32.0.0.2-fix1"></script><script src="js/action-art.js?v=32.0.0.2"></script>
 <script src="js/action-state-visuals.js?v=32.0.0.2-auras-a1"></script>
 <link rel="stylesheet" href="css/action-state-visuals.css?v=32.0.0.2-auras-a1">
 <script src="js/action-data-v32.js?v=32.0.0.2"></script>
-<script src="js/action-cards.js?v=32.0.0.2-auras-a1"></script>
+<script src="js/action-cards.js?v=32.0.0.2-actions6"></script>
+<script src="js/action-costs.js?v=32.0.0.2-actions6"></script>
 <script src="js/localization-extra.js?v=32.0.0"></script>
 <script src="js/localization-reviewed.js?v=32.0.0.2"></script>
 <script src="js/localization-gameplay.js?v=32.0.0-fixes1"></script><script src="js/localization-review321.js?v=32.0.0.2-cloud2"></script>
 <script src="js/pack-rules.js?v=32.0.0"></script>
-<script src="js/objectives.js?v=32.0.0"></script>
+<script src="js/localization-gb-de.js?v=gb-de-2010-2026"></script>
+<script src="js/localization-de.js?v=gb-de-2010-2026"></script>
+<script src="js/entry-locale.js?v=32.0.0.2-entry1"></script>
+<script src="js/collection-milestones.js?v=32.0.0.2-gbde1"></script>
+<script src="js/objectives.js?v=32.0.0.2-gbde1"></script>
 <link rel="stylesheet" href="css/progression-ui.css?v=31.0.2.3-reading1">
 <script src="js/market-tutorial.js?v=31.0.2.4-market2"></script>
 <script src="js/balance-review.js?v=32.0.0.2"></script>
@@ -141,34 +148,32 @@
 <link rel="stylesheet" href="css/orator-countries.css?v=31.0.2.3-reading1">
 <script src="js/game-format.js?v=32.0.0.2"></script>
 <script src="js/cabinet-presets.js?v=32.0.0.2"></script>
-<script src="js/legendary-mastery.js?v=32.0.0.2"></script>
+<script src="js/legendary-mastery.js?v=32.0.0.2-gbde1"></script>
 <script src="js/cabinet-analysis.js?v=32.0.0.2"></script>
 <script src="js/strategy-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/action-cards.css?v=32.0.0.2">
 <script src="js/victory-boost.js?v=32.0.0.2"></script><script src="js/victory-boost-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/victory-boost.css?v=32.0.0.2">
 <script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=32.0.0"></script><script src="js/cosmetic-ui.js?v=32.0.0-fixes1"></script>
-<link rel="stylesheet" href="css/cosmetics.css?v=32.0.0.2-storage1">
-<script src="js/player-backup.js?v=32.0.0.2"></script>
+<link rel="stylesheet" href="css/cosmetics.css?v=32.0.0.2-gbde1">
+<script src="js/player-backup.js?v=32.0.0.2-gbde1"></script>
 <script src="js/ranked-seasons.js?v=31.0.1.2-season1"></script>
 <script src="js/card-confetti.js"></script>
 <script src="js/legendary-confetti.js?v=31.0.1.2"></script>
 <link rel="stylesheet" href="css/legendary-confetti.css?v=31.0.2.3-reading1">
 <script src="js/app-interaction.js?v=31.0.0.3"></script>
-<script src="js/changelog.js?v=32.0.0.2-storage1"></script>
+<script src="js/changelog.js?v=gb-de-2010-2026"></script>
 <link rel="stylesheet" href="css/result-transition.css?v=31.0.2.11-polish9">
 <script src="js/result-transition.js?v=31.0.2.3-medium1"></script>
-<script src="js/economy-client.js?v=32.0.0-fixes1"></script>
-<script src="js/offline-rules-v11.js?v=32.0.0.2-auras-a1"></script>
-<script>window.HemicycleOfflineRulesV11=window.HemicycleOfflineRules;</script>
-<script src="js/offline-rule-dispatch.js?v=32.0.0.2-auras-a1"></script>
-<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({offline11:HemicycleOfflineRulesV11});</script>
-<script src="js/offline-engine-loader.js?v=32.0.0.2-auras-a1"></script>
-<script src="js/offline-combat.js?v=32.0.0.2-storage1"></script>
+<script src="js/economy-client.js?v=gb-de-2010-2026"></script>
+<script src="js/offline-rule-dispatch.js?v=gb-de-2010-2026"></script>
+<script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({},'offline12');</script>
+<script src="js/offline-engine-loader.js?v=gb-de-2010-2026"></script>
+<script src="js/offline-combat.js?v=gb-de-2010-2026"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
 <link rel="stylesheet" href="css/expansion-v32.css?v=32.0.0.2-fix1">
-<link rel="stylesheet" href="css/landscape.css?v=32.0.0.2-storage1">
-<script src="js/game-select.js?v=31.0.2.6-onboarding1"></script>
-<script src="js/market-ui.js?v=31.0.2.6"></script>
+<link rel="stylesheet" href="css/landscape.css?v=32.0.0.2-landscape2">
+<script src="js/game-select.js?v=32.0.0.2-entry1"></script>
+<script src="js/market-ui.js?v=gb-de-2010-2026"></script>
 <script>
 window.onerror=function(m,src,l,c){
   var ct=document.getElementById('content'); if(!ct)return;
@@ -178,7 +183,7 @@ window.onerror=function(m,src,l,c){
 };
 (function(){
 'use strict';
-var VERSION='v32.0.0.2';
+var VERSION='v32.0.0.3';
 var UID=0;
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function slug(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');}
@@ -545,7 +550,8 @@ function gem(rKey, col){
  return '<span class="gem-wrap"><svg viewBox="0 0 20 20" width="14" height="14"><polygon points="'+pts.join(' ')+'" fill="'+col+'" stroke="rgba(255,255,255,0.7)" stroke-width=".9"/></svg></span>';
 }
 
-function localizedQuote(text){return window.HemicycleI18n?HemicycleI18n.quote(text):text;}
+function localizedQuote(text,cardId){return window.HemicycleI18n?HemicycleI18n.quote(text,cardId):text;}
+function quoteTextHTML(text,cardId){return '<span data-editorial-quote data-quote-source="'+esc(text)+'" data-quote-card="'+esc(cardId||'')+'" data-no-translate>'+esc(localizedQuote(text,cardId))+'</span>';}
 function initials(nm){
  var p=nm.split(' ').filter(function(w){return w.length>2;});
  if(!p.length)p=nm.split(' ');
@@ -576,10 +582,10 @@ function artTag(id,nm,allowGold,allowConfetti,edition){
   +'<span style="display:none">'+esc(initials(nm))+'</span>';
 }
 
-function battleActionDefinition(id,snapshot){var state=snapshot||G,legacy=typeof HemicycleLegacyActions!=='undefined'&&state&&state.catalogVersion!==HemicycleCatalog.balanceVersion&&(snapshot||state.authoritative&&SCREEN==='battle');var a=legacy&&HemicycleLegacyActions.byId[id]||BYID[id];if(a&&a.status==='confused'&&state&&(snapshot||SCREEN==='battle')&&(state.actionEffectsVersion||1)<2)return Object.assign({},a,{text:'Aplica Confundido a '+(a.target==='all-rival'?'todos los oradores rivales':'un orador rival')+' durante '+a.duration+' turnos propios. No puede dirigir sus zascas a una bancada vacía.'});return a;}
+function battleActionDefinition(id,snapshot,instance){var state=snapshot||G;if(!instance&&!snapshot&&state&&SCREEN==='battle')instance=[].concat(state.hand&&state.hand.p||[],state.deck&&state.deck.p||[],state.pas&&state.pas.p||[],state.spentActions&&state.spentActions.p||[]).find(function(c){return (c.k||c.id)===id;});var legacy=typeof HemicycleLegacyActions!=='undefined'&&state&&state.catalogVersion!==HemicycleCatalog.balanceVersion&&(snapshot||state.authoritative&&SCREEN==='battle');var a=legacy&&HemicycleLegacyActions.byId[id]||BYID[id];if(typeof HemicycleActionCosts!=='undefined')a=HemicycleActionCosts.forInstance(a,instance);if(a&&a.status==='confused'&&state&&(snapshot||SCREEN==='battle')&&(state.actionEffectsVersion||1)<2)return Object.assign({},a,{text:'Aplica Confundido a '+(a.target==='all-rival'?'todos los oradores rivales':'un orador rival')+' durante '+a.duration+' turnos propios. No puede dirigir sus zascas a una bancada vacía.'});return a;}
 function actionArtHTML(c,extra){var reviewed=HemicycleActionArt[c.id];if(reviewed)return '<div class="action-art action-art-reviewed '+(extra||'')+'" role="img" aria-label="Ilustración de '+esc(c.n)+'">'+HemicyclePortraits.html(reviewed,'action-atlas')+'</div>';if(c.artFamily!==undefined)return '<div class="action-art action-expansion '+(extra||'')+'" style="--ax:'+((c.artFamily%4)*100/3)+'%;--ay:'+(Math.floor(c.artFamily/4)*25)+'%;--action-variant:'+c.artVariant+'" role="img" aria-label="Ilustración de '+esc(c.n)+'"></div>';return '<div class="action-art '+(extra||'')+'" style="--ax:'+((c.index%3)*50)+'%;--ay:'+(Math.floor(c.index/3)*100/3)+'%" role="img" aria-label="Ilustración de '+esc(c.n)+'"></div>';}
-function actionCromoHTML(c,o){c=battleActionDefinition(c.id)||c;o=o||{};return '<div class="cromo action-card'+(o.sel?' sel':'')+'" data-rarity="'+c.r+'" style="--tier:'+RARM[c.r].c+(o.extra?';'+o.extra:'')+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-action-pick="'+c.id+'" role="button" tabindex="0"':'')+'>'+actionArtHTML(c)+'<div class="frame-overlay"></div><div class="top"><span class="cost" aria-label="'+c.cost+' TdP">'+c.cost+'</span>'+gem(c.r,RARM[c.r].c)+'</div>'+(o.count?'<span class="badge" aria-label="'+o.count+' copias">x'+o.count+'</span>':'')+(o.sel?'<span class="sel-tag">✓ ELEGIDA</span>':'')+'<div class="action-card-copy"><small>ACCIÓN · '+RARM[c.r].n+'</small><strong>'+esc(c.n)+'</strong><span>'+esc(c.text)+'</span>'+(c.oncePerBattle?'<i>1 uso por partida</i>':'')+'</div></div>';}
-function actionRulesHTML(c){c=battleActionDefinition(c.id)||c;return '<dl class="action-rules"><dt>Efecto</dt><dd>'+esc(c.text)+'</dd><dt>Coste</dt><dd>'+c.cost+' TdP. Máximo una acción por turno.</dd><dt>Después de activarla</dt><dd>'+(c.oncePerBattle?'Una vez por partida. Pasa al descarte de acciones.':'Regresa al mazo y espera dos turnos propios completos antes de volver a robarse.')+'</dd>'+(c.effect==='silence'?'<dt>Requisitos</dt><dd>Tres oradores propios listos y menos votos que el rival. Los tres agotan su acción. El rival conserva robo y votos pasivos; después queda protegido contra otro silencio durante dos turnos propios adicionales.</dd>':'')+'</dl>';}
+function actionCromoHTML(c,o){c=battleActionDefinition(c.id,null,o&&o.instance||c)||c;o=o||{};return '<div class="cromo action-card'+(o.sel?' sel':'')+'" data-rarity="'+c.r+'" style="--tier:'+RARM[c.r].c+(o.extra?';'+o.extra:'')+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-action-pick="'+c.id+'" role="button" tabindex="0"':'')+'>'+actionArtHTML(c)+'<div class="frame-overlay"></div><div class="top"><span class="cost" aria-label="'+c.cost+' TdP">'+c.cost+'</span>'+gem(c.r,RARM[c.r].c)+'</div>'+(o.count?'<span class="badge" aria-label="'+o.count+' copias">x'+o.count+'</span>':'')+(o.sel?'<span class="sel-tag">✓ ELEGIDA</span>':'')+'<div class="action-card-copy"><small>ACCIÓN · '+RARM[c.r].n+'</small><strong>'+esc(c.n)+'</strong><span>'+esc(c.text)+'</span>'+(c.oncePerBattle?'<i>1 uso por partida</i>':'')+'</div></div>';}
+function actionRulesHTML(c){c=battleActionDefinition(c.id,null,c)||c;return '<dl class="action-rules"><dt>Efecto</dt><dd>'+esc(c.text)+'</dd><dt>Coste</dt><dd>'+c.cost+' TdP. Máximo una acción por turno.</dd><dt>Después de activarla</dt><dd>'+(c.oncePerBattle?'Una vez por partida. Pasa al descarte de acciones.':'Regresa al mazo y espera dos turnos propios completos antes de volver a robarse.')+'</dd>'+(c.effect==='silence'?'<dt>Requisitos</dt><dd>Tres oradores propios listos y menos votos que el rival. Los tres agotan su acción. El rival conserva robo y votos pasivos; después queda protegido contra otro silencio durante dos turnos propios adicionales.</dd>':'')+'</dl>';}
 function uniqueActions(d){var counts={};(d.actionAlbum||[]).forEach(function(id){if(BYID[id]&&BYID[id].action)counts[id]=(counts[id]||0)+1;});return Object.keys(counts).map(function(id){return {id:id,c:BYID[id],n:counts[id]};});}
 function awardCards(d,ids){if(typeof HemicycleActions!=='undefined')HemicycleActions.award(d,ids);else ids.forEach(function(id){d.album.push(id);});}
 
@@ -611,7 +617,7 @@ function fichaHTML(c){
  +'<p class="sub" style="margin:0">Zasca '+stats.a+' &middot; Aguante '+stats.h+' &middot; Coste '+c.c+' TdP &middot; '+c.v+' escaños</p>'
  +'<p class="sub" style="margin:4px 0 0">'+esc(DOCM[c.pa].d)+'</p>'
  +'<p class="sub" style="margin:4px 0 0">'+esc(doctrineMatchup(c.pa))+'</p></div></div>'
- +'<div class="quote">'+esc(localizedQuote(pick(c.q)))+'</div></div>';
+ +'<div class="quote">'+quoteTextHTML(pick(c.q),c.id)+'</div></div>';
 }
 
 /* === SISTEMA DE VENTANA EMERGENTE (MODAL CORREGIDO SIN STOPPROPAGATION) === */
@@ -949,7 +955,7 @@ function claimRankedReward(id){
  };
  return Promise.resolve().then(function(){if(navigator.locks)return navigator.locks.request('hemicycle-market-sale',claim);return claim();}).catch(function(e){showModal('No se ha reclamado el sobre',e.message,'Entendido',false,null);});
 }
-function expansionReceiptKey(event){event=event||HemicycleExpansionEvent;var a=economyAccount(),identity=lsGet(HemicycleBackup.key),prefix=event.id===HemicycleExpansionEvent.id?'hemicycle_expansion_receipts_v1:':'hemicycle_revision_receipts_v1:';return prefix+(a?'account:'+a.userId:'guest:'+identity.id);}
+function expansionReceiptKey(event){event=event||HemicycleExpansionEvent;var a=economyAccount(),identity=lsGet(HemicycleBackup.key),prefix=event.id===HemicycleExpansionEvent.id?'hemicycle_expansion_receipts_v1:':event.id===HemicycleExpansionEvent.review.id?'hemicycle_revision_receipts_v1:':'hemicycle_event_receipts_v1:'+event.id+':';return prefix+(a?'account:'+a.userId:'guest:'+identity.id);}
 function expansionProfile(event){event=event||HemicycleExpansionEvent;var d=JSON.parse(JSON.stringify(D()));event.merge(d,lsGet(expansionReceiptKey(event)));return d;}
 function expansionMail(){return HemicycleExpansionEvent.all.flatMap(function(event){return event.pending(expansionProfile(event),Date.now()).map(function(g){return Object.assign({expansion:true,event:event.id,eventName:event.name,id:'expansion/'+event.id+'/'+g.key},g);});});}
 function packJournalKey(){var a=economyAccount(),identity=lsGet(HemicycleBackup.key);return 'hemicycle_pack_journal_v1:'+(a?'account:'+a.userId:'guest:'+identity.id);}
@@ -1510,8 +1516,9 @@ SCREENS.detalle=function(){
  +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+stats.a+'</b><span>Zasca</span></div><div><b>'+stats.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escaños</span></div></div>'
  +basicAbilityHTML(c)
  +(typeof HemicycleOratorContext!=='undefined'?HemicycleStrategyUI.context(HemicycleOratorContext[c.id]):'')
+ +(!globalThis.HemicycleOratorContext?.[c.id]?'<p class="sub"><a href="fuentes/#'+esc(c.id)+'">Consultar las fuentes de las frases</a></p>':'')
  +'<div class="card-quotes"><h3 style="margin:0 0 3px">Intervenciones célebres</h3>'
- +c.q.slice(0,3).map(function(q){return '<div class="quote">'+esc(localizedQuote(q))+'</div>';}).join('')+'</div>'
+ +c.q.slice(0,3).map(function(q){return '<div class="quote">'+quoteTextHTML(q,c.id)+'</div>';}).join('')+'</div>'
  +cardAppearances(c,d)
  +'</div>'
  +'</div>'
@@ -1874,9 +1881,9 @@ function receiveBattleDamage(card,damage,basicTurn,piercing){
  battleVisual('damage',{uid:card.uid,value:received,guarded:guarded});card.h-=received;return received;
 }
 function localActionTargets(side,action,uid){var foe=side==='p'?'e':'p',owners=action.target==='all'?['p','e']:[action.target.indexOf('rival')>=0?foe:side],targets=[];owners.forEach(function(owner){G.field[owner].forEach(function(card){targets.push({owner:owner,card:card,doc:activeDoc(owner)});});});return action.target.indexOf('all')===0?targets:targets.filter(function(t){return !uid||t.card.uid===uid;});}
-function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=battleActionDefinition(card.k),foe=side==='p'?'e':'p';if((card.availableTurn||0)>G.turns[side])return 'Esta acción está en recuperación.';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
+function localActionReason(side,card,target){if(!G||G.over||G.side!==side)return 'No es tu turno.';var a=battleActionDefinition(card.k,null,card),foe=side==='p'?'e':'p';if((card.availableTurn||0)>G.turns[side])return 'Esta acción está en recuperación.';if(G.tdp[side]<a.cost)return 'Necesitas '+a.cost+' TdP.';if(G.actionUsed&&G.actionUsed[side]===G.turns[side])return 'Ya has usado una carta de acción este turno.';if(a.oncePerBattle&&(G.spentActions&&G.spentActions[side]||[]).some(function(c){return c.k===a.id;}))return 'Esta acción ya se ha agotado.';if(a.effect==='silence'){if(G.field[side].length!==3||!G.field[side].every(function(c){return c.ready;}))return 'Necesitas tres oradores propios listos.';if(G.votes[side]>=G.votes[foe])return 'Debes tener menos votos que el rival.';if(G.pendingSilence&&G.pendingSilence[foe]||G.silenceImmune&&G.turns[foe]<=G.silenceImmune[foe])return 'El rival está protegido frente al silencio.';return '';}
  var targets=localActionTargets(side,a,target);if(!targets.length)return 'No hay un objetivo válido.';if(a.effect==='heal'&&!targets.some(function(x){return x.card.h<x.card.hm;}))return 'No falta Aguante en los objetivos.';if(a.effect==='guard'&&!targets.some(function(x){return !x.card.guard;}))return 'Los objetivos ya tienen defensa.';return '';}
-function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=battleActionDefinition(instance.k);if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p',before=targets.map(function(x){return x.card.h;});
+function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[side].filter(function(c){return c.uid===uid;})[0];return side==='p'&&card?sendRemoteBattle({type:'action',id:card.k,target:target}):false;}if(checkBattleEnd())return false;var instance=G.hand[side].filter(function(c){return c.uid===uid&&c.action;})[0];if(!instance)return false;var a=battleActionDefinition(instance.k,null,instance);if((a.target==='self'||a.target==='rival')&&!target)return false;var reason=localActionReason(side,instance,target);if(reason){log(reason);return false;}var targets=localActionTargets(side,a,target),foe=side==='p'?'e':'p',before=targets.map(function(x){return x.card.h;});
  battleVisual('action',{id:a.id,side:side,targets:targets.filter(function(x){return a.effect!=='heal'||x.card.h<x.card.hm;}).map(function(x){return x.card.uid;})});
  if(!G.actionUsed)G.actionUsed={p:null,e:null};if(!G.spentActions)G.spentActions={p:[],e:[]};G.actionUsed[side]=G.turns[side];if(G.insights&&G.insights[side])G.insights[side].actions++;G.tdp[side]-=a.cost;G.hand[side]=G.hand[side].filter(function(c){return c!==instance;});if(a.oncePerBattle)G.spentActions[side].push(instance);else{instance.availableTurn=G.turns[side]+3;G.deck[side].push(instance);}
  if(a.effect==='silence'){if(!G.pendingSilence)G.pendingSilence={p:false,e:false};G.pendingSilence[foe]=true;G.field[side].forEach(function(c){c.ready=false;});}
@@ -1885,7 +1892,7 @@ function useLocalAction(side,uid,target){if(G&&G.authoritative){var card=G.hand[
 var LOCAL_ACTION=null,LOCAL_ACTION_TARGET=false;
 function closeLocalAction(){LOCAL_ACTION=null;LOCAL_ACTION_TARGET=false;var host=document.getElementById('localActionRoot');if(host)host.remove();}
 function inspectLocalAction(uid){LOCAL_ACTION=uid;LOCAL_ACTION_TARGET=false;G.sel=null;G.move=null;G.support=false;paint();}
-function validLocalActionTargets(instance){var a=battleActionDefinition(instance.k);return localActionTargets('p',a).filter(function(t){return !localActionReason('p',instance,t.card.uid);});}
+function validLocalActionTargets(instance){var a=battleActionDefinition(instance.k,null,instance);return localActionTargets('p',a).filter(function(t){return !localActionReason('p',instance,t.card.uid);});}
 function selectLocalActionTarget(uid){
  if(!LOCAL_ACTION_TARGET||!LOCAL_ACTION)return false;
  var instance=G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION&&c.action;})[0];
@@ -1905,7 +1912,7 @@ function syncLocalAction(){
  if(!G||G.over||SCREEN!=='battle'||G.side!=='p'){closeLocalAction();return;}
  var instance=G.hand.p.filter(function(c){return c.uid===LOCAL_ACTION&&c.action;})[0];if(!instance){closeLocalAction();return;}
  if(LOCAL_ACTION_TARGET)return;
- var a=battleActionDefinition(instance.k),targeted=a.target==='self'||a.target==='rival',valid=targeted?validLocalActionTargets(instance):[],reason=localActionReason('p',instance,targeted&&valid[0]?valid[0].card.uid:undefined);
+ var a=battleActionDefinition(instance.k,null,instance),targeted=a.target==='self'||a.target==='rival',valid=targeted?validLocalActionTargets(instance):[],reason=localActionReason('p',instance,targeted&&valid[0]?valid[0].card.uid:undefined);
  var host=document.createElement('section');host.id='localActionRoot';host.className='local-action-panel';host.setAttribute('role','dialog');host.setAttribute('aria-label',a.n);
  host.innerHTML='<header class="local-action-heading">'+actionArtHTML(a,'action-thumb')+'<div><small>ACCIÓN · '+RARM[a.r].n+'</small><b>'+esc(a.n)+'</b></div><span class="action-price">'+a.cost+'<small>TdP</small></span><button class="mini" data-local-action="close" aria-label="Cerrar acción">×</button></header>'+actionRulesHTML(a)+'<p class="local-action-status" role="status">'+esc(reason||(targeted?'Después, toca un orador '+(a.target==='self'?'propio.':'rival.'):'Afecta a todos los objetivos indicados.'))+'</p><button class="btn sm" data-local-action="activate"'+(reason?' disabled':'')+'>'+(targeted?'Elegir objetivo':'Activar acción')+' · '+a.cost+' TdP</button>';
  host.querySelector('[data-local-action=close]').onclick=function(){closeLocalAction();paint();};
@@ -2380,7 +2387,7 @@ function battleStatusHTML(side,c){
 function basicStatusHTML(side,c){var state=basicRules()?basicRules().view(c,G.turns[side]):null;return state?'<button type="button" class="basic-effect-badge '+state.polarity+'" data-act="battle-effects" data-uid="'+c.uid+'" data-side="'+side+'" aria-label="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'" title="'+esc(HemicycleBasicAbilityPreview.stateText(state))+'">'+HemicycleStatusArt.basicSymbol(state.id)+'<b>'+state.count+'</b></button>':'';}
 function teamStatusHTML(side){var states=HemicycleBattleStatus.team(G,side);return states.length?'<button class="team-state" data-act="battle-effects" data-side="'+side+'" title="'+esc(states.map(function(s){return s.text;}).join(' '))+'">'+HemicycleBattleStatus.symbol(states[0].icon)+states.map(function(s){return esc(s.short);}).join(' · ')+'</button>':'';}
 function cromoBattle(c,side,extra){
- if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra})+'</div>';
+ if(c.action)return '<div data-buid="'+c.uid+'" data-side="'+side+'" role="button" tabindex="0" aria-label="'+esc(c.n)+' · Acción · '+c.c+' TdP">'+actionCromoHTML(BYID[c.k],{noCardAttr:true,extra:extra,instance:c})+'</div>';
  var r=RARM[c.r],isLead=G.leader[side]&&G.leader[side].uid===c.uid;
  var actionInstance=LOCAL_ACTION_TARGET&&G.hand.p.filter(function(x){return x.uid===LOCAL_ACTION;})[0],actionTarget=!!(actionInstance&&enMesa(side,c.uid)&&validLocalActionTargets(actionInstance).some(function(t){return t.card.uid===c.uid;}));
  var isTarget=actionTarget||(side==='e'&&G.sel&&G.move);
@@ -2451,7 +2458,7 @@ function receiveRemoteBattle(snapshot,controls){
  REMOTE_PREPARATION=null;
  var own=snapshot.players[snapshot.you],enemy=snapshot.players[1-snapshot.you];if(!own||!enemy)return false;
  var previous=G&&G.authoritative&&G.remoteId===controls.id?G:null,same=previous&&previous.remoteRevision===snapshot.revision;if(same&&snapshot.status==='active'&&SCREEN==='battle'){REMOTE_BATTLE=controls;var wasBusy=G.networkBusy;G.networkBusy=!!controls.busy;G.turnDeadline=snapshot.deadline?Date.now()+snapshot.deadline-snapshot.serverNow:null;syncBattleClock();if(wasBusy!==G.networkBusy)syncBattleActions();return true;}if(previous&&typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.capture(previous);
- function convert(c){if(c.action){var action=battleActionDefinition(c.id,snapshot);return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,aforadoSpent:!!c.aforadoSpent,basicAbility:c.basicAbility||null,basicReadyTurn:c.basicReadyTurn||0,basicStatus:c.basicStatus?Object.assign({},c.basicStatus):null,actionStates:(c.actionStates||[]).map(function(s){return Object.assign({},s);}),r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,visualBuffs:(c.buffs||[]).map(function(b){return {value:b.value,until:b.until};}),enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
+ function convert(c){if(c.action){var action=battleActionDefinition(c.id,snapshot,c);return {uid:c.uid,k:c.id,n:action.n,r:action.r,c:action.cost,action:true,a:0,h:0,hm:0,v:0};}return {uid:c.uid,k:c.id,n:c.name,aforadoSpent:!!c.aforadoSpent,basicAbility:c.basicAbility||null,basicReadyTurn:c.basicReadyTurn||0,basicStatus:c.basicStatus?Object.assign({},c.basicStatus):null,actionStates:(c.actionStates||[]).map(function(s){return Object.assign({},s);}),r:c.rarity,pa:c.doctrine,c:c.cost,a:c.currentZ===undefined?c.z:c.currentZ,h:c.hp,hm:c.maxHp,v:c.votes,q:c.q,ready:c.ready,guard:c.guard,buff:0,visualBuffs:(c.buffs||[]).map(function(b){return {value:b.value,until:b.until};}),enteredTurn:c.enteredTurn,strongUsedTurn:c.strongUsedTurn,lastHealTurn:c.lastHealTurn,gold:!!c.gold,appearance:c.appearance||'normal'};}
  function leader(p,known){return known.filter(function(c){return c.k===p.leader;})[0]||{uid:'hidden-'+p.leader,k:p.leader,n:BYID[p.leader].n,pa:BYID[p.leader].pa};}
  var pf=own.field.map(convert),ef=enemy.field.map(convert),hand=(own.hand||[]).map(convert),rest=(own.rest||[]).map(convert);
  REMOTE_BATTLE=controls;clearAI();
@@ -3012,6 +3019,8 @@ function firstEntry(){
  if(MENU_GUIDE&&MENU_GUIDE.active){MENU_GUIDE.render();return;}
  if(TUTORIAL&&!TUTORIAL.seen()){TUTORIAL.start('short');return;}
  if(!lsGet('hemiciclo_objectives_intro_v1'))lsSet('hemiciclo_objectives_intro_v1',true);
+ // Initial menu paint can precede entry/account completion. Retry the event
+ // presentation once those gates finish, without requiring another menu click.
  maybeExpansionNotice();
 }
 document.addEventListener('hemicycle:typeface',function(e){var d=D();if(HemicycleAppearance.owns(d,'font',e.detail)){d.typeface=e.detail;saveD(d);}});

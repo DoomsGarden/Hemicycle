@@ -14,10 +14,11 @@ function state(profile,now,firstSeen){return profile&&profile.appearance?validat
 function initialize(profile,now,firstSeen){if(!profile.appearance)profile.appearance=fresh(now,firstSeen);else profile.appearance=validate(profile.appearance);return profile.appearance;}
 function owns(profile,kind,id,now){return state(profile,now).owned.indexOf(kind+'/'+id)>=0;}
 function grant(profile,rewards,now){var s=state(profile,now),added=[];(rewards||[]).forEach(function(r){var key=r.kind+'/'+r.id;if(!validKey(key))throw Error('Recompensa visual desconocida.');if(s.owned.indexOf(key)<0){s.owned.push(key);added.push({kind:r.kind,id:r.id});}});profile.appearance=s;return added;}
-function reward(id,step,cards){var route=routes[id],index=milestones.indexOf(step);if(route&&index>=0)return [{kind:kinds[index],id:route[index]}];var total=cards.length,legends=cards.filter(function(c){return c.r==='legendario';}).length;
+function collectionReward(id,step,counts){var total=counts.total,legends=counts.legendary;
  if(id==='collection'){if(step===Math.ceil(total*.25))return [{kind:'font',id:'editorial'}];if(step===Math.ceil(total*.5))return [{kind:'menu',id:'book'}];if(step===total)return [{kind:'mat',id:'imperial'}];}
  if(id==='legendary'){if(step===Math.ceil(legends*.5))return [{kind:'back',id:'imperial'}];if(step===legends)return [{kind:'coin',id:'imperial'}];}return [];
 }
+function reward(id,step,cards){var route=routes[id],index=milestones.indexOf(step);if(route&&index>=0)return [{kind:kinds[index],id:route[index]}];return collectionReward(id,step,{total:cards.length,legendary:cards.filter(function(c){return c.r==='legendario';}).length});}
 function goldWins(profile,now){return (now===undefined?Date.now():now)<cutoff?10:1000;}
-return Object.freeze({cutoff:cutoff,ids:ids,milestones:milestones,routes:routes,fresh:fresh,validate:validate,state:state,initialize:initialize,owns:owns,grant:grant,reward:reward,goldWins:goldWins});
+return Object.freeze({cutoff:cutoff,ids:ids,milestones:milestones,routes:routes,fresh:fresh,validate:validate,state:state,initialize:initialize,owns:owns,grant:grant,reward:reward,collectionReward:collectionReward,goldWins:goldWins});
 });

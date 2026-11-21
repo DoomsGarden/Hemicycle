@@ -9,7 +9,7 @@ test('offline11 opt-in migration is idempotent and preserves the previous RPC, r
  }finally{await db.close();}
 });
 test('new offline engine replays its seeded commands identically and keeps the old engine available',()=>{
- const E=require('../_dev/online/offline-v11.cjs'),Old=require('../_dev/online/offline-v10.cjs'),AI=require('../_dev/online/ai.cjs'),C=require('../js/orator-catalog.js'),A=require('../js/action-cards.js');const profile={album:C.cards.map(c=>c.id),actionAlbum:A.ids,elo:0,leagueDiv:3},orators=profile.album.slice(0,8),cabinet={orators,leader:orators[0],actions:['pregunta-enredada','duda-razonable','receso','replica']},ticket={rules:'offline11',seed:1792,profile};let {state,rng}=E.start(ticket,cabinet,'normal');const commands=[];
+ const E=require('../_dev/online/offline-v11.cjs'),Old=require('../_dev/online/offline-v10.cjs'),AI=require('../_dev/online/ai.cjs'),C=require('../_dev/online/frozen-v11/orator-catalog.js'),A=require('../js/action-cards.js');const profile={album:C.cards.map(c=>c.id),actionAlbum:A.ids,elo:0,leagueDiv:3},orators=profile.album.slice(0,8),cabinet={orators,leader:orators[0],actions:['pregunta-enredada','duda-razonable','receso','replica']},ticket={rules:'offline11',seed:1792,profile};let {state,rng}=E.start(ticket,cabinet,'normal');const commands=[];
  for(let i=0;state.status==='active'&&i<800;i++){const command=AI.choose(state,0,0);commands.push({at:0,command});state=E.move(state,command,0,rng);}
  a.equal(state.status,'finished');const replay=E.replay(ticket,{cabinet,mode:'normal',commands});a.deepEqual(replay,state);a.equal(state.actionEffectsVersion,2);a.equal(Old.start({...ticket,rules:'offline10'},cabinet,'normal').state.actionEffectsVersion,1);
 });

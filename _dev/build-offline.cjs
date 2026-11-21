@@ -1,6 +1,6 @@
 'use strict';
 // Reproducible bundle: both environments execute the same sources, no remote dependency.
-const fs=require('node:fs'),path=require('node:path'),root=path.resolve(__dirname,'..'),{cards}=require('./market/catalog.cjs');
+const fs=require('node:fs'),path=require('node:path'),root=path.resolve(__dirname,'..'),{cards}=require('./online/frozen-v11/orator-catalog.js');
 const entry='_dev/online/offline-rules.cjs',sources={};
 // A new format must never silently rewrite any previously issued replay engine.
 const crypto=require('node:crypto');
@@ -14,8 +14,15 @@ function visit(id){if(sources[id])return;if(id==='node:crypto'){sources[id]='mod
  // Presentation-only country metadata must not change existing downloaded rules bundles.
  if(id==='_dev/market/catalog-v2.cjs'){sources[id]='module.exports='+JSON.stringify({cards:require('../js/orator-catalog-v2.js').cards.map(function(card){const {country,...rules}=card;return rules;})})+';';return;}
  if(id==='_dev/market/catalog.cjs'){sources[id]='module.exports='+JSON.stringify({cards:cards.map(function(card){const {country,...rules}=card;return rules;})})+';';return;}
- const frozen={};
+ // The issued offline11 bundle includes these progression helpers. Its replay
+ // bytes must stay frozen when live achievements/masteries are extended. A
+ // future catalog activation needs a new engine version, never a rewrite of 11.
+ const frozen={'js/orator-catalog.js':'_dev/online/frozen-v11/orator-catalog.js','js/objectives.js':'_dev/online/frozen-v11/objectives.js','js/legendary-mastery.js':'_dev/online/frozen-v11/legendary-mastery.js','js/basic-effects.js':'_dev/online/frozen-v11/basic-effects.js','js/cosmetic-entitlements.js':'_dev/online/frozen-v11/cosmetic-entitlements.js','js/action-cards.js':'_dev/online/frozen-v11/action-cards.js','_dev/online/combat.cjs':'_dev/online/frozen-v11/combat.cjs'};
  const source=fs.readFileSync(path.join(root,frozen[id]||id),'utf8');sources[id]=source;for(const match of source.matchAll(/require\(['"]([^'"]+)['"]\)/g)){const target=match[1].startsWith('.')?path.posix.normalize(path.posix.join(path.posix.dirname(id),match[1])):match[1];visit(target);}}
 visit(entry);const output="/* Generado por node _dev/build-offline.cjs; no editar a mano. */\n(function(root){'use strict';var modules={\n"+Object.entries(sources).map(([id,source])=>JSON.stringify(id)+':function(require,module,exports){\n'+source+'\n}').join(',\n')+"},cache={};function load(id){if(cache[id])return cache[id].exports;var m=cache[id]={exports:{}};modules[id](function(name){if(name[0]!=='.')return load(name);var parts=id.split('/');parts.pop();name.split('/').forEach(function(p){if(p==='..')parts.pop();else if(p!=='.')parts.push(p);});return load(parts.join('/'));},m,m.exports);return m.exports;}root.HemicycleOfflineRules=load("+JSON.stringify(entry)+");})(globalThis);\n";
 const serverOutput=output.replace('root.HemicycleOfflineRules=load(', 'module.exports=load(');
-for(const [file,content]of [['js/offline-rules-v11.js',output],['_dev/online/offline-v11.cjs',serverOutput]]){if(process.argv.includes('--check')){if(fs.readFileSync(path.join(root,file),'utf8')!==content)throw Error(file+' no coincide con las reglas verificadas. Mantén la versión anterior para partidas pendientes.');}else fs.writeFileSync(path.join(root,file),content);}
+const targets=[['js/offline-rules-v11.js',output],['_dev/online/offline-v11.cjs',serverOutput]];
+// Validate both outputs before writing either. Even the ordinary build command
+// must refuse to overwrite a previously issued replay version with new rules.
+for(const [file,content]of targets){const target=path.join(root,file);if(fs.existsSync(target)){if(fs.readFileSync(target,'utf8')!==content)throw Error(file+' no coincide con las reglas verificadas. Mantén la versión anterior para partidas pendientes y crea una versión nueva.');}else if(process.argv.includes('--check'))throw Error('Falta el motor verificado: '+file);}
+if(!process.argv.includes('--check'))for(const [file,content]of targets){const target=path.join(root,file);if(!fs.existsSync(target))fs.writeFileSync(target,content);}

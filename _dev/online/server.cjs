@@ -9,6 +9,8 @@ function createServer(config={}){
  const serviceOrigin=config.serviceOrigin||process.env.RENDER_EXTERNAL_URL;
  if(serviceOrigin&&/^https:\/\/[a-z0-9-]+\.onrender\.com$/.test(serviceOrigin))origins.push(serviceOrigin);
  const secret=config.secret||process.env.SUPABASE_SERVICE_ROLE_KEY;
+ const catalog=require('../../js/orator-catalog.js');
+ const edition=catalog.expansions?.at(-1)||null;
  const combat=require('./combat-service.cjs').create({url,key,secret,fetcher:upstream,observe}),economy=require('./economy-service.cjs').create({url,key,secret,fetcher:upstream,observe,queueOptions:config.queueOptions});
  const configured=!!(url&&/^https:\/\/[a-z0-9-]+\.supabase\.co\/?$/.test(url)&&key&&origins.length&&!origins.includes('*'));
  const server=http.createServer(async(req,res)=>{
@@ -18,13 +20,30 @@ function createServer(config={}){
   const reply=(status,value)=>{observe.code(value?.code);if(status>=400)value={...value,requestId:observe.requestId()};if(value?.code==='ECONOMY_BUSY')res.setHeader('Retry-After','1');res.writeHead(status);res.end(JSON.stringify(value));};
   const origin=req.headers.origin;if(origin&&!origins.includes(origin))return reply(403,{error:'Origen no permitido.'});
   if(origin){res.setHeader('Access-Control-Allow-Origin',origin);res.setHeader('Vary','Origin');res.setHeader('Access-Control-Expose-Headers','X-Request-ID,Retry-After');}
-  if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
-  if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',version:'v32.0.0.2',revision:/^[0-9a-f]{40}$/.test(process.env.RENDER_GIT_COMMIT||'')?process.env.RENDER_GIT_COMMIT:null,configured,combatEnabled:!!secret});
+  if(req.method==='OPTIONS'){res.setHeader('Access-Control-Allow-Headers','Authorization,Content-Type,X-Hemicycle-Catalog');res.setHeader('Access-Control-Allow-Methods','GET,POST,OPTIONS');return reply(204,{});}
+  if(pathname==='/health'&&req.method==='GET')return reply(200,{service:'hemicycle-private-rooms',version:'v32.0.0.3',revision:/^[0-9a-f]{40}$/.test(process.env.RENDER_GIT_COMMIT||'')?process.env.RENDER_GIT_COMMIT:null,configured,combatEnabled:!!secret,catalogEdition:edition,catalogOrators:catalog.cards.length});
   if(req.method==='GET'&&pathname==='/rooms-test'){res.writeHead(308,{Location:'/rooms-test/'+new URL(req.url,'http://localhost').search});res.end();return;}
   const testFiles={'/rooms-test/':['lobby.html','text/html; charset=utf-8'],'/rooms-test/client.js':['lobby.js','text/javascript; charset=utf-8'],'/rooms-test/style.css':['lobby.css','text/css; charset=utf-8'],'/rooms-test/actions-art.png':['../../assets/actions/art-atlas.png','image/png'],'/rooms-test/combat.js':['../../js/online-combat-ui.js','text/javascript; charset=utf-8'],'/rooms-test/sdk.js':['../../js/supabase-sdk.js','text/javascript; charset=utf-8']};
   if(req.method==='GET'&&testFiles[pathname]){const [file,type]=testFiles[pathname];res.setHeader('Content-Type',type);if(type.startsWith('text/html'))res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self' https://*.supabase.co; frame-ancestors 'none'; base-uri 'none'; form-action 'self'");res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,file)));return;}
   const portrait=pathname.match(/^\/rooms-test\/portraits\/([a-z0-9-]+)\.webp$/);
-  if(req.method==='GET'&&portrait&&require('./combat.cjs').catalog[portrait[1]]){res.setHeader('Content-Type','image/webp');res.writeHead(200);res.end(fs.readFileSync(path.join(__dirname,'../../cards',portrait[1]+'.webp')));return;}
+  if(req.method==='GET'&&portrait){
+   const id=portrait[1];
+   if(require('./combat.cjs').catalog[id]){
+    const art=require('../../js/orator-art.js')[id];
+    const individual=art?.columns===1&&art?.rows===1&&art.url.split('?')[0];
+    const files=['cards/'+id+'.webp'];
+    if(individual&&/^assets\/orators\/[a-z0-9/_-]+\.webp$/.test(individual))files.push(individual);
+    for(const file of files){
+     try{
+      const image=await fs.promises.readFile(path.join(__dirname,'../..',file));
+      res.writeHead(200,{'Content-Type':'image/webp'});res.end(image);return;
+     }catch(error){
+      if(error.code!=='ENOENT')return reply(503,{error:'Retrato temporalmente no disponible.'});
+     }
+    }
+   }
+   return reply(404,{error:'Retrato no disponible.'});
+  }
   if(req.method==='GET'&&pathname==='/rooms-test/catalog')return reply(200,{orators:require('./combat.cjs').cards,actions:require('./actions.cjs').cards});
   if(req.method==='GET'&&pathname==='/rooms-test/config')return reply(configured?200:503,configured?{url,publishableKey:key}:{error:'Servicio pendiente de configurar.'});
   if(pathname==='/api/market/status'&&req.method==='GET')return reply(200,{enabled:configured&&!!secret,real:true,demo:false});
@@ -36,6 +55,12 @@ function createServer(config={}){
     let size=0,chunks=[];for await(const chunk of req){size+=chunk.length;if(size>(pathname==='/offline/settle'?262144:pathname.startsWith('/economy')?8388608:2048)){reply(413,{error:'Solicitud demasiado grande.'});req.resume();return;}chunks.push(chunk);}
     try{body=JSON.parse(Buffer.concat(chunks).toString());}catch{return reply(400,{error:'JSON no válido.'});}
     if(!body||typeof body!=='object'||Array.isArray(body))return reply(400,{error:'Solicitud no válida.'});
+   }
+   const givesCards=pathname==='/economy'&&['pack','claim','expansion-claim'].includes(body.command?.type);
+   if(edition&&req.headers['x-hemicycle-catalog']!==edition&&(givesCards||pathname.startsWith('/api/market/'))){
+    // A stale client cannot present a prize containing unknown cards. Use a
+    // retryable status so its existing operation ID survives until reload.
+    return reply(503,{code:'CATALOG_UPDATE_REQUIRED',error:'Actualiza Hemiciclo para abrir sobres, reclamar premios o usar el Mercado. La operación se conserva para reintentar.'});
    }
    if(pathname.startsWith('/api/market/')||pathname==='/economy'||pathname==='/economy/initialize'||pathname==='/economy/import-request'||pathname==='/offline/tickets'||pathname==='/offline/risk'||pathname==='/offline/settle'){
     try{return reply(200,await economy(auth,pathname,req.method,body));}catch(e){return reply(e.status||409,{error:e.message,...(e.code?{code:e.code}:{})});}

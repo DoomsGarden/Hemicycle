@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <strong>899 oradores · 92 acciones · Un debate por ganar</strong><br>
+  <strong>1.767 oradores · 92 acciones · Un debate por ganar</strong><br>
   Juego de colección y estrategia por turnos, ambientado en la política.
 </p>
 
@@ -16,7 +16,7 @@
 
 Forma un gabinete de **ocho oradores**, elige a tu líder y añade **cuatro cartas de acción distintas**. Presenta tus cromos en la Tribuna, aprovecha sus doctrinas y decide cuándo atacar, defender o recuperar fuerzas. Tu objetivo: **alcanzar 100 votos**.
 
-Hemiciclo está en **prelanzamiento**, versión **v32.0.0.2**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
+Hemiciclo está en **prelanzamiento**, versión **v32.0.0.3**. Puedes jugar en el navegador de móvil u ordenador y añadirlo a la pantalla de inicio cuando tu navegador lo permita. La interfaz cuenta con ajustes de texto, iconos y sonido, tutoriales y prácticas sin riesgo para tu colección.
 
 Corrección del 16 de noviembre: las conexiones cerradas del registro local de partidas se reabren automáticamente, conservando partidas y resultados pendientes. También se ajustan los sobres y el cartel de Inicio en horizontal, los marcos y el desplazamiento de Logros y Desafíos, y el aviso de regalos tras entrar al juego.
 
@@ -37,7 +37,7 @@ La corrección de esta edición renueva 778 retratos de España y Francia con il
 
 <p align="center">
   <a href="press/google-play/es-ES/02-combate.png"><img src="docs/media/promos/02-combate.jpg?v=20261103-meta6" alt="Combate actual: tapetes independientes de jugador y rival, estados visibles y objetivo de 100 votos" width="31%"></a>
-  <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg?v=20261103-meta6" alt="Colecciona 899 oradores con rasgos y frases propios" width="31%"></a>
+  <a href="press/google-play/es-ES/03-coleccion.png"><img src="docs/media/promos/03-coleccion.jpg?v=20261103-meta6" alt="Colecciona 1.767 oradores con rasgos y frases propios" width="31%"></a>
   <a href="press/google-play/es-ES/01-inicio.png"><img src="docs/media/promos/01-inicio.jpg?v=20261103-meta6" alt="Inicio de Hemiciclo con el hemiciclo y sus cromos" width="31%"></a>
 </p>
 
@@ -55,7 +55,7 @@ Capturas actualizadas de **v31.0.2.12**, con progreso de demostración, tapetes 
 
 </details>
 
-La ampliación incorpora 436 oradores de España y 443 de Francia, además de los otros países del catálogo. Los sobres generales y gratuitos incluyen la colección completa; la tienda también ofrece sobres por país y una tabla de probabilidades. Hay interfaz en español, inglés y francés. Los aspectos obtenidos aparecen al reclamar sus hitos, sin afectar a las estadísticas de combate.
+La ampliación incorpora 436 oradores de España y 443 de Francia, además de los otros países del catálogo. Los sobres generales y gratuitos incluyen la colección completa; la tienda también ofrece sobres por país y una tabla de probabilidades. Hay interfaz en español, inglés, francés y alemán. Las frases con original alemán documentado se muestran con su texto original en ese idioma. Los aspectos obtenidos aparecen al reclamar sus hitos, sin afectar a las estadísticas de combate.
 
 El evento de ampliación ofrece 10.000 FS y doce sobres generales en cinco entregas del buzón, una vez por cuenta elegible. Su aviso se cierra con «Genial!», al tocar fuera o tras 15 segundos; la viñeta del buzón permanece hasta abrirlo. Son elegibles los jugadores que hayan entrado antes del 1 de diciembre de 2026, hora de Madrid; los premios pueden reclamarse después.
 
@@ -67,11 +67,11 @@ Ganar cinco partidas seguidas con recompensas activa un bonus aleatorio del 25 %
 
 [Descargar APK para Android](https://hemicycle.online/Hemiciclo.apk) · [Descargar AAB para Google Play](https://hemicycle.online/Hemiciclo.aab) · [Ver todos los archivos](https://hemicycle.online/downloads/)
 
-Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v32.0.0.2**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
+Versión Android **0.0.3.0**, código **3**, con el identificador y la firma originales. Abre el juego en `hemicycle.online`; la versión web sigue siendo **v32.0.0.3**. Conserva una copia del progreso si vienes del antiguo dominio. [Detalles de los paquetes](./_dev/android/README.md).
 
 ## Primeros pasos
 
-1. Abre **[hemicycle.online](https://hemicycle.online/)** y pulsa **Iniciar**. Puedes continuar como invitado o acceder a una cuenta según tu tramo de edad.
+1. Abre **[hemicycle.online](https://hemicycle.online/)**. Puedes elegir español, inglés, francés o alemán desde el desplegable de bandera y código de país de la pantalla de inicio o de la ventana legal. La elección se guarda para las siguientes entradas. Pulsa **Iniciar**. Puedes continuar como invitado o acceder a una cuenta según tu tramo de edad.
 2. Completa la práctica inicial de ocho pasos. No concede ni consume premios; las guías completas se pueden repetir desde **Ayuda**.
 3. En **Cromos → Gabinete**, prepara ocho oradores distintos y marca al líder. Puedes guardar cinco gabinetes favoritos y equipar cuatro acciones distintas.
 4. Vuelve a **Inicio**, abre la flecha junto a **Jugar** y elige una modalidad. La partida rápida prepara un gabinete automáticamente con tu colección.
@@ -94,10 +94,10 @@ Los escaños base son **1 / 2 / 3 / 4** para comunes, raros, especiales y legend
 
 Tienes **tres huecos de Tribuna**. La mano reserva espacio para dos oradores y una acción disponible; las cartas restantes esperan en el mazo. Cada orador puede intervenir **una vez por turno propio**.
 
-- **Ataque normal:** usa el Zasca actual del cromo. Los 899 oradores tienen una habilidad, con activación como máximo una vez cada dos turnos propios. Hay 14 efectos de presión, protección o utilidad. Cada cromo admite un estado: un negativo puede sustituir un positivo rival, y los beneficios propios no limpian estados del adversario. Toca su icono para consultar el efecto y la duración. La ficha de Colección explica su habilidad. Ventanilla rápida recupera antes una carta de acción de apoyo al azar, una vez por turno propio y jugador; no acorta la curación del orador. Llamada al suplente roba el orador de menor coste del mazo, de cualquier rareza, respetando el máximo de dos en mano y una activación por turno propio.
+- **Ataque normal:** usa el Zasca actual del cromo. Los 1.767 oradores tienen una habilidad, con activación como máximo una vez cada dos turnos propios. Hay 14 efectos de presión, protección o utilidad. Cada cromo admite un estado: un negativo puede sustituir un positivo rival, y los beneficios propios no limpian estados del adversario. Toca su icono para consultar el efecto y la duración. La ficha de Colección explica su habilidad. Ventanilla rápida recupera antes una carta de acción de apoyo al azar, una vez por turno propio y jugador; no acorta la curación del orador. Llamada al suplente roba el orador de menor coste del mazo, de cualquier rareza, respetando el máximo de dos en mano y una activación por turno propio.
 - **Ataque fuerte:** causa el 150 % del Zasca, redondeado hacia arriba, y cuesta un punto de Aguante. Su oportunidad aparece en el tercer turno propio del cromo en mesa y después cada tres turnos; si no la usas, debes esperar al siguiente ciclo.
 - **Defensa o curación:** bajo la tercera frase tienes el escudo y la cruz como botones directos. La defensa reduce a la mitad el próximo golpe; la curación recupera la mitad del Aguante perdido, con un mínimo de tres y sin superar su máximo. Tras curarse, ese orador deja pasar un turno propio completo antes de volver a curarse.
-- **Cartas de acción:** puedes usar una por turno. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
+- **Cartas de acción:** puedes usar una por turno. Su coste base máximo es de **6 TdP** para partidas nuevas. No ocupan hueco de orador. Consulta su coste, objetivo, recuperación y posibles límites antes de activarlas.
 
 Al elegir un ataque, cada objetivo muestra el daño previsto y si podrá aplicarse la habilidad. El detalle desplegable explica desvíos, defensa, Aforado y bloqueos; el estado se comprueba de nuevo al jugar.
 
@@ -131,6 +131,8 @@ En horizontal, la navegación pasa al lateral y los menús aprovechan el ancho d
 En combate, las auras distinguen protección, aumento de Zasca, regeneración y los demás estados mediante luz, corrientes y partículas propias. Permanecen hasta que termina el efecto, también en oradores que ya han actuado. Toca el indicador de estados para consultar sus reglas y duración; si hay varios, muestra su cantidad. Con movimiento reducido se conserva una versión estática de cada aura.
 
 **Tienda** ofrece sobres que amplían la colección. **FS** es una moneda virtual del juego: actualmente no hay compras con dinero real ni canje por dinero. Desafíos, Logros y Buzón reúnen objetivos y recompensas; despliega la flecha de Inicio para ver los accesos adicionales.
+
+En horizontal, la apertura muestra los cinco cromos completos con botones separados debajo; cada cromo se puede pulsar para consultar su ficha. El cartel y el abanico de Inicio ajustan juntos su escala a la altura disponible.
 
 En **Mercado** puedes vender repetidos conservando una copia. Las compras e intercambios entre jugadores requieren conexión y cuenta. Revisa cantidad e importe antes de confirmar; las cartas de una oferta publicada pueden quedar reservadas hasta su compra o retirada.
 
@@ -188,7 +190,7 @@ Abre `http://localhost:8080/`. Esa dirección permite revisar la interfaz y el j
 - [Supervisión y diagnóstico del servicio](_dev/operations/README.md)
 - [Material promocional y exportaciones](press/README.md)
 - [Habilidades básicas: explicación y reparto por cromo](docs/balance/habilidades-v31.0.2.10.md)
-- [Notas de la versión v32.0.0.2](_dev/releases/v32.0.0.2.md)
+- [Notas de la versión v32.0.0.3](_dev/releases/v32.0.0.3.md)
 - [Notas de la ampliación v32.0.0](_dev/releases/v32.0.0.md)
 
 Las pruebas de reglas y servicios están en `tests/`; las de base de datos usan PostgreSQL aislado mediante PGlite. Las comprobaciones visuales requieren Playwright y Chromium. Las herramientas y evidencias de `_dev/` se conservan en Git y están excluidas del sitio publicado.

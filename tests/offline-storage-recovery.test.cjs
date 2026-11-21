@@ -39,6 +39,28 @@ test('a failed database open is retryable on the next attempt',async()=>{
  const result=await fixture(page=>page.evaluate(async()=>{const open=indexedDB.open.bind(indexedDB);let fail=true;indexedDB.open=function(...args){if(fail){fail=false;throw new DOMException('temporarily unavailable','UnknownError');}return open(...args);};let rejected=false;try{await client.status();}catch(e){rejected=true;}await client.download();return {rejected,status:await client.status()};}));
  assert.equal(result.rejected,true);assert.equal(result.status.tickets,1);
 });
+test('a failed engine load leaves the prepared ticket free to retry',async()=>{
+ const result=await fixture(page=>page.evaluate(async()=>{
+  await client.download();
+  let attempts=0;
+  window.HemicycleOfflineEngineLoader={ensure:async version=>{
+   if(version!=='offline11')throw Error('Wrong engine');
+   if(++attempts===1)throw Error('Interrupted engine load');
+  }};
+  let message;
+  try{await client.start(cabinet,'normal');}catch(e){message=e.message;}
+  const failed=await client.status();
+  await client.start(cabinet,'normal');client.detach();
+  const resumed=await client.resume();client.detach();
+  return {message,attempts,failed,resumed,requests:requests.length};
+ }));
+ assert.equal(result.message,'Interrupted engine load');
+ assert.equal(result.failed.active,false);
+ assert.equal(result.failed.tickets,1);
+ assert.equal(result.attempts,3);
+ assert.equal(result.requests,1);
+ assert.equal(result.resumed,true);
+});
 test('an aborted read cannot resolve with a value delivered before the transaction completes',async()=>{
  const result=await fixture(page=>page.evaluate(async()=>{await client.download();const d=connections[0],transaction=d.transaction.bind(d);let armed=true;d.transaction=function(...args){const tx=transaction(...args);if(armed){armed=false;const objectStore=tx.objectStore.bind(tx);tx.objectStore=function(...names){const store=objectStore(...names),get=store.get.bind(store);store.get=function(...keys){const q=get(...keys);q.addEventListener('success',()=>tx.abort());return q;};return store;};}return tx;};let rejected=false;try{await client.status();}catch(e){rejected=true;}return {rejected,status:await client.status(),opens};}));
  assert.equal(result.rejected,true);assert.equal(result.status.tickets,1);assert.equal(result.opens,1);

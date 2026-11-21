@@ -1,6 +1,7 @@
 /* Partidas descargadas: jugadas reproducibles, premios pendientes y consumo único al validar. */
 (function(root){'use strict';root.HemicycleOfflineCombat={create:function(api){
  var Rules=root.HemicycleOfflineRules,live=null,clock=null,busy=false,preparing=false,connection=null,dbPromise,dbConnection=null,releaseLease=null,notice=0,settlements=new Map();
+ var currentRules=Rules.version||'offline11';
  function forgetDatabase(d){if(dbConnection===d){dbConnection=null;dbPromise=null;}try{d.close();}catch(e){}}
  function db(){
   if(dbPromise)return dbPromise;
@@ -29,7 +30,13 @@
  function owner(){return api.account()&&api.account().userId;}
  async function lock(id,fn){return navigator.locks?navigator.locks.request('hemicycle-offline:'+id,fn):fn();}
  async function notify(){var sequence=++notice,id=owner(),value=await status();if(sequence===notice&&id===owner()&&api.changed)api.changed(value);}
- async function download(){var id=owner();if(!id||!navigator.onLine)return;var tickets=await api.economy.request('/offline/tickets',{rules:'offline11'});await lock(id,async function(){var store=await read(id),keep=store.tickets.filter(t=>store.pending.some(p=>p.ticketId===t.id)||store.active&&store.active.ticketId===t.id);store.tickets=Array.from(new Map(keep.concat(tickets).map(t=>[t.id,t])).values());await write(id,store);});await notify();}
+ function availableTicket(store,ticket){
+  return ticket.rules===currentRules&&ticket.expires>Date.now()&&(!store.active||store.active.ticketId!==ticket.id)&&!store.pending.some(p=>p.ticketId===ticket.id);
+ }
+ function preparedTicket(store,cabinet){
+  return store.tickets.find(t=>availableTicket(store,t)&&cabinet.orators.every(c=>t.profile.album.includes(c))&&cabinet.actions.every(c=>(t.profile.actionAlbum||[]).includes(c)));
+ }
+ async function download(){var id=owner();if(!id||!navigator.onLine)return;var tickets=await api.economy.request('/offline/tickets',{rules:currentRules});await lock(id,async function(){var store=await read(id),keep=store.tickets.filter(t=>store.pending.some(p=>p.ticketId===t.id)||store.active&&store.active.ticketId===t.id);store.tickets=Array.from(new Map(keep.concat(tickets).map(t=>[t.id,t])).values());await write(id,store);});await notify();}
  function settle(item,id){var key=id+':'+item.operationId;if(settlements.has(key))return settlements.get(key);var task=settleOnce(item,id).finally(function(){if(settlements.get(key)===task)settlements.delete(key);});settlements.set(key,task);return task;}
  async function settleOnce(item,id){
   if(!navigator.onLine)throw Error('Sin conexión.');if(owner()!==id)throw Error('La cuenta ha cambiado.');
@@ -61,17 +68,36 @@
   var id=owner();if(!id)throw Error('Inicia sesión.');if(live){render();return;}
   // Cached games start immediately; only a missing cabinet needs a network download.
   if(preparing)return;preparing=true;if(api.preparing)api.preparing(true);
-  try{await acquire(id);if(owner()!==id)throw Error('La cuenta ha cambiado.');var cached=await read(id);if(owner()!==id)throw Error('La cuenta ha cambiado.');if(mode==='liga'&&cached.pending.some(p=>p.record.mode==='liga')){if(navigator.onLine){await flush();cached=await read(id);}if(cached.pending.some(p=>p.record.mode==='liga'))throw Error('Valida la jornada pendiente al reconectar antes de jugar la siguiente jornada de Liga.');}if(!cached.active&&!cached.tickets.some(t=>t.rules==='offline11'&&t.expires>Date.now()&&!cached.pending.some(p=>p.ticketId===t.id)&&cabinet.orators.every(c=>t.profile.album.includes(c))&&cabinet.actions.every(c=>(t.profile.actionAlbum||[]).includes(c)))&&navigator.onLine)await download();
-if(owner()!==id)throw Error('La cuenta ha cambiado.');await lock(id,async function(){var store=await read(id),record=store.active,ticket;if(owner()!==id)throw Error('La cuenta ha cambiado.');
+  try{
+   await acquire(id);if(owner()!==id)throw Error('La cuenta ha cambiado.');
+   var cached=await read(id);if(owner()!==id)throw Error('La cuenta ha cambiado.');
+   if(mode==='liga'&&cached.pending.some(p=>p.record.mode==='liga')){
+    if(navigator.onLine){await flush();cached=await read(id);}
+    if(cached.pending.some(p=>p.record.mode==='liga'))throw Error('Valida la jornada pendiente al reconectar antes de jugar la siguiente jornada de Liga.');
+   }
+   if(!cached.active&&!preparedTicket(cached,cabinet)&&navigator.onLine)await download();
+   if(owner()!==id)throw Error('La cuenta ha cambiado.');
+   await lock(id,async function(){
+   var store=await read(id),record=store.active,ticket;if(owner()!==id)throw Error('La cuenta ha cambiado.');
    if(record){ticket=store.tickets.find(t=>t.id===record.ticketId);if(!ticket)throw Error('No se encuentra la partida guardada.');}
-   else{ticket=store.tickets.find(t=>t.rules==='offline11'&&t.expires>Date.now()&&!store.pending.some(p=>p.ticketId===t.id)&&cabinet.orators.every(c=>t.profile.album.includes(c))&&cabinet.actions.every(c=>(t.profile.actionAlbum||[]).includes(c)));if(!ticket)throw Error('Conecta un momento para descargar partidas con este gabinete. Los premios pendientes se conservan.');record={ticketId:ticket.id,mode,cabinet:structuredClone(cabinet),startedAt:Date.now(),commands:[]};store.active=record;await write(id,store);}
-   if(root.HemicycleOfflineEngineLoader)await root.HemicycleOfflineEngineLoader.ensure(ticket.rules);if(owner()!==id)throw Error('La cuenta ha cambiado.');var engine=Rules.forTicket(ticket),playback=engine.start(ticket,record.cabinet,record.mode);for(var step of record.commands)playback.state=engine.move(playback.state,step.command,step.at,playback.rng);
+   else{ticket=preparedTicket(store,cabinet);if(!ticket)throw Error('Conecta un momento para descargar partidas con este gabinete. Los premios pendientes se conservan.');}
+   if(root.HemicycleOfflineEngineLoader)await root.HemicycleOfflineEngineLoader.ensure(ticket.rules);
+   if(owner()!==id)throw Error('La cuenta ha cambiado.');
+   var engine=Rules.forTicket(ticket),playback;
+   if(record){
+    playback=engine.start(ticket,record.cabinet,record.mode);
+    for(var step of record.commands)playback.state=engine.move(playback.state,step.command,step.at,playback.rng);
+   }else{
+    playback=engine.start(ticket,cabinet,mode);
+    record={ticketId:ticket.id,mode,cabinet:structuredClone(cabinet),startedAt:Date.now(),commands:[]};
+    store.active=record;await write(id,store);
+   }
    live={owner:id,ticket,record,rules:engine,state:playback.state,rng:playback.rng,lastSequence:playback.state.visualSequence||0};
   });
   render();clock=setInterval(function(){if(live&&live.state.status==='active'&&Date.now()-live.record.startedAt>=live.state.deadline)send({type:'end'});},500);
   }catch(e){detach();throw e;}finally{preparing=false;if(api.preparing)api.preparing(false);}
  }
- async function status(){var id=owner();if(!id)return {tickets:0,pending:0};var store=await read(id);return {tickets:store.tickets.filter(t=>t.rules==='offline11'&&t.expires>Date.now()&&!store.pending.some(p=>p.ticketId===t.id)&&(!store.active||store.active.ticketId!==t.id)).length,rejected:(store.rejected||[]).length,pending:store.pending.length,active:!!store.active};}
+ async function status(){var id=owner();if(!id)return {tickets:0,pending:0};var store=await read(id);return {tickets:store.tickets.filter(t=>availableTicket(store,t)).length,rejected:(store.rejected||[]).length,pending:store.pending.length,active:!!store.active};}
  async function resume(){var id=owner();if(!id)return false;var active=(await read(id)).active;if(!active)return false;await start(active.cabinet,active.mode);return true;}
  return {start,resume,flush,download,detach,status,refresh:notify,rejected:async function(){var id=owner();return id?(await read(id)).rejected||[]:[];}};
 }};})(window);
