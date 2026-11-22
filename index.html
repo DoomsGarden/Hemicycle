@@ -110,7 +110,7 @@
 <script src="js/attack-forecast.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/battle-insights.js?v=31.0.2.10"></script>
 <script src="js/tactical-policy.js?v=32.0.0.2-auras-a1"></script>
-<script src="js/orator-context.js?v=32.0.0"></script>
+<script src="js/orator-context.js?v=33.0.0.1-fuentes1"></script>
 <link rel="stylesheet" href="css/strategy.css?v=31.0.2.10">
 <script src="js/status-art.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/battle-status.js?v=32.0.0.2-auras-a1"></script>
@@ -131,7 +131,7 @@
 <script src="js/localization-reviewed.js?v=32.0.0.2"></script>
 <script src="js/localization-gameplay.js?v=32.0.0-fixes1"></script><script src="js/localization-review321.js?v=32.0.0.2-cloud2"></script>
 <script src="js/pack-rules.js?v=32.0.0"></script>
-<script src="js/localization-gb-de.js?v=gb-de-2010-2026"></script>
+<script src="js/localization-gb-de.js?v=33.0.0.1-fuentes1"></script>
 <script src="js/localization-de.js?v=gb-de-2010-2026"></script>
 <script src="js/entry-locale.js?v=32.0.0.2-entry1"></script>
 <script src="js/collection-milestones.js?v=32.0.0.2-gbde1"></script>
@@ -150,7 +150,7 @@
 <script src="js/cabinet-presets.js?v=32.0.0.2"></script>
 <script src="js/legendary-mastery.js?v=32.0.0.2-gbde1"></script>
 <script src="js/cabinet-analysis.js?v=32.0.0.2"></script>
-<script src="js/strategy-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/action-cards.css?v=32.0.0.2">
+<script src="js/strategy-ui.js?v=33.0.0.1-fuentes1"></script><link rel="stylesheet" href="css/action-cards.css?v=32.0.0.2">
 <script src="js/victory-boost.js?v=32.0.0.2"></script><script src="js/victory-boost-ui.js?v=32.0.0.2"></script><link rel="stylesheet" href="css/victory-boost.css?v=32.0.0.2">
 <script src="js/progression-xp.js?v=31.0.2.11"></script><script src="js/cosmetic-catalog.js?v=32.0.0"></script><script src="js/cosmetic-ui.js?v=32.0.0-fixes1"></script>
 <link rel="stylesheet" href="css/cosmetics.css?v=32.0.0.2-gbde1">
@@ -1523,8 +1523,7 @@ SCREENS.detalle=function(){
  +'</div></div>'
  +'<div class="stat"><div><b>'+c.c+'</b><span>Coste TdP</span></div><div><b>'+stats.a+'</b><span>Zasca</span></div><div><b>'+stats.h+'</b><span>Aguante</span></div><div><b>'+c.v+'</b><span>Escaños</span></div></div>'
  +basicAbilityHTML(c)
- +(typeof HemicycleOratorContext!=='undefined'?HemicycleStrategyUI.context(HemicycleOratorContext[c.id]):'')
- +(!globalThis.HemicycleOratorContext?.[c.id]?'<p class="sub"><a href="fuentes/#'+esc(c.id)+'">Consultar las fuentes de las frases</a></p>':'')
+ +HemicycleStrategyUI.context(globalThis.HemicycleOratorContext?.[c.id],c.id)
  +'<div class="card-quotes"><h3 style="margin:0 0 3px">Intervenciones célebres</h3>'
  +c.q.slice(0,3).map(function(q){return '<div class="quote">'+quoteTextHTML(q,c.id)+'</div>';}).join('')+'</div>'
  +cardAppearances(c,d)

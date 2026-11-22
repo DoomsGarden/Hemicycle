@@ -37,7 +37,7 @@ test('late three-language registrations preserve German and invalidate the cache
 test('German context and legal copies retain source facts, office names and the Spanish originals',()=>{
  const I=language(),contexts=require('../js/orator-context.js'),reviewed=require('../_dev/i18n/de/context-reviewed.json'),legal=require('../js/legal-documents.js');
  const numbers=s=>[...new Set(s.match(/\d+/g)||[])].sort();
- for(const card of Object.values(contexts)){a.equal(I.t(card.extract),reviewed[card.extract],card.id);a.deepEqual(numbers(I.t(card.extract)),numbers(card.extract),card.id+' dates');}
+ for(const card of Object.values(contexts).filter(card=>card.extract)){a.equal(I.t(card.extract),reviewed[card.extract],card.id);a.deepEqual(numbers(I.t(card.extract)),numbers(card.extract),card.id+' dates');}
  a.match(I.t(contexts['angela-merkel'].extract),/17\. Juli 1954/);a.match(I.t(contexts['alfonso-alonso'].extract),/Partido Popular \(PP\)/);a.doesNotMatch(I.t(contexts['alfonso-alonso'].extract),/\bRP\b/);
  for(const document of legal.documents)for(const section of document.sections){a.ok(German.translations[section.text]);a.equal(I.t(section.text),require('../_dev/i18n/de/legal-reviewed.json')[section.text]);}
  for(const [s,de]of [['Rival ·','Gegner ·'],['‹ Anterior','‹ Zurück'],['Siguiente ›','Weiter ›'],['Como Líder (★):','Als Anführer (★):'],['Liga ·','Liga ·']])a.equal(I.t(s),de);

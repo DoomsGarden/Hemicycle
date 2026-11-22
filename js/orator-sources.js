@@ -7,6 +7,18 @@ function update(){var query=normalize(search.value.trim()),orators=0,phrases=0;c
 form.hidden=false;form.addEventListener('submit',function(e){e.preventDefault();});search.addEventListener('input',update);
 form.addEventListener('click',function(e){var button=e.target.closest('[data-source-filter]');if(!button)return;filter=button.dataset.sourceFilter;form.querySelectorAll('[data-source-filter]').forEach(function(b){b.setAttribute('aria-pressed',String(b===button));});update();});
 form.addEventListener('reset',function(){filter='all';search.value='';form.querySelectorAll('[data-source-filter]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.sourceFilter==='all'));});cards.forEach(function(c){c.open=false;});update();search.focus();});
-function reveal(){var id;try{id=decodeURIComponent(location.hash.slice(1));}catch(ignore){return;}var target=document.getElementById(id);if(!target||!target.matches('.orator-card'))return;form.reset();target.open=true;target.querySelector('summary').focus({preventScroll:true});target.scrollIntoView({block:'start'});}
-window.addEventListener('hashchange',reveal);reveal();
+function reveal(){
+ var hash=location.hash,id;try{id=decodeURIComponent(hash.slice(1));}catch(ignore){return;}
+ var target=document.getElementById(id);
+ if(!target||!target.matches('.orator-card'))return;
+ form.reset();
+ target.open=true;
+ requestAnimationFrame(function(){
+  if(location.hash!==hash)return;
+  target.querySelector('summary').focus({preventScroll:true});
+  target.scrollIntoView({block:'start'});
+ });
+}
+window.addEventListener('hashchange',reveal);
+if(document.readyState==='complete')reveal();else window.addEventListener('load',reveal,{once:true});
 })();

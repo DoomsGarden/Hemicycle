@@ -5,5 +5,22 @@ function cabinet(slot,owned){var a=Analysis.analyze(slot,owned);if(!a.count)retu
 function risk(slot,profile,mode){var competitive=['ranked','liga'].includes(mode),ids=competitive?A.lootPool(slot.ids||slot.orators,slot.actions,profile):[];return {mode:mode,ids:ids,competitive:competitive,protected:competitive&&!ids.length};}
 function riskHTML(data,verified){var byId={};C.cards.concat(A.cards).forEach(function(c){byId[c.id]=c;});return '<section class="strategy-panel risk-panel"><h3>Riesgo de colección</h3><p class="sub">'+(verified?'Comprobado con tu colección del servidor.':'Según la colección de este dispositivo.')+'</p>'+(data.competitive?'<p>Si pierdes puede transferirse <b>una copia</b> de uno de estos cromos:</p>'+(data.ids.length?'<div class="risk-candidates">'+data.ids.map(function(id){return '<span>'+esc(byId[id]&&byId[id].n||id)+'</span>';}).join('')+'</div>':'<p>Ahora no hay cromos expuestos en este gabinete.</p>')+'<p class="sub">Se protegen tus últimos ocho oradores y cuatro acciones únicos. Puedes perder copias repetidas sin bajar de esos mínimos. El resultado vuelve a comprobar la colección si ha cambiado.</p>':'<p class="sub">Este modo no transfiere cromos.</p>')+'</section>';}
 function result(insights){var l=I.lesson(insights);if(!l)return '';return '<details class="strategy-panel result-learning"><summary>Una idea para el próximo debate</summary><div><p class="sub">'+esc(l.presence)+' · '+esc(l.effects)+'</p><p>'+esc(l.note)+'</p><button class="btn ghost sm" data-act="tactical-practice" data-lesson="'+l.practice+'">Practicar sin riesgo</button><p class="sub">Recuento de esta partida; no atribuye el resultado a una única causa.</p></div></details>';}
-function context(record){if(!record)return '';return '<details class="strategy-panel historical-context"><summary>Contexto y trayectoria</summary><div><p class="sub">Extracto documental · consultado el '+esc(record.consulted)+'</p><blockquote>'+esc(record.extract)+'</blockquote><p class="sub"><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.attribution)+' ↗</a>'+(record.license==='CC BY-SA 4.0'?' · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Extracto recortado de la entradilla; el cargo indicado corresponde a la referencia consultada.':'. '+esc(record.license))+ (record.limitation?' '+esc(record.limitation):'')+'</p><p class="sub">La trayectoria real se distingue de las habilidades ficticias y frases adaptadas del juego. <a href="fuentes/#'+esc(record.id)+'" target="_blank" rel="noopener noreferrer">Ver las referencias de sus frases ↗</a></p></div></details>';}
+function legacyContext(record){
+ var license=record.license==='CC BY-SA 4.0'?' · <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>. Extracto recortado de la entradilla; el cargo indicado corresponde a la referencia consultada.':'. '+esc(record.license);
+ return '<p class="sub">Extracto documental · consultado el '+esc(record.consulted)+'</p><blockquote>'+esc(record.extract)+'</blockquote>'
+  +'<p class="sub"><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">'+esc(record.attribution)+' ↗</a>'+license+(record.limitation?' '+esc(record.limitation):'')+'</p>';
+}
+function officeContext(record){
+ return '<p class="sub">Cargo documentado</p><blockquote data-no-translate>'+esc(record.role)+'</blockquote>'
+  +'<p class="sub"><a href="'+esc(record.source)+'" target="_blank" rel="noopener noreferrer">Ver la fuente del cargo ↗</a>'
+  +(record.date?' · Fecha de la referencia '+esc(record.date):'')+'</p>';
+}
+function context(record,id){
+ id=id||record&&record.id;
+ if(!id)return '';
+ var body=record?(record.role?officeContext(record):legacyContext(record)):'';
+ return '<details class="strategy-panel historical-context"><summary>Contexto y trayectoria</summary><div>'+body
+  +'<p class="sub">'+(record?'La trayectoria real se distingue de las habilidades ficticias y frases adaptadas del juego. ':'')
+  +'<a href="fuentes/#'+encodeURIComponent(id)+'" target="_blank" rel="noopener noreferrer">Ver las referencias de sus frases ↗</a></p></div></details>';
+}
 return {esc:esc,cabinet:cabinet,risk:risk,riskHTML:riskHTML,result:result,context:context};});
