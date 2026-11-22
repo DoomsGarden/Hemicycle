@@ -2,23 +2,23 @@
 
 Siete imágenes verticales en español, con edición épica sobria en azul noche, marfil y dorado. Las pantallas proceden del juego y mantienen su interfaz; el fondo y los titulares promocionales se componen alrededor.
 
-**[Descargar las siete capturas en ZIP](https://github.com/DoomsGarden/Hemicycle/raw/refs/heads/main/press/hemiciclo-capturas-es.zip?v=20261103-meta6)** · [Ver el juego](https://hemicycle.online/) · [Volver a la presentación](../README.md)
+**[Descargar las siete capturas en ZIP](https://github.com/DoomsGarden/Hemicycle/raw/refs/heads/main/press/hemiciclo-capturas-es.zip?v=20261122-promos1)** · [Ver el juego](https://hemicycle.online/) · [Volver a la presentación](../README.md)
 
-<p align="center"><img src="../docs/media/capturas-resumen.jpg?v=20261103-meta6" alt="Vista conjunta de las siete capturas promocionales de Hemiciclo" width="100%"></p>
+<p align="center"><img src="../docs/media/capturas-resumen.jpg?v=20261122-promos1" alt="Vista conjunta de las siete capturas promocionales de Hemiciclo" width="100%"></p>
 
 | Imagen | Tema | Archivo completo |
 | --- | --- | --- |
 | 01 | Tu gabinete. Tu estrategia. | [Inicio](google-play/es-ES/01-inicio.png) |
 | 02 | 100 votos. Una victoria. | [Combate](google-play/es-ES/02-combate.png) |
-| 03 | 120 oradores. Tu colección. | [Colección](google-play/es-ES/03-coleccion.png) |
-| 04 | Cinco oradores. Dos acciones. | [Gabinete](google-play/es-ES/04-gabinete.png) |
-| 05 | Abre sobres. Descubre cartas. | [Sobres](google-play/es-ES/05-sobres.png) |
+| 03 | 1.767 oradores. Tu colección. | [Colección](google-play/es-ES/03-coleccion.png) |
+| 04 | Ocho oradores. Cuatro acciones. | [Gabinete](google-play/es-ES/04-gabinete.png) |
+| 05 | Sobres por país. Nuevas voces. | [Sobres](google-play/es-ES/05-sobres.png) |
 | 06 | Cada jornada cuenta. | [Liga](google-play/es-ES/06-liga.png) |
-| 07 | Tu colección sigue en juego. | [Mercado](google-play/es-ES/07-mercado.png) |
+| 07 | Da salida a tus repetidos. | [Mercado](google-play/es-ES/07-mercado.png) |
 
 Los siete originales promocionales son **PNG RGB de 24 bits, sin canal alfa, de 1080 × 1920 píxeles (9:16)**. El ZIP conserva su calidad. Las vistas pequeñas del README son JPEG optimizados y no deben sustituir a los originales al subir la ficha de una tienda.
 
-Actualizadas el **3 de noviembre de 2026** con la interfaz de **v31.0.2.12** y un progreso local de demostración. Muestran los tapetes con encuadres independientes, las sombras de mano y mesa y los menús visuales actuales. No contienen datos de cuentas reales ni pantallas legales. Las cifras de colección, saldo y clasificación representan ese estado de muestra; no prometen un inventario inicial ni una recompensa concreta. Las funciones de cuenta y Mercado entre jugadores requieren los requisitos indicados en el juego.
+Actualizadas el **22 de noviembre de 2026** con la interfaz de **v33.0.0.1** y un progreso local de demostración. Muestran los tapetes con encuadres independientes, las sombras de mano y mesa y los menús visuales actuales. No contienen datos de cuentas reales ni pantallas legales. Las cifras de colección, saldo y clasificación representan ese estado de muestra; no prometen un inventario inicial ni una recompensa concreta. Las funciones de cuenta y Mercado entre jugadores requieren los requisitos indicados en el juego.
 
 Para Google Play puedes usar los PNG en el apartado de capturas de teléfono. Comprueba los requisitos que muestre Play Console para tu ficha y dispositivo. Para publicaciones con otra proporción, conviene recomponer el diseño conservando las cartas y controles dentro del encuadre.
 

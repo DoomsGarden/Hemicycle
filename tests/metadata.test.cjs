@@ -11,7 +11,7 @@ test('installation and social metadata agree with the current app and canonical 
 test('every static module and installation resource exists and is included in the worker',()=>{
  for(const m of html.matchAll(/(?:src|href)="((?:js|css)\/[^"<>]+)"/g)){a.ok(fs.existsSync(path.join(root,m[1].split('?')[0])),m[1]);a.ok(assets.includes('./'+m[1]),m[1]);}
  a.deepEqual(new Set(manifest.screenshots.map(s=>s.form_factor)),new Set(['narrow','wide']));
- for(const shot of manifest.screenshots){a.ok(shot.label);a.ok(assets.includes('./'+shot.src));a.ok(fs.existsSync(path.join(root,shot.src)));}
+ for(const shot of manifest.screenshots){a.ok(shot.label);a.ok(assets.includes('./'+shot.src));a.ok(fs.existsSync(path.join(root,shot.src.split('?')[0])));}
  for(const icon of manifest.icons){const bytes=fs.readFileSync(path.join(root,icon.src));a.equal(bytes.readUInt32BE(16)+'x'+bytes.readUInt32BE(20),icon.sizes);}
  a.ok(assets.includes('./Readme.html'));a.ok(!read('Readme.html').includes('location.replace'));
 });

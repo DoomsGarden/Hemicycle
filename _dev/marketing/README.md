@@ -1,6 +1,6 @@
 # Capturas y presentación de Hemiciclo
 
-Edición del 03-11-2026, basada en v31.0.2.12. Preferencia de Dooms: siete capturas en español, estilo épico sobrio, azul y dorado; sin pantallas legales. También se crea README.md en la raíz, con portada, galería, acceso al juego y ayuda.
+Edición del 22-11-2026, basada en v33.0.0.1. Preferencia de Dooms: siete capturas en español, estilo épico sobrio, azul y dorado; sin pantallas legales. También se crea README.md en la raíz, con portada, galería, acceso al juego y ayuda.
 
 ## Composición
 

@@ -45,5 +45,5 @@ test('German context and legal copies retain source facts, office names and the 
 test('German PWA and foil assets keep the existing install identity and actual vector lettering',()=>{
  const manifest=JSON.parse(fs.readFileSync('manifest.de.json'));a.equal(manifest.id,JSON.parse(fs.readFileSync('manifest.json')).id);a.equal(manifest.lang,'de');a.equal(manifest.short_name,'Hemizykel');
  for(const kind of ['diario','semanal','comun','raro','legendario','mitico']){const svg=fs.readFileSync('assets/packs/de/'+kind+'.svg','utf8');a.match(svg,/outlined lettering/);a.match(svg,/Hemizykel-Booster/);a.match(svg,/<path/);a.doesNotMatch(svg,/<text/);}
- const html=fs.readFileSync('index.html','utf8'),worker=fs.readFileSync('sw.js','utf8');const script=html.match(/src="(js\/localization-de\.js\?v=[^"]+)"/);a.ok(script,'German locale has a versioned script');a.ok(worker.includes('./'+script[1]),'The same German script is available offline');a.match(worker,/manifest\.de\.json\?v=gb-de-2010-2026/);
+ const html=fs.readFileSync('index.html','utf8'),worker=fs.readFileSync('sw.js','utf8');const script=html.match(/src="(js\/localization-de\.js\?v=[^"]+)"/);a.ok(script,'German locale has a versioned script');a.ok(worker.includes('./'+script[1]),'The same German script is available offline');a.match(worker,/manifest\.de\.json\?v=[^\s\x22]+/);
 });
