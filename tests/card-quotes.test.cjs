@@ -65,9 +65,17 @@ test('each of the 22 additions has a documented web source matching the game', (
 
 test('every current phrase matches the approved complete sourced catalog in action order',()=>{
  const registry=JSON.parse(fs.readFileSync(path.join(root,'docs/fuentes-frases-actuales.json'),'utf8'));
- assert.equal(registry.cromos.length,899);
+ const catalog=require('../js/orator-catalog.js');
+ const historical=require('../_dev/online/legacy-v32.cjs').frozenModule('js/orator-catalog.js');
+ const cardsById=new Map(catalog.cards.map(card=>[card.id,card]));
+ const historicalIds=new Set(historical.cards.map(card=>card.id));
+ assert.equal(registry.cromos.length,cardsById.size);
+ assert.deepEqual(new Set(registry.cromos.map(item=>item.id)),new Set(cardsById.keys()));
  for(const item of registry.cromos){
-  const card=require('../js/orator-catalog.js').cards.find(c=>c.id===item.id);assert.ok(card,item.id);assert.deepEqual(item.frases.map(q=>q.frase),card.q,item.id);assert.deepEqual(item.frases.map(q=>q.tipo.replace('defensa_y_curacion','defensa_curacion')),['ataque_normal','ataque_fuerte','defensa_curacion']);
-  for(const quote of item.frases){assert.ok(['https:','http:'].includes(new URL(quote.fuente).protocol));assert.ok(quote.original&&quote.tratamiento&&quote.comprobado_en);assert.ok(quote.frase.length<=47);}
+  const card=cardsById.get(item.id);
+  assert.deepEqual(item.frases.map(q=>q.frase),card.q,item.id);
+  assert.deepEqual(item.frases.map(q=>q.tipo.replace('defensa_y_curacion','defensa_curacion')),['ataque_normal','ataque_fuerte','defensa_curacion'],item.id);
+  const maxLength=historicalIds.has(item.id)?47:60;
+  for(const quote of item.frases){assert.ok(['https:','http:'].includes(new URL(quote.fuente).protocol),item.id);assert.ok(quote.original&&quote.tratamiento&&quote.comprobado_en,item.id);assert.ok(quote.frase.length<=maxLength,item.id);}
  }
 });

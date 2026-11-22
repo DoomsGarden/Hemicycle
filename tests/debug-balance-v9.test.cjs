@@ -4,7 +4,7 @@ const B=require('../js/basic-effects.js'),Old=require('../js/basic-effects-v3.js
 const context=team=>({damage:1,attackerHealth:8,targetHealth:30,ownTurn:team.turn,rivalTurn:2,source:0,team,actions:A.byId,random:()=>.9});
 const attack=(id,team,card={basicAbility:id})=>B.afterHit(card,{},context(team));
 test('approved reassignment changes exactly 46 of 120, retains stats, and covers each rarity by role',()=>{
- a.equal(B.version,'basic4');a.equal(Object.keys(B.assignments).length,899);a.equal(C.cards.filter(c=>Old.ability(c.id)&&B.ability(c.id)!==Old.ability(c.id)).length,46);
+ a.equal(B.version,'basic4');a.equal(Object.keys(B.assignments).length,C.cards.length);a.equal(C.cards.filter(c=>Old.ability(c.id)&&B.ability(c.id)!==Old.ability(c.id)).length,46);
  for(const [id,effect]of Object.entries(require('../_dev/balance/drafts/ability-reassignment-v1.cjs').assignments))a.equal(B.assignments[id],effect,id);
  a.equal(fs.readFileSync('js/orator-catalog-v2.js','utf8'),execFileSync('git',['show','2d8319a:js/orator-catalog.js'],{encoding:'utf8'}).replace('root.HemicycleCatalog=factory()','root.HemicycleCatalogV2=factory()'));
  for(const r of ['comun','raro','especial','legendario'])for(const effects of Object.values(require('../_dev/balance/drafts/ability-reassignment-v1.cjs').categories))a.ok(C.cards.some(c=>c.r===r&&effects.includes(B.ability(c.id))),r);

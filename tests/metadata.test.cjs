@@ -7,6 +7,8 @@ test('installation and social metadata agree with the current app and canonical 
  a.ok(html.includes('content="'+manifest.description+'"'));const structured=JSON.parse(html.match(/<script type="application\/ld\+json">([^<]+)<\/script>/)[1]);a.equal(structured.softwareVersion,version.slice(1));a.equal(structured.description,manifest.description);a.equal(structured.name,manifest.name);a.equal(new URL(structured.url).hostname,read('CNAME').trim());a.ok(html.includes('rel="canonical" href="'+structured.url+'"'));
  for(const attr of ['og:image','twitter:image'])a.ok(html.includes(attr+'" content="'+structured.image+'"'));a.ok(fs.existsSync(path.join(root,new URL(structured.image).pathname)));
  const manifestUrl=html.match(/rel="manifest" href="([^"]+)"/)[1];a.ok(assets.includes('./'+manifestUrl));a.ok(manifestUrl.includes(version.slice(1)));
+ const locales=['es-ES',...['en','fr','de'].map(code=>json('manifest.'+code+'.json').lang)];
+ a.deepEqual(structured.inLanguage,locales);
 });
 test('every static module and installation resource exists and is included in the worker',()=>{
  for(const m of html.matchAll(/(?:src|href)="((?:js|css)\/[^"<>]+)"/g)){a.ok(fs.existsSync(path.join(root,m[1].split('?')[0])),m[1]);a.ok(assets.includes('./'+m[1]),m[1]);}

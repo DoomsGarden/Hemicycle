@@ -3,7 +3,7 @@ const {test}=require('node:test'),a=require('node:assert/strict'),C=require('../
 const keys=Object.keys(B.definitions),base=id=>C.cards.find(c=>c.id===id);
 const {fixture}=require('./helpers/basic-effects-fixture.cjs');
 test('all 120 speakers retain approved stats; all have exactly one ability; all marked high-cost cards are covered',()=>{
- a.equal(Object.keys(B.assignments).length,899);for(const id of Object.keys(B.assignments)){a.ok(base(id));a.ok(B.definition(B.ability(id)));}
+ a.equal(Object.keys(B.assignments).length,C.cards.length);for(const id of Object.keys(B.assignments)){a.ok(base(id),id);a.ok(B.definition(B.ability(id)),id);}
  a.equal(C.cards.filter(c=>!B.ability(c.id)).length,0);const draft=require('../_dev/balance/drafts/ability-reassignment-v1.cjs');for(const [id,effect] of Object.entries(draft.assignments))a.equal(B.assignments[id],effect,id);
  for(const c of require('../_dev/balance/pending-utility.json').cards)a.ok(B.ability(c.id),c.id);
 });

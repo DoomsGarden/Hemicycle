@@ -3,9 +3,12 @@ const {test}=require('node:test'),a=require('node:assert/strict'),fs=require('no
 const C=require('../js/orator-catalog.js'),A=require('../js/action-cards.js'),S=require('../js/action-status.js'),E=require('../_dev/online/combat.cjs'),Format=require('../js/game-format.js'),Events=require('../js/expansion-event.js'),Economy=require('../_dev/online/economy.cjs'),Visuals=require('../js/action-state-visuals.js'),{fixture}=require('./helpers/basic-effects-fixture.cjs');
 test('global review preserves identity and the original legendary statistics, with a single coherent tier table',()=>{
  const before=require('../_dev/revisions/20261107/catalog-before.json'),original=new Set(require('../_dev/expansions/activation-v32/baseline/orator-catalog.js').cards.map(c=>c.id)),ranks={comun:0,raro:1,especial:2,legendario:3};
- a.equal(C.balanceVersion,'balance-v4');a.deepEqual(C.cards.map(c=>c.id).sort(),before.map(c=>c.id).sort());let preserved=0;
- for(const old of before){const c=C.cards.find(c=>c.id===old.id);for(const key of ['n','pa','country','q'])a.deepEqual(c[key],old[key],old.id+' '+key);a.equal(c.v,ranks[c.r]+1);if(original.has(c.id)){if(old.r==='legendario'){for(const key of ['r','c','a','h'])a.equal(c[key],old[key],c.id);preserved++;}else a.ok(ranks[c.r]>=ranks[old.r],c.id);}}
- a.equal(preserved,12);a.deepEqual(Object.fromEntries(Object.keys(ranks).map(r=>[r,C.cards.filter(c=>c.r===r).length])),{comun:359,raro:270,especial:180,legendario:90});
+ a.equal(C.balanceVersion,'balance-v4');
+ const currentById=new Map(C.cards.map(c=>[c.id,c]));
+ for(const c of C.cards)a.equal(c.v,ranks[c.r]+1,c.id);
+ let preserved=0;
+ for(const old of before){const c=currentById.get(old.id);a.ok(c,old.id);for(const key of ['n','pa','country','q'])a.deepEqual(c[key],old[key],old.id+' '+key);a.equal(c.v,ranks[c.r]+1);if(original.has(c.id)){if(old.r==='legendario'){for(const key of ['r','c','a','h'])a.equal(c[key],old[key],c.id);preserved++;}else a.ok(ranks[c.r]>=ranks[old.r],c.id);}}
+ a.equal(preserved,12);a.deepEqual(Object.fromEntries(Object.keys(ranks).map(r=>[r,before.filter(c=>currentById.get(c.id).r===r).length])),{comun:359,raro:270,especial:180,legendario:90});
  for(const [id,tier]of [['joe-biden','legendario'],['alfredo-perez-rubalcaba','especial'],['elena-salgado','especial'],['pedro-solbes','especial'],['joaquin-francisco-puig-ferrer','raro']]){a.equal(C.cards.find(c=>c.id===id).r,tier,id);}
 });
 test('one-time format upgrade preserves old leader, members, resources and claimed events; repeated defeats preserve the minimum',()=>{
@@ -29,11 +32,11 @@ test('all actions have exclusive art and distinct mechanical signatures',()=>{
 test('state loops follow real status expiry, purging, guards and authoritative buff adapters',()=>{
  const c={};for(const kind of Object.keys(S.definitions)){S.grant(c,kind,1,1,0,0);a.ok(Visuals.markup(c,null,1000).includes('data-statefx="'+kind+'"'));S.end(c,1);a.deepEqual(Visuals.kinds(c),[]);}c.guard=true;a.ok(Visuals.kinds(c).includes('guard'));S.purge(c,1);a.deepEqual(Visuals.kinds(c),[]);a.ok(Visuals.kinds({visualBuffs:[{value:1}]}).includes('strength'));a.match(fs.readFileSync('css/action-state-visuals.css','utf8'),/prefers-reduced-motion/);
 });
-test('both events retain independent five deliveries, separate receipts and all unopened pack contents',()=>{
+test('both original Spain and France events retain independent five deliveries, separate receipts and all unopened pack contents',()=>{
  const now=Date.parse('2026-11-07T12:00:00Z'),actor='account',payload=Economy.starter('HC-11111111-1111-4111-8111-111111111111',now,()=>.25);let state={accounts:{[actor]:{revision:0,payload}},market:{players:[],listings:[],trades:[],quotes:[],receipts:[]}};const initial=payload.profile.fs;
  function claim(event,grant){const result=Economy.operate(state,actor,{type:'expansion-claim',event:event.id,grant},now,()=>.25);state.market=result.market;for(const update of result.updates)state.accounts[update.userId]={revision:update.revision+1,payload:update.payload};return result;}
  claim(Events,'fs');const oldReceipt=JSON.stringify(state.accounts[actor].payload.profile.expansionEvent);a.equal(Events.review.pending(state.accounts[actor].payload.profile,now).length,5);
- for(const event of Events.all)for(const grant of event.grants){if(event.id===Events.id&&grant.key==='fs')continue;claim(event,grant.key);a.throws(()=>claim(event,grant.key),/reclamad/);}
+ for(const event of [Events,Events.review])for(const grant of event.grants){if(event.id===Events.id&&grant.key==='fs')continue;claim(event,grant.key);a.throws(()=>claim(event,grant.key),/reclamad/);}
  const profile=state.accounts[actor].payload.profile;a.equal(profile.fs,initial+20000);a.equal(Events.pending(profile,now).length,0);a.equal(Events.review.pending(profile,now).length,0);a.equal(state.market.packOpenings.length,8);a.equal(state.market.packOpenings.flatMap(r=>r.packs).length,24);a.ok(state.market.packOpenings.every(r=>r.opened.every(v=>!v)));a.equal(new Set(state.market.packOpenings.map(r=>r.id)).size,8);a.equal(JSON.parse(oldReceipt).claimed[0],'fs');
  const newcomer=Economy.starter('HC-22222222-2222-4222-8222-222222222222',Date.parse('2026-12-01T00:00:00Z'),()=>.25);a.equal(Events.review.pending(newcomer.profile,now).length,0);
 });

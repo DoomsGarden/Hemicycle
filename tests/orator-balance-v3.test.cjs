@@ -41,11 +41,11 @@ test('browser and server dispatch select the exact historical or current engine 
   for(let n=0;state.status==='active'&&n<1000;n++){const command=AI.choose(state,0,0);commands.push({at:0,command});state=engine.move(state,command,0,rng);client.state=browser.forTicket(ticket).move(client.state,command,0,client.rng);}
   a.equal(state.status,'finished');a.deepEqual(engine.replay(ticket,{mode:'normal',cabinet,commands}),state);a.deepEqual(JSON.parse(JSON.stringify(client.state)),JSON.parse(JSON.stringify(state)));a.throws(()=>engine.replay(ticket,{mode:'normal',cabinet,commands:[...commands,{at:0,command:{type:'end'}}]}),/después/);
  }
- for(const rules of ['offline11','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
+ for(const rules of ['offline-does-not-exist','__proto__',null]){a.throws(()=>dispatch.forTicket({rules}));a.throws(()=>browser.forTicket({rules}));}
 });
 
 test('download negotiation preserves absent-version legacy clients and rejects unknown versions',async()=>{
  const calls=[],service=require('../_dev/online/economy-service.cjs').create({url:'https://example.supabase.co',key:'public',secret:'test',fetcher:async(url,options)=>{if(url.endsWith('/auth/v1/user'))return {ok:true,json:async()=>({id:'actor'})};calls.push(JSON.parse(options.body));return {ok:true,json:async()=>[]};}});
- for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8','offline9','offline10']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
- const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline11'}),e=>e.status===400);a.equal(calls.length,count);
+ for(const rules of [undefined,'offline1','offline2','offline3','offline4','offline5','offline6','offline7','offline8','offline9','offline10','offline11','offline12']){await service('Bearer test','/offline/tickets','POST',{rules});a.equal(calls.at(-1).p_rules,rules||'offline1');}
+ const count=calls.length;await a.rejects(service('Bearer test','/offline/tickets','POST',{rules:'offline-does-not-exist'}),e=>e.status===400);a.equal(calls.length,count);
 });
