@@ -12,3 +12,25 @@ test('health ends at retirement, turn banners add no lock and support effects ca
 
 test('speech has a readable minimum in both motion modes, and longer text gets more reading time',()=>{const fx=load(),short=fx.speechTiming('Deal me in',false),long=fx.speechTiming('Una frase bastante larga que necesita tiempo para leerse con calma. '.repeat(3),false),quiet=fx.speechTiming('Deal me in',true);a.equal(short.flight,short.duration);a.equal(short.fade,0);a.equal(long.flight,long.duration);a.ok(short.minimum>=1200&&short.duration>short.minimum);a.ok(long.minimum>short.minimum);a.equal(quiet.flight,0);a.equal(quiet.minimum,short.minimum);});
 test('reading time does not extend the action lock or the damage/retirement sequence',()=>{const fx=load(),speech=fx.speechTiming('Una frase que debe poder leerse.',false),plan=fx.plan([e('attack'),e('damage',{value:5}),e('expel')],false);a.ok(plan.duration<=750);a.ok(speech.minimum>plan.duration);});
+
+test('the final presentation releases the result even when queued effects never finish',async()=>{
+ const timers=new Map();
+ let nextId=0;
+ const doc={addEventListener(){},querySelector(){return null;},querySelectorAll(){return [];},getElementById(){return null;}};
+ const context=vm.createContext({
+  document:doc,addEventListener(){},
+  setTimeout(fn,delay){timers.set(++nextId,{fn,delay});return nextId;},
+  clearTimeout(id){timers.delete(id);}
+ });
+ vm.runInContext(fs.readFileSync('js/battle-visuals.js','utf8'),context);
+ const fx=context.HemicycleBattleVisuals,game={};
+ fx.queue(game,'turn',{side:'p',value:3});
+ let finished=false;
+ const presented=fx.whenPresented(game).then(()=>{finished=true;});
+ Array.from(timers.values()).find(timer=>timer.delay===0).fn();
+ await Promise.resolve();
+ a.equal(finished,false);
+ Array.from(timers.values()).find(timer=>timer.delay===5000).fn();
+ await presented;
+ a.equal(fx.busy(game),false);
+});

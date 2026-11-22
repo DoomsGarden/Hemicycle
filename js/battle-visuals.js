@@ -20,7 +20,18 @@ function waiting(game,all){return busy(game)||all&&speaking(game);}
 function settleWaiters(){var waitingNow=waiters;waiters=[];waitingNow.forEach(function(w){if(waiting(w.game,w.all))waiters.push(w);else w.resolve();});}
 function waitFor(game,all){return new Promise(function(resolve){setTimeout(function(){if(waiting(game,all))waiters.push({game:game,all:all,resolve:resolve});else resolve();},0);});}
 function whenIdle(game){return waitFor(game,false);}
-function whenPresented(game){return waitFor(game,true);}
+function whenPresented(game){
+ return new Promise(function(resolve){
+  // A backlog of readable phrases must not delay the result indefinitely.
+  var limit=setTimeout(function(){
+   if(waiting(game,true)){
+    clear();
+   }
+   resolve();
+  },5000);
+  waitFor(game,true).then(function(){clearTimeout(limit);resolve();});
+ });
+}
 function speechTiming(text,quiet){var minimum=Math.min(1800,Math.max(1200,Array.from(String(text)).length*22));return {flight:quiet?0:minimum+300,minimum:minimum,duration:minimum+300,fade:0};}
 /* Each principal intervention owns its damage/support events, including reflected damage. */
 function plan(events,quiet){
@@ -189,5 +200,5 @@ function render(game,options){
 }
 root.addEventListener('resize',function(){split();});
 if(document.addEventListener)document.addEventListener('visibilitychange',function(){if(document.hidden){var active=sequence;clear();if(active&&hooks.refresh)hooks.refresh();}});
-root.HemicycleBattleVisuals={queue:queue,render:render,capture:capture,beforePaint:beforePaint,busy:busy,whenIdle:whenIdle,whenPresented:whenPresented,speechTiming:speechTiming,plan:plan,actionTargets:actionTargets};
+root.HemicycleBattleVisuals={queue:queue,render:render,clear:clear,capture:capture,beforePaint:beforePaint,busy:busy,whenIdle:whenIdle,whenPresented:whenPresented,speechTiming:speechTiming,plan:plan,actionTargets:actionTargets};
 })(typeof window!=='undefined'?window:globalThis);

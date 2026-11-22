@@ -86,9 +86,9 @@
 <script src="js/event-presenter.js?v=32.0.0.2-fix1"></script>
 <script src="js/pack-journal.js?v=32.0.0-fixes1"></script>
 <script src="js/expansion-event.js?v=32.0.0.2-gbde1"></script>
-<script src="js/localized-title.js?v=32.0.0.2-de1"></script>
+<script src="js/localized-title.js?v=33.0.0.1-hotfix1"></script>
 <script src="js/localization-data.js?v=32.0.0-fixes1"></script>
-<script src="js/localization.js?v=gb-de-2010-2026"></script>
+<script src="js/localization.js?v=33.0.0.1-hotfix1"></script>
 <script src="js/ui-preferences.js?v=32.0.0"></script>
 <script src="js/game-audio.js?v=32.0.0.2-de1"></script>
 <script src="js/resource-loading.js?v=31.0.2.6"></script>
@@ -115,7 +115,7 @@
 <script src="js/status-art.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/battle-status.js?v=32.0.0.2-auras-a1"></script>
 <script src="js/battle-actions-ui.js?v=32.0.0.2-auras-a1"></script>
-<script src="js/battle-visuals.js?v=32.0.0.2-gbde1"></script>
+<script src="js/battle-visuals.js?v=33.0.0.1-hotfix1"></script>
 <script src="js/tactical-practice.js?v=31.0.2.10"></script>
 <script src="js/battle-tutorial.js?v=32.0.0.2"></script>
 <script src="js/pack-presentation.js?v=31.0.1.1"></script>
@@ -167,10 +167,10 @@
 <script src="js/offline-rule-dispatch.js?v=gb-de-2010-2026"></script>
 <script>window.HemicycleOfflineRules=HemicycleOfflineRuleDispatch.create({},'offline12');</script>
 <script src="js/offline-engine-loader.js?v=gb-de-2010-2026"></script>
-<script src="js/offline-combat.js?v=gb-de-2010-2026"></script>
+<script src="js/offline-combat.js?v=33.0.0.1-hotfix1"></script>
 <script src="js/market-rules.js?v=31.0.2.0"></script>
 <link rel="stylesheet" href="css/game-select.css?v=31.0.2.6-onboarding1">
-<link rel="stylesheet" href="css/expansion-v32.css?v=32.0.0.2-fix1">
+<link rel="stylesheet" href="css/expansion-v32.css?v=33.0.0.1-hotfix1">
 <link rel="stylesheet" href="css/landscape.css?v=32.0.0.2-landscape2">
 <script src="js/game-select.js?v=32.0.0.2-entry1"></script>
 <script src="js/market-ui.js?v=gb-de-2010-2026"></script>
@@ -582,7 +582,15 @@ function artTag(id,nm,allowGold,allowConfetti,edition){
   +'<span style="display:none">'+esc(initials(nm))+'</span>';
 }
 
-function battleActionDefinition(id,snapshot,instance){var state=snapshot||G;if(!instance&&!snapshot&&state&&SCREEN==='battle')instance=[].concat(state.hand&&state.hand.p||[],state.deck&&state.deck.p||[],state.pas&&state.pas.p||[],state.spentActions&&state.spentActions.p||[]).find(function(c){return (c.k||c.id)===id;});var legacy=typeof HemicycleLegacyActions!=='undefined'&&state&&state.catalogVersion!==HemicycleCatalog.balanceVersion&&(snapshot||state.authoritative&&SCREEN==='battle');var a=legacy&&HemicycleLegacyActions.byId[id]||BYID[id];if(typeof HemicycleActionCosts!=='undefined')a=HemicycleActionCosts.forInstance(a,instance);if(a&&a.status==='confused'&&state&&(snapshot||SCREEN==='battle')&&(state.actionEffectsVersion||1)<2)return Object.assign({},a,{text:'Aplica Confundido a '+(a.target==='all-rival'?'todos los oradores rivales':'un orador rival')+' durante '+a.duration+' turnos propios. No puede dirigir sus zascas a una bancada vacía.'});return a;}
+function battleActionDefinition(id,snapshot,instance){
+ var state=snapshot||G;
+ if(!instance&&!snapshot&&state&&SCREEN==='battle'){
+  // Network snapshots expose the deck count without exposing its cards.
+  var deck=!state.authoritative&&state.deck?state.deck.p:[];
+  instance=[].concat(state.hand&&state.hand.p||[],deck,state.pas&&state.pas.p||[],state.spentActions&&state.spentActions.p||[]).find(function(c){return c&&(c.k||c.id)===id;});
+ }
+ var legacy=typeof HemicycleLegacyActions!=='undefined'&&state&&state.catalogVersion!==HemicycleCatalog.balanceVersion&&(snapshot||state.authoritative&&SCREEN==='battle');var a=legacy&&HemicycleLegacyActions.byId[id]||BYID[id];if(typeof HemicycleActionCosts!=='undefined')a=HemicycleActionCosts.forInstance(a,instance);if(a&&a.status==='confused'&&state&&(snapshot||SCREEN==='battle')&&(state.actionEffectsVersion||1)<2)return Object.assign({},a,{text:'Aplica Confundido a '+(a.target==='all-rival'?'todos los oradores rivales':'un orador rival')+' durante '+a.duration+' turnos propios. No puede dirigir sus zascas a una bancada vacía.'});return a;
+}
 function actionArtHTML(c,extra){var reviewed=HemicycleActionArt[c.id];if(reviewed)return '<div class="action-art action-art-reviewed '+(extra||'')+'" role="img" aria-label="Ilustración de '+esc(c.n)+'">'+HemicyclePortraits.html(reviewed,'action-atlas')+'</div>';if(c.artFamily!==undefined)return '<div class="action-art action-expansion '+(extra||'')+'" style="--ax:'+((c.artFamily%4)*100/3)+'%;--ay:'+(Math.floor(c.artFamily/4)*25)+'%;--action-variant:'+c.artVariant+'" role="img" aria-label="Ilustración de '+esc(c.n)+'"></div>';return '<div class="action-art '+(extra||'')+'" style="--ax:'+((c.index%3)*50)+'%;--ay:'+(Math.floor(c.index/3)*100/3)+'%" role="img" aria-label="Ilustración de '+esc(c.n)+'"></div>';}
 function actionCromoHTML(c,o){c=battleActionDefinition(c.id,null,o&&o.instance||c)||c;o=o||{};return '<div class="cromo action-card'+(o.sel?' sel':'')+'" data-rarity="'+c.r+'" style="--tier:'+RARM[c.r].c+(o.extra?';'+o.extra:'')+'"'+(o.noCardAttr?'':' data-card="'+c.id+'"')+(o.pick?' data-action-pick="'+c.id+'" role="button" tabindex="0"':'')+'>'+actionArtHTML(c)+'<div class="frame-overlay"></div><div class="top"><span class="cost" aria-label="'+c.cost+' TdP">'+c.cost+'</span>'+gem(c.r,RARM[c.r].c)+'</div>'+(o.count?'<span class="badge" aria-label="'+o.count+' copias">x'+o.count+'</span>':'')+(o.sel?'<span class="sel-tag">✓ ELEGIDA</span>':'')+'<div class="action-card-copy"><small>ACCIÓN · '+RARM[c.r].n+'</small><strong>'+esc(c.n)+'</strong><span>'+esc(c.text)+'</span>'+(c.oncePerBattle?'<i>1 uso por partida</i>':'')+'</div></div>';}
 function actionRulesHTML(c){c=battleActionDefinition(c.id,null,c)||c;return '<dl class="action-rules"><dt>Efecto</dt><dd>'+esc(c.text)+'</dd><dt>Coste</dt><dd>'+c.cost+' TdP. Máximo una acción por turno.</dd><dt>Después de activarla</dt><dd>'+(c.oncePerBattle?'Una vez por partida. Pasa al descarte de acciones.':'Regresa al mazo y espera dos turnos propios completos antes de volver a robarse.')+'</dd>'+(c.effect==='silence'?'<dt>Requisitos</dt><dd>Tres oradores propios listos y menos votos que el rival. Los tres agotan su acción. El rival conserva robo y votos pasivos; después queda protegido contra otro silencio durante dos turnos propios adicionales.</dd>':'')+'</dl>';}
@@ -1239,8 +1247,8 @@ function verifiedResult(receipt,ticketId){
  return {who:won?'p':'e',votes:receipt.votes,enemyVotes:receipt.enemyVotes,msg:msg,mode:receipt.mode,fs:receipt.fs,xp:receipt.xp,boost:receipt.boost,eloDelta:receipt.eloDelta,eloBefore:receipt.eloBefore,eloAfter:receipt.eloAfter,won:receipt.won,lost:receipt.lost,lootStatus:receipt.lootStatus||(['ranked','liga'].indexOf(receipt.mode)>=0&&!receipt.win&&!receipt.lost?'protected':null),liga:receipt.mode==='liga',season:receipt.season,leaguePosition:receipt.leaguePosition,leagueTeams:receipt.leagueTeams,seasonFS:receipt.seasonFS,verified:true,ticketId:ticketId};
 }
 function deferResult(game){if(G!==game)return;clearBattleClock();closeLocalAction();REMOTE_BATTLE=null;G=null;go('menu');}
-async function finishDownloaded(snapshot,ticketId,verification,events){
- var controls=Object.assign({},REMOTE_BATTLE,{deferResult:true});
+async function finishDownloaded(snapshot,ticketId,verification,events,matchControls){
+ var controls=Object.assign({},matchControls||REMOTE_BATTLE,{deferResult:true});
  receiveRemoteBattle(snapshot,controls);remoteBattleEvents(events||[],snapshot.you);
  var game=G;G.sceneShown=true;clearBattleClock();closeLocalAction();
  await waitBattlePresentation(game);if(G!==game||SCREEN!=='battle')return;
@@ -2435,22 +2443,29 @@ function remoteBattleStatus(text,retry){var el=document.getElementById('networkB
 function remoteActionVisual(event){var a=BYID[event.id];if(!a||!a.action||!G||G.over||SCREEN!=='battle')return;gameSound('card');if(typeof document==='undefined'||!document.body||document.hidden)return;document.querySelectorAll('.action-flying').forEach(function(node){node.remove();});var fly=document.createElement('div');fly.className='action-flying';fly.innerHTML=actionCromoHTML(a);document.body.appendChild(fly);setTimeout(function(){fly.remove();},window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches?40:1250);}
 function remoteBattleEvents(events,you){
  if(!G||!G.authoritative)return;
- var actionEffect=null,remaining=0,intervention=null;
- events.forEach(function(event,index){
-  var data=Object.assign({},event);if(typeof data.side==='number')data.side=data.side===you?'p':'e';
-  if(['attack','action','turn','card'].indexOf(event.kind)>=0){intervention=event.kind;actionEffect=null;remaining=0;}
-  if(event.kind==='action'){
-   remoteActionVisual(event);var a=battleActionDefinition(event.id),side=data.side,foe=side==='p'?'e':'p';
-   if(a){actionEffect=a.effect;remaining=a.target==='self'||a.target==='rival'?1:a.target==='all'?G.field.p.length+G.field.e.length:G.field[a.target.indexOf('rival')>=0?foe:side].length;}
-   if(typeof HemicycleBattleVisuals!=='undefined')data.targets=HemicycleBattleVisuals.actionTargets(G,event,events.slice(index+1),you);
-  }
-  if(event.kind==='guard'||event.kind==='heal'){
-   if(actionEffect===event.kind&&remaining>0){remaining--;data.phrase=false;}
-   else if(!event.periodic){var own=G.field.p.find(function(c){return c.uid===event.uid;}),card=own||G.field.e.find(function(c){return c.uid===event.uid;}),side=own?'p':'e';data.phrase=event.kind==='guard'||intervention!=='turn'||!!(card&&card.lastHealTurn===G.turns[side]);}
-  }
-  battleVisual(event.kind,data);
- });
- if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(G,{refresh:paint,cardHTML:cromoBattle,refreshArt:syncGoldCanvases});
+ try{
+  var actionEffect=null,remaining=0,intervention=null;
+  events.forEach(function(event,index){
+   var data=Object.assign({},event);if(typeof data.side==='number')data.side=data.side===you?'p':'e';
+   if(['attack','action','turn','card'].indexOf(event.kind)>=0){intervention=event.kind;actionEffect=null;remaining=0;}
+   if(event.kind==='action'){
+    remoteActionVisual(event);var a=battleActionDefinition(event.id),side=data.side,foe=side==='p'?'e':'p';
+    if(a){actionEffect=a.effect;remaining=a.target==='self'||a.target==='rival'?1:a.target==='all'?G.field.p.length+G.field.e.length:G.field[a.target.indexOf('rival')>=0?foe:side].length;}
+    if(typeof HemicycleBattleVisuals!=='undefined')data.targets=HemicycleBattleVisuals.actionTargets(G,event,events.slice(index+1),you);
+   }
+   if(event.kind==='guard'||event.kind==='heal'){
+    if(actionEffect===event.kind&&remaining>0){remaining--;data.phrase=false;}
+    else if(!event.periodic){var own=G.field.p.find(function(c){return c.uid===event.uid;}),card=own||G.field.e.find(function(c){return c.uid===event.uid;}),side=own?'p':'e';data.phrase=event.kind==='guard'||intervention!=='turn'||!!(card&&card.lastHealTurn===G.turns[side]);}
+   }
+   battleVisual(event.kind,data);
+  });
+  if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.render(G,{refresh:paint,cardHTML:cromoBattle,refreshArt:syncGoldCanvases});
+ }catch(error){
+  // The move has already been accepted. A visual error must not interrupt it or its result.
+  console.error('Error al presentar la jugada',error);
+  if(typeof HemicycleBattleVisuals!=='undefined')HemicycleBattleVisuals.clear();
+  if(SCREEN==='battle')paint();
+ }
 }
 
 function receiveRemoteBattle(snapshot,controls){

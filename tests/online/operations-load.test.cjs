@@ -1,7 +1,7 @@
 'use strict';
 const {test}=require('node:test'),a=require('node:assert/strict'),crypto=require('node:crypto'),fs=require('node:fs');
 const {PGlite}=require('@electric-sql/pglite'),E=require('../../_dev/online/economy.cjs'),{createServer}=require('../../_dev/online/server.cjs');
-const uuid=()=>crypto.randomUUID();
+const uuid=()=>crypto.randomUUID(),edition=require('../../js/orator-catalog.js').expansions.at(-1);
 test('bounded write queue rejects overflow and expired waits, then recovers',async()=>{
  const {create}=require('../../_dev/online/write-queue.cjs');let release,rejected=0;const q=create({limit:1,waitMs:20,onReject:()=>rejected++});
  const first=q.run(()=>new Promise(r=>release=r));await Promise.resolve();
@@ -23,7 +23,7 @@ test('HTTP load on real economy SQL preserves stock, balances, receipts and offl
  }
  for(let i=0;i<2;i++){const s=createServer({url:'https://example.supabase.co',key:'public-test',secret:'private-server-secret',origins:'https://hemicycle.online',fetch:transport,logger:line=>logs.push(JSON.parse(line))});await new Promise(r=>s.listen(0,'127.0.0.1',r));servers.push(s);}
  let requests=0;const durations=[];
- async function call(actor,command,operationId=uuid(),instance=0){const at=performance.now();const r=await fetch('http://127.0.0.1:'+servers[instance].address().port+'/economy',{method:'POST',headers:{Authorization:'Bearer '+actor,'Content-Type':'application/json'},body:JSON.stringify({command,operationId})});requests++;durations.push(performance.now()-at);return {status:r.status,data:await r.json(),reference:r.headers.get('x-request-id')};}
+ async function call(actor,command,operationId=uuid(),instance=0){const at=performance.now();const r=await fetch('http://127.0.0.1:'+servers[instance].address().port+'/economy',{method:'POST',headers:{Authorization:'Bearer '+actor,'Content-Type':'application/json','X-Hemicycle-Catalog':edition},body:JSON.stringify({command,operationId})});requests++;durations.push(performance.now()-at);return {status:r.status,data:await r.json(),reference:r.headers.get('x-request-id')};}
  const context=id=>rpc('hemicycle_economy_context',{p_actor:id});const profile=async id=>(await context(id)).accounts[id].payload.profile;
  const initial=await Promise.all(ids.map(profile));const total=(ps,k)=>ps.reduce((s,p)=>s+(k==='fs'?p.fs:p.album.filter(x=>x===card).length),0);
  const results=await Promise.all(ids.slice(1).flatMap((id,i)=>{const key=uuid(),cmd={type:'machine',id:card,quantity:1};return [call(id,cmd,key,i%2),call(id,cmd,key,1-i%2)];}));a.ok(results.every(r=>r.status===200),JSON.stringify(results.filter(r=>r.status!==200)));for(let i=0;i<results.length;i+=2)a.deepEqual(results[i].data,results[i+1].data);

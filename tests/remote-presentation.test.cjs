@@ -29,3 +29,28 @@ test('protected ranked results explain why no cromo was transferred',()=>{const 
 
  test('unchanged polling keeps the table and selection instead of repainting; a new revision still redraws',()=>{const f=fixture();f.show(9);let redraws=0;const original=f.client.paint;f.client.paint=function(){redraws++;return original.apply(this,arguments);};const card=f.client.G.field.p[0];f.client.G.sel=card?card.uid:null;for(let i=0;i<50;i++)f.show(9);assert.equal(redraws,0);f.show(10);assert.ok(redraws>0);});
 test('Un cromo sin Tiempo de Palabra suficiente no envía una jugada que abriría un error',()=>{const f=fixture();f.show(1);const g=f.client.G,c=g.hand.p[0],sent=[];g.side='p';g.tdp.p=c.c-1;f.controls.send=command=>sent.push(command);const notices=[];f.client.remoteBattleStatus=(text,retry)=>notices.push({text,retry});assert.equal(f.client.playCard('p',c.uid),false);assert.equal(sent.length,0);assert.equal(notices[0].retry,false);assert.match(notices[0].text,/Tiempo de Palabra/);});
+
+test('the action just played can be presented when the authoritative deck contains only a count',()=>{
+ const f=fixture('ai');
+ f.show(1);
+ f.client.G.deck.p=new Array(6);
+ f.client.G.hand.p=f.client.G.hand.p.filter(c=>c.k!=='acuerdo-de-estado');
+ const events=[];
+ f.client.remoteActionVisual=()=>{};
+ f.client.battleVisual=(kind,data)=>events.push({kind,phrase:data.phrase});
+ f.client.G.field.p=[{uid:'healed-orator'}];
+ f.client.remoteBattleEvents([{kind:'action',side:0,id:'acuerdo-de-estado'},{kind:'heal',side:0,uid:'healed-orator'}],0);
+ assert.deepEqual(events,[{kind:'action',phrase:undefined},{kind:'heal',phrase:false}]);
+});
+
+test('an interrupted animation cannot block the normal presentation of a recorded move',()=>{
+ const f=fixture('ai');
+ f.show(1);
+ let cleared=0,reported=0;
+ f.client.HemicycleBattleVisuals={clear(){cleared++;}};
+ f.client.console={error(){reported++;}};
+ f.client.battleVisual=()=>{throw Error('Presentation interrupted');};
+ assert.doesNotThrow(()=>f.client.remoteBattleEvents([{kind:'attack',side:0}],0));
+ assert.equal(cleared,1);
+ assert.equal(reported,1);
+});

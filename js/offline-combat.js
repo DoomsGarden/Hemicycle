@@ -48,20 +48,25 @@
  async function flush(){if(connection)return connection;var id=owner();if(!id||!navigator.onLine)return;connection=(async function(){var pending=(await read(id)).pending;for(var item of pending){try{await settle(item,id);}catch(e){if(!['OFFLINE_TICKET_UNAVAILABLE','OFFLINE_RECEIPT_CONFLICT'].includes(e.code))throw e;if(owner()!==id)throw Error('La cuenta ha cambiado.');await lock(id,async function(){var store=await read(id);store.rejected=store.rejected||[];if(!store.rejected.some(r=>r.ticketId===item.ticketId))store.rejected.push({...item,ticket:store.tickets.find(t=>t.id===item.ticketId)||null,error:e.message,rejectedAt:Date.now()});store.pending=store.pending.filter(r=>r.ticketId!==item.ticketId);store.tickets=store.tickets.filter(t=>t.id!==item.ticketId);await write(id,store);});}}await notify();await download();})().finally(function(){connection=null;});return connection;}
 
  function project(){var now=Math.max(0,Date.now()-live.record.startedAt),s=live.rules.project(live.state,0,live.record.commands.length+1,now);s.opponentKind='ai';s.offline=true;return s;}
- function render(){api.battle(project(),{id:'offline-'+live.ticket.id,busy:busy,send:send,retry:function(){if(live)render();},close:detach});}
+ function controls(){return {id:'offline-'+live.ticket.id,busy:busy,send:send,retry:function(){if(live)render();},close:detach};}
+ function render(){api.battle(project(),controls());}
  function detach(){clearInterval(clock);clock=null;live=null;if(releaseLease){releaseLease();releaseLease=null;}}
  async function acquire(id){if(!navigator.locks)return;await new Promise(function(resolve,reject){navigator.locks.request('hemicycle-active-offline:'+id,{ifAvailable:true},async function(lease){if(!lease){reject(Error('Esta partida está abierta en otra pestaña. Ciérrala allí para continuar aquí.'));return;}var lifetime=new Promise(function(done){releaseLease=done;});resolve();await lifetime;}).catch(reject);});}
  async function finished(){
   clearInterval(clock);clock=null;var match=live,id=match.owner,record=structuredClone(match.record),item={operationId:match.ticket.id,ticketId:match.ticket.id,record};
   await lock(id,async function(){var store=await read(id),existing=store.pending.find(p=>p.ticketId===item.ticketId);if(existing)item=existing;else store.pending.push(item);store.active=null;await write(id,store);});
-  var snapshot=project();detach();
+  var snapshot=project(),matchControls=controls();detach();
   var verification=async function(){var result=await settle(item,id);download().catch(function(){});return result;};
-  notify().catch(function(){});api.finished(snapshot,item.ticketId,verification,(snapshot.visualEvents||[]).filter(e=>e.sequence>match.lastSequence));
+  notify().catch(function(){});api.finished(snapshot,item.ticketId,verification,(snapshot.visualEvents||[]).filter(e=>e.sequence>match.lastSequence),matchControls);
  }
  function send(command){if(busy||!live||owner()!==live.owner)return false;command=structuredClone(command);busy=true;
   Promise.resolve().then(async function(){try{var at=Math.max(live.record.commands.at(-1)?.at||0,Date.now()-live.record.startedAt),next=live.rules.move(live.state,command,at,live.rng);live.state=next;live.record.commands.push({at,command});var match=live;
    await lock(match.owner,async function(){var store=await read(match.owner);store.active=match.record;await write(match.owner,store);});
-   if(next.status==='finished')await finished();else{busy=false;render();if(api.events)api.events(next.visualEvents.filter(e=>e.sequence>match.lastSequence),0);match.lastSequence=next.visualSequence||0;}
+   if(next.status==='finished')await finished();else{
+    var events=next.visualEvents.filter(e=>e.sequence>match.lastSequence);
+    match.lastSequence=next.visualSequence||0;
+    busy=false;render();if(api.events)api.events(events,0);
+   }
   }catch(e){busy=false;if(live)render();if(api.error)api.error(e.message);}finally{busy=false;}});return true;
  }
  async function start(cabinet,mode){
@@ -94,6 +99,7 @@
    }
    live={owner:id,ticket,record,rules:engine,state:playback.state,rng:playback.rng,lastSequence:playback.state.visualSequence||0};
   });
+  if(live.state.status==='finished'){await finished();return;}
   render();clock=setInterval(function(){if(live&&live.state.status==='active'&&Date.now()-live.record.startedAt>=live.state.deadline)send({type:'end'});},500);
   }catch(e){detach();throw e;}finally{preparing=false;if(api.preparing)api.preparing(false);}
  }

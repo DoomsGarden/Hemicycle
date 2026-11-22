@@ -73,3 +73,36 @@ test('reconnecting preserves pending receipts and account isolation, settling ea
  const result=await fixture(page=>page.evaluate(async()=>{await client.download();const d=connections[0];await new Promise((resolve,reject)=>{const tx=d.transaction('accounts','readwrite');tx.objectStore('accounts').put({tickets:[ticket],pending:[{ticketId:ticket.id,operationId:ticket.id,record:{mode:'normal',commands:[]}}],active:null},'A');tx.oncomplete=resolve;tx.onabort=reject;});d.close();const pending=(await client.status()).pending;account='B';const other=await client.status();account='A';await Promise.all([client.flush(),client.flush()]);await client.flush();return {pending,other,status:await client.status(),settled:requests.filter(r=>r.url==='/offline/settle').length,receipts:receipts.length};}));
  assert.equal(result.pending,1);assert.equal(result.other.pending,0);assert.equal(result.other.tickets,0);assert.equal(result.status.pending,0);assert.equal(result.settled,1);assert.equal(result.receipts,1);
 });
+
+test('an already finished recording resumes into verification instead of an active board',async()=>{
+ const result=await fixture(page=>page.evaluate(async()=>{
+  window.HemicycleOfflineRules.forTicket=()=>({
+   start:()=>({state:{status:'active',deadline:90000,visualSequence:0},rng:()=>0}),
+   move:(state,command)=>({...state,status:'finished',winner:0,visualSequence:1,visualEvents:[{kind:'turn',sequence:1}]}),
+   project:state=>structuredClone(state)
+  });
+  const presentations=[];
+  api.finished=(snapshot,id,verification,events,controls)=>presentations.push({snapshot,id,verification,events,controls});
+  client=HemicycleOfflineCombat.create(api);
+  await client.download();
+  await new Promise((resolve,reject)=>{
+   const tx=connections.at(-1).transaction('accounts','readwrite'),record={ticketId:ticket.id,cabinet,mode:'normal',startedAt:Date.now()-2000,commands:[{at:1000,command:{type:'end'}}]};
+   tx.objectStore('accounts').put({tickets:[ticket],pending:[],active:record},account);
+   tx.oncomplete=resolve;tx.onabort=reject;
+  });
+  const resumed=await client.resume(),before=await client.status();
+  const finish=presentations[0];
+  if(finish)await finish.verification();
+  await client.flush();
+  return {resumed,before,after:await client.status(),presentations:presentations.length,match:finish?.controls.id,status:finish?.snapshot.status,events:finish?.events,settled:requests.filter(r=>r.url==='/offline/settle').length};
+ }));
+ assert.equal(result.resumed,true);
+ assert.equal(result.before.active,false);
+ assert.equal(result.before.pending,1);
+ assert.equal(result.presentations,1);
+ assert.equal(result.match,'offline-one-ticket');
+ assert.equal(result.status,'finished');
+ assert.deepEqual(result.events,[]);
+ assert.equal(result.settled,1);
+ assert.equal(result.after.pending,0);
+});
